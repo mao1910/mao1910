@@ -19,7 +19,7 @@
 
 <picture>
   <source
-    srcset="https://github-readme-stats.vercel.app/api?username=mao1910&show_icons=true&theme=dracula"
+    srcset="https://github-readme-stats.vercel.app/api?username=mao1910&show_icons=true&theme=dracula&hide=contribs"
     media="(prefers-color-scheme: dark)"
   />
   <source
