@@ -63,5 +63,9 @@
     <a href = "mao1910dev@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 </div>
 
-<!--   -->
+<!-- Snake Game  -->
+
+![Snake animation](https://github.com/mao1910/mao1910/blob/8a6b0399615931e85721e8550870477ffad22c7e/.github/workflows/snake.yml)
+<!--  -->
+
 
