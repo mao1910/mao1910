@@ -10,15 +10,13 @@
 
 <!-- ABOUT ME -->
 
-<br/>
-
 <div align="center">
  
- 🔭 I’m currently working on **a Nutrition App**
+ 🔭 **I’m currently working on:** Nutrition App
  
- 🌱 I’m currently learning **Outsystems, Flutter, Firebase**
+ 🌱 **I’m currently learning:** Outsystems, Flutter, Firebase
 
- ⚡ Fun fact **Every year the Moon moves 3.8cm away from the Earth. That's the length of an AirPod**
+ ⚡ **Fun fact:** Every year the Moon moves 3.8cm away from the Earth. That's the length of an AirPod.
  
  </div>
  
