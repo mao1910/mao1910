@@ -51,13 +51,14 @@
 <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
 <!-- https://github.com/anuraghazra/github-readme-stats -->
 
+<!-- https://github-readme-stats-mao1910.vercel.app/ My own Vercel deployment-->
 <h2 align="center">📝 Stats </h2>
   <br>
 <div align=in-line>
-  <img width=390 src="https://github-readme-stats.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10" alt="github stats"/>
+  <img width=390 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10" alt="github stats"/>
   <img align="right" width=390 src="https://streak-stats.demolab.com/?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10" alt="streak stats"/>
   <br/><br/><br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5" alt="languages stats" />
+  <img src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5" alt="languages stats" />
 </div>
 
 <br/><br/><br/>
