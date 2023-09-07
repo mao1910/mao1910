@@ -55,10 +55,10 @@
 <h2 align="center">📝 Stats </h2>
   <br>
 <div align=center>
-  <img width=429 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10" alt="github stats"/>
-  <img width=396 src="https://streak-stats.demolab.com/?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10" alt="streak stats"/>
+  <img width=429 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=79DAF9" alt="github stats"/>
+  <img width=396 src="https://streak-stats.demolab.com/?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10&border=79DAF9" alt="streak stats"/>
   <br/>
-  <img src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5" alt="languages stats" />
+  <img src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5&border_color=79DAF9" alt="languages stats" />
 </div>
 
 <br/><br/><br/>
@@ -90,4 +90,4 @@
 <!-- SPOTIFY PLAYING-->
 <!-- https://github.com/novatorem/novatorem -->
 
-[<img width=436px src="https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app//api/spotify/?border_color=ffffff" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
+[<img width=440px src="https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
