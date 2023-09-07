@@ -1,11 +1,11 @@
-<!-- VISITOR BADGE -->
+<!-- VISITOR BADGE https://github.com/hehuapei/visitor-badge -->
 
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=mao1910.mao1910&left_color=blue&right_color=violet" />
 
-<!-- TYPING SVG -->
+<!-- TYPING SVG https://github.com/DenverCoder1/readme-typing-svg -->
 
 <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=5000&lines=Hi+There!+👋;+I'm+Mao!;" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=F724A9&font=raleway&duration=5000&lines=Hi+There!+👋;+I'm+Mao!;" />
 </h1>
 
 <!-- STATS -->
