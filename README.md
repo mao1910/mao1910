@@ -8,6 +8,20 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=F724A9&font=poppins&duration=5000&lines=Hi+There!+👋;+I'm+Mao!;" />
 </h1>
 
+<!-- ABOUT ME -->
+
+<br/>
+
+<div align="center">
+ 
+ 🔭 I’m currently working on **a Nutrition App**
+ 
+ 🌱 I’m currently learning **Outsystems, Flutter, Firebase**
+
+ ⚡ Fun fact **Every year the Moon moves 3.8cm away from the Earth. That's the length of an AirPod**
+ 
+ </div>
+ 
 <!-- STATS -->
 
 <picture>
