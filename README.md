@@ -12,14 +12,24 @@
 
 <div align="center">
  
- 🔭 **I’m currently working on:** Nutrition App
+ 🔭 **I’m currently working on a:** Nutrition App
  
  🌱 **I’m currently learning:** Outsystems, Flutter, Firebase
 
  ⚡ **Fun fact:** Every year the Moon moves 3.8cm away from the Earth. That's the length of an AirPod.
- 
+<!-- Alternatives to the last sentence https://www.themeasureofthings.com/results.php?comp=length&unit=cm&amt=3.8 -->
  </div>
- 
+
+<!-- TECHNOLOGIES LOGOS -->
+
+<hr/> 
+<h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
+<div align="center">
+    <img src="https://skillicons.dev/icons?i=javascript,typescript,angular,react,html,css,scss,bootstrap,cs,java,spring" />
+    <img src="https://skillicons.dev/icons?i=flutter,firebase,supabase,mysql,git,github,gitlab,vscode,idea,maven,figma" />
+</div>
+<br/>
+
 <!-- STATS -->
 
 <picture>
