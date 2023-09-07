@@ -86,6 +86,8 @@
 <!-- START_SECTION:activity -->
 <!-- https://github.com/jamesgeorge007/github-activity-readme -->
 
-[<img src="https://spotify-now-playing-five-kohl.vercel.app/" alt="Mao Spotify Now Playing" />] (https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde
 
-[![Spotify](https://spotify-now-playing-novatorem-steel.vercel.app/api/spotify)](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
+<!-- SPOTIFY PLAYING-->
+<!-- https://github.com/novatorem/novatorem -->
+
+[<img src="https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app//api/spotify" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
