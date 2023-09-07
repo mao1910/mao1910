@@ -48,55 +48,24 @@
 
 <hr/>
 
-<!-- STATS+LANGUAGES TEST-->
+<!-- GITHUB STATS -->
 <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
 <!-- https://github.com/anuraghazra/github-readme-stats -->
 
 <h2 align="center">📝 Stats </h2>
   <br>
-<div align=center>
+<div align=in-line>
+  <img width=390 src="https://github-readme-stats.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10" alt="github stats"/>
   <img width=390 src="https://streak-stats.demolab.com/?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10" alt="streak stats"/>
-  <img width=390 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=react&rank_icon=github&border_radius=10" alt="readme stats" />
   <br/>
-  <img width=325 align="center" src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&hide=HTML&langs_count=8&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5&exclude_repo=github-readme-stats" alt="top langs" />
-
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5" alt="languages stats" />
 </div>
 
 <br/><br/>
-<hr/>
-
-<!-- STATS -->
-
-<picture>
-  <source
-    srcset="https://github-readme-stats.vercel.app/api?username=mao1910&rank_icon=github&show_icons=true&theme=dracula&hide=contribs"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://github-readme-stats.vercel.app/api?username=mao1910&show_icons=true"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="https://github-readme-stats.vercel.app/api?username=mao1910&show_icons=true" />
-</picture>
-
-<!-- LANGUAGES USAGE -->
-
-<picture>
-  <source
-    srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Mao1910&size_weight=0.5&count_weight=0.5&show_icons=true&theme=dracula"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://github-readme-stats.vercel.app/api?username=mao1910&show_icons=true"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="https://github-readme-stats.vercel.app/api?username=mao1910&show_icons=true" />
-</picture>
 
 <!-- FOOTER -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 
-<br/><br/>
 <hr/>
 
 <h3 align="center">
