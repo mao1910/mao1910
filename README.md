@@ -9,6 +9,7 @@
 <h1 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi+There!+👋;+I'm+Mao!;" />
 </h1>
+<br/>
 
 <!-- ABOUT ME -->
 
@@ -21,32 +22,30 @@
  ⚡ **Fun fact:** Every year the Moon moves 3.8cm away from the Earth. That's the length of an AirPod.
 <!-- Alternatives to the last sentence https://www.themeasureofthings.com/results.php?comp=length&unit=cm&amt=3.8 -->
  </div>
+<br/><br/><br/>
 
 <!-- TECHNOLOGIES LOGOS -->
 <!-- https://github.com/tandpfun/skill-icons -->
 
-<hr/> 
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
 <div align="center">
     <img src="https://skillicons.dev/icons?i=javascript,typescript,angular,react,html,css,scss,bootstrap,cs,java,spring" />
     <img src="https://skillicons.dev/icons?i=flutter,firebase,supabase,mysql,git,github,gitlab,vscode,idea,maven,figma" />
 </div>
-<br/>
+<br/><br/><br/>
 
 <!-- CONTRIBUTIONS SNAKE GAME -->
 <!-- https://github.com/Platane/snk -->
 
-<hr/>
 
 <div align="center">
   <h2> 🐍My Contributionssss </h2>
   <br>
   <img alt="contributions-eating Snake" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-contribution-grid-snake.svg" />
   
-  <br/><br/>
+  <br/><br/><br/>
 </div>
 
-<hr/>
 
 <!-- GITHUB STATS -->
 <!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
@@ -56,23 +55,22 @@
   <br>
 <div align=in-line>
   <img width=390 src="https://github-readme-stats.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10" alt="github stats"/>
-  <img width=390 src="https://streak-stats.demolab.com/?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10" alt="streak stats"/>
-  <br/>
+  <img align="right" width=390 src="https://streak-stats.demolab.com/?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10" alt="streak stats"/>
+  <br/><br/><br/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5" alt="languages stats" />
 </div>
 
-<br/><br/>
+<br/><br/><br/>
 
 <!-- FOOTER -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 
-<hr/>
 
 <h3 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=25&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Thanks+for+dropping+by!;Hope+to+see+you+again+👊">
 </h3>
 
-<br/>
+<br/><br/>
 
 <!--  SOCIAL NETWORS -->
 <!-- https://github.com/alexandresanlim/Badges4-README.md-Profile -->
