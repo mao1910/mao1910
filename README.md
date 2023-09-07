@@ -30,6 +30,35 @@
 </div>
 <br/>
 
+<!-- CONTRIBUTIONS SNAKE GAME -->
+
+<hr/>
+
+<div align="center">
+  <h2> 🐍My Contributionssss </h2>
+  <br>
+  <img alt="contributions-eating Snake" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-contribution-grid-snake.svg" />
+  
+  <br/><br/>
+</div>
+
+<hr/>
+
+<!-- STATS+LANGUAGES TEST-->
+
+<h2 align="center">⚡ Stats ⚡</h2>
+<br>
+<div align=center>
+  <img width=390 src="https://streak-stats.demolab.com/?user=mao1910&count_private=true&theme=react&border_radius=10" alt="streak stats"/>
+  <img width=390 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=react&rank_icon=github&border_radius=10" alt="readme stats" />
+  <br/>
+   <img width=325 align="center" src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&hide=HTML&langs_count=8&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5&exclude_repo=github-readme-stats" alt="top langs" />
+
+</div>
+
+<br/><br/>
+<hr/>
+
 <!-- STATS -->
 
 <picture>
@@ -58,33 +87,22 @@
   <img src="https://github-readme-stats.vercel.app/api?username=mao1910&show_icons=true" />
 </picture>
 
-<!-- CONTRIBUTIONS SNAKE GAME -->
+<!-- FOOTER -->
 
+<br/><br/>
 <hr/>
 
-<div align="center">
-  <h2> 🐍My Contributionssss </h2>
-  <br>
-  <img alt="contributions-eating Snake" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-contribution-grid-snake.svg" />
-  
-  <br/><br/><br/>
-</div>
+<h3 align="center">
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=25&center=true&vCenter=true&width=500&height=70&color=F724A9&font=poppins&duration=5000&lines=Thanks+for+dropping+by!+✌️;Hope+to+see+you+again+:)">
+</h3>
 
-<hr/>
+<br/>
 
 <!--  SOCIAL NETWORS -->
   
-  ##
   <div> 
     <a href="https://www.linkedin.com/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <!-- ADD LINKEDIN PROFILE -->
     <a href = "https://www.google.com"><img src="https://img.shields.io/badge/Portfolio-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" target="_blank"></a> <!-- ADD PORTFOLIO WEBSITE -->
     <a href="https://discord.gg" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a> <!-- ADD DISCORD -->
     <a href = "mao1910dev@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   </div>
-
-<!-- Snake Game  -->
-
-![Snake animation](https://github.com/mao1910/mao1910/blob/8a6b0399615931e85721e8550870477ffad22c7e/.github/workflows/snake.yml)
-<!--  -->
-
-
