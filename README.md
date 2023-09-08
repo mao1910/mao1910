@@ -12,46 +12,7 @@
 <br/>
 
 <!-- CODE ABOUT ME TEST -->
-About me   <img src="./assets/gifs/code-element.gif" width="20" alt="Skills" />
 
-```javascript
-while (bored === true) {
-  if (level === 1) {
-    readDocs();
-  } else if (level == 2) {
-    FigmaDesigning();
-  } else if (level === 3) {
-    listenMusic();
-  } else {
-    sleep();
-  }
-}
-```
-
-```typeScript
-const teachings = {
-  "currenlty":{
-    "learning":{
-      "back-End":"MongoDB,Prisma,Postgres",
-      "Designing":"FIGMA",
-      "ReProgramming":"Old project {Code Name}: BlogL",
-      "Other-Language":"🐍"
-    }
-  }
-}
-```
-
-<!-- ABOUT ME -->
-
-<div align="center">
- 
- 🔭 **I’m currently working on a:** Nutrition App
- 
- 🌱 **I’m currently learning:** Outsystems, Flutter, Firebase
-
- ⚡ **Fun fact:** Every year the Moon moves 3.8cm away from the Earth. That's the length of an AirPod.
-<!-- Alternatives to the last sentence https://www.themeasureofthings.com/results.php?comp=length&unit=cm&amt=3.8 -->
- </div>
 <br/><br/><br/>
 
 <!-- TECHNOLOGIES LOGOS -->
