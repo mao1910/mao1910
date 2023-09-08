@@ -12,7 +12,7 @@
 <br/>
 
 <!-- CODE ABOUT ME TEST -->
-<img align="center" src="./assets/terminal3.gif" width=auto alt="Terminal" />
+<img src="./assets/terminal3.gif" alt="Terminal" />
 <br/><br/><br/>
 
 <!-- TECHNOLOGIES LOGOS -->
