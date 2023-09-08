@@ -9,12 +9,14 @@
 <h1 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi+There!+👋;+I'm+Mao!;" />
 </h1>
+
 <br/>
 
-<!-- CODE ABOUT ME TEST -->
+<!-- CODE/TERMINAL ABOUT ME -->
 <h1 align="center">
 <img src="./assets/terminal-5.gif" alt="Terminal" />
 </h1>
+
 <br/><br/><br/>
 
 <!-- TECHNOLOGIES LOGOS -->
@@ -25,6 +27,7 @@
     <img src="https://skillicons.dev/icons?i=javascript,typescript,angular,react,html,css,scss,bootstrap,cs,java,spring" />
     <img src="https://skillicons.dev/icons?i=flutter,firebase,supabase,mysql,git,github,gitlab,vscode,idea,maven,figma" />
 </div>
+
 <br/><br/><br/>
 
 <!-- CONTRIBUTIONS SNAKE GAME -->
@@ -32,7 +35,7 @@
 
 
 <div align="center">
-  <h2> 🐍My Contributionssss </h2>
+  <h2> My Contributionssss🐍 </h2>
   <br>
   <img alt="contributions-eating Snake" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-contribution-grid-snake.svg" />
 
@@ -52,7 +55,7 @@
 
 <!-- https://github-readme-stats-mao1910.vercel.app/ My own Vercel deployment-->
 
-<h2 align="center">📝 Stats </h2>
+<h2 align="center"> Stats📝 </h2>
   <br>
 <div align=center>
   <img width=429 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=79DAF9" alt="github stats"/>
@@ -81,6 +84,7 @@
     <a href = "mao1910dev@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   </div>
 
+
 <!-- START_SECTION:activity -->
 <!-- https://github.com/jamesgeorge007/github-activity-readme -->
 <!-- This SECTION is currently not working -->
@@ -94,8 +98,7 @@
 [<img width=438px src="https://spotify-now-playing-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
 
 
-
-<!-- HTML -->
+<!-- JOKE OF THE DAY -->
 <details>
 <summary>I've got a Joke of the Day for you. Wanna hear it? Check it below.</summary>
 
@@ -108,3 +111,13 @@
 </details>
 
 <br/>
+
+<!-- TODO
+Move the Joke somewhere else
+Change the 3stats boxes around, possibly two on top and one on bottom
+Fix the Activity section
+Elaborate the Goodbye Typing message; make it longer, break the 4th wall, or add a portion of a Tolkien book or Shakespeare's poem
+Organize Spotify Playlists
+Add Portfolio, Discord, Linkedin
+Maybe add Public Repositories of selected Projects
+-->
