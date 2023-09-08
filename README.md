@@ -12,9 +12,10 @@
 <br/>
 
 <!-- CODE ABOUT ME TEST -->
-<img src="./assets/terminal-3.gif" alt="Terminal" />
+<h1 align="center">
+<img align="center" src="./assets/terminal-3.gif" alt="Terminal" />
 <br/><br/><br/>
-
+</h1>
 <!-- TECHNOLOGIES LOGOS -->
 <!-- https://github.com/tandpfun/skill-icons -->
 
