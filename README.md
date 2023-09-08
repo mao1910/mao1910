@@ -42,6 +42,12 @@
   <h2> 🐍My Contributionssss </h2>
   <br>
   <img alt="contributions-eating Snake" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-contribution-grid-snake.svg" />
+
+  <!-- Four lines below suggested by Planate for Dark mode-->
+  <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
+  </picture>
   
   <br/><br/><br/>
 </div>
@@ -52,6 +58,7 @@
 <!-- https://github.com/anuraghazra/github-readme-stats -->
 
 <!-- https://github-readme-stats-mao1910.vercel.app/ My own Vercel deployment-->
+
 <h2 align="center">📝 Stats </h2>
   <br>
 <div align=center>
@@ -85,9 +92,12 @@
 
 <!-- START_SECTION:activity -->
 <!-- https://github.com/jamesgeorge007/github-activity-readme -->
+<!-- This SECTION is currently not working -->
 
 
 <!-- SPOTIFY PLAYING-->
 <!-- https://github.com/novatorem/novatorem -->
 
-[<img width=440px src="https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
+<!-- https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app/ My own Vercel deployment-->
+
+[<img width=438px src="https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
