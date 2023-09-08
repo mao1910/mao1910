@@ -13,9 +13,10 @@
 
 <!-- CODE ABOUT ME TEST -->
 <h1 align="center">
-<img align="center" src="./assets/terminal-3.gif" alt="Terminal" />
-<br/><br/><br/>
+<img src="./assets/terminal-5.gif" alt="Terminal" />
 </h1>
+<br/><br/><br/>
+
 <!-- TECHNOLOGIES LOGOS -->
 <!-- https://github.com/tandpfun/skill-icons -->
 
