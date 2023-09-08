@@ -11,6 +11,36 @@
 </h1>
 <br/>
 
+<!-- CODE ABOUT ME TEST -->
+About me   <img src="./assets/gifs/code-element.gif" width="20" alt="Skills" />
+
+```javascript
+while (bored === true) {
+  if (level === 1) {
+    readDocs();
+  } else if (level == 2) {
+    FigmaDesigning();
+  } else if (level === 3) {
+    listenMusic();
+  } else {
+    sleep();
+  }
+}
+```
+
+```typeScript
+const teachings = {
+  "currenlty":{
+    "learning":{
+      "back-End":"MongoDB,Prisma,Postgres",
+      "Designing":"FIGMA",
+      "ReProgramming":"Old project {Code Name}: BlogL",
+      "Other-Language":"🐍"
+    }
+  }
+}
+```
+
 <!-- ABOUT ME -->
 
 <div align="center">
@@ -78,8 +108,6 @@
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=25&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Thanks+for+dropping+by!;Hope+to+see+you+again+👊">
 </h3>
 
-<br/><br/>
-
 <!--  SOCIAL NETWORS -->
 <!-- https://github.com/alexandresanlim/Badges4-README.md-Profile -->
 
@@ -100,4 +128,20 @@
 
 <!-- https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app/ My own Vercel deployment-->
 
-[<img width=438px src="https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
+[<img width=438px src="https://spotify-now-playing-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
+
+
+
+<!-- HTML -->
+<details>
+<summary>I've got a Joke of the Day for you. Wanna hear it? Check it below.</summary>
+
+<br/>
+
+ <tr>
+ <td style="padding-top:4px"><img src = "https://readme-jokes-git-master-mao1910.vercel.app/api?&theme=dracula"></td>
+ </tr>
+
+</details>
+
+<br/>
