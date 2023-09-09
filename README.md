@@ -129,6 +129,87 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [SQL Commands](https://dev.to/nathalia_friederichs/sql-commands-1md6) 
+ <details><summary>Article</summary> <p>Have you ever heard of SQL? In this article, we will embark on a journey through the realm of data manipulation and definition language, exploring the distinctions between DDL, DML, DTL, DCL, and DQL.</p>
+
+<p><strong>About SQL</strong></p>
+
+<p>Structured Query Language, known by the acronym SQL, is the language used in Database Management Systems (DBMS). It was created by Donald Chamberlin and Raymond Boyce, after Edgar Frank Codd developed the concept of the database while at IBM. Initially, the intention was to name the language SEQUEL, but due to a trademark issue, it was necessary to opt for SQL.</p>
+
+<p>This language plays a crucial role in querying, manipulating, and managing data in relational database systems, widely adopted in the information technology industry.</p>
+
+<p>Although it's a single language, SQL is divided into five categories:</p>
+
+<ul>
+<li>DDL (<em>Data Definition Language</em>) </li>
+<li>DML (<em>Data Manipulation Language</em>) </li>
+<li>DTL (<em>Data Transaction Language</em>) </li>
+<li>DCL (<em>Data Control Language</em>) </li>
+<li>DQL (<em>Data Query Language</em>)</li>
+</ul>
+
+<p><strong>DDL - Data Definition Language</strong></p>
+
+<p>It's used to define and manage the structure and elements that compose a database. In other words, it's responsible for creating, altering, and deleting objects in the database, such as tables, indexes, views, and constraints.</p>
+
+<p>The DDL commands include:</p>
+
+<ul>
+<li>CREATE: creates databases, tables, procedures, etc. </li>
+<li>ALTER: modifies objects created by the CREATE command </li>
+<li>DROP: deletes what was created by the CREATE command</li>
+</ul>
+
+<p><strong>DML - Data Manipulation Language</strong></p>
+
+<p>It's used to perform operations involving the insertion, updating, and deletion of data in a database.</p>
+
+<p>It's essential for the active manipulation of data, allowing the execution of dynamic tasks and maintenance of updated and relevant information according to the system and user needs.</p>
+
+<p>The DML commands include:</p>
+
+<ul>
+<li>INSERT: inserts data into a table </li>
+<li>UPDATE: modifies an existing record in a table </li>
+<li>DELETE: removes a record from the table</li>
+</ul>
+
+<p><strong>DCL - Data Control Language</strong></p>
+
+<p>These commands are used to define which users or roles have permissions to access, modify, or perform specific operations on database objects, such as tables, views, and stored procedures.</p>
+
+<p>It plays a fundamental role in data protection and access control within the database environment.</p>
+
+<p>Examples of DCL commands:</p>
+
+<ul>
+<li>GRANT: grants database access to a user </li>
+<li>REVOKE: revokes database access from a user</li>
+</ul>
+
+<p><strong>DTL - Data Transaction Language</strong></p>
+
+<p>These are the commands that focus on managing transactions in a database. Transactions refer to sequences of database operations executed as a single logical unit.</p>
+
+<p>Examples of DTL commands:</p>
+
+<ul>
+<li>BEGIN TRANSACTION: initiates a transaction </li>
+<li>ROLLBACK: undoes a transaction </li>
+<li>COMMIT: confirms a transaction</li>
+</ul>
+
+<p><strong>DQL - Data Query Language</strong></p>
+
+<p>It plays a crucial role in enabling data analysis, report generation, and obtaining useful information from large datasets. By using DQL, users can efficiently and systematically explore and examine data stored in the database, enabling informed decision-making based on the retrieved information.</p>
+
+<p>The SELECT command with all its clauses, JOIN, WHERE, AND, OR, GROUP BY, ORDER BY, HAVING, LIKE, is an example of DQL.</p>
+
+<p>In the upcoming articles, we will discuss the syntax of DDL, DML and DQL.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Use an API with JavaScript (Beginner's Guide)](https://dev.to/noobizdev/use-an-api-with-javascript-beginners-guide-2mak) 
  <details><summary>Article</summary> <p>JavaScript APIs (Application Programming Interfaces) are essential for web development. They allow developers to interact with external services and data sources, enhancing the functionality of web applications.<br>
 To use an API with JavaScript as a beginner, follow these steps:</p>
@@ -388,23 +469,13 @@ The emails will not contain uppercase letters.
  </details> 
  <hr /> 
 
- #### - [OLD PROJECTS](https://dev.to/mtendekuyokwa19/old-projects-1a6n) 
- <details><summary>Article</summary> <p>I see alot of projects on peoples githubs when they were just starting out as devs and they still have alot of bugs. I think if a person made a project while starting up i think its best to come back and fix the bugs rather than just leaving them.</p>
-
-<p>I think it shows how you use knowledge after acquiring it<br>
-This saturday I fixed my landing page <a href="https://github.com/Mtendekuyokwa19/AfricaLandingpage">https://github.com/Mtendekuyokwa19/AfricaLandingpage</a><br>
-<a href="https://startupsafrica.netlify.app/">https://startupsafrica.netlify.app/</a></p>
-
- </details> 
- <hr /> 
-
  #### - [Resumo: Como ser um programador melhor](https://dev.to/ericarodrigs/resumo-como-ser-um-programador-melhor-1386) 
  <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" alt="Título e capítulos do livro" width="800" height="388"></a><br>
 Já na introducao do livro o autor fala sobre quem deve ler o livro. Nesse trecho ele menciona que todos os programadores independente de seu nível fariam bom proveito dos pensamentos contidos no livro, porém eu não coloquei muita fé no começo. Os primeiros capítulos são bastante técnicos e eu ainda tava pegando o ritmo da leitura então estava achando avançado demais para mim. </p>
 
 <p>Entretanto ao concluir a leitura eu mudei totalmente de ideia. Na minha opinião a leitura desse livro é indicada para a maioria das pessoas independente da área. Obviamente vão ter alguns termos e situações que não fazem sentido se você não é da área da tecnologia, mas em boa parte do livro ele entrega reflexões poderosas sobre nossa postura como profissional em geral, e até mesmo como seres humanos que se relacionam em diferentes aspectos.</p>
 
-<p>O livro é dividido em cinco parte, onde cada uma trata sobre temas específicos. Durante todos os capítulos nos deparamos com perguntas e reflexões que nos levam a pensar em situações reais que se aplicam ao descrito no livro e também é destacado uma seção de ponto chave que funciona para fixar bem determinada ideia. </p>
+<p>O livro é dividido em cinco partes, onde cada uma trata sobre temas específicos. Durante todos os capítulos nos deparamos com perguntas e reflexões que nos levam a pensar em situações reais que se aplicam ao descrito no livro e também é destacado uma seção de ponto chave que funciona para fixar bem determinada ideia. </p>
 
 <p>Na primeira parte, você.escreve(código), são abordados temas essenciais, como se fossem uma série de mandamentos da programação, que representam a base de um bom código. Nesse momento do livro encontramos alguns conselhos como: escreva menos código, remova códigos desnecessários, não ignore erros, espere pelo inesperado e realize testes. </p>
 
