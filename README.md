@@ -127,12 +127,10 @@
 <summary>📕 &nbsp;RSS feed</summary>
 
 <br/>
-<table>
-<tr><th>
+
 <!-- BLOG-POST-LIST:START -->
  #### - [How to prevent GitHub from suspending your cronjob based triggers](https://dev.to/gautamkrishnar/how-to-prevent-github-from-suspending-your-cronjob-based-triggers-knf) 
- <details><summary>توضیحات</summary> <p>I created a GitHub action to prevent GitHub from suspending your cronjob based action triggers due to repository inactivity.</p>
-</th></tr>
+ <details><summary>Article</summary> <p>I created a GitHub action to prevent GitHub from suspending your cronjob based action triggers due to repository inactivity.</p>
 
 
 <div class="ltag-github-readme-tag">
@@ -395,12 +393,12 @@ You can also ask your users to include it as an additional step as mentioned in 
  <hr /> 
 
  #### - [How I built one of the top 20 most used Github Actions](https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/) 
- <details><summary>توضیحات</summary> <p>The post <a rel="nofollow" href="https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/">How I built one of the top 20 most used Github Actions</a> appeared first on <a rel="nofollow" href="https://www.gautamkrishnar.com">Gautam Krishna R</a>.</p>
+ <details><summary>Article</summary> <p>The post <a rel="nofollow" href="https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/">How I built one of the top 20 most used Github Actions</a> appeared first on <a rel="nofollow" href="https://www.gautamkrishnar.com">Gautam Krishna R</a>.</p>
  </details> 
  <hr /> 
 
  #### - [Show your latest dev.to posts automatically on your GitHub profile readme](https://dev.to/gautamkrishnar/show-your-latest-dev-to-posts-automatically-in-your-github-profile-readme-3nk8) 
- <details><summary>توضیحات</summary> <p>I just created a GitHub Action that lets you add links to your latest blog posts from Dev.to and other sources to your Github Profile readme automatically. </p>
+ <details><summary>Article</summary> <p>I just created a GitHub Action that lets you add links to your latest blog posts from Dev.to and other sources to your Github Profile readme automatically. </p>
 
 <p>Check it out if you want a readme like this:<br>
 <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dsiYDLIL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/bcxkje1qtjkz7fqiirvs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dsiYDLIL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/bcxkje1qtjkz7fqiirvs.png" alt="Preview" width="880" height="470"></a></p>
@@ -885,7 +883,7 @@ Example readme: <a href="https://github.com/gautamkrishnar">https://github.com/g
  <hr /> 
 
  #### - [God Mode in browsers: document.designMode = "on"](https://dev.to/gautamkrishnar/god-mode-in-browsers-document-designmode-on-2pmo) 
- <details><summary>توضیحات</summary> <p>Just type <code>document.designMode = "on"</code> on you favourite browser's devtools and see the magic. </p>
+ <details><summary>Article</summary> <p>Just type <code>document.designMode = "on"</code> on you favourite browser's devtools and see the magic. </p>
 
 <p>It will make any website editable:</p>
 
@@ -895,7 +893,7 @@ Example readme: <a href="https://github.com/gautamkrishnar">https://github.com/g
  <hr /> 
 
  #### - [Skipping the Chrome "Your connection is not private" warning](https://dev.to/gautamkrishnar/quickbits-1-skipping-the-chrome-your-connection-is-not-private-warning-4kp1) 
- <details><summary>توضیحات</summary> <p>You guys might have encountered a warning saying that "Your connection is not private" while doing some web development. This tutorial is about how you can skip the same. (Feel free to skip the tutorial, if you are not using chrome or chromium-based browser)</p>
+ <details><summary>Article</summary> <p>You guys might have encountered a warning saying that "Your connection is not private" while doing some web development. This tutorial is about how you can skip the same. (Feel free to skip the tutorial, if you are not using chrome or chromium-based browser)</p>
 
 <p>You will get this kind of error usually when you are not using localhost as the domain for development. This is implemented to make your browsing experience more secure. If you are visiting a website via HTTPS and the server doesn't support it, you are vulnerable to the normal attacks that can happen when accessing a website via HTTP. You are vulnerable to the MIM (Man in the middle) attacks, these attacks a quite serious since it can gather private information like usernames and passwords from the victim.</p>
 
