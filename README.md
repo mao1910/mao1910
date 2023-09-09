@@ -110,9 +110,8 @@
 
 <!-- ACTIVITY -->
 <!-- https://github.com/jamesgeorge007/github-activity-readme -->
-<!-- This SECTION is currently not working -->
 <details>
-<summary>Recent Activity</summary>
+<summary>✍️ Activity</summary>
 
 <br/>
 <!-- START_SECTION:activity -->
@@ -501,11 +500,9 @@ Já na introducao do livro o autor fala sobre quem deve ler o livro. Nesse trech
 
 
 <!-- TODO
-Move the Joke somewhere else
 Change the 3stats boxes around, possibly two on top and one on bottom
-Fix the Activity section // EDIT Activity & RSSfeed
-Elaborate the Goodbye Typing message; make it longer, break the 4th wall, or add a portion of a Tolkien book or Shakespeare's poem
-Organize Spotify Playlists
-Add Portfolio, Discord, Linkedin
-Maybe add Public Repositories of selected Projects
+Fix RSSfeed
+Fix Spotify Playlists
+Fix Socials [Portfolio, Discord, Linkedin]
+In the future, add Public Repositories of Selected Projects
 -->
