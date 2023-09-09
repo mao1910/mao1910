@@ -97,7 +97,7 @@
 
 <!-- JOKE OF THE DAY -->
 <details>
-<summary>I've got a Joke for you. Wanna hear it?</summary>
+<summary>I've got a Joke for you. Wanna hear it? 🙈</summary>
 
 <br/>
 
@@ -112,7 +112,7 @@
 <!-- https://github.com/jamesgeorge007/github-activity-readme -->
 <!-- This SECTION is currently not working -->
 <details>
-<summary>Check recent Activity</summary>
+<summary>Recent Activity</summary>
 
 <br/>
 <!-- START_SECTION:activity -->
@@ -123,9 +123,11 @@
 <!-- RSS FEED -->
 <!-- https://github.com/gautamkrishnar/blog-post-workflow -->
 <details>
-<summary>Check RSS feed.</summary>
+<summary>📕 &nbsp;RSS feed</summary>
 
 <br/>
+<table>
+<tr><th>Title</th></tr>
 <!-- BLOG-POST-LIST:START -->
 - [How to prevent GitHub from suspending your cronjob based triggers](https://dev.to/gautamkrishnar/how-to-prevent-github-from-suspending-your-cronjob-based-triggers-knf)
 - [How I built one of the top 20 most used Github Actions](https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/)
@@ -133,6 +135,7 @@
 - [God Mode in browsers: document.designMode = &quot;on&quot;](https://dev.to/gautamkrishnar/god-mode-in-browsers-document-designmode-on-2pmo)
 - [Skipping the Chrome &quot;Your connection is not private&quot; warning](https://dev.to/gautamkrishnar/quickbits-1-skipping-the-chrome-your-connection-is-not-private-warning-4kp1)
 <!-- BLOG-POST-LIST:END -->
+</table>
 </details>
 
 
