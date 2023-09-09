@@ -17,3 +17,9 @@ jobs:
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           feed_list: "https://dev.to/feed/gautamkrishnar,https://www.gautamkrishnar.com/feed/"
+          commit_message: "Updated readme with the feed entries"
+          date_format: "mmm d, yyyy"
+          template: "$newline #### - [$title]($url) $newline <details><summary>توضیحات</summary> $description </details> $newline <hr /> $newline"
+          # Regex for remove HTML TAG:    /(<([^>]+)>)/ig
+          item_exec: "post.description = post.description.replace('','')"
+          disable_html_encoding: true
