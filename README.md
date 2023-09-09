@@ -116,6 +116,7 @@
 
 <br/>
 <!-- START_SECTION:activity -->
+<!--END_SECTION:activity-->
 
 </details>
 
@@ -127,10 +128,11 @@
 
 <br/>
 <table>
-<tr><th>Title</th></tr>
+<tr><th>
 <!-- BLOG-POST-LIST:START -->
  #### - [How to prevent GitHub from suspending your cronjob based triggers](https://dev.to/gautamkrishnar/how-to-prevent-github-from-suspending-your-cronjob-based-triggers-knf) 
  <details><summary>توضیحات</summary> <p>I created a GitHub action to prevent GitHub from suspending your cronjob based action triggers due to repository inactivity.</p>
+</th></tr>
 
 
 <div class="ltag-github-readme-tag">
