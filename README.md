@@ -468,29 +468,159 @@ The emails will not contain uppercase letters.
  </details> 
  <hr /> 
 
- #### - [Resumo: Como ser um programador melhor](https://dev.to/ericarodrigs/resumo-como-ser-um-programador-melhor-1386) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" alt="Título e capítulos do livro" width="800" height="388"></a><br>
-Já na introducao do livro o autor fala sobre quem deve ler o livro. Nesse trecho ele menciona que todos os programadores independente de seu nível fariam bom proveito dos pensamentos contidos no livro, porém eu não coloquei muita fé no começo. Os primeiros capítulos são bastante técnicos e eu ainda tava pegando o ritmo da leitura então estava achando avançado demais para mim. </p>
+ #### - [Next.js Advanced Routing Methods](https://dev.to/syedmuhammadaliraza/nextjs-advanced-routing-methods-e84) 
+ <details><summary>Article</summary> <h1>
+  
+  
+  Next.js Advanced Routing Methods: Dynamic API Routes, Imperial Routes, and Shortcuts
+</h1>
 
-<p>Entretanto ao concluir a leitura eu mudei totalmente de ideia. Na minha opinião a leitura desse livro é indicada para a maioria das pessoas independente da área. Obviamente vão ter alguns termos e situações que não fazem sentido se você não é da área da tecnologia, mas em boa parte do livro ele entrega reflexões poderosas sobre nossa postura como profissional em geral, e até mesmo como seres humanos que se relacionam em diferentes aspectos.</p>
+<p>Built on top of React, the powerful Next.js offers not only core features, but also advanced routing methods that allow developers to create dynamic and responsive web applications. </p>
 
-<p>O livro é dividido em cinco partes, onde cada uma trata sobre temas específicos. Durante todos os capítulos nos deparamos com perguntas e reflexões que nos levam a pensar em situações reais que se aplicam ao descrito no livro e também é destacado uma seção de ponto chave que funciona para fixar bem determinada ideia. </p>
+<p>In this article, we will look at these three advanced routing methods: Dynamic API Routes, Imperative Routes, and Shallow Routes. We will provide code examples and practical implementations to help you use the full capabilities of Next.js in your projects.</p>
 
-<p>Na primeira parte, você.escreve(código), são abordados temas essenciais, como se fossem uma série de mandamentos da programação, que representam a base de um bom código. Nesse momento do livro encontramos alguns conselhos como: escreva menos código, remova códigos desnecessários, não ignore erros, espere pelo inesperado e realize testes. </p>
+<h2>
+  
+  
+  1. Dynamic API routes
+</h2>
 
-<p>Na segunda parte, a prática leva à perfeição, podemos ver alguns conceitos mais aprofundados da programação em geral e não do código propriamente dito. São tratados tópicos como a importância do controle de versão é como essa ferramenta pode ser sua aliada no desenvolvimento de aplicações, reutilização de trechos de código ou design através de práticas de componentização e a importância de manter a simplicidade no código para que pessoas de diferentes níveis e conhecimentos consigam ler e entender nosso trabalho. </p>
+<p>Dynamic route API allows you to create a flexible and dynamic API by specifying route parameters. It is most useful if your application needs to handle different API requests or operations with a single API endpoint.</p>
 
-<p>A parte três, envolvendo-se pessoalmente, acredito que é a que mais me tocou, pois nesse momento o autor atinge um nível que é mais difícil de ser abordado nessa área. Trata sobre aspectos e características comportamentais que são imprescindíveis para um bom relacionamento interpessoal e para sucesso em trabalho em equipe. Nesses capítulos o autor conversa diretamente com o leitor, aconselhando como se estivesse em uma conversa informal, conversando sobre os benefícios de amar o aprendizado, apreciar o desafio, evitar o comodismo, além de trazer reflexões profundas sobre o comportamento ético de um programador. </p>
+<h3>
+  
+  
+  Implementaion:
+</h3>
 
-<p>Na quarta parte, conseguir que tudo seja feito, Pete traz algumas ideias sobre o processo necessário para a vida de um projeto até sua liberação para uso, com algumas dicas para que não haja desvios no caminho ou atrasos não planejados. Nesses capítulos percebemos dicas sobre o levantamento de requisitos necessários e sobre qual a real definição de pronto. </p>
+<p>Create a dynamic API path that handles different product IDs.<br>
+</p>
 
-<p>Na última parte, uma meta de pessoas, é ressaltada a relevância da comunicação para o sucesso de aplicações. Ninguém trabalha sozinho e precisamos aprender constantemente a melhorar nossas habilidades de lidar com os colegas de profissão. </p>
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code>
+<span class="c1">// pages/api/products/[id].js</span>
 
-<p>Realmente após concluir a leitura não é difícil entender porque o livro é tão aclamado pela nossa comunidade. Aborda várias visões e aspectos diferentes e complementares do mundo da programação e só esse motivo já seria suficiente para que alguém que quer melhorar suas habilidades lesse o livro, porém ele ainda vai além. Traz uma leitura leve, traz exemplos práticos, traz quadrinhos com piadas (que muitas vezes não são muito divertidas ou fáceis de entender kkakakakakakaka), conselhos, pontos chaves, situações reais de experiência do autor, enfim, é um bom livro. Leiam!</p>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">main</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span><span class="nx">id</span><span class="p">}</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">;</span>
 
-<p>*** Curiosidade:</p>
+  <span class="c1">// Get product data from database or API by ID</span>
+  <span class="kd">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="nx">getProductById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
 
-<p>A capa do livro traz a imagem de um peixe voador, que eu não sabia da existência e logo depois de terminar o livro fui ver vídeos no YouTube sobre porque achei bem interessante a ideia de um peixe que voa 🤯. Essa espécie de peixe inclusive foi utilizada como modelo para estudo do desenvolvimento de aviões e possui um recorde de 45 segundos de voo.</p>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">product</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>In this example, the "[id]" part of the filename indicates that this path accepts dynamic parameters. You can access the "id" parameter using "req.query.id". This dynamic API route can handle requests for different product IDs.</p>
+
+<h2>
+  
+  
+  2. Imperative Routing
+</h2>
+
+<p>Imperial Routing in next.js allows programmatic navigation between pages using the Router module from the front / router folder. This is useful when you need to target users based on specific actions or events.</p>
+
+<h3>
+  
+  
+  Implementaion:
+</h3>
+
+<p>Create a button that takes you to another page when clicked.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code>
+<span class="c1">// pages/index.js</span>
+
+<span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span> <span class="p">{</span> <span class="k">import</span> <span class="nx">useRouter</span><span class="p">;</span>
+
+<span class="nx">HomePage</span><span class="p">()</span> <span class="kd">function</span><span class="p">.</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Be sure to go to the "about" page</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to the Imperial Route<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span> <span class="p">=</span> <span class="si">{</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span> Go to About <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="nx">main</span> <span class="nx">HomePage</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>In this example, when the button is clicked, "router.push("/about")" is used to automatically navigate to the "about" page.</p>
+
+<h2>
+  
+  
+  3. Shallow Routing
+</h2>
+
+<p>Shallow routing is a unique feature of Next.js that allows you to change URLs without using data recollection methods. This is especially useful for saving the current page position during navigation.</p>
+
+<h3>
+  
+  
+  Implementaion:
+</h3>
+
+<p>Create deep links that change the URL without refreshing the entire page.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="c1">// pages/products.js</span>
+
+<span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span> <span class="p">{</span> <span class="k">import</span> <span class="nx">useRouter</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">ProductsPage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">handleSallowLinkClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Change the URL without using the getter method</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/products?category=shoes</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="p">{</span><span class="na">vulnerable</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to the Shallow Route<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">click</span><span class="p">=</span><span class="si">{</span><span class="nx">handleShallowLinkClick</span><span class="si">}</span><span class="p">&gt;</span>Change URL<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ProductsPage</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>In this example, when the button is clicked, the URL is changed to "/product?category=shoes" without reloading the page or using the data retrieval method. Useful for keeping the current state of the page when you change the URL.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Next.js' advanced routing techniques, including Dynamic API Routes, Imperative Routes, and Shallow Routes, provide tools for building dynamic, responsive, and responsive web applications. While dynamic API endpoints should be managed, allowing users to change their URL based on actions or without full page load, Next.js focuses on this powerful routing feature. Add these techniques to your projects to improve your user experience and streamline your development process.</p>
 
  </details> 
  <hr /> 
