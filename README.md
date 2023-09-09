@@ -88,21 +88,6 @@
   </div>
 
 
-<!-- START_SECTION:activity -->
-<!-- https://github.com/jamesgeorge007/github-activity-readme -->
-<!-- This SECTION is currently not working -->
-
-
-<!-- BLOG-POST-LIST:START -->
-- [How to prevent GitHub from suspending your cronjob based triggers](https://dev.to/gautamkrishnar/how-to-prevent-github-from-suspending-your-cronjob-based-triggers-knf)
-- [How I built one of the top 20 most used Github Actions](https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/)
-- [Show your latest dev.to posts automatically on your GitHub profile readme](https://dev.to/gautamkrishnar/show-your-latest-dev-to-posts-automatically-in-your-github-profile-readme-3nk8)
-- [God Mode in browsers: document.designMode = &quot;on&quot;](https://dev.to/gautamkrishnar/god-mode-in-browsers-document-designmode-on-2pmo)
-- [Skipping the Chrome &quot;Your connection is not private&quot; warning](https://dev.to/gautamkrishnar/quickbits-1-skipping-the-chrome-your-connection-is-not-private-warning-4kp1)
-<!-- BLOG-POST-LIST:END -->
-<!-- https://github.com/gautamkrishnar/blog-post-workflow -->
-
-
 <!-- SPOTIFY PLAYING-->
 <!-- https://github.com/novatorem/novatorem -->
 
@@ -123,13 +108,39 @@
 
 </details>
 
+
+<!-- ACTIVITY -->
+<!-- https://github.com/jamesgeorge007/github-activity-readme -->
+<!-- This SECTION is currently not working -->
+<details>
+<summary>Check recent Activity</summary>
+
 <br/>
+<!-- START_SECTION:activity -->
+
+</details>
+
+
+<!-- RSS FEED -->
+<!-- https://github.com/gautamkrishnar/blog-post-workflow -->
+<details>
+<summary>Check RSS feed.</summary>
+
+<br/>
+<!-- BLOG-POST-LIST:START -->
+- [How to prevent GitHub from suspending your cronjob based triggers](https://dev.to/gautamkrishnar/how-to-prevent-github-from-suspending-your-cronjob-based-triggers-knf)
+- [How I built one of the top 20 most used Github Actions](https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/)
+- [Show your latest dev.to posts automatically on your GitHub profile readme](https://dev.to/gautamkrishnar/show-your-latest-dev-to-posts-automatically-in-your-github-profile-readme-3nk8)
+- [God Mode in browsers: document.designMode = &quot;on&quot;](https://dev.to/gautamkrishnar/god-mode-in-browsers-document-designmode-on-2pmo)
+- [Skipping the Chrome &quot;Your connection is not private&quot; warning](https://dev.to/gautamkrishnar/quickbits-1-skipping-the-chrome-your-connection-is-not-private-warning-4kp1)
+<!-- BLOG-POST-LIST:END -->
+</details>
 
 
 <!-- TODO
 Move the Joke somewhere else
 Change the 3stats boxes around, possibly two on top and one on bottom
-Fix the Activity section
+Fix the Activity section // EDIT Activity & RSSfeed
 Elaborate the Goodbye Typing message; make it longer, break the 4th wall, or add a portion of a Tolkien book or Shakespeare's poem
 Organize Spotify Playlists
 Add Portfolio, Discord, Linkedin
