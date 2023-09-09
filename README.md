@@ -3,6 +3,7 @@
 
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=mao1910.mao1910&left_color=%2379DAF9&right_color=%23FE6E96" />
 
+
 <!-- TYPING SVG -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 
@@ -19,6 +20,7 @@
 
 <br/><br/><br/>
 
+
 <!-- TECHNOLOGIES LOGOS -->
 <!-- https://github.com/tandpfun/skill-icons -->
 
@@ -30,9 +32,9 @@
 
 <br/><br/><br/>
 
+
 <!-- CONTRIBUTIONS SNAKE GAME -->
 <!-- https://github.com/Platane/snk -->
-
 
 <div align="center">
   <h2> My Contributionssss🐍 </h2>
@@ -66,13 +68,14 @@
 
 <br/><br/><br/>
 
+
 <!-- FOOTER -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
-
 
 <h3 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=25&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Thanks+for+dropping+by!;Hope+to+see+you+again+👊">
 </h3>
+
 
 <!--  SOCIAL NETWORS -->
 <!-- https://github.com/alexandresanlim/Badges4-README.md-Profile -->
@@ -115,6 +118,7 @@
 </details>
 
 <br/>
+
 
 <!-- TODO
 Move the Joke somewhere else
