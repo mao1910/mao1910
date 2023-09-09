@@ -129,187 +129,1051 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [How to prevent GitHub from suspending your cronjob based triggers](https://dev.to/gautamkrishnar/how-to-prevent-github-from-suspending-your-cronjob-based-triggers-knf) 
- <details><summary>توضیحات</summary> <p>I created a GitHub action to prevent GitHub from suspending your cronjob based action triggers due to repository inactivity.</p>
+ #### - [OLD PROJECTS](https://dev.to/mtendekuyokwa19/old-projects-1a6n) 
+ <details><summary>Article</summary> <p>I see alot of projects on peoples githubs when they were just starting out as devs and they still have alot of bugs. I think if a person made a project while starting up i think its best to come back and fix the bugs rather than just leaving them.</p>
 
+<p>I think it shows how you use knowledge after acquiring it<br>
+This saturday I fixed my landing page <a href="https://github.com/Mtendekuyokwa19/AfricaLandingpage">https://github.com/Mtendekuyokwa19/AfricaLandingpage</a><br>
+<a href="https://startupsafrica.netlify.app/">https://startupsafrica.netlify.app/</a></p>
 
-<div class="ltag-github-readme-tag">
-  <div class="readme-overview">
-    <h2>
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i3JOwpme--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/github-logo-ba8488d21cd8ee1fee097b8410db9deaa41d0ca30b004c0c63de0a479114156f.svg" alt="GitHub logo">
-      <a href="https://github.com/gautamkrishnar">
-        gautamkrishnar
-      </a> / <a href="https://github.com/gautamkrishnar/keepalive-workflow">
-        keepalive-workflow
-      </a>
-    </h2>
-    <h3>
-      GitHub action to prevent GitHub from suspending your cronjob based triggers due to repository inactivity 
-    </h3>
-  </div>
-  <div class="ltag-github-body">
-    
-<div id="readme" class="md">
-<h1>
-Keepalive Workflow <a href="https://badge.fury.io/js/keepalive-workflow" rel="nofollow"><img src="https://camo.githubusercontent.com/b71fbd11224165aeb465b106192fb67879afd7f45cc5a6f41a93b40b0a3a0748/68747470733a2f2f62616467652e667572792e696f2f6a732f6b656570616c6976652d776f726b666c6f772e737667" alt="npm version"></a>
-</h1>
-<p>GitHub action to prevent GitHub from suspending your cronjob based triggers due to repository inactivity</p>
-<h3>
-Why</h3>
-<p>GitHub will suspend the scheduled trigger for GitHub action workflows if there is no commit in the repository for the past 60 days. The cron based triggers won't run unless a new commit is made. It shows the message "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days" under the cronjob triggered action.</p>
-<p><a rel="noopener noreferrer" href="https://user-images.githubusercontent.com/8397274/105174930-4303e100-5b49-11eb-90ed-95a55697582f.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uHgBz7TA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/8397274/105174930-4303e100-5b49-11eb-90ed-95a55697582f.png" alt="preview"></a></p>
-<h3>
-What</h3>
-<p>This workflow will automatically create a dummy commit in your repo if the last commit in your repo is 50 days (default) ago
-This will keep the cronjob trigger active so that it will run indefinitely without getting suspended by GitHub for inactivity.</p>
-<h2>
-How to use</h2>
-<p>There are two ways you can consume this library in your GitHub actions</p>
-<h3>
-Via GitHub Actions (For GitHub Actions users)</h3>
-<p>You can just…</p>
+ </details> 
+ <hr /> 
+
+ #### - [Resumo: Como ser um programador melhor](https://dev.to/ericarodrigs/resumo-como-ser-um-programador-melhor-1386) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" alt="Título e capítulos do livro" width="800" height="388"></a><br>
+Já na introducao do livro o autor fala sobre quem deve ler o livro. Nesse trecho ele menciona que todos os programadores independente de seu nível fariam bom proveito dos pensamentos contidos no livro, porém eu não coloquei muita fé no começo. Os primeiros capítulos são bastante técnicos e eu ainda tava pegando o ritmo da leitura então estava achando avançado demais para mim. </p>
+
+<p>Entretanto ao concluir a leitura eu mudei totalmente de ideia. Na minha opinião a leitura desse livro é indicada para a maioria das pessoas independente da área. Obviamente vão ter alguns termos e situações que não fazem sentido se você não é da área da tecnologia, mas em boa parte do livro ele entrega reflexões poderosas sobre nossa postura como profissional em geral, e até mesmo como seres humanos que se relacionam em diferentes aspectos.</p>
+
+<p>O livro é dividido em cinco parte, onde cada uma trata sobre temas específicos. Durante todos os capítulos nos deparamos com perguntas e reflexões que nos levam a pensar em situações reais que se aplicam ao descrito no livro e também é destacado uma seção de ponto chave que funciona para fixar bem determinada ideia. </p>
+
+<p>Na primeira parte, você.escreve(código), são abordados temas essenciais, como se fossem uma série de mandamentos da programação, que representam a base de um bom código. Nesse momento do livro encontramos alguns conselhos como: escreva menos código, remova códigos desnecessários, não ignore erros, espere pelo inesperado e realize testes. </p>
+
+<p>Na segunda parte, a prática leva à perfeição, podemos ver alguns conceitos mais aprofundados da programação em geral e não do código propriamente dito. São tratados tópicos como a importância do controle de versão é como essa ferramenta pode ser sua aliada no desenvolvimento de aplicações, reutilização de trechos de código ou design através de práticas de componentização e a importância de manter a simplicidade no código para que pessoas de diferentes níveis e conhecimentos consigam ler e entender nosso trabalho. </p>
+
+<p>A parte três, envolvendo-se pessoalmente, acredito que é a que mais me tocou, pois nesse momento o autor atinge um nível que é mais difícil de ser abordado nessa área. Trata sobre aspectos e características comportamentais que são imprescindíveis para um bom relacionamento interpessoal e para sucesso em trabalho em equipe. Nesses capítulos o autor conversa diretamente com o leitor, aconselhando como se estivesse em uma conversa informal, conversando sobre os benefícios de amar o aprendizado, apreciar o desafio, evitar o comodismo, além de trazer reflexões profundas sobre o comportamento ético de um programador. </p>
+
+<p>Na quarta parte, conseguir que tudo seja feito, Pete traz algumas ideias sobre o processo necessário para a vida de um projeto até sua liberação para uso, com algumas dicas para que não haja desvios no caminho ou atrasos não planejados. Nesses capítulos percebemos dicas sobre o levantamento de requisitos necessários e sobre qual a real definição de pronto. </p>
+
+<p>Na última parte, uma meta de pessoas, é ressaltada a relevância da comunicação para o sucesso de aplicações. Ninguém trabalha sozinho e precisamos aprender constantemente a melhorar nossas habilidades de lidar com os colegas de profissão. </p>
+
+<p>Realmente após concluir a leitura não é difícil entender porque o livro é tão aclamado pela nossa comunidade. Aborda várias visões e aspectos diferentes e complementares do mundo da programação e só esse motivo já seria suficiente para que alguém que quer melhorar suas habilidades lesse o livro, porém ele ainda vai além. Traz uma leitura leve, traz exemplos práticos, traz quadrinhos com piadas (que muitas vezes não são muito divertidas ou fáceis de entender kkakakakakakaka), conselhos, pontos chaves, situações reais de experiência do autor, enfim, é um bom livro. Leiam!</p>
+
+<p>*** Curiosidade:</p>
+
+<p>A capa do livro traz a imagem de um peixe voador, que eu não sabia da existência e logo depois de terminar o livro fui ver vídeos no YouTube sobre porque achei bem interessante a ideia de um peixe que voa 🤯. Essa espécie de peixe inclusive foi utilizada como modelo para estudo do desenvolvimento de aviões e possui um recorde de 45 segundos de voo.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [get refresh token form google login api](https://dev.to/abdulghaffar/get-refresh-token-form-google-login-api-1k6h) 
+ <details><summary>Article</summary> <p>i am using googleAuthSDK library in angular for google login, i receive a complete object returned from google API but a refresh token. can anyone tell me how to get the refresh token?</p>
+
+<p>method i have implemented </p>
+
+<p>1 =&gt; tried access_type: 'offline'</p>
+
+<p>but still haven't received the refresh token in the object</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Python For Seniors (Part 2)](https://dev.to/scofieldidehen/python-for-the-seniors-part-2-275e) 
+ <details><summary>Article</summary> <p>Welcome to part 2 of our advanced Python programming guide! The beginner tutorial covered core concepts like syntax, data structures, functions, classes, and modules.</p>
+
+<p><a href="https://blog.learnhub.africa/2023/09/05/python-for-the-blinds-part-1/">Find part 1 here. </a></p>
+
+<p>Now, let's dive deeper into some advanced techniques experienced Python developers use. This guide assumes you already have a strong grasp of Python basics.</p>
+
+<h4>Object-Oriented Design Principles</h4>
+
+<p>Python supports object-oriented programming, allowing developers to organize code into class hierarchies and modeled after real-world entities.</p>
+
+<p>Mastering OOP techniques is key to designing and building robust large-scale applications in Python.</p>
+
+<p>Some key object-oriented design principles:</p>
+
+<ul>
+    <li>Encapsulation</li>
+</ul>
+
+<p>This involves bundling related attributes and behaviors into individual classes. For example, a Person class would encapsulate properties like name, age, and behaviors like walking and talking.</p>
+
+<p>Encapsulation allows control over the data through well-defined interfaces along with information hiding. Methods act as the interface, while attributes are kept private to hide complexity.</p>
+
+<ul>
+    <li>Inheritance</li>
+</ul>
+
+<p>Classes can inherit commonly used state and behaviors from parent classes. For example, a Student class can inherit from a base Person class to avoid rewriting duplicated code. The child class only needs to define properties and methods unique to students.</p>
+
+<p>Inheritance enables reuse of code and polymorphism. Subclasses can extend, override, or modify inherited logic as needed.</p>
+
+<ul>
+    <li>Abstraction</li>
+</ul>
+
+<p>This involves exposing only relevant data/methods through public interfaces while hiding unnecessary implementation details. For example, an abstract class Shape could define an area() method while concrete subclasses Circle, Square implement the actual area calculations.</p>
+
+<p>Abstraction reduces complexity and couples code loosely by separating high-level and low-level logic. Interfaces help maintain abstraction.</p>
+
+<ul>
+    <li>Composition</li>
+</ul>
+
+<p>This refers to combining objects to model complex behaviors. Rather than rely on inheritance alone, objects can use other objects via composition. For example, a Car class could compose objects like a Wheel or engine rather than directly inheriting their capabilities.</p>
+
+<p>Composition provides flexibility and encapsulation for complex object interactions.</p>
+
+<p>By following these principles, Python programs can implement domain entities and business logic in an organized, object-oriented manner. Let's look at some examples.</p>
+
+<p>We'll model a zoo management system with classes for animals, zookeepers, and enclosures using inheritance, polymorphism, encapsulation, and composition:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="c1"># Animal base class
+</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+
+<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Rawwwr!"</span><span class="p">)</span>
+
+<span class="c1"># Inherited child classes
+</span>
+<span class="k">class</span> <span class="nc">Lion</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Roar!"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Snake</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Hiss!"</span><span class="p">)</span>
+
+<span class="c1"># Zookeeper class
+</span>
+<span class="k">class</span> <span class="nc">Zookeeper</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="k">def</span> <span class="nf">feed_animal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">animal</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> is feeding the </span><span class="si">{</span><span class="n">animal</span><span class="p">.</span><span class="n">species</span><span class="si">}</span><span class="s"> named </span><span class="si">{</span><span class="n">animal</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+
+<span class="n">animal</span><span class="p">.</span><span class="n">make_sound</span><span class="p">()</span> <span class="c1"># Polymorphism
+</span>
+<span class="c1"># Enclosure class
+</span>
+<span class="k">class</span> <span class="nc">Enclosure</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">animals</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="nb">id</span> <span class="o">=</span> <span class="nb">id</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">animals</span> <span class="o">=</span> <span class="n">animals</span>
+
+<span class="k">def</span> <span class="nf">add_animal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">animal</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">animals</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+
+<span class="c1"># Create objects
+</span>
+<span class="n">leo</span> <span class="o">=</span> <span class="n">Lion</span><span class="p">(</span><span class="s">"Leo"</span><span class="p">,</span> <span class="s">"Lion"</span><span class="p">)</span>
+
+<span class="n">marty</span> <span class="o">=</span> <span class="n">Snake</span><span class="p">(</span><span class="s">"Marty"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">)</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">Zookeeper</span><span class="p">(</span><span class="s">"Bob"</span><span class="p">)</span>
+
+<span class="n">snakes_enclosure</span> <span class="o">=</span> <span class="n">Enclosure</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="p">[</span><span class="n">marty</span><span class="p">])</span>
+
+<span class="n">bob</span><span class="p">.</span><span class="n">feed_animal</span><span class="p">(</span><span class="n">leo</span><span class="p">)</span>
+
+<span class="n">snakes_enclosure</span><span class="p">.</span><span class="n">add_animal</span><span class="p">(</span><span class="n">leo</span><span class="p">)</span>
+</code></pre>
+
 </div>
-  </div>
-  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/gautamkrishnar/keepalive-workflow">View on GitHub</a></div>
+
+
+
+<p>This demonstrates modeling domain entities with encapsulation, inheritance, polymorphism, and composition. Code reuse is improved, coupling reduced, and abstraction maintained.</p>
+
+<h4>Python Decorators</h4>
+
+<p>Decorators dynamically alter the functionality of a function, method, or class without having to modify the code directly. They essentially wrap the original object and modify its behavior as needed before executing it.</p>
+
+<p>Decorators start with the @ symbol and are placed at the definition. For example:</p>
+
+<p><code>@timer</code></p>
+
+<p><code>def run_long_job(args):</code></p>
+
+<p><code># Function body</code></p>
+
+<p>Here @timer is a decorator that measures how long run_long_job takes to execute.</p>
+
+<p>Let's see how to build this timer decorator:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+<span class="c1"># Inner wrapper function
+</span>
+<span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Execution took </span><span class="si">{</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="si">}</span><span class="s"> seconds"</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Return inner function
+</span>
+<span class="k">return</span> <span class="n">inner</span>
+
+<span class="o">@</span><span class="n">timer</span>
+
+<span class="k">def</span> <span class="nf">long_running_job</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Running long job..."</span><span class="p">)</span>
+
+<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="s">"Done!"</span>
+
+<span class="n">long_running_job</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Prints execution time
+</span></code></pre>
+
 </div>
 
 
-<h3>
-  
-  
-  Why
-</h3>
 
-<p>GitHub will suspend the scheduled trigger for GitHub action workflows if there is no commit in the repository for the past 60 days. The cron based triggers won't run unless a new commit is made. It shows the message "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days" under the cronjob triggered action.</p>
+<p>When decorated, long_running_job behavior is extended with the timer functionality without modifying its code.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uHgBz7TA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/8397274/105174930-4303e100-5b49-11eb-90ed-95a55697582f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uHgBz7TA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/8397274/105174930-4303e100-5b49-11eb-90ed-95a55697582f.png" alt="preview"></a></p>
+<p>Some other example uses cases for Python decorators:</p>
 
-<h3>
-  
-  
-  What
-</h3>
+<ul>
+    <li>Logging function arguments and results</li>
+    <li>Checking permissions or roles before executing functions</li>
+    <li>Caching return values to avoid recalculation</li>
+    <li>Rate limiting function calls</li>
+    <li>Instrumenting code for tracing or profiling</li>
+    <li>Validating input data types</li>
+</ul>
 
-<p>This workflow will automatically create a dummy commit in your repo if the last commit in your repo is 50 days (default) ago.<br>
-This will keep the cronjob trigger active so that it will run indefinitely without getting suspended by GitHub for inactivity.</p>
+<p>Decorators supercharge Python with metaprogramming capabilities and expressiveness. They are widely used across frameworks like Flask, Django, etc. Understanding decorators unlocks their powerful capabilities.</p>
+
+<h4>Concurrency in Python</h4>
+
+<p>Concurrency refers to executing multiple tasks simultaneously through parallelization or asynchronous programming. Python supports various concurrency models to improve program efficiency and speed.</p>
+
+<p>Some approaches include:</p>
+
+<ul>
+    <li>Threads</li>
+</ul>
+
+<p>Threads allow execution of code in parallel within the same interpreter process. The OS schedules thread execution across cores.</p>
+
+<p>For IO-bound tasks, threads improve the utilization of idle time that would otherwise be spent waiting. The threading module supports spawning and synchronizing threads:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+
+<span class="k">def</span> <span class="nf">io_bound_worker</span><span class="p">():</span>
+
+<span class="c1"># Perform IO intensive work
+</span>
+<span class="n">threads</span> <span class="o">=</span> <span class="p">[</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">io_bound_worker</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+
+<span class="n">thread</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Main thread continues executing
+</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>Multiprocessing</h4>
+
+<p>For CPU-bound tasks, Python's multiprocessing module distributes work across multiple processes. Each CPU core runs a separate Python interpreter, circumventing the GIL limitation.</p>
+
+<p>Processes have higher overhead than threads but enable true parallelism across multiple CPUs:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+
+<span class="k">def</span> <span class="nf">cpu_bound_worker</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+<span class="c1"># Perform heavy computations
+</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+
+<span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">large_dataset</span><span class="p">]</span> <span class="o">*</span> <span class="mi">8</span>
+
+<span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">input_data</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">cpu_bound_worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">input_data</span><span class="p">,))</span>
+
+<span class="n">processes</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="n">p</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Rest of main process code executes in parallel
+</span></code></pre>
+
+</div>
+
+
+
+<h4>asyncio</h4>
+
+<p>This module provides infrastructure for writing asynchronous code using async/await syntax. It is well-suited for tasks involving network I/O and concurrency:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+
+<span class="c1"># Async HTTP request
+</span>
+<span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">response</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">url1</span><span class="p">,</span> <span class="n">url2</span><span class="p">,</span> <span class="n">url3</span><span class="p">]</span>
+
+<span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+
+<span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Asyncio helps build highly performant network apps by efficiently handling thousands of concurrent connections.</p>
+
+<h4>concurrent.futures</h4>
+
+<p>This high-level module abstracts thread and process pools for executing callables asynchronously:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">with</span> <span class="n">concurrent</span><span class="p">.</span><span class="n">futures</span><span class="p">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+
+<span class="n">futures</span> <span class="o">=</span> <span class="p">[</span><span class="n">executor</span><span class="p">.</span><span class="n">submit</span><span class="p">(</span><span class="n">cpu_bound_fn</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">.</span><span class="n">result</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">futures</span><span class="p">]</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The Future objects provide a clean interface to wait for and retrieve results. The module handles pooling and concurrency under the hood.</p>
+
+<p>These approaches enable Python developers to speed up programs through parallelism, utilize multiple cores, and handle thousands of concurrent connections.</p>
+
+<h4>Metaprogramming with Metaclasses</h4>
+
+<p>While classes in Python enable the creating of multiple objects, metaclasses allow you to customize how the classes themselves are constructed and modified at a meta-level.</p>
+
+<p>Metaclasses intercept class creation and modify the class before it's finalized. For example, automatically registering models in a registry, applying mixins, interfacing with ORMs, etc.</p>
+
+<p>To use a metaclass, define a base type and override <strong>new</strong> and <strong>init</strong> methods:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">class</span> <span class="nc">RegistryMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+
+<span class="n">registry</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+
+<span class="c1"># Modify attrs
+</span>
+<span class="n">attrs</span><span class="p">[</span><span class="s">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">RegistryMeta</span><span class="p">.</span><span class="n">registry</span><span class="p">)</span>
+
+<span class="c1"># Build class as normal
+</span>
+<span class="n">klass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+
+<span class="c1"># Register class
+</span>
+<span class="n">RegistryMeta</span><span class="p">.</span><span class="n">registry</span><span class="p">[</span><span class="n">klass</span><span class="p">.</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">klass</span>
+
+<span class="k">return</span> <span class="n">klass</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Initializing </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> class"</span><span class="p">)</span>
+
+<span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+
+<span class="n">Any</span> <span class="k">class</span> <span class="nc">inheriting</span> <span class="n">this</span> <span class="n">metaclass</span> <span class="n">will</span> <span class="n">be</span> <span class="n">intercepted</span> <span class="ow">and</span> <span class="n">registered</span><span class="p">:</span>
+
+<span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">RegistryMeta</span><span class="p">):</span>
+
+<span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+
+<span class="k">pass</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">RegistryMeta</span><span class="p">.</span><span class="n">registry</span><span class="p">)</span>
+
+<span class="c1"># {0: &amp;lt;class '__main__.Base'&amp;gt;, 1: &amp;lt;class '__main__.Person'&amp;gt;}
+</span></code></pre>
+
+</div>
+
+
+
+<p>Metaclasses open up powerful metaprogramming capabilities and customization hooks to Python's class construction process.</p>
+
+<h4>Dynamic Attribute Access</h4>
+
+<p>Unlike statically typed languages, Python enables objects to have attributes added dynamically at runtime, beyond those explicitly defined in <strong>init</strong> or elsewhere in the class.</p>
+
+<p>For example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">p</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># New attribute created dynamically
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">z</span><span class="p">)</span>
+
+<span class="c1"># Outputs 5
+</span></code></pre>
+
+</div>
+
+
+
+<p>This dynamic behavior can be useful in certain cases like:</p>
+
+<ul>
+    <li>Implementing caching as attributes</li>
+    <li>Lazily creating attributes only when accessed</li>
+    <li>Proxy or delegate classes that reroute attribute access</li>
+    <li>Dynamic mixins that add capabilities to classes</li>
+</ul>
+
+<p>However, it can also make code harder to understand and trace since attributes aren't explicitly defined beforehand.</p>
+
+<p>Python supports the <strong>slots</strong> magic method to restrict this behavior. It tells Python only to allow attributes listed there and raise AttributeError for anything else:</p>
+
+<pre><code>class Point:
+
+__slots__ = ['x', 'y']
+
+p = Point(2, 3)
+
+p.z = 5 # AttributeError!</code></pre>
+
+<p>So <strong>slots</strong> prevents surprise behaviors from dynamic attributes.</p>
+
+<h4>Descriptor Protocol</h4>
+
+<p>This advanced protocol provides the underlying mechanics of how attributes like properties and methods work in Python.</p>
+
+<p>Descriptors essentially control attribute access on objects. They are implemented as classes containing <strong>get</strong>, <strong>set</strong> and <strong>delete</strong> methods.</p>
+
+<p>For example, the @property decorator works through descriptors:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Property</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">fget</span> <span class="o">=</span> <span class="n">fget</span>
+
+<span class="k">def</span> <span class="nf">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">owner</span><span class="p">):</span>
+
+<span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">fget</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="o">@</span><span class="n">Property</span>
+
+<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="c1"># Calls getter internally
+</span></code></pre>
+
+</div>
+
+
+
+<p>Here, the Property descriptor class implements <strong>get</strong> to call the underlying y method when accessed as an attribute.</p>
+
+<p>Some other examples of descriptors:</p>
+
+<ul>
+    <li>@classmethod and @staticmethod to define different method types</li>
+    <li>@memoized to cache method return values</li>
+    <li>__slots__ to restrict attributes</li>
+    <li>ORM frameworks mapping DB rows to Python objects</li>
+</ul>
+
+<p>The descriptor protocol is a key ingredient that enables much of Python's magic like @property, class methods, static methods, etc. Mastering descriptors unlocks deeper capabilities.</p>
+
+<h4>Context Managers</h4>
+
+<p>While the with statement provides easy file cleanup logic, Python enables implementing the same pattern for any object through context managers.</p>
+
+<p>For example, acquiring and releasing a lock or database connection:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Resource</span><span class="p">:</span>
+
+<span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Acquiring resource"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Releasing resource"</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">Resource</span><span class="p">()</span> <span class="k">as</span> <span class="n">resource</span><span class="p">:</span>
+
+<span class="c1"># Use resource
+</span></code></pre>
+
+</div>
+
+
+
+<p>This ensures reliable cleanup through the <strong>exit</strong> method. Context managers can also suppress exceptions during cleanup:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Resource</span><span class="p">:</span>
+
+<span class="c1"># ...
+</span>
+<span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Handling exception"</span><span class="p">)</span>
+
+<span class="c1"># suppress exception by returning True
+</span>
+<span class="k">return</span> <span class="bp">True</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The contextlib module provides utilities like @contextmanager to simplify creating context managers.</p>
+
+<p>Some real-world examples include:</p>
+
+<ul>
+    <li>File opening</li>
+    <li>Lock acquiring/release</li>
+    <li>Database connections</li>
+    <li>Temporary directory handling</li>
+    <li>Logging redirected to buffer</li>
+</ul>
+
+<p>Context managers provide a robust way to handle resources in Python.</p>
+
+<h4>Unit Testing</h4>
+
+<p>Writing tests is vital for validating code quality and ensuring proper behavior as the codebase grows. Python comes with a built-in unittest framework for authoring and running unit tests.</p>
+
+<p>The key components are test case classes, individual test methods, assertions, and test runners:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="k">class</span> <span class="nc">UserTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<span class="c1"># Setup run before each test method
+</span>
+<span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span> <span class="s">"Doe"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">full_name</span><span class="p">(),</span> <span class="s">"John Doe"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_initials</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">initials</span><span class="p">(),</span> <span class="s">"J.D"</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">unittest</span><span class="p">.</span><span class="n">expectedFailure</span>
+
+<span class="k">def</span> <span class="nf">test_send_email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">send_email</span><span class="p">(</span><span class="s">"test@example.com"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+
+<span class="n">unittest</span><span class="p">.</span><span class="n">main</span><span class="p">()</span> <span class="c1"># Run all tests
+</span></code></pre>
+
+</div>
+
+
+
+<p>This allows for organizing related tests into reusable test cases. Functionality like fixtures, assertions, mocking, and test runners handle the testing workflow.</p>
+
+<p>Some other Python testing tools include pytest for a streamlined experience and mocks for isolating code dependencies.</p>
+
+<p>Thorough testing improves code quality and reduces bugs in the long run. Tests empower developers to refactor and iterate rapidly.</p>
+
+<h4>Generators and Iterators</h4>
+
+<p>Generators allow pausing and resuming execution to produce a sequence of values individually through iteration lazily. This is useful for:</p>
+
+<ul>
+    <li>Dealing with large datasets without loading everything into memory</li>
+    <li>Implementing streams and efficient pipelines</li>
+    <li>Avoiding eager allocation of resources until needed</li>
+</ul>
+
+<p>In Python, generators are defined using yield instead of return:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">num_sequence</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+<span class="k">yield</span> <span class="n">i</span>
+
+<span class="n">seq</span> <span class="o">=</span> <span class="n">num_sequence</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span> <span class="c1"># 0
+</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span> <span class="c1"># 1
+</span></code></pre>
+
+</div>
+
+
+
+<p>When called, generators return a generator object that supports the iteration protocol. Lazy iteration enables efficient streaming:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">read_log_file</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
+
+<span class="k">yield</span> <span class="n">process</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">read_log_file</span><span class="p">(</span><span class="s">"logs.txt"</span><span class="p">):</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Generators allow implementation of Python iterators elegantly. Popular libraries like Django ORM use them extensively for lazy querying.</p>
+
+<h4>Asynchronous Programming</h4>
+
+<p>Python 3.5 introduced async/await syntax to natively support asynchronous code using asyncio:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="err"> </span> <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="k">await</span> <span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">()</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="err"> </span> <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">"url1"</span><span class="p">,</span> <span class="s">"url2"</span><span class="p">,</span> <span class="s">"url3"</span><span class="p">]</span>
+<span class="err"> </span> <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="err"> </span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+
+<span class="err">  </span>
+
+<span class="err"> </span> <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+<span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Asyncio provides an event loop to orchestrate concurrent tasks and asynchronous I/O efficiently. It is well suited for highly parallel network programs.</p>
+
+<h4>Python Typing</h4>
+
+<p>Type hints allow adding static types to function arguments and return values for static analysis:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">def</span> <span class="nf">sum_numbers</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="err"> </span> <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This metadata enables better error-catching, IDE autocompletion, and documentation. The code still runs dynamically, as usual.</p>
+
+<p>Popular third-party tools like MyPy leverage these type hints to provide optional static type checking for Python. Typing brings some of the benefits of static languages to Python.</p>
+
+<h4>Python Packaging</h4>
+
+<p>Python code is typically organized into modules or packages. The Python Packaging Index (PyPI) contains thousands of open-source packages with functionality beyond the standard library.</p>
+
+<p>Some best practices for structuring Python code for others to use:</p>
+
+<ul>
+    <li>Setup project structure with src and tests folders</li>
+    <li>Write <a href="http://setup.py" rel="noopener noreferrer nofollow">setup.py</a> script for pip installation</li>
+    <li>Include requirements.txt with dependencies</li>
+    <li>Follow Semantic Versioning for releases</li>
+    <li>Upload package to PyPI for public sharing</li>
+</ul>
+
+<p>Tools like Poetry, Flit, and pipenv streamline handling dependencies and packaging. Sharing reusable packages enables collective code reuse in Python.</p>
+
+<h4>Conclusion</h4>
+
+<p>This concludes our advanced guide to modern Python. We covered important techniques like:</p>
+
+<ul>
+    <li>Object-oriented programming principles</li>
+    <li>Metaprogramming with metaclasses and decorators</li>
+    <li>Improving performance through concurrency</li>
+    <li>Robust resource handling with context managers</li>
+    <li>Unit testing and maintaining code quality</li>
+    <li>Lazy generation of sequences for efficiency</li>
+    <li>Asynchronous I/O handling</li>
+    <li>Static type hints</li>
+    <li>Python packaging ecosystem</li>
+</ul>
+
+<p>These capabilities enable large, robust applications, libraries, and frameworks to be developed in Python.</p>
+
+<p>The key is always to keep learning through documentation, books, open-source code, conferences, and trying out ideas. Python has an amazing community.</p>
+
+<p>I hope you enjoyed reading this guide and feel motivated to start your Python programming journey.</p>
+
+<p>If you find this post exciting, find more exciting posts on <a href="http://blog.learnhub.africa/" rel="noopener noreferrer nofollow">Learnhub Blog</a>; we write everything tech from <a href="https://blog.learnhub.africa/category/cloud-computing/" rel="noopener noreferrer nofollow">Cloud computing</a> to <a href="https://blog.learnhub.africa/category/frontend/" rel="noopener noreferrer nofollow">Frontend Dev</a>, <a href="https://blog.learnhub.africa/category/security/" rel="noopener noreferrer nofollow">Cybersecurity</a>, <a href="https://blog.learnhub.africa/category/data-science/" rel="noopener noreferrer nofollow">AI</a>, and <a href="https://blog.learnhub.africa/category/blockchain/" rel="noopener noreferrer nofollow">Blockchain</a>.</p>
+
+<h4><strong>Resource</strong></h4>
+
+<ul>
+    <li><a href="https://blog.learnhub.africa/2023/05/26/20-essential-python-extensions-for-visual-studio-code/" rel="noopener noreferrer nofollow">20 Essential Python Extensions for Visual Studio Code</a></li>
+    <li><a href="https://blog.learnhub.africa/2023/04/27/using-python-for-web-scraping-and-data-extraction/" rel="noopener noreferrer nofollow">Using Python for Web Scraping and Data Extraction</a></li>
+    <li><a href="https://blog.learnhub.africa/2023/06/06/13-powerful-python-snippets-to-automate-tasks/" rel="noopener noreferrer nofollow">13 Powerful Python Snippets To Automate Tasks</a></li>
+    <li><a href="https://www.python.org/about/gettingstarted/" rel="noopener noreferrer nofollow">Getting Started with Python</a></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Crypto Chart: Full-Stack MERN App](https://dev.to/masakifukunishi/crypto-chart-full-stack-mern-app-3kni) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wNQAS1G4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/atgk2rf36f05n98iw93c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wNQAS1G4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/atgk2rf36f05n98iw93c.png" alt="Home Screenshot" width="800" height="418"></a></p>
+
 <h2>
   
   
-  How to use
+  Demo
 </h2>
 
-<p>There are two ways you can consume this library in your GitHub actions</p>
+<p><a href="https://crypto-chart-2abm.onrender.com">https://crypto-chart-2abm.onrender.com</a></p>
+
+<h2>
+  
+  
+  GitHub Repository
+</h2>
+
+<p><a href="https://github.com/masakifukunishi/crypto-chart">https://github.com/masakifukunishi/crypto-chart</a></p>
+
+<h2>
+  
+  
+  Summary
+</h2>
+
+<p>Crypto Chart is a full-stack <a href="https://www.geeksforgeeks.org/mern-stack/">MERN</a> app that lets users view candlestick charts of cryptocurrencies for selected asset pairs and periods.</p>
+
+<h2>
+  
+  
+  About Settings
+</h2>
+
+<ul>
+<li>Data is retrieved every 8 hours from Cryotowatch</li>
+<li>You can change the exchange and the asset pairs by changing the settings in config/default.json</li>
+<li>Only UTC Time Zone is supported for now</li>
+</ul>
+
+<h2>
+  
+  
+  Why I created this app
+</h2>
+
+<ol>
+<li>
+<p>To show my developing skills</p>
+
+<p>This app is built using TypeScript for the language, React and Redux for the frontend, Tailwind CSS for styling, and Express with Node.js for the backend. Additionally, I've implemented batch processing using cron jobs. I believe this project effectively demonstrates my skills.</p>
+</li>
+<li>
+<p>Expandable and Practical</p>
+
+<p>While the app currently offers basic functionality, there is potential to enhance its practicality by incorporating features such as acquiring candlestick data for shorter periods, integrating technical indicators, and more.</p>
+</li>
+</ol>
+
+<h2>
+  
+  
+  Language and Libraries
+</h2>
+
+<ul>
+<li>TypeScript</li>
+<li>React</li>
+<li>Redux, Redux Toolkit</li>
+<li>Tailwind CSS</li>
+<li>Express</li>
+<li>Node.js</li>
+<li>MongoDB (mongoose)</li>
+<li>ApexCharts</li>
+<li>cron</li>
+<li>Vite</li>
+</ul>
+
 <h3>
   
   
-  Via GitHub Actions (For GitHub Actions users)
+  React
 </h3>
 
-<p>You can just include the library as a step after one of your favorite GitHub actions. Your workflow file should have the checkout action defined in one of your steps since this library needs git CLI to work.<br>
-</p>
+<p>Data fetching from the backend in React is facilitated using custom hooks, making it explicit when the API is called.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Github Action with a cronjob trigger</span>
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">schedule</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
-
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">cronjob-based-github-action</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Cronjob based github action</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
-      <span class="pi">-</span> <span class="c1"># step1</span>
-      <span class="pi">-</span> <span class="c1"># step 2</span>
-      <span class="pi">-</span> <span class="c1"># step n, use it as the last step</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">gautamkrishnar/keepalive-workflow@master</span> <span class="c1"># using the workflow with default settings</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Let's take an example of <a href="https://github.com/athul/waka-readme">Waka Readme</a></p>
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">My awesome readme</span>
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">workflow_dispatch</span><span class="pi">:</span>
-  <span class="na">schedule</span><span class="pi">:</span>
-    <span class="c1"># Runs at 12 am UTC</span>
-    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
-
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">update-readme</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Update this repo's README</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">athul/waka-readme@master</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">WAKATIME_API_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.WAKATIME_API_KEY }}</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">gautamkrishnar/keepalive-workflow@master</span> <span class="c1"># using the workflow with default settings</span>
-</code></pre>
-
-</div>
 <h3>
   
   
-  Via JavaScript library (For GitHub Actions developers)
+  Redux
 </h3>
 
-<p>For developers making awesome GitHub actions, you can consume the library in your javascript-based GitHub action by installing it from <a href="https://www.npmjs.com/package/keepalive-workflow">NPM</a>. Make sure that your GitHub action uses checkout action since this library needs it as a dependency.<br>
-You can also ask your users to include it as an additional step as mentioned in the first part.</p>
-<h4>
-  
-  
-  Install the package
-</h4>
+<p>The selected asset pair and period are stored in the Redux store. Upon accessing the home screen, configuration and constant data are fetched from the server side and stored in Redux.</p>
 
-<p>Install via NPM:<br>
-</p>
+<h3>
+  
+  
+  MongoDB
+</h3>
+
+<p>MongoDB is employed to store OHLCV data obtained from the Cryptowatch API and provide it upon server request.</p>
+
+<h3>
+  
+  
+  ApexCharts
+</h3>
+
+<p>ApexCharts is utilized for rendering candlestick and volume charts.</p>
+
+<h3>
+  
+  
+  cron
+</h3>
+
+<p>cron is employed to regularly retrieve OHLCV data from the Cryptowatch API and store it in MongoDB.</p>
+
+<h3>
+  
+  
+  Vite
+</h3>
+
+<p>Vite is the tool used for building the frontend.</p>
+
+<h2>
+  
+  
+  Architecture
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gu3Jmh1P--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l89vt4mgh01jvtmit5r7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gu3Jmh1P--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l89vt4mgh01jvtmit5r7.png" alt="architecture" width="800" height="426"></a></p>
+
+<h2>
+  
+  
+  How to run
+</h2>
+
+<h3>
+  
+  
+  1. Clone this repository
+</h3>
+
+<h3>
+  
+  
+  2. Install dependencies
+</h3>
+
+
 
 <div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npm i keepalive-workflow
+<pre class="highlight shell"><code>npm <span class="nb">install</span>
 </code></pre>
 
 </div>
 
 
 
-<p>Install via Yarn:<br>
-</p>
+<h3>
+  
+  
+  3. Set environment variables
+</h3>
+
+
 
 <div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>yarn add keepalive-workflow
+<pre class="highlight shell"><code><span class="nb">cp</span> .env.example .env
 </code></pre>
 
 </div>
 
 
 
-<h4>
+<p><code>MONGODB_URI</code> is the URI of the MongoDB database to be used.</p>
+
+<h3>
   
   
-  Use it in your own GitHub action source code
-</h4>
+  4. Set config
+</h3>
+
+<p>If you want to change the exchange and the asset pairs, change the settings in config/default.json.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"cryptowatch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitfinex"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quoteAssets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"btc"</span><span class="p">,</span><span class="w"> </span><span class="s2">"eth"</span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p><a href="///config/default.json">/config/default.json</a></p>
+
+<h3>
+  
+  
+  5. Run batch processing to register initial ohlcv data
+</h3>
 
 
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">core</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@actions/core</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">KeepAliveWorkflow</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">keepalive-workflow</span><span class="dl">'</span><span class="p">);</span>
+<pre class="highlight shell"><code>npm run dev-batch-init
+</code></pre>
 
-<span class="c1">// Using the lib</span>
-<span class="nx">KeepAliveWorkflow</span><span class="p">(</span><span class="nx">githubToken</span><span class="p">,</span> <span class="nx">committerUsername</span><span class="p">,</span> <span class="nx">committerEmail</span><span class="p">,</span> <span class="nx">commitMessage</span><span class="p">,</span> <span class="nx">timeElapsed</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">core</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
-    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">core</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-  <span class="p">});</span>
+</div>
+
+
+
+<p>Thank you!</p>
+
+<h3>
+  
+  
+  6. Run frontend and backend
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm run dev
 </code></pre>
 
 </div>
@@ -319,613 +1183,52 @@ You can also ask your users to include it as an additional step as mentioned in 
 <h2>
   
   
-  Options
+  How to build
 </h2>
 
 <h3>
   
   
-  For GitHub Action
+  1. The same as 1-5 of 'How to run'
 </h3>
-
-<p>If you use the workflow as mentioned via GitHub actions following are the options available to you to customize its behavior.</p>
-
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default Value</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>gh_token</code></td>
-<td>your default GitHub token with repo scope</td>
-<td>GitHub access token with Repo scope</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>commit_message</code></td>
-<td><code>Automated commit by Keepalive Workflow to keep the repository active</code></td>
-<td>Commit message used while committing to the repo</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>committer_username</code></td>
-<td><code>gkr-bot</code></td>
-<td>Username used while committing to the repo</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>committer_username</code></td>
-<td><code>gkr@tuta.io</code></td>
-<td>Email id used while committing to the repo</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>time_elapsed</code></td>
-<td><code>50</code></td>
-<td>Time elapsed from the previous commit to trigger a new automated commit (in days)</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></div>
 
 <h3>
   
   
-  For Javascript Library
+  2. Build frontend and backend
 </h3>
 
-<p>If you are using the JS Library version of the project, please consult the function's DocString in <a href="https://github.com/gautamkrishnar/keepalive-workflow/blob/master/library.js">library.js</a> to see the list of available parameters.</p>
 
-<h2>
-  
-  
-  Liked it?
-</h2>
-
-<p>Hope you liked this project, don't forget to give it a <a href="https://github.com/gautamkrishnar/keepalive-workflow">star</a> ⭐.</p>
-
- </details> 
- <hr /> 
-
- #### - [How I built one of the top 20 most used Github Actions](https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/) 
- <details><summary>توضیحات</summary> <p>The post <a rel="nofollow" href="https://www.gautamkrishnar.com/how-i-built-one-of-the-top-20-most-used-github-actions/">How I built one of the top 20 most used Github Actions</a> appeared first on <a rel="nofollow" href="https://www.gautamkrishnar.com">Gautam Krishna R</a>.</p>
- </details> 
- <hr /> 
-
- #### - [Show your latest dev.to posts automatically on your GitHub profile readme](https://dev.to/gautamkrishnar/show-your-latest-dev-to-posts-automatically-in-your-github-profile-readme-3nk8) 
- <details><summary>توضیحات</summary> <p>I just created a GitHub Action that lets you add links to your latest blog posts from Dev.to and other sources to your Github Profile readme automatically. </p>
-
-<p>Check it out if you want a readme like this:<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dsiYDLIL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/bcxkje1qtjkz7fqiirvs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dsiYDLIL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/bcxkje1qtjkz7fqiirvs.png" alt="Preview" width="880" height="470"></a></p>
-
-<p>Project on GitHub: <a href="https://github.com/gautamkrishnar/blog-post-workflow">https://github.com/gautamkrishnar/blog-post-workflow</a><br>
-Example readme: <a href="https://github.com/gautamkrishnar">https://github.com/gautamkrishnar</a></p>
-<h4>
-  
-  
-  Demo video
-</h4>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/ECuqb5Tv9qI">
-</iframe>
-</p>
-
-<h3>
-  
-  
-  How to use
-</h3>
-
-<ul>
-<li>Star <a href="https://github.com/gautamkrishnar/blog-post-workflow">this</a> repo 😉 </li>
-<li>Go to your repository</li>
-<li>Add the following section to your <strong>README.md</strong> file, you can give whatever title you want. Just make sure that you use <code>&lt;!-- BLOG-POST-LIST:START --&gt;&lt;!-- BLOG-POST-LIST:END --&gt;</code> in your readme. The workflow will replace this comment with the actual blog post list:
-</li>
-</ul>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight markdown"><code><span class="gh"># Blog posts</span>
-<span class="c">&lt;!-- BLOG-POST-LIST:START --&gt;</span>
-<span class="c">&lt;!-- BLOG-POST-LIST:END --&gt;</span>
+<pre class="highlight shell"><code>npm run build
 </code></pre>
 
 </div>
 
 
 
-<ul>
-<li>Create a folder named <code>.github</code> and create a <code>workflows</code> folder inside it if it doesn't exist.</li>
-<li>Create a new file named <code>blog-post-workflow.yml</code> with the following contents inside the workflows folder:
-</li>
-</ul>
+<h3>
+  
+  
+  3. Run the built app
+</h3>
+
+
 
 <div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Latest blog post workflow</span>
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">schedule</span><span class="pi">:</span> <span class="c1"># Run workflow automatically</span>
-    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span> <span class="c1"># Runs every hour, on the hour</span>
-  <span class="na">workflow_dispatch</span><span class="pi">:</span> <span class="c1"># Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly</span>
-<span class="na">permissions</span><span class="pi">:</span>
-  <span class="na">contents</span><span class="pi">:</span> <span class="s">write</span> <span class="c1"># To write the generated contents to the readme</span>
-
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">update-readme-with-blog</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Update this repo's README with latest blog posts</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">gautamkrishnar/blog-post-workflow@master</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">feed_list</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://dev.to/feed/gautamkrishnar,https://www.gautamkrishnar.com/feed/"</span>
+<pre class="highlight shell"><code>npm run start
 </code></pre>
 
 </div>
 
 
 
-<ul>
-<li>Replace the above url list with your own rss feed urls. See popular-sources for a list of common RSS feed urls.</li>
-<li>Commit and wait for it to run automatically or you can also trigger it manually to see the result instantly. To trigger the workflow manually, please follow the steps in the <a href="https://www.youtube.com/watch?v=ECuqb5Tv9qI&amp;t=272s">video</a>.</li>
-</ul>
-
-<h3>
-  
-  
-  Options
-</h3>
-
-<p>This workflow has additional options that you can use to customize it for your use case. The following are the list of options available:</p>
-
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default Value</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>feed_list</code></td>
-<td><code>""</code></td>
-<td>Comma-separated list of RSS feed urls, eg: <code>https://example1.com,https://example2.com</code>
-</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><code>max_post_count</code></td>
-<td><code>5</code></td>
-<td>Maximum number of posts you want to show on your readme, all feeds combined</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>readme_path</code></td>
-<td><code>./README.md</code></td>
-<td>Path of the readme file you want to update</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>gh_token</code></td>
-<td>your GitHub token with repo scope</td>
-<td>Use this to configure the token of the user that commits the workflow result to GitHub</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>comment_tag_name</code></td>
-<td><code>BLOG-POST-LIST</code></td>
-<td>Allows you to override the default comment tag name (<code>&lt;!-- BLOG-POST-LIST:START --&gt;&lt;!-- BLOG-POST-LIST:END --&gt;</code>), if you want to show multiple instances of the action on the same repo, see advanced usage for more info</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>disable_sort</code></td>
-<td><code>false</code></td>
-<td>Disables the sorting of the list based on publish date</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>template</code></td>
-<td><code>default</code></td>
-<td>Allows you to change the structure of the posts list by using different variables. By default this workflow uses markdown list format to render the posts, you can override this behavior using this option. Eg: <code>[$title]($url)</code> will give you a space-separated list of posts.<br><br><strong>Supported variables</strong> <ul>
-<li>
-<code>$title</code>: Title of the post</li>
-<li>
-<code>$url</code>: URL of the post</li>
-<li>
-<code>$description</code>: Description of the post</li>
-<li>
-<code>
-</code>: Inserts a newline</li>
-<li>
-<code>Jul 21, 2020</code>: Inserts the post date based on the <code>date_format</code> specified</li>
-<li>
-<code>$randomEmoji</code>: Allow you to use random emojis in the post, pass emojis as the parameter to chose one of it randomly in each post item. Eg: <code>$randomEmoji(💯,🔥,💫,🚀,🌮)</code>. See the <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/29#issuecomment-699622596">issue comment</a> for more details</li>
-<li>
-<code>$emojiKey</code>: You can use this argument to show emojis on each of your post item sequentially in the order you specify. Example: <code>$emojiKey(💯,🔥,💫)</code>. See the <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/29#issuecomment-699622596">issue comment</a> for more details</li>
-</ul>
-</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>date_format</code></td>
-<td><code>UTC:ddd mmm dd yyyy h:MM TT</code></td>
-<td>Allows you to change the format of the date or time displayed when using the Jul 21, 2020 in the template option. This uses NPM dateformat library, please read the library <a href="https://www.npmjs.com/package/dateformat#named-formats">documentation</a> for the supported formats</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>user_agent</code></td>
-<td><code>rss-parser</code></td>
-<td>Allows you to customize the user agent used by the RSS feed crawler</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>accept_header</code></td>
-<td><code>application/rss+xml</code></td>
-<td>Allows you to customize the accept header of the http requests</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>tag_post_pre_newline</code></td>
-<td>
-<code>true</code> if you are not using <strong>template</strong> option</td>
-<td>Allows you to insert a newline before the closing tag and after the opening tag when using the template option if needed, for better formatting</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>filter_comments</code></td>
-<td><code>medium,stackoverflow/Comment by $author/,stackexchange/Comment by $author/</code></td>
-<td>Comma separated list of platforms you want to enable the comment filter.<br><br><strong>Available filters</strong><ul>
-<li>
-<code>medium</code>: Allows you to filter out the Medium comments. Known issue: <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/37">#37</a>
-</li>
-<li>
-<code>stackoverflow/Comment by $author/</code>: Allows you to filter out the StackOverflow comments. Argument to this filter is optional, it defaults to 'Comment by $author'. If you use any language other than English on StackOverflow, you can use this argument to customize it. See <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/16">#16</a> for more info.</li>
-<li>
-<code>stackexchange/Comment by $author/</code>: Allows you to filter out the StackExchange comments. Argument to this filter follows the same format as <code>stackoverflow</code> filter's argument.</li>
-</ul>
-</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>custom_tags</code></td>
-<td><code>""</code></td>
-<td>Allows you to use the custom tags from your feed items in your template. Format: <code>variableName/tagName/,variableName/tagName/</code>. Please see the <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/28#issuecomment-696024087">issue comment</a> for more details</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>title_max_length</code></td>
-<td><code>""</code></td>
-<td>Allows you to trim the title in the posts list, excess text will be appended with an ellipsis <code>...</code>
-</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>description_max_length</code></td>
-<td><code>""</code></td>
-<td>Allows you to trim the description in the posts list, excess text will be appended with an ellipsis <code>...</code>
-</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>item_exec</code></td>
-<td><code>""</code></td>
-<td>Allows you to execute custom JavaScript code on each post item fetched from the xml to do advanced text manipulation. Please see the <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/34#issuecomment-706582788">issue comment</a> as an example</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>commit_message</code></td>
-<td><code>Updated with the latest blog posts</code></td>
-<td>Allows you to customize the commit message</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>committer_username</code></td>
-<td><code>blog-post-bot</code></td>
-<td>Allows you to customize the committer username</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>committer_email</code></td>
-<td><code>blog-post-bot@example.com</code></td>
-<td>Allows you to customize the committer email</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>output_only</code></td>
-<td><code>false</code></td>
-<td>Sets the generated array as <code>results</code> <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idoutputs">output variable</a> so that it can be consumed in other actions and parsed via utilities like <a href="https://stedolan.github.io/jq/">jq</a>. This will also prevent committing to readme. See <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/51#issuecomment-758570235">#51</a> for more details about the output format and how to use it.</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>enable_keepalive</code></td>
-<td><code>true</code></td>
-<td>Workflow will automatically do a dummy commit to keep the repository active if there is no commit activity for the last 50 days. GitHub will stop running all cron based triggers if the repository is not active for more than 60 days. This flag allows you to disable this feature. See <a href="https://git.io/Jtm4V">#53</a> for more details.</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>retry_count</code></td>
-<td><code>0</code></td>
-<td>Maximum number of times to retry the fetch operation if it fails, See <a href="https://github.com/gautamkrishnar/blog-post-workflow/issues/66">#66</a> for more details.</td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>retry_wait_time</code></td>
-<td><code>1</code></td>
-<td>Time to wait before each retry operation in seconds.</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></div>
-
-<h3>
-  
-  
-  Advanced usage examples
-</h3>
-
-<h4>
-  
-  
-  StackOverflow example
-</h4>
-
-<p>The following configuration allows you to show your latest StackOverflow activity along with your latest blog posts in the Github profile or project readme:</p>
+<p>About this app, if you have any opinions or feedback, please contact the following:</p>
 
 <ul>
-<li>Follow the steps mentioned in the how to use section</li>
-<li>Add the following section to your <strong>README.md</strong> file, you can give whatever title you want. Just make sure that you use <code>&lt;!-- STACKOVERFLOW:START --&gt;&lt;!-- STACKOVERFLOW:END --&gt;</code> in your readme. The workflow will replace this comment with the actual StackOverflow activity:
-</li>
+<li><a href="//mailto:fmsknn@gmail.com">fmsknn@gmail.com</a></li>
 </ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight markdown"><code><span class="gh"># StackOverflow Activity</span>
-<span class="c">&lt;!-- STACKOVERFLOW:START --&gt;</span>
-<span class="c">&lt;!-- STACKOVERFLOW:END --&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Create <code>stack-overflow-workflow.yml</code> in your <code>workflows</code> folder with the following contents, replace <strong>4214976</strong> with your StackOverflow <a href="https://meta.stackexchange.com/questions/98771/what-is-my-user-id/111130#111130">user id</a>:
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Latest stack overflow activity</span>
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">schedule</span><span class="pi">:</span>
-    <span class="c1"># Runs every 5 minutes</span>
-    <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
-  <span class="na">workflow_dispatch</span><span class="pi">:</span>
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">update-readme-with-stack-overflow</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Update this repo's README with latest activity from StackOverflow</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">gautamkrishnar/blog-post-workflow@master</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">comment_tag_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">STACKOVERFLOW"</span>
-          <span class="na">commit_message</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Updated</span><span class="nv"> </span><span class="s">readme</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">latest</span><span class="nv"> </span><span class="s">stackOverflow</span><span class="nv"> </span><span class="s">data"</span>
-          <span class="na">feed_list</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://stackoverflow.com/feeds/user/4214976"</span>
-</code></pre>
-
-</div>
-
-
-
-<p>See the result!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--n5tG6uXy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/8397274/88197889-b727ff80-cc60-11ea-8e4a-b1fbd8dd9d06.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--n5tG6uXy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/8397274/88197889-b727ff80-cc60-11ea-8e4a-b1fbd8dd9d06.png" alt="advanced" width="880" height="438"></a></p>
-
-<h3>
-  
-  
-  Popular Sources
-</h3>
-
-<p>Following are the list of some popular blogging platforms and their RSS feed urls:</p>
-
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Feed URL</th>
-<th>Comments</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://dev.to/">Dev.to</a></td>
-<td><code>https://dev.to/feed/username</code></td>
-<td>Replace username with your own username</td>
-<td><a href="https://dev.to/feed/gautamkrishnar">https://dev.to/feed/gautamkrishnar</a></td>
-</tr>
-<tr>
-<td><a href="https://wordpress.org/">Wordpress</a></td>
-<td><code>https://www.example.com/feed/</code></td>
-<td>Replace with your own blog url</td>
-<td><a href="https://www.gautamkrishnar.com/feed/">https://www.gautamkrishnar.com/feed/</a></td>
-</tr>
-<tr>
-<td><a href="https://medium.com/">Medium</a></td>
-<td><code>https://medium.com/feed/@username</code></td>
-<td>Replace @username with your Medium username</td>
-<td><a href="https://medium.com/feed/@khaosdoctor">https://medium.com/feed/@khaosdoctor</a></td>
-</tr>
-<tr>
-<td><a href="https://medium.com/">Medium (Sub Domain)</a></td>
-<td><code>https://username.medium.com/feed</code></td>
-<td>Replace username with your Medium username</td>
-<td><a href="https://timsneath.medium.com/feed">https://timsneath.medium.com/feed</a></td>
-</tr>
-<tr>
-<td><a href="https://stackoverflow.com/">Stackoverflow</a></td>
-<td><code>https://stackoverflow.com/feeds/user/userid</code></td>
-<td>Replace with your StackOverflow <a href="https://meta.stackexchange.com/questions/98771/what-is-my-user-id/111130#111130">UserId</a>
-</td>
-<td><a href="https://stackoverflow.com/feeds/user/5283532">https://stackoverflow.com/feeds/user/5283532</a></td>
-</tr>
-<tr>
-<td><a href="https://stackexchange.com/">StackExchange</a></td>
-<td><code>https://subdomain.stackexchange.com/feeds/user/userid</code></td>
-<td>Replace with your StackExchange <a href="https://meta.stackexchange.com/questions/98771/what-is-my-user-id/111130#111130">UserId</a> and sub-domain</td>
-<td><a href="https://devops.stackexchange.com/feeds/user/15">https://devops.stackexchange.com/feeds/user/15</a></td>
-</tr>
-<tr>
-<td><a href="https://ghost.org/">Ghost</a></td>
-<td><code>https://www.example.com/rss/</code></td>
-<td>Replace with your own blog url</td>
-<td><a href="https://blog.codinghorror.com/rss/">https://blog.codinghorror.com/rss/</a></td>
-</tr>
-<tr>
-<td><a href="https://www.drupal.org/">Drupal</a></td>
-<td><code>https://www.example.com/rss.xml</code></td>
-<td>Replace with your own blog url</td>
-<td><a href="https://www.arsenal.com/rss.xml">https://www.arsenal.com/rss.xml</a></td>
-</tr>
-<tr>
-<td><a href="https://www.youtube.com">Youtube Playlists</a></td>
-<td><code>https://www.youtube.com/feeds/videos.xml?playlist_id=playlistId</code></td>
-<td>Replace <code>playlistId</code> with your own Youtube playlist id</td>
-<td><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLJNqgDLpd5E69Kc664st4j7727sbzyx0X">https://www.youtube.com/feeds/videos.xml?playlist_id=PLJNqgDLpd5E69Kc664st4j7727sbzyx0X</a></td>
-</tr>
-<tr>
-<td><a href="https://www.youtube.com">Youtube Channel Video list</a></td>
-<td><code>https://www.youtube.com/feeds/videos.xml?channel_id=channelId</code></td>
-<td>Replace <code>channelId</code> with your own Youtube channel id</td>
-<td><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCDCHcqyeQgJ-jVSd6VJkbCw">https://www.youtube.com/feeds/videos.xml?channel_id=UCDCHcqyeQgJ-jVSd6VJkbCw</a></td>
-</tr>
-<tr>
-<td><a href="https://anchor.fm/">Anchor.fm Podcasts</a></td>
-<td><code>https://anchor.fm/s/podcastId/podcast/rss</code></td>
-<td>You can get the rss feed url of a podcast by following <a href="https://help.anchor.fm/hc/en-us/articles/360027712351-Locating-your-Anchor-RSS-feed">these</a> instructions</td>
-<td><a href="https://anchor.fm/s/1e784a38/podcast/rss">https://anchor.fm/s/1e784a38/podcast/rss</a></td>
-</tr>
-<tr>
-<td><a href="https://hashnode.com/">Hashnode</a></td>
-<td><code>https://@username.hashnode.dev/rss.xml</code></td>
-<td>Replace @username with your Hashnode username</td>
-<td><a href="https://polilluminato.hashnode.dev/rss.xml">https://polilluminato.hashnode.dev/rss.xml</a></td>
-</tr>
-<tr>
-<td><a href="https://podcasts.google.com/">Google Podcasts</a></td>
-<td><code>https://podcasts.google.com/feed/channelId</code></td>
-<td>Replace <code>channelId</code> with your Google podcast channel Id</td>
-<td><a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjYyOTIxMTkwL3NvdW5kcy5yc3M=">https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjYyOTIxMTkwL3NvdW5kcy5yc3M=</a></td>
-</tr>
-<tr>
-<td><a href="https://www.reddit.com/">Reddit</a></td>
-<td><code>http://www.reddit.com/r/topic/.rss</code></td>
-<td>You can create an RSS feed by adding '.rss' to the end of an existing Reddit URL. Replace <code>topic</code> with SubReddit topic that interest you or localized to you.</td>
-<td><a href="http://www.reddit.com/r/news/.rss">http://www.reddit.com/r/news/.rss</a></td>
-</tr>
-<tr>
-<td><a href="https://analyticsindiamag.com/">Analytics India Magazine</a></td>
-<td><code>https://analyticsindiamag.com/author/author_name/feed/</code></td>
-<td>Replace <code>author_name</code> with your name</td>
-<td><a href="https://analyticsindiamag.com/author/kaustubhgupta1828gmail-com/feed/">https://analyticsindiamag.com/author/kaustubhgupta1828gmail-com/feed/</a></td>
-</tr>
-<tr>
-<td><a href="https://feedburner.com/">Feedburner</a></td>
-<td><code>https://feeds.feedburner.com/feed_address</code></td>
-<td>Replace <code>feed_address</code> with your Feedburner feed address</td>
-<td><a href="https://feeds.feedburner.com/darkwood-fr/blog">https://feeds.feedburner.com/darkwood-fr/blog</a></td>
-</tr>
-<tr>
-<td><a href="https://www.tumblr.com">Tumblr</a></td>
-<td>
-<code>https://blog_name.tumblr.com/rss</code> or <code>https://example.com/rss</code>
-</td>
-<td>You can create an RSS feed by adding '/rss' to your main blog page or to your own domain if it is configured. Replace <code>blog_name</code> with your blog name</td>
-<td><a href="https://goggledoddle.tumblr.com/rss">https://goggledoddle.tumblr.com/rss</a></td>
-</tr>
-</tbody>
-</table></div>
-
-<h3>
-  
-  
-  Examples
-</h3>
-
-<ul>
-<li>
-<a href="https://github.com/gautamkrishnar">My own GitHub profile readme</a> - <a href="https://github.com/gautamkrishnar/gautamkrishnar/blob/master/.github/workflows/blog-post-workflow.yml">YML File</a>
-</li>
-<li>
-<a href="https://github.com/khaosdoctor">Lucas Santos' GitHub profile readme</a> - <a href="https://github.com/khaosdoctor/khaosdoctor/blob/main/.github/workflows/update-blog-posts.yml">YML File</a>
-</li>
-<li>
-<a href="https://github.com/gkr-bot/gkr-bot#latest-stackoveflow-activity-of-gautamkrishnar">Blog post table</a> - <a href="https://github.com/gkr-bot/gkr-bot/blob/master/.github/workflows/stack-oveflow-workflow.yml">YML File</a>
-</li>
-</ul>
-
-<h4>
-  
-  
-  Update 22-July-2020
-</h4>
-
-<p>Thanks for the overwhelming response everyone, Just added StackOverflow support to the project. Now you can have your dev.to posts along with your StackOverflow activity in your GitHub readme. The action now supports having multiple instances on the same repo. See an example readme:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KOuCJcuF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/d71nle5l2hbh71ekvjsp.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KOuCJcuF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/d71nle5l2hbh71ekvjsp.png" alt="Eg2" width="880" height="438"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [God Mode in browsers: document.designMode = "on"](https://dev.to/gautamkrishnar/god-mode-in-browsers-document-designmode-on-2pmo) 
- <details><summary>توضیحات</summary> <p>Just type <code>document.designMode = "on"</code> on you favourite browser's devtools and see the magic. </p>
-
-<p>It will make any website editable:</p>
-
-<p><a href="https://i.giphy.com/media/iDByhJJoZGSac2RH5z/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/iDByhJJoZGSac2RH5z/giphy.gif" alt="preview"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Skipping the Chrome "Your connection is not private" warning](https://dev.to/gautamkrishnar/quickbits-1-skipping-the-chrome-your-connection-is-not-private-warning-4kp1) 
- <details><summary>توضیحات</summary> <p>You guys might have encountered a warning saying that "Your connection is not private" while doing some web development. This tutorial is about how you can skip the same. (Feel free to skip the tutorial, if you are not using chrome or chromium-based browser)</p>
-
-<p>You will get this kind of error usually when you are not using localhost as the domain for development. This is implemented to make your browsing experience more secure. If you are visiting a website via HTTPS and the server doesn't support it, you are vulnerable to the normal attacks that can happen when accessing a website via HTTP. You are vulnerable to the MIM (Man in the middle) attacks, these attacks a quite serious since it can gather private information like usernames and passwords from the victim.</p>
-
-<p>But having this feature enabled while developing a web application is a headache. Organizations can set browser policies to prevent accessing such pages especially if you are using a machine provided by the company. The screen will look below:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rNO8MFUv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/qkrva33lpcgbcfbu85gh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rNO8MFUv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/qkrva33lpcgbcfbu85gh.png" alt="Certificate"></a></p>
-
-<p>As you can see that there will be no skip button on this. The only way you can access the page is by setting up a correct certificate or launching the Chrome browser in insecure mode via flags.</p>
-
-<p>But there is a <strong>cheat code</strong> you can use to skip this warning 😄 Just type <strong>"thisisunsafe"</strong> in the chrome warning message page. (Not in the address bar, just type it in the page) Boom! 💣 You can see that the warning message disappeared.</p>
-
-<p><a href="https://i.giphy.com/media/YpZAFbpbswOIDNTuo4/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/YpZAFbpbswOIDNTuo4/giphy.gif" alt="magic"></a><br>
-To test this yourself you can visit: <a href="https://self-signed.badssl.com/">https://self-signed.badssl.com/</a></p>
-
-<p>Congrats, You've just added a permanent exception for the corresponding domain for the SSL certificate check. 😄</p>
-
-<p><a href="https://i.giphy.com/media/5VKbvrjxpVJCM/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/5VKbvrjxpVJCM/giphy.gif" alt="wow"></a></p>
-
-<h4>
-  
-  
-  Technical details
-</h4>
-
-<ul>
-<li>Chromium source code: <a href="https://chromium.googlesource.com/chromium/src/+/master/components/security_interstitials/core/browser/resources/interstitial_large.js">https://chromium.googlesource.com/chromium/src/+/master/components/security_interstitials/core/browser/resources/interstitial_large.js</a>
-</li>
-<li>Stackoverflow thread: <a href="https://stackoverflow.com/questions/35274659/does-using-badidea-or-thisisunsafe-to-bypass-a-chrome-certificate-hsts-error">https://stackoverflow.com/questions/35274659/does-using-badidea-or-thisisunsafe-to-bypass-a-chrome-certificate-hsts-error</a>
-</li>
-</ul>
-
-<p>Stay safe, Happy coding.... 😷</p>
 
  </details> 
  <hr /> 
