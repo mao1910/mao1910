@@ -71,10 +71,9 @@
 
 <!-- FOOTER -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
+<!-- https://readme-typing-svg.demolab.com/demo/ -->
 
-<h3 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=25&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Thanks+for+dropping+by!;Hope+to+see+you+again+👊">
-</h3>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&pause=1000&color=FE6E96&width=535&lines=Thanks+for+dropping+by!;Feel+free+to+check+any+of+the+Socials+below+%F0%9F%91%87;Or+the+Joke+Of+The+Day+if+you're+down+for+a+giggle+%F0%9F%98%9D;Hope+to+see+you+again+%F0%9F%91%8A;Uh%3F+You're+still+here%3F;Well...+I'm+running+out+of+things+to+say...;Tell+you+what%2C+due+to+your+effort+and+perseverance%2C;I+shall+present+you+with+a+short+poem%3A;%22To+code%2C+or+not+to+code%2C+that+is+the+question%3A;Whether+'tis+nobler+in+the+IDE+to+debug;The+errors+and+issues+of+outrageous+software%2C;Or+to+take+up+the+keyboard+against+a+sea+of+bugs;And+by+coding%2C+end+them.%22;by+William+Shakespeare%2C+probably.+;Pretty+sure+that's+Hamlet's.;Alrighty%2C+this+has+been+fun.;But+I'll+restart+the+loop+now...+see+ya+soon!" alt="Typing SVG" /></a>
 
 
 <!--  SOCIAL NETWORS -->
@@ -98,7 +97,7 @@
 
 <!-- JOKE OF THE DAY -->
 <details>
-<summary>I've got a Joke of the Day for you. Wanna hear it? Check it below.</summary>
+<summary>I've got a Joke for you. Wanna hear it?</summary>
 
 <br/>
 
