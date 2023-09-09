@@ -129,6 +129,265 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Use an API with JavaScript (Beginner's Guide)](https://dev.to/noobizdev/use-an-api-with-javascript-beginners-guide-2mak) 
+ <details><summary>Article</summary> <p>JavaScript APIs (Application Programming Interfaces) are essential for web development. They allow developers to interact with external services and data sources, enhancing the functionality of web applications.<br>
+To use an API with JavaScript as a beginner, follow these steps:</p>
+<h2>
+  
+  
+  JavaScript API Basics
+</h2>
+
+<ol>
+<li>Learn the Basics: Begin by understanding what an API is. Read beginner's guides like those provided by MDN and RapidAPI. These guides explain the fundamentals.</li>
+<li>Choose an API: Select an API that interests you. It could be for weather, social media, or any other data source. Websites like GeeksforGeeks provide examples of working with various APIs in JavaScript.</li>
+<li>Read Documentation: Explore the API's documentation. It typically provides information on endpoints, authentication, and usage examples. This step is crucial for understanding how to interact with the API effectively.</li>
+<li>Make API Requests: Start making requests to the API using JavaScript. You can use tools like fetch or libraries like Axios. Tutorials like the one on Snipcart offer hands-on guidance.</li>
+<li>Handle Responses: Learn how to handle API responses, which often come in JSON format. Parse the data and use it in your web application.</li>
+<li>Error Handling: Be prepared to handle errors gracefully. Proper error handling ensures your application remains robust.</li>
+<li>Practice: Practice using APIs by building small projects. This helps reinforce your learning.</li>
+<li>Security: If the API requires authentication, follow best practices for securing your API keys and tokens.</li>
+<li>Explore REST: If you're interested in REST APIs, check out the beginner's guide on dev.to.</li>
+</ol>
+<h2>
+  
+  
+  JavaScript API Example Code
+</h2>
+
+<p>In this example, we’ll use a weather API to retrieve current weather information for a specified location. We’ll make an API request, handle the response, and display the data in a user-friendly format.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Define the API endpoint and your API key
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+const apiKey = 'YOUR_API_KEY';
+
+// Function to fetch weather data
+async function fetchWeatherData(city) {
+  try {
+    const response = await fetch(`${apiUrl}?q=${city}&amp;appid=${apiKey}`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+
+    // Extract relevant weather information
+    const temperature = data.main.temp;
+    const description = data.weather[0].description;
+
+    // Display weather information on the web page
+    document.getElementById('temperature').textContent = `${temperature}°C`;
+    document.getElementById('description').textContent = description;
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+  }
+}
+
+// Call the function to fetch weather data for a specific city
+fetchWeatherData('New York');
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Remember that <strong><a href="https://noobizdev.tech/the-power-of-javascript-apis-best-practices-and-examples/">using APIs with JavaScript</a></strong> is a valuable skill for web development, enabling you to access external data and services to enhance your applications.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [A Comprehensive Guide to AWS DynamoDB vs. Redshift for Databases and Data Warehouses](https://dev.to/scc33/a-comprehensive-guide-to-aws-dynamodb-vs-redshift-for-databases-and-data-warehouses-22hb) 
+ <details><summary>Article</summary> <p>Unlock the Full Potential of Your Data: An In-Depth Comparison of AWS DynamoDB and Redshift for Streamlined Data Management and Analytics</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9zxJyhxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bmxh94qref4wbdlz1a4m.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9zxJyhxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bmxh94qref4wbdlz1a4m.jpg" alt="DynamoDB vs Redshift" width="800" height="450"></a></p>
+
+<p>The topics of <a href="https://en.wikipedia.org/wiki/Database">databases</a> and <a href="https://en.wikipedia.org/wiki/Data_warehouse">data warehouses</a> are central to the modern data landscape, and Amazon's offerings<a href="https://aws.amazon.com/dynamodb/">DynamoDB</a> and <a href="https://aws.amazon.com/redshift/">Redshift</a>are standout products in their respective categories. Here's a detailed comparison:</p>
+
+<h3>
+  
+  
+  <strong>Database vs. Data Warehouse</strong>
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4f_eIKpl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ggvkf5m7le3fblcsez9k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4f_eIKpl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ggvkf5m7le3fblcsez9k.png" alt="database vs data warehouses chart" width="800" height="708"></a></p>
+
+<h3>
+  
+  
+  <strong>DynamoDB</strong>
+</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Amazon_DynamoDB">Amazon DynamoDB</a>, launched by AWS in 2012, is a fully managed NoSQL database service designed to provide seamless scalability and reliable performance. Built to handle high-velocity data and offer single-digit millisecond latency, DynamoDB supports key-value and document data models, making it well-suited for a variety of applications, including real-time analytics, mobile backends, and serverless architectures. With features like auto-scaling, in-memory caching, and multi-region replication, DynamoDB has become a cornerstone in the AWS ecosystem for developers requiring a highly available and low-latency data store.</p>
+
+<p><strong>Use Cases</strong> :</p>
+
+<ul>
+<li><p>High-velocity data like IoT event streams.</p></li>
+<li><p>Serverless applications.</p></li>
+<li><p>Real-time big data analytics.</p></li>
+<li><p>Mobile applications needing a backend.</p></li>
+</ul>
+
+<p><strong>Technical Features</strong> :</p>
+
+<ul>
+<li><p>Offers single-digit millisecond latency.</p></li>
+<li><p>Supports key-value and document data models.</p></li>
+<li><p>Can be set up for multi-region replication.</p></li>
+<li><p>Auto-scaling, in-memory caching, backup, and restore functionalities.</p></li>
+</ul>
+
+<h3>
+  
+  
+  <strong>AWS Redshift</strong>
+</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Amazon_Redshift">AWS Redshift</a>, introduced in 2012, is a managed data warehouse service built on a Massively Parallel Processing (MPP) architecture. Based on PostgreSQL, Redshift is engineered for complex query processing and offers robust performance for large datasets by utilizing columnar storage and data compression techniques. Designed to serve the needs of OLAP (Online Analytical Processing) workloads, it integrates seamlessly with a variety of Business Intelligence tools and can handle structured and semi-structured data. As a staple in the AWS service suite, Redshift caters to enterprises and data analysts looking for scalable, fast, and flexible solutions for their analytics needs.</p>
+
+<p><strong>Use Cases</strong> :</p>
+
+<ul>
+<li><p>Business intelligence.</p></li>
+<li><p>Data analytics.</p></li>
+<li><p>Batch data processing.</p></li>
+<li><p>Complex SQL queries over large datasets.</p></li>
+</ul>
+
+<p><strong>Technical Features</strong> :</p>
+
+<ul>
+<li><p>Columnar storage.</p></li>
+<li><p>Data compression to improve query performance.</p></li>
+<li><p>Massively Parallel Processing (MPP) architecture.</p></li>
+<li><p>Integration with various BI tools and data lakes.</p></li>
+</ul>
+
+<h3>
+  
+  
+  <strong>Next Steps</strong>
+</h3>
+
+<p>If you're interested in DynamoDB start with AWS's free tier offer for DynamoDB. Then dive into AWS's extensive <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html">DynamoDB documentation</a> and sample projects before experimenting with different DynamoDB features like Streams and Global Tables.</p>
+
+<p>If you're interested in Redshift utilize the AWS free trial for Redshift! Then explore the i<a href="https://docs.aws.amazon.com/redshift/latest/gsg/new-user-serverless.html">ntegrations between Redshift and other AWS services</a> like S3, Kinesis, and SageMaker for a more comprehensive data solution.</p>
+
+
+
+
+<p>Originally published at <a href="https://blog.seancoughlin.me">https://blog.seancoughlin.me</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Delete Duplicate Emails](https://dev.to/scc33/delete-duplicate-emails-2k0e) 
+ <details><summary>Article</summary> <p>Eliminating Duplicate Emails Efficiently: A Comprehensive Guide to Data Cleanup Using Pandas and SQL</p>
+
+<h2>
+  
+  
+  The Problem
+</h2>
+
+<p>With this article, I will be covering the <a href="https://leetcode.com/problems/delete-duplicate-emails/">delete duplicate emails Leetcode problem</a>.</p>
+
+<p>Leetcode describes this problem as easy. That's a super reasonable evaluation as the solution requires only basic SQL or Pandas knowledge.</p>
+
+<p>The problem description is as follows:</p>
+
+<blockquote>
+<p>Write a solution to <strong>delete</strong> all duplicate emails, keeping only one unique email with the smallest <code>id</code>.</p>
+
+<p>For SQL users, please note that you are supposed to write a <code>DELETE</code> statement and not a <code>SELECT</code> one.</p>
+
+<p>For Pandas users, please note that you are supposed to modify <code>Person</code> in place.</p>
+
+<p>After running your script, the answer shown is the <code>Person</code> table. The driver will first compile and run your piece of code and then show the <code>Person</code> table. The final order of the <code>Person</code> table <strong>does not matter</strong>.</p>
+
+
+<pre class="highlight plaintext"><code>+-------------+---------+
+| Column Name | Type |
++-------------+---------+
+| id | int |
+| email | varchar |
++-------------+---------+
+id is the primary key (column with unique values) for this table.
+Each row of this table contains an email. 
+The emails will not contain uppercase letters.
+
+</code></pre>
+
+</blockquote>
+
+<h2>
+  
+  
+  The Solution
+</h2>
+
+<h3>
+  
+  
+  Pandas
+</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Pandas_(software)">Pandas</a> is a great Python tool for data analysis and manipulation. Built into that library is the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html">drop duplicates</a> function. Please note that the problem statement asks us to do this <a href="https://en.wikipedia.org/wiki/In-place_algorithm">in place</a>.</p>
+
+<p>Using the Pandas library this can be achieved by first in-place sorting by the <code>id</code> field and then dropping the duplicates from <code>email</code>. We want to keep at least the first duplicated element.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">delete_duplicate_emails</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">person</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">'id'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">person</span><span class="p">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s">'email'</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s">'first'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Voila! I love these simple questions.</p>
+
+<h3>
+  
+  
+  SQL
+</h3>
+
+<p>In SQL we want to run a delete query. We will grab two copies of the <code>person</code> table and match them based on the <code>email</code>. To keep at least one of the solutions we only delete the entry with the higher <code>id</code> value. This keeps the <code>email</code> associated with the smallest <code>id</code>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">DELETE</span> <span class="n">p1</span> 
+<span class="k">FROM</span> <span class="n">person</span> <span class="n">p1</span><span class="p">,</span> <span class="n">person</span> <span class="n">p2</span> 
+<span class="k">WHERE</span> <span class="n">p1</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">p2</span><span class="p">.</span><span class="n">email</span> <span class="k">AND</span> <span class="n">p1</span><span class="p">.</span><span class="n">id</span> <span class="o">&gt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>As with many problems, there are multiple ways to solve them. These Pandas and SQL solutions are but one way of approaching the delete duplicate question.</p>
+
+
+
+
+<p>Originally published at <a href="https://blog.seancoughlin.me">https://blog.seancoughlin.me</a>.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [OLD PROJECTS](https://dev.to/mtendekuyokwa19/old-projects-1a6n) 
  <details><summary>Article</summary> <p>I see alot of projects on peoples githubs when they were just starting out as devs and they still have alot of bugs. I think if a person made a project while starting up i think its best to come back and fix the bugs rather than just leaving them.</p>
 
@@ -162,1073 +421,6 @@ Já na introducao do livro o autor fala sobre quem deve ler o livro. Nesse trech
 <p>*** Curiosidade:</p>
 
 <p>A capa do livro traz a imagem de um peixe voador, que eu não sabia da existência e logo depois de terminar o livro fui ver vídeos no YouTube sobre porque achei bem interessante a ideia de um peixe que voa 🤯. Essa espécie de peixe inclusive foi utilizada como modelo para estudo do desenvolvimento de aviões e possui um recorde de 45 segundos de voo.</p>
-
- </details> 
- <hr /> 
-
- #### - [get refresh token form google login api](https://dev.to/abdulghaffar/get-refresh-token-form-google-login-api-1k6h) 
- <details><summary>Article</summary> <p>i am using googleAuthSDK library in angular for google login, i receive a complete object returned from google API but a refresh token. can anyone tell me how to get the refresh token?</p>
-
-<p>method i have implemented </p>
-
-<p>1 =&gt; tried access_type: 'offline'</p>
-
-<p>but still haven't received the refresh token in the object</p>
-
- </details> 
- <hr /> 
-
- #### - [Python For Seniors (Part 2)](https://dev.to/scofieldidehen/python-for-the-seniors-part-2-275e) 
- <details><summary>Article</summary> <p>Welcome to part 2 of our advanced Python programming guide! The beginner tutorial covered core concepts like syntax, data structures, functions, classes, and modules.</p>
-
-<p><a href="https://blog.learnhub.africa/2023/09/05/python-for-the-blinds-part-1/">Find part 1 here. </a></p>
-
-<p>Now, let's dive deeper into some advanced techniques experienced Python developers use. This guide assumes you already have a strong grasp of Python basics.</p>
-
-<h4>Object-Oriented Design Principles</h4>
-
-<p>Python supports object-oriented programming, allowing developers to organize code into class hierarchies and modeled after real-world entities.</p>
-
-<p>Mastering OOP techniques is key to designing and building robust large-scale applications in Python.</p>
-
-<p>Some key object-oriented design principles:</p>
-
-<ul>
-    <li>Encapsulation</li>
-</ul>
-
-<p>This involves bundling related attributes and behaviors into individual classes. For example, a Person class would encapsulate properties like name, age, and behaviors like walking and talking.</p>
-
-<p>Encapsulation allows control over the data through well-defined interfaces along with information hiding. Methods act as the interface, while attributes are kept private to hide complexity.</p>
-
-<ul>
-    <li>Inheritance</li>
-</ul>
-
-<p>Classes can inherit commonly used state and behaviors from parent classes. For example, a Student class can inherit from a base Person class to avoid rewriting duplicated code. The child class only needs to define properties and methods unique to students.</p>
-
-<p>Inheritance enables reuse of code and polymorphism. Subclasses can extend, override, or modify inherited logic as needed.</p>
-
-<ul>
-    <li>Abstraction</li>
-</ul>
-
-<p>This involves exposing only relevant data/methods through public interfaces while hiding unnecessary implementation details. For example, an abstract class Shape could define an area() method while concrete subclasses Circle, Square implement the actual area calculations.</p>
-
-<p>Abstraction reduces complexity and couples code loosely by separating high-level and low-level logic. Interfaces help maintain abstraction.</p>
-
-<ul>
-    <li>Composition</li>
-</ul>
-
-<p>This refers to combining objects to model complex behaviors. Rather than rely on inheritance alone, objects can use other objects via composition. For example, a Car class could compose objects like a Wheel or engine rather than directly inheriting their capabilities.</p>
-
-<p>Composition provides flexibility and encapsulation for complex object interactions.</p>
-
-<p>By following these principles, Python programs can implement domain entities and business logic in an organized, object-oriented manner. Let's look at some examples.</p>
-
-<p>We'll model a zoo management system with classes for animals, zookeepers, and enclosures using inheritance, polymorphism, encapsulation, and composition:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="c1"># Animal base class
-</span>
-<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
-
-<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Rawwwr!"</span><span class="p">)</span>
-
-<span class="c1"># Inherited child classes
-</span>
-<span class="k">class</span> <span class="nc">Lion</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-
-<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Roar!"</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Snake</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-
-<span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Hiss!"</span><span class="p">)</span>
-
-<span class="c1"># Zookeeper class
-</span>
-<span class="k">class</span> <span class="nc">Zookeeper</span><span class="p">:</span>
-
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-
-<span class="k">def</span> <span class="nf">feed_animal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">animal</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> is feeding the </span><span class="si">{</span><span class="n">animal</span><span class="p">.</span><span class="n">species</span><span class="si">}</span><span class="s"> named </span><span class="si">{</span><span class="n">animal</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-
-<span class="n">animal</span><span class="p">.</span><span class="n">make_sound</span><span class="p">()</span> <span class="c1"># Polymorphism
-</span>
-<span class="c1"># Enclosure class
-</span>
-<span class="k">class</span> <span class="nc">Enclosure</span><span class="p">:</span>
-
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">animals</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="nb">id</span> <span class="o">=</span> <span class="nb">id</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">animals</span> <span class="o">=</span> <span class="n">animals</span>
-
-<span class="k">def</span> <span class="nf">add_animal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">animal</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">animals</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-
-<span class="c1"># Create objects
-</span>
-<span class="n">leo</span> <span class="o">=</span> <span class="n">Lion</span><span class="p">(</span><span class="s">"Leo"</span><span class="p">,</span> <span class="s">"Lion"</span><span class="p">)</span>
-
-<span class="n">marty</span> <span class="o">=</span> <span class="n">Snake</span><span class="p">(</span><span class="s">"Marty"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">)</span>
-
-<span class="n">bob</span> <span class="o">=</span> <span class="n">Zookeeper</span><span class="p">(</span><span class="s">"Bob"</span><span class="p">)</span>
-
-<span class="n">snakes_enclosure</span> <span class="o">=</span> <span class="n">Enclosure</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="p">[</span><span class="n">marty</span><span class="p">])</span>
-
-<span class="n">bob</span><span class="p">.</span><span class="n">feed_animal</span><span class="p">(</span><span class="n">leo</span><span class="p">)</span>
-
-<span class="n">snakes_enclosure</span><span class="p">.</span><span class="n">add_animal</span><span class="p">(</span><span class="n">leo</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This demonstrates modeling domain entities with encapsulation, inheritance, polymorphism, and composition. Code reuse is improved, coupling reduced, and abstraction maintained.</p>
-
-<h4>Python Decorators</h4>
-
-<p>Decorators dynamically alter the functionality of a function, method, or class without having to modify the code directly. They essentially wrap the original object and modify its behavior as needed before executing it.</p>
-
-<p>Decorators start with the @ symbol and are placed at the definition. For example:</p>
-
-<p><code>@timer</code></p>
-
-<p><code>def run_long_job(args):</code></p>
-
-<p><code># Function body</code></p>
-
-<p>Here @timer is a decorator that measures how long run_long_job takes to execute.</p>
-
-<p>Let's see how to build this timer decorator:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">time</span>
-
-<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-<span class="c1"># Inner wrapper function
-</span>
-<span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Execution took </span><span class="si">{</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="si">}</span><span class="s"> seconds"</span><span class="p">)</span>
-
-<span class="k">return</span> <span class="n">result</span>
-
-<span class="c1"># Return inner function
-</span>
-<span class="k">return</span> <span class="n">inner</span>
-
-<span class="o">@</span><span class="n">timer</span>
-
-<span class="k">def</span> <span class="nf">long_running_job</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">"Running long job..."</span><span class="p">)</span>
-
-<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-<span class="k">return</span> <span class="s">"Done!"</span>
-
-<span class="n">long_running_job</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="c1"># Prints execution time
-</span></code></pre>
-
-</div>
-
-
-
-<p>When decorated, long_running_job behavior is extended with the timer functionality without modifying its code.</p>
-
-<p>Some other example uses cases for Python decorators:</p>
-
-<ul>
-    <li>Logging function arguments and results</li>
-    <li>Checking permissions or roles before executing functions</li>
-    <li>Caching return values to avoid recalculation</li>
-    <li>Rate limiting function calls</li>
-    <li>Instrumenting code for tracing or profiling</li>
-    <li>Validating input data types</li>
-</ul>
-
-<p>Decorators supercharge Python with metaprogramming capabilities and expressiveness. They are widely used across frameworks like Flask, Django, etc. Understanding decorators unlocks their powerful capabilities.</p>
-
-<h4>Concurrency in Python</h4>
-
-<p>Concurrency refers to executing multiple tasks simultaneously through parallelization or asynchronous programming. Python supports various concurrency models to improve program efficiency and speed.</p>
-
-<p>Some approaches include:</p>
-
-<ul>
-    <li>Threads</li>
-</ul>
-
-<p>Threads allow execution of code in parallel within the same interpreter process. The OS schedules thread execution across cores.</p>
-
-<p>For IO-bound tasks, threads improve the utilization of idle time that would otherwise be spent waiting. The threading module supports spawning and synchronizing threads:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
-
-<span class="k">def</span> <span class="nf">io_bound_worker</span><span class="p">():</span>
-
-<span class="c1"># Perform IO intensive work
-</span>
-<span class="n">threads</span> <span class="o">=</span> <span class="p">[</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">io_bound_worker</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
-
-<span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
-
-<span class="n">thread</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
-
-<span class="c1"># Main thread continues executing
-</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>Multiprocessing</h4>
-
-<p>For CPU-bound tasks, Python's multiprocessing module distributes work across multiple processes. Each CPU core runs a separate Python interpreter, circumventing the GIL limitation.</p>
-
-<p>Processes have higher overhead than threads but enable true parallelism across multiple CPUs:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
-
-<span class="k">def</span> <span class="nf">cpu_bound_worker</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-
-<span class="c1"># Perform heavy computations
-</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-
-<span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">large_dataset</span><span class="p">]</span> <span class="o">*</span> <span class="mi">8</span>
-
-<span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">input_data</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">cpu_bound_worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">input_data</span><span class="p">,))</span>
-
-<span class="n">processes</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-
-<span class="n">p</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
-
-<span class="c1"># Rest of main process code executes in parallel
-</span></code></pre>
-
-</div>
-
-
-
-<h4>asyncio</h4>
-
-<p>This module provides infrastructure for writing asynchronous code using async/await syntax. It is well-suited for tasks involving network I/O and concurrency:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-
-<span class="c1"># Async HTTP request
-</span>
-<span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="k">return</span> <span class="n">response</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-
-<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">url1</span><span class="p">,</span> <span class="n">url2</span><span class="p">,</span> <span class="n">url3</span><span class="p">]</span>
-
-<span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
-
-<span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
-
-<span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
-
-<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Asyncio helps build highly performant network apps by efficiently handling thousands of concurrent connections.</p>
-
-<h4>concurrent.futures</h4>
-
-<p>This high-level module abstracts thread and process pools for executing callables asynchronously:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">with</span> <span class="n">concurrent</span><span class="p">.</span><span class="n">futures</span><span class="p">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
-
-<span class="n">futures</span> <span class="o">=</span> <span class="p">[</span><span class="n">executor</span><span class="p">.</span><span class="n">submit</span><span class="p">(</span><span class="n">cpu_bound_fn</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
-
-<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">.</span><span class="n">result</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">futures</span><span class="p">]</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The Future objects provide a clean interface to wait for and retrieve results. The module handles pooling and concurrency under the hood.</p>
-
-<p>These approaches enable Python developers to speed up programs through parallelism, utilize multiple cores, and handle thousands of concurrent connections.</p>
-
-<h4>Metaprogramming with Metaclasses</h4>
-
-<p>While classes in Python enable the creating of multiple objects, metaclasses allow you to customize how the classes themselves are constructed and modified at a meta-level.</p>
-
-<p>Metaclasses intercept class creation and modify the class before it's finalized. For example, automatically registering models in a registry, applying mixins, interfacing with ORMs, etc.</p>
-
-<p>To use a metaclass, define a base type and override <strong>new</strong> and <strong>init</strong> methods:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">class</span> <span class="nc">RegistryMeta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
-
-<span class="n">registry</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
-
-<span class="c1"># Modify attrs
-</span>
-<span class="n">attrs</span><span class="p">[</span><span class="s">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">RegistryMeta</span><span class="p">.</span><span class="n">registry</span><span class="p">)</span>
-
-<span class="c1"># Build class as normal
-</span>
-<span class="n">klass</span> <span class="o">=</span> <span class="nb">type</span><span class="p">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
-
-<span class="c1"># Register class
-</span>
-<span class="n">RegistryMeta</span><span class="p">.</span><span class="n">registry</span><span class="p">[</span><span class="n">klass</span><span class="p">.</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">klass</span>
-
-<span class="k">return</span> <span class="n">klass</span>
-
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Initializing </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> class"</span><span class="p">)</span>
-
-<span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
-
-<span class="n">Any</span> <span class="k">class</span> <span class="nc">inheriting</span> <span class="n">this</span> <span class="n">metaclass</span> <span class="n">will</span> <span class="n">be</span> <span class="n">intercepted</span> <span class="ow">and</span> <span class="n">registered</span><span class="p">:</span>
-
-<span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">RegistryMeta</span><span class="p">):</span>
-
-<span class="k">pass</span>
-
-<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
-
-<span class="k">pass</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">RegistryMeta</span><span class="p">.</span><span class="n">registry</span><span class="p">)</span>
-
-<span class="c1"># {0: &amp;lt;class '__main__.Base'&amp;gt;, 1: &amp;lt;class '__main__.Person'&amp;gt;}
-</span></code></pre>
-
-</div>
-
-
-
-<p>Metaclasses open up powerful metaprogramming capabilities and customization hooks to Python's class construction process.</p>
-
-<h4>Dynamic Attribute Access</h4>
-
-<p>Unlike statically typed languages, Python enables objects to have attributes added dynamically at runtime, beyond those explicitly defined in <strong>init</strong> or elsewhere in the class.</p>
-
-<p>For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="n">p</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># New attribute created dynamically
-</span>
-<span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">z</span><span class="p">)</span>
-
-<span class="c1"># Outputs 5
-</span></code></pre>
-
-</div>
-
-
-
-<p>This dynamic behavior can be useful in certain cases like:</p>
-
-<ul>
-    <li>Implementing caching as attributes</li>
-    <li>Lazily creating attributes only when accessed</li>
-    <li>Proxy or delegate classes that reroute attribute access</li>
-    <li>Dynamic mixins that add capabilities to classes</li>
-</ul>
-
-<p>However, it can also make code harder to understand and trace since attributes aren't explicitly defined beforehand.</p>
-
-<p>Python supports the <strong>slots</strong> magic method to restrict this behavior. It tells Python only to allow attributes listed there and raise AttributeError for anything else:</p>
-
-<pre><code>class Point:
-
-__slots__ = ['x', 'y']
-
-p = Point(2, 3)
-
-p.z = 5 # AttributeError!</code></pre>
-
-<p>So <strong>slots</strong> prevents surprise behaviors from dynamic attributes.</p>
-
-<h4>Descriptor Protocol</h4>
-
-<p>This advanced protocol provides the underlying mechanics of how attributes like properties and methods work in Python.</p>
-
-<p>Descriptors essentially control attribute access on objects. They are implemented as classes containing <strong>get</strong>, <strong>set</strong> and <strong>delete</strong> methods.</p>
-
-<p>For example, the @property decorator works through descriptors:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Property</span><span class="p">:</span>
-
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">fget</span> <span class="o">=</span> <span class="n">fget</span>
-
-<span class="k">def</span> <span class="nf">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">owner</span><span class="p">):</span>
-
-<span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">fget</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-
-<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-
-<span class="o">@</span><span class="n">Property</span>
-
-<span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="c1"># Calls getter internally
-</span></code></pre>
-
-</div>
-
-
-
-<p>Here, the Property descriptor class implements <strong>get</strong> to call the underlying y method when accessed as an attribute.</p>
-
-<p>Some other examples of descriptors:</p>
-
-<ul>
-    <li>@classmethod and @staticmethod to define different method types</li>
-    <li>@memoized to cache method return values</li>
-    <li>__slots__ to restrict attributes</li>
-    <li>ORM frameworks mapping DB rows to Python objects</li>
-</ul>
-
-<p>The descriptor protocol is a key ingredient that enables much of Python's magic like @property, class methods, static methods, etc. Mastering descriptors unlocks deeper capabilities.</p>
-
-<h4>Context Managers</h4>
-
-<p>While the with statement provides easy file cleanup logic, Python enables implementing the same pattern for any object through context managers.</p>
-
-<p>For example, acquiring and releasing a lock or database connection:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Resource</span><span class="p">:</span>
-
-<span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">"Acquiring resource"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">"Releasing resource"</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="n">Resource</span><span class="p">()</span> <span class="k">as</span> <span class="n">resource</span><span class="p">:</span>
-
-<span class="c1"># Use resource
-</span></code></pre>
-
-</div>
-
-
-
-<p>This ensures reliable cleanup through the <strong>exit</strong> method. Context managers can also suppress exceptions during cleanup:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Resource</span><span class="p">:</span>
-
-<span class="c1"># ...
-</span>
-<span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">"Handling exception"</span><span class="p">)</span>
-
-<span class="c1"># suppress exception by returning True
-</span>
-<span class="k">return</span> <span class="bp">True</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The contextlib module provides utilities like @contextmanager to simplify creating context managers.</p>
-
-<p>Some real-world examples include:</p>
-
-<ul>
-    <li>File opening</li>
-    <li>Lock acquiring/release</li>
-    <li>Database connections</li>
-    <li>Temporary directory handling</li>
-    <li>Logging redirected to buffer</li>
-</ul>
-
-<p>Context managers provide a robust way to handle resources in Python.</p>
-
-<h4>Unit Testing</h4>
-
-<p>Writing tests is vital for validating code quality and ensuring proper behavior as the codebase grows. Python comes with a built-in unittest framework for authoring and running unit tests.</p>
-
-<p>The key components are test case classes, individual test methods, assertions, and test runners:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">unittest</span>
-
-<span class="k">class</span> <span class="nc">UserTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
-
-<span class="c1"># Setup run before each test method
-</span>
-<span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span> <span class="s">"Doe"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">test_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">full_name</span><span class="p">(),</span> <span class="s">"John Doe"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">test_initials</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">initials</span><span class="p">(),</span> <span class="s">"J.D"</span><span class="p">)</span>
-
-<span class="o">@</span><span class="n">unittest</span><span class="p">.</span><span class="n">expectedFailure</span>
-
-<span class="k">def</span> <span class="nf">test_send_email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="bp">self</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">send_email</span><span class="p">(</span><span class="s">"test@example.com"</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-
-<span class="n">unittest</span><span class="p">.</span><span class="n">main</span><span class="p">()</span> <span class="c1"># Run all tests
-</span></code></pre>
-
-</div>
-
-
-
-<p>This allows for organizing related tests into reusable test cases. Functionality like fixtures, assertions, mocking, and test runners handle the testing workflow.</p>
-
-<p>Some other Python testing tools include pytest for a streamlined experience and mocks for isolating code dependencies.</p>
-
-<p>Thorough testing improves code quality and reduces bugs in the long run. Tests empower developers to refactor and iterate rapidly.</p>
-
-<h4>Generators and Iterators</h4>
-
-<p>Generators allow pausing and resuming execution to produce a sequence of values individually through iteration lazily. This is useful for:</p>
-
-<ul>
-    <li>Dealing with large datasets without loading everything into memory</li>
-    <li>Implementing streams and efficient pipelines</li>
-    <li>Avoiding eager allocation of resources until needed</li>
-</ul>
-
-<p>In Python, generators are defined using yield instead of return:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">num_sequence</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-
-<span class="k">yield</span> <span class="n">i</span>
-
-<span class="n">seq</span> <span class="o">=</span> <span class="n">num_sequence</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span> <span class="c1"># 0
-</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span> <span class="c1"># 1
-</span></code></pre>
-
-</div>
-
-
-
-<p>When called, generators return a generator object that supports the iteration protocol. Lazy iteration enables efficient streaming:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">read_log_file</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-
-<span class="k">yield</span> <span class="n">process</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">read_log_file</span><span class="p">(</span><span class="s">"logs.txt"</span><span class="p">):</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Generators allow implementation of Python iterators elegantly. Popular libraries like Django ORM use them extensively for lazy querying.</p>
-
-<h4>Asynchronous Programming</h4>
-
-<p>Python 3.5 introduced async/await syntax to natively support asynchronous code using asyncio:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-<span class="err"> </span> <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-<span class="err"> </span> <span class="err"> </span> <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="k">await</span> <span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">()</span>
-
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="err"> </span> <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">"url1"</span><span class="p">,</span> <span class="s">"url2"</span><span class="p">,</span> <span class="s">"url3"</span><span class="p">]</span>
-<span class="err"> </span> <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="err"> </span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
-<span class="err"> </span> <span class="err"> </span> <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
-
-<span class="err">  </span>
-
-<span class="err"> </span> <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
-<span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Asyncio provides an event loop to orchestrate concurrent tasks and asynchronous I/O efficiently. It is well suited for highly parallel network programs.</p>
-
-<h4>Python Typing</h4>
-
-<p>Type hints allow adding static types to function arguments and return values for static analysis:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-<span class="k">def</span> <span class="nf">sum_numbers</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="err"> </span> <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This metadata enables better error-catching, IDE autocompletion, and documentation. The code still runs dynamically, as usual.</p>
-
-<p>Popular third-party tools like MyPy leverage these type hints to provide optional static type checking for Python. Typing brings some of the benefits of static languages to Python.</p>
-
-<h4>Python Packaging</h4>
-
-<p>Python code is typically organized into modules or packages. The Python Packaging Index (PyPI) contains thousands of open-source packages with functionality beyond the standard library.</p>
-
-<p>Some best practices for structuring Python code for others to use:</p>
-
-<ul>
-    <li>Setup project structure with src and tests folders</li>
-    <li>Write <a href="http://setup.py" rel="noopener noreferrer nofollow">setup.py</a> script for pip installation</li>
-    <li>Include requirements.txt with dependencies</li>
-    <li>Follow Semantic Versioning for releases</li>
-    <li>Upload package to PyPI for public sharing</li>
-</ul>
-
-<p>Tools like Poetry, Flit, and pipenv streamline handling dependencies and packaging. Sharing reusable packages enables collective code reuse in Python.</p>
-
-<h4>Conclusion</h4>
-
-<p>This concludes our advanced guide to modern Python. We covered important techniques like:</p>
-
-<ul>
-    <li>Object-oriented programming principles</li>
-    <li>Metaprogramming with metaclasses and decorators</li>
-    <li>Improving performance through concurrency</li>
-    <li>Robust resource handling with context managers</li>
-    <li>Unit testing and maintaining code quality</li>
-    <li>Lazy generation of sequences for efficiency</li>
-    <li>Asynchronous I/O handling</li>
-    <li>Static type hints</li>
-    <li>Python packaging ecosystem</li>
-</ul>
-
-<p>These capabilities enable large, robust applications, libraries, and frameworks to be developed in Python.</p>
-
-<p>The key is always to keep learning through documentation, books, open-source code, conferences, and trying out ideas. Python has an amazing community.</p>
-
-<p>I hope you enjoyed reading this guide and feel motivated to start your Python programming journey.</p>
-
-<p>If you find this post exciting, find more exciting posts on <a href="http://blog.learnhub.africa/" rel="noopener noreferrer nofollow">Learnhub Blog</a>; we write everything tech from <a href="https://blog.learnhub.africa/category/cloud-computing/" rel="noopener noreferrer nofollow">Cloud computing</a> to <a href="https://blog.learnhub.africa/category/frontend/" rel="noopener noreferrer nofollow">Frontend Dev</a>, <a href="https://blog.learnhub.africa/category/security/" rel="noopener noreferrer nofollow">Cybersecurity</a>, <a href="https://blog.learnhub.africa/category/data-science/" rel="noopener noreferrer nofollow">AI</a>, and <a href="https://blog.learnhub.africa/category/blockchain/" rel="noopener noreferrer nofollow">Blockchain</a>.</p>
-
-<h4><strong>Resource</strong></h4>
-
-<ul>
-    <li><a href="https://blog.learnhub.africa/2023/05/26/20-essential-python-extensions-for-visual-studio-code/" rel="noopener noreferrer nofollow">20 Essential Python Extensions for Visual Studio Code</a></li>
-    <li><a href="https://blog.learnhub.africa/2023/04/27/using-python-for-web-scraping-and-data-extraction/" rel="noopener noreferrer nofollow">Using Python for Web Scraping and Data Extraction</a></li>
-    <li><a href="https://blog.learnhub.africa/2023/06/06/13-powerful-python-snippets-to-automate-tasks/" rel="noopener noreferrer nofollow">13 Powerful Python Snippets To Automate Tasks</a></li>
-    <li><a href="https://www.python.org/about/gettingstarted/" rel="noopener noreferrer nofollow">Getting Started with Python</a></li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Crypto Chart: Full-Stack MERN App](https://dev.to/masakifukunishi/crypto-chart-full-stack-mern-app-3kni) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wNQAS1G4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/atgk2rf36f05n98iw93c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wNQAS1G4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/atgk2rf36f05n98iw93c.png" alt="Home Screenshot" width="800" height="418"></a></p>
-
-<h2>
-  
-  
-  Demo
-</h2>
-
-<p><a href="https://crypto-chart-2abm.onrender.com">https://crypto-chart-2abm.onrender.com</a></p>
-
-<h2>
-  
-  
-  GitHub Repository
-</h2>
-
-<p><a href="https://github.com/masakifukunishi/crypto-chart">https://github.com/masakifukunishi/crypto-chart</a></p>
-
-<h2>
-  
-  
-  Summary
-</h2>
-
-<p>Crypto Chart is a full-stack <a href="https://www.geeksforgeeks.org/mern-stack/">MERN</a> app that lets users view candlestick charts of cryptocurrencies for selected asset pairs and periods.</p>
-
-<h2>
-  
-  
-  About Settings
-</h2>
-
-<ul>
-<li>Data is retrieved every 8 hours from Cryotowatch</li>
-<li>You can change the exchange and the asset pairs by changing the settings in config/default.json</li>
-<li>Only UTC Time Zone is supported for now</li>
-</ul>
-
-<h2>
-  
-  
-  Why I created this app
-</h2>
-
-<ol>
-<li>
-<p>To show my developing skills</p>
-
-<p>This app is built using TypeScript for the language, React and Redux for the frontend, Tailwind CSS for styling, and Express with Node.js for the backend. Additionally, I've implemented batch processing using cron jobs. I believe this project effectively demonstrates my skills.</p>
-</li>
-<li>
-<p>Expandable and Practical</p>
-
-<p>While the app currently offers basic functionality, there is potential to enhance its practicality by incorporating features such as acquiring candlestick data for shorter periods, integrating technical indicators, and more.</p>
-</li>
-</ol>
-
-<h2>
-  
-  
-  Language and Libraries
-</h2>
-
-<ul>
-<li>TypeScript</li>
-<li>React</li>
-<li>Redux, Redux Toolkit</li>
-<li>Tailwind CSS</li>
-<li>Express</li>
-<li>Node.js</li>
-<li>MongoDB (mongoose)</li>
-<li>ApexCharts</li>
-<li>cron</li>
-<li>Vite</li>
-</ul>
-
-<h3>
-  
-  
-  React
-</h3>
-
-<p>Data fetching from the backend in React is facilitated using custom hooks, making it explicit when the API is called.</p>
-
-<h3>
-  
-  
-  Redux
-</h3>
-
-<p>The selected asset pair and period are stored in the Redux store. Upon accessing the home screen, configuration and constant data are fetched from the server side and stored in Redux.</p>
-
-<h3>
-  
-  
-  MongoDB
-</h3>
-
-<p>MongoDB is employed to store OHLCV data obtained from the Cryptowatch API and provide it upon server request.</p>
-
-<h3>
-  
-  
-  ApexCharts
-</h3>
-
-<p>ApexCharts is utilized for rendering candlestick and volume charts.</p>
-
-<h3>
-  
-  
-  cron
-</h3>
-
-<p>cron is employed to regularly retrieve OHLCV data from the Cryptowatch API and store it in MongoDB.</p>
-
-<h3>
-  
-  
-  Vite
-</h3>
-
-<p>Vite is the tool used for building the frontend.</p>
-
-<h2>
-  
-  
-  Architecture
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gu3Jmh1P--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l89vt4mgh01jvtmit5r7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gu3Jmh1P--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l89vt4mgh01jvtmit5r7.png" alt="architecture" width="800" height="426"></a></p>
-
-<h2>
-  
-  
-  How to run
-</h2>
-
-<h3>
-  
-  
-  1. Clone this repository
-</h3>
-
-<h3>
-  
-  
-  2. Install dependencies
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npm <span class="nb">install</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  3. Set environment variables
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">cp</span> .env.example .env
-</code></pre>
-
-</div>
-
-
-
-<p><code>MONGODB_URI</code> is the URI of the MongoDB database to be used.</p>
-
-<h3>
-  
-  
-  4. Set config
-</h3>
-
-<p>If you want to change the exchange and the asset pairs, change the settings in config/default.json.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"cryptowatch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="nl">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitfinex"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"quoteAssets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"btc"</span><span class="p">,</span><span class="w"> </span><span class="s2">"eth"</span><span class="p">],</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p><a href="///config/default.json">/config/default.json</a></p>
-
-<h3>
-  
-  
-  5. Run batch processing to register initial ohlcv data
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npm run dev-batch-init
-</code></pre>
-
-</div>
-
-
-
-<p>Thank you!</p>
-
-<h3>
-  
-  
-  6. Run frontend and backend
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npm run dev
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  How to build
-</h2>
-
-<h3>
-  
-  
-  1. The same as 1-5 of 'How to run'
-</h3>
-
-<h3>
-  
-  
-  2. Build frontend and backend
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npm run build
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  3. Run the built app
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npm run start
-</code></pre>
-
-</div>
-
-
-
-<p>About this app, if you have any opinions or feedback, please contact the following:</p>
-
-<ul>
-<li><a href="//mailto:fmsknn@gmail.com">fmsknn@gmail.com</a></li>
-</ul>
 
  </details> 
  <hr /> 
