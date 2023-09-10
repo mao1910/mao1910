@@ -133,6 +133,388 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Principles for Scaling Frontend Application Developments](https://dev.to/hashcode01/principles-for-scaling-frontend-application-developments-2kja) 
+ <details><summary>Article</summary> <p>Today I decided to note and review the principles that was discussed by Malte UBL from Vercel</p>
+
+<p>Scaling web apps is harder than it seems, both technically and in terms of team growth and iteration.</p>
+
+<p>Technical aspect of making the application performant when reaching millions of users is challenging.</p>
+
+<p>He thinks a lot about scaling and just did a talk on scaling frontend app development on react summit:</p>
+
+<p>Here are six essential principles for scaling applications:</p>
+
+<ul>
+<li>1: Tear down the barriers</li>
+<li>2: Make it east to delete code </li>
+<li>3: Migrate incrementally </li>
+<li>4: Always get better, never get worse</li>
+<li>5: Embrace lack of knowledge</li>
+<li>6: Eliminate systematic complexity</li>
+</ul>
+
+<p>Now lets deep into each principle: </p>
+
+<h2>
+  
+  
+  Principle 1: Tear down the barriers
+</h2>
+
+<p>The first principle discussed in the video is to tear down the barriers that can slow down development. This includes things like silos between teams, slow build times, and manual processes that can be automated. By removing these barriers, teams can work more efficiently and focus on delivering value to users.</p>
+
+<p>Good example : go migrate to a mono repo that could save a lot of times and removes some barriers </p>
+
+<h2>
+  
+  
+  Principle 2: Make it easy to delete code
+</h2>
+
+<p>The second principle is all about making it easy to delete code. This means creating a style system where teams can keep their codebase clean and maintainable.</p>
+
+<p>Good example 1: if you use css-in-js or tailwind, because you have co-location of the css with the code you can easily remove the component with high confidence.<br>
+Good example 2: data fetching inside of components in NextJs 13 </p>
+
+<h2>
+  
+  
+  Principle 3: Migrate incrementally
+</h2>
+
+<p>The third principle is to migrate incrementally. This means moving from old APIs to new capabilities in a gradual way, By taking an incremental approach, teams can avoid breaking changes and minimize risk.</p>
+
+<p>Indeed he believes there are only 2 types of migrations:</p>
+
+<ul>
+<li>incremental migrations</li>
+<li>failed migrations </li>
+</ul>
+
+<p>Good example 1: Next.js 13 app router <br>
+Good example 2: trpc </p>
+
+<h2>
+  
+  
+  Principle 4: Always get better, never get worse
+</h2>
+
+<p>The fourth principle is all about continuous improvement. Teams should always be looking for ways to improve their codebase and processes, rather than letting things stagnate. This includes introducing new rules for new code rather than migrating old code, seeking approval for code changes.</p>
+
+<p>Good example: introducing lint rules gradualy</p>
+
+<p>Principle 5: Embrace lack of knowledge<br>
+The fifth principle is to embrace a lack of knowledge. This means being comfortable with not knowing everything and seeking out answers when needed. It also means being willing to ask questions and challenge assumptions in order to improve outcomes.</p>
+
+<p>Some Good examples:</p>
+
+<ul>
+<li>To reduce any fear of embarrassment, the team establishes an anonymous question submission system</li>
+<li>Encouraging employees to ask dumb questions helps create a culture of openness and comfort by doing it yourself</li>
+<li>Mentorship and Guidance</li>
+</ul>
+
+<h2>
+  
+  
+  Principle 6: Eliminate systematic complexity
+</h2>
+
+<p>The final principle is to eliminate systematic complexity. This includes things like versioning APIs and introducing new fields, which can add unnecessary complexity. The speaker proposes using serverless deployment to eliminate this complexity altogether. By simplifying the system, teams can focus on delivering value to users rather than managing complexity.</p>
+
+<p>Good example: versions Skew  </p>
+
+<p><a href="https://youtu.be/tqhLK0Fb5_4?si=Ql-dj-x5w443dEK9">https://youtu.be/tqhLK0Fb5_4?si=Ql-dj-x5w443dEK9</a></p>
+
+<p>let me know in the comments what's your opinion about hese principles and if you have and good examples of each one </p>
+
+<p>All the best<br>
+HASH</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Explorando o Flutter: Um Guia Básico para Iniciantes](https://dev.to/nahtanpng/explorando-o-flutter-um-guia-basico-para-iniciantes-55l6) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introdução:
+</h2>
+
+<p>Você está interessado em entrar no mundo de desenvolvimento mobile  ou já ouviu falar sobre Flutter e está curioso para entender mais sobre esse poderoso framework? Se sim, você está no lugar certo! Com o passar dos anos o Flutter tem ganhado destaque como uma escolha para desenvolvedores que desejam criar aplicativos para Android e iOS. Neste guia, exploraremos o que é o Flutter até o seu primeiro aplicativo! 📱💙</p>
+
+<h2>
+  
+  
+  Tópicos abordados <a></a>
+</h2>
+
+<ul>
+<li>O que é o Flutter</li>
+<li>Principais features do Flutter</li>
+<li>
+Configurando o Ambiente de Desenvolvimento
+
+<ul>
+<li>Flutter</li>
+<li>Dart</li>
+<li>IDE</li>
+<li>Emulador</li>
+<li>Modo alternativo</li>
+</ul>
+
+
+</li>
+<li>Criando seu Primeiro App com Flutter</li>
+<li>Benefícios do Flutter</li>
+<li>Desafios e Soluções</li>
+<li>Referências</li>
+</ul>
+
+
+
+
+<h2>
+  
+  
+  O que é o Flutter? <a></a>
+</h2>
+
+<p>Flutter é um framework de código aberto do Google para a construção de belos aplicativos multiplataforma, compilados nativamente a partir de uma única base de código, de acordo com o <a href="https://flutter.dev">site oficial do Flutter</a>. Mas o que ele quer dizer com tudo isso? Simples: o seu código escrito em Flutter pode ser executado em diferentes plataformas, como website, mobile e software. Olha que maneiro! Vale lembrar que o framework usa a linguagem de programação *<em>Dart *</em> como base.</p>
+
+<h2>
+  
+  
+  Principais features do Flutter <a></a>
+</h2>
+
+<p>Uma das principais características do Flutter é a utilização de widgets na construção da aplicação. Widgets são elementos individuais de uma interface de usuário que variam em suas mais diversas formas, desde botões até mesmo layouts complexos com colunas e linhas. A árvore de widgets do Flutter descreve a hierarquia dos widgets em seu aplicativo. Aqui está um pequeno exemplo:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight dart"><code><span class="n">Widget</span> <span class="nf">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Container</span><span class="p">(</span>
+      <span class="nl">child:</span> <span class="n">Column</span><span class="p">(</span>
+        <span class="nl">children:</span> <span class="p">[</span>
+          <span class="n">TextButton</span><span class="p">(</span>
+            <span class="nl">onPressed:</span> <span class="p">()</span> <span class="p">{},</span>
+            <span class="nl">child:</span> <span class="n">Text</span><span class="p">(</span><span class="s">'Sou um Widget'</span><span class="p">),</span>
+          <span class="p">),</span>
+        <span class="p">],</span>
+      <span class="p">),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>No exemplo acima, temos três tipos de widgets: Container, que contém uma coluna, e dentro dessa coluna, um botão.</p>
+
+<p>Além disso o Flutter possui <strong>Hot Reload</strong> um recurso que te permite ver instantaneamente as mudanças que você realizou no código, seja durante a criação da interface, adição de novas features etc.</p>
+
+<h2>
+  
+  
+  Configurando o Ambiente de Desenvolvimento <a></a>
+</h2>
+
+<p>Vamos agora para a parte de instalação, ela será dividida em 4 partes: Flutter, Dart, IDE (ambiente de desenvolvimento integrado) e emulador.</p>
+
+<h3>
+  
+  
+  Flutter <a></a>
+</h3>
+
+<ul>
+<li><p><a href="https://docs.flutter.dev/get-started/install">Clique aqui para abrir a documentação oficial do flutter na parte de instalação</a></p></li>
+<li><p>Selecione o seu sistema operacional</p></li>
+<li><p>Baixe o arquivo .zip</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qDL1TsLf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xjv8on5q8sagatdj4w8v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qDL1TsLf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xjv8on5q8sagatdj4w8v.png" alt="Ilustração do arquivo" width="800" height="401"></a></p>
+
+<ul>
+<li><p>Extraia o .zip e coloque a pasta no diretório (C:)</p></li>
+<li><p>Na barra de pesquisa do Windows digite "Variáveis de Ambiente" e clique, agora no canto inferior direito clique em variáveis de ambiente</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p3Rcg7Bb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v787k8otq64fojnu0ujl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p3Rcg7Bb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v787k8otq64fojnu0ujl.png" alt="Imagem mostrando a barra de pesquisa" width="728" height="284"></a> <br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0eGRWUiF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sq3iv31uh1z23jjja0ah.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0eGRWUiF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sq3iv31uh1z23jjja0ah.png" alt="Imagem mostrando o botão variáveis de ambiente" width="408" height="464"></a></p>
+
+<ul>
+<li>Clique em <strong>PATH</strong> e logo depois em <strong>Editar</strong>
+</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Fi_tOVYy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6bded2l7zgygl95uu0tr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Fi_tOVYy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6bded2l7zgygl95uu0tr.png" alt="Imagem mostrando onde está o PATH" width="596" height="313"></a></p>
+
+<ul>
+<li><p>Clique em <strong>Novo</strong> e coloque o endereço "C:\flutter\bin" (Se você tiver colocado em outra pasta tenha certeza que o endereço esteja correto ;D)</p></li>
+<li><p>Logo após isso a sua instalação do Flutter foi concluída, para testar abra o seu CMD e digite "flutter doctor".</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jK95H7bO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hwufb0g9kug8wobpu850.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jK95H7bO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hwufb0g9kug8wobpu850.png" alt="Imagem mostrando a execução do comando flutter doctor" width="800" height="262"></a></p>
+
+<h3>
+  
+  
+  Dart <a></a>
+</h3>
+
+<ul>
+<li><p>Para instalação do Dart vamos utilizar o Chocolatey, um gerenciador de pacotes</p></li>
+<li><p>Procure na barra de pesquisa : Windows Powershell, e abra em modo administrador</p></li>
+<li><p>E coloque o seguinte comando<br>
+</p></li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Após a instalação execute o comando <code>choco</code>
+</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WLH_9D_X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kwju86cfp13svbf7ui6b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WLH_9D_X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kwju86cfp13svbf7ui6b.png" alt="Imagem demonstrando o comando" width="502" height="66"></a></p>
+
+<ul>
+<li><p>Agora para instalar o Dart digite <code>choco install dart-sdk</code></p></li>
+<li><p>Após a instalação digite <code>dart --version</code> para ver se a instalação deu certo</p></li>
+</ul>
+
+<h3>
+  
+  
+  IDE <a></a>
+</h3>
+
+<p>Como IDE vamos utilizar o Visual Studio Code</p>
+
+<ul>
+<li><p>Vá ao <a href="https://code.visualstudio.com/Download">site</a> e baixe a versão de acordo com seu sistema operacional</p></li>
+<li><p>Logo após a instalação vamos instalar a extensão do Flutter e do Dart</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vgFeMYs7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x2mupm8adk922bef83si.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vgFeMYs7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x2mupm8adk922bef83si.png" alt="Demonstração da extensão Dart" width="767" height="216"></a><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oQR_aIYq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qgqli3bvhqvpawv820ir.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oQR_aIYq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qgqli3bvhqvpawv820ir.png" alt="Demonstração da extensão Flutter" width="750" height="220"></a></p>
+
+<ul>
+<li>Agora seu Visual Studio Code está pronto para uso</li>
+</ul>
+
+<h3>
+  
+  
+  Emulador <a></a>
+</h3>
+
+<p>Agora vamos configurar onde você verá sua aplicação rodando</p>
+
+<ul>
+<li><p>Vá até o site do <a href="https://developer.android.com/studio?gclid=Cj0KCQjw0vWnBhC6ARIsAJpJM6fh_C3fVLUubcJryaOuxC54XDiJNjqJ3NHRR3qVrVWLEq4H1EDCTnQaAjkhEALw_wcB&amp;gclsrc=aw.ds">Android Studio</a> e baixe a IDE</p></li>
+<li><p>Siga as etapas de instalação</p></li>
+<li><p>Agora vá em More actions &gt; Virtual Device Manager<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lGICpITT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n9ric6qbimim3pws55tk.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lGICpITT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n9ric6qbimim3pws55tk.gif" alt="Gif demonstrando a instrução acima" width="784" height="642"></a></p></li>
+<li><p>É comum ja vir configurado um emulador, mas você pode configurar da maneira que você quiser</p></li>
+</ul>
+
+<h3>
+  
+  
+  Modo alternativo <a></a>
+</h3>
+
+<p>Os emuladores costumam ser bem pesados, então, existe um método alternativo para visualizar sua aplicação utilizando seu próprio celular</p>
+
+<ul>
+<li><p>Ative o modo desenvolvedor em seu celular</p></li>
+<li><p>Entre nas configurações de desenvolvedor &gt; Ative a opção de <strong>Depuração USB</strong> &gt; <strong>Ative a Intalação por USB</strong></p></li>
+<li><p>Conecte seu celular no computador e pronto!</p></li>
+</ul>
+
+<h2>
+  
+  
+  Criando seu Primeiro App com Flutter <a></a>
+</h2>
+
+<p>Vamos colocar a mão na massa! Criar seu primeiro aplicativo Flutter é emocionante e surpreendentemente simples.</p>
+
+<ul>
+<li><p>Abra seu Terminal/CMD</p></li>
+<li><p>Vá até a pasta de sua preferência e digite <code>flutter create nome_do_app</code></p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QmlLT3-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pnx30lap0f6bt6ms1933.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QmlLT3-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pnx30lap0f6bt6ms1933.png" alt="Demonstração do comando" width="663" height="283"></a></p>
+
+<ul>
+<li><p>Agora digite <code>cd nome_do_app</code> e logo após isso <code>code .</code>para abrir no Visual Studio Code</p></li>
+<li><p>Nosso arquivo da aplicação fica localizada na pasta: <strong>lib</strong> &gt; <strong>main.dart</strong></p></li>
+<li><p>Selecione o dispositivo onde será instalado a aplicação, é possível realizar isso no canto inferior direito. É nesta estapa onde você pode optar por utilizar seu próprio celular.</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xSdwjWQO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4h3myrmopan8q95gquu5.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xSdwjWQO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4h3myrmopan8q95gquu5.gif" alt="Gif explicativo" width="800" height="599"></a></p>
+
+<ul>
+<li>Agora vamos compilar nosso aplicativo e visualizar ele, vá no topo da janela e clique em Run &gt; Run without debugging</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QWbUNSzw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lbojaobax8pnipwwrz3d.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QWbUNSzw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lbojaobax8pnipwwrz3d.gif" alt="Gif" width="271" height="196"></a></p>
+
+<ul>
+<li>E agora pronto, você tem sua primeira aplicação feita e está pronto para entrar nessa jornada de aprendizado!</li>
+</ul>
+
+<h2>
+  
+  
+  Benefícios do Flutter <a></a>
+</h2>
+
+<p>Uma das maiores vantagens do Flutter é a capacidade de criar aplicativos de alta qualidade para Android e iOS com um único código-base. Isso economiza tempo e recursos no desenvolvimento de aplicativos para múltiplas plataformas. </p>
+
+<h2>
+  
+  
+  Desafios e Soluções <a></a>
+</h2>
+
+<p>É claro que nenhum framework está isento de desafios. Você pode encontrar obstáculos ao longo do caminho, como a curva de aprendizado da linguagem Dart ou a necessidade de se adaptar ao modelo de widgets do Flutter. Felizmente, há uma comunidade ativa de desenvolvedores e muitos recursos disponíveis para ajudá-lo a superar esses desafios.</p>
+
+<p>Com base na minha experiência eu recomendaria aprender o básico de Dart antes de entrar de cabeça no Flutter, apenas para você se familiarizar mais com a linguagem e framework.</p>
+
+<ul>
+<li>Voltar ao inicio do artigo ↑</li>
+</ul>
+
+<h2>
+  
+  
+  Referências <a></a>
+</h2>
+
+<p><a href="https://flutter.dev">Flutter</a><br>
+<a href="https://dart.dev">Dart</a><br>
+<a href="https://chocolatey.org">Chocolatey</a></p>
+
+
+
+
+<p>Muito obrigado por ler até aqui, não esqueça de curtir e compartilhar o artigo! 😁💙</p>
+
+ </details> 
+ <hr /> 
+
  #### - [GDScript Cheatsheet](https://dev.to/godot/gdscript-cheatsheet-5ghe) 
  <details><summary>Article</summary> <p>This cheatsheet is meant to be a handy reference for both beginners and experienced GDScript users. So, whether you're just starting out or looking to review up on your GDScript knowledge, this cheatsheet will be your go-to resource. We'll cover all the essential topics you need to know about GDScript, from basic syntax to advanced concepts, complete with code snippets and examples. So, let's get started!</p>
 
@@ -1368,234 +1750,6 @@ There are numerous online resources and tutorials available, including interacti
 <p>So there we have it—your links now boast eye-catching strokes, although the quest for perfect styling remains ever ongoing. If you've got insights on the elusive arrowhead colouring or background contrast, do share! Until then, keep exploring, keep questioning, and most importantly, keep <code>Technically Speaking</code>.</p>
 
 <p>Happy diagramming! 📊✨</p>
-
- </details> 
- <hr /> 
-
- #### - [Dynamic and Asynchronous Vue Components: The What & How](https://dev.to/nyior/dynamic-and-asynchronous-vue-components-the-what-how-44em) 
- <details><summary>Article</summary> <p>It’s asking the right questions that count, they say. So let’s exploit that ancient wisdom and kick things off here with the questions that matter :)</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UbqC5MRW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g89b4h4l7pmp9n21jmf5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UbqC5MRW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g89b4h4l7pmp9n21jmf5.png" alt="Vue tabs" width="800" height="316"></a></p>
-
-<p>The image above shows a user interface with two tabs: <code>JobDescription</code> and <code>ApplicationForm</code>. We want to explore how to create tabbed interfaces like this one using Vue. </p>
-
-<p>It's easy to think it's simple – just create <code>&lt;JobDescription /&gt;</code> and <code>&lt;ApplicationForm /&gt;</code> components and render them to the DOM, as shown in the snippet below. But is it really that straightforward?"<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nc">JobDescription</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nc">ApplicationForm</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Well, that's not quite right. If we render our components that way, both of them would appear at the same time. What we need is to have a single component appear dynamically based on the selected tab.</p>
-
-<p>There's some dynamic behaviour we need: while we anticipate the user's selection of one of two components, the precise choice remains uncertain. What we want is a placeholder, a receptacle if you will, where Vue could insert components based on the selected tab in real-time. </p>
-
-<p>Using vue-router here is not ideal. We do not want our URL changing when users switch between tabs. They are tabs, not pages.</p>
-
-<p><em>So we pose the question, how can this type of dynamic behaviour be achieved in Vue?</em></p>
-
-<p>I will show you how, but first, let's take a quick detour...</p>
-
-<p>Suppose we've managed to learn how to dynamically render components in Vue. With this in mind, let’s take our analysis a step further. You may have already observed that the 'ApplicationForm' tab includes a basic job application form with a field for entering the full names of applicants. </p>
-
-<p>Typically, if you enter your name in the 'ApplicationForm' tab's input field, then switch to the 'JobDescription' tab, and come back to your form, you'll notice that what you typed in the input field is gone. The image below illustrates this behavior:"</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--V1tbiHxV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v16gotahwbn0mcowbtpf.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--V1tbiHxV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v16gotahwbn0mcowbtpf.gif" alt="Dynamic components without keep-alive" width="800" height="352"></a></p>
-
-<p>If you think about how Vue renders components, you’d see that this type of behaviour is expected. Every time we switch from a component, Vue un-mounts that component. </p>
-
-<p>In our scenario, when transitioning from 'ApplicationForm' to 'JobDescription,' Vue un-mounts the former from the DOM and then mounts the latter. Any input in the field is lost because Vue needs to completely re-render the 'ApplicationForm' component when we switch back to it.</p>
-
-<p>Could we potentially retain the state of a tab we've just left, you may ask? After all, we wouldn't want our users to have to re-enter their information from the beginning whenever they switch to a different tab, would we?</p>
-
-<p>This brings us to our second question: <em>How can we persist the state of components in our tabs scenario?</em>  What we want is an effect like the one shown in the image below:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OfyYB7C6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uu9dotb61qmxna4yyj74.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OfyYB7C6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uu9dotb61qmxna4yyj74.gif" alt="Dynamic components with keep-alive" width="800" height="352"></a></p>
-
-<p>Again, let’s assume we’ve somehow figured out how to persist the state of our components, and in our quest for perfection, we want to do one more thing: some performance optimization. </p>
-
-<p>You see, even though Vue dynamically renders our components one at a time, depending on what tab is selected, whenever that page is visited, Vue would load the code for all the tabs on that page. Imagine if we had thousands of tabs we could switch between - not ideal, but a little bit of exaggeration could help here. </p>
-
-<p>The first time that page is visited the code for all the thousands of tabs would be loaded from the server. I put this to you: Especially since Vue would only be rendering one tab at a time to the DOM, is grabbing the code for all the tab components upfront really necessary? What potential performance drawbacks might arise from this approach? Take a moment and reflect - or maybe you don't need to.</p>
-
-<p>If your spidey-sense is already telling you there’s got to be a better way, then you’re absolutely right. What we could do is have Vue load the code for a tab only when it’s selected. So each time the page is visited only the code for the default tab is loaded. For other tabs, they’d only be loaded when visited. If you want to associate this technique with a name, just call it <em>lazy loading.</em></p>
-
-<p>This brings us to our third and final question: <em>How can we implement lazy component loading in Vue?</em></p>
-
-<p>In the subsequent sections, this piece would demonstrate how you could address the first two questions we raised with <strong>Vue Dynamic Components</strong> and how you could implement lazy loading with <strong>Asynchronous Components.</strong></p>
-
-<h2>
-  
-  
-  Dynamic Components
-</h2>
-
-<p>As mentioned just now, we could implement tabbed interfaces where users could switch between tabs and have each tab persist its state with dynamic components. </p>
-
-<p>Normally, to add a component to a template, we’d add it by name to the template like in the snippet below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nc">ApplicationForm</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>That way, we are statically adding our component to that template and by extension statically rendering it to the DOM. What makes a component in Vue dynamic is the fact that instead of statically adding the component to the template we’d have a placeholder of some sort where Vue could insert one of many components after some action happens. A placeholder?</p>
-
-<p>Well yes. Vue has an inbuilt <code>&lt;component&gt;</code> element with the special <code>is</code> attribute:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">component</span> <span class="err">:</span><span class="na">is</span><span class="p">=</span><span class="s">"currentTab"</span><span class="p">&gt;&lt;/</span><span class="nt">component</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The <code>&lt;component&gt;</code> element in the above is the placeholder, and the component rendered in that frame would change once the component <code>CurrentTab</code> is tied to changes. To make this work with our tabs scenario, you’d need to have a list of components defined in the script section of your component. At each point, one of the components in your list has to be mapped to <code>currentTab</code>. The <code>&lt;component&gt;</code> frame would then render whatever component is tied to <code>currentTab</code>. Way too abstract? Okay, let’s look at how we could do this with our <code>ApplicationForm</code> and <code>JobDescription</code> tabs.</p>
-
-<p>The snippet below shows what the script section of our component would look like:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-import JobDescription from "@/components/JD.vue"
-import ApplicationForm from "@/components/ApplicationForm.vue"
-
-export default <span class="si">{</span>
-  <span class="nx">components</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nx">JobDescription</span><span class="p">,</span>
-    <span class="nx">ApplicationForm</span>
-  <span class="p">},</span>
-  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="na">currentTab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">tabs</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">ApplicationForm</span><span class="dl">'</span><span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="si">}</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the snippet above, we initialized <code>tabs</code> array with the components we imported. We then set <code>JobDescription</code> to be our default <code>currentTab</code>.  What this means is that each time that page is visited, the <code>JobDescription</code> tab is what will be shown. But how do we update our <code>currentTab</code> to <code>ApplicationForm</code> when users switch to that tab in the UI? The update is done in the <code>&lt;template&gt;</code> section of our component as shown in the snippet below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span>
-          <span class="na">v-for</span><span class="p">=</span><span class="s">"tab in tabs"</span>
-          <span class="err">:</span><span class="na">key</span><span class="p">=</span><span class="s">"tab"</span>
-          <span class="err">@</span><span class="na">click</span><span class="p">=</span><span class="s">"currentTab = tab"</span>
-        <span class="p">&gt;</span>
-          <span class="si">{</span><span class="p">{</span> <span class="nx">tab</span> <span class="p">}</span><span class="si">}</span>
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-
-          <span class="p">&lt;</span><span class="nc">KeepAlive</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">component</span> <span class="err">:</span><span class="na">is</span><span class="p">=</span><span class="s">"currentTab"</span> <span class="na">class</span><span class="p">=</span><span class="s">"tab"</span><span class="p">&gt;&lt;/</span><span class="nt">component</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nc">KeepAlive</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the snippet above we are using <code>@click</code> to update <code>currentTab</code> to the tab being clicked. One other thing you might have noticed is how the <code>&lt;component&gt;</code> element is wrapped by a <code>KeepAlive</code> component. The <code>keepAlive</code> is an inbuilt component that preserves the state of our component. In our case with the <code>keepAlive</code> around, when switching from the <code>ApplicationForm</code> component, whatever we typed in the input field would still be there when we return.</p>
-
-<p>Two of our concerns had been addressed. What’s left for us now is exploring how we could load components on-demand. We previously tagged this <em>lazy loading.</em> Let’s quickly look at how we could do this.</p>
-
-<h2>
-  
-  
-  Asynchronous Components
-</h2>
-
-<p>Let’s load our <code>ApplicationForm</code> component on-demand. Note that you could apply this to just any component. To load our component in question asynchronously, all we have to do is update how we are registering the component. See the snippet below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-import JobDescription from "@/components/JD.vue"
-// import ApplicationForm from "@/components/ApplicationForm.vue"
-import <span class="si">{</span> <span class="nx">defineAsyncComponent</span> <span class="si">}</span> from 'vue'
-
-export default <span class="si">{</span>
-  <span class="nx">components</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nx">JobDescription</span><span class="p">,</span>
-    <span class="nx">ApplicationForm</span><span class="p">:</span> <span class="nx">defineAsyncComponent</span><span class="p">(()</span> <span class="o">=&gt;</span>
-      <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">@/components/ApplicationForm.vue</span><span class="dl">'</span><span class="p">)</span>
-    <span class="p">)</span>
-  <span class="p">},</span>
-  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="na">currentTab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">tabs</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">ApplicationForm</span><span class="dl">'</span><span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="si">}</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Essentially, the only change we made is in using vue3’s <code>defineAsyncComponent</code> feature to register our <code>ApplicationForm</code> as an asynchronous component. With that, the <code>ApplicationForm</code> component will be loaded on demand.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In this piece, we’ve seen how we could render components to the DOM dynamically in Vue. We’ve also seen how the inbuilt <code>&lt;KeepAlive&gt;</code> component in Vue could help us persist the states of our component. And lastly, we explored how we could load components on demand to optimize for speed.</p>
-
-<p>That’s all I have for you :) </p>
-
-<p>If you want to share your thoughts on this tutorial with me or simply just connect, you can find/follow me on <a href="https://github.com/Nyior">Github</a>, <a href="https://www.linkedin.com/in/nyior/">Linkedin</a>, or <a href="https://twitter.com/nyior_clement">Twitter.</a></p>
-
- </details> 
- <hr /> 
-
- #### - [What is API & REST API ?](https://dev.to/parmita17/what-is-api-rest-api--3noe) 
- <details><summary>Article</summary> <p>An API, or Application Programming Interface, is set of rules i.e. protocols for building and interacting with software application.<br>
-It allows different software systems to communicate with each other, enabling them to share data and functionality.<br>
-An example of an API is the Facebook API, which allows developers to access and interact with functionality of the Facebook platform such as posting status updates, retrieving user information, and managing ad campaigns. Another example is the Google Maps API, which allows developers to embed maps and location-based functionality in their own websites and apps.<br>
-<strong>How an API Works:</strong><br>
-APIs acts as a bridge between applications and web servers, processing data transfer between systems. When a client application initiates an API call, also known as request, it is sent to the web server via the API's Uniform Resource Identifier(URI) and includes a request verb, headers and sometimes a request body. The API then processes the request and may make a call to an external program or web server for the requested information.<br>
-The server responds with the requested data, which the API then forwards to the initial requesting application. This process of requests and responses all happens through the API. Unlike user interfaces which are designed for human use, APIs are designed for use by computers or applications.</p>
-
-<p><strong>REST API: Representational State Transfer</strong><br>
-REST is a type of web architecture and a set of constraints to be used when creating web services. RESTful API is API that conforms to the REST architectural style and constraints, it is typically used to make requests to retrieve or update data on a web server. A RESTful API uses HTTP requests to POST(create), PUT(update), GET(read), and DELETE(delete) data. A RESTful API also returns a response in a standard format, typically JSON or XML, and uses standard HTTP status codes to indicate the status of the request. RESTful APIs are popular because they are simple to understand and easy to use, and they work well with the HHTP protocol that the internet is built on. Additionally, RESTful APIs are often faster and more lightweight than their SOAP(Simple Object Access Protocol) counterparts because they use smaller message formats. RESTful API's have become a popular way for systems to expose databases through HTTP(s) following CRUD operations(Create, Read, Update, Delete), and return JSON or XML as responses, it's also widely used in microservices, mobile and web applications, IoT<br>
-and many more.<br>
-REST requires that a client make a request to the server in order to retrieve or modify data on the server.<br>
-<strong>A request generally consists:</strong></p>
-
-<ul>
-<li><p>An HTTP verb, which defines what kind of operation to perform.</p></li>
-<li><p>A header, which allows the client to pass along information about the request.</p></li>
-<li><p>A path to a resource.</p></li>
-<li><p>An optional message body containing data.</p></li>
-</ul>
 
  </details> 
  <hr /> 
