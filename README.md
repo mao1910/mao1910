@@ -133,6 +133,240 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Manage Node versions with NVM.](https://dev.to/arindam_1729/manage-node-versions-with-nvm-2n0j) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction:
+</h2>
+
+<p>When working with Node.js, you might need to install multiple versions of the runtime.</p>
+
+<p>But, Managing node versions can be tricky for many developers!</p>
+
+<p>Don't Worry!</p>
+
+<p>In this Blog, I will guide you on how to install and manage different node versions with NVM.</p>
+
+<h3>
+  
+  
+  Prerequisites:
+</h3>
+
+<ol>
+<li><p><a href="https://youtu.be/JINE4D0Syqw">Install Node.js</a></p></li>
+<li><p><a href="https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/">Install Node Version Manager</a></p></li>
+</ol>
+
+<h2>
+  
+  
+  What is NVM?
+</h2>
+
+<p>NVM stands for Node Version Manager. It's a command line tool that helps us to manage and switch to different versions of Node.js.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--38PBnpFG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689924930606/eea621ab-2935-4d36-ad7d-c7257077ddd7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--38PBnpFG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689924930606/eea621ab-2935-4d36-ad7d-c7257077ddd7.png" alt="" width="378" height="133"></a></p>
+
+<h2>
+  
+  
+  <strong>Managing Node versions with NVM</strong>
+</h2>
+
+<h4>
+  
+  
+  <strong>1.Check Available Node versions:</strong>
+</h4>
+
+<p>Before Installing any node version let's check the available Node versions. To check available versions, Run the following command in your command prompt:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>nvm <span class="nb">ls </span>available
+</code></pre>
+
+</div>
+
+
+
+<p>After running this code, You will get the following results:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---cyy_6lt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689884660139/c1506f41-1961-442c-bf0a-014781e9c3e5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---cyy_6lt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689884660139/c1506f41-1961-442c-bf0a-014781e9c3e5.png" alt="" width="800" height="544"></a></p>
+
+<h4>
+  
+  
+  <strong>2.Install Multiple Versions of Node.js:</strong>
+</h4>
+
+<p>One of the most important parts of nvm is installing different versions of Node.js.</p>
+
+<p>For this, nvm provides the <code>nvm install</code> command. You can install specific versions by running this command followed by the version you want. For example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>nvm <span class="nb">install </span>12.14.1 
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>Tip:</p>
+
+<p>nvm follows <a href="http://semver.org/"><strong>SemVer</strong></a>, so if you want to install, for example, the latest <code>12.14</code> patch, you can do it by running:</p>
+
+
+<pre class="highlight shell"><code>nvm <span class="nb">install </span>12.14
+</code></pre>
+
+
+<p>Here, '<code>12</code>'represents Major Version &amp; '<code>14</code>' represents Minor Version.</p>
+</blockquote>
+
+<h4>
+  
+  
+  <strong>3.Install the Latest Version of Node:</strong>
+</h4>
+
+<p>To install the latest version of Node, Run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>nvm <span class="nb">install </span>latest
+</code></pre>
+
+</div>
+
+
+
+<p>💡<br>
+Tip: It is always better to install the long-term support (LTS) version of Node because it is less buggy.</p>
+
+<blockquote>
+<p>To install the LTS version of Node, Run:</p>
+
+
+<pre class="highlight shell"><code>nvm <span class="nb">install </span>lts
+</code></pre>
+
+
+<p>After that you'll get :</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DCXl5kN---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689885707513/9e558755-4eb9-48a2-87c7-fac788e90cef.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DCXl5kN---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689885707513/9e558755-4eb9-48a2-87c7-fac788e90cef.png" alt="" width="605" height="220"></a></p>
+</blockquote>
+
+<h4>
+  
+  
+  <strong>4.Install specific Node Version:</strong>
+</h4>
+
+<p>To install that specific version, Run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>nvm <span class="nb">install </span>node-version-number
+</code></pre>
+
+</div>
+
+
+
+<p>Replace the <code>node-version-number\</code> with your desired Node version.</p>
+
+<p>Once you install a version of Node, the corresponding version of NPM is installed for you. So you don’t need to install NPM separately.</p>
+
+<h4>
+  
+  
+  <strong>5.Uninstall Any Instances of Node:</strong>
+</h4>
+
+<p>To uninstall any instance you no longer think is useful, by running:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>nvm uninstall node-version-number
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  <strong>6.See Installed Node Versions:</strong>
+</h4>
+
+<p>To see the list of Node versions you have installed on your Windows machine, run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>nvm list
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--d_Gn93lL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689886505723/9152bada-7aac-411f-a4d4-7deb33c73722.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d_Gn93lL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1689886505723/9152bada-7aac-411f-a4d4-7deb33c73722.png" alt="" width="476" height="137"></a></p>
+
+<h4>
+  
+  
+  <strong>7.Switching Versions of Node:</strong>
+</h4>
+
+<p>As you can see in the previous image that I'm currently using <code>18.16.1</code></p>
+
+<p>If you want to switch your version to another version (eg. <code>18.17.0</code>)</p>
+
+<p>Use the Following Command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>nvm use 18.17.0 //replace the version number with your desired one
+</code></pre>
+
+</div>
+
+
+
+<p>To use a specific version of Node, run:</p>
+
+<ul>
+<li><p><code>nvm use latest</code> to use the latest version</p></li>
+<li><p><code>nvm use lts</code> to use the long-term support version</p></li>
+</ul>
+
+<p>These are some processes to manage Node versions.</p>
+
+<h2>
+  
+  
+  Conclusion:
+</h2>
+
+<p>If you found this blog post helpful, please consider sharing it with others who might benefit. You can also follow me for more content on Tailwind CSS and other web development topics.</p>
+
+<p>To sponsor my work, please visit: <a href="https://arindam1729.hashnode.dev/sponsor">https://arindam1729.hashnode.dev/sponsor</a> and explore the various sponsorship options.</p>
+
+<p>Connect with me on <a href="https://twitter.com/intent/follow?screen_name=Arindam_1729">Twitter</a>, <a href="https://www.linkedin.com/in/arindam2004/">LinkedIn</a>, <a href="https://www.youtube.com/channel/@Arindam_1729">Youtube</a> and <a href="https://github.com/Arindam200">GitHub</a>.</p>
+
+<p>Thank you for Reading :)</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ieoXiZYy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1688125007877/f3d5d31f-d473-44a8-9af3-3839cd538dda.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ieoXiZYy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1688125007877/f3d5d31f-d473-44a8-9af3-3839cd538dda.png" alt="" width="800" height="420"></a></p>
+
+ </details> 
+ <hr /> 
+
  #### - [Angular Cheatsheet](https://dev.to/easewithtuts/angular-cheatsheet-53ki) 
  <details><summary>Article</summary> <p>Angular is a powerful front-end framework for building dynamic web applications. Whether you're a seasoned Angular developer or just getting started, having a handy cheat sheet can be a valuable resource for speeding up development and solving common tasks. In this Angular cheat sheet, we'll cover key concepts, directives, and tips to help you work efficiently with Angular.</p>
 
@@ -1161,81 +1395,6 @@
 <p>The SELECT command with all its clauses, JOIN, WHERE, AND, OR, GROUP BY, ORDER BY, HAVING, LIKE, is an example of DQL.</p>
 
 <p>In the upcoming articles, we will discuss the syntax of DDL, DML and DQL.</p>
-
- </details> 
- <hr /> 
-
- #### - [Use an API with JavaScript (Beginner's Guide)](https://dev.to/noobizdev/use-an-api-with-javascript-beginners-guide-2mak) 
- <details><summary>Article</summary> <p>JavaScript APIs (Application Programming Interfaces) are essential for web development. They allow developers to interact with external services and data sources, enhancing the functionality of web applications.<br>
-To use an API with JavaScript as a beginner, follow these steps:</p>
-<h2>
-  
-  
-  JavaScript API Basics
-</h2>
-
-<ol>
-<li>Learn the Basics: Begin by understanding what an API is. Read beginner's guides like those provided by MDN and RapidAPI. These guides explain the fundamentals.</li>
-<li>Choose an API: Select an API that interests you. It could be for weather, social media, or any other data source. Websites like GeeksforGeeks provide examples of working with various APIs in JavaScript.</li>
-<li>Read Documentation: Explore the API's documentation. It typically provides information on endpoints, authentication, and usage examples. This step is crucial for understanding how to interact with the API effectively.</li>
-<li>Make API Requests: Start making requests to the API using JavaScript. You can use tools like fetch or libraries like Axios. Tutorials like the one on Snipcart offer hands-on guidance.</li>
-<li>Handle Responses: Learn how to handle API responses, which often come in JSON format. Parse the data and use it in your web application.</li>
-<li>Error Handling: Be prepared to handle errors gracefully. Proper error handling ensures your application remains robust.</li>
-<li>Practice: Practice using APIs by building small projects. This helps reinforce your learning.</li>
-<li>Security: If the API requires authentication, follow best practices for securing your API keys and tokens.</li>
-<li>Explore REST: If you're interested in REST APIs, check out the beginner's guide on dev.to.</li>
-</ol>
-<h2>
-  
-  
-  JavaScript API Example Code
-</h2>
-
-<p>In this example, we’ll use a weather API to retrieve current weather information for a specified location. We’ll make an API request, handle the response, and display the data in a user-friendly format.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Define the API endpoint and your API key
-const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
-const apiKey = 'YOUR_API_KEY';
-
-// Function to fetch weather data
-async function fetchWeatherData(city) {
-  try {
-    const response = await fetch(`${apiUrl}?q=${city}&amp;appid=${apiKey}`);
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-
-    const data = await response.json();
-
-    // Extract relevant weather information
-    const temperature = data.main.temp;
-    const description = data.weather[0].description;
-
-    // Display weather information on the web page
-    document.getElementById('temperature').textContent = `${temperature}°C`;
-    document.getElementById('description').textContent = description;
-  } catch (error) {
-    console.error('Error fetching weather data:', error);
-  }
-}
-
-// Call the function to fetch weather data for a specific city
-fetchWeatherData('New York');
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Remember that <strong><a href="https://noobizdev.tech/the-power-of-javascript-apis-best-practices-and-examples/">using APIs with JavaScript</a></strong> is a valuable skill for web development, enabling you to access external data and services to enhance your applications.</p>
 
  </details> 
  <hr /> 
