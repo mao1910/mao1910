@@ -133,6 +133,245 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [HTML For Beginners The Easy Way](https://dev.to/noobizdev/html-for-beginners-the-easy-way-mhp) 
+ <details><summary>Article</summary> <p>In today's digital age, having a basic understanding of <a href="https://html.com/">HTML</a> (Hypertext Markup Language) is essential for anyone looking to explore web development or create their own website. HTML is the foundation of web pages, allowing you to structure and format content. This beginner's guide will walk you through the fundamentals of HTML, helping you create your first web page from scratch.</p>
+
+<h2>
+  
+  
+  1. What is HTML?
+</h2>
+
+<p>HTML, which stands for Hypertext Markup Language, is the standard language used to create web pages. It consists of various elements and tags that define the structure and content of a webpage.</p>
+
+<h2>
+  
+  
+  2. Setting Up Your Development Environment
+</h2>
+
+<p>Before we dive into HTML coding, you'll need a text editor and a web browser. Popular text editors include Visual Studio Code, Sublime Text, or Notepad++. Choose the one you're most comfortable with.</p>
+
+<h2>
+  
+  
+  3. Creating Your First HTML Document
+</h2>
+
+<p>To create an HTML document, start with a basic template:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Your Title Here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  4. Understanding HTML Elements
+</h2>
+
+<p>Headings and Paragraphs<br>
+Headings are used to define the structure of your content. Use h1 for the main title, h2 for subsections, and so on. Paragraphs are created with the </p>
+<p> tag.</p>
+
+<ul>
+<li><p>Lists and Links<br>
+Unordered lists (ul) and ordered lists (ol) help organize information. Links are created using the a tag.</p></li>
+<li><p>Images and Attributes<br>
+Images can be added with the img tag, and attributes like src and alt provide essential information about the image.</p></li>
+</ul>
+
+<h2>
+  
+  
+  5. Structuring Your Page with Tags
+</h2>
+
+<p>HTML offers various tags to structure your content effectively.</p>
+
+<ul>
+<li><p>Divs and Spans<br>
+div and span are generic container elements used to group content.</p></li>
+<li><p>Headers and Footers<br>
+header and footer help define the beginning and end of a section or page.</p></li>
+<li><p>Sections and Articles<br>
+section and article are HTML5 elements that aid in structuring content logically.</p></li>
+</ul>
+
+<h2>
+  
+  
+  6. Styling with CSS
+</h2>
+
+<p>While HTML defines the structure, CSS (Cascading Style Sheets) is used to style your web page. You can use inline styles or external CSS files to control the appearance.</p>
+
+<h2>
+  
+  
+  7. Adding Forms for User Input
+</h2>
+
+<p>Forms are essential for collecting user data. Create them using the form tag, and include input fields, checkboxes, and radio buttons as needed.</p>
+
+<h2>
+  
+  
+  8. Embedding Multimedia
+</h2>
+
+<p>HTML allows you to embed multimedia content such as videos and audio files using the video and audio tags.</p>
+
+<h2>
+  
+  
+  Frequently Asked Questions
+</h2>
+
+<ol>
+<li><p>What is the difference between HTML and CSS?<br>
+HTML is used for structuring content, while CSS is used for styling that content. HTML defines the skeleton, and CSS adds the visual appeal.</p></li>
+<li><p>Are there any free HTML editors available?<br>
+Yes, there are many free HTML editors, such as Visual Studio Code, which is a popular choice among developers.</p></li>
+<li><p>What is the purpose of the alt attribute in the image tag?<br>
+The alt attribute provides alternative text for images, which is displayed if the image cannot be loaded or for accessibility reasons.</p></li>
+<li><p>Can I create a website with just HTML, or do I need other technologies?<br>
+You can create a basic website with just HTML, but for more advanced features and styling, you'll likely want to use CSS and possibly JavaScript.</p></li>
+<li><p>Where can I learn more about web development and HTML?<br>
+There are numerous online resources and tutorials available, including interactive coding platforms like Codecademy and free courses on websites like Mozilla Developer Network (MDN).</p></li>
+</ol>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Congratulations! You've just scratched the surface of HTML. Keep practicing and experimenting to become proficient in web development and Aviod from <a href="https://noobizdev.tech/most-common-html-mistakes-and-errors-to-avoid-and-how-to-fix-them/">common html mistakes</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Colouring Your Arrow / Link with `linkStyle` in Mermaid Markdown](https://dev.to/ranggakd/coloring-your-arrow-link-with-linkstyle-in-mermaid-markdown-39kk) 
+ <details><summary>Article</summary> <p>Welcome back to <code>Technically Speaking</code>, your sanctuary for diving deep into the labyrinthine wonders of technology. Today, we turn the spotlight onto <a href="https://mermaid.js.org/">Mermaid</a>, a marvelous tool that's become my go-to for diagramming and documentation. Specifically, we're going to add some splashes of colour to the arrows or links in our Mermaid Markdown flowcharts. Let's get to it!</p>
+
+<h2>
+  
+  
+  Setting the Stage
+</h2>
+
+<p>First things first, we need a basic flowchart or graph to work with. Here's a snippet from my upcoming post on steganography, showcasing a flowchart that I built using Mermaid Markdown:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight markdown"><code>graph TB
+    Decode([Decode])
+    End([End])
+    ULhbCover[/"Unmerged Left-half
+    bits Cover Image"/]
+    CULhbHidden[/"Cover Image-sized Unmerged Left-half
+    bits Hidden Image"/]
+    ULhbHidden[/"Unmerged Left-half
+    bits Hidden Image"/]
+    Merged[/Merged Image/]
+    Lhb[LHB Mapping]
+    Rhb[RHB Mapping]<span class="sb">
+
+    Decode --&gt; Merged
+    Merged --&gt; Lhb &amp; Rhb
+    Lhb --&gt; ULhbCover
+    Rhb --&gt; CULhbHidden
+    CULhbHidden --"pass on hidden image
+    position in merged image"--&gt; ULhbHidden
+    ULhbCover &amp; ULhbHidden --&gt; End
+</span></code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  The Art of Styling Links
+</h2>
+
+<p>When I first stumbled upon the <a href="https://mermaid.js.org/syntax/flowchart.html#styling-links">Mermaid documentation on styling links</a>, it seemed simple enough. Just use this one-liner:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>linkStyle default stroke:green;
+</code></pre>
+
+</div>
+
+
+
+<p>The <code>default</code> parameter applies the styling to all links or arrows in your chart. However, there was one hiccup: the documentation didn't specify <em>where</em> to put this mysterious one-liner. Initially, I faced errors that had me scratching my head. Then, eureka! It occurred to me to place the styling directive <em>after</em> all the link syntax, like so:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight markdown"><code>graph TB
+    Decode([Decode])
+    End([End])
+    ULhbCover[/"Unmerged Left-half
+    bits Cover Image"/]
+    CULhbHidden[/"Cover Image-sized Unmerged Left-half
+    bits Hidden Image"/]
+    ULhbHidden[/"Unmerged Left-half
+    bits Hidden Image"/]
+    Merged[/Merged Image/]
+    Lhb[LHB Mapping]
+    Rhb[RHB Mapping]<span class="sb">
+
+    Decode --&gt; Merged
+    Merged --&gt; Lhb &amp; Rhb
+    Lhb --&gt; ULhbCover
+    Rhb --&gt; CULhbHidden
+    CULhbHidden --"pass on hidden image
+    position in merged image"--&gt; ULhbHidden
+    ULhbCover &amp; ULhbHidden --&gt; End
+
+    linkStyle default stroke:green;
+</span></code></pre>
+
+</div>
+
+
+
+<p>And just like that, it worked! Behold the green strokes in all their glory:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nLwsPtdt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bws8qomajscahact140x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nLwsPtdt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bws8qomajscahact140x.png" alt="Decode mermaid graph" width="541" height="546"></a></p>
+
+<h2>
+  
+  
+  Uncharted Waters
+</h2>
+
+<p>There are still a couple of nuances that have eluded me. One is colouring the arrowhead itself; I did ask BingChat for a solution, but it involved intricate CSS—a no-go for this Markdown-centric endeavor. Secondly, I'm on a perpetual quest for a contrasting background. Dark mode is my jam, and unfortunately, Mermaid's PNG output doesn't play well with it. I tried to set a solid background colour, but so far, no dice. You could try it live yourself <a href="https://mermaid.live/">here</a>.</p>
+
+<p>So there we have it—your links now boast eye-catching strokes, although the quest for perfect styling remains ever ongoing. If you've got insights on the elusive arrowhead colouring or background contrast, do share! Until then, keep exploring, keep questioning, and most importantly, keep <code>Technically Speaking</code>.</p>
+
+<p>Happy diagramming! 📊✨</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Dynamic and Asynchronous Vue Components: The What & How](https://dev.to/nyior/dynamic-and-asynchronous-vue-components-the-what-how-44em) 
  <details><summary>Article</summary> <p>It’s asking the right questions that count, they say. So let’s exploit that ancient wisdom and kick things off here with the questions that matter :)</p>
 
@@ -672,744 +911,6 @@ barColor = 'red';
 <li>Chart.js: <a href="https://www.chartjs.org/docs/latest/">https://www.chartjs.org/docs/latest/</a>
 </li>
 </ul>
-
- </details> 
- <hr /> 
-
- #### - [How to create a custom alert component in REACT with Context API](https://dev.to/ayo_tech/how-to-create-a-custom-alert-component-in-react-with-context-api-1dfj) 
- <details><summary>Article</summary> <p>Do you have to implement a feature that requires you to prompt a user for response (for example the confirmation message before deleting an item)? Or do you want to have a "awesome" designer who designed an awesome component for notifying users on specific actions? Or for the hundred other reasons you have decided to read this article.<br>
-In this article, We will be implementing a custom alert component for prompting a user to perform an action or notifying a user using ReactJS with Context API.</p>
-<h2>
-  
-  
-  PREREQUISITES
-</h2>
-
-<p>This tutorial makes use of the following languages/technologies and would require you to have a basic knowledge of their usage.</p>
-
-<ul>
-<li>TypeScript</li>
-<li>ReactJS (bootstrapped with create-react-app)</li>
-<li>CSS</li>
-</ul>
-
-
-<h2>
-  
-  
-  Setting up
-</h2>
-
-<p>Diving into creating the alert component, the first thing you need to do is set up your codebase. Since we are going to be making use of ReactJS you can use any of the React Libraries that are available, but for the purpose of this tutorial, we will be bootstrapping out react application with <a href="https://create-react-app.dev/"><code>create-react-app</code></a></p>
-<h2>
-  
-  
-  Structuring the Codebase.
-</h2>
-
-<p>After setting up your codebase, you will proceed to structure the codebase as follows.</p>
-
-<ul>
-<li>Create a folder named <code>components</code> inside the <code>src</code> folder.</li>
-<li>In the components folder, create a new folder named <code>Alert</code>.</li>
-<li>Inside the Alert folder, create a file named <code>Alert.tsx</code>.</li>
-</ul>
-
-<p>Copy the following code and paste in your Alert.tsx file<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="c1">// the component UI will live in this file</span>
-
-<span class="kd">const</span> <span class="nx">Alert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;&gt;&lt;/&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Alert</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Next up, you create a file in the Alert folder named <code>AlertProvider.tsx</code>.
-Inside the AlertProvider.tsx file, paste the following code.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createContext</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">AlertContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">();</span>
-
-<span class="kd">const</span> <span class="nx">AlertProvider</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span> <span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span>
-  <span class="nx">children</span><span class="p">,</span>
-<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">AlertContext</span><span class="p">.</span><span class="nc">Provider</span>
-      <span class="na">value</span><span class="p">=</span><span class="si">{}</span>
-    <span class="p">&gt;</span>
-      <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
-    <span class="p">&lt;/</span><span class="nc">AlertContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">AlertProvider</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>Next up, you create a file named <code>index.tsx</code> inside the <code>Alert</code> folder.<br>
-Inside the <code>index.tsx</code> file, paste the following code;</p>
-
-<p>Here you are creating a wrapper for the alert context for the alert component and the children to subscribe to the context changes.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useContext</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">AlertProvider</span><span class="p">,</span> <span class="p">{</span> <span class="nx">AlertContext</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./AlertProvider</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Alert</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Alert</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">// create hook to be used globally to toggle alert component.</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">useAlert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">AlertContext</span><span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">AlertContainer</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span> <span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span>
-  <span class="nx">children</span><span class="p">,</span>
-<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">AlertProvider</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">Alert</span> <span class="p">/&gt;</span>
-      <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
-    <span class="p">&lt;/</span><span class="nc">AlertProvider</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">AlertContainer</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Register Alert Context in entry file
-</h2>
-
-<p>Now that you have created the context for the alert component, you will register the context globally by updating the entry file. For this tutorial, you will update the <code>src/index.tsx</code> file. If you are using other frameworks, your entry file might be different (for NextJS, the entry will would be <code>/pages/_app.tsx</code>)</p>
-
-<p>Update your <code>src/index.tsx</code> file with the following code.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom/client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">./index.css</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">reportWebVitals</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./reportWebVitals</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">AlertContainer</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/Alert</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// import the AlertContainer</span>
-
-<span class="kd">const</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLElement</span>
-<span class="p">);</span>
-<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-  <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
-    <span class="si">{</span><span class="cm">/* Wrap your application with the Alert context wrapper you created in `/components/Alert/index.tsx' */</span><span class="si">}</span>
-    <span class="p">&lt;</span><span class="nc">AlertContainer</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">AlertContainer</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
-<span class="p">);</span>
-
-<span class="c1">// If you want to start measuring performance in your app, pass a function</span>
-<span class="c1">// to log results (for example: reportWebVitals(console.log))</span>
-<span class="c1">// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals</span>
-<span class="nx">reportWebVitals</span><span class="p">();</span>
-
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Implement functionality for the Alert component.
-</h2>
-
-<p>Now that you are done setting up, you will now implement the functionalities for your alert component. <br>
-In this tutorial, the major functionalities you will be implementing are </p>
-
-<ul>
-<li>
-<code>Open alert component</code>: this will cover the different states in which your component will be rendered. Either as a notifier or as a prompter.</li>
-<li>
-<code>Close alert component</code>: this will cover removing the alert component from user's view and reverting the context state to default.</li>
-</ul>
-
-<p>Now start updating the <code>src/components/AlertProvider.tsx</code> file.</p>
-
-<p>First, you need to declare the types that will be used in the functionality.<br>
-So your file will look like this;<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createContext</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">// type for notification object</span>
-<span class="kr">interface</span> <span class="nx">IAlertNotification</span> <span class="p">{</span>
-  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">message</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="nl">delay</span><span class="p">?:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nl">autoClose</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
-  <span class="nl">inputProps</span><span class="p">?:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">HTMLAttributes</span><span class="o">&lt;</span><span class="nx">HTMLInputElement</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="nl">actions</span><span class="p">?:</span> <span class="p">{</span>
-    <span class="na">text</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-    <span class="nl">callback</span><span class="p">?:</span> <span class="p">(</span><span class="na">arg</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-    <span class="nl">props</span><span class="p">?:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">HTMLAttributes</span><span class="o">&lt;</span><span class="nx">HTMLButtonElement</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="p">}[];</span>
-<span class="p">}</span>
-
-<span class="c1">// the types for methods and variable available in your alert context</span>
-<span class="kr">interface</span> <span class="nx">IAlertContext</span> <span class="p">{</span>
-  <span class="nl">alert</span><span class="p">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">:</span> <span class="nx">IAlertNotification</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-  <span class="nl">alertShown</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
-  <span class="nl">notification</span><span class="p">?:</span> <span class="nx">IAlertNotification</span><span class="p">;</span>
-  <span class="nl">close</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// intialise default methods for context.</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">AlertContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="o">&lt;</span><span class="nx">IAlertContext</span><span class="o">&gt;</span><span class="p">({</span>
-  <span class="na">alert</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
-  <span class="na">close</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">AlertProvider</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span> <span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span>
-  <span class="nx">children</span><span class="p">,</span>
-<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">AlertContext</span><span class="p">.</span><span class="nc">Provider</span>
-      <span class="na">value</span><span class="p">=</span><span class="si">{}</span>
-    <span class="p">&gt;</span>
-      <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
-    <span class="p">&lt;/</span><span class="nc">AlertContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">AlertProvider</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>Next up, you will create the necessary variables and methods to display and hide the alert component. <br>
-So your file will look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createContext</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">// type for notification object</span>
-<span class="kr">interface</span> <span class="nx">IAlertNotification</span> <span class="p">{</span>
-  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">message</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="nl">delay</span><span class="p">?:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nl">autoClose</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
-
-  <span class="nl">inputProps</span><span class="p">?:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">HTMLAttributes</span><span class="o">&lt;</span><span class="nx">HTMLInputElement</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="nl">actions</span><span class="p">?:</span> <span class="p">{</span>
-    <span class="na">text</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-    <span class="nl">callback</span><span class="p">?:</span> <span class="p">(</span><span class="na">arg</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-    <span class="nl">props</span><span class="p">?:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">HTMLAttributes</span><span class="o">&lt;</span><span class="nx">HTMLButtonElement</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="p">}[];</span>
-<span class="p">}</span>
-<span class="c1">// the types for methods and variable available in your alert context</span>
-<span class="kr">interface</span> <span class="nx">IAlertContext</span> <span class="p">{</span>
-  <span class="nl">alert</span><span class="p">:</span> <span class="p">(</span><span class="nx">args</span><span class="p">:</span> <span class="nx">IAlertNotification</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-  <span class="nl">alertShown</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
-  <span class="nl">notification</span><span class="p">?:</span> <span class="nx">IAlertNotification</span><span class="p">;</span>
-  <span class="nl">close</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// initialize default methods for context.</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">AlertContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="o">&lt;</span><span class="nx">IAlertContext</span><span class="o">&gt;</span><span class="p">({</span>
-  <span class="na">alert</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
-  <span class="na">close</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">AlertProvider</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span> <span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span>
-  <span class="nx">children</span><span class="p">,</span>
-<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">alertShown</span><span class="p">,</span> <span class="nx">setAlertShown</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// toggles the view state of the alert component</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">notification</span><span class="p">,</span> <span class="nx">setNotification</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span>
-    <span class="nx">IAlertNotification</span> <span class="o">|</span> <span class="kc">undefined</span>
-  <span class="o">&gt;</span><span class="p">();</span> <span class="c1">// stores the configuration data for the alert component</span>
-  <span class="kd">const</span> <span class="nx">timerRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="o">&lt;</span><span class="nx">ReturnType</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">setTimeout</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">undefined</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// stores the timer value for autoclosing the alert component</span>
-
-  <span class="c1">// closes the alert component and reverts all config to default values.</span>
-  <span class="kd">const</span> <span class="nx">close</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setAlertShown</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-    <span class="nx">setNotification</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
-    <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timerRef</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="c1">// opens the alert component and configures its view state.</span>
-  <span class="kd">const</span> <span class="nx">alert</span> <span class="o">=</span> <span class="p">(</span><span class="na">args</span><span class="p">:</span> <span class="nx">IAlertNotification</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setNotification</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
-    <span class="nx">setAlertShown</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">autoClose</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">timerRef</span><span class="p">.</span><span class="nx">current</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timerRef</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span>
-      <span class="p">}</span>
-
-      <span class="nx">timerRef</span><span class="p">.</span><span class="nx">current</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">close</span><span class="p">();</span>
-      <span class="p">},</span> <span class="nx">notification</span><span class="p">?.</span><span class="nx">delay</span> <span class="o">||</span> <span class="mi">3000</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="nx">notification</span><span class="p">;</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">AlertContext</span><span class="p">.</span><span class="nc">Provider</span>
-      <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="p">{</span>
-        <span class="nx">notification</span><span class="p">,</span>
-        <span class="nx">alert</span><span class="p">,</span>
-        <span class="nx">alertShown</span><span class="p">,</span>
-        <span class="nx">close</span><span class="p">,</span>
-      <span class="p">}</span><span class="si">}</span>
-    <span class="p">&gt;</span>
-      <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
-    <span class="p">&lt;/</span><span class="nc">AlertContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">AlertProvider</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Implement Alert component UI.
-</h2>
-
-<p>Now that you have implemented the functionality, the next step is to create the component UI and set up the view states based on the configuration in the context. </p>
-
-<p>Copy the following code and paste it in the <code>src/components/Alert/Alert.tsx</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useAlert</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">styles</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./styles.module.css</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Alert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">notification</span><span class="p">,</span> <span class="nx">alertShown</span><span class="p">,</span> <span class="nx">close</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useAlert</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">textInputValue</span><span class="p">,</span> <span class="nx">setTextInputValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span>
-      <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="s2">`
-        </span><span class="p">${</span><span class="nx">styles</span><span class="p">.</span><span class="nx">alert_container</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">alertShown</span> <span class="p">?</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">show</span> <span class="p">:</span> <span class="dl">''</span><span class="p">}</span><span class="s2">`</span><span class="si">}</span>
-    <span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">alert</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">alert_content</span><span class="si">}</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">alert_title</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">notification</span><span class="p">?.</span><span class="nx">title</span> <span class="o">||</span> <span class="dl">""</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">alert_body</span><span class="si">}</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">notification</span><span class="p">?.</span><span class="nx">message</span> <span class="o">||</span> <span class="dl">""</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-          <span class="si">{</span><span class="nx">notification</span><span class="p">?.</span><span class="nx">inputProps</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">alert_textinput</span><span class="si">}</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">input</span>
-                <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">textInputValue</span><span class="si">}</span>
-                <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setTextInputValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
-                <span class="si">{</span><span class="p">...</span><span class="nx">notification</span><span class="p">?.</span><span class="nx">inputProps</span><span class="si">}</span>
-              <span class="p">/&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-          <span class="p">)</span><span class="si">}</span>
-
-          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">alert_action</span><span class="si">}</span><span class="p">&gt;</span>
-            <span class="si">{</span><span class="p">(</span><span class="nx">notification</span><span class="p">?.</span><span class="nx">actions</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">map</span><span class="p">((</span><span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-              <span class="p">&lt;</span><span class="nt">div</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">action</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">btn</span><span class="si">}</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">button</span>
-                  <span class="si">{</span><span class="p">...</span><span class="nx">action</span><span class="p">.</span><span class="nx">props</span><span class="si">}</span>
-                  <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="nx">action</span><span class="p">.</span><span class="nx">callback</span><span class="p">?.(</span><span class="nx">textInputValue</span><span class="p">);</span>
-                    <span class="nx">setTextInputValue</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-                    <span class="nx">close</span><span class="p">();</span>
-                  <span class="p">}</span><span class="si">}</span>
-                <span class="p">&gt;</span>
-                  <span class="si">{</span><span class="nx">action</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span>
-                <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-              <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">))</span><span class="si">}</span>
-          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Alert</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Next up, you style the component. <br>
-Create a file named <code>styles.module.css</code> in the <code>src/component/Alert</code> folder. </p>
-
-<p>Copy the following code and paste it in the <code>styles.module.css</code> file<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nc">.alert_container</span> <span class="p">{</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
-  <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
-  <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">z-index</span><span class="p">:</span> <span class="m">999</span><span class="p">;</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">-100%</span><span class="p">);</span>
-  <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">500ms</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.alert_container.show</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">0px</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nc">.alert</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">max-width</span><span class="p">:</span> <span class="m">500px</span><span class="p">;</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_content</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
-  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">10px</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">10px</span> <span class="m">50px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.3</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_title</span> <span class="p">{</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">800</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.275rem</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_body</span> <span class="p">{</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_textinput</span> <span class="p">{</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_textinput</span> <span class="nt">input</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
-  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="n">grey</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">10px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_action</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
-  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="py">gap</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_action</span> <span class="nc">.btn</span> <span class="p">{</span>
-  <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.alert_action</span> <span class="nc">.btn</span> <span class="nt">button</span> <span class="p">{</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#282c34</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
-  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
-  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Testing the alert component
-</h2>
-
-<p>Now that you have finished implementing the component, you can test the various variations for prompting and notifying the users.</p>
-
-<p>Copy the following code and replace your app.tsx file with it.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./logo.svg</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useAlert</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/Alert</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">alert</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useAlert</span><span class="p">();</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">header</span> <span class="na">className</span><span class="p">=</span><span class="s">"App-header"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">logo</span><span class="si">}</span> <span class="na">className</span><span class="p">=</span><span class="s">"App-logo"</span> <span class="na">alt</span><span class="p">=</span><span class="s">"logo"</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-          Edit <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>src/App.tsx<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> and save to reload.
-        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span>
-          <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span>
-            <span class="nx">alert</span><span class="p">({</span>
-              <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Notify</span><span class="dl">"</span><span class="p">,</span>
-              <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Notification message</span><span class="dl">"</span><span class="p">,</span>
-              <span class="na">autoClose</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="p">})</span>
-          <span class="si">}</span>
-        <span class="p">&gt;</span>
-          Notify
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-
-        <span class="p">&lt;</span><span class="nt">button</span>
-          <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span>
-            <span class="nx">alert</span><span class="p">({</span>
-              <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Prompt without feedback</span><span class="dl">"</span><span class="p">,</span>
-              <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Question to ask user before proceeding</span><span class="dl">"</span><span class="p">,</span>
-              <span class="na">actions</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                  <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Cancel</span><span class="dl">"</span><span class="p">,</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                  <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Confirm</span><span class="dl">"</span><span class="p">,</span>
-                  <span class="na">callback</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Confirmed</span><span class="dl">'</span><span class="p">)</span>
-                    <span class="c1">// action to proceed</span>
-                  <span class="p">},</span>
-                <span class="p">},</span>
-              <span class="p">],</span>
-            <span class="p">})</span>
-          <span class="si">}</span>
-        <span class="p">&gt;</span>
-          Prompt without Feedback
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span>
-          <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span>
-            <span class="nx">alert</span><span class="p">({</span>
-              <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Prompt with feedback</span><span class="dl">"</span><span class="p">,</span>
-              <span class="na">message</span><span class="p">:</span>
-                <span class="dl">"</span><span class="s2">Question to ask user before proceeding. Expecting message from user</span><span class="dl">"</span><span class="p">,</span>
-              <span class="na">inputProps</span><span class="p">:</span> <span class="p">{</span> <span class="na">placeholder</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Enter feedback</span><span class="dl">"</span> <span class="p">},</span>
-              <span class="na">actions</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                  <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Cancel</span><span class="dl">"</span><span class="p">,</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                  <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Confirm</span><span class="dl">"</span><span class="p">,</span>
-                  <span class="na">callback</span><span class="p">:</span> <span class="p">(</span><span class="nx">feedback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">feedback</span><span class="p">);</span>
-                    <span class="c1">// action to proceed</span>
-                  <span class="p">},</span>
-                <span class="p">},</span>
-              <span class="p">],</span>
-            <span class="p">})</span>
-          <span class="si">}</span>
-        <span class="p">&gt;</span>
-          Prompt with Feedback
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Results!!!
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DInA2B6a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kw2rgoi1tvb0fbtzechf.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DInA2B6a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kw2rgoi1tvb0fbtzechf.gif" alt="React alert component notification only" width="800" height="450"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fSKuHENx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/imjdxbj1wf91dsed5xwe.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fSKuHENx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/imjdxbj1wf91dsed5xwe.gif" alt="React alert component prompt without feedback" width="800" height="450"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---RdVeBhL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p82662w4am4hixlgqpzh.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---RdVeBhL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p82662w4am4hixlgqpzh.gif" alt="React alert component prompt with feedback" width="800" height="450"></a></p>
-
-<h2>
-  
-  
-  Conclusion.
-</h2>
-
-<p>Yayyy, you have successfully implemented a custom alert component in React. I know the article was a bit lengthy, if you have any questions, be sure to leave them in the comments and I will respond. <br>
-I have also taken the liberty to push the code to github. You can access it [here](<a href="https://github.com/haywhy43/create-custom-alert-component-with-react">https://github.com/haywhy43/create-custom-alert-component-with-react</a>}</p>
-
- </details> 
- <hr /> 
-
- #### - [Solving "Climbing Stairs" Leet code Problem](https://dev.to/leetcode/solving-climbing-stairs-leet-code-problem-46kf) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Question:
-</h2>
-
-<p><strong>70. Climbing Stairs</strong><br>
-Type: Easy<br>
-Liked by 19.8K<br>
-Disliked by 656.<br>
-Companies that asked this question<br>
-Companies: No of times asked<br>
-Amazon 3<br>
-Yahoo 2<br>
-Adobe 11<br>
-Google 5<br>
-Apple 5<br>
-Bloomberg 3<br>
-Microsoft 3<br>
-Uber 2<br>
-Nagarro 2<br>
-Expedia 12<br>
-Oracle 4<br>
-Goldman Sachs 3<br>
-Facebook 2<br>
-Intel 2<br>
-Visa 2<br>
-Optum 2<br>
-Swiggy 2</p>
-
-<p>You are climbing a staircase. It takes n steps to reach the top.</p>
-
-<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
-
-<p><strong>Example 1:</strong><br>
-Input: n =<code>2</code><br>
-Output: <code>2</code><br>
-Explanation: <br>
-`There are two ways to climb to the top.</p>
-
-<ol>
-<li>1 step + 1 step</li>
-<li>2 steps`</li>
-</ol>
-
-<p><strong>Example 2:</strong><br>
-Input: n = <code>3</code><br>
-Output: <code>3</code><br>
-Explanation: <br>
-`There are three ways to climb to the top.</p>
-
-<ol>
-<li>1 step + 1 step + 1 step</li>
-<li>1 step + 2 steps</li>
-<li>2 steps + 1 step`</li>
-</ol>
-
-<p>Constraints:<br>
-<code>1 &lt;= n &lt;= 45</code></p>
-
-<h1>
-  
-  
-  Intuition:
-</h1>
-
-<p>The problem is about finding the number of ways to climb a staircase when you can take either 1 step or 2 steps at a time. To solve it, you can use dynamic programming.</p>
-
-<h1>
-  
-  
-  Approach:
-</h1>
-
-<p>Create an array to store the number of ways to reach each step.<br>
-Initialize the first two elements of the array (representing the first and second steps).<br>
-Use a loop to calculate the number of ways to reach each subsequent step.<br>
-Return the number of ways to reach the final step.</p>
-
-<h1>
-  
-  
-  Complexity:
-</h1>
-
-<p><strong>Time Complexity</strong>: O(n)<br>
-<strong>Space Complexity</strong>: O(n)</p>
-
-<h1>
-  
-  
-  Code
-</h1>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>class Solution {
-    public int climbStairs(int n) {
-        int[] arr = new int[n+1];
-
-        if(n == 1){
-            return 1;
-        }
-        else{
-            arr[1] = 1;
-            arr[2] = 2;
-            for(int i = 3 ; i &lt;=n ; i++){
-                arr[i] = arr[i-1] + arr[i-2];
-            }
-        }
-       return arr[n];
-    }
-}
-</code></pre>
-
-</div>
-
-
-
-<p>Happy coding,<br>
-shiva</p>
 
  </details> 
  <hr /> 
