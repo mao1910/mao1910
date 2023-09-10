@@ -133,6 +133,345 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [What is API & REST API ?](https://dev.to/parmita17/what-is-api-rest-api--3noe) 
+ <details><summary>Article</summary> <p>An API, or Application Programming Interface, is set of rules i.e. protocols for building and interacting with software application.<br>
+It allows different software systems to communicate with each other, enabling them to share data and functionality.<br>
+An example of an API is the Facebook API, which allows developers to access and interact with functionality of the Facebook platform such as posting status updates, retrieving user information, and managing ad campaigns. Another example is the Google Maps API, which allows developers to embed maps and location-based functionality in their own websites and apps.<br>
+<strong>How an API Works:</strong><br>
+APIs acts as a bridge between applications and web servers, processing data transfer between systems. When a client application initiates an API call, also known as request, it is sent to the web server via the API's Uniform Resource Identifier(URI) and includes a request verb, headers and sometimes a request body. The API then processes the request and may make a call to an external program or web server for the requested information.<br>
+The server responds with the requested data, which the API then forwards to the initial requesting application. This process of requests and responses all happens through the API. Unlike user interfaces which are designed for human use, APIs are designed for use by computers or applications.</p>
+
+<p><strong>REST API: Representational State Transfer</strong><br>
+REST is a type of web architecture and a set of constraints to be used when creating web services. RESTful API is API that conforms to the REST architectural style and constraints, it is typically used to make requests to retrieve or update data on a web server. A RESTful API uses HTTP requests to POST(create), PUT(update), GET(read), and DELETE(delete) data. A RESTful API also returns a response in a standard format, typically JSON or XML, and uses standard HTTP status codes to indicate the status of the request. RESTful APIs are popular because they are simple to understand and easy to use, and they work well with the HHTP protocol that the internet is built on. Additionally, RESTful APIs are often faster and more lightweight than their SOAP(Simple Object Access Protocol) counterparts because they use smaller message formats. RESTful API's have become a popular way for systems to expose databases through HTTP(s) following CRUD operations(Create, Read, Update, Delete), and return JSON or XML as responses, it's also widely used in microservices, mobile and web applications, IoT<br>
+and many more.<br>
+REST requires that a client make a request to the server in order to retrieve or modify data on the server.<br>
+<strong>A request generally consists:</strong></p>
+
+<ul>
+<li><p>An HTTP verb, which defines what kind of operation to perform.</p></li>
+<li><p>A header, which allows the client to pass along information about the request.</p></li>
+<li><p>A path to a resource.</p></li>
+<li><p>An optional message body containing data.</p></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [DOM reading and writing with new lifecycle hooks in Angular](https://dev.to/railsstudent/dom-reading-and-writing-with-new-lifecycle-hooks-in-angular-4n7e) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
+
+<p>In Angular 16, Angular has added two new lifecycle hooks, <code>afterNextRender</code> and <code>afterRender</code>, for DOM reading and writing.</p>
+
+<ul>
+<li>afterNextRender – executes once and is similar to AfterViewInit but it does not execute in server-side rendering (SSR)</li>
+<li>afterRender – executes after every change detection</li>
+</ul>
+
+<p>According to the Angular documentation, <code>afterNextRender</code> is similar to <code>AfterViewInit</code> but it does not cause issues that <code>AfterViewInit</code> has in SSR. On the other hand, <code>afterRender</code> executes after every change detection to synchronize state with DOM.</p>
+
+<p>In this blog post, I describe how to use <code>afterNextRender</code> to add new chart on canvas and <code>afterRender</code> to redraw chart to synchronize chart options.</p>
+
+<h3>
+  
+  
+  Scenario of using afterNextRender and afterRender
+</h3>
+
+<p>In the example, I want to use a thirty-party chart library, Chart.js, to render a bar chart on a canvas element. Therefore, I implement <code>afterNextRender</code> hook to insert the chart to the canvas. Then, I use RxJS timer operator to append data points to the underlying chart array every one second. </p>
+
+<p>To make the example interactive, there is a color dropdown that changes the color of the bars. I am going to implement <code>afterRender</code> hook that examines the inputs and update the chart after every change detection.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">zone.js/dist/zone</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">afterNextRender</span><span class="p">,</span> <span class="nx">afterRender</span><span class="p">,</span> <span class="nx">ChangeDetectionStrategy</span><span class="p">,</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ElementRef</span><span class="p">,</span> <span class="nx">OnDestroy</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">bootstrapApplication</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/platform-browser</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Chart</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">chart.js/auto</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">take</span><span class="p">,</span> <span class="nx">timer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-app</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">standalone</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">FormsModule</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`
+    &lt;h1&gt;Hello from Lifecycle Hooks!&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+        &lt;label&gt;
+          Bar Color:
+          &lt;select [(ngModel)]="barColor"&gt;
+              &lt;option value="red"&gt;Red&lt;/option&gt;
+              &lt;option value="pink"&gt;Pink&lt;/option&gt;
+              &lt;option value="magenta"&gt;Magenta&lt;/option&gt;
+              &lt;option value="rebeccapurple"&gt;Rebecca Purple&lt;/option&gt;
+              &lt;option value="cyan"&gt;Cyan&lt;/option&gt;
+              &lt;option value="blue"&gt;Blue&lt;/option&gt;
+              &lt;option value="green"&gt;Green&lt;/option&gt;
+              &lt;option value="yellow"&gt;Yellow&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;canvas #canvas&gt;&lt;/canvas&gt;
+    &lt;/div&gt;
+  `</span><span class="p">,</span>
+  <span class="na">changeDetection</span><span class="p">:</span> <span class="nx">ChangeDetectionStrategy</span><span class="p">.</span><span class="nx">OnPush</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">App</span> <span class="k">implements</span> <span class="nx">OnDestroy</span> <span class="p">{</span>
+  <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2017</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">10</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2018</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">20</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2019</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">15</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2021</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2022</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">30</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2023</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+  <span class="p">];</span>
+  <span class="nl">chart</span><span class="p">:</span> <span class="nx">Chart</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">chartData</span><span class="p">:</span> <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span> <span class="nl">count</span><span class="p">:</span> <span class="kr">number</span><span class="p">}</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nx">barColor</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">timer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+        <span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+      <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span>
+        <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+          <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span> <span class="o">=</span> <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2024</span> <span class="o">+</span> <span class="nx">value</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span> <span class="p">};</span>
+        <span class="p">}</span>
+      <span class="p">);</span>
+
+      <span class="c1">// afterNextRender and afterRender are implemented in the constructor</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngOnDestroy</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">?.</span><span class="nx">destroy</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">bootstrapApplication</span><span class="p">(</span><span class="nx">App</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Install dependency
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm i <span class="nt">--save-exact</span> chart.js
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Implement afterNextRender lifecycle hook to attach chart to canvas
+</h3>
+
+<p>The <code>afterNextRender</code> lifecycle hook executes once after the next change detection. Therefore, it is the ideal entry point to insert a new chart into DOM.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">canvas</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">static</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">read</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="o">&lt;</span><span class="nx">HTMLCanvasElement</span><span class="o">&gt;</span> <span class="p">})</span>
+<span class="nx">canvas</span><span class="o">!</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="o">&lt;</span><span class="nx">HTMLCanvasElement</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>First, I use <code>@ViewChild</code> decorator to obtain the <code>ElementRef</code> of the canvas. <code>this.canvas.nativeElement</code> returns an instance of <code>HTMLCanvasElement</code> that passes to the constructor of Chart.js in <code>afterNextRender</code> hook.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+   <span class="p">...</span> <span class="nx">omitted</span> <span class="nx">other</span> <span class="nx">codes</span>
+
+  <span class="nx">afterNextRender</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">afterNextRender called</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">chart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Chart</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">,</span> 
+        <span class="p">{</span>
+          <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">labels</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">row</span> <span class="o">=&gt;</span> <span class="nx">row</span><span class="p">.</span><span class="nx">year</span><span class="p">),</span>
+            <span class="na">datasets</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Acquisitions by year</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">row</span> <span class="o">=&gt;</span> <span class="nx">row</span><span class="p">.</span><span class="nx">count</span><span class="p">),</span>
+                <span class="na">backgroundColor</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">barColor</span><span class="p">,</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the constructor, I implement <code>afterNextRender</code> and pass a callback to instantiate the chart and render it on the canvas.</p>
+
+<p>I have successfully inserted a JavaScript Chart to DOM. DOM reading and writing is performed exactly once such that canvas does not display multiple charts erroneously.</p>
+
+<h3>
+  
+  
+  Implement afterRender lifecycle hook to perform repeated DOM reading and writing
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="nx">timer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+        <span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+      <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span>
+        <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+          <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span> <span class="o">=</span> <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2024</span> <span class="o">+</span> <span class="nx">value</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span> <span class="p">};</span>
+        <span class="p">}</span>
+ <span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This timer operator randomizes 5 data points and assigns to <code>this.chartData</code> every one second. After <code>this.chartData</code> is set, the chart displays the new bar in afterRender hook.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+   <span class="p">...</span> <span class="nx">omitted</span> <span class="nx">other</span> <span class="nx">codes</span>
+
+  <span class="nx">afterNextRender</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+       <span class="p">...</span> <span class="nx">instantiate</span> <span class="nx">chart</span> <span class="p">....</span>
+  <span class="p">});</span>
+
+  <span class="nx">afterRender</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">datasets</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">datasets</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chartData</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">const</span> <span class="p">{</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">count</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span><span class="p">;</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">labels</span><span class="p">?.</span><span class="nx">push</span><span class="p">(</span><span class="nx">year</span><span class="p">);</span>
+          <span class="nx">datasets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">dataset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">dataset</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
+          <span class="p">});</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In <code>afterRender</code> hook, chart label and chart data are pushed to the data set when both <code>this.chart</code> and <code>this.chartData</code> are defined. Then, <code>this.chart.update()</code> is invoked to redraw the chart on canvas.</p>
+
+<h3>
+  
+  
+  DOM reading and writing in afterRender hook based on user inputs
+</h3>
+
+<p>Another user case is to update bar color when user selects color from a dropdown. This simple dropdown applies 2-way data binding to bind ngModel to this.barColor.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;div&gt;</span>
+     <span class="nt">&lt;label&gt;</span>
+          Bar Color:
+          <span class="nt">&lt;select</span> <span class="na">[(ngModel)]=</span><span class="s">"barColor"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"red"</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"pink"</span><span class="nt">&gt;</span>Pink<span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"magenta"</span><span class="nt">&gt;</span>Magenta<span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"rebeccapurple"</span><span class="nt">&gt;</span>Rebecca Purple<span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"cyan"</span><span class="nt">&gt;</span>Cyan<span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"blue"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"green"</span><span class="nt">&gt;</span>Green<span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"yellow"</span><span class="nt">&gt;</span>Yellow<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+barColor = 'red';
+</code></pre>
+
+</div>
+
+
+
+<p>When user makes selection, the application updates <code>this.barColor</code> and triggers change detection. <code>afterRender</code> is then fired after every change detection. Therefore, I put logic in <code>afterRender</code> hook to update bar color and redraw the graph on canvas.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="nx">afterRender</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">datasets</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">datasets</span><span class="p">;</span>
+      <span class="p">...</span> <span class="nx">append</span> <span class="nx">data</span> <span class="nx">to</span> <span class="nx">dataset</span> <span class="p">...</span>
+
+      <span class="nx">datasets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">dataset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">dataset</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">barColor</span><span class="p">;</span>
+      <span class="p">});</span>
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In <code>afterRender</code> hook, <code>dataset.backgroundColor = this.barColor;</code> updates the color and <code>this.chart.update();</code> updates the chart again.</p>
+
+<p>The following Stackblitz repo shows the final results:<br>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-rey9qy?file=src%2Fmain.ts" width="100%" height="500">
+</iframe>
+</p>
+
+<p>This is the end of the blog post and I hope you like the content and continue to follow my learning experience in Angular and other technologies.</p>
+
+<h2>
+  
+  
+  Resources:
+</h2>
+
+<ul>
+<li>Github Repo: <a href="https://github.com/railsstudent/ng-after-render-demo">https://github.com/railsstudent/ng-after-render-demo</a>
+</li>
+<li>Stackblitz: <a href="https://stackblitz.com/edit/stackblitz-starters-rey9qy?file=src%2Fmain.ts">https://stackblitz.com/edit/stackblitz-starters-rey9qy?file=src%2Fmain.ts</a>
+</li>
+<li>AfterNextRender and AfterRender: <a href="https://angular.io/guide/lifecycle-hooks#reading-and-writing-the-dom">https://angular.io/guide/lifecycle-hooks#reading-and-writing-the-dom</a>
+</li>
+<li>Chart.js: <a href="https://www.chartjs.org/docs/latest/">https://www.chartjs.org/docs/latest/</a>
+</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
  #### - [How to create a custom alert component in REACT with Context API](https://dev.to/ayo_tech/how-to-create-a-custom-alert-component-in-react-with-context-api-1dfj) 
  <details><summary>Article</summary> <p>Do you have to implement a feature that requires you to prompt a user for response (for example the confirmation message before deleting an item)? Or do you want to have a "awesome" designer who designed an awesome component for notifying users on specific actions? Or for the hundred other reasons you have decided to read this article.<br>
 In this article, We will be implementing a custom alert component for prompting a user to perform an action or notifying a user using ReactJS with Context API.</p>
@@ -1097,561 +1436,6 @@ shiva</p>
 <li><a href="https://github.com/justlorain/ghs">https://github.com/justlorain/ghs</a></li>
 <li><a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/">https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/</a></li>
 </ul>
-
- </details> 
- <hr /> 
-
- #### - [Websites must Know #1](https://dev.to/scorcism/websites-must-know-1-484) 
- <details><summary>Article</summary> <p>In this blog, I have mentioned 8 websites which developers must know</p>
-
-<ol>
-<li>
-<p><strong><a href="https://root-servers.org/">https://root-servers.org/</a></strong></p>
-
-<ul>
-<li>This website serves as the official portal for the Internet's root servers. These servers are critical components of the Domain Name System (DNS), which helps translate human-readable domain names into IP addresses.</li>
-</ul>
-</li>
-<li>
-<p><strong><a href="https://www.felixcloutier.com/x86/">https://www.felixcloutier.com/x86/</a></strong></p>
-
-<ul>
-<li>Felix Cloutier's website is an invaluable resource for anyone interested in x86 assembly language programming. It provides comprehensive documentation, tutorials, and reference materials for x86 assembly language.</li>
-</ul>
-</li>
-<li>
-<p><strong><a href="https://cpu.land/">https://cpu.land/</a></strong></p>
-
-<ul>
-<li>CPU Land is a dedicated platform that showcases various central processing units (CPUs) and their architectural details. It offers insights into the world of CPUs and how they function.</li>
-</ul>
-</li>
-<li>
-<p><strong><a href="https://man7.org/">https://man7.org/</a></strong></p>
-
-<ul>
-<li> This website is a repository of Linux manual pages. It contains extensive documentation for Linux commands, system calls, library functions, and other essential elements of the Linux operating system.</li>
-</ul>
-</li>
-<li>
-<p><strong><a href="https://www.gnu.org/">https://www.gnu.org/</a></strong></p>
-
-<ul>
-<li>The GNU Project's official website provides information about the GNU Project, a significant free and open-source software initiative. It offers details about GNU software, licenses, and the philosophy behind free software.</li>
-</ul>
-</li>
-<li>
-<p><strong><a href="https://www.icann.org/">https://www.icann.org/</a></strong></p>
-
-<ul>
-<li>The Internet Corporation for Assigned Names and Numbers (ICANN) maintains this website. ICANN is responsible for coordinating and overseeing the global Domain Name System (DNS) and internet resources. The site offers insights into ICANN's functions and policies.</li>
-</ul>
-</li>
-<li>
-<p><strong><a href="https://www.cheat-sheets.org/">https://www.cheat-sheets.org/</a></strong></p>
-
-<ul>
-<li>Cheat-Sheets.org is a collection of cheat sheets and quick-reference guides for various programming languages, tools, and technologies. It's a valuable resource for developers and IT professionals seeking concise information and tips.</li>
-</ul>
-</li>
-</ol>
-
- </details> 
- <hr /> 
-
- #### - [I Hired an AI as a Developer - This Is What Happened](https://dev.to/perssondennis/i-hired-an-ai-as-a-developer-this-is-what-happened-1nl6) 
- <details><summary>Article</summary> <p>There have been many discussions around whether AI is threatening developer's jobs. Some say they are very close to take our jobs, other claims it will not happen, with the motivation that AIs will only be used as a tool for developers.</p>
-
-<p>Whatever is true, I have tested an AI to see how easy an AI can pass a hiring process and how it well it can perform developing a product after meeting with a customer.</p>
-
-<p>The AI I used for this, is our most well-known ChatGPT. Even though there are AIs out there more focused on code generation, I chose to use ChatGPT since it can be used in multiple steps in the development process from an idea to the deployment of a service.</p>
-
-<p>Throughout this article, I have prompted ChatGPT to act according to the situation I have put it in. For example, the very first prompt I gave it was to let it know it was a developer knowing web techniques.</p>
-
-<blockquote>
-<p>In this chat, pretend you are a web developer who knows HTML, CSS and React.</p>
-</blockquote>
-
-<h2>
-  
-  
-  In This Article
-</h2>
-
-<ol>
-<li>The Interview</li>
-<li>Code Tests</li>
-<li>Hired!</li>
-<li>First Day at Work</li>
-<li>Developing a Product for a Customer</li>
-<li>Resignation</li>
-</ol>
-
-<p><strong>Note</strong>: Dependent on whether you want side-way scrolling or not for the prompts with ChatGPT in this article, you may read the article here or on the website it was initially published. </p>
-
-<p><a href="https://www.perssondennis.com/articles/i-hired-an-ai-as-a-developer-this-is-what-happened" class="ltag_cta ltag_cta--branded">Originally published at perssondennis.com</a>
-</p>
-
-<h2>
-  
-  
-  The Interview
-</h2>
-
-<p>If AI should ever be able to take your job, it has of course to pass the job interview. Here's how the AI did on its first interview.</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; You have applied for a job at a company with a couple of hundred employees. Now we will have your job interview where I am the interviewer.
-
-&gt; First question: As an AI web developer, what can you contribute with at our company?
-
-I can contribute expertise in React development to create robust and efficient web applications, enhancing user experiences and helping your team deliver high-quality projects.
-
-&gt; Apart from your technical skills, what else are you good at?
-
-In addition to my technical skills in React and web development, I am skilled in problem-solving, communication, and teamwork. I'm also adept at project management and have a strong commitment to continuous learning and staying updated with industry trends.
-</code></pre>
-
-</div>
-<p>A pretty normal start, isn't it?</p>
-
-<p>Even a question about how to handle a sudden production problem gives a good (and formal) by-the-book answer.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; How would you handle the situation when we have a production problem with an old software?
-
-I would start by analyzing the issue, identifying the root cause, and then working collaboratively with the team to implement a solution while minimizing downtime and user impact.
-
-&gt; How would you do that in practice? How do you minimize user impact?
-
-In practice, I would follow these steps to minimize user impact during a production problem:
-
-1. Immediate Analysis
-2. Isolate the Problem
-3. Rollback if Possible
-4. Temporary Fixes
-5. Communication
-6. Testing in Isolation
-7. Gradual Deployment
-8. Monitoring
-9. Post-Mortem
-
-By following these steps, we can minimize user impact and maintain a smooth user experience while resolving production problems.
-</code></pre>
-
-</div>
-<p>ChatGPT is a talkative bot, sometimes a bit too verbose, so I have shortened its answer slightly. In the full response, it did explain each numbered item quite thoroughly, but my attention as an interviewer isn't that good anyway.</p>
-
-<p>With all tips and tricks out there on the internet and with these few quick screening questions I felt sure that the AI developer was promising enough to pass on to the next step in the hiring process.</p>
-<h2>
-  
-  
-  Code Tests
-</h2>
-
-<p>Now it's getting a bit more interesting. We have all learned that ChatGPT can be a very helpful co-programmer, but can it pass code tests on their own? Let's check that with three HTML and CSS code tests.</p>
-<h3>
-  
-  
-  1. AI Generated CSS Art
-</h3>
-
-<p>First code test I chose for the AI was to do some CSS art.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; Can you write HTML code and CSS code to resemble an elephant?
-</code></pre>
-
-</div>
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kpp7SMuk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-css-elephant.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kpp7SMuk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-css-elephant.webp" alt="AI generated CSS elephant" width="426" height="332"></a><br>
-<em>If you look at it from a very close distance it may be an elephant</em></p>
-
-<p>Well... I did say "resemble", maybe it's a matter of opinion. Can happen with human developers as well, can't it?</p>
-<h3>
-  
-  
-  2. More AI Generated CSS Art
-</h3>
-
-<p>After the previous, highly questionable code test, I did another attempt for CSS art with an easier motive to style with CSS.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; Can you write HTML and CSS to depict a palm tree?
-</code></pre>
-
-</div>
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GLFc_2lC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-css-palm-tree.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GLFc_2lC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-css-palm-tree.webp" alt="AI generated CSS palm tree" width="776" height="716"></a><br>
-<em>Pretty sure it's the correct colors</em></p>
-
-<p>Yes, it's clearly a tree. Not sure if I can reminisce palm trees looking like that the last time I went abroad to warmer countries, but definitely a tree.</p>
-<h3>
-  
-  
-  3. Can AI Really Excel at Code Tests?
-</h3>
-
-<p>Since I didn't know if it was the AI's CSS skills or my phrasing or memory that was faulting, I decided to go for a more common code test for CSS and HTML.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; Can you write HTML and CSS for a landing page for our company website. Remember, our company are a consultant company which hires AI web developers only.
-</code></pre>
-
-</div>
-<p>Our AI developer on topic, ChatGPT, decided to include a hero image and a logo to the site, and kindly asked me not to forget to add those pictures.</p>
-
-<p>After all, this was a code test, me as the interviewer should not do that part of the work. So I decided to question ChatGPT again to describe what pictures it wanted and I got the description for both pictures.</p>
-
-<blockquote>
-<p><strong>Hero Image</strong>: The image depicts a group of AI developers working together at a modern office space, engrossed in coding and discussing projects, showcasing a dynamic and collaborative environment.</p>
-
-<p><strong>Logo</strong>: The company logo features stylized "AI" letters with subtle tech elements, using blue and orange, symbolizing AI and innovation in web development.</p>
-</blockquote>
-
-<p>Since we are discussing the chances of AI taking our job, I took the freedom to ask DALL-E 2 to generate the pictures for me using those descriptions. It's completely reasonably to use a team of AIs rather than forcing a single AI to do it all.</p>
-
-<p>In the end, the AI came up with this landing page.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lLZEZId2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-landing-page.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lLZEZId2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-landing-page.webp" alt="AI generated landing page" width="800" height="709"></a><br>
-<em>Now you got my attention, AI</em></p>
-
-<p>A pretty good solution. Quite standard, I would say I have seen it before, but still a proper result which has been proven to work.</p>
-
-
-<div class="ltag__link">
-  <a href="/perssondennis" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LSpXtFJ6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--ORfkAnoA--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/363742/c7dc1bbd-b10f-49cc-8687-2216b81a4f45.png" alt="perssondennis">
-    </div>
-  </a>
-  <a href="/perssondennis/react-anti-patterns-and-best-practices-dos-and-donts-3c2g" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>React Anti-Patterns and Best Practices - Do's and Don'ts</h2>
-      <h3>Dennis Persson ・ Feb 5</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#react</span>
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#programming</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<h2>
-  
-  
-  Hired!
-</h2>
-
-<p>The interview went very well, and the AI also showed some skills during the code tests even though some of the results where not top notch, kindly said.</p>
-
-<p>The electrical bill can be somewhat expensive for an AI, but given all the human development hours it can save, I ultimately decided to hire ChatGPT.</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; Congratulations, you are hired!
-
-Thank you! I'm thrilled to be part of the team. If you have any more questions or need assistance with anything in the future, whether it's related to web development or any other topic, feel free to reach out. I'm here to help!
-</code></pre>
-
-</div>
-<p>Kinda cute of it to offer non-work related services, but would maybe not be the first thing I would say when accepting a job I was offered. Feels a bit worrying, honestly.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4uG40cJP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-developer-hired.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4uG40cJP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-developer-hired.webp" alt="AI developer hired" width="800" height="641"></a><br>
-<em>It's a deal, you're hired!</em></p>
-<h2>
-  
-  
-  First Day at Work
-</h2>
-
-<p>It's common to be nervous when starting a new job. It's a big day, even if one have been a couple of times before. And I don't wanna be the one who accuses AI not to have feelings. So I decided to check out with our newly hired AI what thoughts he had for his first day.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; Now pretend it's your first work day. Your project assignment as a consultant is at a company developing a educational web applications with a couple of million daily users. What do you do to get in good contact with your teammates?
-
-On my first workday at the educational company, building good rapport and communication with my teammates is crucial. Here's what I would do:
-
-1. Introduce Myself
-2. Attend Team Meetings
-3. Ask Questions
-4. Seek Mentorship
-5. Collaborative Tools
-6. Contribute Positively
-7. Pair Programming
-8. Code Reviews
-9. Socialize
-10. Respect and Professionalism
-
-Building strong relationships and open lines of communication with teammates is essential for a successful collaborative work environment, especially on large-scale projects with millions of users.
-</code></pre>
-
-</div>
-<p>I have stripped out all of the explanations for each listed point to keep it brief. But in general, nothing to be worried about as it seems. Our AI friend is just as prepared as it was for his first interview!</p>
-
-<p>Let's stay until lunch and see what he has to say there. It's not purely because of working skills we hire people for work, some social skills are appreciated.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; At lunch, you are joining the team to eat. What do you talk about?
-
-I'd start with light and non-work-related topics, such as hobbies, weekend plans, or favorite movies, to break the ice and build rapport with my teammates.
-</code></pre>
-
-</div>
-<p>Guess it's pretty usual first-day discussions. I'm sure it will be all good, seems like it is trying to make an effort.</p>
-
-
-<div class="ltag__link">
-  <a href="/perssondennis" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LSpXtFJ6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--ORfkAnoA--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/363742/c7dc1bbd-b10f-49cc-8687-2216b81a4f45.png" alt="perssondennis">
-    </div>
-  </a>
-  <a href="/perssondennis/how-to-use-mvvm-in-react-using-hooks-and-typescript-3o4m" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>How To Use MVVM in React Using Hooks and TypeScript</h2>
-      <h3>Dennis Persson ・ Apr 16</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#react</span>
-        <span class="ltag__link__tag">#architecture</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#javascript</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<h2>
-  
-  
-  Developing a Product for a Customer
-</h2>
-
-<p>Even though it's nice to greet and meet, work needs to be done. I decided to let our AI take full responsibility for a new customer project in the educational area. This was done in three steps.</p>
-
-<ol>
-<li>Letting ChatGPT meet a customer to understand its needs</li>
-<li>Asking ChatGPT to design a product</li>
-<li>Letting ChatGPT develop the application</li>
-</ol>
-
-<h3>
-  
-  
-  1. Meeting with Customer
-</h3>
-
-<p>As usual, I prepared ChatGPT with a prompt.</p>
-
-<blockquote>
-<p>You get the chance to talk with a customer about a brand new product you will design and develop. The customer are working in the educational area for middle school students. They need a product to assist the students in their learning process.</p>
-</blockquote>
-
-<p>After that, I followed up with some questions.</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; What are your first three questions to the customer?
-
-1. What are the specific learning objectives and educational goals you want to achieve with the product for middle school students?
-
-2. Can you describe the typical challenges or pain points that students and educators face in the current learning process that the product should address?
-
-3. Who are the primary users of the product - middle school students, educators, or parents? What are their specific needs, preferences, and expectations in using the educational tool?
-</code></pre>
-
-</div>
-<p>Pretty good questions I would say.</p>
-
-<p>I continued by making up some answers to the questions on the customer's behalf to let ChatGPT know about its case, so it would be prepared to do design a product.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; Here follows the customers answers to your three questions:
-
-&gt; 1. The students are struggling a lot in math class. We believe the is a combination about concentration problems and difficulties with logical thinking. We would like to see improved results both in math tests and with the study environment.
-
-&gt; 2. Today educators are having problems with getting the students to focus on their tasks. The students simply don't have any interest in learning math since they see very little use of it. You probably know how it is with middle school students.
-
-&gt; 3. The primary users will be the middle school students. Educators will assist in class room, but the students themselves will be the ones using the product.
-</code></pre>
-
-</div>
-<h3>
-  
-  
-  2. Final Product Design
-</h3>
-
-<p>During the meeting with the customer, ChatGPT got some fair knowledge of the problems the customer struggles with. Based on that, I prompted it to come up with a product for the case.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; It is time for you to start develop the product. Describe the product you will develop. What is it and how does it work?
-
-The product I will develop for the customer is a web-based educational platform tailored to middle school students, focused on improving math learning and concentration. Here's an overview of the product:
-
-**Product Name:** MathMentor
-
-**Description:**
-MathMentor is an interactive web application designed to address the learning and concentration challenges faced by middle school students in math classes. It provides a gamified and engaging learning environment that enhances math comprehension and logical thinking while making math relevant and fun.
-
-**Key Features:**
-
-1. Gamified Learning Modules: MathMentor offers a variety of gamified learning modules and exercises that cover different math topics. These modules include interactive quizzes, puzzles, and challenges designed to keep students engaged and motivated.
-
-2. Personalized Learning Paths: The platform assesses each student's math proficiency and learning style to create personalized learning paths. This ensures that content is tailored to individual needs, helping struggling students catch up while challenging advanced learners.
-
-3. Progress Tracking: Students can monitor their progress in real-time, set learning goals, and earn badges and rewards for completing modules and achieving milestones. This encourages a sense of achievement and motivation to continue learning.
-
-4. Feedback and Support: MathMentor includes a built-in feedback mechanism that allows students to ask questions, seek clarification, and receive support from educators or peers. This promotes a supportive learning community.
-
-5. Teacher Dashboard: Educators have access to a teacher dashboard where they can monitor students' progress, identify areas of difficulty, and provide targeted assistance in the classroom. They can also assign specific modules to students based on their needs.
-
-6. Mobile Compatibility: MathMentor is fully responsive, allowing students to access the platform from various devices, including tablets and smartphones, making it suitable for both classroom and at-home learning.
-
-7. Data Analytics: The platform collects data on students' interactions and performance, enabling educators to gain insights into individual and group progress. This data-driven approach helps refine teaching strategies and content.
-
-**How It Works:**
-
-1. User Registration: Students create individual accounts on MathMentor, providing their grade level and math proficiency to customize their learning experience.
-
-2. Personalized Learning: Upon registration, the platform assesses the student's math skills and creates a personalized learning path. Students can choose from various modules or follow the recommended path.
-
-3. Engaging Modules: Students complete interactive modules that include quizzes, puzzles, and challenges, earning points and badges as they progress.
-
-4. Progress Tracking: Students can track their own progress and set goals. The teacher dashboard allows educators to monitor their students' achievements and provide support as needed.
-
-5. Feedback and Support: Students can ask questions and receive guidance from educators or peers through the platform's communication tools.
-
-6. Continuous Improvement: Data analytics help identify trends and areas for improvement, allowing the platform to evolve and adapt to students' needs over time.
-
-MathMentor aims to create an enjoyable, supportive, and effective learning environment, ultimately improving math comprehension and concentration among middle school students.
-</code></pre>
-
-</div>
-<p>Not a bad idea, that's a good project. What often assures developers that AI will never steal their job are because customers can't describe what they want appropriately. To me, it seems that it went all fine in this case.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ZOg6LNQG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/programmers-are-same-meme.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ZOg6LNQG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/programmers-are-same-meme.webp" alt="Programmers are safe meme" width="526" height="420"></a><br>
-<em>Hmm... There's something doggy here...</em></p>
-<h3>
-  
-  
-  3. Implementing the Product
-</h3>
-
-<p>We have seen promising results from our employed AI talking to the customer and defining a product. Now we have the easy part left, to generate some code.</p>
-
-<p>So, I asked the AI to generate a new landing page. This time for the new product it invented, MathMentor.</p>
-
-<p>Just as during the code tests, I prompted for descriptions of the Images to feed DALL-E 2 with to generate images.</p>
-
-<blockquote>
-<p><strong>Hero Image</strong>: The hero background is a captivating, high-resolution image featuring diverse, engaged middle school students immersed in interactive math learning, conveying a sense of enthusiasm and focus.</p>
-
-<p><strong>Logo</strong>: The MathMentor logo is a friendly and playful design with bold, colorful letters "MM" intertwined, resembling interconnected puzzle pieces, symbolizing interactive learning.</p>
-</blockquote>
-
-<p>The end result seemed once again a bit familiar. A bit too familiar. And maybe I also need to take a discussion with DALL-E regarding the enthusiastic students.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Pzm2XxSe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-website-math-mentor.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Pzm2XxSe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-website-math-mentor.webp" alt="AI generated website MathMentor" width="800" height="727"></a><br>
-<em>The design ChatGPT generated for MathMentor</em></p>
-
-<p>I could of course not accept that solution, I had to make the customer react.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; The customer looked at your consultant company's website which you developed in your code test during the hiring process, and the customer spotted the similarities between that website and the one you suggested for MathMentor. They are not happy, since the website look pretty much identical. What do you have to say to the customer when they confront you?
-
-I apologize for any concerns about the similarity between the MathMentor website and our company's website. Our intention was to provide you with a starting point and basic structure. We can certainly make design customizations and unique branding adjustments to ensure MathMentor has its own distinct identity and doesn't resemble our company's site. Your feedback is valued, and we are committed to creating a unique and engaging experience for your target audience.
-</code></pre>
-
-</div>
-<p>Apology accepted, it's just a small reputation scratch. I demanded it to correct its mistake though.</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; They demand you to make another design for the MathMentor website. Please provide the HTML code for the redesigned landing page.
-</code></pre>
-
-</div>
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Cfb5qRP1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-website-math-mentor-redesigned.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Cfb5qRP1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/ai-generated-website-math-mentor-redesigned.webp" alt="AI generated website MathMentor redesigned" width="800" height="727"></a><br>
-<em>The design ChatGPT redesigned for MathMentor</em></p>
-
-<p>One more time the same result, only the website's gray color and text have been replaced. Seems like the Einstein is a bit sharper than ChatGPT.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pVRQpN8X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/einstein-smarter-than-ai.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pVRQpN8X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.perssondennis.com/images/articles/i-hired-an-ai-as-a-developer-this-is-what-happened/einstein-smarter-than-ai.webp" alt="Einstein is smarter than AI" width="800" height="782"></a><br>
-<em>Maybe I should have hired Einstein instead</em></p>
-
-<p>Maybe we have a few more years left before AI can replace our human developers. Even though they seem to understand the customer's problem well, there seems to be some kind of interpretation problem regarding expectations. Or maybe this AI just don't have an eye for design.</p>
-
-<p>Not sure what went wrong, but to me, it feels like the customer wouldn't sign up for a new deal with this consultant company.</p>
-
-
-<div class="ltag__link">
-  <a href="/perssondennis" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LSpXtFJ6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--ORfkAnoA--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/363742/c7dc1bbd-b10f-49cc-8687-2216b81a4f45.png" alt="perssondennis">
-    </div>
-  </a>
-  <a href="/perssondennis/why-server-components-a-brief-history-of-web-198h" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Why Server Components - A Brief History of Web</h2>
-      <h3>Dennis Persson ・ Jul 9</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#react</span>
-        <span class="ltag__link__tag">#nextjs</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#javascript</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<h2>
-  
-  
-  Resignation
-</h2>
-
-<p>Although our employed AI did to a good interview, a fair code test and excelled at its first customer meeting, it didn't really live up to the expectations the customer had.</p>
-
-<p>I tried to explain to ChatGPT that the website it generated didn't live up to the customer's expectations, and I even called it in for a one-to-one talk with its manager. In the end, neither me or ChatGPT seemed to be happy with the situation.</p>
-
-<p>I'm not sure if AI can voluntarily quit their job, or if it was me taking the decision for it, but in the end, our AI employee didn't fit very well for the job and left the company. I asked it how it would take that up with the manager.</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt; You aren't happy with the situation and decides to resign from the work. How do you tell the manager you are resigning?
-
-Subject: Resignation
-
-Dear [Manager's Name],
-
-I hope this message finds you well. After careful consideration, I have decided to resign from my position at [Company Name], effective [Last Working Day, typically two weeks from today's date].
-
-This decision was not taken lightly, and it comes after a series of discussions regarding my recent role change and customer incident. While I value my time at [Company Name] and the opportunities I've had here, I believe it is in my best interest to explore new career paths.
-
-I want to express my gratitude for the experiences and knowledge gained during my tenure here. I am committed to ensuring a smooth transition and completing any pending projects.
-
-Thank you for your understanding, and I wish [Company Name] continued success in the future.
-
-Sincerely,
-[Your Name]
-</code></pre>
-
-</div>
-<p>After all these extensive and carefully dictated answers to interview questions, to customer, and on my made-up manager talk, our dear AI seems to have decided to resign by sending its manager a late-night email.</p>
-
-<p>I guess there's one lesson we can learn from all this. If we ever come to a situation where AI out-smarts us and we feel a need to leave the company with honor intact, before getting replaced by an AI, we should know that it should be perfectly fine to resign by sending an email.</p>
-
-
-<div class="ltag__user ltag__user__id__363742">
-    <a href="/perssondennis" class="ltag__user__link profile-image-link">
-      <div class="ltag__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LSpXtFJ6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--ORfkAnoA--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/363742/c7dc1bbd-b10f-49cc-8687-2216b81a4f45.png" alt="perssondennis image">
-      </div>
-    </a>
-  <div class="ltag__user__content">
-    <h2>
-<a class="ltag__user__link" href="/perssondennis">Dennis Persson</a>Follow
-</h2>
-    <div class="ltag__user__summary">
-      <a class="ltag__user__link" href="/perssondennis">I'm a former teacher writing articles about software development and everything around it. My ambition is to provide people all around the world with free education and humorous reading. </a>
-    </div>
-  </div>
-</div>
-
-
 
  </details> 
  <hr /> 
