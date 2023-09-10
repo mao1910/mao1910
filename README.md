@@ -133,6 +133,68 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [sudo apt update && upgrade ?](https://dev.to/scorcism/sudo-apt-update-upgrade--48g3) 
+ <details><summary>Article</summary> <p>You may have heard or used <code>sudo apt update</code> and <code>sudo apt upgrade</code>, and you must have thought about what these commands actually do.</p>
+
+<p>So, in this blog, we will learn, what these two commands actually do.</p>
+
+<h2>
+  
+  
+  sudo apt update
+</h2>
+
+<p>When you enter <code>sudo apt update</code> in your terminal, this command starts a process that refreshes the package list on the system.</p>
+
+<p>Going in depth (-vv):</p>
+
+<ol>
+<li>
+<p><strong>Refreshing Packages</strong>: As we know, Linux systems use package managers like APT, which stands for Advanced Package Tool, to manage software packages.<br><br>
+These package managers maintain a list of available packages and their versions. So, when you run <code>sudo apt update</code>, the system contacts the package repositories specified in your software sources (usually found in <code>/etc/apt/sources.list</code> or <code>/etc/apt/sources.list.d/</code>) and checks for updates.  </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FgAbTpPs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/rx4ez9N.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FgAbTpPs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/rx4ez9N.png" alt="" width="642" height="231"></a></p>
+</li>
+<li><p><strong>Checking Updates</strong>: The package manager queries each repo (in my case, only one) and checks if there are any new packages or updates available.<br><br>
+This check is done by comparing the versions of packages in the repository with those installed on your system (side-by-side comparison).</p></li>
+<li><p><strong>Updating the Local Cache</strong>: If any updates are found, the package manager downloads the updated package information and stores it in a local cache on the system. This cache will contain metadata about the available packages, such as their names, versions, and dependencies. This will be used when we'sudo apt upgrade`.</p></li>
+</ol>
+
+<p><strong>Summary</strong>: An update doesn't actually include any updates; it only refreshes the list of available packages and their versions on the system.</p>
+
+<h2>
+  
+  
+  sudo apt upgrade
+</h2>
+
+<p>This command is usually performed after <code>update</code> because to update the packages, we need to have the new versions of the packages.  </p>
+
+<p>This upgrades the installed packages on the system.</p>
+
+<p>Going in depth (-vv):</p>
+
+<ol>
+<li><p><strong>Package Selection</strong>: The package manager checks the local cache, which was updated during the previous <code>sudo apt update</code> command. It identifies which installed packages have newer versions available in the repositories by comparing the old versions with the newer versions.</p></li>
+<li><p><strong>Dependency Resolution</strong>: If there are updates available, the package manager checks for any dependencies required by the updated packages. It ensures that the installation or upgrade won't break any existing software by resolving and installing any necessary dependencies.</p></li>
+<li><p><strong>Upgrading Packages</strong>: Once the package manager has determined which packages to upgrade and resolved any dependencies, it begins the upgrade process. It downloads the updated packages from the repositories and replaces the older versions installed on the system with the new ones.</p></li>
+<li><p><strong>Configuration Updates</strong>: In some cases, when upgrading a package, you might be prompted to review and approve changes to configuration files. The package manager provides options to keep your current configuration, use the new one, or review the differences.</p></li>
+<li><p><strong>Completion</strong>: After upgrading the selected packages, the package manager provides a summary of the changes, including the number of packages upgraded and any held back due to conflicts or other issues.</p></li>
+</ol>
+
+<p><strong>Summary</strong>:  <code>sudo apt upgrade</code> upgrades the packages by installing the new verison of the packages.</p>
+
+
+
+
+<p>If the article helps you, leave a like, follow, or anything 🙂.<br><br>
+You can follow me on <a href="https://www.linkedin.com/in/abhishekpathak32/">LinkedIn</a>, <a href="https://github.com/scorcism">GitHub</a>, <a href="https://dev.to/scorcism">Dev.to</a> and <a href="https://scorcism.hashnode.dev/">hashnode</a>.</p>
+
+<p><strong>Bye</strong></p>
+
+ </details> 
+ <hr /> 
+
  #### - [🎯 Medium vs. DEV vs. Hashnode vs. Hackernoon 🔥](https://dev.to/github20k/medium-vs-dev-vs-hashnode-vs-hackernoon-4ma1) 
  <details><summary>Article</summary> <p>I have been to over 20 calls. <br>
 Many people asked me: <strong>What platform should I post on?</strong><br>
@@ -737,68 +799,6 @@ You can follow me on <a href="https://www.linkedin.com/in/abhishekpathak32/">Lin
 </ol>
 
 <p>Remember to test your website's performance on various devices and network conditions to ensure a smooth experience for all users. Additionally, regularly monitor and address performance issues as your application evolves.</p>
-
- </details> 
- <hr /> 
-
- #### - [about arianzagrosmachinery](https://dev.to/arianzagrosmachinery/about-arianzagrosmachinery-558k) 
- <details><summary>Article</summary> <p><strong>Arian Zargos Machinery</strong> is one of the leading manufacturers and exporters of industrial machinery in Iran. They have over 25 years of experience in producing high-quality equipment for various industries such as food processing, chemical, plastic and packaging. Some of their popular products include mixers, extruders, filters and powder packing machines.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ga_GKbrV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvvddj2e9ay4gv1pzb0a.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ga_GKbrV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvvddj2e9ay4gv1pzb0a.jpg" alt="Image description" width="800" height="450"></a><br>
-<a href="https://arianzagrosmachinery.com/">https://arianzagrosmachinery.com/</a></p>
-
-<p>In this article, we will take a closer look at Arian Zargos and what makes them one of the top choices for industrial machinery in the country. I will discuss their product range, manufacturing facilities, quality systems and customer service. By the end, you will understand why they have garnered a reputation as a reliable and trusted supplier in their domain.</p>
-
-<h2>
-  
-  
-  Product Range
-</h2>
-
-<p>Arian Zargos offers a wide selection of machinery catered to different processing needs. Some of their flagship products include:</p>
-
-<p>Mixers: Their range of mixers include variable and fixed tank mixers from 50L to 5000L capacity suitable for applications like food mixing, slurries and more.</p>
-
-<p>Extruders: Both single and twin screw extruders for plastic extrusion, composite production and other industries.</p>
-
-<p>Powder Packaging Machines: Fully automated weighing and packaging machines for powders like rice, flour etc. into bags up to 5000kg/hr speeds.</p>
-
-<p>Filtration Systems: Multiple types of filters for liquid, powder and slurry filtration across sectors.</p>
-
-<p>Special Machinery: Custom machines are also designed and built as per specific customer requirements and processes.</p>
-
-<h2>
-  
-  
-  Manufacturing Facilities
-</h2>
-
-<p>All products are manufactured at Arian Zargos’ facilities spread across 10,000 square meters in Tehran. Advanced CNC machines, quality control labs, powder coating lines and an assembly unit ensure top-notch production. Strict ISO standards are adhered to throughout the manufacturing cycle.</p>
-
-<h2>
-  
-  
-  Quality and Certifications
-</h2>
-
-<p>Quality is a top focus area with routine audits, testing and calibration of machinery as per international standards. Key certifications held include ISO 9001 for quality management systems and CE marking showing safety and performance compliance. Buyers can be assured of the consistent functionality and durability of Arian Zargos equipment.</p>
-
-<h2>
-  
-  
-  Customer Service
-</h2>
-
-<p>Their customer-centric approach is reflected through value-added services like technical support, equipment installation, operator training and multi-year warranty programs. An expert team of engineers, electricians and technicians offer on-site repairs and maintenance services as well. Genuine spare parts are also available for products.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In summary, Arian Zargos Machinery has established itself as a strong brand owing to high-quality manufacturing, comprehensive product range and excellent after-sales assistance. Its state-of-the-art infrastructure and focus on quality enables them to deliver robust and reliable machinery solutions for myriad industries. I would highly recommend them for your equipment sourcing needs.<br>
-<a href="https://arianzagrosmachinery.com/">arianzagrosmachinery</a></p>
 
  </details> 
  <hr /> 
