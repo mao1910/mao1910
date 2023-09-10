@@ -133,6 +133,82 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Recap - Reflection of Term 1 🧐](https://dev.to/rjsgml/recap-reflection-of-term-1-2ic6) 
+ <details><summary>Article</summary> <blockquote>
+<p>Starters 🏁</p>
+</blockquote>
+
+<p>This blog post discusses my experience during the first term of BCIT's Computer Systems Technology program. For those unfamiliar with me, you can refer to my initial <a href="https://dev.to/rjsgml/pilot-start-of-my-blog-journey-2b04">post</a>.</p>
+
+<blockquote>
+<p>British Columbia Institute of Technology (BCIT) 🎓</p>
+</blockquote>
+
+<p>BCIT is a public polytechnic institute located in Burnaby, British Columbia. Unlike traditional colleges or universities, the British Columbia Institute of Technology emphasizes practical, flexible, and applied education. The instructors here bring direct, hands-on experience from their respective fields.</p>
+
+<blockquote>
+<p>Computer Systems Technology (CST) program 💻</p>
+</blockquote>
+
+<p>The CST program at BCIT is among the most challenging and rigorous diploma programs available. This program melds computer systems theory with hands-on experience in software development. For more details about the program, click <a href="https://www.bcit.ca/programs/computer-systems-technology-diploma-full-time-5500dipma/">here</a>.</p>
+
+<blockquote>
+<p><a href="https://www.bcit.ca/programs/computer-systems-technology-diploma-full-time-5500dipma/#courses">Courses</a> in Term 1 📚</p>
+</blockquote>
+
+<ul>
+<li>COMM 1116 (Business Communications 1)</li>
+</ul>
+
+<p>This is one of the more relaxed courses. It covers writing professional emails, informal reports, and oral presentations. It serves as a prerequisite for COMM 2216 and aids international students in enhancing their English reading and writing skills.</p>
+
+<ul>
+<li>COMP 1100 (CST Program Fundamentals)</li>
+</ul>
+
+<p>Another laid-back course. It operates on a pass/fail system, requiring students to attend lectures and submit weekly journals. The focus is on introducing essential information and resources for success in the CST Diploma Program.</p>
+
+<ul>
+<li>COMP 1113 (Applied Mathematics)</li>
+</ul>
+
+<p>This course is manageable with consistent effort. It covers partial discrete mathematics, an introduction to linear equations, and is segmented into: (1) Boolean algebra and logic circuit design; (2) number systems and data representation; and (3) functions, linear equations, vectors, and matrices. Based off this course, I made a <a href="https://github.com/gdcho/comp1113_calculator">web application</a> to assist in learning.</p>
+
+<ul>
+<li>COMP 1510 (Programming Methods)</li>
+</ul>
+
+<p>This is among the more challenging courses for many CST Term 1 students. It introduces the basics of object-oriented programming in Java (Burnaby campus) or Python (Downtown campus). The course covers programming fundamentals, including design, development, testing, debugging, error-handling, and problem-solving.</p>
+
+<ul>
+<li>COMP 1537 (Web Development 1)</li>
+</ul>
+
+<p>Some may find this course challenging, while those with prior web development experience might find it more accessible. It delves into both front-end and back-end programming using JavaScript, AJAX, DOM, and JSON.</p>
+
+<ul>
+<li>COMP 1712 (Business Analysis and System Design)</li>
+</ul>
+
+<p>This was one of the courses I found most challenging. It delves into the methodologies and tools for designing and developing information systems, covering concepts, processes, communication, decision-making, the software development life cycle (SDLC), data and process modeling, entity-relationship diagrams, databases, and more.</p>
+
+<ul>
+<li>COMP 1800 (Projects 1)</li>
+</ul>
+
+<p>This was one of my favorite courses. It involved group projects to create a small-scale responsive web application, incorporating the UX design process, agile methodology, and software management workflow.</p>
+
+<blockquote>
+<p>Reflections 🙏</p>
+</blockquote>
+
+<p>Overall, while Term 1 was demanding, I found it more enjoyable than anticipated. I forged numerous personal and professional connections and learned a tremendous amount in just five months. Beyond the academic growth, the rigorous schedule instilled discipline in my studies and inspired me to plan personal projects for the summer. I'll delve into these in upcoming posts.</p>
+
+<p>Thank you for reading, and stay tuned for future posts! 🤠</p>
+
+ </details> 
+ <hr /> 
+
  #### - [SQL Commands](https://dev.to/nathalia_friederichs/sql-commands-1md6) 
  <details><summary>Article</summary> <p>Have you ever heard of SQL? In this article, we will embark on a journey through the realm of data manipulation and definition language, exploring the distinctions between DDL, DML, DTL, DCL, and DQL.</p>
 
@@ -469,33 +545,6 @@ The emails will not contain uppercase letters.
 
 
 <p>Originally published at <a href="https://blog.seancoughlin.me">https://blog.seancoughlin.me</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [Resumo: Como ser um programador melhor](https://dev.to/ericarodrigs/resumo-como-ser-um-programador-melhor-1386) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zalvk_44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfpb51ibdxs36gpc8atn.jpg" alt="Título e capítulos do livro" width="800" height="388"></a><br>
-Já na introducao do livro o autor fala sobre quem deve ler o livro. Nesse trecho ele menciona que todos os programadores independente de seu nível fariam bom proveito dos pensamentos contidos no livro, porém eu não coloquei muita fé no começo. Os primeiros capítulos são bastante técnicos e eu ainda tava pegando o ritmo da leitura então estava achando avançado demais para mim. </p>
-
-<p>Entretanto ao concluir a leitura eu mudei totalmente de ideia. Na minha opinião a leitura desse livro é indicada para a maioria das pessoas independente da área. Obviamente vão ter alguns termos e situações que não fazem sentido se você não é da área da tecnologia, mas em boa parte do livro ele entrega reflexões poderosas sobre nossa postura como profissional em geral, e até mesmo como seres humanos que se relacionam em diferentes aspectos.</p>
-
-<p>O livro é dividido em cinco partes, onde cada uma trata sobre temas específicos. Durante todos os capítulos nos deparamos com perguntas e reflexões que nos levam a pensar em situações reais que se aplicam ao descrito no livro e também é destacado uma seção de ponto chave que funciona para fixar bem determinada ideia. </p>
-
-<p>Na primeira parte, você.escreve(código), são abordados temas essenciais, como se fossem uma série de mandamentos da programação, que representam a base de um bom código. Nesse momento do livro encontramos alguns conselhos como: escreva menos código, remova códigos desnecessários, não ignore erros, espere pelo inesperado e realize testes. </p>
-
-<p>Na segunda parte, a prática leva à perfeição, podemos ver alguns conceitos mais aprofundados da programação em geral e não do código propriamente dito. São tratados tópicos como a importância do controle de versão é como essa ferramenta pode ser sua aliada no desenvolvimento de aplicações, reutilização de trechos de código ou design através de práticas de componentização e a importância de manter a simplicidade no código para que pessoas de diferentes níveis e conhecimentos consigam ler e entender nosso trabalho. </p>
-
-<p>A parte três, envolvendo-se pessoalmente, acredito que é a que mais me tocou, pois nesse momento o autor atinge um nível que é mais difícil de ser abordado nessa área. Trata sobre aspectos e características comportamentais que são imprescindíveis para um bom relacionamento interpessoal e para sucesso em trabalho em equipe. Nesses capítulos o autor conversa diretamente com o leitor, aconselhando como se estivesse em uma conversa informal, conversando sobre os benefícios de amar o aprendizado, apreciar o desafio, evitar o comodismo, além de trazer reflexões profundas sobre o comportamento ético de um programador. </p>
-
-<p>Na quarta parte, conseguir que tudo seja feito, Pete traz algumas ideias sobre o processo necessário para a vida de um projeto até sua liberação para uso, com algumas dicas para que não haja desvios no caminho ou atrasos não planejados. Nesses capítulos percebemos dicas sobre o levantamento de requisitos necessários e sobre qual a real definição de pronto. </p>
-
-<p>Na última parte, uma meta de pessoas, é ressaltada a relevância da comunicação para o sucesso de aplicações. Ninguém trabalha sozinho e precisamos aprender constantemente a melhorar nossas habilidades de lidar com os colegas de profissão. </p>
-
-<p>Realmente após concluir a leitura não é difícil entender porque o livro é tão aclamado pela nossa comunidade. Aborda várias visões e aspectos diferentes e complementares do mundo da programação e só esse motivo já seria suficiente para que alguém que quer melhorar suas habilidades lesse o livro, porém ele ainda vai além. Traz uma leitura leve, traz exemplos práticos, traz quadrinhos com piadas (que muitas vezes não são muito divertidas ou fáceis de entender kkakakakakakaka), conselhos, pontos chaves, situações reais de experiência do autor, enfim, é um bom livro. Leiam!</p>
-
-<p>*** Curiosidade:</p>
-
-<p>A capa do livro traz a imagem de um peixe voador, que eu não sabia da existência e logo depois de terminar o livro fui ver vídeos no YouTube sobre porque achei bem interessante a ideia de um peixe que voa 🤯. Essa espécie de peixe inclusive foi utilizada como modelo para estudo do desenvolvimento de aviões e possui um recorde de 45 segundos de voo.</p>
 
  </details> 
  <hr /> 
