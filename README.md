@@ -133,6 +133,1006 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [GDScript Cheatsheet](https://dev.to/godot/gdscript-cheatsheet-5ghe) 
+ <details><summary>Article</summary> <p>This cheatsheet is meant to be a handy reference for both beginners and experienced GDScript users. So, whether you're just starting out or looking to review up on your GDScript knowledge, this cheatsheet will be your go-to resource. We'll cover all the essential topics you need to know about GDScript, from basic syntax to advanced concepts, complete with code snippets and examples. So, let's get started!</p>
+
+<h3>
+  
+  
+  Brief overview of GDScript
+</h3>
+
+<p>GDScript is a high-level, both static and dynamically typed programming language specifically designed for the Godot game engine. It's easy to learn, especially if you're familiar with Python, as its syntax and structure are quite similar. GDScript is powerful and versatile, allowing you to create complex game logic with minimal effort.</p>
+
+<p>Some key benefits of using GDScript include:</p>
+
+<ul>
+<li><p>Tight integration with Godot's engine and editor</p></li>
+<li><p>Clear and concise syntax, allows you to focus on game development</p></li>
+<li><p>Designed for rapid prototyping and iteration</p></li>
+</ul>
+
+<h2>
+  
+  
+  Basic Syntax
+</h2>
+
+<p>Let's begin by going over the basic syntax of GDScript. Here are the topics we'll cover:</p>
+
+<h3>
+  
+  
+  Comments
+</h3>
+
+<ul>
+<li><p>Single-line comments: <code># This is a single-line comment</code></p></li>
+<li><p>Multi-line comments: For multi-line comments you need to prefix every line with <code>#</code> hash, sadly in GDScript there's no easier way. Be careful with <code>"""</code> three quotes <code>"""</code> while it looks like multi-line comments, it's actually a multi-line strings and will be silently executed by the interpreter!<br>
+</p></li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="s2">"""
+This is a multiline string, not a comment!
+And thus it will be parsed by interpreter...
+"""</span>
+
+<span class="c1"># Now this</span>
+<span class="c1"># is a multiline comments</span>
+<span class="c1"># Interpreter will not read this</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Basic Output
+</h3>
+
+<p>To print output in GDScript, use the <code>print()</code> function:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, Godot!"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Indentation
+</h3>
+
+<p>GDScript uses indentation to define code blocks, just like Python:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">_init</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Variables
+</h3>
+
+<p>In GDScript, variables can be declared using the <code>var</code> keyword. You can also specify the type of the variable using a colon (<code>:</code>) followed by the type name.</p>
+
+<ul>
+<li><p>Declare a variable: <code>var my_variable = 10</code></p></li>
+<li><p>Change the value of a variable: <code>my_variable = 20</code></p></li>
+<li><p>Declare a variable with a specific type: <code>var my_int: int = 5</code></p></li>
+</ul>
+
+<p>Here are some common data types in GDScript:</p>
+
+<ul>
+<li><p><code>int</code>: Integer numbers</p></li>
+<li><p><code>float</code>: Floating-point numbers</p></li>
+<li><p><code>bool</code>: Boolean values (<code>true</code> or <code>false</code>)</p></li>
+<li><p><code>String</code>: Text strings<br>
+</p></li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">x</span><span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">var</span> <span class="n">y</span><span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="k">var</span> <span class="n">is_active</span><span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">true</span>
+<span class="k">var</span> <span class="n">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">"https://godot.community"</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Arrays and Dictionaries
+</h3>
+
+<p>GDScript also provides built-in data structures like arrays and dictionaries:</p>
+
+<ul>
+<li><p><code>Array</code>: Ordered list of elements</p></li>
+<li><p><code>Dictionary</code>: Key-value pairs<br>
+</p></li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_array</span><span class="p">:</span> <span class="kt">Array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">var</span> <span class="n">my_dict</span><span class="p">:</span> <span class="kt">Dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"key1"</span><span class="p">:</span> <span class="s2">"value1"</span><span class="p">,</span> <span class="s2">"key2"</span><span class="p">:</span> <span class="s2">"value2"</span><span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Static Variables
+</h3>
+
+<p>Static variables belong to a class rather than an instance of the class. To define a static variables, use the <code>static</code> keyword:</p>
+
+<ul>
+<li><p>Declare a static variable: <code>static var my_static_variable = 30</code></p></li>
+<li><p>Change the value of a static variable: <code>my_static_variable = 40</code></p></li>
+</ul>
+
+<h3>
+  
+  
+  Constants
+</h3>
+
+<ul>
+<li>Declare a constant: <code>const MY_CONSTANT = 100</code>
+</li>
+</ul>
+
+<h3>
+  
+  
+  Operators
+</h3>
+
+<h4>
+  
+  
+  Arithmetic
+</h4>
+
+<ul>
+<li><p>Addition: <code>a + b</code></p></li>
+<li><p>Subtraction: <code>a - b</code></p></li>
+<li><p>Multiplication: <code>a * b</code></p></li>
+<li><p>Division: <code>a / b</code></p></li>
+<li><p>Modulus: <code>a % b</code></p></li>
+<li><p>Power: <code>a ** b</code></p></li>
+</ul>
+
+<h4>
+  
+  
+  Comparison
+</h4>
+
+<ul>
+<li><p>Equal: <code>a == b</code></p></li>
+<li><p>Not equal: <code>a != b</code></p></li>
+<li><p>Less than: <code>a &lt; b</code></p></li>
+<li><p>Less than or equal: <code>a &lt;= b</code></p></li>
+<li><p>Greater than: <code>a &gt; b</code></p></li>
+<li><p>Greater than or equal: <code>a &gt;= b</code></p></li>
+</ul>
+
+<h4>
+  
+  
+  Logical
+</h4>
+
+<ul>
+<li><p>And: <code>a and b</code> or <code>a &amp;&amp; b</code></p></li>
+<li><p>Or: <code>a or b</code> or <code>a || b</code></p></li>
+<li><p>Not: <code>not a</code> or <code>!a</code></p></li>
+</ul>
+
+<h4>
+  
+  
+  Bitwise
+</h4>
+
+<ul>
+<li><p>Bitwise AND: <code>a &amp; b</code></p></li>
+<li><p>Bitwise OR: <code>a | b</code></p></li>
+<li><p>Bitwise XOR: <code>a ^ b</code></p></li>
+<li><p>Bitwise NOT: <code>~a</code></p></li>
+<li><p>Left shift: <code>a &lt;&lt; b</code></p></li>
+<li><p>Right shift: <code>a &gt;&gt; b</code></p></li>
+</ul>
+
+<h4>
+  
+  
+  Assignment
+</h4>
+
+<ul>
+<li><p>Assign: <code>a = b</code></p></li>
+<li><p>Add and assign: <code>a += b</code></p></li>
+<li><p>Subtract and assign: <code>a -= b</code></p></li>
+<li><p>Multiply and assign: <code>a *= b</code></p></li>
+<li><p>Divide and assign: <code>a /= b</code></p></li>
+<li><p>Modulus and assign: <code>a %= b</code></p></li>
+<li><p>Power and assign: <code>a **= b</code></p></li>
+<li><p>Left shift and assign: <code>a &lt;&lt;= b</code></p></li>
+<li><p>Right shift and assign: <code>a &gt;&gt;= b</code></p></li>
+<li><p>Bitwise AND and assign: <code>a &amp;= b</code></p></li>
+<li><p>Bitwise OR and assign: <code>a |= b</code></p></li>
+<li><p>Bitwise XOR and assign: <code>a ^= b</code></p></li>
+</ul>
+
+<h2>
+  
+  
+  Variable Typing
+</h2>
+
+<h3>
+  
+  
+  Dynamic Typing
+</h3>
+
+<p>In GDScript, variables are dynamically typed by default, meaning their type is interchangeable at runtime. For example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_variable</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="s2">"Hello, GDScript!"</span> <span class="c1"># This is allowed</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Static Typing
+</h3>
+
+<p>Static typing can be used to explicitly specify the type of a variable, meaning their type is not interchangeable at runtime. This can help catch potential bugs and improve code readability:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_int</span><span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">my_int</span> <span class="o">=</span> <span class="s2">"Hello, GDScript!"</span> <span class="c1"># This will cause an error</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Static type can also be inferred by using <code>:=</code> followed by value. Be careful when using this though, sometimes verbosity is better.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_int</span> <span class="p">:</span><span class="o">=</span> <span class="mi">5</span>
+<span class="n">my_int</span> <span class="o">=</span> <span class="s2">"Hello World"</span> <span class="c1"># Error, because my_int has been statically inferred as int</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Control Structures
+</h2>
+
+<p>Control structures are the building blocks of your GDScript code, allowing you to create complex logic and control the flow of your program. Let's learn about the different types of control structures in GDScript:</p>
+
+<h3>
+  
+  
+  Conditional statements
+</h3>
+
+<h4>
+  
+  
+  If
+</h4>
+
+<p>The <code>if</code> statement is used to execute a block of code if a certain condition is true:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is positive"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Else
+</h4>
+
+<p>The <code>else</code> statement is used to execute a block of code if the condition in the <code>if</code> statement is false:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is positive"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is not positive"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Elif
+</h4>
+
+<p>The <code>elif</code> (short for "else if") statement is used to test multiple conditions in a single <code>if</code> statement:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is positive"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is negative"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is zero"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Loops
+</h3>
+
+<h4>
+  
+  
+  For
+</h4>
+
+<p>The <code>for</code> loop is used to iterate over a sequence, such as an array or a range of numbers:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 2, 3, 4</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_array</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># Prints each item in my_array</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  While
+</h4>
+
+<p>The <code>while</code> loop is used to repeatedly execute a block of code as long as a certain condition is true:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 2, 3, 4</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Break and Continue
+</h4>
+
+<p>The <code>break</code> statement is used to exit a loop prematurely:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 2, 3, 4</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The <code>continue</code> statement is used to skip the rest of the current iteration and proceed to the next one:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 3, 4</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Functions
+</h2>
+
+<p>Functions are blocks of code that can be defined and called by name. They can take input, perform some action, and return a result. Let's learn how to work with functions in GDScript:</p>
+
+<h3>
+  
+  
+  Defining functions
+</h3>
+
+<p>To define a function, use the <code>func</code> keyword followed by the function name and a pair of parentheses:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, GDScript!"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Built-in functions
+</h3>
+
+<p>GDScript comes with a variety of built-in functions that you can use in your code. Some examples include:</p>
+
+<ul>
+<li><p><code>print()</code>: Prints a message to the console</p></li>
+<li><p><code>randi()</code>: Returns a random integer</p></li>
+<li><p><code>len()</code>: Returns the length of a sequence (e.g., an array or a string)</p></li>
+</ul>
+
+<h3>
+  
+  
+  Function arguments
+</h3>
+
+<p>Functions can take input in the form of arguments. To define a function with arguments, include the argument names inside the parentheses:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You can also define the types of the arguments, it will spit out an error if you try to pass different types to the arguments.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Return values
+</h3>
+
+<p>Functions can return a result using the <code>return</code> keyword:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># result is 5</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You can also define the type of the returned value by appending <code>-&gt; ReturnType</code> to the function declaration, it will spit out an error if you try to return something that isn't the correct type.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="c1"># Returns integer</span>
+<span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># This won't work</span>
+<span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s2">"Hello"</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Static Functions
+</h3>
+
+<p>Static functions are functions that belong to a class rather than an instance of the class. To define a static function, use the <code>static</code> keyword:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">static</span> <span class="k">func</span> <span class="nf">my_static_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a static function."</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Classes and Objects
+</h2>
+
+<p>In GDScript, a script file represents a class and objects are instances of classes. You can create instances of a class using the <code>new()</code> method.</p>
+
+<h3>
+  
+  
+  Defining Classes
+</h3>
+
+<p>To define a class, simply create a new script file (e.g., <code>my_class.gd</code>). The name of the file should represents the name of the class. Create a new file called <code>player.gd</code> with the following content:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">class_name</span> <span class="n">Player</span>
+
+<span class="k">var</span> <span class="n">health</span><span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">var</span> <span class="n">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">"Unnamed"</span>
+
+<span class="k">func</span> <span class="nf">take_damage</span><span class="p">(</span><span class="n">amount</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span>
+    <span class="n">health</span> <span class="o">-=</span> <span class="n">amount</span>
+    <span class="k">if</span> <span class="n">health</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Player"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">"has died!"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Creating Object
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">player</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"John Doe"</span>
+<span class="n">player</span><span class="o">.</span><span class="n">take_damage</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Properties
+</h3>
+
+<p>Properties are variables that belong to a class or an object. They can be used to store data or state:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">var</span> <span class="n">my_property</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Methods
+</h3>
+
+<p>Methods are functions that belong to a class or an object. They can be used to perform actions or manipulate data:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">func</span> <span class="nf">my_method</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, GDScript!"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Inheritance
+</h3>
+
+<p>Inheritance is a way for one class to inherit the properties and methods of another class. To inherit from another class, use the <code>extends</code> keyword:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="c1"># Derived class</span>
+<span class="k">class_name</span> <span class="n">DerivedClass</span> <span class="k">extends</span> <span class="n">MyBaseClass</span>
+
+<span class="k">func</span> <span class="nf">my_method</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello from the derived class!"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Constructors
+</h3>
+
+<p>Constructors are special methods that are called when an object is initialized. In GDScript, the constructor is named <code>_init</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">func</span> <span class="nf">_init</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Object initialized!"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Signals and Events
+</h2>
+
+<p>Signals are a way for objects to communicate with each other without relying on direct references. They can be used to decouple your code and make it more modular. Let's learn how to work with signals and events in GDScript:</p>
+
+<h3>
+  
+  
+  Defining signals
+</h3>
+
+<p>To define a signal, use the <code>signal</code> keyword followed by the signal name:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">signal</span> <span class="n">my_signal</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Emitting signals
+</h3>
+
+<p>To emit a signal, you can use the <code>emit_signal</code> method:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="n">emit_signal</span><span class="p">(</span><span class="s2">"my_signal"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>However, it's better to ditch those strings, by simply calling emit method inside the signal directly:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="n">my_signal</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Connecting signals to functions
+</h3>
+
+<p>Signals are a way to communicate between objects in Godot. They allow you to decouple your code and create more modular systems.</p>
+
+<p>To connect a signal to a function, use the <code>connect</code> method:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="n">my_object</span><span class="o">.</span><span class="n">my_signal</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">on_my_signal</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="nf">on_my_signal</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Signal received!"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>There are actually four ways to connect signals, however, this is the recommended approach, instead of the other one (That might more error prone).</p>
+
+<h2>
+  
+  
+  Error Handling
+</h2>
+
+<p>Error handling is an important aspect of programming, as it allows you to gracefully handle errors and exceptions that may occur at runtime. In GDScript, you can use the following constructs to handle errors:</p>
+
+<h3>
+  
+  
+  Assert
+</h3>
+
+<p>The <code>assert</code> statement is used to check if a condition is true, and if not, raise an error:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="nb">assert</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"x must be positive"</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Try, Catch, and Throw
+</h3>
+
+<p>GDScript does not have built-in support for try-catch blocks. There are many godot-proposals from people asking for it, however, It has already been stated that try-catch will never come into gdscript.</p>
+
+<p>Quoting from Juan in <a href="https://github.com/godotengine/godot/issues/3516#issuecomment-177152034">his post</a>:</p>
+
+<blockquote>
+<p>Exceptions won't happen. Godot is designed for things to keep working even if state is inconsistent, while at the same time reporting errors</p>
+</blockquote>
+
+<h2>
+  
+  
+  File I/O
+</h2>
+
+<p>Working with files is a common task in many applications. In GDScript, you can use the <code>File</code> class to read from and write to files:</p>
+
+<h3>
+  
+  
+  Writing a file
+</h3>
+
+<p>To write to a file, use the <code>store_string</code>, <code>store_line</code> or other <code>store_*</code> methods:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">player_name</span> <span class="o">=</span> <span class="s2">"Septian"</span>
+<span class="k">var</span> <span class="n">file</span> <span class="o">=</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"user://save_game.dat"</span><span class="p">,</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">WRITE</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">store_string</span><span class="p">(</span><span class="n">player_name</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Reading and writing
+</h3>
+
+<p>To read from a file, use the <code>get_as_text</code> or other <code>get_*</code> method:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">file</span> <span class="o">=</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"user://save_game.dat"</span><span class="p">,</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">READ</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">player_name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">get_as_text</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">player_name</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Closing files
+</h3>
+
+<p>To close a file, use the <code>close</code> method:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>FileAccess</code> will automatically closes the file when it goes out of scope or set to null. However it's better to be explicit when handling with I/O.</p>
+
+<h2>
+  
+  
+  Useful Tips and Tricks
+</h2>
+
+<p>Here are some handy tips and tricks to help you write better GDScript:</p>
+
+<ul>
+<li><p>Use clear and descriptive variable and function names</p></li>
+<li><p>Keep your functions short and focused</p></li>
+<li><p>Use comments to explain complex or important code</p></li>
+<li><p>Follow the <a href="https://godot.community/topic/27/gdscript-coding-conventions-best-practices-for-readable-and-maintainable-code">GDScript style guide</a></p></li>
+<li><p>Follow the <a href="https://godot.community/topic/41/gdscript-best-practices-for-organized-code">GDScript code ordering</a></p></li>
+</ul>
+
+<h3>
+  
+  
+  String manipulation
+</h3>
+
+<ul>
+<li>String interpolation:
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">result</span> <span class="o">=</span> <span class="s2">"The </span><span class="si">%s</span><span class="s2"> has defeated the </span><span class="si">%s</span><span class="s2"> in </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="s2">"Player"</span><span class="p">,</span> <span class="s2">"Boss"</span><span class="p">,</span> <span class="s2">"Combat"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># Will prints:</span>
+<span class="c1"># The Player has defeated the Boss in Combat</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li><p>Concatenate strings: <code>var result = "Hello, " + "GDScript!"</code></p></li>
+<li><p>Format strings: <code>var result = "Hello, %s!" % "GDScript"</code></p></li>
+<li><p>Split strings: <code>var words = "Hello, GDScript!".split(", ")</code></p></li>
+</ul>
+
+<h3>
+  
+  
+  Array and Dictionary operations
+</h3>
+
+<ul>
+<li><p>Add an item to an array: <code>my_array.append(item)</code></p></li>
+<li><p>Remove an item from an array: <code>my_array.erase(item)</code></p></li>
+<li><p>Get the length of an array: <code>var length = my_array.size()</code></p></li>
+<li><p>Check if a key exists in a dictionary: <code>if my_dict.has(key):</code></p></li>
+</ul>
+
+<h3>
+  
+  
+  Type casting
+</h3>
+
+<ul>
+<li>Cast a value to a specific type: <code>var my_int = int("42")</code>
+</li>
+</ul>
+
+<h3>
+  
+  
+  Debugging
+</h3>
+
+<ul>
+<li><p>Print a message to the console: <code>print("Hello, GDScript!")</code></p></li>
+<li><p>Set a breakpoint: <code>breakpoint</code></p></li>
+</ul>
+
+<h2>
+  
+  
+  Resources
+</h2>
+
+<p>To learn more about GDScript and the Godot game engine, check out these great resources:</p>
+
+<ul>
+<li><p><a href="https://godot.community/category/22/ask">Ask Godot Community</a></p></li>
+<li><p><a href="https://godot.community/category/24/beginner-s-corner">Beginner's Corners</a></p></li>
+<li><p><a href="https://godot.community/tags/tutorial">Tutorials tagged posts</a></p></li>
+</ul>
+
+<p>That's it for this <strong>GDScript Cheatsheet</strong>! I hope you found it useful and informative. Feel free to bookmark this post and refer back to it whenever you need a quick reference for GDScript. Happy coding!</p>
+
+<blockquote>
+<p>This cheatsheet is updated for Godot 4.2, GDScript is an evolving language, if you find outdated information, please let me know so I can fix it! </p>
+</blockquote>
+
+ </details> 
+ <hr /> 
+
  #### - [HTML For Beginners The Easy Way](https://dev.to/noobizdev/html-for-beginners-the-easy-way-mhp) 
  <details><summary>Article</summary> <p>In today's digital age, having a basic understanding of <a href="https://html.com/">HTML</a> (Hypertext Markup Language) is essential for anyone looking to explore web development or create their own website. HTML is the foundation of web pages, allowing you to structure and format content. This beginner's guide will walk you through the fundamentals of HTML, helping you create your first web page from scratch.</p>
 
@@ -379,13 +1379,13 @@ There are numerous online resources and tutorials available, including interacti
 
 <p>The image above shows a user interface with two tabs: <code>JobDescription</code> and <code>ApplicationForm</code>. We want to explore how to create tabbed interfaces like this one using Vue. </p>
 
-<p>It's easy to think it's simple – just create <code>&lt;/JobDescription&gt;</code> and <code>&lt;/ApplicationForm&gt;</code> components and render them to the DOM, as shown in the snippet below. But is it really that straightforward?"<br>
+<p>It's easy to think it's simple – just create <code>&lt;JobDescription /&gt;</code> and <code>&lt;ApplicationForm /&gt;</code> components and render them to the DOM, as shown in the snippet below. But is it really that straightforward?"<br>
 </p>
 
 <div class="highlight js-code-highlight">
 <pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nc">JobDescription</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="err">/</span><span class="na">ApplicationForm</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nc">JobDescription</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nc">ApplicationForm</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </code></pre>
 
@@ -409,7 +1409,7 @@ There are numerous online resources and tutorials available, including interacti
 
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--V1tbiHxV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v16gotahwbn0mcowbtpf.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--V1tbiHxV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v16gotahwbn0mcowbtpf.gif" alt="Dynamic components without keep-alive" width="800" height="352"></a></p>
 
-<p>If you think about how Vue renders components, you’d see that this type of behavior is expected. Every time we switch from a component, Vue un-mounts that component. </p>
+<p>If you think about how Vue renders components, you’d see that this type of behaviour is expected. Every time we switch from a component, Vue un-mounts that component. </p>
 
 <p>In our scenario, when transitioning from 'ApplicationForm' to 'JobDescription,' Vue un-mounts the former from the DOM and then mounts the latter. Any input in the field is lost because Vue needs to completely re-render the 'ApplicationForm' component when we switch back to it.</p>
 
@@ -444,8 +1444,8 @@ There are numerous online resources and tutorials available, including interacti
 
 <div class="highlight js-code-highlight">
 <pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">ApplicationForm</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="err">/</span><span class="na">template</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nc">ApplicationForm</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
 </code></pre>
 
 </div>
@@ -595,321 +1595,6 @@ REST requires that a client make a request to the server in order to retrieve or
 <li><p>A header, which allows the client to pass along information about the request.</p></li>
 <li><p>A path to a resource.</p></li>
 <li><p>An optional message body containing data.</p></li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [DOM reading and writing with new lifecycle hooks in Angular](https://dev.to/railsstudent/dom-reading-and-writing-with-new-lifecycle-hooks-in-angular-4n7e) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
-
-<p>In Angular 16, Angular has added two new lifecycle hooks, <code>afterNextRender</code> and <code>afterRender</code>, for DOM reading and writing.</p>
-
-<ul>
-<li>afterNextRender – executes once and is similar to AfterViewInit but it does not execute in server-side rendering (SSR)</li>
-<li>afterRender – executes after every change detection</li>
-</ul>
-
-<p>According to the Angular documentation, <code>afterNextRender</code> is similar to <code>AfterViewInit</code> but it does not cause issues that <code>AfterViewInit</code> has in SSR. On the other hand, <code>afterRender</code> executes after every change detection to synchronize state with DOM.</p>
-
-<p>In this blog post, I describe how to use <code>afterNextRender</code> to add new chart on canvas and <code>afterRender</code> to redraw chart to synchronize chart options.</p>
-
-<h3>
-  
-  
-  Scenario of using afterNextRender and afterRender
-</h3>
-
-<p>In the example, I want to use a thirty-party chart library, Chart.js, to render a bar chart on a canvas element. Therefore, I implement <code>afterNextRender</code> hook to insert the chart to the canvas. Then, I use RxJS timer operator to append data points to the underlying chart array every one second. </p>
-
-<p>To make the example interactive, there is a color dropdown that changes the color of the bars. I am going to implement <code>afterRender</code> hook that examines the inputs and update the chart after every change detection.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">zone.js/dist/zone</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">afterNextRender</span><span class="p">,</span> <span class="nx">afterRender</span><span class="p">,</span> <span class="nx">ChangeDetectionStrategy</span><span class="p">,</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ElementRef</span><span class="p">,</span> <span class="nx">OnDestroy</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">bootstrapApplication</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/platform-browser</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Chart</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">chart.js/auto</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">take</span><span class="p">,</span> <span class="nx">timer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-app</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">standalone</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">FormsModule</span><span class="p">],</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s2">`
-    &lt;h1&gt;Hello from Lifecycle Hooks!&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-        &lt;label&gt;
-          Bar Color:
-          &lt;select [(ngModel)]="barColor"&gt;
-              &lt;option value="red"&gt;Red&lt;/option&gt;
-              &lt;option value="pink"&gt;Pink&lt;/option&gt;
-              &lt;option value="magenta"&gt;Magenta&lt;/option&gt;
-              &lt;option value="rebeccapurple"&gt;Rebecca Purple&lt;/option&gt;
-              &lt;option value="cyan"&gt;Cyan&lt;/option&gt;
-              &lt;option value="blue"&gt;Blue&lt;/option&gt;
-              &lt;option value="green"&gt;Green&lt;/option&gt;
-              &lt;option value="yellow"&gt;Yellow&lt;/option&gt;
-          &lt;/select&gt;
-        &lt;/label&gt;
-      &lt;/div&gt;
-      &lt;canvas #canvas&gt;&lt;/canvas&gt;
-    &lt;/div&gt;
-  `</span><span class="p">,</span>
-  <span class="na">changeDetection</span><span class="p">:</span> <span class="nx">ChangeDetectionStrategy</span><span class="p">.</span><span class="nx">OnPush</span><span class="p">,</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">App</span> <span class="k">implements</span> <span class="nx">OnDestroy</span> <span class="p">{</span>
-  <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2017</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">10</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2018</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">20</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2019</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">15</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2021</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2022</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">30</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2023</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
-  <span class="p">];</span>
-  <span class="nl">chart</span><span class="p">:</span> <span class="nx">Chart</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="nl">chartData</span><span class="p">:</span> <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span> <span class="nl">count</span><span class="p">:</span> <span class="kr">number</span><span class="p">}</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="nx">barColor</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">;</span>
-
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">timer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
-        <span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-      <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
-          <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span> <span class="o">=</span> <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2024</span> <span class="o">+</span> <span class="nx">value</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span> <span class="p">};</span>
-        <span class="p">}</span>
-      <span class="p">);</span>
-
-      <span class="c1">// afterNextRender and afterRender are implemented in the constructor</span>
-  <span class="p">}</span>
-
-  <span class="nx">ngOnDestroy</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">?.</span><span class="nx">destroy</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">bootstrapApplication</span><span class="p">(</span><span class="nx">App</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Install dependency
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npm i <span class="nt">--save-exact</span> chart.js
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Implement afterNextRender lifecycle hook to attach chart to canvas
-</h3>
-
-<p>The <code>afterNextRender</code> lifecycle hook executes once after the next change detection. Therefore, it is the ideal entry point to insert a new chart into DOM.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">canvas</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">static</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">read</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="o">&lt;</span><span class="nx">HTMLCanvasElement</span><span class="o">&gt;</span> <span class="p">})</span>
-<span class="nx">canvas</span><span class="o">!</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="o">&lt;</span><span class="nx">HTMLCanvasElement</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>First, I use <code>@ViewChild</code> decorator to obtain the <code>ElementRef</code> of the canvas. <code>this.canvas.nativeElement</code> returns an instance of <code>HTMLCanvasElement</code> that passes to the constructor of Chart.js in <code>afterNextRender</code> hook.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-   <span class="p">...</span> <span class="nx">omitted</span> <span class="nx">other</span> <span class="nx">codes</span>
-
-  <span class="nx">afterNextRender</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">afterNextRender called</span><span class="dl">'</span><span class="p">);</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">chart</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Chart</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">,</span> 
-        <span class="p">{</span>
-          <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span>
-          <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">labels</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">row</span> <span class="o">=&gt;</span> <span class="nx">row</span><span class="p">.</span><span class="nx">year</span><span class="p">),</span>
-            <span class="na">datasets</span><span class="p">:</span> <span class="p">[</span>
-              <span class="p">{</span>
-                <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Acquisitions by year</span><span class="dl">'</span><span class="p">,</span>
-                <span class="na">data</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">row</span> <span class="o">=&gt;</span> <span class="nx">row</span><span class="p">.</span><span class="nx">count</span><span class="p">),</span>
-                <span class="na">backgroundColor</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">barColor</span><span class="p">,</span>
-              <span class="p">}</span>
-            <span class="p">]</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-      <span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the constructor, I implement <code>afterNextRender</code> and pass a callback to instantiate the chart and render it on the canvas.</p>
-
-<p>I have successfully inserted a JavaScript Chart to DOM. DOM reading and writing is performed exactly once such that canvas does not display multiple charts erroneously.</p>
-
-<h3>
-  
-  
-  Implement afterRender lifecycle hook to perform repeated DOM reading and writing
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="nx">timer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
-        <span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-      <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
-          <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span> <span class="o">=</span> <span class="p">{</span> <span class="na">year</span><span class="p">:</span> <span class="mi">2024</span> <span class="o">+</span> <span class="nx">value</span><span class="p">,</span> <span class="na">count</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span> <span class="p">};</span>
-        <span class="p">}</span>
- <span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This timer operator randomizes 5 data points and assigns to <code>this.chartData</code> every one second. After <code>this.chartData</code> is set, the chart displays the new bar in afterRender hook.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-   <span class="p">...</span> <span class="nx">omitted</span> <span class="nx">other</span> <span class="nx">codes</span>
-
-  <span class="nx">afterNextRender</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-       <span class="p">...</span> <span class="nx">instantiate</span> <span class="nx">chart</span> <span class="p">....</span>
-  <span class="p">});</span>
-
-  <span class="nx">afterRender</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">datasets</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">datasets</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chartData</span><span class="p">)</span> <span class="p">{</span>
-          <span class="kd">const</span> <span class="p">{</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">count</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span><span class="p">;</span>
-          <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">labels</span><span class="p">?.</span><span class="nx">push</span><span class="p">(</span><span class="nx">year</span><span class="p">);</span>
-          <span class="nx">datasets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">dataset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">dataset</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
-          <span class="p">});</span>
-          <span class="k">this</span><span class="p">.</span><span class="nx">chartData</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="p">}</span>
-
-        <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In <code>afterRender</code> hook, chart label and chart data are pushed to the data set when both <code>this.chart</code> and <code>this.chartData</code> are defined. Then, <code>this.chart.update()</code> is invoked to redraw the chart on canvas.</p>
-
-<h3>
-  
-  
-  DOM reading and writing in afterRender hook based on user inputs
-</h3>
-
-<p>Another user case is to update bar color when user selects color from a dropdown. This simple dropdown applies 2-way data binding to bind ngModel to this.barColor.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;div&gt;</span>
-     <span class="nt">&lt;label&gt;</span>
-          Bar Color:
-          <span class="nt">&lt;select</span> <span class="na">[(ngModel)]=</span><span class="s">"barColor"</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"red"</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/option&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"pink"</span><span class="nt">&gt;</span>Pink<span class="nt">&lt;/option&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"magenta"</span><span class="nt">&gt;</span>Magenta<span class="nt">&lt;/option&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"rebeccapurple"</span><span class="nt">&gt;</span>Rebecca Purple<span class="nt">&lt;/option&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"cyan"</span><span class="nt">&gt;</span>Cyan<span class="nt">&lt;/option&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"blue"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/option&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"green"</span><span class="nt">&gt;</span>Green<span class="nt">&lt;/option&gt;</span>
-              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"yellow"</span><span class="nt">&gt;</span>Yellow<span class="nt">&lt;/option&gt;</span>
-          <span class="nt">&lt;/select&gt;</span>
-    <span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-
-barColor = 'red';
-</code></pre>
-
-</div>
-
-
-
-<p>When user makes selection, the application updates <code>this.barColor</code> and triggers change detection. <code>afterRender</code> is then fired after every change detection. Therefore, I put logic in <code>afterRender</code> hook to update bar color and redraw the graph on canvas.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="nx">afterRender</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-   <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">datasets</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">datasets</span><span class="p">;</span>
-      <span class="p">...</span> <span class="nx">append</span> <span class="nx">data</span> <span class="nx">to</span> <span class="nx">dataset</span> <span class="p">...</span>
-
-      <span class="nx">datasets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">dataset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dataset</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">barColor</span><span class="p">;</span>
-      <span class="p">});</span>
-
-      <span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In <code>afterRender</code> hook, <code>dataset.backgroundColor = this.barColor;</code> updates the color and <code>this.chart.update();</code> updates the chart again.</p>
-
-<p>The following Stackblitz repo shows the final results:<br>
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-rey9qy?file=src%2Fmain.ts" width="100%" height="500">
-</iframe>
-</p>
-
-<p>This is the end of the blog post and I hope you like the content and continue to follow my learning experience in Angular and other technologies.</p>
-
-<h2>
-  
-  
-  Resources:
-</h2>
-
-<ul>
-<li>Github Repo: <a href="https://github.com/railsstudent/ng-after-render-demo">https://github.com/railsstudent/ng-after-render-demo</a>
-</li>
-<li>Stackblitz: <a href="https://stackblitz.com/edit/stackblitz-starters-rey9qy?file=src%2Fmain.ts">https://stackblitz.com/edit/stackblitz-starters-rey9qy?file=src%2Fmain.ts</a>
-</li>
-<li>AfterNextRender and AfterRender: <a href="https://angular.io/guide/lifecycle-hooks#reading-and-writing-the-dom">https://angular.io/guide/lifecycle-hooks#reading-and-writing-the-dom</a>
-</li>
-<li>Chart.js: <a href="https://www.chartjs.org/docs/latest/">https://www.chartjs.org/docs/latest/</a>
-</li>
 </ul>
 
  </details> 
