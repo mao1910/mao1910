@@ -133,6 +133,129 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [How to Improve Front-end performance??🤔](https://dev.to/manish7107/how-to-improve-front-end-performance-3ag7) 
+ <details><summary>Article</summary> <p>Improving front-end performance is crucial for creating fast and responsive web applications. Here are some tips to help you enhance the performance of your front-end code:</p>
+
+<ol>
+<li>
+<p><strong>Optimize Images and Media:</strong></p>
+
+<ul>
+<li>Use appropriate image formats (e.g., JPEG, PNG, SVG) for different types of images.</li>
+<li>Compress images to reduce file size without sacrificing quality.</li>
+<li>Lazy load images to only load them when they are in the viewport.</li>
+</ul>
+</li>
+<li>
+<p><strong>Minimize HTTP Requests:</strong></p>
+
+<ul>
+<li>Reduce the number of requests by combining CSS and JavaScript files, using sprite sheets, and avoiding excessive use of external resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>Utilize Browser Caching:</strong></p>
+
+<ul>
+<li>Set appropriate cache headers to allow the browser to store resources locally. This reduces the need for repeated downloads.</li>
+</ul>
+</li>
+<li>
+<p><strong>Minify and Bundle Files:</strong></p>
+
+<ul>
+<li>Minify CSS, JavaScript, and HTML files to remove unnecessary characters like whitespace, comments, and newline characters.</li>
+<li>Bundle multiple smaller files into a single, larger file to reduce the number of HTTP requests.</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize Critical Rendering Path:</strong></p>
+
+<ul>
+<li>Prioritize the loading of critical resources needed for initial rendering (e.g., inline critical CSS, preload resources).</li>
+<li>Avoid render-blocking resources in the head section.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Content Delivery Networks (CDNs):</strong></p>
+
+<ul>
+<li>Leverage CDNs to distribute static resources across multiple servers, reducing server load and improving load times for users globally.</li>
+</ul>
+</li>
+<li>
+<p><strong>Choose Efficient CSS Selectors:</strong></p>
+
+<ul>
+<li>Avoid using complex selectors or over-qualified selectors. Specificity can slow down rendering times.</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize CSS and JavaScript Performance:</strong></p>
+
+<ul>
+<li>Avoid unnecessary animations and transitions, as they can hinder performance.</li>
+<li>Use asynchronous and deferred loading for non-critical scripts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Implement Responsive Web Design:</strong></p>
+
+<ul>
+<li>Use CSS media queries to ensure your website is optimized for various screen sizes and devices.</li>
+</ul>
+</li>
+<li>
+<p><strong>Avoid Render-Blocking Scripts:</strong></p>
+
+<ul>
+<li>Load non-essential scripts after the initial rendering or use techniques like <code>async</code> and <code>defer</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize Fonts:</strong></p>
+
+<ul>
+<li>Use system fonts or a small set of web-safe fonts to reduce font loading times.</li>
+<li>Consider using font-display CSS property to control how fonts are displayed while they are still loading.</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitor and Analyze Performance:</strong></p>
+
+<ul>
+<li>Use tools like Lighthouse, PageSpeed Insights, and browser developer tools to identify performance bottlenecks and areas for improvement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize JavaScript Execution:</strong></p>
+
+<ul>
+<li>Avoid unnecessary calculations and DOM manipulations, especially in loops.</li>
+<li>Use efficient algorithms and data structures.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reduce DOM Manipulations:</strong></p>
+
+<ul>
+<li>Minimize the frequency of DOM updates and try to batch them when possible.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consider Server-Side Rendering (SSR) or Static Site Generation (SSG):</strong></p>
+
+<ul>
+<li>For content-heavy sites, consider generating HTML on the server or at build time to reduce client-side rendering.</li>
+</ul>
+</li>
+</ol>
+
+<p>Remember to test your website's performance on various devices and network conditions to ensure a smooth experience for all users. Additionally, regularly monitor and address performance issues as your application evolves.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [about arianzagrosmachinery](https://dev.to/arianzagrosmachinery/about-arianzagrosmachinery-558k) 
  <details><summary>Article</summary> <p><strong>Arian Zargos Machinery</strong> is one of the leading manufacturers and exporters of industrial machinery in Iran. They have over 25 years of experience in producing high-quality equipment for various industries such as food processing, chemical, plastic and packaging. Some of their popular products include mixers, extruders, filters and powder packing machines.</p>
 
@@ -469,55 +592,78 @@ Learning to work with gRPC may require additional time and effort.</p>
  </details> 
  <hr /> 
 
- #### - [How Do You Get Unstuck from A Difficult Problem?](https://dev.to/devteam/how-do-you-get-unstuck-from-a-difficult-problem-3ocj) 
- <details><summary>Article</summary> <p><em>Welcome to Code Chatter, your go-to series for conversational coding insights. What makes this series of questions different from all the others? Well, truth be told, not much, but they're still thought-provoking and fun. Join us as we explore the coding world, one witty question at a time.</em></p>
+ #### - [Firefox form auto-fill](https://dev.to/michalbryxi/firefox-form-auto-fill-25pi) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Problem
+</h2>
 
-<blockquote>
-<p>When facing a particularly difficult problem, bug, or design issue, what strategies do you use to 'unstick' yourself?</p>
-</blockquote>
+<p>One of the trivial, yet crucial UX issues I have with the Firefox web browser is that the other browsers do absolutely smashing job in auto-filling addresses.</p>
 
-<p>Follow the DEVteam for more discussions and online camaraderie!</p>
+<p>Basically I just fill my address in once, the browser remembers and then I can select the remembered option in any web page and 90% of the form will be filled in correctly.</p>
+
+<p>It sounds trivial, but filling in my physical address is surprisingly common workflow on contemporary web.</p>
+
+<h2>
+  
+  
+  Research
+</h2>
+
+<p>I tried to follow the <a href="https://support.mozilla.org/en-US/kb/automatically-fill-your-address-web-forms-android">Automatically fill in your address on web forms in Firefox for Android</a> from Mozilla, but mentioned settings options are not even available in my version (<code>118.0b6</code>).</p>
+
+<p>After a bit of research I found out that <a href="https://wiki.mozilla.org/Firefox/Features/Form_Autofill#Feature_Availability">Firefox/Features/Form Autofill</a> contains the answer. <strong>Important</strong>: Since this article will inevitably go out of date, please refer to the linked official documentation for the correct way.</p>
+
+<h2>
+  
+  
+  Solution
+</h2>
+
+<ol>
+<li>In the address bar type in <code>about:config</code> and press enter.</li>
+<li>Search for <code>extensions.formautofill.addresses</code>
+</li>
+<li><code>extensions.formautofill.addresses.capture.enabled = true</code></li>
+<li>
+<code>extensions.formautofill.addresses.capture.v2.enabled = true</code> 
+
+<ul>
+<li>Not exactly sure what is the difference between this and the previous one, but can't hurt?</li>
+</ul>
+</li>
+<li><code>extensions.formautofill.addresses.supported = on</code></li>
+<li>
+<code>extensions.formautofill.addresses.supportedCountries = US,CA,CH,CZ,GB</code> 
+
+<ul>
+<li>My country is Switzerland, therefore I added <code>CH</code> to this list. List of country codes follows the <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes">ISO 3166</a> <em>aplha-2 code</em> standard.</li>
+</ul>
+</li>
+<li>Restart browser</li>
+<li>Now you should see in the <code>Settings</code> new item in <code>Forms and Autofill</code>
+</li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Y5_4g1xv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/emfjlvzyh0ilk072kcdq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Y5_4g1xv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/emfjlvzyh0ilk072kcdq.png" alt="Forms and Autofill settings in Firefox" width="800" height="292"></a></p>
+
+<p>Now you can use try on websites like <a href="https://fill.dev/form/identity-simple">fill.dev</a> to see if it works:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ctsjsOOV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vxa1uhm65ir3yp4ht972.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ctsjsOOV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vxa1uhm65ir3yp4ht972.png" alt="fill.dev website with Firefox autofill toolbar" width="782" height="342"></a></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Firefox can fill in addresses in forms and does it <em>reasonably</em> well even in countries that are <em>not</em> officially supported. One just need to know where/how to enable it in settings.</p>
 
 
-<div class="ltag__user ltag__user__id__1">
-  <a href="/devteam" class="ltag__user__link profile-image-link">
-    <div class="ltag__user__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vzeA_jD8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--CMkjYEfB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg" alt="devteam image">
-    </div>
-  </a>
-  <div class="ltag__user__content">
-    <h2>
-      <a href="/devteam" class="ltag__user__link">The DEV Team</a>
-      Follow
-    </h2>
-    <div class="ltag__user__summary">
-      <a href="/devteam" class="ltag__user__link">
-        The team behind this very platform. 😄
-      </a>
-    </div>
-  </div>
-</div>
- 
 
- </details> 
- <hr /> 
 
- #### - [🚀 Unlock Success: Ask, Don't Assume! 🚀](https://dev.to/apetryla/unlock-success-ask-dont-assume-34fd) 
- <details><summary>Article</summary> <p>In the fast-paced world of business, assumptions can be silent deal-breakers! 🤝</p>
-
-<p>Countless deals have gone awry when crucial details were assumed. 💔 It's time to break that cycle! 🔄</p>
-
-<p>Here's the secret to success: <strong>Ask, Don't Assume!</strong> 🤔✅</p>
-
-<p>🔊 It can be as simple as making sure You're pronouncing colleagues name right. 🗣️🤗</p>
-
-<p>📝 It can be as crucial as agreeing on requirements and their ownership. 💼</p>
-
-<p>💥 Even the simplest question can make a world of difference in your journey to success. 🌍💪</p>
-
-<p>Let's build strong connections and thriving collaborations by making sure we're always on the same page. 📖🤝</p>
-
-<p>Share this post to spread the message and keep the momentum going! 🔥🌐</p>
+<p>Image generated via Midjourney prompt: firefox as a delivery man --ar 16:9</p>
 
  </details> 
  <hr /> 
