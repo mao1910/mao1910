@@ -133,6 +133,210 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Dynamic and Asynchronous Vue Components: The What & How](https://dev.to/nyior/dynamic-and-asynchronous-vue-components-the-what-how-44em) 
+ <details><summary>Article</summary> <p>It’s asking the right questions that count, they say. So let’s exploit that ancient wisdom and kick things off here with the questions that matter :)</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UbqC5MRW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g89b4h4l7pmp9n21jmf5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UbqC5MRW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g89b4h4l7pmp9n21jmf5.png" alt="Vue tabs" width="800" height="316"></a></p>
+
+<p>The image above shows a user interface with two tabs: <code>JobDescription</code> and <code>ApplicationForm</code>. We want to explore how to create tabbed interfaces like this one using Vue. </p>
+
+<p>It's easy to think it's simple – just create <code>&lt;/JobDescription&gt;</code> and <code>&lt;/ApplicationForm&gt;</code> components and render them to the DOM, as shown in the snippet below. But is it really that straightforward?"<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">JobDescription</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="err">/</span><span class="na">ApplicationForm</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Well, that's not quite right. If we render our components that way, both of them would appear at the same time. What we need is to have a single component appear dynamically based on the selected tab.</p>
+
+<p>There's some dynamic behaviour we need: while we anticipate the user's selection of one of two components, the precise choice remains uncertain. What we want is a placeholder, a receptacle if you will, where Vue could insert components based on the selected tab in real-time. </p>
+
+<p>Using vue-router here is not ideal. We do not want our URL changing when users switch between tabs. They are tabs, not pages.</p>
+
+<p><em>So we pose the question, how can this type of dynamic behaviour be achieved in Vue?</em></p>
+
+<p>I will show you how, but first, let's take a quick detour...</p>
+
+<p>Suppose we've managed to learn how to dynamically render components in Vue. With this in mind, let’s take our analysis a step further. You may have already observed that the 'ApplicationForm' tab includes a basic job application form with a field for entering the full names of applicants. </p>
+
+<p>Typically, if you enter your name in the 'ApplicationForm' tab's input field, then switch to the 'JobDescription' tab, and come back to your form, you'll notice that what you typed in the input field is gone. The image below illustrates this behavior:"</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--V1tbiHxV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v16gotahwbn0mcowbtpf.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--V1tbiHxV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v16gotahwbn0mcowbtpf.gif" alt="Dynamic components without keep-alive" width="800" height="352"></a></p>
+
+<p>If you think about how Vue renders components, you’d see that this type of behavior is expected. Every time we switch from a component, Vue un-mounts that component. </p>
+
+<p>In our scenario, when transitioning from 'ApplicationForm' to 'JobDescription,' Vue un-mounts the former from the DOM and then mounts the latter. Any input in the field is lost because Vue needs to completely re-render the 'ApplicationForm' component when we switch back to it.</p>
+
+<p>Could we potentially retain the state of a tab we've just left, you may ask? After all, we wouldn't want our users to have to re-enter their information from the beginning whenever they switch to a different tab, would we?</p>
+
+<p>This brings us to our second question: <em>How can we persist the state of components in our tabs scenario?</em>  What we want is an effect like the one shown in the image below:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OfyYB7C6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uu9dotb61qmxna4yyj74.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OfyYB7C6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uu9dotb61qmxna4yyj74.gif" alt="Dynamic components with keep-alive" width="800" height="352"></a></p>
+
+<p>Again, let’s assume we’ve somehow figured out how to persist the state of our components, and in our quest for perfection, we want to do one more thing: some performance optimization. </p>
+
+<p>You see, even though Vue dynamically renders our components one at a time, depending on what tab is selected, whenever that page is visited, Vue would load the code for all the tabs on that page. Imagine if we had thousands of tabs we could switch between - not ideal, but a little bit of exaggeration could help here. </p>
+
+<p>The first time that page is visited the code for all the thousands of tabs would be loaded from the server. I put this to you: Especially since Vue would only be rendering one tab at a time to the DOM, is grabbing the code for all the tab components upfront really necessary? What potential performance drawbacks might arise from this approach? Take a moment and reflect - or maybe you don't need to.</p>
+
+<p>If your spidey-sense is already telling you there’s got to be a better way, then you’re absolutely right. What we could do is have Vue load the code for a tab only when it’s selected. So each time the page is visited only the code for the default tab is loaded. For other tabs, they’d only be loaded when visited. If you want to associate this technique with a name, just call it <em>lazy loading.</em></p>
+
+<p>This brings us to our third and final question: <em>How can we implement lazy component loading in Vue?</em></p>
+
+<p>In the subsequent sections, this piece would demonstrate how you could address the first two questions we raised with <strong>Vue Dynamic Components</strong> and how you could implement lazy loading with <strong>Asynchronous Components.</strong></p>
+
+<h2>
+  
+  
+  Dynamic Components
+</h2>
+
+<p>As mentioned just now, we could implement tabbed interfaces where users could switch between tabs and have each tab persist its state with dynamic components. </p>
+
+<p>Normally, to add a component to a template, we’d add it by name to the template like in the snippet below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">ApplicationForm</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="err">/</span><span class="na">template</span><span class="p">&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>That way, we are statically adding our component to that template and by extension statically rendering it to the DOM. What makes a component in Vue dynamic is the fact that instead of statically adding the component to the template we’d have a placeholder of some sort where Vue could insert one of many components after some action happens. A placeholder?</p>
+
+<p>Well yes. Vue has an inbuilt <code>&lt;component&gt;</code> element with the special <code>is</code> attribute:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">component</span> <span class="err">:</span><span class="na">is</span><span class="p">=</span><span class="s">"currentTab"</span><span class="p">&gt;&lt;/</span><span class="nt">component</span><span class="p">&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The <code>&lt;component&gt;</code> element in the above is the placeholder, and the component rendered in that frame would change once the component <code>CurrentTab</code> is tied to changes. To make this work with our tabs scenario, you’d need to have a list of components defined in the script section of your component. At each point, one of the components in your list has to be mapped to <code>currentTab</code>. The <code>&lt;component&gt;</code> frame would then render whatever component is tied to <code>currentTab</code>. Way too abstract? Okay, let’s look at how we could do this with our <code>ApplicationForm</code> and <code>JobDescription</code> tabs.</p>
+
+<p>The snippet below shows what the script section of our component would look like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+import JobDescription from "@/components/JD.vue"
+import ApplicationForm from "@/components/ApplicationForm.vue"
+
+export default <span class="si">{</span>
+  <span class="nx">components</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">JobDescription</span><span class="p">,</span>
+    <span class="nx">ApplicationForm</span>
+  <span class="p">},</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">currentTab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">tabs</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">ApplicationForm</span><span class="dl">'</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="si">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the snippet above, we initialized <code>tabs</code> array with the components we imported. We then set <code>JobDescription</code> to be our default <code>currentTab</code>.  What this means is that each time that page is visited, the <code>JobDescription</code> tab is what will be shown. But how do we update our <code>currentTab</code> to <code>ApplicationForm</code> when users switch to that tab in the UI? The update is done in the <code>&lt;template&gt;</code> section of our component as shown in the snippet below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span>
+          <span class="na">v-for</span><span class="p">=</span><span class="s">"tab in tabs"</span>
+          <span class="err">:</span><span class="na">key</span><span class="p">=</span><span class="s">"tab"</span>
+          <span class="err">@</span><span class="na">click</span><span class="p">=</span><span class="s">"currentTab = tab"</span>
+        <span class="p">&gt;</span>
+          <span class="si">{</span><span class="p">{</span> <span class="nx">tab</span> <span class="p">}</span><span class="si">}</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nc">KeepAlive</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">component</span> <span class="err">:</span><span class="na">is</span><span class="p">=</span><span class="s">"currentTab"</span> <span class="na">class</span><span class="p">=</span><span class="s">"tab"</span><span class="p">&gt;&lt;/</span><span class="nt">component</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nc">KeepAlive</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the snippet above we are using <code>@click</code> to update <code>currentTab</code> to the tab being clicked. One other thing you might have noticed is how the <code>&lt;component&gt;</code> element is wrapped by a <code>KeepAlive</code> component. The <code>keepAlive</code> is an inbuilt component that preserves the state of our component. In our case with the <code>keepAlive</code> around, when switching from the <code>ApplicationForm</code> component, whatever we typed in the input field would still be there when we return.</p>
+
+<p>Two of our concerns had been addressed. What’s left for us now is exploring how we could load components on-demand. We previously tagged this <em>lazy loading.</em> Let’s quickly look at how we could do this.</p>
+
+<h2>
+  
+  
+  Asynchronous Components
+</h2>
+
+<p>Let’s load our <code>ApplicationForm</code> component on-demand. Note that you could apply this to just any component. To load our component in question asynchronously, all we have to do is update how we are registering the component. See the snippet below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+import JobDescription from "@/components/JD.vue"
+// import ApplicationForm from "@/components/ApplicationForm.vue"
+import <span class="si">{</span> <span class="nx">defineAsyncComponent</span> <span class="si">}</span> from 'vue'
+
+export default <span class="si">{</span>
+  <span class="nx">components</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">JobDescription</span><span class="p">,</span>
+    <span class="nx">ApplicationForm</span><span class="p">:</span> <span class="nx">defineAsyncComponent</span><span class="p">(()</span> <span class="o">=&gt;</span>
+      <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">@/components/ApplicationForm.vue</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">},</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">currentTab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">tabs</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">JobDescription</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">ApplicationForm</span><span class="dl">'</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="si">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Essentially, the only change we made is in using vue3’s <code>defineAsyncComponent</code> feature to register our <code>ApplicationForm</code> as an asynchronous component. With that, the <code>ApplicationForm</code> component will be loaded on demand.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In this piece, we’ve seen how we could render components to the DOM dynamically in Vue. We’ve also seen how the inbuilt <code>&lt;KeepAlive&gt;</code> component in Vue could help us persist the states of our component. And lastly, we explored how we could load components on demand to optimize for speed.</p>
+
+<p>That’s all I have for you :) </p>
+
+<p>If you want to share your thoughts on this tutorial with me or simply just connect, you can find/follow me on <a href="https://github.com/Nyior">Github</a>, <a href="https://www.linkedin.com/in/nyior/">Linkedin</a>, or <a href="https://twitter.com/nyior_clement">Twitter.</a></p>
+
+ </details> 
+ <hr /> 
+
  #### - [What is API & REST API ?](https://dev.to/parmita17/what-is-api-rest-api--3noe) 
  <details><summary>Article</summary> <p>An API, or Application Programming Interface, is set of rules i.e. protocols for building and interacting with software application.<br>
 It allows different software systems to communicate with each other, enabling them to share data and functionality.<br>
@@ -1206,236 +1410,6 @@ Return the number of ways to reach the final step.</p>
 
 <p>Happy coding,<br>
 shiva</p>
-
- </details> 
- <hr /> 
-
- #### - [I Created a Chrome Extension in 15 Minutes with Zero Front-End Knowledge Using GPT](https://dev.to/justlorain/i-created-a-chrome-extension-in-15-minutes-with-zero-front-end-knowledge-using-gpt-33df) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Preface
-</h2>
-
-<p>When reading, authors often mention various projects or related materials, and sometimes it's just plain text without corresponding links. If I want to learn more about these projects, I have to search for them myself, either through Google or other means. One common thing I often do is:</p>
-
-<ul>
-<li>Copy the name of a project.</li>
-<li>Open a new tab.</li>
-<li>Visit GitHub.</li>
-<li>Paste and search.</li>
-</ul>
-
-<p>Perhaps because I've been repeating this process too frequently recently, I came up with the idea to develop a plugin to simplify this process.</p>
-
-<p>So, a few minutes later, I created my first Chrome extension, <a href="https://github.com/justlorain/ghs">GitHub Searcher (GHS)</a>.</p>
-
-<h2>
-  
-  
-  Expected Outcome
-</h2>
-
-<p>The desired outcome for the plugin is very simple, or one could say rudimentary: <strong>search for the text I've selected on GitHub, and be able to choose whether to search in the current tab or open a new tab</strong>. With this feature, I can simplify the four steps mentioned earlier into just two:</p>
-
-<ul>
-<li>Select the content I want to search for.</li>
-<li>Right-click and choose whether to search in the current tab or open a new tab.</li>
-</ul>
-
-<h2>
-  
-  
-  Development Approach
-</h2>
-
-<p>After trying to search for several repositories on GitHub, I found that the URL for searching repositories on GitHub is:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>github.com/search?q=test<span class="err">&amp;</span>type=repositories
-</code></pre>
-
-</div>
-
-
-
-<p>In this URL, the <code>q</code> parameter corresponds to the search query content, and the default <code>type</code> is <code>repositories</code>. Therefore, to achieve the desired outcome, it becomes very simple. I just need to find a way to get the selected text, then concatenate it and visit the URL.</p>
-
-<h2>
-  
-  
-  Development Process
-</h2>
-
-<p>With the basic idea in mind, it's time to start development. Since I primarily use Chrome, I decided to implement it as a Chrome extension.</p>
-
-<p>I quickly went through the <a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/">Development basics</a> provided by the official Chrome documentation to understand the project structure and necessary files for a Chrome extension. However, my knowledge of front-end development is limited to a few common HTML tags. This is where I relied on my trusty friend GPT.</p>
-
-<p>I organized my earlier thoughts into language that GPT could understand and fed them to it, and then... GPT generated all the code for me.</p>
-
-<p>Initially, I didn't have very high expectations. I thought it would generate some code samples using Chrome API, which I could then modify to make it work. But when I copied the code generated by GPT into my project and loaded the extension in Chrome, the desired functionality was fully implemented!</p>
-
-<p>My prompts to GPT were quite simple, as follows:</p>
-
-<blockquote>
-<p><strong>Me:</strong> What's the operation called when you select a portion of text in a web page by pressing and dragging the mouse?</p>
-
-<p><strong>GPT:</strong> In a web browser, the operation of selecting a portion of text by pressing and dragging the left mouse button is typically referred to as "text selection" or "text dragging." This operation allows users to highlight text on a web page for purposes such as copying, cutting, or performing other actions like searching or translating. It's a common interaction when reading web pages, copying information, or quoting text.</p>
-
-<p><strong>Me:</strong> What's the operation called when you right-click with the mouse in a web browser to open a menu?</p>
-
-<p><strong>GPT:</strong> In a web browser, the operation of opening a menu by right-clicking with the mouse is usually called "context menu" operation, sometimes referred to as the "right-click menu." This menu typically contains options related to the element or area you right-clicked on, allowing you to perform various actions like opening links, saving images, copying text, and more. The content of this context menu can vary depending on what you right-clicked and your browser's settings. It provides a convenient way to access common functions quickly.</p>
-
-<p><strong>Me:</strong> In some Chrome extensions, the right-click menu often has a submenu, such as "Image Helper," which contains various supported actions like "Extract Images from this page" and "Download Images from this page." Is there an official term for these?</p>
-
-<p><strong>GPT:</strong> In Chrome extensions, these submenus within the right-click menu, which contain multiple related actions, are typically referred to as "context menu submenus" or "right-click submenus." These submenus allow extension developers to organize different functionalities supported by the extension into a larger group of options, providing more functionality choices and an improved user experience. In this submenu, each option usually represents a specific operation or feature supported by the extension. In the example you mentioned, the "Image Helper" submenu includes actions like "Extract Images from this page" and "Download Images from this page."</p>
-
-<p>It's important to note that there isn't an official standard term for this, and different extension developers may use different terminology to describe this functionality. However, in general, the purpose of such submenus is to organize and present multiple related action options.</p>
-
-<p><strong>Me:</strong> I want to develop a Chrome extension called "ghs" (GitHub Searcher). The usage of this extension is as follows:</p>
-
-<ol>
-<li>The user selects some words or sentences on a web page using the mouse, which is the "text selection" operation.</li>
-<li>The user right-clicks with the mouse to open a context menu and selects a submenu named "GitHub Searcher." This submenu contains two options: "Current Tab" and "New Tab."</li>
-<li>After selecting text, clicking on these two options will open the URL <code>github.com/search?q={{ sample }}&amp;type=repositories</code> in either the current tab or a new tab, where <code>{{ }}</code> represents the selected text.</li>
-</ol>
-
-<p>Here's an actual use case: While browsing a web page, I select the word "helloworld," then right-click and choose the "New Tab" option from the "GitHub Searcher" submenu. The browser should then open a new tab and visit the URL <code>github.com/search?q=helloworld&amp;type=repositories</code>.</p>
-
-<p>Now, I need your help to develop this extension. Please list each step and add necessary comments to the code to help me understand it.</p>
-
-<p><strong>GPT:</strong> Developing a Chrome browser extension involves several steps. I'll list each step and add comments to the code to help you understand it.</p>
-
-<p><strong>Step 1: Create the Extension Directory and Manifest File</strong></p>
-
-<p>First, you need to create a local directory for your extension and create a manifest file (<code>manifest.json</code>) within that directory. The manifest file is used to define the extension's basic information, permissions, and functionality.</p>
-
-
-<pre class="highlight json"><code><span class="err">//</span><span class="w"> </span><span class="err">manifest.json</span><span class="w">
-
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GitHub Searcher"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search GitHub repositories from selected text."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"contextMenus"</span><span class="p">],</span><span class="w">
-  </span><span class="nl">"icons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"48"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icon.png"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"background"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"service_worker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"background.js"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"activeTab"</span><span class="p">,</span><span class="w"> </span><span class="s2">"contextMenus"</span><span class="p">],</span><span class="w">
-  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"default_popup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popup.html"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"default_icon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"16"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icon.png"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"48"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icon.png"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"128"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icon.png"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-
-<p><strong>Step 2: Create the Extension Icon</strong></p>
-
-<p>Add the extension icon (<code>icon.png</code>) to the extension directory. This icon represents your extension.</p>
-
-<p><strong>Step 3: Create the Context Menu</strong></p>
-
-<p>In the <code>background.js</code> file, create the context menu so that users can right-click selected text to open the extension's submenu. Here's an example <code>background.js</code> file:</p>
-
-
-<pre class="highlight javascript"><code><span class="c1">// background.js</span>
-
-<span class="nx">chrome</span><span class="p">.</span><span class="nx">contextMenus</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">githubSearcherContextMenu</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GitHub Searcher</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">contexts</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">]</span>
-<span class="p">});</span>
-
-<span class="nx">chrome</span><span class="p">.</span><span class="nx">contextMenus</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">githubSearcherCurrentTab</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Current Tab</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">parentId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">githubSearcherContextMenu</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">contexts</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">]</span>
-<span class="p">});</span>
-
-<span class="nx">chrome</span><span class="p">.</span><span class="nx">contextMenus</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">githubSearcherNewTab</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">New Tab</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">parentId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">githubSearcherContextMenu</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">contexts</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">]</span>
-<span class="p">});</span>
-
-<span class="c1">// Add click event listeners</span>
-<span class="nx">chrome</span><span class="p">.</span><span class="nx">contextMenus</span><span class="p">.</span><span class="nx">onClicked</span><span class="p">.</span><span class="nx">addListener</span><span class="p">((</span><span class="nx">info</span><span class="p">,</span> <span class="nx">tab</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">menuItemId</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">githubSearcherCurrentTab</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">openGitHubSearchPage</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">selectionText</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">menuItemId</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">githubSearcherNewTab</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">openGitHubSearchPage</span><span class="p">(</span><span class="nx">info</span><span class="p">.</span><span class="nx">selectionText</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-
-<span class="c1">// Function to open the GitHub search page</span>
-<span class="kd">function</span> <span class="nx">openGitHubSearchPage</span><span class="p">(</span><span class="nx">selectedText</span><span class="p">,</span> <span class="nx">newTab</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">searchUrl</span> <span class="o">=</span> <span class="s2">`https://github.com/search?q=</span><span class="p">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">selectedText</span><span class="p">)}</span><span class="s2">&amp;type=repositories`</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">newTab</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">chrome</span><span class="p">.</span><span class="nx">tabs</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span> <span class="na">url</span><span class="p">:</span> <span class="nx">searchUrl</span> <span class="p">});</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">chrome</span><span class="p">.</span><span class="nx">tabs</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span> <span class="na">url</span><span class="p">:</span> <span class="nx">searchUrl</span> <span class="p">});</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-
-<p><strong>Step 4: Create the Extension Popup Page</strong></p>
-
-<p>Create a popup page (<code>popup.html</code>) that will display information or settings when the user clicks the extension icon. You can customize this page as needed.</p>
-
-<p><strong>Step 5: Load the Extension</strong></p>
-
-<p>Finally, load your extension in the Chrome browser:</p>
-
-<ol>
-<li>Open the Chrome browser and go to the extensions management page (chrome://extensions/).</li>
-<li>Enable "Developer mode."</li>
-<li>Click the "Load unpacked" button and select your extension directory.</li>
-</ol>
-
-<p>Once you've completed these steps, your extension should be able to display the "GitHub Searcher" submenu when the user selects text and right-clicks, and it should open the corresponding GitHub search page when "Current Tab" or "New Tab" is selected.</p>
-
-<p>Please note that this is a basic example, and you can further expand and customize the extension's interface according to your needs. Also, ensure that you follow the Chrome Web Store's publishing guidelines and best practices. Once successfully published, users can install and use your extension from the Chrome Web Store.</p>
-</blockquote>
-
-<p>You can see that the first three steps were primarily about aligning terminology and concepts with GPT. Only in the fourth step did I start combining these terms and my own ideas to have GPT generate the actual code.</p>
-
-<p>As I mentioned earlier, the code provided by GPT was essentially correct and achieved the desired functionality when installed, but there were some flaws that needed to be addressed, such as the absence of <code>popup.html</code> and a reminder to set the icon. However, these were minor issues, and after designing a nice-looking icon and adding supplementary files like <code>popup.html</code> (optional), README, LICENSE, etc., our extension was complete :)</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SKwvISDv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6otqp3vp52zuexnl7dqc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SKwvISDv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6otqp3vp52zuexnl7dqc.png" alt="GitHub Searcher Icon" width="800" height="270"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>The above is the complete process of developing a Chrome extension from scratch with the help of GPT. A significant reason for the smooth development was that the functionality of this extension was quite simple, hhhh, but it certainly saved me some time.</p>
-
-<p>Due to the complexity of publishing extensions in the Chrome Web Store, I didn't go through that process. If you're interested in this extension, you can download the source code and manually load it into your Chrome browser. Of course, if you find this extension useful, feel free to give the project a Star!</p>
-
-<h2>
-  
-  
-  References
-</h2>
-
-<ul>
-<li><a href="https://github.com/justlorain/ghs">https://github.com/justlorain/ghs</a></li>
-<li><a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/">https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/</a></li>
-</ul>
 
  </details> 
  <hr /> 
