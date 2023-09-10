@@ -133,6 +133,341 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Top 10 SEO Things That Even Experienced Experts Don't Know](https://dev.to/dhruvjoshi9/top-10-seo-things-that-even-experienced-experts-dont-know-22ma) 
+ <details><summary>Article</summary> <p>SEO is a complex and ever-changing field, and even experienced experts can sometimes be caught off guard by the latest trends and changes. <br>
+In this blog post, we will take a look at top 10 SEO things that even experienced experts might not know.</p>
+
+<p><em><strong>(if you know, please ignore, and if know any extras, please comment down and support! :))</strong></em></p>
+
+<h1>
+  
+  
+  10 SEO Secrets That Even Experts Don't Know
+</h1>
+
+<h2>
+  
+  
+  1. Understanding BERT: The Game Changer
+</h2>
+
+<p>Google's BERT algorithm is a seismic shift in how search engines understand language. It focuses on context and nuances, making it imperative to create content that answers users' queries comprehensively.</p>
+
+<h2>
+  
+  
+  2. The Power of Latent Semantic Indexing (LSI) Keywords
+</h2>
+
+<p>LSI keywords help search engines understand the topic of your content better. Integrating them naturally into your content can significantly improve your rankings.</p>
+
+<h2>
+  
+  
+  3. Structured Data Markup: Your SEO Superweapon
+</h2>
+
+<p>Implementing structured data markup can enhance your website's appearance in search results, providing users with more information upfront and increasing click-through rates.</p>
+
+<h2>
+  
+  
+  4. Mobile-First Indexing: A Priority, Not an Option
+</h2>
+
+<p>With the majority of internet traffic coming from mobile devices, ensuring your website is optimized for mobile is non-negotiable for SEO success.</p>
+
+<h2>
+  
+  
+  5. The Importance of Core Web Vitals
+</h2>
+
+<p>Google's Core Web Vitals measure user experience on your site. Focusing on factors like page speed, interactivity, and visual stability can improve your website's SEO performance.</p>
+
+<h2>
+  
+  
+  6. Nofollow Links: A Valuable SEO Strategy
+</h2>
+
+<p>Contrary to popular belief, nofollow links can still provide value to your SEO efforts, especially when it comes to building a diverse backlink profile.</p>
+
+<h2>
+  
+  
+  7. Google Discover: Tapping into a Hidden Goldmine
+</h2>
+
+<p>Google Discover is a powerful tool for content discovery. Optimizing your content for Discover can lead to increased visibility and traffic.</p>
+
+<h2>
+  
+  
+  8. Video SEO: Beyond YouTube
+</h2>
+
+<p>Video content is booming, and optimizing it for search engines is vital. Consider platforms like Vimeo and DailyMotion in addition to YouTube.</p>
+
+<h2>
+  
+  
+  9. The Rising Influence of Voice Search
+</h2>
+
+<p>With the proliferation of voice-activated devices, optimizing your content for voice search is becoming essential for SEO success.</p>
+
+<h2>
+  
+  
+  10. Local SEO Secrets Unveiled
+</h2>
+
+<p>Local SEO can make or break brick-and-mortar businesses. Discover effective strategies for dominating local search results.</p>
+
+<p>Now that we've explored these ten intriguing facets of SEO, it's clear that even experienced professionals can benefit from a fresh perspective. By staying informed and adapting to the ever-changing SEO landscape, you can ensure that your website consistently ranks higher and attracts more organic traffic.</p>
+
+<h2>
+  
+  
+  Final Words
+</h2>
+
+<p>SEO is a dynamic field, and staying ahead of the curve is the key to success. By implementing these lesser-known SEO strategies, you can take your optimization efforts to the next level. Remember, the digital landscape is constantly evolving, so always be ready to adapt and embrace new SEO techniques.</p>
+
+<h2>
+  
+  
+  FAQs
+</h2>
+
+<h3>
+  
+  
+  1. What is BERT, and why is it important for SEO?
+</h3>
+
+<p>BERT is a Google algorithm that focuses on understanding the context and nuances of user queries. It's crucial for SEO because it rewards content that provides comprehensive answers to users' questions.</p>
+
+<h3>
+  
+  
+  2. How can I optimize my website for mobile-first indexing?
+</h3>
+
+<p>To optimize for mobile-first indexing, ensure that your website is responsive, loads quickly on mobile devices, and provides a seamless user experience on smartphones and tablets.</p>
+
+<h3>
+  
+  
+  3. What are Core Web Vitals, and how do they impact SEO?
+</h3>
+
+<p>Core Web Vitals are user experience metrics that Google considers when ranking websites. They include page speed, interactivity, and visual stability. Optimizing for these metrics can improve your SEO performance.</p>
+
+<h3>
+  
+  
+  4. Are nofollow links valuable for SEO?
+</h3>
+
+<p>Yes, nofollow links can still provide value for SEO. While they don't pass PageRank, they can contribute to a diverse backlink profile and drive referral traffic.</p>
+
+<h3>
+  
+  
+  5. How can I optimize my content for voice search?
+</h3>
+
+<p>To optimize for voice search, focus on natural language, use long-tail keywords, and provide concise, informative answers to common questions users may ask using voice assistants.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Javascript Zoned-Date library - fully DST support](https://dev.to/sang/javascript-zoned-date-library-fully-dst-support-3mmo) 
+ <details><summary>Article</summary> <p>NPM package link: <a href="https://www.npmjs.com/package/zoned-date">https://www.npmjs.com/package/zoned-date</a></p>
+
+<h2>
+  
+  
+  Terminology
+</h2>
+
+<p>Regarding date time:</p>
+
+<ul>
+<li>Wallclock: the values shown in your wall-clock, calendar, namely: year, month, date, day (weekday), hour, minute, second, millisecond, timezone offset.</li>
+<li>Epoch: a point in the timeline stream, identified by the number of seconds from a specific time in history.</li>
+</ul>
+
+<h2>
+  
+  
+  Rationale
+</h2>
+
+<p>In Javascript, all wallclock methods returns different results based on the runtime's config. <code>date.getHours()</code> returns different results when running in client browser, in server, and in your local dev machine (for the date objects with same <code>date.getTime()</code> value).</p>
+
+<h2>
+  
+  
+  Perfect fix for date-related problems
+</h2>
+
+<p>I recently publish <a href="https://www.npmjs.com/package/zoned-date">zoned-date</a> all date-related issues in Javascript.</p>
+
+<h1>
+  
+  
+  Install
+</h1>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>yarn add zoned-date
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">ZonedDate</span><span class="p">,</span> <span class="nx">OffsetDate</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">zoned-date</span><span class="dl">'</span>
+<span class="c1">// or</span>
+<span class="k">import</span> <span class="nx">ZonedDate</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">zoned-date/ZonedDate</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">OffsetDate</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">zoned-date/OffsetDate</span><span class="dl">'</span>
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  Usage
+</h1>
+
+<p><code>ZonedDate</code> and <code>OffsetDate</code> implement all Date's methods with the additional of timezone support.</p>
+
+<ul>
+<li>
+<code>OffsetDate</code>: when you know the offset of the timezone. This class is highly recommended. It is just math and the pure Date object, and always just works.</li>
+<li>
+<code>ZonedDate</code>: you specify timezone by its name. The library uses <code>Intl</code> internally to derive the offset. Specially, <code>ZonedDate</code> explicitly support DST with the full support for Disambiguation option defined by <a href="https://tc39.es/proposal-temporal/docs/ambiguity.html#resolving-time-ambiguity-in-temporal">Termporal proposal</a>
+</li>
+</ul>
+
+<p>Note: <code>OffsetDate</code> is sub-class of <code>Date</code> (<code>new OffsetDate instanceof Date</code> is <code>true</code>), while <code>ZonedDate</code> is not (<code>new ZonedDate instanceof Date</code> is <code>false</code>).</p>
+
+<h1>
+  
+  
+  Sample usage
+</h1>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OffsetDate</span><span class="p">(</span><span class="dl">'</span><span class="s1">2020-01-01T03:00:00.000Z</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">offset</span><span class="p">:</span> <span class="mi">9</span><span class="p">})</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">hours</span><span class="p">)</span> <span class="c1">// return hours at GMT+9: 12</span>
+<span class="nx">date</span><span class="p">.</span><span class="nx">hours</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">// set hours at GMT+9</span>
+<span class="nx">date</span><span class="p">.</span><span class="nx">hours</span> <span class="o">=</span> <span class="nx">h</span> <span class="o">=&gt;</span> <span class="nx">h</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1">// decrease by 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">())</span> <span class="c1">// 2020-01-01T00:00:00.000Z</span>
+
+<span class="nx">date</span><span class="p">.</span><span class="nx">withMonth</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">withYear</span><span class="p">(</span><span class="nx">y</span> <span class="o">=&gt;</span> <span class="nx">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// returns a new OffsetDate object</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Timezone conversion<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZonedDate</span><span class="p">(</span><span class="dl">'</span><span class="s1">2021-09-04T05:19:52.001</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">timezone</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Asia/Tokyo</span><span class="dl">'</span><span class="p">})</span> <span class="c1">// GMT+9</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">hours</span> <span class="o">===</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="nx">date</span><span class="p">.</span><span class="nx">timezone</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Asia/Bangkok</span><span class="dl">'</span> <span class="c1">// GMT+7</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">hours</span> <span class="o">===</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="nx">date</span><span class="p">.</span><span class="nx">timezone</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">UTC</span><span class="dl">'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">hours</span> <span class="o">===</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">24</span><span class="p">)</span>
+
+<span class="nx">date</span><span class="p">.</span><span class="nx">timezone</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">America/New_York</span><span class="dl">'</span> <span class="c1">// GMT-4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">hours</span> <span class="o">===</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">9</span> <span class="o">+</span> <span class="o">-</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">24</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>DST support<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">timezone</span><span class="p">,</span> <span class="nx">wallclock</span><span class="p">,</span> <span class="nx">disambiguation</span><span class="p">,</span> <span class="nx">expected</span><span class="p">]</span> <span class="k">of</span> <span class="p">[</span>
+    <span class="c1">// positive dst</span>
+    <span class="c1">// forward, dst starts</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-10-01T02:00:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-10-01T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-10-01T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">compatible</span><span class="dl">'</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-10-01T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">earlier</span><span class="dl">'</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-10-01T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">later</span><span class="dl">'</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="c1">// backward, dst ends</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-04-02T02:00:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-04-02T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-04-02T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">compatible</span><span class="dl">'</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-04-02T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">earlier</span><span class="dl">'</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-04-02T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">later</span><span class="dl">'</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+
+    <span class="c1">// negative dst</span>
+    <span class="c1">// forward, dst starts</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-03-12T02:00:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-03-12T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-03-12T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">compatible</span><span class="dl">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-03-12T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">earlier</span><span class="dl">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-03-12T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">later</span><span class="dl">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="c1">// backward, dst ends</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-11-05T01:00:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-11-05T01:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-11-05T01:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">compatible</span><span class="dl">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-11-05T01:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">earlier</span><span class="dl">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-11-05T01:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">later</span><span class="dl">'</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">],</span>
+<span class="p">])</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZonedDate</span><span class="p">(</span><span class="nx">wallclock</span><span class="p">,</span> <span class="p">{</span><span class="nx">timezone</span><span class="p">,</span> <span class="nx">disambiguation</span><span class="p">})</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">offset</span> <span class="o">===</span> <span class="nx">expected</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">ok</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">timezone</span><span class="p">,</span> <span class="nx">wallclock</span><span class="p">,</span> <span class="nx">disambiguation</span><span class="p">,</span> <span class="nx">expected</span><span class="p">]</span> <span class="k">of</span> <span class="p">[</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-10-01T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">reject</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">Australia/ACT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-04-02T02:30:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">reject</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-03-12T02:00:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">reject</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">America/Los_Angeles</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2023-11-05T01:00:00.000</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">reject</span><span class="dl">'</span><span class="p">],</span>
+<span class="p">])</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZonedDate</span><span class="p">(</span><span class="nx">wallclock</span><span class="p">,</span> <span class="p">{</span><span class="nx">timezone</span><span class="p">,</span> <span class="nx">disambiguation</span><span class="p">})</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="nx">date</span><span class="p">.</span><span class="nx">time</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">ok</span><span class="dl">'</span><span class="p">)</span>
+      <span class="k">continue</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">failed</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+ </details> 
+ <hr /> 
+
  #### - [Manage Node versions with NVM.](https://dev.to/arindam_1729/manage-node-versions-with-nvm-2n0j) 
  <details><summary>Article</summary> <h2>
   
@@ -892,509 +1227,6 @@ Tip: It is always better to install the long-term support (LTS) version of Node 
 <p>Overall, while Term 1 was demanding, I found it more enjoyable than anticipated. I forged numerous personal and professional connections and learned a tremendous amount in just five months. Beyond the academic growth, the rigorous schedule instilled discipline in my studies and inspired me to plan personal projects for the summer. I'll delve into these in upcoming posts.</p>
 
 <p>Thank you for reading, and stay tuned for future posts! 🤠</p>
-
- </details> 
- <hr /> 
-
- #### - [How to display API data on map using React?](https://dev.to/thedev_subrat/how-to-display-api-data-on-map-using-react-51de) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
-
-<p>Usually developers struggle with issues like how to embed maps in app, how to show data on map, etc. With this article, we will learn how to display API data on map in react application using <code>leaflet</code> &amp; <code>react-leaflet</code>. </p>
-
-<p>We will observe how based on user’s clicking anywhere on the map, coordinates (latitude and longitude) will be recorded and sent as parameters to API and then data (like nearby cities) gets fetched and displayed on the map.</p>
-
-<h2>
-  
-  
-  Prerequisites
-</h2>
-
-<p>We need to have fair knowledge of how React works.</p>
-
-<h2>
-  
-  
-  Why Leaflet &amp; React-Leaflet ?
-</h2>
-
-<p><a href="https://leafletjs.com/examples/quick-start/">Leaflet</a> is an open source JS library to work with interactive maps. It lets us add markers, circles, polygons, show dynamic data based on users' interactions. </p>
-
-<p><a href="https://react-leaflet.js.org/docs/start-introduction/">React-Leaflet</a> is a package acting as bridge between React and Leaflet. It provides useful <strong>components</strong>, <strong>hooks</strong> like <code>MapComponent</code>, <code>TileLayer</code>, <code>Marker</code>, <code>useMap</code>, <code>useMapEvents</code>, etc. helping users to deal with map interactivity. </p>
-
-<h2>
-  
-  
-  Rapid API Subscription
-</h2>
-
-<p>To consume <a href="https://rapidapi.com/tipsters/api/booking-com">API</a>, we have to create an account on <a href="https://rapidapi.com/hub">Rapid API</a> . Then, search for booking com: </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EHDZJibr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1itg5Xuh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EHDZJibr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1itg5Xuh.png" alt="Rapid API UI" width="800" height="209"></a></p>
-
-<p>Before using this api, we need to login/sign up and subscribe to it. Once subscribed, we will find <strong>Subscribed</strong> on the right side as shown in the above image. Finally, we are ready to consume api.</p>
-
-<p>For this article, you will use <code>Nearby Cities</code> endpoint:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--CO8t8EEL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkZm-cQO2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CO8t8EEL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkZm-cQO2.png" alt="Nearby Cities endpoint" width="800" height="903"></a></p>
-
-<p>We will choose Javascript (Axios) to get the code for testing the endpoint.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QZ-oNVVN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1bzzqQ_n.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QZ-oNVVN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1bzzqQ_n.png" alt="Javascript code" width="800" height="393"></a></p>
-
-<p><strong>X-RapidAPI-Key</strong> is secret key accessible for the subscribed users only. So, please don't share it with others. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--B40IP1Sp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkvoMqmdh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--B40IP1Sp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkvoMqmdh.png" alt="Rapid API Key" width="800" height="1076"></a><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Latitude, longitude and locale are mandatory parameters that needs to be passed as params while testing the api endpoint.
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Installations
-</h2>
-
-<p>Once you have the above mentioned code snippet with required parameters, move to the next step for creating React app named <strong>mapData</strong>.</p>
-
-<p>With the following commands, we'll have our react app up and running at <a href="http://localhost:3000">http://localhost:3000</a>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>1. npx create-react-app mapData
-2. cd mapData
-3. npm start
-</code></pre>
-
-</div>
-
-
-
-<p>To embed maps in react app, you need to install following package:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm install leaflet react-leaflet axios
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Project Structure
-</h2>
-
-<p>Once done with installations, let’s start writing code - </p>
-
-<p>Project Structure will look like this:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rdOt3-tk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/Bkpx_jEO2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rdOt3-tk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/Bkpx_jEO2.png" alt="Project Structure" width="550" height="1048"></a></p>
-
-<h2>
-  
-  
-  Add Leaflet CSS
-</h2>
-
-<p>In <code>index.html</code> under <code>public</code> folder, write following code inside <code>&lt;head&gt;</code> tag to include <code>Leaflet CSS</code> file:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;link</span> 
-      <span class="na">rel=</span><span class="s">"stylesheet"</span> 
-      <span class="na">href=</span><span class="s">"https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"</span>
-      <span class="na">integrity=</span><span class="s">"sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="</span>
-      <span class="na">crossorigin=</span><span class="s">""</span>
-    <span class="nt">/&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Add following css in <code>src/components/map/index.css</code> which must have <strong>leaflet-container</strong> as the classname for the visibility of map:
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nc">.leaflet-container</span> <span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100vw</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Consume booking com api
-</h2>
-
-<p>Write the following code in <code>src/api/index.js</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">getNearbyCities</span> <span class="o">=</span> <span class="k">async</span><span class="p">(</span><span class="nx">coordinates</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// console.log("coordinates ", coordinates)</span>
-    <span class="kd">const</span> <span class="p">{</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">lng</span><span class="p">}</span> <span class="o">=</span> <span class="nx">coordinates</span><span class="p">;</span>
-
-    <span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://booking-com.p.rapidapi.com/v1/hotels/nearby-cities</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
-          <span class="na">latitude</span><span class="p">:</span> <span class="nx">lat</span><span class="p">,</span>
-          <span class="na">longitude</span><span class="p">:</span> <span class="nx">lng</span><span class="p">,</span>
-          <span class="na">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">en-gb</span><span class="dl">'</span>
-        <span class="p">},</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-          <span class="dl">'</span><span class="s1">X-RapidAPI-Key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_SECRET_API_KEY</span><span class="dl">'</span><span class="p">,</span>
-          <span class="dl">'</span><span class="s1">X-RapidAPI-Host</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">booking-com.p.rapidapi.com</span><span class="dl">'</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
-
-      <span class="k">try</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">cities </span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-      <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this code, </p>
-
-<ul>
-<li>
-<code>getNearbyCities</code> accepts <strong>coordinates</strong> as parameter and <strong>coordinates</strong> value changes whenever user clicks anywhere on the map.</li>
-<li>
-<strong>url</strong> in <code>options</code> uses <code>/hotels/nearby-cities</code> as the endpoint.</li>
-<li>
-<strong>params</strong> contain latitude, longitude and locale </li>
-<li>
-<strong>headers</strong> contain <strong>X-RapidAPI-Key</strong> &amp; <strong>X-RapidAPI-Host</strong>
-</li>
-</ul>
-
-<h2>
-  
-  
-  Displaying API Data on map
-</h2>
-
-<p>Write following code in <code>src/components/map/index.js</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MapContainer</span><span class="p">,</span> <span class="nx">TileLayer</span><span class="p">,</span> <span class="nx">Marker</span><span class="p">,</span> <span class="nx">Popup</span><span class="p">,</span> <span class="nx">useMapEvent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-leaflet</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// Very important as it loads Leaflet's CSS</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Icon</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">leaflet</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">getNearbyCities</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../api</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="c1">// to use any marker, use following method - </span>
-<span class="kd">const</span> <span class="nx">redIcon</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Icon</span><span class="p">({</span>
-    <span class="na">iconUrl</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../../img/redMarker.webp</span><span class="dl">'</span><span class="p">),</span> <span class="c1">// path where red marker icon is located</span>
-    <span class="na">iconSize</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="kd">const</span> <span class="nb">Map</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">marker</span><span class="p">,</span> <span class="nx">setMarker</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span><span class="na">lat</span><span class="p">:</span> <span class="mf">51.505</span><span class="p">,</span> <span class="na">lng</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.09</span><span class="p">})</span> <span class="c1">// initial coordinates of blue marker when app renders</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">citiesLocation</span><span class="p">,</span> <span class="nx">setCitiesLocation</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span> <span class="c1">// it contains locations of nearby-cities </span>
-    <span class="c1">// fetched by api</span>
-
-    <span class="kd">function</span> <span class="nx">SetViewOnClick</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">useMapEvent</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">click event info =&gt; </span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
-            <span class="nx">setMarker</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">);</span>  <span class="c1">// to update the location of blue Marker</span>
-            <span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">,</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getZoom</span><span class="p">())</span>
-        <span class="p">})</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">e.latlng </span><span class="dl">"</span><span class="p">,</span><span class="nx">marker</span><span class="p">)</span>
-        <span class="nx">getNearbyCities</span><span class="p">(</span><span class="nx">marker</span><span class="p">)</span> <span class="c1">// passing marker as coordinates to fetch nearby-cities' locations</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="nx">setCitiesLocation</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
-    <span class="p">},[</span><span class="nx">marker</span><span class="p">])</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">MapContainer</span>
-            <span class="nx">center</span><span class="o">=</span><span class="p">{</span><span class="nx">marker</span><span class="p">}</span>
-            <span class="nx">zoom</span><span class="o">=</span><span class="p">{</span><span class="mi">12</span><span class="p">}</span>
-            <span class="nx">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> 
-        <span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">TileLayer</span>
-                <span class="nx">attribution</span><span class="o">=</span><span class="dl">'</span><span class="s1">&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors</span><span class="dl">'</span>
-                <span class="nx">url</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</span><span class="dl">"</span>
-            <span class="o">/&gt;</span>
-            <span class="o">&lt;</span><span class="nx">Marker</span> <span class="nx">position</span><span class="o">=</span><span class="p">{</span><span class="nx">marker</span><span class="p">}</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">Popup</span><span class="o">&gt;</span>
-                    <span class="nx">See</span> <span class="k">this</span>
-                <span class="o">&lt;</span><span class="sr">/Popup</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/Marker</span><span class="err">&gt;
-</span>            <span class="p">{</span>
-                <span class="nx">citiesLocation</span><span class="p">?.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>  <span class="c1">// at each city location, redIconed marker will be visible</span>
-                    <span class="o">&lt;</span><span class="nx">Marker</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span> <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">redIcon</span><span class="p">}</span> <span class="nx">position</span><span class="o">=</span><span class="p">{[</span><span class="nx">item</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span> <span class="nx">item</span><span class="p">.</span><span class="nx">longitude</span><span class="p">]}</span><span class="o">&gt;</span>
-                        <span class="o">&lt;</span><span class="nx">Popup</span><span class="o">&gt;</span>
-                            <span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">},</span> <span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">country</span><span class="p">}</span>
-                        <span class="o">&lt;</span><span class="sr">/Popup</span><span class="err">&gt;
-</span>                    <span class="o">&lt;</span><span class="sr">/Marker</span><span class="err">&gt;
-</span>                <span class="p">))</span>
-            <span class="p">}</span>
-            <span class="o">&lt;</span><span class="nx">SetViewOnClick</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="sr">/MapContainer</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nb">Map</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the above code, </p>
-
-<ul>
-<li>
-<code>const [marker, setMarker] = useState({lat: 51.505, lng: -0.09})</code> indicates initial coordinates of blue marker (check in Output section) when app renders</li>
-<li>
-<code>const [citiesLocation, setCitiesLocation] = useState([])</code> will contain locations of nearby-cities fetched by api</li>
-<li>
-<code>function SetViewOnClick()</code> updates the location of blue marker based on user's click as well as view just by clicking on the map.</li>
-<li>
-<code>map.setView(e.latlng, map.getZoom())</code> sets the view of the map to the location where clicked and zooms</li>
-<li>
-<code>useEffect(() =&gt; {
-   ...
-},[marker])</code> have dependency array containing <strong>marker</strong>, It means on changing marker's value, useEffect will trigger, <code>getNearbyCities</code> executes and populates <code>citiesLocation</code>
-</li>
-<li>
-<code>&lt;MapContainer center={marker} zoom={12} scrollWheelZoom={true}&gt;...&lt;/MapContainer&gt;</code> has <strong>center</strong> showing the center of the map, <strong>zoom</strong> showing zoom level and    <strong>scrollWheelZoom</strong> to decide whether map can be zoomed using mouse scroll wheel.</li>
-<li>
-<code>&lt;TileLayer
-            attribution='&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        /&gt;</code> We need to add Tile layer to our map, in our case it's OpenStreetMap tile layer and it requires an <code>attribution</code>. Thereafter, map loads.</li>
-<li>
-<code>&lt;Marker position={marker}&gt;
-&lt;Popup&gt;
-    See this
-&lt;/Popup&gt;
-&lt;/Marker&gt;</code> shows the marker with the popup (when clicked)</li>
-</ul>
-
-<h3>
-  
-  
-  Rendering of Map inside <code>src/App.js</code>
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nb">Map</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/map</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nb">Map</span><span class="o">/&gt;</span> <span class="p">{</span><span class="cm">/** Map component will contain the map shown in our React app */</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>And, then <code>&lt;App/&gt;</code> inside <code>src/index.js</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-dom/client</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">));</span>
-<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
-  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Output
-</h2>
-
-<p>Final output -</p>
-
-<p>On rendering, map shows following data: </p>
-
-<ol>
-<li>Blue marker shows coordinates(<code>lat: 51.505, lng: -0.09</code>) of <code>Southwark London England United Kingdom</code>.</li>
-<li>Red markers show cities' locations nearby <code>London, UK</code>.</li>
-</ol>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7WOUfXy6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/rkX8z54O3.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7WOUfXy6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/rkX8z54O3.jpg" alt="Locations nearby London, UK" width="800" height="440"></a></p>
-
-<p>Check the console tab in developer console <strong>after rendering</strong>:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--b-dYaviZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/S1_KF54u2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--b-dYaviZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/S1_KF54u2.png" alt="dev console after rendering" width="766" height="542"></a></p>
-
-<p>After clicking anywhere on the map, blue marker's position gets updated and accordingly, cities' locations update.</p>
-
-<p>Check out following image:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--aU3qWKDG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1VVsqE_n.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aU3qWKDG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1VVsqE_n.jpg" alt="cities locations" width="800" height="434"></a></p>
-
-<p>Check the console tab in developer console <strong>after clicking</strong>: </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_X_DJzOX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1eUq9Vun.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_X_DJzOX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1eUq9Vun.png" alt="dev console after clicking" width="764" height="958"></a></p>
-
-<h3>
-  
-  
-  Popups with location names
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--95gBk9ZB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B15AziV_2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--95gBk9ZB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B15AziV_2.png" alt="location names" width="800" height="879"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vmbrrGbz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1A3VoE_n.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vmbrrGbz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1A3VoE_n.png" alt="location name" width="767" height="692"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>With this article, now you would be able to embed maps in react app and play around with it as per your requirements.</p>
-
-<h2>
-  
-  
-  References
-</h2>
-
-<p><a href="https://leafletjs.com/examples/quick-start/">https://leafletjs.com/examples/quick-start/</a><br>
-<a href="https://react-leaflet.js.org/docs/start-setup/">https://react-leaflet.js.org/docs/start-setup/</a></p>
-
- </details> 
- <hr /> 
-
- #### - [SQL Commands](https://dev.to/nathalia_friederichs/sql-commands-1md6) 
- <details><summary>Article</summary> <p>Have you ever heard of SQL? In this article, we will embark on a journey through the realm of data manipulation and definition language, exploring the distinctions between DDL, DML, DTL, DCL, and DQL.</p>
-
-<p><strong>About SQL</strong></p>
-
-<p>Structured Query Language, known by the acronym SQL, is the language used in Database Management Systems (DBMS). It was created by Donald Chamberlin and Raymond Boyce, after Edgar Frank Codd developed the concept of the database while at IBM. Initially, the intention was to name the language SEQUEL, but due to a trademark issue, it was necessary to opt for SQL.</p>
-
-<p>This language plays a crucial role in querying, manipulating, and managing data in relational database systems, widely adopted in the information technology industry.</p>
-
-<p>Although it's a single language, SQL is divided into five categories:</p>
-
-<ul>
-<li>DDL (<em>Data Definition Language</em>) </li>
-<li>DML (<em>Data Manipulation Language</em>) </li>
-<li>DTL (<em>Data Transaction Language</em>) </li>
-<li>DCL (<em>Data Control Language</em>) </li>
-<li>DQL (<em>Data Query Language</em>)</li>
-</ul>
-
-<p><strong>DDL - Data Definition Language</strong></p>
-
-<p>It's used to define and manage the structure and elements that compose a database. In other words, it's responsible for creating, altering, and deleting objects in the database, such as tables, indexes, views, and constraints.</p>
-
-<p>The DDL commands include:</p>
-
-<ul>
-<li>CREATE: creates databases, tables, procedures, etc. </li>
-<li>ALTER: modifies objects created by the CREATE command </li>
-<li>DROP: deletes what was created by the CREATE command</li>
-</ul>
-
-<p><strong>DML - Data Manipulation Language</strong></p>
-
-<p>It's used to perform operations involving the insertion, updating, and deletion of data in a database.</p>
-
-<p>It's essential for the active manipulation of data, allowing the execution of dynamic tasks and maintenance of updated and relevant information according to the system and user needs.</p>
-
-<p>The DML commands include:</p>
-
-<ul>
-<li>INSERT: inserts data into a table </li>
-<li>UPDATE: modifies an existing record in a table </li>
-<li>DELETE: removes a record from the table</li>
-</ul>
-
-<p><strong>DCL - Data Control Language</strong></p>
-
-<p>These commands are used to define which users or roles have permissions to access, modify, or perform specific operations on database objects, such as tables, views, and stored procedures.</p>
-
-<p>It plays a fundamental role in data protection and access control within the database environment.</p>
-
-<p>Examples of DCL commands:</p>
-
-<ul>
-<li>GRANT: grants database access to a user </li>
-<li>REVOKE: revokes database access from a user</li>
-</ul>
-
-<p><strong>DTL - Data Transaction Language</strong></p>
-
-<p>These are the commands that focus on managing transactions in a database. Transactions refer to sequences of database operations executed as a single logical unit.</p>
-
-<p>Examples of DTL commands:</p>
-
-<ul>
-<li>BEGIN TRANSACTION: initiates a transaction </li>
-<li>ROLLBACK: undoes a transaction </li>
-<li>COMMIT: confirms a transaction</li>
-</ul>
-
-<p><strong>DQL - Data Query Language</strong></p>
-
-<p>It plays a crucial role in enabling data analysis, report generation, and obtaining useful information from large datasets. By using DQL, users can efficiently and systematically explore and examine data stored in the database, enabling informed decision-making based on the retrieved information.</p>
-
-<p>The SELECT command with all its clauses, JOIN, WHERE, AND, OR, GROUP BY, ORDER BY, HAVING, LIKE, is an example of DQL.</p>
-
-<p>In the upcoming articles, we will discuss the syntax of DDL, DML and DQL.</p>
 
  </details> 
  <hr /> 
