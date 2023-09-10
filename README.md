@@ -764,14 +764,6 @@ Output is:
  </details> 
  <hr /> 
 
- #### - [I have Developed a Free Web Scraping API](https://dev.to/muhammadmobeen/i-have-developed-a-free-web-scraping-api-8ma) 
- <details><summary>Article</summary> <p>I have Developed a Free Web Scraping API<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4XuunRQ1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1rq5nkbwh64koyj29w2w.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4XuunRQ1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1rq5nkbwh64koyj29w2w.png" alt="API Hosted on RapidAPI" width="800" height="152"></a><br>
-Hey guys! I have developed this API for people who need to do web scraping or need to include in their projects. It is completely free with the ability to scrape modern JS websites too. All this is just for free. You don't need to worry about Selenium, BS4, and setting up Chrome Web Drivers. Deploy your scrapers easily on the cloud now. You can check out the API at: <a href="https://rapidapi.com/markhorverse-markhorverse-default/api/dripcrawler">https://rapidapi.com/markhorverse-markhorverse-default/api/dripcrawler</a></p>
-
- </details> 
- <hr /> 
-
  #### - [Yet Another Newsletter LOL: Fortune Cheese](https://dev.to/nickytonline/yet-another-newsletter-lol-fortune-cheese-53c3) 
  <details><summary>Article</summary> <p>Another week, another newsletter. Let's get to it!</p>
 
@@ -866,6 +858,192 @@ AGE Query</p>
 <p>Apache AGE opens up exciting possibilities for developers looking to work with graph data while leveraging the power and familiarity of PostgreSQL. By combining the strengths of both relational and graph databases, AGE provides a versatile solution for a wide range of applications. Whether you are building a social network, recommendation engine, or analyzing complex interconnected data, Apache AGE is a tool worth exploring.</p>
 
 <p>In this article, we've only scratched the surface of what Apache AGE can do. To dive deeper into its capabilities and explore more advanced features, be sure to check out the official documentation and start experimenting with your own graph data.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Discover Bun - A Faster, Modern JavaScript Runtime](https://dev.to/thevinitgupta/discover-bun-a-faster-modern-javascript-runtime-5fob) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PIIahm_e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yjrhlmtofass38oajbqf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PIIahm_e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yjrhlmtofass38oajbqf.png" width="80" height="70"></a></p>
+
+<h2>
+  
+  
+  Bun is the new Javascript Runtime built from scratch to serve the modern Javascript ecosystem.
+</h2>
+
+<p>But do we really need more Javascript tools?</p>
+
+<p><a href="https://i.giphy.com/media/d2lcHJTG5Tscg/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/d2lcHJTG5Tscg/giphy.gif" width="500" height="281"></a></p>
+
+<p>Well, the Javascript Space is completely different from 15 years ago when NodeJS was first released.</p>
+
+<ul>
+<li>Yearly new releases of <code>ECMAScript</code>.</li>
+<li>Typescript becoming the norm because of the enhanced Developer experience.</li>
+<li>Use of JSX in almost every development framework.</li>
+</ul>
+
+<p>These have forced the Javascript runtimes to become <code>lighter</code> and <code>faster</code>.</p>
+
+<h2>
+  
+  
+  Deno - Modern runtime that becamse Jurasic
+</h2>
+
+<p>A little bit ago, we got Deno. While it is just No-De reversed as De-No, it does more than that.</p>
+
+<p>It's features are listed on their website : </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wxN6eEFW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tx3clsz1vuiq2a8bg362.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wxN6eEFW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tx3clsz1vuiq2a8bg362.png" alt="Deno Features" width="800" height="386"></a></p>
+
+<p>But, Deno essentially failed, because : </p>
+
+<blockquote>
+<p>Deno only really sported "minor features" from a users perspective. It had a cleaner codebase, used up-to-date best-practices, and had better security, but those things are really only "features" to a user, not a product in themselves.</p>
+</blockquote>
+
+<h2>
+  
+  
+  The Technology Behind Bun
+</h2>
+
+<p>Bun is a Javascript Runtime. But what does it mean actually?<br>
+It starts with an Engine - The Component of a runtime that runs the Javascript code. </p>
+
+<p>We all know V8, the JS Engine behind Chrome and NodeJS.<br>
+But Bun uses something different - <code>JavascriptCore</code>.</p>
+<h3>
+  
+  
+  Javascript Core is a <code>Performance🚀 focused</code> solution built by Apple 🍎 for the Safari Browser
+</h3>
+
+<p>The JS engine cannot work on it's own. So it combines with external APIs and message Queues and the infamous Event loop to create a Javascript Runtime.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--huR1KKNY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vqnm77ue4jdejhklnk7x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--huR1KKNY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vqnm77ue4jdejhklnk7x.png" alt="Javscript Runtime Internal working" width="800" height="625"></a></p>
+
+<p>In Bun, this is implemented from scratch using <code>Zig</code> which is a <code>low-level</code> general purpose language like C or Rust for building fast applications. </p>
+<h3>
+  
+  
+  The above implementation provides better performance and memory management during Start and Runtimes, combined with the promise of mind-blowing speed, you have a real competitor of NodeJS.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PmKmZgbU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6p0e0cy5tdvz3dv6je9h.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PmKmZgbU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6p0e0cy5tdvz3dv6je9h.jpg" alt="Bun Meme" width="509" height="500"></a></p>
+<h2>
+  
+  
+  Features of Bun
+</h2>
+
+<p>Bun has a lot of great features that makes it worthy.</p>
+<h3>
+  
+  
+  1. Support for NodeJS packages 🎯
+</h3>
+
+<p>Bun is like a Drop-In replacement for NodeJS thanks to the native implementation of 100s of Node modules</p>
+
+<p>Bun also uses the <code>package.json</code> file for dependencies, so less learning curve from NodeJS and <code>bun install</code> is really fast 👇</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---TiLLlX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zeq16xccepmdt9650fhd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---TiLLlX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zeq16xccepmdt9650fhd.png" alt="Bun speed" width="800" height="478"></a></p>
+<h3>
+  
+  
+  2. Built in Typescript Support and it's fast ⚡
+</h3>
+
+<p>Before the dawn of Bun, running typescript was tedious and slow. Bun comes with built in support for running Typescript in your projects and makes it faster. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4W1S55Cr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s2w501y62psor9ox6wdt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4W1S55Cr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s2w501y62psor9ox6wdt.png" alt="Typescript Bun" width="800" height="457"></a></p>
+<h3>
+  
+  
+  3. Support for both CommonJS and ESModules(MyFavorite) 🎉
+</h3>
+
+<p>Remember those days where you had to convert your project from the old <code>require</code> syntax to <code>import</code> syntax? Some libraries still not support the import syntax perfectly with Typescript. </p>
+
+<p>This all goes away with Bun. You can write either or both.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--07xaYk4R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86m8z894k6suwc876cy1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--07xaYk4R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86m8z894k6suwc876cy1.png" alt="Bun Features" width="800" height="800"></a></p>
+<h3>
+  
+  
+  4. Built-In Testing Support 💡
+</h3>
+
+<p>You love the Test driven development? Or are you just starting with it? It doesn't matter. Because you do not have to go and learn a new testing framework to do the job. </p>
+
+<p>Bun comes with built-in testing support, and so it is much faster from the other ones out there.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pBSGy7BG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgi5m2ywckerlag3yuk9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pBSGy7BG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgi5m2ywckerlag3yuk9.png" alt="Bun testing Benchmarks" width="800" height="547"></a></p>
+<h4>
+  
+  
+  Enough talk, let's see some examples of using Bun 📌
+</h4>
+<h2>
+  
+  
+  Installing Bun
+</h2>
+
+<p>Installing Bun is as simple as below :<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>curl <span class="nt">-fsSL</span> https://bun.sh/install | bash
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Setting up a Server
+</h2>
+
+<p>Ready to develop your own service? Create a new file : <code>server.ts</code> and add the following code : </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--MbojM6qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cptbnrm0fzbohr3ziddo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MbojM6qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cptbnrm0fzbohr3ziddo.png" alt="Bun HTTP Server" width="800" height="800"></a></p>
+
+<h2>
+  
+  
+  Start the server
+</h2>
+
+<p>Now to start listening to requests, run the following command(no intermediate step of converting to <code>.js</code> separately) :<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>bun index.tsx
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  React Components with Bun
+</h2>
+
+<p>Bun supports .jsx and .tsx files out of the box. Bun's internal transpiler converts JSX syntax into vanilla JavaScript before execution.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_T2cUxV_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77oc2k00qcpbi186o1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_T2cUxV_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77oc2k00qcpbi186o1.png" alt="JSX With Bun" width="800" height="800"></a><br>
+It also works with the above React component.</p>
+
+<p>With the above features and many more, Bun is ready to become the new norm in the Javascript runtime market.</p>
+
+<p>Do you want to use Bun in your projects? Checkout their official website for Getting Started and installation guides here : <a href="https://bun.sh/">Bun.js</a></p>
 
  </details> 
  <hr /> 
