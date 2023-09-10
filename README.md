@@ -133,6 +133,491 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [🎯 Medium vs. DEV vs. Hashnode vs. Hackernoon 🔥](https://dev.to/github20k/medium-vs-dev-vs-hashnode-vs-hackernoon-4ma1) 
+ <details><summary>Article</summary> <p>I have been to over 20 calls. <br>
+Many people asked me: <strong>What platform should I post on?</strong><br>
+I think that’s a valid question but the wrong question to ask. <br>
+The real question is: <strong>What platform should I launch on?</strong></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--peQcjBAB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://media.beehiiv.com/cdn-cgi/image/fit%3Dscale-down%2Cformat%3Dauto%2Conerror%3Dredirect%2Cquality%3D80/uploads/asset/file/65006e14-8b16-44f1-85e7-b7476a47ec3e/ezgif.com-resize__24_.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--peQcjBAB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://media.beehiiv.com/cdn-cgi/image/fit%3Dscale-down%2Cformat%3Dauto%2Conerror%3Dredirect%2Cquality%3D80/uploads/asset/file/65006e14-8b16-44f1-85e7-b7476a47ec3e/ezgif.com-resize__24_.gif" alt="Launch" width="800" height="423"></a></p>
+
+
+
+<h2>
+  
+  
+  Your blog 📄
+</h2>
+
+<p>If you are in tech and want to grow your product, you need a blog that can be good for: </p>
+
+<ul>
+<li><p>Motivated developers who wish to learn more about you. </p></li>
+<li><p>Developers who are doing research about a problem and want to find a solution (SEO). </p></li>
+</ul>
+
+<p>I don’t like to discuss other benefits, such as credibility and education, that can be for another post. </p>
+
+<p>Now that we have established the importance of a blog, why would you want to use an external blog for your content?</p>
+
+
+
+<h2>
+  
+  
+  Your external blog 📜
+</h2>
+
+<p>What if: </p>
+
+<ul>
+<li>People are not aware that they have a problem. (Product without market dominator, such as Novu). </li>
+<li>SEO has a meager amount of traffic, and the competition is stiff. </li>
+<li>You don’t have enough time to wait for long-term channels. </li>
+</ul>
+
+<p><strong>You can use external blogs</strong>. They have a lot of mixed visitors who scour their platform daily and might be interested in what you offer.<br>
+Those platforms work in the <strong>“marketplace”</strong> mode, where they promote interesting and trending articles. </p>
+
+<p>Nothing stops you from posting your article on your website blog and then posting your articles to all the other platforms with a <strong>canonical link</strong> back to your website. I used a <strong>freelancer on Upwork</strong> for a few dollars to post my articles on DEV, Hashnode, Hacknoon, and Medium whenever I have a new article. </p>
+
+<p>And for the question, “<strong>What platform should I post on?</strong>” The answer is: all of them.</p>
+
+
+
+<h2>
+  
+  
+  Traffic to launch 🚀
+</h2>
+
+<p>As I mentioned, the biggest question is, <strong>“What platform should I launch on?”</strong><br>
+When you launch something, you send every possible traffic you currently have: Social Media, Newsletter, etc. to the platform of your choice. Your main goal is that the platform will reward you with the traffic you send. Here are my thoughts about the different platforms: </p>
+
+
+
+<h3>
+  
+  
+  Medium
+</h3>
+
+<p><a href="https://medium.com">Medium</a> is a generalized platform, and it has the most significant amount of audience for developers. If you managed to trend on Medium, you might get tens of thousands of developers reading your content. But it’s hard.</p>
+
+<p>If you are starting, here is what I would do: </p>
+
+<p>I would not put my launch on Medium. I will post my articles there regularly, and after a while, some publications will contact you and give you the ability to publish the post on their feed. Use it, and always post on their feed. I play with my publications between <a href="https://javascript.plainenglish.io">Javascript in plain English</a>, <a href="https://blog.bitsrc.io">Bits and Pieces</a>, and <a href="https://blog.devgenius.io">Dev Genius</a>. After a while, your audience on Medium will grow, you will get more followers exposed to your new articles, and your initial traffic can significantly increase. </p>
+
+<p>Here is a trick I really liked from <a href="https://www.linkedin.com/in/arielweinberger">Ariel Weinberger</a>, founder of <a href="https://pezzo.ai">Pezzo</a>. </p>
+
+<p>Ariel has the most extensive Udemy course about NestJS. When he has a NestJS-related article, he sends people to the article on Medium and gets thousands of likes. And you can do the same with different traffic sources you have. </p>
+
+<p>Once you have a vast audience, you can feel comfortable to launch on Medium. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--M9qFcGo0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yoho3pqklg5so40fktv4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--M9qFcGo0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yoho3pqklg5so40fktv4.png" alt="Medium" width="800" height="452"></a></p>
+
+
+
+<h3>
+  
+  
+  DEV
+</h3>
+
+<p><a href="https://dev.to">DEV</a> is my favorite platform to launch; getting your article trending there requires meager traffic. Their algorithm is still young, so you can quickly bring enough traffic and likes to the platform to be on the top feed. </p>
+
+<p>I had articles there reaching 100k views with a minimal amount of marketing. </p>
+
+<p>The platform consists mainly of juniors and Javascript developers. You acquire an audience fast there; I have more than 11k followers in one year. </p>
+
+<p>I feel like the platform has started getting less traffic than in the past.<br>
+It’s good enough for now, but let’s see what happens next year. </p>
+
+<p>I am a big advocate for DEV, and <a href="https://github20k.com/blog">my blog</a> contains many tricks to get your articles trending there. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cN2TiDxu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wx0v1qov6tjio8b1kyyn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cN2TiDxu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wx0v1qov6tjio8b1kyyn.png" alt="DEV" width="800" height="400"></a></p>
+
+
+
+<h3>
+  
+  
+  Hashnode
+</h3>
+
+<p><a href="https://hashnode.com">Hashnode</a> is an interesting platform. It’s a blog that consists of many blogs. And on the main, there is a “Featured” section for trending articles. </p>
+
+<p>I think DEV made a better approach since when I go to somebody's article on DEV, I stay on the DEV website so that I might be exposed to other people's articles. On Hashnode, you remain in the personal blog, so the traffic is not circulating. As a result, I feel that Hashnode has much less traffic than DEV. </p>
+
+<p>I was featured on Hashnode multiple times and got little traffic. </p>
+
+<p>What I do feel is that </p>
+
+<p>They get new features rapidly outside compared to DEV </p>
+
+<p>The owner of the platforms is very active daily there and helps articles out. </p>
+
+<p>I think there will be a significant change there in the coming years. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uiyxwLZi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/27u2o6izsez079pe8pv4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uiyxwLZi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/27u2o6izsez079pe8pv4.png" alt="Hashnode" width="800" height="430"></a></p>
+
+
+
+<h3>
+  
+  
+  Hackernoon
+</h3>
+
+<p><a href="https://hackernoon.com">Hackernoon</a> it’s the weirdest platform of all of them in terms of design. You can post articles. You have to “Submit” them. They also charge companies to post. I had one piece there, and the results were “meh” compared to posting on DEV. The platform itself is super complicated, and the UX is awful. I don’t even post there regularly. </p>
+
+<p>I might lack information about this platform as I am not motivated to explore it deeply. Do you think you know better what to do with it? Let me know.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--c-pKG0UJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/txq1owxa2uwwytbirr5r.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--c-pKG0UJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/txq1owxa2uwwytbirr5r.png" alt="Hackernoon" width="800" height="336"></a></p>
+
+
+
+<h2>
+  
+  
+  GitHub 20k ⭐️
+</h2>
+
+<p>I have set on a mission to help people grow through open source by giving weekly knowledge.<br>
+This newsletter is good for you if:</p>
+
+<ul>
+<li>You are considering open-sourcing your product (or building a new one).</li>
+<li>You are considering opening a by-product and open-source it (to reflect on your main product).</li>
+<li>You are in tech and want the growth without the stars / without GitHub trending.</li>
+</ul>
+
+<p>It’s a 100% free newsletter (and always will be). Feel free to register at:</p>
+
+<p><a href="https://github20k.com/">https://github20k.com</a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WmbmR-sq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86ywkzncq6erg44d6xy9.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WmbmR-sq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86ywkzncq6erg44d6xy9.gif" alt="In for tech" width="800" height="336"></a></p>
+
+<p>Where do you usually post?</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Networking Hardware - Summary](https://dev.to/scorcism/networking-hardware-summary-4ngi) 
+ <details><summary>Article</summary> <p>Hello everyone, I hope you are having a good day.</p>
+
+<p>In this blog, we are going to cover different types of Network Hardware Devices.</p>
+
+<blockquote>
+<p>The basic imp devices are written pointwise, and only imp points are written, which helps in understanding the device in simple terms.</p>
+</blockquote>
+
+<h3>
+  
+  
+  Hubs
+</h3>
+
+<ul>
+<li>Hubs are layer 1 devices (physical layer).</li>
+<li>Data is flooded, meaning it sends data to every connected computer, whether they require it or not.</li>
+<li>A central hub is often used in a ring LAN, transferring data to every connected computer.</li>
+</ul>
+
+<h3>
+  
+  
+  Switch
+</h3>
+
+<ul>
+<li>Switches are like intelligent hubs.</li>
+<li>They only send data to the required devices.</li>
+<li>Switches have memory elements.</li>
+<li>They operate at the layer 2 level.</li>
+</ul>
+
+<h3>
+  
+  
+  Repeater
+</h3>
+
+<ul>
+<li>Repeaters are commonly used in wireless and wired communication.</li>
+<li>They regenerate signals at the same frequency, preventing signal degradation.</li>
+</ul>
+
+<h3>
+  
+  
+  Modem
+</h3>
+
+<ul>
+<li>A modem converts digital data into analog form so it can travel through telephone lines.</li>
+</ul>
+
+<h3>
+  
+  
+  NIC (Network Interface Card)
+</h3>
+
+<ul>
+<li>NICs are connected to PCs.</li>
+<li>They provide PCs with a MAC address, which cannot be changed.</li>
+<li>The MAC address is a hardware or physical address.</li>
+<li>MAC addresses are required to transfer data from one node to another.</li>
+</ul>
+
+<h3>
+  
+  
+  Bridge
+</h3>
+
+<ul>
+<li>Bridges are layer 2 devices.</li>
+<li>They have RAM memory elements that store MAC addresses from both sides of the network.</li>
+</ul>
+
+<h3>
+  
+  
+  Router
+</h3>
+
+<ul>
+<li>Routers are network layer devices.</li>
+<li>They operate at OSI model level 3.</li>
+<li>Routers connect different networks.</li>
+<li>They have LAN ports for internal network connections.</li>
+<li>They also have WAN ports for connecting internet devices to external networks.</li>
+</ul>
+
+
+
+
+<p>If the article helps you, leave a like, follow, or anything 🙂.<br><br>
+You can follow me on <a href="https://www.linkedin.com/in/abhishekpathak32/">LinkedIn</a>, <a href="https://github.com/scorcism">GitHub</a>, <a href="https://dev.to/scorcism">Dev.to</a> and <a href="https://scorcism.hashnode.dev/">hashnode</a>.</p>
+
+<p><strong>Bye</strong></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Node.js Unveiled: The Inner Workings of a Runtime Revolution](https://dev.to/hakan_turan/nodejs-unveiled-the-inner-workings-of-a-runtime-revolution-agf) 
+ <details><summary>Article</summary> <p>Node.js has been a game-changer in the world of web development, breaking down the barriers between client and server-side programming. But have you ever wondered how Node.js actually works under the hood? This article aims to demystify the inner workings of Node.js, offering a comprehensive look at its architecture, event-driven model, and much more. Buckle up for an exciting journey into the heart of Node.js!</p>
+
+<p> </p>
+
+<h2>
+  
+  
+  What is Node.js?
+</h2>
+
+<p> </p>
+
+<p>Before diving into the nitty-gritty, let's establish what Node.js is. Node.js is a runtime environment that allows you to execute JavaScript code server-side. Built on Chrome's V8 JavaScript engine, Node.js has enabled JavaScript to expand beyond the browser, powering back-end development, APIs, and even desktop applications.</p>
+
+<p> </p>
+
+<h2>
+  
+  
+  The V8 Engine
+</h2>
+
+<p> </p>
+
+<p>The V8 engine is the powerhouse behind Node.js. Developed by Google, V8 compiles JavaScript to native machine code, making it incredibly fast. But Node.js is not just V8. It extends the capabilities of the engine by providing additional modules and features that are not available in the browser environment, such as file system access and networking.</p>
+
+<p> </p>
+
+<h2>
+  
+  
+  The Event Loop: Node.js' Beating Heart
+</h2>
+
+<p> </p>
+
+<p>Node.js adopts an event-driven, non-blocking I/O model, which makes it lightweight and efficient. The Event Loop is the core of this model. If you've ever wondered how Node.js can handle multiple tasks simultaneously despite being single-threaded, the Event Loop is your answer.</p>
+
+<p> </p>
+
+<h3>
+  
+  
+  How the Event Loop Works
+</h3>
+
+<p> </p>
+
+<ol>
+<li><p><strong>Initial Code Execution</strong>: When a Node.js application starts, the main module's code is executed.</p></li>
+<li><p><strong>Asynchronous Calls</strong>: Node.js offloads asynchronous operations like file reading or network requests to separate threads, freeing up the main thread.</p></li>
+<li><p><strong>Callback Queue</strong>: Once an asynchronous operation is complete, its callback function is pushed into a queue.</p></li>
+<li><p><strong>Event Loop</strong>: The Event Loop continuously checks if the main thread is free. If it is, it dequeues a callback from the queue and executes it.</p></li>
+</ol>
+
+<p> </p>
+
+<h2>
+  
+  
+  Modules and NPM
+</h2>
+
+<p> </p>
+
+<p>Node.js introduced the CommonJS module system, allowing developers to include various modules in their applications. The Node Package Manager (NPM) is another cornerstone, providing a vast ecosystem of open-source libraries and tools.</p>
+
+<p> </p>
+
+<h3>
+  
+  
+  Core Modules
+</h3>
+
+<p> </p>
+
+<p>Node.js comes with several built-in modules, such as:</p>
+
+<ul>
+<li>
+<code>fs</code> for file system operations</li>
+<li>
+<code>http</code> for HTTP requests and responses</li>
+<li>
+<code>crypto</code> for cryptography functions</li>
+</ul>
+
+<p> </p>
+
+<h3>
+  
+  
+  Third-Party Modules
+</h3>
+
+<p> </p>
+
+<p>NPM allows you to install third-party modules to extend your application's capabilities. Popular modules include:</p>
+
+<ul>
+<li>
+<code>express</code> for web application framework</li>
+<li>
+<code>mongoose</code> for MongoDB object modeling</li>
+<li>
+<code>socket.io</code> for real-time communication</li>
+</ul>
+
+<p> </p>
+
+<h2>
+  
+  
+  Streams and Buffers
+</h2>
+
+<p> </p>
+
+<p>Node.js is designed to handle large files and data streams efficiently. Buffers temporarily hold data, while streams allow you to read from or write to a data source incrementally, reducing memory usage.</p>
+
+<p> </p>
+
+<h3>
+  
+  
+  Types of Streams
+</h3>
+
+<p> </p>
+
+<ol>
+<li>
+<strong>Readable Streams</strong>: For reading data (e.g., reading a file).</li>
+<li>
+<strong>Writable Streams</strong>: For writing data (e.g., creating a file).</li>
+<li>
+<strong>Duplex Streams</strong>: Both readable and writable (e.g., TCP sockets).</li>
+<li>
+<strong>Transform Streams</strong>: Duplex streams that modify data as it's read or written (e.g., compression).</li>
+</ol>
+
+<p> </p>
+
+<h2>
+  
+  
+  Real-world Applications
+</h2>
+
+<p> </p>
+
+<p>Node.js is incredibly versatile, powering a range of applications:</p>
+
+<ul>
+<li>
+<strong>Web Servers</strong>: With frameworks like Express.js, Node.js is a popular choice for building web servers.</li>
+<li>
+<strong>APIs</strong>: Node.js excels at handling I/O-bound operations, making it ideal for building RESTful APIs.</li>
+<li>
+<strong>Real-time Applications</strong>: With WebSockets and libraries like Socket.io, Node.js is perfect for real-time applications like chat apps and online gaming.</li>
+</ul>
+
+<p> </p>
+
+<h2>
+  
+  
+  Case Studies
+</h2>
+
+<p> </p>
+
+<h3>
+  
+  
+  Netflix
+</h3>
+
+<p>Netflix switched some of its components to Node.js for better performance and reduced build times. They experienced up to a 70% reduction in startup time.</p>
+
+<p> </p>
+
+<h3>
+  
+  
+  LinkedIn
+</h3>
+
+<p>LinkedIn moved its mobile backend to Node.js, resulting in a 20x faster server and significantly reduced resources.</p>
+
+<p> </p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p> </p>
+
+<p>Node.js is more than just "JavaScript on the server." It's a robust, high-performance environment that has fundamentally changed the way we think about web development. By understanding its inner workings, you'll be better equipped to harness its full power and potential.</p>
+
+<p>So, whether you're a seasoned developer or a newcomer eager to learn, Node.js offers a world of possibilities waiting to be explored.</p>
+
+<p>Happy Coding! 🚀</p>
+
+ </details> 
+ <hr /> 
+
  #### - [How to Improve Front-end performance??🤔](https://dev.to/manish7107/how-to-improve-front-end-performance-3ag7) 
  <details><summary>Article</summary> <p>Improving front-end performance is crucial for creating fast and responsive web applications. Here are some tips to help you enhance the performance of your front-end code:</p>
 
@@ -314,356 +799,6 @@
 
 <p>In summary, Arian Zargos Machinery has established itself as a strong brand owing to high-quality manufacturing, comprehensive product range and excellent after-sales assistance. Its state-of-the-art infrastructure and focus on quality enables them to deliver robust and reliable machinery solutions for myriad industries. I would highly recommend them for your equipment sourcing needs.<br>
 <a href="https://arianzagrosmachinery.com/">arianzagrosmachinery</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Solving the "Container With Most Water" Problem on Leet Code](https://dev.to/leetcode/solving-the-container-with-most-water-problem-on-leet-code-51f5) 
- <details><summary>Article</summary> <h2>
-  
-  
-  11. Container With Most Water
-</h2>
-
-<p><strong>Type :</strong> Medium<br>
-<strong>Liked by:</strong> 26.5K<br>
-<strong>Disliked by:</strong> 1.4K</p>
-
-<p><strong>Companies that asked this Question</strong><br>
-<em>Companies : No of Times asked</em></p>
-
-<p>Microsoft 4<br>
-Google 4<br>
-Amazon 3<br>
-Adobe 2<br>
-Bloomberg 2<br>
-Apple 9<br>
-Facebook 4<br>
-Uber 3<br>
-Oracle 2<br>
-TikTok 2<br>
-Goldman Sachs 5<br>
-Intel 4<br>
-Swiggy 4<br>
-ByteDance 3<br>
-VMware 3<br>
-Qualtrics 3<br>
-Intuit 3<br>
-Flipkart 2<br>
-Zoho 2<br>
-Samsung 2<br>
-eBay 2<br>
-Walmart Labs 2<br>
-Yandex 2<br>
-Yahoo 2<br>
-Cisco 2<br>
-tcs 2<br>
-Tesla 2<br>
-C3 IoT 2<br>
-Arcesium 2<br>
-DE Shaw 2<br>
-JPMorgan 2<br>
-Wix 1</p>
-
-<p>You are given an integer array <code>height</code> of length <code>n</code>. There are n vertical lines drawn such that the two <code>endpoints</code> of the <code>ith</code> line are <code>(i, 0)</code> and <code>(i, height[i]).</code><br>
-Find two lines that together with the x-axis form a container, such that the container contains the most water.<br>
-Return the maximum amount of water a container can store.<br>
-Notice that you may not slant the container.</p>
-
-<p><strong>Example 2:</strong><br>
-Input: height = <code>[1,8,6,2,5,4,8,3,7]</code><br>
-Output: <code>49</code><br>
-Explanation: <code>The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.</code></p>
-
-<p><strong>Example 2:</strong><br>
-Input: height = <code>[1,1]</code><br>
-Output: <code>1</code></p>
-
-<h2>
-  
-  
-  Intuition:
-</h2>
-
-<p>The code aims to find the maximum area between two lines in a histogram, where the lines represent the heights of bars.</p>
-
-<h2>
-  
-  
-  Approach:
-</h2>
-
-<ul>
-<li>Initialize pointers at both ends of the histogram (LeftPointer at 0 and RightPointer at the last element).</li>
-<li>While the LeftPointer is less than the RightPointer:</li>
-<li>Calculate the area between the lines formed by the heights at LeftPointer and RightPointer.</li>
-<li>Update the MaximumArea if the current area is greater.</li>
-<li>Move the pointer that points to the shorter line inward (towards the other pointer).</li>
-<li>Repeat step 2 until the pointers meet.</li>
-</ul>
-
-<h2>
-  
-  
-  Complexity:
-</h2>
-
-<p><strong>Time complexity:</strong> O(n) where n is the number of elements in the height array. We iterate through the array once.<br>
-<strong>Space complexity:</strong> O(1) because we use a constant amount of extra space regardless of the input size.</p>
-
-<h2>
-  
-  
-  Code:
-</h2>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>class Solution {
-    public int maxArea(int[] height) {
-        int MaximumArea = 0;
-        int LeftPointer = 0;
-        int RightPointer = height.length - 1;
-
-        while(LeftPointer &lt; RightPointer){
-            if(height[LeftPointer] &lt; height[RightPointer]){
-                MaximumArea = Math.max(MaximumArea , height[LeftPointer] *(RightPointer - LeftPointer));
-                LeftPointer++;
-            }
-            else{
-                MaximumArea = Math.max(MaximumArea ,height[RightPointer] *(RightPointer - LeftPointer));
-                RightPointer--;
-            }
-        }
-
-        return MaximumArea;
-    }
-}
-</code></pre>
-
-</div>
-
-
-
-<p>Happy coding,<br>
-shiva</p>
-
- </details> 
- <hr /> 
-
- #### - [Rest VS gRPC](https://dev.to/hasanelsherbiny/rest-vs-grpc-1bj3) 
- <details><summary>Article</summary> <p>Since the first appearance of API there has been many approaches to make it simpler and much powerful and easy to use.<br>
-if you don't know <a href="https://dev.to/hasanelsherbiny/what-is-api-21bc">what is API read this article</a></p>
-
-<p>this is a quick comparison between REST And gRPC APIS</p>
-
-<p>REST is an architectural style for designing networked applications. <br>
-It is not a protocol, but a set of constraints and principles for creating web services.</p>
-
-<p>REST APIs are built considering these concepts:<br>
-Resources: In REST, everything is a resource, which can be a physical object, a piece of data or a service. <br>
-Each resource is identified by a uniqu URL.</p>
-
-<ol>
-<li><p>HTTP Methods: <br>
-REST uses standard HTTP methods (GET, POST, PUT, DELETE, etc.) to perform CRUD (Create, Read, Update, Delete) operations on resourcs</p></li>
-<li><p>Stateless:<br>
-RESTful APIs are statelss, meaning each request from a client to the server must contain all the information needed to understand and fulfil the request</p></li>
-</ol>
-
-<p>3.Representation: <br>
-Resources can have multiple representations, such as JSON or XML, which clients can request based on their needs.</p>
-
-<h2>
-  
-  
-  Why To Choose REST?
-</h2>
-
-<p>Simplicity: REST is easy to understand and implement making it a popular choice for web APIs</p>
-
-<p>Language Agnostic: Clients and servers can be written in different programming languages promoting interoperability.</p>
-
-<p>Caching: REST leverage HTTP caching mechanisms for better performance.</p>
-
-<p>Maturity: REST has been around for a long time and has widespread support in various web frameworks and tools.</p>
-
-<h2>
-  
-  
-  Drawbacks of REST
-</h2>
-
-<ol>
-<li><p>Overfetching / Underfetching: Clients may receive more or less data than they need impacting efficiency.</p></li>
-<li><p>Latency: Multiple round-trips can result in higher latency when dealing with complex operations.</p></li>
-</ol>
-
-<h2>
-  
-  
-  So What Is gRPC?
-</h2>
-
-<p>gRPC is a high-performance, open-source framework developed by Google that allows you to define RPC (Remote Procedure Call) services and generate client-server code for multiple programming languages. It uses Protocol Buffers (protobufs) for data serialization and HTTP/2 for transport.</p>
-
-<h2>
-  
-  
-  Why To Choose gRPC?
-</h2>
-
-<p>1.IDL (Interface Definition Language): <br>
-gRPC uses a language-agnostic IDL to define services and message types. These definitions can then be used to generate client and server code in multiple languages.</p>
-
-<p>2.Strongly Typed: <br>
-Data serialization with protobufs is strongly typed reducing the chances of runtime errors due to data mismatches.</p>
-
-<p>3.HTTP/2: <br>
-gRPC uses HTTP/2 for transport, offering features like multiplexing, flow control, and header compression which enhance performance.</p>
-
-<h2>
-  
-  
-  Why To Choose gRPC?
-</h2>
-
-<p>1.Bidirectional Streaming: <br>
-gRPC supports bidirectional streaming allowing both the client and server to send a stream of messages.</p>
-
-<p>2.Efficiency: <br>
-gRPC's use of HTTP/2 and binary serialization makes it highly efficient in terms of bandwidth and latency.</p>
-
-<p>3.Code Generation: <br>
-gRPC automatically generates client and server code reducing the likelihood of human error.</p>
-
-<p>4.Strong Typing: <br>
-Protobufs ensure strong typing and versioning of data contracts.</p>
-
-<p>5.Bidirectional Streaming: <br>
-Ideal for real-time applications and chat systems.</p>
-
-<h2>
-  
-  
-  Drawbacks of gRPC
-</h2>
-
-<p>1.Complexity: <br>
-The additional complexity of protobuf definitions and code generation can be challenging for some developers.</p>
-
-<p>2.Learning Curve: <br>
-Learning to work with gRPC may require additional time and effort.</p>
-
-<h2>
-  
-  
-  When To Choose REST OR gRPC?
-</h2>
-
-<p>This depends project's requirements and constraints but</p>
-
-<h2>
-  
-  
-  Use REST if:
-</h2>
-
-<ul>
-<li>You need simplicity and quick development.</li>
-<li>Your clients and servers are implemented in different languages.</li>
-<li>You want to leverage the maturty and existing support of REST in web frameworks.</li>
-</ul>
-
-<h2>
-  
-  
-  Use gRPC if:
-</h2>
-
-<ul>
-<li>You prioritize efficiency and low latency.</li>
-<li>You have strong typing and versioning requirements.</li>
-<li>Bidirectional streaming or real-time communication is essential.</li>
-<li>You want to benefit from code generation and maintainable APIs.</li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Firefox form auto-fill](https://dev.to/michalbryxi/firefox-form-auto-fill-25pi) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Problem
-</h2>
-
-<p>One of the trivial, yet crucial UX issues I have with the Firefox web browser is that the other browsers do absolutely smashing job in auto-filling addresses.</p>
-
-<p>Basically I just fill my address in once, the browser remembers and then I can select the remembered option in any web page and 90% of the form will be filled in correctly.</p>
-
-<p>It sounds trivial, but filling in my physical address is surprisingly common workflow on contemporary web.</p>
-
-<h2>
-  
-  
-  Research
-</h2>
-
-<p>I tried to follow the <a href="https://support.mozilla.org/en-US/kb/automatically-fill-your-address-web-forms-android">Automatically fill in your address on web forms in Firefox for Android</a> from Mozilla, but mentioned settings options are not even available in my version (<code>118.0b6</code>).</p>
-
-<p>After a bit of research I found out that <a href="https://wiki.mozilla.org/Firefox/Features/Form_Autofill#Feature_Availability">Firefox/Features/Form Autofill</a> contains the answer. <strong>Important</strong>: Since this article will inevitably go out of date, please refer to the linked official documentation for the correct way.</p>
-
-<h2>
-  
-  
-  Solution
-</h2>
-
-<ol>
-<li>In the address bar type in <code>about:config</code> and press enter.</li>
-<li>Search for <code>extensions.formautofill.addresses</code>
-</li>
-<li><code>extensions.formautofill.addresses.capture.enabled = true</code></li>
-<li>
-<code>extensions.formautofill.addresses.capture.v2.enabled = true</code> 
-
-<ul>
-<li>Not exactly sure what is the difference between this and the previous one, but can't hurt?</li>
-</ul>
-</li>
-<li><code>extensions.formautofill.addresses.supported = on</code></li>
-<li>
-<code>extensions.formautofill.addresses.supportedCountries = US,CA,CH,CZ,GB</code> 
-
-<ul>
-<li>My country is Switzerland, therefore I added <code>CH</code> to this list. List of country codes follows the <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes">ISO 3166</a> <em>aplha-2 code</em> standard.</li>
-</ul>
-</li>
-<li>Restart browser</li>
-<li>Now you should see in the <code>Settings</code> new item in <code>Forms and Autofill</code>
-</li>
-</ol>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Y5_4g1xv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/emfjlvzyh0ilk072kcdq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Y5_4g1xv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/emfjlvzyh0ilk072kcdq.png" alt="Forms and Autofill settings in Firefox" width="800" height="292"></a></p>
-
-<p>Now you can use try on websites like <a href="https://fill.dev/form/identity-simple">fill.dev</a> to see if it works:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ctsjsOOV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vxa1uhm65ir3yp4ht972.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ctsjsOOV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vxa1uhm65ir3yp4ht972.png" alt="fill.dev website with Firefox autofill toolbar" width="782" height="342"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Firefox can fill in addresses in forms and does it <em>reasonably</em> well even in countries that are <em>not</em> officially supported. One just need to know where/how to enable it in settings.</p>
-
-
-
-
-<p>Image generated via Midjourney prompt: firefox as a delivery man --ar 16:9</p>
 
  </details> 
  <hr /> 
