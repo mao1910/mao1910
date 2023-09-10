@@ -133,6 +133,459 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Angular Cheatsheet](https://dev.to/easewithtuts/angular-cheatsheet-53ki) 
+ <details><summary>Article</summary> <p>Angular is a powerful front-end framework for building dynamic web applications. Whether you're a seasoned Angular developer or just getting started, having a handy cheat sheet can be a valuable resource for speeding up development and solving common tasks. In this Angular cheat sheet, we'll cover key concepts, directives, and tips to help you work efficiently with Angular.</p>
+
+<h2>
+  
+  
+  <strong>Getting Started with Angular</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong>Creating a New Angular Project</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>ng new my-app
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Starting the Development Server</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>ng serve
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Generating a New Component</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>ng generate component my-component
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Angular Basics</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong>Interpolation (Binding Values)</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>{{ variableName }}
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Property Binding</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>[src]="imageUrl"
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Event Binding</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>(click)="methodName()"
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Two-Way Data Binding</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>[(ngModel)]="propertyName"
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Structural Directives</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong><code>*ngIf</code></strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">*ngIf=</span><span class="s">"showElement"</span><span class="nt">&gt;</span>Visible when showElement is true<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong><code>*ngFor</code></strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">*ngFor=</span><span class="s">"let item of items"</span><span class="nt">&gt;</span>{{ item }}<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong><code>*ngSwitch</code></strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">[ngSwitch]=</span><span class="s">"value"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">*ngSwitchCase=</span><span class="s">"'case1'"</span><span class="nt">&gt;</span>Content for case 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">*ngSwitchCase=</span><span class="s">"'case2'"</span><span class="nt">&gt;</span>Content for case 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">*ngSwitchDefault</span><span class="nt">&gt;</span>Default content<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Component Interaction</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong>Input Binding</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;app-child</span> <span class="na">[inputProperty]=</span><span class="s">"parentProperty"</span><span class="nt">&gt;&lt;/app-child&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Output Binding</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;app-child</span> <span class="na">(outputEvent)=</span><span class="s">"parentMethod($event)"</span><span class="nt">&gt;&lt;/app-child&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Forms</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong>Template-Driven Forms</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;form</span> <span class="na">#form</span><span class="err">="</span><span class="na">ngForm</span><span class="err">"</span> <span class="na">(ngSubmit)=</span><span class="s">"submitForm(form)"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">ngModel</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Reactive Forms</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;form</span> <span class="na">[formGroup]=</span><span class="s">"formGroup"</span> <span class="na">(ngSubmit)=</span><span class="s">"submitForm()"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">formControlName=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>HTTP Requests</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong>Import HttpClientModule</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpClientModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http</span><span class="dl">'</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Making a GET Request</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span><span class="p">:</span> <span class="nx">HttpClient</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/data</span><span class="dl">'</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Routing</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong>Configuring Routes</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">routes</span><span class="p">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">HomeComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">about</span><span class="dl">'</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">AboutComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">redirectTo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/home</span><span class="dl">'</span><span class="p">,</span> <span class="na">pathMatch</span><span class="p">:</span> <span class="dl">'</span><span class="s1">full</span><span class="dl">'</span> <span class="p">},</span>
+<span class="p">];</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Router Outlet</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Services</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong>Creating a Service</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">ng</span> <span class="nx">generate</span> <span class="nx">service</span> <span class="nx">my</span><span class="o">-</span><span class="nx">service</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Injecting a Service</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">myService</span><span class="p">:</span> <span class="nx">MyService</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Lifecycle Hooks</strong>
+</h2>
+
+<h3>
+  
+  
+  <strong><code>ngOnInit</code></strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Initialization logic here</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong><code>ngOnChanges</code></strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">ngOnChanges</span><span class="p">(</span><span class="nx">changes</span><span class="p">:</span> <span class="nx">SimpleChanges</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Handle changes here</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Tips and Tricks</strong>
+</h2>
+
+<ul>
+<li>Use the Angular CLI for code generation and project setup.</li>
+<li>Leverage Angular CLI's powerful commands like <code>ng generate component</code> and <code>ng generate service</code>.</li>
+<li>Utilize Angular's dependency injection system for managing services.</li>
+<li>Follow best practices for component and module organization.</li>
+<li>Take advantage of Angular's built-in directives for data binding and DOM manipulation.</li>
+<li>Regularly check Angular's official documentation and community resources for updates and solutions to common issues.</li>
+</ul>
+
+<p>This Angular cheat sheet provides a quick reference guide to some of the most commonly used features and concepts in Angular development. Keep it handy as you work on your Angular projects, and don't hesitate to explore the official Angular documentation and community resources for more in-depth information and tutorials. Happy coding!</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Recap - Reflection of Term 1 🧐](https://dev.to/rjsgml/recap-reflection-of-term-1-2ic6) 
  <details><summary>Article</summary> <blockquote>
 <p>Starters 🏁</p>
@@ -205,6 +658,428 @@
 <p>Overall, while Term 1 was demanding, I found it more enjoyable than anticipated. I forged numerous personal and professional connections and learned a tremendous amount in just five months. Beyond the academic growth, the rigorous schedule instilled discipline in my studies and inspired me to plan personal projects for the summer. I'll delve into these in upcoming posts.</p>
 
 <p>Thank you for reading, and stay tuned for future posts! 🤠</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to display API data on map using React?](https://dev.to/thedev_subrat/how-to-display-api-data-on-map-using-react-51de) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
+
+<p>Usually developers struggle with issues like how to embed maps in app, how to show data on map, etc. With this article, we will learn how to display API data on map in react application using <code>leaflet</code> &amp; <code>react-leaflet</code>. </p>
+
+<p>We will observe how based on user’s clicking anywhere on the map, coordinates (latitude and longitude) will be recorded and sent as parameters to API and then data (like nearby cities) gets fetched and displayed on the map.</p>
+
+<h2>
+  
+  
+  Prerequisites
+</h2>
+
+<p>We need to have fair knowledge of how React works.</p>
+
+<h2>
+  
+  
+  Why Leaflet &amp; React-Leaflet ?
+</h2>
+
+<p><a href="https://leafletjs.com/examples/quick-start/">Leaflet</a> is an open source JS library to work with interactive maps. It lets us add markers, circles, polygons, show dynamic data based on users' interactions. </p>
+
+<p><a href="https://react-leaflet.js.org/docs/start-introduction/">React-Leaflet</a> is a package acting as bridge between React and Leaflet. It provides useful <strong>components</strong>, <strong>hooks</strong> like <code>MapComponent</code>, <code>TileLayer</code>, <code>Marker</code>, <code>useMap</code>, <code>useMapEvents</code>, etc. helping users to deal with map interactivity. </p>
+
+<h2>
+  
+  
+  Rapid API Subscription
+</h2>
+
+<p>To consume <a href="https://rapidapi.com/tipsters/api/booking-com">API</a>, we have to create an account on <a href="https://rapidapi.com/hub">Rapid API</a> . Then, search for booking com: </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EHDZJibr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1itg5Xuh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EHDZJibr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1itg5Xuh.png" alt="Rapid API UI" width="800" height="209"></a></p>
+
+<p>Before using this api, we need to login/sign up and subscribe to it. Once subscribed, we will find <strong>Subscribed</strong> on the right side as shown in the above image. Finally, we are ready to consume api.</p>
+
+<p>For this article, you will use <code>Nearby Cities</code> endpoint:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--CO8t8EEL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkZm-cQO2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CO8t8EEL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkZm-cQO2.png" alt="Nearby Cities endpoint" width="800" height="903"></a></p>
+
+<p>We will choose Javascript (Axios) to get the code for testing the endpoint.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QZ-oNVVN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1bzzqQ_n.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QZ-oNVVN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1bzzqQ_n.png" alt="Javascript code" width="800" height="393"></a></p>
+
+<p><strong>X-RapidAPI-Key</strong> is secret key accessible for the subscribed users only. So, please don't share it with others. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--B40IP1Sp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkvoMqmdh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--B40IP1Sp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/HkvoMqmdh.png" alt="Rapid API Key" width="800" height="1076"></a><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Latitude, longitude and locale are mandatory parameters that needs to be passed as params while testing the api endpoint.
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Installations
+</h2>
+
+<p>Once you have the above mentioned code snippet with required parameters, move to the next step for creating React app named <strong>mapData</strong>.</p>
+
+<p>With the following commands, we'll have our react app up and running at <a href="http://localhost:3000">http://localhost:3000</a>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>1. npx create-react-app mapData
+2. cd mapData
+3. npm start
+</code></pre>
+
+</div>
+
+
+
+<p>To embed maps in react app, you need to install following package:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>npm install leaflet react-leaflet axios
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Project Structure
+</h2>
+
+<p>Once done with installations, let’s start writing code - </p>
+
+<p>Project Structure will look like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rdOt3-tk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/Bkpx_jEO2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rdOt3-tk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/Bkpx_jEO2.png" alt="Project Structure" width="550" height="1048"></a></p>
+
+<h2>
+  
+  
+  Add Leaflet CSS
+</h2>
+
+<p>In <code>index.html</code> under <code>public</code> folder, write following code inside <code>&lt;head&gt;</code> tag to include <code>Leaflet CSS</code> file:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;link</span> 
+      <span class="na">rel=</span><span class="s">"stylesheet"</span> 
+      <span class="na">href=</span><span class="s">"https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"</span>
+      <span class="na">integrity=</span><span class="s">"sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="</span>
+      <span class="na">crossorigin=</span><span class="s">""</span>
+    <span class="nt">/&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Add following css in <code>src/components/map/index.css</code> which must have <strong>leaflet-container</strong> as the classname for the visibility of map:
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="nc">.leaflet-container</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100vw</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Consume booking com api
+</h2>
+
+<p>Write the following code in <code>src/api/index.js</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getNearbyCities</span> <span class="o">=</span> <span class="k">async</span><span class="p">(</span><span class="nx">coordinates</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// console.log("coordinates ", coordinates)</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">lng</span><span class="p">}</span> <span class="o">=</span> <span class="nx">coordinates</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://booking-com.p.rapidapi.com/v1/hotels/nearby-cities</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">latitude</span><span class="p">:</span> <span class="nx">lat</span><span class="p">,</span>
+          <span class="na">longitude</span><span class="p">:</span> <span class="nx">lng</span><span class="p">,</span>
+          <span class="na">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">en-gb</span><span class="dl">'</span>
+        <span class="p">},</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+          <span class="dl">'</span><span class="s1">X-RapidAPI-Key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_SECRET_API_KEY</span><span class="dl">'</span><span class="p">,</span>
+          <span class="dl">'</span><span class="s1">X-RapidAPI-Host</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">booking-com.p.rapidapi.com</span><span class="dl">'</span>
+        <span class="p">}</span>
+      <span class="p">};</span>
+
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">cities </span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In this code, </p>
+
+<ul>
+<li>
+<code>getNearbyCities</code> accepts <strong>coordinates</strong> as parameter and <strong>coordinates</strong> value changes whenever user clicks anywhere on the map.</li>
+<li>
+<strong>url</strong> in <code>options</code> uses <code>/hotels/nearby-cities</code> as the endpoint.</li>
+<li>
+<strong>params</strong> contain latitude, longitude and locale </li>
+<li>
+<strong>headers</strong> contain <strong>X-RapidAPI-Key</strong> &amp; <strong>X-RapidAPI-Host</strong>
+</li>
+</ul>
+
+<h2>
+  
+  
+  Displaying API Data on map
+</h2>
+
+<p>Write following code in <code>src/components/map/index.js</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">MapContainer</span><span class="p">,</span> <span class="nx">TileLayer</span><span class="p">,</span> <span class="nx">Marker</span><span class="p">,</span> <span class="nx">Popup</span><span class="p">,</span> <span class="nx">useMapEvent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-leaflet</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// Very important as it loads Leaflet's CSS</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Icon</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">leaflet</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">getNearbyCities</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../api</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// to use any marker, use following method - </span>
+<span class="kd">const</span> <span class="nx">redIcon</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Icon</span><span class="p">({</span>
+    <span class="na">iconUrl</span><span class="p">:</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../../img/redMarker.webp</span><span class="dl">'</span><span class="p">),</span> <span class="c1">// path where red marker icon is located</span>
+    <span class="na">iconSize</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="kd">const</span> <span class="nb">Map</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">marker</span><span class="p">,</span> <span class="nx">setMarker</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span><span class="na">lat</span><span class="p">:</span> <span class="mf">51.505</span><span class="p">,</span> <span class="na">lng</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.09</span><span class="p">})</span> <span class="c1">// initial coordinates of blue marker when app renders</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">citiesLocation</span><span class="p">,</span> <span class="nx">setCitiesLocation</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span> <span class="c1">// it contains locations of nearby-cities </span>
+    <span class="c1">// fetched by api</span>
+
+    <span class="kd">function</span> <span class="nx">SetViewOnClick</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">useMapEvent</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">click event info =&gt; </span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+            <span class="nx">setMarker</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">);</span>  <span class="c1">// to update the location of blue Marker</span>
+            <span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">,</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getZoom</span><span class="p">())</span>
+        <span class="p">})</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">e.latlng </span><span class="dl">"</span><span class="p">,</span><span class="nx">marker</span><span class="p">)</span>
+        <span class="nx">getNearbyCities</span><span class="p">(</span><span class="nx">marker</span><span class="p">)</span> <span class="c1">// passing marker as coordinates to fetch nearby-cities' locations</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="nx">setCitiesLocation</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+    <span class="p">},[</span><span class="nx">marker</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">MapContainer</span>
+            <span class="nx">center</span><span class="o">=</span><span class="p">{</span><span class="nx">marker</span><span class="p">}</span>
+            <span class="nx">zoom</span><span class="o">=</span><span class="p">{</span><span class="mi">12</span><span class="p">}</span>
+            <span class="nx">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span> 
+        <span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">TileLayer</span>
+                <span class="nx">attribution</span><span class="o">=</span><span class="dl">'</span><span class="s1">&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors</span><span class="dl">'</span>
+                <span class="nx">url</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</span><span class="dl">"</span>
+            <span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Marker</span> <span class="nx">position</span><span class="o">=</span><span class="p">{</span><span class="nx">marker</span><span class="p">}</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Popup</span><span class="o">&gt;</span>
+                    <span class="nx">See</span> <span class="k">this</span>
+                <span class="o">&lt;</span><span class="sr">/Popup</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/Marker</span><span class="err">&gt;
+</span>            <span class="p">{</span>
+                <span class="nx">citiesLocation</span><span class="p">?.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>  <span class="c1">// at each city location, redIconed marker will be visible</span>
+                    <span class="o">&lt;</span><span class="nx">Marker</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span> <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">redIcon</span><span class="p">}</span> <span class="nx">position</span><span class="o">=</span><span class="p">{[</span><span class="nx">item</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span> <span class="nx">item</span><span class="p">.</span><span class="nx">longitude</span><span class="p">]}</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">Popup</span><span class="o">&gt;</span>
+                            <span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">},</span> <span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">country</span><span class="p">}</span>
+                        <span class="o">&lt;</span><span class="sr">/Popup</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="sr">/Marker</span><span class="err">&gt;
+</span>                <span class="p">))</span>
+            <span class="p">}</span>
+            <span class="o">&lt;</span><span class="nx">SetViewOnClick</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/MapContainer</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nb">Map</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the above code, </p>
+
+<ul>
+<li>
+<code>const [marker, setMarker] = useState({lat: 51.505, lng: -0.09})</code> indicates initial coordinates of blue marker (check in Output section) when app renders</li>
+<li>
+<code>const [citiesLocation, setCitiesLocation] = useState([])</code> will contain locations of nearby-cities fetched by api</li>
+<li>
+<code>function SetViewOnClick()</code> updates the location of blue marker based on user's click as well as view just by clicking on the map.</li>
+<li>
+<code>map.setView(e.latlng, map.getZoom())</code> sets the view of the map to the location where clicked and zooms</li>
+<li>
+<code>useEffect(() =&gt; {
+   ...
+},[marker])</code> have dependency array containing <strong>marker</strong>, It means on changing marker's value, useEffect will trigger, <code>getNearbyCities</code> executes and populates <code>citiesLocation</code>
+</li>
+<li>
+<code>&lt;MapContainer center={marker} zoom={12} scrollWheelZoom={true}&gt;...&lt;/MapContainer&gt;</code> has <strong>center</strong> showing the center of the map, <strong>zoom</strong> showing zoom level and    <strong>scrollWheelZoom</strong> to decide whether map can be zoomed using mouse scroll wheel.</li>
+<li>
+<code>&lt;TileLayer
+            attribution='&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        /&gt;</code> We need to add Tile layer to our map, in our case it's OpenStreetMap tile layer and it requires an <code>attribution</code>. Thereafter, map loads.</li>
+<li>
+<code>&lt;Marker position={marker}&gt;
+&lt;Popup&gt;
+    See this
+&lt;/Popup&gt;
+&lt;/Marker&gt;</code> shows the marker with the popup (when clicked)</li>
+</ul>
+
+<h3>
+  
+  
+  Rendering of Map inside <code>src/App.js</code>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nb">Map</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/map</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nb">Map</span><span class="o">/&gt;</span> <span class="p">{</span><span class="cm">/** Map component will contain the map shown in our React app */</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>And, then <code>&lt;App/&gt;</code> inside <code>src/index.js</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-dom/client</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Output
+</h2>
+
+<p>Final output -</p>
+
+<p>On rendering, map shows following data: </p>
+
+<ol>
+<li>Blue marker shows coordinates(<code>lat: 51.505, lng: -0.09</code>) of <code>Southwark London England United Kingdom</code>.</li>
+<li>Red markers show cities' locations nearby <code>London, UK</code>.</li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7WOUfXy6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/rkX8z54O3.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7WOUfXy6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/rkX8z54O3.jpg" alt="Locations nearby London, UK" width="800" height="440"></a></p>
+
+<p>Check the console tab in developer console <strong>after rendering</strong>:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--b-dYaviZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/S1_KF54u2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--b-dYaviZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/S1_KF54u2.png" alt="dev console after rendering" width="766" height="542"></a></p>
+
+<p>After clicking anywhere on the map, blue marker's position gets updated and accordingly, cities' locations update.</p>
+
+<p>Check out following image:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--aU3qWKDG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1VVsqE_n.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aU3qWKDG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1VVsqE_n.jpg" alt="cities locations" width="800" height="434"></a></p>
+
+<p>Check the console tab in developer console <strong>after clicking</strong>: </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_X_DJzOX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1eUq9Vun.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_X_DJzOX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/H1eUq9Vun.png" alt="dev console after clicking" width="764" height="958"></a></p>
+
+<h3>
+  
+  
+  Popups with location names
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--95gBk9ZB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B15AziV_2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--95gBk9ZB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B15AziV_2.png" alt="location names" width="800" height="879"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vmbrrGbz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1A3VoE_n.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vmbrrGbz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://hackmd.io/_uploads/B1A3VoE_n.png" alt="location name" width="767" height="692"></a></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>With this article, now you would be able to embed maps in react app and play around with it as per your requirements.</p>
+
+<h2>
+  
+  
+  References
+</h2>
+
+<p><a href="https://leafletjs.com/examples/quick-start/">https://leafletjs.com/examples/quick-start/</a><br>
+<a href="https://react-leaflet.js.org/docs/start-setup/">https://react-leaflet.js.org/docs/start-setup/</a></p>
 
  </details> 
  <hr /> 
@@ -361,190 +1236,6 @@ fetchWeatherData('New York');
 </h2>
 
 <p>Remember that <strong><a href="https://noobizdev.tech/the-power-of-javascript-apis-best-practices-and-examples/">using APIs with JavaScript</a></strong> is a valuable skill for web development, enabling you to access external data and services to enhance your applications.</p>
-
- </details> 
- <hr /> 
-
- #### - [A Comprehensive Guide to AWS DynamoDB vs. Redshift for Databases and Data Warehouses](https://dev.to/scc33/a-comprehensive-guide-to-aws-dynamodb-vs-redshift-for-databases-and-data-warehouses-22hb) 
- <details><summary>Article</summary> <p>Unlock the Full Potential of Your Data: An In-Depth Comparison of AWS DynamoDB and Redshift for Streamlined Data Management and Analytics</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9zxJyhxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bmxh94qref4wbdlz1a4m.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9zxJyhxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bmxh94qref4wbdlz1a4m.jpg" alt="DynamoDB vs Redshift" width="800" height="450"></a></p>
-
-<p>The topics of <a href="https://en.wikipedia.org/wiki/Database">databases</a> and <a href="https://en.wikipedia.org/wiki/Data_warehouse">data warehouses</a> are central to the modern data landscape, and Amazon's offerings<a href="https://aws.amazon.com/dynamodb/">DynamoDB</a> and <a href="https://aws.amazon.com/redshift/">Redshift</a>are standout products in their respective categories. Here's a detailed comparison:</p>
-
-<h3>
-  
-  
-  <strong>Database vs. Data Warehouse</strong>
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4f_eIKpl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ggvkf5m7le3fblcsez9k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4f_eIKpl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ggvkf5m7le3fblcsez9k.png" alt="database vs data warehouses chart" width="800" height="708"></a></p>
-
-<h3>
-  
-  
-  <strong>DynamoDB</strong>
-</h3>
-
-<p><a href="https://en.wikipedia.org/wiki/Amazon_DynamoDB">Amazon DynamoDB</a>, launched by AWS in 2012, is a fully managed NoSQL database service designed to provide seamless scalability and reliable performance. Built to handle high-velocity data and offer single-digit millisecond latency, DynamoDB supports key-value and document data models, making it well-suited for a variety of applications, including real-time analytics, mobile backends, and serverless architectures. With features like auto-scaling, in-memory caching, and multi-region replication, DynamoDB has become a cornerstone in the AWS ecosystem for developers requiring a highly available and low-latency data store.</p>
-
-<p><strong>Use Cases</strong> :</p>
-
-<ul>
-<li><p>High-velocity data like IoT event streams.</p></li>
-<li><p>Serverless applications.</p></li>
-<li><p>Real-time big data analytics.</p></li>
-<li><p>Mobile applications needing a backend.</p></li>
-</ul>
-
-<p><strong>Technical Features</strong> :</p>
-
-<ul>
-<li><p>Offers single-digit millisecond latency.</p></li>
-<li><p>Supports key-value and document data models.</p></li>
-<li><p>Can be set up for multi-region replication.</p></li>
-<li><p>Auto-scaling, in-memory caching, backup, and restore functionalities.</p></li>
-</ul>
-
-<h3>
-  
-  
-  <strong>AWS Redshift</strong>
-</h3>
-
-<p><a href="https://en.wikipedia.org/wiki/Amazon_Redshift">AWS Redshift</a>, introduced in 2012, is a managed data warehouse service built on a Massively Parallel Processing (MPP) architecture. Based on PostgreSQL, Redshift is engineered for complex query processing and offers robust performance for large datasets by utilizing columnar storage and data compression techniques. Designed to serve the needs of OLAP (Online Analytical Processing) workloads, it integrates seamlessly with a variety of Business Intelligence tools and can handle structured and semi-structured data. As a staple in the AWS service suite, Redshift caters to enterprises and data analysts looking for scalable, fast, and flexible solutions for their analytics needs.</p>
-
-<p><strong>Use Cases</strong> :</p>
-
-<ul>
-<li><p>Business intelligence.</p></li>
-<li><p>Data analytics.</p></li>
-<li><p>Batch data processing.</p></li>
-<li><p>Complex SQL queries over large datasets.</p></li>
-</ul>
-
-<p><strong>Technical Features</strong> :</p>
-
-<ul>
-<li><p>Columnar storage.</p></li>
-<li><p>Data compression to improve query performance.</p></li>
-<li><p>Massively Parallel Processing (MPP) architecture.</p></li>
-<li><p>Integration with various BI tools and data lakes.</p></li>
-</ul>
-
-<h3>
-  
-  
-  <strong>Next Steps</strong>
-</h3>
-
-<p>If you're interested in DynamoDB start with AWS's free tier offer for DynamoDB. Then dive into AWS's extensive <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html">DynamoDB documentation</a> and sample projects before experimenting with different DynamoDB features like Streams and Global Tables.</p>
-
-<p>If you're interested in Redshift utilize the AWS free trial for Redshift! Then explore the i<a href="https://docs.aws.amazon.com/redshift/latest/gsg/new-user-serverless.html">ntegrations between Redshift and other AWS services</a> like S3, Kinesis, and SageMaker for a more comprehensive data solution.</p>
-
-
-
-
-<p>Originally published at <a href="https://blog.seancoughlin.me">https://blog.seancoughlin.me</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [Delete Duplicate Emails](https://dev.to/scc33/delete-duplicate-emails-2k0e) 
- <details><summary>Article</summary> <p>Eliminating Duplicate Emails Efficiently: A Comprehensive Guide to Data Cleanup Using Pandas and SQL</p>
-
-<h2>
-  
-  
-  The Problem
-</h2>
-
-<p>With this article, I will be covering the <a href="https://leetcode.com/problems/delete-duplicate-emails/">delete duplicate emails Leetcode problem</a>.</p>
-
-<p>Leetcode describes this problem as easy. That's a super reasonable evaluation as the solution requires only basic SQL or Pandas knowledge.</p>
-
-<p>The problem description is as follows:</p>
-
-<blockquote>
-<p>Write a solution to <strong>delete</strong> all duplicate emails, keeping only one unique email with the smallest <code>id</code>.</p>
-
-<p>For SQL users, please note that you are supposed to write a <code>DELETE</code> statement and not a <code>SELECT</code> one.</p>
-
-<p>For Pandas users, please note that you are supposed to modify <code>Person</code> in place.</p>
-
-<p>After running your script, the answer shown is the <code>Person</code> table. The driver will first compile and run your piece of code and then show the <code>Person</code> table. The final order of the <code>Person</code> table <strong>does not matter</strong>.</p>
-
-
-<pre class="highlight plaintext"><code>+-------------+---------+
-| Column Name | Type |
-+-------------+---------+
-| id | int |
-| email | varchar |
-+-------------+---------+
-id is the primary key (column with unique values) for this table.
-Each row of this table contains an email. 
-The emails will not contain uppercase letters.
-
-</code></pre>
-
-</blockquote>
-
-<h2>
-  
-  
-  The Solution
-</h2>
-
-<h3>
-  
-  
-  Pandas
-</h3>
-
-<p><a href="https://en.wikipedia.org/wiki/Pandas_(software)">Pandas</a> is a great Python tool for data analysis and manipulation. Built into that library is the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html">drop duplicates</a> function. Please note that the problem statement asks us to do this <a href="https://en.wikipedia.org/wiki/In-place_algorithm">in place</a>.</p>
-
-<p>Using the Pandas library this can be achieved by first in-place sorting by the <code>id</code> field and then dropping the duplicates from <code>email</code>. We want to keep at least the first duplicated element.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">delete_duplicate_emails</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="n">person</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">'id'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">person</span><span class="p">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s">'email'</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s">'first'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>Voila! I love these simple questions.</p>
-
-<h3>
-  
-  
-  SQL
-</h3>
-
-<p>In SQL we want to run a delete query. We will grab two copies of the <code>person</code> table and match them based on the <code>email</code>. To keep at least one of the solutions we only delete the entry with the higher <code>id</code> value. This keeps the <code>email</code> associated with the smallest <code>id</code>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">DELETE</span> <span class="n">p1</span> 
-<span class="k">FROM</span> <span class="n">person</span> <span class="n">p1</span><span class="p">,</span> <span class="n">person</span> <span class="n">p2</span> 
-<span class="k">WHERE</span> <span class="n">p1</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">p2</span><span class="p">.</span><span class="n">email</span> <span class="k">AND</span> <span class="n">p1</span><span class="p">.</span><span class="n">id</span> <span class="o">&gt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>As with many problems, there are multiple ways to solve them. These Pandas and SQL solutions are but one way of approaching the delete duplicate question.</p>
-
-
-
-
-<p>Originally published at <a href="https://blog.seancoughlin.me">https://blog.seancoughlin.me</a>.</p>
 
  </details> 
  <hr /> 
