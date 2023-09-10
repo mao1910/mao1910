@@ -133,6 +133,250 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [I have Developed a Free Web Scraping API](https://dev.to/muhammadmobeen/i-have-developed-a-free-web-scraping-api-8ma) 
+ <details><summary>Article</summary> <p>I have Developed a Free Web Scraping API<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4XuunRQ1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1rq5nkbwh64koyj29w2w.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4XuunRQ1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1rq5nkbwh64koyj29w2w.png" alt="API Hosted on RapidAPI" width="800" height="152"></a><br>
+Hey guys! I have developed this API for people who need to do web scraping or need to include in their projects. It is completely free with the ability to scrape modern JS websites too. All this is just for free. You don't need to worry about Selenium, BS4, and setting up Chrome Web Drivers. Deploy your scrapers easily on the cloud now. You can check out the API at: <a href="https://rapidapi.com/markhorverse-markhorverse-default/api/dripcrawler">https://rapidapi.com/markhorverse-markhorverse-default/api/dripcrawler</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Yet Another Newsletter LOL: Fortune Cheese](https://dev.to/nickytonline/yet-another-newsletter-lol-fortune-cheese-53c3) 
+ <details><summary>Article</summary> <p>Another week, another newsletter. Let's get to it!</p>
+
+<h2>Around the Web</h2>
+
+<ul>
+<li>This seems pretty new, but this new array method, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">.toSorted()</a> allows you to get a copy of a sorted array instead of mutating it when you run <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">Array.prototype.sort()</a>
+</li>
+<li>I meant to share this in a previous newsletter, and it got lost in the sea of things I bookmark. Ahmad Shadeed has a great post on <a href="https://ishadeed.com/article/virtual-keyboard-api/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">the virtual keyboard API</a>.</li>
+<li>
+<a href="https://www.joshwcomeau.com/react/server-components/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">Making Sense of React Server Components</a> – Josh W. Comeau drops another banger of a blog post. Such a great breakdown of React Server Components (RSC).</li>
+<li>
+<a href="https://bun.sh/blog/bun-v1.0?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">Bun hits 1.0</a>! If you haven’t heard of Bun, here’s the TLDR;</li>
+</ul>
+
+<blockquote>
+<p>Bun is a fast, all-in-one toolkit for running, building, testing, and debugging JavaScript and TypeScript, from a single file to a full-stack application.</p>
+</blockquote>
+
+<h2>Fun Stuff</h2>
+
+<p>🔮🧀 <a href="https://www.cbc.ca/player/play/2260932675796?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">Step aside crystal ball, this cheese will tell your fortune</a></p>
+
+<h2>Words of Wisdom for the Week</h2>
+
+<blockquote>
+<p>There is a fine line between humility and arrogance. Confidence is in the middle.</p>
+</blockquote>
+
+<p>– <a href="https://twitter.com/kelseyhightower/status/1696941080716128274?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">Kelsey Hightower on Twitter</a></p>
+
+<h2>Shameless Plugs</h2>
+
+<p>I've been having issues with OBS streaming to Twitch since last week. I finally got it sorted out, but all that to say there was no stream this week. In the meantime, checkout the back catalogue on <a href="https://nickyt.tube?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">nickyt.tube</a>!</p>
+
+<p>I am pleased to announce though, that I’ve <a href="https://www.nickyt.co/pages/stream-schedule/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese#aiden-bai-virtual-dom-back-in-block">rescheduled with Aiden Bai</a> and it’s happening this Wednesday, September 13th at 5 pm UTC! Come hang and learn about <a href="https://million.dev/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">million.js</a>!</p>
+
+<h2>Jobs</h2>
+
+<ul>
+<li>No specific job posting this week, but I did come across a site, <a href="https://frontendremotejobs.com/?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">frontendremotejobs.com</a> that my old co-worker Ben from Netlify created. Maybe you'll find it helpful for landing a remote frontend role.</li>
+</ul>
+
+<p>I post jobs in the iamdeveloper.com community, plus all other kinds of content, as do others. If you're looking for another friendly nook of the internet, head to <a href="https://discord.iamdeveloper.com?utm_source=nickytonline&amp;utm_medium=email&amp;utm_campaign=yet-another-newsletter-lol-fortune-cheese">discord.iamdeveloper.com</a>.</p>
+
+<p>If you liked this newsletter, you can <a href="https://www.nickyt.co/pages/newsletter/">subscribe</a> or if RSS is your jam, you can also <a href="https://www.nickyt.co/newsletter.rss">subscribe via RSS</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Discover Bun - A Faster, Modern JavaScript Runtime](https://dev.to/thevinitgupta/discover-bun-a-faster-modern-javascript-runtime-5fob) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PIIahm_e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yjrhlmtofass38oajbqf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PIIahm_e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yjrhlmtofass38oajbqf.png" width="80" height="70"></a></p>
+
+<h2>
+  
+  
+  Bun is the new Javascript Runtime built from scratch to serve the modern Javascript ecosystem.
+</h2>
+
+<p>But do we really need more Javascript tools?</p>
+
+<p><a href="https://i.giphy.com/media/d2lcHJTG5Tscg/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/d2lcHJTG5Tscg/giphy.gif" width="500" height="281"></a></p>
+
+<p>Well, the Javascript Space is completely different from 15 years ago when NodeJS was first released.</p>
+
+<ul>
+<li>Yearly new releases of <code>ECMAScript</code>.</li>
+<li>Typescript becoming the norm because of the enhanced Developer experience.</li>
+<li>Use of JSX in almost every development framework.</li>
+</ul>
+
+<p>These have forced the Javascript runtimes to become <code>lighter</code> and <code>faster</code>.</p>
+
+<h2>
+  
+  
+  Deno - Modern runtime that becamse Jurasic
+</h2>
+
+<p>A little bit ago, we got Deno. While it is just No-De reversed as De-No, it does more than that.</p>
+
+<p>It's features are listed on their website : </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wxN6eEFW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tx3clsz1vuiq2a8bg362.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wxN6eEFW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tx3clsz1vuiq2a8bg362.png" alt="Deno Features" width="800" height="386"></a></p>
+
+<p>But, Deno essentially failed, because : </p>
+
+<blockquote>
+<p>Deno only really sported "minor features" from a users perspective. It had a cleaner codebase, used up-to-date best-practices, and had better security, but those things are really only "features" to a user, not a product in themselves.</p>
+</blockquote>
+
+<h2>
+  
+  
+  The Technology Behind Bun
+</h2>
+
+<p>Bun is a Javascript Runtime. But what does it mean actually?<br>
+It starts with an Engine - The Component of a runtime that runs the Javascript code. </p>
+
+<p>We all know V8, the JS Engine behind Chrome and NodeJS.<br>
+But Bun uses something different - <code>JavascriptCore</code>.</p>
+<h3>
+  
+  
+  Javascript Core is a <code>Performance🚀 focused</code> solution built by Apple 🍎 for the Safari Browser
+</h3>
+
+<p>The JS engine cannot work on it's own. So it combines with external APIs and message Queues and the infamous Event loop to create a Javascript Runtime.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--huR1KKNY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vqnm77ue4jdejhklnk7x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--huR1KKNY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vqnm77ue4jdejhklnk7x.png" alt="Javscript Runtime Internal working" width="800" height="625"></a></p>
+
+<p>In Bun, this is implemented from scratch using <code>Zig</code> which is a <code>low-level</code> general purpose language like C or Rust for building fast applications. </p>
+<h3>
+  
+  
+  The above implementation provides better performance and memory management during Start and Runtimes, combined with the promise of mind-blowing speed, you have a real competitor of NodeJS.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PmKmZgbU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6p0e0cy5tdvz3dv6je9h.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PmKmZgbU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6p0e0cy5tdvz3dv6je9h.jpg" alt="Bun Meme" width="509" height="500"></a></p>
+<h2>
+  
+  
+  Features of Bun
+</h2>
+
+<p>Bun has a lot of great features that makes it worthy.</p>
+<h3>
+  
+  
+  1. Support for NodeJS packages 🎯
+</h3>
+
+<p>Bun is like a Drop-In replacement for NodeJS thanks to the native implementation of 100s of Node modules</p>
+
+<p>Bun also uses the <code>package.json</code> file for dependencies, so less learning curve from NodeJS and <code>bun install</code> is really fast 👇</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---TiLLlX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zeq16xccepmdt9650fhd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---TiLLlX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zeq16xccepmdt9650fhd.png" alt="Bun speed" width="800" height="478"></a></p>
+<h3>
+  
+  
+  2. Built in Typescript Support and it's fast ⚡
+</h3>
+
+<p>Before the dawn of Bun, running typescript was tedious and slow. Bun comes with built in support for running Typescript in your projects and makes it faster. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4W1S55Cr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s2w501y62psor9ox6wdt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4W1S55Cr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s2w501y62psor9ox6wdt.png" alt="Typescript Bun" width="800" height="457"></a></p>
+<h3>
+  
+  
+  3. Support for both CommonJS and ESModules(MyFavorite) 🎉
+</h3>
+
+<p>Remember those days where you had to convert your project from the old <code>require</code> syntax to <code>import</code> syntax? Some libraries still not support the import syntax perfectly with Typescript. </p>
+
+<p>This all goes away with Bun. You can write either or both.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--07xaYk4R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86m8z894k6suwc876cy1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--07xaYk4R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86m8z894k6suwc876cy1.png" alt="Bun Features" width="800" height="800"></a></p>
+<h3>
+  
+  
+  4. Built-In Testing Support 💡
+</h3>
+
+<p>You love the Test driven development? Or are you just starting with it? It doesn't matter. Because you do not have to go and learn a new testing framework to do the job. </p>
+
+<p>Bun comes with built-in testing support, and so it is much faster from the other ones out there.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pBSGy7BG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgi5m2ywckerlag3yuk9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pBSGy7BG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgi5m2ywckerlag3yuk9.png" alt="Bun testing Benchmarks" width="800" height="547"></a></p>
+<h4>
+  
+  
+  Enough talk, let's see some examples of using Bun 📌
+</h4>
+<h2>
+  
+  
+  Installing Bun
+</h2>
+
+<p>Installing Bun is as simple as below :<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>curl <span class="nt">-fsSL</span> https://bun.sh/install | bash
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Setting up a Server
+</h2>
+
+<p>Ready to develop your own service? Create a new file : <code>server.ts</code> and add the following code : </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--MbojM6qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cptbnrm0fzbohr3ziddo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MbojM6qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cptbnrm0fzbohr3ziddo.png" alt="Bun HTTP Server" width="800" height="800"></a></p>
+
+<h2>
+  
+  
+  Start the server
+</h2>
+
+<p>Now to start listening to requests, run the following command(no intermediate step of converting to <code>.js</code> separately) :<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>bun index.tsx
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  React Components with Bun
+</h2>
+
+<p>Bun supports .jsx and .tsx files out of the box. Bun's internal transpiler converts JSX syntax into vanilla JavaScript before execution.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_T2cUxV_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77oc2k00qcpbi186o1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_T2cUxV_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77oc2k00qcpbi186o1.png" alt="JSX With Bun" width="800" height="800"></a><br>
+It also works with the above React component.</p>
+
+<p>With the above features and many more, Bun is ready to become the new norm in the Javascript runtime market.</p>
+
+<p>Do you want to use Bun in your projects? Checkout their official website for Getting Started and installation guides here : <a href="https://bun.sh/">Bun.js</a></p>
+
+ </details> 
+ <hr /> 
+
  #### - [sudo apt update && upgrade ?](https://dev.to/scorcism/sudo-apt-update-upgrade--48g3) 
  <details><summary>Article</summary> <p>You may have heard or used <code>sudo apt update</code> and <code>sudo apt upgrade</code>, and you must have thought about what these commands actually do.</p>
 
@@ -361,444 +605,6 @@ This newsletter is good for you if:</p>
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WmbmR-sq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86ywkzncq6erg44d6xy9.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WmbmR-sq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86ywkzncq6erg44d6xy9.gif" alt="In for tech" width="800" height="336"></a></p>
 
 <p>Where do you usually post?</p>
-
- </details> 
- <hr /> 
-
- #### - [Networking Hardware - Summary](https://dev.to/scorcism/networking-hardware-summary-4ngi) 
- <details><summary>Article</summary> <p>Hello everyone, I hope you are having a good day.</p>
-
-<p>In this blog, we are going to cover different types of Network Hardware Devices.</p>
-
-<blockquote>
-<p>The basic imp devices are written pointwise, and only imp points are written, which helps in understanding the device in simple terms.</p>
-</blockquote>
-
-<h3>
-  
-  
-  Hubs
-</h3>
-
-<ul>
-<li>Hubs are layer 1 devices (physical layer).</li>
-<li>Data is flooded, meaning it sends data to every connected computer, whether they require it or not.</li>
-<li>A central hub is often used in a ring LAN, transferring data to every connected computer.</li>
-</ul>
-
-<h3>
-  
-  
-  Switch
-</h3>
-
-<ul>
-<li>Switches are like intelligent hubs.</li>
-<li>They only send data to the required devices.</li>
-<li>Switches have memory elements.</li>
-<li>They operate at the layer 2 level.</li>
-</ul>
-
-<h3>
-  
-  
-  Repeater
-</h3>
-
-<ul>
-<li>Repeaters are commonly used in wireless and wired communication.</li>
-<li>They regenerate signals at the same frequency, preventing signal degradation.</li>
-</ul>
-
-<h3>
-  
-  
-  Modem
-</h3>
-
-<ul>
-<li>A modem converts digital data into analog form so it can travel through telephone lines.</li>
-</ul>
-
-<h3>
-  
-  
-  NIC (Network Interface Card)
-</h3>
-
-<ul>
-<li>NICs are connected to PCs.</li>
-<li>They provide PCs with a MAC address, which cannot be changed.</li>
-<li>The MAC address is a hardware or physical address.</li>
-<li>MAC addresses are required to transfer data from one node to another.</li>
-</ul>
-
-<h3>
-  
-  
-  Bridge
-</h3>
-
-<ul>
-<li>Bridges are layer 2 devices.</li>
-<li>They have RAM memory elements that store MAC addresses from both sides of the network.</li>
-</ul>
-
-<h3>
-  
-  
-  Router
-</h3>
-
-<ul>
-<li>Routers are network layer devices.</li>
-<li>They operate at OSI model level 3.</li>
-<li>Routers connect different networks.</li>
-<li>They have LAN ports for internal network connections.</li>
-<li>They also have WAN ports for connecting internet devices to external networks.</li>
-</ul>
-
-
-
-
-<p>If the article helps you, leave a like, follow, or anything 🙂.<br><br>
-You can follow me on <a href="https://www.linkedin.com/in/abhishekpathak32/">LinkedIn</a>, <a href="https://github.com/scorcism">GitHub</a>, <a href="https://dev.to/scorcism">Dev.to</a> and <a href="https://scorcism.hashnode.dev/">hashnode</a>.</p>
-
-<p><strong>Bye</strong></p>
-
- </details> 
- <hr /> 
-
- #### - [Node.js Unveiled: The Inner Workings of a Runtime Revolution](https://dev.to/hakan_turan/nodejs-unveiled-the-inner-workings-of-a-runtime-revolution-agf) 
- <details><summary>Article</summary> <p>Node.js has been a game-changer in the world of web development, breaking down the barriers between client and server-side programming. But have you ever wondered how Node.js actually works under the hood? This article aims to demystify the inner workings of Node.js, offering a comprehensive look at its architecture, event-driven model, and much more. Buckle up for an exciting journey into the heart of Node.js!</p>
-
-<p> </p>
-
-<h2>
-  
-  
-  What is Node.js?
-</h2>
-
-<p> </p>
-
-<p>Before diving into the nitty-gritty, let's establish what Node.js is. Node.js is a runtime environment that allows you to execute JavaScript code server-side. Built on Chrome's V8 JavaScript engine, Node.js has enabled JavaScript to expand beyond the browser, powering back-end development, APIs, and even desktop applications.</p>
-
-<p> </p>
-
-<h2>
-  
-  
-  The V8 Engine
-</h2>
-
-<p> </p>
-
-<p>The V8 engine is the powerhouse behind Node.js. Developed by Google, V8 compiles JavaScript to native machine code, making it incredibly fast. But Node.js is not just V8. It extends the capabilities of the engine by providing additional modules and features that are not available in the browser environment, such as file system access and networking.</p>
-
-<p> </p>
-
-<h2>
-  
-  
-  The Event Loop: Node.js' Beating Heart
-</h2>
-
-<p> </p>
-
-<p>Node.js adopts an event-driven, non-blocking I/O model, which makes it lightweight and efficient. The Event Loop is the core of this model. If you've ever wondered how Node.js can handle multiple tasks simultaneously despite being single-threaded, the Event Loop is your answer.</p>
-
-<p> </p>
-
-<h3>
-  
-  
-  How the Event Loop Works
-</h3>
-
-<p> </p>
-
-<ol>
-<li><p><strong>Initial Code Execution</strong>: When a Node.js application starts, the main module's code is executed.</p></li>
-<li><p><strong>Asynchronous Calls</strong>: Node.js offloads asynchronous operations like file reading or network requests to separate threads, freeing up the main thread.</p></li>
-<li><p><strong>Callback Queue</strong>: Once an asynchronous operation is complete, its callback function is pushed into a queue.</p></li>
-<li><p><strong>Event Loop</strong>: The Event Loop continuously checks if the main thread is free. If it is, it dequeues a callback from the queue and executes it.</p></li>
-</ol>
-
-<p> </p>
-
-<h2>
-  
-  
-  Modules and NPM
-</h2>
-
-<p> </p>
-
-<p>Node.js introduced the CommonJS module system, allowing developers to include various modules in their applications. The Node Package Manager (NPM) is another cornerstone, providing a vast ecosystem of open-source libraries and tools.</p>
-
-<p> </p>
-
-<h3>
-  
-  
-  Core Modules
-</h3>
-
-<p> </p>
-
-<p>Node.js comes with several built-in modules, such as:</p>
-
-<ul>
-<li>
-<code>fs</code> for file system operations</li>
-<li>
-<code>http</code> for HTTP requests and responses</li>
-<li>
-<code>crypto</code> for cryptography functions</li>
-</ul>
-
-<p> </p>
-
-<h3>
-  
-  
-  Third-Party Modules
-</h3>
-
-<p> </p>
-
-<p>NPM allows you to install third-party modules to extend your application's capabilities. Popular modules include:</p>
-
-<ul>
-<li>
-<code>express</code> for web application framework</li>
-<li>
-<code>mongoose</code> for MongoDB object modeling</li>
-<li>
-<code>socket.io</code> for real-time communication</li>
-</ul>
-
-<p> </p>
-
-<h2>
-  
-  
-  Streams and Buffers
-</h2>
-
-<p> </p>
-
-<p>Node.js is designed to handle large files and data streams efficiently. Buffers temporarily hold data, while streams allow you to read from or write to a data source incrementally, reducing memory usage.</p>
-
-<p> </p>
-
-<h3>
-  
-  
-  Types of Streams
-</h3>
-
-<p> </p>
-
-<ol>
-<li>
-<strong>Readable Streams</strong>: For reading data (e.g., reading a file).</li>
-<li>
-<strong>Writable Streams</strong>: For writing data (e.g., creating a file).</li>
-<li>
-<strong>Duplex Streams</strong>: Both readable and writable (e.g., TCP sockets).</li>
-<li>
-<strong>Transform Streams</strong>: Duplex streams that modify data as it's read or written (e.g., compression).</li>
-</ol>
-
-<p> </p>
-
-<h2>
-  
-  
-  Real-world Applications
-</h2>
-
-<p> </p>
-
-<p>Node.js is incredibly versatile, powering a range of applications:</p>
-
-<ul>
-<li>
-<strong>Web Servers</strong>: With frameworks like Express.js, Node.js is a popular choice for building web servers.</li>
-<li>
-<strong>APIs</strong>: Node.js excels at handling I/O-bound operations, making it ideal for building RESTful APIs.</li>
-<li>
-<strong>Real-time Applications</strong>: With WebSockets and libraries like Socket.io, Node.js is perfect for real-time applications like chat apps and online gaming.</li>
-</ul>
-
-<p> </p>
-
-<h2>
-  
-  
-  Case Studies
-</h2>
-
-<p> </p>
-
-<h3>
-  
-  
-  Netflix
-</h3>
-
-<p>Netflix switched some of its components to Node.js for better performance and reduced build times. They experienced up to a 70% reduction in startup time.</p>
-
-<p> </p>
-
-<h3>
-  
-  
-  LinkedIn
-</h3>
-
-<p>LinkedIn moved its mobile backend to Node.js, resulting in a 20x faster server and significantly reduced resources.</p>
-
-<p> </p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p> </p>
-
-<p>Node.js is more than just "JavaScript on the server." It's a robust, high-performance environment that has fundamentally changed the way we think about web development. By understanding its inner workings, you'll be better equipped to harness its full power and potential.</p>
-
-<p>So, whether you're a seasoned developer or a newcomer eager to learn, Node.js offers a world of possibilities waiting to be explored.</p>
-
-<p>Happy Coding! 🚀</p>
-
- </details> 
- <hr /> 
-
- #### - [How to Improve Front-end performance??🤔](https://dev.to/manish7107/how-to-improve-front-end-performance-3ag7) 
- <details><summary>Article</summary> <p>Improving front-end performance is crucial for creating fast and responsive web applications. Here are some tips to help you enhance the performance of your front-end code:</p>
-
-<ol>
-<li>
-<p><strong>Optimize Images and Media:</strong></p>
-
-<ul>
-<li>Use appropriate image formats (e.g., JPEG, PNG, SVG) for different types of images.</li>
-<li>Compress images to reduce file size without sacrificing quality.</li>
-<li>Lazy load images to only load them when they are in the viewport.</li>
-</ul>
-</li>
-<li>
-<p><strong>Minimize HTTP Requests:</strong></p>
-
-<ul>
-<li>Reduce the number of requests by combining CSS and JavaScript files, using sprite sheets, and avoiding excessive use of external resources.</li>
-</ul>
-</li>
-<li>
-<p><strong>Utilize Browser Caching:</strong></p>
-
-<ul>
-<li>Set appropriate cache headers to allow the browser to store resources locally. This reduces the need for repeated downloads.</li>
-</ul>
-</li>
-<li>
-<p><strong>Minify and Bundle Files:</strong></p>
-
-<ul>
-<li>Minify CSS, JavaScript, and HTML files to remove unnecessary characters like whitespace, comments, and newline characters.</li>
-<li>Bundle multiple smaller files into a single, larger file to reduce the number of HTTP requests.</li>
-</ul>
-</li>
-<li>
-<p><strong>Optimize Critical Rendering Path:</strong></p>
-
-<ul>
-<li>Prioritize the loading of critical resources needed for initial rendering (e.g., inline critical CSS, preload resources).</li>
-<li>Avoid render-blocking resources in the head section.</li>
-</ul>
-</li>
-<li>
-<p><strong>Use Content Delivery Networks (CDNs):</strong></p>
-
-<ul>
-<li>Leverage CDNs to distribute static resources across multiple servers, reducing server load and improving load times for users globally.</li>
-</ul>
-</li>
-<li>
-<p><strong>Choose Efficient CSS Selectors:</strong></p>
-
-<ul>
-<li>Avoid using complex selectors or over-qualified selectors. Specificity can slow down rendering times.</li>
-</ul>
-</li>
-<li>
-<p><strong>Optimize CSS and JavaScript Performance:</strong></p>
-
-<ul>
-<li>Avoid unnecessary animations and transitions, as they can hinder performance.</li>
-<li>Use asynchronous and deferred loading for non-critical scripts.</li>
-</ul>
-</li>
-<li>
-<p><strong>Implement Responsive Web Design:</strong></p>
-
-<ul>
-<li>Use CSS media queries to ensure your website is optimized for various screen sizes and devices.</li>
-</ul>
-</li>
-<li>
-<p><strong>Avoid Render-Blocking Scripts:</strong></p>
-
-<ul>
-<li>Load non-essential scripts after the initial rendering or use techniques like <code>async</code> and <code>defer</code>.</li>
-</ul>
-</li>
-<li>
-<p><strong>Optimize Fonts:</strong></p>
-
-<ul>
-<li>Use system fonts or a small set of web-safe fonts to reduce font loading times.</li>
-<li>Consider using font-display CSS property to control how fonts are displayed while they are still loading.</li>
-</ul>
-</li>
-<li>
-<p><strong>Monitor and Analyze Performance:</strong></p>
-
-<ul>
-<li>Use tools like Lighthouse, PageSpeed Insights, and browser developer tools to identify performance bottlenecks and areas for improvement.</li>
-</ul>
-</li>
-<li>
-<p><strong>Optimize JavaScript Execution:</strong></p>
-
-<ul>
-<li>Avoid unnecessary calculations and DOM manipulations, especially in loops.</li>
-<li>Use efficient algorithms and data structures.</li>
-</ul>
-</li>
-<li>
-<p><strong>Reduce DOM Manipulations:</strong></p>
-
-<ul>
-<li>Minimize the frequency of DOM updates and try to batch them when possible.</li>
-</ul>
-</li>
-<li>
-<p><strong>Consider Server-Side Rendering (SSR) or Static Site Generation (SSG):</strong></p>
-
-<ul>
-<li>For content-heavy sites, consider generating HTML on the server or at build time to reduce client-side rendering.</li>
-</ul>
-</li>
-</ol>
-
-<p>Remember to test your website's performance on various devices and network conditions to ensure a smooth experience for all users. Additionally, regularly monitor and address performance issues as your application evolves.</p>
 
  </details> 
  <hr /> 
