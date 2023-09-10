@@ -133,6 +133,342 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [about arianzagrosmachinery](https://dev.to/arianzagrosmachinery/about-arianzagrosmachinery-558k) 
+ <details><summary>Article</summary> <p><strong>Arian Zargos Machinery</strong> is one of the leading manufacturers and exporters of industrial machinery in Iran. They have over 25 years of experience in producing high-quality equipment for various industries such as food processing, chemical, plastic and packaging. Some of their popular products include mixers, extruders, filters and powder packing machines.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ga_GKbrV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvvddj2e9ay4gv1pzb0a.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ga_GKbrV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvvddj2e9ay4gv1pzb0a.jpg" alt="Image description" width="800" height="450"></a><br>
+<a href="https://arianzagrosmachinery.com/">https://arianzagrosmachinery.com/</a></p>
+
+<p>In this article, we will take a closer look at Arian Zargos and what makes them one of the top choices for industrial machinery in the country. I will discuss their product range, manufacturing facilities, quality systems and customer service. By the end, you will understand why they have garnered a reputation as a reliable and trusted supplier in their domain.</p>
+
+<h2>
+  
+  
+  Product Range
+</h2>
+
+<p>Arian Zargos offers a wide selection of machinery catered to different processing needs. Some of their flagship products include:</p>
+
+<p>Mixers: Their range of mixers include variable and fixed tank mixers from 50L to 5000L capacity suitable for applications like food mixing, slurries and more.</p>
+
+<p>Extruders: Both single and twin screw extruders for plastic extrusion, composite production and other industries.</p>
+
+<p>Powder Packaging Machines: Fully automated weighing and packaging machines for powders like rice, flour etc. into bags up to 5000kg/hr speeds.</p>
+
+<p>Filtration Systems: Multiple types of filters for liquid, powder and slurry filtration across sectors.</p>
+
+<p>Special Machinery: Custom machines are also designed and built as per specific customer requirements and processes.</p>
+
+<h2>
+  
+  
+  Manufacturing Facilities
+</h2>
+
+<p>All products are manufactured at Arian Zargos’ facilities spread across 10,000 square meters in Tehran. Advanced CNC machines, quality control labs, powder coating lines and an assembly unit ensure top-notch production. Strict ISO standards are adhered to throughout the manufacturing cycle.</p>
+
+<h2>
+  
+  
+  Quality and Certifications
+</h2>
+
+<p>Quality is a top focus area with routine audits, testing and calibration of machinery as per international standards. Key certifications held include ISO 9001 for quality management systems and CE marking showing safety and performance compliance. Buyers can be assured of the consistent functionality and durability of Arian Zargos equipment.</p>
+
+<h2>
+  
+  
+  Customer Service
+</h2>
+
+<p>Their customer-centric approach is reflected through value-added services like technical support, equipment installation, operator training and multi-year warranty programs. An expert team of engineers, electricians and technicians offer on-site repairs and maintenance services as well. Genuine spare parts are also available for products.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In summary, Arian Zargos Machinery has established itself as a strong brand owing to high-quality manufacturing, comprehensive product range and excellent after-sales assistance. Its state-of-the-art infrastructure and focus on quality enables them to deliver robust and reliable machinery solutions for myriad industries. I would highly recommend them for your equipment sourcing needs.<br>
+<a href="https://arianzagrosmachinery.com/">arianzagrosmachinery</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Solving the "Container With Most Water" Problem on Leet Code](https://dev.to/leetcode/solving-the-container-with-most-water-problem-on-leet-code-51f5) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  11. Container With Most Water
+</h2>
+
+<p><strong>Type :</strong> Medium<br>
+<strong>Liked by:</strong> 26.5K<br>
+<strong>Disliked by:</strong> 1.4K</p>
+
+<p><strong>Companies that asked this Question</strong><br>
+<em>Companies : No of Times asked</em></p>
+
+<p>Microsoft 4<br>
+Google 4<br>
+Amazon 3<br>
+Adobe 2<br>
+Bloomberg 2<br>
+Apple 9<br>
+Facebook 4<br>
+Uber 3<br>
+Oracle 2<br>
+TikTok 2<br>
+Goldman Sachs 5<br>
+Intel 4<br>
+Swiggy 4<br>
+ByteDance 3<br>
+VMware 3<br>
+Qualtrics 3<br>
+Intuit 3<br>
+Flipkart 2<br>
+Zoho 2<br>
+Samsung 2<br>
+eBay 2<br>
+Walmart Labs 2<br>
+Yandex 2<br>
+Yahoo 2<br>
+Cisco 2<br>
+tcs 2<br>
+Tesla 2<br>
+C3 IoT 2<br>
+Arcesium 2<br>
+DE Shaw 2<br>
+JPMorgan 2<br>
+Wix 1</p>
+
+<p>You are given an integer array <code>height</code> of length <code>n</code>. There are n vertical lines drawn such that the two <code>endpoints</code> of the <code>ith</code> line are <code>(i, 0)</code> and <code>(i, height[i]).</code><br>
+Find two lines that together with the x-axis form a container, such that the container contains the most water.<br>
+Return the maximum amount of water a container can store.<br>
+Notice that you may not slant the container.</p>
+
+<p><strong>Example 2:</strong><br>
+Input: height = <code>[1,8,6,2,5,4,8,3,7]</code><br>
+Output: <code>49</code><br>
+Explanation: <code>The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.</code></p>
+
+<p><strong>Example 2:</strong><br>
+Input: height = <code>[1,1]</code><br>
+Output: <code>1</code></p>
+
+<h2>
+  
+  
+  Intuition:
+</h2>
+
+<p>The code aims to find the maximum area between two lines in a histogram, where the lines represent the heights of bars.</p>
+
+<h2>
+  
+  
+  Approach:
+</h2>
+
+<ul>
+<li>Initialize pointers at both ends of the histogram (LeftPointer at 0 and RightPointer at the last element).</li>
+<li>While the LeftPointer is less than the RightPointer:</li>
+<li>Calculate the area between the lines formed by the heights at LeftPointer and RightPointer.</li>
+<li>Update the MaximumArea if the current area is greater.</li>
+<li>Move the pointer that points to the shorter line inward (towards the other pointer).</li>
+<li>Repeat step 2 until the pointers meet.</li>
+</ul>
+
+<h2>
+  
+  
+  Complexity:
+</h2>
+
+<p><strong>Time complexity:</strong> O(n) where n is the number of elements in the height array. We iterate through the array once.<br>
+<strong>Space complexity:</strong> O(1) because we use a constant amount of extra space regardless of the input size.</p>
+
+<h2>
+  
+  
+  Code:
+</h2>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>class Solution {
+    public int maxArea(int[] height) {
+        int MaximumArea = 0;
+        int LeftPointer = 0;
+        int RightPointer = height.length - 1;
+
+        while(LeftPointer &lt; RightPointer){
+            if(height[LeftPointer] &lt; height[RightPointer]){
+                MaximumArea = Math.max(MaximumArea , height[LeftPointer] *(RightPointer - LeftPointer));
+                LeftPointer++;
+            }
+            else{
+                MaximumArea = Math.max(MaximumArea ,height[RightPointer] *(RightPointer - LeftPointer));
+                RightPointer--;
+            }
+        }
+
+        return MaximumArea;
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>Happy coding,<br>
+shiva</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Rest VS gRPC](https://dev.to/hasanelsherbiny/rest-vs-grpc-1bj3) 
+ <details><summary>Article</summary> <p>Since the first appearance of API there has been many approaches to make it simpler and much powerful and easy to use.<br>
+if you don't know <a href="https://dev.to/hasanelsherbiny/what-is-api-21bc">what is API read this article</a></p>
+
+<p>this is a quick comparison between REST And gRPC APIS</p>
+
+<p>REST is an architectural style for designing networked applications. <br>
+It is not a protocol, but a set of constraints and principles for creating web services.</p>
+
+<p>REST APIs are built considering these concepts:<br>
+Resources: In REST, everything is a resource, which can be a physical object, a piece of data or a service. <br>
+Each resource is identified by a uniqu URL.</p>
+
+<ol>
+<li><p>HTTP Methods: <br>
+REST uses standard HTTP methods (GET, POST, PUT, DELETE, etc.) to perform CRUD (Create, Read, Update, Delete) operations on resourcs</p></li>
+<li><p>Stateless:<br>
+RESTful APIs are statelss, meaning each request from a client to the server must contain all the information needed to understand and fulfil the request</p></li>
+</ol>
+
+<p>3.Representation: <br>
+Resources can have multiple representations, such as JSON or XML, which clients can request based on their needs.</p>
+
+<h2>
+  
+  
+  Why To Choose REST?
+</h2>
+
+<p>Simplicity: REST is easy to understand and implement making it a popular choice for web APIs</p>
+
+<p>Language Agnostic: Clients and servers can be written in different programming languages promoting interoperability.</p>
+
+<p>Caching: REST leverage HTTP caching mechanisms for better performance.</p>
+
+<p>Maturity: REST has been around for a long time and has widespread support in various web frameworks and tools.</p>
+
+<h2>
+  
+  
+  Drawbacks of REST
+</h2>
+
+<ol>
+<li><p>Overfetching / Underfetching: Clients may receive more or less data than they need impacting efficiency.</p></li>
+<li><p>Latency: Multiple round-trips can result in higher latency when dealing with complex operations.</p></li>
+</ol>
+
+<h2>
+  
+  
+  So What Is gRPC?
+</h2>
+
+<p>gRPC is a high-performance, open-source framework developed by Google that allows you to define RPC (Remote Procedure Call) services and generate client-server code for multiple programming languages. It uses Protocol Buffers (protobufs) for data serialization and HTTP/2 for transport.</p>
+
+<h2>
+  
+  
+  Why To Choose gRPC?
+</h2>
+
+<p>1.IDL (Interface Definition Language): <br>
+gRPC uses a language-agnostic IDL to define services and message types. These definitions can then be used to generate client and server code in multiple languages.</p>
+
+<p>2.Strongly Typed: <br>
+Data serialization with protobufs is strongly typed reducing the chances of runtime errors due to data mismatches.</p>
+
+<p>3.HTTP/2: <br>
+gRPC uses HTTP/2 for transport, offering features like multiplexing, flow control, and header compression which enhance performance.</p>
+
+<h2>
+  
+  
+  Why To Choose gRPC?
+</h2>
+
+<p>1.Bidirectional Streaming: <br>
+gRPC supports bidirectional streaming allowing both the client and server to send a stream of messages.</p>
+
+<p>2.Efficiency: <br>
+gRPC's use of HTTP/2 and binary serialization makes it highly efficient in terms of bandwidth and latency.</p>
+
+<p>3.Code Generation: <br>
+gRPC automatically generates client and server code reducing the likelihood of human error.</p>
+
+<p>4.Strong Typing: <br>
+Protobufs ensure strong typing and versioning of data contracts.</p>
+
+<p>5.Bidirectional Streaming: <br>
+Ideal for real-time applications and chat systems.</p>
+
+<h2>
+  
+  
+  Drawbacks of gRPC
+</h2>
+
+<p>1.Complexity: <br>
+The additional complexity of protobuf definitions and code generation can be challenging for some developers.</p>
+
+<p>2.Learning Curve: <br>
+Learning to work with gRPC may require additional time and effort.</p>
+
+<h2>
+  
+  
+  When To Choose REST OR gRPC?
+</h2>
+
+<p>This depends project's requirements and constraints but</p>
+
+<h2>
+  
+  
+  Use REST if:
+</h2>
+
+<ul>
+<li>You need simplicity and quick development.</li>
+<li>Your clients and servers are implemented in different languages.</li>
+<li>You want to leverage the maturty and existing support of REST in web frameworks.</li>
+</ul>
+
+<h2>
+  
+  
+  Use gRPC if:
+</h2>
+
+<ul>
+<li>You prioritize efficiency and low latency.</li>
+<li>You have strong typing and versioning requirements.</li>
+<li>Bidirectional streaming or real-time communication is essential.</li>
+<li>You want to benefit from code generation and maintainable APIs.</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
  #### - [How Do You Get Unstuck from A Difficult Problem?](https://dev.to/devteam/how-do-you-get-unstuck-from-a-difficult-problem-3ocj) 
  <details><summary>Article</summary> <p><em>Welcome to Code Chatter, your go-to series for conversational coding insights. What makes this series of questions different from all the others? Well, truth be told, not much, but they're still thought-provoking and fun. Join us as we explore the coding world, one witty question at a time.</em></p>
 
@@ -182,257 +518,6 @@
 <p>Let's build strong connections and thriving collaborations by making sure we're always on the same page. 📖🤝</p>
 
 <p>Share this post to spread the message and keep the momentum going! 🔥🌐</p>
-
- </details> 
- <hr /> 
-
- #### - [AI-Powered Quiz Generation: Introducing QwizLab with NextJS](https://dev.to/tashynw/ai-powered-quiz-generation-introducing-qwizlab-with-nextjs-i13) 
- <details><summary>Article</summary> <p>Discover QwizLab, a NextJS app that leverages the power of AI to transform your notes into quizzes. Say goodbye to manual quiz creation and hello to a smarter, more efficient learning experience.</p>
-
-<p>Unleashing the AI Advantage:<br>
-QwizLab harnesses OpenAI's capabilities to automatically generate quizzes from your notes. Dive into your studies without the hassle of crafting questions.</p>
-
-<p>Total Control, Effortless Editing:<br>
-Take charge of your quizzes. With QwizLab, you can create, edit, and delete questions with ease, ensuring your quizzes are perfectly tailored.</p>
-
-<p>Export and Share:<br>
-Need to collaborate or study offline? QwizLab lets you export quizzes effortlessly, making sharing and studying with peers a breeze.</p>
-
-<p>Get Started:<br>
-Join the future of learning. Visit QwizLab <a href="https://qwizlab.com/">here</a> and sign up!</p>
-
-<p>Conclusion:<br>
-QwizLab is your shortcut to smarter studying. Embrace the power of AI for a more effective learning journey. Try QwizLab today!</p>
-
-<p>Images:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8v-JYitw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8vgads79mrcgkuc7yu1t.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8v-JYitw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8vgads79mrcgkuc7yu1t.png" alt="Image description" width="800" height="397"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sCDspZJF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/okubulc9iizrlvr11fh3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sCDspZJF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/okubulc9iizrlvr11fh3.png" alt="Image description" width="800" height="395"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DJuXS7yk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fg1z7tmvzybd1ln80rir.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DJuXS7yk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fg1z7tmvzybd1ln80rir.png" alt="Image description" width="800" height="394"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fAGOcTg6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wtr292snibmjmfpy2lfo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fAGOcTg6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wtr292snibmjmfpy2lfo.png" alt="Image description" width="800" height="399"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oIv1FWLO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pupw9m282ahty7umxf50.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oIv1FWLO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pupw9m282ahty7umxf50.png" alt="Image description" width="800" height="394"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--C6sXZV3v--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rguihdq4q1w67tc3ip83.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--C6sXZV3v--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rguihdq4q1w67tc3ip83.png" alt="Image description" width="800" height="395"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--D6XGD8xu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yyepips05wirzpyyue49.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--D6XGD8xu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yyepips05wirzpyyue49.png" alt="Image description" width="800" height="400"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eh8om8R5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/20lrbyj2zzb79wpxro01.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eh8om8R5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/20lrbyj2zzb79wpxro01.png" alt="Image description" width="800" height="401"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Solving the "Trapping Rain Water" Problem on Leet Code](https://dev.to/leetcode/solving-the-trapping-rain-water-problem-on-leet-code-ham) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Question
-</h2>
-
-<h2>
-  
-  
-  42. Trapping Rain Water
-</h2>
-
-<p><strong>Type:</strong> Hard<br>
-<strong>Liked by:</strong> 29K<br>
-<strong>Disliked by:</strong> 412</p>
-
-<p><strong>Companies that asked this Question</strong><br>
-<em>Companies: No of times Asked</em></p>
-
-<p>Amazon 14<br>
-Bloomberg 5<br>
-Adobe 4<br>
-Apple 4<br>
-Goldman Sachs 3<br>
-Yandex 3<br>
-EPAM Systems 2<br>
-Microsoft 16<br>
-Google 9<br>
-Uber 4<br>
-MakeMyTrip 3<br>
-Facebook 2<br>
-eBay 2<br>
-Salesforce 2<br>
-Intel 8<br>
-Rubrik 8<br>
-Qualtrics 7<br>
-Tesla 6<br>
-Oracle 5<br>
-Citadel 5<br>
-VMware 4<br>
-C3 IoT 4<br>
-Snapchat 3<br>
-Lyft 3<br>
-Visa 3<br>
-PayPal 3<br>
-ServiceNow 3<br>
-Swiggy 3<br>
-National Instruments 3<br>
-Sapient 3<br>
-Zoho 2<br>
-Intuit 2<br>
-Coupang 2<br>
-Yahoo 2<br>
-Expedia 2<br>
-Twitch 2<br>
-Morgan Stanley 2<br>
-DE Shaw 2<br>
-TikTok 2<br>
-Navi 2<br>
-Airbnb 1 <br>
-Zenefits 1<br>
-Twitter 1<br>
-Wix 1</p>
-
-<p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ocn9tzuF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b5lho9om9ah85sozyxtw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ocn9tzuF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b5lho9om9ah85sozyxtw.png" alt="Rainwater Image" width="412" height="161"></a></p>
-
-<p><strong>Example 1:</strong><br>
-Input: height = <code>[0,1,0,2,1,0,1,3,2,1,2,1]</code><br>
-Output: <code>6</code></p>
-
-<p>Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rainwater (blue section) are being trapped.</p>
-
-<p><strong>Example 2:</strong><br>
-Input: height = <code>[4,2,0,3,2,5]</code><br>
-Output: <code>9</code></p>
-
-<p><strong>Constraints:</strong><br>
-<code>n == height.length<br>
-1 &lt;= n &lt;= 2 * 104<br>
-0 &lt;= height[i] &lt;= 105</code></p>
-
-<h2>
-  
-  
-  Intuition:
-</h2>
-
-<p>The goal is to calculate the total trapped water between bars with given heights. We achieve this by computing left and right boundaries for each bar and then calculating trapped water based on these boundaries.</p>
-
-<h2>
-  
-  
-  Approach:
-</h2>
-
-<ul>
-<li>Initialize res to 0, lb (left boundaries), and rb (right boundaries) arrays.</li>
-<li>Calculate left boundaries (lb) and right boundaries (rb) for each bar in the input array.</li>
-<li>Iterate through the input array, calculating trapped water for each bar and accumulating it in res.</li>
-<li>Return res as the total trapped water.</li>
-</ul>
-
-<h2>
-  
-  
-  Complexity:
-</h2>
-
-<p><strong>Time complexity:</strong> O(n) where n is the number of elements in the input array.</p>
-
-<p><strong>Space complexity:</strong> O(n) due to the lb and rb arrays used to store boundaries.</p>
-
-<h2>
-  
-  
-  Code:
-</h2>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>class Solution {
-    public int trap(int[] height) {
-        int  res = 0;
-        int[] lb = new int[height.length];
-        int[] rb = new int[height.length];
-
-        lb[0] = height[0];
-        for(int i = 1 ; i &lt; height.length -1 ;i++){
-            lb[i] = Math.max(height[i],lb[i-1]);
-        }
-
-        rb[height.length - 1] = height[height.length - 1 ];
-        for(int i = height.length - 2 ; i &gt;= 0;i--){
-            rb[i] = Math.max(height[i],rb[i+1]);
-        }
-
-        for(int i = 1 ; i &lt; height.length -1 ; i++){
-            int tw = Math.min(lb[i],rb[i]) - height[i];
-            res = res + tw;
-        }
-
-        return res;
-    }
-}
-</code></pre>
-
-</div>
-
-
-
-<p>Happy coding,<br>
-shiva</p>
-
- </details> 
- <hr /> 
-
- #### - [ChatGPT API vs Google's Palm API](https://dev.to/nikola_cosic_e7c912ef9079/chatgpt-api-vs-googles-palm-api-2dcg) 
- <details><summary>Article</summary> <p>The two major LLMs expose their functionality via API to be used in 3rd party products. ChatGPT API has been around for a while, but Google's Palm API, which taps into the Bard functionality, is just emerging in beta. This analysis aims to provide insights into the strengths and weaknesses of both, based on extensive research and hands-on experience.</p>
-
-<h2>
-  
-  
-  Palm API (Bard):
-</h2>
-
-<p><strong>Status:</strong> Currently in beta testing and free.<br>
-<strong>Bandwidth:</strong> Provides a much higher bandwidth at no cost during the beta phase. If you have a lot of prompts to run now, this may be the decisive factor in choosing your LLM API. <br>
-<strong>Speed:</strong> Appears to have greater computing resources and generally offers faster responses.<br>
-<strong>Accuracy:</strong> Tends to produce lower-quality responses in certain areas compared to ChatGPT. In other areas it seems to be better. So you really have to test and decide for yourself. I've created a comparative testing tool for the two LLM APIs, <a href="https://apiscout.ai">https://apiscout.ai</a> - let me know what you think. <br>
-<strong>Geographical Restrictions:</strong> Primarily accessible in the US; other regions face limitations.</p>
-
-<h2>
-  
-  
-  ChatGPT API:
-</h2>
-
-<p><strong>Cost:</strong> Can become costly if you have a lot of prompts to run.<br>
-<strong>Speed:</strong> Has faced some performance issues and outages, also it takes more time to produce an output than Google's solution.<br>
-<strong>Accuracy:</strong> A mixed bag, but it does seem to deliver more accurate responses in a number of areas. You will have to compare the two for your particular use. <br>
-<strong>Reliability:</strong> Currently more reliable for long-term projects as it's in live commercial use. <br>
-<strong>Geographical Reach:</strong> Globally accessible without heavy restrictions.</p>
-
-<h2>
-  
-  
-  Key Insights:
-</h2>
-
-<p><strong>Performance and Cost:</strong> Palm API's lack of cost and high bandwidth can be enticing for projects requiring a significant number of prompts. ChatGPT's pricing structure can make it prohibitive for large-scale applications.<br>
-<strong>Reliability:</strong> Palm API's beta status implies uncertain longevity, potential pricing changes, and potential performance challenges in the future. In contrast, ChatGPT currently offers a more reliable solution for long-term projects.<br>
-<strong>Documentation Quality:</strong> Palm API's documentation, at present, seems inadequate, with some request parameters being particularly challenging to comprehend. This could signal broader issues with the project's maturity.<br>
-<strong>Geographical Considerations:</strong> Palm API has significant geographical restrictions. A US-based key cannot be used from a server in Canada, and non-US regions might face challenges in obtaining beta testing keys.<br>
-<strong>API vs. Web Access Discrepancies:</strong> It's important to note that there can be variations in the responses received from direct API access as opposed to web user interface access, even with identical parameters. As a solution, I've introduced a tool, <a href="https://apiscout.ai">https://apiscout.ai</a>, which allows users to view side-by-side responses from both APIs while customizing parameters. The tool is especially handy for non-developers designing prompts.</p>
-
-<h2>
-  
-  
-  Conclusion:
-</h2>
-
-<p>While both APIs offer unique strengths, developers must weigh the pros and cons based on the specific requirements of their projects. The rapid development in the AI industry further underscores the importance of staying updated on these platforms.</p>
-
-<p>Should you have any feedback, updates, or insights on the current state of LLM APIs, your input would be invaluable to the community.</p>
 
  </details> 
  <hr /> 
