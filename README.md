@@ -109,23 +109,8 @@
 </details>
 
 
-<!-- ACTIVITY -->
-<!-- https://github.com/jamesgeorge007/github-activity-readme -->
-
-
-<details>
-<summary>✍️ Activity</summary>
-
-<br/>
-<!-- START_SECTION:activity -->
-<!--END_SECTION:activity-->
-
-</details>
-
-
 <!-- RSS FEED -->
 <!-- https://github.com/gautamkrishnar/blog-post-workflow -->
-
 
 <details>
 <summary>📕 &nbsp;RSS feed</summary>
