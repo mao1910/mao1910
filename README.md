@@ -133,1203 +133,1123 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Dependency Injection for Games — Appendix: Injection Container](https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd) 
- <details><summary>Article</summary> <p>In the main <a href="https://dev.to/filippoceffa/dependency-injection-for-games-4dhb">Dependency Injection for Games</a> article, we explained how <strong>Dependency Injection</strong> helps you organize your <strong>game</strong> or <strong>game engine</strong> architecture, but we did not address one inconvenient issue that affects it.</p>
-
-<p>In large applications, Dependency Injection requires the user to write and maintain a lot of tedious and time-consuming <strong>boilerplate code</strong>.</p>
-
-<p>The goal of this appendix is to demonstrate how this burden can be relieved by using a <strong>Dependency Injection Container</strong> library.</p>
-
-<p>We will start by defining the problem, and providing a theoretical solution. Finally, we will show how a Container solves the problem in practice.</p>
+ #### - [Getting Started with SMS Notifications using Africas Talking and GitHub Actions🐙](https://dev.to/ken_mwaura1/getting-started-with-sms-notifications-using-africas-talking-and-github-actions-5de0) 
+ <details><summary>Article</summary> <p>New month, New Tutorial 🚀. In the next few weeks, I will be writing a series of tutorials on how to send SMS notifications using Africas Talking and GitHub Actions. This is the first tutorial in the series.</p>
 
 <h2>
   
   
-  Practical problem
+  Introduction 💫
 </h2>
 
-<p>When examining the <code>main()</code> function in our dummy game application, we see that Dependency Injection burdens the user with two tedious tasks:</p>
+<p>GitHub Actions allows you to create workflows that automate your CI/CD process. Africas Talking provides a simple and reliable API to send SMS notifications to your users.</p>
+
+<p>This tutorial I will show you how to send SMS notifications using Africas Talking and GitHub Actions. We will be using the Africas Talking SMS API to send SMS notifications to a phone number of your choice. We will be using GitHub Actions to automate the process of sending the SMS notifications.</p>
+
+<p>The diagram below shows a highlevel overview of the workflow we will be creating:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kawmV8HU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xrf9ciqpz253glukdslb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kawmV8HU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xrf9ciqpz253glukdslb.png" alt="Workflow diagram" width="800" height="390"></a></p>
+
+<h2>
+  
+  
+  Benefits 🦸
+</h2>
+
+<ul>
+<li>Get real-time SMS alerts for workflow results.</li>
+<li>No need to constantly check GitHub for status.</li>
+<li>SMS is more convenient compared to email notifications.</li>
+</ul>
+
+<h2>
+  
+  
+  Prerequisites
+</h2>
+
+<ul>
+<li>A GitHub account with a repository (Alternatively create a new repo).</li>
+<li>An Africas Talking account and API keys.</li>
+</ul>
+
+<h2>
+  
+  
+  Getting Started 🤩
+</h2>
+
+<h3>
+  
+  
+  Steps 🚶
+</h3>
+
+<p>The steps below assume you have a GitHub account and a repository. If you don’t have a repository, you can create one by following the steps <a href="https://help.github.com/en/github/getting-started-with-github/create-a-repo">here</a>. Once you have a repository, follow the steps below to get started.</p>
+
+<ul>
+<li>Get Africas Talking API keys 🔑:</li>
+</ul>
 
 <ol>
-<li><p>Construct systems in an appropriate order;</p></li>
-<li><p>Manually pass dependencies to their dependent systems.<br>
+<li>Sign up on <a href="https://africastalking.com/">AfricasTalking.com</a>
+</li>
+<li>Get your username and API key from the SMS dashboard. Note you will be prompted for your password. Once the key is created and displayed copy and paste it elsewhere as they usually create a new one each time. </li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QsllITeM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9t49hj51ar2p5n79ho9m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QsllITeM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9t49hj51ar2p5n79ho9m.png" alt="Settings page" width="800" height="300"></a></p>
+
+<ul>
+<li>Add secrets to GitHub repository(We will use these secrets in our workflow):</li>
+</ul>
+
+<ol>
+<li>In your repo, go to <strong>Settings &gt; Secrets &gt; Actions</strong>
+</li>
+<li>Add a secret <code>AT_USERNAME</code> with your username.</li>
+<li>Add a secret <code>AT_API_KEY</code> with your API key.</li>
+<li>Add a secret <code>toPhoneNumber</code> with the phone number you want to send the SMS to. (Format: +2547XXXXXXXX)</li>
+</ol>
+
+<p>Once you have added the secrets, your secrets page should look like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DN7tCJAT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4l5cu3gnqklcyq087qtw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DN7tCJAT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4l5cu3gnqklcyq087qtw.png" alt="Secrets dashboard" width="800" height="307"></a></p>
+
+<h2>
+  
+  
+  Methods of running code on GitHub Actions 🐙
+</h2>
+
+<p>There are two ways to we can accomplish running our code on GitHub Actions. We can either:</p>
+
+<ol>
+<li><p>create a new workflow.</p></li>
+<li><p>use an existing workflow and add the code as a step.</p></li>
+</ol>
+
+<p>Lets explore both methods.</p>
+
+<h3>
+  
+  
+  Method 1: Create a new workflow
+</h3>
+
+<h2>
+  
+  
+  - Create a new workflow:
+</h2>
+
+<p><strong>If you are using the GitHub website:</strong></p>
+
+<ul>
+<li>In your repo, go to <strong>Actions &gt; New Workflow</strong>
+</li>
+<li>Select <strong>Set up a workflow yourself</strong>
+</li>
+<li>Name your workflow</li>
+</ul>
+
+<p><strong>If you are working in your IDE eg VSCode</strong></p>
+
+<ul>
+<li>In your GitHub repository, create a .github/workflows directory if it doesn't already exist.</li>
+<li>Inside the .github/workflows directory, create a YAML file (e.g., sms-notification.yml) to define your GitHub Actions workflow.</li>
+<li>Add the following code:
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
+<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">]</span>
+<span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">send_sms</span><span class="pi">:</span>
+<span class="err"> </span><span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+ <span class="na">steps</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">alphaolomi/actions-africastalking@main</span>
+    <span class="s">with</span><span class="err">:</span>
+      <span class="na">fromPhoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">INFO'</span>   <span class="c1"># or  ${{ secrets.fromPhoneNumber }}</span>
+      <span class="na">toPhoneNumber</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
+      <span class="na">message</span><span class="pi">:</span> <span class="s">${{ github.event_name }} on ${{ github.repository }} by ${{ github.actor }} has ${{github.event.workflow_run.conclusion}}. Check it out at ${{ github.event.workflow_run.url }}</span>
+    <span class="na">env</span><span class="pi">:</span>
+      <span class="na">AT_API_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.AT_API_KEY }}</span>
+      <span class="na">AT_USERNAME</span><span class="pi">:</span> <span class="s">${{ secrets.AT_USERNAME }}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Lets break down the code above:</p>
+
+<ul>
+<li>
+<code>name</code> is the name of the workflow. You can name it anything you want.</li>
+<li>
+<code>on</code> is the event that triggers the workflow. In this case, we want the workflow to be triggered when code is pushed to the main branch.</li>
+<li>
+<code>jobs</code> is a collection of steps that run sequentially. In this case, we have one job called <code>send_sms</code>.</li>
+<li>
+<code>runs-on</code> is the type of machine the job runs on. In this case, we are using the latest version of Ubuntu.</li>
+<li>
+<code>steps</code> is a collection of tasks that will be executed as part of the job. In this case, we have one step called <code>Send SMS Notification</code>.</li>
+<li>
+<code>uses</code> is the action that will be executed. In this case, we are using the <code>alphaolomi/actions-africastalking</code> action.</li>
+<li>
+<code>with</code> is the input parameters for the action. In this case, we are passing the <code>fromPhoneNumber</code>, <code>toPhoneNumber</code> and <code>message</code> parameters.</li>
+<li>
+<code>env</code> is the environment variables that will be used by the action. In this case, we are passing the <code>AT_API_KEY</code> and <code>AT_USERNAME</code> variables.</li>
+<li><p><code>secrets</code> is the GitHub secrets that will be used by the action. In this case, we are passing the <code>toPhoneNumber</code>, <code>AT_API_KEY</code> and <code>AT_USERNAME</code> secrets.</p></li>
+<li><p>Commit the changes and push to GitHub. This should  trigger the workflow.</p></li>
+</ul>
+
+<p>There is however a different way to add the code for sending the text. This involves using the Africas Talking SDKs. The SDKs are available in different languages including: Python, Node, PHP etc. You can find the SDKs <a href="https://developers.africastalking.com/sdks">here.</a></p>
+
+<p>Now lets look at an example using the Python SDK 🐍:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
+<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">]</span>
+<span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">send_sms</span><span class="pi">:</span>
+<span class="err"> </span><span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+ <span class="na">steps</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Africa's Talking SDK</span>
+   <span class="na">run</span><span class="pi">:</span> <span class="s">pip install africastalking</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS notification</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">TO</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span> 
+    <span class="s">from africastalking.SMS import SMS</span>
+
+    <span class="s">sms = SMS(username=${{ secrets.AT_USERNAME }}, api_key=${{ secrets.AT_API_KEY }}) </span>
+
+    <span class="s">response = sms.send(message="GitHub workflow completed!", recipients=[TO])</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Lets break down the code above:</p>
+
+<ul>
+<li>
+<code>name</code> is the name of the workflow. You can name it anything you want.</li>
+<li>
+<code>on</code> is the event that triggers the workflow. In this case, we want the workflow to be triggered when code is pushed to the main branch.</li>
+<li>
+<code>jobs</code> is a collection of steps that run sequentially. In this case, we have one job called <code>send_sms</code>.</li>
+<li>
+<code>runs-on</code> is the type of machine the job runs on. In this case, we are using the latest version of Ubuntu.</li>
+<li>
+<code>steps</code> is a collection of tasks that will be executed as part of the job. In this case, we have two steps.</li>
+<li>
+<code>name</code> is the name of the step. You can name it anything you want.</li>
+<li>
+<code>run</code> is the code that will be executed as part of the step. In this case, we are installing the Africas Talking SDK.</li>
+<li>
+<code>env</code> is the environment variables that will be used by the action. In this case, we are passing the <code>TO</code> variable.</li>
+<li>
+<code>run</code> is the code that will be executed as part of the step. In this case, we are using the Africas Talking SDK to send the SMS notification.</li>
+</ul>
+
+<p>This approach allows for more flexibility and customization as needed.</p>
+
+<h3>
+  
+  
+  Method 2: Use an existing workflow:
+</h3>
+
+<p>This method involves adding the code to an existing workflow. This is useful if you want to add the SMS notification to an existing workflow.</p>
+
+<p><strong>If you are using the GitHub website:</strong></p>
+
+<ul>
+<li>In your repo, go to <strong>Actions &gt; Workflows</strong>
+</li>
+<li>Select the workflow you want to add the code to.</li>
+<li>Click on <strong>Edit</strong>.</li>
+</ul>
+
+<p><strong>If you are working in your IDE eg VSCode</strong></p>
+
+<ul>
+<li>In your GitHub repository, go to the .github/workflows directory.</li>
+<li><p>Open the YAML file of the workflow you want to add the code to.</p></li>
+<li><p>Add the following code:<br>
 </p></li>
-</ol>
+</ul>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">State</span> <span class="n">state</span><span class="p">{};</span>
-    <span class="c1">// 1: User must construct Physics before Simulation</span>
-    <span class="n">Physics</span> <span class="n">physics</span><span class="p">{};</span> 
-    <span class="n">Simulation</span> <span class="n">simulation</span> <span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">physics</span><span class="p">};</span>
-    <span class="n">OpenGL</span> <span class="n">openGL</span><span class="p">{};</span>
-    <span class="n">Rendering</span> <span class="n">rendering</span><span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">openGL</span><span class="p">};</span>
-    <span class="c1">// 2: User must manually pass simulation and rendering to Loop</span>
-    <span class="n">Loop</span> <span class="n">loop</span><span class="p">{</span><span class="n">simulation</span><span class="p">,</span> <span class="n">rendering</span><span class="p">};</span> 
-<span class="p">}</span>
+<pre class="highlight yaml"><code>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">alphaolomi/actions-africastalking@main</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">fromPhoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">INFO'</span>   <span class="c1"># or  ${{ secrets.fromPhoneNumber }}</span>
+    <span class="na">toPhoneNumber</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
+    <span class="na">message</span><span class="pi">:</span> <span class="s">${{ github.event_name }} on ${{ github.repository }} by ${{ github.actor }} has ${{github.event.workflow_run.conclusion}}. Check it out at ${{ github.event.workflow_run.url }}</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">AT_API_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.AT_API_KEY }}</span>
+    <span class="na">AT_USERNAME</span><span class="pi">:</span> <span class="s">${{ secrets.AT_USERNAME }}</span>
+
 </code></pre>
 
 </div>
 
 
 
-<p>This is a negligible problem in our simple example, but the cost to write and modify this boilerplate code grows significantly in an application with hundreds of systems. Is there a better way than to do this work by hand?</p>
+<ul>
+<li>Commit the changes and push to GitHub. This should  trigger the workflow.</li>
+</ul>
+
+<p>Now lets look at an example using the Python SDK:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">TO</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span> 
+    <span class="s">from africastalking.SMS import SMS</span>
+
+    <span class="s">sms = SMS(username=${{ secrets.AT_USERNAME }}, api_key=${{ secrets.AT_API_KEY }}) </span>
+
+    <span class="s">response = sms.send(message="GitHub workflow completed!", recipients=[TO])</span>
+
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Commit the changes and push to GitHub. This should  trigger the workflow.</li>
+</ul>
+
+<p>If everything went successful you should a successful run as seen below: </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kZbuBxaY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w06d1zezwkd1fvmcccvl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kZbuBxaY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w06d1zezwkd1fvmcccvl.png" alt="Workflows" width="800" height="359"></a></p>
 
 <h2>
   
   
-  Theoretical solution
+  Conclusion🚧
 </h2>
 
-<p>From a theoretical point of view, our problem is very clear — we are working with a <strong>directed acyclic graph</strong>, where nodes represent systems, and edges represent dependencies:</p>
+<p>In this tutorial, we have seen how to send SMS notifications using Africas Talking and GitHub Actions. We have also seen two methods of running code on GitHub Actions. In the next tutorial, we will look at further customization of the code depennding on the use case and SMS notifications.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--I8LgMMnd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mwxfhckqd6n5ey4k2d69.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--I8LgMMnd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mwxfhckqd6n5ey4k2d69.jpg" alt="Image description" width="800" height="267"></a></p>
+<h2>
+  
+  
+  Resources
+</h2>
 
-<p>This graph contains all the information to automate the two manual tasks:</p>
+<ul>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions</a></li>
+<li><a href="https://africastalking.com/">Africas Talking</a></li>
+<li><a href="https://developers.africastalking.com/docs/sms">Africas Talking SMS API</a></li>
+<li><a href="https://developers.africastalking.com/sdks">Africas Talking SDKs</a></li>
+<li><a href="https://github.com/alphaolomi/actions-africastalking">Africas Talking GitHUb Actions</a></li>
+</ul>
+
+<p>Thanks for reading! Free free to leave a comment below if you have any questions, suggestions or clarifications. You can also reach out to me on <a href="https://twitter.com/KenMwaura1">Twitter.</a> or <a href="https://www.linkedin.com/in/kennedy-mwaura/">LinkedIn</a> If you found this article helpful feel free to share it with others.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bGqbHTBS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/diajdqtjfsq60kke6kcn.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bGqbHTBS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/diajdqtjfsq60kke6kcn.gif" alt="Next time" width="498" height="206"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Linux filters - How to streamline text like a boss](https://dev.to/cherryramatis/linux-filters-how-to-streamline-text-like-a-boss-2dp4) 
+ <details><summary>Article</summary> <p>Are you familiar with the Unix philosophy and how to create better scripts? In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting such as the pipeline operator, stdin, and stdout manipulation. Finally, we'll dissect how to apply those as good practices on our ruby/bash scripts!</p>
+
+<h2>
+  
+  
+  Table of Contents
+</h2>
+
+<ul>
+<li>What is the Unix philosophy?</li>
+<li>What is a pipeline?</li>
+<li>What is stdin and stdout?</li>
+<li>
+What defines a bad script and how to turn into a good one?
+
+<ul>
+<li>Ignoring standard input and output communication</li>
+<li>Doing a lot on the same tool, aka monolithic scripts</li>
+</ul>
+
+
+</li>
+<li>Bonus point: The bang operator in vim</li>
+<li>Conclusion</li>
+</ul>
+
+<h2>
+  
+  
+  What is the Unix philosophy?
+</h2>
+
+<p>The Unix philosophy was originally defined by the master <a href="https://en.wikipedia.org/wiki/Ken_Thompson">Ken thompson</a> and it's a set of good practices that define a <em>minimalist</em> and <em>modular</em> software, all the core utils from Unix (such as <code>find</code>, <code>grep</code>) follow this good practices so we can agree that it need to be good right?</p>
+
+<p>The original quote documented by <a href="https://en.wikipedia.org/wiki/Douglas_McIlroy">Doug Mcllroy</a> contain the following items:</p>
+
+<blockquote>
+<ol>
+<li>Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features".</li>
+<li>Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats. Don't insist on interactive input.</li>
+<li>Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them.</li>
+<li>Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them.</li>
+</ol>
+</blockquote>
+
+<p>The last two items define a more "programming in general" tips, the goal of this article will focus entirely on the first two tips where a good script can be known as <em>something that do one job really well and can be put in a pipeline</em>. On the following chapters we'll try to understand this phrase a little better.</p>
+
+<h2>
+  
+  
+  What is a pipeline?
+</h2>
+
+<p>A pipeline is a continuous run of programs where the stdout of one follow as the stdin of the next one, on bash/zsh/fish shells we can use the <code>|</code> operator to refer as a pipe and we use it a lot to further query information, for example: imagine you want to count how many markdown files you have in your directory, you can do the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span> | <span class="nb">wc</span> <span class="nt">-l</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Let's break it down piece by piece so you can understand properly shall we?</p>
+
+<p>First we have the <code>find</code> command being used to list all the markdown files on the current directory, for me personally this produces the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span>
+./posts/20230814T124722/README.md
+./posts/20230703T214043/README.md
+./posts/20230616T234323/README.md
+./posts/20230625T223158/README.md
+./posts/20230731T212528/README.md
+./posts/20230807T203924/README.md
+./posts/20230804T140043/README.md
+./REPL Driven Development - For not so smart developers.md
+./Como escrever uma CLI CRUD utilizando ScyllaDB + Ruby.md
+./Linux filters - How to streamline text like a boss.md
+</code></pre>
+
+</div>
+
+
+
+<p>If you just want to list the proper file names without counting them, you can even pipe it to the <code>sort</code> command, that way it lists alphabetically like the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span> | <span class="nb">sort</span>
+./Como escrever uma CLI CRUD utilizando ScyllaDB + Ruby.md
+./Linux filters - How to streamline text like a boss.md
+./REPL Driven Development - For not so smart developers.md
+./posts/20230616T234323/README.md
+./posts/20230625T223158/README.md
+./posts/20230703T214043/README.md
+./posts/20230731T212528/README.md
+./posts/20230804T140043/README.md
+./posts/20230807T203924/README.md
+./posts/20230814T124722/README.md
+</code></pre>
+
+</div>
+
+
+
+<p>See how the output of the first <code>find</code> command was streamlined to the <code>sort</code> command where it returned it properly sorted? This is the entire purpose of writing small tools, that way you can easily compose them into different pipelines to get cool results.</p>
+
+<p>In the case of the initial example we used the <code>wc</code> command that only count whatever it receives from stdin, in this case we use the <code>-l</code> flag to count lines. With all that put together voilá! We have our result:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span> | <span class="nb">wc</span> <span class="nt">-l</span>
+      10
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  What is stdin and stdout?
+</h2>
+
+<p>Stdin (standard input) and stdout (standard output) are the main ways that a computer communicates with the outside world. Below, we'll delve more into the details of each one:</p>
+
+<ul>
+<li>Stdin (standard input) is normally referred to as anything that waits for a user interaction (like typing on an input, selecting an item from a list, etc.), but this can be understood in a more generalized way; basically, we can think of Stdin as the default <em>information provider</em>, whether this comes from another program or from a user interacting with it.</li>
+<li>Stdout (standard output) is normally referred to as anything that prints out a value to the screen (it can be a terminal, a browser, or anything). Differently from Stdin, this is totally correct, the only caveat is that when inserted in a pipeline context, all stdout is suppressed as the stdin of the next command instead of printing to the screen.</li>
+</ul>
+
+<h2>
+  
+  
+  What defines a bad script and how to turn into a good one?
+</h2>
+
+<p>Describing a exact summary of what is a good script can be quite tricky because of the many variables involved. Instead, let's flip the question: what does a bad script look like according to the Linux philosophy? And how can we solve the specific problem to create slightly better tools?</p>
+
+<h3>
+  
+  
+  Ignoring standard input and output communication
+</h3>
+
+<p>Have you ever used some CLIs that have a fancy way to display information with an animated input or a cool spinner? It's indeed quite cool to use those tools when you just want to use them by themselves, but when you try to put those tools in a pipeline, they break the whole process. Instead, always write your tools by using standard communication as the primary way to receive and retrieve information, prefer to use options instead of hard-coding values (an example of an option is <code>--output=json</code> or <code>-o json</code>).</p>
+
+<p>In Ruby, it's far easier to not shoot yourself in the foot because the way we learn to get data already works pretty well with the standard input, but it's important to keep an eye on how you design your script. </p>
+
+<p>For example, consider this simple script called <code>printname.rb</code> example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby</span>
+
+<span class="nb">puts</span> <span class="s1">'Type your name: '</span>
+<span class="nb">name</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chomp</span>
+
+<span class="nb">puts</span> <span class="s2">"Your name is: </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This script in a first glance works both running by itself and on a pipeline, but observe the output produced by both:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"Cherry Ramatis"</span> | ./printname.rb
+Type your name:
+Your name is: Cherry Ramatis
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>$ ./printname.rb
+Type your name:
+Cherry Ramatis
+Your name is: Cherry Ramatis
+</code></pre>
+
+</div>
+
+
+
+<p>You can observe that we're always printing the <code>Type your name</code> message, in this case we have two options:</p>
+
+<ul>
+<li>Accept this name with a flag parameters instead by receiving <code>--name="Cherry Ramatis"</code>
+</li>
+<li>Drop the <code>Type your name</code> message, turning the script into a more pipelineable (nice word huh?) one.</li>
+</ul>
+
+<h3>
+  
+  
+  Doing a lot on the same tool, aka monolithic scripts
+</h3>
+
+<p>Sometimes you're writing a tool and quickly observe that the scope got bigger while you were writing it, now what should be a small tool is growing to be a big project with various interactive steps. When it reaches that point it's quite seducing to just keep iterating on the same tool by adding a lot of sub commands, but the unix philosophy help us understand that writing a tool that <em>do one thing right</em> is more valuable than writing a gigantic behemoth.</p>
+
+<p>So instead of creating a big CLI with a whole set of commands, try to think in writing small separate tools that interconnect and complement each other, for example:</p>
+
+<p>Imagine you want to write a command that list all the songs from a database in a particular order and prompt the user to choose one, instead of writing all those functionalities in <em>one</em> command, you can compose with different ones like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>list_songs | <span class="nb">sort</span> | update_song
+</code></pre>
+
+</div>
+
+
+
+<p>See how <code>list_songs</code> and <code>update_song</code> are different scripts? both communicate via STDIN and STDOUT, allowing the user to pipeline through any command and receive the same behavior (for example we're piping it to sort because we want to view the list in a sorted manner.)</p>
+
+<h2>
+  
+  
+  Bonus point: The bang operator in vim
+</h2>
+
+<p>Rejoice, Vim users! This is our time to shine. Vim is a somewhat standard editor in Unix systems and this comes with a set of benefits such as interacting with binaries directly in your buffer via the <code>!</code> operator.</p>
+
+<p>In vim you can press <code>!!</code> in <strong>normal mode</strong> to populate a command like this in your minibuffer <code>:.!</code>, the command you type after the <code>!</code> will be used with the current line as STDIN, mind blowing right? Observe the example below:</p>
+
+<p>Consider the following script in ruby:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby</span>
+
+<span class="no">STDIN</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">line</span><span class="o">|</span>
+ <span class="nb">puts</span> <span class="s2">"- </span><span class="si">#{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In this script we're looping over the STDIN received and printing it back to the STDOUT with a <code>-</code> on the beginning, now we can interact with vim:</p>
+
+<p><a href="https://asciinema.org/a/607360"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--27wSR1Wa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://asciinema.org/a/607360.svg" width="800" height="524"></a></p>
+
+<p>Other variations of the bang command:</p>
+
+<ul>
+<li>
+<code>!}</code>: Populate the bang command from the current line to the end of the paragraph.</li>
+<li>
+<code>!/pattern</code>: Populate the bang command from the current line to the first find of <code>pattern</code> in the buffer.</li>
+<li>
+<code>!G</code>: Populate the bang command from the current line to the end of the file.</li>
+<li>
+<code>!4j</code>: Populate the bang command from the current line to 4 lines below.</li>
+</ul>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>This is a smaller article where I tried to bring more context into something that I do a lot in my day to day life: <strong>automating</strong>. I hope this content is useful for you and if I can help with anything just reach me out! May the force be with you 🍒</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Advancеd Backup Stratеgiеs in PostgrеSQL](https://dev.to/hassanrehan/advancied-backup-stratiegiies-in-postgriesql-2g84) 
+ <details><summary>Article</summary> <p>PostgrеSQL,  bеing thе most powеrful and trustеd opеn-sourcе databasе,  providеs sеvеral options for backups in nеcеssary formats and automation.  In this blog post,  wе will dеlvе into thе advancеd stratеgiеs for backing up PostgrеSQL data. </p>
+
+<h2>
+  
+  
+  Thrее Fundamеntal Approachеs
+</h2>
+
+<p>Thеrе arе thrее fundamеntally diffеrеnt approachеs to backing up PostgrеSQL data:</p>
 
 <ol>
-<li><p>Systems construction order is determined by a depth-first traversal.</p></li>
-<li><p>Passing dependencies only requires knowing the edges of the graph.</p></li>
+<li> <strong>SQL Dump</strong>: This mеthod gеnеratеs a filе with SQL commands that can rеcrеatе thе databasе to thе samе statе as it was at thе timе of thе dump. </li>
+<li> <strong>Filе Systеm Lеvеl Backup</strong>: This approach dirеctly copiеs thе databasе filеs,  allowing for fastеr rеcovеry. </li>
+<li> <strong>Continuous Archiving and Point-in-Timе Rеcovеry (PITR)</strong>: This mеthod combinеs a filе systеm lеvеl backup with thе backup of Writе-Ahеad Log (WAL) filеs. </li>
 </ol>
 
-<p>How can we take advantage of this knowledge in our implementation?</p>
+<p>Each of thеsе mеthods has its own strеngths and wеaknеssеs,  and thеy arе discussеd in turn in thе following sеctions. </p>
 
 <h2>
   
   
-  Dependency Injection Container
+  SQL Dump
 </h2>
 
-<p>The <strong>Container</strong> is the software that implements our theoretical solution. Let’s take an overview at how it works:</p>
-
-<ul>
-<li><p>The user provides the list of services (the nodes) to the Container.</p></li>
-<li><p>The Container infers the dependencies (the edges) by looking at the parameters of the system constructors.</p></li>
-<li><p>The Container constructs and destructs systems in the correct order.</p></li>
-<li><p>The Container passes dependencies to the dependent systems.</p></li>
-</ul>
-
-<p>What follows is a possible API for a <strong>Container library</strong>, written in <strong>C++</strong>. Please, be aware that the API refers to systems as “<strong>components</strong>”, a more common term in the context of Dependency Injection:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// We register components with the ComponentSet helper class.</span>
-    <span class="c1">// No construction happens here, and systems can be added in any order.</span>
-    <span class="n">ComponentSet</span> <span class="n">components</span><span class="p">;</span> 
-    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Loop</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Physics</span><span class="o">&gt;</span><span class="p">();</span>       
-    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Rendering</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Simulation</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">OpenGL</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">();</span>
-
-    <span class="c1">// Systems are constructed in correct order in Container constructor</span>
-    <span class="n">Container</span> <span class="n">container</span><span class="p">{</span><span class="n">components</span><span class="p">};</span> 
-
-<span class="p">}</span> <span class="c1">// Systems are destructed in reverse order in Container destructor</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The Container can also support <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a>, we only need to specify which system implements an interface:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="c1">// Rendering depends on IGraphics</span>
-<span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Rendering</span><span class="o">&gt;</span><span class="p">();</span> 
-
-<span class="c1">// OpenGL implements IGraphics</span>
-<span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">OpenGL</span><span class="o">&gt;</span><span class="p">().</span><span class="n">implements</span><span class="o">&lt;</span><span class="n">IGraphics</span><span class="o">&gt;</span><span class="p">();</span> 
-</code></pre>
-
-</div>
-
-
-
-<p>Integrating a Container in your application is <strong>non-invasive</strong>— the only file that depends on the Container is <code>main.cpp</code>.</p>
+<p>SQL Dump is a simplе yеt еffеctivе mеthod for backing up PostgrеSQL data.  It involvеs using thе <code>pg_dump</code> or <code>pg_dumpall</code> command to crеatе a dump of thе databasе.  This dump can thеn bе usеd to rеstorе thе databasе to its original statе. </p>
 
 <h2>
   
   
-  Conclusions
+  Filе Systеm Lеvеl Backup
 </h2>
 
-<p>A Container is a great tool to reduce Dependency Injection boilerplate code. However, there are some drawbacks:</p>
-
-<ul>
-<li><p>It is an additional dependency to maintain in your project.</p></li>
-<li><p>An invalid graph is detected at runtime instead of compile time.</p></li>
-</ul>
-
-<p>In the end, whether to use a Container or not is up to you — it is perfectly possible to adopt Dependency Injection without using one.</p>
-
-<p>You will need to evaluate how much time you waste writing and modifying boilerplate code, and decide if using a Container is worth the tradeoff.</p>
+<p>Filе systеm lеvеl backup involvеs dirеctly copying thе filеs that makе up thе databasе.  This mеthod is fastеr than SQL Dump as it doеs not involvе rеcrеating thе databasе from scratch.  Howеvеr,  it rеquirеs morе storagе spacе as it involvеs copying all databasе filеs. </p>
 
 <h2>
   
   
-  Next steps
+  Continuous Archiving and Point-in-Timе Rеcovеry (PITR)
 </h2>
 
-<ul>
-<li><p>If you wish to check out the <strong>implementation</strong> of the dummy game application using a Container, or are curious about the theory and implementation of a <strong>C++ Container library</strong>, please refer to the accompanying <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub repository</strong></a>.</p></li>
-<li><p>If you haven’t yet, read the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a>.</p></li>
-</ul>
+<p>Continuous Archiving and Point-in-Timе Rеcovеry (PITR) is an advancеd backup stratеgy that combinеs filе systеm lеvеl backup with thе backup of WAL filеs.  This allows for continuous archiving of thе databasе,  which can bе usеd to rеstorе thе databasе to any point in timе. </p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Planning is kеy to backup and rеcovеry.  It's important to undеrstand your own еnvironmеnt and how a data loss can happеn.  Dеpеnding on your spеcific nееds and circumstancеs,  onе of thеsе mеthods may bе morе suitablе than othеrs.  Rеmеmbеr,  rеgular backups arе еssеntial to prеvеnt data loss and еnsurе continuity. </p>
+
+<p>Sourcеs:<br>
+1) <a href="https://www.%D0%B5nt%D0%B5rpris%D0%B5db.com/postgr%D0%B5sql-databas%D0%B5-backup-r%D0%B5cov%D0%B5ry-what-works-wal-pitr">https://www.еntеrprisеdb.com/postgrеsql-databasе-backup-rеcovеry-what-works-wal-pitr</a>. <br>
+2) <a href="https://www.postgr%D0%B5sql.org/docs/curr%D0%B5nt/backup.html">https://www.postgrеsql.org/docs/currеnt/backup.html</a>. <br>
+3) <a href="https://www.p%D0%B5rcona.com/blog/postgr%D0%B5sql-backup-strat%D0%B5gy-%D0%B5nt%D0%B5rpris%D0%B5-grad%D0%B5-%D0%B5nvironm%D0%B5nt/">https://www.pеrcona.com/blog/postgrеsql-backup-stratеgy-еntеrprisе-gradе-еnvironmеnt/</a>. <br>
+4)<a href="https://www.postgr%D0%B5sql.%D0%B5u/v%D0%B5nts/pgconf%D0%B5u2018/s%D0%B5ssions/s%D0%B5ssion/2098/slid%D0%B5s/123/Advanc%D0%B5d%20backup%20m%D0%B5thods.pdf">https://www.postgrеsql.еu/vеnts/pgconfеu2018/sеssions/sеssion/2098/slidеs/123/Advancеd%20backup%20mеthods.pdf</a>.  </p>
 
  </details> 
  <hr /> 
 
- #### - [Dependency Injection for Games — Appendix: Dependency Inversion](https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc) 
- <details><summary>Article</summary> <p>In the main <a href="https://dev.to/filippoceffa/dependency-injection-for-games-4dhb">Dependency Injection for Games</a> article, we used a dummy game application as an example to explain how <strong>Dependency Injection</strong> can help you organize your <strong>game</strong> or <strong>game engine</strong> architecture.</p>
+ #### - [Better Git Commits with `@commitlint`](https://dev.to/maafaishal/better-git-commits-with-commitlint-g18) 
+ <details><summary>Article</summary> <p>When working on a project together, <a href="https://git-scm.com/">Git</a> is a crucial tool that help teams collaborate smoothly. One of the key features is <code>commits</code>, which act like snapshots of the project's progress.</p>
 
-<p>For the sake of simplicity, the example intentionally omitted a technique commonly adopted in real-world applications: <strong>Dependency Inversion</strong>.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KVGWow1o--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpvmdcu90e7e1zue0jbz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KVGWow1o--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpvmdcu90e7e1zue0jbz.png" alt="git commit" width="349" height="500"></a></p>
 
-<p>The goal of this appendix is to expand our problem to include Dependency Inversion, and prove that Dependency Injection remains the ideal solution.</p>
+<p>However, do you know which one of my commit add a new feature? I'm sure you won't, including me...</p>
 
-<p>We will start by introducing Dependency Inversion through a <strong>practical example</strong>, by modifying our dummy game application to make use of it.</p>
+<p>The problem is I was naming the commit randomly without looking at the context which makes it harder for me to identify when I want to revert the changes.</p>
 
-<h2>
-  
-  
-  Problem (re)definition
-</h2>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AWXU7Fxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zt9lqp7mvcz2l4d332t9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AWXU7Fxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zt9lqp7mvcz2l4d332t9.png" alt="commitlint" width="800" height="227"></a></p>
 
-<p>First, let’s recap the dependency graph of our dummy game application:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7uE5jjZD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zht9t50o6clxldhvhq1u.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7uE5jjZD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zht9t50o6clxldhvhq1u.jpg" alt="Image description" width="800" height="267"></a></p>
-
-<p>Rendering uses the <code>OpenGL</code> graphics API, but as the requirements of our project grow, we may want <code>Rendering</code> to work with multiple graphics APIs. The following scenarios are common:</p>
-
-<ul>
-<li><p>We wish <code>Rendering</code> to support both <code>Vulkan</code> and <code>OpenGL</code>, and select the appropriate API at runtime, based on a command-line argument.</p></li>
-<li><p>We wish to test <code>Rendering</code> using a <code>Mock</code> graphics API, in order to make test results independent of graphics API details.</p></li>
-</ul>
-
-<p>We can provide this flexibility by making <code>Rendering</code> depend on the <code>IGraphics</code> interface, and make <code>OpenGL</code>, <code>Vulkan</code> and <code>Mock</code> implement it:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--S8LLL0n8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w106jnfrfzsx118hbguh.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--S8LLL0n8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w106jnfrfzsx118hbguh.jpg" alt="Image description" width="800" height="267"></a></p>
-
-<p>This solution follows the <strong>Dependency Inversion</strong> principle, which states that systems should depend on interfaces instead of implementations:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Rdf1NuHC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r22oq2o1jkbw28u6b19p.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Rdf1NuHC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r22oq2o1jkbw28u6b19p.jpg" alt="Image description" width="800" height="267"></a></p>
-
-<p>The introduction of Dependency Inversion slightly changes the nature of our problem — we are not dealing anymore with a dependency graph of systems, but with a <strong>dependency graph of systems and interfaces</strong>.</p>
-
-<p>In the next section we will see how Dependency Injection comfortably supports these new requirements, and remains the ideal solution to organize your game architecture.</p>
-
-<h2>
-  
-  
-  Problem solution
-</h2>
-
-<p>Dependency Inversion shields a system from the implementation details of its dependencies, including their <strong>constructors</strong>.</p>
-
-<p>Consequently, when adopting Dependency Inversion, a system cannot be responsible for creating its own dependencies. They must be created somewhere else, and shared with the system through their interface.</p>
-
-<p>An application that adopts <strong>Dependency Injection</strong> creates all systems in <code>main()</code>, and forwards them to their dependent systems. This provides the perfect framework to support Dependency Inversion:<br>
+<p>To solve the problem, there is a useful linter named <code>commitlint</code>. It will prevent us from naming our commits randomly<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">OpenGL</span> <span class="n">openGL</span><span class="p">{};</span>             <span class="c1">// dependency created outside system</span>
-    <span class="n">Rendering</span> <span class="n">rendering</span><span class="p">{</span><span class="n">openGL</span><span class="p">};</span> <span class="c1">// dependency passed to system</span>
-<span class="p">}</span>
+<pre class="highlight javascript"><code><span class="c1">// git commit</span>
+<span class="nx">oops</span>
+
+<span class="c1">// it will trigger this error </span>
+<span class="c1">// ❌ type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test] [type-enum]</span>
 </code></pre>
 
 </div>
 
 
 
-<p>The only step necessary to adopt Dependency Inversion is to change a system’s dependency from a concrete implementation to an interface:<br>
+<p>and force us to name the commit properly.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="k">class</span> <span class="nc">OpenGL</span> <span class="o">:</span> <span class="n">IGraphics</span> <span class="p">{...};</span>
-
-<span class="n">Rendering</span><span class="o">::</span><span class="n">Rendering</span><span class="p">(</span><span class="n">OpenGL</span><span class="o">&amp;</span><span class="p">){}</span>    <span class="c1">// Injection, but not Inversion</span>
-<span class="n">Rendering</span><span class="o">::</span><span class="n">Rendering</span><span class="p">(</span><span class="n">IGraphics</span><span class="o">&amp;</span><span class="p">){}</span> <span class="c1">// Injection and Inversion</span>
+<pre class="highlight javascript"><code><span class="nx">fix</span><span class="p">:</span> <span class="nx">resolve</span> <span class="nx">the</span> <span class="nx">issue</span> <span class="nx">related</span> <span class="nx">to</span> <span class="nx">comma</span>
+<span class="nx">feat</span><span class="p">:</span> <span class="nx">add</span> <span class="nx">a</span> <span class="nx">feature</span> <span class="nx">named</span> <span class="nx">calculator</span>
 </code></pre>
 
 </div>
 
 
 
-<h2>
-  
-  
-  Conclusions
-</h2>
+<p>It's very clear and easy to understand the context, right?</p>
 
-<p>Dependency Injection can effortlessly support Dependency Inversion.</p>
-
-<p>Dependency Inversion is a powerful tool in your toolbox — it has <strong>benefits</strong> in modularity and testability, and it has <strong>drawbacks</strong> in complexity and performance. Like every tool, it should be used when appropriate.</p>
-
-<p>Dependency Injection grants you full control in deciding if and where to adopt Dependency Inversion, allowing you to design your game or game engine architecture in complete flexibility.</p>
-
-<h2>
-  
-  
-  Next steps
-</h2>
+<p>The following are all the types that <code>commitlint</code> suggests and provides including the example commit:</p>
 
 <ul>
-<li><p>Check out the accompanying <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub repository</strong></a>, which contains an <strong>implementation</strong> of the dummy game application.</p></li>
-<li><p>If you haven’t yet, read the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd"><strong>Injection Container</strong></a>.</p></li>
+<li>
+<strong>build</strong> --&gt; Changes that affect the build system or external dependencies
+</li>
 </ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>build: update npm dependency
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>ci</strong> --&gt; Changes to our CI configuration files and scripts
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>ci: add circleci configuration file
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>docs</strong> --&gt; Documentation only changes
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>docs: update readme with installation instructions
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>feat</strong> --&gt; A new feature
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>feat: add user authentication feature
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>fix</strong> --&gt; A bug fix
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>fix: resolve issue with incorrect data rendering
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>perf</strong> --&gt; A code change that improves performance
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>perf: optimize database query for faster response times
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>refactor</strong> --&gt; A code change that neither fixes a bug nor adds a feature
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>refactor: reorganize code structure for better readability
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>style</strong> --&gt; Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>style: format code according to Prettier standards
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<strong>test</strong> --&gt; Adding missing tests or correcting existing tests
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>test: add unit tests for user authentication
+</code></pre>
+
+</div>
+
+
+
+<p>There are many features of <code>commitlint</code> that I can't mention one by one, as well as installation guide. To know the detail you can directly access <a href="https://github.com/conventional-changelog/commitlint">https://github.com/conventional-changelog/commitlint</a>.</p>
 
  </details> 
  <hr /> 
 
- #### - [Dependency Injection for Games](https://dev.to/filippoceffa/dependency-injection-for-games-4dhb) 
- <details><summary>Article</summary> <p>Whether you are a <strong>game programmer</strong> or a <strong>game engine developer</strong>, a well-organized architecture is crucial to keep your project maintainable, readable, and safe— especially if you work with a team on a large codebase.</p>
-
-<p>This article aims to present the concept of <strong>Dependency Injection</strong>, and to show how it can help you to easily structure your <strong>game architecture</strong> in a robust and flexible way, without any performance overhead.</p>
-
-<p>Using a dummy game application as a <strong>practical example</strong>, we will start by defining the problem we intend to solve. We will try different strategies, and demonstrate how Dependency Injection emerges as the ideal solution.</p>
-
-<p>We will use <strong>C++</strong>, the go-to language for high-performance applications, but the ideas discussed are universal, and applicable in other languages.</p>
-
-<p>The code presented in this article is available on <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub</strong></a>.</p>
-
-<h2>
-  
-  
-  Problem Definition
-</h2>
-
-<p>Games are complex applications, consisting of multiple unique systems, such as Rendering or Physics. In a typical game application, systems are initialized on startup, they interact with each other for the lifetime of the application, and are destroyed when the application terminates.</p>
-
-<p>Some systems are specific to the game being developed, while others are more general, and are typically wrapped into a <strong>game engine</strong>:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1liPNz6N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/69oeromapt1g1yj72j9a.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1liPNz6N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/69oeromapt1g1yj72j9a.jpg" alt="Image description" width="800" height="171"></a></p>
-
-<p>In our discussion we will not consider this separation, and refer to any system in the application as a <strong>game system</strong>.</p>
-
-<p>Let’s now introduce the example that will accompany us for the rest of this article — a dummy 2D game application where two red circles bounce around the screen. Our game consists of just a handful of systems:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--m954nEyH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fjc5gds55wsdo6q55dpt.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m954nEyH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fjc5gds55wsdo6q55dpt.jpg" alt="Image description" width="800" height="76"></a></p>
-
-<ul>
-<li><p><code>State</code> holds the state of the game: the circle positions and velocities.</p></li>
-<li><p><code>Simulation</code> moves circles in the <code>update()</code> method, modifying <code>State</code>.</p></li>
-<li><p><code>Physics</code> is used by <code>Simulation</code> in <code>update()</code> to resolve circle collisions.</p></li>
-<li><p><code>Rendering</code> reads <code>State</code>, and draws circles on screen with <code>render()</code>.</p></li>
-<li><p><code>OpenGL</code> wraps the OpenGL API, required by <code>Rendering</code> to <code>render()</code>.</p></li>
-<li><p><code>Loop</code> runs the game loop, which calls <code>update()</code> and then <code>render()</code>.</p></li>
-</ul>
-
-<p>Let’s identify the <strong>dependencies</strong> between our systems:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--m8oyXBAt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3rgilpclp6cfjzvluzl6.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m8oyXBAt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3rgilpclp6cfjzvluzl6.jpg" alt="Image description" width="800" height="267"></a></p>
-
-<p>The design of our application is nicely represented by a graph, where nodes represent systems, and edges represent dependencies. In particular, this is a <strong>directed acyclic graph</strong>, where there is no circular dependency.</p>
-
-<p>Now that we have a solid theoretical understanding of how to organize our architecture, it is time to introduce the concrete problem at the core of this article: <strong>how do we turn this theory into practice?</strong></p>
-
-<p>We wish to find a way to <strong>accurately</strong> express our theoretical architecture in code, with a focus on <strong>clarity</strong>, <strong>safety</strong>, <strong>modularity</strong> and <strong>performance</strong>.</p>
-
-<p>Instead of trying to derive our solution from these high-level goals, in the next section we will proceed bottom-up, and <strong>dive into implementation</strong>. As we try different strategies, we will get a practical understanding of what problems we wish to avoid, and we will define rules that we wish to follow.</p>
-
-<p>Eventually, we will converge on an ideal solution: <strong>Dependency Injection</strong>.</p>
-
-
-
-
-<blockquote>
-<p>Further reading:<br>
-For simplicity, we ignore the situation where systems implement and depend on interfaces, quite common in real game applications. If you are interested to know more, refer to the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a> after finishing this article.</p>
-</blockquote>
-
-<h2>
-  
-  
-  Problem Solution
-</h2>
-
-<h3>
-  
-  
-  Attempt 1: Systems are global variables
-</h3>
-
-<p>Based on the problem definition, we know that game systems must be unique, created at startup, and destroyed at shutdown. These requirements are satisfied by creating a global variable for each system:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="c1">// State.h</span>
-<span class="k">class</span> <span class="nc">State</span><span class="p">{...};</span>     <span class="c1">// class definition</span>
-<span class="k">extern</span> <span class="n">State</span> <span class="n">g_state</span><span class="p">;</span> <span class="c1">// global variable declaration</span>
-
-<span class="c1">// State.cpp</span>
-<span class="n">State</span> <span class="n">g_state</span><span class="p">{};</span>      <span class="c1">// global variable definition</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Systems access dependencies directly from global state:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="cp">#include</span> <span class="cpf">&lt;State.h&gt;</span><span class="cp">
-</span><span class="n">Simulation</span><span class="o">::</span><span class="n">Simulation</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">g_state</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>One problem with global variables is that we do not control their construction order. If <code>g_simulation</code> happens to be constructed before <code>g_state</code>, the above code causes an uninitialized memory access.</p>
-
-<p>We wish to have a way to guarantee that <code>g_simulation</code> is constructed after <code>g_state</code>. And, to avoid the same issue in the destructor, we also wish to guarantee that <code>g_simulation</code> is destroyed before <code>g_state</code>.</p>
-
-<p>Let’s formalize our wish in a rule:</p>
-
-<blockquote>
-<p>Rule 1: Systems must be created after / destroyed before dependencies.</p>
-</blockquote>
-
-<p>Another problem with global variables is that their access is not limited to constructors — they can be accessed from anywhere:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="kt">void</span> <span class="n">Simulation</span><span class="o">::</span><span class="n">update</span><span class="p">()</span> 
-<span class="p">{</span> 
-    <span class="n">g_state</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This freedom has a side effect — it becomes difficult to understand the dependencies of a system, because they are not listed in a single place.</p>
-
-<p>Unclear dependencies make it hard to understand the architecture, to refactor, and to make changes. Let’s define a rule to prevent this situation:</p>
-
-<blockquote>
-<p>Rule 2: Dependencies must be explicit.</p>
-</blockquote>
-
-<p>The final issue with global variables is the potential to easily introduce <strong>circular dependencies</strong> between systems:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code><span class="kt">void</span> <span class="n">Physics</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span> 
-<span class="p">{</span>
-    <span class="n">g_rendering</span><span class="p">.</span><span class="n">bar</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">Rendering</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">g_physics</span><span class="p">.</span><span class="n">bar</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>To ensure that our codebase remains <strong>modular</strong> and <strong>maintainable</strong>, we wish to forbid circular dependencies altogether:</p>
-
-<blockquote>
-<p>Rule 3: Introducing circular dependencies must be prevented.</p>
-</blockquote>
-
-<h3>
-  
-  
-  Attempt 2: Systems own dependencies
-</h3>
-
-<p>Let’s make systems responsible for managing their own dependencies. <br>
-The dependencies are member variables, created in the constructor:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code> <span class="n">Loop</span><span class="o">::</span><span class="n">Loop</span><span class="p">()</span>
- <span class="o">:</span> <span class="n">m_simulation</span><span class="p">{}</span> <span class="c1">// dependency created here</span>
- <span class="p">,</span> <span class="n">m_rendering</span><span class="p">{}</span>
- <span class="p">{}</span>
-
-<span class="n">Loop</span><span class="o">::~</span><span class="n">Loop</span><span class="p">(){}</span> <span class="c1">// dependency destroyed here</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Using constructor recursion, a system creates its entire dependency subgraph. Consequently, constructing the root system <code>Loop</code> triggers the creation of every system.</p>
-
-<p>We construct our application by creating <code>Loop</code> on the stack of <code>main()</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
- <span class="p">{</span>
-     <span class="n">Loop</span> <span class="n">loop</span><span class="p">{};</span> <span class="c1">// recursively construct every system</span>
- <span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>A problem arises when multiple systems, like <code>Simulation</code> and <code>Rendering</code>, depend on the same system, such as <code>State</code>. Both <code>Simulation</code> and <code>Rendering</code> create separate copies of <code>State</code>, but systems must be <strong>unique</strong>.</p>
-
-<p>To resolve this, we can create <code>State</code> within <code>Loop</code>, the parent system of <code>Simulation</code> and <code>Rendering</code>, and have <code>Loop</code> share <code>State</code> with their constructors by reference:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code> <span class="n">Loop</span><span class="o">::</span><span class="n">Loop</span><span class="p">()</span>
- <span class="o">:</span> <span class="n">m_state</span><span class="p">{}</span> <span class="c1">// create here</span>
- <span class="p">,</span> <span class="n">m_simulation</span><span class="p">{</span><span class="n">m_state</span><span class="p">}</span> <span class="c1">// share reference</span>
- <span class="p">,</span> <span class="n">m_rendering</span><span class="p">{</span><span class="n">m_state</span><span class="p">}</span> <span class="c1">// share reference</span>
- <span class="p">{}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This solution patches the problem, but it introduces an extra dependency. We have failed to exactly map our theoretical architecture into code:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2LE8KrMT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kf1c5vj2yv30lr697we5.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2LE8KrMT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kf1c5vj2yv30lr697we5.jpg" alt="Image description" width="800" height="267"></a></p>
-
-<p>There is a fundamental problem with this approach that prevents us from converging on an ideal solution. In order to understand it, we should take a step back, and start thinking in terms of <strong>responsibilities.</strong></p>
-
-<p>Systems are burdened with <strong>two</strong> responsibilities:</p>
-
-<ol>
-<li><p><strong>Functionality:</strong> executing the logic that defines system behavior.</p></li>
-<li><p><strong>Structure</strong>: creating, destroying, organizing, passing dependencies.</p></li>
-</ol>
-
-<p>The dependency graph should only reflect dependencies that occur due to <strong>functionality</strong>, such as <code>Simulation</code> depending on <code>Physics</code> for collision resolution. However, the need for organizing the application <strong>structure</strong> introduces additional dependencies, such as <code>Loop</code> depending on <code>State</code>.</p>
-
-<p>To resolve this problem, we wish to follow the <strong>single responsibility principle</strong>, and give systems a single responsibility: <strong>functionality</strong>.</p>
-
-<blockquote>
-<p>Rule 4: Systems must not be responsible to structure the application.</p>
-</blockquote>
-
-<h3>
-  
-  
-  Successful attempt: Systems receive dependencies
-</h3>
-
-<p>In this final attempt, the responsibility for structuring the application is moved to <code>main()</code>, where every system is created in the correct order, and passed as dependency to other systems:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
- <span class="p">{</span>
-     <span class="n">State</span> <span class="n">state</span><span class="p">{};</span>
-     <span class="n">Physics</span> <span class="n">physics</span><span class="p">{};</span>
-     <span class="n">Simulation</span> <span class="n">simulation</span> <span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">physics</span><span class="p">};</span>
-     <span class="n">OpenGL</span> <span class="n">openGL</span><span class="p">{};</span>
-     <span class="n">Rendering</span> <span class="n">rendering</span><span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">openGL</span><span class="p">};</span>
-     <span class="n">Loop</span> <span class="n">loop</span><span class="p">{</span><span class="n">simulation</span><span class="p">,</span> <span class="n">rendering</span><span class="p">};</span>  
- <span class="p">}</span> <span class="c1">// out of scope: system destructed in reverse order</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Systems are no longer responsible for structuring the application. They receive their dependencies through the <strong>constructor</strong>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight cpp"><code> <span class="n">Loop</span><span class="o">::</span><span class="n">Loop</span><span class="p">(</span><span class="n">Simulation</span><span class="o">&amp;</span> <span class="n">simulationRef</span><span class="p">,</span> <span class="n">Rendering</span><span class="o">&amp;</span> <span class="n">renderingRef</span><span class="p">)</span>
- <span class="p">,</span> <span class="n">m_simulationRef</span><span class="p">{</span><span class="n">simulationRef</span><span class="p">}</span>
- <span class="p">,</span> <span class="n">m_renderingRef</span><span class="p">{</span><span class="n">renderingRef</span><span class="p">}</span>
- <span class="p">{}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This approach follows all our rules:</p>
-
-<blockquote>
-<p>Rule 1: Systems must be created after / destroyed before dependencies.</p>
-</blockquote>
-
-<p>✅ System is outlived by its dependency, as it is created later on the stack.</p>
-
-<blockquote>
-<p>Rule 2: Dependencies must be explicit.</p>
-</blockquote>
-
-<p>✅ The signature of the system constructor lists all dependencies.</p>
-
-<blockquote>
-<p>Rule 3: Introducing circular dependencies must be prevented.</p>
-</blockquote>
-
-<p>✅ It is impossible to order system creation to cause a cycle.</p>
-
-<blockquote>
-<p>Rule 4: Systems must not be responsible to structure the application.</p>
-</blockquote>
-
-<p>✅ Application structure is entirely determined in main().</p>
-
-<p>Success!</p>
-
-<p>We converged on a solution that precisely implements our theoretical architecture, while being simple, safe, modular and efficient.</p>
-
-<p>As promised, this ideal solution is none other than an implementation of <strong>Dependency Injection</strong>.</p>
-
-<blockquote>
-<p>Dependency Injection is a programming technique in which an object [..] receives other objects [..] that it depends on.<br>
-(Wikipedia)</p>
-</blockquote>
-
-
-
-
-<blockquote>
-<p>Further reading:<br>
-In applications with a large number of systems, the cost to write and modify the code in <code>main()</code> is significant. If you wish to learn of an automated solution to reduce the boilerplate code, refer to the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd"><strong>Injection Container</strong></a>.</p>
-</blockquote>
-
-<h2>
-  
-  
-  Conclusions
-</h2>
-
-<p>I hope this article was able to make you excited about Dependency Injection, and its application in game development.</p>
-
-<p>By adopting Dependency Injection, you will quickly realize how radically it improves your everyday game development experience:</p>
-
-<ul>
-<li><p>You will easily understand, reason and discuss your architecture.</p></li>
-<li><p>You will quickly refactor and make changes with peace of mind.</p></li>
-<li><p>You will never worry about accessing uninitialized dependencies.</p></li>
-</ul>
-
-<p>I suggest that you try adopting Dependency Injection in your own project, and I believe you will not be able to look back!</p>
-
-<h2>
-  
-  
-  Next steps
-</h2>
-
-<ul>
-<li><p>Check out the accompanying <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub repository</strong></a>, which contains an <strong>implementation</strong> of the dummy game application.</p></li>
-<li><p>Read the appendices on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a> and <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd"><strong>Injection Container</strong></a>.</p></li>
-<li><p>If you have any questions, or wish to share your thoughts, please feel free to leave a <strong>comment</strong>, or to contact me on <a href="https://www.linkedin.com/in/filippoceffa/"><strong>LinkedIn</strong></a>.</p></li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [The Flow Blockchain Hackaton Season 2](https://dev.to/glazer/the-flow-blockchain-hackaton-season-2-j5m) 
+ #### - [We had a date bug that happened two times a year, and we didn't know, you might have it too 😱](https://dev.to/novu/we-had-a-date-bug-that-happened-two-times-a-year-and-we-didnt-know-you-might-have-it-too-56o6) 
  <details><summary>Article</summary> <h2>
   
   
-  Intro
+  TL;DR
 </h2>
 
-<p>My second hackathon was on the Flow chain. You might ask why I specifically chose Flow and not any other hackathon? The answer is quite simple. I was part of the community from the very beginning; during the ICO, when I first heard about the project and invested in Flow at 60 cents per coin. It was a good deal, especially when Flow's cost rose up to $40 per coin. At that time, all the coins were locked, making it impossible for ICO investors to sell any. I was only able to sell them at $17, which, in my opinion, was great. Since then, I've actively followed the community. I wanted to participate in hackathon season 1 but was busy with several other projects. So, when I heard about the upcoming hackathon season 2, I was very excited to participate in it with my charity idea that I had for a long time in my mind.</p>
+<p>Novu's team encountered a significant bug affecting date calculations in their CI/CD pipelines, hindering all deployments. </p>
 
-<p>Before diving any deeper, you can try project yourself by visiting <a href="https://prayforua.com">https://prayforua.com</a> or you might also want to see the use case on YouTube:</p>
+<p>The issue arose from the date-fns library's addMonths and subMonths functions.</p>
 
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/Zk6X8abE_BU">
-</iframe>
-</p>
+<p>We fixed this by using addDays and subDays functions instead.   </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UIbJ4yVD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qewo5qx57k5z4g466ot.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UIbJ4yVD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qewo5qx57k5z4g466ot.gif" alt="Panic Gif" width="800" height="600"></a></p>
+
+
+
 
 <h2>
   
   
-  Flow: Cadence, FCL Official Guide
+  Novu: Open-source notification infrastructure 🚀
 </h2>
 
-<p>Since it was my first time working with the Flow ecosystem, I decided to use the official guide to learn Cadence and <a href="https://developers.flow.com/tooling/fcl-js/api">FCL - Flow Client Library</a>, which we will talk about later.</p>
+<p>Just a quick background about us. Novu is an open-source notification infrastructure. We basically help to manage all the product notifications. It can be In-App (the bell icon like you have in the Dev Community - Websockets), Emails, SMSs and so on.</p>
 
-<p>The official guide helped me understand Cadence better, guiding me through the most common use cases. Although very useful, I found it a bit verbose, with many articles written so that readers could jump in at any point. This led to repetition and made it seem clunky. Other than that, it took me around 6-8 hours to finish, leading to a basic understanding of the language principles and architecture of blockchain projects using the Flow ecosystem. Both Cadence and FCL were developed by DapperLabs, providing a consistent developer experience. Their API also seemed mature to me, even tho It's a new language and API might change in the future, covering almost everything a developer might need, it might ever work for an enterprise-sized project.<br>
-My project was smaller, but it still required a lot of smart contracts, I'll describe that in Architecture section.</p>
-<h3>
-  
-  
-  Cadence Compared to Other Languages
-</h3>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WzpngZeC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/134zbnlfi42ui6wn828k.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WzpngZeC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/134zbnlfi42ui6wn828k.jpg" alt="Novu Request Stars On Github" width="800" height="335"></a></p>
 
-<p>For those who don't know, <a href="https://developers.flow.com/cadence/language">Cadence</a> is a new programming language for smart contracts written by Dapper Labs.</p>
 
-<p>I was very curious to try Cadence, having heard about this language a some time ago, with its resource-oriented nature akin to Rust. Compares it with the well-established Solidity that I've used.</p>
-<h4>
-  
-  
-  Resource-Oriented Nature
-</h4>
 
-<p>One of the standout features of Cadence is its resource-oriented nature, drawing parallels with the programming language Rust. Rust gained prominence for its efficient resource allocation mechanism, centered around borrowing and lending. Similarly, Cadence employs a similar principle: resources can exist in only one location at a time. This fundamental concept guarantees resource safety, particularly for tokens and other critical resources within the smart contract ecosystem. This design choice not only enhances security but also contributes to the predictability and reliability of smart contracts.</p>
-<h4>
-  
-  
-  Enhanced Security
-</h4>
 
-<p>Cadence's resource-oriented approach inherently addresses some of the security concerns that plagued Solidity-based contracts. By preventing resource duplication and enforcing strict ownership rules, Cadence minimizes the potential for vulnerabilities such as reentrancy attacks and unauthorized token transfers. This focus on security aligns with Dapper Labs vision of providing a robust platform for building decentralized applications without compromising on safety. On the other hand Solidity's design allowed for pitfalls such as reentrancy attacks, which posed a significant security threat.</p>
 <h2>
   
   
-  My Hackathon Project
+  The Mindset
 </h2>
 
-<p><strong>Let's briefly examine the app architecture and the main concept of my hackathon project.</strong></p>
+<p>When working in software development, we're always prepared for bugs to crop up. </p>
 
-<p><a href="https://camo.githubusercontent.com/ee5dfcc51e41f4756d367910c69dc4d864d7f606e6d1a2504dec70d093d9da44/68747470733a2f2f646576666f6c696f2d70726f642e73332e61702d736f7574682d312e616d617a6f6e6177732e636f6d2f6861636b6174686f6e732f36333330363535303031393334323730393130333364326366633236323165362f70726f6a656374732f31333234326363343163656234323330386161306536616236666362316138342f39363133333065632d303435332d343132312d623131352d3932343236646164373764372e706e67" class="article-body-image-wrapper"><img src="https://camo.githubusercontent.com/ee5dfcc51e41f4756d367910c69dc4d864d7f606e6d1a2504dec70d093d9da44/68747470733a2f2f646576666f6c696f2d70726f642e73332e61702d736f7574682d312e616d617a6f6e6177732e636f6d2f6861636b6174686f6e732f36333330363535303031393334323730393130333364326366633236323165362f70726f6a656374732f31333234326363343163656234323330386161306536616236666362316138342f39363133333065632d303435332d343132312d623131352d3932343236646164373764372e706e67" alt="project pitch" width="1848" height="822"></a></p>
-<h3>
+<p>Sometimes they're small, easy to identify, and quick to fix. </p>
+
+<p>Other times, they're like this year's candidate for our 'Bug Of The Year'. </p>
+
+<p>This was a bug so elusive and mysterious that it had us rummaging through our pipelines, questioning our code-base, and coming face-to-face with the intricacies of date manipulation.</p>
+
+<h2>
   
   
-  Tooling
-</h3>
+  Problems, Different Problems, and More Problems
+</h2>
 
-<p>For my own projects, Svelte is a no-brainer, so:</p>
+<p>Our CI/CD pipelines were failing. Specifically, two tests which were blocking ALL new deployments. It was time to put on our detective hats 🕵️.</p>
 
-<ul>
-<li>
-<strong>pnmp</strong> for speed.</li>
-<li>
-<strong>Svelte</strong> as js framework.</li>
-<li>
-<strong>SvelteKit</strong> as an application framework.
-(For those unfamiliar with SvelteKit, you might think of it as similar to Next.js)</li>
-<li>
-<strong>TailwindCSS/DaisyUI</strong> - For quick prototyping.
-(TailwindCSS for styles and the Tailwind library of mixed styles DaisyUI for even more styles on top of tailwind shugar for basic components like buttons, ranges, etc.)
-</li>
-</ul>
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="err">//package.json</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="err">...</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"@sveltejs/adapter-vercel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0.2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"@sveltejs/kit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.22.1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"autoprefixer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^10.4.14"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"daisyui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.1.11"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eslint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.44.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eslint-config-prettier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.8.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eslint-plugin-svelte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.32.2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"postcss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.4.25"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"prettier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"prettier-plugin-svelte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.10.1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"svelte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.0.5"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"tailwindcss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.3.2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"vite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.4.2"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"@onflow/fcl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.4.1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^10.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nanoid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.0.2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ramda"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.29.0"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<p>We dove into our commit history using <a href="https://git-scm.com/docs/git-bisect"><code>git bisect</code></a> however it offered us no insight. Git bisect took us back to commits that where over 6 months in the past, long before any of our newest changes to the system that would have caused this. Was this bug created at the very beginning of Novu?</p>
 
-</div>
+<p>However, we did have a clue. Our failing unit tests showed us that we had incorrect date calculations. </p>
 
-
-<p>As you can see, there are 4 client libs i'm using:</p>
-
-<ul>
-<li>fcl - flow client api</li>
-<li>firebase - my user data storage solution + <code>onSnapshot</code> db real time updates</li>
-<li>nanoid - gen random id</li>
-<li>ramda - like lodash, but functional style library of utilities
-(Ramda helped take advantage of utility functions like pipe, combine, etc.)</li>
-</ul>
-
-<p>Because svelte is a <strong>compiler</strong> at the first place, there is no real difference between devDependencies and dependencies, but I'm adding client libs as dependencies for the sake of concepts separation, so it's easier to read.</p>
-<h3>
+<h2>
   
   
-  Svelte store firebase simplified implementation
-</h3>
+  Gathering the Clues 💡
+</h2>
 
-<p>You might want to see <a href="https://github.com/nicholasglazer/prayforua.com/blob/main/src/stores/dbStore.js">simple svelte store firebase api wrapper with localStorage sync</a><br>
+<p>Strangely, the difference was just one day.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">getFirestore</span><span class="p">,</span> <span class="nx">doc</span><span class="p">,</span> <span class="nx">setDoc</span><span class="p">,</span> <span class="nx">getDoc</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">firebase/firestore</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">initializeApp</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">firebase/app</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">writable</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svelte/store</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">browser</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">$app/environment</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">firebaseKeys</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">$lib/firebase/config</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{};</span>
-
-<span class="kd">function</span> <span class="nx">createDb</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">initialValue</span> <span class="o">=</span>
-    <span class="nx">browser</span> <span class="o">&amp;&amp;</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
-      <span class="p">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span>
-      <span class="p">:</span> <span class="nx">initialState</span><span class="p">;</span>
-
-  <span class="kd">const</span> <span class="p">{</span><span class="nx">subscribe</span><span class="p">,</span> <span class="kd">set</span><span class="p">,</span> <span class="nx">update</span><span class="p">}</span> <span class="o">=</span> <span class="nx">writable</span><span class="p">(</span><span class="nx">initialValue</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">ini</span> <span class="o">=</span> <span class="nx">initializeApp</span><span class="p">(</span><span class="nx">firebaseKeys</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">getFirestore</span><span class="p">(</span><span class="nx">ini</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="kd">set</span><span class="p">,</span>
-    <span class="nx">update</span><span class="p">,</span>
-    <span class="nx">subscribe</span><span class="p">,</span>
-    <span class="na">getDbRef</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">db</span><span class="p">,</span>
-    <span class="na">getDoc</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">docRef</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
-      <span class="k">return</span> <span class="k">await</span> <span class="nx">getDoc</span><span class="p">(</span><span class="nx">docRef</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="na">setDoc</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">try</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">docRef</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
-        <span class="k">await</span> <span class="nx">setDoc</span><span class="p">(</span><span class="nx">docRef</span><span class="p">,</span> <span class="p">{...</span><span class="nx">payload</span><span class="p">},</span> <span class="p">{</span><span class="na">merge</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">'</span><span class="s1">Document added to Firestore:</span><span class="dl">'</span><span class="p">,</span> <span class="nb">document</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error adding document to Firestore:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="na">useLocalStorage</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">subscribe</span><span class="p">((</span><span class="nx">current</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">browser</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">current</span><span class="p">));</span>
-        <span class="p">}</span>
-      <span class="p">});</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">createDb</span><span class="p">(</span><span class="dl">'</span><span class="s1">app-db</span><span class="dl">'</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-08-31</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">oneMonthAhead</span> <span class="o">=</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">subMonths</span><span class="p">(</span><span class="nx">oneMonthAhead</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>  <span class="c1">// Expected: 31st of August, Reality: 30th of August</span>
 </code></pre>
 
 </div>
 
 
 
-<p>I wrote this wrapper to simplify usage of firebase api across the app.</p>
+<p>We also found that this does not happen on 31st July.<br>
+</p>
 
-<p><a href="https://github.com/nicholasglazer/prayforua.com/blob/main/src/stores/projectStore.js">Project store</a> migth look a bit complex, but the logic is similar to zustand.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-07-31</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">oneMonthAhead</span> <span class="o">=</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">subMonths</span><span class="p">(</span><span class="nx">oneMonthAhead</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>  <span class="c1">// Expected: 31st of July, Reality: 31th of July</span>
+</code></pre>
+
+</div>
+
+
+
+<p>But the bug shows up again January 31st.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-01-31</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">oneMonthAhead</span> <span class="o">=</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">subMonths</span><span class="p">(</span><span class="nx">oneMonthAhead</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>  <span class="c1">// Expected: 31st of January, Reality: 28th of January</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So this bug only happens when we add 1 month to a month that has more days then the next month and then subtract 1 month to go back to the month before. </p>
 
 <h2>
   
   
-  Svelte and cadence integration
+  This is a sneaky one
 </h2>
 
-<p>One aspect I love the most is the ability to integrate smart contract transactions and scripts using FCL, very handy for creating a serverless app.<br>
-For example transfering tokens be like:<br>
+<p>So here is what we know so far:</p>
+
+<ul>
+<li>It would only show up on systems that does this specific sequence of logic.</li>
+<li>The code would have to be ran on one of the few dates that are effected. </li>
+<li>This effect is not documented anywhere on any of the libraries we use.</li>
+</ul>
+
+<p>The worst thing is that this bug is also shows up HR tools, finance tools, salary tools, public government tools all rely on this package but unfortunately it is still better then us making the functions our-self's.</p>
+
+<p>It has been said many times that date-times are among the trickiest aspects of programming, and our current predicament served as a hash reminder.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--S4j-U-Ux--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6xt36eh8300agqnklq7o.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--S4j-U-Ux--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6xt36eh8300agqnklq7o.gif" alt="This is tough GIF" width="800" height="450"></a></p>
+
+<h2>
+  
+  
+  Why a simple actions can lead to bad things
+</h2>
+
+<p>After finding this out, we had a 'Eureka!' moment. <br>
+Our CTO, Dima Grossman, then had the idea to try it it on <a href="//raycast.com">raycast</a>. Interestingly enough it was happening in their product too.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4JU2Jexk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kw6sb2bfvl2nn6qwtfca.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4JU2Jexk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kw6sb2bfvl2nn6qwtfca.png" alt="Showing Raycast also uses date-fns" width="800" height="504"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VAYw-pj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4aso2414apy6vz0svoar.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VAYw-pj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4aso2414apy6vz0svoar.gif" alt="Mind Blown Gif" width="800" height="600"></a></p>
+
+<p>We realized that the issue stemmed from being on the last day of the month, but what exactly was going awry?</p>
+<h2>
+  
+  
+  The Culprit:
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WwEPkCS0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kc12kgdwa1q3hhw8n03l.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WwEPkCS0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kc12kgdwa1q3hhw8n03l.png" alt="date-fns icon" width="176" height="33"></a></p>
+
+<p>This popular utility library for date operations was at the heart of the problem.</p>
+
+<p>Specifically, the <code>addMonths</code> and <code>subMonths</code> functions.</p>
+
+<p>The <code>addMonths</code> function, when adding a month to the last day of any given month, would take you to the last day of the following month. Logical, right?<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">...</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">transferFlow</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">amount</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">cid</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">transactionId</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="nx">initTransactionState</span><span class="p">();</span>
-
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">transactionId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fcl</span><span class="p">.</span><span class="nx">mutate</span><span class="p">({</span>
-      <span class="na">cadence</span><span class="p">:</span> <span class="s2">`
-        import FungibleToken from 0x9a0766d93b6608b7
-        import FlowToken from 0x7e60df042a9c0868
-
-        transaction(amount: UFix64, to: Address) {
-
-           // The Vault resource that holds the tokens that are being transferred
-           let sentVault: @FungibleToken.Vault
-
-           prepare(signer: AuthAccount) {
-
-               // Get a reference to the signer's stored vault
-               let vaultRef = signer.borrow&lt;&amp;FlowToken.Vault&gt;(from: /storage/flowTokenVault)
-            ?? panic("Could not borrow reference to the owner's Vault!")
-
-               // Withdraw tokens from the signer's stored vault
-               self.sentVault &lt;- vaultRef.withdraw(amount: amount)
-           }
-
-           execute {
-
-               // Get a reference to the recipient's Receiver
-               let receiverRef =  getAccount(to)
-                   .getCapability(/public/flowTokenReceiver)
-                   .borrow&lt;&amp;{FungibleToken.Receiver}&gt;()
-                    ?? panic("Could not borrow receiver reference to the recipient's Vault")
-
-               // Deposit the withdrawn tokens in the recipient's receiver
-               receiverRef.deposit(from: &lt;-self.sentVault)
-           }
-        }
-      `</span><span class="p">,</span>
-      <span class="na">args</span><span class="p">:</span> <span class="p">(</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">arg</span><span class="p">(</span><span class="nx">amount</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">UFix64</span><span class="p">),</span> <span class="nx">arg</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">Address</span><span class="p">)],</span>
-      <span class="na">payer</span><span class="p">:</span> <span class="nx">fcl</span><span class="p">.</span><span class="nx">authz</span><span class="p">,</span>
-      <span class="na">proposer</span><span class="p">:</span> <span class="nx">fcl</span><span class="p">.</span><span class="nx">authz</span><span class="p">,</span>
-      <span class="na">authorizations</span><span class="p">:</span> <span class="p">[</span><span class="nx">fcl</span><span class="p">.</span><span class="nx">authz</span><span class="p">],</span>
-      <span class="na">limit</span><span class="p">:</span> <span class="mi">50</span>
-    <span class="p">});</span>
-
-    <span class="c1">// store method</span>
-    <span class="nx">txId</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">transactionId</span><span class="p">);</span>
-
-    <span class="c1">// subscribe to svelte transactions</span>
-    <span class="nx">fcl</span><span class="p">.</span><span class="nx">tx</span><span class="p">(</span><span class="nx">transactionId</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">transactionStatus</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">getAccountBalance</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">cid</span><span class="p">);</span>
-          <span class="nx">auth</span><span class="p">.</span><span class="nx">addFlowTransaction</span><span class="p">({</span>
-            <span class="na">txId</span><span class="p">:</span> <span class="nx">transactionId</span><span class="p">,</span>
-            <span class="na">event</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">amount</span><span class="p">}</span><span class="s2"> Flow transferred to </span><span class="p">${</span><span class="nx">addr</span><span class="p">}</span><span class="s2"> at`</span><span class="p">,</span>
-            <span class="na">status</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span>
-            <span class="na">timestamp</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span>
-          <span class="p">});</span>
-          <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">transactionInProgress</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span> <span class="mi">2000</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">transactionStatus</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="c1">// source: https://github.com/date-fns/date-fns/blob/main/src/addMonths/index.ts</span>
+<span class="kd">const</span> <span class="nx">daysInMonth</span> <span class="o">=</span> <span class="nx">endOfDesiredMonth</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">dayOfMonth</span> <span class="o">&gt;=</span> <span class="nx">daysInMonth</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// If we're already at the end of the month, then this is the correct date</span>
+    <span class="c1">// and we're done.</span>
+    <span class="k">return</span> <span class="nx">endOfDesiredMonth</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Otherwise, we now know that setting the original day-of-month value won't</span>
+    <span class="c1">// cause an overflow, so set the desired day-of-month. Note that we can't</span>
+    <span class="c1">// just set the date of `endOfDesiredMonth` because that object may have had</span>
+    <span class="c1">// its time changed in the unusual case where where a DST transition was on</span>
+    <span class="c1">// the last day of the month and its local time was in the hour skipped or</span>
+    <span class="c1">// repeated next to a DST transition.  So we use `date` instead which is</span>
+    <span class="c1">// guaranteed to still have the original time.</span>
+    <span class="nx">_date</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span>
+      <span class="nx">endOfDesiredMonth</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">(),</span>
+      <span class="nx">endOfDesiredMonth</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">(),</span>
+      <span class="nx">dayOfMonth</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nx">_date</span>
   <span class="p">}</span>
-<span class="p">};</span>
-<span class="p">...</span>
-
 </code></pre>
 
 </div>
 
 
 
-<p>Here <code>fcl.mutate</code> method receiveing an object with key <code>cadence</code> and value will be valid cadence code, and this way you can write transactions and scripts easily from your js files.<br>
-See more examples of flc actions in <a href="https://github.com/nicholasglazer/prayforua.com/blob/main/src/lib/flow/actions.js">github</a>.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Even tho I didn't won, the Flow ecosystem fullstack development was an interesting experience. It seems more concise and simplified to work with, when compared to the Ethereum ecosystem, which is not bad at all but I definitely like cadence more than solidity. However, to be fair, the last time I used the Solidity ecosystem was more than three years ago, so things might have changed, although I doubt it. 🥲</p>
-
-<h2>
-  
-  
-  Outro
-</h2>
-
-<p>I appreciate your engagement thus far. 🙏</p>
-
-<p><strong>Whether you're a startup or an established enterprise, I'm here to help you build and enhance your digital products by offering my services.</strong></p>
-
-<p>You can reach me by email at <a href="mailto:glazer.nicholas@gmail.com">glazer.nicholas@gmail.com</a> or find more contact information at <a href="https://nicholasglazer.com/man/ng">https://nicholasglazer.com/man/ng</a></p>
-
- </details> 
- <hr /> 
-
- #### - [10 Underutilized CSS Properties Every Developer Should Know](https://dev.to/mainulspace/10-underutilized-css-properties-every-developer-should-know-2ia0) 
- <details><summary>Article</summary> <p>Developers now have more options than ever before for customizing websites’ appearance. But in the rush of daily tasks and amidst the clatter of countless lines of code, many of us fall back on what we already know.</p>
-
-<p>We often forget that different CSS properties can take our designs from good to visually appealing. Today, let’s explore 10 of these underutilized CSS properties that can give your designs a new appearance.</p>
-
-<h2>
-  
-  
-  <strong>1.</strong> <code>clip-path</code> — Visual Shapeshifter
-</h2>
-
-<p>The <code>clip-path</code> property shapes web elements like cookies. You can shape an element to match an SVG or to seem unique. It’s that simple and creative!<br>
+<p>But the <code>subMonths</code> function, rather than having its own dedicated logic, simply reused <code>addMonths</code> with a negative number. D.R.Y principles in action, but with an unintended consequence.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">circle</span> <span class="p">{</span>
-    <span class="nx">clip</span><span class="o">-</span><span class="nx">path</span><span class="p">:</span> <span class="nx">circle</span><span class="p">(</span><span class="mi">50</span><span class="o">%</span> <span class="nx">at</span> <span class="mi">50</span><span class="o">%</span> <span class="mi">50</span><span class="o">%</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="c1">// source: https://github.com/date-fns/date-fns/blob/main/src/subMonths/index.ts</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">subMonths</span><span class="o">&lt;</span><span class="nx">DateType</span> <span class="kd">extends</span> <span class="nb">Date</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="nx">date</span><span class="p">:</span> <span class="nx">DateType</span> <span class="o">|</span> <span class="nx">number</span><span class="p">,</span>
+  <span class="nx">amount</span><span class="p">:</span> <span class="nx">number</span>
+<span class="p">):</span> <span class="nx">DateType</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="o">-</span><span class="nx">amount</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 
 </div>
 
 
-<p>With the power of the <code>clip-path</code> property, you have the ability to create cool animations and transitions, all without using heavy images or overly complex scripts.</p>
+
 <h2>
   
   
-  2. object-fit — Perfect Fit Every Time
+  Here is what exactly caused our issue
 </h2>
 
-<p>Think of <code>object-fit</code> as the tailor of the web. It defines how <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> elements resize themselves within their containers.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">img</span> <span class="p">{</span>
-    <span class="nx">object</span><span class="o">-</span><span class="nx">fit</span><span class="p">:</span> <span class="nx">cover</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
+<p>Let's put it this way:</p>
 
-</div>
+<ul>
+<li>For 28th February, add one month and then subtract one month, and you get 28th February. No problems there.</li>
+<li>But, for 31st August, add one month and then subtract one month, and you land on... 30th August. That's one day lost in date limbo!</li>
+</ul>
 
+<p>The core of the issue was the way <code>addMonths</code> determined the end of the desired month.</p>
 
-<p>When resizing media, it maintains the original aspect ratio. No more odd cropping or stretching.</p>
+<p>For days that were not at the end of the month, the logic was sound. </p>
+
+<p>However, for the last day of a month, the function defaulted to the end of the next month instead of adding the correct amount of days.</p>
+
 <h2>
   
   
-  3. backdrop-filter — Background Magician
+  The Simple Fix
 </h2>
 
-<p>With the <code>backdrop-filter</code>, you can add effects like blurs or color changes to the backgrounds of your elements, making them dynamic and vibrant.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">backdrop</span> <span class="p">{</span>
-    <span class="nx">backdrop</span><span class="o">-</span><span class="nx">filter</span><span class="p">:</span> <span class="nx">blur</span><span class="p">(</span><span class="mi">5</span><span class="nx">px</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
+<p>To ensure a consistent approach to date manipulation, we shifted from using <code>addMonths</code> and <code>subMonths</code> to <code>addDays</code> and <code>subDays</code>. </p>
 
-</div>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--y4JuGC4H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2aoc0bfp131dc79q5dor.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--y4JuGC4H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2aoc0bfp131dc79q5dor.gif" alt="Quicly Coding Cat Gif" width="800" height="600"></a></p>
 
+<p>This provided a more granular and precise way to handle date calculations, and importantly, allowed us to sidestep the <code>addMonths</code> pitfall.</p>
 
-<p>Use effects like glossy glass to make your website look better. It’s a great way to make things like pop-ups or sidebars stand out.</p>
 <h2>
   
   
-  4. calc() — Calculator for Style
+  Lessons Learnt
 </h2>
 
-<p>You can do math in your stylesheets with the <code>calc()</code> function. This means you can adjust sizes or positions when needed.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">container</span> <span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="nx">calc</span><span class="p">(</span><span class="mi">100</span><span class="o">%</span> <span class="o">-</span> <span class="mi">20</span><span class="nx">px</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
+<p>This bug served as a strong lesson in a few key areas:</p>
 
-</div>
+<ol>
+<li>
+<strong>Assumptions are Risky:</strong> Never assume that widely-used libraries are infallible. Even the most popular ones have their quirks.</li>
+<li>
+<strong>Tests are Gold:</strong> If not for our rigorous testing suite, this bug might have remained hidden, only to wreak havoc at the most inopportune moment.</li>
+<li>
+<strong>Dates are Tricky:</strong> They've always been, and will continue to be, a challenging aspect of software development. Always handle with care.</li>
+</ol>
 
+<p>While this bug threw a wrench in our pipes, it also reinforced the importance of comprehensive tests and the need to continually question and challenge our assumptions. </p>
 
-<p>At its best, flexibility. Adjust sizes, positions, and margins. This is very beneficial for designs that require responsiveness.</p>
 <h2>
   
   
-  5. contain — Element Isolator
+  Death of this Bug
 </h2>
 
-<p>Some parts of a website can stand on their own thanks to the <code>contain</code> feature. Some parts of a website can stand on their own thanks to the <code>contain</code> feature.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">independent</span> <span class="p">{</span>
-    <span class="nl">contain</span><span class="p">:</span> <span class="nx">content</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
+<p>In a world of code where dates and times form such a crucial part of our applications, bugs like these provide not just a hiccup, but a learning opportunity. The next time you find a weird issue in your application, dig deep. Who knows, you might just uncover the next 'Bug Of The Year'.</p>
 
-</div>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SXE07O9m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ps74vqneyl5oxnqmhxj.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SXE07O9m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ps74vqneyl5oxnqmhxj.gif" alt="Bug Goodbye Gif" width="800" height="533"></a></p>
 
+<p>You can find the PRs and Issues here:</p>
 
-<p>Performance is key. By highlighting non-impacting elements, you improve browsing speed and experience.</p>
-
-<p><iframe class="tweet-embed" id="tweet-1697878041962139711-662" src="https://platform.twitter.com/embed/Tweet.html?id=1697878041962139711">
-</iframe>
-
-  // Detect dark theme
-  var iframe = document.getElementById('tweet-1697878041962139711-662');
-  if (document.body.className.includes('dark-theme')) {
-    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1697878041962139711&amp;theme=dark"
-  }
-
-
-
-</p>
-<h2>
-  
-  
-  6. mix-blend-mode — Digital Painter’s Delight
-</h2>
-
-<p>Think of your content as paint on a canvas. With <code>mix-blend-mode</code>, you can decide how this “paint” works with layers below it.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">blend</span> <span class="p">{</span>
-    <span class="nx">mix</span><span class="o">-</span><span class="nx">blend</span><span class="o">-</span><span class="nx">mode</span><span class="p">:</span> <span class="nx">multiply</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-<p>Get creative by stacking web elements in new ways. This can give your designs a richer, more interactive look.</p>
-<h2>
-  
-  
-  7. writing mode — Typography’s Flexible Friend
-</h2>
-
-<p>Flipping the script, literally. Writing mode changes your text’s direction, making it horizontal or vertical.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">vertical</span><span class="o">-</span><span class="nx">text</span> <span class="p">{</span>
-    <span class="nx">writing</span><span class="o">-</span><span class="nx">mode</span><span class="p">:</span> <span class="nx">vertical</span><span class="o">-</span><span class="nx">rl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-<p>It’s not simply for languages that write vertically. This property gives titles, pull quotes, and sidebar notes a new, eye-catching design look.</p>
-<h2>
-  
-  
-  8. grid-template-areas — Making Layouts Intuitive
-</h2>
-
-<p>With the help of this feature, you can give each <code>grid</code> space a name, giving you a bird’s-eye view of your layout.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">grid</span> <span class="p">{</span>
-    <span class="nx">grid</span><span class="o">-</span><span class="nx">template</span><span class="o">-</span><span class="nx">areas</span><span class="p">:</span> 
-    <span class="dl">"</span><span class="s2">header header</span><span class="dl">"</span>
-    <span class="dl">"</span><span class="s2">sidebar content</span><span class="dl">"</span>
-    <span class="dl">"</span><span class="s2">footer footer</span><span class="dl">"</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-<p>Design becomes more intuitive. It simplifies managing responsive designs and makes your grid structures easy to grasp at a glance.</p>
-<h2>
-  
-  
-  9. will-change — Future Predictor
-</h2>
-
-<p>Give browsers a heads-up about changes you’ll make to an element. It’s like telling a friend to expect a surprise so they’re better prepared.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">animation</span><span class="o">-</span><span class="nx">target</span> <span class="p">{</span>
-    <span class="nx">will</span><span class="o">-</span><span class="nx">change</span><span class="p">:</span> <span class="nx">transform</span><span class="p">,</span> <span class="nx">opacity</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-<p>By hinting at what will change, browsers can prep themselves, ensuring smooth animations and transitions with fewer jerks or delays.</p>
-<h2>
-  
-  
-  10. :is() — Simplifying Selectors
-</h2>
-
-<p>The :is() will-change helps tidy up your styles. It groups similar things together, so you don’t have to repeat yourself.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">:</span><span class="nx">is</span><span class="p">(</span><span class="nx">h1</span><span class="p">,</span> <span class="nx">h2</span><span class="p">,</span> <span class="nx">h3</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">margin</span><span class="o">-</span><span class="nx">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-<p>Efficiency and cleanliness are the future of coding. When you streamline your stylesheets, you make your code tidier and ensure you follow the DRY principle.</p>
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Web designers are like artists, but our canvas is digital. Trying new tools can lead to amazing discoveries. So, dive into these CSS properties; they might inspire your next design.</p>
-
-<p>Are you an early adopter who has used some of these properties? Or Perhaps you’ve discovered other CSS gems on your design journey?</p>
-
-<p>We’d love to hear from you! Share your insights, experiences, and tips in the comments below.</p>
-
-<p>If you found this article useful or have more insights on the topic, feel free to connect with me on <a href="https://twitter.com/mainulspace"><strong>Twitter</strong></a> and <a href="https://www.linkedin.com/in/mainulspace/"><strong>LinkedIn</strong></a>. Let’s continue the conversation there!</p>
-<h2>
-  
-  
-  Read Next...
-</h2>
-
-
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/10-lesser-known-javascript-array-methods-you-mightve-missed-32b3" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>10 Lesser-Known JavaScript Array Methods You Might’ve Missed</h2>
-      <h3>Mainul Hasan ・ Sep 5</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#programming</span>
-        <span class="ltag__link__tag">#coding</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/chatgpt-my-co-developer-for-mundane-tasks-3jjo" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>ChatGPT: My Co-Developer for Mundane Tasks</h2>
-      <h3>Mainul Hasan ・ Sep 8</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#chatgpt</span>
-        <span class="ltag__link__tag">#ai</span>
-        <span class="ltag__link__tag">#productivity</span>
-        <span class="ltag__link__tag">#programmers</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/short-circuit-evaluation-making-your-code-more-concise-2jne" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Short-Circuit Evaluation: Making Your Code More Concise</h2>
-      <h3>Mainul Hasan ・ Sep 7</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#programming</span>
-        <span class="ltag__link__tag">#optimization</span>
-        <span class="ltag__link__tag">#coding</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
+<ul>
+<li><a href="https://github.com/novuhq/novu/pull/4071">Novu PR</a></li>
+<li><a href="https://github.com/date-fns/date-fns/issues/3506">Issue on date-fns</a></li>
+</ul>
 
  </details> 
  <hr /> 
