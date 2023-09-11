@@ -133,6 +133,1647 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Lidando com regressão visual: enfrentando desafios com Django, Selenium e Pillow](https://dev.to/eduardojm/lidando-com-regressao-visual-enfrentando-desafios-com-django-selenium-e-pillow-o8d) 
+ <details><summary>Article</summary> <p>O <strong>django-image-uploader-widget</strong> é um projeto de componente de upload de imagem para o <strong>django</strong>. Por motivos de retrocompatibilidade entre as versões 3.x e 4.x do <strong>django</strong>, foi decidido implementar testes de regressão visual utilizando <strong>Selenium</strong> e <strong>Pillow</strong>. Nesse texto vamos trabalhar esse tema e seus desafios.</p>
+
+<h2>
+  
+  
+  Índice
+</h2>
+
+<ul>
+<li>Introdução</li>
+<li>O suporte do django a suas versões</li>
+<li>O que é um teste de regressão visual?</li>
+<li>O Browser e o Selenium</li>
+<li>Pillow</li>
+<li>Juntando as Peças</li>
+<li>
+Desafios
+
+<ul>
+<li>O problema inicial</li>
+<li>Alteração nas fontes</li>
+<li>Animações, transições e threshold</li>
+<li>Theme Toggle</li>
+</ul>
+
+
+</li>
+<li>Referências</li>
+</ul>
+
+<h2>
+  
+  
+  Introdução <a></a>
+</h2>
+
+<p>O <a href="https://github.com/inventare/django-image-uploader-widget">django-image-uploader-widget</a> é um projeto de componente de upload de imagem para o <strong>django</strong>, criado para melhorar a estética dos <em>uploaders</em> originais. É mantido como open-source desde o início, inclusive recebendo colaborações de outros desenvolvedores.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--yMzmwO7C--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t0pzhx6vm8kwio4xf5i9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--yMzmwO7C--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t0pzhx6vm8kwio4xf5i9.png" alt="Visualização do Componente" width="800" height="160"></a></p>
+
+<p>Com o lançamento das versões 4.x do django, o componente passou a ter diferenças significativas no visual entre algumas de suas versões, conforme registrado na issue <a href="https://github.com/inventare/django-image-uploader-widget/issues/96#issuecomment-1690740705">#96</a>.</p>
+
+<p>A partir dessa diferença visual, em diferentes versões do <strong>django</strong>, entra no radar do projeto a possibilidade de implementação de testes de regressão visual. Nesse artigo vamos explorar os desafios enfrentados durante essa implementação.</p>
+
+<h2>
+  
+  
+  O suporte do django a suas versões <a></a>
+</h2>
+
+<p>Um ponto que vale ser levado em consideração, para justificar a decisão de implementar testes de regressão visual, é o fato de que o <strong>django</strong> mantem, por muito tempo, suporte a diversas de suas versões (<a href="https://www.djangoproject.com/download/">Ver Referência</a>), como na imagem:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xwpjDp3c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/03mlns5lyp7k2s16drdr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xwpjDp3c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/03mlns5lyp7k2s16drdr.png" alt="django supported versions roadmap" width="800" height="369"></a></p>
+
+<h2>
+  
+  
+  O que é um teste de regressão visual? <a></a>
+</h2>
+
+<p>Como o Guilherme Ananias comenta no seu texto (<a href="https://dev.to/woovi/avoiding-ui-regressions-with-jest-49f3">Ver Referência</a>), um teste de regressão visual é um tipo de teste que irá garantir que qualquer alteração no código não irá alterar a forma como o usuário final irá verá esse componente ou página.</p>
+
+<p>Dado o contexto de suporte a múltiplas versões do <strong>django</strong> e, principalmente, do <strong>django-admin</strong>, com alterações de estilização entre as versões, esse tipo de teste pode, também, ser utilizado para garantir retrocompatibilidade entre o componente e as versões do <strong>django</strong>.</p>
+
+<h2>
+  
+  
+  O Browser e o Selenium <a></a>
+</h2>
+
+<p>O código desse componente já possuía uma suite de testes, funcionais, rodando com o <strong>Selenium</strong> e o <strong>Chrome Driver</strong>. A justificativa para o uso de testes funcionais pode ser lida nas <a href="https://inventare.github.io/django-image-uploader-widget/docs/development/tests/">documentações do projeto</a>.</p>
+
+<p>Tendo o browser e, mais especificamente, o <strong>selenium</strong> disponíveis, é possível utilizar o método <code>screenshot(filename)</code> para salvar um <em>screenshot</em> de um elemento da página, conforme <a href="https://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.screenshot">documentação</a>.</p>
+
+<h2>
+  
+  
+  Pillow <a></a>
+</h2>
+
+<p>A utilização dos campos de imagem do <strong>django</strong> só é possível com a biblioteca <strong>Pillow</strong> instalada no projeto. Essa biblioteca traz, com a sua instalação, métodos para lidar com a diferença entre imagens (<a href="https://pillow.readthedocs.io/en/stable/reference/ImageChops.html#PIL.ImageChops.difference">Ver Referência</a>).</p>
+
+<h2>
+  
+  
+  Juntando as Peças <a></a>
+</h2>
+
+<p>Ao utilizar o <strong>selenium</strong> e a lib <strong>Pillow</strong> é possível, de forma bem simples, tirar <em>screenshot</em> dos elementos e comparar com outro <em>screenshot</em> já armazenado (<a href="https://github.com/inventare/django-image-uploader-widget/blob/main/utils/tests/snapshot.py#L188">ver implementação</a>).</p>
+
+<h2>
+  
+  
+  Desafios <a></a>
+</h2>
+
+<p>Foram enfrentados diversos desafios durante a implementação dos testes de regressão visual. Alguns desses desafios foram causados pela natureza das escolhas para a implementação desses testes e outros pela natureza do <strong>django</strong> e <strong>django-admin</strong>.</p>
+
+<h3>
+  
+  
+  O problema inicial <a></a>
+</h3>
+
+<p>Toda a implementação dos testes de regressão visual nasceram devido a um problema entre versões do django, vide <a href="https://github.com/inventare/django-image-uploader-widget/issues/96#issuecomment-1690740705">#96</a>, onde, devido a alteração de estilos do <strong>django-admin</strong>, adicionando <code>flexbox</code>, causou a quebra da estilização.</p>
+
+<p>Assim, é necessário dizer que um dos primeiros desafios é da natureza do <strong>django</strong> e, principalmente, do suporte a múltiplas versões do mesmo.</p>
+
+<p>A solução, pra esse caso, em específico, foi simples e corriqueira fazendo o tratamento tanto pro <strong>css</strong> das versões 3.x do <strong>django-admin</strong> quanto para as novas, que utilizam <code>flexbox</code>.</p>
+
+<h3>
+  
+  
+  Alteração nas fontes <a></a>
+</h3>
+
+<p>Complementando o problema inicial, logo nos primeiros testes, foi identificado uma alteração no padrão visual do componente (ou <em>widget</em>), em uma das versões mais recentes do <strong>django</strong>. As fontes do <em>widget</em> estavam diferentes. Ao buscar pelas <em>releases notes</em> do <strong>django</strong>, é observado a seguinte descrição (<a href="https://docs.djangoproject.com/en/4.2/releases/4.2/">referência</a>):</p>
+
+<blockquote>
+<p>The admin’s font stack now prefers system UI fonts and no longer requires downloading fonts. Additionally, CSS variables are available to more easily override the default font families.</p>
+</blockquote>
+
+<p>Uma solução, não necessariamente a melhor, porém a mais simples foi a de adiantar essa alteração das fontes, para o componente de upload de imagens, independente da versão do <strong>django</strong>.</p>
+
+<h3>
+  
+  
+  Animações, transições e threshold <a></a>
+</h3>
+
+<p>Da natureza da comparação das imagens, junto ao fato de ser uma aplicação <em>web</em> executando, tem-se o problema de ter alguns pixeis de diferença em algumas situações, provavelmente causado por animações e transições.</p>
+
+<p>Para aguardar o fim das transições e animações, o método <code>time.sleep()</code> do Python foi utilizado. Por conta da utilização do <code>time.sleep()</code> é, natural, que o tempo de execução dos testes aumente significativamente.</p>
+
+<blockquote>
+<p>Nesse ponto, é sempre importante deixar pontuado que, não existe certo ou errado, ou solução pra todos os problemas, ou, ainda, solução sem contrapontos. Toda técnica, ou escolha, geralmente, tem suas vantagens e desvantagens. Cabe ponderar se as vantagens superam as desvantagens no contexto ao qual se quer utilizar a ferramenta.</p>
+</blockquote>
+
+<p>Por fim, após a implementação do <code>time.sleep()</code> raras se tornaram as vezes que as imagens divergiam em locais que não deveriam, porém, por garantia, ainda foi implementado um sistema de comparação com <em>threshold</em> (limiar) para esses casos.</p>
+
+<h3>
+  
+  
+  Theme Toggle <a></a>
+</h3>
+
+<p>Ainda nas <em>release notes</em> da versão <strong>4.2</strong> do <strong>django</strong> é possível verificar a adição de um <em>theme toggle</em> no admin. Quando o componente foi, inicialmente, desenvolvido, as versões 4.x do <em>django</em> ainda não tinham assumido o status de <strong>LTS</strong>. Além disso, por um tempo, apenas as manutenções básicas foram dadas ao projeto. Dados esses contextos, o componente não tinha suporte a mudança de tema pela interface de usuário.</p>
+
+<p>Esse problema só foi percebido, de fato, com a implementação dos testes de regressão visual e, para a solução, foi aberta uma nova issue no GitHub (<a href="https://github.com/inventare/django-image-uploader-widget/issues/103">#103</a>).</p>
+
+<p>Esse foi o único caso em que foi implementada uma condicional da versão do <strong>django</strong> em que os testes estavam sendo executados:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">django</span>
+<span class="c1"># ...
+</span>
+<span class="k">class</span> <span class="nc">InlineEditorUIRegressionTestCase</span><span class="p">(</span><span class="n">IUWTestCase</span><span class="p">):</span>
+    <span class="c1"># ...
+</span>    <span class="k">def</span> <span class="nf">test_ui_initialized_toggle_dark_theme_inverted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">dark_mode</span><span class="p">()</span>
+
+        <span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">django</span><span class="p">.</span><span class="n">VERSION</span>
+        <span class="k">if</span> <span class="n">major</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">minor</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+
+<h2>
+  
+  
+  Referências <a></a>
+</h2>
+
+<p>As referências citadas no texto, listadas:</p>
+
+<ul>
+<li><a href="https://github.com/inventare/django-image-uploader-widget">django-image-uploader-widget</a></li>
+<li><a href="https://github.com/inventare/django-image-uploader-widget/issues/96#issuecomment-1690740705">django-image-uploader-widget#96</a></li>
+<li><a href="https://www.djangoproject.com/download/">Download - Django</a></li>
+<li><a href="https://dev.to/woovi/avoiding-ui-regressions-with-jest-49f3">Avoiding UI Regressions With Jest</a></li>
+<li><a href="https://inventare.github.io/django-image-uploader-widget/docs/development/tests/">Tests - django-image-uploader-widget docs</a></li>
+<li><a href="https://selenium-python.readthedocs.io/api.html#selenium.webdriver.remote.webelement.WebElement.screenshot">Selenium Docs</a></li>
+<li><a href="https://pillow.readthedocs.io/en/stable/reference/ImageChops.html#PIL.ImageChops.difference">Pillow Docs</a></li>
+<li><a href="https://github.com/inventare/django-image-uploader-widget/blob/main/utils/tests/snapshot.py#L188">django-image-uploader-widget/snapshot.py</a></li>
+<li><a href="https://docs.djangoproject.com/en/4.2/releases/4.2/">Django - Django 4.2 Release</a></li>
+<li><a href="https://github.com/inventare/django-image-uploader-widget/issues/103">django-image-uploader-widget#103</a></li>
+</ul>
+
+
+
+
+<p>Foto de <a href="https://unsplash.com/pt-br/@buudkaanaa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Budka Damdinsuren</a> na <a href="https://unsplash.com/pt-br/fotografias/xihqiK6rD9k?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Dark Mode with Next.js, TypeScript, Styled Components and Redux Toolkit🔯🔮](https://dev.to/koyablue/dark-mode-with-nextjs-typescript-styled-components-and-redux-toolkit-3863) 
+ <details><summary>Article</summary> <p>Hi 👋<br>
+Thank you for taking time to read this article!</p>
+
+<p>One of the most common features we implement is dark mode. However, after implementing dark mode once in a project, it's easy to forget how it was implemented because there's no opportunity to implement it for a while. <br>
+So I decided to put together an article on the method I use most often so that everyone can check it anytime!</p>
+<h2>
+  
+  
+  Table of Contents
+</h2>
+
+<p> 1. Tech stack<br>
+ 2. Step-by-step implementation</p>
+
+<p>       2.1. Configs, constants and types for color themes</p>
+
+<p>       2.2. Set up Redux Toolkit</p>
+
+<p>       2.3. Utility functions to handle color theme cookie</p>
+
+<p>       2.4. Implement useColorTheme custom hook</p>
+
+<p>       2.5. Configure RTK and Styled Components in _app.tsx<br>
+ 3. Let's implement dark mode toggle switch</p>
+<h2>
+  
+  
+  Tech stack
+</h2>
+
+<p>The language, libraries and frameworks used for the implementation are as follows:</p>
+
+<ul>
+<li>Next.js</li>
+<li>TypeScript</li>
+<li>Styled Components</li>
+<li>Redux Toolkit</li>
+<li>cookies-next</li>
+</ul>
+<h2>
+  
+  
+  Step-by-step implementation
+</h2>
+<h3>
+  
+  
+  Configs, constants and types for color themes
+</h3>
+
+<p>First, let's define the constants and types needed to manage the color theme.<br>
+in <code>const/colorTheme.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// const/colorTheme.ts</span>
+
+<span class="c1">// Types of available color themes</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">colorThemeNames</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">'</span><span class="s1">light</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">dark</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">]</span> <span class="k">as</span> <span class="kd">const</span><span class="p">;</span>
+
+<span class="c1">// Can't use type ColorThemeName because of circular dependency</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">defaultColorThemeName</span><span class="p">:</span> <span class="k">typeof</span> <span class="nx">colorThemeNames</span><span class="p">[</span><span class="kr">number</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">light</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Cookie key for color theme</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">colorThemeCookieName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">myAppColorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>and</p>
+
+<p>in <code>types/colorTheme.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// types/colorTheme.ts</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">colorThemeNames</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../const/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">ColorThemeStyle</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">colors</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">text</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">background</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">componentBackground</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">border</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">info</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">infoBg</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">danger</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">dangerBg</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">ColorThemeName</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">colorThemeNames</span><span class="p">[</span><span class="kr">number</span><span class="p">];</span>
+
+<span class="cm">/**
+ * Type guard for ColorThemeName
+ *
+ * @param {unknown} val
+ * @return {*}  {val is ColorThemeName}
+ */</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">isColorThemeName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">):</span> <span class="nx">val</span> <span class="k">is</span> <span class="nx">ColorThemeName</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="nx">colorThemeNames</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">val</span> <span class="k">as</span> <span class="nx">ColorThemeName</span><span class="p">)</span>
+<span class="p">);</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Also we need to modify <code>DefaultTheme</code> type in <code>styled.d.ts</code> like this.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// styled.d.ts</span>
+
+<span class="k">import</span> <span class="dl">'</span><span class="s1">styled-components</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ColorThemeStyle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./types/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kr">declare</span> <span class="kr">module</span> <span class="dl">'</span><span class="s1">styled-components</span><span class="dl">'</span> <span class="p">{</span>
+  <span class="k">export</span> <span class="kr">interface</span> <span class="nx">DefaultTheme</span> <span class="kd">extends</span> <span class="nx">ColorThemeStyle</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>It's convenient to create variables for the colors we will use.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// const/styles/colors.tsx</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">dryadBark</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#37352f</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// light theme string color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">white</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#ffffff</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// light theme component color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">errigalWhite</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#f6f6f9</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// light theme background color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">gainsboro</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#d9d9d9</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// light theme border color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">coralRed</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#f93e3d</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// common danger color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">translucentUnicorn</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#fcecee</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">softPetals</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#e9f6ef</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">vegetation</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#48cd90</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// common info color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">stonewallGrey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#c3c2c1</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">astrograniteDebris</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#3b414a</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// dark theme border color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">aswadBlack</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#141519</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// dark theme background color</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">washedBlack</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">#202528</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// dark theme component background color</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>(I used <a href="https://github.com/meodai/color-names">this</a> library to name these variables.)</p>
+
+<p>Then declare color theme objects, default theme.<br>
+<code>config/styles/colorTheme.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ColorThemeStyle</span><span class="p">,</span> <span class="nx">ColorThemeName</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../types/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// colors</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">dryadBark</span><span class="p">,</span>
+  <span class="nx">white</span><span class="p">,</span>
+  <span class="nx">errigalWhite</span><span class="p">,</span>
+  <span class="nx">gainsboro</span><span class="p">,</span>
+  <span class="nx">coralRed</span><span class="p">,</span>
+  <span class="nx">vegetation</span><span class="p">,</span>
+  <span class="nx">astrograniteDebris</span><span class="p">,</span>
+  <span class="nx">aswadBlack</span><span class="p">,</span>
+  <span class="nx">washedBlack</span><span class="p">,</span>
+  <span class="nx">softPetals</span><span class="p">,</span>
+  <span class="nx">translucentUnicorn</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../const/styles/colors</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">defaultColorThemeName</span><span class="p">:</span> <span class="nx">ColorThemeName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">light</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">lightTheme</span><span class="p">:</span> <span class="nx">ColorThemeStyle</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">colors</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">text</span><span class="p">:</span> <span class="nx">dryadBark</span><span class="p">,</span>
+    <span class="na">background</span><span class="p">:</span> <span class="nx">errigalWhite</span><span class="p">,</span>
+    <span class="na">componentBackground</span><span class="p">:</span> <span class="nx">white</span><span class="p">,</span>
+    <span class="na">border</span><span class="p">:</span> <span class="nx">gainsboro</span><span class="p">,</span>
+    <span class="na">info</span><span class="p">:</span> <span class="nx">vegetation</span><span class="p">,</span>
+    <span class="na">infoBg</span><span class="p">:</span> <span class="nx">softPetals</span><span class="p">,</span>
+    <span class="na">danger</span><span class="p">:</span> <span class="nx">coralRed</span><span class="p">,</span>
+    <span class="na">dangerBg</span><span class="p">:</span> <span class="nx">translucentUnicorn</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">darkTheme</span><span class="p">:</span> <span class="nx">ColorThemeStyle</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">colors</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">text</span><span class="p">:</span> <span class="nx">white</span><span class="p">,</span>
+    <span class="na">background</span><span class="p">:</span> <span class="nx">aswadBlack</span><span class="p">,</span>
+    <span class="na">componentBackground</span><span class="p">:</span> <span class="nx">washedBlack</span><span class="p">,</span>
+    <span class="na">border</span><span class="p">:</span> <span class="nx">astrograniteDebris</span><span class="p">,</span>
+    <span class="na">info</span><span class="p">:</span> <span class="nx">vegetation</span><span class="p">,</span>
+    <span class="na">infoBg</span><span class="p">:</span> <span class="nx">softPetals</span><span class="p">,</span>
+    <span class="na">danger</span><span class="p">:</span> <span class="nx">coralRed</span><span class="p">,</span>
+    <span class="na">dangerBg</span><span class="p">:</span> <span class="nx">translucentUnicorn</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">themeNameStyleMap</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">ColorThemeName</span><span class="p">]:</span> <span class="nx">ColorThemeStyle</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">light</span><span class="p">:</span> <span class="nx">lightTheme</span><span class="p">,</span>
+  <span class="na">dark</span><span class="p">:</span> <span class="nx">darkTheme</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">defaultColorThemeStyle</span> <span class="o">=</span> <span class="nx">themeNameStyleMap</span><span class="p">[</span><span class="nx">defaultColorThemeName</span><span class="p">];</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Set up Redux Toolkit
+</h3>
+
+<p>The state for dark mode must be managed globally. So let's use Redux Toolkit to manage global state.<br>
+We are going to create <code>colorThemeSlice</code>, typed <code>useDispatch</code>, typed <code>useSelector</code> and configure <code>store</code>.</p>
+
+<p><code>stores/slices/colorThemeSlice.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createSlice</span><span class="p">,</span> <span class="nx">PayloadAction</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// "type" is needed. If no "type", circular dependency error arise</span>
+<span class="c1">// https://stackoverflow.com/questions/63923025/how-to-fix-circular-dependencies-of-slices-with-the-rootstate</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">RootState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../store</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ColorThemeName</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../types/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">defaultColorThemeName</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../const/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">ColorThemeState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">theme</span><span class="p">:</span> <span class="nx">ColorThemeName</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">initialState</span><span class="p">:</span> <span class="nx">ColorThemeState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">theme</span><span class="p">:</span> <span class="nx">defaultColorThemeName</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">colorThemeSlice</span> <span class="o">=</span> <span class="nx">createSlice</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">colorTheme</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">initialState</span><span class="p">,</span>
+  <span class="na">reducers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">updateColorTheme</span><span class="p">:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="na">action</span><span class="p">:</span> <span class="nx">PayloadAction</span><span class="o">&lt;</span><span class="nx">ColorThemeName</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">state</span><span class="p">.</span><span class="nx">theme</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="c1">// selectors</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">selectColorTheme</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">:</span> <span class="nx">RootState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">colorTheme</span><span class="p">.</span><span class="nx">theme</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">colorThemeSlice</span><span class="p">.</span><span class="nx">reducer</span><span class="p">;</span>
+
+<span class="c1">// actions</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="p">{</span>
+  <span class="nx">updateColorTheme</span><span class="p">,</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">colorThemeSlice</span><span class="p">.</span><span class="nx">actions</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p><code>stores/store.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// https://redux-toolkit.js.org/tutorials/typescript</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">configureStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// reducers</span>
+<span class="k">import</span> <span class="nx">colorThemeReducer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./slices/colorThemeSlice</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">({</span>
+  <span class="na">reducer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">colorTheme</span><span class="p">:</span> <span class="nx">colorThemeReducer</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">RootState</span> <span class="o">=</span> <span class="nx">ReturnType</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">AppDispatch</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p><code>stores/hooks.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// https://redux-toolkit.js.org/tutorials/typescript</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useDispatch</span><span class="p">,</span> <span class="nx">useSelector</span><span class="p">,</span> <span class="nx">TypedUseSelectorHook</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RootState</span><span class="p">,</span> <span class="nx">AppDispatch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">useAppDispatch</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">AppDispatch</span> <span class="o">=</span> <span class="nx">useDispatch</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">useAppSelector</span><span class="p">:</span> <span class="nx">TypedUseSelectorHook</span><span class="o">&lt;</span><span class="nx">RootState</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">useSelector</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Utility functions to handle color theme cookie
+</h3>
+
+<p>Dark mode must persists even when the page is refreshed. To achieve this, we are going to use cookie.</p>
+
+<p><code>utils/cookie/colorTheme.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">getCookie</span><span class="p">,</span> <span class="nx">setCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">cookies-next</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OptionsType</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">cookies-next/lib/types</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">colorThemeCookieName</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../const/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ColorThemeName</span><span class="p">,</span> <span class="nx">isColorThemeName</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../types/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="cm">/**
+ * Set color theme cookie to persist color theme config
+ *
+ * @param {ColorThemeName} value
+ * @param {OptionsType} [options]
+ */</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">setColorThemeCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="nx">ColorThemeName</span><span class="p">,</span> <span class="nx">options</span><span class="p">?:</span> <span class="nx">OptionsType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setCookie</span><span class="p">(</span><span class="nx">colorThemeCookieName</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ *
+ *
+ * @param {OptionsType} [options]
+ * @return {string}  {string}
+ */</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getColorThemeCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">options</span><span class="p">?:</span> <span class="nx">OptionsType</span><span class="p">):</span> <span class="kr">string</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">colorThemeCookie</span> <span class="o">=</span> <span class="nx">getCookie</span><span class="p">(</span><span class="nx">colorThemeCookieName</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">isColorThemeName</span><span class="p">(</span><span class="nx">colorThemeCookie</span><span class="p">)</span> <span class="p">?</span> <span class="nx">colorThemeCookie</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
+<span class="p">};</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Implement useColorTheme custom hook
+</h3>
+
+<p>In the implementation, we'll need to switch color themes or retrieve the current color theme. Let's put those logics into a custom hook so that they can be called in every components.</p>
+
+<p><code>hooks/useColorTheme.ts</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">defaultColorThemeName</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../const/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">getColorThemeCookie</span><span class="p">,</span> <span class="nx">setColorThemeCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../utils/cookie/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useAppDispatch</span><span class="p">,</span> <span class="nx">useAppSelector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../stores/hooks</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">selectColorTheme</span><span class="p">,</span> <span class="nx">updateColorTheme</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../stores/slices/colorThemeSlice</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">themeNameStyleMap</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../config/styles/colorThemes</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ColorThemeName</span><span class="p">,</span> <span class="nx">ColorThemeStyle</span><span class="p">,</span> <span class="nx">isColorThemeName</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../types/colorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="cm">/**
+ * Custom hook for handling color themes
+ *
+ */</span>
+<span class="kd">const</span> <span class="nx">useColorTheme</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">useAppDispatch</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">currentColorTheme</span> <span class="o">=</span> <span class="nx">useAppSelector</span><span class="p">(</span><span class="nx">selectColorTheme</span><span class="p">);</span>
+
+  <span class="cm">/**
+   * Set color theme cookie and state
+   *
+   * @param {ColorThemeName} colorThemeName
+   */</span>
+  <span class="kd">const</span> <span class="nx">setColorTheme</span> <span class="o">=</span> <span class="p">(</span><span class="na">colorThemeName</span><span class="p">:</span> <span class="nx">ColorThemeName</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setColorThemeCookie</span><span class="p">(</span><span class="nx">colorThemeName</span><span class="p">);</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">updateColorTheme</span><span class="p">(</span><span class="nx">colorThemeName</span><span class="p">));</span>
+  <span class="p">};</span>
+
+  <span class="cm">/**
+   * Initialize color theme cookie and state
+   *
+   * @return {void}
+   */</span>
+  <span class="kd">const</span> <span class="nx">initColorTheme</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">currentColorThemeCookie</span> <span class="o">=</span> <span class="nx">getColorThemeCookie</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">currentColorThemeCookie</span> <span class="o">||</span> <span class="o">!</span><span class="nx">isColorThemeName</span><span class="p">(</span><span class="nx">currentColorThemeCookie</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">setColorTheme</span><span class="p">(</span><span class="nx">defaultColorThemeName</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">updateColorTheme</span><span class="p">(</span><span class="nx">currentColorThemeCookie</span><span class="p">));</span>
+  <span class="p">};</span>
+
+  <span class="cm">/**
+   *
+   *
+   * @return {*} ColorTheme
+   */</span>
+  <span class="kd">const</span> <span class="nx">getCurrentColorThemeState</span> <span class="o">=</span> <span class="p">():</span> <span class="nx">ColorTheme</span> <span class="o">=&gt;</span> <span class="p">(</span>
+    <span class="nx">currentColorThemeState</span>
+  <span class="p">);</span>
+
+  <span class="cm">/**
+   *
+   *
+   * @return {*}  {ColorThemeStyle}
+   */</span>
+  <span class="kd">const</span> <span class="nx">getCurrentColorThemeStyle</span> <span class="o">=</span> <span class="p">():</span> <span class="nx">ColorThemeStyle</span> <span class="o">=&gt;</span> <span class="p">(</span>
+    <span class="nx">themeNameStyleMap</span><span class="p">[</span><span class="nx">currentColorTheme</span><span class="p">]</span>
+  <span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">setColorTheme</span><span class="p">,</span>
+    <span class="nx">initColorTheme</span><span class="p">,</span>
+    <span class="nx">getCurrentColorThemeState</span><span class="p">,</span>
+    <span class="nx">getCurrentColorThemeStyle</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">useColorTheme</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Configure RTK and Styled Components in _app.tsx
+</h3>
+
+<p>We've implemented so many functions and logic up to this point, but as it stands, we can't use them yet.<br>
+Let's edit _app.tsx to make sure Redux Toolkit and Styled Components are available for use.</p>
+
+<p><code>pages/_app.tsx</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">ReactElement</span><span class="p">,</span> <span class="nx">ReactNode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Next</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NextPage</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">AppProps</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/app</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Libraries</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Provider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ThemeProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">styled-components</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../stores/store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="nx">GlobalStyle</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../components/globalstyles</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="nx">useColorTheme</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../hooks/useColorTheme</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Layout configuration doc</span>
+<span class="c1">// https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts#with-typescript</span>
+
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">NextPageWithLayout</span><span class="o">&lt;</span><span class="nx">P</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">IP</span> <span class="o">=</span> <span class="nx">P</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">NextPage</span><span class="o">&lt;</span><span class="nx">P</span><span class="p">,</span> <span class="nx">IP</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="p">{</span>
+  <span class="nx">getLayout</span><span class="p">?:</span> <span class="p">(</span><span class="na">page</span><span class="p">:</span> <span class="nx">ReactElement</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">AppPropsWithLayout</span> <span class="o">=</span> <span class="nx">AppProps</span> <span class="o">&amp;</span> <span class="p">{</span>
+  <span class="na">Component</span><span class="p">:</span> <span class="nx">NextPageWithLayout</span>
+  <span class="na">router</span><span class="p">:</span> <span class="nx">Router</span> <span class="c1">// Error if this property doesn't exist</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ *
+ *
+ * @param {AppPropsWithLayout} { Component, pageProps }
+ * @return {*} JSX.Element
+ */</span>
+<span class="kd">const</span> <span class="nx">WithThemeProviderComponent</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">pageProps</span> <span class="p">}:</span> <span class="nx">AppPropsWithLayout</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">initColorTheme</span><span class="p">,</span> <span class="nx">getCurrentColorThemeStyle</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useColorTheme</span><span class="p">();</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">initColorTheme</span><span class="p">();</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ThemeProvider</span> <span class="nx">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">getCurrentColorThemeStyle</span><span class="p">()}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">GlobalStyle</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{...</span><span class="nx">pageProps</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/ThemeProvider</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">pageProps</span><span class="p">,</span> <span class="nx">router</span> <span class="p">}:</span> <span class="nx">AppPropsWithLayout</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">getLayout</span> <span class="o">=</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">getLayout</span> <span class="o">??</span> <span class="p">((</span><span class="nx">page</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">page</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">getLayout</span><span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">WithThemeProviderComponent</span>
+          <span class="nx">Component</span><span class="o">=</span><span class="p">{</span><span class="nx">Component</span><span class="p">}</span>
+          <span class="nx">pageProps</span><span class="o">=</span><span class="p">{</span><span class="nx">pageProps</span><span class="p">}</span>
+          <span class="nx">router</span><span class="o">=</span><span class="p">{</span><span class="nx">router</span><span class="p">}</span>
+        <span class="sr">/&gt;</span><span class="err">,
+</span>      <span class="p">)}</span>
+    <span class="o">&lt;</span><span class="sr">/Provider</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Let's implement dark mode toggle switch
+</h2>
+
+<p>With the implementation up to this point, we've completed the necessary preparations for switching the color theme.<br>
+Now, let's use <code>useColorTheme</code> to implement <code>DarkModeToggleSwitch</code> component (we'll skip detailed styling for now).</p>
+
+<p><code>globalstyles.tsx</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="p">...</span>
+  <span class="nx">body</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="nx">$</span><span class="p">{({</span> <span class="nx">theme</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">colors</span><span class="p">.</span><span class="nx">background</span><span class="p">};</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nx">$</span><span class="p">{({</span> <span class="nx">theme</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">colors</span><span class="p">.</span><span class="nx">text</span><span class="p">};</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+
+<span class="p">...</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>components/DarkModeToggleSwitch.tsx</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useColorTheme</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../hooks/useColorTheme</span><span class="dl">'</span>
+
+
+<span class="cm">/**
+ * Dark mode &lt;-&gt; light mode toggle switch
+ * Update cookie value and global state
+ *
+ * @return {*} JSX.Element
+ */</span>
+<span class="kd">const</span> <span class="nx">DarkModeToggleSwitch</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">setColorTheme</span><span class="p">,</span> <span class="nx">getCurrentColorThemeState</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useColorTheme</span><span class="p">()</span>
+
+  <span class="kd">const</span> <span class="nx">currentColorTheme</span> <span class="o">=</span> <span class="nx">getCurrentColorThemeState</span><span class="p">()</span>
+
+  <span class="kd">const</span> <span class="nx">isDark</span> <span class="o">=</span> <span class="nx">currentColorTheme</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">dark</span><span class="dl">'</span>
+
+  <span class="kd">const</span> <span class="nx">toggleDarkTheme</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">isDark</span> <span class="p">?</span> <span class="nx">setColorTheme</span><span class="p">(</span><span class="dl">'</span><span class="s1">light</span><span class="dl">'</span><span class="p">)</span> <span class="p">:</span> <span class="nx">setColorTheme</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="p">...</span>
+      <span class="o">&lt;</span><span class="nx">input</span> <span class="kd">type</span><span class="o">=</span><span class="dl">'</span><span class="s1">checkbox</span><span class="dl">'</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">isDark</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleDarkTheme</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="p">...</span>
+    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">DarkModeToggleSwitch</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+
+<p>That's all.<br>
+How was it? I hope this article was helpful for you.</p>
+
+<p>There are many ways to implement color theme switching besides this article. If you have any recommended methods or articles, please share them in the comments and let me know!</p>
+
+<p>And if you found this article helpful, please share it on social media!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [DynamoDB Streams EventBridge Pipes Multiple Items](https://dev.to/aws-builders/dynamodb-streams-eventbridge-pipes-multiple-items-4657) 
+ <details><summary>Article</summary> <p>I've written a few articles lately on EventBridge Pipes and specifically around using them with DynamoDB Streams. I've written about <a href="https://www.binaryheap.com/dynamodb-eventbridge-pipes-enrichment/">Enrichment</a>. And I've written about just straight <a href="https://www.binaryheap.com/streaming-aws-dynamodb-to-a-lambda-via-eventbridge-pipes/">Streaming</a>. I believe that using EventBridge Pipes plays a nice part in a Serverless, Event-Driven approach. So in this article, I want to explore Streaming DynamoDB to EventBridge Pipes with multiple items in one table.</p>
+
+<p>Several of the comments I received about <a href="https://www.binaryheap.com/dynamodb-eventbridge-pipes-enrichment/">Streaming DynamoDB to EventBridge Pipes</a> were around, "What if I have multiple item collections in the same table?". I intend to show a pattern for handling that exact problem in this article. At the bottom, you'll find a working code sample that you can deploy and build on top of. I've used this exact setup in production, so rest assured that this is a great base to start from.</p>
+
+<h2>
+  
+  
+  Architecture
+</h2>
+
+<p>Let's start with defining the setup that I'll be walking through.</p>
+
+<ul>
+<li>  DynamoDB Table with 2 Item Types
+
+<ul>
+<li>  Patient</li>
+<li>  Address</li>
+</ul>
+
+
+</li>
+<li>  DynamoDB Stream connected to an EventBridge Pipe</li>
+<li>  EB Pipe will
+
+<ul>
+<li>  Filter</li>
+<li>  Enrich</li>
+<li>  Put into the EventBridge Default Bus</li>
+</ul>
+
+
+</li>
+<li>  EB Rules carved out for
+
+<ul>
+<li>  Lambda Handler for Patient</li>
+<li>  Lambda Handler for Address</li>
+</ul>
+
+
+</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TwVlHZ52--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/Multi-Arch.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TwVlHZ52--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/Multi-Arch.png" alt="EventBridge Pipe Stream" width="800" height="256"></a></p>
+
+<h2>
+  
+  
+  Step Through the Code
+</h2>
+
+<h3>
+  
+  
+  DynamoDB Table
+</h3>
+
+<p>The DynamoDB Table I'm working from is going to contain multiple item types. This can be described as Single-Table design, Multi-Item Collection Design or whatever you like. The point is, that DynamoDB is great at storing things that are related in the same table. I'm defining an <code>id</code> field as the Partition Key and then <code>sk</code> as the Range Key.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">this</span><span class="p">.</span><span class="nx">_table</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Table</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">billingMode</span><span class="p">:</span> <span class="nx">BillingMode</span><span class="p">.</span><span class="nx">PAY_PER_REQUEST</span><span class="p">,</span>
+    <span class="na">removalPolicy</span><span class="p">:</span> <span class="nx">RemovalPolicy</span><span class="p">.</span><span class="nx">DESTROY</span><span class="p">,</span>
+    <span class="na">partitionKey</span><span class="p">:</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nx">AttributeType</span><span class="p">.</span><span class="nx">STRING</span> <span class="p">},</span>
+    <span class="na">sortKey</span><span class="p">:</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sk</span><span class="dl">"</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nx">AttributeType</span><span class="p">.</span><span class="nx">STRING</span> <span class="p">},</span>
+    <span class="na">tableName</span><span class="p">:</span> <span class="s2">`Patients`</span><span class="p">,</span>
+    <span class="na">encryption</span><span class="p">:</span> <span class="nx">TableEncryption</span><span class="p">.</span><span class="nx">CUSTOMER_MANAGED</span><span class="p">,</span>
+    <span class="na">encryptionKey</span><span class="p">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">key</span><span class="p">,</span>
+    <span class="na">stream</span><span class="p">:</span> <span class="nx">StreamViewType</span><span class="p">.</span><span class="nx">NEW_AND_OLD_IMAGES</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Notice as well that I'm defining a <code>stream</code> that will propagate changes with New and Old images attached to the change record. This will be useful as I get into the Pipe definition.</p>
+
+<p>A Patient will look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PATIENT#1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDRESS#1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Some City, Some State USAA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"addressId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"patientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>And an Address like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PATIENT#1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDRESS#1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Some City, Some State USAA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"addressId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"patientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5qkpO-QE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/db_records.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5qkpO-QE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/db_records.png" alt="Table Records" width="800" height="181"></a></p>
+
+<h3>
+  
+  
+  EventBridge Pipe
+</h3>
+
+<p>When Streaming DynamoDB to EventBridge Pipes, the Pipe is the central player in the design. In this scenario, I'm ignoring Deletes and only dealing with DynamoDB Modify and Insert change types.</p>
+
+<h4>
+  
+  
+  The Source
+</h4>
+
+<p>I want to first address the fact that your source component needs to have the proper IAM Permissions attached to read from the stream and decrypt the data.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">new</span> <span class="nx">PolicyDocument</span><span class="p">({</span>
+    <span class="na">statements</span><span class="p">:</span> <span class="p">[</span>
+        <span class="k">new</span> <span class="nx">PolicyStatement</span><span class="p">({</span>
+            <span class="na">actions</span><span class="p">:</span> <span class="p">[</span>
+                <span class="dl">"</span><span class="s2">dynamodb:DescribeStream</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">dynamodb:GetRecords</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">dynamodb:GetShardIterator</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">dynamodb:ListStreams</span><span class="dl">"</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="na">effect</span><span class="p">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">ALLOW</span><span class="p">,</span>
+            <span class="na">resources</span><span class="p">:</span> <span class="p">[</span><span class="nx">table</span><span class="p">.</span><span class="nx">tableStreamArn</span><span class="o">!</span><span class="p">],</span>
+        <span class="p">}),</span>
+        <span class="k">new</span> <span class="nx">PolicyStatement</span><span class="p">({</span>
+            <span class="na">actions</span><span class="p">:</span> <span class="p">[</span>
+                <span class="dl">"</span><span class="s2">kms:Decrypt</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">kms:DescribeKey</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">kms:Encrypt</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">kms:GenerateDataKey*</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">kms:ReEncrypt*</span><span class="dl">"</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="na">resources</span><span class="p">:</span> <span class="p">[</span><span class="nx">key</span><span class="p">.</span><span class="nx">keyArn</span><span class="p">],</span>
+            <span class="na">effect</span><span class="p">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">ALLOW</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">],</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The next step is to configure the stream reader. I want to process 1 record at a time in addition to filtering in only the Modify and Inserts as described above.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">return</span> <span class="p">{</span>
+    <span class="na">dynamoDbStreamParameters</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">startingPosition</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LATEST</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">batchSize</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">filterCriteria</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">filters</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="na">pattern</span><span class="p">:</span> <span class="dl">'</span><span class="s1"> { "eventName": [ "MODIFY", "INSERT" ] }</span><span class="dl">'</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  The Enrichment
+</h4>
+
+<p>In this case, I want to simply strip out the DynamoDB parts of the source event down a raw <code>struct</code> in Golang that I can pass along into the EventBridge Bus. To do that, I'm going to use a Lambda function as part of the Pipe workflow.</p>
+
+<p>The Lambda will be triggered as a Request/Response that makes this synchronous in the workflow.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">return</span> <span class="p">{</span>
+    <span class="na">lambdaParameters</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">invocationType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">REQUEST_RESPONSE</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">inputTemplate</span><span class="p">:</span> <span class="s2">``</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The Lambda itself handles the shaping of the Stream Record.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight go"><code><span class="k">func</span> <span class="n">Convert</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span><span class="n">events</span><span class="o">.</span><span class="n">DynamoDBEventRecord</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">CustomEvent</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">// the body of this function parses out the values</span>
+    <span class="c">// and returns shaped record</span>
+    <span class="k">if</span> <span class="n">itemType</span> <span class="o">==</span> <span class="s">"Patient"</span> <span class="p">{</span>
+        <span class="n">i</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+        <span class="n">n</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span>
+        <span class="n">t</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"itemType"</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"sk"</span><span class="p">]</span>
+        <span class="n">pid</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"patientId"</span><span class="p">]</span>
+
+        <span class="n">change</span> <span class="o">:=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s">"Patient%s"</span><span class="p">,</span> <span class="n">strings</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="n">strings</span><span class="o">.</span><span class="n">ToLower</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">EventName</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="o">&amp;</span><span class="n">CustomEvent</span><span class="p">{</span>
+            <span class="n">EventType</span><span class="o">:</span>     <span class="n">change</span><span class="p">,</span>
+            <span class="n">CorrelationId</span><span class="o">:</span> <span class="n">r</span><span class="o">.</span><span class="n">EventID</span><span class="p">,</span>
+            <span class="n">Body</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">ItemOne</span><span class="p">{</span>
+                <span class="n">Id</span><span class="o">:</span>        <span class="n">i</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">Name</span><span class="o">:</span>      <span class="n">n</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">ItemType</span><span class="o">:</span>  <span class="n">t</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">Sk</span><span class="o">:</span>        <span class="n">s</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">PatientId</span><span class="o">:</span> <span class="n">pid</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+            <span class="p">}},</span> <span class="no">nil</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">itemType</span> <span class="o">==</span> <span class="s">"Address"</span> <span class="p">{</span>
+        <span class="n">i</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+        <span class="n">n</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"address"</span><span class="p">]</span>
+        <span class="n">t</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"itemType"</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"sk"</span><span class="p">]</span>
+        <span class="n">pid</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"patientId"</span><span class="p">]</span>
+        <span class="n">aid</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"addressId"</span><span class="p">]</span>
+        <span class="n">change</span> <span class="o">:=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s">"Address%s"</span><span class="p">,</span> <span class="n">strings</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="n">strings</span><span class="o">.</span><span class="n">ToLower</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">EventName</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="o">&amp;</span><span class="n">CustomEvent</span><span class="p">{</span>
+            <span class="n">EventType</span><span class="o">:</span>     <span class="n">change</span><span class="p">,</span>
+            <span class="n">CorrelationId</span><span class="o">:</span> <span class="n">r</span><span class="o">.</span><span class="n">EventID</span><span class="p">,</span>
+            <span class="n">Body</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">ItemTwo</span><span class="p">{</span>
+                <span class="n">Id</span><span class="o">:</span>        <span class="n">i</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">Address</span><span class="o">:</span>   <span class="n">n</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">ItemType</span><span class="o">:</span>  <span class="n">t</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">Sk</span><span class="o">:</span>        <span class="n">s</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">PatientId</span><span class="o">:</span> <span class="n">pid</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+                <span class="n">AddressId</span><span class="o">:</span> <span class="n">aid</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+            <span class="p">}},</span> <span class="no">nil</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  The Target
+</h4>
+
+<p>Once the event has been shaped in the format that I want, it's time to send the payload to an EventBridge Bus. I'm going to shape the output into a result that I prefer.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">return</span> <span class="p">{</span>
+    <span class="na">eventBridgeEventBusParameters</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">detailType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PatientChange</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">com.binaryheap.patient</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">inputTemplate</span><span class="p">:</span> <span class="s2">`{
+            "meta": {
+                "correlationId": &lt;$.eventId&gt;,
+                "changeType": &lt;$.eventType&gt;
+            },
+            "event": &lt;$.body&gt;
+        }`</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Just like with the source input, I need to grant the consumer the ability to post to EventBridge.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">return</span> <span class="k">new</span> <span class="nx">PolicyDocument</span><span class="p">({</span>
+    <span class="na">statements</span><span class="p">:</span> <span class="p">[</span>
+        <span class="k">new</span> <span class="nx">PolicyStatement</span><span class="p">({</span>
+            <span class="na">resources</span><span class="p">:</span> <span class="p">[</span><span class="nx">busArn</span><span class="p">],</span>
+            <span class="na">actions</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">events:PutEvents</span><span class="dl">"</span><span class="p">],</span>
+            <span class="na">effect</span><span class="p">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">ALLOW</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">],</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Rules to Handle Item Types
+</h3>
+
+<p>Now that I've got a Pipe publishing to EventBridge's Default Bus, I can craft some rules. When Streaming DynamoDB to EventBridge Pipes in a MultiCast scenario, my specific rules will help target Lambda functions that I want to handle the Item changes. These could also be queues or anything else you like. This is where having multiple Item Types in one table comes back together. You could have service consumers handling all changes from the Patients table or you could have specific consumers dealing with the specific Item Types. My example shows the latter. I want to be specific to highlight the pattern.</p>
+
+<h4>
+  
+  
+  Patient Rule
+</h4>
+
+<p>When dealing with the Patient, I might want to address something specific about that record. I first need to build an EventBridge Rule for handling the Bus message and the target I want.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">this</span><span class="p">.</span><span class="nx">_handlerOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GoFunction</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemOneHandlerFunction</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/type-one-handler</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">functionName</span><span class="p">:</span> <span class="s2">`type-one-handler`</span><span class="p">,</span>
+    <span class="na">timeout</span><span class="p">:</span> <span class="nx">Duration</span><span class="p">.</span><span class="nx">seconds</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+    <span class="na">environment</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">IS_LOCAL</span><span class="p">:</span> <span class="dl">"</span><span class="s2">false</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">LOG_LEVEL</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DEBUG</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">VERSION</span><span class="p">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This code will deploy the Lambda that will be the target for my Patient rule.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">rule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rule</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemOnHandlerRule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">eventPattern</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">detailType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">PatientChange</span><span class="dl">"</span><span class="p">],</span>
+        <span class="na">detail</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">meta</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">changeType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">PatientModify</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">PatientInsert</span><span class="dl">"</span><span class="p">],</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="na">eventBus</span><span class="p">:</span> <span class="nx">EventBus</span><span class="p">.</span><span class="nx">fromEventBusArn</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">DefaultBusItemOne</span><span class="dl">"</span><span class="p">,</span> <span class="nx">busArn</span><span class="p">),</span>
+    <span class="na">ruleName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">item-one-rule</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">dlq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Queue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemOneHandler-DLQ</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">rule</span><span class="p">.</span><span class="nx">addTarget</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">LambdaFunction</span><span class="p">(</span><span class="nx">handler</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">deadLetterQueue</span><span class="p">:</span> <span class="nx">dlq</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>As you can notice, I'm looking for the top-level detail-type of <code>PatientChange</code>. Then I'm looking deeper into the payload for the <code>PatientInsert</code> and <code>PatientModify</code> change types. That then forwards into my Item One Lambda.</p>
+
+<h4>
+  
+  
+  Address Rule
+</h4>
+
+<p>Next, I build an almost identical rule, but specifically for Address.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">rule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rule</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemTwoHandlerRule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">eventPattern</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">detailType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">PatientChange</span><span class="dl">"</span><span class="p">],</span>
+        <span class="na">detail</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">meta</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">changeType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">AddressModify</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">AddressInsert</span><span class="dl">"</span><span class="p">],</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="na">eventBus</span><span class="p">:</span> <span class="nx">EventBus</span><span class="p">.</span><span class="nx">fromEventBusArn</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">DefaultBusItemTwo</span><span class="dl">"</span><span class="p">,</span> <span class="nx">busArn</span><span class="p">),</span>
+    <span class="na">ruleName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">item-two-rule</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">dlq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Queue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemTwoHandler-DLQ</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">rule</span><span class="p">.</span><span class="nx">addTarget</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">LambdaFunction</span><span class="p">(</span><span class="nx">handler</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">deadLetterQueue</span><span class="p">:</span> <span class="nx">dlq</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sI2HST4c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_change_pattern.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sI2HST4c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_change_pattern.png" alt="Address Rule" width="800" height="173"></a></p>
+
+<p>On the backside of my targets, I have two separate Lambdas. They are identical for this example as they just print out the payload.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight go"><code><span class="k">func</span> <span class="n">handler</span><span class="p">(</span><span class="n">ctx</span> <span class="n">context</span><span class="o">.</span><span class="n">Context</span><span class="p">,</span> <span class="n">e</span> <span class="k">interface</span><span class="p">{})</span> <span class="p">(</span><span class="k">interface</span><span class="p">{},</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">WithFields</span><span class="p">(</span><span class="n">log</span><span class="o">.</span><span class="n">Fields</span><span class="p">{</span>
+        <span class="s">"body"</span><span class="o">:</span> <span class="n">e</span><span class="p">,</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">Debug</span><span class="p">(</span><span class="s">"Printing out the body"</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="no">nil</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Patient Output</strong><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jbeoM6qn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/patient_log.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jbeoM6qn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/patient_log.png" alt="Patient Output" width="800" height="395"></a></p>
+
+<p><strong>Address Output</strong><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--crzEGJDV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_log.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--crzEGJDV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_log.png" alt="Address Output" width="800" height="448"></a></p>
+
+<h2>
+  
+  
+  Notes on the Pattern
+</h2>
+
+<p>When streaming DynamoDB to EventBridge Pipes you have so many options from filtering, enriching and then ultimately the targets. I continue personally to put Pipes into my workloads as I find it performs super efficiently and is easy to set up and reason about. I also find that where I was using Step Functions for these types of workflows, I'm now defaulting to Pipes.</p>
+
+<h2>
+  
+  
+  Wrap Up
+</h2>
+
+<p>To pull things back together, Streaming DynamoDB has a limit of 2 consumers that you can attach to the stream. That limit isn't a big deal when you have 1 type of record in the table. You could have one stream handling Inserts and Modifies and then another Pipe to handle the Deletes. But when you have a Single-Table or Multi-Type situation, you need a few more services layered in.</p>
+
+<p>Using EventBridge's Rules and Targets is exactly the service and capability that makes this possible. I also find that if you've got local teams with permission boundaries as well, this can be even further enhanced with an <a href="https://www.binaryheap.com/eventbus-mesh/">Event Bus Mesh</a>.</p>
+
+<p>As always, for a [fully functioning <a href="https://github.com/benbpyle/ddb-stream-multi-cast">and working repository</a>, you can head on over to GitHub and clone it.</p>
+
+<p>I hope this gets you a little more in your toolbox when working with DynamoDB Streams and EventBridge Pipes.</p>
+
+<p>Happy Building!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Code Smell 224 - Deodorant Comments](https://dev.to/mcsee/code-smell-224-deodorant-comments-3nfk) 
+ <details><summary>Article</summary> <p><em>You use nice words to excuse bad code</em></p>
+
+<blockquote>
+<p>TL;DR: Don't excuse bad code. Write a clean one!</p>
+</blockquote>
+
+<h1>
+  
+  
+  Problems
+</h1>
+
+<ul>
+<li>Readability</li>
+</ul>
+
+<h1>
+  
+  
+  Solutions
+</h1>
+
+<ol>
+<li>Rewrite the code and delete the comment</li>
+</ol>
+
+<h1>
+  
+  
+  Context
+</h1>
+
+<p>The term comes from Martin Fowler's book "Refactoring: Improving the Design of Existing Code"</p>
+
+<h1>
+  
+  
+  Sample Code
+</h1>
+
+<h2>
+  
+  
+  Wrong
+</h2>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="c1"># This is a function that adds two numbers
+</span><span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="c1"># Now you are going to add a and b
+</span>    <span class="n">res</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="c1"># And return the result
+</span>    <span class="k">return</span> <span class="n">res</span>
+
+</code></pre>
+
+</div>
+
+<h2>
+  
+  
+  Right
+</h2>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">adder</span><span class="p">,</span> <span class="n">anotherAdder</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="n">adder</span> <span class="o">+</span> <span class="n">anotherAdder</span>
+</code></pre>
+
+</div>
+
+
+<p>If you ask ChatGPT to improve this version it will actually worsen it:</p>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
+    <span class="c1"># Calculate the sum of two numbers
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># In this improved version:
+#
+# The function name calculate_sum is more descriptive than sum, 
+# making it clear that this function calculates the sum of two numbers.
+# (Wrong) it is more imperative and mistakes the 'what' with the 'how'
+#
+# The parameter names number1 and number2 are more meaningful 
+# than adder and anotherAdder, helping to indicate the purpose of each parameter.
+# (wrong) They indicate type instead of role
+#
+# The comment # Calculate the sum of two numbers provides a clear 
+# and concise explanation of what the function does, 
+# making it easier for someone reading the code to understand its purpose.    
+# (wrong) in fact, it is an example of deodorant and useless comment
+</span></code></pre>
+
+</div>
+
+<h1>
+  
+  
+  Detection
+</h1>
+
+<p>[X] Semi-Automatic </p>
+
+<p>Most comments are code smells. </p>
+
+<p>You can remove deodorant comments and improve the code.</p>
+<h1>
+  
+  
+  Exceptions
+</h1>
+
+<ul>
+<li>Comments should only be used to describe important design decisions.</li>
+</ul>
+<h1>
+  
+  
+  Tags
+</h1>
+
+<ul>
+<li>Comments</li>
+</ul>
+<h1>
+  
+  
+  Conclusion
+</h1>
+
+<p>Remove any meaningless comment you find in your code.</p>
+<h1>
+  
+  
+  Relations
+</h1>
+
+
+<div class="ltag__link">
+  <a href="/mcsee" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
+    </div>
+  </a>
+  <a href="/mcsee/code-smell-151-commented-code-5d8l" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Code Smell 151 - Commented Code</h2>
+      <h3>Maxi Contieri ・ Jul 22 '22</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#programming</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+
+<div class="ltag__link">
+  <a href="/mcsee" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
+    </div>
+  </a>
+  <a href="/mcsee/code-smell-183-obsolete-comments-3mmo" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Code Smell 183 - Obsolete Comments</h2>
+      <h3>Maxi Contieri ・ Dec 2 '22</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#programming</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="ltag__link">
+  <a href="/mcsee" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
+    </div>
+  </a>
+  <a href="/mcsee/code-smell-146-getter-comments-3pjn" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Code Smell 146 - Getter Comments</h2>
+      <h3>Maxi Contieri ・ Jul 2 '22</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#programming</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="ltag__link">
+  <a href="/mcsee" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
+    </div>
+  </a>
+  <a href="/mcsee/code-smell-05-comment-abusers-2ba5" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Code Smell 05 - Comment Abusers</h2>
+      <h3>Maxi Contieri ・ Oct 24 '20</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#codenewbie</span>
+        <span class="ltag__link__tag">#tutorial</span>
+        <span class="ltag__link__tag">#beginners</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="ltag__link">
+  <a href="/mcsee" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
+    </div>
+  </a>
+  <a href="/mcsee/-refactoring-011-replace-comments-with-tests-27j1" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Refactoring 011 - Replace Comments with Tests</h2>
+      <h3>Maxi Contieri ・ Apr 23</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#tutorial</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<h1>
+  
+  
+  More Info
+</h1>
+
+<p><a href="https://learning.oreilly.com/library/view/clean-code-in/9781838982973">Clean Code In C#</a></p>
+
+<h1>
+  
+  
+  Disclaimer
+</h1>
+
+<p>Code Smells are my <a href="https://dev.to/mcsee/i-wrote-more-than-90-articles-on-2021-here-is-what-i-learned-1n3a">opinion</a>.</p>
+
+<h1>
+  
+  
+  Credits
+</h1>
+
+<p>Photo by <a href="https://unsplash.com/@ana_essentiels">Ana Essentiels</a> on <a href="https://unsplash.com/photos/Eh6iapfqDzA">Unsplash</a></p>
+
+
+
+
+<blockquote>
+<p>The reason we mention comments here is that comments often are used as a deodorant. It's surprising how often you look at thickly commented code and notice that the comments are there because the code is bad. </p>
+</blockquote>
+
+<p><em>Martin Fowler</em></p>
+
+
+<div class="ltag__link">
+  <a href="/mcsee" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
+    </div>
+  </a>
+  <a href="/mcsee/software-engineering-great-quotes-26ci" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Software Engineering Great Quotes</h2>
+      <h3>Maxi Contieri ・ Dec 28 '20</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#codenewbie</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#quotes</span>
+        <span class="ltag__link__tag">#software</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+
+
+<p>This article is part of the CodeSmell Series.</p>
+
+
+<div class="ltag__link">
+  <a href="/mcsee" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
+    </div>
+  </a>
+  <a href="/mcsee/how-to-find-the-stinky-parts-of-your-code-1dbc" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>How to Find the Stinky parts of your Code</h2>
+      <h3>Maxi Contieri ・ May 21 '21</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#codenewbie</span>
+        <span class="ltag__link__tag">#tutorial</span>
+        <span class="ltag__link__tag">#codequality</span>
+        <span class="ltag__link__tag">#beginners</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+ </details> 
+ <hr /> 
+
  #### - [Principles for Scaling Frontend Application Developments](https://dev.to/hashcode01/principles-for-scaling-frontend-application-developments-2kja) 
  <details><summary>Article</summary> <p>Today I decided to note and review the principles that was discussed by Malte UBL from Vercel</p>
 
@@ -231,1525 +1872,6 @@ The fifth principle is to embrace a lack of knowledge. This means being comforta
 
 <p>All the best<br>
 HASH</p>
-
- </details> 
- <hr /> 
-
- #### - [Explorando o Flutter: Um Guia Básico para Iniciantes](https://dev.to/nahtanpng/explorando-o-flutter-um-guia-basico-para-iniciantes-55l6) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introdução:
-</h2>
-
-<p>Você está interessado em entrar no mundo de desenvolvimento mobile  ou já ouviu falar sobre Flutter e está curioso para entender mais sobre esse poderoso framework? Se sim, você está no lugar certo! Com o passar dos anos o Flutter tem ganhado destaque como uma escolha para desenvolvedores que desejam criar aplicativos para Android e iOS. Neste guia, exploraremos o que é o Flutter até o seu primeiro aplicativo! 📱💙</p>
-
-<h2>
-  
-  
-  Tópicos abordados <a></a>
-</h2>
-
-<ul>
-<li>O que é o Flutter</li>
-<li>Principais features do Flutter</li>
-<li>
-Configurando o Ambiente de Desenvolvimento
-
-<ul>
-<li>Flutter</li>
-<li>Dart</li>
-<li>IDE</li>
-<li>Emulador</li>
-<li>Modo alternativo</li>
-</ul>
-
-
-</li>
-<li>Criando seu Primeiro App com Flutter</li>
-<li>Benefícios do Flutter</li>
-<li>Desafios e Soluções</li>
-<li>Referências</li>
-</ul>
-
-
-
-
-<h2>
-  
-  
-  O que é o Flutter? <a></a>
-</h2>
-
-<p>Flutter é um framework de código aberto do Google para a construção de belos aplicativos multiplataforma, compilados nativamente a partir de uma única base de código, de acordo com o <a href="https://flutter.dev">site oficial do Flutter</a>. Mas o que ele quer dizer com tudo isso? Simples: o seu código escrito em Flutter pode ser executado em diferentes plataformas, como website, mobile e software. Olha que maneiro! Vale lembrar que o framework usa a linguagem de programação *<em>Dart *</em> como base.</p>
-
-<h2>
-  
-  
-  Principais features do Flutter <a></a>
-</h2>
-
-<p>Uma das principais características do Flutter é a utilização de widgets na construção da aplicação. Widgets são elementos individuais de uma interface de usuário que variam em suas mais diversas formas, desde botões até mesmo layouts complexos com colunas e linhas. A árvore de widgets do Flutter descreve a hierarquia dos widgets em seu aplicativo. Aqui está um pequeno exemplo:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight dart"><code><span class="n">Widget</span> <span class="nf">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">Container</span><span class="p">(</span>
-      <span class="nl">child:</span> <span class="n">Column</span><span class="p">(</span>
-        <span class="nl">children:</span> <span class="p">[</span>
-          <span class="n">TextButton</span><span class="p">(</span>
-            <span class="nl">onPressed:</span> <span class="p">()</span> <span class="p">{},</span>
-            <span class="nl">child:</span> <span class="n">Text</span><span class="p">(</span><span class="s">'Sou um Widget'</span><span class="p">),</span>
-          <span class="p">),</span>
-        <span class="p">],</span>
-      <span class="p">),</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>No exemplo acima, temos três tipos de widgets: Container, que contém uma coluna, e dentro dessa coluna, um botão.</p>
-
-<p>Além disso o Flutter possui <strong>Hot Reload</strong> um recurso que te permite ver instantaneamente as mudanças que você realizou no código, seja durante a criação da interface, adição de novas features etc.</p>
-
-<h2>
-  
-  
-  Configurando o Ambiente de Desenvolvimento <a></a>
-</h2>
-
-<p>Vamos agora para a parte de instalação, ela será dividida em 4 partes: Flutter, Dart, IDE (ambiente de desenvolvimento integrado) e emulador.</p>
-
-<h3>
-  
-  
-  Flutter <a></a>
-</h3>
-
-<ul>
-<li><p><a href="https://docs.flutter.dev/get-started/install">Clique aqui para abrir a documentação oficial do flutter na parte de instalação</a></p></li>
-<li><p>Selecione o seu sistema operacional</p></li>
-<li><p>Baixe o arquivo .zip</p></li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qDL1TsLf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xjv8on5q8sagatdj4w8v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qDL1TsLf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xjv8on5q8sagatdj4w8v.png" alt="Ilustração do arquivo" width="800" height="401"></a></p>
-
-<ul>
-<li><p>Extraia o .zip e coloque a pasta no diretório (C:)</p></li>
-<li><p>Na barra de pesquisa do Windows digite "Variáveis de Ambiente" e clique, agora no canto inferior direito clique em variáveis de ambiente</p></li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p3Rcg7Bb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v787k8otq64fojnu0ujl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p3Rcg7Bb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v787k8otq64fojnu0ujl.png" alt="Imagem mostrando a barra de pesquisa" width="728" height="284"></a> <br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0eGRWUiF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sq3iv31uh1z23jjja0ah.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0eGRWUiF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sq3iv31uh1z23jjja0ah.png" alt="Imagem mostrando o botão variáveis de ambiente" width="408" height="464"></a></p>
-
-<ul>
-<li>Clique em <strong>PATH</strong> e logo depois em <strong>Editar</strong>
-</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Fi_tOVYy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6bded2l7zgygl95uu0tr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Fi_tOVYy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6bded2l7zgygl95uu0tr.png" alt="Imagem mostrando onde está o PATH" width="596" height="313"></a></p>
-
-<ul>
-<li><p>Clique em <strong>Novo</strong> e coloque o endereço "C:\flutter\bin" (Se você tiver colocado em outra pasta tenha certeza que o endereço esteja correto ;D)</p></li>
-<li><p>Logo após isso a sua instalação do Flutter foi concluída, para testar abra o seu CMD e digite "flutter doctor".</p></li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jK95H7bO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hwufb0g9kug8wobpu850.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jK95H7bO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hwufb0g9kug8wobpu850.png" alt="Imagem mostrando a execução do comando flutter doctor" width="800" height="262"></a></p>
-
-<h3>
-  
-  
-  Dart <a></a>
-</h3>
-
-<ul>
-<li><p>Para instalação do Dart vamos utilizar o Chocolatey, um gerenciador de pacotes</p></li>
-<li><p>Procure na barra de pesquisa : Windows Powershell, e abra em modo administrador</p></li>
-<li><p>E coloque o seguinte comando<br>
-</p></li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Após a instalação execute o comando <code>choco</code>
-</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WLH_9D_X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kwju86cfp13svbf7ui6b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WLH_9D_X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kwju86cfp13svbf7ui6b.png" alt="Imagem demonstrando o comando" width="502" height="66"></a></p>
-
-<ul>
-<li><p>Agora para instalar o Dart digite <code>choco install dart-sdk</code></p></li>
-<li><p>Após a instalação digite <code>dart --version</code> para ver se a instalação deu certo</p></li>
-</ul>
-
-<h3>
-  
-  
-  IDE <a></a>
-</h3>
-
-<p>Como IDE vamos utilizar o Visual Studio Code</p>
-
-<ul>
-<li><p>Vá ao <a href="https://code.visualstudio.com/Download">site</a> e baixe a versão de acordo com seu sistema operacional</p></li>
-<li><p>Logo após a instalação vamos instalar a extensão do Flutter e do Dart</p></li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vgFeMYs7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x2mupm8adk922bef83si.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vgFeMYs7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x2mupm8adk922bef83si.png" alt="Demonstração da extensão Dart" width="767" height="216"></a><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oQR_aIYq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qgqli3bvhqvpawv820ir.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oQR_aIYq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qgqli3bvhqvpawv820ir.png" alt="Demonstração da extensão Flutter" width="750" height="220"></a></p>
-
-<ul>
-<li>Agora seu Visual Studio Code está pronto para uso</li>
-</ul>
-
-<h3>
-  
-  
-  Emulador <a></a>
-</h3>
-
-<p>Agora vamos configurar onde você verá sua aplicação rodando</p>
-
-<ul>
-<li><p>Vá até o site do <a href="https://developer.android.com/studio?gclid=Cj0KCQjw0vWnBhC6ARIsAJpJM6fh_C3fVLUubcJryaOuxC54XDiJNjqJ3NHRR3qVrVWLEq4H1EDCTnQaAjkhEALw_wcB&amp;gclsrc=aw.ds">Android Studio</a> e baixe a IDE</p></li>
-<li><p>Siga as etapas de instalação</p></li>
-<li><p>Agora vá em More actions &gt; Virtual Device Manager<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lGICpITT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n9ric6qbimim3pws55tk.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lGICpITT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n9ric6qbimim3pws55tk.gif" alt="Gif demonstrando a instrução acima" width="784" height="642"></a></p></li>
-<li><p>É comum ja vir configurado um emulador, mas você pode configurar da maneira que você quiser</p></li>
-</ul>
-
-<h3>
-  
-  
-  Modo alternativo <a></a>
-</h3>
-
-<p>Os emuladores costumam ser bem pesados, então, existe um método alternativo para visualizar sua aplicação utilizando seu próprio celular</p>
-
-<ul>
-<li><p>Ative o modo desenvolvedor em seu celular</p></li>
-<li><p>Entre nas configurações de desenvolvedor &gt; Ative a opção de <strong>Depuração USB</strong> &gt; <strong>Ative a Intalação por USB</strong></p></li>
-<li><p>Conecte seu celular no computador e pronto!</p></li>
-</ul>
-
-<h2>
-  
-  
-  Criando seu Primeiro App com Flutter <a></a>
-</h2>
-
-<p>Vamos colocar a mão na massa! Criar seu primeiro aplicativo Flutter é emocionante e surpreendentemente simples.</p>
-
-<ul>
-<li><p>Abra seu Terminal/CMD</p></li>
-<li><p>Vá até a pasta de sua preferência e digite <code>flutter create nome_do_app</code></p></li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QmlLT3-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pnx30lap0f6bt6ms1933.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QmlLT3-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pnx30lap0f6bt6ms1933.png" alt="Demonstração do comando" width="663" height="283"></a></p>
-
-<ul>
-<li><p>Agora digite <code>cd nome_do_app</code> e logo após isso <code>code .</code>para abrir no Visual Studio Code</p></li>
-<li><p>Nosso arquivo da aplicação fica localizada na pasta: <strong>lib</strong> &gt; <strong>main.dart</strong></p></li>
-<li><p>Selecione o dispositivo onde será instalado a aplicação, é possível realizar isso no canto inferior direito. É nesta estapa onde você pode optar por utilizar seu próprio celular.</p></li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xSdwjWQO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4h3myrmopan8q95gquu5.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xSdwjWQO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4h3myrmopan8q95gquu5.gif" alt="Gif explicativo" width="800" height="599"></a></p>
-
-<ul>
-<li>Agora vamos compilar nosso aplicativo e visualizar ele, vá no topo da janela e clique em Run &gt; Run without debugging</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QWbUNSzw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lbojaobax8pnipwwrz3d.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QWbUNSzw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lbojaobax8pnipwwrz3d.gif" alt="Gif" width="271" height="196"></a></p>
-
-<ul>
-<li>E agora pronto, você tem sua primeira aplicação feita e está pronto para entrar nessa jornada de aprendizado!</li>
-</ul>
-
-<h2>
-  
-  
-  Benefícios do Flutter <a></a>
-</h2>
-
-<p>Uma das maiores vantagens do Flutter é a capacidade de criar aplicativos de alta qualidade para Android e iOS com um único código-base. Isso economiza tempo e recursos no desenvolvimento de aplicativos para múltiplas plataformas. </p>
-
-<h2>
-  
-  
-  Desafios e Soluções <a></a>
-</h2>
-
-<p>É claro que nenhum framework está isento de desafios. Você pode encontrar obstáculos ao longo do caminho, como a curva de aprendizado da linguagem Dart ou a necessidade de se adaptar ao modelo de widgets do Flutter. Felizmente, há uma comunidade ativa de desenvolvedores e muitos recursos disponíveis para ajudá-lo a superar esses desafios.</p>
-
-<p>Com base na minha experiência eu recomendaria aprender o básico de Dart antes de entrar de cabeça no Flutter, apenas para você se familiarizar mais com a linguagem e framework.</p>
-
-<ul>
-<li>Voltar ao inicio do artigo ↑</li>
-</ul>
-
-<h2>
-  
-  
-  Referências <a></a>
-</h2>
-
-<p><a href="https://flutter.dev">Flutter</a><br>
-<a href="https://dart.dev">Dart</a><br>
-<a href="https://chocolatey.org">Chocolatey</a></p>
-
-
-
-
-<p>Muito obrigado por ler até aqui, não esqueça de curtir e compartilhar o artigo! 😁💙</p>
-
- </details> 
- <hr /> 
-
- #### - [GDScript Cheatsheet](https://dev.to/godot/gdscript-cheatsheet-5ghe) 
- <details><summary>Article</summary> <p>This cheatsheet is meant to be a handy reference for both beginners and experienced GDScript users. So, whether you're just starting out or looking to review up on your GDScript knowledge, this cheatsheet will be your go-to resource. We'll cover all the essential topics you need to know about GDScript, from basic syntax to advanced concepts, complete with code snippets and examples. So, let's get started!</p>
-
-<h3>
-  
-  
-  Brief overview of GDScript
-</h3>
-
-<p>GDScript is a high-level, both static and dynamically typed programming language specifically designed for the Godot game engine. It's easy to learn, especially if you're familiar with Python, as its syntax and structure are quite similar. GDScript is powerful and versatile, allowing you to create complex game logic with minimal effort.</p>
-
-<p>Some key benefits of using GDScript include:</p>
-
-<ul>
-<li><p>Tight integration with Godot's engine and editor</p></li>
-<li><p>Clear and concise syntax, allows you to focus on game development</p></li>
-<li><p>Designed for rapid prototyping and iteration</p></li>
-</ul>
-
-<h2>
-  
-  
-  Basic Syntax
-</h2>
-
-<p>Let's begin by going over the basic syntax of GDScript. Here are the topics we'll cover:</p>
-
-<h3>
-  
-  
-  Comments
-</h3>
-
-<ul>
-<li><p>Single-line comments: <code># This is a single-line comment</code></p></li>
-<li><p>Multi-line comments: For multi-line comments you need to prefix every line with <code>#</code> hash, sadly in GDScript there's no easier way. Be careful with <code>"""</code> three quotes <code>"""</code> while it looks like multi-line comments, it's actually a multi-line strings and will be silently executed by the interpreter!<br>
-</p></li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="s2">"""
-This is a multiline string, not a comment!
-And thus it will be parsed by interpreter...
-"""</span>
-
-<span class="c1"># Now this</span>
-<span class="c1"># is a multiline comments</span>
-<span class="c1"># Interpreter will not read this</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Basic Output
-</h3>
-
-<p>To print output in GDScript, use the <code>print()</code> function:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, Godot!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Indentation
-</h3>
-
-<p>GDScript uses indentation to define code blocks, just like Python:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">_init</span><span class="p">():</span>
-    <span class="k">pass</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Variables
-</h3>
-
-<p>In GDScript, variables can be declared using the <code>var</code> keyword. You can also specify the type of the variable using a colon (<code>:</code>) followed by the type name.</p>
-
-<ul>
-<li><p>Declare a variable: <code>var my_variable = 10</code></p></li>
-<li><p>Change the value of a variable: <code>my_variable = 20</code></p></li>
-<li><p>Declare a variable with a specific type: <code>var my_int: int = 5</code></p></li>
-</ul>
-
-<p>Here are some common data types in GDScript:</p>
-
-<ul>
-<li><p><code>int</code>: Integer numbers</p></li>
-<li><p><code>float</code>: Floating-point numbers</p></li>
-<li><p><code>bool</code>: Boolean values (<code>true</code> or <code>false</code>)</p></li>
-<li><p><code>String</code>: Text strings<br>
-</p></li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">x</span><span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="k">var</span> <span class="n">y</span><span class="p">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mf">3.14</span>
-<span class="k">var</span> <span class="n">is_active</span><span class="p">:</span> <span class="kt">bool</span> <span class="o">=</span> <span class="bp">true</span>
-<span class="k">var</span> <span class="n">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">"https://godot.community"</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Arrays and Dictionaries
-</h3>
-
-<p>GDScript also provides built-in data structures like arrays and dictionaries:</p>
-
-<ul>
-<li><p><code>Array</code>: Ordered list of elements</p></li>
-<li><p><code>Dictionary</code>: Key-value pairs<br>
-</p></li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_array</span><span class="p">:</span> <span class="kt">Array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="k">var</span> <span class="n">my_dict</span><span class="p">:</span> <span class="kt">Dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"key1"</span><span class="p">:</span> <span class="s2">"value1"</span><span class="p">,</span> <span class="s2">"key2"</span><span class="p">:</span> <span class="s2">"value2"</span><span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Static Variables
-</h3>
-
-<p>Static variables belong to a class rather than an instance of the class. To define a static variables, use the <code>static</code> keyword:</p>
-
-<ul>
-<li><p>Declare a static variable: <code>static var my_static_variable = 30</code></p></li>
-<li><p>Change the value of a static variable: <code>my_static_variable = 40</code></p></li>
-</ul>
-
-<h3>
-  
-  
-  Constants
-</h3>
-
-<ul>
-<li>Declare a constant: <code>const MY_CONSTANT = 100</code>
-</li>
-</ul>
-
-<h3>
-  
-  
-  Operators
-</h3>
-
-<h4>
-  
-  
-  Arithmetic
-</h4>
-
-<ul>
-<li><p>Addition: <code>a + b</code></p></li>
-<li><p>Subtraction: <code>a - b</code></p></li>
-<li><p>Multiplication: <code>a * b</code></p></li>
-<li><p>Division: <code>a / b</code></p></li>
-<li><p>Modulus: <code>a % b</code></p></li>
-<li><p>Power: <code>a ** b</code></p></li>
-</ul>
-
-<h4>
-  
-  
-  Comparison
-</h4>
-
-<ul>
-<li><p>Equal: <code>a == b</code></p></li>
-<li><p>Not equal: <code>a != b</code></p></li>
-<li><p>Less than: <code>a &lt; b</code></p></li>
-<li><p>Less than or equal: <code>a &lt;= b</code></p></li>
-<li><p>Greater than: <code>a &gt; b</code></p></li>
-<li><p>Greater than or equal: <code>a &gt;= b</code></p></li>
-</ul>
-
-<h4>
-  
-  
-  Logical
-</h4>
-
-<ul>
-<li><p>And: <code>a and b</code> or <code>a &amp;&amp; b</code></p></li>
-<li><p>Or: <code>a or b</code> or <code>a || b</code></p></li>
-<li><p>Not: <code>not a</code> or <code>!a</code></p></li>
-</ul>
-
-<h4>
-  
-  
-  Bitwise
-</h4>
-
-<ul>
-<li><p>Bitwise AND: <code>a &amp; b</code></p></li>
-<li><p>Bitwise OR: <code>a | b</code></p></li>
-<li><p>Bitwise XOR: <code>a ^ b</code></p></li>
-<li><p>Bitwise NOT: <code>~a</code></p></li>
-<li><p>Left shift: <code>a &lt;&lt; b</code></p></li>
-<li><p>Right shift: <code>a &gt;&gt; b</code></p></li>
-</ul>
-
-<h4>
-  
-  
-  Assignment
-</h4>
-
-<ul>
-<li><p>Assign: <code>a = b</code></p></li>
-<li><p>Add and assign: <code>a += b</code></p></li>
-<li><p>Subtract and assign: <code>a -= b</code></p></li>
-<li><p>Multiply and assign: <code>a *= b</code></p></li>
-<li><p>Divide and assign: <code>a /= b</code></p></li>
-<li><p>Modulus and assign: <code>a %= b</code></p></li>
-<li><p>Power and assign: <code>a **= b</code></p></li>
-<li><p>Left shift and assign: <code>a &lt;&lt;= b</code></p></li>
-<li><p>Right shift and assign: <code>a &gt;&gt;= b</code></p></li>
-<li><p>Bitwise AND and assign: <code>a &amp;= b</code></p></li>
-<li><p>Bitwise OR and assign: <code>a |= b</code></p></li>
-<li><p>Bitwise XOR and assign: <code>a ^= b</code></p></li>
-</ul>
-
-<h2>
-  
-  
-  Variable Typing
-</h2>
-
-<h3>
-  
-  
-  Dynamic Typing
-</h3>
-
-<p>In GDScript, variables are dynamically typed by default, meaning their type is interchangeable at runtime. For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_variable</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">my_variable</span> <span class="o">=</span> <span class="s2">"Hello, GDScript!"</span> <span class="c1"># This is allowed</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Static Typing
-</h3>
-
-<p>Static typing can be used to explicitly specify the type of a variable, meaning their type is not interchangeable at runtime. This can help catch potential bugs and improve code readability:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_int</span><span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">my_int</span> <span class="o">=</span> <span class="s2">"Hello, GDScript!"</span> <span class="c1"># This will cause an error</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Static type can also be inferred by using <code>:=</code> followed by value. Be careful when using this though, sometimes verbosity is better.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">my_int</span> <span class="p">:</span><span class="o">=</span> <span class="mi">5</span>
-<span class="n">my_int</span> <span class="o">=</span> <span class="s2">"Hello World"</span> <span class="c1"># Error, because my_int has been statically inferred as int</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Control Structures
-</h2>
-
-<p>Control structures are the building blocks of your GDScript code, allowing you to create complex logic and control the flow of your program. Let's learn about the different types of control structures in GDScript:</p>
-
-<h3>
-  
-  
-  Conditional statements
-</h3>
-
-<h4>
-  
-  
-  If
-</h4>
-
-<p>The <code>if</code> statement is used to execute a block of code if a certain condition is true:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is positive"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Else
-</h4>
-
-<p>The <code>else</code> statement is used to execute a block of code if the condition in the <code>if</code> statement is false:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is positive"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is not positive"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Elif
-</h4>
-
-<p>The <code>elif</code> (short for "else if") statement is used to test multiple conditions in a single <code>if</code> statement:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is positive"</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is negative"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"x is zero"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Loops
-</h3>
-
-<h4>
-  
-  
-  For
-</h4>
-
-<p>The <code>for</code> loop is used to iterate over a sequence, such as an array or a range of numbers:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 2, 3, 4</span>
-
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_array</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># Prints each item in my_array</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  While
-</h4>
-
-<p>The <code>while</code> loop is used to repeatedly execute a block of code as long as a certain condition is true:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 2, 3, 4</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Break and Continue
-</h4>
-
-<p>The <code>break</code> statement is used to exit a loop prematurely:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 2, 3, 4</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The <code>continue</code> statement is used to skip the rest of the current iteration and proceed to the next one:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Prints 0, 1, 3, 4</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Functions
-</h2>
-
-<p>Functions are blocks of code that can be defined and called by name. They can take input, perform some action, and return a result. Let's learn how to work with functions in GDScript:</p>
-
-<h3>
-  
-  
-  Defining functions
-</h3>
-
-<p>To define a function, use the <code>func</code> keyword followed by the function name and a pair of parentheses:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">my_function</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, GDScript!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Built-in functions
-</h3>
-
-<p>GDScript comes with a variety of built-in functions that you can use in your code. Some examples include:</p>
-
-<ul>
-<li><p><code>print()</code>: Prints a message to the console</p></li>
-<li><p><code>randi()</code>: Returns a random integer</p></li>
-<li><p><code>len()</code>: Returns the length of a sequence (e.g., an array or a string)</p></li>
-</ul>
-
-<h3>
-  
-  
-  Function arguments
-</h3>
-
-<p>Functions can take input in the form of arguments. To define a function with arguments, include the argument names inside the parentheses:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</code></pre>
-
-</div>
-
-
-
-<p>You can also define the types of the arguments, it will spit out an error if you try to pass different types to the arguments.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Return values
-</h3>
-
-<p>Functions can return a result using the <code>return</code> keyword:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-
-<span class="k">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># result is 5</span>
-</code></pre>
-
-</div>
-
-
-
-<p>You can also define the type of the returned value by appending <code>-&gt; ReturnType</code> to the function declaration, it will spit out an error if you try to return something that isn't the correct type.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="c1"># Returns integer</span>
-<span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-
-<span class="c1"># This won't work</span>
-<span class="k">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="s2">"Hello"</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Static Functions
-</h3>
-
-<p>Static functions are functions that belong to a class rather than an instance of the class. To define a static function, use the <code>static</code> keyword:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">static</span> <span class="k">func</span> <span class="nf">my_static_function</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"This is a static function."</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Classes and Objects
-</h2>
-
-<p>In GDScript, a script file represents a class and objects are instances of classes. You can create instances of a class using the <code>new()</code> method.</p>
-
-<h3>
-  
-  
-  Defining Classes
-</h3>
-
-<p>To define a class, simply create a new script file (e.g., <code>my_class.gd</code>). The name of the file should represents the name of the class. Create a new file called <code>player.gd</code> with the following content:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">class_name</span> <span class="n">Player</span>
-
-<span class="k">var</span> <span class="n">health</span><span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="k">var</span> <span class="n">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s2">"Unnamed"</span>
-
-<span class="k">func</span> <span class="nf">take_damage</span><span class="p">(</span><span class="n">amount</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span>
-    <span class="n">health</span> <span class="o">-=</span> <span class="n">amount</span>
-    <span class="k">if</span> <span class="n">health</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Player"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">"has died!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Creating Object
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-<span class="n">player</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"John Doe"</span>
-<span class="n">player</span><span class="o">.</span><span class="n">take_damage</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Properties
-</h3>
-
-<p>Properties are variables that belong to a class or an object. They can be used to store data or state:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-    <span class="k">var</span> <span class="n">my_property</span> <span class="o">=</span> <span class="mi">0</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Methods
-</h3>
-
-<p>Methods are functions that belong to a class or an object. They can be used to perform actions or manipulate data:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-    <span class="k">func</span> <span class="nf">my_method</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, GDScript!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Inheritance
-</h3>
-
-<p>Inheritance is a way for one class to inherit the properties and methods of another class. To inherit from another class, use the <code>extends</code> keyword:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="c1"># Derived class</span>
-<span class="k">class_name</span> <span class="n">DerivedClass</span> <span class="k">extends</span> <span class="n">MyBaseClass</span>
-
-<span class="k">func</span> <span class="nf">my_method</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello from the derived class!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Constructors
-</h3>
-
-<p>Constructors are special methods that are called when an object is initialized. In GDScript, the constructor is named <code>_init</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-    <span class="k">func</span> <span class="nf">_init</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Object initialized!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Signals and Events
-</h2>
-
-<p>Signals are a way for objects to communicate with each other without relying on direct references. They can be used to decouple your code and make it more modular. Let's learn how to work with signals and events in GDScript:</p>
-
-<h3>
-  
-  
-  Defining signals
-</h3>
-
-<p>To define a signal, use the <code>signal</code> keyword followed by the signal name:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">signal</span> <span class="n">my_signal</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Emitting signals
-</h3>
-
-<p>To emit a signal, you can use the <code>emit_signal</code> method:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="n">emit_signal</span><span class="p">(</span><span class="s2">"my_signal"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>However, it's better to ditch those strings, by simply calling emit method inside the signal directly:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="n">my_signal</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Connecting signals to functions
-</h3>
-
-<p>Signals are a way to communicate between objects in Godot. They allow you to decouple your code and create more modular systems.</p>
-
-<p>To connect a signal to a function, use the <code>connect</code> method:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="n">my_object</span><span class="o">.</span><span class="n">my_signal</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">on_my_signal</span><span class="p">)</span>
-
-<span class="k">func</span> <span class="nf">on_my_signal</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Signal received!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>There are actually four ways to connect signals, however, this is the recommended approach, instead of the other one (That might more error prone).</p>
-
-<h2>
-  
-  
-  Error Handling
-</h2>
-
-<p>Error handling is an important aspect of programming, as it allows you to gracefully handle errors and exceptions that may occur at runtime. In GDScript, you can use the following constructs to handle errors:</p>
-
-<h3>
-  
-  
-  Assert
-</h3>
-
-<p>The <code>assert</code> statement is used to check if a condition is true, and if not, raise an error:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="nb">assert</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"x must be positive"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Try, Catch, and Throw
-</h3>
-
-<p>GDScript does not have built-in support for try-catch blocks. There are many godot-proposals from people asking for it, however, It has already been stated that try-catch will never come into gdscript.</p>
-
-<p>Quoting from Juan in <a href="https://github.com/godotengine/godot/issues/3516#issuecomment-177152034">his post</a>:</p>
-
-<blockquote>
-<p>Exceptions won't happen. Godot is designed for things to keep working even if state is inconsistent, while at the same time reporting errors</p>
-</blockquote>
-
-<h2>
-  
-  
-  File I/O
-</h2>
-
-<p>Working with files is a common task in many applications. In GDScript, you can use the <code>File</code> class to read from and write to files:</p>
-
-<h3>
-  
-  
-  Writing a file
-</h3>
-
-<p>To write to a file, use the <code>store_string</code>, <code>store_line</code> or other <code>store_*</code> methods:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">player_name</span> <span class="o">=</span> <span class="s2">"Septian"</span>
-<span class="k">var</span> <span class="n">file</span> <span class="o">=</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"user://save_game.dat"</span><span class="p">,</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">WRITE</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">store_string</span><span class="p">(</span><span class="n">player_name</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Reading and writing
-</h3>
-
-<p>To read from a file, use the <code>get_as_text</code> or other <code>get_*</code> method:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">file</span> <span class="o">=</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"user://save_game.dat"</span><span class="p">,</span> <span class="n">FileAccess</span><span class="o">.</span><span class="n">READ</span><span class="p">)</span>
-<span class="k">var</span> <span class="n">player_name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">get_as_text</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">player_name</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Closing files
-</h3>
-
-<p>To close a file, use the <code>close</code> method:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre>
-
-</div>
-
-
-
-<p><code>FileAccess</code> will automatically closes the file when it goes out of scope or set to null. However it's better to be explicit when handling with I/O.</p>
-
-<h2>
-  
-  
-  Useful Tips and Tricks
-</h2>
-
-<p>Here are some handy tips and tricks to help you write better GDScript:</p>
-
-<ul>
-<li><p>Use clear and descriptive variable and function names</p></li>
-<li><p>Keep your functions short and focused</p></li>
-<li><p>Use comments to explain complex or important code</p></li>
-<li><p>Follow the <a href="https://godot.community/topic/27/gdscript-coding-conventions-best-practices-for-readable-and-maintainable-code">GDScript style guide</a></p></li>
-<li><p>Follow the <a href="https://godot.community/topic/41/gdscript-best-practices-for-organized-code">GDScript code ordering</a></p></li>
-</ul>
-
-<h3>
-  
-  
-  String manipulation
-</h3>
-
-<ul>
-<li>String interpolation:
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight gdscript"><code><span class="k">var</span> <span class="n">result</span> <span class="o">=</span> <span class="s2">"The </span><span class="si">%s</span><span class="s2"> has defeated the </span><span class="si">%s</span><span class="s2"> in </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">[</span><span class="s2">"Player"</span><span class="p">,</span> <span class="s2">"Boss"</span><span class="p">,</span> <span class="s2">"Combat"</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="c1"># Will prints:</span>
-<span class="c1"># The Player has defeated the Boss in Combat</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li><p>Concatenate strings: <code>var result = "Hello, " + "GDScript!"</code></p></li>
-<li><p>Format strings: <code>var result = "Hello, %s!" % "GDScript"</code></p></li>
-<li><p>Split strings: <code>var words = "Hello, GDScript!".split(", ")</code></p></li>
-</ul>
-
-<h3>
-  
-  
-  Array and Dictionary operations
-</h3>
-
-<ul>
-<li><p>Add an item to an array: <code>my_array.append(item)</code></p></li>
-<li><p>Remove an item from an array: <code>my_array.erase(item)</code></p></li>
-<li><p>Get the length of an array: <code>var length = my_array.size()</code></p></li>
-<li><p>Check if a key exists in a dictionary: <code>if my_dict.has(key):</code></p></li>
-</ul>
-
-<h3>
-  
-  
-  Type casting
-</h3>
-
-<ul>
-<li>Cast a value to a specific type: <code>var my_int = int("42")</code>
-</li>
-</ul>
-
-<h3>
-  
-  
-  Debugging
-</h3>
-
-<ul>
-<li><p>Print a message to the console: <code>print("Hello, GDScript!")</code></p></li>
-<li><p>Set a breakpoint: <code>breakpoint</code></p></li>
-</ul>
-
-<h2>
-  
-  
-  Resources
-</h2>
-
-<p>To learn more about GDScript and the Godot game engine, check out these great resources:</p>
-
-<ul>
-<li><p><a href="https://godot.community/category/22/ask">Ask Godot Community</a></p></li>
-<li><p><a href="https://godot.community/category/24/beginner-s-corner">Beginner's Corners</a></p></li>
-<li><p><a href="https://godot.community/tags/tutorial">Tutorials tagged posts</a></p></li>
-</ul>
-
-<p>That's it for this <strong>GDScript Cheatsheet</strong>! I hope you found it useful and informative. Feel free to bookmark this post and refer back to it whenever you need a quick reference for GDScript. Happy coding!</p>
-
-<blockquote>
-<p>This cheatsheet is updated for Godot 4.2, GDScript is an evolving language, if you find outdated information, please let me know so I can fix it! </p>
-</blockquote>
-
- </details> 
- <hr /> 
-
- #### - [HTML For Beginners The Easy Way](https://dev.to/noobizdev/html-for-beginners-the-easy-way-mhp) 
- <details><summary>Article</summary> <p>In today's digital age, having a basic understanding of <a href="https://html.com/">HTML</a> (Hypertext Markup Language) is essential for anyone looking to explore web development or create their own website. HTML is the foundation of web pages, allowing you to structure and format content. This beginner's guide will walk you through the fundamentals of HTML, helping you create your first web page from scratch.</p>
-
-<h2>
-  
-  
-  1. What is HTML?
-</h2>
-
-<p>HTML, which stands for Hypertext Markup Language, is the standard language used to create web pages. It consists of various elements and tags that define the structure and content of a webpage.</p>
-
-<h2>
-  
-  
-  2. Setting Up Your Development Environment
-</h2>
-
-<p>Before we dive into HTML coding, you'll need a text editor and a web browser. Popular text editors include Visual Studio Code, Sublime Text, or Notepad++. Choose the one you're most comfortable with.</p>
-
-<h2>
-  
-  
-  3. Creating Your First HTML Document
-</h2>
-
-<p>To create an HTML document, start with a basic template:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Your Title Here&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  4. Understanding HTML Elements
-</h2>
-
-<p>Headings and Paragraphs<br>
-Headings are used to define the structure of your content. Use h1 for the main title, h2 for subsections, and so on. Paragraphs are created with the </p>
-<p> tag.</p>
-
-<ul>
-<li><p>Lists and Links<br>
-Unordered lists (ul) and ordered lists (ol) help organize information. Links are created using the a tag.</p></li>
-<li><p>Images and Attributes<br>
-Images can be added with the img tag, and attributes like src and alt provide essential information about the image.</p></li>
-</ul>
-
-<h2>
-  
-  
-  5. Structuring Your Page with Tags
-</h2>
-
-<p>HTML offers various tags to structure your content effectively.</p>
-
-<ul>
-<li><p>Divs and Spans<br>
-div and span are generic container elements used to group content.</p></li>
-<li><p>Headers and Footers<br>
-header and footer help define the beginning and end of a section or page.</p></li>
-<li><p>Sections and Articles<br>
-section and article are HTML5 elements that aid in structuring content logically.</p></li>
-</ul>
-
-<h2>
-  
-  
-  6. Styling with CSS
-</h2>
-
-<p>While HTML defines the structure, CSS (Cascading Style Sheets) is used to style your web page. You can use inline styles or external CSS files to control the appearance.</p>
-
-<h2>
-  
-  
-  7. Adding Forms for User Input
-</h2>
-
-<p>Forms are essential for collecting user data. Create them using the form tag, and include input fields, checkboxes, and radio buttons as needed.</p>
-
-<h2>
-  
-  
-  8. Embedding Multimedia
-</h2>
-
-<p>HTML allows you to embed multimedia content such as videos and audio files using the video and audio tags.</p>
-
-<h2>
-  
-  
-  Frequently Asked Questions
-</h2>
-
-<ol>
-<li><p>What is the difference between HTML and CSS?<br>
-HTML is used for structuring content, while CSS is used for styling that content. HTML defines the skeleton, and CSS adds the visual appeal.</p></li>
-<li><p>Are there any free HTML editors available?<br>
-Yes, there are many free HTML editors, such as Visual Studio Code, which is a popular choice among developers.</p></li>
-<li><p>What is the purpose of the alt attribute in the image tag?<br>
-The alt attribute provides alternative text for images, which is displayed if the image cannot be loaded or for accessibility reasons.</p></li>
-<li><p>Can I create a website with just HTML, or do I need other technologies?<br>
-You can create a basic website with just HTML, but for more advanced features and styling, you'll likely want to use CSS and possibly JavaScript.</p></li>
-<li><p>Where can I learn more about web development and HTML?<br>
-There are numerous online resources and tutorials available, including interactive coding platforms like Codecademy and free courses on websites like Mozilla Developer Network (MDN).</p></li>
-</ol>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Congratulations! You've just scratched the surface of HTML. Keep practicing and experimenting to become proficient in web development and Aviod from <a href="https://noobizdev.tech/most-common-html-mistakes-and-errors-to-avoid-and-how-to-fix-them/">common html mistakes</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [Colouring Your Arrow / Link with `linkStyle` in Mermaid Markdown](https://dev.to/ranggakd/coloring-your-arrow-link-with-linkstyle-in-mermaid-markdown-39kk) 
- <details><summary>Article</summary> <p>Welcome back to <code>Technically Speaking</code>, your sanctuary for diving deep into the labyrinthine wonders of technology. Today, we turn the spotlight onto <a href="https://mermaid.js.org/">Mermaid</a>, a marvelous tool that's become my go-to for diagramming and documentation. Specifically, we're going to add some splashes of colour to the arrows or links in our Mermaid Markdown flowcharts. Let's get to it!</p>
-
-<h2>
-  
-  
-  Setting the Stage
-</h2>
-
-<p>First things first, we need a basic flowchart or graph to work with. Here's a snippet from my upcoming post on steganography, showcasing a flowchart that I built using Mermaid Markdown:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight markdown"><code>graph TB
-    Decode([Decode])
-    End([End])
-    ULhbCover[/"Unmerged Left-half
-    bits Cover Image"/]
-    CULhbHidden[/"Cover Image-sized Unmerged Left-half
-    bits Hidden Image"/]
-    ULhbHidden[/"Unmerged Left-half
-    bits Hidden Image"/]
-    Merged[/Merged Image/]
-    Lhb[LHB Mapping]
-    Rhb[RHB Mapping]<span class="sb">
-
-    Decode --&gt; Merged
-    Merged --&gt; Lhb &amp; Rhb
-    Lhb --&gt; ULhbCover
-    Rhb --&gt; CULhbHidden
-    CULhbHidden --"pass on hidden image
-    position in merged image"--&gt; ULhbHidden
-    ULhbCover &amp; ULhbHidden --&gt; End
-</span></code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  The Art of Styling Links
-</h2>
-
-<p>When I first stumbled upon the <a href="https://mermaid.js.org/syntax/flowchart.html#styling-links">Mermaid documentation on styling links</a>, it seemed simple enough. Just use this one-liner:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>linkStyle default stroke:green;
-</code></pre>
-
-</div>
-
-
-
-<p>The <code>default</code> parameter applies the styling to all links or arrows in your chart. However, there was one hiccup: the documentation didn't specify <em>where</em> to put this mysterious one-liner. Initially, I faced errors that had me scratching my head. Then, eureka! It occurred to me to place the styling directive <em>after</em> all the link syntax, like so:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight markdown"><code>graph TB
-    Decode([Decode])
-    End([End])
-    ULhbCover[/"Unmerged Left-half
-    bits Cover Image"/]
-    CULhbHidden[/"Cover Image-sized Unmerged Left-half
-    bits Hidden Image"/]
-    ULhbHidden[/"Unmerged Left-half
-    bits Hidden Image"/]
-    Merged[/Merged Image/]
-    Lhb[LHB Mapping]
-    Rhb[RHB Mapping]<span class="sb">
-
-    Decode --&gt; Merged
-    Merged --&gt; Lhb &amp; Rhb
-    Lhb --&gt; ULhbCover
-    Rhb --&gt; CULhbHidden
-    CULhbHidden --"pass on hidden image
-    position in merged image"--&gt; ULhbHidden
-    ULhbCover &amp; ULhbHidden --&gt; End
-
-    linkStyle default stroke:green;
-</span></code></pre>
-
-</div>
-
-
-
-<p>And just like that, it worked! Behold the green strokes in all their glory:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nLwsPtdt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bws8qomajscahact140x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nLwsPtdt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bws8qomajscahact140x.png" alt="Decode mermaid graph" width="541" height="546"></a></p>
-
-<h2>
-  
-  
-  Uncharted Waters
-</h2>
-
-<p>There are still a couple of nuances that have eluded me. One is colouring the arrowhead itself; I did ask BingChat for a solution, but it involved intricate CSS—a no-go for this Markdown-centric endeavor. Secondly, I'm on a perpetual quest for a contrasting background. Dark mode is my jam, and unfortunately, Mermaid's PNG output doesn't play well with it. I tried to set a solid background colour, but so far, no dice. You could try it live yourself <a href="https://mermaid.live/">here</a>.</p>
-
-<p>So there we have it—your links now boast eye-catching strokes, although the quest for perfect styling remains ever ongoing. If you've got insights on the elusive arrowhead colouring or background contrast, do share! Until then, keep exploring, keep questioning, and most importantly, keep <code>Technically Speaking</code>.</p>
-
-<p>Happy diagramming! 📊✨</p>
 
  </details> 
  <hr /> 
