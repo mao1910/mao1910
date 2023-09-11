@@ -133,117 +133,628 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Introducing Spaces: Build collaborative environments in a few lines of code](https://dev.to/ably/introducing-spaces-build-collaborative-environments-in-a-few-lines-of-code-3n01) 
- <details><summary>Article</summary> <p><strong>Spaces comes with a purpose-built SDK to enable developers to add a collaborative environment around existing applications.</strong></p>
-
-<p>We are very excited to announce a new product — Spaces! </p>
-
-<p>The <a href="https://www.ably.com/spaces">Spaces SDK</a> comes with an intuitive set of APIs that allow you to build realtime collaboration features such as avatar stacks, live cursors, member location and component locking, in days. Each API is optimized for their specific use-case, reducing integration effort.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NiFIe1aW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aidlg30sqzw8gtpnf365.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NiFIe1aW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aidlg30sqzw8gtpnf365.gif" alt="Image description" width="800" height="449"></a></p>
-
-<h2>
+ #### - [5 Tips & Tricks to Enhance Your Tailwind CSS Code](https://dev.to/arindam_1729/5-tips-tricks-to-enhance-your-tailwind-css-code-1h7c) 
+ <details><summary>Article</summary> <h1>
   
   
-  Spaces at a glance
-</h2>
+  Introduction:
+</h1>
 
-<ul>
-<li>
-<strong>Feature specific APIs:</strong> The only product that comes with purpose-built, realtime collaboration APIs for adding avatar stacks, member location, live cursors, and component locking. All APIs are optimized for top performance. For example, the live cursors API automatically batches pointer position events to avoid unnecessary streaming of messages whilst ensuring negligible latency.</li>
-<li>
-<strong>Easy to use:</strong> Spaces is a simple and intuitive SDK that can be used with any web application.</li>
-<li>
-<strong>High performing:</strong> Powered by our market-proven, realtime infrastructure that’s built for reliability at scale, backed by five nines SLAs and messaging guarantees.</li>
-<li>
-<strong>Realtime experiences unlocked:</strong> Spaces is built to work with Ably’s other complementary products like Pub/Sub Channels to unlock end-to-end realtime messaging throughout your app. While Spaces powers the features you need to enable synchronous collaboration for teams and manage their participant state, Pub/Sub channels allows you to flexibly broadcast and sync app state changes between members, your backend and any other pieces in your system design.</li>
-</ul>
+<p>Are you a front-end developer or designer looking to unlock the full potential of Tailwind CSS?</p>
 
-<h2>
+<p>Well, you're in the right place!</p>
+
+<p>In this blog post, I'll share some Tricks to enhance your Code. Are you ready?</p>
+
+<p>Let's get started!</p>
+
+<h1>
   
   
-  Enhancing your product with in-app collaboration &amp; Spaces
-</h2>
+  Tailwind Tips &amp; Tricks:
+</h1>
 
-<p>With the <a href="https://www.ably.com/spaces">Spaces SDK</a> you can set up a collaborative environment on any part of your application (or your entire application) so that collaborators have contextual awareness of what everyone is up to. Members of a space can see which other members are online, what they are looking at, their location within the app (this could be a cell, a page, a slide or a folder) and any specific component they’ve locked for editing. All of this and more in just a few lines of code.  No need to change your existing system design or app architecture. No realtime infrastructure to build and maintain to scale the collaboration to millions of virtual spaces and users.</p>
-
-<h2>
+<h3>
   
   
-  SDK feature highlights
-</h2>
+  1. The "Group Hover" Effect:
+</h3>
 
-<p>Here’s the full set of APIs available in the beta release with many more planned:</p>
+<p>With this technique, we can apply hover effects on parent elements and they will affect the child elements as well.</p>
 
-<ul>
-<li>
-<strong>Space:</strong> A virtual collaborative space set up on your application where members can collaborate with each other in realtime.</li>
-<li>
-<strong>Members:</strong> Online users connected to the virtual collaborative space. This powers an <a href="https://ably.com/examples/avatar-stack">avatar stack</a> for end users which is a visual representation of a member’s presence - showing them as online and connected.</li>
-<li>
-<strong>Member location:</strong> The <a href="https://examples.ably.dev/member-location">live location</a> of a user within the app - page, cell, slide, block or anything else that makes sense for your application.</li>
-<li>
-<strong>Live cursor:</strong> The pointer location of members in a virtual space showing what they are looking at. The <a href="https://ably.com/examples/live-cursors">live cursor API</a> automatically batches messages and provides the message rate required for smooth performance of 100s of simultaneous cursors (though we don’t recommend going beyond 15 for a good user experience).</li>
-<li>
-<strong>Component locking:</strong> Enables end-users to <a href="https://examples.ably.dev/component-locking">lock specific UI</a> components while making their edits, so there’s no confusion with other collaborators or disruption to overall collaboration in the space.</li>
-</ul>
+<p>The Syntax is very simple! We just have to add the <code>"group"</code> class in the parent element and the <code>"group-hover"</code> class in the children elements.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--v5m-zIg8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3wojtd9khrgzjc0a9x4k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v5m-zIg8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3wojtd9khrgzjc0a9x4k.png" alt="Image description" width="800" height="439"></a></p>
+<p>It's a very useful tag to make interactive Ui designs!</p>
 
-<h2>
-  
-  
-  Get started today
-</h2>
-
-<p>Spaces is currently available in beta. To get started simply</p>
-
-<ul>
-<li>Sign-up for a <a href="https://ably.com/sign-up">free developer account</a>
-</li>
-<li>Take a closer look at <a href="http://www.ably.com/spaces">Spaces</a>
-</li>
-<li>Dive into the <a href="https://ably.com/docs/products/spaces">Spaces docs</a>
-</li>
-<li>Sign-up for <a href="https://pages.ably.com/collaborative-spaces-webinar">the webinar</a>
-</li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Updating Docker Apps automagically with Watchtower✨🐳](https://dev.to/sliplane/updating-docker-apps-automagically-with-watchtower-1a61) 
- <details><summary>Article</summary> <p>Have you ever deployed a Docker app on a server, but everytime you push a new version of your image to a Docker registry you need to manually restart your app? If you want to automate this restarting, this blog post is for you! I am now going to show you how you can do this with literally <strong>1 simple command</strong> using <a href="https://containrrr.dev/watchtower">Watchtower!</a></p>
-
-<p>This tutorial assumes that you already have a flow to automatically build and push your containers to a registry. If you do not have that, I suggest you to read and follow <a href="https://josephrodriguezg.medium.com/build-and-publish-docker-images-with-github-actions-78be3b3fbb9b">this tutorial</a> or simply use a ready-to-go solution such as <a href="https://sliplane.io?utm_source=watchtower">Sliplane</a></p>
-
-<p>Let's get started! 🚀</p>
-
-<h2>
-  
-  
-  Setup
-</h2>
-
-<p>First, run your container that you want to automatically update. Then, run the following command after replacing <code>username</code>, <code>password</code>, and <code>container_to_watch</code><br>
+<p>For example:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>docker run <span class="nt">-d</span> <span class="se">\</span>
-  <span class="nt">--name</span> watchtower <span class="se">\</span>
-  <span class="nt">-e</span> <span class="nv">REPO_USER</span><span class="o">=</span>username <span class="se">\</span>
-  <span class="nt">-e</span> <span class="nv">REPO_PASS</span><span class="o">=</span>password <span class="se">\</span>
-  <span class="nt">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
-  containrrr/watchtower container_to_watch <span class="nt">--debug</span> <span class="nt">--interval</span> 300
+<pre class="highlight xml"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"group"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"group-hover:text-yellow-500 text-black"</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"group-hover:text-red-500 text-black"</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/span&gt;</span> 
+<span class="nt">&lt;/div&gt;</span>
 </code></pre>
 
 </div>
 
 
 
-<p>This will run the watchtower container (<code>containerrr/watchtower</code>) in the background (<code>-d</code>), name it watchtower, and pass in the username and password for your Docker container registry (<code>-e REPO_USER=username -e REPO_PASS=password</code>)</p>
+<p>Here, when the parent <code>&lt;div&gt;</code> with the <code>group</code> class is hovered, the two <code>&lt;span&gt;</code> elements will change colour to yellow and red, respectively.</p>
 
-<p>Watchtower will now periodically check if your Docker image has changed (in your remote repository!) and pull a new version once it has changed. It will then gracefully shut down your old container and restart it with the same configuration but with a new image. The default <a href="https://containrrr.dev/watchtower/arguments/#poll_interval">polling interval</a> is 24 hours, which is quite conservative if you ask me. You can change the polling interval with <code>--interval x</code> where x is the number of seconds to wait. If you want to check for updates every 5 minutes you would add <code>--interval 300</code></p>
+<p>This allows you to style child elements based on the hover state of a parent element.</p>
+
+<p>We can achieve more complex hover effects using <code>group-hover</code>. For example, to create a hovercard:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight xml"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"group relative"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"absolute group-hover:opacity-100"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"absolute group-hover:opacity-100"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  2. The "flow-root" Utility:
+</h3>
+
+<p>The <code>"flow-root"</code> utility class is very useful for containing floats and preventing margin collapsing.</p>
+
+<p>We can use <code>"flow-root"</code> class in Tailwind CSS to create a block-level element with its block formatting context so things like margins will not collapse across the <code>flow-root</code> element.</p>
+
+<p>For example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight xml"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"space-y-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flow-root"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"my-4"</span><span class="nt">&gt;</span>  
+        Content here will have its own block formatting context.
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Here the inner <code>&lt;div&gt;</code> with class <code>flow-root</code> will establish a new block formatting context for its child elements.</p>
+
+<h3>
+  
+  
+  3. Prettier Extension:
+</h3>
+
+<p>Prettier is a powerful code customizer that makes cleaner, more readable code in your Tailwind CSS projects.</p>
+
+<p>With this extension, We can effortlessly maintain consistent code formatting throughout our projects.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--85KaZNqG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://tailwindcss.com/_next/static/media/prettier-banner.79c40690.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--85KaZNqG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://tailwindcss.com/_next/static/media/prettier-banner.79c40690.jpg" alt="Editor Setup - Tailwind CSS" width="800" height="273"></a></p>
+
+<h3>
+  
+  
+  4. Delegate Classes to Parent Element:
+</h3>
+
+<p>Delegating Classes to Parent Elements is a great approach that helps to simplify markup, maintain consistency, and ease maintenance.</p>
+
+<p>In this approach, we don't have to add classes individually to the child elements.</p>
+
+<p>The added classes in the Parent element are being inherited by the child elements, which makes the code more readable and clean.</p>
+
+<p>We can use Tailwind's arbitrary selectors to delegate tailwind classes to child elements from a parent element.</p>
+
+<p>For example, say you have a list of avatars:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight xml"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To apply the same Tailwind classes to all the <code>&lt;img&gt;</code> elements, you can use the <code>[&amp;&gt;*]:</code> arbitrary selector on the parent <code>&lt;div&gt;</code> element:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"[&amp;&gt;*]:rounded-full [&amp;&gt;*]:w-14 [&amp;&gt;*]:h-14 [&amp;&gt;*]:ring-4 [&amp;&gt;*]:ring-white"</span> <span class="na">class=</span><span class="s">"flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>  
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>  
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>  
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Here:</p>
+
+<ul>
+<li><p><code>[&amp;&gt;*]:rounded-full</code> applies the <code>rounded-full</code> class to all direct children (<code>*</code>) of the element</p></li>
+<li><p><code>[&amp;&gt;*]:w-14</code> applies the <code>w-14</code> class to all direct children</p></li>
+</ul>
+
+<p>This makes the HTML more readable by concentrating the style rules in the parent element.</p>
+
+<p>To make the arbitrary selectors more readable, we can define custom variants in your <code>tailwind.config.js</code>.</p>
+
+<p>For example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="nt">variants</span><span class="o">:</span> <span class="p">{</span>
+  <span class="py">children</span><span class="p">:</span> <span class="p">[</span><span class="s2">'responsive'</span><span class="p">,</span> <span class="s2">'hover'</span><span class="p">,</span> <span class="s2">'focus'</span><span class="p">]</span> 
+<span class="p">}</span><span class="o">,</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then use it as:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight xml"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"children:rounded-full children:w-14 children:h-14"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  5. Tailwind CSS IntelliSense:
+</h3>
+
+<p>Tailwind CSS IntelliSense is a powerful extension for Visual Studio Code.</p>
+
+<p>With the Prettier plugin, We can automatically sort our Tailwind CSS utility classes in templates following Tailwind's recommended class order.</p>
+
+<p>consistency reduced cognitive load, and ease of understanding</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6FOLoSad--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://raw.githubusercontent.com/bradlc/vscode-tailwindcss/master/packages/vscode-tailwindcss/.github/banner.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6FOLoSad--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://raw.githubusercontent.com/bradlc/vscode-tailwindcss/master/packages/vscode-tailwindcss/.github/banner.png" alt="" width="800" height="400"></a></p>
+
+<h1>
+  
+  
+  Conclusion:
+</h1>
+
+<p>By mastering these tips &amp; tricks, you'll be able to write more efficient, readable &amp; maintainable code.</p>
+
+<p>If you found this blog post helpful, please consider sharing it with others who might benefit. You can also follow me for more content on Tailwind CSS and other web development topics.</p>
+
+<p>Connect with me on <a href="https://twitter.com/intent/follow?screen_name=Arindam_1729"><strong>Twitter</strong></a>, <a href="https://www.linkedin.com/in/arindam2004/"><strong>LinkedIn</strong></a>, and <a href="https://github.com/Arindam200"><strong>GitHub</strong></a>.</p>
+
+<p>Thank you for reading, and happy designing with Tailwind CSS!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SL3ADMLt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1692385434714/77d6e4a9-b310-4acf-9660-7c7e17adcf8d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SL3ADMLt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1692385434714/77d6e4a9-b310-4acf-9660-7c7e17adcf8d.png" alt="" width="800" height="420"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Soon every person on earth will have at least one passkey – if they want or not](https://dev.to/vdelitz/soon-every-person-on-earth-will-have-at-least-one-passkey-if-they-want-or-not-4c7b) 
+ <details><summary>Article</summary> <p>In the evolving landscape of digital security, Google and Apple have begun a transition from traditional passwords to passkeys. With the support of the FIDO Alliance, these tech giants are leading the way to a more secure and efficient authentication era.</p>
+
+<p>Traditional passwords, despite their widespread use, have always been vulnerable to hacking and theft. The introduction of passkeys offers a new layer of security. These digital keys are directly linked to a device and often leverage biometric features, like Face ID, for authentication. The standardization of passkeys has been possible due to the combined efforts of the FIDO Alliance, which includes tech leaders like Google, Apple, and Microsoft.</p>
+
+<h2>
+  
+  
+  Google's Approach to Passkey Integration
+</h2>
+
+<p>Recognizing the importance of improved digital security, Google has begun integrating passkeys into its platforms, automatically generating a passkey for any Android device linked to a Google account - a feature that users cannot remove. This strategy implies that a significant chunk of the global population now has access to this secure login method.</p>
+
+<h2>
+  
+  
+  Apple's Take on Enhanced Security with Passkeys
+</h2>
+
+<p>Apple, too, has taken steps forward in integrating passkeys, thus underlining its commitment to provide consistent and advanced security across all platforms. As disclosed in WWDC 2023, devices using iOS 17, iPadOS 17, and macOS Sonoma will also feature automatically generated, non-deletable passkeys. </p>
+
+<h2>
+  
+  
+  The Implications of Google and Apple's Dominance on Passkey Adoption
+</h2>
+
+<p>With Android and Apple collectively holding approximately 99% of the mobile market, their move toward passkey integration has far-reaching implications. With such vast influence and their ongoing commitment to automatic passkey integration, it's clear that enhanced security measures will soon become commonplace for users worldwide.</p>
+
+<p><strong>1. Google’s and Apple's passkey rollout will push social logins</strong><br>
+The integration of passkeys into Google and Apple's services extends beyond their domains. Social logins which let users apply existing credentials from platforms like Google or Apple to log into third-party sites will benefit from this development. This progression prompts a query: will there still be a need for independent passkey integrations for third-party apps and platforms?</p>
+
+<p><strong>2. Websites and apps still need to provide their own login options</strong><br>
+However, previous attempts by Google and Apple to universalize their login solutions haven't been wholly successful. Many platforms continue to offer traditional email and password combinations, indicating a possible preference for direct passkey integrations, rather than relying on tech giants.</p>
+
+<p><strong>3. Tech giants set new industry standards with passkeys</strong><br>
+The active role of Google and Apple in the passkey realm will shape future industry standards. Their combined reach might influence other tech leaders to reconsider and modify their existing security mechanisms. As users increasingly familiarize themselves with the ease and security of passkeys, it becomes crucial for website and app providers to ensure their offerings balance user convenience with stringent security.</p>
+
+<h2>
+  
+  
+  To sum it up:
+</h2>
+
+<p>Passkeys are undoubtedly paving the way for a more secure digital experience. Their proliferation suggests that their usage will soon be widespread, and users will come to expect it as a standard feature. This shift means service providers, possibly with the assistance of passkey aggregators, will need to find ways to manage user login credentials more efficiently.</p>
+
+<p>Those curious about details of this transition and its implications can find out more <a>here</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [FFMPEG-Coder: Simplifying Video Conversion with FFMPEG](https://dev.to/abirtx/ffmpeg-coder-simplifying-video-conversion-with-ffmpeg-14aj) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
+
+<p>Video conversion with FFMPEG can be a daunting task, especially for newcomers to the world of command-line tools. To address this challenge, I'm excited to introduce <strong>FFMPEG-Coder</strong>, a versatile and user-friendly CLI tool designed to simplify video conversion with FFMPEG. Whether you're a seasoned FFMPEG user looking for efficiency or new to the command line, FFMPEG-Coder aims to streamline your video conversion tasks.</p>
+
+<h2>
+  
+  
+  Links
+</h2>
+
+<ul>
+<li><a href="https://github.com/Abir-Tx/ffmpeg-coder">FFMPEG-Coder GitHub</a></li>
+<li><a href="https://sourceforge.net/projects/ffmpeg-coder/">Sourceforge Link of FFMPEGC</a></li>
+</ul>
+
+<h2>
+  
+  
+  Project Description
+</h2>
+
+<p><strong>FFMPEG-Coder</strong> is a small, cross-platform command-line tool that bridges the gap between users and FFMPEG commands. Its primary mission is to make generating FFMPEG commands quick and effortless, eliminating the need to memorize or search for complex command-line options. This tool is compatible with Windows, Linux, and macOS, making it accessible to a wide range of users.</p>
+
+<h2>
+  
+  
+  Who is this Tool For?
+</h2>
+
+<p><strong>FFMPEG-Coder</strong> is tailored for two primary user groups:</p>
+
+<ol>
+<li><p><strong>Experienced FFMPEG Users</strong>: For those who frequently work with FFMPEG but seek a more convenient way to generate complex conversion commands.</p></li>
+<li><p><strong>Command Line Newcomers</strong>: Even if you're new to the command line, FFMPEG-Coder provides a user-friendly interface to create FFMPEG commands effortlessly. Say goodbye to endless Google searches for the right commands.</p></li>
+</ol>
+
+<h2>
+  
+  
+  Features
+</h2>
+
+<p>Here's why you should consider using <strong>FFMPEG-Coder</strong> in your video conversion tasks:</p>
+
+<ul>
+<li>
+<strong>Cross-Platform Support</strong>: Enjoy a consistent experience on Windows, Linux, and macOS.</li>
+<li>
+<strong>No External Dependencies</strong>: <strong>FFMPEG-Coder</strong> is lightweight and doesn't rely on additional dependencies.</li>
+<li>
+<strong>Speed and Efficiency</strong>: Quickly generate FFMPEG commands tailored to your needs.</li>
+<li>
+<strong>Options for h264 and libx265</strong>: Customize your video conversion with ease.</li>
+</ul>
+
+<h2>
+  
+  
+  Installation Guide
+</h2>
+
+<h3>
+  
+  
+  Windows
+</h3>
+
+<ol>
+<li>Download the Windows installer file from the <a href="https://github.com/Abir-Tx/ffmpeg-coder/releases/latest">latest release</a> or <a href="https://github.com/Abir-Tx/ffmpeg-coder/releases/download/v1.0/ffmpeg-coder_1.0_win.zip">here</a>.</li>
+<li>Extract the downloaded <code>ffmpeg-coder_1.0_win.zip</code>.</li>
+<li>Navigate to the unzipped folder and double-click <code>ffmpeg-coder_1.0_win.exe</code>.</li>
+<li>Follow the on-screen instructions to complete the installation.</li>
+<li>After installation, search for <strong>FFMPEG-Coder</strong> in your start menu and open the tool.</li>
+</ol>
+
+<h3>
+  
+  
+  Linux (Debian-based distros)
+</h3>
+
+<h4>
+  
+  
+  Automatic One-Click Process
+</h4>
+
+<ul>
+<li>Copy and paste the following script into your terminal:
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>wget https://raw.githubusercontent.com/Abir-Tx/ffmpeg-coder/main/scripts/debian_install.sh <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x debian_install.sh <span class="o">&amp;&amp;</span>./debian_install.sh
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Arch Based Distros
+</h4>
+
+<p>Arch Linux users can easily install FFMPEG-Coder from the AUR with:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>yay <span class="nt">-S</span> ffmpeg-coder
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Other Methods
+</h3>
+
+<p>You can also compile the tool from source or manually download it. Instructions on those methods are described on the main project readme <a href="https://github.com/Abir-Tx/ffmpeg-coder#install-from-source">here</a></p>
+
+<h2>
+  
+  
+  Using FFMPEG-Coder
+</h2>
+
+<p>FFMPEG-Coder is designed to simplify the process of generating FFMPEG commands for video conversion. Let's walk through some examples of how to use this tool effectively.</p>
+
+<h3>
+  
+  
+  Example 1: Basic Video Conversion
+</h3>
+
+<p>Suppose you have a video file named <code>input.mp4</code> that you want to convert to the popular H.264 format with a different output filename <code>output.mp4</code>. Here's how you can do it using FFMPEG-Coder:</p>
+
+<ol>
+<li>Launch FFMPEG-Coder after installation.</li>
+<li>In the main menu, select "Make Codes."</li>
+<li>You will be prompted to choose the encoding method, then CRF and many mores.</li>
+<li>Next, specify the desired output file name as <code>output</code> notice that the name should be without extension.</li>
+<li>FFMPEG-Coder will now generate the FFMPEG command for you. Simply copy and paste it into your terminal to start the conversion.</li>
+<li>Insert <code>-1</code> to exit the input loop</li>
+</ol>
+
+<p>There is also a second option which is a preset named Quick Convert. I generally use it for quick works.</p>
+
+<p>FFMPEG-Coder makes it effortless to perform this common video conversion task without needing to remember the intricate FFMPEG command syntax.</p>
+
+<h2>
+  
+  
+  Contribute
+</h2>
+
+<p>We welcome contributions to the FFMPEG-Coder project! Whether you're interested in fixing bugs, adding new features, improving documentation, or simply want to get involved, your contributions are highly valuable to the community.</p>
+
+<p><a href="https://github.com/Abir-Tx/ffmpeg-coder/blob/main/docs/CONTRIBUTING.md">Read more</a> on how to contribute to this project.</p>
+
+<p>Mushfiqur Rahman Abir<br>
+<em>Computer Science Engineer</em> </p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Node.js path module](https://dev.to/endeavourmonk/nodejs-path-module-16fm) 
+ <details><summary>Article</summary> <p>The path module in Node.js is a built-in module that provides utilities for working with file and directory paths. It helps in constructing, manipulating, and working with file and directory paths in a cross-platform manner, making it easier to write platform-independent code.</p>
+
+<p>Here are some common functions provided by the path module:<br>
+<strong>1. path.join([...paths]):</strong><br>
+Joins one or more path segments into a single path, using the appropriate platform-specific separator (e.g., "\" on Windows and "/" on Unix-like systems).<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    const path = require('path');
+    const fullPath = path.join(__dirname, 'folder', 'file.txt');
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>2. path.resolve([...paths]):</strong><br>
+Resolves an absolute path from relative paths. It returns an absolute path by combining the current working directory with the provided paths.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    const path = require('path');
+    const absolutePath = path.resolve('folder', 'file.txt');
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>3. path.basename(path, [ext]):</strong><br>
+Returns the last portion of a path (i.e., the filename). You can also specify an extension to remove.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    const path = require('path');
+    const filename = path.basename('/path/to/file.txt'); // Returns 'file.txt'
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>4. path.dirname(path):</strong><br>
+Returns the directory name of a path.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    const path = require('path');
+    const dirname = path.dirname('/path/to/file.txt'); // Returns '/path/to'
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>5. path.extname(path):</strong></p>
+
+<p>Returns the file extension of a path, including the dot.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    const path = require('path');
+    const extension = path.extname('/path/to/file.txt'); // Returns '.txt'
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>6. path.normalize(path):</strong><br>
+Normalizes a path by resolving '..' and '.' segments and removing redundant slashes.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    const path = require('path');
+    const normalizedPath = path.normalize('/path/to/../file.txt'); // Returns '/path/file.txt'
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>7. path.isAbsolute(path):</strong></p>
+
+<p>Check if a path is an absolute path.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    const path = require('path');
+    const isAbsolute = path.isAbsolute('/path/to/file.txt'); // Returns true
+
+</code></pre>
+
+</div>
+
+
+
+<p>These are just a few of the functions provided by the path module. The module is particularly useful when dealing with file I/O, working with file paths in a cross-platform way, and ensuring that your code behaves consistently across different operating systems.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Choosing the Right Database for Your Application](https://dev.to/taquiimam14/choosing-the-right-database-for-your-application-5ff3) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction✨
+</h2>
+
+<p>When it comes to developing a robust and efficient application, one of the critical decisions you'll <strong>face is choosing the right database</strong>. Your choice can significantly impact your <strong>application's performance, scalability, and overall success</strong>. With a plethora of database options available today, it can be overwhelming to make the right decision. But fear not, we're here to guide you through the process.</p>
+
+<h2>
+  
+  
+  Understanding the Types of Databases
+</h2>
+
+<p>Databases come in various flavors, but they can be broadly categorized into two main types: SQL (relational) databases and NoSQL databases. Let's take a closer look at each:</p>
+
+<h2>
+  
+  
+  SQL Databases✡
+</h2>
+
+<p>SQL databases are known for their structured, tabular data model. They're ideal for applications that require complex queries, transactions, and maintain strict data integrity. Here are a few popular SQL databases:</p>
+
+<p><strong>1. MySQL</strong>: An open-source relational database that's well-suited for web applications.</p>
+
+<p><strong>2. PostgreSQL:</strong> Known for its advanced features and extensibility, PostgreSQL is a strong choice for enterprise-level applications.</p>
+
+<p><strong>3. Microsoft SQL Server:</strong> A robust database management system with strong integration options for Windows-based applications.</p>
+
+<h2>
+  
+  
+  NoSQL Databases🗃
+</h2>
+
+<p>NoSQL databases, on the other hand, are designed to handle unstructured or semi-structured data. They are more flexible and scalable, making them suitable for modern, data-intensive applications. Some notable NoSQL databases include:</p>
+
+<p><strong>1. MongoDB:</strong> A popular document-oriented NoSQL database, great for handling large volumes of data.</p>
+
+<p><strong>2. Cassandra:</strong> Ideal for handling massive amounts of data across distributed clusters, making it suitable for IoT and real-time analytics applications.</p>
+
+<p><strong>3. Redis:</strong> A lightning-fast, in-memory data store often used for caching and real-time analytics.</p>
+
+<h2>
+  
+  
+  Considerations for Choosing the Right Database
+</h2>
+
+<p>Now that we have a basic understanding of the types of databases, let's delve into some key factors to consider when making your decision:</p>
+
+<p><strong>1. Data Model📑:</strong><br>
+Consider the structure of your data. If your data is highly structured and requires complex querying, an SQL database might be the right choice. For more flexibility with unstructured data, NoSQL databases shine.</p>
+
+<p><strong>2. Scalability🌐:</strong><br>
+Think about your application's growth potential. If you anticipate rapid growth, NoSQL databases are generally more scalable and can handle horizontal scaling more effectively.</p>
+
+<p><strong>3. Consistency and Transactions💸:</strong><br>
+If your application requires ACID (Atomicity, Consistency, Isolation, Durability) compliance and strict data consistency, SQL databases are your friend. NoSQL databases offer eventual consistency, which may be acceptable for certain use cases.</p>
+
+<p><strong>4. Performance🚀:</strong><br>
+Consider the speed and latency requirements of your application. If you need lightning-fast read and write operations, NoSQL databases, particularly in-memory stores like Redis, might be a better fit.</p>
+
+<p><strong>5. Ecosystem and Support🌎:</strong><br>
+Check the availability of libraries, frameworks, and community support for your chosen database. A robust ecosystem can save you a lot of development time.</p>
 
 <h2>
   
@@ -251,88 +762,15 @@
   Conclusion
 </h2>
 
-<p>That's it! Now your cool dockerized app should update everytime you push a new image to your Docker repository. If you want to deploy a Docker app without all of the devops pain and without any Docker repositories, check out <a href="https://sliplane.io?utm_source=watchtower">Sliplane</a></p>
+<p>Choosing the right database for your application is a critical decision that can <strong>affect your project's success</strong>. It's essential to understand your data, scalability needs, and the specific requirements of your application. Whether you opt for an SQL or NoSQL database, <strong>remember that there's no one-size-fits-all solution</strong>. The key is aligning your choice with your project's unique demands.</p>
 
- </details> 
- <hr /> 
-
- #### - [how much % you have used out of your life???](https://dev.to/rodonguyen/how-much-you-have-used-out-of-your-life-3nnb) 
- <details><summary>Article</summary> <p>Hello fellow inventors!</p>
-
-<p>So I developed a fun and simple app that tells you how many percentages of your life you've used. It's called "Time I Have Left" :)</p>
-
-<p>The link to this app can be found at the bottom or the comment section. <strong>Like</strong> or <strong>Comment</strong> to let me know if you want to read more about the project or my tips on programming in general!</p>
-
-<p>In this project, I decided to use TypeScript instead of JavaScript to learn more about its type-checking feature as well as integrating TS in a pre-built JS application.</p>
-
-<p>The result? I feel safer with TS and the code becomes more readable with the Type and Interface declaration 😌</p>
-
-<p>Also, do visit <a href="https://amazing.rodonguyen.dev/timeihaveleft">the app</a> too. Hope it provides you with a different len of looking at life! This can be a reminder of how short life is, a message to stop your procrastination or it may just tell you that you're old 😂</p>
-
-<p>Again... please feel free to <strong>Like</strong> or <strong>Comment</strong> to let me know if you want to read more about the project or my tips on programming in general! </p>
-
-<p>I'm also just learning to program, just like you :&gt;</p>
-
- </details> 
- <hr /> 
-
- #### - [Meme Monday](https://dev.to/ben/meme-monday-1hjc) 
- <details><summary>Article</summary> <p><strong>Meme Monday!</strong></p>
-
-<p>Today's cover image comes from <a href="https://dev.to/ben/meme-3opp">last week's thread</a>.</p>
-
-<p>DEV is an inclusive space! Humor in poor taste will be downvoted by mods.</p>
-
- </details> 
- <hr /> 
-
- #### - [Music Monday — What are you listening to? (Soft Edition)](https://dev.to/devteam/music-monday-what-are-you-listening-to-soft-edition-1mc9) 
- <details><summary>Article</summary> <p><em>cover image source: <a href="https://giphy.com/gifs/chill-cassette-music-mix-portals-landscape-window-mellow-tranquil-26gs7byN2JOXsBiuY">Giphy</a></em></p>
-
-<p><strong>Last week, we got heavy, and this week and I wanna take 180° turn and go soft. What are your favorite tender ballads and gentle instrumentals? What tunes do you turn to to soothe your mind, body, and soul? Let's give a listen to those softer tunes today. As always, take this prompt however you wanna... I'm looking forward to tuning into y'all's suggestions!</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JAXmJOws--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gc2vh7sooluk804cli50.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JAXmJOws--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gc2vh7sooluk804cli50.gif" alt="A woman soulfully playing a harp" width="480" height="480"></a></p>
-
-
-
+<p>In the end, the right database will help your application perform at its best, ensuring a smooth user experience and efficient data management. So, <strong>take your time, evaluate your options</strong>, and make an informed decision. Your application's success depends on it.</p>
 
 <h2>
   
   
-  How we do
+  Happy coding!
 </h2>
-
-<p>In this weekly series, folks can chime in and drop links to whatever it is they've been listening to recently + browse others suggestions. You can follow the suggested genre if you'd like, but don't feel confined to it; you're free to suggest whatever you wanna. 🙌  </p>
-
-<p>If you're interested in having other discussions about music, consider following the aptly named <a href="https://dev.to/music-discussions">#music discussions</a> organization.</p>
-
-
-<div class="ltag__user ltag__user__id__5579">
-  <a href="/music-discussions" class="ltag__user__link profile-image-link">
-    <div class="ltag__user__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pJKyMGM---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--brJM2E2x--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_66%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/5579/2ecc2b3c-301f-4eb6-82f8-dabf0e455df2.gif" alt="music-discussions image">
-    </div>
-  </a>
-  <div class="ltag__user__content">
-    <h2>
-      <a href="/music-discussions" class="ltag__user__link">#music discussions</a>
-      Follow
-    </h2>
-    <div class="ltag__user__summary">
-      <a href="/music-discussions" class="ltag__user__link">
-        Let's talk about #music. 🎶
-      </a>
-    </div>
-  </div>
-</div>
-  
-
-
-
-
-<p>Let the soothing sounds ease your mind! <em>Note: you can embed a link to your song using the following syntax <code>{% embed https://... %}</code>. This should work for most common platforms!</em></p>
-
-<p>Looking forward to listening to y'all's suggestions! 🎶</p>
 
  </details> 
  <hr /> 
