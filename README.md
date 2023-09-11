@@ -133,6 +133,730 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [PURISTA: Build with rimraf, esbuild, Turbo & git-cliff](https://dev.to/purista/purista-build-with-rimraf-esbuild-turbo-git-cliff-5h5e) 
+ <details><summary>Article</summary> <p>In our previous article, we laid the foundation with a glimpse of our coding setup.</p>
+
+<p>It's now time to spotlight the indispensable build tools that power its development.</p>
+
+<h2>
+  
+  
+  rimraf
+</h2>
+
+<p>Huge thanks to <a href="http://blog.izs.me/">Isaacs</a>!<br>
+<a href="https://github.com/isaacs/rimraf">Rimraf</a> comes to the rescue, providing a reliable solution for deep, recursive removal of folders and files.<br>
+At PURISTA, we rely on rimraf to maintain pristine build output directories. </p>
+<h2>
+  
+  
+  Turbo
+</h2>
+
+<p>PURISTA is organized in a monorepo.<br>
+During the development and build process, <a href="https://turbo.build">Turbo</a> is used to execute different tasks and steps on multiple packages with one command.</p>
+
+<p>We aren't harnessing the full potential and capabilities of Turbo at the moment since PURISTA currently requires only a few straightforward build tasks.</p>
+
+<p>If you have more complex tasks, especially those with interdependencies between steps, it's worth exploring <a href="https://turbo.build">https://turbo.build</a></p>
+<h2>
+  
+  
+  Esbuild
+</h2>
+
+<p>In its early stages, PURISTA was built using the standard TypeScript compiler.<br>
+However, this approach excelled in creating CommonJS packages but turned into a nightmare when it came to generating ESM builds.</p>
+
+<p><a href="https://esbuild.github.io">esbuild</a> - the rescue!<br>
+No longer struggling with configs, file extensions or similar.</p>
+
+<p>With esbuild, it was becoming simple and fast.</p>
+
+<p>We created a small script:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">esbuild</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">esbuild</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">esbuild</span>
+  <span class="p">.</span><span class="nx">build</span><span class="p">({</span>
+    <span class="na">entryPoints</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./src/index.ts</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">outfile</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./lib/esm/index.mjs</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">bundle</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">esm</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">splitting</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">platform</span><span class="p">:</span> <span class="dl">'</span><span class="s1">node</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">sourcemap</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">target</span><span class="p">:</span> <span class="dl">'</span><span class="s1">node18</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">minify</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">packages</span><span class="p">:</span> <span class="dl">'</span><span class="s1">external</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="nx">esbuild</span>
+  <span class="p">.</span><span class="nx">build</span><span class="p">({</span>
+    <span class="na">entryPoints</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./src/index.ts</span><span class="dl">'</span><span class="p">],</span>
+    <span class="na">outfile</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./lib/cjs/index.cjs</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">bundle</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cjs</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">splitting</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">platform</span><span class="p">:</span> <span class="dl">'</span><span class="s1">node</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">sourcemap</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">target</span><span class="p">:</span> <span class="dl">'</span><span class="s1">node18</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">minify</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">packages</span><span class="p">:</span> <span class="dl">'</span><span class="s1">external</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Since this approach only generates JavaScript files, and we aim to provide proper TypeScript types to PURISTA users, we utilize the TypeScript compiler specifically for building types.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>tsc --emitDeclarationOnly --declarationMap false --declaration --outDir lib/types
+</code></pre>
+
+</div>
+
+
+
+<p>In <code>package.json</code>, only these additions were necessary:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"directories"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"lib"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lib/index.js"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./lib/cjs/index.cjs"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./lib/esm/index.mjs"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"exports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"."</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"import"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./lib/esm/index.mjs"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./lib/cjs/index.cjs"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"types"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./lib/types/index.d.ts"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"typings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lib/types/index.d.ts"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"lib"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>A big thank you ❤️ to all contributors and maintainers of esbuild!<br>
+It solved the issue with CommonJS/ESM for us and produces size optimized outputs for all PURISTA packages.</p>
+<h2>
+  
+  
+  git-cliff
+</h2>
+
+<p>Changelogs are nice and everybody likes them, but nobody wants to maintain them 😜.<br>
+Here, <a href="https://git-cliff.org/">git-cliff</a> by <a href="https://blog.orhun.dev">Orhun Parmaksız</a> is one simple to use solution.</p>
+
+<p>One simple command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>git-cliff &gt; CHANGELOG.md
+</code></pre>
+
+</div>
+
+
+
+<p>And your changelog gets generated from your git history.</p>
+
+<p>Undoubtedly one of the time-saving tools, you should check out at <a href="https://git-cliff.org">https://git-cliff.org</a></p>
+
+
+
+
+<p>In the upcoming article of this series, we will delve deeper into the test setup. Stay tuned!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Unlocking the Potential of Telegram Bot Development Using .NET Core](https://dev.to/ronakmunjapara/unlocking-the-potential-of-telegram-bot-development-using-net-core-597g) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DvNnOTzI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w2usaz0un5r5j6ovosbt.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DvNnOTzI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w2usaz0un5r5j6ovosbt.jpeg" alt="Image description" width="800" height="800"></a><br>
+In the realm of modern communication and automation, Telegram stands out as a popular messaging platform that caters to millions of users worldwide. Telegram's versatility lies not only in its ability to connect people but also in its support for creating intelligent and interactive chatbots. These chatbots, often referred to as Telegram Bots, offer a myriad of possibilities for businesses and developers. In this comprehensive guide, we'll delve into the exciting world of Telegram Bot development using .NET Core, a powerful and cross-platform framework. </p>
+<h2>
+  
+  
+  Table of Contents
+</h2>
+
+<ul>
+<li><strong>Introduction to Telegram Bots</strong></li>
+<li><strong>Why Choose .NET Core for Telegram Bot Development</strong></li>
+<li><strong>Setting Up Your Development Environment</strong></li>
+<li><strong>Creating Your First Telegram Bot</strong></li>
+<li><strong>Interacting with Telegram's Bot API</strong></li>
+<li><strong>Implementing Bot Commands and Responses</strong></li>
+<li><strong>Enhancing User Experience with Inline Mode</strong></li>
+<li><strong>Storing Data Securely</strong></li>
+<li><strong>Deploying Your Telegram Bot</strong></li>
+<li><strong>Monitoring and Maintenance</strong></li>
+<li><strong>Security Best Practices</strong></li>
+<li><strong>Scaling Your Bot for High Demand</strong></li>
+<li><strong>Case Studies: Real-World Telegram Bots</strong></li>
+<li><strong>Conclusion and Next Steps</strong></li>
+</ul>
+<h2>
+  
+  
+  Introduction to Telegram Bots
+</h2>
+
+<p>Telegram Bots are special accounts that can be programmed to perform automated tasks within the Telegram platform. They serve a variety of purposes, from providing information and customer support to automating routine tasks and entertainment. Telegram's Bot API offers a robust set of tools for developers to create and manage these bots effectively.</p>
+<h2>
+  
+  
+  Why Choose .NET Core for Telegram Bot Development
+</h2>
+
+<p>.NET Core is a powerful and versatile framework for building cross-platform applications, making it an excellent choice for Telegram Bot development. Some key reasons to opt for .NET Core include:</p>
+
+<ul>
+<li><p><strong>Cross-Platform Compatibility:</strong> .NET Core allows you to develop Telegram Bots that can run seamlessly on different operating systems, including Windows, Linux, and macOS.</p></li>
+<li><p><strong>High Performance:</strong> .NET Core is known for its exceptional performance, ensuring that your Telegram Bot responds swiftly to user interactions.</p></li>
+<li><p><strong>Robust Development Tools:</strong> Visual Studio and Visual Studio Code provide exceptional development environments for .NET Core, offering features like IntelliSense, debugging, and code analysis.</p></li>
+<li><p><strong>Strong Community Support:</strong> The .NET Core community is vast, and you can find numerous libraries, packages, and resources to expedite your Telegram Bot development.</p></li>
+</ul>
+<h2>
+  
+  
+  Setting Up Your Development Environment
+</h2>
+
+<p>Before diving into Telegram Bot development, you need to set up your development environment. Ensure that you have .NET Core SDK, a code editor (Visual Studio Code is recommended), and access to the Telegram app.</p>
+<h2>
+  
+  
+  Creating Your First Telegram Bot
+</h2>
+
+<p>In this section, we'll guide you through the process of creating your first Telegram Bot. We'll cover the essentials, including bot registration, obtaining API tokens, and configuring your bot's settings.</p>
+<h2>
+  
+  
+  Interacting with Telegram's Bot API
+</h2>
+
+<p>Understanding Telegram's Bot API is crucial for building feature-rich bots. We'll explore the API's endpoints and demonstrate how to send messages, images, and more to Telegram users.</p>
+<h2>
+  
+  
+  Implementing Bot Commands and Responses
+</h2>
+
+<p>Learn how to program your Telegram Bot to respond to specific commands and messages. We'll create custom responses and explore various interaction scenarios.</p>
+<h2>
+  
+  
+  Enhancing User Experience with Inline Mode
+</h2>
+
+<p>Telegram's Inline Mode enables bots to provide immediate responses within chat conversations. Discover how to implement this feature to enhance user experience.</p>
+<h2>
+  
+  
+  Storing Data Securely
+</h2>
+
+<p>Security is paramount in bot development. We'll discuss best practices for securely storing sensitive information, such as API tokens and user data.</p>
+<h2>
+  
+  
+  Deploying Your Telegram Bot
+</h2>
+
+<p>Once your bot is ready, you'll need to deploy it for public use. We'll cover hosting options and deployment strategies to make your bot accessible to Telegram users.</p>
+<h2>
+  
+  
+  Monitoring and Maintenance
+</h2>
+
+<p>A successful bot requires ongoing monitoring and maintenance. We'll provide insights into monitoring tools and essential maintenance tasks.</p>
+<h2>
+  
+  
+  Security Best Practices
+</h2>
+
+<p>We'll delve into security best practices to protect your bot and users from potential threats and vulnerabilities.</p>
+<h2>
+  
+  
+  Scaling Your Bot for High Demand
+</h2>
+
+<p>As your bot gains popularity, scalability becomes crucial. Learn how to scale your bot to handle high user demand without compromising performance.</p>
+<h2>
+  
+  
+  Case Studies: Real-World Telegram Bots
+</h2>
+
+<p>Explore real-world examples of Telegram Bots developed using .NET Core. These case studies will inspire you with innovative bot ideas and implementations.</p>
+<h2>
+  
+  
+  Conclusion and Next Steps
+</h2>
+
+<p>In the conclusion, we'll summarize key takeaways and guide you on the next steps in your Telegram Bot development journey. Whether you're a beginner or an experienced developer, mastering Telegram Bot development with .NET Core opens up exciting possibilities for automation and interaction.</p>
+<h1>
+  
+  
+  Frequently Asked Questions
+</h1>
+<h2>
+  
+  
+  1. What is the Telegram Bot API?
+</h2>
+
+<p>The Telegram Bot API is a set of tools and interfaces provided by Telegram for developers to create and manage Telegram Bots. It allows developers to interact with Telegram's platform programmatically, enabling the automation of various tasks and interactions.</p>
+<h2>
+  
+  
+  2. Do I need prior experience in .NET Core to get started?
+</h2>
+
+<p>While prior experience in .NETCore is beneficial, this guide is designed to cater to both beginners and experienced developers. We'll provide step-by-step instructions and code samples to ensure that anyone can start building Telegram Bots using .NET Core, regardless of their prior experience.</p>
+<h2>
+  
+  
+  3. Can I deploy my Telegram Bot on any hosting platform?
+</h2>
+
+<p>Yes, Telegram Bots developed with .NET Core can be deployed on a wide range of hosting platforms, including cloud services like Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). We'll guide you through the deployment process, allowing you to choose the platform that suits your needs.</p>
+<h2>
+  
+  
+  4. Are there any costs associated with developing Telegram Bots?
+</h2>
+
+<p>Developing Telegram Bots using .NET Core does not incur any specific costs beyond the standard charges for hosting and any third-party services or libraries you choose to integrate. Telegram itself provides a free platform for bot development and usage.</p>
+<h2>
+  
+  
+  5. Can I monetize my Telegram Bot?
+</h2>
+
+<p>Yes, you can monetize your Telegram Bot through various strategies, such as offering premium features, running ads, or providing subscription-based services. We'll discuss monetization options and considerations to help you make informed decisions.</p>
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In this comprehensive guide, we've embarked on a journey to unlock the potential of Telegram Bot development using .NET Core. We've explored the fundamentals, best practices, and real-world applications of building intelligent and interactive bots. Whether you aim to automate tasks, provide valuable services, or simply enhance user experiences on Telegram, this guide equips you with the knowledge and skills needed to succeed.</p>
+
+<p>Now, it's time for you to dive into the world of Telegram Bot development. Begin by setting up your development environment, creating your first bot, and exploring the limitless possibilities that await. Feel free to reach out with any questions or share your bot success stories with the community. Happy bot building!</p>
+
+
+<div class="ltag-github-readme-tag">
+  <div class="readme-overview">
+    <h2>
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
+      <a href="https://github.com/ronakmunjapara">
+        ronakmunjapara
+      </a> / <a href="https://github.com/ronakmunjapara/TelegramBot">
+        TelegramBot
+      </a>
+    </h2>
+    <h3>
+      Telegram Bot @FitRonyBot Using .Net Core
+    </h3>
+  </div>
+  <div class="ltag-github-body">
+    
+<div id="readme" class="md">
+<h1>
+Fit.Rony Telegram Bot</h1>
+<p>Fit.Rony is a Telegram bot designed to provide fitness advice and tips to users. The bot offers information on exercise routines, diet plans, and overall wellness to help individuals achieve their fitness goals.</p>
+<h2>
+Features</h2>
+<ul>
+<li>Receive personalized fitness advice based on your specific goals and interests</li>
+<li>Get exercise recommendations for different muscle groups and fitness levels</li>
+<li>Learn about proper nutrition and healthy eating habits</li>
+<li>Stay motivated with regular fitness tips and reminders</li>
+<li>Engage in conversation with the bot for interactive fitness discussions</li>
+</ul>
+<h2>
+Getting Started</h2>
+<p>To start using the Fit.Rony bot, follow these steps:</p>
+<ol>
+<li>Create a Telegram account if you don't have one already.</li>
+<li>Search for "@FitRonyBot" in the Telegram app.</li>
+<li>Start a conversation with the bot.</li>
+<li>Send a message to the bot to receive personalized fitness advice and tips.</li>
+</ol>
+<h2>
+Screenshot</h2>
+<p><a rel="noopener noreferrer" href="https://user-images.githubusercontent.com/43374534/252140981-c9613a8f-f8de-47be-bd19-f9dcab34573a.jpg"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ZbGCxZX0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://user-images.githubusercontent.com/43374534/252140981-c9613a8f-f8de-47be-bd19-f9dcab34573a.jpg" alt="Screenshot_2023-07-09-16-01-17-72_948cd9899890cbd5c2798760b2b95377"></a></p>
+<h2>
+Contributing</h2>
+<p>Contributions to the Fit.Rony Telegram bot project are welcome! If you have any suggestions, bug reports, or…</p>
+</div>
+  </div>
+  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/ronakmunjapara/TelegramBot">View on GitHub</a></div>
+</div>
+
+
+ </details> 
+ <hr /> 
+
+ #### - [Validando chave ssh pública no Laravel](https://dev.to/devlopez/validando-chave-ssh-no-laravel-2d2i) 
+ <details><summary>Article</summary> <p>Quando somos chamados para desenvolver uma aplicação, devemos ter em mente que podemos ter que lidar com vários tipos de problemas, aqueles que talvez jamais tenhamos imaginado em enfrentar. Contudo, vez ou outra precisamos sair de nossa zona de conforto.</p>
+
+<h2>
+  
+  
+  Entendendo o problema
+</h2>
+
+<p>Há alguns dias, fui acionado para construir uma feature que iria receber a chave pública de um dev e iria enviá-la, posteriormente, para o forge, fazendo com que o usuário tivesse acesso ssh aos devidos servidores.</p>
+
+<blockquote>
+<p>Maravilha Matheusão, como vou validar essa tipo de dado?</p>
+</blockquote>
+
+<p>Incialmente a gente pensa em validar o básico, como o tamanho da string, se ela já existe no banco de dados, etc:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nullable'</span><span class="p">,</span> <span class="s1">'string'</span><span class="p">,</span> <span class="s1">'unique:users,ssh_key'</span><span class="p">,</span> <span class="s1">'max:5000'</span><span class="p">]</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Beleza, mas e se o meu usuário passar, sei lá, todas as letras do alfabeto? Infelizmente vai passar pela validação 🙁.</p>
+
+<h2>
+  
+  
+  À procura da validação perfeita
+</h2>
+
+<p>Pesquisei bastante à respeito de como realizar essa validação. Em vários blogs, vi muita gente indicando usar funções nativas, como o <strong><code>openssl_verify</code>,</strong> <strong><code>openssl_get_publickey</code></strong> ou a <strong><code>openssl_pkey_get_details</code>,</strong> mas elas infelizmente não funcionaram para o que eu precisava (Lembre-se, uma chave SSH é diferente de uma chave SSL, por isso essas funções não funcionam). Vi em outros fóruns um pessoal dizendo para utilizar o package <a href="https://phpseclib.com/">https://phpseclib.com/</a>. Mas para pra pensar, pra que instalar um pacote que você só vai utilizar uma classe e somente um método dela?</p>
+
+<p>Eu vejo isso como um acoplamento totalmente desnecessário, mas enfim…</p>
+
+<h2>
+  
+  
+  Indo um pouco mais fundo
+</h2>
+
+<p>Depois de alguma pesquisa, vi que podemos usar o <code>ssk-keygen</code> para validar essa string pra gente, mas como?</p>
+
+<p>Para isso, podemos usar duas flags, a <code>-l</code> para pegar o fingerprint e o <code>-f</code> para indicar o caminho do arquivo. Então o nosso comando ficaria assim:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>ssh-keygen <span class="nt">-lf</span> /path/to/my/file.pub
+</code></pre>
+
+</div>
+
+
+
+<p>E dessa forma poderemos checar se nossa chave SSH é válida ou não.</p>
+
+<h2>
+  
+  
+  Criando nosso comando de checagem
+</h2>
+
+<p>O Laravel trouxe, a partir da versão 10, um componente chamado <a href="https://laravel.com/docs/10.x/processes">Process</a>, que nada mais é do que um wrapper ao redor do componente Process do <a href="https://symfony.com/doc/current/components/process.html">Symfony</a>. É com esse carinha que vamos fazer a mágica.</p>
+
+<blockquote>
+<p>Logicamente que poderíamos usa a função <code>exec</code>, nativa do php. Porém, se você acha que não é necessário usar este wrapper, fique à vontade 🙂👍🏻.</p>
+</blockquote>
+
+<p>Vamos pensar o que precisamos fazer:</p>
+
+<ul>
+<li>Preciso receber a string contendo a chave do usuário.</li>
+<li>Preciso salvar essa string em algum lugar acessível.</li>
+<li>Preciso chamar o comando <code>ssh-keygen</code> com o caminho do arquivo.</li>
+<li>Preciso destruir o arquivo após a validação.</li>
+</ul>
+
+<h3>
+  
+  
+  Configurando as Coisas
+</h3>
+
+<p>Vamos criar um diretório dentro de <code>storage/app</code> chamado <code>ssh</code>. Não se esqueça de remover esse novo diretório do seu versionamento:</p>
+
+<p><em>storage/app/.gitignore</em><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="k">*</span>
+<span class="o">!</span>public/
+<span class="o">!</span>.gitignore
+<span class="o">!</span>ssh/
+</code></pre>
+
+</div>
+
+
+
+<p><em>storage/app/ssh/.gitignore</em><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="k">*</span>
+<span class="o">!</span>.gitignore
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Escrevendo nossa classe
+</h3>
+
+<p>Agora podemos criar a nossa classe que fará a interação com o <code>ssh-keygen</code></p>
+
+<p><strong>App/Terminal/ValidateSsh.php</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Terminal</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Support\Facades\Process</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Support\Str</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ValidateSsh</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$keyPath</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="nv">$content</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span> <span class="o">=</span> <span class="nf">storage_path</span><span class="p">(</span><span class="s1">'app/ssh/'</span> <span class="mf">.</span> <span class="nc">Str</span><span class="o">::</span><span class="nf">uuid</span><span class="p">()</span> <span class="mf">.</span> <span class="s1">'.pub'</span><span class="p">);</span>
+
+        <span class="nb">file_put_contents</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">content</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">():</span> <span class="kt">bool</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nc">Process</span><span class="o">::</span><span class="nf">run</span><span class="p">(</span>
+            <span class="n">command</span><span class="o">:</span> <span class="s1">'ssh-keygen -lf '</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span> <span class="mf">.</span> <span class="s1">' &amp;&amp; rm '</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">-&gt;</span><span class="nf">successful</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Maravilha, a nossa classe está prontinha pra ser utilizada.</p>
+
+<ul>
+<li>Recebe o conteúdo e salva com um nome aleatório.</li>
+<li>Checa o arquivo e em caso de sucesso, já o apaga também.</li>
+</ul>
+
+<p>Agora, vamos escrever os nossos testes.</p>
+
+<p><strong>tests/Unit/Terminal/ValidateSshTest.php</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">use</span> <span class="nc">App\Terminal\ValidateSsh</span><span class="p">;</span>
+
+<span class="nf">it</span><span class="p">(</span><span class="s1">'should return true if process if file is valid'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">string</span> <span class="nv">$key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
+
+    <span class="nf">expect</span><span class="p">(</span><span class="nv">$validateSsh</span><span class="p">())</span><span class="o">-&gt;</span><span class="nf">toBeTruthy</span><span class="p">();</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="nf">with</span><span class="p">([</span>
+    <span class="s1">'RSA'</span>   <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
+    <span class="s1">'EDCSA'</span> <span class="o">=&gt;</span> <span class="s1">'ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFvXWSVYzRnjxYsz/xKjOjAaPjzg98MMHaDulQYczTX28xlsMmFkviCeCCv7CLh19ydoH4LNKpvgTGiMXz8ib68= worker@envoyer.'</span><span class="p">,</span>
+<span class="p">]);</span>
+
+<span class="nf">it</span><span class="p">(</span><span class="s1">'should return false if ssh file is invalid'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="s1">'a simple text file'</span><span class="p">);</span>
+
+    <span class="nf">expect</span><span class="p">(</span><span class="nv">$validateSsh</span><span class="p">())</span><span class="o">-&gt;</span><span class="nf">toBeFalsy</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Escrevendo nossa rule
+</h3>
+
+<p>Pensa que acabou? Não mesmo. A responsabilidade da classe <code>ValidateSsh</code> é apenas a de verificar se a chave é válida ou não.</p>
+
+<p>Vamos criar uma rule para que possamos fazer uso dessa validação.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>php artisan make:rule IsSshKeyValid
+</code></pre>
+
+</div>
+
+
+
+<p>Maravilha, agora, podemos fazer o seguinte:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Rules</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">App\Terminal\ValidateSsh</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Closure</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Contracts\Validation\ValidationRule</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Translation\PotentiallyTranslatedString</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">IsSshKeyValid</span> <span class="kd">implements</span> <span class="nc">ValidationRule</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @param Closure(string): PotentiallyTranslatedString $fail
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span>
+        <span class="kt">string</span> <span class="nv">$attribute</span><span class="p">,</span>
+        <span class="kt">mixed</span> <span class="nv">$value</span><span class="p">,</span>
+        <span class="kt">Closure</span> <span class="nv">$fail</span>
+    <span class="p">):</span> <span class="kt">void</span> <span class="p">{</span>
+        <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$validateSsh</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$fail</span><span class="p">(</span><span class="s1">'The :attribute is not a valid SSH key.'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Com isso, já estamos prontos para fazer os nossos testes http ❤️</p>
+
+<h2>
+  
+  
+  Testando nosso nossa chamada Http
+</h2>
+
+<p>Antes de prosseguir para os testes http, precisamos adicionar a nossa rule em nossas regras de validação:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'nullable'</span><span class="p">,</span>
+    <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'unique:users,ssh_key'</span><span class="p">,</span>
+    <span class="s1">'max:5000'</span><span class="p">,</span>
+    <span class="k">new</span> <span class="nc">IsSshKeyValid</span><span class="p">(),</span>
+<span class="p">],</span>
+</code></pre>
+
+</div>
+
+
+
+<p>E nossos testes para esse campo podem ficar dessa maneira:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="nf">it</span><span class="p">(</span><span class="s1">'should validate `ssh_key` field'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">mixed</span> <span class="nv">$value</span><span class="p">,</span> <span class="kt">string</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">login</span><span class="p">();</span>
+
+    <span class="nf">postJson</span><span class="p">(</span><span class="nf">route</span><span class="p">(</span><span class="s1">'api.users.store'</span><span class="p">),</span> <span class="p">[</span><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">])</span>
+        <span class="o">-&gt;</span><span class="nf">assertUnprocessable</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="nf">assertJsonValidationErrors</span><span class="p">([</span><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="nv">$error</span><span class="p">]);</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="nf">with</span><span class="p">([</span>
+    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.string'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">])],</span>
+    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nb">str_repeat</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">5001</span><span class="p">),</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.max.string'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">,</span> <span class="s1">'max'</span> <span class="o">=&gt;</span> <span class="mi">5000</span><span class="p">])],</span>
+    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'The ssh key is not a valid SSH key.'</span><span class="p">],</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="nc">User</span><span class="o">::</span><span class="nf">factory</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="nf">create</span><span class="p">([</span>
+                <span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
+            <span class="p">]);</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="n">ssh_key</span><span class="p">,</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.unique'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">])];</span>
+    <span class="p">},</span>
+<span class="p">]);</span>
+
+<span class="nf">it</span><span class="p">(</span><span class="s1">'should store an user'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nf">login</span><span class="p">();</span>
+
+    <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'name'</span>    <span class="o">=&gt;</span> <span class="s1">'Matheus Santos'</span><span class="p">,</span>
+        <span class="s1">'email'</span>   <span class="o">=&gt;</span> <span class="s1">'matheusao@my-company.com'</span><span class="p">,</span>
+        <span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="nf">postJson</span><span class="p">(</span><span class="nf">route</span><span class="p">(</span><span class="s1">'api.users.store'</span><span class="p">),</span> <span class="nv">$data</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="nf">assertCreated</span><span class="p">();</span>
+
+    <span class="nf">assertDatabaseHas</span><span class="p">(</span><span class="nc">Users</span><span class="o">::</span><span class="n">class</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Legal não?</p>
+
+<p>Agora, posso cadastrar os usuários no meu sistema sem me preocupar com aqueles engraçadinhos que vão passar um <code>aaaaaaaa</code> no campo <code>ssh_key</code> 😃.</p>
+
+<p>E lembre-se, às vezes precisamos sair do óbvio para encontrar as soluções para alguns problemas. Quanto mais mente-aberta formos, mais rápido conseguimos progredir e aprender novas coisas.</p>
+
+<p>Um abraço e até a próxima 😗 🧀</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Boost Your Productivity with the Top 10 AI Tools](https://dev.to/ronakmunjapara/boost-your-productivity-with-the-top-10-ai-tools-1ma) 
  <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bRKZKB4w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5pkpv5i99b710nzs5w74.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bRKZKB4w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5pkpv5i99b710nzs5w74.jpeg" alt="Image description" width="800" height="500"></a><br>
 In today's fast-paced digital world, staying productive is a key challenge. With an ever-increasing workload and constant distractions, finding ways to boost your productivity is essential. Thankfully, technology has come to the rescue, and Artificial Intelligence (AI) is at the forefront of this productivity revolution.</p>
@@ -258,377 +982,69 @@ In today's fast-paced digital world, staying productive is a key challenge. With
  </details> 
  <hr /> 
 
- #### - [**Don't Miss!!!** TOP Google Penalties Guide](https://dev.to/noobizdev/dont-miss-top-google-penalties-guide-4dcd) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Understanding Google Penalties
-</h2>
+ #### - [PURISTA - Thanks to amazing open-source software](https://dev.to/purista/purista-thanks-to-amazing-open-source-software-4k2e) 
+ <details><summary>Article</summary> <p>Welcome to our series on the unsung heroes behind PURISTA!</p>
 
-<p>Google Penalties refer to punitive actions taken by Google against websites that violate its guidelines and standards. These penalties can negatively impact a website's search engine ranking and visibility.</p>
+<p>Ever wondered about PURISTA?<br>
+It's not just another Typescript backend framework for simply building HTTP-endpoints.<br>
+It's a versatile solution that embraces diverse techniques for highly distributed deployments, taking inspiration from event-driven architecture.<br>
+If you're interested, you're invited to take a look at the official website <a href="//purista.dev">http://purista.dev</a>.</p>
 
-<h2>
-  
-  
-  List of Google Penalties
-</h2>
+<p>But hold on, this series isn't about the framework itself. Instead, we're here to shine a spotlight on the incredible libraries, tools, software, and passionate contributors that make PURISTA possible. </p>
 
-<p>A comprehensive list of Google Penalties includes various penalties that Google may impose on websites for violating its guidelines. These penalties can impact a site's ranking and visibility. Here are some notable Google Penalties:</p>
-
-<ol>
-<li>Algorithmic Penalties: These are automatic penalties triggered by Google's algorithms, such as Panda (content quality), Penguin (link quality), and Hummingbird (semantic search).</li>
-<li>Manual Actions: Google's manual reviewers can impose penalties for issues like unnatural links, thin content, or spammy structured markup.</li>
-<li>Mobile-Friendly Penalty: Websites not optimized for mobile devices can face lower rankings in mobile search results.</li>
-<li>Page Quality Penalty: For low-quality content, including duplicate, thin, or irrelevant content.</li>
-<li>Link-Related Penalties: Includes penalties for unnatural links, paid links, or link schemes.</li>
-<li>Security Issues: Sites with security vulnerabilities may face penalties for the safety of users.</li>
-<li>User Experience Penalties: Slow-loading pages and intrusive interstitials can lead to lower rankings.</li>
-<li>Cloaking Penalty: Penalizes websites that show different content to users and search engines.</li>
-<li>Intrusive Interstitials Penalty: Sites with pop-ups that disrupt user experience on mobile devices can be penalized.</li>
-<li>Ad-Related Penalties: Sites with too many ads or deceptive ad placements may face penalties.</li>
-</ol>
+<p>In this series, we will introduce all the tools, explain how we use them, why we find them essential, and endeavor to illustrate why they might also be a suitable solution for you.</p>
 
 <h2>
   
   
-  How to Avoid a Google Penalty?
+  General setup
 </h2>
 
-<p>To avoid Google penalties and maintain a healthy online presence, follow these essential tips:</p>
+<p>Most developers should be more or less familiar with the basic setup.</p>
 
-<ol>
-<li>Quality Content: Create high-quality, original, and relevant content. Avoid duplicate or low-value content that can trigger penalties.</li>
-<li>Keyword Usage: Use keywords naturally and avoid keyword stuffing. Ensure your content serves the user's intent.</li>
-<li>Mobile-Friendly Design: Ensure your website is responsive and mobile-friendly for a better user experience.</li>
-<li>Page Speed: Optimize page loading times to improve user satisfaction and SEO rankings.</li>
-<li>Backlink Quality: Build high-quality, relevant backlinks and avoid spammy link-building practices.</li>
-</ol>
+<p><a href="https://code.visualstudio.com">VSCode</a> as a code editor with  ESLint plugin.</p>
 
-<p>you can Read more About <strong><a href="https://noobizdev.tech/the-ultimate-guide-to-google-penalties-complete-list-and-recovery-strategies/">Google Penalties Giude And Complete List and Recovery Strategies</a></strong></p>
-
-<blockquote>
-<p>Let's spread the love! <br>
-Don't forget to leave a comment, like, and save this post.<br>
-Thanks for reading, See you next time... ❤️👋</p>
-</blockquote>
+<p><a href="https://github.com/sebastianwessel/purista">GitHub</a> is uses as repository, issue &amp; project tracker, and also for hosting the <a href="https://purista.dev/">official website</a>.</p>
 
 <h2>
   
   
-  Conclusion
+  Coding Setup
 </h2>
 
-<p>By ceasing any black hat SEO practices, implementing security and moderation tools on your site, and focusing on truly quality content, you can avoid Google penalties, improve your ranking and traffic, and protect your site from hackers.</p>
-
- </details> 
- <hr /> 
-
- #### - [Creating an 👩‍💻 Open Source Search Platform: Search Engines with AI - Swirl 🌌](https://dev.to/swirl/creating-an-open-source-search-platform-search-engines-with-ai-swirl-2m0h) 
- <details><summary>Article</summary> <blockquote>
-<p>Swirl is an Open-Source Search Engine written in Python. Powered by Large Language Models (LLMs) &amp; ChatGPT along with ML &amp; NLP Algorithms.</p>
-</blockquote>
-
-<p>Before wasting time, let me introduce Swirl. This unified open-source search platform built with Python and Django seamlessly unifies searches across databases (SQL and NoSQL), cloud services, search providers, data siloes, and tools like Miro, Jira, GitHub, etc.</p>
-
-<p>With Swirl, users can conduct a single query, instantly pooling and presenting relevant data from multiple platforms in one consolidated UI.</p>
-
-<p><strong><a href="https://github.com/swirlai/swirl-search">Swirl on GitHub 👇</a></strong></p>
-
-<p>Link: <a href="https://github.com/swirlai/swirl-search">https://github.com/swirlai/swirl-search</a>🌌</p>
-
-<p><a href="https://github.com/swirlai/swirl-search"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--c8VOh2O8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5pjduz4fq70dc1bfe0x7.png" alt="Swirl Search on GitHub" width="800" height="256"></a></p>
-
-<h2>
-  
-  
-  The Hunt for Open Source Search Platforms 🕵️‍♀️
-</h2>
-
-<p>Search is everywhere in our daily lives. Giants like Google Search, Bing, and Duck Duck make it easy for us to find information at the click of a button.</p>
-
-<p>However, the choices are somewhat limited for businesses, startups, and developers looking to incorporate search functionality into their platforms without being bound to these major players. Most enterprise-level search engines come with licensing fees or restrictions. Integration options such as Google's Programmable Search Engine and Algolia are powerful. Still, they might not always cater to the specific needs of all businesses, especially when customization and self-hosting are concerned.</p>
-
-<p>This brings out the need for open-source search engines. For all the users trying to integrate search into their platforms, Swirl serves as one of the best choices. Built on Python, and it's highly customizable. Being free and open-source, it carries the Apache 2.0 License, which means developers and businesses can utilize and modify it without any licensing costs. The teams can contribute towards its development by doing improvements, bug fixes, and feature enhancements.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sCvN1BF_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h40hcuneineb0lys85jz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sCvN1BF_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h40hcuneineb0lys85jz.png" alt="Searching for Open Source Search Engines" width="400" height="200"></a></p>
-
-<h2>
-  
-  
-  Dealing with Many Data Sources, Data Bases, and Data Siloes 😿
-</h2>
-
-<p>As any startup or company grows, so does the size of its data and databases. Eventually, the complexity of finding the correct information increases as well. As these organizations expand, they inevitably accumulate data in various forms – traditional documents, code repositories, spreadsheets, or more structured databases like SQL and NoSQL. The real challenge, however, is not just storing this large volume of data but efficiently retrieving the information when needed.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4RHH0UvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgpo66icr4n6abwng2b2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4RHH0UvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgpo66icr4n6abwng2b2.png" alt="Where is the Data? We should have used Swirl" width="800" height="800"></a></p>
-
-<p><em>So, in which database is our document lying? Is it in USE_CASE_1 or USE_CASE_2?<br>
-A typical scenario is when you need data and don't know where.</em></p>
-
-<p>The diversity of data sources adds another layer of complexity. Imagine sifting through a vast library where books, journals, handwritten notes, and digital records are all stored haphazardly. Sounds daunting, right? That’s precisely the scenario many businesses face today. Different data types, coupled with isolated data siloes, can make it a Herculean task for employees to locate the correct information promptly.</p>
-
-<p>Swirl connects to multiple data sources and can search in all. Swirl is a centralized hub, enabling streamlined searches across all integrated data sources. This simplifies the search process and ensures that no crucial information gets overlooked because of its origin or format.</p>
-
-<h2>
-  
-  
-  Using LLMs with Search and Bringing Multiple Data Sources Together 🤝
-</h2>
-
-<p>Swirl distributes user queries to search engines, databases, and other enterprise cloud services using their existing APIs and standards-based security mechanisms like OAuth2. Swirl asynchronously normalizes and re-ranks the unified results using large language models.</p>
-
-<p>Let's understand how Swirl works.</p>
-
-<ol>
-<li>The user provides the data sources to which Swirl integrates.</li>
-<li>The user creates a query to search for.</li>
-<li>Swirl sends those queries to each source.</li>
-<li>Get the response and find the best using LLMs.</li>
-<li>Swirl then gets the citations in an async pipe.</li>
-<li>It then fetches the top results and creates a prompt.</li>
-<li>It sends the data + prompt to ChatGPT (or any LLM).</li>
-<li>Swirl returns answers with ChatGPT insights.</li>
-</ol>
+<p>In addition to Node.js and TypeScript, we rely on two indispensable tools available as npm modules:</p>
 
 <h3>
   
   
-  Diagram Explaining Swirl Search with ChatGPT as a configured LLM
+  ESLint and Prettier
 </h3>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4-KNMib0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fi3dradgja7t3scn57a5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4-KNMib0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fi3dradgja7t3scn57a5.png" alt="How Swirl Works" width="800" height="516"></a></p>
+<p>Maintaining a clean, readable, and consistent codebase is essential, and ESLint and Prettier are the perfect tools for the job.<br>
+Just enable "lint on save" in VSCode, and you won't have to worry about it. They're a "must-have," even for small personal projects.</p>
 
-<p><em>A diagram explaining how Swirl can work with multiple data sources and provide results with ChatGPT insights.</em></p>
+<p>See <a href="//eslint.org">https://eslint.org</a> and <a href="//prettier.io">https://prettier.io</a></p>
 
-<p>The whole search process is simplified, and setting up Swirl is pretty straightforward. To state Raman Ramanenkou of Sense.</p>
-
-<blockquote>
-<p>“Setting up and running Swirl in a Docker container is incredibly straightforward—it takes just a few minutes.<br>
-~ Raman Ramanenkou of Sense</p>
-</blockquote>
-
-<p>Data privacy and security are essential while searching. People should only be able to search for information they can access in any corporation. Swirl incorporates OAuth2 authentication. This means that the access and visibility of data are tightly controlled based on the credentials of the individual searching. It ensures that sensitive information remains restricted, and only those with the necessary permissions can view it.</p>
-
-<p>Therefore, someone who doesn't have access to critical files cannot search for them or even know that they exist.</p>
-
-<h2>
-  
-  
-  Retrieval Augmented Generation (RAG) using Swirl ✨
-</h2>
-
-<p>Retrieval Augmented Generation (RAG) is a technique where information retrieval is combined with text generation. In simpler terms, RAG first fetches relevant data by searching and then crafts an answer based on that data using Large Language Models; a widely popular example is Bing AI Chat. You can create a dynamic knowledge base by implementing RAG on your data sets.</p>
-
-<p>Swirl helps you create a chatbot for your data with ease. You can integrate the power of ChatGPT enterprise with Swirl and then generate answers on the fly. You don't need any extra database to store any information. Just search.</p>
-
-<p>Swirl can retrieve accurate information and obtain answers complete with citations to the original documents. This will supercharge your productivity. And you will have reliable and referenced information at your fingertips.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_XLk9n90--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opamzs2cq4jr51dcja2c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_XLk9n90--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opamzs2cq4jr51dcja2c.png" alt="RAG using Swirl" width="800" height="471"></a></p>
-
-<p><em>An example is when we search for Sid Probstein using ChatGPT and then search again using Swirl's RAG pipeline. We get the document used for generating the answer in the link at the bottom left.</em></p>
-
-<h2>
-  
-  
-  Get Started with Swirl 💻
-</h2>
-
-<p>If you want to try Swirl and get it up and running at no cost. Head to the GitHub page and check it out. 👇</p>
-
-<p>GitHub 🔗: <a href="https://github.com/swirlai/swirl-search">Swirl on GitHub 🌌</a></p>
-
-<p>💿Installing instructions: <a href="https://github.com/swirlai/swirl-search#try-swirl-now-in-docker">Getting started with Swirl</a></p>
-
-<p>📃 Documentation: <a href="https://github.com/swirlai/swirl-search/wiki">Swirl Wiki</a></p>
-
-<p><strong>A snapshot of Swirl UI when running</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lXhlAJpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8iiil9klnh87f4ibhqsg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lXhlAJpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8iiil9klnh87f4ibhqsg.png" alt="Galaxy UI" width="800" height="494"></a></p>
-
-<p><em>Swirl in Action with the Galaxy UI</em></p>
-
-
-
-
-<p>Swirl is a community-driven 👩‍💻 open-source project. We welcome individuals interested in creating a search platform and contributing to the project's development. If you are interested in learning about the project and want to contribute or begin your open-source journey with us. We'd gladly guide you and help you understand and create your first open-source contribution. 🤗</p>
-
-<p><a href="https://join.slack.com/t/swirlmetasearch/shared_invite/zt-22ozfml3o-oqe7sWvB5jw6xEwv1duW4g">Join our Slack Community. 💖</a></p>
-
-<p>Please give us a Star 🌟 on <a href="https://github.com/swirlai/swirl-search">GitHub.</a></p>
-
-<p><a href="https://twitter.com/SWIRL_SEARCH">Follow us on</a> <a href="https://twitter.com/SWIRL_SEARCH">Twitter/𝕏</a> for updates.</p>
-
- </details> 
- <hr /> 
-
- #### - [Index Optimization in Database Query Performance: Guidelines and Real-world Examples](https://dev.to/nightbird07/index-optimization-in-database-query-performance-guidelines-and-real-world-examples-4f80) 
- <details><summary>Article</summary> <p>Don’t get too smug with your current level after reading a ton of articles (especially, mine) because today, I am going to throw some curveballs at you and if you can hit them all, then you are truly a geek and you deserve a party popper. In the world of database query optimization, the choice of indexes can make or break your queries. This article reveals the secrets of picking and tweaking indexes, supported by real-world examples. We’ll talk about situations where the right index can make your query fly and when it might need a makeover.</p>
-
-<h2>
-  
-  
-  <strong>Recap on Index Optimization:</strong>
-</h2>
-
-<p>And I know you are looking for a cheat sheet, so here is one that could jog your truly brilliant memory when you were diligent. Here’s a crisp recap of key index concepts that can help you nail the questions:</p>
-
-<ol>
-<li><p><strong>Single-Column Indexes:</strong> An index on a single column is effective for filtering data based on that column's values. For example, creating an index on a <code>date_column</code> with the current data-- case sensitive,can accelerate queries that involve date-based filtering.</p></li>
-<li><p><strong>Multi-Column Indexes:</strong> In scenarios where queries involve filtering by multiple columns or sorting by one column, a multi-column index can be advantageous. It optimizes both filtering and sorting operations. For instance, an index on <code>(a, date_column)</code> works well when filtering by <code>a</code> and sorting by <code>date_column</code>(ordere matters).</p></li>
-<li><p><strong>Multi-Purpose Indexes:</strong> Sometimes, a single index can serve multiple query patterns. If you have queries filtering by different combinations of columns, a multi-column index that covers all relevant columns, such as <code>(a, b)</code>, can be beneficial for optimizing these queries.</p></li>
-<li><p><strong>Pattern Search Indexes:</strong> When performing text pattern searches, consider using specialized index types like <code>varchar_pattern_ops</code>. These indexes are tailored for efficient pattern matching, as seen in the 'text LIKE' query.</p></li>
-<li><p><strong>Impact of Conditions:</strong> Introducing additional conditions to a query can affect its performance. Whether it makes the query slower, faster, or keeps it the same depends on the specific data and query. Evaluating these changes is essential for efficient indexing.</p></li>
-</ol>
-
-
-
-
-<p>for each question you have to choose <br>
-1- <strong>Good Fit</strong><br>
-2- <strong>Bad Fit</strong> -- could be optimized. </p>
-
-<h3>
-  
-  
-  Question1
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">first_name_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">first_name</span><span class="p">)</span>
-
-<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-<span class="k">FROM</span> <span class="n">employee</span> 
-<span class="k">WHERE</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">first_name</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'GORG'</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h3>
-  
-  
-  Question 2
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">name_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="n">last_name</span><span class="p">)</span>
-
-<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="k">FROM</span> <span class="n">employee</span>
-<span class="k">WHERE</span> <span class="n">last_name</span> <span class="o">=</span> <span class="s1">'OoPs'</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">first_name</span> <span class="k">DESC</span>
-<span class="k">FETCH</span> <span class="k">FIRST</span> <span class="mi">2</span> <span class="k">ROW</span> <span class="k">ONLY</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h3>
-  
-  
-  Question 3
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">name_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="n">last_name</span><span class="p">)</span>
-
-<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="k">FROM</span> <span class="n">employee</span>
-<span class="k">WHERE</span> <span class="n">last_name</span> <span class="o">=</span> <span class="s1">'OoPs'</span>
-<span class="k">AND</span> <span class="n">first_name</span> <span class="o">=</span> <span class="s1">'Hahah'</span>
-
-<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="k">FROM</span> <span class="n">employee</span>
-<span class="k">WHERE</span> <span class="n">last_name</span> <span class="o">=</span> <span class="s1">'OoPs'</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h3>
-  
-  
-  Question 4
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">notes_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">notes</span> <span class="n">text_pattern_ops</span><span class="p">)</span>
-
-<span class="k">SELECT</span> <span class="n">notes</span> <span class="k">FROM</span> <span class="n">employee</span> 
-<span class="k">WHERE</span> <span class="n">notes</span> <span class="k">LIKE</span> <span class="s1">'late%'</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h3>
-  
-  
-  Tips
-</h3>
-
-<p>1- Indexes can only be used from left to right side. If the first index column is not in the where clause, the index is of little help.<br>
-2- Use an index-only scan for queries that access many rows but only a few columns.<br>
-Avoid select * to increase chances for an index-only scan.</p>
-
-
-
-
-<p>please, refer to the comment section to see the answer and rate yourself and don't forget to give yourself a Confetti. </p>
-
- </details> 
- <hr /> 
-
- #### - [DevOpsDays Ukraine: Disaster Recovery at scale on September 14-15th ⚙️](https://dev.to/devopsdays_kyiv/devopsdays-ukraine-disaster-recovery-at-scale-on-september-14-15th-3hai) 
- <details><summary>Article</summary> <p>Hey folks! We’re happy to invite you to DevOpsDays Ukraine: Disaster Recovery at scale on September 14-15th⚙️<br>
-Get ready for a two-day DevOps journey:</p>
-
-<p>🔸 Fireside Chat with the co-founder of DevOpsDays, Patrick Debois. <br>
-🔸 Cultural Talks by top experts Charity Majors, Iaroslav Molochko, Manuel Pais, Adriana Villela just to name a few.</p>
-
-<p>Some of the topics: </p>
+<p>ESLint is extended by some awesome plugins and extensions:</p>
 
 <ul>
-<li>Emergency cloud migration and cost optimization tricks during
-the first months of a full-scale invasion of Ukraine</li>
-<li>Compliance and Regulatory Standards Are Not Incompatible With Modern Development Best Practices</li>
-<li>Beyond Engineering: The Future of Platforms</li>
-<li>The Case for Self-Service Tooling</li>
-<li>Key strategies to overcome the challenges of operating</li>
+<li>
+<a href="https://github.com/lydell/eslint-plugin-simple-import-sort">eslint-plugin-simple-import-sort</a> by Simon Lydell <a href="https://twitter.com/SimonLydell">@SimonLydell</a>
+</li>
+<li>
+<a href="https://github.com/mysticatea/eslint-plugin-node">eslint-plugin-node</a> by Toru Nagashima - Dev.to: <a class="mentioned-user" href="https://dev.to/mysticatea">@mysticatea</a> &amp;  Twitter: <a href="https://twitter.com/mysticatea">@mysticatea</a>
+</li>
+<li>
+<a href="https://github.com/azeemba/eslint-plugin-json">eslint-plugin-json</a> by <a href="https://azeemba.com">Azeem Bande-Ali</a>
+</li>
+<li><a href="https://github.com/import-js/eslint-plugin-import">eslint-plugin-import</a></li>
+<li><a href="https://github.com/standard/eslint-config-standard">eslint-config-standard</a></li>
 </ul>
 
-<p>🔸 Ignite talks: DevOps in GameDev, Socio-Technical Engineering, FQDN Egress Control and much more.</p>
 
-<p>And finally online networking on Open-Spaces with like-minded experts from around the world. </p>
 
-<p>Check out agenda &amp; register 👉 <a href="https://www.devopsdays.com.ua">https://www.devopsdays.com.ua</a> <br>
-When? September 14-15<br>
-Where? Online</p>
 
-<p>Can't wait to see y'all!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gfPK3wDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uy8jch4lmeijjrmdf1ym.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gfPK3wDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uy8jch4lmeijjrmdf1ym.png" alt="DevOpsDays Ukraine speakers" width="800" height="533"></a></p>
+<p>In our upcoming article, we'll delve deep into the inner workings of PURISTA's build pipeline. Stay tuned for an in-depth exploration!</p>
 
  </details> 
  <hr /> 
