@@ -133,6 +133,38 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Announcing The Browser Conference](https://dev.to/joelgriffith/announcing-the-browser-conference-44i4) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LbpngZGq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jd54akbnx8ixhko62l5d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LbpngZGq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jd54akbnx8ixhko62l5d.png" alt="The browser conference" width="800" height="400"></a></p>
+
+<p>We've thought about doing this for years… with the explosive growth of providers and the need for developers to have browser automation as a core skill set, we wanted to create an industry conference that is all about sharing the most cutting edge technologies and best practices for browser automation. The conference will focus on libraries such as Puppeteer, Selenium, Webkit, Playwright and many more. We will also include speakers from both tool providers as well as practitioners that are in the trenches day-to-day crafting unique solutions to the hardest problems. </p>
+
+<p>The first year is virtual and 100% free to join. We would greatly appreciate you taking time out of your day to support this effort. We have worked together with Oxylabs to bring this event to life and have an amazing speaker line-up. You can sign up here: <a href="https://www.accelevents.com/e/the-browser-conference-23">https://www.accelevents.com/e/the-browser-conference-23</a></p>
+
+<p><strong>About the Event</strong></p>
+
+<p>While the first year is going to be smaller, we hope to partner with industry leaders and turn this into a much larger event in the coming years. If you want this to become something, help us out by signing up and showing your interest in learning more about what Browser Automation can do for your career and company. </p>
+
+<p>Here is an overview of the amazing speakers we will have at The Browser Conference:</p>
+
+<p><strong>Fara Ashiru</strong>: Fara Ashiru Jituboh is the co-founder and CEO/CTO of Okra, Inc., a fintech Nigerian-based startup that allows for the exchange of real-time financial information between customers, applications, and banks. Fara is a software engineer and entrepreneur, who is fluent in over 20 programming languages.</p>
+
+<p><strong>Dario Kontratiuk</strong>: Dario Kondratiuk has been a web developer since 2001. He won the Microsoft MVP (most valuable professional) award in 2020 for his contributions to the developer’s community. Dario has been working with Puppeteer since the beta versions, back in 2017. He is the author of Puppeteer-Sharp, a Puppeteer port to .NET, and Playwright-Sharp, a Playwright port to .NET. He writes about web automation in his blog <a href="https://www.hardkoded.com/">https://www.hardkoded.com/</a>, and he’s active on Stack Overflow.</p>
+
+<p><strong>Ben Fellows</strong>: Ben is the Founder and CEO of Loop where he helps startups &amp; enterprise organizations run successful test automation teams. Ben is an evangelist of Playwright and a realist when it comes to continuous development. Overall fan of QA &amp; promoting the industry.</p>
+
+<p><strong>Joel Griffith</strong>: Founder and CEO of browserless.io, Joel has seen just about every kind of platform, library and headless browser binary this is. These days he spends his time operationalizing and writing about best practices with regards to headless automation.</p>
+
+<p><strong>Final Tidbits</strong></p>
+
+<ul>
+<li>Can't join? No worries! Sign-up and we'll record the event for future enjoyment. A collectors item for years to come!</li>
+<li>Can't join won't join? No problem! If you wanted to tweet or tell some friends about it, that'd help tremendously.</li>
+<li>Can't join won't join won't X-it? That's ok too, thanks for reading!</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
  #### - [Brewing a Full-Stack Breakfast with ExpressoTS, Bun, and Elysia](https://dev.to/expressots/brewing-a-full-stack-breakfast-with-expressots-bun-and-elysia-1d40) 
  <details><summary>Article</summary> <blockquote>
 <p>Combine the power of ExpressoTS with Bun's Elysia framework in TypeScript for a mouth-watering full-stack experience.</p>
@@ -1068,57 +1100,6 @@ Delete User 42
 <p>Thanks for Reading ❤️! Check my website <a href="https://democoding.in/">Demo coding</a> for updates about my latest CSS Animation, CSS Tools, and some cool web dev tips. Let's be friends!</p>
 
 <p>Don't forget to subscribe to our channel : <a href="https://www.youtube.com/@democode">Demo code</a> </p>
-
- </details> 
- <hr /> 
-
- #### - [What's Behind the Excitement in the JavaScript Community about Bun.js?](https://dev.to/mitchiemt11/whats-behind-the-excitement-in-the-javascript-community-about-bunjs-2p4l) 
- <details><summary>Article</summary> <p>Howdy, folks!👋</p>
-
-<p>Bun, a new JavaScript runtime that entered beta in July 2022, has generated significant buzz within the JavaScript community, v1.0 is out! Developers are enthusiastic about it for several reasons.</p>
-
-<p><strong>What is Bun</strong><br>
-Firstly, Bun is described as <strong>"a fast all-in-one JavaScript runtime"</strong> and is developed by Jarred Sumner using the Zig programming language. It joins the ranks of Deno.js and Node.js, but what sets it apart is its focus on delivering exceptional speed and enhanced complexity.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wKxCBq9y--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g02ppepuapdvvp7x9osu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wKxCBq9y--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g02ppepuapdvvp7x9osu.png" alt="Bun landing" width="800" height="369"></a></p>
-
-<p>JavaScript has evolved significantly over the years, with features like ES modules and async/await that were not present when Node.js was initially created by Ryan Dahl in 2009. Dahl's own regrets about certain aspects of Node.js led to the development of Deno.js in 2020, built with Rust to address issues related to security, performance, and native TypeScript support. Despite Deno's advantages, it hasn't seen widespread adoption, partly due to the need for rewriting npm packages.</p>
-
-<p>Bun, on the other hand, has sparked excitement for its high-speed performance and compatibility with Node.js, leading some to speculate that it could be a "Node-killer."</p>
-
-<p><strong>How does Bun.js differ from Deno.js and Node.js?</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FvU4vVMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75ugrnpogg9m0r05sbpy.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FvU4vVMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75ugrnpogg9m0r05sbpy.gif" alt="thinking gif" width="370" height="300"></a></p>
-
-<p>While Node.js, Deno.js, and Bun.js are all runtimes for JavaScript outside the browser, there are significant differences among them. Node.js is written in C++, Deno.js in Rust, and Bun.js in Zig. Bun.js leverages Zig's attributes, such as clear control flow and low-level memory control, to make it easier to write fast software.</p>
-
-<p>In terms of performance, Bun.js stands out. It uses Webkit's JavaScriptCore engine, the same engine that powers Apple's Safari, for a "fast start," and benchmark results on its website show it consistently outperforming both Node.js and Deno.js by at least three times.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--u3kXvFs8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kuwpilbslff67d7vddzt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--u3kXvFs8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kuwpilbslff67d7vddzt.png" alt="bun stats" width="800" height="733"></a></p>
-
-<p>Bun.js also supports TypeScript and simplifies the installation of packages from npm with its built-in npm manager, making it up to 20 times faster than Node.js. Additional features include an integrated SQLite3 client, web APIs like get and WebSocket, automatic loading of environment variables, and a built-in test runner.</p>
-
-<p>Of the three runtimes, Bun.js excels in terms of performance, Deno.js is known for its security, and Node.js boasts the largest and most stable community.</p>
-
-<p><strong>Will Bun.js actually make an impact on the ecosystem?</strong></p>
-
-<p>The JavaScript ecosystem is indeed excited about Bun.js. The hype surrounding its release is significant, and JavaScript developers are eager to explore its exceptional speed and robust tooling for productivity. The Bun.js Discord server already has a thriving community of over 2000 members, indicating strong enthusiasm for this new technology.</p>
-
-<p><strong>What's the future outlook for Bun.js, Node.js, and Deno.js</strong></p>
-
-<p>JavaScript is here to stay, and Bun.js, Node.js, and Deno.js all have their roles in its future. Node.js, with its recent release of version 20, remains a staple in many businesses and startups, including giants like PayPal.</p>
-
-<p>Deno.js is actively evolving and expanding, aiming to become a software-as-a-service (SaaS) platform for managing JavaScript runtime services.</p>
-
-<p>While Bun.js shows promise, it's still in the early stages and has limited support, particularly on Windows where it requires Windows Subsystem for Linux to run. It's not yet suitable for production-ready software, and there's work to be done to mature it.</p>
-
-<p>In conclusion, Bun.js has stirred up excitement in the JavaScript community with its promise of high-speed performance and innovative features, offering a compelling alternative to Node.js and Deno.js. Its future impact on the ecosystem remains to be seen, but it's clear that JavaScript developers are eager to embrace this new technology.</p>
-
-<p><em>To get started with Bun.js and explore its capabilities, visit the <a href="https://bun.sh/">https://bun.sh/</a> website.</em></p>
-
-<p>Until next time....</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zDvqImPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/635leop2yy7cry2zv3n7.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zDvqImPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/635leop2yy7cry2zv3n7.jpeg" alt="cheers" width="561" height="360"></a></p>
 
  </details> 
  <hr /> 
