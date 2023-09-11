@@ -133,6 +133,1229 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Let’s Create an End-to-End Web Scraping Pipeline With Scrapy!](https://dev.to/nanellooo/lets-create-an-end-to-end-web-scraping-pipeline-with-scrapy-261o) 
+ <details><summary>Article</summary> <h1>
+  
+  
+  Introduction
+</h1>
+
+<p>Web scraping has become an indispensable tool for gathering data, allowing developers and data enthusiasts access to valuable information from the web. Tools like BeautifulSoup4 and Selenium are user-friendly tools that make this task as simple as possible, especially for one-off scripts and basic workflows.</p>
+
+<p>However, web scraping is often just the first step in a broader process of Extract, Transform, Load (ETL). As your needs grow, so too will the number of custom scripts. With no framework to organize these one-off scripts, this will inevitably lead to a confusing mess down the road.</p>
+
+<p>As Albert Einstein once said, “Everything should be made as simple as possible, but not simpler.” That’s where Scrapy comes in!</p>
+
+<p>In this tutorial, I’m going to walk you through a web scraping ETL process using Scrapy that gathers quotes, like that Einstein quote, and loads them into an SQLite database. We’ll be using <a href="http://quotes.toscrape.com/page/1/">Quotes to Scrape</a> as our target scraping site:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IP00BGJG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sk0edksszz2lp0ett6nd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IP00BGJG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sk0edksszz2lp0ett6nd.png" alt="Image description" width="800" height="494"></a></p>
+
+<h1>
+  
+  
+  We’ll go over the following:
+</h1>
+
+<ul>
+<li>  Creating a virtual environment for Python.</li>
+<li>  Setting up Scrapy, a Python web scraping framework.</li>
+<li>  Building a web scraper using Scrapy to extract quotes from a website.</li>
+<li>  Configuring a Scrapy pipeline to process and store scraped data.</li>
+<li>  Creating a SQLite database using Python.</li>
+<li>  Storing scraped data in an SQL database.</li>
+<li>  (For Fun) Analyzing scraped data with Pandas and Matplotlib</li>
+</ul>
+
+<h1>
+  
+  
+  Step 1: Creating a Virtual Environment
+</h1>
+
+<p>Before we dive in, a good idea to create a clean and isolated Python environment using a virtual environment. This ensures that the packages and dependencies for your Scrapy project won’t interfere with your system-wide Python installation, and it will automatically Scrapy’s CLI to the virtual environment’s PATH for maximum ease of use.</p>
+
+<p>Here are the steps to create a virtual environment:</p>
+
+<ol>
+<li> Open a terminal or command prompt on your computer.</li>
+<li> Navigate to the directory where you want to create your Scrapy project. You</li>
+<li> Once you’re in the desired directory, run the following command to create a virtual environment named <code>quotesenv</code> (you can replace <code>quotesenv</code> with your preferred name):
+</li>
+</ol>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>python -m venv quotesenv
+</code></pre>
+
+</div>
+
+
+
+<p>After running this command, you’ll have a new directory named <code>myenv</code> (or your chosen name) in your project directory. This directory contains a clean Python environment where you can install packages without affecting your system-wide Python installation.</p>
+
+<p>Now that you have a virtual environment set up, you can proceed to the next step: installing Scrapy and creating your Scrapy project.</p>
+
+<h1>
+  
+  
+  Step 2: Installing Scrapy and Creating Your First Project
+</h1>
+
+<p>It’s time to install Scrapy and create a Scrapy project for our web scraping endeavor.</p>
+
+<ol>
+<li> Activate your virtual environment if it’s not already activated. You can do this by running:
+</li>
+</ol>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>source quotesenv/bin/activate
+</code></pre>
+
+</div>
+
+
+
+<p>Replace <code>quotesenv</code> with the name of your virtual environment if it's different.</p>
+
+<ol>
+<li> Now, you can install Scrapy inside your virtual environment using pip:
+</li>
+</ol>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>pip install scrapy
+</code></pre>
+
+</div>
+
+
+
+<ol>
+<li> Once Scrapy is installed, you can create a new Scrapy project using the following command:
+</li>
+</ol>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>scrapy startproject quotes\_project
+</code></pre>
+
+</div>
+
+
+
+<p>This command will create a directory structure for your Scrapy project, including all the necessary files and boilerplate to get you started:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>\&gt;quotes\_project/  
+    scrapy.cfg  
+    quotes\_project/  
+        \_\_init\_\_.py  
+        items.py  
+        middlewares.py  
+        pipelines.py  
+        settings.py  
+        spiders/  
+            \_\_init\_\_.py  
+            quotes\_spider.py
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  Here’s how they all work together:
+</h1>
+
+<ul>
+<li>  scrapy.cfg: This is the Scrapy project configuration file. It contains settings and configurations for your Scrapy project.</li>
+<li>  quotes_project(directory): This is the Python package for your Scrapy project.</li>
+<li>  <a href="http://init.py/">init.py</a>: This is an empty Python file that makes the directory a Python package.</li>
+<li>  <a href="http://items.py/">items.py</a>: This is where you define the structure of the items that will hold the scraped data. You create item classes with fields that correspond to the data you want to scrape.</li>
+<li>  <a href="http://middlewares.py/">middlewares.py</a>: This file is used to define custom middleware components for your Scrapy project. Middleware can modify requests and responses during the scraping process.</li>
+<li>  <a href="http://pipelines.py/">pipelines.py</a>: Here, you can define data processing pipelines to process and store the scraped data. You can implement actions like storing data in databases, exporting data to files, or performing additional processing.</li>
+<li>  <a href="http://settings.py/">settings.py</a>: This is the main configuration file for your Scrapy project. You can set various project-specific settings, including user agent, concurrency, and more.</li>
+<li>  spiders(directory): This directory contains your web-scraping spiders.</li>
+<li>  <a href="http://init.py/">init.py</a>: This is an empty Python file that makes the directory a Python package.</li>
+<li>  quotes_<a href="http://spider.py/">spider.py</a>: This is an example spider file where you define the spider to crawl and scrape data from websites. You create classes that inherit from <code>scrapy.Spider</code> and define how the spider navigates and extracts data from web pages. We'll create our first one together.</li>
+</ul>
+
+<p>This folder and file structure provide a clear organization for your Scrapy project, separating configuration, item definitions, spider code, and data processing logic.</p>
+
+<p>Now that you have Scrapy installed and your project set up, let’s move on to defining a spider to scrape quotes from a website. Stay tuned for Step 3!</p>
+
+<h1>
+  
+  
+  Step 3: Creating the Item Class For Our Data Structure
+</h1>
+
+<p>In this step, we’ll define the structure of the item that will hold the scraped data. Scrapy uses Items to structure and store the data you extract from websites.</p>
+
+<p>Open the <code>[items.py](http://items.py/)</code> file in your Scrapy project directory. This file is automatically generated when you create your Scrapy project using the <code>scrapy startproject</code> command.</p>
+
+<p>In <code>[items.py](http://items.py/)</code>, you'll notice the CLI has already created the QuotesScraperItem class, which inherits from scrapy.Item. Add the following code and remove the pass statement to define the structure of the <code>QuotesScraperItem</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>import scrapy  
+class QuotesScraperItem(scrapy.Item):  
+    text = scrapy.Field()  
+    author = scrapy.Field()
+</code></pre>
+
+</div>
+
+
+
+<p>This code snippet defines an item class with two fields: <code>title</code> and <code>author</code>. You could also grab the <code>tags</code> data, but that's beyond the scope of this tutorial. These fields correspond to the data we'll scrape from the website.</p>
+
+<p>With the item structure defined, we’re ready to move on to creating the spider, which is the class responsible for the extract portion of our ETL pipeline. I’ve done the work of inspecting the target website and finding the selectors for the data we’ll be scraping, too.</p>
+
+<h1>
+  
+  
+  Step 4: Defining a Scrapy Spider to Scrape Quotes
+</h1>
+
+<p>A Scrapy spider is a class that contains the rules for how to navigate and extract data from a website. Let’s get started:</p>
+
+<ol>
+<li> Create a new file named <code>quotes_spider.py</code> inside the <code>quotes_project/quotes_project/spiders</code> directory. This is where we'll define our spider.</li>
+<li> Edit <code>quotes_spider.py</code> and add the code below
+</li>
+</ol>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>import scrapy  
+from quotes\_project.items import QuotesScraperItem #made in the previous step  
+class QuotesSpider(scrapy.Spider):  
+            name = "quotes"  
+            start\_urls = \[  
+                'http://quotes.toscrape.com/page/1/',  
+            \]  
+            def parse(self, response):  
+                for quote in response.css('div.quote'):  
+                    item = QuotesScraperItem()  
+                    item\['text'\] = ''.join(quote.css('span.text::text').get())  
+                    item\['author'\] = ''.join(quote.css('span small::text').get())  
+                    yield item  
+                next\_page = response.css('li.next a::attr(href)').get()  
+                if next\_page is not None:  
+                    yield response.follow(next\_page, self.parse)
+</code></pre>
+
+</div>
+
+
+
+<p>This code defines a Scrapy spider named “quotes” that starts at the specified URL and scrapes quotes and their authors. It also continues to do so for each page until there are no more pages left. The “”.join() string function is necessary because the ‘text’ field will return a list of strings rather than one string, and this combines it for us easily.</p>
+
+<ol>
+<li> To run the spider and see it in action, use the following command in your project’s root directory:
+</li>
+</ol>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>scrapy crawl quotes
+</code></pre>
+
+</div>
+
+
+
+<p>Now, your spider will start scraping quotes from the website. But you have nowhere to put it… Fear not, that comes next!</p>
+
+<h1>
+  
+  
+  Step 5: Saving Scraped Data to a SQLite Database
+</h1>
+
+<p>Now that you’ve successfully scraped data from the web, it’s time to store that data in a database for future use and analysis. In this step, we’ll set up an SQLite database as the destination for the data in our pipeline automatically when we run the pipeline.</p>
+
+<p>In Scrapy, pipelines are responsible for processing scraped data. We’ll create a custom pipeline to insert our scraped items into the SQLite database we just created.</p>
+
+<ol>
+<li> In your Scrapy project folder, navigate to the <code>quotes_scraper</code> directory (or your project name) and open the <code>[pipelines.py](http://pipelines.py/)</code> file.</li>
+<li> Define the following pipeline class at the end of the file.
+</li>
+</ol>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>import sqlite3  
+            from itemadapter import ItemAdapter              
+            class QuotesToSQLitePipeline:  
+                def \_\_init\_\_(self):  
+                    self.conn = sqlite3.connect('quotes.db')  
+                    self.cursor = self.conn.cursor()  
+                def process\_item(self, item, spider):  
+                    adapter = ItemAdapter(item)  
+                    self.cursor.execute('''  
+                    CREATE TABLE IF NOT EXISTS quotes (  
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,  
+                        text TEXT,  
+                        author TEXT  
+                    )  
+                ''')  
+                    self.cursor.execute('''  
+                        INSERT INTO quotes (text, author)  
+                        VALUES (?, ?)  
+                    ''', (adapter\['text'\], adapter\['author'\]))  
+                    self.conn.commit()  
+                    return item  
+                def close\_spider(self, spider):  
+                    self.conn.close()
+</code></pre>
+
+</div>
+
+
+
+<p>This pipeline class creates (if it doesn’t yet exist) or connects to the SQLite database, inserts scraped data into the <code>quotes</code> table and closes the connection when the spider is done. The ItemAdapter allows us to data within an Item without having to import that Item itself (less tightly coupled, yay!).</p>
+
+<h1>
+  
+  
+  Step 3: Enabling the Pipeline
+</h1>
+
+<p>To enable your custom pipeline, add it to the <code>[settings.py](http://settings.py/)</code> file in your Scrapy project folder:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>\# settings.py  
+\# ...  
+        # Configure item pipelines  
+        ITEM\_PIPELINES = {  
+           'quotes\_scraper.pipelines.QuotesToSQLitePipeline': 300,  # Adjust the priority if needed  
+        }  
+        # ...
+</code></pre>
+
+</div>
+
+
+
+<p>In this example, I’ve set the pipeline’s priority to 300, but you can adjust it as necessary.</p>
+
+<h1>
+  
+  
+  Step 4: Running Your Spider and Saving Data
+</h1>
+
+<p>Now that everything is set up, you can run your spider again and see how Scrapy saves scraped data to the SQLite database:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>scrapy crawl quotes
+</code></pre>
+
+</div>
+
+
+
+<p>Scrapy will execute your spider and use the custom pipeline to save the scraped quotes and authors to the <code>quotes.db</code> database, which will now be in your project folder.</p>
+
+<p>That’s it for Step 4! You’ve successfully set up an SQLite database and configured a pipeline to save your scraped data. In the next steps, we’ll cover how to retrieve and analyze the data.</p>
+
+<h1>
+  
+  
+  Step 5: Retrieving Data from the SQLite Database
+</h1>
+
+<p>You’ve successfully scraped and saved data to an SQLite database using Scrapy. In this step, we’ll explore how to retrieve that data from the database and perform basic queries.</p>
+
+<h1>
+  
+  
+  Step 1: Connecting to the Database
+</h1>
+
+<p>To retrieve data from the SQLite database, we need to establish a connection and create a cursor object, then perform a select, and finally print what’s returned from the cursor. Create a file called retrieve_<a href="http://quotes.py/">quotes.py</a> in the project’s root folder and copy in the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>import sqlite3  
+
+def retrieve\_quotes():  
+  # Create a context manager for the SQLite connection  
+  with sqlite3.connect('quotes.db') as conn:  
+      # Create a cursor within the context manager  
+      cursor = conn.cursor   
+      # Execute an SQL query to retrieve all quotes  
+      cursor.execute('SELECT \* FROM quotes')                      
+      # Fetch all the results from the cursor; fetchall() function returns a list.  
+      quotes = cursor.fetchall(  
+      # Display the retrieved data  
+      for quote in quotes:  
+          print(quote)  
+if \_\_name\_\_ == "\_\_main\_\_":  
+  retrieve\_quotes()
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  Step 2: Running the Script
+</h1>
+
+<p>To run the script and retrieve data from the database, use the following command or run it in your IDE:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>python retrieve\_data.py
+</code></pre>
+
+</div>
+
+
+
+<p>The script will connect to the database, retrieve the data, and display it in the terminal.</p>
+
+<p>That’s it for Step 5! You’ve learned how to retrieve data from the SQLite database where you saved your scraped quotes and authors. In the next steps, we’ll dive deeper into data analysis and visualization.</p>
+
+<h1>
+  
+  
+  Step 6: (For Fun) Data Analysis and Visualization
+</h1>
+
+<p>In this optional step, you can explore your scraped data further by performing data analysis and visualization. We’ll use Python libraries like Pandas and Matplotlib to accomplish this. This is barely enough data to bother with, but I thought it’d be nice to show this step to complete the most minimal of MVPs for a complete Scrapy pipeline use case!</p>
+
+<h1>
+  
+  
+  Step 1: Importing Required Libraries
+</h1>
+
+<p>First, make sure you have the necessary Python libraries installed. You can install them using pip:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>pip install pandas matplotlib
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  Step 2: Analyzing Data
+</h1>
+
+<p>Now, let’s perform some basic analysis of the scraped data. We’ll use Pandas to load the data from the SQLite database into a DataFrame and then calculate some statistics. In the project’s root folder, create a Python script called <a href="http://analysis.py/">data_analysis.py</a> and add the following code. This will print the total number of records using pandas.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>import pandas as pd  
+import sqlite3  
+\# Connect to the SQLite database  
+conn = sqlite3.connect('quotes.db')  
+\# Load data into a Pandas DataFrame  
+df = pd.read\_sql\_query('SELECT \* FROM quotes', conn)  
+\# Calculate the number of quotes  
+total\_quotes = len(df)  
+\# Display the total number of quotes  
+print(f'Total Number of Quotes: {total\_quotes}')
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  Step 3: Visualizing Data
+</h1>
+
+<p>Next, let’s create a simple bar chart to visualize the distribution of quotes by author. We’ll use Matplotlib for this purpose. Add the import to the top of <a href="http://analysis.py/">data_analysis.py</a> and copy-paste everything from the body of the code below to the end of <a href="http://analysis.py/">data_analysis.py</a>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>import matplotlib.pyplot as plt  
+\# Group quotes by author and count the occurrences  
+author\_counts = df\['author'\].value\_counts()  
+\# Create a bar chart  
+plt.figure(figsize=(12, 6))  
+author\_counts.plot(kind='bar')  
+plt.title('Quotes by Author')  
+plt.xlabel('Author')  
+plt.ylabel('Number of Quotes')  
+plt.xticks(rotation=45)  
+plt.tight\_layout()  
+plt.show()
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  Step 4: Running the Script
+</h1>
+
+<p>Run the script using the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>python data\_analysis.py
+</code></pre>
+
+</div>
+
+
+
+<p>After running the script, you’ll see the total number of quotes displayed in the console, and a bar chart showing the distribution of quotes by author will pop up.</p>
+
+<p>That concludes Step 6, where you have the option to perform data analysis and visualization on your scraped data.</p>
+
+<h1>
+  
+  
+  Recap and Next Steps
+</h1>
+
+<p>Congratulations! You’ve completed my tutorial on web scraping and data extraction process using Scrapy. At this point, you will have:</p>
+
+<ol>
+<li> Created a virtual environment for your Python project to manage dependencies.</li>
+<li> Set up a Scrapy project and defined a web scraping spider.</li>
+<li> Extracted quotes and authors from a website using Scrapy.</li>
+<li> Created an SQLite database and stored the scraped data.</li>
+<li> Implemented a Scrapy pipeline to automate data storage.</li>
+<li> Performed data analysis and visualization on the scraped data.</li>
+</ol>
+
+<h1>
+  
+  
+  Next Steps
+</h1>
+
+<p>Now that you have a solid foundation in web scraping with Scrapy, you can explore more advanced topics and real-world applications. In the coming weeks, I will be writing and linking in tutorials that build off this simple pipeline. They’ll cover such topics as:</p>
+
+<ul>
+<li>  Scraping data from multiple websites and combining it.</li>
+<li>  Handling different data formats and structures.</li>
+<li>  Scheduling web scraping tasks to run at specific intervals.</li>
+<li>  Implementing user authentication for scraping behind login pages.</li>
+<li>  Scaling up your scraping efforts with distributed systems.</li>
+</ul>
+
+<p>Feel free to apply the knowledge and techniques you’ve learned here to gather data for your projects, research, or data analysis tasks. If you make something cool out of a Scrapy pipeline after reading this, please let me know! I’d love to see it!</p>
+
+<p>Scrape responsibly, and have fun!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to animate Fire TV splash screens with React Native & Lottie](https://dev.to/amazonappdev/how-to-animate-fire-tv-splash-screens-with-react-native-lottie-32ca) 
+ <details><summary>Article</summary> <blockquote>
+<p><em><strong>Author's Note:</strong> In my <a href="https://dev.to/amazonappdev/develop-animated-splash-screens-on-fire-tv-with-lottie-5emp">previous Lottie article</a>, we covered how to create animated custom splash screens on Fire TV using Kotlin for Android and <a href="https://github.com/airbnb/lottie-android">Lottie</a>. For this article, we'll focus on those of you building Android apps using React Native. Since Lottie supports React Native, we'll cover the essentials to get you up and running quickly. Let's dive in!</em></p>
+</blockquote>
+
+<p><strong>Quick recap for Lottie</strong><br>
+<a href="https://airbnb.io/lottie/#/">Lottie</a> is an open-source animation library created by Airbnb to render complex animations on mobile devices in real time. It's an excellent choice for creating interactive animations for both Android and iOS. Since Fire OS is based on the Android Open source Project <a href="https://source.android.com/">AOSP</a> we can use Lottie to render complex animated splash screens on Fire TV apps with React Native.</p>
+
+<p>Let's now walk through how to create an animated splash screen for a React Native app running on Fire TV!</p>
+<h3>
+  
+  
+  <strong>Prerequisite:</strong> Create a React Native project
+</h3>
+
+<p>You can use your own existing React Native project or create a new one using the command line:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npx react-native@latest init SplashScreenApp
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>💡 <strong>Note:</strong> If you're new to React Native and want to learn how to setup your development environment and command line tools, head over to <a href="https://reactnative.dev/docs/environment-setup">the React Native official docs</a> to get up and running.</p>
+</blockquote>
+
+<h3>
+  
+  
+  <strong>Step 1:</strong> Prepare the Lottie animation
+</h3>
+
+<p>To integrate Lottie animations into our TV splash screen, we need to first build an animation to match our app's branding and theme. For this example, we'll use the <a href="https://lottiefiles.com/animations/tv-watching-g5Lr55wxgp">TV Watching</a> animation by <a href="https://lottiefiles.com/wovencontent">Alan Murphy</a> available as a sample from <a href="https://lottiefiles.com/">LottieFiles</a>. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zQ-B9c60--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pvitz7foralsqe9gmbwe.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zQ-B9c60--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pvitz7foralsqe9gmbwe.png" alt="Lottie animation from LottieFiles" width="800" height="369"></a></p>
+
+<h3>
+  
+  
+  <strong>Step 2:</strong> Place the Lottie animation into the React Native app project
+</h3>
+
+<p>Create a directory <code>assets</code> in your React Native project and download the "<a href="https://lottiefiles.com/animations/tv-watching-g5Lr55wxgp">TV Watching Animation</a>" in Lottie JSON format from the step above. Place the JSON file in the new <code>assets</code> folder and make sure to rename the JSON file <code>splashscreen.json</code>.</p>
+
+<h3>
+  
+  
+  <strong>Step 3:</strong> Include Lottie as a package dependency
+</h3>
+
+<p>From the command line, inside the root directory of your React Native app execute the command to add Lottie as a dependency:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>yarn add lottie-react-native
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Step 4:</strong> Define the main components for your splash screen
+</h3>
+
+<p>For this sample app, we'll declare all required components inside <code>App.tsx</code>. </p>
+
+<p>The 3 components are:</p>
+
+<ol>
+<li>
+<code>App</code>, which represents the main app component</li>
+<li>
+<code>SplashScreen</code> for initiating the splash screen</li>
+<li>
+<code>MainContent</code> for the view that is shown after the splash screen disappears</li>
+</ol>
+
+<p>Let's open the file <code>App.tsx</code> and remove all the content generated by the React Native command line.</p>
+
+<p>Then at the top of the file, add the required imports for the components we need:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Text</span><span class="p">,</span> <span class="nx">View</span><span class="p">,</span> <span class="nx">StyleSheet</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">LottieView</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lottie-react-native</span><span class="dl">'</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Next up you will declare the 3 components:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">SplashScreen</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">onAnimationFinish</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+
+<span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">MainContent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+
+<span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>and in addition set the styles we will apply for each of them:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code>
+<span class="kd">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="na">container</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">justifyContent</span><span class="p">:</span> <span class="dl">'</span><span class="s1">center</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">alignItems</span><span class="p">:</span> <span class="dl">'</span><span class="s1">center</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">splashContainer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">width</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="na">height</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">splash</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">mainContainer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">marginTop</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">text</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">fontWeight</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bold</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Remember to export the <code>App</code> component at the end of the file:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Step 5:</strong> Implement the SplashScreen component
+</h3>
+
+<p>Implement the SplashScreen component by declaring its components. For this we will have a View containing a <code>LottieView</code> with the previous json animation file assigned to the <code>source</code> property of the <code>LottieView</code>.</p>
+
+<p>We also define the <code>autoPlay</code> property in the <code>LottieView</code> in order to automatically start the animation and set the <code>loop</code> property as false so that we only show the animation one time:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">SplashScreen</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">onAnimationFinish</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">splashContainer</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">LottieView</span>
+      <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">splash</span><span class="p">}</span>
+      <span class="nx">source</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./assets/splashscreen.json</span><span class="dl">'</span><span class="p">)}</span>
+      <span class="nx">autoPlay</span>
+      <span class="nx">loop</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
+      <span class="nx">onAnimationFinish</span><span class="o">=</span><span class="p">{</span><span class="nx">onAnimationFinish</span><span class="p">}</span>
+    <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/View</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Step 6:</strong> Implement the MainContent component
+</h3>
+
+<p>To start, this step will just show Text and then you choose when to display your app's home screen after the Splash Screen animation ends:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">MainContent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mainContainer</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Your</span> <span class="nx">Awesome</span> <span class="nx">App</span> <span class="nx">Home</span> <span class="nx">Screen</span><span class="o">!&lt;</span><span class="sr">/Text</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/View</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Step 7:</strong> Implement the App component
+</h3>
+
+<p>The App component handles the logic to display and hide the Splash screen. </p>
+
+<p>Declare a <code>loaded</code> state and set it to false. This allows the the animation to load prior to the Splash Screen being rendered on screen. Once the animation resource is ready, a callback will flip the <code>loaded</code> state to true to then make the <code>MainContent</code> component visible on the Fire TV:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">loaded</span><span class="p">,</span> <span class="nx">setLoaded</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">handleAnimationFinish</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setLoaded</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">loaded</span> <span class="p">?</span> <span class="o">&lt;</span><span class="nx">MainContent</span> <span class="o">/&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="nx">SplashScreen</span> <span class="nx">onAnimationFinish</span><span class="o">=</span><span class="p">{</span><span class="nx">handleAnimationFinish</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">}
+</span>    <span class="o">&lt;</span><span class="sr">/View</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  <strong>Wrap Up:</strong> Load up and test our animated splash screen!
+</h2>
+
+<p>Now we can test either by using <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html">Fire TV via adb</a> or <a href="https://developer.android.com/training/tv/start/start#run-on-a-virtual-device">starting an Android TV emulator</a>. </p>
+
+<p>Either approach will let us see the sample in action by running this command from the project directory:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>npm start
+</code></pre>
+
+</div>
+
+
+
+<p>Remember to press <code>a</code> to run the Android version.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JkM_SjJq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tyxq87fbnnwiylijvikd.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JkM_SjJq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tyxq87fbnnwiylijvikd.gif" alt="Animated Splash screen" width="600" height="714"></a></p>
+
+<p>Using <a href="https://github.com/lottie-react-native/lottie-react-native">Lottie for React Native</a> is an easy way to enrich your app with beautiful animations and make your user happy.</p>
+
+<p>Thanks for reading this guide and make sure to check out the sample project source code <a href="https://github.com/giolaq/splash-screen-tv-app-react-native">on Github</a>.</p>
+
+<p><strong>Stay updated</strong> </p>
+
+<p>For the latest Amazon Appstore developer news, product releases, tutorials, and more:</p>
+
+<p>📣 Follow <a href="https://twitter.com/AmazonAppDev">@AmazonAppDev</a> and <a href="https://twitter.com/i/lists/1580293569897984000/members">our team</a> on Twitter</p>
+
+<p>📺 Subscribe to our <a href="https://www.youtube.com/amazonappstoredevelopers">Youtube channel</a></p>
+
+<p>📧 Sign up for the <a href="https://m.amazonappservices.com/devto-newsletter-subscribe">Developer Newsletter</a></p>
+
+<h3>
+  
+  
+  About the author
+</h3>
+
+<p>Giovanni ("Gio") Laquidara is a Senior Dev Advocate at Amazon, where he works on supporting developers around the world using the Amazon Appstore across many devices. </p>
+
+<p>Previously, Gio worked as a software engineer building mobile apps, real-time defence systems, and VR/AR experiences. For fun, Gio enjoys low level programming, IoT hacking, and command line apps ⌨️✨.</p>
+
+<p><em>You can connect with Gio on <a href="https://twitter.com/giolaq">Twitter</a>, <a href="https://www.linkedin.com/in/glaquidara/">Linkedin</a>, and <a href="https://giolaq.dev">giolaq.dev</a>.</em></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Convert a Hygraph Next.js project to Next.js app directory](https://dev.to/brob/convert-a-hygraph-nextjs-project-to-nextjs-app-directory-beta-4m13) 
+ <details><summary>Article</summary> <p>In late 2022, the Next.js team launched their next stable version: Next.js 13. While this update came with a lot of improved functionality, one new feature is set to redefine the way you build with Next: the app directory beta.</p>
+
+<p>The app beta is not used default. It needs to be enabled and can then be incrementally adopted. In this article, we're going to take a look at the new app structure and convert an existing Hygraph project to this new structure. We'll take this step by step and see how incremental adoption really works.</p>
+
+<h2>
+  
+  
+  Required Knowledge
+</h2>
+
+<ul>
+<li>A basic understanding of <a href="https://nextjs.org/">Next.js</a>
+</li>
+<li>Basic knowledge of <a href="https://hygraph.com/learn/graphql">GraphQL</a>
+</li>
+<li>Basic knowledge of <a href="https://hygraph.com">Hygraph</a>
+</li>
+</ul>
+
+<h2>
+  
+  
+  Why the app structure?
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--m6M7jNBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/d7bqvqN5Rq6PgNQO955j" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m6M7jNBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/d7bqvqN5Rq6PgNQO955j" alt="The new file structure allows for much more flexibility including the adding of specific templates for each route such as not-found, loading, head, and more" width="800" height="450"></a></p>
+
+<p>The new app directory structure isn’t just a reorganization of your project (though it is, and that reorganization feels powerful). This new methodology utilizes <a href="https://beta.nextjs.org/docs/rendering/server-and-client-components#why-server-components">React Server Components</a> to bring many new features and mental models. With Server components, a developer can do their business logic in a React component that doesn’t need to be sent to the client. This allows for a lot less JavaScript to be sent to the browser. If you have frontend needs, you can then use client components that get sent individually to the browser. This should reduce your bundle size down to a more manageable state. Just the code you need for interactivity.</p>
+
+<p>The overall data fetching model has shifted, as well. Next has extended the <a href="https://beta.nextjs.org/docs/api-reference/fetch">native fetch() method</a> from Node and the browser APIs and has added additional caching and deduplication functionality. This means you can create requests for data in various files, but the request will only fire to your API once. Fetching your blog posts to create a list on your homepage and to create the blog page list? Now that’s 1 API request, despite writing the code in multiple places. This gives a lot of developer convenience while creating better build and serve times.</p>
+
+<p>There are even more new and improved features, but to use them, we need to be able to upgrade our project to use this new structure. It’s not as simple as moving your page files into the app directory, so let’s dig in and get things updated.</p>
+
+<h2>
+  
+  
+  Setting up a Next.js 13 project to work with the app directory
+</h2>
+
+<p>To start, we need a Next.js project. While this process is possible with any Next project using data fetching, let’s start from our simple Next example from the <a href="https://github.com/hygraph/hygraph-examples/tree/master/with-nextjs">hygraph-examples GitHub repository</a>. Run the following commands:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npx degit hygraph/hygraph-examples/with-nextjs with-nextjs
+<span class="nb">cd </span>with-nextjs
+</code></pre>
+
+</div>
+
+
+
+<p>Before we install, we’ll need to update some dependencies in the package.json file. Let’s upgrade Next to <code>^13.0.0</code> and remove the <code>react</code> and <code>react-doc</code> dependencies.</p>
+
+<p>Your package.json should now look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hygraph-with-nextjs"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"private"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"graphql-request"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.8.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^13.0.0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>Now we can start the development server by running <code>npm run dev</code>. Immediately on loading the local version, we’re presented with the first update. Since this was previously not running Next 13, the Link component is structured wrong. In Next 13, we no longer need to have an anchor tag inside the Link component. This is a great update, but we need to change these references. The only location the Link component is used is the homepage in <code>/src/pages/index.js</code>. Open that file, and remove the <code>&lt;a&gt;&lt;/a&gt;</code> tags to get the site to run<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// Old</span>
+    <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">slug</span><span class="p">}</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">`/products/</span><span class="p">${</span><span class="nx">slug</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">a</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
+</span>
+<span class="c1">// New</span>
+    <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">slug</span><span class="p">}</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">`/products/</span><span class="p">${</span><span class="nx">slug</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
+       <span class="p">{</span><span class="nx">name</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
+</span></code></pre>
+
+</div>
+
+
+
+<p>Now that the site runs, let’s update from the Pages directory to the new app directory.</p>
+
+<h2>
+  
+  
+  Converting from /pages to /app
+</h2>
+
+<p>Before we can convert to the app directory, we need to let Next know that we’ll be using this experimental feature. To do that, we need a configuration file. In the root of our project, let’s create a <code>next.config.js</code> file. Inside that file, add the following basic configuration.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="cm">/** @type {import('next').NextConfig} */</span>
+<span class="kd">const</span> <span class="nx">nextConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">experimental</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">appDir</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">nextConfig</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>From there, we can create our app directory. Inside the src directory, add an <code>app</code> directory. We’ll be moving each of our routes to this directory. The nice thing is that each of our older routes will continue to work as we make these changes, since both directories can work at the same time.</p>
+
+<h3>
+  
+  
+  Creating the root layout component
+</h3>
+
+<p>One of the first big changes to the overall structure is the need of a “root layout.” This will be the scaffolding of Markup for all pages. This can start very simply, but have any global information that each route will need. The <code>RootLayout</code> function accepts a children object. That children object will contain the Server Components that we’ll add via each page we create.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">RootLayout</span><span class="p">({</span><span class="nx">children</span><span class="p">})</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+            <span class="p">{</span> <span class="nx">children</span> <span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>With this layout, we can now add our first page.</p>
+
+<h3>
+  
+  
+  Adding the homepage
+</h3>
+
+<p>Instead of the <code>index.js</code> convention of the <code>/pages</code> directory, each page in the app directory will be named <code>page.js</code>. In the root of the app directory, create a new <code>page.js</code> file. This will be our homepage.</p>
+
+<p>Once you create this page, Next will thrown an error in the console. There is now a conflicting route: <code>/src/pages/index.js</code> is the same route as <code>/src/app/page.jsx</code>. For now, rename <code>/src/pages/index.js</code> to <code>oldIndex.js</code>. We’ll delete this file later, but this file is the blueprint for our new file.</p>
+
+<p>Once we rename the file, we get a new error. The <code>page.jsx</code> file is not exporting a React component. In fact, it’s exporting anything, since it’s blank. Let’s fix that and export a simple React component with an h1 of Products.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Products</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now the homepage should have the H1 instead of the product list from the old homepage. Let’s get the list of products back.</p>
+
+<p>In the old index file, we export a function called <code>getStaticProps</code> to get and pass the data to our page component. In the new structure, we don’t need to export anything or name things in any specific ways. Instead, we can create a regular async function to fetch our data.</p>
+
+<p>Before our Server Component in the new <code>page.jsx</code> file, create a new async function named <code>getProducts</code>. This run a fetch request to the Hygraph endpoint for the project and return the products array. We can then run that function in our Server Component to loop through the data and display a link to each page.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">getProducts</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api-eu-central-1.hygraph.com/v2/ck8sn5tnf01gc01z89dbc7s0o/master</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="na">query</span><span class="p">:</span> <span class="s2">`{
+                products {
+                  slug
+                  name
+                  id
+                }
+              }`</span>
+        <span class="p">})</span>
+
+    <span class="p">})</span>
+
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getProducts</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Products</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+                <span class="p">{</span><span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">product</span> <span class="o">=&gt;</span> <span class="p">(</span>
+                    <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">`/products/</span><span class="p">${</span><span class="nx">product</span><span class="p">.</span><span class="nx">slug</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>                <span class="p">))}</span>
+            <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>A few things have changed between our old version and new. </p>
+
+<ul>
+<li>Since we’re not using <code>getStaticProps</code>, we no longer need to structure our return in a specific way. Instead, we just return back the array of products</li>
+<li>Using <code>fetch</code> instead of <code>GraphQLRequest</code>. By using fetch, we allow Next to cache the information and if we execute an identical fetch later, it won’t make a separate call, but instead use this data</li>
+</ul>
+
+<p>Once you save this in, we have a functioning homepage. These links even take us to the pages associated with our old dynamic routes — since <code>/app</code> and <code>/pages</code> can work incrementally. That could be a fine stopping point, but let’s convert our dynamic route over, as well.</p>
+
+<h3>
+  
+  
+  Converting the dynamic products route
+</h3>
+
+<p>Just like the homepage, we’ll start by setting up our structure. Instead of the dynamic route brackets happening on the file, hey happen on the directory. So the <code>/pages/products[slug].js</code> will change to be <code>/app/products/[slug]/page.jsx</code>. This allows for more flexibility and the ability to add custom, co-located features such as error pages, loading pages, and custom layouts.</p>
+
+<p>Create the new file and add a simple component like we did for the homepage.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">product</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This time, the application won’t immediately error, since the static pages aren’t being rebuilt, but if you restart Next, it will throw the same error as before about conflicting files. Delete or rename the file and we’ll move forward.</p>
+
+<p>The overall structure of this file is significantly different. Just like the homepage, we no longer need the getStaticProps function, but we also don’t need the getStaticPaths either. These are all files that render on the server, so we can move all that information into a single async function that can happen at request time.</p>
+
+<p>The new Server Component gives us a params object that we can use to get the slug for the current route. We can pass that into a new getProduct() function and use that as a variable in our query to Hygraph. This will fetch the data for that specific product. We can then use that in the Markup generated by our component to display the title, description, and price.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getProduct</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api-eu-central-1.hygraph.com/v2/ck8sn5tnf01gc01z89dbc7s0o/master</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="na">query</span><span class="p">:</span> <span class="s2">`{
+                product(where: {slug: "</span><span class="p">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">slug</span><span class="p">}</span><span class="s2">"}) {
+                    name
+                    description
+                    price
+                }
+            }`</span><span class="p">,</span>
+            <span class="na">variables</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">slug</span><span class="p">:</span> <span class="nx">params</span><span class="p">.</span><span class="nx">slug</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="p">})</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">product</span>
+<span class="p">}</span>
+
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">({</span><span class="nx">params</span><span class="p">})</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getProduct</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">price</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We now have all the pages working together. Let’s take this one step further and add a custom 404 page for any products that aren’t found.</p>
+
+<h3>
+  
+  
+  Setting up a custom 404 page
+</h3>
+
+<p>Because of the new app structure, we can colocate all of our relative files. In this case, if we want a custom 404 page, we can add a <code>not-found.jsx</code> template in the <code>/products/[slug]</code> directory.</p>
+
+<p>The file will export a Server (or client) component, and for now, we’ll have a very simple message. In this case, since we’re looking for a product, let’s be specific and say “Product not found” instead of a simple “Page not found.”<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">NotFound</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="mi">404</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Product</span> <span class="nx">not</span> <span class="nx">found</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now, navigate to a route that doesn’t match any slug in Hygraph: try <a href="http://localhost:3000/products/sdlfkjl/">http://localhost:3000/products/sdlfkjl/</a></p>
+
+<p>Instead of getting a 404 page, we receive an unhandled error. That’s because we need to tell Next when we know it’s not found. In this case, if our query to Hygraph returns no results, we need to throw a 404.</p>
+
+<p>After calling the getProduct() function, we can check if product is defined and if not, run the notFound() function from <code>next/navigation</code>. This will do a few things for us. It will redirect the browser to the NotFound component and automatically add a "noindex" meta tag to these routes. This is good SEO practice and will keep your site’s 404 pages from being indexed by search engines.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">({</span><span class="nx">params</span><span class="p">})</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getProduct</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">product</span><span class="p">)</span> <span class="nx">notFound</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">price</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now, we have a fully-functioning 404 page! </p>
+
+<p>From here, you can delete the /pages directory and move to working on your app. You’ll still use the pages directory for your API routes, as well as any static routes you want to use, but most things can be used to this new, more-powerful version of Next.</p>
+
+<h2>
+  
+  
+  Next steps
+</h2>
+
+<p>With that, we have fully converted our simple Hygraph Next.js example from /pages to /app. At this point, I’d suggest taking look at all the different file types you can create in the colocated directories.</p>
+
+<ul>
+<li>Add a head.jsx file to specify meta data such as title, description, and more for each product page</li>
+<li>Add a loading.jsx file for loading page for longer queries.</li>
+<li>Add an error.jsx file to handle other error types.</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
  #### - [Docker Node.js and MongoDB example](https://dev.to/tienbku/docker-nodejs-and-mongodb-example-doc) 
  <details><summary>Article</summary> <p><a href="https://www.docker.com/">Docker</a> provides lightweight containers to run services in isolation from our infrastructure so we can deliver software quickly. In this tutorial, I will show you how to dockerize Nodejs Express and MongoDB example using <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
 
@@ -759,689 +1982,6 @@ Removing image node-mongodb_app
 </h2>
 
 <p>En masse, Systems Manager stands as a formidable ally in the realm of sysops administration. Its capabilities, from automating patch management to streamlining command execution, have illuminated a path toward operational efficiency and resource security. As you embark on your journey with SSM, remember that its true power lies not just in its features but in how you harness them to optimize your AWS infrastructure. With SSM by your side, tasks that once seemed daunting become manageable, and you can maintain control and security over your resources effortlessly. So, as you dive into the world of SSM, remember that it's here to simplify your life as a sysops admin. Use it wisely, and you'll find that it's the key to smoother, more secure, and more efficient cloud operations.</p>
-
- </details> 
- <hr /> 
-
- #### - [How to use geolocation api using ReactJS](https://dev.to/choiruladamm/how-to-use-geolocation-api-using-reactjs-ndk) 
- <details><summary>Article</summary> <p>Geolocation is used to find the current location of a network device. It can be used in applications like Google Maps, Uber, Tripadvisor, etc.</p>
-
-<p>In ReactJS, we can find a user's current geolocation using the JavaScript Geolocation API.</p>
-
-<blockquote>
-<p>Note: The Geolocation API is supported in a handful of broswers which can run HTML 5 such as Google Chrome, Opera, Edge, etc.</p>
-</blockquote>
-
-<p>Now we will look at the steps that we need to follow in order to use the Geolocation API and find a user's latitude and longitude coordinates.</p>
-
-<ul>
-<li>First, we will need to import react and the required libraries that will be used in this implementation. We will use the useState react hook to manage the variable which stores a user's geolocation. We shall add the following line to include these libraries and methods at the start of our program.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import React, { useState } from 'react';
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li><p>We will declare a component function called App() for our React project, which will load the application page. There we will enclose all the geolocation methods.</p></li>
-<li><p>We will declare a component function called App() for our React project, which will load the application page. There we will enclose all the geolocation methods.<br>
-</p></li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const [userLocation, setUserLocation] = useState(null);
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>The next step is to define a function to find the user's geolocation and update the userLocation variable accordingly. We will use the arrow function shown below.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const getUserLocation = () =&gt; { /*insert code here*/ };
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>In this getUserLocation function, we will now add all the methods for finding the user's geolocation. First, we will check whether the geolocation functionality is supported by the user's browser. We will use a simple if else statement encasing the navigator.geolocation function.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>if (navigator.geolocation) {
-    // what to do if supported
-}
-else {
-    // display an error if not supported
-    console.error('Geolocation is not supported by this browser.');
-}
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Now, we need to work on what to do if the navigator.geolocation method is supported by the user's browser. We will need to retrieve the user's location. To do this, we use the navigator.geolocation.getCurrentPosition() function.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>navigator.geolocation.getCurrentPosition(
-    (position) =&gt; {
-        // what to do once we have the position
-    },
-    (error) =&gt; {
-        // display an error if we cant get the users position
-        console.error('Error getting user location:', error);
-    }
-);
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Once we have the position of the user, we can now use it to find the user's coordinates and other relevant data. To access the coordinates that are enclosed in the position variable, we can use the poisiton.coords method. We will now create two variables to store these coordinates for later use.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const { latitude, longitude } = position.coords;
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Once we have access to the user's coordinates, we will now update our userLocation variable by calling the setUserLocation() function.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>setUserLocation({ latitude, longitude });
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Now that we have stored the user's location coordinates, our next job is to render an HTML that will reflect back the user's coordinates onto the web page. To do this, we will include a button, and when its clicked, we will call the getUserLocation function and update the userLocation variable.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;button onClick={getUserLocation}&gt;Get User Location&lt;/button&gt;
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>We must also display the user location if we retrieve it successfully. To do this, we will use a &amp;&amp; statement along with the userLocation variable, which encloses all the HTML code to print the user's coordinates. Once the userLocation variable updates, it is no longer a null value, and the statement is now true; hence it displays the coordinates.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>{userLocation &amp;&amp; (
-    &lt;div&gt;
-        &lt;h2&gt;User Location&lt;/h2&gt;
-        &lt;p&gt;Latitude: {userLocation.latitude}&lt;/p&gt;
-        &lt;p&gt;Longitude: {userLocation.longitude}&lt;/p&gt;
-    &lt;/div&gt;
-)}
-</code></pre>
-
-</div>
-
-
-
-<p>Now that we have gone through all the steps that we need to follow to retrieve a user's geographical location, we will now combine all the steps into a single file.</p>
-
-<h2>
-  
-  
-  Full Source code
-</h2>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// import the required react libraries</span>
-<span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// const variable array to save the users location</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">userLocation</span><span class="p">,</span> <span class="nx">setUserLocation</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-  <span class="c1">// define the function that finds the users geolocation</span>
-  <span class="kd">const</span> <span class="nx">getUserLocation</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// if geolocation is supported by the users browser</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// get the current users location</span>
-      <span class="nb">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">position</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="c1">// save the geolocation coordinates in two variables</span>
-          <span class="kd">const</span> <span class="p">{</span> <span class="nx">latitude</span><span class="p">,</span> <span class="nx">longitude</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">;</span>
-          <span class="c1">// update the value of userlocation variable</span>
-          <span class="nx">setUserLocation</span><span class="p">({</span> <span class="nx">latitude</span><span class="p">,</span> <span class="nx">longitude</span> <span class="p">});</span>
-        <span class="p">},</span>
-        <span class="c1">// if there was an error getting the users location</span>
-        <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error getting user location:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">// if geolocation is not supported by the users browser</span>
-    <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Geolocation is not supported by this browser.</span><span class="dl">'</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-
-  <span class="c1">// return an HTML page for the user to check their location</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Geolocation</span> <span class="nx">App</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="cm">/* create a button that is mapped to the function which retrieves the users location */</span><span class="p">}</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">getUserLocation</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Get</span> <span class="nx">User</span> <span class="nx">Location</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="cm">/* if the user location variable has a value, print the users location */</span><span class="p">}</span>
-      <span class="p">{</span><span class="nx">userLocation</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">User</span> <span class="nx">Location</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="na">Latitude</span><span class="p">:</span> <span class="p">{</span><span class="nx">userLocation</span><span class="p">.</span><span class="nx">latitude</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="na">Longitude</span><span class="p">:</span> <span class="p">{</span><span class="nx">userLocation</span><span class="p">.</span><span class="nx">longitude</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="p">)}</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  If you want using typescript, source code here
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span>
-
-<span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">TestGeolocation</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">userLocation</span><span class="p">,</span> <span class="nx">setUserLocation</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="p">{</span>
-    <span class="na">latitude</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-    <span class="nl">longitude</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">getUserLocation</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nb">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">position</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="kd">const</span> <span class="p">{</span> <span class="nx">latitude</span><span class="p">,</span> <span class="nx">longitude</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">;</span>
-
-          <span class="nx">setUserLocation</span><span class="p">({</span> <span class="nx">latitude</span><span class="p">,</span> <span class="nx">longitude</span> <span class="p">});</span>
-        <span class="p">},</span>
-
-        <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error get user location: </span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Geolocation is not supported by this browser</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span> 
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Geolocation</span> <span class="nx">App</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="cm">/* create a button that is mapped to the function which retrieves the users location */</span><span class="p">}</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">getUserLocation</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Get</span> <span class="nx">User</span> <span class="nx">Location</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="cm">/* if the user location variable has a value, print the users location */</span><span class="p">}</span>
-      <span class="p">{</span><span class="nx">userLocation</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">User</span> <span class="nx">Location</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="na">Latitude</span><span class="p">:</span> <span class="p">{</span><span class="nx">userLocation</span><span class="p">.</span><span class="nx">latitude</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="na">Longitude</span><span class="p">:</span> <span class="p">{</span><span class="nx">userLocation</span><span class="p">.</span><span class="nx">longitude</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="p">)}</span>
-    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
- </details> 
- <hr /> 
-
- #### - [Data Communication : System design](https://dev.to/rajrathod/data-communication-system-design-3hgf) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Data Communication:
-</h2>
-
-<p>Data communication, also known as data networking or network communication, refers to the transmission of digital data between devices or systems over a network. It is a fundamental concept in computer science and telecommunications and plays a crucial role in enabling communication and data exchange in today's interconnected world. Here are key aspects and components of data communication:</p>
-
-<p><strong>1. Data Transmission Medium</strong>:</p>
-
-<ul>
-<li>
-<p><strong>Physical Media</strong>: Data can be transmitted over various physical mediums, including:</p>
-
-<ul>
-<li>
-<strong>Copper Wire</strong>: Used in Ethernet and telephone connections.</li>
-<li>
-<strong>Fiber Optic Cable</strong>: Provides high-speed and long-distance data transmission.</li>
-<li>
-<strong>Wireless</strong>: Radio waves, microwaves, and satellite links are used for wireless communication.</li>
-<li>
-<strong>Coaxial Cable</strong>: Often used for cable television and some data networks.</li>
-</ul>
-
-
-</li>
-<li><p><strong>Wireless Technologies</strong>: Wireless data communication includes Wi-Fi, cellular networks (3G, 4G, 5G), Bluetooth, and satellite communication.</p></li>
-</ul>
-
-<p><strong>2. Data Transmission Methods</strong>:</p>
-
-<ul>
-<li>
-<strong>Serial vs. Parallel</strong>: Data can be transmitted serially (one bit at a time) or in parallel (multiple bits simultaneously).</li>
-<li>
-<strong>Synchronous vs. Asynchronous</strong>: In synchronous transmission, data is sent in synchronized frames, while asynchronous transmission does not require strict synchronization.</li>
-</ul>
-
-<p><strong>3. Network Protocols and Standards</strong>:</p>
-
-<ul>
-<li>
-<strong>Protocols</strong>: Network protocols define rules and conventions for data communication. Examples include TCP/IP, HTTP, FTP, SMTP, and more.</li>
-<li>
-<strong>Standards</strong>: Standards organizations like the IEEE, ISO, and ITU develop specifications for networking and communication technologies, ensuring interoperability.</li>
-</ul>
-
-<p><strong>4. Network Topologies</strong>:</p>
-
-<ul>
-<li>
-<strong>Physical Topology</strong>: Describes the physical layout of devices in a network, such as star, bus, ring, or mesh topologies.</li>
-<li>
-<strong>Logical Topology</strong>: Defines how data flows in the network, often based on protocols (e.g., Ethernet, Token Ring).</li>
-</ul>
-
-<p><strong>5. Network Devices</strong>:</p>
-
-<ul>
-<li>
-<strong>Routers</strong>: Devices that connect different networks and route data between them.</li>
-<li>
-<strong>Switches</strong>: Devices that forward data within a local network based on MAC addresses.</li>
-<li>
-<strong>Firewalls</strong>: Network security devices that filter incoming and outgoing traffic.</li>
-<li>
-<strong>Modems</strong>: Devices that modulate and demodulate signals to enable digital data transmission over analog lines (e.g., DSL modems).</li>
-</ul>
-
-<p><strong>6. Network Layers</strong>:</p>
-
-<ul>
-<li>
-<strong>OSI Model</strong>: The OSI (Open Systems Interconnection) model defines seven layers, each responsible for specific functions in data communication. These layers include physical, data link, network, transport, session, presentation, and application layers.</li>
-</ul>
-
-<p><strong>7. Transmission Modes</strong>:</p>
-
-<ul>
-<li>
-<strong>Simplex</strong>: Data flows in one direction only (e.g., TV broadcast).</li>
-<li>
-<strong>Half-Duplex</strong>: Data can flow in both directions but not simultaneously (e.g., walkie-talkies).</li>
-<li>
-<strong>Full-Duplex</strong>: Data can flow in both directions simultaneously (e.g., phone conversation).</li>
-</ul>
-
-<p><strong>8. Error Detection and Correction</strong>:</p>
-
-<ul>
-<li>Techniques like checksums and error-correcting codes are used to detect and correct errors in transmitted data.</li>
-</ul>
-
-<p><strong>9. Data Encoding and Modulation</strong>:</p>
-
-<ul>
-<li>Data is often encoded into electrical, optical, or radio wave signals for transmission. Techniques like modulation are used to represent digital data in analog signals.</li>
-</ul>
-
-<p><strong>10. Network Security and Encryption</strong>:</p>
-
-<ul>
-<li>Data communication often involves security measures to protect data from unauthorized access and eavesdropping. Encryption and secure protocols are used for secure communication.</li>
-</ul>
-
-<p><strong>11. Bandwidth and Data Rate</strong>:</p>
-
-<ul>
-<li>Bandwidth represents the capacity of a communication channel, while data rate refers to the speed at which data is transmitted.</li>
-</ul>
-
-<p><strong>12. Data Routing</strong>:</p>
-
-<ul>
-<li>Data is routed through networks using routing algorithms and tables that determine the best path from the source to the destination.</li>
-</ul>
-
-<p>Data communication is the foundation of the internet, telecommunication networks, and various other communication systems. It enables the exchange of information, multimedia content, and real-time interactions across the globe, impacting various aspects of modern life, from business and education to entertainment and healthcare.</p>
-
-<h2>
-  
-  
-  Application Layer:
-</h2>
-
-<p>The application layer is one of the seven layers in the OSI (Open Systems Interconnection) model and one of the five layers in the TCP/IP model. It is the topmost layer in both models and plays a fundamental role in network communication, as it focuses on end-user services and applications. Here's an overview of the application layer:<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vkG17HvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opg7tsvapbmdpcssq9fj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vkG17HvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opg7tsvapbmdpcssq9fj.png" alt="Image description" width="585" height="359"></a></p>
-
-<p><strong>Key Functions of the Application Layer</strong>:</p>
-
-<ol>
-<li><p><strong>End-User Services</strong>: The primary purpose of the application layer is to provide various network services directly to end-users or applications. It acts as an interface between the network and the user, ensuring that applications can communicate over the network.</p></li>
-<li><p><strong>Application Protocols</strong>: The application layer defines various protocols and standards for specific applications and services to communicate with one another. These protocols determine how data is formatted, transmitted, and received by applications.</p></li>
-<li><p><strong>Data Presentation and Translation</strong>: The application layer is responsible for data presentation and conversion. It ensures that data is in a format that the receiving application can understand and interpret. This includes tasks like data encryption, compression, and character set conversion.</p></li>
-<li><p><strong>Session Management</strong>: The application layer can establish, maintain, and terminate communication sessions between applications. It helps manage the flow of data and ensures that information is synchronized between sender and receiver.</p></li>
-<li><p><strong>Application Identification and Addressing</strong>: The application layer defines mechanisms for identifying applications and services on a network, typically using port numbers or other identifiers. This enables routers and switches to forward data to the appropriate destination.</p></li>
-<li><p><strong>User Authentication and Authorization</strong>: Some application layer protocols and services handle user authentication and authorization, ensuring that only authorized users can access certain resources or services.</p></li>
-<li><p><strong>File Transfer and Remote Access</strong>: Protocols like FTP (File Transfer Protocol) and SSH (Secure Shell) operate at the application layer and enable file transfer and remote access to servers.</p></li>
-<li><p><strong>Email Services</strong>: Email protocols such as SMTP (Simple Mail Transfer Protocol) for sending emails and POP3/IMAP for receiving emails operate at the application layer.</p></li>
-<li><p><strong>Web Services</strong>: HTTP (Hypertext Transfer Protocol), used for web browsing and web-based applications, is a key application layer protocol.</p></li>
-</ol>
-
-<p><strong>Examples of Application Layer Protocols and Services</strong>:</p>
-
-<ul>
-<li>
-<strong>HTTP/HTTPS</strong>: Hypertext Transfer Protocol and its secure version are used for web browsing and web services.</li>
-<li>
-<strong>SMTP</strong>: Simple Mail Transfer Protocol is used for sending email.</li>
-<li>
-<strong>POP3/IMAP</strong>: Post Office Protocol and Internet Message Access Protocol are used for receiving email.</li>
-<li>
-<strong>FTP</strong>: File Transfer Protocol is used for transferring files.</li>
-<li>
-<strong>SSH</strong>: Secure Shell is used for secure remote access and management of network devices.</li>
-<li>
-<strong>DNS</strong>: Domain Name System resolves domain names into IP addresses.</li>
-<li>
-<strong>SNMP</strong>: Simple Network Management Protocol is used for managing and monitoring network devices.</li>
-<li>
-<strong>TELNET</strong>: Used for remote terminal access (not secure).</li>
-</ul>
-
-<p>The application layer is critical for enabling communication between different software applications and services across a network. It provides the necessary abstractions and protocols to facilitate this communication, ensuring that data is exchanged accurately and efficiently.</p>
-
-<h2>
-  
-  
-  Network Protocols:
-</h2>
-
-<p>HTTP (Hypertext Transfer Protocol), TCP (Transmission Control Protocol), and UDP (User Datagram Protocol) are fundamental protocols in computer networking that play essential roles in data communication and web services. Each protocol serves a specific purpose and has its characteristics and use cases. Here's an overview of each:<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RKMceQE8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b0l6a19qac8dhho1l3sj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RKMceQE8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b0l6a19qac8dhho1l3sj.png" alt="Image description" width="697" height="537"></a></p>
-
-<p><strong>HTTP (Hypertext Transfer Protocol)</strong>:</p>
-
-<ul>
-<li>
-<strong>Purpose</strong>: HTTP is an application layer protocol used for transferring hypertext (text-based documents with links) and other data between a client (typically a web browser) and a web server.</li>
-<li>
-<strong>Characteristics</strong>:
-
-<ul>
-<li>Request-Response Model: HTTP follows a client-server model where a client sends requests to a web server, and the server responds with the requested content.</li>
-<li>Stateless: HTTP is stateless, meaning each request-response cycle is independent, and the server doesn't retain information about previous requests from the same client.</li>
-<li>Connectionless: By default, HTTP uses a connectionless model where each request/response is a separate connection. However, HTTP/1.1 introduced the option to reuse connections (HTTP Keep-Alive) for multiple requests.</li>
-</ul>
-
-
-</li>
-<li>
-<strong>Use Cases</strong>: HTTP is the foundation of the World Wide Web and is used for browsing websites, fetching resources like HTML pages, images, videos, and interacting with web services through APIs (e.g., RESTful APIs).</li>
-</ul>
-
-<p><strong>TCP (Transmission Control Protocol)</strong>:</p>
-
-<ul>
-<li>
-<strong>Purpose</strong>: TCP is a transport layer protocol that provides reliable, connection-oriented, and stream-oriented data communication between two devices in a network.</li>
-<li>
-<strong>Characteristics</strong>:
-
-<ul>
-<li>Reliable: TCP ensures the reliable delivery of data by acknowledging received packets, retransmitting lost packets, and ordering received packets.</li>
-<li>Connection-Oriented: TCP establishes a connection before data exchange and terminates the connection after communication.</li>
-<li>Stream-Oriented: TCP treats data as a continuous stream of bytes, providing a byte-stream interface to applications.</li>
-</ul>
-
-
-</li>
-<li>
-<strong>Use Cases</strong>: TCP is commonly used for applications where data reliability and ordering are critical, such as web browsing, email, file transfer (e.g., FTP), and remote access (e.g., SSH).</li>
-</ul>
-
-<p><strong>UDP (User Datagram Protocol)</strong>:</p>
-
-<ul>
-<li>
-<strong>Purpose</strong>: UDP is a transport layer protocol that provides a connectionless and lightweight method for sending datagrams (packets) of data between devices in a network.</li>
-<li>
-<strong>Characteristics</strong>:
-
-<ul>
-<li>Connectionless: UDP does not establish a connection before sending data and does not guarantee the delivery or ordering of data packets.</li>
-<li>Lightweight: UDP has lower overhead compared to TCP because it lacks features like flow control and error correction.</li>
-<li>Low Latency: UDP is preferred for real-time applications where low latency is crucial, such as VoIP, online gaming, and multimedia streaming.</li>
-</ul>
-
-
-</li>
-<li>
-<strong>Use Cases</strong>: UDP is suitable for applications where real-time communication is more important than data integrity, such as video conferencing, DNS, DHCP, and various real-time protocols.
-Remote Procedure Call (RPC), gRPC, REST, and GraphQL are all protocols and technologies used for building APIs and enabling communication between clients and servers in distributed systems. Each of these technologies has its own characteristics and use cases. Here's an in-depth explanation of each:</li>
-</ul>
-
-<p><strong>Remote Procedure Call (RPC)</strong>:</p>
-
-<ul>
-<li>
-<strong>Purpose</strong>: RPC is a protocol that allows a program or function to execute code on a remote server or service as if it were a local function call. It abstracts the complexities of network communication, making it appear as if the client is invoking a function on the server.</li>
-<li>
-<strong>Characteristics</strong>:
-
-<ul>
-<li>Synchronous: RPC calls are typically synchronous, meaning the client waits for the remote procedure to complete and return a response.</li>
-<li>Language Agnostic: RPC can work across different programming languages, allowing clients and servers to be written in different languages.</li>
-<li>Communication Overhead: RPC may involve serialization/deserialization of data and network communication, which can add overhead.</li>
-</ul>
-
-
-</li>
-<li>
-<strong>Use Cases</strong>: RPC is commonly used in scenarios where you need direct control over remote services and want to make remote calls feel like local calls. Examples include remote method invocation in Java RMI and gRPC.</li>
-</ul>
-
-<p><strong>gRPC</strong>:</p>
-
-<ul>
-<li>
-<strong>Purpose</strong>: gRPC is an open-source RPC framework developed by Google. It uses HTTP/2 as the transport protocol and Protocol Buffers (protobuf) as the interface definition language (IDL) to define services and message structures.</li>
-<li>
-<strong>Characteristics</strong>:
-
-<ul>
-<li>Strongly Typed: gRPC uses Protocol Buffers to define APIs and data structures, providing strong typing and code generation.</li>
-<li>Language Agnostic: Similar to RPC, gRPC allows communication between clients and servers implemented in different programming languages.</li>
-<li>Bidirectional Streaming: gRPC supports bidirectional streaming, enabling both clients and servers to send multiple messages in a single RPC.</li>
-</ul>
-
-
-</li>
-<li>
-<strong>Use Cases</strong>: gRPC is well-suited for building efficient and performant APIs in microservices architectures. It's commonly used in scenarios where high performance, strong typing, and bidirectional communication are important.</li>
-</ul>
-
-<p><strong>REST (Representational State Transfer)</strong>:</p>
-
-<ul>
-<li>
-<strong>Purpose</strong>: REST is an architectural style for designing networked applications. It is based on a set of principles and constraints that define how resources are identified and addressed via URLs, and how they can be manipulated using a limited set of standardized HTTP methods.</li>
-<li>
-<strong>Characteristics</strong>:
-
-<ul>
-<li>Stateless: RESTful services are stateless, meaning each request from a client to a server must contain all the information needed to understand and process the request.</li>
-<li>CRUD Operations: REST maps CRUD (Create, Read, Update, Delete) operations to HTTP methods (POST, GET, PUT, DELETE) for resource manipulation.</li>
-<li>Representations: Resources in REST can have multiple representations (e.g., JSON, XML, HTML), and clients can specify their preferred representation.</li>
-</ul>
-
-
-</li>
-<li>
-<strong>Use Cases</strong>: REST is widely used for building APIs on the web, including web services, social media APIs, and any scenario where stateless communication over HTTP is appropriate.</li>
-</ul>
-
-<p><strong>GraphQL</strong>:</p>
-
-<ul>
-<li>
-<strong>Purpose</strong>: GraphQL is a query language and runtime for APIs that allows clients to request only the data they need and nothing more. It provides a flexible and efficient approach to data retrieval and manipulation.</li>
-<li>
-<strong>Characteristics</strong>:
-
-<ul>
-<li>Flexible Queries: Clients can specify exactly what data they need in their queries, reducing over-fetching or under-fetching of data.</li>
-<li>Strongly Typed: GraphQL APIs are strongly typed and introspective, meaning the schema is self-documenting, and clients can discover available operations and types.</li>
-<li>Single Endpoint: GraphQL typically exposes a single endpoint for all API operations, making it easier to manage and optimize.</li>
-</ul>
-
-
-</li>
-<li>
-<strong>Use Cases</strong>: GraphQL is suitable for scenarios where clients have diverse data needs, need to reduce over-fetching of data, or want to consolidate multiple API endpoints into a single endpoint. It is often used in modern web and mobile app development.</li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Self-developed PSD parser dynamically generates static code to improve your development efficiency](https://dev.to/yuanmr/self-developed-psd-parser-dynamically-generates-static-code-to-improve-your-development-efficiency-200c) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Preface
-</h2>
-
-<p>Hello everyone, welcome to the <code>Useless Innovation</code> technology channel. That's right! You read that right, here is a combination of useless technologies or technologies that are rarely touched in daily life. Innovate a more useless tool and provide it for everyone to use. Therefore, we call it <code>useless innovation</code>, or we can also call it <code>berry innovation</code>.</p>
-
-<h2>
-  
-  
-  Finished product display
-</h2>
-
-<p>Before explaining my development and learning process, I will first share the tools with everyone. If you want to know more about us or want to learn and cooperate, you can send me a private message. Quick access address：<a href="http://meichuang.org.cn/meichuangToos/#/index">http://meichuang.org.cn/meichuangToos/#/index</a></p>
-
-<h2>
-  
-  
-  front page
-</h2>
-
-<p>When you enter the homepage of the platform, you can see a very simple style, which is mainly divided into three areas: the header area, the introduction area, and the functional module area. What we developed this time: the “useless” static code generator tool is our first product, also known as Pixel Partner.</p>
-
-<p>*When I chose this name, I wanted this tool to be your partner in the development process. It can help you complete the task of cutting pictures at any time, so that you are no longer a picture cutting boy. *</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TIPKnLDx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rryzsqgdyk5924vb3odm.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TIPKnLDx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rryzsqgdyk5924vb3odm.png" alt="home" width="800" height="444"></a></p>
-
-<h2>
-  
-  
-  Pixel Partner
-</h2>
-
-<p>When you enter the Pixel Partner tool, you will be asked by default to upload a PSD mockup first. After the upload is completed, it will help you with cutting, rendering and other actions, and finally enter the console.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XntJ4RLI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1m925bybdk8chtbiay5h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XntJ4RLI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1m925bybdk8chtbiay5h.png" alt="import" width="800" height="445"></a></p>
-
-<p><strong>The console page is divided into three modules:</strong></p>
-
-<ol>
-<li>File preview area on the left: You can upload multiple psds and switch at any time.</li>
-<li>The page preview area in the middle: preview the corresponding psd interface.</li>
-<li>Ribbon on the right: Set the configuration of download code.</li>
-</ol>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lt_tmprU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nl3foqy1ireaatqgt02m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lt_tmprU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nl3foqy1ireaatqgt02m.png" alt="preview" width="800" height="446"></a></p>
-
-<p>Mainly explain the functions of the functional area:</p>
-
-<ol>
-<li>Source code type: Generate code using the syntax and rules of the corresponding type. Contains HTML, Vue2.x, React, Uniapp, WeChat applet</li>
-<li>Size standard: The page adapts to the size. According to the value you fill in, all the elements of the page are generated to the corresponding adapted size, so that they can be perfectly presented on the page.</li>
-<li>Unit standard: According to the size and unit, it can be adapted to the display of different clients. Contains PX, REM, VH, VW</li>
-<li>Font: Upload the corresponding text font to restore the visual draft.</li>
-</ol>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eul0SFSp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lf9n6tfcta4r9molrz8d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eul0SFSp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lf9n6tfcta4r9molrz8d.png" alt="ribbon" width="800" height="1520"></a></p>
-
-<h2>
-  
-  
-  Self-test
-</h2>
-
-<p>After the development was completed, we also conducted self-tests for a period of time to summarize the overall integrity of the current website.</p>
-
-<ol>
-<li>Parse poster-related PSD files, which can be perfectly parsed, as long as the corresponding font file is uploaded (<strong>This is very important</strong>). Our company is also using it now, which basically saves one or two people’s working hours (the boss is very satisfied).</li>
-<li>The layout is not strong, and it is not very friendly to the management backend or daily business viewing pages. The current overall layout is based on positioning and has no structure. We are constantly making breakthroughs in this regard (<strong>If you have the ability and interest in this area People can join our small team, and we can open source in this area</strong>)</li>
-<li>The recognition is not strong and cannot be recognized as input boxes, tables, icons, etc. We are also looking for a breakthrough point for this. To be honest, it is a bit difficult. There is no one in this field (<strong>If anyone is willing to teach us how to train large models, please send me a private message, or if you are willing to cooperate</strong>)</li>
-</ol>
-
-<h2>
-  
-  
-  Summarize
-</h2>
-
-<p>The above introduction ends here. The operation is very simple, and the function of generating page code is also very nice. Everyone can try it. Maybe it will be helpful to you, <code>I introduced this tool to a friend, and he directly used it to take orders to develop pages. He complained that he could borrow more orders for drawing static pages.</code>I secretly envy people who have private contracts. That’s it for this issue, see you next time.</p>
 
  </details> 
  <hr /> 
