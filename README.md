@@ -118,6 +118,249 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [This Context API Mistake Ruins Your Whole React App (All Components Re-Render)](https://dev.to/ubahthebuilder/this-context-api-mistake-ruins-your-whole-react-app-all-components-re-render-2k63) 
+ <details><summary>Article</summary> <p>It can’t be overstated how much of a key role performance plays when it comes to user experience.</p>
+
+<p>Nothing can make a user leave your app quicker than a sluggish or laggy user interface (UI), and often times this results from poor coding practices on the part of the developer.</p>
+
+<p>A lot of React developers use the context API in a way that results in pointless UI rerenders and ultimately a slow application. While its effect might be subtle in smaller apps, it becomes quite noticeable in large applications.</p>
+
+<p>So what is this bug we’re going to be talking about? Read on to find out!</p>
+
+<blockquote>
+<p>Sidenote: If you’re new to learning web development, and you’re looking for the best resource to help with that, I strongly recommend <a href="https://gumroad.com/a/834147443/dvfyN">HTML to React: The Ultimate Guide</a>.</p>
+</blockquote>
+
+<h2>
+  
+  
+  The Problem of Rerendering The Whole Application
+</h2>
+
+<p>Consider the following App component, which returns a main element housing two custom components: <strong>ExampleComponent1</strong> and <strong>ExampleComponent2</strong>. Inside <strong>ExampleComponent1</strong>, we’re keeping track of the <strong>count</strong> state:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">main</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">ExampleComponent1</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">ExampleComponent2</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent1</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent2</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now let’s say we later on discover that <strong>ExampleComponent2</strong> will also need access to the <strong>count</strong> state.</p>
+
+<p>What you typically do is lift the state up to the parent component. But oftentimes, in real-world scenarios, a lot of other components might need access to the same state.</p>
+
+<p>Rather than manually passing down the props into the various components, the better approach would be to use the context API. Let’s bring it into our App component:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">,</span> <span class="nx">useContext</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+
+<span class="kd">const</span> <span class="nx">CountContext</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">main</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">CountContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{{</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">}}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ExampleComponent1</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ExampleComponent2</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/CountContext.Provider</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent1</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">CountContext</span><span class="p">)</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent2</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Basically, you’re to wrap the part of your app that needs access to the global state in the Context Provider component.</p>
+
+<p>You’d then pass the variables you want the children components to access, which, in our case, is the <strong>count</strong> variable and <strong>setCount()</strong> method.</p>
+
+<p>Now here comes the mistake.</p>
+
+<p>Keep in mind that we’re consuming the context in ExampleComponent1, but not in ExampleComponent2. The idea is that, when we change the state in the parent App component, it’s only the components using the context that get re-rendered.</p>
+
+<p>But the reality is that both components nested in the provider will be rerendered when the state changes.</p>
+
+<p>To demonstrate this, let’s log different messages from both components and add a button in ExampleComponent1 that, when clicked, updates the state:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// App component goes here</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent1</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">CountContext</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ExampleComponent1 rendering</span><span class="dl">"</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">1</span> 
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span> <span class="nx">Click</span> <span class="nx">me</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent2</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ExampleComponent2 rendering</span><span class="dl">"</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Because only the first component is using the context, the second should not be affected when we click the button to update the state, right?</p>
+
+<p>Wrong!</p>
+
+<p>When you open your browser’s console, refresh the page, and click the button, you’ll see the messages in both components being logged there. This means that both ExampleComponent1 and ExampleComponent2 have been re-rendered.</p>
+
+<p>Now imagine that you have the provider high up in your component tree. The whole app will likely rerender every time you make a change. This is very inefficient and could result in significantly lowered performance in large applications.</p>
+
+<h2>
+  
+  
+  The Solution is to Put The React Context in a Separate File
+</h2>
+
+<p>The solution to this problem is quite straightforward.</p>
+
+<p>You’d start by creating a new folder named <strong>contexts</strong> inside of the <strong>src/</strong> directory within your project’s directory structure.</p>
+
+<p>Then inside the <strong>src/contexts</strong> directory, create a file named <strong>count-contexts.jsx</strong> and paste in the following code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">CountContext</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">CountContextProvider</span><span class="p">({</span><span class="nx">children</span><span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">CountContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{{</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">}}</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/CountContext.Provider</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You’re basically moving the context provider, along with the global state, to a separate file. And this time, the provider component accepts the children from the parent.</p>
+
+<p>Now in your App component, import the <strong>CountContextProvider</strong> and the CountContext variable from the newly created file, then use the former to wrap the children elements:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">CountContextProvider</span><span class="p">,</span> <span class="p">{</span><span class="nx">CountContext</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./contexts/count-context</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">main</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">CountContextProvider</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ExampleComponent1</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ExampleComponent2</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/CountContextProvider</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Other components</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now when you save the file, open your browser’s console, refresh the browser, and click the button, you’ll notice that only ExampleComponent1 is being re-rendered. And this is because it’s the only one using the context.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>If you’re building a large application with a lot of components requiring the same state, then it’s crucial that you use the technique we covered in this article to improve your app’s performance, and consequently, the user’s experience.</p>
+
+<p>Want to collaborate with me? <a href="https://forms.gle/2h3UKhM55KZPNXm5A">Fill out this form</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [What Are the Biggest Misconceptions about Your Work?](https://dev.to/codenewbieteam/what-are-the-biggest-misconceptions-about-your-work-2da0) 
+ <details><summary>Article</summary> <p><em>Get a glimpse into the daily experiences, work routines, and unique perspectives of tech professionals, both novice and experienced alike, in "A Day in the Life."</em></p>
+
+<blockquote>
+<p>What are the common misconceptions about your job? Or about tech work, in general?</p>
+</blockquote>
+
+<p>Follow the <a href="https://dev.to/codenewbieteam">CodeNewbie Org</a> and <a href="https://dev.to/t/codenewbie">#codenewbie</a> for more discussions and online camaraderie!</p>
+
+<p><em><div class="ltag__user ltag__user__id__2167">
+  <a href="/codenewbieteam" class="ltag__user__link profile-image-link">
+    <div class="ltag__user__pic">
+      <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" alt="codenewbieteam image"></a>
+    </div>
+  </a>
+  <div class="ltag__user__content">
+    <h2>
+      <a href="/codenewbieteam" class="ltag__user__link">CodeNewbie</a>
+      Follow
+    </h2>
+    <div class="ltag__user__summary">
+      <a href="/codenewbieteam" class="ltag__user__link">
+        The most supportive community of programmers and people learning to code.  Part of the DEV family.
+
+
+      </a>
+    </div>
+  </div>
+</div>
+</em>  </p>
+
+ </details> 
+ <hr /> 
+
  #### - [PURISTA: Build with rimraf, esbuild, Turbo & git-cliff](https://dev.to/purista/purista-build-with-rimraf-esbuild-turbo-git-cliff-5h5e) 
  <details><summary>Article</summary> <p>In our previous article, we laid the foundation with a glimpse of our coding setup.</p>
 
@@ -838,198 +1081,6 @@ Contributing</h2>
 <p>E lembre-se, às vezes precisamos sair do óbvio para encontrar as soluções para alguns problemas. Quanto mais mente-aberta formos, mais rápido conseguimos progredir e aprender novas coisas.</p>
 
 <p>Um abraço e até a próxima 😗 🧀</p>
-
- </details> 
- <hr /> 
-
- #### - [Boost Your Productivity with the Top 10 AI Tools](https://dev.to/ronakmunjapara/boost-your-productivity-with-the-top-10-ai-tools-1ma) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bRKZKB4w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5pkpv5i99b710nzs5w74.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bRKZKB4w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5pkpv5i99b710nzs5w74.jpeg" alt="Image description" width="800" height="500"></a><br>
-In today's fast-paced digital world, staying productive is a key challenge. With an ever-increasing workload and constant distractions, finding ways to boost your productivity is essential. Thankfully, technology has come to the rescue, and Artificial Intelligence (AI) is at the forefront of this productivity revolution.</p>
-
-<h2>
-  
-  
-  Introduction
-</h2>
-
-<p>AI tools have rapidly evolved to become indispensable for professionals and businesses looking to streamline their work processes, automate repetitive tasks, and make data-driven decisions. In this article, we'll explore the top 10 AI tools that can significantly enhance your productivity.</p>
-
-<h2>
-  
-  
-  1. <strong>Grammarly</strong>
-</h2>
-
-<p><strong>Grammarly</strong> is a writing assistant powered by AI. It helps you write clear, error-free, and engaging content. From proofreading emails to enhancing your writing style, Grammarly ensures that your communication is top-notch.</p>
-
-<h2>
-  
-  
-  2. <strong>Trello</strong>
-</h2>
-
-<p><strong>Trello</strong> uses AI to simplify project management. With its intuitive boards, lists, and cards, you can organize tasks efficiently. AI-powered suggestions help you stay on track and meet deadlines.</p>
-
-<h2>
-  
-  
-  3. <strong>Zapier</strong>
-</h2>
-
-<p><strong>Zapier</strong> automates workflows by connecting your favorite apps. AI-driven "Zaps" allow you to set up triggers and actions, saving you time and effort on repetitive tasks.</p>
-
-<h2>
-  
-  
-  4. <strong>Otter.ai</strong>
-</h2>
-
-<p><strong>Otter.ai</strong> is your AI note-taking assistant. It transcribes meetings, interviews, and lectures, making it easy to search for and reference important information.</p>
-
-<h2>
-  
-  
-  5. <strong>Asana</strong>
-</h2>
-
-<p><strong>Asana</strong> utilizes AI to streamline project management. Its automation features help teams collaborate seamlessly, track progress, and achieve goals efficiently.</p>
-
-<h2>
-  
-  
-  6. <strong>Calendly</strong>
-</h2>
-
-<p><strong>Calendly</strong> simplifies scheduling with AI-powered availability. Say goodbye to back-and-forth emails when trying to set up meetings or appointments.</p>
-
-<h2>
-  
-  
-  7. <strong>RescueTime</strong>
-</h2>
-
-<p><strong>RescueTime</strong> provides insights into your digital habits. AI analyzes your online activities, helping you identify where your time goes and how to improve focus.</p>
-
-<h2>
-  
-  
-  8. <strong>Salesforce Einstein</strong>
-</h2>
-
-<p><strong>Salesforce Einstein</strong> is AI for CRM. It enhances customer relationship management by providing predictive analytics, automating tasks, and personalizing customer experiences.</p>
-
-<h2>
-  
-  
-  9. <strong>Hootsuite</strong>
-</h2>
-
-<p><strong>Hootsuite</strong> uses AI to simplify social media management. Schedule posts, analyze performance, and engage with your audience efficiently.</p>
-
-<h2>
-  
-  
-  10. <strong>Notion</strong>
-</h2>
-
-<p><strong>Notion</strong> is an all-in-one workspace powered by AI. It's a versatile tool for notes, databases, and project management, keeping your work organized and accessible.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Embracing AI tools can transform the way you work, boosting your productivity and helping you achieve more in less time. Whether you're a student, professional, or business owner, integrating these AI tools into your workflow can make a significant difference. Stay ahead of the productivity curve with AI assistance.</p>
-
-<p>Incorporate these AI tools into your daily routine, and you'll soon find yourself accomplishing tasks more efficiently, leaving you with valuable time to focus on what truly matters.</p>
-
-<h1>
-  
-  
-  FAQs
-</h1>
-
-<p><strong>Q1:</strong> Are these AI tools suitable for beginners?</p>
-
-<p>Yes, most of these tools are beginner-friendly and offer user-friendly interfaces and helpful tutorials.</p>
-
-<p><strong>Q2:</strong> Are there any free versions of these AI tools?</p>
-
-<p>Many of these tools offer free versions with limited features. However, to unlock their full potential, you may want to consider premium plans.</p>
-
-<p><strong>Q3:</strong> How can AI tools enhance team collaboration?</p>
-
-<p>AI tools like Trello and Asana streamline project management, making it easier for teams to</p>
-
-<p>Subscribing my Free AI newsletter for AI tools Update <a href="https://thedigitalduo.beehiiv.com/subscribe">Click Here</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [PURISTA - Thanks to amazing open-source software](https://dev.to/purista/purista-thanks-to-amazing-open-source-software-4k2e) 
- <details><summary>Article</summary> <p>Welcome to our series on the unsung heroes behind PURISTA!</p>
-
-<p>Ever wondered about PURISTA?<br>
-It's not just another Typescript backend framework for simply building HTTP-endpoints.<br>
-It's a versatile solution that embraces diverse techniques for highly distributed deployments, taking inspiration from event-driven architecture.<br>
-If you're interested, you're invited to take a look at the official website <a href="//purista.dev">http://purista.dev</a>.</p>
-
-<p>But hold on, this series isn't about the framework itself. Instead, we're here to shine a spotlight on the incredible libraries, tools, software, and passionate contributors that make PURISTA possible. </p>
-
-<p>In this series, we will introduce all the tools, explain how we use them, why we find them essential, and endeavor to illustrate why they might also be a suitable solution for you.</p>
-
-<h2>
-  
-  
-  General setup
-</h2>
-
-<p>Most developers should be more or less familiar with the basic setup.</p>
-
-<p><a href="https://code.visualstudio.com">VSCode</a> as a code editor with  ESLint plugin.</p>
-
-<p><a href="https://github.com/sebastianwessel/purista">GitHub</a> is uses as repository, issue &amp; project tracker, and also for hosting the <a href="https://purista.dev/">official website</a>.</p>
-
-<h2>
-  
-  
-  Coding Setup
-</h2>
-
-<p>In addition to Node.js and TypeScript, we rely on two indispensable tools available as npm modules:</p>
-
-<h3>
-  
-  
-  ESLint and Prettier
-</h3>
-
-<p>Maintaining a clean, readable, and consistent codebase is essential, and ESLint and Prettier are the perfect tools for the job.<br>
-Just enable "lint on save" in VSCode, and you won't have to worry about it. They're a "must-have," even for small personal projects.</p>
-
-<p>See <a href="//eslint.org">https://eslint.org</a> and <a href="//prettier.io">https://prettier.io</a></p>
-
-<p>ESLint is extended by some awesome plugins and extensions:</p>
-
-<ul>
-<li>
-<a href="https://github.com/lydell/eslint-plugin-simple-import-sort">eslint-plugin-simple-import-sort</a> by Simon Lydell <a href="https://twitter.com/SimonLydell">@SimonLydell</a>
-</li>
-<li>
-<a href="https://github.com/mysticatea/eslint-plugin-node">eslint-plugin-node</a> by Toru Nagashima - Dev.to: <a class="mentioned-user" href="https://dev.to/mysticatea">@mysticatea</a> &amp;  Twitter: <a href="https://twitter.com/mysticatea">@mysticatea</a>
-</li>
-<li>
-<a href="https://github.com/azeemba/eslint-plugin-json">eslint-plugin-json</a> by <a href="https://azeemba.com">Azeem Bande-Ali</a>
-</li>
-<li><a href="https://github.com/import-js/eslint-plugin-import">eslint-plugin-import</a></li>
-<li><a href="https://github.com/standard/eslint-config-standard">eslint-config-standard</a></li>
-</ul>
-
-
-
-
-<p>In our upcoming article, we'll delve deep into the inner workings of PURISTA's build pipeline. Stay tuned for an in-depth exploration!</p>
 
  </details> 
  <hr /> 
