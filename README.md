@@ -538,6 +538,62 @@ Remote Procedure Call (RPC), gRPC, REST, and GraphQL are all protocols and techn
  </details> 
  <hr /> 
 
+ #### - [Navigating the shift from customer service to coding](https://dev.to/wdp/navigating-the-shift-from-customer-service-to-coding-oe6) 
+ <details><summary>Article</summary> <p>In the rapidly evolving landscape of software development, professionals with diverse backgrounds bring unique perspectives and valuable skills to the table. Meet <a href="https://www.linkedin.com/in/thorrellt/">Thorrell Turner</a>, a Mobile Software Developer currently dedicated to a healthcare platform that aims to improve accessibility to medical care. Balancing work and a family of five, Thorrell successfully transitioned from a career in Customer Service to the tech industry, leveraging his Bachelor's degree in Computer Science. With his solid foundation and a <a href="https://thorrellt.com/">portfolio</a> showcasing his expertise in mobile software development, Thorrell is driven to make a meaningful impact in the field.</p>
+
+<p>Explore our interview with Thorrell as we delve into his inspiring story, his experiences in web development, and his significant contributions to the <a href="https://www.webdevpath.co/">Web Dev Path project</a>—an open-source initiative that empowers aspiring tech professionals, such as designers, developers, and project managers to gain practical, real-life experience. Through his narrative, we aim to inspire others considering a similar path and emphasize the boundless opportunities that come with embracing change and pursuing a fulfilling career in the ever-evolving world of mobile software development.</p>
+
+
+
+
+<p><strong>Can you share your experience, your background in web development, and how it led you to contribute to the Web Dev Path project?</strong></p>
+
+<p>Absolutely! My journey in web development began when I decided to make a career transition to software development. At the time, I had approximately one year of web development experience under my belt. Most recently, I completed a project utilizing React and Node.</p>
+
+<p>While I was focusing on securing more job interviews to gain industry-worthy experience, a close friend introduced me to the Web Dev Path project. Intrigued by its details, I dove in and immediately knew that I wanted to be part of this initiative. I quickly familiarized myself with Next.js and React and reached out the very next day to offer my contribution.</p>
+
+<p><strong>As a software developer with full-stack experience, how do you see the Web Dev Path project benefiting aspiring web developers in their learning journey?</strong></p>
+
+<p>The Web Dev Path project offers aspiring web developers several valuable benefits. Firstly, it provides an opportunity to interact with an existing codebase, which is crucial since professionals will often encounter code written by others in their careers. This project allows individuals to enhance their ability to understand and work with unfamiliar code—an essential skill in the industry.</p>
+
+<p>Furthermore, the project offers access to more experienced developers, creating an invaluable learning environment. Being part of the Web Dev Path community saved me time and alleviated stress through discussions about solutions, strategies, and providing insights into the logic behind specific decisions.</p>
+
+<p><strong>Can you describe some of the key features and functionalities of the Web Dev Path project that make it a valuable resource for individuals looking to enter or progress in the field of web development?</strong></p>
+
+<p>For those lacking professional experience in the tech industry, like myself when I first contributed to the project, Web Dev Path plays a significant role in introducing core aspects of the development lifecycle. Participants have the opportunity to assign themselves tasks with requirements, test code, document changes, and more—replicating real-world scenarios.</p>
+
+<p>From my perspective as a developer starting out, the most impactful aspect of the Web Dev Path project was the experience gained with Git. This ranged from cloning a repository, running it on my local machine, to completing pull requests and merging changes. In fact, during an interview that led to my first job offer, I successfully answered a Git question based on knowledge gained through my involvement with the project.</p>
+
+<p><strong>How do you believe the Web Dev Path project promotes a sense of community and knowledge sharing among aspiring web developers, considering your personal values of collaboration and learning?</strong></p>
+
+<p>The Web Dev Path community emanates warmth and a genuine eagerness to assist others. It creates a safe space where individuals feel empowered to ask questions, even if they consider them "dumb." This environment fosters learning and personal growth.</p>
+
+<p>Having mostly pursued my journey in isolation, it was a refreshing change to engage in brainstorming dialogues within the community and discover insightful articles or videos recommended by fellow members. I quickly realized how much I had limited myself by not embracing collaboration earlier.</p>
+
+<p><strong>What advice would you give to aspiring web developers who are interested in leveraging the Web Dev Path project to enhance their skills and knowledge? How can they make the most out of this open-source resource?</strong></p>
+
+<p>To those interested in maximizing their benefit from the Web Dev Path project, I encourage you to dive in even before you feel completely ready. Embrace the challenge of stepping out of your comfort zone, as that's where lasting knowledge is truly built.</p>
+
+<p>Additionally, make sure to document and leverage the experience gained from contributing to an open-source project like this. Take notes of your contributions with the intention of showcasing them on your resume or discussing them during interviews.</p>
+
+<p>For those with limited tech experience on their resume, consider using headings like "Technical Experience" and "Non-technical Experience" instead of the traditional "Work Experience." Under the "Technical Experience" section, you can list any technical work experience you may have, as well as your open-source contributions and personal projects. This approach can provide an edge and catch the attention of recruiters, especially if your "Technical Experience" section spans half a page or more.</p>
+
+
+
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Thorrell's journey from Customer Service to Tech exemplifies the possibilities that arise from transitioning careers. Through his interview, Thorrell invites aspiring web developers to embrace challenges and leverage resources like open-source projects to enhance their skills and knowledge in the dynamic field of web development.</p>
+
+<p>As we conclude our conversation with Thorrell, we encourage you to explore the transformative impact of the Web Dev Path project. Join the vibrant community of like-minded individuals, embark on your own journey of growth, and unlock new opportunities. Visit the <a href="https://www.webdevpath.co/">Web Dev Path website</a> to discover how you can contribute and propel your web development career forward.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Lidando com regressão visual: enfrentando desafios com Django, Selenium e Pillow](https://dev.to/eduardojm/lidando-com-regressao-visual-enfrentando-desafios-com-django-selenium-e-pillow-o8d) 
  <details><summary>Article</summary> <p>O <strong>django-image-uploader-widget</strong> é um projeto de componente de upload de imagem para o <strong>django</strong>. Por motivos de retrocompatibilidade entre as versões 3.x e 4.x do <strong>django</strong>, foi decidido implementar testes de regressão visual utilizando <strong>Selenium</strong> e <strong>Pillow</strong>. Nesse texto vamos trabalhar esse tema e seus desafios.</p>
 
@@ -1367,473 +1423,6 @@ How was it? I hope this article was helpful for you.</p>
 <p>There are many ways to implement color theme switching besides this article. If you have any recommended methods or articles, please share them in the comments and let me know!</p>
 
 <p>And if you found this article helpful, please share it on social media!</p>
-
- </details> 
- <hr /> 
-
- #### - [DynamoDB Streams EventBridge Pipes Multiple Items](https://dev.to/aws-builders/dynamodb-streams-eventbridge-pipes-multiple-items-4657) 
- <details><summary>Article</summary> <p>I've written a few articles lately on EventBridge Pipes and specifically around using them with DynamoDB Streams. I've written about <a href="https://www.binaryheap.com/dynamodb-eventbridge-pipes-enrichment/">Enrichment</a>. And I've written about just straight <a href="https://www.binaryheap.com/streaming-aws-dynamodb-to-a-lambda-via-eventbridge-pipes/">Streaming</a>. I believe that using EventBridge Pipes plays a nice part in a Serverless, Event-Driven approach. So in this article, I want to explore Streaming DynamoDB to EventBridge Pipes with multiple items in one table.</p>
-
-<p>Several of the comments I received about <a href="https://www.binaryheap.com/dynamodb-eventbridge-pipes-enrichment/">Streaming DynamoDB to EventBridge Pipes</a> were around, "What if I have multiple item collections in the same table?". I intend to show a pattern for handling that exact problem in this article. At the bottom, you'll find a working code sample that you can deploy and build on top of. I've used this exact setup in production, so rest assured that this is a great base to start from.</p>
-
-<h2>
-  
-  
-  Architecture
-</h2>
-
-<p>Let's start with defining the setup that I'll be walking through.</p>
-
-<ul>
-<li>  DynamoDB Table with 2 Item Types
-
-<ul>
-<li>  Patient</li>
-<li>  Address</li>
-</ul>
-
-
-</li>
-<li>  DynamoDB Stream connected to an EventBridge Pipe</li>
-<li>  EB Pipe will
-
-<ul>
-<li>  Filter</li>
-<li>  Enrich</li>
-<li>  Put into the EventBridge Default Bus</li>
-</ul>
-
-
-</li>
-<li>  EB Rules carved out for
-
-<ul>
-<li>  Lambda Handler for Patient</li>
-<li>  Lambda Handler for Address</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TwVlHZ52--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/Multi-Arch.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TwVlHZ52--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/Multi-Arch.png" alt="EventBridge Pipe Stream" width="800" height="256"></a></p>
-
-<h2>
-  
-  
-  Step Through the Code
-</h2>
-
-<h3>
-  
-  
-  DynamoDB Table
-</h3>
-
-<p>The DynamoDB Table I'm working from is going to contain multiple item types. This can be described as Single-Table design, Multi-Item Collection Design or whatever you like. The point is, that DynamoDB is great at storing things that are related in the same table. I'm defining an <code>id</code> field as the Partition Key and then <code>sk</code> as the Range Key.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">this</span><span class="p">.</span><span class="nx">_table</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Table</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">billingMode</span><span class="p">:</span> <span class="nx">BillingMode</span><span class="p">.</span><span class="nx">PAY_PER_REQUEST</span><span class="p">,</span>
-    <span class="na">removalPolicy</span><span class="p">:</span> <span class="nx">RemovalPolicy</span><span class="p">.</span><span class="nx">DESTROY</span><span class="p">,</span>
-    <span class="na">partitionKey</span><span class="p">:</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nx">AttributeType</span><span class="p">.</span><span class="nx">STRING</span> <span class="p">},</span>
-    <span class="na">sortKey</span><span class="p">:</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sk</span><span class="dl">"</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="nx">AttributeType</span><span class="p">.</span><span class="nx">STRING</span> <span class="p">},</span>
-    <span class="na">tableName</span><span class="p">:</span> <span class="s2">`Patients`</span><span class="p">,</span>
-    <span class="na">encryption</span><span class="p">:</span> <span class="nx">TableEncryption</span><span class="p">.</span><span class="nx">CUSTOMER_MANAGED</span><span class="p">,</span>
-    <span class="na">encryptionKey</span><span class="p">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">key</span><span class="p">,</span>
-    <span class="na">stream</span><span class="p">:</span> <span class="nx">StreamViewType</span><span class="p">.</span><span class="nx">NEW_AND_OLD_IMAGES</span><span class="p">,</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Notice as well that I'm defining a <code>stream</code> that will propagate changes with New and Old images attached to the change record. This will be useful as I get into the Pipe definition.</p>
-
-<p>A Patient will look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PATIENT#1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDRESS#1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Some City, Some State USAA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"addressId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"patientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>And an Address like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PATIENT#1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDRESS#1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Some City, Some State USAA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"addressId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"patientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5qkpO-QE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/db_records.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5qkpO-QE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/db_records.png" alt="Table Records" width="800" height="181"></a></p>
-
-<h3>
-  
-  
-  EventBridge Pipe
-</h3>
-
-<p>When Streaming DynamoDB to EventBridge Pipes, the Pipe is the central player in the design. In this scenario, I'm ignoring Deletes and only dealing with DynamoDB Modify and Insert change types.</p>
-
-<h4>
-  
-  
-  The Source
-</h4>
-
-<p>I want to first address the fact that your source component needs to have the proper IAM Permissions attached to read from the stream and decrypt the data.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">new</span> <span class="nx">PolicyDocument</span><span class="p">({</span>
-    <span class="na">statements</span><span class="p">:</span> <span class="p">[</span>
-        <span class="k">new</span> <span class="nx">PolicyStatement</span><span class="p">({</span>
-            <span class="na">actions</span><span class="p">:</span> <span class="p">[</span>
-                <span class="dl">"</span><span class="s2">dynamodb:DescribeStream</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">dynamodb:GetRecords</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">dynamodb:GetShardIterator</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">dynamodb:ListStreams</span><span class="dl">"</span><span class="p">,</span>
-            <span class="p">],</span>
-            <span class="na">effect</span><span class="p">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">ALLOW</span><span class="p">,</span>
-            <span class="na">resources</span><span class="p">:</span> <span class="p">[</span><span class="nx">table</span><span class="p">.</span><span class="nx">tableStreamArn</span><span class="o">!</span><span class="p">],</span>
-        <span class="p">}),</span>
-        <span class="k">new</span> <span class="nx">PolicyStatement</span><span class="p">({</span>
-            <span class="na">actions</span><span class="p">:</span> <span class="p">[</span>
-                <span class="dl">"</span><span class="s2">kms:Decrypt</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">kms:DescribeKey</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">kms:Encrypt</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">kms:GenerateDataKey*</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">kms:ReEncrypt*</span><span class="dl">"</span><span class="p">,</span>
-            <span class="p">],</span>
-            <span class="na">resources</span><span class="p">:</span> <span class="p">[</span><span class="nx">key</span><span class="p">.</span><span class="nx">keyArn</span><span class="p">],</span>
-            <span class="na">effect</span><span class="p">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">ALLOW</span><span class="p">,</span>
-        <span class="p">}),</span>
-    <span class="p">],</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The next step is to configure the stream reader. I want to process 1 record at a time in addition to filtering in only the Modify and Inserts as described above.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">return</span> <span class="p">{</span>
-    <span class="na">dynamoDbStreamParameters</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">startingPosition</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LATEST</span><span class="dl">"</span><span class="p">,</span>
-        <span class="na">batchSize</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">filterCriteria</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">filters</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="na">pattern</span><span class="p">:</span> <span class="dl">'</span><span class="s1"> { "eventName": [ "MODIFY", "INSERT" ] }</span><span class="dl">'</span><span class="p">,</span>
-            <span class="p">},</span>
-        <span class="p">],</span>
-    <span class="p">},</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  The Enrichment
-</h4>
-
-<p>In this case, I want to simply strip out the DynamoDB parts of the source event down a raw <code>struct</code> in Golang that I can pass along into the EventBridge Bus. To do that, I'm going to use a Lambda function as part of the Pipe workflow.</p>
-
-<p>The Lambda will be triggered as a Request/Response that makes this synchronous in the workflow.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">return</span> <span class="p">{</span>
-    <span class="na">lambdaParameters</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">invocationType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">REQUEST_RESPONSE</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">inputTemplate</span><span class="p">:</span> <span class="s2">``</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The Lambda itself handles the shaping of the Stream Record.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight go"><code><span class="k">func</span> <span class="n">Convert</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span><span class="n">events</span><span class="o">.</span><span class="n">DynamoDBEventRecord</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">CustomEvent</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c">// the body of this function parses out the values</span>
-    <span class="c">// and returns shaped record</span>
-    <span class="k">if</span> <span class="n">itemType</span> <span class="o">==</span> <span class="s">"Patient"</span> <span class="p">{</span>
-        <span class="n">i</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
-        <span class="n">n</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span>
-        <span class="n">t</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"itemType"</span><span class="p">]</span>
-        <span class="n">s</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"sk"</span><span class="p">]</span>
-        <span class="n">pid</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"patientId"</span><span class="p">]</span>
-
-        <span class="n">change</span> <span class="o">:=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s">"Patient%s"</span><span class="p">,</span> <span class="n">strings</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="n">strings</span><span class="o">.</span><span class="n">ToLower</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">EventName</span><span class="p">)))</span>
-        <span class="k">return</span> <span class="o">&amp;</span><span class="n">CustomEvent</span><span class="p">{</span>
-            <span class="n">EventType</span><span class="o">:</span>     <span class="n">change</span><span class="p">,</span>
-            <span class="n">CorrelationId</span><span class="o">:</span> <span class="n">r</span><span class="o">.</span><span class="n">EventID</span><span class="p">,</span>
-            <span class="n">Body</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">ItemOne</span><span class="p">{</span>
-                <span class="n">Id</span><span class="o">:</span>        <span class="n">i</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">Name</span><span class="o">:</span>      <span class="n">n</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">ItemType</span><span class="o">:</span>  <span class="n">t</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">Sk</span><span class="o">:</span>        <span class="n">s</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">PatientId</span><span class="o">:</span> <span class="n">pid</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-            <span class="p">}},</span> <span class="no">nil</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">itemType</span> <span class="o">==</span> <span class="s">"Address"</span> <span class="p">{</span>
-        <span class="n">i</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
-        <span class="n">n</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"address"</span><span class="p">]</span>
-        <span class="n">t</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"itemType"</span><span class="p">]</span>
-        <span class="n">s</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"sk"</span><span class="p">]</span>
-        <span class="n">pid</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"patientId"</span><span class="p">]</span>
-        <span class="n">aid</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Change</span><span class="o">.</span><span class="n">NewImage</span><span class="p">[</span><span class="s">"addressId"</span><span class="p">]</span>
-        <span class="n">change</span> <span class="o">:=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s">"Address%s"</span><span class="p">,</span> <span class="n">strings</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="n">strings</span><span class="o">.</span><span class="n">ToLower</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">EventName</span><span class="p">)))</span>
-        <span class="k">return</span> <span class="o">&amp;</span><span class="n">CustomEvent</span><span class="p">{</span>
-            <span class="n">EventType</span><span class="o">:</span>     <span class="n">change</span><span class="p">,</span>
-            <span class="n">CorrelationId</span><span class="o">:</span> <span class="n">r</span><span class="o">.</span><span class="n">EventID</span><span class="p">,</span>
-            <span class="n">Body</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">ItemTwo</span><span class="p">{</span>
-                <span class="n">Id</span><span class="o">:</span>        <span class="n">i</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">Address</span><span class="o">:</span>   <span class="n">n</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">ItemType</span><span class="o">:</span>  <span class="n">t</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">Sk</span><span class="o">:</span>        <span class="n">s</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">PatientId</span><span class="o">:</span> <span class="n">pid</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-                <span class="n">AddressId</span><span class="o">:</span> <span class="n">aid</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
-            <span class="p">}},</span> <span class="no">nil</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  The Target
-</h4>
-
-<p>Once the event has been shaped in the format that I want, it's time to send the payload to an EventBridge Bus. I'm going to shape the output into a result that I prefer.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">return</span> <span class="p">{</span>
-    <span class="na">eventBridgeEventBusParameters</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">detailType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PatientChange</span><span class="dl">"</span><span class="p">,</span>
-        <span class="na">source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">com.binaryheap.patient</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">inputTemplate</span><span class="p">:</span> <span class="s2">`{
-            "meta": {
-                "correlationId": &lt;$.eventId&gt;,
-                "changeType": &lt;$.eventType&gt;
-            },
-            "event": &lt;$.body&gt;
-        }`</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Just like with the source input, I need to grant the consumer the ability to post to EventBridge.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">return</span> <span class="k">new</span> <span class="nx">PolicyDocument</span><span class="p">({</span>
-    <span class="na">statements</span><span class="p">:</span> <span class="p">[</span>
-        <span class="k">new</span> <span class="nx">PolicyStatement</span><span class="p">({</span>
-            <span class="na">resources</span><span class="p">:</span> <span class="p">[</span><span class="nx">busArn</span><span class="p">],</span>
-            <span class="na">actions</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">events:PutEvents</span><span class="dl">"</span><span class="p">],</span>
-            <span class="na">effect</span><span class="p">:</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">ALLOW</span><span class="p">,</span>
-        <span class="p">}),</span>
-    <span class="p">],</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Rules to Handle Item Types
-</h3>
-
-<p>Now that I've got a Pipe publishing to EventBridge's Default Bus, I can craft some rules. When Streaming DynamoDB to EventBridge Pipes in a MultiCast scenario, my specific rules will help target Lambda functions that I want to handle the Item changes. These could also be queues or anything else you like. This is where having multiple Item Types in one table comes back together. You could have service consumers handling all changes from the Patients table or you could have specific consumers dealing with the specific Item Types. My example shows the latter. I want to be specific to highlight the pattern.</p>
-
-<h4>
-  
-  
-  Patient Rule
-</h4>
-
-<p>When dealing with the Patient, I might want to address something specific about that record. I first need to build an EventBridge Rule for handling the Bus message and the target I want.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">this</span><span class="p">.</span><span class="nx">_handlerOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GoFunction</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemOneHandlerFunction</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">src/type-one-handler</span><span class="dl">"</span><span class="p">,</span>
-    <span class="na">functionName</span><span class="p">:</span> <span class="s2">`type-one-handler`</span><span class="p">,</span>
-    <span class="na">timeout</span><span class="p">:</span> <span class="nx">Duration</span><span class="p">.</span><span class="nx">seconds</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
-    <span class="na">environment</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">IS_LOCAL</span><span class="p">:</span> <span class="dl">"</span><span class="s2">false</span><span class="dl">"</span><span class="p">,</span>
-        <span class="na">LOG_LEVEL</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DEBUG</span><span class="dl">"</span><span class="p">,</span>
-        <span class="na">VERSION</span><span class="p">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This code will deploy the Lambda that will be the target for my Patient rule.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">rule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rule</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemOnHandlerRule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">eventPattern</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">detailType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">PatientChange</span><span class="dl">"</span><span class="p">],</span>
-        <span class="na">detail</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">meta</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">changeType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">PatientModify</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">PatientInsert</span><span class="dl">"</span><span class="p">],</span>
-            <span class="p">},</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="na">eventBus</span><span class="p">:</span> <span class="nx">EventBus</span><span class="p">.</span><span class="nx">fromEventBusArn</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">DefaultBusItemOne</span><span class="dl">"</span><span class="p">,</span> <span class="nx">busArn</span><span class="p">),</span>
-    <span class="na">ruleName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">item-one-rule</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">dlq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Queue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemOneHandler-DLQ</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">rule</span><span class="p">.</span><span class="nx">addTarget</span><span class="p">(</span>
-    <span class="k">new</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">LambdaFunction</span><span class="p">(</span><span class="nx">handler</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">deadLetterQueue</span><span class="p">:</span> <span class="nx">dlq</span><span class="p">,</span>
-    <span class="p">})</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>As you can notice, I'm looking for the top-level detail-type of <code>PatientChange</code>. Then I'm looking deeper into the payload for the <code>PatientInsert</code> and <code>PatientModify</code> change types. That then forwards into my Item One Lambda.</p>
-
-<h4>
-  
-  
-  Address Rule
-</h4>
-
-<p>Next, I build an almost identical rule, but specifically for Address.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">rule</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rule</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemTwoHandlerRule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">eventPattern</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">detailType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">PatientChange</span><span class="dl">"</span><span class="p">],</span>
-        <span class="na">detail</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">meta</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">changeType</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">AddressModify</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">AddressInsert</span><span class="dl">"</span><span class="p">],</span>
-            <span class="p">},</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="na">eventBus</span><span class="p">:</span> <span class="nx">EventBus</span><span class="p">.</span><span class="nx">fromEventBusArn</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="dl">"</span><span class="s2">DefaultBusItemTwo</span><span class="dl">"</span><span class="p">,</span> <span class="nx">busArn</span><span class="p">),</span>
-    <span class="na">ruleName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">item-two-rule</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">dlq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Queue</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ItemTwoHandler-DLQ</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">rule</span><span class="p">.</span><span class="nx">addTarget</span><span class="p">(</span>
-    <span class="k">new</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">LambdaFunction</span><span class="p">(</span><span class="nx">handler</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">deadLetterQueue</span><span class="p">:</span> <span class="nx">dlq</span><span class="p">,</span>
-    <span class="p">})</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sI2HST4c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_change_pattern.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sI2HST4c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_change_pattern.png" alt="Address Rule" width="800" height="173"></a></p>
-
-<p>On the backside of my targets, I have two separate Lambdas. They are identical for this example as they just print out the payload.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight go"><code><span class="k">func</span> <span class="n">handler</span><span class="p">(</span><span class="n">ctx</span> <span class="n">context</span><span class="o">.</span><span class="n">Context</span><span class="p">,</span> <span class="n">e</span> <span class="k">interface</span><span class="p">{})</span> <span class="p">(</span><span class="k">interface</span><span class="p">{},</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">WithFields</span><span class="p">(</span><span class="n">log</span><span class="o">.</span><span class="n">Fields</span><span class="p">{</span>
-        <span class="s">"body"</span><span class="o">:</span> <span class="n">e</span><span class="p">,</span>
-    <span class="p">})</span><span class="o">.</span><span class="n">Debug</span><span class="p">(</span><span class="s">"Printing out the body"</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">e</span><span class="p">,</span> <span class="no">nil</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Patient Output</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jbeoM6qn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/patient_log.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jbeoM6qn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/patient_log.png" alt="Patient Output" width="800" height="395"></a></p>
-
-<p><strong>Address Output</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--crzEGJDV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_log.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--crzEGJDV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.binaryheap.com/wp-content/uploads/2023/09/address_log.png" alt="Address Output" width="800" height="448"></a></p>
-
-<h2>
-  
-  
-  Notes on the Pattern
-</h2>
-
-<p>When streaming DynamoDB to EventBridge Pipes you have so many options from filtering, enriching and then ultimately the targets. I continue personally to put Pipes into my workloads as I find it performs super efficiently and is easy to set up and reason about. I also find that where I was using Step Functions for these types of workflows, I'm now defaulting to Pipes.</p>
-
-<h2>
-  
-  
-  Wrap Up
-</h2>
-
-<p>To pull things back together, Streaming DynamoDB has a limit of 2 consumers that you can attach to the stream. That limit isn't a big deal when you have 1 type of record in the table. You could have one stream handling Inserts and Modifies and then another Pipe to handle the Deletes. But when you have a Single-Table or Multi-Type situation, you need a few more services layered in.</p>
-
-<p>Using EventBridge's Rules and Targets is exactly the service and capability that makes this possible. I also find that if you've got local teams with permission boundaries as well, this can be even further enhanced with an <a href="https://www.binaryheap.com/eventbus-mesh/">Event Bus Mesh</a>.</p>
-
-<p>As always, for a [fully functioning <a href="https://github.com/benbpyle/ddb-stream-multi-cast">and working repository</a>, you can head on over to GitHub and clone it.</p>
-
-<p>I hope this gets you a little more in your toolbox when working with DynamoDB Streams and EventBridge Pipes.</p>
-
-<p>Happy Building!</p>
 
  </details> 
  <hr /> 
