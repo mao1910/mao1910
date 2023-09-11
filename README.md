@@ -133,6 +133,445 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [What's Behind the Excitement in the JavaScript Community about Bun.js?](https://dev.to/mitchiemt11/whats-behind-the-excitement-in-the-javascript-community-about-bunjs-2p4l) 
+ <details><summary>Article</summary> <p>Howdy, folks!👋</p>
+
+<p>Bun, a new JavaScript runtime that entered beta in July 2022, has generated significant buzz within the JavaScript community, v1.0 is out! Developers are enthusiastic about it for several reasons.</p>
+
+<p><strong>What is Bun</strong><br>
+Firstly, Bun is described as <strong>"a fast all-in-one JavaScript runtime"</strong> and is developed by Jarred Sumner using the Zig programming language. It joins the ranks of Deno.js and Node.js, but what sets it apart is its focus on delivering exceptional speed and enhanced complexity.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wKxCBq9y--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g02ppepuapdvvp7x9osu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wKxCBq9y--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g02ppepuapdvvp7x9osu.png" alt="Bun landing" width="800" height="369"></a></p>
+
+<p>JavaScript has evolved significantly over the years, with features like ES modules and async/await that were not present when Node.js was initially created by Ryan Dahl in 2009. Dahl's own regrets about certain aspects of Node.js led to the development of Deno.js in 2020, built with Rust to address issues related to security, performance, and native TypeScript support. Despite Deno's advantages, it hasn't seen widespread adoption, partly due to the need for rewriting npm packages.</p>
+
+<p>Bun, on the other hand, has sparked excitement for its high-speed performance and compatibility with Node.js, leading some to speculate that it could be a "Node-killer."</p>
+
+<p><strong>How does Bun.js differ from Deno.js and Node.js?</strong></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FvU4vVMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75ugrnpogg9m0r05sbpy.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FvU4vVMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75ugrnpogg9m0r05sbpy.gif" alt="thinking gif" width="370" height="300"></a></p>
+
+<p>While Node.js, Deno.js, and Bun.js are all runtimes for JavaScript outside the browser, there are significant differences among them. Node.js is written in C++, Deno.js in Rust, and Bun.js in Zig. Bun.js leverages Zig's attributes, such as clear control flow and low-level memory control, to make it easier to write fast software.</p>
+
+<p>In terms of performance, Bun.js stands out. It uses Webkit's JavaScriptCore engine, the same engine that powers Apple's Safari, for a "fast start," and benchmark results on its website show it consistently outperforming both Node.js and Deno.js by at least three times.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--u3kXvFs8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kuwpilbslff67d7vddzt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--u3kXvFs8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kuwpilbslff67d7vddzt.png" alt="bun stats" width="800" height="733"></a></p>
+
+<p>Bun.js also supports TypeScript and simplifies the installation of packages from npm with its built-in npm manager, making it up to 20 times faster than Node.js. Additional features include an integrated SQLite3 client, web APIs like get and WebSocket, automatic loading of environment variables, and a built-in test runner.</p>
+
+<p>Of the three runtimes, Bun.js excels in terms of performance, Deno.js is known for its security, and Node.js boasts the largest and most stable community.</p>
+
+<p><strong>Will Bun.js actually make an impact on the ecosystem?</strong></p>
+
+<p>The JavaScript ecosystem is indeed excited about Bun.js. The hype surrounding its release is significant, and JavaScript developers are eager to explore its exceptional speed and robust tooling for productivity. The Bun.js Discord server already has a thriving community of over 2000 members, indicating strong enthusiasm for this new technology.</p>
+
+<p><strong>What's the future outlook for Bun.js, Node.js, and Deno.js</strong></p>
+
+<p>JavaScript is here to stay, and Bun.js, Node.js, and Deno.js all have their roles in its future. Node.js, with its recent release of version 20, remains a staple in many businesses and startups, including giants like PayPal.</p>
+
+<p>Deno.js is actively evolving and expanding, aiming to become a software-as-a-service (SaaS) platform for managing JavaScript runtime services.</p>
+
+<p>While Bun.js shows promise, it's still in the early stages and has limited support, particularly on Windows where it requires Windows Subsystem for Linux to run. It's not yet suitable for production-ready software, and there's work to be done to mature it.</p>
+
+<p>In conclusion, Bun.js has stirred up excitement in the JavaScript community with its promise of high-speed performance and innovative features, offering a compelling alternative to Node.js and Deno.js. Its future impact on the ecosystem remains to be seen, but it's clear that JavaScript developers are eager to embrace this new technology.</p>
+
+<p><em>To get started with Bun.js and explore its capabilities, visit the <a href="https://bun.sh/">https://bun.sh/</a> website.</em></p>
+
+<p>Until next time....</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zDvqImPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/635leop2yy7cry2zv3n7.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zDvqImPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/635leop2yy7cry2zv3n7.jpeg" alt="cheers" width="561" height="360"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to Build a Passkey Login Page with React](https://dev.to/vdelitz/how-to-build-a-passkey-login-page-with-react-16jl) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  1. Introduction
+</h2>
+
+<p>In this blog post, we’ll be walking through the process of building a sample application with passkey authentication using React. We’ll cover how to embed the Corbado web component and implement passkey login functionality for a seamless user experience.</p>
+
+<p>If you want to see the finished code, please have a look at our <a href="https://github.com/corbado/example-passkeys-react">sample application repository on GitHub</a>.</p>
+
+<p>The result looks as follows:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sp89y2lo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tg0lf9lfm0tpqu6rtwz8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sp89y2lo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tg0lf9lfm0tpqu6rtwz8.png" alt="Passkey Login Page" width="800" height="253"></a></p>
+
+<h2>
+  
+  
+  2. Prerequisites
+</h2>
+
+<p>This tutorial assumes basic familiarity with React, HTML, CSS and JavaScript. Let’s dive in! Moreover, you need to have Node and NPM installed on your machine.‍</p>
+
+<h2>
+  
+  
+  3. Repository structure
+</h2>
+
+<p>Let’s first discuss the structure of our project (<a href="https://github.com/corbado/example-passkeys-react">full GitHub repo</a>):</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<p>The rest of the files of this project can be ignored for the purpose of this tutorial.‍</p>
+
+<h2>
+  
+  
+  4. Set up the React project
+</h2>
+
+<p>In the following, we explain step-by-step what needs to be done to successfully set up the React project.</p>
+
+<p>Let’s start out by initializing a new React project. In this tutorial, we’re using React version 18.2.0:</p>
+
+<p><code>npx create-react-app react-example<br>
+</code><br>
+If you’re asked to proceed, click “Yes”. Then execute:</p>
+
+<p><code>cd react-example<br>
+</code><br>
+If you run</p>
+
+<p><code>npm start<br>
+</code><br>
+the sample skeleton application starts at <a href="http://localhost:3000:">http://localhost:3000:</a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--t08XUOFe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w6t7ebiahvmum8z1fl16.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--t08XUOFe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w6t7ebiahvmum8z1fl16.png" alt="React skeleton" width="800" height="368"></a></p>
+<h2>
+  
+  
+  5. Set up the Corbado web component for passkey authentication
+</h2>
+<h3>
+  
+  
+  5.1 Set up your Corbado account and project
+</h3>
+
+<p>Visit the <a href="https://app.corbado.com/signin#register">Corbado developer panel</a> to sign up and create your account (you’ll see the passkey sign-up in action here!).</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--F-ePE7yP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/64tbxytwwbcdbh0u0l6m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--F-ePE7yP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/64tbxytwwbcdbh0u0l6m.png" alt="Corbado developer panel" width="800" height="357"></a></p>
+
+<p>In the appearing project wizard, select “Integration guide”. Then, select “Web app” as type of app and afterward select “No existing users” as we’re building a new app from scratch. Moreover, providing some details regarding your frontend and backend tech stack as well as the main goal you want to achieve with Corbado helps us to customize and smooth your developer experience.</p>
+
+<p>Then, jump over to the <a href="https://app.corbado.com/app/getting-started/integration-guide">integration guide</a> that helps to set up all required settings.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--B1hgdJ-r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2meg9e2x0mljpz2mvsk2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--B1hgdJ-r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2meg9e2x0mljpz2mvsk2.png" alt="Integration guide" width="800" height="541"></a></p>
+
+<p>In step 1, we need to define a new authorized origin, which is <a href="http://localhost:3000">http://localhost:3000</a> in the case of our React application (you can give it any name you want, e.g. “local”).</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kEGZkW8f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5mw2iylu0w847e7eub9f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kEGZkW8f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5mw2iylu0w847e7eub9f.png" alt="Add authorized origin" width="800" height="505"></a></p>
+
+<p>In this example, the creation of an API secret is optional. You would need it if you want to request protected user data from the Corbado backend or use Corbado’s session management for protecting your own resources.</p>
+
+<p>Next, we set the Application URL, Redirect URL and Relying Party ID to the following values (see explanation below):</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--F2J2t-If--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wgx9y5hocpilg86i6fdw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--F2J2t-If--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wgx9y5hocpilg86i6fdw.png" alt="Application URL Redirect URL Relying Party ID" width="800" height="405"></a></p>
+
+<p>Application URL: Provide the URL where you embedded the web component, here: <a href="http://localhost:3000">http://localhost:3000</a><br>
+Redirect URL: Provide the URL your app should redirect to after successful authentication and which gets sent a short-term session cookie, here: <a href="http://localhost:3000/profile">http://localhost:3000/profile</a><br>
+Relying Party ID: Provide the domain (no protocol, no port and no path) where passkeys should be bound to, here: localhost<br>
+The last two steps in the integration guide (“Add Corbado session management and protect your routes” and “Start using passkeys”) will be covered below.‍</p>
+<h3>
+  
+  
+  5.2 Embed the web component in the frontend
+</h3>
+
+<p>Now, let’s jump back to the code we created from step 4.</p>
+
+<p>Then, we need to install the web component:</p>
+
+<p><code>npm i @corbado/webcomponent<br>
+</code><br>
+Next, we create a .env file where we put in the Corbado project ID:</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<p>Then, we add a new file Home.js. This file contains the sign up / login web component. As HTML attribute “project-id”, we past the project ID from the developer panel into the .env file and read it from there.</p>
+
+<p>Optionally, you can modify the styling (via CSS classes) and text / behavior (via the developer panel or via HTML attributes).‍</p>
+
+<p>Moreover, we install the “react-router-dom” package.</p>
+
+<p><code>npm i react-router-dom<br>
+</code><br>
+Then, we add routing to index.js:</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<p>Restart your React web app (via npm start) and open <a href="http://localhost:3000">http://localhost:3000</a> in the browser. You should see the following screen with the Corbado web component to sign up and log in:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JSIVHfOy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/paj5v0jkdj7y5cwk9im6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JSIVHfOy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/paj5v0jkdj7y5cwk9im6.png" alt="Passkey Login Page" width="800" height="253"></a></p>
+
+<p>‍</p>
+
+<h3>
+  
+  
+  5.3 Set up the profile page
+</h3>
+
+<p>After successful authentication, the Corbado web component redirects the user to the provided Redirect URL (<a href="https://localhost:3000/profile">https://localhost:3000/profile</a>). This page renders basic user information (user ID and email) and provides a button to logout. Create a Profile.js file and add the following code:</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<p>Also adapt index.js to provide adequate routing:</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<p>This page has content that should only be visible to authenticated users. Therefore, we use Corbado session management in the code above.‍</p>
+
+<h3>
+  
+  
+  5.4 Start using passkeys
+</h3>
+
+<p>If everything is set up and installed, run the application with</p>
+
+<p><code>npm start<br>
+</code><br>
+You should see the following screen:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p8LPUgew--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6eovqgijbnt9wvu0gk68.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p8LPUgew--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6eovqgijbnt9wvu0gk68.png" alt="Passkey Login Page" width="800" height="450"></a></p>
+
+<p>After successful sign up / login, you see the profile page:</p>
+
+<p>![Passkey Profile Page(<a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g0i6w7ztyqpqw0h5qia7.png">https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g0i6w7ztyqpqw0h5qia7.png</a>)</p>
+
+<p>‍</p>
+
+<h2>
+  
+  
+  6. Conclusion
+</h2>
+
+<p>This tutorial showed how easy it is to add passwordless authentication with passkeys to a React app using Corbado. Besides the passkey-first authentication, Corbado provides simple session management, that we used for a retrieval of basic user data. If you want to read more about how you can leverage Corbado’s session management to retrieve backend data, please check out our documentation <a href="https://docs.corbado.com/sessions/overview">here </a>or if you want to add Corbado to your existing app with existing users, please see our documentation <a href="https://docs.corbado.com/products/corbado-connect">here</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Maximizing Efficiency and Savings: A Guide to Optimizing Amazon Redshift](https://dev.to/luxacademy/maximizing-efficiency-and-savings-a-guide-to-optimizing-amazon-redshift-3ddl) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KsfxSjpj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fsua77i6345opv9ybeko.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KsfxSjpj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fsua77i6345opv9ybeko.png" alt="Image description" width="800" height="396"></a></p>
+
+<p><strong>Amazon Redshift</strong> serves as a robust data warehousing service that assumes a pivotal role in the management of large-scale data analytics for organizations.</p>
+
+<p>As a data engineer, your interaction with AWS Redshift becomes indispensable if your company prefers it as the data warehousing technology, or if your organization has embraced it as the central data lakehouse tool to leverage the combined advantages of a data lake and warehouse within a unified platform.</p>
+
+<p>To fully exploit the capabilities of Redshift while concurrently managing costs and ensuring the efficiency of query performance, optimization becomes imperative. </p>
+
+<p>In this article, we will delve into a set of strategies designed to assist you in optimizing Amazon Redshift for both cost-effectiveness and query performance. This endeavor will not only result in cost savings for your organization but also enhance query speed, benefiting you as a developer.</p>
+
+<p><strong>We will be discussing several strategies, including:</strong></p>
+
+<ol>
+<li>Data Modeling</li>
+<li>Data Loading</li>
+<li>Compression</li>
+<li>Query Optimization</li>
+<li>Concurrency Scaling</li>
+<li>Workload Management (WLM)</li>
+<li>Partitioning</li>
+<li>Vacuuming and Analyzing</li>
+<li>Monitoring and Alerts</li>
+<li>Redshift Spectrum</li>
+<li>Redshift Advisor and Reserved Instances </li>
+<li>Regular Review and Optimization</li>
+</ol>
+
+<h3>
+  
+  
+  <strong>1). Data Modeling</strong>
+</h3>
+
+<p>The foundation of effective Redshift optimization begins with smart data modeling decisions:</p>
+
+<ul>
+<li>Data Distribution and Sort Keys: The choice of data distribution style (even, key, or all) and sort keys for your tables can significantly impact query performance. It's essential to select these attributes thoughtfully based on your specific needs.</li>
+<li>Normalization vs. Denormalization: Evaluate your query patterns to decide whether to normalize or denormalize your data. Normalization conserves storage space, while denormalization can enhance query performance. Your choice should align with your unique requirements.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>2). Data Loading</strong>
+</h3>
+
+<p>Efficient data loading processes are crucial for Redshift optimization:</p>
+
+<ul>
+<li>COPY Command: Utilize the COPY command for bulk data loading instead of INSERT operations. It is not only faster but also more cost-effective, particularly when dealing with substantial data volumes.</li>
+<li>Amazon S3 Staging: Consider using Amazon S3 as a staging area for data loading. This approach simplifies the process and reduces load times, enhancing overall efficiency.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>3). Compression</strong>
+</h3>
+
+<p>Optimizing storage with proper compression techniques can lead to substantial savings and improved query performance:</p>
+
+<ul>
+<li>Compression Encodings: Employ suitable compression encodings for columns to save storage costs and boost query performance. Selecting the right encodings is key to success.</li>
+<li>ANALYZE Command: Run the ANALYZE command periodically to update statistics. This aids the query planner in making informed decisions regarding data distribution and compression.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>4). Query Optimization</strong>
+</h3>
+
+<p>Fine-tuning your queries can significantly impact performance:</p>
+
+<ul>
+<li>EXPLAIN Command: Use the EXPLAIN command to analyze query plans and identify performance bottlenecks. This helps in pinpointing areas that require optimization.</li>
+<li>Column Selection: Avoid using SELECT * in queries; instead, explicitly list the columns you need. This reduces unnecessary data transfer and computation.</li>
+<li>Minimize DISTINCT and ORDER BY: Minimize the use of DISTINCT and ORDER BY clauses, as they can be computationally expensive. Use them only when necessary.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>5). Concurrency Scaling</strong>
+</h3>
+
+<p>Efficiently managing query concurrency is vital:</p>
+
+<ul>
+<li>Automatic Concurrency Scaling: Enable automatic concurrency scaling to handle query load spikes without sacrificing performance.</li>
+<li>Custom Concurrency Settings: Adjust concurrency scaling settings based on your workload and requirements, striking the right balance between cost and performance.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>6). Workload Management (WLM)</strong>
+</h3>
+
+<p>Effectively allocate resources among different query workloads:</p>
+
+<ul>
+<li>WLM Queues: Utilize WLM queues to distribute resources efficiently. Set appropriate memory and concurrency values for each queue to optimize both cost and performance.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>7). Partitioning</strong>
+</h3>
+
+<p>For large tables with specific query patterns, partitioning is a game-changer:</p>
+
+<ul>
+<li>Table Partitioning: Implement table partitioning if you frequently query specific date ranges or subsets of data. This enhances query performance and reduces costs.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>8). Vacuuming and Analyzing</strong>
+</h3>
+
+<p>Maintenance tasks are essential for long-term optimization:</p>
+
+<ul>
+<li>VACUUM and ANALYZE: Regularly run the VACUUM and ANALYZE commands to reclaim storage space and keep statistics up-to-date, ensuring peak performance.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>9). Monitoring and Alerts</strong>
+</h3>
+
+<p>Stay proactive with monitoring and alert systems:</p>
+
+<ul>
+<li>Monitoring Tools: Implement monitoring and set up alerts to track query performance and resource utilization. Services like Amazon CloudWatch can be invaluable for this purpose.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>10). Redshift Spectrum</strong>
+</h3>
+
+<p>Leverage Redshift Spectrum for cost-effective data querying:</p>
+
+<ul>
+<li>Amazon S3 Integration: Consider using Redshift Spectrum to query data stored in Amazon S3 directly, especially for historical or less-frequently accessed data. This can significantly reduce storage costs
+.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>11) Redshift Advisor and Reserved Instances</strong>
+</h3>
+
+<p>Utilize built-in tools for guidance and cost savings:</p>
+
+<ul>
+<li>
+<strong>Redshift Advisor:</strong> Take advantage of the Redshift Advisor tool, which provides recommendations for optimizing your cluster's performance and cost-efficiency.</li>
+<li>
+<strong>Reserved Instances (RIs):</strong> If your Redshift usage is steady, consider purchasing Reserved Instances to lower your per-hour costs, providing predictability and savings.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>12). Regular Review and Optimization</strong>
+</h3>
+
+<p>Continuous improvement is the key to success:</p>
+
+<ul>
+<li>
+<strong>Performance and Cost Metrics:</strong> Regularly review your cluster's performance and cost metrics to identify opportunities for optimization. Adapting to changing needs is crucial.</li>
+</ul>
+
+<h3>
+  
+  
+  <strong>Conclusion</strong>
+</h3>
+
+<p>Optimizing Amazon Redshift for cost and query performance is not a one-time task but rather an <strong>ongoing journey</strong> that requires a deep understanding of your data, workload, and business objectives. By implementing the strategies mentioned in this article and staying vigilant, you can continuously fine-tune your Redshift cluster to strike the right balance between cost savings and efficient data analytics. This iterative process ensures that your organization maximizes the benefits of this powerful data warehousing service, adapting to evolving needs and extracting valuable insights from your data.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [4 Open-Source Technologies Every True Full-Stack Developer Should Master](https://dev.to/rigdev/4-open-source-technologies-every-true-full-stack-developer-should-master-33e9) 
  <details><summary>Article</summary> <p>Full-stack development is a constantly evolving, dynamic field with new tools and technologies. Developers often find themselves in pursuit of the best resources to streamline their workflow and build exceptional applications. From the frontend user interface to the backend server logic and all the data management in between, the task can seem daunting, and using the right set of tools makes all the difference. There are multiple frameworks and tools with different capabilities for every part of full-stack applications, and choosing the proper set helps simplify and streamline the development process.</p>
 
@@ -276,258 +715,256 @@
  </details> 
  <hr /> 
 
- #### - [Fluid Typography](https://dev.to/marcelluscaio/fluid-typography-1mfl) 
- <details><summary>Article</summary> <p><em>Photo by Ross Findon in Unsplash</em></p>
+ #### - [Mastering Test-Driven Development (TDD) with C# Examples](https://dev.to/bakatsiasgeorge/title-mastering-test-driven-development-tdd-with-c-examples-5fk4) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
 
-<blockquote>
-<p>You can access this article in Portuguese <a href="https://dev.to/marcelluscaio/tipografia-fluida-104n">here</a><br>
-Você pode acessar este artigo em português <a href="https://dev.to/marcelluscaio/tipografia-fluida-104n">aqui</a></p>
-</blockquote>
+<p>In the dynamic realm of software development, the pursuit of impeccable code, devoid of pesky bugs, is the ultimate quest. Yet, this journey is fraught with challenges, particularly as projects grow in complexity. This is where Test-Driven Development (TDD) emerges as your stalwart companion. In this comprehensive article, we will delve into TDD, unravel its merits, explore how to wield it proficiently with C# (complete with authentic code illustrations), and importantly, navigate the intricacies of requirements and what precisely should be tested. We will scrutinize the facets of your software that warrant testing, with practical examples spanning functionality, data types, boundaries, UI, security, performance, integration, and more. Additionally, we will examine the role of Docker in facilitating an optimal testing environment setup.</p>
 
 <h2>
   
   
-  A promise is a debt
+  The TDD Ballet
 </h2>
 
-<p>A few days ago, <a href="https://dev.to/marcelluscaio/using-rem-doesnt-make-your-website-responsive-heres-why-4b0e">I wrote about some typography tips</a>. We discussed the importance of using the REM unit and how to make our fonts responsive using Media Queries. With that, you can already create impeccable web projects in terms of font size. But I promised to talk about making fonts responsive without using Media Queries, and a promise is a debt. So, here we go!</p>
+<p>What exactly does TDD entail? Envision TDD as a choreographed dance, with you as the choreographer:</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Q8LYksrf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lly5ctf7jqgs8zjg9fy0.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Q8LYksrf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lly5ctf7jqgs8zjg9fy0.jpg" alt="Image description" width="484" height="720"></a></p>
-
-<h2>
-  
-  
-  The limits of Media Queries
-</h2>
-
-<p>When we adapt font sizes using media queries, our fonts remain the same size until they reach the breakpoint, and only then they change.</p>
-
-<p>Open the CodePen below and adjust the screen width to see the sudden change in font size.</p>
-
-<p><iframe height="600" src="https://codepen.io/marcelluscaio/embed/XWopvde?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
-<br>
-<a href="https://codepen.io/marcelluscaio/pen/XWopvde">Open the CodePen in another tab.</a></p>
-
-<p>Using the fluid typography technique, our font will always adjust to the screen size. For every pixel the screen increases, there will be an increment in font size.</p>
-
-<p>"Caio, what kind of witchcraft is this? How is that possible?"</p>
-
-<p>It's not witchcraft, but a powerful CSS function: clamp().</p>
-<h2>
-  
-  
-  Getting to know 'clamp()'
-</h2>
-
-<p>With clamp(), we can define a minimum value, an ideal value, and a maximum value.</p>
-
-<p>Let's say we want our font to be 16px on a screen width of 320px and 32px on a screen width of 1920px. Our clamp() would look something like this:<br>
+<p>Step 1 Craft a Test: Picture building a calculator. Initially, you formulate a test case that articulates your code's intended behavior. It resembles composing the dance steps.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">clamp</span><span class="o">(</span><span class="err">1</span><span class="nt">rem</span><span class="o">,</span> <span class="nt">valor</span> <span class="nt">ideal</span><span class="o">,</span> <span class="err">2</span><span class="nt">rem</span><span class="o">);</span>
+<pre class="highlight plaintext"><code>[Test]
+public void TestAddition()
+{
+    Calculator calculator = new Calculator();
+    int result = calculator.Add(2, 3);
+    Assert.AreEqual(5, result);
+}
 
-<span class="c">/*
-You noticed that we're using REM, right?
-No PX for fonts, remember?
-*/</span>
 </code></pre>
 
 </div>
 
 
 
-<p>What about the ideal value? Well, since we want our font to adapt to the screen size, we'll use one of the viewport units, VW. 100vw is the size of the screen, and 1vw is 1% of the screen width. On a 320px screen, 100vw is 320px, and 1vw equals 3.2px.</p>
-
-<p>Let's temporarily use the value of 5vw.<br>
+<p>Step 2 Craft the Code: Subsequently, you script the code, ensuring it aligns with the aspirations of your test. This phase equates to instructing your dancers in the steps.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">clamp</span><span class="o">(</span><span class="err">1</span><span class="nt">rem</span><span class="o">,</span> <span class="err">5</span><span class="nt">vw</span><span class="o">,</span> <span class="err">2</span><span class="nt">rem</span><span class="o">)</span>
+<pre class="highlight plaintext"><code>public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+
 </code></pre>
 
 </div>
 
 
 
-<p>With this, our font still has those minimum and maximum limits of 16px and 32px (based on the browser's default font), but with 5vw as the ideal value, it will always try to be 5vw in size.</p>
-
-<p>Let's see some examples:</p>
-
-<blockquote>
-<p>On a 300px screen: 5vw would be 15px. 15px is less than 16px - our minimum font size. In this case, the font would be 16px.</p>
-
-<p>On a 320px screen: 5vw would be 16px. The font used would be 16px.</p>
-
-<p>On a 500px screen: 5vw would be 25px. 25px is greater than 16px, and it's less than the maximum limit of 32px. So, the font used would be 25px.</p>
-
-<p>On a 1000px screen: 5vw would be 50px. Since this value is greater than our limit, the font used would be 32px.</p>
-</blockquote>
-
-<p>See this applied in the example below:</p>
-
-<p><iframe height="600" src="https://codepen.io/marcelluscaio/embed/eYbvYyZ?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
+<p>Step 3 Execute the Test: It's time to evaluate whether your code performs the dance flawlessly. Execute the tests and verify that they passed as expected.<br>
 </p>
 
-<p><a href="https://codepen.io/marcelluscaio/pen/eYbvYyZ">Open the CodePen in another tab.</a></p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>$ dotnet test
 
-<h3>
-  
-  
-  Not everything is perfect
-</h3>
+</code></pre>
 
-<p>We have two problems here:</p>
+</div>
 
-<p>1) Our font is growing too quickly in this example. It reached our limit at a screen width of 640px, but we wanted it to vary fluidly up to 1920px. It becomes static for 1280px! </p>
 
-<p>2) Using a font based solely on viewport units poses an accessibility problem. Try going back to the previous CodePen and zoom in on the screen. Users cannot zoom in on the font, which remains frozen since it's based on the screen size. You'll notice that the text in the center of the screen doesn't change in size, while the screen and font size counter in the upper-left corner increases.</p>
+
+<p>Step 4 Refine: If the dance seems somewhat lacking in elegance, you can fine-tune it. Polish your code to make it sleeker, swifter, or more efficient. However, remember the golden rule: don't disrupt what's already working.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        if (a &lt; 0)
+        {
+            throw new ArgumentException("Input must be non-negative", nameof(a));
+        }
+        return a + b;
+    }
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>Step 5 Repeat: Continuously iterate through these steps for each new segment of the dance you intend to teach.</p>
 
 <h2>
   
   
-  Using VW + REM
+  Why TDD Triumphs
 </h2>
 
-<p>A technique that helps with these two problems is to define the ideal value, the one in the middle of the clamp(), not just in VW, but as a sum of VW and REM.</p>
+<p>TDD isn't just a dance; it's a dance-off where victory is guaranteed.</p>
 
-<p>Let's use the following values:<br>
-</p>
+<p>Improved code quality: TDD can unveil any missing specifications of the feature you are developing and help find bugs early in the development cycle.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">clamp</span><span class="o">(</span><span class="err">1</span><span class="nt">rem</span><span class="o">,</span> <span class="o">.</span><span class="err">8</span><span class="nt">rem</span> <span class="o">+</span> <span class="err">1</span><span class="nt">vw</span><span class="o">,</span> <span class="err">2</span><span class="nt">rem</span><span class="o">)</span>
-</code></pre>
+<p>Painless Maintenance: Your code becomes a breeze to maintain. Farewell to those late-night debugging expeditions.</p>
 
-</div>
+<p>Swift Troubleshooting: If something falters, your tests pinpoint the trouble spot. No more sifting through code like a detective in a labyrinth.</p>
 
+<p>Regression Resilience: Armed with an array of tests, you can confidently introduce fresh moves without disarraying the old ones.</p>
 
+<p>Living Documentation: Your tests materialize as a cheat sheet for your code. Everyone comprehends what to expect in the dance.</p>
 
-<p>See in the example below that the font starts to grow exactly after 320px and stops just before 1920px!</p>
-
-<p><iframe height="600" src="https://codepen.io/marcelluscaio/embed/MWZpYwJ?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
-</p>
-
-<p><a href="https://codepen.io/marcelluscaio/pen/MWZpYwJ">Open the CodePen in another tab.</a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--83hglD5s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fgq82nvo82r82fhvy5et.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--83hglD5s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fgq82nvo82r82fhvy5et.gif" alt="Image description" width="640" height="420"></a></p>
-
-<p>"Caio, you're a genius! How did you come up with that value?"</p>
-
-<p>I hate to disappoint you, dear reader, but I didn't do this calculation in my head! There is a formula to calculate this ideal value, and all the explanations for that will be in one of the articles I'll leave in the references. In this example and in my daily work, I use a tool that calculates it for me.</p>
-
-<p><a href="https://utopia.fyi/type/calculator">You can access this tool here.</a></p>
-
-<h3>
-  
-  
-  The Fluid Type Calculator
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9yFI9-yH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2exkk76jg2ft60qinjnl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9yFI9-yH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2exkk76jg2ft60qinjnl.png" alt="Image description" width="502" height="540"></a></p>
-
-<p>Here, we can define the minimum and maximum screen widths and the minimum and maximum font sizes — let's just ignore the Type Scale option for now.</p>
-
-<p>The tool provides the clamp() values for you. Then, just add them to your code, and you're good to go.</p>
-
-<h3>
-  
-  
-  Dealing with multiple font sizes simultaneously
-</h3>
-
-<blockquote>
-<p>"Caio, I've never worked on a project with just one font size!"</p>
-</blockquote>
-
-<p>I know, I know. The example with only one font size was to make things simple. But there's no catch 22 here. Let's apply this logic to our first example, the one with fonts using Media Queries.</p>
-
-<p>There, we had the following font model:</p>
-
-<p>Level 1 -&gt; 16px to 18px;</p>
-
-<p>Level 2 -&gt; 20px to 24px;</p>
-
-<p>Level 3 -&gt; 25px to 32px;</p>
-
-<p>Level 4 -&gt; 31px to 42px;</p>
-
-<p>Now we just need to use our calculator for each of these ranges!</p>
-
-<p>Previously, we had:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nd">:root</span><span class="p">{</span>
-  <span class="py">--fs-1</span><span class="p">:</span> <span class="m">1.125rem</span><span class="p">;</span>
-  <span class="py">--fs-2</span><span class="p">:</span> <span class="m">1.5rem</span><span class="p">;</span>
-  <span class="py">--fs-3</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-  <span class="py">--fs-4</span><span class="p">:</span> <span class="m">2.625rem</span>
-<span class="p">}</span>
-
-<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">40em</span><span class="p">){</span>
-  <span class="nd">:root</span><span class="p">{</span>
-    <span class="py">--fs-1</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-    <span class="py">--fs-2</span><span class="p">:</span> <span class="m">1.25rem</span><span class="p">;</span>
-    <span class="py">--fs-3</span><span class="p">:</span> <span class="m">1.5625rem</span><span class="p">;</span>
-    <span class="py">--fs-4</span><span class="p">:</span> <span class="m">1.9375rem</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now we end up with this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nd">:root</span><span class="p">{</span>
-  <span class="py">--fs-1</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1.00rem</span><span class="p">,</span> <span class="n">calc</span><span class="p">(</span><span class="m">0.98rem</span> <span class="err">+</span> <span class="m">0.13vw</span><span class="p">),</span> <span class="m">1.13rem</span><span class="p">);</span><span class="err">;</span>
-  <span class="py">--fs-2</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1.25rem</span><span class="p">,</span> <span class="n">calc</span><span class="p">(</span><span class="m">1.20rem</span> <span class="err">+</span> <span class="m">0.25vw</span><span class="p">),</span> <span class="m">1.50rem</span><span class="p">);</span>
-  <span class="py">--fs-3</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1.56rem</span><span class="p">,</span> <span class="n">calc</span><span class="p">(</span><span class="m">1.48rem</span> <span class="err">+</span> <span class="m">0.44vw</span><span class="p">),</span> <span class="m">2.00rem</span><span class="p">);</span>
-  <span class="py">--fs-4</span><span class="p">:</span> <span class="n">clamp</span><span class="p">(</span><span class="m">1.95rem</span><span class="p">,</span> <span class="n">calc</span><span class="p">(</span><span class="m">1.81rem</span> <span class="err">+</span> <span class="m">0.71vw</span><span class="p">),</span> <span class="m">2.66rem</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>See the example below:</p>
-
-<p><iframe height="600" src="https://codepen.io/marcelluscaio/embed/VwqpYdO?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
-</p>
-
-<p><a href="https://codepen.io/marcelluscaio/pen/VwqpYdO">Open the CodePen in another tab.</a></p>
+<p>Team Harmony: TDD fosters cohesion among your team, developers and testers.</p>
 
 <h2>
   
   
-  Ok, what about the Type Scale Thing?
+  What Warrants Testing in TDD
 </h2>
 
-<p>As developers, we often don't take part in the font size selection process. Designers usually lead that decision. "And how do they do that?", you might be wondering.</p>
+<p>Now, let's now address the most basic question: What should be subjected to testing in TDD? Here is a thorough analysis of your software's components that demand close examination, along with real-world examples:</p>
 
-<p>That's a science of its own. There are different systems: the 4-point grid, the 8-point grid, Google's Material Design, and many others. None of these systems can do without the trained eyes of design professionals: systems are not magic and often require adaptations.</p>
+<p>Functionality Testing: This represents the very essence of TDD. You assess whether your code executes its designated functions. For instance, if you consider designing a calculator you should test against the addition function.<br>
+</p>
 
-<p>One of these systems is modular scale typography. In this system, we start with a font size and increase or decrease it based on a multiplication factor. For example, let's say our smallest font is 10px, and the multiplication factor is 2. Our font system could have the following values: 10px, 20px, 40px, 80px, and so on. This example is exaggerated for didactic purposes, of course.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Illustration: Functionality Testing - Calculator's Addition
+[Test]
+public void TestAddition()
+{
+    Calculator calculator = new Calculator();
+    int result = calculator.Add(2, 3);
+    Assert.AreEqual(5, result);
+}
 
-<p>This methodology adds objectivity to font size selection and helps make our typography hierarchy more consistent.</p>
+</code></pre>
 
-<p>The Type Scale field in our calculator helps generate fonts using this type of methodology. Let's say I have a project with 4 font levels (4 different sizes), and the smallest font should be 14px on mobile and 20px on monitors.</p>
+</div>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YIX4cePz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9dkwqsii1rncstt1uh46.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YIX4cePz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9dkwqsii1rncstt1uh46.png" alt="Image description" width="780" height="233"></a></p>
 
-<p>Here, I'm applying a growth rate of 1.25 on 320px screens while applying a growth rate of 1.414 on 1900px screens. The result is as follows:</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vnqHnXTS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gtl9wqlpbpl5g383h2xu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vnqHnXTS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gtl9wqlpbpl5g383h2xu.png" alt="Image description" width="780" height="297"></a></p>
+<p>Data Type Testing: Validating data types for accuracy is essential. Ensure that the variables, inputs, and outputs you use correspond to the appropriate data type and size. This strategy works as a prevention towards data-related errors.<br>
+</p>
 
-<p>Note that font sizes grow much faster on the 1900px screen because we used a higher rate. I invite you to read the excellent articles on modular typography scales that will be in the references of this article to better understand when to choose which rate for your scale. I also encourage you to generate and test different scales and compare the results. What happens when the scale rate is higher on larger screens than on smaller screens? What happens when the rate is the same? And when it's smaller?</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Illustration: Data Type Testing - Verification of Integer Data Type
+[Test]
+public void TestIntegerDataType()
+{
+    int number = 42;
+    Assert.IsInstanceOfType(number, typeof(int));
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>Edge Cases and Boundaries: Probe the extremities. Investigate the outcomes when you present the smallest or largest conceivable values. For instance, if your calculator can process integers, examine its behavior with the most minuscule and colossal integers.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Illustration: Edge Cases and Boundaries - Adding one to int.MaxValue should throw an OverflowException
+[Test]
+public void AddingOneToIntMaxValueThrowsOverflowException()
+{
+    int maxValue = int.MaxValue;
+
+    Assert.Throws&lt;OverflowException&gt;(() =&gt;
+    {
+        int result = checked(maxValue + 1);
+    });
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>UI Testing with Gherkin and SpecFlow: UI testing assumes paramount importance for assuring the seamless functionality of your application's user interface. Tools such as Gherkin and SpecFlow provide a framework to draft human-readable scenarios.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Scenario: Successful User Login
+    Given the user navigates to the login page
+    When they input valid credentials
+    And click the login button
+    Then they should be directed to the dashboard
+
+</code></pre>
+
+</div>
+
+
+
+<p>Security Testing: Security should never be an afterthought. Investigate vulnerabilities such as SQL injection, cross-site scripting (XSS), and authentication flaws. Specialized security testing frameworks can ferret out and mitigate these risks.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Illustration: Security Testing - Prevention of SQL Injection
+[Test]
+public void TestSQLInjectionPrevention()
+{
+    // Simulate a SQL injection attempt
+    string userInput = "'; DROP TABLE Users; --";
+    bool isSafe = SecurityHelper.IsInputSafe(userInput);
+    Assert.IsTrue(isSafe);
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>Performance and Benchmark Testing: Evaluation of your software's performance is crucial as it grows. How quickly is it able to work? Can it handle an abundance of users or data? Tools for performance testing shed light on these questions.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Illustration: Performance and Benchmark Testing - Evaluation of Response Time
+[Benchmark]
+public void MeasureResponseTime()
+{
+    PerformanceTester tester = new PerformanceTester();
+    double responseTime = tester.MeasureResponseTime();
+    Assert.IsTrue(responseTime &lt; 100); // Response time should be under 100 milliseconds
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>Integration Testing: Examine the interactions between the various parts of your software. This is especially important for complex systems with several interrelated components.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Illustration: Integration Testing - API Integration Assessment
+public void TestApiIntegration()
+{
+    ApiClient apiClient = new ApiClient();
+    ApiResponse response = apiClient.Get("https://someApi.aa/Getdata");
+    Assert.AreEqual(200, response.StatusCode);
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>Regression Testing: As you introduce novel features or rectify defects, it's imperative to ascertain that the existing functionality remains unaffected. Execute regression tests to apprehend unintended side effects.</p>
 
 <h2>
   
@@ -535,304 +972,7 @@ No PX for fonts, remember?
   Conclusion
 </h2>
 
-<p>We've learned how to apply the fluid typography technique using CSS. Fluid typography is an elegant solution that brings visual integrity to your project on various screens.</p>
-
-<p>Always remember that accessibility is a priority. To ensure your website is accessible, always test it with a 200% zoom.</p>
-
-<h2>
-  
-  
-  References
-</h2>
-
-<p>Kevin Powell - Simple solutions to responsive typography<br>
-<a href="https://www.youtube.com/watch?v=wARbgs5Fmuw">https://www.youtube.com/watch?v=wARbgs5Fmuw</a></p>
-
-<p>Modern Fluid Typography Using CSS Clamp<br>
-<a href="https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/">https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/</a></p>
-
-<p>Generating <code>font-size</code> CSS Rules and Creating a Fluid Type Scale<br>
-<a href="https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/">https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/</a></p>
-
-<p>Responsive Type and Zoom<br>
-<a href="https://adrianroselli.com/2019/12/responsive-type-and-zoom.html">https://adrianroselli.com/2019/12/responsive-type-and-zoom.html</a></p>
-
-<p>Resize text<br>
-<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html</a></p>
-
-<p>Should I change the default HTML font-size to 62.5%?<br>
-<a href="https://fedmentor.dev/posts/rem-html-font-size-hack/">https://fedmentor.dev/posts/rem-html-font-size-hack/</a></p>
-
-<p>4-Point Grid System for more consistent interface design<br>
-<a href="https://medium.com/@aratidube12lns/4-point-grid-system-for-more-consistent-interface-design-efea81dea3f3">https://medium.com/@aratidube12lns/4-point-grid-system-for-more-consistent-interface-design-efea81dea3f3</a></p>
-
-<p>More Meaningful Typography<br>
-<a href="https://alistapart.com/article/more-meaningful-typography/">https://alistapart.com/article/more-meaningful-typography/</a></p>
-
-<p>Um guia prático para criar um tipo de escala modular para suas interfaces<br>
-<a href="https://www.ux-republic.com/pt/guia-pr%C3%A1tico-para-criar-um-tipo-de-escala-modular-para-suas-interfaces/">https://www.ux-republic.com/pt/guia-pr%C3%A1tico-para-criar-um-tipo-de-escala-modular-para-suas-interfaces/</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Install Playwright and Visual Studio Code](https://dev.to/hambalee/install-playwright-and-visual-studio-code-37ep) 
- <details><summary>Article</summary> <p>Playwright is a tool that can automate tasks on the web. It works with multiple browsers, so you can use it to test your website or app on different browsers. It can also be used to scrape data from websites or monitor website performance.</p>
-
-<p>Visual Studio Code is a code editor that makes it easy to write code for Playwright. It has a lot of features that can help you write code more efficiently, such as syntax highlighting and code completion.</p>
-
-<p>Install JavaScript Runtime<br>
-<a href="https://nodejs.org/en">Node.js</a></p>
-
-<p>Install Visual Studio Code<br>
-<a href="https://code.visualstudio.com">https://code.visualstudio.com</a></p>
-
-<p><code>mkdir playwright</code> to create a new directory</p>
-
-<p>Installing Playwright<br>
-<a href="https://playwright.dev/">https://playwright.dev/</a><br>
-<code>npm init playwright@latest</code></p>
-
-<p>Running the Example Test<br>
-<code>npx playwright test</code></p>
-
-<p>or run with UI mode<br>
-<code>npx playwright test --ui</code></p>
-
-<p>HTML Test Reports<br>
-<code>npx playwright show-report</code></p>
-
- </details> 
- <hr /> 
-
- #### - [Most essential Xcode shortcuts every developer should know](https://dev.to/oleksandr_masliukivskyi_1/most-essential-xcode-shortcuts-every-developer-should-know-2dff) 
- <details><summary>Article</summary> <p>As iOS developers, we spend most of our time at work in the Xcode. To put it into perspective - It's about <strong>20–35 hours per week</strong>! What if I told you that you may use this time <strong>inefficiently</strong>, and you can <strong>optimise</strong> it?</p>
-
-<p>Imagine having an elevator in your house, but still using stairs to get to the top floor.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6W1-PhLv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w1z14m4mrn5li8drwmro.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6W1-PhLv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w1z14m4mrn5li8drwmro.gif" alt="Image description" width="400" height="400"></a></p>
-
-<p>At the end of the day, you'll reach the same floor, but at the cost of <strong>time</strong> and <strong>exhaustion</strong>. The same is applicable to using Xcode without shortcuts.<br>
- <br>
-In this article, I'll show you a few <strong>Xcode shortcuts</strong> that will boost your productivity and elevate your skills in writing code.</p>
-
-<p>We'll separate them by <strong>Project View and Navigation</strong>, <strong>Code Editing</strong>, and <strong>Project Build</strong> sections. Some of them might be well-known, and some - can be new to you, but I'm sure all of those mentioned are essential to every iOS developer.</p>
-
-<p>Plus, there's a very helpful <strong>bonus</strong> at the end of the article 👀</p>
-
-<p>First things first, let's agree on the dictionary of the symbols. In this article, I'll follow this setup:<br>
-<strong>⌘ – Command</strong> key<br>
-<strong>⌃ – Control</strong> or Ctrl key<br>
-<strong>⌥ – Option</strong> or Alt key<br>
-<strong>⇧ – Shift</strong> key</p>
-
-<h2>
-  
-  
-  Project View and Navigation
-</h2>
-
-<p>In this section, we'll focus on the shortcuts that will help you to navigate through your Xcode project and understand its file system way faster than you used to.</p>
-
-<p>The first one is <strong>⌘ + ⇧ + O</strong>. To open a file by its name, just press this combination, type the filename, and you'll see a list of options matching your input.You can search by class/struct name and methods declaration.This is the fastest way of getting around the big projects when trying to find something, especially when onboarding into a new project.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8thU9IlF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/66sxingkrfqc4ljbqsh3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8thU9IlF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/66sxingkrfqc4ljbqsh3.png" alt="Search window with multiple options" width="800" height="719"></a></p>
-
-<p>The next one is <strong>⌘ + J</strong> - focus on a file in the navigator. It's very helpful while working on projects with complex structures - you can easily end up in some unknown location, and this shortcut will show you exactly where you are right now.</p>
-
-<p><strong>⌘ + N</strong> - create a new file. A common shortcut for all IDEs, but in combination with the previous one, you can create a new file in the right place of your project very fast.</p>
-
-<p><strong>⇧ + ⌘ + Y</strong> - show/hide debug area. Also comes in very handy for quickly accessing the debug area view.</p>
-
-<p><strong>⌘ + ⌥ + Enter</strong> - toggle SwiftUI Preview/Canvas. While working with SwiftUI, this one is helpful to toggle the additional Previews view when needed.</p>
-
-<p><strong>^ + ⌘+ J</strong> - Jump to the definition. After selecting a property or function, just use this shortcut, and it will navigate you to the definition of the selection.</p>
-
-<p><strong>⌘ + ⌃ + left/right arrows</strong> - jump between the previous and next opened file.</p>
-
-<p><strong>⌘ + ⇧ + 0 (zero)</strong> - show a documentation view. I encourage you to use this one from time to time or when dealing with some unknown Swift issues, Apple's documentation is very user-friendly and easy to navigate through.</p>
-
-<h2>
-  
-  
-  Code Editing
-</h2>
-
-<p>Now we'll focus on how to boost your code editing with shortcuts.</p>
-
-<p><strong>⌘ + ⌃+ E </strong>- Select all in scope. Very useful shortcut for refactoring small chunks of code in a local scope. Let's say you've misspelled your property name, and you want to fix it quickly in all local-scope usages. You can do so by selecting a word and using this shortcut:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jUwwzUrb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q7cysnthhb1k8x102709.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jUwwzUrb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q7cysnthhb1k8x102709.gif" alt="Image description" width="800" height="503"></a></p>
-
-<p><strong>⌘ + ⌥ + E</strong> - find in the current file. Just select a word and press this shortcut to jump to the next usage of this word.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5QlehCBp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yqnuvkrpzveq0xmi30ox.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5QlehCBp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yqnuvkrpzveq0xmi30ox.gif" alt="Image description" width="800" height="503"></a></p>
-
-<p>But be careful, this shortcut is <strong>case-insensitive</strong> and matches by parts, not the whole word.</p>
-
-<p><strong>⌃ + I</strong> - Re-indent code. After making some changes to your functions, you may notice that code indentation can mess up. Use this shortcut to quickly fix your code.</p>
-
-<p><strong>⌘ + ⌥ + Up/Down arrows</strong> - fold/unfold method or class. It will cover the selected part of the code. Very helpful to use this in big and complicated parts of code, just in order to focus on what's important right now.</p>
-
-<p><strong>⌘ + ⌥ + /</strong> - create a documentation. It just pastes a documentation template right above the selection, which is way faster than writing it all by yourself.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--grXCN0NP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ipf3oe8k1v3lr5jskzj5.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--grXCN0NP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ipf3oe8k1v3lr5jskzj5.gif" alt="Image description" width="800" height="298"></a></p>
-
-<h2>
-  
-  
-  Project build
-</h2>
-
-<p>As for the project build shortcuts, I consider these most helpful:</p>
-
-<ul>
-<li>
-<strong>⌘ + R</strong> - run current target</li>
-<li>
-<strong>⌘ + B</strong> - build current target</li>
-<li>
-<strong>⌘ + U</strong> - build and run testing target. Add <strong>⇧</strong> (<strong>⌘ + ⇧ + U</strong>) to just build without running. Or add <strong>⌃</strong> (<strong>⌘ + ⌃+ U</strong>) to skip building when it's not needed</li>
-<li>
-<strong>⌃ + ⌥ + ⌘ + G</strong> -re-run a previous test case. Very helpful while fixing just one problematic test. If your last testing action was running the whole class, it will run the whole class again</li>
-<li>
-<strong>⌘ + ⇧ + K</strong> - clean build</li>
-</ul>
-
-
-
-
-<h2>
-  
-  
-  Bonus time!
-</h2>
-
-<p>For a quick multiline change in your code, you can use <strong>⌃ + ⇧ + up/down arrows</strong>. This way, you will activate a multiline cursor, which can be very handy for refactoring chunks of code without repetitions. And, to make it sound even better, you can use <strong>mouse clicks</strong> to select the specific parts of lines to edit!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oaHDm91E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yexpe54go29xgsdq86jm.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oaHDm91E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yexpe54go29xgsdq86jm.gif" alt="Image description" width="800" height="334"></a></p>
-
-<p>I can guarantee that after using it a few times, you'll love it and will not imagine your Xcode development without this shortcut!</p>
-
-<p>And also, as a bonus-bonus, you can change and create your own shortcuts in Xcode. To do so, go to Xcode → Settings → Key Bindings.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gACnbSSJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e8d3p2u1q3urqp7d6zyp.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gACnbSSJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e8d3p2u1q3urqp7d6zyp.png" alt="Image description" width="800" height="570"></a><br>
-Be careful not to use some macOS system shortcuts though, because the OS will treat it with a bigger priority</p>
-
-
-
-
-<p><strong>In conclusion</strong>, I'd say that the usage of the Xcode shortcuts is a pretty good marker of how proficient a developer is. After hosting multiple iOS job interviews with live coding/debugging sessions, I always paid attention when an interviewee was using them. It shows that the person is not totally new to iOS development and is interested in becoming more proficient by learning how to use a tool a bit more than just creating a project and being able to run it.</p>
-
-<p>And that's it! I hope you've learned something new from this article and that I've helped you become an even more productive iOS Developer than you were before. </p>
-
-<p>Have I missed some interesting shortcuts? Let me know in the comments, let's learn together!</p>
-
- </details> 
- <hr /> 
-
- #### - [Using Node.js for Automated Testing with Headless Browsers](https://dev.to/saint_vandora/using-nodejs-for-automated-testing-with-headless-browsers-5g8) 
- <details><summary>Article</summary> <p>In the fast-paced world of web development, ensuring the reliability and functionality of web applications is paramount. Automated testing is an essential practice that helps developers catch bugs and regressions early in the development process. One of the powerful tools in the arsenal of automated testing is Node.js, which, when combined with headless browsers, provides an efficient and flexible testing environment. </p>
-
-<p>In this article, we will explore how to leverage Node.js for automated testing with headless browsers to streamline the testing process and deliver high-quality web applications.</p>
-
-<h2>
-  
-  
-  Understanding Headless Browsers
-</h2>
-
-<p>Headless browsers are web browsers without a graphical user interface (GUI). They can be controlled programmatically, making them ideal for automated testing. Unlike traditional browsers like Chrome or Firefox, which require manual interactions, headless browsers execute commands via code. This means you can run tests without any visual distractions and on a server or a continuous integration (CI) system without any GUI overhead.</p>
-
-<p><strong>Popular headless browsers include:</strong></p>
-
-<ol>
-<li><p><strong>Puppeteer:</strong> Developed by Google, <a href="https://pptr.dev/category/guides">Puppeteer</a> is a Node.js library that provides a high-level API for controlling headless Chrome or Chromium browsers. It's widely used for web scraping and automated testing.</p></li>
-<li><p><strong>Playwright:</strong> Created by Microsoft, <a href="https://playwright.dev/">Playwright</a> supports multiple browsers, including Chromium, Firefox, and WebKit. It provides a unified API for browser automation, making it a versatile choice for testing across different browsers.</p></li>
-</ol>
-
-<h2>
-  
-  
-  Leveraging Node.js for Automated Testing
-</h2>
-
-<p>Node.js, a JavaScript runtime, is well-suited for automated testing due to its non-blocking, event-driven architecture. Combining Node.js with headless browsers allows you to write tests in JavaScript, simplifying the testing process and making it accessible to a broader audience of developers.</p>
-
-<h3>
-  
-  
-  Setting Up Your Environment
-</h3>
-
-<p>To get started, you'll need to set up your testing environment:</p>
-
-<ol>
-<li><p><strong>Install Node.js:</strong> If you haven't already, download and install Node.js from the official website (<a href="https://nodejs.org/">https://nodejs.org/</a>).</p></li>
-<li><p><strong>Choose a Headless Browser:</strong> Select a headless browser library like <a href="https://pptr.dev/category/guides">Puppeteer</a> or <a href="https://playwright.dev/">Playwright</a> based on your project requirements.</p></li>
-<li><p><strong>Initialize Your Project:</strong> Create a new Node.js project and install the chosen headless browser library using <a href="https://docs.npmjs.com/">npm</a> or <a href="https://yarnpkg.com/getting-started">yarn</a>.</p></li>
-</ol>
-
-<h3>
-  
-  
-  Writing Automated Tests
-</h3>
-
-<p>Now that your environment is set up, you can start writing automated tests. Here's a basic example using Puppeteer:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const puppeteer = require('puppeteer');
-
-(async () =&gt; {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
-  await page.goto('https://example.com');
-
-  // Your testing logic goes here
-
-  await browser.close();
-})();
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, we launch a headless browser, navigate to a web page, and perform testing operations within the <code>async</code> function.</p>
-
-<h3>
-  
-  
-  Running Tests
-</h3>
-
-<p>To execute your tests, you can create test scripts using popular testing frameworks like <a href="https://mochajs.org/">Mocha</a>, <a href="https://jasmine.github.io/">Jasmine</a>, or <a href="https://jestjs.io/">Jest</a>. These frameworks provide a structured way to organize and run your tests, report results, and handle assertions.</p>
-
-<h2>
-  
-  
-  Benefits of Using Node.js for Automated Testing
-</h2>
-
-<ol>
-<li><p><strong>Simplified Setup:</strong> Node.js simplifies the setup of automated testing environments, making it accessible to developers with JavaScript expertise.</p></li>
-<li><p><strong>Cross-Browser Testing:</strong> With libraries like Playwright, you can perform cross-browser testing using a single codebase, ensuring your web application works consistently across different browsers.</p></li>
-<li><p><strong>Scalability:</strong> Node.js is known for its scalability, making it suitable for running tests in parallel and on CI/CD pipelines to ensure fast and efficient testing.</p></li>
-<li><p><strong>Community and Ecosystem:</strong> The Node.js community is vibrant and offers a wealth of libraries and tools for automated testing, making it easy to find solutions to common testing challenges.</p></li>
-</ol>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Automated testing with headless browsers and Node.js is a powerful combination for ensuring the quality and reliability of web applications. With Node.js, you can leverage the flexibility and scalability of JavaScript to write automated tests that catch bugs early in the development process. Whether you choose Puppeteer or Playwright, these headless browser libraries provide the tools needed to streamline your testing workflow and deliver high-quality web applications to your users.</p>
-
-<p>Thanks for reading...<br>
-<strong>Happy Coding!</strong></p>
+<p>In summary, Test-Driven Development (TDD) is your reliable ally in the realm of coding. It empowers you to create robust, bug-free software by putting tests at the forefront of your development process. With C# as your platform and a deep understanding of what aspects should undergo testing, you have the tools to engineer high-quality software. So, get ready to embark on your path to software excellence through TDD, where meticulous testing leads the way to success!</p>
 
  </details> 
  <hr /> 
