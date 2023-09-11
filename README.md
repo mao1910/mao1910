@@ -133,6 +133,578 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [AWS open source newsletter, #173](https://dev.to/aws/aws-open-source-newsletter-173-3bof) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  September 11th, 2023 - Instalment #173
+</h2>
+
+<p>Welcome to #173 of the AWS open source newsletter, bringing you all the news and latest projects for AWS developers. This weeks new projects include a Golang based SDK for kernel eBPF operations, a project that helps you to optimise your network performance, a couple of projects for Apache Flink users, as well as a handful of different tools and demos featuring open source technologies helping to drive innovation in generative AI. !As well as the new projects, we also have content this week on open source technologies including ebpf, Apache Flink, Griptape, AWS Amplify, Amazon Corretto, Smithy, lakeFS, Jupyter, GitLab, OpenSearch, Apache Kafka, Apache Iceberg, OpenQAOA, AWS Toolkit for Visual Studio, Apache Airflow, PostgreSQL, MySQL, AWS SAM, PyTorch, and Flux. </p>
+
+<p>Finally, be sure to check out the events section as there are a few events happening this week. Before you dive into the newsletter, check out the following information on open source mentorship program being sponsored by the OpenSearch project.</p>
+
+<p><strong>Open Source Mentorship</strong></p>
+
+<p>The OpenSearch group is going to be doing their second cohort of our open source mentorship program. This program helps new developers make contributions to open source software, giving them a portfolio to launch them into their career. This is a really exciting opportunity, so please make some time to read <a href="https://aws-oss.beachgeek.co.uk/38p">Receive mentorship from Amazon engineers and accelerate your career in Tech</a> where Iskander Rakhman talks about the history of the program, provides lots of details you will want to know, and provides a link where you can sign up. Please share with anyone you know who is looking for an opportunity like this to kick start their open source journey.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3UiWUaZj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://opensearch.org/assets/media/blog-images/2023-09-05-college-contributor-initiative/Hot%2520Air%2520Balloon.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3UiWUaZj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://opensearch.org/assets/media/blog-images/2023-09-05-college-contributor-initiative/Hot%2520Air%2520Balloon.jpg" alt="image of open source mentorship blog post" width="800" height="369"></a></p>
+
+<p><strong>Feedback</strong></p>
+
+<p>Before you dive in however, I need your help!  Please please please take 1 minute to <a href="https://www.pulse.aws/promotion/10NT4XZQ">complete this short survey</a> and you will forever have my gratitude! </p>
+
+<h3>
+  
+  
+  Celebrating open source contributors
+</h3>
+
+<p>The articles and projects shared in this newsletter are only possible thanks to the many contributors in open source. I would like to shout out and thank those folks who really do power open source and enable us all to learn and build on top of what they have created.</p>
+
+<p>So thank you to the following open source heroes:  Jay Pillai, Shikhar Kwatra, Karthik Sonti,  Ken Collins, Supratip Banerjee, Nathan Peck, Lionel Tchami, Dr. Aparna Sundar, Will Childs-Klein, Andrew Foss, Vijay Karumajji, Eric Johnson, Rio Astamal,  Sukhpreet Bedi, Betty Zheng, and Iskander Rakhman</p>
+
+<h3>
+  
+  
+  Latest open source projects
+</h3>
+
+<p><em>The great thing about open source projects is that you can review the source code. If you like the look of these projects, make sure you that take a look at the code, and if it is useful to you, get in touch with the maintainer to provide feedback, suggestions or even submit a contribution. The projects mentioned here do not represent any formal recommendation or endorsement, I am just sharing for greater awareness as I think they look useful and interesting!</em></p>
+
+<h4>
+  
+  
+  Tools
+</h4>
+
+<p><strong>hypergraph-tabular-lm</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/38l">hypergraph-tabular-lm</a> This repository contains the official implementation for the paper <a href="https://aws-oss.beachgeek.co.uk/38m">HyTrel: Hypergraph-enhanced Tabular Data Representation Learning</a> with code, data, and checkpoints. From the abstract we can see:</p>
+
+<blockquote>
+<p>Language models pretrained on large collections of tabular data have demonstrated their effectiveness in several downstream tasks. However, many of these models do not take into account the row/column permutation invariances, hierarchical structure, etc. that exist in tabular data. To alleviate these limitations, we propose HYTREL, a tabular language model, that captures the permutation invariances and three more structural properties of tabular data by using hypergraphs–where the table cells make up the nodes and the cells occurring jointly together in each row, column, and the entire table are used to form three different types of hyperedges.</p>
+</blockquote>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--clyksqDQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/awslabs/hypergraph-tabular-lm/blob/main/figure1.png%3Fraw%3Dtrue" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--clyksqDQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/awslabs/hypergraph-tabular-lm/blob/main/figure1.png%3Fraw%3Dtrue" alt="diagram of hypergraph tabular lm" width="800" height="274"></a></p>
+
+<p><strong>dpdk-setup-eks</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/37x">dpdk-setup-eks</a> provides sample code on how you can use packet acceleration using SRIOV (Single Root I/O Virtualization) and DPDK (Data Plane Development Kit) to achieve high network bandwidth, maximum throughput, and minimal latency in your cloud native workloads. SRIOV enables hardware-based acceleration in a virtualised environment that provides higher I/O performance, lower CPU utilisation, higher packet per second (PPS) performance, and lower latency. DPDK provides software-based development kit, which bypasses the operating system (OS) kernel and reduces packet processing overhead, resulting in performance improvement and lower latency. To help you get started with this code, following along with the post <a href="https://aws-oss.beachgeek.co.uk/37y">Automate Packet Acceleration configuration using DPDK on Amazon EKS</a>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PX5z_z1---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/c5b76da3e608d34edb07244cd9b875ee86906328/2023/08/30/Create-EKS-Nodegroup-with-the-pre-built-DPDK-AMI-1024x612.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PX5z_z1---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/c5b76da3e608d34edb07244cd9b875ee86906328/2023/08/30/Create-EKS-Nodegroup-with-the-pre-built-DPDK-AMI-1024x612.jpg" alt="overview of high performance networking on eks" width="800" height="478"></a></p>
+
+<p><strong>aws-ebpf-sdk-go</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/38k">aws-ebpf-sdk-go</a> is a Golang based SDK for kernel eBPF operations i.e, load/attach/detach eBPF programs and create/delete/update maps. SDK relies on Unix bpf() system calls. This SDK currently supports eBPF program types (a. Traffic Classifiers b. XDP c. Kprobes/Kretprobes d. Tracepoint probes), and Ring buffer (would need kernel 5.10+). The SDK currently does not support Map in Map and Perf buffer. This is the first version of SDK and interface is subject to change so kindly review the release notes before upgrading.</p>
+
+<p><strong>static-checker-flink</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/38n">static-checker-flink</a> The goal of this project is to catch certain issues with Apache Flink applications fast (during build/packaging). Covered cases include Kinesis connector compatibility issues, Apache Kafka connector compatibility issues, and MSK IAM Auth library issues. As an example of how you might use this, did you know that you have to use AWS Kinesis Connector 1.15.4 or above for Apache Flink 1.15 apps? This plugin is there to stop you from building an app that has such incompatible connector versions.</p>
+
+<p><strong>managed-service-for-apache-flink-blueprints</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/38o">managed-service-for-apache-flink-blueprints</a> are a curated collection of Apache Flink applications. Each blueprint will walk you through how to solve a practical problem related to stream processing using Apache Flink. These blueprints can be leveraged to create more complex applications to solve your business challenges in Apache Flink, and they are designed to be extensible. We will feature examples for both the DataStream and Table API where possible.</p>
+
+<p>Currently the repo contains two blueprints, and you will find examples of Apache Flink applications that can be run locally, on an open source Apache Flink cluster, or on Managed Service for Apache Flink cluster.</p>
+
+<h3>
+  
+  
+  Demos, Samples, Solutions and Workshops
+</h3>
+
+<p><strong>generative-ai-demo-on-miro</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/38g">generative-ai-demo-on-miro</a> is the source code for a super cool demo that shows three Generative AI use-cases integrated into single solution on Miro board (digital whiteboard). It turns Python notebooks into dynamic interactive experience, where several team members can brainstorm, explore, exchange ideas empowered by privately hosted Sagemaker generative AI models. This demo can be easily extended by adding use-cases to demonstrate new concepts and solutions.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fM1D1ox0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://github.com/aws-samples/generative-ai-demo-on-miro/blob/main/media/genai-demo-960x540_low_fps.gif%3Fraw%3Dtrue" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fM1D1ox0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://github.com/aws-samples/generative-ai-demo-on-miro/blob/main/media/genai-demo-960x540_low_fps.gif%3Fraw%3Dtrue" alt="demo of generative miro board" width="" height=""></a></p>
+
+<p><strong>lambda-rag</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/38h">lambda-rag</a> is  a Retrieval Augmented Generation Chat AI Demo from AWS Hero Ken Collins. This OpenAI based RAG chat application that can help you learn about AI retrieval patterns. The technologies here are beginner friendly and easy to deploy to AWS Lambda. You will need an OpenAI API key to run this application, so check out the README for more details on other dependencies.</p>
+
+<p>To help you get started and help explain everything,  Ken has put together a couple of great blog posts that really do a fantastic job of explaining the approach and the details. Make sure you read <a href="https://aws-oss.beachgeek.co.uk/38j">RAGs To Riches - Part #1 Generative AI &amp; Retrieval</a>, and the not surprisingly named, <a href="https://aws-oss.beachgeek.co.uk/38i">RAGs To Riches - Part #2 Building On Lambda</a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bRnT2h2w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://raw.githubusercontent.com/metaskills/lambda-rag/main/public/lambda-rag-hats-light.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bRnT2h2w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://raw.githubusercontent.com/metaskills/lambda-rag/main/public/lambda-rag-hats-light.png" alt="example demo screenshot of rag demo app" width="800" height="514"></a></p>
+
+<p><strong>griptape-hello-world</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/38e">griptape-hello-world</a> Griptape is an open source project that provides an enterprise grade alternative to tools like LangChain, and in this repo I share some code that I put together whilst testing it out as part of writing a short blog post on this project, <a href="https://aws-oss.beachgeek.co.uk/38f">Getting gnarly with AI - a quick look at Griptape, an enterprise ready alternative to LangChain</a>. Let me know what you think if you try this out.</p>
+
+<p><strong>genai-jumpstart-amplify-cdk-app</strong></p>
+
+<p><a href="https://aws-oss.beachgeek.co.uk/383">genai-jumpstart-amplify-cdk-app</a> In this project we show you how you can take a SageMaker Generative AI model, expose it as a SageMaker Endpoint and consume the Foundational Model in a React Amplify front end. This sample project also demonstrates an implementation of Retrieval Augmented Generation using AWS OpenSearch. The project illustrates how to take sample documents and use a SageMaker Endpoint running an Embeddings LLM to get the embeddings and create an embeddings index within OpenSearch. The app integrates with Cognito for authentication. All the backend components including Lambda, SageMaker Endpoints, OpenSearch, Fargate all run within a VPC. </p>
+
+<p>Jay Pillai, Shikhar Kwatra, and Karthik Sonti have put together a detailed blog post, <a href="https://aws-oss.beachgeek.co.uk/384">Build a secure enterprise application with Generative AI and RAG using Amazon SageMaker JumpStart</a>, to help bootstrap you with this code.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wBPu8eJg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2023/08/23/genai-1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wBPu8eJg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2023/08/23/genai-1.png" alt="overview of genai amplify demo app architecture" width="800" height="590"></a></p>
+
+<h3>
+  
+  
+  AWS and Community blog posts
+</h3>
+
+<p><strong>Community round up</strong></p>
+
+<p>The community round up is my favourite part of the newsletter, as I get to read about some of the great open source work being done by the AWS community. This week starts off with AWS Community Builder Supratip Banerjee who takes a look at how to build Data version control using lakeFS, an open-source project that provides format-agnostic version control for data lakes, in the post <a href="https://aws-oss.beachgeek.co.uk/38a">A Step-by-Step Guide to Implementing Data Version Control</a>. Next up we have Nathan Peck who has put together <a href="https://aws-oss.beachgeek.co.uk/38b">Deploy Jupyter notebook container with Amazon ECS</a>, which is a nice detailed blueprint that shows how you can deploy Jupyter notebooks on Amazon ECS, leveraging underlying infrastructure optimised for AI (AWS Inferentia and AWS Trainium instance types). AWS Community Builders Lionel Tchami takes a look at setting up CI/CD pipelines using GitLab in his post, <a href="https://aws-oss.beachgeek.co.uk/38c">Every Project Deserves its CI/CD pipeline, no matter how small</a>, something I think we can all agree on. To wrap things up this week, we finish with Dr. Aparna Sundar who has put together <a href="https://aws-oss.beachgeek.co.uk/38d">OpenSearch Dashboards: A usability snapshot</a> that takes a look at the approach taken to enhance the user experience for OpenSearch users.</p>
+
+<p><strong>Amazon Corretto</strong></p>
+
+<p>Amazon Corretto Crypto Provider (ACCP)  is a collection of high-performance cryptographic implementations exposed via standard JCA/JCE interfaces, something I have spoken and demoed in the past. It is super cool stuff! I was therefore delighted when I saw Will Childs-Klein's post, <a href="https://aws-oss.beachgeek.co.uk/37z">Accelerating JVM cryptography with Amazon Corretto Crypto Provider 2</a> which looks at the updated version (ACCP 2) delivers comprehensive performance enhancements, with some algorithms (such as elliptic curve key generation) seeing a greater than 13-fold improvement over ACCP 1. This release also sees changes to the backing cryptography library for ACCP from OpenSSL (used in ACCP 1) to the AWS open source cryptography library, AWS libcrypto (AWS-LC). If you are a Java developer, then this is a must read post this week.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--htytlXIK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2023/08/29/img1-2.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--htytlXIK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2023/08/29/img1-2.jpg" alt="overview of accp2 vs accp1 benchmark" width="800" height="448"></a></p>
+
+<p><strong>Smithy</strong></p>
+
+<p>Smithy is an open-source Interface Definition Language (IDL) and set of tools for building web services, created by AWS. AWS uses Smithy to model services, generate server scaffolding, generate SDKs for multiple languages, and generate AWS SDKs. Andrew Foss is excited to announce the release of a new capability, which he writes about in his post <a href="https://aws-oss.beachgeek.co.uk/389">Creating Smithy Projects with Smithy Init</a>. The release of the init command in Smithy CLI, enables developers to create new Smithy projects quickly and easily. Jump into the post to find out more about Smithy and this new update. [hands on]</p>
+
+<p><strong>Other posts and quick reads</strong></p>
+
+<ul>
+<li>
+<a href="https://aws-oss.beachgeek.co.uk/380">Introducing Amazon MSK as a source for Amazon OpenSearch Ingestion</a> looks at Amazon MSK as a source to Amazon OpenSearch Ingestion, a serverless, fully managed, real-time data collector for OpenSearch Service that makes this ingestion even easier [hands on]</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3-aFYt6E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2023/08/22/BDB-3631-image001.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3-aFYt6E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2023/08/22/BDB-3631-image001.png" alt="overview of amazon msk and opensearch ingestion" width="800" height="340"></a></p>
+
+<ul>
+<li>
+<a href="https://aws-oss.beachgeek.co.uk/381">Query your Iceberg tables in data lake using Amazon Redshift (Preview)</a> provides an example of querying an Iceberg table in Redshift using files stored in Amazon S3, demonstrating some of the key features like efficient row-level update and delete, and the schema evolution experience [hands on]</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EDk-x2sa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2023/08/29/BDB-3187-image001.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EDk-x2sa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2023/08/29/BDB-3187-image001.jpg" alt="overview of apache iceberg tables in redshift" width="800" height="827"></a></p>
+
+<ul>
+<li>
+<a href="https://aws-oss.beachgeek.co.uk/386">Optimization with OpenQAOA on Amazon Braket</a> explores how the open source project OpenQAOA is integrated  with Amazon Braket, demonstrating how to cast an optimisation problem</li>
+<li>
+<a href="https://aws-oss.beachgeek.co.uk/387">Build streaming data pipelines with Amazon MSK Serverless and IAM authentication</a> shows you how to create a serverless integration Lambda function between API Gateway and MSK Serverless as a way to do IAM authentication when your producer is not written in Java [hands on]</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VRwlfd-B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2023/08/24/image001.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VRwlfd-B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2023/08/24/image001.png" alt="overview of Amazon MSK serverless and IAM authentication" width="800" height="353"></a></p>
+
+<ul>
+<li>
+<a href="https://aws-oss.beachgeek.co.uk/388">Use the reverse token filter to enable suffix matching queries in OpenSearch</a> gives a hands on guide on how you can implement a suffix-based search [hands on]</li>
+</ul>
+
+<h3>
+  
+  
+  Quick updates
+</h3>
+
+<p><strong>AWS Toolkit for Visual Studio</strong></p>
+
+<p>Announced last week was news that the AWS Toolkit for Visual Studio is now generally available on the Arm64 version of Visual Studio (aka “Arm64 Visual Studio”). This release enables a Visual Studio user on a native Windows Arm64 device or on a device emulating Windows Arm64 on a M class Apple device to leverage the same AWS tooling that has been available to x64 versions of Visual Studio. You can read the full details in the post, <a href="https://aws-oss.beachgeek.co.uk/382">AWS Toolkit for Visual Studio adds support for Arm64 Visual Studio</a></p>
+
+<p><strong>AWS SDK</strong></p>
+
+<p>There is an upcoming change in the S3 GetObjectAttributes API, and so John Viegas has put together a post that users of the AWS SDK for Java v2, AWS SDK for .NET v3, and AWS Tools for PowerShell should read and understand how they can prepare. You can catch the post here, <a href="https://aws-oss.beachgeek.co.uk/385">Update to AWS SDK for Java v2, AWS SDK for .NET v3, and AWS Tools for PowerShell when using S3 GetObjectAttributes API</a></p>
+
+<p><strong>Apache Airflow</strong></p>
+
+<p>Amazon Managed Workflows for Apache Airflow (MWAA) has added certifications for International Organization for Standardization (ISO) and Information Security Registered Assessors Program (IRAP). Amazon Web Services (AWS) maintains certifications through extensive audits of its controls to ensure that information security risks that affect the confidentiality, integrity, and availability of company and customer information are appropriately managed. </p>
+
+<p>Amazon MWAA is a managed orchestration service for Apache Airflow that makes it easier to set up and operate end-to-end data pipelines in the cloud. Amazon MWAA has certification for compliance with ISO/IEC 27001:2013, 27017:2015, 27018:2019, 27701:2019, 22301:2019, 9001:2015, and CSA STAR CCM v4.0. You can download copies of the AWS ISO certificates and use them to jump-start your own certification efforts. Further, with IRAP certification, you can meet the Australian Government Information Security Manual (ISM) control objectives while using Amazon MWAA.</p>
+
+<p>In addition to ISO and IRAP certification, Amazon MWAA is also Health Insurance Portability and Accountability Act (HIPAA) eligible, in scope for System and Organization Controls (SOC) reports, and Payment Card Industry Data Security Standard (PCI) compliant. </p>
+
+<p><strong>MySQL and PostgreSQL</strong></p>
+
+<p>Amazon Relational Database Service (RDS) announces Amazon RDS Extended Support for Amazon Aurora and Amazon RDS database instances running MySQL 5.7, PostgreSQL 11, and higher major versions beyond the community end of life. Amazon RDS Extended Support provides you more time, up to three years, to upgrade to a new major version to help you meet your business requirements. Extended Support is available for Aurora MySQL-compatible edition, Aurora PostgreSQL-compatible edition, RDS for MySQL and RDS for PostgreSQL.</p>
+
+<p>Starting in December, 2023, you will be able to opt-in to Amazon RDS Extended Support through the AWS Console, CLI, and APIs. When you opt-in to Extended Support, Amazon RDS will provide critical security and bug fixes for your MySQL and PostgreSQL databases after the community ends support for a major version. You can run your databases on Amazon Aurora and Amazon RDS with Extended Support for up to three years beyond a major version’s end of standard support date. Learn more about Extended Support, including supported engine versions, in the Amazon Aurora user guide and Amazon RDS User Guide.</p>
+
+<p>Amazon RDS Extended Support is now available for Aurora MySQL-Compatible version 2 and higher, Aurora PostgreSQL-Compatible version 11 and higher, RDS for MySQL major versions 5.7 and higher, and RDS for PostgreSQL major versions 11 and higher in AWS Commercial and AWS GovCloud (US) Regions.</p>
+
+<p>Find out more by reading the post, <a href="https://aws-oss.beachgeek.co.uk/37w">Introducing Amazon RDS Extended Support for MySQL databases on Amazon Aurora and Amazon RDS</a>, where Vijay Karumajji makes some compelling arguments why you should try and upgrade, but failing that, how  Amazon RDS Extended Support can help.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8n2jr4FJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2023/09/01/DBBLOG-3499_img1-1024x308.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8n2jr4FJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2023/09/01/DBBLOG-3499_img1-1024x308.png" alt="overview of extended support diagram for MySQL" width="800" height="241"></a></p>
+
+<p><strong>PostreSQL</strong></p>
+
+<p>Aside from the Extended support news just mentioned, there are a couple of other updates worth noting.</p>
+
+<p>First is news that Amazon Relational Database Service (RDS) for PostgreSQL now supports the h3-pg extension, which provides an API to H3, an open-source hexagonal, hierarchical geospatial indexing system. With this extension, you can perform different kinds of spatial analysis over large datasets, including efficient indexing and lookups, modeling flow through a grid, and applying machine learning models over your geospatial data stored in Amazon RDS for PostgreSQL. The H3 library provides an invariant set of hexagonal map tiles over multiple layers of resolution. This allows the h3-pg extension to index your geospatial data so you can efficiently query data on your maps. For example, a retailer planning new outlets may want to create a heatmap visualisation using traffic, mobility, demographic, and other geospatial datasets to identify locations best suited for their customers. You can also use H3 and PostGIS together to perform different geospatial analyses. h3-pg is available on database instances in Amazon RDS running PostgreSQL 15.4, 14.9, 13.12 and higher in all applicable AWS Regions.</p>
+
+<p>Finally, Amazon RDS for PostgreSQL 16 Release Candidate 1 (RC1) is now available in the Amazon RDS Database Preview Environment, allowing you to evaluate the pre-release of PostgreSQL 16 on Amazon RDS for PostgreSQL. You can deploy PostgreSQL 16 RC1 in the Preview Environment and have the same benefits of a fully managed database, making it simpler to set up, operate, and monitor databases. PostgreSQL 16RC1 in the Preview Environment also includes support for logical decoding on read replicas, AWS libcrypto (AWS-LC), and over 80 PostgreSQL extensions such as pgvector, pg_tle, h3-pg, pg_cron, and rdkit.</p>
+
+<p>The PostgreSQL community released PostgreSQL 16 RC1 on August 31, 2023 that enables logical replication from standbys and includes numerous performance improvements. PostgreSQL 16 also adds support for SQL/JSON constructors and identity functions, more query types that can use parallelism, introduction of using SIMD CPU acceleration, and the ‘pg_stat_io’ view that provides statistics on I/O usage. The Amazon RDS Database Preview Environment supports the latest generation of instance classes that are retained for a maximum period of 60 days and are automatically deleted after the retention period. Amazon RDS database snapshots that are created in the Preview Environment can only be used to create or restore database instances within the Preview Environment. You can use the PostgreSQL dump and load functionality to import or export your databases from the Preview Environment.</p>
+
+<p><strong>AWS Serverless Application Model (SAM)</strong></p>
+
+<p>The AWS Serverless Application Model (SAM) Command Line Interface (CLI) announces the launch of SAM CLI local testing and debugging on HashiCorp Terraform. The AWS SAM CLI is a developer tool that makes it easier to build, test, package, and deploy serverless applications. Terraform is an infrastructure as code tool that lets you build, change, and version cloud and on-premises resources safely and efficiently.</p>
+
+<p>Customers can now use the SAM CLI to locally test and debug AWS Lambda functions and Amazon API Gateway defined in their Terraform application. SAM CLI can read the infrastructure resource information from the Terraform project and start Lambda functions and API Gateway endpoints locally running in a Docker container. Customers can invoke their function or API endpoint with an event payload, or attach a debugger using AWS toolkits on IDE to step through the Lambda function code. Previously, SAM CLI only supported local testing and debugging on CloudFormation templates. With this change, Terraform users can use the SAM CLI local testing commands like sam local start-api, sam local start-lambda and sam local invoke on their Terraform projects to speed up their development cycles. They can also use sam local generate command to generate mock test events for local testing.</p>
+
+<p>This feature is supported with Terraform version 1.1+ and you can find out more by reading the post from Eric Johnson, <a href="https://aws-oss.beachgeek.co.uk/37v">AWS SAM support for HashiCorp Terraform now generally available</a></p>
+
+<p><strong>PyTorch</strong></p>
+
+<p>SageMaker Multi-Model Endpoint (MME) is a fully managed capability that allows customers to deploy 1000s of models on a single SageMaker endpoint and reduce costs. Until today, MME was not supported for PyTorch models deployed using TorchServe. Now, customers can use MME to deploy 1000s of PyTorch models using TorchServe to reduce inference costs.</p>
+
+<p>Customers are increasingly building ML models using PyTorch to achieve business outcomes, To deploy these ML models, customers use TorchServe on CPU/GPU instances to meet desired latency and throughput goals. However, costs can add up if customers are deploying 10+ models. With MME support for TorchServe, customers can deploy 1000s of PyTorch based models on a single SageMaker endpoint. Behind the scenes, MME will run multiple models on a single instance and dynamically load/unload models across multiple instances based on the incoming traffic. With this feature, customers can save costs, as they can share instances behind an endpoint across 1000s of models and only pay for the number of instances used. </p>
+
+<p>This feature supports PyTorch models which use SageMaker TorchServe Inference Container with all machine learning optimised CPU instances and single GPU instances in ml.g4dn, ml.g5, ml.p2, ml.p3 family. It is also available in all regions supported by Amazon SageMaker. </p>
+
+<p><strong>lightsail-miab-installer</strong></p>
+
+<p>This is a project from my fellow developer advocate Rio Astamal, that provides a user-friendly command-line tool to streamline the setup of Mail-in-a-Box on Amazon Lightsail. Rio contacted me that <a href="https://aws-oss.beachgeek.co.uk/2ym">lightsail-miab-installer</a> has had an update so go check out the changelog for updates. </p>
+
+<h3>
+  
+  
+  Videos of the week
+</h3>
+
+<p><strong>Start building with PL/Rust in Amazon RDS for PostgreSQL</strong></p>
+
+<p>Rust combines the performance and resource efficiency of compiled languages like C with mechanisms that limit the risks from unsafe memory use. As a PostgreSQL trusted procedural language, PL/Rust provides memory safety so that an unprivileged user can run code in the database without the risk of crashing the database due to a software defect that corrupts memory. Developers can also package PL/Rust code as Trusted Language Extensions (TLE) for PostgreSQL to run on Amazon RDS. RDS for PostgreSQL customers can now use Rust to build high performance user defined functions to extend PostgreSQL for compute-intensive data processing. </p>
+
+<p>In this session, Sukhpreet Bedi provides a brief introduction to Rust, walk you through how to deploy RDS for PostgreSQL with PL/Rust enabled, and show you how to write high-performance Rust code directly to your database.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/ZluZH0Q5Mhw">
+</iframe>
+</p>
+
+<p><strong>Mastering GitOps with Flux: Step-by-Step Guide for Effective Implementation</strong></p>
+
+<p>GitOps is an effective way to achieve continuous deployment for Kubernetes clusters while meeting enterprise requirements like security, separation of privileges, audibility, and agility. In this series of 4 demos, Betty Zheng will show you some good practices for GitOps based on EKS and Flux CD. Check the YouTube listing for the supporting code so you can follow along too.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/_jdq7BhK4IQ">
+</iframe>
+</p>
+
+<p><strong>Open Source Brief</strong></p>
+
+<p>Now featured every week in the AWS Community Radio show, grab a quick five minute recap of the weekly open source newsletter from yours truely.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/zQjtBsjjCcc">
+</iframe>
+</p>
+
+<p>Check out the <a href="https://aws-oss.beachgeek.co.uk/359">playlist here</a>.</p>
+
+<p><strong>Build on Open Source</strong></p>
+
+<p>For those unfamiliar with this show, Build on Open Source is where we go over this newsletter and then invite special guests to dive deep into their open source project. Expect plenty of code, demos and hopefully laughs. We have put together a playlist so that you can easily access all (sixteen) of the episodes of the Build on Open Source show. <a href="https://aws-oss.beachgeek.co.uk/episodes">Build on Open Source playlist</a>.</p>
+
+<p>We are currently planning the third series - if you have an open source project you want to talk about, get in touch and we might be able to feature your project in future episodes of Build on Open Source.</p>
+
+<h1>
+  
+  
+  Events for your diary
+</h1>
+
+<p>If you are planning any events in 2023, either virtual, in person, or hybrid, get in touch as I would love to share details of your event with readers. </p>
+
+<p><strong>Building ML capabilities with PostgreSQL and pgvector extension</strong><br>
+<strong>YouTube, 14th September 4pm UK time</strong></p>
+
+<p>Generative AI and Large Language Models (LLMs) are powerful technologies for building applications with richer and more personalized user experiences. Application developers who use Amazon Aurora for PostgreSQL or Amazon RDS for PostgreSQL can use pgvector, an open-source extension for PostgreSQL, to harness the power of generative AI and LLMs for driving richer user experiences. Register now to learn more about this powerful technology.</p>
+
+<p>Watch it <a href="https://aws-oss.beachgeek.co.uk/325">live on YouTube</a>.</p>
+
+<p><strong>Build ML into your apps with PostgreSQL and the pgvector extension</strong><br>
+<strong>YouTube, 21st September 4pm UK time</strong></p>
+
+<p>This office hours session is a follow up for those who attended the fireside chat titled "Building ML capabilities into your apps with PostgreSQL and the open-source pgvector extension". Others are also welcome. Office hours attendees can ask questions related to this topic. Application developers who use Amazon Aurora for PostgreSQL or Amazon RDS for PostgreSQL can use pgvector, an open-source extension for PostgreSQL, to harness the power of generative AI and LLMs for driving richer user experiences. Join us to ask your questions and hear the answers to the most frequently asked questions about the pgvector extension for PostgreSQL.</p>
+
+<p>Watch it <a href="https://aws-oss.beachgeek.co.uk/326">live on YouTube</a>.</p>
+
+<p><strong>Open Source Summit, Europe</strong><br>
+<strong>September 19th-21st, Bilboa Spain</strong></p>
+
+<p>"Open Source Summit is the premier event for open source developers, technologists, and community leaders to collaborate, share information, solve problems, and gain knowledge, furthering open source innovation and ensuring a sustainable open source ecosystem. It is the gathering place for open-source code and community contributors." You will find AWS as well as myself at Open Source Summit this year, so come by the AWS booth and say hello - from the glimpses I have seen so far, it is going to be awesome! Find out more at the official site, <a href="https://aws-oss.beachgeek.co.uk/31f">Open Source Summit Europe 2023</a>.</p>
+
+<p><strong>OpenSearchCon</strong><br>
+<strong>Seattle, September 27-29, 2023</strong></p>
+
+<p>Registration is now open source OpenSearchCon. Check out this post from Daryll Swager, <a href="https://aws-oss.beachgeek.co.uk/2zk">Registration for OpenSearchCon 2023 is now open!</a> that provides you with what you can expect, and resources you need to help plan your trip.</p>
+
+<p><strong>CDK Day, 2023</strong><br>
+<strong>Online, 29th September 2023</strong></p>
+
+<p>Back for the fourth instalment, this Community led event is a must attend for anyone working with infrastructure as code using the AWS Cloud Development Kit (CDK). It is intended to provide learning opportunities for all users of the CDK and related libraries. The event will be live streamed on YouTube, and you check more at the website, <a href="https://aws-oss.beachgeek.co.uk/fr">CDK Day</a> </p>
+
+<p><strong>All Things Open</strong><br>
+<strong>October, 15th-17th, Raleigh Convention Center, Raleigh, North Carolina</strong></p>
+
+<p>I will be attending and speaking at All Things Open, looking at Apache Airflow as an container orchestrator. I will be there with a bunch of fellow AWS colleagues, and I hope to meet some of you there. Check us out at the AWS booth, where you will find me and the other AWS folk throughout the event. Check out the event and sessions/speakers at the official webpage for the event, <a href="https://aws-oss.beachgeek.co.uk/31e">AllThingsOpen 2023</a></p>
+
+<p><strong>Open Source India</strong><br>
+<strong>October 19th-21st, NIMHANS Convention Center, Bengaluru</strong></p>
+
+<p>One of the most important open source events in the region, Open Source India will be welcoming thousands of attendees all to discuss and learn about open source technologies. I will be there too, doing a talk so I would love to meet with any of you who are also planning on attending. Check out more details on their web page, <a href="https://aws-oss.beachgeek.co.uk/31d">here</a>.</p>
+
+<p><strong>Cortex</strong><br>
+<strong>Every other Thursday, next one 16th February</strong></p>
+
+<p>The Cortex community call happens every two weeks on Thursday, alternating at 1200 UTC and 1700 UTC. You can check out the GitHub project for more details, go to the <a href="https://aws-oss.beachgeek.co.uk/2h5">Community Meetings</a> section. The community calls keep a rolling doc of previous meetings, so you can catch up on the previous discussions. Check the <a href="https://aws-oss.beachgeek.co.uk/2h6">Cortex Community Meetings Notes</a> for more info.</p>
+
+<p><strong>OpenSearch</strong><br>
+<strong>Every other Tuesday, 3pm GMT</strong></p>
+
+<p>This regular meet-up is for anyone interested in OpenSearch &amp; Open Distro. All skill levels are welcome and they cover and welcome talks on topics including: search, logging, log analytics, and data visualisation.</p>
+
+<p>Sign up to the next session, <a href="https://aws-oss.beachgeek.co.uk/1az">OpenSearch Community Meeting</a></p>
+
+<h3>
+  
+  
+  Stay in touch with open source at AWS
+</h3>
+
+<p>Remember to check out the <a href="https://aws.amazon.com/opensource/?opensource-all.sort-by=item.additionalFields.startDate&amp;opensource-all.sort-order=asc">Open Source homepage</a> to keep up to date with all our activity in open source by following us on <a href="https://twitter.com/AWSOpen">@AWSOpen</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [🖊 I am building a pastebin alternative!](https://dev.to/shaancodes/i-am-building-a-pastebin-alternative-57o2) 
+ <details><summary>Article</summary> <p>Hi.<br>
+I wanted to learn T3 stack as it is trend right now. So what better way is there to learn a particular stack than actually creating a project in it. But, I did not wanted to create the traditional recipe app, social media app or a boring e-commerce app. I wanted to create something which can be used by others also.</p>
+
+<p>So, I thought to myself what are the apps which I use, but it could've been better if I built it. I thought of lot of apps, but later came across pastebin. I thought to myself, "I could build it better".</p>
+
+<h2>
+  
+  
+  Is it a regular pastebin clone?
+</h2>
+
+<p>No, it's not exactly a pastebin clone, but rather I'm planning it to build it as an alternative to it. It's going to be better, with beautiful UI and everything. </p>
+
+<h2>
+  
+  
+  How is it going to be different?
+</h2>
+
+<p>The difference is I am gonna let users write notion like documents and then share it, unlike pastebin which only lets us share text. For writing documents, I'm gonna use <a href="https://novel.sh/">Novel.sh</a>. It is a WYSIWYG editor which provides interface and features similar to Notion. It also lets us use OpenAI API to integrate AI into it.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pEW7PWB8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2v4xi3tkwerp9a7e23yd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pEW7PWB8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2v4xi3tkwerp9a7e23yd.png" alt="Novel.sh" width="800" height="693"></a></p>
+
+<p>It will have all the regular features like document sharing, password protection, document exposure, document expiration etc. For now, I'm planning to build a MVP in a week or so, and later I'll improve it by introducing more features into it.</p>
+
+<h2>
+  
+  
+  What tech stack I'm planning to use?
+</h2>
+
+<ul>
+<li>T3 stack</li>
+<li>Novel.sh (WYSIWYG editor)</li>
+<li>shadcn/ui</li>
+<li>MySql</li>
+<li>PlanetScale</li>
+<li>Vercel</li>
+</ul>
+
+<p>I am bad at naming things 😁, I had hard time thinking about a name for this project. I came up with "docshare", but I think it can be further improved. I'd appreciate it if you guys can help me come up with a perfect name for this project. Thanks in advance!</p>
+
+<h3>
+  
+  
+  My Socials
+</h3>
+
+<p>Twitter - <a href="https://twitter.com/shaancodes">https://twitter.com/shaancodes</a></p>
+
+<p>Instagram - <a href="https://www.instagram.com/shaancodes/">https://www.instagram.com/shaancodes/</a></p>
+
+<p>GitHub - <a href="https://github.com/shaan-alam/">https://github.com/shaan-alam/</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Which AI Tool is the Best?](https://dev.to/ronakmunjapara/which-ai-tool-is-the-best-1987) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8iWs-JGQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fkbjq67b4fmemjbfmf08.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8iWs-JGQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fkbjq67b4fmemjbfmf08.jpeg" alt="Image description" width="800" height="800"></a><br>
+In today's digital age, the integration of artificial intelligence (AI) has revolutionized various industries. From healthcare to finance, AI has proven to be a game-changer. But when it comes to choosing the best AI tool, the landscape can be overwhelming. With a multitude of options available, it's essential to navigate the terrain wisely to select the one that aligns with your specific needs. In this comprehensive guide, we'll delve into the world of AI tools, dissecting their features, applications, and advantages, to help you make an informed decision.</p>
+
+<h2>
+  
+  
+  Understanding the AI Ecosystem
+</h2>
+
+<p>Before we embark on our journey to uncover the best AI tool, it's crucial to understand the diverse AI ecosystem. Artificial intelligence encompasses a wide range of technologies and applications, each designed to address specific challenges and tasks. Here are some key components of the AI landscape:</p>
+
+<h3>
+  
+  
+  Machine Learning
+</h3>
+
+<p>Machine learning is the foundation of many AI tools. It involves training algorithms to learn from data and make predictions or decisions without explicit programming. Machine learning finds applications in image recognition, natural language processing, and recommendation systems.</p>
+
+<h3>
+  
+  
+  Natural Language Processing (NLP)
+</h3>
+
+<p>NLP focuses on enabling computers to understand, interpret, and generate human language. It powers chatbots, virtual assistants, and language translation tools.</p>
+
+<h3>
+  
+  
+  Computer Vision
+</h3>
+
+<p>Computer vision enables machines to interpret and process visual information from the world. It plays a vital role in facial recognition, autonomous vehicles, and medical image analysis.</p>
+
+<h3>
+  
+  
+  Robotics
+</h3>
+
+<p>AI-driven robotics involve the development of intelligent machines that can perform tasks autonomously or semi-autonomously. Industrial automation and healthcare are prominent domains for AI robotics.</p>
+
+<h3>
+  
+  
+  Deep Learning
+</h3>
+
+<p>Deep learning is a subset of machine learning that involves neural networks with multiple layers. It's used for complex tasks like voice recognition, image analysis, and autonomous decision-making.</p>
+
+<h3>
+  
+  
+  AI in Business
+</h3>
+
+<p>AI has gained prominence in the business world, with applications ranging from predictive analytics to customer relationship management. Businesses use AI to enhance operations, improve customer experiences, and drive innovation.</p>
+
+<h2>
+  
+  
+  The Quest for the Best AI Tool
+</h2>
+
+<p>Now that we've gained a foundational understanding of AI, let's embark on the quest to find the best AI tool. It's important to note that the "best" AI tool varies depending on your specific needs and goals. What suits one organization or individual may not be the optimal choice for another. To determine the best AI tool for you, consider the following factors:</p>
+
+<h3>
+  
+  
+  1. <strong>Use Case</strong>
+</h3>
+
+<p>Define your specific use case. Are you looking for an AI tool to automate customer support, analyze large datasets, or enhance your creative projects? Understanding your use case is the first step in narrowing down your options.</p>
+
+<h3>
+  
+  
+  2. <strong>Scalability</strong>
+</h3>
+
+<p>Consider the scalability of the AI tool. Will it accommodate your needs as your requirements grow? Scalability is crucial for businesses that anticipate expansion.</p>
+
+<h3>
+  
+  
+  3. <strong>Ease of Integration</strong>
+</h3>
+
+<p>How easily can the AI tool integrate with your existing systems and workflows? Seamless integration can save time and resources.</p>
+
+<h3>
+  
+  
+  4. <strong>Accuracy and Performance</strong>
+</h3>
+
+<p>Assess the accuracy and performance of the AI tool in your chosen domain. Look for user reviews, case studies, and performance benchmarks.</p>
+
+<h3>
+  
+  
+  5. <strong>Cost and ROI</strong>
+</h3>
+
+<p>Evaluate the cost of implementing the AI tool and weigh it against the potential return on investment (ROI). Consider both short-term and long-term expenses.</p>
+
+<h3>
+  
+  
+  6. <strong>Support and Training</strong>
+</h3>
+
+<p>Check whether the AI tool provider offers adequate support, training, and documentation. A robust support system can be invaluable during implementation.</p>
+
+<h3>
+  
+  
+  7. <strong>Security and Compliance</strong>
+</h3>
+
+<p>For businesses, security and compliance are paramount. Ensure that the AI tool aligns with your data security and regulatory requirements.</p>
+
+<h2>
+  
+  
+  Top Contenders in the AI Arena
+</h2>
+
+<p>While the best AI tool ultimately depends on your specific needs, we can explore some top contenders that have garnered acclaim in various domains:</p>
+
+<h3>
+  
+  
+  1. <strong>OpenAI's GPT-3</strong>
+</h3>
+
+<p>GPT-3, powered by OpenAI, is a language processing AI model known for its ability to generate human-like text. It's utilized in content generation, chatbots, and language translation.</p>
+
+<h3>
+  
+  
+  2. <strong>IBM Watson</strong>
+</h3>
+
+<p>IBM Watson offers a suite of AI solutions for businesses, including AI-powered analytics, natural language processing, and automation tools. It's renowned for its versatility and scalability.</p>
+
+<h3>
+  
+  
+  3. <strong>Google Cloud AI</strong>
+</h3>
+
+<p>Google Cloud AI provides a range of AI services, from machine learning APIs to AI platform tools. It's a favorite among businesses looking to leverage Google's extensive AI capabilities.</p>
+
+<h3>
+  
+  
+  4. <strong>Amazon Web Services (AWS) AI</strong>
+</h3>
+
+<p>AWS AI offers a comprehensive set of AI and machine learning services, including computer vision, natural language processing, and predictive analytics.</p>
+
+<h3>
+  
+  
+  5. <strong>Microsoft Azure AI</strong>
+</h3>
+
+<p>Microsoft Azure AI provides a suite of AI tools for developers and businesses, with offerings in machine learning, computer vision, and speech recognition.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>The quest for the best AI tool is an ongoing journey, as the field of artificial intelligence continues to evolve. To make an informed choice, start by clearly defining your use case and objectives. Consider scalability, ease of integration, performance, cost, and support. Finally, explore the top contenders in the AI landscape to find the tool that aligns with your unique needs. The best AI tool is the one that empowers you to achieve your goals and unlock the full potential of artificial intelligence.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Let’s Create an End-to-End Web Scraping Pipeline With Scrapy!](https://dev.to/nanellooo/lets-create-an-end-to-end-web-scraping-pipeline-with-scrapy-261o) 
  <details><summary>Article</summary> <h1>
   
@@ -956,1032 +1528,6 @@ plt.show()
 <p>Previously, Gio worked as a software engineer building mobile apps, real-time defence systems, and VR/AR experiences. For fun, Gio enjoys low level programming, IoT hacking, and command line apps ⌨️✨.</p>
 
 <p><em>You can connect with Gio on <a href="https://twitter.com/giolaq">Twitter</a>, <a href="https://www.linkedin.com/in/glaquidara/">Linkedin</a>, and <a href="https://giolaq.dev">giolaq.dev</a>.</em></p>
-
- </details> 
- <hr /> 
-
- #### - [Convert a Hygraph Next.js project to Next.js app directory](https://dev.to/brob/convert-a-hygraph-nextjs-project-to-nextjs-app-directory-beta-4m13) 
- <details><summary>Article</summary> <p>In late 2022, the Next.js team launched their next stable version: Next.js 13. While this update came with a lot of improved functionality, one new feature is set to redefine the way you build with Next: the app directory beta.</p>
-
-<p>The app beta is not used default. It needs to be enabled and can then be incrementally adopted. In this article, we're going to take a look at the new app structure and convert an existing Hygraph project to this new structure. We'll take this step by step and see how incremental adoption really works.</p>
-
-<h2>
-  
-  
-  Required Knowledge
-</h2>
-
-<ul>
-<li>A basic understanding of <a href="https://nextjs.org/">Next.js</a>
-</li>
-<li>Basic knowledge of <a href="https://hygraph.com/learn/graphql">GraphQL</a>
-</li>
-<li>Basic knowledge of <a href="https://hygraph.com">Hygraph</a>
-</li>
-</ul>
-
-<h2>
-  
-  
-  Why the app structure?
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--m6M7jNBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/d7bqvqN5Rq6PgNQO955j" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m6M7jNBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/d7bqvqN5Rq6PgNQO955j" alt="The new file structure allows for much more flexibility including the adding of specific templates for each route such as not-found, loading, head, and more" width="800" height="450"></a></p>
-
-<p>The new app directory structure isn’t just a reorganization of your project (though it is, and that reorganization feels powerful). This new methodology utilizes <a href="https://beta.nextjs.org/docs/rendering/server-and-client-components#why-server-components">React Server Components</a> to bring many new features and mental models. With Server components, a developer can do their business logic in a React component that doesn’t need to be sent to the client. This allows for a lot less JavaScript to be sent to the browser. If you have frontend needs, you can then use client components that get sent individually to the browser. This should reduce your bundle size down to a more manageable state. Just the code you need for interactivity.</p>
-
-<p>The overall data fetching model has shifted, as well. Next has extended the <a href="https://beta.nextjs.org/docs/api-reference/fetch">native fetch() method</a> from Node and the browser APIs and has added additional caching and deduplication functionality. This means you can create requests for data in various files, but the request will only fire to your API once. Fetching your blog posts to create a list on your homepage and to create the blog page list? Now that’s 1 API request, despite writing the code in multiple places. This gives a lot of developer convenience while creating better build and serve times.</p>
-
-<p>There are even more new and improved features, but to use them, we need to be able to upgrade our project to use this new structure. It’s not as simple as moving your page files into the app directory, so let’s dig in and get things updated.</p>
-
-<h2>
-  
-  
-  Setting up a Next.js 13 project to work with the app directory
-</h2>
-
-<p>To start, we need a Next.js project. While this process is possible with any Next project using data fetching, let’s start from our simple Next example from the <a href="https://github.com/hygraph/hygraph-examples/tree/master/with-nextjs">hygraph-examples GitHub repository</a>. Run the following commands:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npx degit hygraph/hygraph-examples/with-nextjs with-nextjs
-<span class="nb">cd </span>with-nextjs
-</code></pre>
-
-</div>
-
-
-
-<p>Before we install, we’ll need to update some dependencies in the package.json file. Let’s upgrade Next to <code>^13.0.0</code> and remove the <code>react</code> and <code>react-doc</code> dependencies.</p>
-
-<p>Your package.json should now look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hygraph-with-nextjs"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"private"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"graphql-request"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.8.2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^13.0.0"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>Now we can start the development server by running <code>npm run dev</code>. Immediately on loading the local version, we’re presented with the first update. Since this was previously not running Next 13, the Link component is structured wrong. In Next 13, we no longer need to have an anchor tag inside the Link component. This is a great update, but we need to change these references. The only location the Link component is used is the homepage in <code>/src/pages/index.js</code>. Open that file, and remove the <code>&lt;a&gt;&lt;/a&gt;</code> tags to get the site to run<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// Old</span>
-    <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">slug</span><span class="p">}</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">`/products/</span><span class="p">${</span><span class="nx">slug</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">a</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
-</span>
-<span class="c1">// New</span>
-    <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">slug</span><span class="p">}</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">`/products/</span><span class="p">${</span><span class="nx">slug</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
-       <span class="p">{</span><span class="nx">name</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-<p>Now that the site runs, let’s update from the Pages directory to the new app directory.</p>
-
-<h2>
-  
-  
-  Converting from /pages to /app
-</h2>
-
-<p>Before we can convert to the app directory, we need to let Next know that we’ll be using this experimental feature. To do that, we need a configuration file. In the root of our project, let’s create a <code>next.config.js</code> file. Inside that file, add the following basic configuration.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="cm">/** @type {import('next').NextConfig} */</span>
-<span class="kd">const</span> <span class="nx">nextConfig</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">experimental</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">appDir</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">};</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">nextConfig</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>From there, we can create our app directory. Inside the src directory, add an <code>app</code> directory. We’ll be moving each of our routes to this directory. The nice thing is that each of our older routes will continue to work as we make these changes, since both directories can work at the same time.</p>
-
-<h3>
-  
-  
-  Creating the root layout component
-</h3>
-
-<p>One of the first big changes to the overall structure is the need of a “root layout.” This will be the scaffolding of Markup for all pages. This can start very simply, but have any global information that each route will need. The <code>RootLayout</code> function accepts a children object. That children object will contain the Server Components that we’ll add via each page we create.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">RootLayout</span><span class="p">({</span><span class="nx">children</span><span class="p">})</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
-            <span class="p">{</span> <span class="nx">children</span> <span class="p">}</span>
-        <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>With this layout, we can now add our first page.</p>
-
-<h3>
-  
-  
-  Adding the homepage
-</h3>
-
-<p>Instead of the <code>index.js</code> convention of the <code>/pages</code> directory, each page in the app directory will be named <code>page.js</code>. In the root of the app directory, create a new <code>page.js</code> file. This will be our homepage.</p>
-
-<p>Once you create this page, Next will thrown an error in the console. There is now a conflicting route: <code>/src/pages/index.js</code> is the same route as <code>/src/app/page.jsx</code>. For now, rename <code>/src/pages/index.js</code> to <code>oldIndex.js</code>. We’ll delete this file later, but this file is the blueprint for our new file.</p>
-
-<p>Once we rename the file, we get a new error. The <code>page.jsx</code> file is not exporting a React component. In fact, it’s exporting anything, since it’s blank. Let’s fix that and export a simple React component with an h1 of Products.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;&gt;</span>
-            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Products</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now the homepage should have the H1 instead of the product list from the old homepage. Let’s get the list of products back.</p>
-
-<p>In the old index file, we export a function called <code>getStaticProps</code> to get and pass the data to our page component. In the new structure, we don’t need to export anything or name things in any specific ways. Instead, we can create a regular async function to fetch our data.</p>
-
-<p>Before our Server Component in the new <code>page.jsx</code> file, create a new async function named <code>getProducts</code>. This run a fetch request to the Hygraph endpoint for the project and return the products array. We can then run that function in our Server Component to loop through the data and display a link to each page.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">getProducts</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api-eu-central-1.hygraph.com/v2/ck8sn5tnf01gc01z89dbc7s0o/master</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="na">query</span><span class="p">:</span> <span class="s2">`{
-                products {
-                  slug
-                  name
-                  id
-                }
-              }`</span>
-        <span class="p">})</span>
-
-    <span class="p">})</span>
-
-    <span class="kd">const</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getProducts</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;&gt;</span>
-            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Products</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
-                <span class="p">{</span><span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">product</span> <span class="o">=&gt;</span> <span class="p">(</span>
-                    <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span>
-                        <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">`/products/</span><span class="p">${</span><span class="nx">product</span><span class="p">.</span><span class="nx">slug</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
-</span>                    <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>                <span class="p">))}</span>
-            <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>A few things have changed between our old version and new. </p>
-
-<ul>
-<li>Since we’re not using <code>getStaticProps</code>, we no longer need to structure our return in a specific way. Instead, we just return back the array of products</li>
-<li>Using <code>fetch</code> instead of <code>GraphQLRequest</code>. By using fetch, we allow Next to cache the information and if we execute an identical fetch later, it won’t make a separate call, but instead use this data</li>
-</ul>
-
-<p>Once you save this in, we have a functioning homepage. These links even take us to the pages associated with our old dynamic routes — since <code>/app</code> and <code>/pages</code> can work incrementally. That could be a fine stopping point, but let’s convert our dynamic route over, as well.</p>
-
-<h3>
-  
-  
-  Converting the dynamic products route
-</h3>
-
-<p>Just like the homepage, we’ll start by setting up our structure. Instead of the dynamic route brackets happening on the file, hey happen on the directory. So the <code>/pages/products[slug].js</code> will change to be <code>/app/products/[slug]/page.jsx</code>. This allows for more flexibility and the ability to add custom, co-located features such as error pages, loading pages, and custom layouts.</p>
-
-<p>Create the new file and add a simple component like we did for the homepage.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;&gt;</span>
-            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">product</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This time, the application won’t immediately error, since the static pages aren’t being rebuilt, but if you restart Next, it will throw the same error as before about conflicting files. Delete or rename the file and we’ll move forward.</p>
-
-<p>The overall structure of this file is significantly different. Just like the homepage, we no longer need the getStaticProps function, but we also don’t need the getStaticPaths either. These are all files that render on the server, so we can move all that information into a single async function that can happen at request time.</p>
-
-<p>The new Server Component gives us a params object that we can use to get the slug for the current route. We can pass that into a new getProduct() function and use that as a variable in our query to Hygraph. This will fetch the data for that specific product. We can then use that in the Markup generated by our component to display the title, description, and price.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getProduct</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api-eu-central-1.hygraph.com/v2/ck8sn5tnf01gc01z89dbc7s0o/master</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="na">query</span><span class="p">:</span> <span class="s2">`{
-                product(where: {slug: "</span><span class="p">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">slug</span><span class="p">}</span><span class="s2">"}) {
-                    name
-                    description
-                    price
-                }
-            }`</span><span class="p">,</span>
-            <span class="na">variables</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">slug</span><span class="p">:</span> <span class="nx">params</span><span class="p">.</span><span class="nx">slug</span>
-            <span class="p">}</span>
-        <span class="p">})</span>
-    <span class="p">})</span>
-    <span class="kd">const</span> <span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
-    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">product</span>
-<span class="p">}</span>
-
-
-<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">({</span><span class="nx">params</span><span class="p">})</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getProduct</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;&gt;</span>
-            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">price</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We now have all the pages working together. Let’s take this one step further and add a custom 404 page for any products that aren’t found.</p>
-
-<h3>
-  
-  
-  Setting up a custom 404 page
-</h3>
-
-<p>Because of the new app structure, we can colocate all of our relative files. In this case, if we want a custom 404 page, we can add a <code>not-found.jsx</code> template in the <code>/products/[slug]</code> directory.</p>
-
-<p>The file will export a Server (or client) component, and for now, we’ll have a very simple message. In this case, since we’re looking for a product, let’s be specific and say “Product not found” instead of a simple “Page not found.”<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">NotFound</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;&gt;</span>
-            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="mi">404</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Product</span> <span class="nx">not</span> <span class="nx">found</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now, navigate to a route that doesn’t match any slug in Hygraph: try <a href="http://localhost:3000/products/sdlfkjl/">http://localhost:3000/products/sdlfkjl/</a></p>
-
-<p>Instead of getting a 404 page, we receive an unhandled error. That’s because we need to tell Next when we know it’s not found. In this case, if our query to Hygraph returns no results, we need to throw a 404.</p>
-
-<p>After calling the getProduct() function, we can check if product is defined and if not, run the notFound() function from <code>next/navigation</code>. This will do a few things for us. It will redirect the browser to the NotFound component and automatically add a "noindex" meta tag to these routes. This is good SEO practice and will keep your site’s 404 pages from being indexed by search engines.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">({</span><span class="nx">params</span><span class="p">})</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getProduct</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">product</span><span class="p">)</span> <span class="nx">notFound</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;&gt;</span>
-            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">price</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now, we have a fully-functioning 404 page! </p>
-
-<p>From here, you can delete the /pages directory and move to working on your app. You’ll still use the pages directory for your API routes, as well as any static routes you want to use, but most things can be used to this new, more-powerful version of Next.</p>
-
-<h2>
-  
-  
-  Next steps
-</h2>
-
-<p>With that, we have fully converted our simple Hygraph Next.js example from /pages to /app. At this point, I’d suggest taking look at all the different file types you can create in the colocated directories.</p>
-
-<ul>
-<li>Add a head.jsx file to specify meta data such as title, description, and more for each product page</li>
-<li>Add a loading.jsx file for loading page for longer queries.</li>
-<li>Add an error.jsx file to handle other error types.</li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Docker Node.js and MongoDB example](https://dev.to/tienbku/docker-nodejs-and-mongodb-example-doc) 
- <details><summary>Article</summary> <p><a href="https://www.docker.com/">Docker</a> provides lightweight containers to run services in isolation from our infrastructure so we can deliver software quickly. In this tutorial, I will show you how to dockerize Nodejs Express and MongoDB example using <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
-
-<p>Related Posts:</p>
-
-<ul>
-    <li><a href="https://bezkoder.com/node-express-mongodb-crud-rest-api/">Node.js Express Rest API with MongoDb</a></li>
-    <li><a href="https://bezkoder.com/node-js-mongodb-pagination/">Node.js Express Pagination with Mongoose and MongoDB</a></li>
-    <li><a href="https://bezkoder.com/node-js-mongodb-auth-jwt/">Node.js + MongoDB: User Authentication &amp; Authorization</a></li>
-    <li><a href="https://bezkoder.com/node-js-upload-store-images-mongodb/">Upload/store images in MongoDB using Node.js, Express &amp; Multer</a></li>
-    <li><a href="https://bezkoder.com/mongoose-one-to-one-relationship-example/">MongoDB One-to-One relationship tutorial with Mongoose example</a></li>
-    <li><a href="https://bezkoder.com/mongoose-one-to-many-relationship/">MongoDB One-to-Many Relationship tutorial with Mongoose examples</a></li>
-    <li><a href="https://bezkoder.com/mongodb-many-to-many-mongoose/">MongoDB Many-to-Many Relationship with Mongoose examples</a></li>
-</ul>
-
-<p>Dockerize fullstack:</p>
-
-<ul>
-<li><a href="https://www.bezkoder.com/docker-mern/">Docker Compose: React + Node.js Express + MongoDB</a></li>
-</ul>
-
-<h2>Node.js Express and MongoDB with Docker Overview</h2>
-
-<p>Assume that we have a Nodejs Application working with MongoDB database.<br>
-The problem is to containerize a system that requires more than one Docker container:</p>
-
-<ul>
-    <li>Node.js Express for API</li>
-    <li>MongoDB for database</li>
-</ul>
-
-<p>Docker Compose helps us setup the system more easily and efficiently than with only Docker. We're gonna following these steps:</p>
-
-<ul>
-    <li>Create Nodejs App working with MongoDB database.</li>
-    <li>Create Dockerfile for Nodejs App.</li>
-    <li>Write Docker Compose configurations in YAML file.</li>
-    <li>Set Environment variables for Docker Compose</li>
-    <li>Run the system.</li>
-</ul>
-
-<p>Directory Structure:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nbKlN0kA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.bezkoder.com/wp-content/uploads/2021/08/docker-compose-nodejs-mongodb-example-structure.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nbKlN0kA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.bezkoder.com/wp-content/uploads/2021/08/docker-compose-nodejs-mongodb-example-structure.png" alt="docker-compose-nodejs-mongodb-example-structure" width="230" height="180"></a></p>
-
-<h2>Create Nodejs App</h2>
-
-<p>You can read and get Github source code from one of following tutorials:</p>
-
-<ul>
-    <li><a href="https://bezkoder.com/node-express-mongodb-crud-rest-api/">Node.js Express Rest API with MongoDb</a></li>
-    <li><a href="https://bezkoder.com/node-js-mongodb-pagination/">Node.js Express Pagination with Mongoose and MongoDB</a></li>
-    <li><a href="https://bezkoder.com/node-js-mongodb-auth-jwt/">Node.js + MongoDB: User Authentication &amp; Authorization</a></li>
-    <li><a href="https://bezkoder.com/node-js-upload-store-images-mongodb/">Upload/store images in MongoDB using Node.js, Express &amp; Multer</a></li>
-</ul>
-
-<p>Using the code base above, we put the Nodejs project in <strong>bezkoder-app</strong> folder and modify some files to work with environment variables.</p>
-
-<p>Firstly, let's add <code>dotenv</code> module into <em>package.json</em>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">...</span><span class="w">
-  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"dotenv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^10.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>Next we import <code>dotenv</code> in <em>server.js</em> and use <code>process.env</code> for setting port.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">dotenv</span><span class="dl">"</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
-<span class="p">..</span>
-<span class="c1">// set port, listen for requests</span>
-<span class="kd">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_DOCKER_PORT</span> <span class="o">||</span> <span class="mi">8080</span><span class="p">;</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Server is running on port </span><span class="p">${</span><span class="nx">PORT</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Then we change modify database configuration and initialization.</p>
-
-<p><strong>app</strong>/<strong>config</strong>/<em>db.config.js</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="p">{</span>
-  <span class="nx">DB_USER</span><span class="p">,</span>
-  <span class="nx">DB_PASSWORD</span><span class="p">,</span>
-  <span class="nx">DB_HOST</span><span class="p">,</span>
-  <span class="nx">DB_PORT</span><span class="p">,</span>
-  <span class="nx">DB_NAME</span><span class="p">,</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">;</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s2">`mongodb://</span><span class="p">${</span><span class="nx">DB_USER</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">DB_PASSWORD</span><span class="p">}</span><span class="s2">@</span><span class="p">${</span><span class="nx">DB_HOST</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">DB_PORT</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">DB_NAME</span><span class="p">}</span><span class="s2">?authSource=admin`</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We also need to make a <em>.env</em> sample file that shows all necessary arguments.</p>
-
-<p><strong>bezkoder-app</strong>/<em>.env.sample</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight properties"><code><span class="py">DB_HOST</span><span class="p">=</span><span class="s">localhost</span>
-<span class="py">DB_USER</span><span class="p">=</span><span class="s">root</span>
-<span class="py">DB_PASSWORD</span><span class="p">=</span><span class="s">123456</span>
-<span class="py">DB_NAME</span><span class="p">=</span><span class="s">bezkoder_db</span>
-<span class="py">DB_PORT</span><span class="p">=</span><span class="s">27017</span>
-
-<span class="py">NODE_DOCKER_PORT</span><span class="p">=</span><span class="s">8080</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>Create Dockerfile for Nodejs App</h2>
-
-<p>Dockerfile defines a list of commands that Docker uses for setting up the Node.js application environment. So we put the file in <strong>bezkoder-app</strong> folder.</p>
-
-<p>Because we will use Docker Compose, we won't define all the configuration commands in this Dockerfile.</p>
-
-<p><strong>bezkoder-app</strong>/<em>Dockerfile</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight properties"><code><span class="err">FROM</span> <span class="py">node</span><span class="p">:</span><span class="s">14</span>
-
-<span class="err">WORKDIR</span> <span class="err">/bezkoder-app</span>
-<span class="err">COPY</span> <span class="err">package.json</span> <span class="err">.</span>
-<span class="err">RUN</span> <span class="err">npm</span> <span class="err">install</span>
-<span class="err">COPY</span> <span class="err">.</span> <span class="err">.</span>
-<span class="err">CMD</span> <span class="err">npm</span> <span class="err">start</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Let me explain some points:</p>
-
-<ul>
-    <li>
-<code>FROM</code>: install the image of the Node.js version.</li>
-    <li>
-<code>WORKDIR</code>: path of the working directory.</li>
-    <li>
-<code>COPY</code>: copy <em>package.json</em> file to the container, then the second one copies all the files inside the project directory.</li>
-    <li>
-<code>RUN</code>: execute a command-line inside the container: <code>npm install</code> to install the dependencies in <em>package.json</em>.</li>
-    <li>
-<code>CMD</code>: run script <code>npm start</code> after the image is built.</li>
-</ul>
-
-<h2>Write Docker Compose configurations</h2>
-
-<p>On the root of the project directory, we're gonna create the <em>docker-compose.yml</em> file. Follow <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/">version 3</a> syntax defined by Docker:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight properties"><code><span class="py">version</span><span class="p">:</span> <span class="s">'3.8'</span>
-
-<span class="py">services</span><span class="p">:</span> 
-    <span class="s">mongodb:</span>
-    <span class="py">app</span><span class="p">:</span>
-
-<span class="py">volumes</span><span class="p">:</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-    <li>
-<code>version</code>: Docker Compose file format version will be used.</li>
-    <li>
-<code>services</code>: individual services in isolated containers. Our application has two services: <code>app</code> (Nodejs) and <code>mongodb</code> (MongoDB database).</li>
-    <li>
-<code><a href="https://docs.docker.com/storage/volumes/">volumes</a></code>: named volumes that keeps our data alive after restart.</li>
-</ul>
-
-<p>Let's implement the details.</p>
-
-<p><em>docker-compose.yml</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight properties"><code><span class="py">version</span><span class="p">:</span> <span class="s">"3.8"</span>
-
-<span class="py">services</span><span class="p">:</span>
-  <span class="py">mongodb</span><span class="p">:</span>
-    <span class="py">image</span><span class="p">:</span> <span class="s">mongo:5.0.2</span>
-    <span class="py">restart</span><span class="p">:</span> <span class="s">unless-stopped</span>
-    <span class="py">env_file</span><span class="p">:</span> <span class="s">./.env</span>
-    <span class="py">environment</span><span class="p">:</span>
-      <span class="err">-</span> <span class="py">MONGO_INITDB_ROOT_USERNAME</span><span class="p">=</span><span class="s">$MONGODB_USER</span>
-      <span class="err">-</span> <span class="py">MONGO_INITDB_ROOT_PASSWORD</span><span class="p">=</span><span class="s">$MONGODB_PASSWORD</span>
-    <span class="py">ports</span><span class="p">:</span>
-      <span class="err">-</span> <span class="err">$</span><span class="py">MONGODB_LOCAL_PORT</span><span class="p">:</span><span class="s">$MONGODB_DOCKER_PORT</span>
-    <span class="py">volumes</span><span class="p">:</span>
-      <span class="err">-</span> <span class="py">db</span><span class="p">:</span><span class="s">/data/db</span>
-  <span class="py">app</span><span class="p">:</span>
-    <span class="py">depends_on</span><span class="p">:</span>
-      <span class="err">-</span> <span class="err">mongodb</span>
-    <span class="py">build</span><span class="p">:</span> <span class="s">./bezkoder-app</span>
-    <span class="py">restart</span><span class="p">:</span> <span class="s">unless-stopped</span>
-    <span class="py">env_file</span><span class="p">:</span> <span class="s">./.env</span>
-    <span class="py">ports</span><span class="p">:</span>
-      <span class="err">-</span> <span class="err">$</span><span class="py">NODE_LOCAL_PORT</span><span class="p">:</span><span class="s">$NODE_DOCKER_PORT</span>
-    <span class="py">environment</span><span class="p">:</span>
-      <span class="err">-</span> <span class="py">DB_HOST</span><span class="p">=</span><span class="s">mongodb</span>
-      <span class="err">-</span> <span class="py">DB_USER</span><span class="p">=</span><span class="s">$MONGODB_USER</span>
-      <span class="err">-</span> <span class="py">DB_PASSWORD</span><span class="p">=</span><span class="s">$MONGODB_PASSWORD</span>
-      <span class="err">-</span> <span class="py">DB_NAME</span><span class="p">=</span><span class="s">$MONGODB_DATABASE</span>
-      <span class="err">-</span> <span class="py">DB_PORT</span><span class="p">=</span><span class="s">$MONGODB_DOCKER_PORT</span>
-    <span class="py">stdin_open</span><span class="p">:</span> <span class="s">true</span>
-    <span class="py">tty</span><span class="p">:</span> <span class="s">true</span>
-
-<span class="py">volumes</span><span class="p">:</span>
-  <span class="py">db</span><span class="p">:</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<p><strong>mongodb</strong>:</p>
-
-<ul>
-<li>
-<code>image</code>: official Docker image</li>
-<li>
-<code>restart</code>: configure the <a href="https://docs.docker.com/config/containers/start-containers-automatically/#use-a-restart-policy">restart policy</a>
-</li>
-<li>
-<code>env_file</code>: specify our <em>.env</em> path that we will create later</li>
-<li>
-<code>environment</code>: provide setting using environment variables</li>
-<li>
-<code>ports</code>: specify ports will be used</li>
-<li>
-<code>volumes</code>: map volume folders</li>
-</ul>
-
-
-</li>
-<li>
-
-<p><strong>app</strong>:</p>
-
-<ul>
-<li>
-<code><a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on">depends_on</a></code>: dependency order, <strong>mongodb</strong> is started before <strong>app</strong>
-</li>
-<li>
-<code>build</code>: configuration options that are applied at build time that we defined in the <em>Dockerfile</em> with relative path</li>
-<li>
-<code>environment</code>: environmental variables that Node application uses</li>
-<li>
-<code>stdin_open</code> and <code>tty</code>: keep open the terminal after building container</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p>You should note that the host port (<code>LOCAL_PORT</code>) and the container port (<code>DOCKER_PORT</code>) is different. Networked service-to-service communication uses the container port, and the outside uses the host port.</p>
-
-<h2>Docker Compose Environment variables with MongoDB</h2>
-
-<p>In the service configuration, we used environmental variables defined inside the <em>.env</em> file. Now we start writing it.</p>
-
-<p><em>.env</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight properties"><code><span class="py">MONGODB_USER</span><span class="p">=</span><span class="s">root</span>
-<span class="py">MONGODB_PASSWORD</span><span class="p">=</span><span class="s">123456</span>
-<span class="py">MONGODB_DATABASE</span><span class="p">=</span><span class="s">bezkoder_db</span>
-<span class="py">MONGODB_LOCAL_PORT</span><span class="p">=</span><span class="s">7017</span>
-<span class="py">MONGODB_DOCKER_PORT</span><span class="p">=</span><span class="s">27017</span>
-
-<span class="py">NODE_LOCAL_PORT</span><span class="p">=</span><span class="s">6868</span>
-<span class="py">NODE_DOCKER_PORT</span><span class="p">=</span><span class="s">8080</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>Run Nodejs MongoDB with Docker Compose</h2>
-
-<p>We can easily run the whole with only a single command:<br>
-<code>docker-compose up</code></p>
-
-<p>Docker will pull the MongoDB and Node.js images (if our machine does not have it before).</p>
-
-<p>The services can be run on the background with command:<br>
-<code>docker-compose up -d</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
-Creating network <span class="s2">"node-mongodb_default"</span> with the default driver
-Creating volume <span class="s2">"node-mongodb_db"</span> with default driver
-Pulling mongodb <span class="o">(</span>mongo:5.0.2<span class="o">)</span>...
-5.0.2: Pulling from library/mongo
-16ec32c2132b: Pull <span class="nb">complete
-</span>6335cf672677: Pull <span class="nb">complete
-</span>cbc70ccc8ebe: Pull <span class="nb">complete
-</span>0d1a3c6bd417: Pull <span class="nb">complete
-</span>960f3b9b27d3: Pull <span class="nb">complete
-</span>aff995a136b4: Pull <span class="nb">complete
-</span>4249be7550a8: Pull <span class="nb">complete
-</span>cc105ff5aa3c: Pull <span class="nb">complete
-</span>82819807d07a: Pull <span class="nb">complete
-</span>81447d2c233f: Pull <span class="nb">complete
-</span>Digest: sha256:54d24682d00278f64bf21ff62b7ee62b59dae50f65139831a884b345922b0f8a
-Status: Downloaded newer image <span class="k">for </span>mongo:5.0.2
-Building app
-Sending build context to Docker daemon  19.46kB
-Step 1/6 : FROM node:14
-14: Pulling from library/node
-eb18d230e067: Pull <span class="nb">complete 
-</span>83600c1b4583: Pull <span class="nb">complete 
-</span>4ae15c65bfa0: Pull <span class="nb">complete 
-</span>c19c058edda5: Pull <span class="nb">complete 
-</span>05cdaa0fd103: Pull <span class="nb">complete 
-</span>8461dcff50c4: Pull <span class="nb">complete 
-</span>84be4117f79d: Pull <span class="nb">complete 
-</span>4ccb803887fd: Pull <span class="nb">complete 
-</span>ab52680a5469: Pull <span class="nb">complete 
-</span>Digest: sha256:c1fa7759eeff3f33ba08ff600ffaca4558954722a4345653ed1a0d87dffed9aa
-Status: Downloaded newer image <span class="k">for </span>node:14
- <span class="nt">---</span><span class="o">&gt;</span> 256d6360f157
-Step 2/6 : WORKDIR /bezkoder-app
- <span class="nt">---</span><span class="o">&gt;</span> Running <span class="k">in </span>71b4b2e9dd6c
-Removing intermediate container 71b4b2e9dd6c
- <span class="nt">---</span><span class="o">&gt;</span> 194372d3695c
-Step 3/6 : COPY package.json <span class="nb">.</span>
- <span class="nt">---</span><span class="o">&gt;</span> 093f866b404a
-Step 4/6 : RUN npm <span class="nb">install</span>
- <span class="nt">---</span><span class="o">&gt;</span> Running <span class="k">in </span>025f0f0365a9
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN node-express-mongodb@1.0.0 No repository field.
-
-added 81 packages from 128 contributors and audited 81 packages <span class="k">in </span>6.902s
-
-2 packages are looking <span class="k">for </span>funding
-  run <span class="sb">`</span>npm fund<span class="sb">`</span> <span class="k">for </span>details
-
-found 0 vulnerabilities
-
-Removing intermediate container 025f0f0365a9
- <span class="nt">---</span><span class="o">&gt;</span> 2f04aeaa93b1
-Step 5/6 : COPY <span class="nb">.</span> <span class="nb">.</span>
- <span class="nt">---</span><span class="o">&gt;</span> 50e31a045a02
-Step 6/6 : CMD npm start
- <span class="nt">---</span><span class="o">&gt;</span> Running <span class="k">in </span>7353ac17fa02
-Removing intermediate container 7353ac17fa02
- <span class="nt">---</span><span class="o">&gt;</span> bd9d66054ea2
-Successfully built bd9d66054ea2
-Successfully tagged node-mongodb_app:latest
-WARNING: Image <span class="k">for </span>service app was built because it did not already exist. To rebuild this image you must use <span class="sb">`</span>docker-compose build<span class="sb">`</span> or <span class="sb">`</span>docker-compose up <span class="nt">--build</span><span class="sb">`</span><span class="nb">.</span>
-Creating node-mongodb_mongodb_1 ... <span class="k">done
-</span>Creating node-mongodb_app_1     ... <span class="k">done</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now you can check the current working containers:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>docker ps
-CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS         PORTS                                         NAMES
-42b9271dd73f   node-mongodb_app   <span class="s2">"docker-entrypoint.s…"</span>   2 minutes ago   Up 2 minutes   0.0.0.0:6868-&gt;8080/tcp, :::6868-&gt;8080/tcp     node-mongodb_app_1
-e17bf545c0ba   mongo:5.0.2        <span class="s2">"docker-entrypoint.s…"</span>   2 minutes ago   Up 2 minutes   0.0.0.0:7017-&gt;27017/tcp, :::7017-&gt;27017/tcp   node-mongodb_mongodb_1
-</code></pre>
-
-</div>
-
-
-
-<p>And Docker images:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>docker images
-REPOSITORY            TAG            IMAGE ID       CREATED         SIZE
-node-mongodb_app      latest         bd9d66054ea2   5 minutes ago   960MB
-node                  14             256d6360f157   6 minutes ago   944MB
-mongo                 5.0.2          269b735e72cb   6 minutes ago   682MB
-</code></pre>
-
-</div>
-
-
-
-<p>Let's send an HTTP request to check the Express Rest API:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--J0K2FGtQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.bezkoder.com/wp-content/uploads/2021/08/docker-compose-nodejs-mongodb-example-test-api.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J0K2FGtQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.bezkoder.com/wp-content/uploads/2021/08/docker-compose-nodejs-mongodb-example-test-api.png" alt="docker-compose-nodejs-mongodb-example-test-api" width="510" height="410"></a></p>
-
-<p>And the MongoDB database also:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---w-BTzBf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.bezkoder.com/wp-content/uploads/2021/08/docker-compose-nodejs-mongodb-example-test-database.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---w-BTzBf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.bezkoder.com/wp-content/uploads/2021/08/docker-compose-nodejs-mongodb-example-test-database.png" alt="docker-compose-nodejs-mongodb-example-test-database" width="600" height="390"></a></p>
-
-<h2>Stop the Application</h2>
-
-<p>Stopping all the running containers is also simple with a single command:<br>
-<code>docker-compose down</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>docker-compose down
-Stopping node-mongodb_app_1     ... <span class="k">done
-</span>Stopping node-mongodb_mongodb_1 ... <span class="k">done
-</span>Removing node-mongodb_app_1     ... <span class="k">done
-</span>Removing node-mongodb_mongodb_1 ... <span class="k">done
-</span>Removing network node-mongodb_default
-</code></pre>
-
-</div>
-
-
-
-<p>If you need to stop and remove all containers, networks, and all images used by any service in <em>docker-compose.yml</em> file, use the command:<br>
-<code>docker-compose down --rmi all</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>docker-compose down <span class="nt">--rmi</span> all
-Stopping node-mongodb_app_1     ... <span class="k">done
-</span>Stopping node-mongodb_mongodb_1 ... <span class="k">done
-</span>Removing node-mongodb_app_1     ... <span class="k">done
-</span>Removing node-mongodb_mongodb_1 ... <span class="k">done
-</span>Removing network node-mongodb_default
-Removing image mongo:5.0.2
-Removing image node-mongodb_app
-</code></pre>
-
-</div>
-
-
-
-<h2>Conclusion</h2>
-
-<p>Today we've successfully created Docker Compose file for Nodejs and MongoDB application. Now we can deploy Nodejs Express and MongoDB with Docker on a very simple way: <em>docker-compose.yml</em>.</p>
-
-<p>You can apply this way to one of following project:</p>
-
-<ul>
-    <li><a href="https://bezkoder.com/node-express-mongodb-crud-rest-api/">Node.js Express Rest API with MongoDb</a></li>
-    <li><a href="https://bezkoder.com/node-js-mongodb-pagination/">Node.js Express Pagination with Mongoose and MongoDB</a></li>
-    <li><a href="https://bezkoder.com/node-js-mongodb-auth-jwt/">Node.js + MongoDB: User Authentication &amp; Authorization</a></li>
-    <li><a href="https://bezkoder.com/node-js-upload-store-images-mongodb/">Upload/store images in MongoDB using Node.js, Express &amp; Multer</a></li>
-</ul>
-
-<p>Or Dockerize fullstack:</p>
-
-<ul>
-<li><a href="https://www.bezkoder.com/docker-mern/">Docker Compose: React + Node.js Express + MongoDB</a></li>
-</ul>
-
-<p>Happy Learning! See you again.</p>
-
-<h2>Source Code</h2>
-
-<p>The source code for this tutorial can be found at <a href="https://github.com/bezkoder/docker-compose-nodejs-mongodb">Github</a>.</p>
-
-<h2>Further Reading</h2>
-
-<p>Associations:</p>
-
-<ul>
-    <li><a href="https://bezkoder.com/mongoose-one-to-one-relationship-example/">MongoDB One-to-One relationship tutorial with Mongoose example</a></li>
-    <li><a href="https://bezkoder.com/mongoose-one-to-many-relationship/">MongoDB One-to-Many Relationship tutorial with Mongoose examples</a></li>
-    <li><a href="https://bezkoder.com/mongodb-many-to-many-mongoose/">MongoDB Many-to-Many Relationship with Mongoose examples</a></li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Automating AWS Operations: A Deep Dive into Systems Manager for SysOps](https://dev.to/brandondamue/automating-aws-operations-a-deep-dive-into-systems-manager-for-sysops-30nc) 
- <details><summary>Article</summary> <p>Wearing my SysOps suit, I've navigated the intricate realm of AWS infrastructure management, and one thing has become abundantly clear: efficiency and control are paramount. In this fast-paced cloud environment, where every second counts and resource management can be a maze, AWS Systems Manager (SSM) emerges as the beacon of hope for SysOps administrators. It's the tool that addresses a multitude of challenges that have often left us scratching our heads.</p>
-
-<p>This article is an expedition into Systems Manager (SSM) and it delves deep into its transformative capabilities, tailored specifically to resolve the challenges that have left SysOps professionals pondering solutions. From providing an all-encompassing view of your infrastructure to streamlining routine tasks and ensuring compliance, SSM furnishes a robust set of solutions poised to revolutionize your AWS environment management. Enough said! Let's get to exploring SSM and its wonderful features but before we get to that here is a concise overview of what SSM is all about.</p>
-
-<p>SSM is like a trusty sidekick for sysops administrators, giving them a single, easy-to-use dashboard to wrangle, automate, and fortify their AWS setup. Imagine it as a Swiss Army knife for sysops, covering everything from keeping tabs on resources and automatic updates to boss-level command execution and smart workflow automation. It even does some neat tricks like secure session management, secret storage, and compliance watchdog duties.</p>
-
-<p>In practical terms, this means sysops folks can breathe a little easier. SSM takes care of repetitive chores, keeps a vigilant eye on security, and makes sure everything plays by the rules. It's like having a skilled assistant who can automate tasks, keep everything in line, and maintain top-notch security across your AWS kingdom. In the end, it's about simplifying the complex, saving time, and lightening the load for sysops teams. Now let's explore the different features and tools that are part of the SSM Swiss army knife.</p>
-
-<h2>
-  
-  
-  System Patch Management
-</h2>
-
-<p>With SSM Patch Manager, sysops professionals can streamline and automate patch management for EC2 instances and other AWS resources. Patch Manager allows you to create patch baselines to define which patches should be applied to instances, set up patching schedules, and even automate the patching process using predefined automation documents. This level of automation not only guarantees that your resources stay current with the latest security patches but also trims down the amount of work needed for manually handling patches.</p>
-
-<p>Furthermore, SSM offers strong compliance monitoring and reporting features, giving sysops administrators the tools to uphold top-notch security and compliance standards throughout their AWS setup. SSM's adaptability reaches into cross-platform patching, making it easy to handle patches for servers in on-premises settings and other cloud environments without a hitch. By embracing SSM for patch management, sysops teams can notably boost the security, efficiency, and oversight of their AWS resources while keeping downtime and disruptions to a minimum.</p>
-
-<h2>
-  
-  
-  SSM Run Command
-</h2>
-
-<p>Sysops administrators can tap into the efficiency of SSM Run Command to perform tasks on multiple instances simultaneously, making their workload more manageable. This feature proves especially useful for handling routine operations like software installations and configurations across a bunch of instances. Imagine you have a batch of EC2 instances that require crucial security updates. Instead of the tedious process of connecting to each instance individually and applying updates step by step, SSM Run Command enables you to run the necessary commands on all the selected instances simultaneously. This not only slashes the time needed but also maintains uniformity while reducing the chances of mistakes. In simpler terms, it's like having a powerful remote control for your instances. You can send commands to a group of instances all at once, making tasks that used to be painstakingly manual more efficient and reliable. So, whether you're fine-tuning configurations, installing software, or applying security patches, SSM Run Command streamlines the process, making life easier for sysops administrators.</p>
-
-<p>Similarly, if you need to configure specific settings on a group of instances, like adjusting firewall rules or modifying system parameters, SSM Run Command allows you to push these configurations across multiple instances simultaneously. For instance, you can execute commands to update firewall rules to enhance security or change the configurations to optimize resource utilization. This centralized control over command execution not only simplifies the administration of your AWS resources but also enhances security and compliance by ensuring that all instances are configured consistently according to your desired specifications. In essence, SSM Run Command empowers sysops administrators to efficiently manage and maintain their instances, making it an invaluable tool for tasks that require consistency and scale across their AWS environment.</p>
-
-<h2>
-  
-  
-  State Management
-</h2>
-
-<p>Maintaining consistent configurations across a fleet of instances is a daunting task, especially as your infrastructure grows. Here's where SSM State Manager shines as a beacon of efficiency. It allows sysops administrators to define, enforce, and track configurations across their instances systematically. By creating custom documents or leveraging pre-built ones (like the AWS-managed documents), sysops can specify the desired state of their instances. These documents can cover a wide array of configurations, from security settings to application installations.</p>
-
-<p>When it comes to compliance SSM State Manager plays an integral role in ensuring compliance with organizational standards and industry regulations. It enables sysops to establish configuration baselines that adhere to security best practices. For instance, you can define a baseline configuration that mandates specific firewall rules, software versions, or file permissions. If an instance's configuration ever drifts away from this desired state, SSM State Manager automatically remediates it, bringing it back into compliance. This real-time enforcement minimizes security risks and ensures that instances consistently meet compliance requirements.</p>
-
-<h2>
-  
-  
-  Inventory Management
-</h2>
-
-<p>Picture SSM as your PA, but for managing your AWS instances. One of its cool tricks is that it can keep track of all your instances and gather information about them - things like their names, IP addresses, operating systems, and more. It's like having a little notebook where it jots down details about all your instances.</p>
-
-<p>Now, why is this handy? Imagine you have a bunch of instances doing different tasks - some for your website, some for databases, and who knows what else. With SSM Inventory Manager, you don't have to go hunting for information about each one individually. You've got it all in one place, organized and easy to find. It's like having a neat inventory of all your IT resources. Plus, when you need to take action, like installing updates or checking security settings, you know exactly which instance is which. SSM makes managing your AWS resources as smooth as a well-organized toolbox.</p>
-
-<h2>
-  
-  
-  Automation Documents
-</h2>
-
-<p>I just realized I have been making references to automation documents without telling you what they are all about. I apologize for that oversight. Let's examine what they are. Think of Automation Documents as a collection of predefined steps for common tasks, kind of like a recipe for cooking your favourite meal. In the world of sysops, these documents are like secret shortcuts to getting things done quickly and correctly. They're like having an expert sysadmin by your side, guiding you through complex tasks.</p>
-
-<p>For example, let's say you need to create a backup of your EC2 instances regularly. You could write a long list of steps to do it manually, but that's time-consuming and prone to errors. With an Automation Document, you just choose the "Create EC2 Backup" recipe, provide some details like which instances to back up and where to store the backups, and hit "Start." It's like having a magical kitchen gadget that prepares your meal with the push of a button.</p>
-
-<p>But these documents can do much more than backups. They can handle tasks like setting up monitoring, scaling your infrastructure, or even responding to security incidents. So, sysops administrators can save a ton of time and ensure consistency by using these pre-built automation scripts. It's like having a library of superpowers at your fingertips.</p>
-
-<h2>
-  
-  
-  Session Management
-</h2>
-
-<p>SSM Session Manager offers a secure and auditable way for sysops administrators to remotely access their AWS instances, ensuring both security and transparency in the process. Instead of relying on traditional methods like SSH or RDP, Session Manager establishes a secure, encrypted connection to the instance via the AWS Management Console, AWS CLI, or AWS SDKs.</p>
-
-<p>Here's how it works: Sysops administrators can initiate a session to an instance directly from the AWS Management Console. Once the session is set up, it's like administrators have taken a virtual seat right in front of the instance, giving them complete control over it. It's almost as if they were there in person, but they can manage everything remotely and securely.</p>
-
-<p>The key advantages are security and auditability. Sessions are logged, providing a detailed record of who accessed which instance, what commands were executed, and when these actions occurred. These logs are invaluable for compliance, troubleshooting, and security investigations, offering transparency into system changes and user activities. Moreover, SSM Session Manager eliminates the need to open inbound ports on instances, reducing the attack surface and enhancing overall security. This centralized and auditable remote access capability is a significant enhancement over traditional access methods like SSH or RDP.</p>
-
-<h2>
-  
-  
-  Resource Groups and Tagging
-</h2>
-
-<p>Resource groups and tagging are powerful tools in SSM that play a crucial role in organizing and managing instances efficiently within your AWS infrastructure.</p>
-
-<p>Resource groups allow you to create logical collections of AWS resources, including EC2 instances, based on criteria that you define. These criteria can include resource types, tags, and other properties. Utilizing resource groups provides a unified perspective of your assets, simplifying their management and monitoring. For sysops administrators, this means you can create groups based on specific requirements, such as grouping all instances related to a particular application, environment (like development, staging, or production), or business unit. This simplifies the process of locating and accessing instances when performing management tasks.</p>
-
-<p>Tagging is another essential feature that involves attaching metadata (key-value pairs) to AWS resources, like EC2 instances. Sysops administrators can use tags to add custom labels to instances, indicating their purpose, owner, environment, or any other relevant information. Tags streamline the process of classifying and recognizing instances, particularly within extensive environments. SSM leverages these tags and resource groups, allowing sysops teams to target and manage instances based on specific tags or the resource groups they belong to. This streamlined approach ensures that actions taken through SSM are precise and that you can efficiently manage instances based on their intended purpose or role within your infrastructure. Additionally, tags and resource groups enhance visibility and control, facilitating tasks like monitoring, security, and compliance management.</p>
-
-<h2>
-  
-  
-  Parameter Store
-</h2>
-
-<p>SSM Parameter Store is like a highly secure digital vault for all the critical data that keeps your AWS infrastructure running smoothly. It's like your go-to bank for storing everything from database passwords and API keys to configuration settings and secrets.</p>
-
-<p>Now, here's where it gets handy for sysops: SSM Parameter Store allows you to neatly organize and label your data, much like having labelled folders in a physical filing cabinet. This allows you to maintain a well-organized repository of secrets and configurations, ensuring they are readily accessible when required.</p>
-
-<p>However, there's more to it. SSM Parameter Store enhances security by enabling encryption for your stored data using AWS Key Management Service (KMS). Think of it as having a secure, digital lock on each of those folders in your vault. Only those with the right keys can access the information inside.</p>
-
-<p>Sysops professionals can then seamlessly integrate this stored data into their workflows and applications. Need to update a database password for an application? No problem, just fetch it securely from Parameter Store. This ensures that sensitive information remains safe, easily accessible when required, and highly manageable, making the sysops' job much more efficient and secure. It's like having a trusty digital Swiss Army knife for managing sensitive data in your AWS environment.</p>
-
-<h2>
-  
-  
-  Integration with Other AWS Services
-</h2>
-
-<p>We have covered a lot of ground when it comes to SSM and how sysops professionals can leverage it in performing various actions. However, I still feel like ending this article without talking about SSM's integration with other AWS services won't be nice. With that in mind, here is how SSM integrates with a few AWS services starting with CloudWatch.</p>
-
-<p>SSM and CloudWatch are a dynamic pair for efficient resource management. CloudWatch continuously monitors AWS resources and applications' performance, collecting valuable data and logs. SSM complements this by enabling real-time responses to CloudWatch alarms and events. When a CloudWatch alarm triggers, SSM can swiftly execute commands, run scripts, or initiate specific workflows on managed instances. This synergy ensures proactive management and rapid responses to critical incidents.</p>
-
-<p>SSM also seamlessly integrates with AWS Config, forming a comprehensive resource management and compliance solution. AWS Config records resource configurations and evaluates compliance with your policies. With SSM, you can track historical data and compliance checks for your managed instances. AWS Config Rules define desired resource configurations, while SSM enforces these configurations automatically. This integration helps maintain instances in the desired state and ensures regulatory compliance, enhancing governance and auditing capabilities.</p>
-
-<p>AWS IAM regulates access to AWS resources and pairs effectively with SSM for streamlined access control. By creating finely-tuned IAM policies that specify who can access SSM functionalities and what actions they can perform, you enhance security. The integration ensures that only authorized personnel can interact with managed instances, bolstering the security and compliance posture of your AWS environment.</p>
-
-<h2>
-  
-  
-  Last Words
-</h2>
-
-<p>En masse, Systems Manager stands as a formidable ally in the realm of sysops administration. Its capabilities, from automating patch management to streamlining command execution, have illuminated a path toward operational efficiency and resource security. As you embark on your journey with SSM, remember that its true power lies not just in its features but in how you harness them to optimize your AWS infrastructure. With SSM by your side, tasks that once seemed daunting become manageable, and you can maintain control and security over your resources effortlessly. So, as you dive into the world of SSM, remember that it's here to simplify your life as a sysops admin. Use it wisely, and you'll find that it's the key to smoother, more secure, and more efficient cloud operations.</p>
 
  </details> 
  <hr /> 
