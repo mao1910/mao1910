@@ -133,6 +133,28 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [📘 Just devoured "The DevOps Career Handbook" and WOW, what a gem! 🚀](https://dev.to/apetryla/just-devoured-the-devops-career-handbook-and-wow-what-a-gem-h4n) 
+ <details><summary>Article</summary> <p>📘 Just devoured "The DevOps Career Handbook" by John Knight and Nate Swenson, and WOW, what a gem! 🚀</p>
+
+<p>If you're diving into the dynamic world of DevOps or looking to level up your career, this book is one of the BEST. 🌟</p>
+
+<p>🔍 Here's why:</p>
+
+<p>1️⃣ High-Level Insight: It won't drown you in technical jargon. Instead, it offers a crystal-clear high-level view of the field. Perfect if you're just getting started!</p>
+
+<p>2️⃣ Actionable Steps: It's not just theory. You'll find practical action steps to break into DevOps, gain experience, and acquire essential skills.</p>
+
+<p>3️⃣ Interview Ninja: From interview prep to communicating with recruiters, this book's got you covered. It's like having a personal mentor in your pocket!</p>
+
+<p>4️⃣ Salary Savvy: Ever wondered about industry salary ranges? Yep, they've got that too. 💰</p>
+
+<p>5️⃣ 2022 Wisdom: It's fresh, folks! In an ever-evolving field like DevOps, having the latest insights is crucial.</p>
+
+<p>Have you read it? Share your thoughts below! Let's ignite a discussion and help each other rise in the DevOps universe. 🚀💬</p>
+
+ </details> 
+ <hr /> 
+
  #### - [🐬Top 5 MySQL GUI Clients to Command MySQL⚡️](https://dev.to/bytebase/top-5-mysql-gui-clients-to-command-mysql-8lf) 
  <details><summary>Article</summary> <p>To interact with MySQL databases, it’s common to employ MySQL GUI clients. They enable users to visually view, create and modify database objects such as tables, rows, and columns. Some familiar features of MySQL GUI clients include SQL generator and export data, which makes designing, creating, and administering MySQL databases easier and more convenient. Here, we gathered 5 best MySQL GUI Clients on the market right now.</p>
 
@@ -264,236 +286,135 @@
  </details> 
  <hr /> 
 
- #### - [Leveling Up in OR: Excel Solver vs. Python](https://dev.to/balagmadhu/leveling-up-in-or-excel-solver-vs-python-388j) 
- <details><summary>Article</summary> <p><strong>Intro</strong>:<br>
-Operations Research, often referred to as OR, is a dynamic field at the intersection of mathematics, science, and decision-making. It was born out of the necessity to solve real-world problems during World War II, where military strategists needed better ways to allocate resources, plan logistics, and optimize their operations for maximum impact. Optimization is branch which is to  succeed with decision making in real-time, navigating through a maze of choices and constraints. Optimization in OR is like having a superpower that helps organizations make decisions that minimize costs, maximize profits, reduce waste, and streamline operations</p>
+ #### - [How I Went Viral](https://dev.to/mohammadfaisal/how-i-went-viral-e5p) 
+ <details><summary>Article</summary> <p><strong><em>To read more articles like this, <a href="https://www.mohammadfaisal.dev/blog">visit my blog</a></em></strong></p>
 
-<p><strong>Real - world Concepts</strong>:<br>
-The series <a href="https://dev.to/balagmadhu/series/23887">Optimization Simplified</a> we explored some of the real world examples. These real-world examples illustrate how optimization techniques play a crucial role in improving efficiency, reducing costs, and making informed decisions across various industries and sectors. They demonstrate the versatility and applicability of optimization in solving complex problems efficiently.</p>
+<p>7 months ago on a cold evening, I was sitting idly on my desk and thinking of doing something productive.</p>
 
-<p><strong>Considerations for Excel Solver</strong>:<br>
-Excel Solver is a powerful tool for solving a wide range of optimization problems, particularly those that are relatively small to medium in size and don't require highly specialized algorithms. Solver proves most effective when you can decompose the larger problem into smaller components, allowing you to utilize Solver to prototype and establish the value proposition for a systemic solution.<br>
-<em>Constraints with Solver</em>:<br>
-1) The standard Microsoft Excel Solver has a limit of 200 decision variables<br>
-2) Problems that involve both discrete (integer) and continuous decision variables, combined with nonlinear constraints, can be challenging <br>
-3) Not suited for extremely complex optimization problems, especially those with a large number of decision variables and constraints. Would have performance impact due to memory and processing constraints<br>
-Excel is set by default to use all cores it can. But it also depends on how your code and functions are written. But ifnot then enable in advance options<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6RqfWoPA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5ki8tgv5yadztsmx0ose.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6RqfWoPA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5ki8tgv5yadztsmx0ose.png" alt="Image description" width="800" height="356"></a></p>
+<p>Suddenly the brilliant idea of writing an article hit my mind. Although I didn’t write anything in my life up to that point.</p>
 
-<p><strong>Showdown - Excel Solver vs. Python</strong>: </p>
+<p>The medium was the obvious choice for writing because I read a lot of articles on Medium because of my job as a Software Engineer.</p>
 
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th>Criterion</th>
-<th>Excel Solver</th>
-<th>Python</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Skillset   needed</td>
-<td>Low Code</td>
-<td>Pro Code</td>
-</tr>
-<tr>
-<td>Community   and Support</td>
-<td>Medium</td>
-<td>High (lots of literature but every implementation need a design approach)</td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td>Medium</td>
-<td>Mid</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>N/A</td>
-<td>Need to Engineer the solution</td>
-</tr>
-<tr>
-<td>Scalability</td>
-<td>Low</td>
-<td>Medium to High depending on the type of solver you choose</td>
-</tr>
-<tr>
-<td>Solution   Quality</td>
-<td>Low</td>
-<td>High</td>
-</tr>
-<tr>
-<td>Licensing</td>
-<td>Free</td>
-<td>Depends on type of solver. Have free solvers as well</td>
-</tr>
-<tr>
-<td>Performance</td>
-<td>Low</td>
-<td>Depends on type of solver. Medium performance If open version solvers   used</td>
-</tr>
-</tbody>
-</table></div>
+<p>So I started writing.</p>
 
-<p><strong>Inference from the series</strong>: <br>
-Ultimately, the choice between Excel Solver and Python programming should align with the specific requirements and characteristics of your optimization project. Evaluating factors like complexity, problem size, customization needs, and integration capabilities will help you make an informed decision.</p>
+<h2>
+  
+  
+  How it Happened
+</h2>
 
- </details> 
- <hr /> 
+<p>My initial intention was to document the journey of myself as a software engineer. Also having a blogging portfolio can prove to my employers that I know what I am doing.</p>
 
- #### - [Generating Thumbnails from Videos using ApyHub’s API](https://dev.to/apyhub/generating-thumbnails-from-videos-using-apyhubs-api-p3k) 
- <details><summary>Article</summary> <p>As we have discussed in <a href="https://apyhub.com/blog/video-thumbnails-for-seo">previous articles</a>, video thumbnails have a lot of benefits and possible uses, including:</p>
+<p>On average the articles were viewed around 6–12 times per day and I thought to myself</p>
 
-<p>enhanced visual appeal, improved user experience, and of course a boost in brand identity and recognition. In this tutorial, we will go a bit more technical - focusing on the <a href="https://apyhub.com/utility/video-thumbnail">ApyHub video thumbnail</a> generator API.</p>
+<blockquote>
+<p>WOW! People are spending their time reading my stuff!</p>
+</blockquote>
 
-<p>No worries, this will be extremely simple and detailed. We will go slow and step by step, guiding you through every little detail. We will cover the API's core functionalities, including how to request thumbnails from videos using simple HTTP requests.</p>
+<p>It felt so good. But after some days suddenly my view count went from 20 to 500!</p>
 
-<p>Moreover, we will show something cool: How to customize thumbnail dimensions and extract thumbnails from various time points within a video. Finally we will show how to seamlessly implement the generated thumbnails into your applications or websites</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VqBEBZAB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2000/1%2A73WYw_fXIVC-VuLNHJ69QQ.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VqBEBZAB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2000/1%2A73WYw_fXIVC-VuLNHJ69QQ.png" alt="My first spike" width="740" height="270"></a></p>
 
-<p>First things first - We'll start by importing packages and walk you through the process to execute the file using the Node.js command.</p>
+<p>It gathered a huge amount of views afterward and to this day it accumulates over <strong>30000</strong> <strong>views</strong>. That’s <strong>viral</strong> for me!</p>
+
+<p>It was a story about our mistake as startup founders. How some poor technical choice almost ruined us.</p>
+
+<p>[Costly Mistakes: Why We Had to Abandoned Firebase]( javascript.plainenglish.io](<a href="https://javascript.plainenglish.io/costly-mistakes-why-we-had-to-abandoned-firebase-b89930c10d92">https://javascript.plainenglish.io/costly-mistakes-why-we-had-to-abandoned-firebase-b89930c10d92</a> )</p>
+
+<p>Whatever the case it felt so good. And I became much more serious after that about writing.</p>
+
+<h2>
+  
+  
+  Why Though?
+</h2>
+
+<p>Honestly, at that time, I had absolutely no idea why this particular article went viral.</p>
+
+<p>But now, after 6 months I think I’m now in a better place to explain why that article went viral. And these are factors that I used my other viral stories too. So maybe there is something.</p>
+
+<h2>
+  
+  
+  1. This is a Story of Failure
+</h2>
+
+<p>This story is about <strong>failure</strong>. People love to hear about other people’s failures. One of my most favorite quotes is.</p>
+
+<blockquote>
+<p>It is not enough to succeed; others must fail — Gore Vidal</p>
+</blockquote>
+
+<p>Yes, it’s true. No matter how much you want to avoid the truth it’s actually true.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--akpUdWau--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/11520/1%2AT-s5uiIdryQ9RC1oWIp_xA.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--akpUdWau--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/11520/1%2AT-s5uiIdryQ9RC1oWIp_xA.jpeg" alt="Photo by [Nathan Cowley](https://www.pexels.com/@mastercowley?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels) from [Pexels](https://www.pexels.com/photo/man-in-blue-and-brown-plaid-dress-shirt-touching-his-hair-897817/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels)" width="800" height="533"></a></p>
+
+<p>This is explained in <a href="https://www.psychologytoday.com/us/blog/in-the-name-love/200901/why-are-we-pleased-others-misfortune">this article </a>very nicely. And I think this is a factor why people <strong>engaged</strong> with that particular article.</p>
+
+<h2>
+  
+  
+  2. Powerful Word in The Title
+</h2>
+
+<p>According to <a href="https://kajabi.com/blog/power-words">this website</a></p>
+
+<blockquote>
+<p>A <strong>power word</strong> (also sometimes confused as a trigger <strong>word</strong>) is a <strong>word</strong> that evokes an emotion and a response. It instills in people the desire or need to respond to whatever you’re presenting them with.</p>
+</blockquote>
+
+<p>I used the word <strong>“Abandon”</strong> in the title which is a <strong>power word</strong>. It was a spontaneous choice back then but later I found out it’s an important factor in writing a <strong>great title</strong> for your article.</p>
+
+<p>I think this word in the title <strong>triggered</strong> many people to click on the article.</p>
 
 <h3>
   
   
-  <strong>Step 1: Set up the project</strong>
+  3. Against Popular Opinion
 </h3>
 
-<p>Create a new directory for your project and navigate to it using the terminal<br>
-</p>
+<p>In my article, I talked about the technology <strong>Firebase.</strong> Which is loved by many people and for good reasons. There are tons of articles about why it’s great and all.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">mkdir</span> <span class="nx">video</span><span class="o">-</span><span class="nx">thumbnail</span><span class="o">-</span><span class="nx">api</span><span class="o">-</span><span class="nx">nodejs</span>
-<span class="nx">cd</span> <span class="nx">video</span><span class="o">-</span><span class="nx">thumbnail</span><span class="o">-</span><span class="nx">api</span><span class="o">-</span><span class="nx">nodejs</span>
-</code></pre>
+<p>But unfortunately in our case, we failed to make the most out of it. That’s why people got curious about how we failed.</p>
 
-</div>
-
-
+<p>Many people in the comments also expressed their anger and pointed out why it was our fault that we failed to utilize it. (But forgot that I wrote the article to explain just that :p )</p>
 
 <h3>
   
   
-  Step 2: Initialize Node.js Project
+  4. Luck
 </h3>
 
-<p>Initialize a Node.js project by running the following command. This will create a package.json file.<br>
-</p>
+<p>Well….. most probably you saw it coming.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">npm</span> <span class="nx">init</span> <span class="o">-</span><span class="nx">y</span>
-</code></pre>
+<blockquote>
+<p>I am not trying to pretend to be a wizard who just figured out the algorithm.</p>
+</blockquote>
 
-</div>
+<p>After all the things that you can do there is still a crucial factor that is <strong>LUCK.</strong> Maybe some of my other articles had similar <strong>juices</strong> as that first article but didn’t take off.</p>
 
+<p>And that’s life for you. Write more consistently and write the best version that you possibly can.</p>
 
+<blockquote>
+<p>Because it’s the only thing that is in your control</p>
+</blockquote>
 
-<h3>
+<p>Best of luck with your writing journey. I hope you enjoyed it reading as much as I enjoyed writing it.</p>
+
+<h2>
   
   
-  Step 3: Install Required Packages
-</h3>
+  Resources
+</h2>
 
-<p>Install the required packages: Axios for making HTTP requests and form-data for handling multipart/form-data.<br>
-</p>
+<ol>
+<li><p><a href="https://www.psychologytoday.com/us/blog/in-the-name-love/200901/why-are-we-pleased-others-misfortune">https://www.psychologytoday.com/us/blog/in-the-name-love/200901/why-are-we-pleased-others-misfortune</a></p></li>
+<li><p><a href="https://kajabi.com/blog/power-words">https://kajabi.com/blog/power-words</a></p></li>
+</ol>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">axios</span> <span class="nx">form</span><span class="o">-</span><span class="nx">data</span> <span class="nx">fs</span>
-</code></pre>
+<p>Have a Great Day! :D</p>
 
-</div>
-
-
-
-<p>Once we run <code>npm install</code> in the terminal, the command triggers the installation of the specified dependencies listed in the project's package.json file. The following dependencies are commonly installed.</p>
-
-<p><strong>axios:</strong> A popular HTTP client library for making HTTP requests in Node.js. It simplifies the process of sending HTTP requests and handling responses. In this case, axios is used to make a POST request to the Video Watermarking API, sending the video URL and watermark image URL.</p>
-
-<p><strong>form-data:</strong> form-data is a JavaScript library that provides a way to create and handle multipart/form-data requests. It allows you to easily construct and send HTTP requests that contain files or other binary data. This library is often used in conjunction with axios or other HTTP client libraries to send form-based requests with files attached.</p>
-
-<p><strong>fs (File System)</strong>: A built-in module in Node.js that provides functionalities for working with the file system. In this context, fs is used to create a write stream and save the watermarked video file. The createWriteStream function allows you to write the response data from the API request directly to a file on the local file system.</p>
-
-<h3>
-  
-  
-  Step 4: Create Your Integration Script
-</h3>
-
-<p>Create a file named <strong>generateThumbnail.js</strong> in your project directory.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="c1">// Import required packages</span>
-<span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">FormData</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">form-data</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="c1">// API endpoint URL</span>
-<span class="kd">const</span> <span class="nx">apiUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://api.apyhub.com/generate/video-thumbnail/file</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="c1">// Replace 'YOUR_APY_TOKEN' with your actual API token</span>
-<span class="kd">const</span> <span class="nx">apyToken</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">YOUR_APY_TOKEN</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="c1">// Define the file path and details</span>
-<span class="kd">const</span> <span class="nx">videoFilePath</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">/path_to_file</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">outputFileName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">PROVIDE_THE_OUTPUT_FILE_NAME</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">startTime</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">duration</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">size</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">400x300</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">generateThumbnail</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="c1">// Create form data</span>
-    <span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">video</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="nx">videoFilePath</span><span class="p">));</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">start_time</span><span class="dl">'</span><span class="p">,</span> <span class="nx">startTime</span><span class="p">);</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">duration</span><span class="dl">'</span><span class="p">,</span> <span class="nx">duration</span><span class="p">);</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">,</span> <span class="nx">size</span><span class="p">);</span>
-
-    <span class="c1">// Set headers</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">apy-token</span><span class="dl">'</span><span class="p">,</span> <span class="nx">apiToken</span><span class="p">);</span>
-
-    <span class="c1">// Make POST request</span>
-    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">apiUrl</span><span class="p">,</span> <span class="nx">form</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="p">.</span><span class="nx">getHeaders</span><span class="p">(),</span>
-      <span class="p">},</span>
-      <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">output</span><span class="p">:</span> <span class="nx">outputFileName</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">});</span>
-
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Thumbnail generation response:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error generating thumbnail:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Call the function to generate the thumbnail</span>
-<span class="nx">generateThumbnail</span><span class="p">();</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Step 5: Execute the Script</strong></p>
-
-<p>Execute the script using the Node.js command.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">node</span> <span class="nx">generateThumbnail</span><span class="p">.</span><span class="nx">js</span>
-</code></pre>
-
-</div>
-
-
-
-<p>That's it! It wasn't so difficult right? We have now successfully integrated the <a href="https://apyhub.com/utility/video-thumbnail">Video Thumbnail API</a> using Node.js!</p>
-
-<p>Using this service, we can generate video thumbnails from literally any part of a video file or URL (e.g. youtube). This way, we automate extracting thumbnails from videos , allowing for efficient and consistent extraction of thumbnails without the need of any manual work. This can save both time and resources for all businesses and content creators. </p>
-
-<p>The <a href="https://apyhub.com/utility/video-thumbnail">ApyHub Video Thumbnail API</a> can also be integrated into existing workflows and platforms, making it easy to incorporate thumbnail extraction into existing processes.<br>
-Good luck with using the API. Looking forward to any feedback on <a href="https://discord.gg/KcjnPHef7p">discord</a>.</p>
+<p>Get in touch with me via <a href="https://www.linkedin.com/in/56faisal/">LinkedIn</a> or <a href="https://www.mohammadfaisal.dev/">Personal Website</a></p>
 
  </details> 
  <hr /> 
