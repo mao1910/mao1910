@@ -133,6 +133,411 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Data Communication : System design](https://dev.to/rajrathod/data-communication-system-design-3hgf) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Data Communication:
+</h2>
+
+<p>Data communication, also known as data networking or network communication, refers to the transmission of digital data between devices or systems over a network. It is a fundamental concept in computer science and telecommunications and plays a crucial role in enabling communication and data exchange in today's interconnected world. Here are key aspects and components of data communication:</p>
+
+<p><strong>1. Data Transmission Medium</strong>:</p>
+
+<ul>
+<li>
+<p><strong>Physical Media</strong>: Data can be transmitted over various physical mediums, including:</p>
+
+<ul>
+<li>
+<strong>Copper Wire</strong>: Used in Ethernet and telephone connections.</li>
+<li>
+<strong>Fiber Optic Cable</strong>: Provides high-speed and long-distance data transmission.</li>
+<li>
+<strong>Wireless</strong>: Radio waves, microwaves, and satellite links are used for wireless communication.</li>
+<li>
+<strong>Coaxial Cable</strong>: Often used for cable television and some data networks.</li>
+</ul>
+
+
+</li>
+<li><p><strong>Wireless Technologies</strong>: Wireless data communication includes Wi-Fi, cellular networks (3G, 4G, 5G), Bluetooth, and satellite communication.</p></li>
+</ul>
+
+<p><strong>2. Data Transmission Methods</strong>:</p>
+
+<ul>
+<li>
+<strong>Serial vs. Parallel</strong>: Data can be transmitted serially (one bit at a time) or in parallel (multiple bits simultaneously).</li>
+<li>
+<strong>Synchronous vs. Asynchronous</strong>: In synchronous transmission, data is sent in synchronized frames, while asynchronous transmission does not require strict synchronization.</li>
+</ul>
+
+<p><strong>3. Network Protocols and Standards</strong>:</p>
+
+<ul>
+<li>
+<strong>Protocols</strong>: Network protocols define rules and conventions for data communication. Examples include TCP/IP, HTTP, FTP, SMTP, and more.</li>
+<li>
+<strong>Standards</strong>: Standards organizations like the IEEE, ISO, and ITU develop specifications for networking and communication technologies, ensuring interoperability.</li>
+</ul>
+
+<p><strong>4. Network Topologies</strong>:</p>
+
+<ul>
+<li>
+<strong>Physical Topology</strong>: Describes the physical layout of devices in a network, such as star, bus, ring, or mesh topologies.</li>
+<li>
+<strong>Logical Topology</strong>: Defines how data flows in the network, often based on protocols (e.g., Ethernet, Token Ring).</li>
+</ul>
+
+<p><strong>5. Network Devices</strong>:</p>
+
+<ul>
+<li>
+<strong>Routers</strong>: Devices that connect different networks and route data between them.</li>
+<li>
+<strong>Switches</strong>: Devices that forward data within a local network based on MAC addresses.</li>
+<li>
+<strong>Firewalls</strong>: Network security devices that filter incoming and outgoing traffic.</li>
+<li>
+<strong>Modems</strong>: Devices that modulate and demodulate signals to enable digital data transmission over analog lines (e.g., DSL modems).</li>
+</ul>
+
+<p><strong>6. Network Layers</strong>:</p>
+
+<ul>
+<li>
+<strong>OSI Model</strong>: The OSI (Open Systems Interconnection) model defines seven layers, each responsible for specific functions in data communication. These layers include physical, data link, network, transport, session, presentation, and application layers.</li>
+</ul>
+
+<p><strong>7. Transmission Modes</strong>:</p>
+
+<ul>
+<li>
+<strong>Simplex</strong>: Data flows in one direction only (e.g., TV broadcast).</li>
+<li>
+<strong>Half-Duplex</strong>: Data can flow in both directions but not simultaneously (e.g., walkie-talkies).</li>
+<li>
+<strong>Full-Duplex</strong>: Data can flow in both directions simultaneously (e.g., phone conversation).</li>
+</ul>
+
+<p><strong>8. Error Detection and Correction</strong>:</p>
+
+<ul>
+<li>Techniques like checksums and error-correcting codes are used to detect and correct errors in transmitted data.</li>
+</ul>
+
+<p><strong>9. Data Encoding and Modulation</strong>:</p>
+
+<ul>
+<li>Data is often encoded into electrical, optical, or radio wave signals for transmission. Techniques like modulation are used to represent digital data in analog signals.</li>
+</ul>
+
+<p><strong>10. Network Security and Encryption</strong>:</p>
+
+<ul>
+<li>Data communication often involves security measures to protect data from unauthorized access and eavesdropping. Encryption and secure protocols are used for secure communication.</li>
+</ul>
+
+<p><strong>11. Bandwidth and Data Rate</strong>:</p>
+
+<ul>
+<li>Bandwidth represents the capacity of a communication channel, while data rate refers to the speed at which data is transmitted.</li>
+</ul>
+
+<p><strong>12. Data Routing</strong>:</p>
+
+<ul>
+<li>Data is routed through networks using routing algorithms and tables that determine the best path from the source to the destination.</li>
+</ul>
+
+<p>Data communication is the foundation of the internet, telecommunication networks, and various other communication systems. It enables the exchange of information, multimedia content, and real-time interactions across the globe, impacting various aspects of modern life, from business and education to entertainment and healthcare.</p>
+
+<h2>
+  
+  
+  Application Layer:
+</h2>
+
+<p>The application layer is one of the seven layers in the OSI (Open Systems Interconnection) model and one of the five layers in the TCP/IP model. It is the topmost layer in both models and plays a fundamental role in network communication, as it focuses on end-user services and applications. Here's an overview of the application layer:<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vkG17HvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opg7tsvapbmdpcssq9fj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vkG17HvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opg7tsvapbmdpcssq9fj.png" alt="Image description" width="585" height="359"></a></p>
+
+<p><strong>Key Functions of the Application Layer</strong>:</p>
+
+<ol>
+<li><p><strong>End-User Services</strong>: The primary purpose of the application layer is to provide various network services directly to end-users or applications. It acts as an interface between the network and the user, ensuring that applications can communicate over the network.</p></li>
+<li><p><strong>Application Protocols</strong>: The application layer defines various protocols and standards for specific applications and services to communicate with one another. These protocols determine how data is formatted, transmitted, and received by applications.</p></li>
+<li><p><strong>Data Presentation and Translation</strong>: The application layer is responsible for data presentation and conversion. It ensures that data is in a format that the receiving application can understand and interpret. This includes tasks like data encryption, compression, and character set conversion.</p></li>
+<li><p><strong>Session Management</strong>: The application layer can establish, maintain, and terminate communication sessions between applications. It helps manage the flow of data and ensures that information is synchronized between sender and receiver.</p></li>
+<li><p><strong>Application Identification and Addressing</strong>: The application layer defines mechanisms for identifying applications and services on a network, typically using port numbers or other identifiers. This enables routers and switches to forward data to the appropriate destination.</p></li>
+<li><p><strong>User Authentication and Authorization</strong>: Some application layer protocols and services handle user authentication and authorization, ensuring that only authorized users can access certain resources or services.</p></li>
+<li><p><strong>File Transfer and Remote Access</strong>: Protocols like FTP (File Transfer Protocol) and SSH (Secure Shell) operate at the application layer and enable file transfer and remote access to servers.</p></li>
+<li><p><strong>Email Services</strong>: Email protocols such as SMTP (Simple Mail Transfer Protocol) for sending emails and POP3/IMAP for receiving emails operate at the application layer.</p></li>
+<li><p><strong>Web Services</strong>: HTTP (Hypertext Transfer Protocol), used for web browsing and web-based applications, is a key application layer protocol.</p></li>
+</ol>
+
+<p><strong>Examples of Application Layer Protocols and Services</strong>:</p>
+
+<ul>
+<li>
+<strong>HTTP/HTTPS</strong>: Hypertext Transfer Protocol and its secure version are used for web browsing and web services.</li>
+<li>
+<strong>SMTP</strong>: Simple Mail Transfer Protocol is used for sending email.</li>
+<li>
+<strong>POP3/IMAP</strong>: Post Office Protocol and Internet Message Access Protocol are used for receiving email.</li>
+<li>
+<strong>FTP</strong>: File Transfer Protocol is used for transferring files.</li>
+<li>
+<strong>SSH</strong>: Secure Shell is used for secure remote access and management of network devices.</li>
+<li>
+<strong>DNS</strong>: Domain Name System resolves domain names into IP addresses.</li>
+<li>
+<strong>SNMP</strong>: Simple Network Management Protocol is used for managing and monitoring network devices.</li>
+<li>
+<strong>TELNET</strong>: Used for remote terminal access (not secure).</li>
+</ul>
+
+<p>The application layer is critical for enabling communication between different software applications and services across a network. It provides the necessary abstractions and protocols to facilitate this communication, ensuring that data is exchanged accurately and efficiently.</p>
+
+<h2>
+  
+  
+  Network Protocols:
+</h2>
+
+<p>HTTP (Hypertext Transfer Protocol), TCP (Transmission Control Protocol), and UDP (User Datagram Protocol) are fundamental protocols in computer networking that play essential roles in data communication and web services. Each protocol serves a specific purpose and has its characteristics and use cases. Here's an overview of each:<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RKMceQE8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b0l6a19qac8dhho1l3sj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RKMceQE8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b0l6a19qac8dhho1l3sj.png" alt="Image description" width="697" height="537"></a></p>
+
+<p><strong>HTTP (Hypertext Transfer Protocol)</strong>:</p>
+
+<ul>
+<li>
+<strong>Purpose</strong>: HTTP is an application layer protocol used for transferring hypertext (text-based documents with links) and other data between a client (typically a web browser) and a web server.</li>
+<li>
+<strong>Characteristics</strong>:
+
+<ul>
+<li>Request-Response Model: HTTP follows a client-server model where a client sends requests to a web server, and the server responds with the requested content.</li>
+<li>Stateless: HTTP is stateless, meaning each request-response cycle is independent, and the server doesn't retain information about previous requests from the same client.</li>
+<li>Connectionless: By default, HTTP uses a connectionless model where each request/response is a separate connection. However, HTTP/1.1 introduced the option to reuse connections (HTTP Keep-Alive) for multiple requests.</li>
+</ul>
+
+
+</li>
+<li>
+<strong>Use Cases</strong>: HTTP is the foundation of the World Wide Web and is used for browsing websites, fetching resources like HTML pages, images, videos, and interacting with web services through APIs (e.g., RESTful APIs).</li>
+</ul>
+
+<p><strong>TCP (Transmission Control Protocol)</strong>:</p>
+
+<ul>
+<li>
+<strong>Purpose</strong>: TCP is a transport layer protocol that provides reliable, connection-oriented, and stream-oriented data communication between two devices in a network.</li>
+<li>
+<strong>Characteristics</strong>:
+
+<ul>
+<li>Reliable: TCP ensures the reliable delivery of data by acknowledging received packets, retransmitting lost packets, and ordering received packets.</li>
+<li>Connection-Oriented: TCP establishes a connection before data exchange and terminates the connection after communication.</li>
+<li>Stream-Oriented: TCP treats data as a continuous stream of bytes, providing a byte-stream interface to applications.</li>
+</ul>
+
+
+</li>
+<li>
+<strong>Use Cases</strong>: TCP is commonly used for applications where data reliability and ordering are critical, such as web browsing, email, file transfer (e.g., FTP), and remote access (e.g., SSH).</li>
+</ul>
+
+<p><strong>UDP (User Datagram Protocol)</strong>:</p>
+
+<ul>
+<li>
+<strong>Purpose</strong>: UDP is a transport layer protocol that provides a connectionless and lightweight method for sending datagrams (packets) of data between devices in a network.</li>
+<li>
+<strong>Characteristics</strong>:
+
+<ul>
+<li>Connectionless: UDP does not establish a connection before sending data and does not guarantee the delivery or ordering of data packets.</li>
+<li>Lightweight: UDP has lower overhead compared to TCP because it lacks features like flow control and error correction.</li>
+<li>Low Latency: UDP is preferred for real-time applications where low latency is crucial, such as VoIP, online gaming, and multimedia streaming.</li>
+</ul>
+
+
+</li>
+<li>
+<strong>Use Cases</strong>: UDP is suitable for applications where real-time communication is more important than data integrity, such as video conferencing, DNS, DHCP, and various real-time protocols.
+Remote Procedure Call (RPC), gRPC, REST, and GraphQL are all protocols and technologies used for building APIs and enabling communication between clients and servers in distributed systems. Each of these technologies has its own characteristics and use cases. Here's an in-depth explanation of each:</li>
+</ul>
+
+<p><strong>Remote Procedure Call (RPC)</strong>:</p>
+
+<ul>
+<li>
+<strong>Purpose</strong>: RPC is a protocol that allows a program or function to execute code on a remote server or service as if it were a local function call. It abstracts the complexities of network communication, making it appear as if the client is invoking a function on the server.</li>
+<li>
+<strong>Characteristics</strong>:
+
+<ul>
+<li>Synchronous: RPC calls are typically synchronous, meaning the client waits for the remote procedure to complete and return a response.</li>
+<li>Language Agnostic: RPC can work across different programming languages, allowing clients and servers to be written in different languages.</li>
+<li>Communication Overhead: RPC may involve serialization/deserialization of data and network communication, which can add overhead.</li>
+</ul>
+
+
+</li>
+<li>
+<strong>Use Cases</strong>: RPC is commonly used in scenarios where you need direct control over remote services and want to make remote calls feel like local calls. Examples include remote method invocation in Java RMI and gRPC.</li>
+</ul>
+
+<p><strong>gRPC</strong>:</p>
+
+<ul>
+<li>
+<strong>Purpose</strong>: gRPC is an open-source RPC framework developed by Google. It uses HTTP/2 as the transport protocol and Protocol Buffers (protobuf) as the interface definition language (IDL) to define services and message structures.</li>
+<li>
+<strong>Characteristics</strong>:
+
+<ul>
+<li>Strongly Typed: gRPC uses Protocol Buffers to define APIs and data structures, providing strong typing and code generation.</li>
+<li>Language Agnostic: Similar to RPC, gRPC allows communication between clients and servers implemented in different programming languages.</li>
+<li>Bidirectional Streaming: gRPC supports bidirectional streaming, enabling both clients and servers to send multiple messages in a single RPC.</li>
+</ul>
+
+
+</li>
+<li>
+<strong>Use Cases</strong>: gRPC is well-suited for building efficient and performant APIs in microservices architectures. It's commonly used in scenarios where high performance, strong typing, and bidirectional communication are important.</li>
+</ul>
+
+<p><strong>REST (Representational State Transfer)</strong>:</p>
+
+<ul>
+<li>
+<strong>Purpose</strong>: REST is an architectural style for designing networked applications. It is based on a set of principles and constraints that define how resources are identified and addressed via URLs, and how they can be manipulated using a limited set of standardized HTTP methods.</li>
+<li>
+<strong>Characteristics</strong>:
+
+<ul>
+<li>Stateless: RESTful services are stateless, meaning each request from a client to a server must contain all the information needed to understand and process the request.</li>
+<li>CRUD Operations: REST maps CRUD (Create, Read, Update, Delete) operations to HTTP methods (POST, GET, PUT, DELETE) for resource manipulation.</li>
+<li>Representations: Resources in REST can have multiple representations (e.g., JSON, XML, HTML), and clients can specify their preferred representation.</li>
+</ul>
+
+
+</li>
+<li>
+<strong>Use Cases</strong>: REST is widely used for building APIs on the web, including web services, social media APIs, and any scenario where stateless communication over HTTP is appropriate.</li>
+</ul>
+
+<p><strong>GraphQL</strong>:</p>
+
+<ul>
+<li>
+<strong>Purpose</strong>: GraphQL is a query language and runtime for APIs that allows clients to request only the data they need and nothing more. It provides a flexible and efficient approach to data retrieval and manipulation.</li>
+<li>
+<strong>Characteristics</strong>:
+
+<ul>
+<li>Flexible Queries: Clients can specify exactly what data they need in their queries, reducing over-fetching or under-fetching of data.</li>
+<li>Strongly Typed: GraphQL APIs are strongly typed and introspective, meaning the schema is self-documenting, and clients can discover available operations and types.</li>
+<li>Single Endpoint: GraphQL typically exposes a single endpoint for all API operations, making it easier to manage and optimize.</li>
+</ul>
+
+
+</li>
+<li>
+<strong>Use Cases</strong>: GraphQL is suitable for scenarios where clients have diverse data needs, need to reduce over-fetching of data, or want to consolidate multiple API endpoints into a single endpoint. It is often used in modern web and mobile app development.</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Self-developed PSD parser dynamically generates static code to improve your development efficiency](https://dev.to/yuanmr/self-developed-psd-parser-dynamically-generates-static-code-to-improve-your-development-efficiency-200c) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Preface
+</h2>
+
+<p>Hello everyone, welcome to the <code>Useless Innovation</code> technology channel. That's right! You read that right, here is a combination of useless technologies or technologies that are rarely touched in daily life. Innovate a more useless tool and provide it for everyone to use. Therefore, we call it <code>useless innovation</code>, or we can also call it <code>berry innovation</code>.</p>
+
+<h2>
+  
+  
+  Finished product display
+</h2>
+
+<p>Before explaining my development and learning process, I will first share the tools with everyone. If you want to know more about us or want to learn and cooperate, you can send me a private message. Quick access address：<a href="http://meichuang.org.cn/meichuangToos/#/index">http://meichuang.org.cn/meichuangToos/#/index</a></p>
+
+<h2>
+  
+  
+  front page
+</h2>
+
+<p>When you enter the homepage of the platform, you can see a very simple style, which is mainly divided into three areas: the header area, the introduction area, and the functional module area. What we developed this time: the “useless” static code generator tool is our first product, also known as Pixel Partner.</p>
+
+<p>*When I chose this name, I wanted this tool to be your partner in the development process. It can help you complete the task of cutting pictures at any time, so that you are no longer a picture cutting boy. *</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TIPKnLDx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rryzsqgdyk5924vb3odm.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TIPKnLDx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rryzsqgdyk5924vb3odm.png" alt="home" width="800" height="444"></a></p>
+
+<h2>
+  
+  
+  Pixel Partner
+</h2>
+
+<p>When you enter the Pixel Partner tool, you will be asked by default to upload a PSD mockup first. After the upload is completed, it will help you with cutting, rendering and other actions, and finally enter the console.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XntJ4RLI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1m925bybdk8chtbiay5h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XntJ4RLI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1m925bybdk8chtbiay5h.png" alt="import" width="800" height="445"></a></p>
+
+<p><strong>The console page is divided into three modules:</strong></p>
+
+<ol>
+<li>File preview area on the left: You can upload multiple psds and switch at any time.</li>
+<li>The page preview area in the middle: preview the corresponding psd interface.</li>
+<li>Ribbon on the right: Set the configuration of download code.</li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lt_tmprU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nl3foqy1ireaatqgt02m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lt_tmprU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nl3foqy1ireaatqgt02m.png" alt="preview" width="800" height="446"></a></p>
+
+<p>Mainly explain the functions of the functional area:</p>
+
+<ol>
+<li>Source code type: Generate code using the syntax and rules of the corresponding type. Contains HTML, Vue2.x, React, Uniapp, WeChat applet</li>
+<li>Size standard: The page adapts to the size. According to the value you fill in, all the elements of the page are generated to the corresponding adapted size, so that they can be perfectly presented on the page.</li>
+<li>Unit standard: According to the size and unit, it can be adapted to the display of different clients. Contains PX, REM, VH, VW</li>
+<li>Font: Upload the corresponding text font to restore the visual draft.</li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eul0SFSp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lf9n6tfcta4r9molrz8d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eul0SFSp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lf9n6tfcta4r9molrz8d.png" alt="ribbon" width="800" height="1520"></a></p>
+
+<h2>
+  
+  
+  Self-test
+</h2>
+
+<p>After the development was completed, we also conducted self-tests for a period of time to summarize the overall integrity of the current website.</p>
+
+<ol>
+<li>Parse poster-related PSD files, which can be perfectly parsed, as long as the corresponding font file is uploaded (<strong>This is very important</strong>). Our company is also using it now, which basically saves one or two people’s working hours (the boss is very satisfied).</li>
+<li>The layout is not strong, and it is not very friendly to the management backend or daily business viewing pages. The current overall layout is based on positioning and has no structure. We are constantly making breakthroughs in this regard (<strong>If you have the ability and interest in this area People can join our small team, and we can open source in this area</strong>)</li>
+<li>The recognition is not strong and cannot be recognized as input boxes, tables, icons, etc. We are also looking for a breakthrough point for this. To be honest, it is a bit difficult. There is no one in this field (<strong>If anyone is willing to teach us how to train large models, please send me a private message, or if you are willing to cooperate</strong>)</li>
+</ol>
+
+<h2>
+  
+  
+  Summarize
+</h2>
+
+<p>The above introduction ends here. The operation is very simple, and the function of generating page code is also very nice. Everyone can try it. Maybe it will be helpful to you, <code>I introduced this tool to a friend, and he directly used it to take orders to develop pages. He complained that he could borrow more orders for drawing static pages.</code>I secretly envy people who have private contracts. That’s it for this issue, see you next time.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Lidando com regressão visual: enfrentando desafios com Django, Selenium e Pillow](https://dev.to/eduardojm/lidando-com-regressao-visual-enfrentando-desafios-com-django-selenium-e-pillow-o8d) 
  <details><summary>Article</summary> <p>O <strong>django-image-uploader-widget</strong> é um projeto de componente de upload de imagem para o <strong>django</strong>. Por motivos de retrocompatibilidade entre as versões 3.x e 4.x do <strong>django</strong>, foi decidido implementar testes de regressão visual utilizando <strong>Selenium</strong> e <strong>Pillow</strong>. Nesse texto vamos trabalhar esse tema e seus desafios.</p>
 
@@ -1429,449 +1834,6 @@ How was it? I hope this article was helpful for you.</p>
 <p>I hope this gets you a little more in your toolbox when working with DynamoDB Streams and EventBridge Pipes.</p>
 
 <p>Happy Building!</p>
-
- </details> 
- <hr /> 
-
- #### - [Code Smell 224 - Deodorant Comments](https://dev.to/mcsee/code-smell-224-deodorant-comments-3nfk) 
- <details><summary>Article</summary> <p><em>You use nice words to excuse bad code</em></p>
-
-<blockquote>
-<p>TL;DR: Don't excuse bad code. Write a clean one!</p>
-</blockquote>
-
-<h1>
-  
-  
-  Problems
-</h1>
-
-<ul>
-<li>Readability</li>
-</ul>
-
-<h1>
-  
-  
-  Solutions
-</h1>
-
-<ol>
-<li>Rewrite the code and delete the comment</li>
-</ol>
-
-<h1>
-  
-  
-  Context
-</h1>
-
-<p>The term comes from Martin Fowler's book "Refactoring: Improving the Design of Existing Code"</p>
-
-<h1>
-  
-  
-  Sample Code
-</h1>
-
-<h2>
-  
-  
-  Wrong
-</h2>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="c1"># This is a function that adds two numbers
-</span><span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="c1"># Now you are going to add a and b
-</span>    <span class="n">res</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-    <span class="c1"># And return the result
-</span>    <span class="k">return</span> <span class="n">res</span>
-
-</code></pre>
-
-</div>
-
-<h2>
-  
-  
-  Right
-</h2>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">adder</span><span class="p">,</span> <span class="n">anotherAdder</span><span class="p">):</span>
-
-    <span class="k">return</span> <span class="n">adder</span> <span class="o">+</span> <span class="n">anotherAdder</span>
-</code></pre>
-
-</div>
-
-
-<p>If you ask ChatGPT to improve this version it will actually worsen it:</p>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-    <span class="c1"># Calculate the sum of two numbers
-</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="c1"># In this improved version:
-#
-# The function name calculate_sum is more descriptive than sum, 
-# making it clear that this function calculates the sum of two numbers.
-# (Wrong) it is more imperative and mistakes the 'what' with the 'how'
-#
-# The parameter names number1 and number2 are more meaningful 
-# than adder and anotherAdder, helping to indicate the purpose of each parameter.
-# (wrong) They indicate type instead of role
-#
-# The comment # Calculate the sum of two numbers provides a clear 
-# and concise explanation of what the function does, 
-# making it easier for someone reading the code to understand its purpose.    
-# (wrong) in fact, it is an example of deodorant and useless comment
-</span></code></pre>
-
-</div>
-
-<h1>
-  
-  
-  Detection
-</h1>
-
-<p>[X] Semi-Automatic </p>
-
-<p>Most comments are code smells. </p>
-
-<p>You can remove deodorant comments and improve the code.</p>
-<h1>
-  
-  
-  Exceptions
-</h1>
-
-<ul>
-<li>Comments should only be used to describe important design decisions.</li>
-</ul>
-<h1>
-  
-  
-  Tags
-</h1>
-
-<ul>
-<li>Comments</li>
-</ul>
-<h1>
-  
-  
-  Conclusion
-</h1>
-
-<p>Remove any meaningless comment you find in your code.</p>
-<h1>
-  
-  
-  Relations
-</h1>
-
-
-<div class="ltag__link">
-  <a href="/mcsee" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
-    </div>
-  </a>
-  <a href="/mcsee/code-smell-151-commented-code-5d8l" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Code Smell 151 - Commented Code</h2>
-      <h3>Maxi Contieri ・ Jul 22 '22</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#programming</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-
-<div class="ltag__link">
-  <a href="/mcsee" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
-    </div>
-  </a>
-  <a href="/mcsee/code-smell-183-obsolete-comments-3mmo" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Code Smell 183 - Obsolete Comments</h2>
-      <h3>Maxi Contieri ・ Dec 2 '22</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#programming</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<div class="ltag__link">
-  <a href="/mcsee" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
-    </div>
-  </a>
-  <a href="/mcsee/code-smell-146-getter-comments-3pjn" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Code Smell 146 - Getter Comments</h2>
-      <h3>Maxi Contieri ・ Jul 2 '22</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#programming</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<div class="ltag__link">
-  <a href="/mcsee" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
-    </div>
-  </a>
-  <a href="/mcsee/code-smell-05-comment-abusers-2ba5" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Code Smell 05 - Comment Abusers</h2>
-      <h3>Maxi Contieri ・ Oct 24 '20</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#codenewbie</span>
-        <span class="ltag__link__tag">#tutorial</span>
-        <span class="ltag__link__tag">#beginners</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<div class="ltag__link">
-  <a href="/mcsee" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
-    </div>
-  </a>
-  <a href="/mcsee/-refactoring-011-replace-comments-with-tests-27j1" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Refactoring 011 - Replace Comments with Tests</h2>
-      <h3>Maxi Contieri ・ Apr 23</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#programming</span>
-        <span class="ltag__link__tag">#tutorial</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<h1>
-  
-  
-  More Info
-</h1>
-
-<p><a href="https://learning.oreilly.com/library/view/clean-code-in/9781838982973">Clean Code In C#</a></p>
-
-<h1>
-  
-  
-  Disclaimer
-</h1>
-
-<p>Code Smells are my <a href="https://dev.to/mcsee/i-wrote-more-than-90-articles-on-2021-here-is-what-i-learned-1n3a">opinion</a>.</p>
-
-<h1>
-  
-  
-  Credits
-</h1>
-
-<p>Photo by <a href="https://unsplash.com/@ana_essentiels">Ana Essentiels</a> on <a href="https://unsplash.com/photos/Eh6iapfqDzA">Unsplash</a></p>
-
-
-
-
-<blockquote>
-<p>The reason we mention comments here is that comments often are used as a deodorant. It's surprising how often you look at thickly commented code and notice that the comments are there because the code is bad. </p>
-</blockquote>
-
-<p><em>Martin Fowler</em></p>
-
-
-<div class="ltag__link">
-  <a href="/mcsee" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
-    </div>
-  </a>
-  <a href="/mcsee/software-engineering-great-quotes-26ci" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Software Engineering Great Quotes</h2>
-      <h3>Maxi Contieri ・ Dec 28 '20</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#codenewbie</span>
-        <span class="ltag__link__tag">#programming</span>
-        <span class="ltag__link__tag">#quotes</span>
-        <span class="ltag__link__tag">#software</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-
-
-<p>This article is part of the CodeSmell Series.</p>
-
-
-<div class="ltag__link">
-  <a href="/mcsee" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ykqWDKUm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--g5itNIDM--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/366059/d995753c-a4ef-4552-918b-f467838d01f5.png" alt="mcsee">
-    </div>
-  </a>
-  <a href="/mcsee/how-to-find-the-stinky-parts-of-your-code-1dbc" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>How to Find the Stinky parts of your Code</h2>
-      <h3>Maxi Contieri ・ May 21 '21</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#codenewbie</span>
-        <span class="ltag__link__tag">#tutorial</span>
-        <span class="ltag__link__tag">#codequality</span>
-        <span class="ltag__link__tag">#beginners</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
- </details> 
- <hr /> 
-
- #### - [Principles for Scaling Frontend Application Developments](https://dev.to/hashcode01/principles-for-scaling-frontend-application-developments-2kja) 
- <details><summary>Article</summary> <p>Today I decided to note and review the principles that was discussed by Malte UBL from Vercel</p>
-
-<p>Scaling web apps is harder than it seems, both technically and in terms of team growth and iteration.</p>
-
-<p>Technical aspect of making the application performant when reaching millions of users is challenging.</p>
-
-<p>He thinks a lot about scaling and just did a talk on scaling frontend app development on react summit:</p>
-
-<p>Here are six essential principles for scaling applications:</p>
-
-<ul>
-<li>1: Tear down the barriers</li>
-<li>2: Make it east to delete code </li>
-<li>3: Migrate incrementally </li>
-<li>4: Always get better, never get worse</li>
-<li>5: Embrace lack of knowledge</li>
-<li>6: Eliminate systematic complexity</li>
-</ul>
-
-<p>Now lets deep into each principle: </p>
-
-<h2>
-  
-  
-  Principle 1: Tear down the barriers
-</h2>
-
-<p>The first principle discussed in the video is to tear down the barriers that can slow down development. This includes things like silos between teams, slow build times, and manual processes that can be automated. By removing these barriers, teams can work more efficiently and focus on delivering value to users.</p>
-
-<p>Good example : go migrate to a mono repo that could save a lot of times and removes some barriers </p>
-
-<h2>
-  
-  
-  Principle 2: Make it easy to delete code
-</h2>
-
-<p>The second principle is all about making it easy to delete code. This means creating a style system where teams can keep their codebase clean and maintainable.</p>
-
-<p>Good example 1: if you use css-in-js or tailwind, because you have co-location of the css with the code you can easily remove the component with high confidence.<br>
-Good example 2: data fetching inside of components in NextJs 13 </p>
-
-<h2>
-  
-  
-  Principle 3: Migrate incrementally
-</h2>
-
-<p>The third principle is to migrate incrementally. This means moving from old APIs to new capabilities in a gradual way, By taking an incremental approach, teams can avoid breaking changes and minimize risk.</p>
-
-<p>Indeed he believes there are only 2 types of migrations:</p>
-
-<ul>
-<li>incremental migrations</li>
-<li>failed migrations </li>
-</ul>
-
-<p>Good example 1: Next.js 13 app router <br>
-Good example 2: trpc </p>
-
-<h2>
-  
-  
-  Principle 4: Always get better, never get worse
-</h2>
-
-<p>The fourth principle is all about continuous improvement. Teams should always be looking for ways to improve their codebase and processes, rather than letting things stagnate. This includes introducing new rules for new code rather than migrating old code, seeking approval for code changes.</p>
-
-<p>Good example: introducing lint rules gradualy</p>
-
-<p>Principle 5: Embrace lack of knowledge<br>
-The fifth principle is to embrace a lack of knowledge. This means being comfortable with not knowing everything and seeking out answers when needed. It also means being willing to ask questions and challenge assumptions in order to improve outcomes.</p>
-
-<p>Some Good examples:</p>
-
-<ul>
-<li>To reduce any fear of embarrassment, the team establishes an anonymous question submission system</li>
-<li>Encouraging employees to ask dumb questions helps create a culture of openness and comfort by doing it yourself</li>
-<li>Mentorship and Guidance</li>
-</ul>
-
-<h2>
-  
-  
-  Principle 6: Eliminate systematic complexity
-</h2>
-
-<p>The final principle is to eliminate systematic complexity. This includes things like versioning APIs and introducing new fields, which can add unnecessary complexity. The speaker proposes using serverless deployment to eliminate this complexity altogether. By simplifying the system, teams can focus on delivering value to users rather than managing complexity.</p>
-
-<p>Good example: versions Skew  </p>
-
-<p><a href="https://youtu.be/tqhLK0Fb5_4?si=Ql-dj-x5w443dEK9">https://youtu.be/tqhLK0Fb5_4?si=Ql-dj-x5w443dEK9</a></p>
-
-<p>let me know in the comments what's your opinion about hese principles and if you have and good examples of each one </p>
-
-<p>All the best<br>
-HASH</p>
 
  </details> 
  <hr /> 
