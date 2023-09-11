@@ -133,6 +133,806 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Generating Thumbnails from Videos using ApyHub’s API](https://dev.to/apyhub/generating-thumbnails-from-videos-using-apyhubs-api-p3k) 
+ <details><summary>Article</summary> <p>As we have discussed in <a href="https://apyhub.com/blog/video-thumbnails-for-seo">previous articles</a>, video thumbnails have a lot of benefits and possible uses, including:</p>
+
+<p>enhanced visual appeal, improved user experience, and of course a boost in brand identity and recognition. In this tutorial, we will go a bit more technical - focusing on the <a href="https://apyhub.com/utility/video-thumbnail">ApyHub video thumbnail</a> generator API.</p>
+
+<p>No worries, this will be extremely simple and detailed. We will go slow and step by step, guiding you through every little detail. We will cover the API's core functionalities, including how to request thumbnails from videos using simple HTTP requests.</p>
+
+<p>Moreover, we will show something cool: How to customize thumbnail dimensions and extract thumbnails from various time points within a video. Finally we will show how to seamlessly implement the generated thumbnails into your applications or websites</p>
+
+<p>First things first - We'll start by importing packages and walk you through the process to execute the file using the Node.js command.</p>
+
+<h3>
+  
+  
+  <strong>Step 1: Set up the project</strong>
+</h3>
+
+<p>Create a new directory for your project and navigate to it using the terminal<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="nx">mkdir</span> <span class="nx">video</span><span class="o">-</span><span class="nx">thumbnail</span><span class="o">-</span><span class="nx">api</span><span class="o">-</span><span class="nx">nodejs</span>
+<span class="nx">cd</span> <span class="nx">video</span><span class="o">-</span><span class="nx">thumbnail</span><span class="o">-</span><span class="nx">api</span><span class="o">-</span><span class="nx">nodejs</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Step 2: Initialize Node.js Project
+</h3>
+
+<p>Initialize a Node.js project by running the following command. This will create a package.json file.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="nx">npm</span> <span class="nx">init</span> <span class="o">-</span><span class="nx">y</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Step 3: Install Required Packages
+</h3>
+
+<p>Install the required packages: Axios for making HTTP requests and form-data for handling multipart/form-data.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">axios</span> <span class="nx">form</span><span class="o">-</span><span class="nx">data</span> <span class="nx">fs</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Once we run <code>npm install</code> in the terminal, the command triggers the installation of the specified dependencies listed in the project's package.json file. The following dependencies are commonly installed.</p>
+
+<p><strong>axios:</strong> A popular HTTP client library for making HTTP requests in Node.js. It simplifies the process of sending HTTP requests and handling responses. In this case, axios is used to make a POST request to the Video Watermarking API, sending the video URL and watermark image URL.</p>
+
+<p><strong>form-data:</strong> form-data is a JavaScript library that provides a way to create and handle multipart/form-data requests. It allows you to easily construct and send HTTP requests that contain files or other binary data. This library is often used in conjunction with axios or other HTTP client libraries to send form-based requests with files attached.</p>
+
+<p><strong>fs (File System)</strong>: A built-in module in Node.js that provides functionalities for working with the file system. In this context, fs is used to create a write stream and save the watermarked video file. The createWriteStream function allows you to write the response data from the API request directly to a file on the local file system.</p>
+
+<h3>
+  
+  
+  Step 4: Create Your Integration Script
+</h3>
+
+<p>Create a file named <strong>generateThumbnail.js</strong> in your project directory.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="c1">// Import required packages</span>
+<span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">FormData</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">form-data</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// API endpoint URL</span>
+<span class="kd">const</span> <span class="nx">apiUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://api.apyhub.com/generate/video-thumbnail/file</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Replace 'YOUR_APY_TOKEN' with your actual API token</span>
+<span class="kd">const</span> <span class="nx">apyToken</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">YOUR_APY_TOKEN</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Define the file path and details</span>
+<span class="kd">const</span> <span class="nx">videoFilePath</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">/path_to_file</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">outputFileName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">PROVIDE_THE_OUTPUT_FILE_NAME</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">startTime</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">duration</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">size</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">400x300</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">generateThumbnail</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// Create form data</span>
+    <span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">video</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="nx">videoFilePath</span><span class="p">));</span>
+    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">start_time</span><span class="dl">'</span><span class="p">,</span> <span class="nx">startTime</span><span class="p">);</span>
+    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">duration</span><span class="dl">'</span><span class="p">,</span> <span class="nx">duration</span><span class="p">);</span>
+    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">size</span><span class="dl">'</span><span class="p">,</span> <span class="nx">size</span><span class="p">);</span>
+
+    <span class="c1">// Set headers</span>
+    <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">apy-token</span><span class="dl">'</span><span class="p">,</span> <span class="nx">apiToken</span><span class="p">);</span>
+
+    <span class="c1">// Make POST request</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">apiUrl</span><span class="p">,</span> <span class="nx">form</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">form</span><span class="p">.</span><span class="nx">getHeaders</span><span class="p">(),</span>
+      <span class="p">},</span>
+      <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">output</span><span class="p">:</span> <span class="nx">outputFileName</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">});</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Thumbnail generation response:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error generating thumbnail:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Call the function to generate the thumbnail</span>
+<span class="nx">generateThumbnail</span><span class="p">();</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Step 5: Execute the Script</strong></p>
+
+<p>Execute the script using the Node.js command.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="nx">node</span> <span class="nx">generateThumbnail</span><span class="p">.</span><span class="nx">js</span>
+</code></pre>
+
+</div>
+
+
+
+<p>That's it! It wasn't so difficult right? We have now successfully integrated the <a href="https://apyhub.com/utility/video-thumbnail">Video Thumbnail API</a> using Node.js!</p>
+
+<p>Using this service, we can generate video thumbnails from literally any part of a video file or URL (e.g. youtube). This way, we automate extracting thumbnails from videos , allowing for efficient and consistent extraction of thumbnails without the need of any manual work. This can save both time and resources for all businesses and content creators. </p>
+
+<p>The <a href="https://apyhub.com/utility/video-thumbnail">ApyHub Video Thumbnail API</a> can also be integrated into existing workflows and platforms, making it easy to incorporate thumbnail extraction into existing processes.<br>
+Good luck with using the API. Looking forward to any feedback on <a href="https://discord.gg/KcjnPHef7p">discord</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Power Automate - Flow Logging in App Insights](https://dev.to/wyattdave/power-automate-flow-logging-in-app-insights-lp) 
+ <details><summary>Article</summary> <p>One of the big challenges with maintaining production flows in Power Automate was the lack of read only access. This meant to read a flow log you would need full edit access, not good for production environments using Service Accounts.</p>
+
+<p>Fortunately Microsoft heard us and just launch <a href="https://learn.microsoft.com/en-us/power-platform/admin/app-insights-cloud-flow">flow log integration with Application Insights</a>. App Insights is the Azure standard for all logging, so it's incredibly powerful, additionally it can be setup with notification alerts and used as a data source for Power BI dashboards. It's not free (small memory cost and for alerts) and requires someone with Azure experience and permissions to create one.</p>
+
+<p>Couple of call outs:</p>
+
+<ul>
+<li>It's not the same as the logs, as you do not see in flow data (the inputs and outputs, just the actions)</li>
+<li>The Global Power Platform Admin who creates the connection requires edit access to the app insight instance</li>
+<li>Each connection is between one environment and one app, but you can create multiple connections to each app, so you could have all your production flows linked to one App, all Dev another. Likewise you could link one environment to 2 apps, one for all Prod, one for the particular Dev,Test,Prod stack.</li>
+<li>In preview it works on any environment, once out of preview it will only work on Managed Environments (no surprise there lol)</li>
+</ul>
+
+<h2>
+  
+  
+  Setup
+</h2>
+
+<p>Setup is nice and easy, you need to be a Global Power Platform Admin, then you select following menus:<br>
+<strong>Analytics - Data Export - App Insights - New Data Export</strong></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--q4iqS0aC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7s9sjxxe9cr728auuky7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--q4iqS0aC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7s9sjxxe9cr728auuky7.png" alt="app insight config 1" width="800" height="417"></a><br>
+Select Power Automate and runs, triggers, actions</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1jf-PMs---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0v45xhw85al4v6fosblv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1jf-PMs---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0v45xhw85al4v6fosblv.png" alt="select environment" width="800" height="455"></a><br>
+Select required environment</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qYAhrFkc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oddufxop5koiqll5hbup.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qYAhrFkc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oddufxop5koiqll5hbup.png" alt="select app insights" width="800" height="454"></a><br>
+Select subscription, resource group, from there you should see the list of available App Insights, select the required one</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cU_87BKc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aqi84jhzw8208zrnaab4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cU_87BKc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aqi84jhzw8208zrnaab4.png" alt="app insight connections" width="800" height="373"></a></p>
+
+<p>You should then see list of all your connections, you can add more with the new data export from the top.</p>
+<h2>
+  
+  
+  App Insights
+</h2>
+
+<p>App Insights can be found in your Azure Portal</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sp7yNqN0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vvy64f5u7hydz1mxtf5u.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sp7yNqN0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vvy64f5u7hydz1mxtf5u.png" alt="app insights" width="612" height="298"></a></p>
+
+<p>There is so much you can do with App Insights, like live data, alerts, and more. But I'm just going to look at the log query, as this is in my opinion the most useful.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xWhX1DZi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zaovm4iqaxjdtdnwmohz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xWhX1DZi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zaovm4iqaxjdtdnwmohz.png" alt="app insight query" width="800" height="469"></a></p>
+
+<p>There are couple key commands that I use:</p>
+
+<p><code>let</code>- for variables <code>let myEnvironmentId = 'ca99eaab-99a9-ef99-9b99-99ded999999f';</code></p>
+
+<p><code>requests</code> <code>dependencies</code> <code>traces</code> <code>exceptions</code> <code>customMetrics</code> - the table for what log you need, for Flows we just use requests and dependencies</p>
+
+<p><code>| where</code> - standard filter the results by <code>| where customDimensions ['environmentId'] == myEnvironmentId</code></p>
+
+<p><code>| extend</code> - brings nested keys/fields to the root <code>| extend Data = todynamic(tostring(customDimensions.Data))</code></p>
+
+<p><code>| project</code> - selects required keys/fields for the report <code>| project timestamp ,id ,DisplayName = Data.FlowDisplayName</code></p>
+<h2>
+  
+  
+  Request and Dependency Structure
+</h2>
+
+<p>There are a lot of keys/fields returned from the 2 tables, but to keep it simple I will identify the key ones:</p>
+
+<p><strong>Requests</strong></p>
+
+<div class="table-wrapper-paragraph"><table>
+<thead>
+<tr>
+<th>Key/Field            ﻿</th>
+<th>Description</th>
+<th>Node</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timestamp</td>
+<td>date / time of run</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>GUID for app insights</td>
+<td></td>
+</tr>
+<tr>
+<td>success</td>
+<td>boolean if run was successful</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>flow id</td>
+<td></td>
+</tr>
+<tr>
+<td>duration</td>
+<td>time for flow to complete</td>
+<td></td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>request or dependency</td>
+<td></td>
+</tr>
+<tr>
+<td>customDimensions</td>
+<td>main node of data</td>
+<td></td>
+</tr>
+<tr>
+<td>Data</td>
+<td>node of data</td>
+<td>customDimensions</td>
+</tr>
+<tr>
+<td>FlowDisplayName</td>
+<td>flow name</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>RunId</td>
+<td>Run ID</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>node of data</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>flow owner id</td>
+<td>tags</td>
+</tr>
+<tr>
+<td>environmentId</td>
+<td>environment id</td>
+<td>customDimensions</td>
+</tr>
+<tr>
+<td>error</td>
+<td>node of data</td>
+<td>customDimensions</td>
+</tr>
+<tr>
+<td>code</td>
+<td>error description</td>
+<td>error</td>
+</tr>
+<tr>
+<td>message</td>
+<td>error reason</td>
+<td>error</td>
+</tr>
+<tr>
+<td>signalCategory</td>
+<td>log type (cloud/desktop)</td>
+<td>customDimensions</td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Dependencies</strong></p>
+
+<div class="table-wrapper-paragraph"><table>
+<thead>
+<tr>
+<th>Key/Field﻿</th>
+<th>Description</th>
+<th>Node</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timestamp</td>
+<td>date / time of run</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>GUID for app insights</td>
+<td></td>
+</tr>
+<tr>
+<td>resourceId</td>
+<td>Flow ID</td>
+<td>customDimensions</td>
+</tr>
+<tr>
+<td>success</td>
+<td>boolean if action was successful</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>action name</td>
+<td></td>
+</tr>
+<tr>
+<td>duration</td>
+<td>time for flow to complete</td>
+<td></td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>request or dependency</td>
+<td></td>
+</tr>
+<tr>
+<td>RunId</td>
+<td>Run ID</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>customDimensions</td>
+<td>main node of data</td>
+<td></td>
+</tr>
+<tr>
+<td>Data</td>
+<td>node of data</td>
+<td>customDimensions</td>
+</tr>
+<tr>
+<td>FlowDisplayName</td>
+<td>flow name</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>operation_ParentId</td>
+<td>Run ID</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>actionType</td>
+<td>action type</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>node of data</td>
+<td>Data</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>flow owner id</td>
+<td>tags</td>
+</tr>
+<tr>
+<td>environmentId</td>
+<td>environment id</td>
+<td>customDimensions</td>
+</tr>
+<tr>
+<td>error</td>
+<td>node of data</td>
+<td>customDimensions</td>
+</tr>
+<tr>
+<td>code</td>
+<td>error description</td>
+<td>error</td>
+</tr>
+<tr>
+<td>message</td>
+<td>error reason</td>
+<td>error</td>
+</tr>
+<tr>
+<td>signalCategory</td>
+<td>log type (cloud/desktop)</td>
+<td>customDimensions</td>
+</tr>
+</tbody>
+</table></div>
+
+<p><strong>Relationships</strong></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AdyWaEdf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nefgbdx9okyqluscli45.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AdyWaEdf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nefgbdx9okyqluscli45.png" alt="request to dependency relationships" width="800" height="497"></a></p>
+<h2>
+  
+  
+  Queries
+</h2>
+
+<p>You can see there are infinite different queries you can run, but I thought I would show the 3 that I have started to use:</p>
+
+<p><strong>Flow Runs</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>let myEnvironmentId = 'ca84eccb-78a7-ef84-9b20-84ded785680f'; 
+requests 
+| where customDimensions ['resourceProvider'] == 'Cloud Flow' 
+| where customDimensions ['signalCategory'] == 'Cloud flow runs' 
+| where customDimensions ['environmentId'] == myEnvironmentId 
+| extend Data = todynamic(tostring(customDimensions.Data)) 
+| extend Error = todynamic(tostring(customDimensions.error)) 
+| project timestamp 
+,id 
+,DisplayName = Data.FlowDisplayName
+,name
+,RunID = Data.OriginRunId  
+,ErrorCode = Error.code  
+,ErrorMessage = Error.message  
+,success 
+,customDimensions
+</code></pre>
+
+</div>
+
+
+
+<p>This query brings up all my flow runs (I use the time range in App Insights to narrow down time range). I also add <code>| where success== False</code> when I want just failed runs.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OgO0UcgO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nt9r1mfb7dg8cj46uzeq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OgO0UcgO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nt9r1mfb7dg8cj46uzeq.png" alt="flow runs results" width="800" height="149"></a></p>
+
+<p><strong>Flow Action Performance</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>let myEnvironmentId = 'ca99eaab-99a9-ef99-9b99-99ded999999f'; 
+let myFlowId = '90911457-7dd5-453b-afb3-8f8f3374c599'; 
+dependencies
+| extend Data = todynamic(tostring(customDimensions.Data)) 
+| extend DisplayName = Data.FlowDisplayName 
+| extend RunID = Data.OriginRunId 
+| extend Error = todynamic(tostring(customDimensions.error)) 
+| extend ErrorCode = Error.code 
+| extend ErrorMessage = Error.message 
+| where name == 'Fail'
+| where customDimensions.resourceId == myFlowId
+| where customDimensions ['environmentId'] == myEnvironmentId 
+| project timestamp 
+,id 
+,DisplayName 
+,name
+,operation_ParentId 
+,ErrorCode
+,ErrorMessage 
+,success 
+,customDimensions
+</code></pre>
+
+</div>
+
+
+
+<p>This query allows me to look at how a specific action has performed over a set time span, helping debug potential issues.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Yco1hQt8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vx841ca7i02wvmyj6ehl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Yco1hQt8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vx841ca7i02wvmyj6ehl.png" alt="flow action results" width="800" height="106"></a></p>
+
+<p><strong>Flow Detail</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>let myEnvironmentId = 'ca99eaab-99a9-ef99-9b99-99ded999999f'; 
+let myEnvironmentId = 'ca84eccb-78a7-ef84-9b20-84ded785680f'; 
+let queryId='08585075362661487682209269813CU165'; 
+(requests |union dependencies) 
+| extend Data = todynamic(tostring(customDimensions.Data)) 
+| extend DisplayName = Data.FlowDisplayName 
+| extend RunID = Data.OriginRunId 
+| extend Error = todynamic(tostring(customDimensions.error)) 
+| extend ErrorCode = Error.code 
+| extend ErrorMessage = Error.message 
+| where operation_ParentId == queryId or RunID == queryId 
+| where customDimensions ['environmentId'] == myEnvironmentId 
+| project timestamp 
+,id 
+,DisplayName 
+,name
+,RunID 
+,operation_ParentId 
+,ErrorCode
+,ErrorMessage 
+,success 
+,customDimensions
+</code></pre>
+
+</div>
+
+
+
+<p>The above query allows me to view a specific flow run, with the request and dependencies union'd together.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--54Kz8_ie--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u1rlgzcgxdn10e70p3uc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--54Kz8_ie--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u1rlgzcgxdn10e70p3uc.png" alt="flow run results" width="800" height="146"></a></p>
+
+<h2>
+  
+  
+  What's Next
+</h2>
+
+<p>So this is a good starting point to track flow performance and identify failed runs. But what is really cool is you can easily add the App Insights data to Power BI:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--i6Y9g6PY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ytqju7po2ggcb0sscmap.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i6Y9g6PY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ytqju7po2ggcb0sscmap.png" alt="app insights export" width="251" height="217"></a></p>
+
+<p>Just click new dataset and it will open Power BI and create the connection and allow you to create reports with live data.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QYLi6FcZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/orid5at4qkwijq56kj51.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QYLi6FcZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/orid5at4qkwijq56kj51.png" alt="power bi data connection" width="800" height="488"></a><br>
+Below is auto generated, so you can do a lot more with some effort.<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--a8RggktY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j8cxyibo9otszdicq8vk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--a8RggktY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j8cxyibo9otszdicq8vk.png" alt="power bi report" width="800" height="405"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Sentiment Analysis Using Python: A Beginner-Friendly Tutorial!](https://dev.to/pavanbelagatti/sentiment-analysis-using-python-a-beginner-friendly-tutorial-34da) 
+ <details><summary>Article</summary> <p>If you've ever wondered how companies understand customer opinions, or how social media platforms gauge public sentiment, you're in the right place. Sentiment Analysis is a fascinating field at the intersection of data science and natural language processing, and Python is one of the most popular languages to perform this analysis. Whether you're completely new to Python or just new to the world of Sentiment Analysis, this tutorial is designed with you in mind. </p>
+
+<h2>
+  
+  
+  What is Sentiment Analysis?
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UVfpnM_L--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ef1rsw5ab2r96bod5qqp.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UVfpnM_L--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ef1rsw5ab2r96bod5qqp.jpg" alt="Sentiment Analysis" width="800" height="314"></a></p>
+
+<p>Sentiment Analysis, also known as opinion mining, is the process of using natural language processing, text analysis, and computational linguistics to identify and categorize subjective opinions or feelings expressed in a piece of text. The primary objective is to determine the writer's attitude toward a particular topic, product, or service as positive, negative, or neutral. In some advanced forms, sentiment analysis may also involve identifying the intensity of the sentiment or even categorizing it into more specific emotional states like "happy," "angry," or "sad."</p>
+
+<p>Let's understand sentiment analysis with a simple hands-on tutorial. We will use SingleStore's Notebooks feature in this tutorial. So <strong>let's get started!</strong></p>
+
+<h2>
+  
+  
+  Prerequisites
+</h2>
+
+<ul>
+<li><a href="https://www.python.org/downloads/">Python installed</a></li>
+<li>
+<a href="https://www.singlestore.com/cloud-trial/?utm_medium=referral&amp;utm_source=pavan&amp;utm_term=devto&amp;utm_content=sentimentanalysis">SingleStore Notebook installed</a>. Signup and select SingleStore Notebooks feature</li>
+<li>Install required Python package: textblob</li>
+</ul>
+
+<p>You can install TextBlob using pip:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>pip install textblob
+</code></pre>
+
+</div>
+
+<h2>
+  
+  
+  Steps to Create the SingleStore Notebook
+</h2>
+
+<p>We will use SingleStore's Notebooks feature (it is FREE to use) as our development environment for this tutorial.</p>
+
+<p>The SingleStore Notebook extends the capabilities of Jupyter Notebook to enable data professionals to easily work and play around. </p>
+<h4>
+  
+  
+  What is SingleStore?
+</h4>
+
+<p><a href="https://www.singlestore.com/cloud-trial/?utm_medium=referral&amp;utm_source=pavan&amp;utm_term=devto&amp;utm_content=sentimentanalysis">SingleStore</a> is a distributed, in-memory, SQL database management system designed for high-performance, high-velocity applications. It offers real-time analytics and mixes the capabilities of a traditional operational database with that of an analytical database to allow for transactions and analytics to be performed in a single system.</p>
+
+<p>Signup for <a href="https://www.singlestore.com/cloud-trial/?utm_medium=referral&amp;utm_source=pavan&amp;utm_term=devto&amp;utm_content=sentimentanalysis">SingleStore</a> to use the Notebooks.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--S25EcECw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ug1scnnwrz9ar1op5yji.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--S25EcECw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ug1scnnwrz9ar1op5yji.png" alt="SingleStore Notebooks feature" width="592" height="832"></a></p>
+
+<p>Once you sign up to SingleStore, you will also receive $600 worth free computing resources. So why not use this opportunity.</p>
+
+<p>Click on 'Notebooks' and start with a blank Notebook.<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EwcKnmfM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/99l9xf5hltflrjbl8qlx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EwcKnmfM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/99l9xf5hltflrjbl8qlx.png" alt="singlestore notebooks usage" width="800" height="961"></a></p>
+
+<p>Name it something like 'Sentiment-Tutorial' or as per your wish.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NvkD06D1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wk3s4wcsgl5tw3alfxa9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NvkD06D1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wk3s4wcsgl5tw3alfxa9.png" alt="blank notebook" width="800" height="546"></a></p>
+
+<p>Let's start working with our Notebook that we just created.<br>
+Follow this step by step guide and keep adding the code shown in each step in your Notebook and execute it. Let's start!</p>
+<h4>
+  
+  
+  Step 1: Import Libraries
+</h4>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>from textblob import TextBlob
+</code></pre>
+
+</div>
+
+<h4>
+  
+  
+  Step 2: Define Sample Text Data
+</h4>
+
+<p>We'll use a list of sample sentences for this example.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sample_texts = [
+    "I love programming.",
+    "I hate bugs.",
+    "I feel indifferent about documentation.",
+    "Debugging is fun!",
+    "I'm frustrated with errors."
+]
+
+</code></pre>
+
+</div>
+
+<h4>
+  
+  
+  Step 3: Analyze Sentiment
+</h4>
+
+<p>We'll loop through the sample texts and analyze their sentiment using TextBlob.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>for text in sample_texts:
+    analysis = TextBlob(text)
+    polarity = analysis.sentiment.polarity
+    subjectivity = analysis.sentiment.subjectivity
+
+    if polarity &gt; 0:
+        sentiment = "Positive"
+    elif polarity &lt; 0:
+        sentiment = "Negative"
+    else:
+        sentiment = "Neutral"
+
+    print(f"Text: {text}")
+    print(f"Sentiment: {sentiment}")
+    print(f"Polarity: {polarity}")
+    print(f"Subjectivity: {subjectivity}")
+    print("------")
+</code></pre>
+
+</div>
+
+
+<p>This will output the sentiment, polarity, and subjectivity for each sample sentence.</p>
+<h4>
+  
+  
+  Step 4: Interpret Results
+</h4>
+
+<ul>
+<li><p><strong>Polarity</strong>: Ranges from -1 to 1. Negative value indicates negative sentiment, and a positive value indicates positive sentiment.</p></li>
+<li><p><strong>Subjectivity</strong>: Ranges from 0 to 1. Higher values indicate that the text contains personal opinion, emotion, or judgment.</p></li>
+</ul>
+
+<p>You can put all these code snippets together in a SingleStore Notebook to create a complete workflow for basic sentiment analysis.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Ly1UrEqn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nz0tbg61gwtdywdefsbt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ly1UrEqn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nz0tbg61gwtdywdefsbt.png" alt="ss notebooks usage" width="800" height="451"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2llxUtcd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvbsa50dxyuc3zk5v3z9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2llxUtcd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvbsa50dxyuc3zk5v3z9.png" alt="sentiment analysis" width="798" height="1336"></a></p>
+
+<p>The complete Notebook code is available here on my <a href="https://github.com/pavanbelagatti/sentiment-analysis">GitHub repository</a>. </p>
+
+<p><em>Congratulations on completing 'Your First Sentiment Analysis Project in Python!</em> By now, you should have some understanding of the basics of Sentiment Analysis and how to implement it using Python and Notebooks. You've not only learned the theory but also applied it in a simple hands-on project. </p>
+
+<p>As you continue your journey in data science, remember that Sentiment Analysis is just the tip of the iceberg. There are countless other exciting applications and techniques waiting for you to explore. So, what's next? Keep practicing, consider diving into more advanced topics like Large Language Models (LLMs), LangChain, Vector Databases, etc.</p>
+
+<p>Take a look at my other articles that talk about the above important topics/concepts. </p>
+
+
+<div class="ltag__link">
+  <a href="/pavanbelagatti" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Zi879WGp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--SzI-nAkL--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/68703/6b2032e7-c028-4024-b132-260b569d1989.jpeg" alt="pavanbelagatti">
+    </div>
+  </a>
+  <a href="/pavanbelagatti/python-cheat-sheet-for-data-engineers-and-data-scientists-3emj" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Python Cheat Sheet for Data Engineers and Data Scientists!</h2>
+      <h3>Pavan Belagatti ・ Aug 31</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#python</span>
+        <span class="ltag__link__tag">#datascience</span>
+        <span class="ltag__link__tag">#dataengineering</span>
+        <span class="ltag__link__tag">#developers</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+
+<div class="ltag__link">
+  <a href="/pavanbelagatti" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Zi879WGp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--SzI-nAkL--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/68703/6b2032e7-c028-4024-b132-260b569d1989.jpeg" alt="pavanbelagatti">
+    </div>
+  </a>
+  <a href="/pavanbelagatti/a-beginners-guide-to-building-llm-powered-applications-with-langchain-2d6e" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>A Beginner’s Guide to Building LLM-Powered Applications with LangChain!</h2>
+      <h3>Pavan Belagatti ・ Aug 30</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#datascience</span>
+        <span class="ltag__link__tag">#dataengineering</span>
+        <span class="ltag__link__tag">#llm</span>
+        <span class="ltag__link__tag">#database</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="ltag__link">
+  <a href="/pavanbelagatti" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Zi879WGp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--SzI-nAkL--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/68703/6b2032e7-c028-4024-b132-260b569d1989.jpeg" alt="pavanbelagatti">
+    </div>
+  </a>
+  <a href="/pavanbelagatti/wtf-is-a-vector-database-a-beginners-guide-16p" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>WTF Is a Vector Database: A Beginner's Guide!</h2>
+      <h3>Pavan Belagatti ・ Aug 25</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#database</span>
+        <span class="ltag__link__tag">#ai</span>
+        <span class="ltag__link__tag">#devops</span>
+        <span class="ltag__link__tag">#developers</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+ </details> 
+ <hr /> 
+
  #### - [AWS open source newsletter, #173](https://dev.to/aws/aws-open-source-newsletter-173-3bof) 
  <details><summary>Article</summary> <h2>
   
@@ -518,1016 +1318,6 @@ I wanted to learn T3 stack as it is trend right now. So what better way is there
 <p>Instagram - <a href="https://www.instagram.com/shaancodes/">https://www.instagram.com/shaancodes/</a></p>
 
 <p>GitHub - <a href="https://github.com/shaan-alam/">https://github.com/shaan-alam/</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Which AI Tool is the Best?](https://dev.to/ronakmunjapara/which-ai-tool-is-the-best-1987) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8iWs-JGQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fkbjq67b4fmemjbfmf08.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8iWs-JGQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fkbjq67b4fmemjbfmf08.jpeg" alt="Image description" width="800" height="800"></a><br>
-In today's digital age, the integration of artificial intelligence (AI) has revolutionized various industries. From healthcare to finance, AI has proven to be a game-changer. But when it comes to choosing the best AI tool, the landscape can be overwhelming. With a multitude of options available, it's essential to navigate the terrain wisely to select the one that aligns with your specific needs. In this comprehensive guide, we'll delve into the world of AI tools, dissecting their features, applications, and advantages, to help you make an informed decision.</p>
-
-<h2>
-  
-  
-  Understanding the AI Ecosystem
-</h2>
-
-<p>Before we embark on our journey to uncover the best AI tool, it's crucial to understand the diverse AI ecosystem. Artificial intelligence encompasses a wide range of technologies and applications, each designed to address specific challenges and tasks. Here are some key components of the AI landscape:</p>
-
-<h3>
-  
-  
-  Machine Learning
-</h3>
-
-<p>Machine learning is the foundation of many AI tools. It involves training algorithms to learn from data and make predictions or decisions without explicit programming. Machine learning finds applications in image recognition, natural language processing, and recommendation systems.</p>
-
-<h3>
-  
-  
-  Natural Language Processing (NLP)
-</h3>
-
-<p>NLP focuses on enabling computers to understand, interpret, and generate human language. It powers chatbots, virtual assistants, and language translation tools.</p>
-
-<h3>
-  
-  
-  Computer Vision
-</h3>
-
-<p>Computer vision enables machines to interpret and process visual information from the world. It plays a vital role in facial recognition, autonomous vehicles, and medical image analysis.</p>
-
-<h3>
-  
-  
-  Robotics
-</h3>
-
-<p>AI-driven robotics involve the development of intelligent machines that can perform tasks autonomously or semi-autonomously. Industrial automation and healthcare are prominent domains for AI robotics.</p>
-
-<h3>
-  
-  
-  Deep Learning
-</h3>
-
-<p>Deep learning is a subset of machine learning that involves neural networks with multiple layers. It's used for complex tasks like voice recognition, image analysis, and autonomous decision-making.</p>
-
-<h3>
-  
-  
-  AI in Business
-</h3>
-
-<p>AI has gained prominence in the business world, with applications ranging from predictive analytics to customer relationship management. Businesses use AI to enhance operations, improve customer experiences, and drive innovation.</p>
-
-<h2>
-  
-  
-  The Quest for the Best AI Tool
-</h2>
-
-<p>Now that we've gained a foundational understanding of AI, let's embark on the quest to find the best AI tool. It's important to note that the "best" AI tool varies depending on your specific needs and goals. What suits one organization or individual may not be the optimal choice for another. To determine the best AI tool for you, consider the following factors:</p>
-
-<h3>
-  
-  
-  1. <strong>Use Case</strong>
-</h3>
-
-<p>Define your specific use case. Are you looking for an AI tool to automate customer support, analyze large datasets, or enhance your creative projects? Understanding your use case is the first step in narrowing down your options.</p>
-
-<h3>
-  
-  
-  2. <strong>Scalability</strong>
-</h3>
-
-<p>Consider the scalability of the AI tool. Will it accommodate your needs as your requirements grow? Scalability is crucial for businesses that anticipate expansion.</p>
-
-<h3>
-  
-  
-  3. <strong>Ease of Integration</strong>
-</h3>
-
-<p>How easily can the AI tool integrate with your existing systems and workflows? Seamless integration can save time and resources.</p>
-
-<h3>
-  
-  
-  4. <strong>Accuracy and Performance</strong>
-</h3>
-
-<p>Assess the accuracy and performance of the AI tool in your chosen domain. Look for user reviews, case studies, and performance benchmarks.</p>
-
-<h3>
-  
-  
-  5. <strong>Cost and ROI</strong>
-</h3>
-
-<p>Evaluate the cost of implementing the AI tool and weigh it against the potential return on investment (ROI). Consider both short-term and long-term expenses.</p>
-
-<h3>
-  
-  
-  6. <strong>Support and Training</strong>
-</h3>
-
-<p>Check whether the AI tool provider offers adequate support, training, and documentation. A robust support system can be invaluable during implementation.</p>
-
-<h3>
-  
-  
-  7. <strong>Security and Compliance</strong>
-</h3>
-
-<p>For businesses, security and compliance are paramount. Ensure that the AI tool aligns with your data security and regulatory requirements.</p>
-
-<h2>
-  
-  
-  Top Contenders in the AI Arena
-</h2>
-
-<p>While the best AI tool ultimately depends on your specific needs, we can explore some top contenders that have garnered acclaim in various domains:</p>
-
-<h3>
-  
-  
-  1. <strong>OpenAI's GPT-3</strong>
-</h3>
-
-<p>GPT-3, powered by OpenAI, is a language processing AI model known for its ability to generate human-like text. It's utilized in content generation, chatbots, and language translation.</p>
-
-<h3>
-  
-  
-  2. <strong>IBM Watson</strong>
-</h3>
-
-<p>IBM Watson offers a suite of AI solutions for businesses, including AI-powered analytics, natural language processing, and automation tools. It's renowned for its versatility and scalability.</p>
-
-<h3>
-  
-  
-  3. <strong>Google Cloud AI</strong>
-</h3>
-
-<p>Google Cloud AI provides a range of AI services, from machine learning APIs to AI platform tools. It's a favorite among businesses looking to leverage Google's extensive AI capabilities.</p>
-
-<h3>
-  
-  
-  4. <strong>Amazon Web Services (AWS) AI</strong>
-</h3>
-
-<p>AWS AI offers a comprehensive set of AI and machine learning services, including computer vision, natural language processing, and predictive analytics.</p>
-
-<h3>
-  
-  
-  5. <strong>Microsoft Azure AI</strong>
-</h3>
-
-<p>Microsoft Azure AI provides a suite of AI tools for developers and businesses, with offerings in machine learning, computer vision, and speech recognition.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>The quest for the best AI tool is an ongoing journey, as the field of artificial intelligence continues to evolve. To make an informed choice, start by clearly defining your use case and objectives. Consider scalability, ease of integration, performance, cost, and support. Finally, explore the top contenders in the AI landscape to find the tool that aligns with your unique needs. The best AI tool is the one that empowers you to achieve your goals and unlock the full potential of artificial intelligence.</p>
-
- </details> 
- <hr /> 
-
- #### - [Let’s Create an End-to-End Web Scraping Pipeline With Scrapy!](https://dev.to/nanellooo/lets-create-an-end-to-end-web-scraping-pipeline-with-scrapy-261o) 
- <details><summary>Article</summary> <h1>
-  
-  
-  Introduction
-</h1>
-
-<p>Web scraping has become an indispensable tool for gathering data, allowing developers and data enthusiasts access to valuable information from the web. Tools like BeautifulSoup4 and Selenium are user-friendly tools that make this task as simple as possible, especially for one-off scripts and basic workflows.</p>
-
-<p>However, web scraping is often just the first step in a broader process of Extract, Transform, Load (ETL). As your needs grow, so too will the number of custom scripts. With no framework to organize these one-off scripts, this will inevitably lead to a confusing mess down the road.</p>
-
-<p>As Albert Einstein once said, “Everything should be made as simple as possible, but not simpler.” That’s where Scrapy comes in!</p>
-
-<p>In this tutorial, I’m going to walk you through a web scraping ETL process using Scrapy that gathers quotes, like that Einstein quote, and loads them into an SQLite database. We’ll be using <a href="http://quotes.toscrape.com/page/1/">Quotes to Scrape</a> as our target scraping site:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IP00BGJG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sk0edksszz2lp0ett6nd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IP00BGJG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sk0edksszz2lp0ett6nd.png" alt="Image description" width="800" height="494"></a></p>
-
-<h1>
-  
-  
-  We’ll go over the following:
-</h1>
-
-<ul>
-<li>  Creating a virtual environment for Python.</li>
-<li>  Setting up Scrapy, a Python web scraping framework.</li>
-<li>  Building a web scraper using Scrapy to extract quotes from a website.</li>
-<li>  Configuring a Scrapy pipeline to process and store scraped data.</li>
-<li>  Creating a SQLite database using Python.</li>
-<li>  Storing scraped data in an SQL database.</li>
-<li>  (For Fun) Analyzing scraped data with Pandas and Matplotlib</li>
-</ul>
-
-<h1>
-  
-  
-  Step 1: Creating a Virtual Environment
-</h1>
-
-<p>Before we dive in, a good idea to create a clean and isolated Python environment using a virtual environment. This ensures that the packages and dependencies for your Scrapy project won’t interfere with your system-wide Python installation, and it will automatically Scrapy’s CLI to the virtual environment’s PATH for maximum ease of use.</p>
-
-<p>Here are the steps to create a virtual environment:</p>
-
-<ol>
-<li> Open a terminal or command prompt on your computer.</li>
-<li> Navigate to the directory where you want to create your Scrapy project. You</li>
-<li> Once you’re in the desired directory, run the following command to create a virtual environment named <code>quotesenv</code> (you can replace <code>quotesenv</code> with your preferred name):
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>python -m venv quotesenv
-</code></pre>
-
-</div>
-
-
-
-<p>After running this command, you’ll have a new directory named <code>myenv</code> (or your chosen name) in your project directory. This directory contains a clean Python environment where you can install packages without affecting your system-wide Python installation.</p>
-
-<p>Now that you have a virtual environment set up, you can proceed to the next step: installing Scrapy and creating your Scrapy project.</p>
-
-<h1>
-  
-  
-  Step 2: Installing Scrapy and Creating Your First Project
-</h1>
-
-<p>It’s time to install Scrapy and create a Scrapy project for our web scraping endeavor.</p>
-
-<ol>
-<li> Activate your virtual environment if it’s not already activated. You can do this by running:
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>source quotesenv/bin/activate
-</code></pre>
-
-</div>
-
-
-
-<p>Replace <code>quotesenv</code> with the name of your virtual environment if it's different.</p>
-
-<ol>
-<li> Now, you can install Scrapy inside your virtual environment using pip:
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>pip install scrapy
-</code></pre>
-
-</div>
-
-
-
-<ol>
-<li> Once Scrapy is installed, you can create a new Scrapy project using the following command:
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>scrapy startproject quotes\_project
-</code></pre>
-
-</div>
-
-
-
-<p>This command will create a directory structure for your Scrapy project, including all the necessary files and boilerplate to get you started:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>\&gt;quotes\_project/  
-    scrapy.cfg  
-    quotes\_project/  
-        \_\_init\_\_.py  
-        items.py  
-        middlewares.py  
-        pipelines.py  
-        settings.py  
-        spiders/  
-            \_\_init\_\_.py  
-            quotes\_spider.py
-</code></pre>
-
-</div>
-
-
-
-<h1>
-  
-  
-  Here’s how they all work together:
-</h1>
-
-<ul>
-<li>  scrapy.cfg: This is the Scrapy project configuration file. It contains settings and configurations for your Scrapy project.</li>
-<li>  quotes_project(directory): This is the Python package for your Scrapy project.</li>
-<li>  <a href="http://init.py/">init.py</a>: This is an empty Python file that makes the directory a Python package.</li>
-<li>  <a href="http://items.py/">items.py</a>: This is where you define the structure of the items that will hold the scraped data. You create item classes with fields that correspond to the data you want to scrape.</li>
-<li>  <a href="http://middlewares.py/">middlewares.py</a>: This file is used to define custom middleware components for your Scrapy project. Middleware can modify requests and responses during the scraping process.</li>
-<li>  <a href="http://pipelines.py/">pipelines.py</a>: Here, you can define data processing pipelines to process and store the scraped data. You can implement actions like storing data in databases, exporting data to files, or performing additional processing.</li>
-<li>  <a href="http://settings.py/">settings.py</a>: This is the main configuration file for your Scrapy project. You can set various project-specific settings, including user agent, concurrency, and more.</li>
-<li>  spiders(directory): This directory contains your web-scraping spiders.</li>
-<li>  <a href="http://init.py/">init.py</a>: This is an empty Python file that makes the directory a Python package.</li>
-<li>  quotes_<a href="http://spider.py/">spider.py</a>: This is an example spider file where you define the spider to crawl and scrape data from websites. You create classes that inherit from <code>scrapy.Spider</code> and define how the spider navigates and extracts data from web pages. We'll create our first one together.</li>
-</ul>
-
-<p>This folder and file structure provide a clear organization for your Scrapy project, separating configuration, item definitions, spider code, and data processing logic.</p>
-
-<p>Now that you have Scrapy installed and your project set up, let’s move on to defining a spider to scrape quotes from a website. Stay tuned for Step 3!</p>
-
-<h1>
-  
-  
-  Step 3: Creating the Item Class For Our Data Structure
-</h1>
-
-<p>In this step, we’ll define the structure of the item that will hold the scraped data. Scrapy uses Items to structure and store the data you extract from websites.</p>
-
-<p>Open the <code>[items.py](http://items.py/)</code> file in your Scrapy project directory. This file is automatically generated when you create your Scrapy project using the <code>scrapy startproject</code> command.</p>
-
-<p>In <code>[items.py](http://items.py/)</code>, you'll notice the CLI has already created the QuotesScraperItem class, which inherits from scrapy.Item. Add the following code and remove the pass statement to define the structure of the <code>QuotesScraperItem</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import scrapy  
-class QuotesScraperItem(scrapy.Item):  
-    text = scrapy.Field()  
-    author = scrapy.Field()
-</code></pre>
-
-</div>
-
-
-
-<p>This code snippet defines an item class with two fields: <code>title</code> and <code>author</code>. You could also grab the <code>tags</code> data, but that's beyond the scope of this tutorial. These fields correspond to the data we'll scrape from the website.</p>
-
-<p>With the item structure defined, we’re ready to move on to creating the spider, which is the class responsible for the extract portion of our ETL pipeline. I’ve done the work of inspecting the target website and finding the selectors for the data we’ll be scraping, too.</p>
-
-<h1>
-  
-  
-  Step 4: Defining a Scrapy Spider to Scrape Quotes
-</h1>
-
-<p>A Scrapy spider is a class that contains the rules for how to navigate and extract data from a website. Let’s get started:</p>
-
-<ol>
-<li> Create a new file named <code>quotes_spider.py</code> inside the <code>quotes_project/quotes_project/spiders</code> directory. This is where we'll define our spider.</li>
-<li> Edit <code>quotes_spider.py</code> and add the code below
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import scrapy  
-from quotes\_project.items import QuotesScraperItem #made in the previous step  
-class QuotesSpider(scrapy.Spider):  
-            name = "quotes"  
-            start\_urls = \[  
-                'http://quotes.toscrape.com/page/1/',  
-            \]  
-            def parse(self, response):  
-                for quote in response.css('div.quote'):  
-                    item = QuotesScraperItem()  
-                    item\['text'\] = ''.join(quote.css('span.text::text').get())  
-                    item\['author'\] = ''.join(quote.css('span small::text').get())  
-                    yield item  
-                next\_page = response.css('li.next a::attr(href)').get()  
-                if next\_page is not None:  
-                    yield response.follow(next\_page, self.parse)
-</code></pre>
-
-</div>
-
-
-
-<p>This code defines a Scrapy spider named “quotes” that starts at the specified URL and scrapes quotes and their authors. It also continues to do so for each page until there are no more pages left. The “”.join() string function is necessary because the ‘text’ field will return a list of strings rather than one string, and this combines it for us easily.</p>
-
-<ol>
-<li> To run the spider and see it in action, use the following command in your project’s root directory:
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>scrapy crawl quotes
-</code></pre>
-
-</div>
-
-
-
-<p>Now, your spider will start scraping quotes from the website. But you have nowhere to put it… Fear not, that comes next!</p>
-
-<h1>
-  
-  
-  Step 5: Saving Scraped Data to a SQLite Database
-</h1>
-
-<p>Now that you’ve successfully scraped data from the web, it’s time to store that data in a database for future use and analysis. In this step, we’ll set up an SQLite database as the destination for the data in our pipeline automatically when we run the pipeline.</p>
-
-<p>In Scrapy, pipelines are responsible for processing scraped data. We’ll create a custom pipeline to insert our scraped items into the SQLite database we just created.</p>
-
-<ol>
-<li> In your Scrapy project folder, navigate to the <code>quotes_scraper</code> directory (or your project name) and open the <code>[pipelines.py](http://pipelines.py/)</code> file.</li>
-<li> Define the following pipeline class at the end of the file.
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import sqlite3  
-            from itemadapter import ItemAdapter              
-            class QuotesToSQLitePipeline:  
-                def \_\_init\_\_(self):  
-                    self.conn = sqlite3.connect('quotes.db')  
-                    self.cursor = self.conn.cursor()  
-                def process\_item(self, item, spider):  
-                    adapter = ItemAdapter(item)  
-                    self.cursor.execute('''  
-                    CREATE TABLE IF NOT EXISTS quotes (  
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,  
-                        text TEXT,  
-                        author TEXT  
-                    )  
-                ''')  
-                    self.cursor.execute('''  
-                        INSERT INTO quotes (text, author)  
-                        VALUES (?, ?)  
-                    ''', (adapter\['text'\], adapter\['author'\]))  
-                    self.conn.commit()  
-                    return item  
-                def close\_spider(self, spider):  
-                    self.conn.close()
-</code></pre>
-
-</div>
-
-
-
-<p>This pipeline class creates (if it doesn’t yet exist) or connects to the SQLite database, inserts scraped data into the <code>quotes</code> table and closes the connection when the spider is done. The ItemAdapter allows us to data within an Item without having to import that Item itself (less tightly coupled, yay!).</p>
-
-<h1>
-  
-  
-  Step 3: Enabling the Pipeline
-</h1>
-
-<p>To enable your custom pipeline, add it to the <code>[settings.py](http://settings.py/)</code> file in your Scrapy project folder:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>\# settings.py  
-\# ...  
-        # Configure item pipelines  
-        ITEM\_PIPELINES = {  
-           'quotes\_scraper.pipelines.QuotesToSQLitePipeline': 300,  # Adjust the priority if needed  
-        }  
-        # ...
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, I’ve set the pipeline’s priority to 300, but you can adjust it as necessary.</p>
-
-<h1>
-  
-  
-  Step 4: Running Your Spider and Saving Data
-</h1>
-
-<p>Now that everything is set up, you can run your spider again and see how Scrapy saves scraped data to the SQLite database:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>scrapy crawl quotes
-</code></pre>
-
-</div>
-
-
-
-<p>Scrapy will execute your spider and use the custom pipeline to save the scraped quotes and authors to the <code>quotes.db</code> database, which will now be in your project folder.</p>
-
-<p>That’s it for Step 4! You’ve successfully set up an SQLite database and configured a pipeline to save your scraped data. In the next steps, we’ll cover how to retrieve and analyze the data.</p>
-
-<h1>
-  
-  
-  Step 5: Retrieving Data from the SQLite Database
-</h1>
-
-<p>You’ve successfully scraped and saved data to an SQLite database using Scrapy. In this step, we’ll explore how to retrieve that data from the database and perform basic queries.</p>
-
-<h1>
-  
-  
-  Step 1: Connecting to the Database
-</h1>
-
-<p>To retrieve data from the SQLite database, we need to establish a connection and create a cursor object, then perform a select, and finally print what’s returned from the cursor. Create a file called retrieve_<a href="http://quotes.py/">quotes.py</a> in the project’s root folder and copy in the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import sqlite3  
-
-def retrieve\_quotes():  
-  # Create a context manager for the SQLite connection  
-  with sqlite3.connect('quotes.db') as conn:  
-      # Create a cursor within the context manager  
-      cursor = conn.cursor   
-      # Execute an SQL query to retrieve all quotes  
-      cursor.execute('SELECT \* FROM quotes')                      
-      # Fetch all the results from the cursor; fetchall() function returns a list.  
-      quotes = cursor.fetchall(  
-      # Display the retrieved data  
-      for quote in quotes:  
-          print(quote)  
-if \_\_name\_\_ == "\_\_main\_\_":  
-  retrieve\_quotes()
-</code></pre>
-
-</div>
-
-
-
-<h1>
-  
-  
-  Step 2: Running the Script
-</h1>
-
-<p>To run the script and retrieve data from the database, use the following command or run it in your IDE:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>python retrieve\_data.py
-</code></pre>
-
-</div>
-
-
-
-<p>The script will connect to the database, retrieve the data, and display it in the terminal.</p>
-
-<p>That’s it for Step 5! You’ve learned how to retrieve data from the SQLite database where you saved your scraped quotes and authors. In the next steps, we’ll dive deeper into data analysis and visualization.</p>
-
-<h1>
-  
-  
-  Step 6: (For Fun) Data Analysis and Visualization
-</h1>
-
-<p>In this optional step, you can explore your scraped data further by performing data analysis and visualization. We’ll use Python libraries like Pandas and Matplotlib to accomplish this. This is barely enough data to bother with, but I thought it’d be nice to show this step to complete the most minimal of MVPs for a complete Scrapy pipeline use case!</p>
-
-<h1>
-  
-  
-  Step 1: Importing Required Libraries
-</h1>
-
-<p>First, make sure you have the necessary Python libraries installed. You can install them using pip:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>pip install pandas matplotlib
-</code></pre>
-
-</div>
-
-
-
-<h1>
-  
-  
-  Step 2: Analyzing Data
-</h1>
-
-<p>Now, let’s perform some basic analysis of the scraped data. We’ll use Pandas to load the data from the SQLite database into a DataFrame and then calculate some statistics. In the project’s root folder, create a Python script called <a href="http://analysis.py/">data_analysis.py</a> and add the following code. This will print the total number of records using pandas.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import pandas as pd  
-import sqlite3  
-\# Connect to the SQLite database  
-conn = sqlite3.connect('quotes.db')  
-\# Load data into a Pandas DataFrame  
-df = pd.read\_sql\_query('SELECT \* FROM quotes', conn)  
-\# Calculate the number of quotes  
-total\_quotes = len(df)  
-\# Display the total number of quotes  
-print(f'Total Number of Quotes: {total\_quotes}')
-</code></pre>
-
-</div>
-
-
-
-<h1>
-  
-  
-  Step 3: Visualizing Data
-</h1>
-
-<p>Next, let’s create a simple bar chart to visualize the distribution of quotes by author. We’ll use Matplotlib for this purpose. Add the import to the top of <a href="http://analysis.py/">data_analysis.py</a> and copy-paste everything from the body of the code below to the end of <a href="http://analysis.py/">data_analysis.py</a>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import matplotlib.pyplot as plt  
-\# Group quotes by author and count the occurrences  
-author\_counts = df\['author'\].value\_counts()  
-\# Create a bar chart  
-plt.figure(figsize=(12, 6))  
-author\_counts.plot(kind='bar')  
-plt.title('Quotes by Author')  
-plt.xlabel('Author')  
-plt.ylabel('Number of Quotes')  
-plt.xticks(rotation=45)  
-plt.tight\_layout()  
-plt.show()
-</code></pre>
-
-</div>
-
-
-
-<h1>
-  
-  
-  Step 4: Running the Script
-</h1>
-
-<p>Run the script using the following command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>python data\_analysis.py
-</code></pre>
-
-</div>
-
-
-
-<p>After running the script, you’ll see the total number of quotes displayed in the console, and a bar chart showing the distribution of quotes by author will pop up.</p>
-
-<p>That concludes Step 6, where you have the option to perform data analysis and visualization on your scraped data.</p>
-
-<h1>
-  
-  
-  Recap and Next Steps
-</h1>
-
-<p>Congratulations! You’ve completed my tutorial on web scraping and data extraction process using Scrapy. At this point, you will have:</p>
-
-<ol>
-<li> Created a virtual environment for your Python project to manage dependencies.</li>
-<li> Set up a Scrapy project and defined a web scraping spider.</li>
-<li> Extracted quotes and authors from a website using Scrapy.</li>
-<li> Created an SQLite database and stored the scraped data.</li>
-<li> Implemented a Scrapy pipeline to automate data storage.</li>
-<li> Performed data analysis and visualization on the scraped data.</li>
-</ol>
-
-<h1>
-  
-  
-  Next Steps
-</h1>
-
-<p>Now that you have a solid foundation in web scraping with Scrapy, you can explore more advanced topics and real-world applications. In the coming weeks, I will be writing and linking in tutorials that build off this simple pipeline. They’ll cover such topics as:</p>
-
-<ul>
-<li>  Scraping data from multiple websites and combining it.</li>
-<li>  Handling different data formats and structures.</li>
-<li>  Scheduling web scraping tasks to run at specific intervals.</li>
-<li>  Implementing user authentication for scraping behind login pages.</li>
-<li>  Scaling up your scraping efforts with distributed systems.</li>
-</ul>
-
-<p>Feel free to apply the knowledge and techniques you’ve learned here to gather data for your projects, research, or data analysis tasks. If you make something cool out of a Scrapy pipeline after reading this, please let me know! I’d love to see it!</p>
-
-<p>Scrape responsibly, and have fun!</p>
-
- </details> 
- <hr /> 
-
- #### - [How to animate Fire TV splash screens with React Native & Lottie](https://dev.to/amazonappdev/how-to-animate-fire-tv-splash-screens-with-react-native-lottie-32ca) 
- <details><summary>Article</summary> <blockquote>
-<p><em><strong>Author's Note:</strong> In my <a href="https://dev.to/amazonappdev/develop-animated-splash-screens-on-fire-tv-with-lottie-5emp">previous Lottie article</a>, we covered how to create animated custom splash screens on Fire TV using Kotlin for Android and <a href="https://github.com/airbnb/lottie-android">Lottie</a>. For this article, we'll focus on those of you building Android apps using React Native. Since Lottie supports React Native, we'll cover the essentials to get you up and running quickly. Let's dive in!</em></p>
-</blockquote>
-
-<p><strong>Quick recap for Lottie</strong><br>
-<a href="https://airbnb.io/lottie/#/">Lottie</a> is an open-source animation library created by Airbnb to render complex animations on mobile devices in real time. It's an excellent choice for creating interactive animations for both Android and iOS. Since Fire OS is based on the Android Open source Project <a href="https://source.android.com/">AOSP</a> we can use Lottie to render complex animated splash screens on Fire TV apps with React Native.</p>
-
-<p>Let's now walk through how to create an animated splash screen for a React Native app running on Fire TV!</p>
-<h3>
-  
-  
-  <strong>Prerequisite:</strong> Create a React Native project
-</h3>
-
-<p>You can use your own existing React Native project or create a new one using the command line:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>npx react-native@latest init SplashScreenApp
-</code></pre>
-
-</div>
-
-
-
-<blockquote>
-<p>💡 <strong>Note:</strong> If you're new to React Native and want to learn how to setup your development environment and command line tools, head over to <a href="https://reactnative.dev/docs/environment-setup">the React Native official docs</a> to get up and running.</p>
-</blockquote>
-
-<h3>
-  
-  
-  <strong>Step 1:</strong> Prepare the Lottie animation
-</h3>
-
-<p>To integrate Lottie animations into our TV splash screen, we need to first build an animation to match our app's branding and theme. For this example, we'll use the <a href="https://lottiefiles.com/animations/tv-watching-g5Lr55wxgp">TV Watching</a> animation by <a href="https://lottiefiles.com/wovencontent">Alan Murphy</a> available as a sample from <a href="https://lottiefiles.com/">LottieFiles</a>. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zQ-B9c60--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pvitz7foralsqe9gmbwe.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zQ-B9c60--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pvitz7foralsqe9gmbwe.png" alt="Lottie animation from LottieFiles" width="800" height="369"></a></p>
-
-<h3>
-  
-  
-  <strong>Step 2:</strong> Place the Lottie animation into the React Native app project
-</h3>
-
-<p>Create a directory <code>assets</code> in your React Native project and download the "<a href="https://lottiefiles.com/animations/tv-watching-g5Lr55wxgp">TV Watching Animation</a>" in Lottie JSON format from the step above. Place the JSON file in the new <code>assets</code> folder and make sure to rename the JSON file <code>splashscreen.json</code>.</p>
-
-<h3>
-  
-  
-  <strong>Step 3:</strong> Include Lottie as a package dependency
-</h3>
-
-<p>From the command line, inside the root directory of your React Native app execute the command to add Lottie as a dependency:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>yarn add lottie-react-native
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  <strong>Step 4:</strong> Define the main components for your splash screen
-</h3>
-
-<p>For this sample app, we'll declare all required components inside <code>App.tsx</code>. </p>
-
-<p>The 3 components are:</p>
-
-<ol>
-<li>
-<code>App</code>, which represents the main app component</li>
-<li>
-<code>SplashScreen</code> for initiating the splash screen</li>
-<li>
-<code>MainContent</code> for the view that is shown after the splash screen disappears</li>
-</ol>
-
-<p>Let's open the file <code>App.tsx</code> and remove all the content generated by the React Native command line.</p>
-
-<p>Then at the top of the file, add the required imports for the components we need:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Text</span><span class="p">,</span> <span class="nx">View</span><span class="p">,</span> <span class="nx">StyleSheet</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-native</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">LottieView</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lottie-react-native</span><span class="dl">'</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Next up you will declare the 3 components:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">SplashScreen</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">onAnimationFinish</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
-
-<span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">MainContent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
-
-<span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>and in addition set the styles we will apply for each of them:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code>
-<span class="kd">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">container</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="na">justifyContent</span><span class="p">:</span> <span class="dl">'</span><span class="s1">center</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">alignItems</span><span class="p">:</span> <span class="dl">'</span><span class="s1">center</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">splashContainer</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">width</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-    <span class="na">height</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">splash</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">mainContainer</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">marginTop</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">text</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">fontWeight</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bold</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Remember to export the <code>App</code> component at the end of the file:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  <strong>Step 5:</strong> Implement the SplashScreen component
-</h3>
-
-<p>Implement the SplashScreen component by declaring its components. For this we will have a View containing a <code>LottieView</code> with the previous json animation file assigned to the <code>source</code> property of the <code>LottieView</code>.</p>
-
-<p>We also define the <code>autoPlay</code> property in the <code>LottieView</code> in order to automatically start the animation and set the <code>loop</code> property as false so that we only show the animation one time:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">SplashScreen</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">onAnimationFinish</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
-<span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">splashContainer</span><span class="p">}</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">LottieView</span>
-      <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">splash</span><span class="p">}</span>
-      <span class="nx">source</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./assets/splashscreen.json</span><span class="dl">'</span><span class="p">)}</span>
-      <span class="nx">autoPlay</span>
-      <span class="nx">loop</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
-      <span class="nx">onAnimationFinish</span><span class="o">=</span><span class="p">{</span><span class="nx">onAnimationFinish</span><span class="p">}</span>
-    <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/View</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  <strong>Step 6:</strong> Implement the MainContent component
-</h3>
-
-<p>To start, this step will just show Text and then you choose when to display your app's home screen after the Splash Screen animation ends:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">MainContent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
-  <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mainContainer</span><span class="p">}</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Your</span> <span class="nx">Awesome</span> <span class="nx">App</span> <span class="nx">Home</span> <span class="nx">Screen</span><span class="o">!&lt;</span><span class="sr">/Text</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/View</span><span class="err">&gt;
-</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  <strong>Step 7:</strong> Implement the App component
-</h3>
-
-<p>The App component handles the logic to display and hide the Splash screen. </p>
-
-<p>Declare a <code>loaded</code> state and set it to false. This allows the the animation to load prior to the Splash Screen being rendered on screen. Once the animation resource is ready, a callback will flip the <code>loaded</code> state to true to then make the <code>MainContent</code> component visible on the Fire TV:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">loaded</span><span class="p">,</span> <span class="nx">setLoaded</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">handleAnimationFinish</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setLoaded</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
-      <span class="p">{</span><span class="nx">loaded</span> <span class="p">?</span> <span class="o">&lt;</span><span class="nx">MainContent</span> <span class="o">/&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="nx">SplashScreen</span> <span class="nx">onAnimationFinish</span><span class="o">=</span><span class="p">{</span><span class="nx">handleAnimationFinish</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">}
-</span>    <span class="o">&lt;</span><span class="sr">/View</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  <strong>Wrap Up:</strong> Load up and test our animated splash screen!
-</h2>
-
-<p>Now we can test either by using <a href="https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html">Fire TV via adb</a> or <a href="https://developer.android.com/training/tv/start/start#run-on-a-virtual-device">starting an Android TV emulator</a>. </p>
-
-<p>Either approach will let us see the sample in action by running this command from the project directory:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm start
-</code></pre>
-
-</div>
-
-
-
-<p>Remember to press <code>a</code> to run the Android version.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JkM_SjJq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tyxq87fbnnwiylijvikd.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JkM_SjJq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tyxq87fbnnwiylijvikd.gif" alt="Animated Splash screen" width="600" height="714"></a></p>
-
-<p>Using <a href="https://github.com/lottie-react-native/lottie-react-native">Lottie for React Native</a> is an easy way to enrich your app with beautiful animations and make your user happy.</p>
-
-<p>Thanks for reading this guide and make sure to check out the sample project source code <a href="https://github.com/giolaq/splash-screen-tv-app-react-native">on Github</a>.</p>
-
-<p><strong>Stay updated</strong> </p>
-
-<p>For the latest Amazon Appstore developer news, product releases, tutorials, and more:</p>
-
-<p>📣 Follow <a href="https://twitter.com/AmazonAppDev">@AmazonAppDev</a> and <a href="https://twitter.com/i/lists/1580293569897984000/members">our team</a> on Twitter</p>
-
-<p>📺 Subscribe to our <a href="https://www.youtube.com/amazonappstoredevelopers">Youtube channel</a></p>
-
-<p>📧 Sign up for the <a href="https://m.amazonappservices.com/devto-newsletter-subscribe">Developer Newsletter</a></p>
-
-<h3>
-  
-  
-  About the author
-</h3>
-
-<p>Giovanni ("Gio") Laquidara is a Senior Dev Advocate at Amazon, where he works on supporting developers around the world using the Amazon Appstore across many devices. </p>
-
-<p>Previously, Gio worked as a software engineer building mobile apps, real-time defence systems, and VR/AR experiences. For fun, Gio enjoys low level programming, IoT hacking, and command line apps ⌨️✨.</p>
-
-<p><em>You can connect with Gio on <a href="https://twitter.com/giolaq">Twitter</a>, <a href="https://www.linkedin.com/in/glaquidara/">Linkedin</a>, and <a href="https://giolaq.dev">giolaq.dev</a>.</em></p>
 
  </details> 
  <hr /> 
