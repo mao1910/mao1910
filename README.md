@@ -133,6 +133,381 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [**Don't Miss!!!** TOP Google Penalties Guide](https://dev.to/noobizdev/dont-miss-top-google-penalties-guide-4dcd) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Understanding Google Penalties
+</h2>
+
+<p>Google Penalties refer to punitive actions taken by Google against websites that violate its guidelines and standards. These penalties can negatively impact a website's search engine ranking and visibility.</p>
+
+<h2>
+  
+  
+  List of Google Penalties
+</h2>
+
+<p>A comprehensive list of Google Penalties includes various penalties that Google may impose on websites for violating its guidelines. These penalties can impact a site's ranking and visibility. Here are some notable Google Penalties:</p>
+
+<ol>
+<li>Algorithmic Penalties: These are automatic penalties triggered by Google's algorithms, such as Panda (content quality), Penguin (link quality), and Hummingbird (semantic search).</li>
+<li>Manual Actions: Google's manual reviewers can impose penalties for issues like unnatural links, thin content, or spammy structured markup.</li>
+<li>Mobile-Friendly Penalty: Websites not optimized for mobile devices can face lower rankings in mobile search results.</li>
+<li>Page Quality Penalty: For low-quality content, including duplicate, thin, or irrelevant content.</li>
+<li>Link-Related Penalties: Includes penalties for unnatural links, paid links, or link schemes.</li>
+<li>Security Issues: Sites with security vulnerabilities may face penalties for the safety of users.</li>
+<li>User Experience Penalties: Slow-loading pages and intrusive interstitials can lead to lower rankings.</li>
+<li>Cloaking Penalty: Penalizes websites that show different content to users and search engines.</li>
+<li>Intrusive Interstitials Penalty: Sites with pop-ups that disrupt user experience on mobile devices can be penalized.</li>
+<li>Ad-Related Penalties: Sites with too many ads or deceptive ad placements may face penalties.</li>
+</ol>
+
+<h2>
+  
+  
+  How to Avoid a Google Penalty?
+</h2>
+
+<p>To avoid Google penalties and maintain a healthy online presence, follow these essential tips:</p>
+
+<ol>
+<li>Quality Content: Create high-quality, original, and relevant content. Avoid duplicate or low-value content that can trigger penalties.</li>
+<li>Keyword Usage: Use keywords naturally and avoid keyword stuffing. Ensure your content serves the user's intent.</li>
+<li>Mobile-Friendly Design: Ensure your website is responsive and mobile-friendly for a better user experience.</li>
+<li>Page Speed: Optimize page loading times to improve user satisfaction and SEO rankings.</li>
+<li>Backlink Quality: Build high-quality, relevant backlinks and avoid spammy link-building practices.</li>
+</ol>
+
+<p>you can Read more About <strong><a href="https://noobizdev.tech/the-ultimate-guide-to-google-penalties-complete-list-and-recovery-strategies/">Google Penalties Giude And Complete List and Recovery Strategies</a></strong></p>
+
+<blockquote>
+<p>Let's spread the love! <br>
+Don't forget to leave a comment, like, and save this post.<br>
+Thanks for reading, See you next time... ❤️👋</p>
+</blockquote>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>By ceasing any black hat SEO practices, implementing security and moderation tools on your site, and focusing on truly quality content, you can avoid Google penalties, improve your ranking and traffic, and protect your site from hackers.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Creating an 👩‍💻 Open Source Search Platform: Search Engines with AI - Swirl 🌌](https://dev.to/swirl/creating-an-open-source-search-platform-search-engines-with-ai-swirl-2m0h) 
+ <details><summary>Article</summary> <blockquote>
+<p>Swirl is an Open-Source Search Engine written in Python. Powered by Large Language Models (LLMs) &amp; ChatGPT along with ML &amp; NLP Algorithms.</p>
+</blockquote>
+
+<p>Before wasting time, let me introduce Swirl. This unified open-source search platform built with Python and Django seamlessly unifies searches across databases (SQL and NoSQL), cloud services, search providers, data siloes, and tools like Miro, Jira, GitHub, etc.</p>
+
+<p>With Swirl, users can conduct a single query, instantly pooling and presenting relevant data from multiple platforms in one consolidated UI.</p>
+
+<p><strong><a href="https://github.com/swirlai/swirl-search">Swirl on GitHub 👇</a></strong></p>
+
+<p>Link: <a href="https://github.com/swirlai/swirl-search">https://github.com/swirlai/swirl-search</a>🌌</p>
+
+<p><a href="https://github.com/swirlai/swirl-search"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--c8VOh2O8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5pjduz4fq70dc1bfe0x7.png" alt="Swirl Search on GitHub" width="800" height="256"></a></p>
+
+<h2>
+  
+  
+  The Hunt for Open Source Search Platforms 🕵️‍♀️
+</h2>
+
+<p>Search is everywhere in our daily lives. Giants like Google Search, Bing, and Duck Duck make it easy for us to find information at the click of a button.</p>
+
+<p>However, the choices are somewhat limited for businesses, startups, and developers looking to incorporate search functionality into their platforms without being bound to these major players. Most enterprise-level search engines come with licensing fees or restrictions. Integration options such as Google's Programmable Search Engine and Algolia are powerful. Still, they might not always cater to the specific needs of all businesses, especially when customization and self-hosting are concerned.</p>
+
+<p>This brings out the need for open-source search engines. For all the users trying to integrate search into their platforms, Swirl serves as one of the best choices. Built on Python, and it's highly customizable. Being free and open-source, it carries the Apache 2.0 License, which means developers and businesses can utilize and modify it without any licensing costs. The teams can contribute towards its development by doing improvements, bug fixes, and feature enhancements.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sCvN1BF_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h40hcuneineb0lys85jz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sCvN1BF_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h40hcuneineb0lys85jz.png" alt="Searching for Open Source Search Engines" width="400" height="200"></a></p>
+
+<h2>
+  
+  
+  Dealing with Many Data Sources, Data Bases, and Data Siloes 😿
+</h2>
+
+<p>As any startup or company grows, so does the size of its data and databases. Eventually, the complexity of finding the correct information increases as well. As these organizations expand, they inevitably accumulate data in various forms – traditional documents, code repositories, spreadsheets, or more structured databases like SQL and NoSQL. The real challenge, however, is not just storing this large volume of data but efficiently retrieving the information when needed.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4RHH0UvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgpo66icr4n6abwng2b2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4RHH0UvF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bgpo66icr4n6abwng2b2.png" alt="Where is the Data? We should have used Swirl" width="800" height="800"></a></p>
+
+<p><em>So, in which database is our document lying? Is it in USE_CASE_1 or USE_CASE_2?<br>
+A typical scenario is when you need data and don't know where.</em></p>
+
+<p>The diversity of data sources adds another layer of complexity. Imagine sifting through a vast library where books, journals, handwritten notes, and digital records are all stored haphazardly. Sounds daunting, right? That’s precisely the scenario many businesses face today. Different data types, coupled with isolated data siloes, can make it a Herculean task for employees to locate the correct information promptly.</p>
+
+<p>Swirl connects to multiple data sources and can search in all. Swirl is a centralized hub, enabling streamlined searches across all integrated data sources. This simplifies the search process and ensures that no crucial information gets overlooked because of its origin or format.</p>
+
+<h2>
+  
+  
+  Using LLMs with Search and Bringing Multiple Data Sources Together 🤝
+</h2>
+
+<p>Swirl distributes user queries to search engines, databases, and other enterprise cloud services using their existing APIs and standards-based security mechanisms like OAuth2. Swirl asynchronously normalizes and re-ranks the unified results using large language models.</p>
+
+<p>Let's understand how Swirl works.</p>
+
+<ol>
+<li>The user provides the data sources to which Swirl integrates.</li>
+<li>The user creates a query to search for.</li>
+<li>Swirl sends those queries to each source.</li>
+<li>Get the response and find the best using LLMs.</li>
+<li>Swirl then gets the citations in an async pipe.</li>
+<li>It then fetches the top results and creates a prompt.</li>
+<li>It sends the data + prompt to ChatGPT (or any LLM).</li>
+<li>Swirl returns answers with ChatGPT insights.</li>
+</ol>
+
+<h3>
+  
+  
+  Diagram Explaining Swirl Search with ChatGPT as a configured LLM
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4-KNMib0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fi3dradgja7t3scn57a5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4-KNMib0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fi3dradgja7t3scn57a5.png" alt="How Swirl Works" width="800" height="516"></a></p>
+
+<p><em>A diagram explaining how Swirl can work with multiple data sources and provide results with ChatGPT insights.</em></p>
+
+<p>The whole search process is simplified, and setting up Swirl is pretty straightforward. To state Raman Ramanenkou of Sense.</p>
+
+<blockquote>
+<p>“Setting up and running Swirl in a Docker container is incredibly straightforward—it takes just a few minutes.<br>
+~ Raman Ramanenkou of Sense</p>
+</blockquote>
+
+<p>Data privacy and security are essential while searching. People should only be able to search for information they can access in any corporation. Swirl incorporates OAuth2 authentication. This means that the access and visibility of data are tightly controlled based on the credentials of the individual searching. It ensures that sensitive information remains restricted, and only those with the necessary permissions can view it.</p>
+
+<p>Therefore, someone who doesn't have access to critical files cannot search for them or even know that they exist.</p>
+
+<h2>
+  
+  
+  Retrieval Augmented Generation (RAG) using Swirl ✨
+</h2>
+
+<p>Retrieval Augmented Generation (RAG) is a technique where information retrieval is combined with text generation. In simpler terms, RAG first fetches relevant data by searching and then crafts an answer based on that data using Large Language Models; a widely popular example is Bing AI Chat. You can create a dynamic knowledge base by implementing RAG on your data sets.</p>
+
+<p>Swirl helps you create a chatbot for your data with ease. You can integrate the power of ChatGPT enterprise with Swirl and then generate answers on the fly. You don't need any extra database to store any information. Just search.</p>
+
+<p>Swirl can retrieve accurate information and obtain answers complete with citations to the original documents. This will supercharge your productivity. And you will have reliable and referenced information at your fingertips.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_XLk9n90--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opamzs2cq4jr51dcja2c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_XLk9n90--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/opamzs2cq4jr51dcja2c.png" alt="RAG using Swirl" width="800" height="471"></a></p>
+
+<p><em>An example is when we search for Sid Probstein using ChatGPT and then search again using Swirl's RAG pipeline. We get the document used for generating the answer in the link at the bottom left.</em></p>
+
+<h2>
+  
+  
+  Get Started with Swirl 💻
+</h2>
+
+<p>If you want to try Swirl and get it up and running at no cost. Head to the GitHub page and check it out. 👇</p>
+
+<p>GitHub 🔗: <a href="https://github.com/swirlai/swirl-search">Swirl on GitHub 🌌</a></p>
+
+<p>💿Installing instructions: <a href="https://github.com/swirlai/swirl-search#try-swirl-now-in-docker">Getting started with Swirl</a></p>
+
+<p>📃 Documentation: <a href="https://github.com/swirlai/swirl-search/wiki">Swirl Wiki</a></p>
+
+<p><strong>A snapshot of Swirl UI when running</strong></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lXhlAJpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8iiil9klnh87f4ibhqsg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lXhlAJpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8iiil9klnh87f4ibhqsg.png" alt="Galaxy UI" width="800" height="494"></a></p>
+
+<p><em>Swirl in Action with the Galaxy UI</em></p>
+
+
+
+
+<p>Swirl is a community-driven 👩‍💻 open-source project. We welcome individuals interested in creating a search platform and contributing to the project's development. If you are interested in learning about the project and want to contribute or begin your open-source journey with us. We'd gladly guide you and help you understand and create your first open-source contribution. 🤗</p>
+
+<p><a href="https://join.slack.com/t/swirlmetasearch/shared_invite/zt-22ozfml3o-oqe7sWvB5jw6xEwv1duW4g">Join our Slack Community. 💖</a></p>
+
+<p>Please give us a Star 🌟 on <a href="https://github.com/swirlai/swirl-search">GitHub.</a></p>
+
+<p><a href="https://twitter.com/SWIRL_SEARCH">Follow us on</a> <a href="https://twitter.com/SWIRL_SEARCH">Twitter/𝕏</a> for updates.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Index Optimization in Database Query Performance: Guidelines and Real-world Examples](https://dev.to/nightbird07/index-optimization-in-database-query-performance-guidelines-and-real-world-examples-4f80) 
+ <details><summary>Article</summary> <p>Don’t get too smug with your current level after reading a ton of articles (especially, mine) because today, I am going to throw some curveballs at you and if you can hit them all, then you are truly a geek and you deserve a party popper. In the world of database query optimization, the choice of indexes can make or break your queries. This article reveals the secrets of picking and tweaking indexes, supported by real-world examples. We’ll talk about situations where the right index can make your query fly and when it might need a makeover.</p>
+
+<h2>
+  
+  
+  <strong>Recap on Index Optimization:</strong>
+</h2>
+
+<p>And I know you are looking for a cheat sheet, so here is one that could jog your truly brilliant memory when you were diligent. Here’s a crisp recap of key index concepts that can help you nail the questions:</p>
+
+<ol>
+<li><p><strong>Single-Column Indexes:</strong> An index on a single column is effective for filtering data based on that column's values. For example, creating an index on a <code>date_column</code> with the current data-- case sensitive,can accelerate queries that involve date-based filtering.</p></li>
+<li><p><strong>Multi-Column Indexes:</strong> In scenarios where queries involve filtering by multiple columns or sorting by one column, a multi-column index can be advantageous. It optimizes both filtering and sorting operations. For instance, an index on <code>(a, date_column)</code> works well when filtering by <code>a</code> and sorting by <code>date_column</code>(ordere matters).</p></li>
+<li><p><strong>Multi-Purpose Indexes:</strong> Sometimes, a single index can serve multiple query patterns. If you have queries filtering by different combinations of columns, a multi-column index that covers all relevant columns, such as <code>(a, b)</code>, can be beneficial for optimizing these queries.</p></li>
+<li><p><strong>Pattern Search Indexes:</strong> When performing text pattern searches, consider using specialized index types like <code>varchar_pattern_ops</code>. These indexes are tailored for efficient pattern matching, as seen in the 'text LIKE' query.</p></li>
+<li><p><strong>Impact of Conditions:</strong> Introducing additional conditions to a query can affect its performance. Whether it makes the query slower, faster, or keeps it the same depends on the specific data and query. Evaluating these changes is essential for efficient indexing.</p></li>
+</ol>
+
+
+
+
+<p>for each question you have to choose <br>
+1- <strong>Good Fit</strong><br>
+2- <strong>Bad Fit</strong> -- could be optimized. </p>
+
+<h3>
+  
+  
+  Question1
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">first_name_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">first_name</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">employee</span> 
+<span class="k">WHERE</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">first_name</span><span class="p">)</span> <span class="o">=</span> <span class="s1">'GORG'</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+
+<h3>
+  
+  
+  Question 2
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">name_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="n">last_name</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="k">FROM</span> <span class="n">employee</span>
+<span class="k">WHERE</span> <span class="n">last_name</span> <span class="o">=</span> <span class="s1">'OoPs'</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">first_name</span> <span class="k">DESC</span>
+<span class="k">FETCH</span> <span class="k">FIRST</span> <span class="mi">2</span> <span class="k">ROW</span> <span class="k">ONLY</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+
+<h3>
+  
+  
+  Question 3
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">name_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="n">last_name</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="k">FROM</span> <span class="n">employee</span>
+<span class="k">WHERE</span> <span class="n">last_name</span> <span class="o">=</span> <span class="s1">'OoPs'</span>
+<span class="k">AND</span> <span class="n">first_name</span> <span class="o">=</span> <span class="s1">'Hahah'</span>
+
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="k">FROM</span> <span class="n">employee</span>
+<span class="k">WHERE</span> <span class="n">last_name</span> <span class="o">=</span> <span class="s1">'OoPs'</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+
+<h3>
+  
+  
+  Question 4
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">notes_index</span> <span class="k">ON</span> <span class="n">employee</span><span class="p">(</span><span class="n">notes</span> <span class="n">text_pattern_ops</span><span class="p">)</span>
+
+<span class="k">SELECT</span> <span class="n">notes</span> <span class="k">FROM</span> <span class="n">employee</span> 
+<span class="k">WHERE</span> <span class="n">notes</span> <span class="k">LIKE</span> <span class="s1">'late%'</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+
+<h3>
+  
+  
+  Tips
+</h3>
+
+<p>1- Indexes can only be used from left to right side. If the first index column is not in the where clause, the index is of little help.<br>
+2- Use an index-only scan for queries that access many rows but only a few columns.<br>
+Avoid select * to increase chances for an index-only scan.</p>
+
+
+
+
+<p>please, refer to the comment section to see the answer and rate yourself and don't forget to give yourself a Confetti. </p>
+
+ </details> 
+ <hr /> 
+
+ #### - [DevOpsDays Ukraine: Disaster Recovery at scale on September 14-15th ⚙️](https://dev.to/devopsdays_kyiv/devopsdays-ukraine-disaster-recovery-at-scale-on-september-14-15th-3hai) 
+ <details><summary>Article</summary> <p>Hey folks! We’re happy to invite you to DevOpsDays Ukraine: Disaster Recovery at scale on September 14-15th⚙️<br>
+Get ready for a two-day DevOps journey:</p>
+
+<p>🔸 Fireside Chat with the co-founder of DevOpsDays, Patrick Debois. <br>
+🔸 Cultural Talks by top experts Charity Majors, Iaroslav Molochko, Manuel Pais, Adriana Villela just to name a few.</p>
+
+<p>Some of the topics: </p>
+
+<ul>
+<li>Emergency cloud migration and cost optimization tricks during
+the first months of a full-scale invasion of Ukraine</li>
+<li>Compliance and Regulatory Standards Are Not Incompatible With Modern Development Best Practices</li>
+<li>Beyond Engineering: The Future of Platforms</li>
+<li>The Case for Self-Service Tooling</li>
+<li>Key strategies to overcome the challenges of operating</li>
+</ul>
+
+<p>🔸 Ignite talks: DevOps in GameDev, Socio-Technical Engineering, FQDN Egress Control and much more.</p>
+
+<p>And finally online networking on Open-Spaces with like-minded experts from around the world. </p>
+
+<p>Check out agenda &amp; register 👉 <a href="https://www.devopsdays.com.ua">https://www.devopsdays.com.ua</a> <br>
+When? September 14-15<br>
+Where? Online</p>
+
+<p>Can't wait to see y'all!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gfPK3wDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uy8jch4lmeijjrmdf1ym.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gfPK3wDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uy8jch4lmeijjrmdf1ym.png" alt="DevOpsDays Ukraine speakers" width="800" height="533"></a></p>
+
+ </details> 
+ <hr /> 
+
  #### - [Announcing The Browser Conference](https://dev.to/joelgriffith/announcing-the-browser-conference-44i4) 
  <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LbpngZGq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jd54akbnx8ixhko62l5d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LbpngZGq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jd54akbnx8ixhko62l5d.png" alt="The browser conference" width="800" height="400"></a></p>
 
@@ -161,945 +536,6 @@
 <li>Can't join won't join? No problem! If you wanted to tweet or tell some friends about it, that'd help tremendously.</li>
 <li>Can't join won't join won't X-it? That's ok too, thanks for reading!</li>
 </ul>
-
- </details> 
- <hr /> 
-
- #### - [Brewing a Full-Stack Breakfast with ExpressoTS, Bun, and Elysia](https://dev.to/expressots/brewing-a-full-stack-breakfast-with-expressots-bun-and-elysia-1d40) 
- <details><summary>Article</summary> <blockquote>
-<p>Combine the power of ExpressoTS with Bun's Elysia framework in TypeScript for a mouth-watering full-stack experience.</p>
-</blockquote>
-
-<h1>
-  
-  
-  Introduction
-</h1>
-
-<p>Welcome to a hands-on guide focused on integrating ExpressoTS, Bun, and Elysia into a full-stack TypeScript application. Let's cut to the chase and see what ingredients we'll be working with.</p>
-
-<h2>
-  
-  
-  Our Ingredients
-</h2>
-
-<h3>
-  
-  
-  <a href="https://expresso-ts.com"><strong>ExpressoTS</strong></a>
-</h3>
-
-<p>This TypeScript framework is designed for server-side applications. It offers flexibility in project structure and supports multiple<br>
-architectural patterns, including MVC. If you like your applications like your coffee — robust and versatile — ExpressoTS is your go-to.</p>
-
-<p><a href="https://daniel-boll.me/posts/a-first-project-with-expressots">You can also check my guide on a first project with ExpressoTS</a></p>
-<h3>
-  
-  
-  <a href="https://bun.sh"><strong>Bun</strong></a>
-</h3>
-
-<p>An all-in-one toolkit that brings speed and efficiency to your JavaScript and TypeScript projects.<br>
-Think of Bun as the wholesome bread holding all your stack's ingredients together.<br>
-It's an entire toolbox in one neat package, and it's faster than you can say "bun in the oven."</p>
-<h3>
-  
-  
-  <a href="https://elysiajs.com/"><strong>ElysiaJS</strong></a>
-</h3>
-
-<p>A Bun web framework that promises performance, simplicity, and flexibility. Designed with TypeScript in mind, Elysia is like that final<br>
-touch of seasoning that takes your project from good to great.</p>
-
-<blockquote>
-<p>So, whether you're into French toast or a classic Eggs Benedict, the aim of this blog post is to show you how to whip up a dish that's not just full of flavor, but also robust and scalable.</p>
-</blockquote>
-<h1>
-  
-  
-  Getting Started: Your First Bite of Elysia
-</h1>
-
-<p>Now that we've set the table with the ingredients, let's start cooking. We'll begin by setting up a basic Elysia application using Bun.</p>
-<h2>
-  
-  
-  1. Install Bun
-</h2>
-
-<p>First, you'll need to download and install Bun. Open your terminal and run the following command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>curl <span class="nt">-fsSL</span> https://bun.sh/install | bash
-</code></pre>
-
-</div>
-
-
-
-<p>This will download and install Bun on your machine, equipping you with a fast and efficient JavaScript runtime.</p>
-
-<h2>
-  
-  
-  2. Create Your Elysia Project
-</h2>
-
-<p>Once Bun is installed, it's time to create your Elysia project. Run:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>bun create elysia breakfast-ts
-</code></pre>
-
-</div>
-
-
-
-<p>You should see a message like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>Created elysia project successfully
-
-<span class="c"># To get started, run:</span>
-
-  <span class="nb">cd </span>breakfast-ts
-  bun run src/index.ts
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  3. Run Your Application
-</h2>
-
-<p>Follow the instructions in the terminal message:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">cd </span>breakfast-ts
-bun run src/index.ts
-</code></pre>
-
-</div>
-
-
-
-<p>And just like that, you should see the message, instantaneously 🌪:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>🦊 Elysia is running at localhost:3000
-</code></pre>
-
-</div>
-
-
-
-<p>Voila! You've just whipped up your first Elysia app, hot and fresh.</p>
-
-<h3>
-  
-  
-  4. Verify Your Application
-</h3>
-
-<p>To verify Elysia's functionality, you can perform a health check using the provided endpoint. While I'll be using <a href="https://httpie.io/">httpie</a> for its straightforward API, you're welcome to use <code>curl</code> if you prefer.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>http :3000
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Length</span><span class="p">:</span> <span class="s">12</span>
-<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
-<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
-
-Hello Elysia
-</code></pre>
-
-</div>
-
-
-
-<h1>
-  
-  
-  Extending Elysia: Crafting a Simple User CRUD
-</h1>
-
-<p>With the basic setup out of the way, let's extend our Elysia app by adding some CRUD functionality for users.<br>
-This will serve as a good starting point before we dive into more complex operations in future posts.</p>
-<h2>
-  
-  
-  1. Run Your Application in Watch Mode
-</h2>
-
-<p>First, stop the server if it's running. Then leverage Bun's watch mode, which will automatically reload the application<br>
-when changes are made to the source code:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>bun run <span class="nt">--watch</span> src/index.ts
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  2. Add User CRUD Routes
-</h2>
-
-<p>Now, let's define some basic CRUD operations. Open <code>src/index.ts</code> and add to your existing code the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Elysia</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">elysia</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">// Create a user route group</span>
-<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Elysia</span><span class="p">().</span><span class="nx">group</span><span class="p">(</span><span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="o">=&gt;</span>
-  <span class="nx">app</span>
-    <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">All users</span><span class="dl">"</span><span class="p">)</span>
-    <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/:id</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Create User</span><span class="dl">"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="dl">"</span><span class="s2">/:id</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`Update User </span><span class="p">${</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-    <span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">"</span><span class="s2">/:id</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`Delete User </span><span class="p">${</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="c1">// Main app</span>
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Elysia</span><span class="p">()</span>
-  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hello Elysia</span><span class="dl">"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-  <span class="s2">`🦊 Elysia is running at </span><span class="p">${</span><span class="nx">app</span><span class="p">.</span><span class="nx">server</span><span class="p">?.</span><span class="nx">hostname</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">app</span><span class="p">.</span><span class="nx">server</span><span class="p">?.</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Here, we've used Elysia's <code>group&lt;Prefix extends string = string&gt;(prefix: Prefix, run: (group: Elysia&lt;...&gt;))</code> method to bundle all user-related routes together. We've defined routes for getting all users, getting a single user by ID, creating a user, updating a user, and deleting a user.</p>
-
-<h2>
-  
-  
-  3. More Advanced Features
-</h2>
-
-<p><strong><em>Note:</em></strong> You can extend this basic setup in various ways. Elysia supports both simple state management within the server and more advanced<br>
-dependency injection techniques for robust applications. Check out Elysia's documentation on<br>
-<a href="https://elysiajs.com/concept/state-decorate.html">State Decorate</a> and<br>
-<a href="https://elysiajs.com/patterns/dependency-injection.html">Dependency Injection</a> if you're interested.</p>
-
-<blockquote>
-<p>For the sake of this blog post, we're keeping it simple. If you are willing to expand your horizons, however, you are <strong>encouraged</strong> to check out the<br>
-  <a href="https://daniel-boll.me/posts/a-breakfest-with-expressots-and-bun#call-to-action"><strong>Call to Action</strong></a> section at the end of this post, where you may help the ExpressoTS community in the bun integration.</p>
-</blockquote>
-<h2>
-  
-  
-  4. Test Your User CRUD Endpoints
-</h2>
-
-<p>After running your server, you can test each endpoint to make sure they're working as intended.</p>
-<h3>
-  
-  
-  <strong>Get All Users</strong>
-</h3>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>http :3001/user
-</code></pre>
-
-</div>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Length</span><span class="p">:</span> <span class="s">9</span>
-<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
-<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
-
-All users
-</code></pre>
-
-</div>
-
-<h3>
-  
-  
-  <strong>Get a Single User</strong>
-</h3>
-
-<p>Replace <code>{id}</code> with the ID of the user you're interested in.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>http :3001/user/42
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Length</span><span class="p">:</span> <span class="s">11</span>
-<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
-<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
-
-Hello, 42
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  <strong>Create a User</strong>
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>http POST :3001/user
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Length</span><span class="p">:</span> <span class="s">11</span>
-<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
-<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
-
-Create User
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  <strong>Update a User</strong>
-</h3>
-
-<p>Again, replace <code>{id}</code> with the ID of the user you want to update.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>http PUT :3001/user/42
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Length</span><span class="p">:</span> <span class="s">16</span>
-<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
-<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
-
-Update User 42
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  <strong>Delete a User</strong>
-</h3>
-
-<p>And one last time, replace <code>{id}</code> with the ID of the user you want to delete.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>http DELETE :3001/user/42
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Length</span><span class="p">:</span> <span class="s">16</span>
-<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
-<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
-
-Delete User 42
-</code></pre>
-
-</div>
-
-
-
-<p>Now you've successfully tested all of your user CRUD operations. It's like a full-course breakfast — everything is present and accounted for!</p>
-
-<h2>
-  
-  
-  Diving into the Heart of the Matter: <strong>Reflection</strong> and <strong>Decorators</strong>
-</h2>
-
-<p>In programming, reflection is a mechanism that allows you to inspect and manipulate program elements like classes and objects at runtime. In other words, reflection enables a program to observe its own structure, similar to how you can observe your own reflection in the mirror. This allows for greater dynamic behavior, enabling more powerful and flexible constructs like decorators.</p>
-
-<h1>
-  
-  
-  Dive deeper @ <a href="https://daniel-boll.me/posts/a-breakfest-with-expressots-and-bun#diving-into-the-heart-of-the-matter-reflection-and-decorators">daniel-boll.me</a>
-</h1>
-
-<p>If you are interested in the stuff you can achieve with reflection make sure to check out the full blog at <a href="https://daniel-boll.me/posts/a-breakfest-with-expressots-and-bun#diving-into-the-heart-of-the-matter-reflection-and-decorators">daniel-boll.me</a> for much more content.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8_jrSY3F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3rjunwbp6yun7gcgudz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8_jrSY3F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3rjunwbp6yun7gcgudz.png" alt="Image description" width="273" height="749"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [My Opinion on Adopting New Technologies: Using Bun as a Case Study.](https://dev.to/rsaz/opinion-about-new-technology-adoption-using-bun-as-an-example-2o66) 
- <details><summary>Article</summary> <p>The thrill of diving into new technology is like an adrenaline shot for any software engineer. As someone who enjoys tinkering with new tools, I'm always eager to explore the latest and greatest. But wearing the hat of a technical lead and a university professor in computer science with a 21-year career in software development changes the game. It's like having an internal debate between an angel and a devil: Should you adopt this promising new technology or be cautious?</p>
-
-<p>Early adopters, especially in the open-source community, are crucial catalysts for innovation. They help technologies evolve through their valuable contributions. But when it comes to corporate adoption, we must shift gears. Corporations need mature, battle-tested solutions.</p>
-
-<p>Take Node.js, for example. It's been a 14-year journey for it to reach its current mature state. Deno, around since 2018, is still considered somewhat obscure. Bun is an even newer kid on the block and far from production-ready. Its potential may be promising, but resilience, sustained development, and vision are key for its long-term viability.</p>
-
-<p>To carve out a niche in the corporate world, Bun needs more than just promising features. It needs a vibrant community, widespread industry adoption, and enough momentum to host events and generate buzz. Only then could we even start to think of it as a serious contender to Node.js.</p>
-
-<p>Another challenge is balancing performance with developer-friendliness. As you build abstractions to make life easier for developers, you risk diluting the tool's performance and efficiency. Maintaining that balance while sticking to the initial vision is no small feat.</p>
-
-<p>The choice of the Zig programming language for Bun is another intriguing design decision. Who's going to learn Zig just to contribute? Why not go for something more commonly adopted, like Rust? It raises questions about the future talent pool and whether this choice aligns with corporate considerations.</p>
-
-<p>Even as I wish Bun all the success, only time will tell if it will stand the test of time, especially given that other solutions like Just.js, Cobra, and Hermes already outperform it.</p>
-
-<p>So while the pace of technological evolution is exhilarating, it also makes it incredibly challenging to maintain consistent development and vision for new products. Before Bun—or any emerging technology—becomes viable for corporate adoption, it must check numerous boxes, from community support to feature stability. As much as we'd like to dive head-first into every new technology, the devil is in the details, and those details demand a discerning eye.</p>
-
- </details> 
- <hr /> 
-
- #### - [How to Finetune Llama 2: A Beginner's Guide](https://dev.to/dhanushreddy29/how-to-finetune-llama-2-a-beginners-guide-219e) 
- <details><summary>Article</summary> <p>Meta AI's LLaMA 2 has taken the NLP community by storm with its impressive range of pretrained and fine-tuned Large Language Models (LLMs). With model sizes ranging from 7B to a staggering 70B parameters, LLaMA 2 builds upon the success of its predecessor, LLaMA 1, offering a host of enhancements that have captivated the NLP community.</p>
-
-<h2>
-  
-  
-  The Evolution of LLaMA
-</h2>
-
-<p>LLaMA 2 signifies a significant evolution in the landscape of language models. Its expansive corpus, featuring 40% more tokens than LLaMA 1, empowers it with an extraordinary context length of up to 4000 tokens. This extended contextual understanding enables LLaMA 2 to excel in tasks that require nuanced comprehension of text and context.</p>
-
-<p>What makes LLaMA 2 even more extraordinary is its accessibility. Meta AI has generously made these advanced model weights available for both research and commercial applications. This democratization of cutting-edge language models ensures that a broader audience, from researchers to businesses, can harness the power of LLaMA 2 for their unique needs.</p>
-
-<p>To get access to Llama 2, you can follow these steps:</p>
-
-<p>Go to the Hugging Face Model Hub: <a href="https://huggingface.co/meta-llama">huggingface.co/meta-llama</a> and select the model that you want to use.</p>
-
-<ul>
-<li>Click on the "<strong>Request Access</strong>" button.</li>
-<li>Fill out the form and Submit it.</li>
-<li>Once your request has been approved, you will be able to download the model weights.</li>
-<li>
-<p>Here are some additional details about each size of the Llama 2 model:</p>
-
-<ul>
-<li>
-<strong>7B parameters</strong>: This is the smallest size of the Llama 2 model. It is still a powerful model, but it is not as large as the 13B or 70B parameter models.</li>
-<li>
-<strong>13B parameters</strong>: This is the medium-sized version of the Llama 2 model. It is a good choice for most applications.</li>
-<li>
-<strong>70B parameters</strong>: This is the largest size of the Llama 2 model. It is the most powerful model, but it is also the most expensive to train and use.</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p>In this blog post, I will show you how to effortlessly fine-tune the LLaMA 2 - 7B model on a subset of the CodeAlpaca-20k dataset. This dataset contains over 20,000 coding questions and their corresponding correct answers. By fine-tuning the model on this dataset, we can teach it to generate code for a variety of tasks.</p>
-
-<p>In this blog post, I want to make it as simple as possible to fine-tune the LLaMA 2 - 7B model, using as little code as possible. We will be using the <a href="https://github.com/tloen/alpaca-lora">Alpaca Lora Training script</a>, which automates the process of fine-tuning the model and for GPU we will be using <a href="https://beam.cloud">Beam</a>.</p>
-
-<p>You can create a free account on <a href="https://www.beam.cloud/">Beam</a>, to get started.</p>
-
-<h2>
-  
-  
-  Prerequisites
-</h2>
-
-<ul>
-<li>An account on <a href="https://www.beam.cloud/login">Beam</a>
-</li>
-<li>An API Key from <a href="https://www.beam.cloud/dashboard/settings/api-keys">Dashboard</a>
-</li>
-<li>Install <a href="https://docs.beam.cloud/getting-started/quickstart">Beam CLI</a> by running:
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>curl https://raw.githubusercontent.com/slai-labs/get-beam/main/get-beam.sh <span class="nt">-sSfL</span> | sh
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Configure Beam by entering
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>beam configure
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Install Beam SDK
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>pip <span class="nb">install </span>beam-sdk
-</code></pre>
-
-</div>
-
-
-
-<p>Now you’re ready to start using Beam to deploy your ML models.</p>
-
-<p>To make it simple, I have made a <a href="https://github.com/dhanushreddy291/finetune-llama2">Github Repo</a>, which you can clone to start with.</p>
-
-<p>In the <code>app.py</code> file, I use the <a href="https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k">CodeAlpaca-20k</a> dataset.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">train_model</span><span class="p">():</span>
-    <span class="c1"># Trained models will be saved to this path
-</span>    <span class="n">beam_volume_path</span> <span class="o">=</span> <span class="s">"./checkpoints"</span>
-
-    <span class="c1"># Load dataset -- for this example, we'll use the sahil2801/CodeAlpaca-20k dataset hosted on Huggingface:
-</span>    <span class="c1"># https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k
-</span>    <span class="n">dataset</span> <span class="o">=</span> <span class="n">DatasetDict</span><span class="p">()</span>
-    <span class="n">dataset</span><span class="p">[</span><span class="s">"train"</span><span class="p">]</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s">"sahil2801/CodeAlpaca-20k"</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s">"train[:20%]"</span><span class="p">)</span>
-
-    <span class="c1"># Adjust the training loop based on the size of the dataset
-</span>    <span class="n">samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">"train"</span><span class="p">])</span>
-    <span class="n">val_set_size</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">samples</span><span class="p">)</span>
-
-    <span class="n">train</span><span class="p">(</span>
-        <span class="n">base_model</span><span class="o">=</span><span class="n">base_model</span><span class="p">,</span>
-        <span class="n">val_set_size</span><span class="o">=</span><span class="n">val_set_size</span><span class="p">,</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
-        <span class="n">output_dir</span><span class="o">=</span><span class="n">beam_volume_path</span><span class="p">,</span>
-    <span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>To run the training/finetuning we will be running it using the command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>beam run app.py:train_model
-</code></pre>
-
-</div>
-
-
-
-<p>When we run this command, the training function will run on Beam's cloud, and we'll see the progress of the training process streamed to our terminal. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IRA-iMVQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cujy9wivzm8u7xkgoblc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IRA-iMVQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cujy9wivzm8u7xkgoblc.png" alt="LlaMA2 Finetuning logs" width="800" height="237"></a></p>
-
-<p>The training may take hours to complete depending on the size of the dataset you use for finetuning. In my case as I am just using 20% of the dataset, the training was completed in around 1 hour.</p>
-
-<p>When the model is succesfuuly trained, we can deploy an API to run inference of our fine-tuned model.</p>
-
-<p>Let's create a new function for inference. If you look closely, you'll notice that we're using a different decorator this time: <code>rest_api</code> instead of <code>run</code>.</p>
-
-<p>This will allow us to deploy the function as a REST API.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">rest_api</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">run_inference</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">):</span>
-    <span class="c1"># Inputs passed to the API
-</span>    <span class="nb">input</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s">"input"</span><span class="p">]</span>
-
-    <span class="c1"># Grab the latest checkpoint
-</span>    <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">get_newest_checkpoint</span><span class="p">()</span>
-
-    <span class="c1"># Initialize models
-</span>    <span class="n">models</span> <span class="o">=</span> <span class="n">load_models</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">checkpoint</span><span class="p">)</span>
-
-    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="s">"model"</span><span class="p">]</span>
-    <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="s">"tokenizer"</span><span class="p">]</span>
-    <span class="n">prompter</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="s">"prompter"</span><span class="p">]</span>
-
-    <span class="c1"># Generate text
-</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">call_model</span><span class="p">(</span>
-        <span class="nb">input</span><span class="o">=</span><span class="nb">input</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span> <span class="n">prompter</span><span class="o">=</span><span class="n">prompter</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">response</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We can deploy this as a REST API by running this command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>beam deploy app.py:run_inference
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SQGLDtC_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3c0bp9a47tvb5gfyhr0i.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SQGLDtC_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3c0bp9a47tvb5gfyhr0i.png" alt="Deployment Logs" width="800" height="180"></a></p>
-
-<p>If we navigate to the URL printed in the shell, we'll be able to copy the full cURL request to call the REST API.</p>
-
-<p>Now when I tried asking "How to download an image from link in Python"<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"input"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How to download an image from its URL in Python?"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>I get this entire markdown string as a response</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rUFrA8ft--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sgk5r0ru14ppec77gpbu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rUFrA8ft--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sgk5r0ru14ppec77gpbu.png" alt="API Response" width="800" height="416"></a></p>
-
-<p>I have prettified it below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">urllib.request</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s">'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Square_logo_2008.png/1200px-Square_logo_2008.png'</span>
-
-<span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
- <span class="n">image</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-
-<span class="c1">### Solution:
-</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s">'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Square_logo_2008.png/1200px-Square_logo_2008.png'</span>
-
-<span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
- <span class="n">image</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-
-
-<span class="c1">### Explanation:
-</span>
-<span class="n">The</span> <span class="n">first</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">the</span> <span class="sb">`urllib.request`</span> <span class="n">module</span><span class="p">.</span>
-
-<span class="n">The</span> <span class="n">second</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`with`</span> <span class="n">statement</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`with`</span> <span class="n">statement</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">a</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">connection</span><span class="p">.</span>
-
-<span class="n">The</span> <span class="n">third</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`urlopen`</span> <span class="n">function</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`urlopen`</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">a</span> <span class="n">URL</span><span class="p">.</span>
-
-<span class="n">The</span> <span class="n">fourth</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`response`</span> <span class="n">variable</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`response`</span> <span class="n">variable</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">store</span> <span class="n">the</span> <span class="n">response</span> <span class="n">of</span> <span class="n">the</span> <span class="n">URL</span><span class="p">.</span>
-
-<span class="n">The</span> <span class="n">fifth</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`read`</span> <span class="n">function</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`read`</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">read</span> <span class="n">the</span> <span class="n">response</span> <span class="n">of</span> <span class="n">the</span> <span class="n">URL</span><span class="p">.</span>
-
-<span class="n">The</span> <span class="n">sixth</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="k">print</span> <span class="n">the</span> <span class="n">image</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`print`</span> <span class="n">statement</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="k">print</span> <span class="n">the</span> <span class="n">image</span><span class="p">.</span>
-
-<span class="c1">### Reflection:
-</span>
-<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`with`</span> <span class="n">statement</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`try`</span> <span class="n">statement</span><span class="err">?</span>
-<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`urlopen`</span> <span class="n">function</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">function</span><span class="err">?</span>
-<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`response`</span> <span class="n">variable</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">variable</span><span class="err">?</span>
-<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`read`</span> <span class="n">function</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">function</span><span class="err">?</span>
-<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`print`</span> <span class="n">statement</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">statement</span><span class="err">?</span>
-<span class="o">&lt;/</span><span class="n">s</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Although training the model on 20% of the dataset is not ideal, it is still a good way to get started. You can see that we are already starting to see good results with this small amount of data. If you want to get even better results, you can try fine-tuning the model on the entire dataset. This will take several hours, but it will be worth it in the end. Once the model is trained, you can use it whenever you need it.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In conclusion, we have seen how to fine-tune LLaMA 2 - 7B on a subset of the CodeAlpaca-20k dataset using the Alpaca Lora Training script. This script makes it easy to fine-tune the model without having to write any code.</p>
-
-<p>We have also seen that even by training the model on 20% of the dataset, we can get good results. If you want to get even better results, you can try fine-tuning the model on the entire dataset.</p>
-
-<p>The future of open source AI is bright. The availability of large language models like LLaMA 2 makes it possible for anyone to develop powerful AI applications. With the help of open source tools and resources, developers can fine-tune these models to meet their specific needs.</p>
-
-<p>In case if you still have any questions regarding this post or want to discuss something with me feel free to connect on <a href="https://www.linkedin.com/in/dhanushreddy29/">LinkedIn</a> or <a href="https://twitter.com/dhanushreddy291">Twitter</a>.</p>
-
-<blockquote>
-<p>If you run an organization and want me to write for you, please connect with me on my Socials 🙃</p>
-</blockquote>
-
- </details> 
- <hr /> 
-
- #### - [100 + Login/Signup form for web developers](https://dev.to/jon_snow789/100-loginsignup-form-for-web-developers-l7f) 
- <details><summary>Article</summary> <p>We make a collection of 100 + Login forms for web developers. they all are free and open source. you can feel free to use in your website or in any project.</p>
-
-
-
-
-<h2>
-  
-  
-  <center><a href="https://democoding.in/100-login-form-for-web-developers">👉democoding.in/100-login-form-for-web-developers👈</a></center>
-</h2>
-
-
-
-
-<h3>
-  
-  
-  The best Login Form from the collection
-</h3>
-
-<h4>
-  
-  
-  1.
-</h4>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UJBZQ2RE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h1teziqfiqhesxvh0vfg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UJBZQ2RE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h1teziqfiqhesxvh0vfg.png" alt="100 + Login form for web developers" width="800" height="447"></a></p>
-
-
-
-
-<h3>
-  
-  
-  2.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kfvesaH3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xfu92h4gjopehpgnfu4i.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kfvesaH3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xfu92h4gjopehpgnfu4i.png" alt="100 + Login form for web developers" width="800" height="495"></a></p>
-
-
-
-
-<h3>
-  
-  
-  3.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--CLWplm8M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/as8ldc15u7rveoco4wim.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CLWplm8M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/as8ldc15u7rveoco4wim.png" alt="100 + Login form for web developers" width="800" height="450"></a></p>
-
-
-
-
-<h3>
-  
-  
-  4.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ezMjYOEo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zkj7jnd40wkkawpfb48f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ezMjYOEo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zkj7jnd40wkkawpfb48f.png" alt="100 + Login form for web developers" width="800" height="450"></a></p>
-
-
-
-
-<h3>
-  
-  
-  5.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--x7ih_iSw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3mndj6v40du7tchylhhf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--x7ih_iSw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3mndj6v40du7tchylhhf.png" alt="100 + Login form for web developers" width="768" height="432"></a></p>
-
-
-
-
-<h3>
-  
-  
-  6.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KHmLDFSc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/t-EMinSz_Tk/maxresdefault.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KHmLDFSc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/t-EMinSz_Tk/maxresdefault.jpg" alt="100 + Login form for web developers" width="800" height="450"></a></p>
-
-
-
-
-<h3>
-  
-  
-  7.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uqiO-Ls6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/F9s3-e7FJnY/maxresdefault.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uqiO-Ls6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/F9s3-e7FJnY/maxresdefault.jpg" alt="100 + Login form for web developers" width="800" height="450"></a></p>
-
-
-
-
-<h3>
-  
-  
-  8.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8IZDaXQ4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5ysqlrkl3lgoz6zrhcd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8IZDaXQ4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5ysqlrkl3lgoz6zrhcd.png" alt="100 + Login form for web developers" width="640" height="379"></a></p>
-
-
-
-
-<h3>
-  
-  
-  9.
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--b4_cQ2_r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cly8i4dovo48zy3qdide.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--b4_cQ2_r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cly8i4dovo48zy3qdide.png" alt="100 + Login form for web developers" width="640" height="535"></a></p>
-
-
-
-
-
-
-
-<h3>
-  
-  
-  Check the full Collection
-</h3>
-
-<p><a href="https://democoding.in/100-login-form-for-web-developers">democoding.in/100-login-form-for-web-developers</a></p>
-
-
-
-
-<blockquote>
-<p>Note: we did not make these forms. We are only sharing these great designs. All the rights reserved to respective owner.</p>
-</blockquote>
-
-
-
-
-<p>We also created a awesome list of free css generator </p>
-
-<blockquote>
-<p><a href="https://democoding.in/awesome-free-css-generator">Check here</a></p>
-</blockquote>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7BG2-194--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gmk0b9a8yehounuut1qw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7BG2-194--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gmk0b9a8yehounuut1qw.png" alt="Awesome list of free CSS Generator" width="800" height="450"></a></p>
-
-<ul>
-<li>Glassmorphism CSS Generator</li>
-<li>CSS Gradient Generator</li>
-<li>CSS Text Shadow Generator</li>
-<li>CSS Grid Generator</li>
-</ul>
-
-<p>3D Book Image CSS Generator</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--mCC-6TU2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avrg7non6kxi86a6p9cv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mCC-6TU2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avrg7non6kxi86a6p9cv.png" alt="3D Book Image CSS Generator" width="640" height="322"></a></p>
-
-<p>Check the full collection</p>
-
-<h3>
-  
-  
-  <center><a href="https://democoding.in/awesome-free-css-generator">https://democoding.in/awesome-free-css-generator</a></center>
-</h3>
-
-
-
-
-
-
-
-<h3>
-  
-  
-  Support Us
-</h3>
-
-<p>Don't miss the amazing video we've embedded in this post! Click the play button to be inspired</p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/kQxKkEm3oDA">
-</iframe>
-</p>
-
-
-
-
-
-
-
-<p>Thanks for Reading ❤️! Check my website <a href="https://democoding.in/">Demo coding</a> for updates about my latest CSS Animation, CSS Tools, and some cool web dev tips. Let's be friends!</p>
-
-<p>Don't forget to subscribe to our channel : <a href="https://www.youtube.com/@democode">Demo code</a> </p>
 
  </details> 
  <hr /> 
