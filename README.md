@@ -133,611 +133,117 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Getting Started with SMS Notifications using Africas Talking and GitHub Actions🐙](https://dev.to/ken_mwaura1/getting-started-with-sms-notifications-using-africas-talking-and-github-actions-5de0) 
- <details><summary>Article</summary> <p>New month, New Tutorial 🚀. In the next few weeks, I will be writing a series of tutorials on how to send SMS notifications using Africas Talking and GitHub Actions. This is the first tutorial in the series.</p>
+ #### - [Introducing Spaces: Build collaborative environments in a few lines of code](https://dev.to/ably/introducing-spaces-build-collaborative-environments-in-a-few-lines-of-code-3n01) 
+ <details><summary>Article</summary> <p><strong>Spaces comes with a purpose-built SDK to enable developers to add a collaborative environment around existing applications.</strong></p>
+
+<p>We are very excited to announce a new product — Spaces! </p>
+
+<p>The <a href="https://www.ably.com/spaces">Spaces SDK</a> comes with an intuitive set of APIs that allow you to build realtime collaboration features such as avatar stacks, live cursors, member location and component locking, in days. Each API is optimized for their specific use-case, reducing integration effort.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NiFIe1aW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aidlg30sqzw8gtpnf365.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NiFIe1aW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aidlg30sqzw8gtpnf365.gif" alt="Image description" width="800" height="449"></a></p>
 
 <h2>
   
   
-  Introduction 💫
-</h2>
-
-<p>GitHub Actions allows you to create workflows that automate your CI/CD process. Africas Talking provides a simple and reliable API to send SMS notifications to your users.</p>
-
-<p>This tutorial I will show you how to send SMS notifications using Africas Talking and GitHub Actions. We will be using the Africas Talking SMS API to send SMS notifications to a phone number of your choice. We will be using GitHub Actions to automate the process of sending the SMS notifications.</p>
-
-<p>The diagram below shows a highlevel overview of the workflow we will be creating:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kawmV8HU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xrf9ciqpz253glukdslb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kawmV8HU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xrf9ciqpz253glukdslb.png" alt="Workflow diagram" width="800" height="390"></a></p>
-
-<h2>
-  
-  
-  Benefits 🦸
+  Spaces at a glance
 </h2>
 
 <ul>
-<li>Get real-time SMS alerts for workflow results.</li>
-<li>No need to constantly check GitHub for status.</li>
-<li>SMS is more convenient compared to email notifications.</li>
+<li>
+<strong>Feature specific APIs:</strong> The only product that comes with purpose-built, realtime collaboration APIs for adding avatar stacks, member location, live cursors, and component locking. All APIs are optimized for top performance. For example, the live cursors API automatically batches pointer position events to avoid unnecessary streaming of messages whilst ensuring negligible latency.</li>
+<li>
+<strong>Easy to use:</strong> Spaces is a simple and intuitive SDK that can be used with any web application.</li>
+<li>
+<strong>High performing:</strong> Powered by our market-proven, realtime infrastructure that’s built for reliability at scale, backed by five nines SLAs and messaging guarantees.</li>
+<li>
+<strong>Realtime experiences unlocked:</strong> Spaces is built to work with Ably’s other complementary products like Pub/Sub Channels to unlock end-to-end realtime messaging throughout your app. While Spaces powers the features you need to enable synchronous collaboration for teams and manage their participant state, Pub/Sub channels allows you to flexibly broadcast and sync app state changes between members, your backend and any other pieces in your system design.</li>
 </ul>
 
 <h2>
   
   
-  Prerequisites
+  Enhancing your product with in-app collaboration &amp; Spaces
 </h2>
 
-<ul>
-<li>A GitHub account with a repository (Alternatively create a new repo).</li>
-<li>An Africas Talking account and API keys.</li>
-</ul>
+<p>With the <a href="https://www.ably.com/spaces">Spaces SDK</a> you can set up a collaborative environment on any part of your application (or your entire application) so that collaborators have contextual awareness of what everyone is up to. Members of a space can see which other members are online, what they are looking at, their location within the app (this could be a cell, a page, a slide or a folder) and any specific component they’ve locked for editing. All of this and more in just a few lines of code.  No need to change your existing system design or app architecture. No realtime infrastructure to build and maintain to scale the collaboration to millions of virtual spaces and users.</p>
 
 <h2>
   
   
-  Getting Started 🤩
+  SDK feature highlights
 </h2>
 
-<h3>
-  
-  
-  Steps 🚶
-</h3>
-
-<p>The steps below assume you have a GitHub account and a repository. If you don’t have a repository, you can create one by following the steps <a href="https://help.github.com/en/github/getting-started-with-github/create-a-repo">here</a>. Once you have a repository, follow the steps below to get started.</p>
+<p>Here’s the full set of APIs available in the beta release with many more planned:</p>
 
 <ul>
-<li>Get Africas Talking API keys 🔑:</li>
+<li>
+<strong>Space:</strong> A virtual collaborative space set up on your application where members can collaborate with each other in realtime.</li>
+<li>
+<strong>Members:</strong> Online users connected to the virtual collaborative space. This powers an <a href="https://ably.com/examples/avatar-stack">avatar stack</a> for end users which is a visual representation of a member’s presence - showing them as online and connected.</li>
+<li>
+<strong>Member location:</strong> The <a href="https://examples.ably.dev/member-location">live location</a> of a user within the app - page, cell, slide, block or anything else that makes sense for your application.</li>
+<li>
+<strong>Live cursor:</strong> The pointer location of members in a virtual space showing what they are looking at. The <a href="https://ably.com/examples/live-cursors">live cursor API</a> automatically batches messages and provides the message rate required for smooth performance of 100s of simultaneous cursors (though we don’t recommend going beyond 15 for a good user experience).</li>
+<li>
+<strong>Component locking:</strong> Enables end-users to <a href="https://examples.ably.dev/component-locking">lock specific UI</a> components while making their edits, so there’s no confusion with other collaborators or disruption to overall collaboration in the space.</li>
 </ul>
 
-<ol>
-<li>Sign up on <a href="https://africastalking.com/">AfricasTalking.com</a>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--v5m-zIg8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3wojtd9khrgzjc0a9x4k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v5m-zIg8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3wojtd9khrgzjc0a9x4k.png" alt="Image description" width="800" height="439"></a></p>
+
+<h2>
+  
+  
+  Get started today
+</h2>
+
+<p>Spaces is currently available in beta. To get started simply</p>
+
+<ul>
+<li>Sign-up for a <a href="https://ably.com/sign-up">free developer account</a>
 </li>
-<li>Get your username and API key from the SMS dashboard. Note you will be prompted for your password. Once the key is created and displayed copy and paste it elsewhere as they usually create a new one each time. </li>
-</ol>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QsllITeM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9t49hj51ar2p5n79ho9m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QsllITeM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9t49hj51ar2p5n79ho9m.png" alt="Settings page" width="800" height="300"></a></p>
-
-<ul>
-<li>Add secrets to GitHub repository(We will use these secrets in our workflow):</li>
-</ul>
-
-<ol>
-<li>In your repo, go to <strong>Settings &gt; Secrets &gt; Actions</strong>
+<li>Take a closer look at <a href="http://www.ably.com/spaces">Spaces</a>
 </li>
-<li>Add a secret <code>AT_USERNAME</code> with your username.</li>
-<li>Add a secret <code>AT_API_KEY</code> with your API key.</li>
-<li>Add a secret <code>toPhoneNumber</code> with the phone number you want to send the SMS to. (Format: +2547XXXXXXXX)</li>
-</ol>
-
-<p>Once you have added the secrets, your secrets page should look like this:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DN7tCJAT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4l5cu3gnqklcyq087qtw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DN7tCJAT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4l5cu3gnqklcyq087qtw.png" alt="Secrets dashboard" width="800" height="307"></a></p>
-
-<h2>
-  
-  
-  Methods of running code on GitHub Actions 🐙
-</h2>
-
-<p>There are two ways to we can accomplish running our code on GitHub Actions. We can either:</p>
-
-<ol>
-<li><p>create a new workflow.</p></li>
-<li><p>use an existing workflow and add the code as a step.</p></li>
-</ol>
-
-<p>Lets explore both methods.</p>
-
-<h3>
-  
-  
-  Method 1: Create a new workflow
-</h3>
-
-<h2>
-  
-  
-  - Create a new workflow:
-</h2>
-
-<p><strong>If you are using the GitHub website:</strong></p>
-
-<ul>
-<li>In your repo, go to <strong>Actions &gt; New Workflow</strong>
+<li>Dive into the <a href="https://ably.com/docs/products/spaces">Spaces docs</a>
 </li>
-<li>Select <strong>Set up a workflow yourself</strong>
-</li>
-<li>Name your workflow</li>
-</ul>
-
-<p><strong>If you are working in your IDE eg VSCode</strong></p>
-
-<ul>
-<li>In your GitHub repository, create a .github/workflows directory if it doesn't already exist.</li>
-<li>Inside the .github/workflows directory, create a YAML file (e.g., sms-notification.yml) to define your GitHub Actions workflow.</li>
-<li>Add the following code:
+<li>Sign-up for <a href="https://pages.ably.com/collaborative-spaces-webinar">the webinar</a>
 </li>
 </ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
-<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">]</span>
-<span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">send_sms</span><span class="pi">:</span>
-<span class="err"> </span><span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
- <span class="na">steps</span><span class="pi">:</span>
-   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
-  <span class="na">uses</span><span class="pi">:</span> <span class="s">alphaolomi/actions-africastalking@main</span>
-    <span class="s">with</span><span class="err">:</span>
-      <span class="na">fromPhoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">INFO'</span>   <span class="c1"># or  ${{ secrets.fromPhoneNumber }}</span>
-      <span class="na">toPhoneNumber</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
-      <span class="na">message</span><span class="pi">:</span> <span class="s">${{ github.event_name }} on ${{ github.repository }} by ${{ github.actor }} has ${{github.event.workflow_run.conclusion}}. Check it out at ${{ github.event.workflow_run.url }}</span>
-    <span class="na">env</span><span class="pi">:</span>
-      <span class="na">AT_API_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.AT_API_KEY }}</span>
-      <span class="na">AT_USERNAME</span><span class="pi">:</span> <span class="s">${{ secrets.AT_USERNAME }}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Lets break down the code above:</p>
-
-<ul>
-<li>
-<code>name</code> is the name of the workflow. You can name it anything you want.</li>
-<li>
-<code>on</code> is the event that triggers the workflow. In this case, we want the workflow to be triggered when code is pushed to the main branch.</li>
-<li>
-<code>jobs</code> is a collection of steps that run sequentially. In this case, we have one job called <code>send_sms</code>.</li>
-<li>
-<code>runs-on</code> is the type of machine the job runs on. In this case, we are using the latest version of Ubuntu.</li>
-<li>
-<code>steps</code> is a collection of tasks that will be executed as part of the job. In this case, we have one step called <code>Send SMS Notification</code>.</li>
-<li>
-<code>uses</code> is the action that will be executed. In this case, we are using the <code>alphaolomi/actions-africastalking</code> action.</li>
-<li>
-<code>with</code> is the input parameters for the action. In this case, we are passing the <code>fromPhoneNumber</code>, <code>toPhoneNumber</code> and <code>message</code> parameters.</li>
-<li>
-<code>env</code> is the environment variables that will be used by the action. In this case, we are passing the <code>AT_API_KEY</code> and <code>AT_USERNAME</code> variables.</li>
-<li><p><code>secrets</code> is the GitHub secrets that will be used by the action. In this case, we are passing the <code>toPhoneNumber</code>, <code>AT_API_KEY</code> and <code>AT_USERNAME</code> secrets.</p></li>
-<li><p>Commit the changes and push to GitHub. This should  trigger the workflow.</p></li>
-</ul>
-
-<p>There is however a different way to add the code for sending the text. This involves using the Africas Talking SDKs. The SDKs are available in different languages including: Python, Node, PHP etc. You can find the SDKs <a href="https://developers.africastalking.com/sdks">here.</a></p>
-
-<p>Now lets look at an example using the Python SDK 🐍:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
-<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">]</span>
-<span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">main</span><span class="pi">]</span>
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">send_sms</span><span class="pi">:</span>
-<span class="err"> </span><span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
- <span class="na">steps</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Africa's Talking SDK</span>
-   <span class="na">run</span><span class="pi">:</span> <span class="s">pip install africastalking</span>
-
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS notification</span>
-  <span class="na">env</span><span class="pi">:</span>
-    <span class="na">TO</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
-  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span> 
-    <span class="s">from africastalking.SMS import SMS</span>
-
-    <span class="s">sms = SMS(username=${{ secrets.AT_USERNAME }}, api_key=${{ secrets.AT_API_KEY }}) </span>
-
-    <span class="s">response = sms.send(message="GitHub workflow completed!", recipients=[TO])</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>Lets break down the code above:</p>
-
-<ul>
-<li>
-<code>name</code> is the name of the workflow. You can name it anything you want.</li>
-<li>
-<code>on</code> is the event that triggers the workflow. In this case, we want the workflow to be triggered when code is pushed to the main branch.</li>
-<li>
-<code>jobs</code> is a collection of steps that run sequentially. In this case, we have one job called <code>send_sms</code>.</li>
-<li>
-<code>runs-on</code> is the type of machine the job runs on. In this case, we are using the latest version of Ubuntu.</li>
-<li>
-<code>steps</code> is a collection of tasks that will be executed as part of the job. In this case, we have two steps.</li>
-<li>
-<code>name</code> is the name of the step. You can name it anything you want.</li>
-<li>
-<code>run</code> is the code that will be executed as part of the step. In this case, we are installing the Africas Talking SDK.</li>
-<li>
-<code>env</code> is the environment variables that will be used by the action. In this case, we are passing the <code>TO</code> variable.</li>
-<li>
-<code>run</code> is the code that will be executed as part of the step. In this case, we are using the Africas Talking SDK to send the SMS notification.</li>
-</ul>
-
-<p>This approach allows for more flexibility and customization as needed.</p>
-
-<h3>
-  
-  
-  Method 2: Use an existing workflow:
-</h3>
-
-<p>This method involves adding the code to an existing workflow. This is useful if you want to add the SMS notification to an existing workflow.</p>
-
-<p><strong>If you are using the GitHub website:</strong></p>
-
-<ul>
-<li>In your repo, go to <strong>Actions &gt; Workflows</strong>
-</li>
-<li>Select the workflow you want to add the code to.</li>
-<li>Click on <strong>Edit</strong>.</li>
-</ul>
-
-<p><strong>If you are working in your IDE eg VSCode</strong></p>
-
-<ul>
-<li>In your GitHub repository, go to the .github/workflows directory.</li>
-<li><p>Open the YAML file of the workflow you want to add the code to.</p></li>
-<li><p>Add the following code:<br>
-</p></li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code>
-<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
-  <span class="na">uses</span><span class="pi">:</span> <span class="s">alphaolomi/actions-africastalking@main</span>
-  <span class="na">with</span><span class="pi">:</span>
-    <span class="na">fromPhoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">INFO'</span>   <span class="c1"># or  ${{ secrets.fromPhoneNumber }}</span>
-    <span class="na">toPhoneNumber</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
-    <span class="na">message</span><span class="pi">:</span> <span class="s">${{ github.event_name }} on ${{ github.repository }} by ${{ github.actor }} has ${{github.event.workflow_run.conclusion}}. Check it out at ${{ github.event.workflow_run.url }}</span>
-  <span class="na">env</span><span class="pi">:</span>
-    <span class="na">AT_API_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.AT_API_KEY }}</span>
-    <span class="na">AT_USERNAME</span><span class="pi">:</span> <span class="s">${{ secrets.AT_USERNAME }}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Commit the changes and push to GitHub. This should  trigger the workflow.</li>
-</ul>
-
-<p>Now lets look at an example using the Python SDK:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code>
-<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Send SMS Notification</span>
-  <span class="na">env</span><span class="pi">:</span>
-    <span class="na">TO</span><span class="pi">:</span> <span class="s">${{ secrets.toPhoneNumber }}</span>
-  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span> 
-    <span class="s">from africastalking.SMS import SMS</span>
-
-    <span class="s">sms = SMS(username=${{ secrets.AT_USERNAME }}, api_key=${{ secrets.AT_API_KEY }}) </span>
-
-    <span class="s">response = sms.send(message="GitHub workflow completed!", recipients=[TO])</span>
-
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Commit the changes and push to GitHub. This should  trigger the workflow.</li>
-</ul>
-
-<p>If everything went successful you should a successful run as seen below: </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kZbuBxaY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w06d1zezwkd1fvmcccvl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kZbuBxaY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w06d1zezwkd1fvmcccvl.png" alt="Workflows" width="800" height="359"></a></p>
-
-<h2>
-  
-  
-  Conclusion🚧
-</h2>
-
-<p>In this tutorial, we have seen how to send SMS notifications using Africas Talking and GitHub Actions. We have also seen two methods of running code on GitHub Actions. In the next tutorial, we will look at further customization of the code depennding on the use case and SMS notifications.</p>
-
-<h2>
-  
-  
-  Resources
-</h2>
-
-<ul>
-<li><a href="https://docs.github.com/en/actions">GitHub Actions</a></li>
-<li><a href="https://africastalking.com/">Africas Talking</a></li>
-<li><a href="https://developers.africastalking.com/docs/sms">Africas Talking SMS API</a></li>
-<li><a href="https://developers.africastalking.com/sdks">Africas Talking SDKs</a></li>
-<li><a href="https://github.com/alphaolomi/actions-africastalking">Africas Talking GitHUb Actions</a></li>
-</ul>
-
-<p>Thanks for reading! Free free to leave a comment below if you have any questions, suggestions or clarifications. You can also reach out to me on <a href="https://twitter.com/KenMwaura1">Twitter.</a> or <a href="https://www.linkedin.com/in/kennedy-mwaura/">LinkedIn</a> If you found this article helpful feel free to share it with others.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bGqbHTBS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/diajdqtjfsq60kke6kcn.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bGqbHTBS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/diajdqtjfsq60kke6kcn.gif" alt="Next time" width="498" height="206"></a></p>
 
  </details> 
  <hr /> 
 
- #### - [Linux filters - How to streamline text like a boss](https://dev.to/cherryramatis/linux-filters-how-to-streamline-text-like-a-boss-2dp4) 
- <details><summary>Article</summary> <p>Are you familiar with the Unix philosophy and how to create better scripts? In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting such as the pipeline operator, stdin, and stdout manipulation. Finally, we'll dissect how to apply those as good practices on our ruby/bash scripts!</p>
+ #### - [Updating Docker Apps automagically with Watchtower✨🐳](https://dev.to/sliplane/updating-docker-apps-automagically-with-watchtower-1a61) 
+ <details><summary>Article</summary> <p>Have you ever deployed a Docker app on a server, but everytime you push a new version of your image to a Docker registry you need to manually restart your app? If you want to automate this restarting, this blog post is for you! I am now going to show you how you can do this with literally <strong>1 simple command</strong> using <a href="https://containrrr.dev/watchtower">Watchtower!</a></p>
+
+<p>This tutorial assumes that you already have a flow to automatically build and push your containers to a registry. If you do not have that, I suggest you to read and follow <a href="https://josephrodriguezg.medium.com/build-and-publish-docker-images-with-github-actions-78be3b3fbb9b">this tutorial</a> or simply use a ready-to-go solution such as <a href="https://sliplane.io?utm_source=watchtower">Sliplane</a></p>
+
+<p>Let's get started! 🚀</p>
 
 <h2>
   
   
-  Table of Contents
+  Setup
 </h2>
 
-<ul>
-<li>What is the Unix philosophy?</li>
-<li>What is a pipeline?</li>
-<li>What is stdin and stdout?</li>
-<li>
-What defines a bad script and how to turn into a good one?
-
-<ul>
-<li>Ignoring standard input and output communication</li>
-<li>Doing a lot on the same tool, aka monolithic scripts</li>
-</ul>
-
-
-</li>
-<li>Bonus point: The bang operator in vim</li>
-<li>Conclusion</li>
-</ul>
-
-<h2>
-  
-  
-  What is the Unix philosophy?
-</h2>
-
-<p>The Unix philosophy was originally defined by the master <a href="https://en.wikipedia.org/wiki/Ken_Thompson">Ken thompson</a> and it's a set of good practices that define a <em>minimalist</em> and <em>modular</em> software, all the core utils from Unix (such as <code>find</code>, <code>grep</code>) follow this good practices so we can agree that it need to be good right?</p>
-
-<p>The original quote documented by <a href="https://en.wikipedia.org/wiki/Douglas_McIlroy">Doug Mcllroy</a> contain the following items:</p>
-
-<blockquote>
-<ol>
-<li>Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new "features".</li>
-<li>Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information. Avoid stringently columnar or binary input formats. Don't insist on interactive input.</li>
-<li>Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them.</li>
-<li>Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them.</li>
-</ol>
-</blockquote>
-
-<p>The last two items define a more "programming in general" tips, the goal of this article will focus entirely on the first two tips where a good script can be known as <em>something that do one job really well and can be put in a pipeline</em>. On the following chapters we'll try to understand this phrase a little better.</p>
-
-<h2>
-  
-  
-  What is a pipeline?
-</h2>
-
-<p>A pipeline is a continuous run of programs where the stdout of one follow as the stdin of the next one, on bash/zsh/fish shells we can use the <code>|</code> operator to refer as a pipe and we use it a lot to further query information, for example: imagine you want to count how many markdown files you have in your directory, you can do the following:<br>
+<p>First, run your container that you want to automatically update. Then, run the following command after replacing <code>username</code>, <code>password</code>, and <code>container_to_watch</code><br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span> | <span class="nb">wc</span> <span class="nt">-l</span>
+<pre class="highlight shell"><code>docker run <span class="nt">-d</span> <span class="se">\</span>
+  <span class="nt">--name</span> watchtower <span class="se">\</span>
+  <span class="nt">-e</span> <span class="nv">REPO_USER</span><span class="o">=</span>username <span class="se">\</span>
+  <span class="nt">-e</span> <span class="nv">REPO_PASS</span><span class="o">=</span>password <span class="se">\</span>
+  <span class="nt">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
+  containrrr/watchtower container_to_watch <span class="nt">--debug</span> <span class="nt">--interval</span> 300
 </code></pre>
 
 </div>
 
 
 
-<p>Let's break it down piece by piece so you can understand properly shall we?</p>
+<p>This will run the watchtower container (<code>containerrr/watchtower</code>) in the background (<code>-d</code>), name it watchtower, and pass in the username and password for your Docker container registry (<code>-e REPO_USER=username -e REPO_PASS=password</code>)</p>
 
-<p>First we have the <code>find</code> command being used to list all the markdown files on the current directory, for me personally this produces the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span>
-./posts/20230814T124722/README.md
-./posts/20230703T214043/README.md
-./posts/20230616T234323/README.md
-./posts/20230625T223158/README.md
-./posts/20230731T212528/README.md
-./posts/20230807T203924/README.md
-./posts/20230804T140043/README.md
-./REPL Driven Development - For not so smart developers.md
-./Como escrever uma CLI CRUD utilizando ScyllaDB + Ruby.md
-./Linux filters - How to streamline text like a boss.md
-</code></pre>
-
-</div>
-
-
-
-<p>If you just want to list the proper file names without counting them, you can even pipe it to the <code>sort</code> command, that way it lists alphabetically like the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span> | <span class="nb">sort</span>
-./Como escrever uma CLI CRUD utilizando ScyllaDB + Ruby.md
-./Linux filters - How to streamline text like a boss.md
-./REPL Driven Development - For not so smart developers.md
-./posts/20230616T234323/README.md
-./posts/20230625T223158/README.md
-./posts/20230703T214043/README.md
-./posts/20230731T212528/README.md
-./posts/20230804T140043/README.md
-./posts/20230807T203924/README.md
-./posts/20230814T124722/README.md
-</code></pre>
-
-</div>
-
-
-
-<p>See how the output of the first <code>find</code> command was streamlined to the <code>sort</code> command where it returned it properly sorted? This is the entire purpose of writing small tools, that way you can easily compose them into different pipelines to get cool results.</p>
-
-<p>In the case of the initial example we used the <code>wc</code> command that only count whatever it receives from stdin, in this case we use the <code>-l</code> flag to count lines. With all that put together voilá! We have our result:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s1">'*.md'</span> | <span class="nb">wc</span> <span class="nt">-l</span>
-      10
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  What is stdin and stdout?
-</h2>
-
-<p>Stdin (standard input) and stdout (standard output) are the main ways that a computer communicates with the outside world. Below, we'll delve more into the details of each one:</p>
-
-<ul>
-<li>Stdin (standard input) is normally referred to as anything that waits for a user interaction (like typing on an input, selecting an item from a list, etc.), but this can be understood in a more generalized way; basically, we can think of Stdin as the default <em>information provider</em>, whether this comes from another program or from a user interacting with it.</li>
-<li>Stdout (standard output) is normally referred to as anything that prints out a value to the screen (it can be a terminal, a browser, or anything). Differently from Stdin, this is totally correct, the only caveat is that when inserted in a pipeline context, all stdout is suppressed as the stdin of the next command instead of printing to the screen.</li>
-</ul>
-
-<h2>
-  
-  
-  What defines a bad script and how to turn into a good one?
-</h2>
-
-<p>Describing a exact summary of what is a good script can be quite tricky because of the many variables involved. Instead, let's flip the question: what does a bad script look like according to the Linux philosophy? And how can we solve the specific problem to create slightly better tools?</p>
-
-<h3>
-  
-  
-  Ignoring standard input and output communication
-</h3>
-
-<p>Have you ever used some CLIs that have a fancy way to display information with an animated input or a cool spinner? It's indeed quite cool to use those tools when you just want to use them by themselves, but when you try to put those tools in a pipeline, they break the whole process. Instead, always write your tools by using standard communication as the primary way to receive and retrieve information, prefer to use options instead of hard-coding values (an example of an option is <code>--output=json</code> or <code>-o json</code>).</p>
-
-<p>In Ruby, it's far easier to not shoot yourself in the foot because the way we learn to get data already works pretty well with the standard input, but it's important to keep an eye on how you design your script. </p>
-
-<p>For example, consider this simple script called <code>printname.rb</code> example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby</span>
-
-<span class="nb">puts</span> <span class="s1">'Type your name: '</span>
-<span class="nb">name</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chomp</span>
-
-<span class="nb">puts</span> <span class="s2">"Your name is: </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This script in a first glance works both running by itself and on a pipeline, but observe the output produced by both:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"Cherry Ramatis"</span> | ./printname.rb
-Type your name:
-Your name is: Cherry Ramatis
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>$ ./printname.rb
-Type your name:
-Cherry Ramatis
-Your name is: Cherry Ramatis
-</code></pre>
-
-</div>
-
-
-
-<p>You can observe that we're always printing the <code>Type your name</code> message, in this case we have two options:</p>
-
-<ul>
-<li>Accept this name with a flag parameters instead by receiving <code>--name="Cherry Ramatis"</code>
-</li>
-<li>Drop the <code>Type your name</code> message, turning the script into a more pipelineable (nice word huh?) one.</li>
-</ul>
-
-<h3>
-  
-  
-  Doing a lot on the same tool, aka monolithic scripts
-</h3>
-
-<p>Sometimes you're writing a tool and quickly observe that the scope got bigger while you were writing it, now what should be a small tool is growing to be a big project with various interactive steps. When it reaches that point it's quite seducing to just keep iterating on the same tool by adding a lot of sub commands, but the unix philosophy help us understand that writing a tool that <em>do one thing right</em> is more valuable than writing a gigantic behemoth.</p>
-
-<p>So instead of creating a big CLI with a whole set of commands, try to think in writing small separate tools that interconnect and complement each other, for example:</p>
-
-<p>Imagine you want to write a command that list all the songs from a database in a particular order and prompt the user to choose one, instead of writing all those functionalities in <em>one</em> command, you can compose with different ones like:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>list_songs | <span class="nb">sort</span> | update_song
-</code></pre>
-
-</div>
-
-
-
-<p>See how <code>list_songs</code> and <code>update_song</code> are different scripts? both communicate via STDIN and STDOUT, allowing the user to pipeline through any command and receive the same behavior (for example we're piping it to sort because we want to view the list in a sorted manner.)</p>
-
-<h2>
-  
-  
-  Bonus point: The bang operator in vim
-</h2>
-
-<p>Rejoice, Vim users! This is our time to shine. Vim is a somewhat standard editor in Unix systems and this comes with a set of benefits such as interacting with binaries directly in your buffer via the <code>!</code> operator.</p>
-
-<p>In vim you can press <code>!!</code> in <strong>normal mode</strong> to populate a command like this in your minibuffer <code>:.!</code>, the command you type after the <code>!</code> will be used with the current line as STDIN, mind blowing right? Observe the example below:</p>
-
-<p>Consider the following script in ruby:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby</span>
-
-<span class="no">STDIN</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">line</span><span class="o">|</span>
- <span class="nb">puts</span> <span class="s2">"- </span><span class="si">#{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this script we're looping over the STDIN received and printing it back to the STDOUT with a <code>-</code> on the beginning, now we can interact with vim:</p>
-
-<p><a href="https://asciinema.org/a/607360"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--27wSR1Wa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://asciinema.org/a/607360.svg" width="800" height="524"></a></p>
-
-<p>Other variations of the bang command:</p>
-
-<ul>
-<li>
-<code>!}</code>: Populate the bang command from the current line to the end of the paragraph.</li>
-<li>
-<code>!/pattern</code>: Populate the bang command from the current line to the first find of <code>pattern</code> in the buffer.</li>
-<li>
-<code>!G</code>: Populate the bang command from the current line to the end of the file.</li>
-<li>
-<code>!4j</code>: Populate the bang command from the current line to 4 lines below.</li>
-</ul>
+<p>Watchtower will now periodically check if your Docker image has changed (in your remote repository!) and pull a new version once it has changed. It will then gracefully shut down your old container and restart it with the same configuration but with a new image. The default <a href="https://containrrr.dev/watchtower/arguments/#poll_interval">polling interval</a> is 24 hours, which is quite conservative if you ask me. You can change the polling interval with <code>--interval x</code> where x is the number of seconds to wait. If you want to check for updates every 5 minutes you would add <code>--interval 300</code></p>
 
 <h2>
   
@@ -745,258 +251,47 @@ Your name is: Cherry Ramatis
   Conclusion
 </h2>
 
-<p>This is a smaller article where I tried to bring more context into something that I do a lot in my day to day life: <strong>automating</strong>. I hope this content is useful for you and if I can help with anything just reach me out! May the force be with you 🍒</p>
+<p>That's it! Now your cool dockerized app should update everytime you push a new image to your Docker repository. If you want to deploy a Docker app without all of the devops pain and without any Docker repositories, check out <a href="https://sliplane.io?utm_source=watchtower">Sliplane</a></p>
 
  </details> 
  <hr /> 
 
- #### - [Advancеd Backup Stratеgiеs in PostgrеSQL](https://dev.to/hassanrehan/advancied-backup-stratiegiies-in-postgriesql-2g84) 
- <details><summary>Article</summary> <p>PostgrеSQL,  bеing thе most powеrful and trustеd opеn-sourcе databasе,  providеs sеvеral options for backups in nеcеssary formats and automation.  In this blog post,  wе will dеlvе into thе advancеd stratеgiеs for backing up PostgrеSQL data. </p>
+ #### - [how much % you have used out of your life???](https://dev.to/rodonguyen/how-much-you-have-used-out-of-your-life-3nnb) 
+ <details><summary>Article</summary> <p>Hello fellow inventors!</p>
 
-<h2>
-  
-  
-  Thrее Fundamеntal Approachеs
-</h2>
+<p>So I developed a fun and simple app that tells you how many percentages of your life you've used. It's called "Time I Have Left" :)</p>
 
-<p>Thеrе arе thrее fundamеntally diffеrеnt approachеs to backing up PostgrеSQL data:</p>
+<p>The link to this app can be found at the bottom or the comment section. <strong>Like</strong> or <strong>Comment</strong> to let me know if you want to read more about the project or my tips on programming in general!</p>
 
-<ol>
-<li> <strong>SQL Dump</strong>: This mеthod gеnеratеs a filе with SQL commands that can rеcrеatе thе databasе to thе samе statе as it was at thе timе of thе dump. </li>
-<li> <strong>Filе Systеm Lеvеl Backup</strong>: This approach dirеctly copiеs thе databasе filеs,  allowing for fastеr rеcovеry. </li>
-<li> <strong>Continuous Archiving and Point-in-Timе Rеcovеry (PITR)</strong>: This mеthod combinеs a filе systеm lеvеl backup with thе backup of Writе-Ahеad Log (WAL) filеs. </li>
-</ol>
+<p>In this project, I decided to use TypeScript instead of JavaScript to learn more about its type-checking feature as well as integrating TS in a pre-built JS application.</p>
 
-<p>Each of thеsе mеthods has its own strеngths and wеaknеssеs,  and thеy arе discussеd in turn in thе following sеctions. </p>
+<p>The result? I feel safer with TS and the code becomes more readable with the Type and Interface declaration 😌</p>
 
-<h2>
-  
-  
-  SQL Dump
-</h2>
+<p>Also, do visit <a href="https://amazing.rodonguyen.dev/timeihaveleft">the app</a> too. Hope it provides you with a different len of looking at life! This can be a reminder of how short life is, a message to stop your procrastination or it may just tell you that you're old 😂</p>
 
-<p>SQL Dump is a simplе yеt еffеctivе mеthod for backing up PostgrеSQL data.  It involvеs using thе <code>pg_dump</code> or <code>pg_dumpall</code> command to crеatе a dump of thе databasе.  This dump can thеn bе usеd to rеstorе thе databasе to its original statе. </p>
+<p>Again... please feel free to <strong>Like</strong> or <strong>Comment</strong> to let me know if you want to read more about the project or my tips on programming in general! </p>
 
-<h2>
-  
-  
-  Filе Systеm Lеvеl Backup
-</h2>
-
-<p>Filе systеm lеvеl backup involvеs dirеctly copying thе filеs that makе up thе databasе.  This mеthod is fastеr than SQL Dump as it doеs not involvе rеcrеating thе databasе from scratch.  Howеvеr,  it rеquirеs morе storagе spacе as it involvеs copying all databasе filеs. </p>
-
-<h2>
-  
-  
-  Continuous Archiving and Point-in-Timе Rеcovеry (PITR)
-</h2>
-
-<p>Continuous Archiving and Point-in-Timе Rеcovеry (PITR) is an advancеd backup stratеgy that combinеs filе systеm lеvеl backup with thе backup of WAL filеs.  This allows for continuous archiving of thе databasе,  which can bе usеd to rеstorе thе databasе to any point in timе. </p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Planning is kеy to backup and rеcovеry.  It's important to undеrstand your own еnvironmеnt and how a data loss can happеn.  Dеpеnding on your spеcific nееds and circumstancеs,  onе of thеsе mеthods may bе morе suitablе than othеrs.  Rеmеmbеr,  rеgular backups arе еssеntial to prеvеnt data loss and еnsurе continuity. </p>
-
-<p>Sourcеs:<br>
-1) <a href="https://www.%D0%B5nt%D0%B5rpris%D0%B5db.com/postgr%D0%B5sql-databas%D0%B5-backup-r%D0%B5cov%D0%B5ry-what-works-wal-pitr">https://www.еntеrprisеdb.com/postgrеsql-databasе-backup-rеcovеry-what-works-wal-pitr</a>. <br>
-2) <a href="https://www.postgr%D0%B5sql.org/docs/curr%D0%B5nt/backup.html">https://www.postgrеsql.org/docs/currеnt/backup.html</a>. <br>
-3) <a href="https://www.p%D0%B5rcona.com/blog/postgr%D0%B5sql-backup-strat%D0%B5gy-%D0%B5nt%D0%B5rpris%D0%B5-grad%D0%B5-%D0%B5nvironm%D0%B5nt/">https://www.pеrcona.com/blog/postgrеsql-backup-stratеgy-еntеrprisе-gradе-еnvironmеnt/</a>. <br>
-4)<a href="https://www.postgr%D0%B5sql.%D0%B5u/v%D0%B5nts/pgconf%D0%B5u2018/s%D0%B5ssions/s%D0%B5ssion/2098/slid%D0%B5s/123/Advanc%D0%B5d%20backup%20m%D0%B5thods.pdf">https://www.postgrеsql.еu/vеnts/pgconfеu2018/sеssions/sеssion/2098/slidеs/123/Advancеd%20backup%20mеthods.pdf</a>.  </p>
+<p>I'm also just learning to program, just like you :&gt;</p>
 
  </details> 
  <hr /> 
 
- #### - [Better Git Commits with `@commitlint`](https://dev.to/maafaishal/better-git-commits-with-commitlint-g18) 
- <details><summary>Article</summary> <p>When working on a project together, <a href="https://git-scm.com/">Git</a> is a crucial tool that help teams collaborate smoothly. One of the key features is <code>commits</code>, which act like snapshots of the project's progress.</p>
+ #### - [Meme Monday](https://dev.to/ben/meme-monday-1hjc) 
+ <details><summary>Article</summary> <p><strong>Meme Monday!</strong></p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KVGWow1o--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpvmdcu90e7e1zue0jbz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KVGWow1o--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpvmdcu90e7e1zue0jbz.png" alt="git commit" width="349" height="500"></a></p>
+<p>Today's cover image comes from <a href="https://dev.to/ben/meme-3opp">last week's thread</a>.</p>
 
-<p>However, do you know which one of my commit add a new feature? I'm sure you won't, including me...</p>
-
-<p>The problem is I was naming the commit randomly without looking at the context which makes it harder for me to identify when I want to revert the changes.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AWXU7Fxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zt9lqp7mvcz2l4d332t9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AWXU7Fxp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zt9lqp7mvcz2l4d332t9.png" alt="commitlint" width="800" height="227"></a></p>
-
-<p>To solve the problem, there is a useful linter named <code>commitlint</code>. It will prevent us from naming our commits randomly<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// git commit</span>
-<span class="nx">oops</span>
-
-<span class="c1">// it will trigger this error </span>
-<span class="c1">// ❌ type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test] [type-enum]</span>
-</code></pre>
-
-</div>
-
-
-
-<p>and force us to name the commit properly.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">fix</span><span class="p">:</span> <span class="nx">resolve</span> <span class="nx">the</span> <span class="nx">issue</span> <span class="nx">related</span> <span class="nx">to</span> <span class="nx">comma</span>
-<span class="nx">feat</span><span class="p">:</span> <span class="nx">add</span> <span class="nx">a</span> <span class="nx">feature</span> <span class="nx">named</span> <span class="nx">calculator</span>
-</code></pre>
-
-</div>
-
-
-
-<p>It's very clear and easy to understand the context, right?</p>
-
-<p>The following are all the types that <code>commitlint</code> suggests and provides including the example commit:</p>
-
-<ul>
-<li>
-<strong>build</strong> --&gt; Changes that affect the build system or external dependencies
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>build: update npm dependency
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>ci</strong> --&gt; Changes to our CI configuration files and scripts
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>ci: add circleci configuration file
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>docs</strong> --&gt; Documentation only changes
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>docs: update readme with installation instructions
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>feat</strong> --&gt; A new feature
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>feat: add user authentication feature
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>fix</strong> --&gt; A bug fix
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>fix: resolve issue with incorrect data rendering
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>perf</strong> --&gt; A code change that improves performance
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>perf: optimize database query for faster response times
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>refactor</strong> --&gt; A code change that neither fixes a bug nor adds a feature
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>refactor: reorganize code structure for better readability
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>style</strong> --&gt; Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>style: format code according to Prettier standards
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>test</strong> --&gt; Adding missing tests or correcting existing tests
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>test: add unit tests for user authentication
-</code></pre>
-
-</div>
-
-
-
-<p>There are many features of <code>commitlint</code> that I can't mention one by one, as well as installation guide. To know the detail you can directly access <a href="https://github.com/conventional-changelog/commitlint">https://github.com/conventional-changelog/commitlint</a>.</p>
+<p>DEV is an inclusive space! Humor in poor taste will be downvoted by mods.</p>
 
  </details> 
  <hr /> 
 
- #### - [We had a date bug that happened two times a year, and we didn't know, you might have it too 😱](https://dev.to/novu/we-had-a-date-bug-that-happened-two-times-a-year-and-we-didnt-know-you-might-have-it-too-56o6) 
- <details><summary>Article</summary> <h2>
-  
-  
-  TL;DR
-</h2>
+ #### - [Music Monday — What are you listening to? (Soft Edition)](https://dev.to/devteam/music-monday-what-are-you-listening-to-soft-edition-1mc9) 
+ <details><summary>Article</summary> <p><em>cover image source: <a href="https://giphy.com/gifs/chill-cassette-music-mix-portals-landscape-window-mellow-tranquil-26gs7byN2JOXsBiuY">Giphy</a></em></p>
 
-<p>Novu's team encountered a significant bug affecting date calculations in their CI/CD pipelines, hindering all deployments. </p>
+<p><strong>Last week, we got heavy, and this week and I wanna take 180° turn and go soft. What are your favorite tender ballads and gentle instrumentals? What tunes do you turn to to soothe your mind, body, and soul? Let's give a listen to those softer tunes today. As always, take this prompt however you wanna... I'm looking forward to tuning into y'all's suggestions!</strong></p>
 
-<p>The issue arose from the date-fns library's addMonths and subMonths functions.</p>
-
-<p>We fixed this by using addDays and subDays functions instead.   </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UIbJ4yVD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qewo5qx57k5z4g466ot.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UIbJ4yVD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7qewo5qx57k5z4g466ot.gif" alt="Panic Gif" width="800" height="600"></a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JAXmJOws--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gc2vh7sooluk804cli50.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JAXmJOws--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gc2vh7sooluk804cli50.gif" alt="A woman soulfully playing a harp" width="480" height="480"></a></p>
 
 
 
@@ -1004,252 +299,40 @@ Your name is: Cherry Ramatis
 <h2>
   
   
-  Novu: Open-source notification infrastructure 🚀
+  How we do
 </h2>
 
-<p>Just a quick background about us. Novu is an open-source notification infrastructure. We basically help to manage all the product notifications. It can be In-App (the bell icon like you have in the Dev Community - Websockets), Emails, SMSs and so on.</p>
+<p>In this weekly series, folks can chime in and drop links to whatever it is they've been listening to recently + browse others suggestions. You can follow the suggested genre if you'd like, but don't feel confined to it; you're free to suggest whatever you wanna. 🙌  </p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WzpngZeC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/134zbnlfi42ui6wn828k.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WzpngZeC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/134zbnlfi42ui6wn828k.jpg" alt="Novu Request Stars On Github" width="800" height="335"></a></p>
-
-
+<p>If you're interested in having other discussions about music, consider following the aptly named <a href="https://dev.to/music-discussions">#music discussions</a> organization.</p>
 
 
-<h2>
-  
-  
-  The Mindset
-</h2>
-
-<p>When working in software development, we're always prepared for bugs to crop up. </p>
-
-<p>Sometimes they're small, easy to identify, and quick to fix. </p>
-
-<p>Other times, they're like this year's candidate for our 'Bug Of The Year'. </p>
-
-<p>This was a bug so elusive and mysterious that it had us rummaging through our pipelines, questioning our code-base, and coming face-to-face with the intricacies of date manipulation.</p>
-
-<h2>
-  
-  
-  Problems, Different Problems, and More Problems
-</h2>
-
-<p>Our CI/CD pipelines were failing. Specifically, two tests which were blocking ALL new deployments. It was time to put on our detective hats 🕵️.</p>
-
-<p>We dove into our commit history using <a href="https://git-scm.com/docs/git-bisect"><code>git bisect</code></a> however it offered us no insight. Git bisect took us back to commits that where over 6 months in the past, long before any of our newest changes to the system that would have caused this. Was this bug created at the very beginning of Novu?</p>
-
-<p>However, we did have a clue. Our failing unit tests showed us that we had incorrect date calculations. </p>
-
-<h2>
-  
-  
-  Gathering the Clues 💡
-</h2>
-
-<p>Strangely, the difference was just one day.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-08-31</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">oneMonthAhead</span> <span class="o">=</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">subMonths</span><span class="p">(</span><span class="nx">oneMonthAhead</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>  <span class="c1">// Expected: 31st of August, Reality: 30th of August</span>
-</code></pre>
-
+<div class="ltag__user ltag__user__id__5579">
+  <a href="/music-discussions" class="ltag__user__link profile-image-link">
+    <div class="ltag__user__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pJKyMGM---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--brJM2E2x--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_66%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/5579/2ecc2b3c-301f-4eb6-82f8-dabf0e455df2.gif" alt="music-discussions image">
+    </div>
+  </a>
+  <div class="ltag__user__content">
+    <h2>
+      <a href="/music-discussions" class="ltag__user__link">#music discussions</a>
+      Follow
+    </h2>
+    <div class="ltag__user__summary">
+      <a href="/music-discussions" class="ltag__user__link">
+        Let's talk about #music. 🎶
+      </a>
+    </div>
+  </div>
 </div>
-
-
-
-<p>We also found that this does not happen on 31st July.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-07-31</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">oneMonthAhead</span> <span class="o">=</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">subMonths</span><span class="p">(</span><span class="nx">oneMonthAhead</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>  <span class="c1">// Expected: 31st of July, Reality: 31th of July</span>
-</code></pre>
-
-</div>
-
-
-
-<p>But the bug shows up again January 31st.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2023-01-31</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">oneMonthAhead</span> <span class="o">=</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">subMonths</span><span class="p">(</span><span class="nx">oneMonthAhead</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>  <span class="c1">// Expected: 31st of January, Reality: 28th of January</span>
-</code></pre>
-
-</div>
-
-
-
-<p>So this bug only happens when we add 1 month to a month that has more days then the next month and then subtract 1 month to go back to the month before. </p>
-
-<h2>
   
-  
-  This is a sneaky one
-</h2>
-
-<p>So here is what we know so far:</p>
-
-<ul>
-<li>It would only show up on systems that does this specific sequence of logic.</li>
-<li>The code would have to be ran on one of the few dates that are effected. </li>
-<li>This effect is not documented anywhere on any of the libraries we use.</li>
-</ul>
-
-<p>The worst thing is that this bug is also shows up HR tools, finance tools, salary tools, public government tools all rely on this package but unfortunately it is still better then us making the functions our-self's.</p>
-
-<p>It has been said many times that date-times are among the trickiest aspects of programming, and our current predicament served as a hash reminder.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--S4j-U-Ux--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6xt36eh8300agqnklq7o.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--S4j-U-Ux--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6xt36eh8300agqnklq7o.gif" alt="This is tough GIF" width="800" height="450"></a></p>
-
-<h2>
-  
-  
-  Why a simple actions can lead to bad things
-</h2>
-
-<p>After finding this out, we had a 'Eureka!' moment. <br>
-Our CTO, Dima Grossman, then had the idea to try it it on <a href="//raycast.com">raycast</a>. Interestingly enough it was happening in their product too.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4JU2Jexk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kw6sb2bfvl2nn6qwtfca.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4JU2Jexk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kw6sb2bfvl2nn6qwtfca.png" alt="Showing Raycast also uses date-fns" width="800" height="504"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VAYw-pj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4aso2414apy6vz0svoar.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VAYw-pj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4aso2414apy6vz0svoar.gif" alt="Mind Blown Gif" width="800" height="600"></a></p>
-
-<p>We realized that the issue stemmed from being on the last day of the month, but what exactly was going awry?</p>
-<h2>
-  
-  
-  The Culprit:
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WwEPkCS0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kc12kgdwa1q3hhw8n03l.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WwEPkCS0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kc12kgdwa1q3hhw8n03l.png" alt="date-fns icon" width="176" height="33"></a></p>
-
-<p>This popular utility library for date operations was at the heart of the problem.</p>
-
-<p>Specifically, the <code>addMonths</code> and <code>subMonths</code> functions.</p>
-
-<p>The <code>addMonths</code> function, when adding a month to the last day of any given month, would take you to the last day of the following month. Logical, right?<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// source: https://github.com/date-fns/date-fns/blob/main/src/addMonths/index.ts</span>
-<span class="kd">const</span> <span class="nx">daysInMonth</span> <span class="o">=</span> <span class="nx">endOfDesiredMonth</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">dayOfMonth</span> <span class="o">&gt;=</span> <span class="nx">daysInMonth</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// If we're already at the end of the month, then this is the correct date</span>
-    <span class="c1">// and we're done.</span>
-    <span class="k">return</span> <span class="nx">endOfDesiredMonth</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// Otherwise, we now know that setting the original day-of-month value won't</span>
-    <span class="c1">// cause an overflow, so set the desired day-of-month. Note that we can't</span>
-    <span class="c1">// just set the date of `endOfDesiredMonth` because that object may have had</span>
-    <span class="c1">// its time changed in the unusual case where where a DST transition was on</span>
-    <span class="c1">// the last day of the month and its local time was in the hour skipped or</span>
-    <span class="c1">// repeated next to a DST transition.  So we use `date` instead which is</span>
-    <span class="c1">// guaranteed to still have the original time.</span>
-    <span class="nx">_date</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span>
-      <span class="nx">endOfDesiredMonth</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">(),</span>
-      <span class="nx">endOfDesiredMonth</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">(),</span>
-      <span class="nx">dayOfMonth</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="nx">_date</span>
-  <span class="p">}</span>
-</code></pre>
-
-</div>
 
 
 
-<p>But the <code>subMonths</code> function, rather than having its own dedicated logic, simply reused <code>addMonths</code> with a negative number. D.R.Y principles in action, but with an unintended consequence.<br>
-</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// source: https://github.com/date-fns/date-fns/blob/main/src/subMonths/index.ts</span>
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">subMonths</span><span class="o">&lt;</span><span class="nx">DateType</span> <span class="kd">extends</span> <span class="nb">Date</span><span class="o">&gt;</span><span class="p">(</span>
-  <span class="nx">date</span><span class="p">:</span> <span class="nx">DateType</span> <span class="o">|</span> <span class="nx">number</span><span class="p">,</span>
-  <span class="nx">amount</span><span class="p">:</span> <span class="nx">number</span>
-<span class="p">):</span> <span class="nx">DateType</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">addMonths</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="o">-</span><span class="nx">amount</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
+<p>Let the soothing sounds ease your mind! <em>Note: you can embed a link to your song using the following syntax <code>{% embed https://... %}</code>. This should work for most common platforms!</em></p>
 
-</div>
-
-
-
-<h2>
-  
-  
-  Here is what exactly caused our issue
-</h2>
-
-<p>Let's put it this way:</p>
-
-<ul>
-<li>For 28th February, add one month and then subtract one month, and you get 28th February. No problems there.</li>
-<li>But, for 31st August, add one month and then subtract one month, and you land on... 30th August. That's one day lost in date limbo!</li>
-</ul>
-
-<p>The core of the issue was the way <code>addMonths</code> determined the end of the desired month.</p>
-
-<p>For days that were not at the end of the month, the logic was sound. </p>
-
-<p>However, for the last day of a month, the function defaulted to the end of the next month instead of adding the correct amount of days.</p>
-
-<h2>
-  
-  
-  The Simple Fix
-</h2>
-
-<p>To ensure a consistent approach to date manipulation, we shifted from using <code>addMonths</code> and <code>subMonths</code> to <code>addDays</code> and <code>subDays</code>. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--y4JuGC4H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2aoc0bfp131dc79q5dor.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--y4JuGC4H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2aoc0bfp131dc79q5dor.gif" alt="Quicly Coding Cat Gif" width="800" height="600"></a></p>
-
-<p>This provided a more granular and precise way to handle date calculations, and importantly, allowed us to sidestep the <code>addMonths</code> pitfall.</p>
-
-<h2>
-  
-  
-  Lessons Learnt
-</h2>
-
-<p>This bug served as a strong lesson in a few key areas:</p>
-
-<ol>
-<li>
-<strong>Assumptions are Risky:</strong> Never assume that widely-used libraries are infallible. Even the most popular ones have their quirks.</li>
-<li>
-<strong>Tests are Gold:</strong> If not for our rigorous testing suite, this bug might have remained hidden, only to wreak havoc at the most inopportune moment.</li>
-<li>
-<strong>Dates are Tricky:</strong> They've always been, and will continue to be, a challenging aspect of software development. Always handle with care.</li>
-</ol>
-
-<p>While this bug threw a wrench in our pipes, it also reinforced the importance of comprehensive tests and the need to continually question and challenge our assumptions. </p>
-
-<h2>
-  
-  
-  Death of this Bug
-</h2>
-
-<p>In a world of code where dates and times form such a crucial part of our applications, bugs like these provide not just a hiccup, but a learning opportunity. The next time you find a weird issue in your application, dig deep. Who knows, you might just uncover the next 'Bug Of The Year'.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SXE07O9m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ps74vqneyl5oxnqmhxj.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SXE07O9m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ps74vqneyl5oxnqmhxj.gif" alt="Bug Goodbye Gif" width="800" height="533"></a></p>
-
-<p>You can find the PRs and Issues here:</p>
-
-<ul>
-<li><a href="https://github.com/novuhq/novu/pull/4071">Novu PR</a></li>
-<li><a href="https://github.com/date-fns/date-fns/issues/3506">Issue on date-fns</a></li>
-</ul>
+<p>Looking forward to listening to y'all's suggestions! 🎶</p>
 
  </details> 
  <hr /> 
