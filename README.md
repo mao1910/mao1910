@@ -133,6 +133,945 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Brewing a Full-Stack Breakfast with ExpressoTS, Bun, and Elysia](https://dev.to/expressots/brewing-a-full-stack-breakfast-with-expressots-bun-and-elysia-1d40) 
+ <details><summary>Article</summary> <blockquote>
+<p>Combine the power of ExpressoTS with Bun's Elysia framework in TypeScript for a mouth-watering full-stack experience.</p>
+</blockquote>
+
+<h1>
+  
+  
+  Introduction
+</h1>
+
+<p>Welcome to a hands-on guide focused on integrating ExpressoTS, Bun, and Elysia into a full-stack TypeScript application. Let's cut to the chase and see what ingredients we'll be working with.</p>
+
+<h2>
+  
+  
+  Our Ingredients
+</h2>
+
+<h3>
+  
+  
+  <a href="https://expresso-ts.com"><strong>ExpressoTS</strong></a>
+</h3>
+
+<p>This TypeScript framework is designed for server-side applications. It offers flexibility in project structure and supports multiple<br>
+architectural patterns, including MVC. If you like your applications like your coffee — robust and versatile — ExpressoTS is your go-to.</p>
+
+<p><a href="https://daniel-boll.me/posts/a-first-project-with-expressots">You can also check my guide on a first project with ExpressoTS</a></p>
+<h3>
+  
+  
+  <a href="https://bun.sh"><strong>Bun</strong></a>
+</h3>
+
+<p>An all-in-one toolkit that brings speed and efficiency to your JavaScript and TypeScript projects.<br>
+Think of Bun as the wholesome bread holding all your stack's ingredients together.<br>
+It's an entire toolbox in one neat package, and it's faster than you can say "bun in the oven."</p>
+<h3>
+  
+  
+  <a href="https://elysiajs.com/"><strong>ElysiaJS</strong></a>
+</h3>
+
+<p>A Bun web framework that promises performance, simplicity, and flexibility. Designed with TypeScript in mind, Elysia is like that final<br>
+touch of seasoning that takes your project from good to great.</p>
+
+<blockquote>
+<p>So, whether you're into French toast or a classic Eggs Benedict, the aim of this blog post is to show you how to whip up a dish that's not just full of flavor, but also robust and scalable.</p>
+</blockquote>
+<h1>
+  
+  
+  Getting Started: Your First Bite of Elysia
+</h1>
+
+<p>Now that we've set the table with the ingredients, let's start cooking. We'll begin by setting up a basic Elysia application using Bun.</p>
+<h2>
+  
+  
+  1. Install Bun
+</h2>
+
+<p>First, you'll need to download and install Bun. Open your terminal and run the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>curl <span class="nt">-fsSL</span> https://bun.sh/install | bash
+</code></pre>
+
+</div>
+
+
+
+<p>This will download and install Bun on your machine, equipping you with a fast and efficient JavaScript runtime.</p>
+
+<h2>
+  
+  
+  2. Create Your Elysia Project
+</h2>
+
+<p>Once Bun is installed, it's time to create your Elysia project. Run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>bun create elysia breakfast-ts
+</code></pre>
+
+</div>
+
+
+
+<p>You should see a message like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>Created elysia project successfully
+
+<span class="c"># To get started, run:</span>
+
+  <span class="nb">cd </span>breakfast-ts
+  bun run src/index.ts
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  3. Run Your Application
+</h2>
+
+<p>Follow the instructions in the terminal message:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd </span>breakfast-ts
+bun run src/index.ts
+</code></pre>
+
+</div>
+
+
+
+<p>And just like that, you should see the message, instantaneously 🌪:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>🦊 Elysia is running at localhost:3000
+</code></pre>
+
+</div>
+
+
+
+<p>Voila! You've just whipped up your first Elysia app, hot and fresh.</p>
+
+<h3>
+  
+  
+  4. Verify Your Application
+</h3>
+
+<p>To verify Elysia's functionality, you can perform a health check using the provided endpoint. While I'll be using <a href="https://httpie.io/">httpie</a> for its straightforward API, you're welcome to use <code>curl</code> if you prefer.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>http :3000
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">12</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
+<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
+
+Hello Elysia
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  Extending Elysia: Crafting a Simple User CRUD
+</h1>
+
+<p>With the basic setup out of the way, let's extend our Elysia app by adding some CRUD functionality for users.<br>
+This will serve as a good starting point before we dive into more complex operations in future posts.</p>
+<h2>
+  
+  
+  1. Run Your Application in Watch Mode
+</h2>
+
+<p>First, stop the server if it's running. Then leverage Bun's watch mode, which will automatically reload the application<br>
+when changes are made to the source code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>bun run <span class="nt">--watch</span> src/index.ts
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  2. Add User CRUD Routes
+</h2>
+
+<p>Now, let's define some basic CRUD operations. Open <code>src/index.ts</code> and add to your existing code the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Elysia</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">elysia</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// Create a user route group</span>
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Elysia</span><span class="p">().</span><span class="nx">group</span><span class="p">(</span><span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="o">=&gt;</span>
+  <span class="nx">app</span>
+    <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">All users</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/:id</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Create User</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="dl">"</span><span class="s2">/:id</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`Update User </span><span class="p">${</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">"</span><span class="s2">/:id</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`Delete User </span><span class="p">${</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="c1">// Main app</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Elysia</span><span class="p">()</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hello Elysia</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+  <span class="s2">`🦊 Elysia is running at </span><span class="p">${</span><span class="nx">app</span><span class="p">.</span><span class="nx">server</span><span class="p">?.</span><span class="nx">hostname</span><span class="p">}</span><span class="s2">:</span><span class="p">${</span><span class="nx">app</span><span class="p">.</span><span class="nx">server</span><span class="p">?.</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Here, we've used Elysia's <code>group&lt;Prefix extends string = string&gt;(prefix: Prefix, run: (group: Elysia&lt;...&gt;))</code> method to bundle all user-related routes together. We've defined routes for getting all users, getting a single user by ID, creating a user, updating a user, and deleting a user.</p>
+
+<h2>
+  
+  
+  3. More Advanced Features
+</h2>
+
+<p><strong><em>Note:</em></strong> You can extend this basic setup in various ways. Elysia supports both simple state management within the server and more advanced<br>
+dependency injection techniques for robust applications. Check out Elysia's documentation on<br>
+<a href="https://elysiajs.com/concept/state-decorate.html">State Decorate</a> and<br>
+<a href="https://elysiajs.com/patterns/dependency-injection.html">Dependency Injection</a> if you're interested.</p>
+
+<blockquote>
+<p>For the sake of this blog post, we're keeping it simple. If you are willing to expand your horizons, however, you are <strong>encouraged</strong> to check out the<br>
+  <a href="https://daniel-boll.me/posts/a-breakfest-with-expressots-and-bun#call-to-action"><strong>Call to Action</strong></a> section at the end of this post, where you may help the ExpressoTS community in the bun integration.</p>
+</blockquote>
+<h2>
+  
+  
+  4. Test Your User CRUD Endpoints
+</h2>
+
+<p>After running your server, you can test each endpoint to make sure they're working as intended.</p>
+<h3>
+  
+  
+  <strong>Get All Users</strong>
+</h3>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>http :3001/user
+</code></pre>
+
+</div>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">9</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
+<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
+
+All users
+</code></pre>
+
+</div>
+
+<h3>
+  
+  
+  <strong>Get a Single User</strong>
+</h3>
+
+<p>Replace <code>{id}</code> with the ID of the user you're interested in.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>http :3001/user/42
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">11</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
+<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
+
+Hello, 42
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Create a User</strong>
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>http POST :3001/user
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">11</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
+<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
+
+Create User
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Update a User</strong>
+</h3>
+
+<p>Again, replace <code>{id}</code> with the ID of the user you want to update.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>http PUT :3001/user/42
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">16</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
+<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
+
+Update User 42
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  <strong>Delete a User</strong>
+</h3>
+
+<p>And one last time, replace <code>{id}</code> with the ID of the user you want to delete.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>http DELETE :3001/user/42
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">16</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sun, 10 Sep 2023 20:47:46 GMT</span>
+<span class="na">content-type</span><span class="p">:</span> <span class="s">text/plain;charset=utf-8</span>
+
+Delete User 42
+</code></pre>
+
+</div>
+
+
+
+<p>Now you've successfully tested all of your user CRUD operations. It's like a full-course breakfast — everything is present and accounted for!</p>
+
+<h2>
+  
+  
+  Diving into the Heart of the Matter: <strong>Reflection</strong> and <strong>Decorators</strong>
+</h2>
+
+<p>In programming, reflection is a mechanism that allows you to inspect and manipulate program elements like classes and objects at runtime. In other words, reflection enables a program to observe its own structure, similar to how you can observe your own reflection in the mirror. This allows for greater dynamic behavior, enabling more powerful and flexible constructs like decorators.</p>
+
+<h1>
+  
+  
+  Dive deeper @ <a href="https://daniel-boll.me/posts/a-breakfest-with-expressots-and-bun#diving-into-the-heart-of-the-matter-reflection-and-decorators">daniel-boll.me</a>
+</h1>
+
+<p>If you are interested in the stuff you can achieve with reflection make sure to check out the full blog at <a href="https://daniel-boll.me/posts/a-breakfest-with-expressots-and-bun#diving-into-the-heart-of-the-matter-reflection-and-decorators">daniel-boll.me</a> for much more content.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8_jrSY3F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3rjunwbp6yun7gcgudz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8_jrSY3F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3rjunwbp6yun7gcgudz.png" alt="Image description" width="273" height="749"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [My Opinion on Adopting New Technologies: Using Bun as a Case Study.](https://dev.to/rsaz/opinion-about-new-technology-adoption-using-bun-as-an-example-2o66) 
+ <details><summary>Article</summary> <p>The thrill of diving into new technology is like an adrenaline shot for any software engineer. As someone who enjoys tinkering with new tools, I'm always eager to explore the latest and greatest. But wearing the hat of a technical lead and a university professor in computer science with a 21-year career in software development changes the game. It's like having an internal debate between an angel and a devil: Should you adopt this promising new technology or be cautious?</p>
+
+<p>Early adopters, especially in the open-source community, are crucial catalysts for innovation. They help technologies evolve through their valuable contributions. But when it comes to corporate adoption, we must shift gears. Corporations need mature, battle-tested solutions.</p>
+
+<p>Take Node.js, for example. It's been a 14-year journey for it to reach its current mature state. Deno, around since 2018, is still considered somewhat obscure. Bun is an even newer kid on the block and far from production-ready. Its potential may be promising, but resilience, sustained development, and vision are key for its long-term viability.</p>
+
+<p>To carve out a niche in the corporate world, Bun needs more than just promising features. It needs a vibrant community, widespread industry adoption, and enough momentum to host events and generate buzz. Only then could we even start to think of it as a serious contender to Node.js.</p>
+
+<p>Another challenge is balancing performance with developer-friendliness. As you build abstractions to make life easier for developers, you risk diluting the tool's performance and efficiency. Maintaining that balance while sticking to the initial vision is no small feat.</p>
+
+<p>The choice of the Zig programming language for Bun is another intriguing design decision. Who's going to learn Zig just to contribute? Why not go for something more commonly adopted, like Rust? It raises questions about the future talent pool and whether this choice aligns with corporate considerations.</p>
+
+<p>Even as I wish Bun all the success, only time will tell if it will stand the test of time, especially given that other solutions like Just.js, Cobra, and Hermes already outperform it.</p>
+
+<p>So while the pace of technological evolution is exhilarating, it also makes it incredibly challenging to maintain consistent development and vision for new products. Before Bun—or any emerging technology—becomes viable for corporate adoption, it must check numerous boxes, from community support to feature stability. As much as we'd like to dive head-first into every new technology, the devil is in the details, and those details demand a discerning eye.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to Finetune Llama 2: A Beginner's Guide](https://dev.to/dhanushreddy29/how-to-finetune-llama-2-a-beginners-guide-219e) 
+ <details><summary>Article</summary> <p>Meta AI's LLaMA 2 has taken the NLP community by storm with its impressive range of pretrained and fine-tuned Large Language Models (LLMs). With model sizes ranging from 7B to a staggering 70B parameters, LLaMA 2 builds upon the success of its predecessor, LLaMA 1, offering a host of enhancements that have captivated the NLP community.</p>
+
+<h2>
+  
+  
+  The Evolution of LLaMA
+</h2>
+
+<p>LLaMA 2 signifies a significant evolution in the landscape of language models. Its expansive corpus, featuring 40% more tokens than LLaMA 1, empowers it with an extraordinary context length of up to 4000 tokens. This extended contextual understanding enables LLaMA 2 to excel in tasks that require nuanced comprehension of text and context.</p>
+
+<p>What makes LLaMA 2 even more extraordinary is its accessibility. Meta AI has generously made these advanced model weights available for both research and commercial applications. This democratization of cutting-edge language models ensures that a broader audience, from researchers to businesses, can harness the power of LLaMA 2 for their unique needs.</p>
+
+<p>To get access to Llama 2, you can follow these steps:</p>
+
+<p>Go to the Hugging Face Model Hub: <a href="https://huggingface.co/meta-llama">huggingface.co/meta-llama</a> and select the model that you want to use.</p>
+
+<ul>
+<li>Click on the "<strong>Request Access</strong>" button.</li>
+<li>Fill out the form and Submit it.</li>
+<li>Once your request has been approved, you will be able to download the model weights.</li>
+<li>
+<p>Here are some additional details about each size of the Llama 2 model:</p>
+
+<ul>
+<li>
+<strong>7B parameters</strong>: This is the smallest size of the Llama 2 model. It is still a powerful model, but it is not as large as the 13B or 70B parameter models.</li>
+<li>
+<strong>13B parameters</strong>: This is the medium-sized version of the Llama 2 model. It is a good choice for most applications.</li>
+<li>
+<strong>70B parameters</strong>: This is the largest size of the Llama 2 model. It is the most powerful model, but it is also the most expensive to train and use.</li>
+</ul>
+
+
+</li>
+</ul>
+
+<p>In this blog post, I will show you how to effortlessly fine-tune the LLaMA 2 - 7B model on a subset of the CodeAlpaca-20k dataset. This dataset contains over 20,000 coding questions and their corresponding correct answers. By fine-tuning the model on this dataset, we can teach it to generate code for a variety of tasks.</p>
+
+<p>In this blog post, I want to make it as simple as possible to fine-tune the LLaMA 2 - 7B model, using as little code as possible. We will be using the <a href="https://github.com/tloen/alpaca-lora">Alpaca Lora Training script</a>, which automates the process of fine-tuning the model and for GPU we will be using <a href="https://beam.cloud">Beam</a>.</p>
+
+<p>You can create a free account on <a href="https://www.beam.cloud/">Beam</a>, to get started.</p>
+
+<h2>
+  
+  
+  Prerequisites
+</h2>
+
+<ul>
+<li>An account on <a href="https://www.beam.cloud/login">Beam</a>
+</li>
+<li>An API Key from <a href="https://www.beam.cloud/dashboard/settings/api-keys">Dashboard</a>
+</li>
+<li>Install <a href="https://docs.beam.cloud/getting-started/quickstart">Beam CLI</a> by running:
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>curl https://raw.githubusercontent.com/slai-labs/get-beam/main/get-beam.sh <span class="nt">-sSfL</span> | sh
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Configure Beam by entering
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>beam configure
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Install Beam SDK
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>pip <span class="nb">install </span>beam-sdk
+</code></pre>
+
+</div>
+
+
+
+<p>Now you’re ready to start using Beam to deploy your ML models.</p>
+
+<p>To make it simple, I have made a <a href="https://github.com/dhanushreddy291/finetune-llama2">Github Repo</a>, which you can clone to start with.</p>
+
+<p>In the <code>app.py</code> file, I use the <a href="https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k">CodeAlpaca-20k</a> dataset.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">train_model</span><span class="p">():</span>
+    <span class="c1"># Trained models will be saved to this path
+</span>    <span class="n">beam_volume_path</span> <span class="o">=</span> <span class="s">"./checkpoints"</span>
+
+    <span class="c1"># Load dataset -- for this example, we'll use the sahil2801/CodeAlpaca-20k dataset hosted on Huggingface:
+</span>    <span class="c1"># https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k
+</span>    <span class="n">dataset</span> <span class="o">=</span> <span class="n">DatasetDict</span><span class="p">()</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s">"train"</span><span class="p">]</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s">"sahil2801/CodeAlpaca-20k"</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s">"train[:20%]"</span><span class="p">)</span>
+
+    <span class="c1"># Adjust the training loop based on the size of the dataset
+</span>    <span class="n">samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">"train"</span><span class="p">])</span>
+    <span class="n">val_set_size</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">samples</span><span class="p">)</span>
+
+    <span class="n">train</span><span class="p">(</span>
+        <span class="n">base_model</span><span class="o">=</span><span class="n">base_model</span><span class="p">,</span>
+        <span class="n">val_set_size</span><span class="o">=</span><span class="n">val_set_size</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="n">beam_volume_path</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To run the training/finetuning we will be running it using the command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>beam run app.py:train_model
+</code></pre>
+
+</div>
+
+
+
+<p>When we run this command, the training function will run on Beam's cloud, and we'll see the progress of the training process streamed to our terminal. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IRA-iMVQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cujy9wivzm8u7xkgoblc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IRA-iMVQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cujy9wivzm8u7xkgoblc.png" alt="LlaMA2 Finetuning logs" width="800" height="237"></a></p>
+
+<p>The training may take hours to complete depending on the size of the dataset you use for finetuning. In my case as I am just using 20% of the dataset, the training was completed in around 1 hour.</p>
+
+<p>When the model is succesfuuly trained, we can deploy an API to run inference of our fine-tuned model.</p>
+
+<p>Let's create a new function for inference. If you look closely, you'll notice that we're using a different decorator this time: <code>rest_api</code> instead of <code>run</code>.</p>
+
+<p>This will allow us to deploy the function as a REST API.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">rest_api</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">run_inference</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">):</span>
+    <span class="c1"># Inputs passed to the API
+</span>    <span class="nb">input</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s">"input"</span><span class="p">]</span>
+
+    <span class="c1"># Grab the latest checkpoint
+</span>    <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">get_newest_checkpoint</span><span class="p">()</span>
+
+    <span class="c1"># Initialize models
+</span>    <span class="n">models</span> <span class="o">=</span> <span class="n">load_models</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">checkpoint</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="s">"model"</span><span class="p">]</span>
+    <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="s">"tokenizer"</span><span class="p">]</span>
+    <span class="n">prompter</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="s">"prompter"</span><span class="p">]</span>
+
+    <span class="c1"># Generate text
+</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">call_model</span><span class="p">(</span>
+        <span class="nb">input</span><span class="o">=</span><span class="nb">input</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span> <span class="n">prompter</span><span class="o">=</span><span class="n">prompter</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We can deploy this as a REST API by running this command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>beam deploy app.py:run_inference
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SQGLDtC_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3c0bp9a47tvb5gfyhr0i.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SQGLDtC_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3c0bp9a47tvb5gfyhr0i.png" alt="Deployment Logs" width="800" height="180"></a></p>
+
+<p>If we navigate to the URL printed in the shell, we'll be able to copy the full cURL request to call the REST API.</p>
+
+<p>Now when I tried asking "How to download an image from link in Python"<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"input"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How to download an image from its URL in Python?"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>I get this entire markdown string as a response</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rUFrA8ft--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sgk5r0ru14ppec77gpbu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rUFrA8ft--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sgk5r0ru14ppec77gpbu.png" alt="API Response" width="800" height="416"></a></p>
+
+<p>I have prettified it below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Square_logo_2008.png/1200px-Square_logo_2008.png'</span>
+
+<span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+ <span class="n">image</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+<span class="c1">### Solution:
+</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Square_logo_2008.png/1200px-Square_logo_2008.png'</span>
+
+<span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+ <span class="n">image</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+
+<span class="c1">### Explanation:
+</span>
+<span class="n">The</span> <span class="n">first</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">the</span> <span class="sb">`urllib.request`</span> <span class="n">module</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">second</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`with`</span> <span class="n">statement</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`with`</span> <span class="n">statement</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">a</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">connection</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">third</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`urlopen`</span> <span class="n">function</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`urlopen`</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">a</span> <span class="n">URL</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">fourth</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`response`</span> <span class="n">variable</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`response`</span> <span class="n">variable</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">store</span> <span class="n">the</span> <span class="n">response</span> <span class="n">of</span> <span class="n">the</span> <span class="n">URL</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">fifth</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="sb">`read`</span> <span class="n">function</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`read`</span> <span class="n">function</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">read</span> <span class="n">the</span> <span class="n">response</span> <span class="n">of</span> <span class="n">the</span> <span class="n">URL</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">sixth</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">to</span> <span class="k">print</span> <span class="n">the</span> <span class="n">image</span><span class="p">.</span> <span class="n">The</span> <span class="sb">`print`</span> <span class="n">statement</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="k">print</span> <span class="n">the</span> <span class="n">image</span><span class="p">.</span>
+
+<span class="c1">### Reflection:
+</span>
+<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`with`</span> <span class="n">statement</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`try`</span> <span class="n">statement</span><span class="err">?</span>
+<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`urlopen`</span> <span class="n">function</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">function</span><span class="err">?</span>
+<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`response`</span> <span class="n">variable</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">variable</span><span class="err">?</span>
+<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`read`</span> <span class="n">function</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">function</span><span class="err">?</span>
+<span class="o">-</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">a</span> <span class="sb">`print`</span> <span class="n">statement</span> <span class="ow">and</span> <span class="n">a</span> <span class="sb">`request`</span> <span class="n">statement</span><span class="err">?</span>
+<span class="o">&lt;/</span><span class="n">s</span><span class="o">&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Although training the model on 20% of the dataset is not ideal, it is still a good way to get started. You can see that we are already starting to see good results with this small amount of data. If you want to get even better results, you can try fine-tuning the model on the entire dataset. This will take several hours, but it will be worth it in the end. Once the model is trained, you can use it whenever you need it.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In conclusion, we have seen how to fine-tune LLaMA 2 - 7B on a subset of the CodeAlpaca-20k dataset using the Alpaca Lora Training script. This script makes it easy to fine-tune the model without having to write any code.</p>
+
+<p>We have also seen that even by training the model on 20% of the dataset, we can get good results. If you want to get even better results, you can try fine-tuning the model on the entire dataset.</p>
+
+<p>The future of open source AI is bright. The availability of large language models like LLaMA 2 makes it possible for anyone to develop powerful AI applications. With the help of open source tools and resources, developers can fine-tune these models to meet their specific needs.</p>
+
+<p>In case if you still have any questions regarding this post or want to discuss something with me feel free to connect on <a href="https://www.linkedin.com/in/dhanushreddy29/">LinkedIn</a> or <a href="https://twitter.com/dhanushreddy291">Twitter</a>.</p>
+
+<blockquote>
+<p>If you run an organization and want me to write for you, please connect with me on my Socials 🙃</p>
+</blockquote>
+
+ </details> 
+ <hr /> 
+
+ #### - [100 + Login/Signup form for web developers](https://dev.to/jon_snow789/100-loginsignup-form-for-web-developers-l7f) 
+ <details><summary>Article</summary> <p>We make a collection of 100 + Login forms for web developers. they all are free and open source. you can feel free to use in your website or in any project.</p>
+
+
+
+
+<h2>
+  
+  
+  <center><a href="https://democoding.in/100-login-form-for-web-developers">👉democoding.in/100-login-form-for-web-developers👈</a></center>
+</h2>
+
+
+
+
+<h3>
+  
+  
+  The best Login Form from the collection
+</h3>
+
+<h4>
+  
+  
+  1.
+</h4>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UJBZQ2RE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h1teziqfiqhesxvh0vfg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UJBZQ2RE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h1teziqfiqhesxvh0vfg.png" alt="100 + Login form for web developers" width="800" height="447"></a></p>
+
+
+
+
+<h3>
+  
+  
+  2.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kfvesaH3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xfu92h4gjopehpgnfu4i.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kfvesaH3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xfu92h4gjopehpgnfu4i.png" alt="100 + Login form for web developers" width="800" height="495"></a></p>
+
+
+
+
+<h3>
+  
+  
+  3.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--CLWplm8M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/as8ldc15u7rveoco4wim.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CLWplm8M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/as8ldc15u7rveoco4wim.png" alt="100 + Login form for web developers" width="800" height="450"></a></p>
+
+
+
+
+<h3>
+  
+  
+  4.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ezMjYOEo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zkj7jnd40wkkawpfb48f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ezMjYOEo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zkj7jnd40wkkawpfb48f.png" alt="100 + Login form for web developers" width="800" height="450"></a></p>
+
+
+
+
+<h3>
+  
+  
+  5.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--x7ih_iSw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3mndj6v40du7tchylhhf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--x7ih_iSw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3mndj6v40du7tchylhhf.png" alt="100 + Login form for web developers" width="768" height="432"></a></p>
+
+
+
+
+<h3>
+  
+  
+  6.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KHmLDFSc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/t-EMinSz_Tk/maxresdefault.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KHmLDFSc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/t-EMinSz_Tk/maxresdefault.jpg" alt="100 + Login form for web developers" width="800" height="450"></a></p>
+
+
+
+
+<h3>
+  
+  
+  7.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uqiO-Ls6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/F9s3-e7FJnY/maxresdefault.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uqiO-Ls6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://img.youtube.com/vi/F9s3-e7FJnY/maxresdefault.jpg" alt="100 + Login form for web developers" width="800" height="450"></a></p>
+
+
+
+
+<h3>
+  
+  
+  8.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8IZDaXQ4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5ysqlrkl3lgoz6zrhcd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8IZDaXQ4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5ysqlrkl3lgoz6zrhcd.png" alt="100 + Login form for web developers" width="640" height="379"></a></p>
+
+
+
+
+<h3>
+  
+  
+  9.
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--b4_cQ2_r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cly8i4dovo48zy3qdide.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--b4_cQ2_r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cly8i4dovo48zy3qdide.png" alt="100 + Login form for web developers" width="640" height="535"></a></p>
+
+
+
+
+
+
+
+<h3>
+  
+  
+  Check the full Collection
+</h3>
+
+<p><a href="https://democoding.in/100-login-form-for-web-developers">democoding.in/100-login-form-for-web-developers</a></p>
+
+
+
+
+<blockquote>
+<p>Note: we did not make these forms. We are only sharing these great designs. All the rights reserved to respective owner.</p>
+</blockquote>
+
+
+
+
+<p>We also created a awesome list of free css generator </p>
+
+<blockquote>
+<p><a href="https://democoding.in/awesome-free-css-generator">Check here</a></p>
+</blockquote>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7BG2-194--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gmk0b9a8yehounuut1qw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7BG2-194--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gmk0b9a8yehounuut1qw.png" alt="Awesome list of free CSS Generator" width="800" height="450"></a></p>
+
+<ul>
+<li>Glassmorphism CSS Generator</li>
+<li>CSS Gradient Generator</li>
+<li>CSS Text Shadow Generator</li>
+<li>CSS Grid Generator</li>
+</ul>
+
+<p>3D Book Image CSS Generator</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--mCC-6TU2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avrg7non6kxi86a6p9cv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mCC-6TU2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/avrg7non6kxi86a6p9cv.png" alt="3D Book Image CSS Generator" width="640" height="322"></a></p>
+
+<p>Check the full collection</p>
+
+<h3>
+  
+  
+  <center><a href="https://democoding.in/awesome-free-css-generator">https://democoding.in/awesome-free-css-generator</a></center>
+</h3>
+
+
+
+
+
+
+
+<h3>
+  
+  
+  Support Us
+</h3>
+
+<p>Don't miss the amazing video we've embedded in this post! Click the play button to be inspired</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/kQxKkEm3oDA">
+</iframe>
+</p>
+
+
+
+
+
+
+
+<p>Thanks for Reading ❤️! Check my website <a href="https://democoding.in/">Demo coding</a> for updates about my latest CSS Animation, CSS Tools, and some cool web dev tips. Let's be friends!</p>
+
+<p>Don't forget to subscribe to our channel : <a href="https://www.youtube.com/@democode">Demo code</a> </p>
+
+ </details> 
+ <hr /> 
+
  #### - [What's Behind the Excitement in the JavaScript Community about Bun.js?](https://dev.to/mitchiemt11/whats-behind-the-excitement-in-the-javascript-community-about-bunjs-2p4l) 
  <details><summary>Article</summary> <p>Howdy, folks!👋</p>
 
@@ -180,799 +1119,6 @@ Firstly, Bun is described as <strong>"a fast all-in-one JavaScript runtime"</str
 <p>Until next time....</p>
 
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zDvqImPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/635leop2yy7cry2zv3n7.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zDvqImPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/635leop2yy7cry2zv3n7.jpeg" alt="cheers" width="561" height="360"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [How to Build a Passkey Login Page with React](https://dev.to/vdelitz/how-to-build-a-passkey-login-page-with-react-16jl) 
- <details><summary>Article</summary> <h2>
-  
-  
-  1. Introduction
-</h2>
-
-<p>In this blog post, we’ll be walking through the process of building a sample application with passkey authentication using React. We’ll cover how to embed the Corbado web component and implement passkey login functionality for a seamless user experience.</p>
-
-<p>If you want to see the finished code, please have a look at our <a href="https://github.com/corbado/example-passkeys-react">sample application repository on GitHub</a>.</p>
-
-<p>The result looks as follows:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sp89y2lo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tg0lf9lfm0tpqu6rtwz8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sp89y2lo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tg0lf9lfm0tpqu6rtwz8.png" alt="Passkey Login Page" width="800" height="253"></a></p>
-
-<h2>
-  
-  
-  2. Prerequisites
-</h2>
-
-<p>This tutorial assumes basic familiarity with React, HTML, CSS and JavaScript. Let’s dive in! Moreover, you need to have Node and NPM installed on your machine.‍</p>
-
-<h2>
-  
-  
-  3. Repository structure
-</h2>
-
-<p>Let’s first discuss the structure of our project (<a href="https://github.com/corbado/example-passkeys-react">full GitHub repo</a>):</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<p>The rest of the files of this project can be ignored for the purpose of this tutorial.‍</p>
-
-<h2>
-  
-  
-  4. Set up the React project
-</h2>
-
-<p>In the following, we explain step-by-step what needs to be done to successfully set up the React project.</p>
-
-<p>Let’s start out by initializing a new React project. In this tutorial, we’re using React version 18.2.0:</p>
-
-<p><code>npx create-react-app react-example<br>
-</code><br>
-If you’re asked to proceed, click “Yes”. Then execute:</p>
-
-<p><code>cd react-example<br>
-</code><br>
-If you run</p>
-
-<p><code>npm start<br>
-</code><br>
-the sample skeleton application starts at <a href="http://localhost:3000:">http://localhost:3000:</a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--t08XUOFe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w6t7ebiahvmum8z1fl16.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--t08XUOFe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w6t7ebiahvmum8z1fl16.png" alt="React skeleton" width="800" height="368"></a></p>
-<h2>
-  
-  
-  5. Set up the Corbado web component for passkey authentication
-</h2>
-<h3>
-  
-  
-  5.1 Set up your Corbado account and project
-</h3>
-
-<p>Visit the <a href="https://app.corbado.com/signin#register">Corbado developer panel</a> to sign up and create your account (you’ll see the passkey sign-up in action here!).</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--F-ePE7yP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/64tbxytwwbcdbh0u0l6m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--F-ePE7yP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/64tbxytwwbcdbh0u0l6m.png" alt="Corbado developer panel" width="800" height="357"></a></p>
-
-<p>In the appearing project wizard, select “Integration guide”. Then, select “Web app” as type of app and afterward select “No existing users” as we’re building a new app from scratch. Moreover, providing some details regarding your frontend and backend tech stack as well as the main goal you want to achieve with Corbado helps us to customize and smooth your developer experience.</p>
-
-<p>Then, jump over to the <a href="https://app.corbado.com/app/getting-started/integration-guide">integration guide</a> that helps to set up all required settings.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--B1hgdJ-r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2meg9e2x0mljpz2mvsk2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--B1hgdJ-r--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2meg9e2x0mljpz2mvsk2.png" alt="Integration guide" width="800" height="541"></a></p>
-
-<p>In step 1, we need to define a new authorized origin, which is <a href="http://localhost:3000">http://localhost:3000</a> in the case of our React application (you can give it any name you want, e.g. “local”).</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kEGZkW8f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5mw2iylu0w847e7eub9f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kEGZkW8f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5mw2iylu0w847e7eub9f.png" alt="Add authorized origin" width="800" height="505"></a></p>
-
-<p>In this example, the creation of an API secret is optional. You would need it if you want to request protected user data from the Corbado backend or use Corbado’s session management for protecting your own resources.</p>
-
-<p>Next, we set the Application URL, Redirect URL and Relying Party ID to the following values (see explanation below):</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--F2J2t-If--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wgx9y5hocpilg86i6fdw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--F2J2t-If--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wgx9y5hocpilg86i6fdw.png" alt="Application URL Redirect URL Relying Party ID" width="800" height="405"></a></p>
-
-<p>Application URL: Provide the URL where you embedded the web component, here: <a href="http://localhost:3000">http://localhost:3000</a><br>
-Redirect URL: Provide the URL your app should redirect to after successful authentication and which gets sent a short-term session cookie, here: <a href="http://localhost:3000/profile">http://localhost:3000/profile</a><br>
-Relying Party ID: Provide the domain (no protocol, no port and no path) where passkeys should be bound to, here: localhost<br>
-The last two steps in the integration guide (“Add Corbado session management and protect your routes” and “Start using passkeys”) will be covered below.‍</p>
-<h3>
-  
-  
-  5.2 Embed the web component in the frontend
-</h3>
-
-<p>Now, let’s jump back to the code we created from step 4.</p>
-
-<p>Then, we need to install the web component:</p>
-
-<p><code>npm i @corbado/webcomponent<br>
-</code><br>
-Next, we create a .env file where we put in the Corbado project ID:</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<p>Then, we add a new file Home.js. This file contains the sign up / login web component. As HTML attribute “project-id”, we past the project ID from the developer panel into the .env file and read it from there.</p>
-
-<p>Optionally, you can modify the styling (via CSS classes) and text / behavior (via the developer panel or via HTML attributes).‍</p>
-
-<p>Moreover, we install the “react-router-dom” package.</p>
-
-<p><code>npm i react-router-dom<br>
-</code><br>
-Then, we add routing to index.js:</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<p>Restart your React web app (via npm start) and open <a href="http://localhost:3000">http://localhost:3000</a> in the browser. You should see the following screen with the Corbado web component to sign up and log in:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JSIVHfOy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/paj5v0jkdj7y5cwk9im6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JSIVHfOy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/paj5v0jkdj7y5cwk9im6.png" alt="Passkey Login Page" width="800" height="253"></a></p>
-
-<p>‍</p>
-
-<h3>
-  
-  
-  5.3 Set up the profile page
-</h3>
-
-<p>After successful authentication, the Corbado web component redirects the user to the provided Redirect URL (<a href="https://localhost:3000/profile">https://localhost:3000/profile</a>). This page renders basic user information (user ID and email) and provides a button to logout. Create a Profile.js file and add the following code:</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<p>Also adapt index.js to provide adequate routing:</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<p>This page has content that should only be visible to authenticated users. Therefore, we use Corbado session management in the code above.‍</p>
-
-<h3>
-  
-  
-  5.4 Start using passkeys
-</h3>
-
-<p>If everything is set up and installed, run the application with</p>
-
-<p><code>npm start<br>
-</code><br>
-You should see the following screen:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p8LPUgew--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6eovqgijbnt9wvu0gk68.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p8LPUgew--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6eovqgijbnt9wvu0gk68.png" alt="Passkey Login Page" width="800" height="450"></a></p>
-
-<p>After successful sign up / login, you see the profile page:</p>
-
-<p>![Passkey Profile Page(<a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g0i6w7ztyqpqw0h5qia7.png">https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g0i6w7ztyqpqw0h5qia7.png</a>)</p>
-
-<p>‍</p>
-
-<h2>
-  
-  
-  6. Conclusion
-</h2>
-
-<p>This tutorial showed how easy it is to add passwordless authentication with passkeys to a React app using Corbado. Besides the passkey-first authentication, Corbado provides simple session management, that we used for a retrieval of basic user data. If you want to read more about how you can leverage Corbado’s session management to retrieve backend data, please check out our documentation <a href="https://docs.corbado.com/sessions/overview">here </a>or if you want to add Corbado to your existing app with existing users, please see our documentation <a href="https://docs.corbado.com/products/corbado-connect">here</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [Maximizing Efficiency and Savings: A Guide to Optimizing Amazon Redshift](https://dev.to/luxacademy/maximizing-efficiency-and-savings-a-guide-to-optimizing-amazon-redshift-3ddl) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KsfxSjpj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fsua77i6345opv9ybeko.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KsfxSjpj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fsua77i6345opv9ybeko.png" alt="Image description" width="800" height="396"></a></p>
-
-<p><strong>Amazon Redshift</strong> serves as a robust data warehousing service that assumes a pivotal role in the management of large-scale data analytics for organizations.</p>
-
-<p>As a data engineer, your interaction with AWS Redshift becomes indispensable if your company prefers it as the data warehousing technology, or if your organization has embraced it as the central data lakehouse tool to leverage the combined advantages of a data lake and warehouse within a unified platform.</p>
-
-<p>To fully exploit the capabilities of Redshift while concurrently managing costs and ensuring the efficiency of query performance, optimization becomes imperative. </p>
-
-<p>In this article, we will delve into a set of strategies designed to assist you in optimizing Amazon Redshift for both cost-effectiveness and query performance. This endeavor will not only result in cost savings for your organization but also enhance query speed, benefiting you as a developer.</p>
-
-<p><strong>We will be discussing several strategies, including:</strong></p>
-
-<ol>
-<li>Data Modeling</li>
-<li>Data Loading</li>
-<li>Compression</li>
-<li>Query Optimization</li>
-<li>Concurrency Scaling</li>
-<li>Workload Management (WLM)</li>
-<li>Partitioning</li>
-<li>Vacuuming and Analyzing</li>
-<li>Monitoring and Alerts</li>
-<li>Redshift Spectrum</li>
-<li>Redshift Advisor and Reserved Instances </li>
-<li>Regular Review and Optimization</li>
-</ol>
-
-<h3>
-  
-  
-  <strong>1). Data Modeling</strong>
-</h3>
-
-<p>The foundation of effective Redshift optimization begins with smart data modeling decisions:</p>
-
-<ul>
-<li>Data Distribution and Sort Keys: The choice of data distribution style (even, key, or all) and sort keys for your tables can significantly impact query performance. It's essential to select these attributes thoughtfully based on your specific needs.</li>
-<li>Normalization vs. Denormalization: Evaluate your query patterns to decide whether to normalize or denormalize your data. Normalization conserves storage space, while denormalization can enhance query performance. Your choice should align with your unique requirements.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>2). Data Loading</strong>
-</h3>
-
-<p>Efficient data loading processes are crucial for Redshift optimization:</p>
-
-<ul>
-<li>COPY Command: Utilize the COPY command for bulk data loading instead of INSERT operations. It is not only faster but also more cost-effective, particularly when dealing with substantial data volumes.</li>
-<li>Amazon S3 Staging: Consider using Amazon S3 as a staging area for data loading. This approach simplifies the process and reduces load times, enhancing overall efficiency.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>3). Compression</strong>
-</h3>
-
-<p>Optimizing storage with proper compression techniques can lead to substantial savings and improved query performance:</p>
-
-<ul>
-<li>Compression Encodings: Employ suitable compression encodings for columns to save storage costs and boost query performance. Selecting the right encodings is key to success.</li>
-<li>ANALYZE Command: Run the ANALYZE command periodically to update statistics. This aids the query planner in making informed decisions regarding data distribution and compression.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>4). Query Optimization</strong>
-</h3>
-
-<p>Fine-tuning your queries can significantly impact performance:</p>
-
-<ul>
-<li>EXPLAIN Command: Use the EXPLAIN command to analyze query plans and identify performance bottlenecks. This helps in pinpointing areas that require optimization.</li>
-<li>Column Selection: Avoid using SELECT * in queries; instead, explicitly list the columns you need. This reduces unnecessary data transfer and computation.</li>
-<li>Minimize DISTINCT and ORDER BY: Minimize the use of DISTINCT and ORDER BY clauses, as they can be computationally expensive. Use them only when necessary.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>5). Concurrency Scaling</strong>
-</h3>
-
-<p>Efficiently managing query concurrency is vital:</p>
-
-<ul>
-<li>Automatic Concurrency Scaling: Enable automatic concurrency scaling to handle query load spikes without sacrificing performance.</li>
-<li>Custom Concurrency Settings: Adjust concurrency scaling settings based on your workload and requirements, striking the right balance between cost and performance.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>6). Workload Management (WLM)</strong>
-</h3>
-
-<p>Effectively allocate resources among different query workloads:</p>
-
-<ul>
-<li>WLM Queues: Utilize WLM queues to distribute resources efficiently. Set appropriate memory and concurrency values for each queue to optimize both cost and performance.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>7). Partitioning</strong>
-</h3>
-
-<p>For large tables with specific query patterns, partitioning is a game-changer:</p>
-
-<ul>
-<li>Table Partitioning: Implement table partitioning if you frequently query specific date ranges or subsets of data. This enhances query performance and reduces costs.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>8). Vacuuming and Analyzing</strong>
-</h3>
-
-<p>Maintenance tasks are essential for long-term optimization:</p>
-
-<ul>
-<li>VACUUM and ANALYZE: Regularly run the VACUUM and ANALYZE commands to reclaim storage space and keep statistics up-to-date, ensuring peak performance.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>9). Monitoring and Alerts</strong>
-</h3>
-
-<p>Stay proactive with monitoring and alert systems:</p>
-
-<ul>
-<li>Monitoring Tools: Implement monitoring and set up alerts to track query performance and resource utilization. Services like Amazon CloudWatch can be invaluable for this purpose.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>10). Redshift Spectrum</strong>
-</h3>
-
-<p>Leverage Redshift Spectrum for cost-effective data querying:</p>
-
-<ul>
-<li>Amazon S3 Integration: Consider using Redshift Spectrum to query data stored in Amazon S3 directly, especially for historical or less-frequently accessed data. This can significantly reduce storage costs
-.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>11) Redshift Advisor and Reserved Instances</strong>
-</h3>
-
-<p>Utilize built-in tools for guidance and cost savings:</p>
-
-<ul>
-<li>
-<strong>Redshift Advisor:</strong> Take advantage of the Redshift Advisor tool, which provides recommendations for optimizing your cluster's performance and cost-efficiency.</li>
-<li>
-<strong>Reserved Instances (RIs):</strong> If your Redshift usage is steady, consider purchasing Reserved Instances to lower your per-hour costs, providing predictability and savings.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>12). Regular Review and Optimization</strong>
-</h3>
-
-<p>Continuous improvement is the key to success:</p>
-
-<ul>
-<li>
-<strong>Performance and Cost Metrics:</strong> Regularly review your cluster's performance and cost metrics to identify opportunities for optimization. Adapting to changing needs is crucial.</li>
-</ul>
-
-<h3>
-  
-  
-  <strong>Conclusion</strong>
-</h3>
-
-<p>Optimizing Amazon Redshift for cost and query performance is not a one-time task but rather an <strong>ongoing journey</strong> that requires a deep understanding of your data, workload, and business objectives. By implementing the strategies mentioned in this article and staying vigilant, you can continuously fine-tune your Redshift cluster to strike the right balance between cost savings and efficient data analytics. This iterative process ensures that your organization maximizes the benefits of this powerful data warehousing service, adapting to evolving needs and extracting valuable insights from your data.</p>
-
- </details> 
- <hr /> 
-
- #### - [4 Open-Source Technologies Every True Full-Stack Developer Should Master](https://dev.to/rigdev/4-open-source-technologies-every-true-full-stack-developer-should-master-33e9) 
- <details><summary>Article</summary> <p>Full-stack development is a constantly evolving, dynamic field with new tools and technologies. Developers often find themselves in pursuit of the best resources to streamline their workflow and build exceptional applications. From the frontend user interface to the backend server logic and all the data management in between, the task can seem daunting, and using the right set of tools makes all the difference. There are multiple frameworks and tools with different capabilities for every part of full-stack applications, and choosing the proper set helps simplify and streamline the development process.</p>
-
-<p>In this article, we'll explore a powerful set of open-source frameworks and tools that can be a go-to option for a number of applications when building fully functional, full-stack projects.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GwEzGfdG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1p5gi8esxt2w8te6nq53.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GwEzGfdG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1p5gi8esxt2w8te6nq53.gif" alt="Darth Full Stack" width="400" height="171"></a></p>
-
-<p>The 4 technologies that we will discuss in this article are:</p>
-
-<ol>
-<li>React.js for Frontend Development</li>
-<li>Golang for Backend Development</li>
-<li>PostgreSQL for the Database layer</li>
-<li>Rig.dev for DevOps/Deployment</li>
-</ol>
-
-<p>DevOps/Deployment has been added to expand the role of a full-stack developer within the entire development lifecycle.</p>
-
-<h2>
-  
-  
-  Frontend with Reactjs
-</h2>
-
-<p>React.js, developed and maintained by Meta (formerly Facebook), is an open-source JavaScript library for building user interfaces. React's component-based architecture sets it apart, which allows developers to break down user interfaces into reusable and encapsulated components. This approach fosters modular development and efficient rendering.</p>
-
-<p>One of the great things about Reactjs is its popularity and community support. One will find a wealth of resources, tutorials, and third-party libraries to enhance your React projects, and it's also one of the most versatile front-end frameworks.</p>
-
-<p><strong>Use Cases and Examples</strong></p>
-
-<ul>
-<li>Single-Page Applications (SPAs): React's component-based architecture is perfect for building SPAs, where dynamic content updates are essential.</li>
-<li>Progressive Web Apps (PWAs): React can create PWAs that provide a native app-like experience in the browser.</li>
-<li>Interactive User Interfaces: React simplifies the development of complex UIs with interactive elements, such as forms, dashboards, and real-time data displays.</li>
-</ul>
-
-<p><strong>Benefits of React.js:</strong></p>
-
-<ul>
-<li>Component-Based Architecture: React's component-based approach encourages code reusability and maintainability by breaking user interfaces into reusable building blocks.</li>
-<li>Virtual DOM: React's virtual DOM minimizes browser updates, resulting in faster performance and a smoother user experience.</li>
-<li>One-Way Data Flow: React's unidirectional data flow simplifies data management and enhances application predictability and testability.</li>
-</ul>
-
-<h2>
-  
-  
-  Backend with Golang
-</h2>
-
-<p>Go, often referred to as Golang is an open-source, statically typed programming language created by Google. While not a traditional backend framework, Go is known for its efficiency, simplicity, and robust standard library, making it an excellent choice for building server-side applications.</p>
-
-<p><strong>Primary Functionalities</strong></p>
-
-<ul>
-<li>Concurrency: Go's built-in concurrency primitives, like goroutines and channels, make writing highly concurrent and efficient backend code easy.</li>
-<li>Networking: Go provides robust networking support, making it suitable for building network-related applications, including network protocols, servers, and clients.</li>
-<li>Web Frameworks: Go has web frameworks like Gin and Echo that simplify building robust web services with routing, middleware support, and more.</li>
-</ul>
-
-<p><strong>Benefits of Golang:</strong></p>
-
-<ul>
-<li>Simplicity and Readability: Go's clean and minimalistic syntax promotes code readability and reduces unnecessary complexity. It encourages good coding practices and makes code easier to understand and maintain.</li>
-<li>Concurrency Support: Go provides built-in support for concurrency with goroutines and channels, making it efficient for concurrent and parallel programming.</li>
-<li>Strongly Typed and Statically Checked: It is statically typed, which means variable types are checked simultaneously, ensuring code reliability and reducing runtime errors.</li>
-<li>Cross-Platform Compatibility: Go is highly portable and compiles machine code, allowing developers to create cross-platform applications for various operating systems.</li>
-</ul>
-
-<h2>
-  
-  
-  Database layer with PostgreSQL
-</h2>
-
-<p>PostgreSQL, often called Postgres, is an open-source relational database management system (RDBMS) known for its reliability and extensibility. It supports various data types, including JSON, and offers advanced features such as indexing, replication, and partitioning.</p>
-
-<p>It is an ancient database management system and can be integrated with programming languages like Java, C, C++, etc. This feature allows developers to have customized functions.</p>
-
-<p><strong>Features of PostgreSQL:</strong></p>
-
-<ul>
-<li>ACID Compliance: PostgreSQL is fully ACID-compliant, ensuring data integrity and reliability, even in complex transactional scenarios.</li>
-<li>Advanced Indexing: PostgreSQL provides various indexing methods, including B-tree, hash, and GiST (Generalized Search Tree), allowing developers to optimize queries for multiple data types.</li>
-<li>Concurrency Control: PostgreSQL can handle concurrent access because of its Multi-Version Concurrency Control (MVCC) system. This means that multiple users can access and modify data without conflicts.</li>
-</ul>
-
-<p><strong>Benefits of using PostgreSQL:</strong></p>
-
-<ul>
-<li>Rich features and extensions: Robust features of PostgreSQL, like Multi-Version Concurrency Control (MVCC), recovery, granular access controls, tablespaces, asynchronous replication, nested transactions, and a refined query planner/optimizer make it stand out from other databases.</li>
-<li>Reliability and standards compliance: The large base of open source contributors lends it a built-in community support network. It's highly fault-tolerant, and since it's an ancient db, troubleshooting is also easy.</li>
-<li>Easy to use: You only need a little training before getting your hands dirty on PostgreSQL. It's pretty easy to learn.</li>
-</ul>
-
-<h2>
-  
-  
-  DevOps/Deployment on Kubernetes with Rig.dev
-</h2>
-
-<p>Kubernetes has become the de facto standard for how modern companies scale their applications. Developers interact with Kubernetes in one of two ways: either they are exposed to Kubernetes themselves either natively through something like Helm and Terraform, or they are working with an abstraction layer that takes control of the entire cluster, leaving no room to go out of the box without fragile external dependencies.</p>
-
-<p>While the former gives flexibility for complex solutions, it enforces a high learning curve with no abstractions. The latter, on the other hand, removes the flexibility that is often needed when scaling or building complex solutions.</p>
-
-<p>This is where Rig.dev comes into the picture!</p>
-
-<p>Rig.dev is an open-source application platform for Kubernetes, designed to eliminate its inherent complexities. It seeks to empower developers with a developer-friendly deployment engine that simplifies rolling out, managing, debugging, and scaling applications on Kubernetes. With features like Capsules and Rollouts, a slick Dashboard, and a CLI for terminal operations, Rig.dev aims to provide developers with powerful and intuitive tools.</p>
-
-<p>Rig.dev is not just another platform; it's the vision for the future of application development. It promises an application platform that evolves with your needs, all while ensuring the freedom to choose and transition between any cloud provider that supports Kubernetes.</p>
-
-<p><strong>Features of Rig.dev:</strong></p>
-
-<ul>
-<li>Capsules: Rig.dev comes with a deployment engine that wraps resources in what we call <em>Capsules</em>. A Capsule contains a bundle of resources that will be deployed as a unit.</li>
-<li>Rollouts: Deployments of a build to a specific environment and network configuration. Rollouts are immutable and are used to manage the lifecycle of the application.</li>
-<li>Dashboard and CLI compatible: Rig.dev provides a Dashboard that easily lets developers work with Application resources and the CLI where all operations are available.</li>
-</ul>
-
-<p><strong>Benefits of Rig.dev:</strong></p>
-
-<ul>
-<li>Capsules and Rollouts are modern takes on developer-friendly abstractions.</li>
-<li>Deploy well-configured applications in Kubernetes without the complexity.</li>
-<li>CI/CD pipelines that seamlessly integrate with GitHub Actions.</li>
-<li>Having both Dashboard and CLI increases the development experience.</li>
-</ul>
-
-<h2>
-  
-  
-  We'd love your support
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4-MplMEJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2voispvdhhinda8cng55.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4-MplMEJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2voispvdhhinda8cng55.gif" alt="Join us" width="640" height="640"></a></p>
-
-<p>We are not done building yet, but we would love your support on <strong><a href="http://go.rig.dev/devto/4-open-source-technologies-to-master/github">Github</a></strong>.</p>
-
-<p>Also, please join our <strong><a href="http://go.rig.dev/devto/4-open-source-technologies-to-master/discord">Discord Channel</a></strong> to share feedback, report bugs, suggest features, and stay tuned for future updates.</p>
-
- </details> 
- <hr /> 
-
- #### - [Mastering Test-Driven Development (TDD) with C# Examples](https://dev.to/bakatsiasgeorge/title-mastering-test-driven-development-tdd-with-c-examples-5fk4) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
-
-<p>In the dynamic realm of software development, the pursuit of impeccable code, devoid of pesky bugs, is the ultimate quest. Yet, this journey is fraught with challenges, particularly as projects grow in complexity. This is where Test-Driven Development (TDD) emerges as your stalwart companion. In this comprehensive article, we will delve into TDD, unravel its merits, explore how to wield it proficiently with C# (complete with authentic code illustrations), and importantly, navigate the intricacies of requirements and what precisely should be tested. We will scrutinize the facets of your software that warrant testing, with practical examples spanning functionality, data types, boundaries, UI, security, performance, integration, and more. Additionally, we will examine the role of Docker in facilitating an optimal testing environment setup.</p>
-
-<h2>
-  
-  
-  The TDD Ballet
-</h2>
-
-<p>What exactly does TDD entail? Envision TDD as a choreographed dance, with you as the choreographer:</p>
-
-<p>Step 1 Craft a Test: Picture building a calculator. Initially, you formulate a test case that articulates your code's intended behavior. It resembles composing the dance steps.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>[Test]
-public void TestAddition()
-{
-    Calculator calculator = new Calculator();
-    int result = calculator.Add(2, 3);
-    Assert.AreEqual(5, result);
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Step 2 Craft the Code: Subsequently, you script the code, ensuring it aligns with the aspirations of your test. This phase equates to instructing your dancers in the steps.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>public class Calculator
-{
-    public int Add(int a, int b)
-    {
-        return a + b;
-    }
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Step 3 Execute the Test: It's time to evaluate whether your code performs the dance flawlessly. Execute the tests and verify that they passed as expected.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>$ dotnet test
-
-</code></pre>
-
-</div>
-
-
-
-<p>Step 4 Refine: If the dance seems somewhat lacking in elegance, you can fine-tune it. Polish your code to make it sleeker, swifter, or more efficient. However, remember the golden rule: don't disrupt what's already working.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>public class Calculator
-{
-    public int Add(int a, int b)
-    {
-        if (a &lt; 0)
-        {
-            throw new ArgumentException("Input must be non-negative", nameof(a));
-        }
-        return a + b;
-    }
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Step 5 Repeat: Continuously iterate through these steps for each new segment of the dance you intend to teach.</p>
-
-<h2>
-  
-  
-  Why TDD Triumphs
-</h2>
-
-<p>TDD isn't just a dance; it's a dance-off where victory is guaranteed.</p>
-
-<p>Improved code quality: TDD can unveil any missing specifications of the feature you are developing and help find bugs early in the development cycle.</p>
-
-<p>Painless Maintenance: Your code becomes a breeze to maintain. Farewell to those late-night debugging expeditions.</p>
-
-<p>Swift Troubleshooting: If something falters, your tests pinpoint the trouble spot. No more sifting through code like a detective in a labyrinth.</p>
-
-<p>Regression Resilience: Armed with an array of tests, you can confidently introduce fresh moves without disarraying the old ones.</p>
-
-<p>Living Documentation: Your tests materialize as a cheat sheet for your code. Everyone comprehends what to expect in the dance.</p>
-
-<p>Team Harmony: TDD fosters cohesion among your team, developers and testers.</p>
-
-<h2>
-  
-  
-  What Warrants Testing in TDD
-</h2>
-
-<p>Now, let's now address the most basic question: What should be subjected to testing in TDD? Here is a thorough analysis of your software's components that demand close examination, along with real-world examples:</p>
-
-<p>Functionality Testing: This represents the very essence of TDD. You assess whether your code executes its designated functions. For instance, if you consider designing a calculator you should test against the addition function.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Illustration: Functionality Testing - Calculator's Addition
-[Test]
-public void TestAddition()
-{
-    Calculator calculator = new Calculator();
-    int result = calculator.Add(2, 3);
-    Assert.AreEqual(5, result);
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Data Type Testing: Validating data types for accuracy is essential. Ensure that the variables, inputs, and outputs you use correspond to the appropriate data type and size. This strategy works as a prevention towards data-related errors.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Illustration: Data Type Testing - Verification of Integer Data Type
-[Test]
-public void TestIntegerDataType()
-{
-    int number = 42;
-    Assert.IsInstanceOfType(number, typeof(int));
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Edge Cases and Boundaries: Probe the extremities. Investigate the outcomes when you present the smallest or largest conceivable values. For instance, if your calculator can process integers, examine its behavior with the most minuscule and colossal integers.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Illustration: Edge Cases and Boundaries - Adding one to int.MaxValue should throw an OverflowException
-[Test]
-public void AddingOneToIntMaxValueThrowsOverflowException()
-{
-    int maxValue = int.MaxValue;
-
-    Assert.Throws&lt;OverflowException&gt;(() =&gt;
-    {
-        int result = checked(maxValue + 1);
-    });
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>UI Testing with Gherkin and SpecFlow: UI testing assumes paramount importance for assuring the seamless functionality of your application's user interface. Tools such as Gherkin and SpecFlow provide a framework to draft human-readable scenarios.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Scenario: Successful User Login
-    Given the user navigates to the login page
-    When they input valid credentials
-    And click the login button
-    Then they should be directed to the dashboard
-
-</code></pre>
-
-</div>
-
-
-
-<p>Security Testing: Security should never be an afterthought. Investigate vulnerabilities such as SQL injection, cross-site scripting (XSS), and authentication flaws. Specialized security testing frameworks can ferret out and mitigate these risks.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Illustration: Security Testing - Prevention of SQL Injection
-[Test]
-public void TestSQLInjectionPrevention()
-{
-    // Simulate a SQL injection attempt
-    string userInput = "'; DROP TABLE Users; --";
-    bool isSafe = SecurityHelper.IsInputSafe(userInput);
-    Assert.IsTrue(isSafe);
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Performance and Benchmark Testing: Evaluation of your software's performance is crucial as it grows. How quickly is it able to work? Can it handle an abundance of users or data? Tools for performance testing shed light on these questions.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Illustration: Performance and Benchmark Testing - Evaluation of Response Time
-[Benchmark]
-public void MeasureResponseTime()
-{
-    PerformanceTester tester = new PerformanceTester();
-    double responseTime = tester.MeasureResponseTime();
-    Assert.IsTrue(responseTime &lt; 100); // Response time should be under 100 milliseconds
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Integration Testing: Examine the interactions between the various parts of your software. This is especially important for complex systems with several interrelated components.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Illustration: Integration Testing - API Integration Assessment
-public void TestApiIntegration()
-{
-    ApiClient apiClient = new ApiClient();
-    ApiResponse response = apiClient.Get("https://someApi.aa/Getdata");
-    Assert.AreEqual(200, response.StatusCode);
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Regression Testing: As you introduce novel features or rectify defects, it's imperative to ascertain that the existing functionality remains unaffected. Execute regression tests to apprehend unintended side effects.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In summary, Test-Driven Development (TDD) is your reliable ally in the realm of coding. It empowers you to create robust, bug-free software by putting tests at the forefront of your development process. With C# as your platform and a deep understanding of what aspects should undergo testing, you have the tools to engineer high-quality software. So, get ready to embark on your path to software excellence through TDD, where meticulous testing leads the way to success!</p>
 
  </details> 
  <hr /> 
