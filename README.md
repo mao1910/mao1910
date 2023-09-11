@@ -133,6 +133,710 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Advanced Features of PostgreSQL (Part 01)](https://dev.to/pawankukreja01/advanced-features-of-postgresql-part-01-lnb) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction:
+</h2>
+
+<p>We will now discuss some more advanced features of SQL that simplify management and prevent loss or corruption of your data. We will discuss some PostgreSQL extensions aswell.<br>
+Some examples from this chapter can also be found in advanced.sql in the tutorial directory. This file also contains some sample data to load.</p>
+
+<h2>
+  
+  
+  Views:
+</h2>
+
+<p>Suppose the combined listing of weather records and city location<br>
+is of particular interest to your application, but you do not want to type the query each time you need<br>
+it. You can create a view over the query, which gives a name to the query that you can refer to like an<br>
+ordinary table.</p>
+
+<p>Views allow you to encapsulate the details of the structure of your tables, Making liberal use of views is a key aspect of good SQL database design.<br>
+Views can be used in almost any place a real table can be used. Building views upon other views is not uncommon.</p>
+
+<h2>
+  
+  
+  Foreign Keys:
+</h2>
+
+<p>You want to make sure that no one can insert rows in the weather table that do not have a matching entry in<br>
+the cities table. This is called maintaining the referential integrity of your data. In simplistic database<br>
+systems this would be implemented (if at all) by first looking at the cities table to check if a matching<br>
+record exists, and then inserting or rejecting the new weather records.</p>
+
+<h2>
+  
+  
+  Transactions:
+</h2>
+
+<p>It is a fundamental concept of all database systems. The essential point of a transaction is that it bundles multiple steps into a single, all-or-nothing operation. The intermediate states between the steps<br>
+are not visible to other concurrent transactions, and if some failure occurs that prevents the transaction<br>
+from completing, then none of the steps affect the database at all.<br>
+When the transaction is done and acknowledged by the database system, it has been permanently recorded and not being lost if ever crash in system. Another important property of transactional databases is closely related to the notion of atomic updates. when multiple transactions are running concurrently, each one should not be able to see the incomplete changes made by others.<br>
+In PostgreSQL, a transaction is set up by surrounding the SQL commands of the transaction with BEGIN and COMMIT commands.<br>
+If partway through the transaction, we decide we do not want to commit we can issue the command ROLLBACK instead of COMMIT, and all our updates so far will be canceled. </p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Websites with AWS: Single Page Applications](https://dev.to/aws-builders/websites-with-aws-single-page-applications-59o3) 
+ <details><summary>Article</summary> <p>In my previous post, I explained how straightforward it is to host a static website on S3 with HTTPS support and a custom domain. Naturally, this should include <a href="https://en.wikipedia.org/wiki/Single-page_application">Single Page Applications</a> (SPAs) since they're essentially bundles of HTML, JS, CSS, and other assets. However, when combined with S3, SPAs pose unique challenges that manifest under specific circumstances. Let's explore the problem and its solutions.</p>
+
+<h2>
+  
+  
+  Problem with SPA
+</h2>
+
+<p>Single Page Applications, as the name suggests, comprise just one HTML file and one or more JS files. The HTML file loads on the initial request, and all the magic happens on the client side through DOM manipulation by the JS code.</p>
+
+<p>Moreover, SPAs often feature a routing component, such as React Router in React's case, which intercepts navigation requests when a link is clicked. Instead of sending an HTTP request to the server to navigate to a sub-page, the router stops the browser from navigating and simply replaces the current content. Despite this, it appears as though you're navigating since the router updates the URL.</p>
+
+<p>For instance, consider this React Router demo app deployed on S3 via static website hosting:</p>
+
+<blockquote>
+<p><a href="http://spa-hosting-example.s3-website-us-east-1.amazonaws.com/">spa-hosting-example.s3-website-us-east-1.amazonaws.com</a></p>
+</blockquote>
+
+<p>If you navigate to its sub-pages, everything should work smoothly. However, try accessing a sub-page directly or refreshing while on a sub-page like <code>/about</code>:</p>
+
+<blockquote>
+<p><a href="http://spa-hosting-example.s3-website-us-east-1.amazonaws.com/about">spa-hosting-example.s3-website-us-east-1.amazonaws.com/about</a> </p>
+</blockquote>
+
+<p>Oops, an error occurred! But why now and not earlier?</p>
+
+<p>The crux of the issue is this: when you access a resource like <code>/about</code> on a S3 website hosting bucket, it will first attempt to fetch the <code>about</code> object from the bucket's root. If this object isn't found, it'll look for <code>about/index.html</code>. If this object isn't found either, it will return <em>404 Not Found</em> error. </p>
+
+<p>On a side note: It's possible to host a website on S3, but without <em>static website hosting</em>. In this case, CloudFront accesses the S3 bucket via its REST endpoint instead of its HTTP endpoint. In this scenario, the same error would occur, but you would get a <em>403 Access Denied</em> instead of a <em>404 Not Found</em> error. This <a href="https://repost.aws/knowledge-center/s3-rest-api-cloudfront-error-403">AWS document</a> explains the various reasons for 403 errors.</p>
+
+<h3>
+  
+  
+  Solution(s)
+</h3>
+
+<p>This problem can be fixed either via S3 or CloudFront.</p>
+
+<h4>
+  
+  
+  S3 Error Document
+</h4>
+
+<p>If you're using S3's static website hosting feature, you can <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CustomErrorDocSupport.html">configure an error document</a> for <em>404 Not Found</em> errors. But, instead of a different document, you'd return the <code>index.html</code> from your SPA bundle. This means unresolved S3 requests will return the <code>index.html</code> document.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--yS_UwUoh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a6p94p3g6sqb4qimb0ye.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--yS_UwUoh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a6p94p3g6sqb4qimb0ye.png" alt="S3 Custom Error Document" width="800" height="526"></a></p>
+S3 Custom Error Document
+
+
+
+<p>It's worth noting that despite responding with the correct <code>index.html</code>, S3 will still send a <em>404</em> HTTP response code. The <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CustomErrorDocSupport.html">AWS docs</a> highlights that some browsers might override the S3 error document for <em>404</em> errors, displaying their own error page instead.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--o1oFGxLu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykzupts7bh1cc0jnlkhe.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--o1oFGxLu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykzupts7bh1cc0jnlkhe.png" alt="404 Error" width="800" height="362"></a></p>
+404 Error for sub-page /about
+
+
+
+<h4>
+  
+  
+  CloudFront Custom Error Response
+</h4>
+
+<p>CloudFront offers functionality similar to S3, enabling customized responses to HTTP error codes. For a <em>404 Not Found</em>, CloudFront can be set to return the default <code>index.html</code> document. Unlike S3, CloudFront lets us adjust the HTTP response code to <em>200 OK</em>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uYaRbYB_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yeums2mvb6iw97rzas5f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uYaRbYB_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yeums2mvb6iw97rzas5f.png" alt="CloudFront Custom Error Response" width="800" height="648"></a></p>
+CloudFront Custom Error Response
+
+
+
+<h4>
+  
+  
+  CloudFront Functions
+</h4>
+
+<p>This advanced solution involves CloudFront Functions or Lambda@Edge to inspect all incoming requests and rewrite the URLs, similar to the rewrite-rules from Apache or Nginx. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DX76XzWl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i7jq3qij80debe2a3u0y.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DX76XzWl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i7jq3qij80debe2a3u0y.png" alt="CloudFront Function" width="800" height="404"></a></p>
+CloudFront Function
+
+
+
+<p>When this function is assigned to a CloudFront distribution, requests to <code>/about</code> or <code>/about/</code> will yield the root <code>index.html</code> document. However, users won't perceive this change as it affects only the communication between CloudFront and S3, not between the user and CloudFront.</p>
+
+<p>Be aware that this function is quite rudimentary and will probably require some adjustments and review before it is used in production. For example, it only checks for a dot in the URL, and if absent, changes the URL.</p>
+
+<p>Two official AWS resources delve deeper into CloudFront or Lambda@Edge Functions:</p>
+
+<ul>
+<li><a href="https://github.com/aws-samples/amazon-cloudfront-functions/blob/main/url-rewrite-single-page-apps/README.md">URL rewrite to append index.html to the URI for single page applications</a></li>
+<li><a href="https://aws.amazon.com/blogs/compute/implementing-default-directory-indexes-in-amazon-s3-backed-amazon-cloudfront-origins-using-lambdaedge/">Implementing Default Directory Indexes in Amazon S3-backed Amazon CloudFront Origins Using Lambda@Edge</a></li>
+</ul>
+
+<h3>
+  
+  
+  Conclusion
+</h3>
+
+<p>Now, which option should you choose? As is often the case, it depends on your specific needs. S3's error document is the simplest, eliminating the need for additional services like CloudFront. But if you're already using CloudFront for HTTPS and custom domains, it would be logical to employ its custom error response feature. If your SPA isn't limited to a single index.html but has several files located in various subfolders, this method won't work. In this case, it may make sense to opt for the most powerful option and use CloudFront and Lambda@Edge Functions.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Next JS | Multi-Step Form](https://dev.to/shubhamtiwari909/next-js-multistep-form-2gc9) 
+ <details><summary>Article</summary> <p>Hello Everyone, today i will show you how you can create a multistep form in next js using a simple method.</p>
+
+<p>Technologies Used -  NEXT JS with TailwindCSS</p>
+
+<p>Let's get started...</p>
+
+<h2>
+  
+  
+  Creating 3 different form components
+</h2>
+
+<h3>
+  
+  
+  Username and Email
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// UserNameEmail.js</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">UserNameEmail</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">data</span><span class="p">,</span><span class="nx">handleChange</span><span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">max-w-xs md:max-w-lg mx-auto</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mb-10</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block text-gray-700 text-sm font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">Username</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Username...</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block text-gray-700 text-sm font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">Email</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">email</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">email</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Email...</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">email</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">UserNameEmail</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>We have created a form with name and email input fields.</li>
+<li>Using props, we are accessing the data object and handleChange method which we are going to create in our Main component along with other states.</li>
+<li>Then we have passed the handleChange method to onChange event handlers and data values to the value attribute.</li>
+</ul>
+
+<h3>
+  
+  
+  Dob and Gender
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// DobGender.js</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">DobGender</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">data</span><span class="p">,</span><span class="nx">handleChange</span><span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">max-w-xs md:max-w-lg mx-auto</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">inline-block relative w-64 mb-10</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block text-gray-700 text-sm font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">Gender</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">select</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">'</span><span class="s1">gender</span><span class="dl">'</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">gender</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">option</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">male</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Male</span><span class="o">&lt;</span><span class="sr">/option</span><span class="err">&gt;
+</span>                        <span class="o">&lt;</span><span class="nx">option</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">female</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Female</span><span class="o">&lt;</span><span class="sr">/option</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="sr">/select</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block text-gray-700 text-sm font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">dob</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">Dob</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">dob</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">date</span><span class="dl">"</span>  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">dob</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">DobGender</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>We have created a form with gender as a select input field and dob as date input field.</li>
+<li>Using props, we are accessing the data object and handleChange method which we are going to create in our Main component along with other states.</li>
+<li>Then we have passed the handleChange method to onChange event handlers and data values to the value attribute.</li>
+</ul>
+
+<h3>
+  
+  
+  Address
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// Address.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">Address</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span><span class="nx">setData</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">fullAddress</span><span class="p">,</span> <span class="nx">setFullAddress</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
+        <span class="na">house</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">locality</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">city</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">state</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">zip</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="p">})</span>
+
+    <span class="kd">const</span> <span class="nx">handleAddressChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">value</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+        <span class="nx">setFullAddress</span><span class="p">({</span>
+            <span class="p">...</span><span class="nx">fullAddress</span><span class="p">,</span>
+            <span class="p">[</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">value</span><span class="p">,</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+
+    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">isDataEmpty</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">fullAddress</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">fullAddress</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">trim</span><span class="p">()</span> <span class="o">===</span> <span class="dl">""</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// At least one property is empty</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// All properties have values</span>
+        <span class="p">};</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">isDataEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nx">setData</span><span class="p">({</span>
+                <span class="p">...</span><span class="nx">data</span><span class="p">,</span>
+                <span class="na">address</span><span class="p">:</span><span class="nx">fullAddress</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">[</span><span class="nx">fullAddress</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-full max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex flex-wrap -mx-3 mb-6</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-full md:w-1/2 px-3 mb-6 md:mb-0</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">house-no</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">House</span> <span class="nx">no</span><span class="p">.</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">house</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">house no.</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">fullAddress</span><span class="p">.</span><span class="nx">house</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleAddressChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-full md:w-1/2 px-3 mb-6 md:mb-0</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">locality</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">Locality</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">locality</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">locality</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">fullAddress</span><span class="p">.</span><span class="nx">locality</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleAddressChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex flex-wrap -mx-3 mb-2</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-full md:w-1/3 px-3 mb-6 md:mb-0</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">city</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">City</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">city</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">city</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">fullAddress</span><span class="p">.</span><span class="nx">city</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleAddressChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-full md:w-1/3 px-3 mb-6 md:mb-0</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">State</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">state</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">state</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">fullAddress</span><span class="p">.</span><span class="nx">state</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleAddressChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-full md:w-1/3 px-3 mb-6 md:mb-0</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2</span><span class="dl">"</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">zip</span><span class="dl">"</span><span class="o">&gt;</span>
+                        <span class="nx">Zip</span>
+                    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">zip</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">zip code</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">fullAddress</span><span class="p">.</span><span class="nx">zip</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleAddressChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Address</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>This one is interesting as the address has 5 input fields, we can't directly set the handler here, instead we have created another state with 5 properties for the full address and used this state to handle the input values and onChange handlers.</li>
+<li>Then created a useEffect, checking whether all the properties of fullAddress object has values or not, if it is true then we will set the original data address property to the full address state.</li>
+</ul>
+
+<h2>
+  
+  
+  Main component
+</h2>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// MainForm.js</span>
+<span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">UserNameEmail</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./UserNameEmail</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">DobGender</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./DobGender</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Address</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Address</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">MainForm</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">email</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">dob</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">gender</span><span class="p">:</span> <span class="dl">"</span><span class="s2">male</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="p">})</span>
+
+    <span class="kd">const</span> <span class="nx">handleChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">value</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+        <span class="nx">setData</span><span class="p">({</span>
+            <span class="p">...</span><span class="nx">data</span><span class="p">,</span>
+            <span class="p">[</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">value</span><span class="p">,</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+
+
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">activeTab</span><span class="p">,</span> <span class="nx">setActiveTab</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="kd">const</span> <span class="nx">formElements</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">&lt;</span><span class="nx">UserNameEmail</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="nx">handleChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">,
+</span>        <span class="o">&lt;</span><span class="nx">DobGender</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="nx">handleChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">,
+</span>        <span class="o">&lt;</span><span class="nx">Address</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span> <span class="nx">setData</span><span class="o">=</span><span class="p">{</span><span class="nx">setData</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">]</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">'</span><span class="s1">min-h-screen flex flex-col justify-center bg-slate-900</span><span class="dl">'</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="p">{</span>
+                    <span class="nx">formElements</span><span class="p">[</span><span class="nx">activeTab</span><span class="p">]</span>
+                <span class="p">}</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">'</span><span class="s1">flex flex-wrap gap-x-6 mx-auto</span><span class="dl">'</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">button</span>
+                    <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">""</span><span class="p">}</span>
+                    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setActiveTab</span><span class="p">(</span><span class="nx">prev</span> <span class="o">=&gt;</span> <span class="nx">prev</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)}</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s2">`px-4 py-2 rounded-xl bg-blue-600 text-white </span><span class="p">${</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">opacity-50 bg-slate-600</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">opacity-100</span><span class="dl">"</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span>
+                    <span class="nx">Back</span>
+                <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">button</span>
+                    <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="nx">formElements</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">""</span><span class="p">}</span>
+                    <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setActiveTab</span><span class="p">(</span><span class="nx">prev</span> <span class="o">=&gt;</span> <span class="nx">prev</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s2">`px-4 py-2 rounded-xl bg-blue-600 text-white </span><span class="p">${</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="nx">formElements</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">opacity-50 bg-slate-600</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">opacity-100</span><span class="dl">"</span><span class="p">}</span><span class="s2">`</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Next</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>                <span class="p">{</span>
+                    <span class="nx">activeTab</span> <span class="o">===</span> <span class="nx">formElements</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">?</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="dl">'</span><span class="s1">px-4 py-2 rounded-xl bg-blue-600 text-white</span><span class="dl">'</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Submit</span><span class="o">&lt;</span><span class="sr">/button&gt; : nul</span><span class="err">l
+</span>                <span class="p">}</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MainForm</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Firstly we have imported out Form components</li>
+<li>Then initializes a state variable called data using the useState hook. data is an object that represents the form data with default values for name, email, dob, gender, and address.</li>
+<li>handleChange function is responsible for updating the form data when input fields change. It extracts the name and value properties from the event target (usually an input field) and updates the data state using the spread operator to merge the new value with the existing data.</li>
+<li>Another state variable activeTab is initialized with a default value of 0. This variable is used to keep track of the currently active step/tab in the form.</li>
+<li>An array called formElements is created, which contains JSX elements for the form steps. Each step is represented by a component (UserNameEmail, DobGender, and Address) with props that include the form data and the handleChange function.</li>
+<li>We are using the activeTab state value with formElements array to render the component with a particular index value (0 -&gt; UsernameEmail, 1 -&gt; DobGender, 2 -&gt; Address)</li>
+<li>Then we have created 2 buttons, Back and Next, which will increment/decrement activeTab value by 1 to change the component, We are also disabling the Back button, if the activeTab is 0 and Disabling Next button if the activeTab is equal to the formElements array length - 1, which is the last element in the array.</li>
+<li>Finally we have a submit button which will appear only when the form is at the last step, we simply put a console log statement for the submit button, you can handle the submittion according to your need.</li>
+</ul>
+
+<p>Feel free to give suggestions in comments to improve the component and make it more reusable and efficient.<br>
+THANK YOU FOR CHECKING THIS POST<br>
+You can contact me on -<br>
+Instagram - <a href="https://www.instagram.com/supremacism__shubh/">https://www.instagram.com/supremacism__shubh/</a><br>
+LinkedIn - <a href="https://www.linkedin.com/in/shubham-tiwari-b7544b193/">https://www.linkedin.com/in/shubham-tiwari-b7544b193/</a><br>
+Email - <a href="mailto:shubhmtiwri00@gmail.com">shubhmtiwri00@gmail.com</a></p>
+
+<p>^^You can help me with some donation at the link below Thank you👇👇 ^^<br>
+☕ --&gt; <a href="https://www.buymeacoffee.com/waaduheck">https://www.buymeacoffee.com/waaduheck</a> &lt;--</p>
+
+<p>Also check these posts as well<br>
+<a href="https://dev.to/shubhamtiwari909/website-components-you-should-know-25nm">https://dev.to/shubhamtiwari909/website-components-you-should-know-25nm</a></p>
+
+<p><a href="https://dev.to/shubhamtiwari909/smooth-scrolling-with-js-n56">https://dev.to/shubhamtiwari909/smooth-scrolling-with-js-n56</a></p>
+
+<p><a href="https://dev.to/shubhamtiwari909/swiperjs-3802">https://dev.to/shubhamtiwari909/swiperjs-3802</a></p>
+
+<p><a href="https://dev.to/shubhamtiwari909/custom-tabs-with-sass-and-javascript-4dej">https://dev.to/shubhamtiwari909/custom-tabs-with-sass-and-javascript-4dej</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [8 Best Chrome Extensions Every Developer Needs🌐](https://dev.to/shivamblog/8-best-chrome-extensions-every-developer-needs-218f) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction: Welcome to the Web-Verse, Dev Heroes! 🦸‍♂️🦸‍♀️
+</h2>
+
+<p>Hey there, code warriors! 🤓 Ever felt like Peter Parker juggling between school, photography, and being Spider-Man? Web development can be just as chaotic. But don't worry, we've got your back! We've assembled a list of 8 Chrome extensions that are as essential to web developers as Spidey's web-shooters are to him. So, let's swing into action!</p>
+
+
+
+
+<h2>
+  
+  
+  1.The Iron Man Suit of Visual Debugging: VisBug🛠️
+</h2>
+
+<p>Imagine having an Iron Man suit but for visual debugging. That's what VisBug is! It's like having J.A.R.V.I.S. for your code. You can inspect elements, move them around, and even change their colors.</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.8
+</h3>
+
+<h3>
+  
+  
+  Download📥: 1M+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc">Download VisBug</a></p>
+
+
+
+
+<h2>
+  
+  
+  2.The Thor's Hammer for Web Analytics: Wappalyzer⚡
+</h2>
+
+<p>Wappalyzer is your Mjölnir for web analytics. With this extension, you can identify technologies used on websites faster than Thor can down a pint of ale.</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.6
+</h3>
+
+<h3>
+  
+  
+  Download📥: 500K+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg">Download Wappalyzer</a></p>
+
+
+
+
+<h2>
+  
+  
+  3.The Captain America Shield of Color Picking: ColorZilla🛡️
+</h2>
+
+<p>Just like Cap's shield has multiple uses, ColorZilla helps you pick colors, analyze DOM element colors, and even generate gradients. It's like having a vibranium color palette!</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.5
+</h3>
+
+<h3>
+  
+  
+  Download📥: 3M+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp">Download ColorZilla</a></p>
+
+
+
+
+<h2>
+  
+  
+  4.The Hulk Smash of Link Checking: Check My Links💪
+</h2>
+
+<p>Check My Links helps you smash through broken links like Hulk smashes through, well, everything. Validate all links on your webpage and make sure they're all Incredible!</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.5
+</h3>
+
+<h3>
+  
+  
+  Download📥: 1.5M+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf">Download Check My Links</a></p>
+
+
+
+
+<h2>
+  
+  
+  5.The Black Widow Web of SEO: Detailed SEO🕷️
+</h2>
+
+<p>Black Widow may not have superpowers, but her SEO skills are top-notch. Detailed SEO helps you plan your web development projects with the same level of precision.</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.9
+</h3>
+
+<h3>
+  
+  
+  Download📥: 1M+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/detailed-seo-extension/pfjdepjjfjjahkjfpkcgfmfhmnakjfba">Download Detailed SEO</a></p>
+
+
+
+
+<h2>
+  
+  
+  6.The Doctor Strange of Web Development: Web Developer🧙‍♂️
+</h2>
+
+<p>Web Developer is like having the Eye of Agamotto to view all realities—err, I mean web elements. It provides a toolbar for various web development tasks.</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.5
+</h3>
+
+<h3>
+  
+  
+  Download📥: 1M+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm">Download Web Developer</a></p>
+
+
+
+
+<h2>
+  
+  
+  7.The Ant-Man of Placeholder Text: Lorem Ipsum Generator🐜
+</h2>
+
+<p>Lorem Ipsum Generator is the Ant-Man of Chrome extensions. It generates placeholder text faster than Scott Lang can shrink.</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.8
+</h3>
+
+<h3>
+  
+  
+  Download📥: 10K+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/lorem-ipsum-generator/pglahbfamjiifnafcicdibiiabpakkkb">Download Lorem Ipsum Generator</a></p>
+
+
+
+
+<h2>
+  
+  
+  8.The Black Panther of JSON: JSON Viewer🐾
+</h2>
+
+<p>JSON Viewer is the Black Panther of JSON formatting. It formats JSON into a readable structure, all while shouting "Wakanda Forever!"</p>
+
+<h3>
+  
+  
+  Rating🌟: 4.6
+</h3>
+
+<h3>
+  
+  
+  Download📥: 1M+ Downloads
+</h3>
+
+<p>👉 <a href="https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh">Download JSON Viewer</a></p>
+
+
+
+
+<p>Conclusion:Time to Suit Up, Dev Avengers! 🦸‍♂️🦸‍♀️</p>
+
+<p>So, there you have it, the ultimate utility belt of Chrome extensions for web developers. It's like having the Avengers on speed dial, but for coding! Now that you're armed and fabulous, we want to hear from you. What's your secret coding weapon? What Chrome extension makes you feel like a superhero? Share your thoughts and assemble in the comments below! 🗨️</p>
+
+<p>Remember, a true hero isn't measured by the size of their strength, but by the strength of their comments. So don't be shy, let's get this comment section buzzing like Tony Stark's lab!</p>
+
+
+
+
+<p>And remember, with great power comes great responsibility... to leave a comment! 😂</p>
+
+ </details> 
+ <hr /> 
+
  #### - [📘 Just devoured "The DevOps Career Handbook" and WOW, what a gem! 🚀](https://dev.to/apetryla/just-devoured-the-devops-career-handbook-and-wow-what-a-gem-h4n) 
  <details><summary>Article</summary> <p>📘 Just devoured "The DevOps Career Handbook" by John Knight and Nate Swenson, and WOW, what a gem! 🚀</p>
 
@@ -151,270 +855,6 @@
 <p>5️⃣ 2022 Wisdom: It's fresh, folks! In an ever-evolving field like DevOps, having the latest insights is crucial.</p>
 
 <p>Have you read it? Share your thoughts below! Let's ignite a discussion and help each other rise in the DevOps universe. 🚀💬</p>
-
- </details> 
- <hr /> 
-
- #### - [🐬Top 5 MySQL GUI Clients to Command MySQL⚡️](https://dev.to/bytebase/top-5-mysql-gui-clients-to-command-mysql-8lf) 
- <details><summary>Article</summary> <p>To interact with MySQL databases, it’s common to employ MySQL GUI clients. They enable users to visually view, create and modify database objects such as tables, rows, and columns. Some familiar features of MySQL GUI clients include SQL generator and export data, which makes designing, creating, and administering MySQL databases easier and more convenient. Here, we gathered 5 best MySQL GUI Clients on the market right now.</p>
-
-<h3>
-  
-  
-  The Official: MySQL Workbench
-</h3>
-
-<p><a href="https://www.mysql.com/products/workbench/">MySQL Workbench</a> is a free database design and model access tool for MySQL, meant for database architects, developers, and of course, DBAs. It is available on Windows, Linux, as well as MacOS. Since the official MySQL vendor offers it, it looks like it's going to be free and maintained for the foreseeable future.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--33G1BbQM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lgvs92n5sg49txtwfaia.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--33G1BbQM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lgvs92n5sg49txtwfaia.png" alt="mysql-workbench" width="800" height="480"></a></p>
-
-<h3>
-  
-  
-  The Old School: phpMyAdmin
-</h3>
-
-<p>phpMyAdmin is a web-based interface to MySQL and MariaDB written in PHP that was first released back in 1998. It's open-source and free to use. For over 20 years, phpMyAdmin remains one of the most popular administration tools for MySQL databases, with a large community of users and contributors.</p>
-
-<p>A range of features are available (managing databases, tables, users, permissions, etc) and can be performed via the user-friendly interface, you can also execute SQL queries directly. However, being web-based has pros and cons: phpMyAdmin is available on all the platforms with a web browser, yet it can be prone to security attacks such as SQL injection, so make sure to take proper precautionary measures.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--MIkjGHNo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gcp5bp0qt0v43bp338rx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MIkjGHNo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gcp5bp0qt0v43bp338rx.png" alt="phpmyadmin" width="800" height="573"></a></p>
-
-<h2>
-  
-  
-  The Power Couple: Navicat &amp; DBeaver
-</h2>
-
-<h3>
-  
-  
-  Navicat
-</h3>
-
-<p><a href="https://navicat.com/">Navicat</a>'s first release came in 2002 and back then, it was a simple application only available for MySQL on Windows. Now it's available on macOS and Linux, with a long list of compatible databases, including Redis, PostgreSQL, SQL Server, Oracle, MariaDB, SQLite, MongoDB, and a handful of cloud databases.</p>
-
-<p>It is not open-source, nor does it have a free offering, you can only choose between the premium and lite (with a compact list of features and database support as compared to the premium versions.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kD234wI5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8erdfn6bmsxau33zncs8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kD234wI5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8erdfn6bmsxau33zncs8.png" alt="navicat" width="800" height="480"></a></p>
-
-<h3>
-  
-  
-  DBeaver
-</h3>
-
-<p>Unlike Navicat, which only offers commercial versions, <a href="https://dbeaver.io/">DBeaver</a> offers both open-source and commercial products. It started as a hobby project back in 2010 and was open-sourced for use in 2013. The OS version caters to most database management and administration needs, while the commercial version extends the capabilities with additional advanced features like reverse engineering, data modeling, collaboration tools, and tech support.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sMFISfMT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4tge97avtmiu6s0e4jrc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sMFISfMT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4tge97avtmiu6s0e4jrc.png" alt="dbeaver" width="800" height="433"></a></p>
-
-<p>Currently, it supports 80+ databases (SQL, NoSQL, document-oriented, key-value, big data, cloud, you name it). DBeaver is a desktop client, if you prefer web-based tools, they also have CloudBeaver.</p>
-
-<h3>
-  
-  
-  The Starlet: TablePlus
-</h3>
-
-<p>Starting in 2017, <a href="https://tableplus.com/">TablePlus</a> is the newbie on the list, and its modern and simple UI reflects it. It supports most relational databases and some NoSQL ones. When they just started, they only supported macOS, but it is now available on Windows, Linux, and iOS (!). It is not open-source, but the roadmap is open and anyone can open an issue on their GitHub Issue Tracker. TablePlus has two plans: a free tier (has no limit on trial time) and a paid subscription model (license) with extended features.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LbHuCqkc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pjlgqijg064w9d5lqeoe.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LbHuCqkc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pjlgqijg064w9d5lqeoe.png" alt="tableplus" width="800" height="541"></a></p>
-
-<p>It's worth mentioning that DBngin, a tool to <a href="https://www.bytebase.com/blog/free-tools-to-start-local-database-on-mac/">spin up a local database server</a> (currently supports PostgreSQL, MySQL, and Redis) on your Mac, is also TablePlus' and is open-source. You can connect DBngin to TablePlus to visually manage your local databases.</p>
-
-<h3>
-  
-  
-  Bytebase
-</h3>
-
-<p>Any of the aforementioned provides a UI for users to operate on databases, a SQL Editor, and the ability to export data. On the other hand, if your organization needs are beyond those and demands an extra layer of control over database queries, changes, and admin actions, try out <a href="https://www.bytebase.com/">Bytebase</a>. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Vn07wTII--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g6ltowca2e2gji3h00hn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Vn07wTII--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g6ltowca2e2gji3h00hn.png" alt="bytebase" width="800" height="609"></a></p>
-
-<p>Bytebase is an <a href="https://github.com/bytebase/bytebase">open-source</a> Database DevOps and CI/CD tool for teams, designed to centralize the control and secure your organization’s most valuable asset, the database data.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PaGP0e_E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nyepzl0wh9tulvpsrf4w.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PaGP0e_E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nyepzl0wh9tulvpsrf4w.gif" alt="wink" width="498" height="498"></a></p>
-
-<h3>
-  
-  
-  Final Thoughts
-</h3>
-
-<p>MySQL GUI Clients can be used to help you manage databases with more confidence. However, the best-fit tool depends on your level of familiarity with MySQL, and what you need to accomplish in the tool.</p>
-
- </details> 
- <hr /> 
-
- #### - [Weekly AI News and Discussion Thread](https://dev.to/ai-pulse/weekly-ai-news-and-discussion-thread-5458) 
- <details><summary>Article</summary> <p>Stay up-to-date on AI trends and connect in our weekly open thread.</p>
-
- </details> 
- <hr /> 
-
- #### - [Who Has a Positive Opinion of You?](https://dev.to/devteam/who-has-a-positive-opinion-of-you-305j) 
- <details><summary>Article</summary> <p><em>Welcome to Code Chatter, your go-to series for conversational coding insights. What makes this series of questions different from all the others? Well, truth be told, not much, but they're still thought-provoking and fun. Join us as we explore the coding world, one witty question at a time.</em></p>
-
-<blockquote>
-<p>If you had to describe yourself through the eyes of someone who thinks highly of you, what would they say about you as a coder?</p>
-</blockquote>
-
-<p>Follow the DEVteam for more discussions and online camaraderie!</p>
-
-
-<div class="ltag__user ltag__user__id__1">
-  <a href="/devteam" class="ltag__user__link profile-image-link">
-    <div class="ltag__user__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vzeA_jD8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--CMkjYEfB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg" alt="devteam image">
-    </div>
-  </a>
-  <div class="ltag__user__content">
-    <h2>
-      <a href="/devteam" class="ltag__user__link">The DEV Team</a>
-      Follow
-    </h2>
-    <div class="ltag__user__summary">
-      <a href="/devteam" class="ltag__user__link">
-        The team behind this very platform. 😄
-      </a>
-    </div>
-  </div>
-</div>
- 
-
- </details> 
- <hr /> 
-
- #### - [How I Went Viral](https://dev.to/mohammadfaisal/how-i-went-viral-e5p) 
- <details><summary>Article</summary> <p><strong><em>To read more articles like this, <a href="https://www.mohammadfaisal.dev/blog">visit my blog</a></em></strong></p>
-
-<p>7 months ago on a cold evening, I was sitting idly on my desk and thinking of doing something productive.</p>
-
-<p>Suddenly the brilliant idea of writing an article hit my mind. Although I didn’t write anything in my life up to that point.</p>
-
-<p>The medium was the obvious choice for writing because I read a lot of articles on Medium because of my job as a Software Engineer.</p>
-
-<p>So I started writing.</p>
-
-<h2>
-  
-  
-  How it Happened
-</h2>
-
-<p>My initial intention was to document the journey of myself as a software engineer. Also having a blogging portfolio can prove to my employers that I know what I am doing.</p>
-
-<p>On average the articles were viewed around 6–12 times per day and I thought to myself</p>
-
-<blockquote>
-<p>WOW! People are spending their time reading my stuff!</p>
-</blockquote>
-
-<p>It felt so good. But after some days suddenly my view count went from 20 to 500!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VqBEBZAB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2000/1%2A73WYw_fXIVC-VuLNHJ69QQ.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VqBEBZAB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2000/1%2A73WYw_fXIVC-VuLNHJ69QQ.png" alt="My first spike" width="740" height="270"></a></p>
-
-<p>It gathered a huge amount of views afterward and to this day it accumulates over <strong>30000</strong> <strong>views</strong>. That’s <strong>viral</strong> for me!</p>
-
-<p>It was a story about our mistake as startup founders. How some poor technical choice almost ruined us.</p>
-
-<p>[Costly Mistakes: Why We Had to Abandoned Firebase]( javascript.plainenglish.io](<a href="https://javascript.plainenglish.io/costly-mistakes-why-we-had-to-abandoned-firebase-b89930c10d92">https://javascript.plainenglish.io/costly-mistakes-why-we-had-to-abandoned-firebase-b89930c10d92</a> )</p>
-
-<p>Whatever the case it felt so good. And I became much more serious after that about writing.</p>
-
-<h2>
-  
-  
-  Why Though?
-</h2>
-
-<p>Honestly, at that time, I had absolutely no idea why this particular article went viral.</p>
-
-<p>But now, after 6 months I think I’m now in a better place to explain why that article went viral. And these are factors that I used my other viral stories too. So maybe there is something.</p>
-
-<h2>
-  
-  
-  1. This is a Story of Failure
-</h2>
-
-<p>This story is about <strong>failure</strong>. People love to hear about other people’s failures. One of my most favorite quotes is.</p>
-
-<blockquote>
-<p>It is not enough to succeed; others must fail — Gore Vidal</p>
-</blockquote>
-
-<p>Yes, it’s true. No matter how much you want to avoid the truth it’s actually true.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--akpUdWau--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/11520/1%2AT-s5uiIdryQ9RC1oWIp_xA.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--akpUdWau--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/11520/1%2AT-s5uiIdryQ9RC1oWIp_xA.jpeg" alt="Photo by [Nathan Cowley](https://www.pexels.com/@mastercowley?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels) from [Pexels](https://www.pexels.com/photo/man-in-blue-and-brown-plaid-dress-shirt-touching-his-hair-897817/?utm_content=attributionCopyText&amp;utm_medium=referral&amp;utm_source=pexels)" width="800" height="533"></a></p>
-
-<p>This is explained in <a href="https://www.psychologytoday.com/us/blog/in-the-name-love/200901/why-are-we-pleased-others-misfortune">this article </a>very nicely. And I think this is a factor why people <strong>engaged</strong> with that particular article.</p>
-
-<h2>
-  
-  
-  2. Powerful Word in The Title
-</h2>
-
-<p>According to <a href="https://kajabi.com/blog/power-words">this website</a></p>
-
-<blockquote>
-<p>A <strong>power word</strong> (also sometimes confused as a trigger <strong>word</strong>) is a <strong>word</strong> that evokes an emotion and a response. It instills in people the desire or need to respond to whatever you’re presenting them with.</p>
-</blockquote>
-
-<p>I used the word <strong>“Abandon”</strong> in the title which is a <strong>power word</strong>. It was a spontaneous choice back then but later I found out it’s an important factor in writing a <strong>great title</strong> for your article.</p>
-
-<p>I think this word in the title <strong>triggered</strong> many people to click on the article.</p>
-
-<h3>
-  
-  
-  3. Against Popular Opinion
-</h3>
-
-<p>In my article, I talked about the technology <strong>Firebase.</strong> Which is loved by many people and for good reasons. There are tons of articles about why it’s great and all.</p>
-
-<p>But unfortunately in our case, we failed to make the most out of it. That’s why people got curious about how we failed.</p>
-
-<p>Many people in the comments also expressed their anger and pointed out why it was our fault that we failed to utilize it. (But forgot that I wrote the article to explain just that :p )</p>
-
-<h3>
-  
-  
-  4. Luck
-</h3>
-
-<p>Well….. most probably you saw it coming.</p>
-
-<blockquote>
-<p>I am not trying to pretend to be a wizard who just figured out the algorithm.</p>
-</blockquote>
-
-<p>After all the things that you can do there is still a crucial factor that is <strong>LUCK.</strong> Maybe some of my other articles had similar <strong>juices</strong> as that first article but didn’t take off.</p>
-
-<p>And that’s life for you. Write more consistently and write the best version that you possibly can.</p>
-
-<blockquote>
-<p>Because it’s the only thing that is in your control</p>
-</blockquote>
-
-<p>Best of luck with your writing journey. I hope you enjoyed it reading as much as I enjoyed writing it.</p>
-
-<h2>
-  
-  
-  Resources
-</h2>
-
-<ol>
-<li><p><a href="https://www.psychologytoday.com/us/blog/in-the-name-love/200901/why-are-we-pleased-others-misfortune">https://www.psychologytoday.com/us/blog/in-the-name-love/200901/why-are-we-pleased-others-misfortune</a></p></li>
-<li><p><a href="https://kajabi.com/blog/power-words">https://kajabi.com/blog/power-words</a></p></li>
-</ol>
-
-<p>Have a Great Day! :D</p>
-
-<p>Get in touch with me via <a href="https://www.linkedin.com/in/56faisal/">LinkedIn</a> or <a href="https://www.mohammadfaisal.dev/">Personal Website</a></p>
 
  </details> 
  <hr /> 
