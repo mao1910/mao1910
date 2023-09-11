@@ -133,972 +133,1203 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Scoped C# - What you need to know (Guide)](https://dev.to/bytehide/scoped-c-what-you-need-to-know-guide-1a4g) 
- <details><summary>Article</summary> <p>Hey there, C# enthusiasts and pros alike! Buckle up as we dive deep into the ocean of C# to uncover the true essence of ‘Scoped C#’. This journey promises to be exciting, immersive, and informative. Just like Captain Nemo’s Nautilus, we are heading for a deep dive. Ready?</p>
+ #### - [Dependency Injection for Games — Appendix: Injection Container](https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd) 
+ <details><summary>Article</summary> <p>In the main <a href="https://dev.to/filippoceffa/dependency-injection-for-games-4dhb">Dependency Injection for Games</a> article, we explained how <strong>Dependency Injection</strong> helps you organize your <strong>game</strong> or <strong>game engine</strong> architecture, but we did not address one inconvenient issue that affects it.</p>
+
+<p>In large applications, Dependency Injection requires the user to write and maintain a lot of tedious and time-consuming <strong>boilerplate code</strong>.</p>
+
+<p>The goal of this appendix is to demonstrate how this burden can be relieved by using a <strong>Dependency Injection Container</strong> library.</p>
+
+<p>We will start by defining the problem, and providing a theoretical solution. Finally, we will show how a Container solves the problem in practice.</p>
 
 <h2>
   
   
-  Understanding the Concept of Scoped C#
+  Practical problem
 </h2>
 
-<p>Scoped C# is a versatile feature that allows programmers to manage the lifetimes of objects, encapsulating them within blocks of code or methods. The main essence of ‘Scoped C#’ lies in controlling the accessibility and duration of variables and objects. Let’s dig deeper into this concept, unveiling the myriad facets of it as we go along.</p>
-
-<p>A scope in C# can be defined as a block of code where a variable or a function has its existence. It’s like a house where your variables and functions live. When we talk about scoped C#, it’s about how and where in the ‘house’ these variables and functions are defined and used.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="c1">//class-level scope: variable can be accessed by all methods within the class</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">SampleClass</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">classLevelVariable</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
-
-    <span class="k">void</span> <span class="nf">MethodOne</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">methodOneVariable</span> <span class="p">=</span> <span class="n">classLevelVariable</span><span class="p">;</span> <span class="c1">// OK</span>
-    <span class="p">}</span>
-
-    <span class="k">void</span> <span class="nf">MethodTwo</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">methodTwoVariable</span> <span class="p">=</span> <span class="n">classLevelVariable</span><span class="p">;</span> <span class="c1">// Also OK</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Here, classLevelVariable is defined at the class level and hence, its scope extends to all methods within the SampleClass.</p>
-
-<h3>
-  
-  
-  Importance of Scoped C#
-</h3>
-
-<p>Understanding C# scoping is imperative for any C# developer. Not only it helps us control the visibility and lifespan of your variables and objects, but it also aids in maintaining code neatness and reducing errors.</p>
-
-<p>When we talk about scoping, variables are like your belongings and scopes are like rooms in a house. You wouldn’t want your personal belongings scattered all over the house, would you? The same concept applies in programming. Scoped C# ensures that each variable and object stays confined to its appropriate block (room), facilitating organized and error-free code.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">SampleMethod</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Local scope inside a method</span>
-    <span class="kt">int</span> <span class="n">localVariable</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Block scope inside the 'if' statement</span>
-        <span class="kt">int</span> <span class="n">blockVariable</span> <span class="p">=</span> <span class="n">localVariable</span><span class="p">;</span> <span class="c1">// OK</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Error: blockVariable doesn't exist here</span>
-    <span class="kt">int</span> <span class="n">anotherVariable</span> <span class="p">=</span> <span class="n">blockVariable</span><span class="p">;</span> 
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, the blockVariable is defined within the ‘if’ block and is not accessible outside it. Trying to use blockVariable outside the ‘if’ block results in an error. This prevents misuse and creates clear, compartmentalized (or “scoped”) code.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="p">(</span><span class="n">SqlConnection</span> <span class="n">connection</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SqlConnection</span><span class="p">(</span><span class="n">connectionString</span><span class="p">))</span>
-<span class="p">{</span>
-    <span class="n">connection</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
-    <span class="c1">// Perform database operations</span>
-    <span class="kt">var</span> <span class="n">command</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SqlCommand</span><span class="p">(</span><span class="n">queryString</span><span class="p">,</span> <span class="n">connection</span><span class="p">);</span>
-    <span class="n">command</span><span class="p">.</span><span class="nf">ExecuteNonQuery</span><span class="p">();</span>
-<span class="p">}</span> 
-<span class="c1">// Connection is automatically closed as we leave the defined scope</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Here, the scope is clearly defined for the SqlConnection object. The database connection is automatically closed once we step out of the using block. This way, Scoped C# not only makes your code manageable and efficient but also ensures optimal use of resources by automatically handling the disposal of objects saving you from potential memory leaks.</p>
-
-<p>As you can see, learning the ropes of scoping in C# is more than just the icing on the cake — it’s more like the entire recipe!</p>
-
-<h2>
-  
-  
-  Introduction to AddScoped C#
-</h2>
-
-<p>The term ‘AddScoped C#’ might seem like techno-jargon at first, but once you understand it, you’ll see it’s rather straightforward. It’s a method that comes from ASP.NET Core’s built-in service container. It is used for setting up services to be used via dependency injection.</p>
-
-<p>When we say AddScoped, it means a new instance of the specified service is created and shared within each individual request to the application. That’s how it helps in managing resource utilization and isolation during the processing of HTTP requests.</p>
-
-<p>Here’s a little secret: <em>AddScoped</em> is like the tailor of the programming world – just like a tailor stitches each outfit uniquely for each customer order, AddScoped creates a unique service instance for each unique request.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">services</span><span class="p">.</span><span class="n">AddScoped</span><span class="p">&lt;</span><span class="n">IMyService</span><span class="p">,</span> <span class="n">MyService</span><span class="p">&gt;();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>By invoking ‘AddScoped’ in the ‘ConfigureServices’ method, you’re telling .NET to add a scoped service of type ‘IMyService’ that, when requested, will return an instance of ‘MyService’.</p>
-
-<h3>
-  
-  
-  Use Cases of AddScoped C#
-</h3>
-
-<p>It’s easy to get lost in the world of codes and methods. That’s why it’s important to understand where and how to use our newly acquired AddScoped knowledge. In C#, whenever we need to maintain a consistent behavior within a single transaction or a single HTTP request, that’s where AddScoped comes into play. Let’s say we are processing an HTTP Request in an MVC application and we have a service that retrieves user data from a database.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="n">services</span><span class="p">.</span><span class="n">AddScoped</span><span class="p">&lt;</span><span class="n">IUserDataService</span><span class="p">,</span> <span class="n">UserDataService</span><span class="p">&gt;();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This code registers the UserDataService using an interface IUserDataService with a scoped lifetime. This means, within the scope of a single request, whenever IUserDataService is injected or used, it will provide the same instance of UserDataService. This ensures data consistency within a single transaction or request.</p>
-
-<p>Let’s look at another scenario. Suppose you have a shopping cart functionality and you want each user or client to maintain their own cart-contents during their session or while their request is being processed.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="n">services</span><span class="p">.</span><span class="n">AddScoped</span><span class="p">&lt;</span><span class="n">IShoppingCartService</span><span class="p">,</span> <span class="n">ShoppingCartService</span><span class="p">&gt;();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Here, the ShoppingCartService instance created for each unique request (or user) will be different, ensuring a unique, private cart for each user.</p>
-
-<p>In essence, AddScoped proves to be a game-changer in scenarios demanding consistency per request and user-specific behavioral patterns. It simplifies resource management and enables smoother application performance. It’s like having a personal assistant entrusted with the task of remembering and managing specific chores for you; it’s that efficient!</p>
-
-<h3>
-  
-  
-  Implementing C# File Scoped Namespace in Projects
-</h3>
-
-<p>Time to dive into the practical world and iron out the theory with some concrete examples of file scoped namespace.</p>
-
-<p>The traditional namespace declaration looked something like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Project</span>
-<span class="p">{</span>
-    <span class="k">class</span> <span class="nc">MyClass</span>
-    <span class="p">{</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the above lines of code, we’ve created a namespace ‘Project’ and a class ‘MyClass’. You can see ‘MyClass’ is indented as it is inside the namespace ‘Project’ braces.</p>
-
-<p>While nothing is wrong with this approach, C# 10 presents the file-scoped namespace, allowing for a sleeker declaration.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Project</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">MyClass</span>
-<span class="p">{</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>As you can notice, the class declaration is at the same indent level as the namespace declaration itself. Not a single character more than necessary. You can immediately notice how it removes the extra indentations and reduces the clutter in the code, making it more readable.</p>
-
-<p>This is the power of the “C# file scoped namespace”. It serves to be a crucial organizational tool that works wonders for larger files where there are multiple classes, as it significantly cuts down on unnecessary indentation.</p>
-
-<p>Imagine having a large piece of code that spans multiple pages; decluttering and tidiness that file-scoped namespace offers can be a real lifesaver. The less clutter there is, the easier it is to read and maintain the code. So next time you’re working on a large project, consider using the file-scoped namespace feature to give your code a cleaner and neater look and enhance readability.</p>
-
-<p>C# Scoped Services form a significant part of the ASP.NET core services. Generally, three types of service lifetimes exist in ASP.NET Core: Singleton, Transient, and Scoped. Scoped services hold a unique position as they are created once per client request (connection). This allows you to share resources within a request, making your programming more efficient.</p>
-
-<h3>
-  
-  
-  Advantages of C# Scoped Services
-</h3>
-
-<p>There are several advantages to using Scoped services in C#. Here are a few of them with corresponding code examples.</p>
-
-<ul>
-<li>  <strong>Share Resources</strong> – Scoped services allow you to instantiate a service once and share it across your application. This can be advantageous when several parts of complex applications need to communicate with each other, as shown below:
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Registering our service with AddScoped </span>
-    <span class="n">services</span><span class="p">.</span><span class="n">AddScoped</span><span class="p">&lt;</span><span class="n">IMyService</span><span class="p">,</span> <span class="n">MyService</span><span class="p">&gt;();</span>
-    <span class="c1">// Now MyService can be shared and utilized within the application scope</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this code example, we’ve added to the collection of services. This service can now be shared and utilized within the application scope.</p>
-
-<ul>
-<li>  <strong>Less Memory Consumption</strong> – Since the service is created once for each user request, rather than each call within the request, there is less memory consumption as compared to Transient services. This aids in creating applications that are memory efficient.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">MyController</span> <span class="p">:</span> <span class="n">Controller</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IMyService</span> <span class="n">_myService</span><span class="p">;</span> <span class="c1">// Scoped service instance</span>
-
-    <span class="c1">// The instance is injected through a constructor</span>
-    <span class="k">public</span> <span class="nf">MyController</span><span class="p">(</span><span class="n">IMyService</span> <span class="n">myService</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_myService</span> <span class="p">=</span> <span class="n">myService</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Index</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">_myService</span><span class="p">.</span><span class="nf">DoThings</span><span class="p">();</span> <span class="c1">// Usage of the same instance initiated per request</span>
-        <span class="k">return</span> <span class="nf">View</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this code example, any usage of the object in an action method would refer to the same instance of throughout the entire request.</p>
-
-<ul>
-<li>  <strong>Better Data Consistency</strong> – If a service is retrieving and working on data, Scoped services provide better data consistency since the same instance of the service is used through a single request.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">MyActionFilter</span> <span class="p">:</span> <span class="n">IActionFilter</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IMyDataService</span> <span class="n">_myDataService</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="nf">MyActionFilter</span><span class="p">(</span><span class="n">IMyDataService</span> <span class="n">myDataService</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_myDataService</span> <span class="p">=</span> <span class="n">myDataService</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">void</span> <span class="nf">OnActionExecuting</span><span class="p">(</span><span class="n">ActionExecutingContext</span> <span class="n">context</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="n">_myDataService</span><span class="p">.</span><span class="nf">RetrieveData</span><span class="p">();</span>
-        <span class="c1">// The same instance of MyDataService is used for retrieving data</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">void</span> <span class="nf">OnActionExecuted</span><span class="p">(</span><span class="n">ActionExecutedContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this case, the instance of is kept consistent throughout the request, ensuring that all data operations are synchronized.</p>
-
-<p>However, just like the two sides of a coin, C# Scoped Services also have certain limitations. So be aware and conscious of how and where you are using them.</p>
-
-<h3>
-  
-  
-  Disadvantages of C# Scoped Services
-</h3>
-
-<ul>
-<li>  <strong>Not Suitable for Multi-Threaded Environments</strong> – In a multi-threaded environment, Scoped services can lead to problems since they are not thread safe. Multiple threads can potentially modify service data simultaneously, creating a data inconsistency.</li>
-<li>  <strong>Limited Lifetime</strong> – Scoped services have a lifetime only for the duration of a single request. The service must be created again for every new request, which can possibly introduce additional computation.</li>
-<li>  <strong>Potential Memory Leaks</strong> – If Scoped services are not properly disposed of, they can create memory leaks. The developer must ensure that the services are correctly disposed of after the request finishes.</li>
-</ul>
-
-<p>What’s important to take away from this discussion is that choosing scopes for your services is critical. Their choice and utilization depends on the lifecycle required, whether they involve database communication, or whether concurrent access is possible, among others. In conclusion, a <a href="https://www.bytehide.com/blog/solid-principles-in-csharp">solid</a> understanding of Scoped services and their applicability in C# programming will certainly allow more efficient and coherent coding practices.</p>
-
-<h3>
-  
-  
-  A Closer Look at C# CreateScope Method
-</h3>
-
-<p>As a C# developer, frequently you might find yourself in a situation where you need to create your own scope for services. This is particularly the case when you’re handling background tasks or hosted services. The in C# is an apt method for such situations.</p>
-
-<h3>
-  
-  
-  Boost Your Coding Practices with CreateScope C#
-</h3>
-
-<p>The ‘CreateScope’ method provided by the .NET core’s built-in IoC container enables you to create a new DI (Dependency Injection) scope within your application. Here’s a simple code snippet to illustrate this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code>    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">scope</span> <span class="p">=</span> <span class="n">serviceProvider</span><span class="p">.</span><span class="nf">CreateScope</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="kt">var</span> <span class="n">service</span> <span class="p">=</span> <span class="n">scope</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetService</span><span class="p">&lt;</span><span class="n">MyService</span><span class="p">&gt;();</span>
-        <span class="c1">// Utilize the service</span>
-    <span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the code snippet above, the method is employed to orchestrate a new Dependency Injection (DI) scope. Within this scope, we can call to access any scoped services. The statement ensures our scope is properly disposed of at the end of the block.</p>
-
-<p>So I guess our journey is coming to an end, my friend. This tour of the awesome island of ‘Scoped C#’ must have been enriching, wasn’t it? As it’s said, knowledge is best put to use when shared. So, why not pass along the wisdom and see the magic of ‘Scoped C#’ spreading in the coding universe. Happy coding!</p>
-
- </details> 
- <hr /> 
-
- #### - [Using Bash and Python Together](https://dev.to/sm0ke/using-bash-and-python-together-2bli) 
- <details><summary>Article</summary> <p>Hello Coders! </p>
-
-<p><strong><a href="https://www.docs.deploypro.dev/blog/using-bash-and-python">Using Bash and Python together</a></strong> to automate tasks on a Linux system is a powerful combination. <strong>Bash</strong> is the default shell in most Linux distributions, and <strong>Python</strong> is a versatile scripting language. <code>Thanks for reading!</code></p>
-
-
-
-
-<p>Here's a step-by-step guide on how to get started with using them together for automation:</p>
-
-<h2>
-  
-  
-  <strong>Install Python</strong>
-</h2>
-
-<p>Most Linux distributions come with Python preinstalled. You can check the installed Python version by running:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>python <span class="nt">--version</span>
-</code></pre>
-
-</div>
-
-
-
-<p>If Python is not installed or you want to use a specific version, you can install it using your distribution's package manager. For example, on Ubuntu:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get update
-<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>python3
-</code></pre>
-
-</div>
-
-
-
-
-
-<h2>
-  
-  
-  ✅ <strong>Write Python Scripts</strong>
-</h2>
-
-<p>Create Python scripts to perform specific tasks or automation. Python is a versatile language for various automation needs, from file manipulation to web scraping. <br>
-You can use Python's built-in libraries or install additional packages as needed.</p>
-
-<p>Here's a <strong>simple example of a Python</strong> script that prints "Hello, World!" to the terminal:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="c1">#!/usr/bin/env python3
-</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<blockquote>
-<p><strong>Make Scripts Executable</strong>:</p>
-</blockquote>
-
-<p>To run <strong>Python</strong> scripts as executable files from the command line, you need to make them executable. You can do this using the <code>chmod</code> command. For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">chmod</span> +x myscript.py
-</code></pre>
-
-</div>
-
-
-
-
-
-<h2>
-  
-  
-  ✅ <strong>Use Bash for Script Execution</strong>
-</h2>
-
-<p>You can use Bash to call and execute your Python scripts. For instance:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c">#!/bin/bash</span>
-
-python3 myscript.py
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  ✅ <strong>Pass Command-Line Arguments</strong>
-</h2>
-
-<p>You can pass command-line arguments to your Python script from Bash. These arguments can be used to customize the behavior of your script. <br>
-In Python, you can access these arguments using the <code>sys.argv</code> list from the <code>sys</code> module. For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Hello, "</span> <span class="o">+</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s">"!"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>When calling this script from Bash, you can provide a name as an argument: <code>./myscript.py Alice</code> will print "Hello, Alice!"</p>
-
-
-
-
-<h2>
-  
-  
-  ✅ <strong>Automate Common Tasks</strong>
-</h2>
-
-<p>Identify tasks you want to automate on your Linux system. These tasks can range from file operations, backups, system maintenance, and more.</p>
-
-<p>Write Python scripts that perform these tasks, and use Bash scripts to schedule them with tools like <code>cron</code> for regular execution.</p>
-
-
-
-
-<h2>
-  
-  
-  ✅ <strong>Error Handling and Logging</strong>
-</h2>
-
-<p>Implement error handling and logging in your Python scripts to capture and handle exceptions gracefully. This ensures that you can troubleshoot issues and monitor the automation process effectively.</p>
-
-
-
-
-<h2>
-  
-  
-  ✅ <strong>Security Considerations</strong>
-</h2>
-
-<p>Be mindful of security when automating tasks. Avoid storing sensitive information like passwords in plain text within your scripts. Instead, use secure methods like environment variables or encrypted files.</p>
-
-
-
-
-<h2>
-  
-  
-  ✅ <strong>Testing and Debugging</strong>
-</h2>
-
-<p>Test your scripts thoroughly in a safe environment before deploying them for production use. Use debugging tools available in both Bash and Python to troubleshoot issues.</p>
-
-
-
-
-<h2>
-  
-  
-  ✅ More Advanced Samples
-</h2>
-
-<p>Here are a few more advanced examples of using Bash and Python together for automation on a Linux system:</p>
-
-<h3>
-  
-  
-  <strong>Automated Backup Script</strong>
-</h3>
-
-<p>This script combines Bash and Python to create an automated backup system. It identifies files to back up, compresses them, adds a timestamp, and stores them in a specified backup directory.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c">#!/bin/bash</span>
-
-<span class="c"># Define backup directory and create it if it doesn't exist</span>
-<span class="nv">backup_dir</span><span class="o">=</span><span class="s2">"/path/to/backup"</span>
-<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$backup_dir</span>
-
-<span class="c"># Create a timestamp for the backup</span>
-<span class="nv">timestamp</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> +%Y%m%d%H%M%S<span class="si">)</span>
-
-<span class="c"># Define directories to back up</span>
-<span class="nv">source_dir</span><span class="o">=</span><span class="s2">"/path/to/source"</span>
-
-<span class="c"># Archive and compress the source directory</span>
-<span class="nb">tar</span> <span class="nt">-czf</span> <span class="nv">$backup_dir</span>/backup_<span class="nv">$timestamp</span>.tar.gz <span class="nt">-C</span> <span class="nv">$source_dir</span> <span class="nb">.</span>
-
-<span class="c"># Optionally, remove old backups to save space</span>
-find <span class="nv">$backup_dir</span> <span class="nt">-type</span> f <span class="nt">-mtime</span> +7 <span class="nt">-exec</span> <span class="nb">rm</span> <span class="o">{}</span> <span class="se">\;</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h3>
-  
-  
-  <strong>Automated System Monitoring Script</strong>
-</h3>
-
-<p>This script uses Bash to collect system information and Python to send notifications. <br>
-It periodically checks system metrics like CPU usage, memory usage, and disk space and sends an email notification if any metrics exceed predefined thresholds.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c">#!/bin/bash</span>
-
-<span class="c"># Define threshold values</span>
-<span class="nv">max_cpu_usage</span><span class="o">=</span>80
-<span class="nv">max_memory_usage</span><span class="o">=</span>90
-<span class="nv">min_disk_space</span><span class="o">=</span>10
-
-<span class="c"># Get system metrics</span>
-<span class="nv">cpu_usage</span><span class="o">=</span><span class="si">$(</span>top <span class="nt">-b</span> <span class="nt">-n</span> 1 | <span class="nb">awk</span> <span class="s1">'/%Cpu/{print $2}'</span><span class="si">)</span>
-<span class="nv">memory_usage</span><span class="o">=</span><span class="si">$(</span>free <span class="nt">-m</span> | <span class="nb">awk</span> <span class="s1">'/Mem/{printf("%.2f", $3/$2*100)}'</span><span class="si">)</span>
-<span class="nv">disk_space</span><span class="o">=</span><span class="si">$(</span><span class="nb">df</span> <span class="nt">-h</span> / | <span class="nb">awk</span> <span class="s1">'/\//{print $5}'</span> | <span class="nb">sed</span> <span class="s1">'s/%//'</span><span class="si">)</span>
-
-<span class="c"># Check and send notifications if thresholds are exceeded</span>
-<span class="k">if</span> <span class="o">((</span> <span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$cpu_usage</span><span class="s2"> &gt; </span><span class="nv">$max_cpu_usage</span><span class="s2">"</span> | bc <span class="nt">-l</span><span class="si">)</span> <span class="o">))</span><span class="p">;</span> <span class="k">then
-    </span>python3 send_notification.py <span class="s2">"High CPU Usage Alert: </span><span class="nv">$cpu_usage</span><span class="s2">%"</span>
-<span class="k">fi
-
-if</span> <span class="o">((</span> <span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$memory_usage</span><span class="s2"> &gt; </span><span class="nv">$max_memory_usage</span><span class="s2">"</span> | bc <span class="nt">-l</span><span class="si">)</span> <span class="o">))</span><span class="p">;</span> <span class="k">then
-    </span>python3 send_notification.py <span class="s2">"High Memory Usage Alert: </span><span class="nv">$memory_usage</span><span class="s2">%"</span>
-<span class="k">fi
-
-if</span> <span class="o">((</span> <span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$disk_space</span><span class="s2"> &lt; </span><span class="nv">$min_disk_space</span><span class="s2">"</span> | bc <span class="nt">-l</span><span class="si">)</span> <span class="o">))</span><span class="p">;</span> <span class="k">then
-    </span>python3 send_notification.py <span class="s2">"Low Disk Space Alert: </span><span class="nv">$disk_space</span><span class="s2">%"</span>
-<span class="k">fi</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this script, <code>send_notification.py</code> is a Python script that sends email or other types of notifications using libraries like <code>smtplib</code>.</p>
-
-
-
-
-<h3>
-  
-  
-  <strong>Web Scraping and Data Analysis Script</strong>
-</h3>
-
-<p>This script uses Python's BeautifulSoup library for web scraping and data analysis. It fetches data from a website, parses it, and performs data analysis or visualization tasks.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># Define the URL to scrape
-</span><span class="n">url</span> <span class="o">=</span> <span class="s">"https://example.com/data"</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="c1"># Parse HTML content
-</span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="s">"html.parser"</span><span class="p">)</span>
-
-<span class="c1"># Extract and process data
-</span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">"data-item"</span><span class="p">):</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">"value"</span><span class="p">).</span><span class="n">text</span>
-    <span class="n">label</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"span"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">"label"</span><span class="p">).</span><span class="n">text</span>
-    <span class="n">data</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">label</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
-
-<span class="c1"># Create a DataFrame
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"Label"</span><span class="p">,</span> <span class="s">"Value"</span><span class="p">])</span>
-
-<span class="c1"># Plot data
-</span><span class="n">plt</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">"Label"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s">"Value"</span><span class="p">])</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Labels"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Values"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Data Visualization"</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="c1"># Save or display the plot
-</span><span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">"data_plot.png"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>These advanced examples demonstrate the flexibility and power of combining <strong>Bash and Python</strong> for automation on a Linux system. </p>
-
-
-
-
-<h3>
-  
-  
-  Critical Files Monitoring
-</h3>
-
-<p>Monitoring critical files for changes and sending email notifications when edits occur can be a valuable security and auditing measure. Here's a Bash and Python script combination to achieve this:</p>
-
-<p><strong>Bash Script (<code>file_monitor.sh</code>)</strong>:</p>
-
-<p>This Bash script will periodically check the critical files for changes using their checksums (MD5 in this example). If a change is detected, it will trigger a Python script to send an email notification.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c">#!/bin/bash</span>
-
-<span class="c"># Define the critical files to monitor</span>
-<span class="nv">file1</span><span class="o">=</span><span class="s2">"/path/to/critical_file1.txt"</span>
-<span class="nv">file2</span><span class="o">=</span><span class="s2">"/path/to/critical_file2.txt"</span>
-
-<span class="c"># Store the initial checksums</span>
-<span class="nv">md5sum1</span><span class="o">=</span><span class="si">$(</span><span class="nb">md5sum</span> <span class="s2">"</span><span class="nv">$file1</span><span class="s2">"</span><span class="si">)</span>
-<span class="nv">md5sum2</span><span class="o">=</span><span class="si">$(</span><span class="nb">md5sum</span> <span class="s2">"</span><span class="nv">$file2</span><span class="s2">"</span><span class="si">)</span>
-
-<span class="k">while </span><span class="nb">true</span><span class="p">;</span> <span class="k">do</span>
-    <span class="c"># Calculate the current checksums</span>
-    <span class="nv">current_md5sum1</span><span class="o">=</span><span class="si">$(</span><span class="nb">md5sum</span> <span class="s2">"</span><span class="nv">$file1</span><span class="s2">"</span><span class="si">)</span>
-    <span class="nv">current_md5sum2</span><span class="o">=</span><span class="si">$(</span><span class="nb">md5sum</span> <span class="s2">"</span><span class="nv">$file2</span><span class="s2">"</span><span class="si">)</span>
-
-    <span class="c"># Compare checksums to detect changes</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$md5sum1</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"</span><span class="nv">$current_md5sum1</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-        </span>python3 send_notification.py <span class="s2">"Change detected in </span><span class="nv">$file1</span><span class="s2"> by </span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="s2">"</span>
-        <span class="nv">md5sum1</span><span class="o">=</span><span class="s2">"</span><span class="nv">$current_md5sum1</span><span class="s2">"</span>
-    <span class="k">fi
-
-    if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$md5sum2</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"</span><span class="nv">$current_md5sum2</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-        </span>python3 send_notification.py <span class="s2">"Change detected in </span><span class="nv">$file2</span><span class="s2"> by </span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="s2">"</span>
-        <span class="nv">md5sum2</span><span class="o">=</span><span class="s2">"</span><span class="nv">$current_md5sum2</span><span class="s2">"</span>
-    <span class="k">fi</span>
-
-    <span class="c"># Adjust the sleep interval (e.g., 5 minutes)</span>
-    <span class="nb">sleep </span>300
-<span class="k">done</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Python Script (<code>send_notification.py</code>)</strong>:</p>
-
-<p>This Python script sends email notifications when changes are detected. It uses the <code>smtplib</code> library to send emails via SMTP. You'll need to configure your SMTP server and credentials.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="kn">import</span> <span class="nn">smtplib</span>
-<span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
-<span class="kn">from</span> <span class="nn">email.mime.multipart</span> <span class="kn">import</span> <span class="n">MIMEMultipart</span>
-
-<span class="c1"># Email configuration
-</span><span class="n">sender_email</span> <span class="o">=</span> <span class="s">"your_email@gmail.com"</span>
-<span class="n">receiver_email</span> <span class="o">=</span> <span class="s">"recipient_email@example.com"</span>
-<span class="n">password</span> <span class="o">=</span> <span class="s">"your_email_password"</span>
-<span class="n">smtp_server</span> <span class="o">=</span> <span class="s">"smtp.gmail.com"</span>
-<span class="n">smtp_port</span> <span class="o">=</span> <span class="mi">587</span>
-
-<span class="c1"># Create the email message
-</span><span class="n">subject</span> <span class="o">=</span> <span class="s">"File Change Alert"</span>
-<span class="n">body</span> <span class="o">=</span> <span class="s">"A change was detected in one of the critical files."</span>
-<span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEMultipart</span><span class="p">()</span>
-<span class="n">msg</span><span class="p">[</span><span class="s">'From'</span><span class="p">]</span> <span class="o">=</span> <span class="n">sender_email</span>
-<span class="n">msg</span><span class="p">[</span><span class="s">'To'</span><span class="p">]</span> <span class="o">=</span> <span class="n">receiver_email</span>
-<span class="n">msg</span><span class="p">[</span><span class="s">'Subject'</span><span class="p">]</span> <span class="o">=</span> <span class="n">subject</span>
-<span class="n">msg</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="n">MIMEText</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="s">'plain'</span><span class="p">))</span>
-
-<span class="c1"># Send the email
-</span><span class="k">try</span><span class="p">:</span>
-    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="p">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtp_server</span><span class="p">,</span> <span class="n">smtp_port</span><span class="p">)</span>
-    <span class="n">server</span><span class="p">.</span><span class="n">starttls</span><span class="p">()</span>
-    <span class="n">server</span><span class="p">.</span><span class="n">login</span><span class="p">(</span><span class="n">sender_email</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-    <span class="n">server</span><span class="p">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">sender_email</span><span class="p">,</span> <span class="n">receiver_email</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">as_string</span><span class="p">())</span>
-    <span class="n">server</span><span class="p">.</span><span class="n">quit</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Email sent successfully."</span><span class="p">)</span>
-<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"Email sending failed:"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<blockquote>
-<p><strong>Note</strong></p>
-</blockquote>
+<p>When examining the <code>main()</code> function in our dummy game application, we see that Dependency Injection burdens the user with two tedious tasks:</p>
 
 <ol>
-<li>Replace the paths to your critical files in the Bash script.</li>
-<li>Configure the email settings (sender_email, receiver_email, password, SMTP server, and SMTP port) in the Python script.</li>
-<li>For security reasons, it's recommended to use an application-specific password if you're using Gmail or a similar email service.</li>
-<li>You may need to allow less secure apps to access your Gmail account if you're using Gmail for sending emails.</li>
+<li><p>Construct systems in an appropriate order;</p></li>
+<li><p>Manually pass dependencies to their dependent systems.<br>
+</p></li>
 </ol>
 
-<p>This combination of Bash and Python scripts will monitor the specified files and send an email notification whenever a change is detected, including the user who made the edit.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">State</span> <span class="n">state</span><span class="p">{};</span>
+    <span class="c1">// 1: User must construct Physics before Simulation</span>
+    <span class="n">Physics</span> <span class="n">physics</span><span class="p">{};</span> 
+    <span class="n">Simulation</span> <span class="n">simulation</span> <span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">physics</span><span class="p">};</span>
+    <span class="n">OpenGL</span> <span class="n">openGL</span><span class="p">{};</span>
+    <span class="n">Rendering</span> <span class="n">rendering</span><span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">openGL</span><span class="p">};</span>
+    <span class="c1">// 2: User must manually pass simulation and rendering to Loop</span>
+    <span class="n">Loop</span> <span class="n">loop</span><span class="p">{</span><span class="n">simulation</span><span class="p">,</span> <span class="n">rendering</span><span class="p">};</span> 
+<span class="p">}</span>
+</code></pre>
+
+</div>
 
 
 
+<p>This is a negligible problem in our simple example, but the cost to write and modify this boilerplate code grows significantly in an application with hundreds of systems. Is there a better way than to do this work by hand?</p>
 
-<p><code>In summary</code>, By combining the power of <strong>Bash and Python</strong>, you can automate a wide range of tasks on your Linux system, making your administration and workflow more efficient. </p>
+<h2>
+  
+  
+  Theoretical solution
+</h2>
 
-<p>Remember to continuously improve and refine your automation scripts based on your evolving needs.</p>
+<p>From a theoretical point of view, our problem is very clear — we are working with a <strong>directed acyclic graph</strong>, where nodes represent systems, and edges represent dependencies:</p>
 
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--I8LgMMnd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mwxfhckqd6n5ey4k2d69.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--I8LgMMnd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mwxfhckqd6n5ey4k2d69.jpg" alt="Image description" width="800" height="267"></a></p>
+
+<p>This graph contains all the information to automate the two manual tasks:</p>
+
+<ol>
+<li><p>Systems construction order is determined by a depth-first traversal.</p></li>
+<li><p>Passing dependencies only requires knowing the edges of the graph.</p></li>
+</ol>
+
+<p>How can we take advantage of this knowledge in our implementation?</p>
+
+<h2>
+  
+  
+  Dependency Injection Container
+</h2>
+
+<p>The <strong>Container</strong> is the software that implements our theoretical solution. Let’s take an overview at how it works:</p>
+
+<ul>
+<li><p>The user provides the list of services (the nodes) to the Container.</p></li>
+<li><p>The Container infers the dependencies (the edges) by looking at the parameters of the system constructors.</p></li>
+<li><p>The Container constructs and destructs systems in the correct order.</p></li>
+<li><p>The Container passes dependencies to the dependent systems.</p></li>
+</ul>
+
+<p>What follows is a possible API for a <strong>Container library</strong>, written in <strong>C++</strong>. Please, be aware that the API refers to systems as “<strong>components</strong>”, a more common term in the context of Dependency Injection:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// We register components with the ComponentSet helper class.</span>
+    <span class="c1">// No construction happens here, and systems can be added in any order.</span>
+    <span class="n">ComponentSet</span> <span class="n">components</span><span class="p">;</span> 
+    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Loop</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Physics</span><span class="o">&gt;</span><span class="p">();</span>       
+    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Rendering</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Simulation</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">OpenGL</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="c1">// Systems are constructed in correct order in Container constructor</span>
+    <span class="n">Container</span> <span class="n">container</span><span class="p">{</span><span class="n">components</span><span class="p">};</span> 
+
+<span class="p">}</span> <span class="c1">// Systems are destructed in reverse order in Container destructor</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The Container can also support <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a>, we only need to specify which system implements an interface:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="c1">// Rendering depends on IGraphics</span>
+<span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">Rendering</span><span class="o">&gt;</span><span class="p">();</span> 
+
+<span class="c1">// OpenGL implements IGraphics</span>
+<span class="n">components</span><span class="p">.</span><span class="n">add</span><span class="o">&lt;</span><span class="n">OpenGL</span><span class="o">&gt;</span><span class="p">().</span><span class="n">implements</span><span class="o">&lt;</span><span class="n">IGraphics</span><span class="o">&gt;</span><span class="p">();</span> 
+</code></pre>
+
+</div>
+
+
+
+<p>Integrating a Container in your application is <strong>non-invasive</strong>— the only file that depends on the Container is <code>main.cpp</code>.</p>
+
+<h2>
+  
+  
+  Conclusions
+</h2>
+
+<p>A Container is a great tool to reduce Dependency Injection boilerplate code. However, there are some drawbacks:</p>
+
+<ul>
+<li><p>It is an additional dependency to maintain in your project.</p></li>
+<li><p>An invalid graph is detected at runtime instead of compile time.</p></li>
+</ul>
+
+<p>In the end, whether to use a Container or not is up to you — it is perfectly possible to adopt Dependency Injection without using one.</p>
+
+<p>You will need to evaluate how much time you waste writing and modifying boilerplate code, and decide if using a Container is worth the tradeoff.</p>
+
+<h2>
+  
+  
+  Next steps
+</h2>
+
+<ul>
+<li><p>If you wish to check out the <strong>implementation</strong> of the dummy game application using a Container, or are curious about the theory and implementation of a <strong>C++ Container library</strong>, please refer to the accompanying <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub repository</strong></a>.</p></li>
+<li><p>If you haven’t yet, read the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a>.</p></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Dependency Injection for Games — Appendix: Dependency Inversion](https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc) 
+ <details><summary>Article</summary> <p>In the main <a href="https://dev.to/filippoceffa/dependency-injection-for-games-4dhb">Dependency Injection for Games</a> article, we used a dummy game application as an example to explain how <strong>Dependency Injection</strong> can help you organize your <strong>game</strong> or <strong>game engine</strong> architecture.</p>
+
+<p>For the sake of simplicity, the example intentionally omitted a technique commonly adopted in real-world applications: <strong>Dependency Inversion</strong>.</p>
+
+<p>The goal of this appendix is to expand our problem to include Dependency Inversion, and prove that Dependency Injection remains the ideal solution.</p>
+
+<p>We will start by introducing Dependency Inversion through a <strong>practical example</strong>, by modifying our dummy game application to make use of it.</p>
+
+<h2>
+  
+  
+  Problem (re)definition
+</h2>
+
+<p>First, let’s recap the dependency graph of our dummy game application:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7uE5jjZD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zht9t50o6clxldhvhq1u.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7uE5jjZD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zht9t50o6clxldhvhq1u.jpg" alt="Image description" width="800" height="267"></a></p>
+
+<p>Rendering uses the <code>OpenGL</code> graphics API, but as the requirements of our project grow, we may want <code>Rendering</code> to work with multiple graphics APIs. The following scenarios are common:</p>
+
+<ul>
+<li><p>We wish <code>Rendering</code> to support both <code>Vulkan</code> and <code>OpenGL</code>, and select the appropriate API at runtime, based on a command-line argument.</p></li>
+<li><p>We wish to test <code>Rendering</code> using a <code>Mock</code> graphics API, in order to make test results independent of graphics API details.</p></li>
+</ul>
+
+<p>We can provide this flexibility by making <code>Rendering</code> depend on the <code>IGraphics</code> interface, and make <code>OpenGL</code>, <code>Vulkan</code> and <code>Mock</code> implement it:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--S8LLL0n8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w106jnfrfzsx118hbguh.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--S8LLL0n8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w106jnfrfzsx118hbguh.jpg" alt="Image description" width="800" height="267"></a></p>
+
+<p>This solution follows the <strong>Dependency Inversion</strong> principle, which states that systems should depend on interfaces instead of implementations:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Rdf1NuHC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r22oq2o1jkbw28u6b19p.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Rdf1NuHC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r22oq2o1jkbw28u6b19p.jpg" alt="Image description" width="800" height="267"></a></p>
+
+<p>The introduction of Dependency Inversion slightly changes the nature of our problem — we are not dealing anymore with a dependency graph of systems, but with a <strong>dependency graph of systems and interfaces</strong>.</p>
+
+<p>In the next section we will see how Dependency Injection comfortably supports these new requirements, and remains the ideal solution to organize your game architecture.</p>
+
+<h2>
+  
+  
+  Problem solution
+</h2>
+
+<p>Dependency Inversion shields a system from the implementation details of its dependencies, including their <strong>constructors</strong>.</p>
+
+<p>Consequently, when adopting Dependency Inversion, a system cannot be responsible for creating its own dependencies. They must be created somewhere else, and shared with the system through their interface.</p>
+
+<p>An application that adopts <strong>Dependency Injection</strong> creates all systems in <code>main()</code>, and forwards them to their dependent systems. This provides the perfect framework to support Dependency Inversion:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">OpenGL</span> <span class="n">openGL</span><span class="p">{};</span>             <span class="c1">// dependency created outside system</span>
+    <span class="n">Rendering</span> <span class="n">rendering</span><span class="p">{</span><span class="n">openGL</span><span class="p">};</span> <span class="c1">// dependency passed to system</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The only step necessary to adopt Dependency Inversion is to change a system’s dependency from a concrete implementation to an interface:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="k">class</span> <span class="nc">OpenGL</span> <span class="o">:</span> <span class="n">IGraphics</span> <span class="p">{...};</span>
+
+<span class="n">Rendering</span><span class="o">::</span><span class="n">Rendering</span><span class="p">(</span><span class="n">OpenGL</span><span class="o">&amp;</span><span class="p">){}</span>    <span class="c1">// Injection, but not Inversion</span>
+<span class="n">Rendering</span><span class="o">::</span><span class="n">Rendering</span><span class="p">(</span><span class="n">IGraphics</span><span class="o">&amp;</span><span class="p">){}</span> <span class="c1">// Injection and Inversion</span>
+</code></pre>
+
+</div>
 
 
 
 <h2>
   
   
-  Resources
+  Conclusions
 </h2>
 
-<ul>
-<li>👉 <a href="https://deploypro.dev/">Deploy Projects</a> using your preferred provider: <code>AWS</code>, <code>GCP</code>, <code>Azure</code> and GCP (soon)</li>
-<li>👉 Get <a href="https://deploypro.dev/support/">Deployment Support</a> from the team behind this service</li>
-<li>👉 Join the <a href="https://discord.gg/qQhjQZhnur">Community</a> and chat with the team behind <code>DeployPRO</code> </li>
-</ul>
+<p>Dependency Injection can effortlessly support Dependency Inversion.</p>
 
- </details> 
- <hr /> 
+<p>Dependency Inversion is a powerful tool in your toolbox — it has <strong>benefits</strong> in modularity and testability, and it has <strong>drawbacks</strong> in complexity and performance. Like every tool, it should be used when appropriate.</p>
 
- #### - [Weekly Roundup (Sep 4): 🔥Hot Topics🔥 in #workplace, #sharepoint, and #powerplatform](https://dev.to/jaloplo/weekly-roundup-sep-4-hot-topics-in-workplace-sharepoint-and-powerplatform-g81) 
- <details><summary>Article</summary> <p>Hey fellow developers! It's <a class="mentioned-user" href="https://dev.to/jaloplo">@jaloplo</a>, here to give you the latest scoop on what's been happening in the <a href="https://dev.to/t/workplace">#workplace</a>, <a href="https://dev.to/t/sharepoint">#sharepoint</a>, and <a href="https://dev.to/t/powerplatform">#powerplatform</a> communities. 😎</p>
+<p>Dependency Injection grants you full control in deciding if and where to adopt Dependency Inversion, allowing you to design your game or game engine architecture in complete flexibility.</p>
 
 <h2>
   
   
-  <a href="https://dev.to/t/workplace">#workplace</a>
+  Next steps
 </h2>
 
 <ul>
-<li>
-<a href="https://dev.to/hackathons/what-is-an-internal-hackathon-4382">What is an internal hackathon?</a> by <a href="https://dev.to/igeligel">Kevin Peters</a>
-</li>
-<li>
-<a href="https://dev.to/mudassirali007/employee-monitoring-systemor-spying-system-ft-kickidler-2fip">Employee Monitoring System or Spying System ft. kickidler</a> by <a href="https://dev.to/mudassirali007">Mudassir Ali</a>
-</li>
-<li>
-<a href="https://dev.to/teambuildingpro/unleash-your-rhythm-with-drum-circle-activities-2pbp">Unleash Your Rhythm with Drum Circle Activities!</a> by <a href="https://dev.to/teambuildingpro">TeamBuildingPro</a>
-</li>
+<li><p>Check out the accompanying <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub repository</strong></a>, which contains an <strong>implementation</strong> of the dummy game application.</p></li>
+<li><p>If you haven’t yet, read the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd"><strong>Injection Container</strong></a>.</p></li>
 </ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Dependency Injection for Games](https://dev.to/filippoceffa/dependency-injection-for-games-4dhb) 
+ <details><summary>Article</summary> <p>Whether you are a <strong>game programmer</strong> or a <strong>game engine developer</strong>, a well-organized architecture is crucial to keep your project maintainable, readable, and safe— especially if you work with a team on a large codebase.</p>
+
+<p>This article aims to present the concept of <strong>Dependency Injection</strong>, and to show how it can help you to easily structure your <strong>game architecture</strong> in a robust and flexible way, without any performance overhead.</p>
+
+<p>Using a dummy game application as a <strong>practical example</strong>, we will start by defining the problem we intend to solve. We will try different strategies, and demonstrate how Dependency Injection emerges as the ideal solution.</p>
+
+<p>We will use <strong>C++</strong>, the go-to language for high-performance applications, but the ideas discussed are universal, and applicable in other languages.</p>
+
+<p>The code presented in this article is available on <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub</strong></a>.</p>
 
 <h2>
   
   
-  <a href="https://dev.to/t/powerplatform">#powerplatform </a>
+  Problem Definition
+</h2>
+
+<p>Games are complex applications, consisting of multiple unique systems, such as Rendering or Physics. In a typical game application, systems are initialized on startup, they interact with each other for the lifetime of the application, and are destroyed when the application terminates.</p>
+
+<p>Some systems are specific to the game being developed, while others are more general, and are typically wrapped into a <strong>game engine</strong>:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1liPNz6N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/69oeromapt1g1yj72j9a.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1liPNz6N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/69oeromapt1g1yj72j9a.jpg" alt="Image description" width="800" height="171"></a></p>
+
+<p>In our discussion we will not consider this separation, and refer to any system in the application as a <strong>game system</strong>.</p>
+
+<p>Let’s now introduce the example that will accompany us for the rest of this article — a dummy 2D game application where two red circles bounce around the screen. Our game consists of just a handful of systems:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--m954nEyH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fjc5gds55wsdo6q55dpt.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m954nEyH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fjc5gds55wsdo6q55dpt.jpg" alt="Image description" width="800" height="76"></a></p>
+
+<ul>
+<li><p><code>State</code> holds the state of the game: the circle positions and velocities.</p></li>
+<li><p><code>Simulation</code> moves circles in the <code>update()</code> method, modifying <code>State</code>.</p></li>
+<li><p><code>Physics</code> is used by <code>Simulation</code> in <code>update()</code> to resolve circle collisions.</p></li>
+<li><p><code>Rendering</code> reads <code>State</code>, and draws circles on screen with <code>render()</code>.</p></li>
+<li><p><code>OpenGL</code> wraps the OpenGL API, required by <code>Rendering</code> to <code>render()</code>.</p></li>
+<li><p><code>Loop</code> runs the game loop, which calls <code>update()</code> and then <code>render()</code>.</p></li>
+</ul>
+
+<p>Let’s identify the <strong>dependencies</strong> between our systems:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--m8oyXBAt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3rgilpclp6cfjzvluzl6.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m8oyXBAt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3rgilpclp6cfjzvluzl6.jpg" alt="Image description" width="800" height="267"></a></p>
+
+<p>The design of our application is nicely represented by a graph, where nodes represent systems, and edges represent dependencies. In particular, this is a <strong>directed acyclic graph</strong>, where there is no circular dependency.</p>
+
+<p>Now that we have a solid theoretical understanding of how to organize our architecture, it is time to introduce the concrete problem at the core of this article: <strong>how do we turn this theory into practice?</strong></p>
+
+<p>We wish to find a way to <strong>accurately</strong> express our theoretical architecture in code, with a focus on <strong>clarity</strong>, <strong>safety</strong>, <strong>modularity</strong> and <strong>performance</strong>.</p>
+
+<p>Instead of trying to derive our solution from these high-level goals, in the next section we will proceed bottom-up, and <strong>dive into implementation</strong>. As we try different strategies, we will get a practical understanding of what problems we wish to avoid, and we will define rules that we wish to follow.</p>
+
+<p>Eventually, we will converge on an ideal solution: <strong>Dependency Injection</strong>.</p>
+
+
+
+
+<blockquote>
+<p>Further reading:<br>
+For simplicity, we ignore the situation where systems implement and depend on interfaces, quite common in real game applications. If you are interested to know more, refer to the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a> after finishing this article.</p>
+</blockquote>
+
+<h2>
+  
+  
+  Problem Solution
+</h2>
+
+<h3>
+  
+  
+  Attempt 1: Systems are global variables
+</h3>
+
+<p>Based on the problem definition, we know that game systems must be unique, created at startup, and destroyed at shutdown. These requirements are satisfied by creating a global variable for each system:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="c1">// State.h</span>
+<span class="k">class</span> <span class="nc">State</span><span class="p">{...};</span>     <span class="c1">// class definition</span>
+<span class="k">extern</span> <span class="n">State</span> <span class="n">g_state</span><span class="p">;</span> <span class="c1">// global variable declaration</span>
+
+<span class="c1">// State.cpp</span>
+<span class="n">State</span> <span class="n">g_state</span><span class="p">{};</span>      <span class="c1">// global variable definition</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Systems access dependencies directly from global state:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="cp">#include</span> <span class="cpf">&lt;State.h&gt;</span><span class="cp">
+</span><span class="n">Simulation</span><span class="o">::</span><span class="n">Simulation</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">g_state</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>One problem with global variables is that we do not control their construction order. If <code>g_simulation</code> happens to be constructed before <code>g_state</code>, the above code causes an uninitialized memory access.</p>
+
+<p>We wish to have a way to guarantee that <code>g_simulation</code> is constructed after <code>g_state</code>. And, to avoid the same issue in the destructor, we also wish to guarantee that <code>g_simulation</code> is destroyed before <code>g_state</code>.</p>
+
+<p>Let’s formalize our wish in a rule:</p>
+
+<blockquote>
+<p>Rule 1: Systems must be created after / destroyed before dependencies.</p>
+</blockquote>
+
+<p>Another problem with global variables is that their access is not limited to constructors — they can be accessed from anywhere:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="kt">void</span> <span class="n">Simulation</span><span class="o">::</span><span class="n">update</span><span class="p">()</span> 
+<span class="p">{</span> 
+    <span class="n">g_state</span><span class="p">.</span><span class="n">write</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This freedom has a side effect — it becomes difficult to understand the dependencies of a system, because they are not listed in a single place.</p>
+
+<p>Unclear dependencies make it hard to understand the architecture, to refactor, and to make changes. Let’s define a rule to prevent this situation:</p>
+
+<blockquote>
+<p>Rule 2: Dependencies must be explicit.</p>
+</blockquote>
+
+<p>The final issue with global variables is the potential to easily introduce <strong>circular dependencies</strong> between systems:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code><span class="kt">void</span> <span class="n">Physics</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span> 
+<span class="p">{</span>
+    <span class="n">g_rendering</span><span class="p">.</span><span class="n">bar</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Rendering</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">g_physics</span><span class="p">.</span><span class="n">bar</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To ensure that our codebase remains <strong>modular</strong> and <strong>maintainable</strong>, we wish to forbid circular dependencies altogether:</p>
+
+<blockquote>
+<p>Rule 3: Introducing circular dependencies must be prevented.</p>
+</blockquote>
+
+<h3>
+  
+  
+  Attempt 2: Systems own dependencies
+</h3>
+
+<p>Let’s make systems responsible for managing their own dependencies. <br>
+The dependencies are member variables, created in the constructor:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code> <span class="n">Loop</span><span class="o">::</span><span class="n">Loop</span><span class="p">()</span>
+ <span class="o">:</span> <span class="n">m_simulation</span><span class="p">{}</span> <span class="c1">// dependency created here</span>
+ <span class="p">,</span> <span class="n">m_rendering</span><span class="p">{}</span>
+ <span class="p">{}</span>
+
+<span class="n">Loop</span><span class="o">::~</span><span class="n">Loop</span><span class="p">(){}</span> <span class="c1">// dependency destroyed here</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Using constructor recursion, a system creates its entire dependency subgraph. Consequently, constructing the root system <code>Loop</code> triggers the creation of every system.</p>
+
+<p>We construct our application by creating <code>Loop</code> on the stack of <code>main()</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="n">Loop</span> <span class="n">loop</span><span class="p">{};</span> <span class="c1">// recursively construct every system</span>
+ <span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>A problem arises when multiple systems, like <code>Simulation</code> and <code>Rendering</code>, depend on the same system, such as <code>State</code>. Both <code>Simulation</code> and <code>Rendering</code> create separate copies of <code>State</code>, but systems must be <strong>unique</strong>.</p>
+
+<p>To resolve this, we can create <code>State</code> within <code>Loop</code>, the parent system of <code>Simulation</code> and <code>Rendering</code>, and have <code>Loop</code> share <code>State</code> with their constructors by reference:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code> <span class="n">Loop</span><span class="o">::</span><span class="n">Loop</span><span class="p">()</span>
+ <span class="o">:</span> <span class="n">m_state</span><span class="p">{}</span> <span class="c1">// create here</span>
+ <span class="p">,</span> <span class="n">m_simulation</span><span class="p">{</span><span class="n">m_state</span><span class="p">}</span> <span class="c1">// share reference</span>
+ <span class="p">,</span> <span class="n">m_rendering</span><span class="p">{</span><span class="n">m_state</span><span class="p">}</span> <span class="c1">// share reference</span>
+ <span class="p">{}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This solution patches the problem, but it introduces an extra dependency. We have failed to exactly map our theoretical architecture into code:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2LE8KrMT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kf1c5vj2yv30lr697we5.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2LE8KrMT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kf1c5vj2yv30lr697we5.jpg" alt="Image description" width="800" height="267"></a></p>
+
+<p>There is a fundamental problem with this approach that prevents us from converging on an ideal solution. In order to understand it, we should take a step back, and start thinking in terms of <strong>responsibilities.</strong></p>
+
+<p>Systems are burdened with <strong>two</strong> responsibilities:</p>
+
+<ol>
+<li><p><strong>Functionality:</strong> executing the logic that defines system behavior.</p></li>
+<li><p><strong>Structure</strong>: creating, destroying, organizing, passing dependencies.</p></li>
+</ol>
+
+<p>The dependency graph should only reflect dependencies that occur due to <strong>functionality</strong>, such as <code>Simulation</code> depending on <code>Physics</code> for collision resolution. However, the need for organizing the application <strong>structure</strong> introduces additional dependencies, such as <code>Loop</code> depending on <code>State</code>.</p>
+
+<p>To resolve this problem, we wish to follow the <strong>single responsibility principle</strong>, and give systems a single responsibility: <strong>functionality</strong>.</p>
+
+<blockquote>
+<p>Rule 4: Systems must not be responsible to structure the application.</p>
+</blockquote>
+
+<h3>
+  
+  
+  Successful attempt: Systems receive dependencies
+</h3>
+
+<p>In this final attempt, the responsibility for structuring the application is moved to <code>main()</code>, where every system is created in the correct order, and passed as dependency to other systems:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="n">State</span> <span class="n">state</span><span class="p">{};</span>
+     <span class="n">Physics</span> <span class="n">physics</span><span class="p">{};</span>
+     <span class="n">Simulation</span> <span class="n">simulation</span> <span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">physics</span><span class="p">};</span>
+     <span class="n">OpenGL</span> <span class="n">openGL</span><span class="p">{};</span>
+     <span class="n">Rendering</span> <span class="n">rendering</span><span class="p">{</span><span class="n">state</span><span class="p">,</span> <span class="n">openGL</span><span class="p">};</span>
+     <span class="n">Loop</span> <span class="n">loop</span><span class="p">{</span><span class="n">simulation</span><span class="p">,</span> <span class="n">rendering</span><span class="p">};</span>  
+ <span class="p">}</span> <span class="c1">// out of scope: system destructed in reverse order</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Systems are no longer responsible for structuring the application. They receive their dependencies through the <strong>constructor</strong>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight cpp"><code> <span class="n">Loop</span><span class="o">::</span><span class="n">Loop</span><span class="p">(</span><span class="n">Simulation</span><span class="o">&amp;</span> <span class="n">simulationRef</span><span class="p">,</span> <span class="n">Rendering</span><span class="o">&amp;</span> <span class="n">renderingRef</span><span class="p">)</span>
+ <span class="p">,</span> <span class="n">m_simulationRef</span><span class="p">{</span><span class="n">simulationRef</span><span class="p">}</span>
+ <span class="p">,</span> <span class="n">m_renderingRef</span><span class="p">{</span><span class="n">renderingRef</span><span class="p">}</span>
+ <span class="p">{}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This approach follows all our rules:</p>
+
+<blockquote>
+<p>Rule 1: Systems must be created after / destroyed before dependencies.</p>
+</blockquote>
+
+<p>✅ System is outlived by its dependency, as it is created later on the stack.</p>
+
+<blockquote>
+<p>Rule 2: Dependencies must be explicit.</p>
+</blockquote>
+
+<p>✅ The signature of the system constructor lists all dependencies.</p>
+
+<blockquote>
+<p>Rule 3: Introducing circular dependencies must be prevented.</p>
+</blockquote>
+
+<p>✅ It is impossible to order system creation to cause a cycle.</p>
+
+<blockquote>
+<p>Rule 4: Systems must not be responsible to structure the application.</p>
+</blockquote>
+
+<p>✅ Application structure is entirely determined in main().</p>
+
+<p>Success!</p>
+
+<p>We converged on a solution that precisely implements our theoretical architecture, while being simple, safe, modular and efficient.</p>
+
+<p>As promised, this ideal solution is none other than an implementation of <strong>Dependency Injection</strong>.</p>
+
+<blockquote>
+<p>Dependency Injection is a programming technique in which an object [..] receives other objects [..] that it depends on.<br>
+(Wikipedia)</p>
+</blockquote>
+
+
+
+
+<blockquote>
+<p>Further reading:<br>
+In applications with a large number of systems, the cost to write and modify the code in <code>main()</code> is significant. If you wish to learn of an automated solution to reduce the boilerplate code, refer to the appendix on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd"><strong>Injection Container</strong></a>.</p>
+</blockquote>
+
+<h2>
+  
+  
+  Conclusions
+</h2>
+
+<p>I hope this article was able to make you excited about Dependency Injection, and its application in game development.</p>
+
+<p>By adopting Dependency Injection, you will quickly realize how radically it improves your everyday game development experience:</p>
+
+<ul>
+<li><p>You will easily understand, reason and discuss your architecture.</p></li>
+<li><p>You will quickly refactor and make changes with peace of mind.</p></li>
+<li><p>You will never worry about accessing uninitialized dependencies.</p></li>
+</ul>
+
+<p>I suggest that you try adopting Dependency Injection in your own project, and I believe you will not be able to look back!</p>
+
+<h2>
+  
+  
+  Next steps
 </h2>
 
 <ul>
+<li><p>Check out the accompanying <a href="https://github.com/Ceffa93/dependency_injection_for_games"><strong>GitHub repository</strong></a>, which contains an <strong>implementation</strong> of the dummy game application.</p></li>
+<li><p>Read the appendices on <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-dependency-inversion-3coc"><strong>Dependency Inversion</strong></a> and <a href="https://dev.to/filippoceffa/dependency-injection-for-games-appendix-injection-container-5ebd"><strong>Injection Container</strong></a>.</p></li>
+<li><p>If you have any questions, or wish to share your thoughts, please feel free to leave a <strong>comment</strong>, or to contact me on <a href="https://www.linkedin.com/in/filippoceffa/"><strong>LinkedIn</strong></a>.</p></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [The Flow Blockchain Hackaton Season 2](https://dev.to/glazer/the-flow-blockchain-hackaton-season-2-j5m) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Intro
+</h2>
+
+<p>My second hackathon was on the Flow chain. You might ask why I specifically chose Flow and not any other hackathon? The answer is quite simple. I was part of the community from the very beginning; during the ICO, when I first heard about the project and invested in Flow at 60 cents per coin. It was a good deal, especially when Flow's cost rose up to $40 per coin. At that time, all the coins were locked, making it impossible for ICO investors to sell any. I was only able to sell them at $17, which, in my opinion, was great. Since then, I've actively followed the community. I wanted to participate in hackathon season 1 but was busy with several other projects. So, when I heard about the upcoming hackathon season 2, I was very excited to participate in it with my charity idea that I had for a long time in my mind.</p>
+
+<p>Before diving any deeper, you can try project yourself by visiting <a href="https://prayforua.com">https://prayforua.com</a> or you might also want to see the use case on YouTube:</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/Zk6X8abE_BU">
+</iframe>
+</p>
+
+<h2>
+  
+  
+  Flow: Cadence, FCL Official Guide
+</h2>
+
+<p>Since it was my first time working with the Flow ecosystem, I decided to use the official guide to learn Cadence and <a href="https://developers.flow.com/tooling/fcl-js/api">FCL - Flow Client Library</a>, which we will talk about later.</p>
+
+<p>The official guide helped me understand Cadence better, guiding me through the most common use cases. Although very useful, I found it a bit verbose, with many articles written so that readers could jump in at any point. This led to repetition and made it seem clunky. Other than that, it took me around 6-8 hours to finish, leading to a basic understanding of the language principles and architecture of blockchain projects using the Flow ecosystem. Both Cadence and FCL were developed by DapperLabs, providing a consistent developer experience. Their API also seemed mature to me, even tho It's a new language and API might change in the future, covering almost everything a developer might need, it might ever work for an enterprise-sized project.<br>
+My project was smaller, but it still required a lot of smart contracts, I'll describe that in Architecture section.</p>
+<h3>
+  
+  
+  Cadence Compared to Other Languages
+</h3>
+
+<p>For those who don't know, <a href="https://developers.flow.com/cadence/language">Cadence</a> is a new programming language for smart contracts written by Dapper Labs.</p>
+
+<p>I was very curious to try Cadence, having heard about this language a some time ago, with its resource-oriented nature akin to Rust. Compares it with the well-established Solidity that I've used.</p>
+<h4>
+  
+  
+  Resource-Oriented Nature
+</h4>
+
+<p>One of the standout features of Cadence is its resource-oriented nature, drawing parallels with the programming language Rust. Rust gained prominence for its efficient resource allocation mechanism, centered around borrowing and lending. Similarly, Cadence employs a similar principle: resources can exist in only one location at a time. This fundamental concept guarantees resource safety, particularly for tokens and other critical resources within the smart contract ecosystem. This design choice not only enhances security but also contributes to the predictability and reliability of smart contracts.</p>
+<h4>
+  
+  
+  Enhanced Security
+</h4>
+
+<p>Cadence's resource-oriented approach inherently addresses some of the security concerns that plagued Solidity-based contracts. By preventing resource duplication and enforcing strict ownership rules, Cadence minimizes the potential for vulnerabilities such as reentrancy attacks and unauthorized token transfers. This focus on security aligns with Dapper Labs vision of providing a robust platform for building decentralized applications without compromising on safety. On the other hand Solidity's design allowed for pitfalls such as reentrancy attacks, which posed a significant security threat.</p>
+<h2>
+  
+  
+  My Hackathon Project
+</h2>
+
+<p><strong>Let's briefly examine the app architecture and the main concept of my hackathon project.</strong></p>
+
+<p><a href="https://camo.githubusercontent.com/ee5dfcc51e41f4756d367910c69dc4d864d7f606e6d1a2504dec70d093d9da44/68747470733a2f2f646576666f6c696f2d70726f642e73332e61702d736f7574682d312e616d617a6f6e6177732e636f6d2f6861636b6174686f6e732f36333330363535303031393334323730393130333364326366633236323165362f70726f6a656374732f31333234326363343163656234323330386161306536616236666362316138342f39363133333065632d303435332d343132312d623131352d3932343236646164373764372e706e67" class="article-body-image-wrapper"><img src="https://camo.githubusercontent.com/ee5dfcc51e41f4756d367910c69dc4d864d7f606e6d1a2504dec70d093d9da44/68747470733a2f2f646576666f6c696f2d70726f642e73332e61702d736f7574682d312e616d617a6f6e6177732e636f6d2f6861636b6174686f6e732f36333330363535303031393334323730393130333364326366633236323165362f70726f6a656374732f31333234326363343163656234323330386161306536616236666362316138342f39363133333065632d303435332d343132312d623131352d3932343236646164373764372e706e67" alt="project pitch" width="1848" height="822"></a></p>
+<h3>
+  
+  
+  Tooling
+</h3>
+
+<p>For my own projects, Svelte is a no-brainer, so:</p>
+
+<ul>
 <li>
-<a href="https://dev.to/wyattdave/power-automate-keep-it-simple-stupid-ocl">Power Automate - Keep It Simple, Stupid</a> by <a href="https://dev.to/wyattdave">david wyatt</a>
+<strong>pnmp</strong> for speed.</li>
+<li>
+<strong>Svelte</strong> as js framework.</li>
+<li>
+<strong>SvelteKit</strong> as an application framework.
+(For those unfamiliar with SvelteKit, you might think of it as similar to Next.js)</li>
+<li>
+<strong>TailwindCSS/DaisyUI</strong> - For quick prototyping.
+(TailwindCSS for styles and the Tailwind library of mixed styles DaisyUI for even more styles on top of tailwind shugar for basic components like buttons, ranges, etc.)
 </li>
 </ul>
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="err">//package.json</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"@sveltejs/adapter-vercel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"@sveltejs/kit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.22.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"autoprefixer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^10.4.14"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"daisyui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.1.11"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eslint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.44.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eslint-config-prettier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.8.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eslint-plugin-svelte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.32.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postcss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.4.25"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prettier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prettier-plugin-svelte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.10.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"svelte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.0.5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tailwindcss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.3.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.4.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"@onflow/fcl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.4.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^10.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nanoid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.0.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ramda"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.29.0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<p>That's all for this week's roundup! Thanks for tuning in, and remember to keep the discussions lively and informative in our tags. 💬 If you have any suggestions for future topics, feel free to drop them in the comments below. See you next week! 👋</p>
+</div>
+
+
+<p>As you can see, there are 4 client libs i'm using:</p>
+
+<ul>
+<li>fcl - flow client api</li>
+<li>firebase - my user data storage solution + <code>onSnapshot</code> db real time updates</li>
+<li>nanoid - gen random id</li>
+<li>ramda - like lodash, but functional style library of utilities
+(Ramda helped take advantage of utility functions like pipe, combine, etc.)</li>
+</ul>
+
+<p>Because svelte is a <strong>compiler</strong> at the first place, there is no real difference between devDependencies and dependencies, but I'm adding client libs as dependencies for the sake of concepts separation, so it's easier to read.</p>
+<h3>
+  
+  
+  Svelte store firebase simplified implementation
+</h3>
+
+<p>You might want to see <a href="https://github.com/nicholasglazer/prayforua.com/blob/main/src/stores/dbStore.js">simple svelte store firebase api wrapper with localStorage sync</a><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">getFirestore</span><span class="p">,</span> <span class="nx">doc</span><span class="p">,</span> <span class="nx">setDoc</span><span class="p">,</span> <span class="nx">getDoc</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">firebase/firestore</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">initializeApp</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">firebase/app</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">writable</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svelte/store</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">browser</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">$app/environment</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">firebaseKeys</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">$lib/firebase/config</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="kd">function</span> <span class="nx">createDb</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">initialValue</span> <span class="o">=</span>
+    <span class="nx">browser</span> <span class="o">&amp;&amp;</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+      <span class="p">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span>
+      <span class="p">:</span> <span class="nx">initialState</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="p">{</span><span class="nx">subscribe</span><span class="p">,</span> <span class="kd">set</span><span class="p">,</span> <span class="nx">update</span><span class="p">}</span> <span class="o">=</span> <span class="nx">writable</span><span class="p">(</span><span class="nx">initialValue</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">ini</span> <span class="o">=</span> <span class="nx">initializeApp</span><span class="p">(</span><span class="nx">firebaseKeys</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">getFirestore</span><span class="p">(</span><span class="nx">ini</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="kd">set</span><span class="p">,</span>
+    <span class="nx">update</span><span class="p">,</span>
+    <span class="nx">subscribe</span><span class="p">,</span>
+    <span class="na">getDbRef</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">db</span><span class="p">,</span>
+    <span class="na">getDoc</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">docRef</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
+      <span class="k">return</span> <span class="k">await</span> <span class="nx">getDoc</span><span class="p">(</span><span class="nx">docRef</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">setDoc</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">docRef</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
+        <span class="k">await</span> <span class="nx">setDoc</span><span class="p">(</span><span class="nx">docRef</span><span class="p">,</span> <span class="p">{...</span><span class="nx">payload</span><span class="p">},</span> <span class="p">{</span><span class="na">merge</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="dl">'</span><span class="s1">Document added to Firestore:</span><span class="dl">'</span><span class="p">,</span> <span class="nb">document</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error adding document to Firestore:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">useLocalStorage</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">subscribe</span><span class="p">((</span><span class="nx">current</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">browser</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">current</span><span class="p">));</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">createDb</span><span class="p">(</span><span class="dl">'</span><span class="s1">app-db</span><span class="dl">'</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>I wrote this wrapper to simplify usage of firebase api across the app.</p>
+
+<p><a href="https://github.com/nicholasglazer/prayforua.com/blob/main/src/stores/projectStore.js">Project store</a> migth look a bit complex, but the logic is similar to zustand.</p>
+
+<h2>
+  
+  
+  Svelte and cadence integration
+</h2>
+
+<p>One aspect I love the most is the ability to integrate smart contract transactions and scripts using FCL, very handy for creating a serverless app.<br>
+For example transfering tokens be like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">...</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">transferFlow</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">amount</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">cid</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">transactionId</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nx">initTransactionState</span><span class="p">();</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">transactionId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fcl</span><span class="p">.</span><span class="nx">mutate</span><span class="p">({</span>
+      <span class="na">cadence</span><span class="p">:</span> <span class="s2">`
+        import FungibleToken from 0x9a0766d93b6608b7
+        import FlowToken from 0x7e60df042a9c0868
+
+        transaction(amount: UFix64, to: Address) {
+
+           // The Vault resource that holds the tokens that are being transferred
+           let sentVault: @FungibleToken.Vault
+
+           prepare(signer: AuthAccount) {
+
+               // Get a reference to the signer's stored vault
+               let vaultRef = signer.borrow&lt;&amp;FlowToken.Vault&gt;(from: /storage/flowTokenVault)
+            ?? panic("Could not borrow reference to the owner's Vault!")
+
+               // Withdraw tokens from the signer's stored vault
+               self.sentVault &lt;- vaultRef.withdraw(amount: amount)
+           }
+
+           execute {
+
+               // Get a reference to the recipient's Receiver
+               let receiverRef =  getAccount(to)
+                   .getCapability(/public/flowTokenReceiver)
+                   .borrow&lt;&amp;{FungibleToken.Receiver}&gt;()
+                    ?? panic("Could not borrow receiver reference to the recipient's Vault")
+
+               // Deposit the withdrawn tokens in the recipient's receiver
+               receiverRef.deposit(from: &lt;-self.sentVault)
+           }
+        }
+      `</span><span class="p">,</span>
+      <span class="na">args</span><span class="p">:</span> <span class="p">(</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">arg</span><span class="p">(</span><span class="nx">amount</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">UFix64</span><span class="p">),</span> <span class="nx">arg</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">Address</span><span class="p">)],</span>
+      <span class="na">payer</span><span class="p">:</span> <span class="nx">fcl</span><span class="p">.</span><span class="nx">authz</span><span class="p">,</span>
+      <span class="na">proposer</span><span class="p">:</span> <span class="nx">fcl</span><span class="p">.</span><span class="nx">authz</span><span class="p">,</span>
+      <span class="na">authorizations</span><span class="p">:</span> <span class="p">[</span><span class="nx">fcl</span><span class="p">.</span><span class="nx">authz</span><span class="p">],</span>
+      <span class="na">limit</span><span class="p">:</span> <span class="mi">50</span>
+    <span class="p">});</span>
+
+    <span class="c1">// store method</span>
+    <span class="nx">txId</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">transactionId</span><span class="p">);</span>
+
+    <span class="c1">// subscribe to svelte transactions</span>
+    <span class="nx">fcl</span><span class="p">.</span><span class="nx">tx</span><span class="p">(</span><span class="nx">transactionId</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">transactionStatus</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">getAccountBalance</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">cid</span><span class="p">);</span>
+          <span class="nx">auth</span><span class="p">.</span><span class="nx">addFlowTransaction</span><span class="p">({</span>
+            <span class="na">txId</span><span class="p">:</span> <span class="nx">transactionId</span><span class="p">,</span>
+            <span class="na">event</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">amount</span><span class="p">}</span><span class="s2"> Flow transferred to </span><span class="p">${</span><span class="nx">addr</span><span class="p">}</span><span class="s2"> at`</span><span class="p">,</span>
+            <span class="na">status</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span>
+            <span class="na">timestamp</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span>
+          <span class="p">});</span>
+          <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">transactionInProgress</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span> <span class="mi">2000</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">transactionStatus</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="p">...</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Here <code>fcl.mutate</code> method receiveing an object with key <code>cadence</code> and value will be valid cadence code, and this way you can write transactions and scripts easily from your js files.<br>
+See more examples of flc actions in <a href="https://github.com/nicholasglazer/prayforua.com/blob/main/src/lib/flow/actions.js">github</a>.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Even tho I didn't won, the Flow ecosystem fullstack development was an interesting experience. It seems more concise and simplified to work with, when compared to the Ethereum ecosystem, which is not bad at all but I definitely like cadence more than solidity. However, to be fair, the last time I used the Solidity ecosystem was more than three years ago, so things might have changed, although I doubt it. 🥲</p>
+
+<h2>
+  
+  
+  Outro
+</h2>
+
+<p>I appreciate your engagement thus far. 🙏</p>
+
+<p><strong>Whether you're a startup or an established enterprise, I'm here to help you build and enhance your digital products by offering my services.</strong></p>
+
+<p>You can reach me by email at <a href="mailto:glazer.nicholas@gmail.com">glazer.nicholas@gmail.com</a> or find more contact information at <a href="https://nicholasglazer.com/man/ng">https://nicholasglazer.com/man/ng</a></p>
 
  </details> 
  <hr /> 
 
- #### - [What are Blockchain Layers and how do they work?](https://dev.to/hkaybaba/what-are-blockchain-layers-and-how-do-they-work-8e9) 
- <details><summary>Article</summary> <p><strong>INTRODUCTION</strong></p>
+ #### - [10 Underutilized CSS Properties Every Developer Should Know](https://dev.to/mainulspace/10-underutilized-css-properties-every-developer-should-know-2ia0) 
+ <details><summary>Article</summary> <p>Developers now have more options than ever before for customizing websites’ appearance. But in the rush of daily tasks and amidst the clatter of countless lines of code, many of us fall back on what we already know.</p>
 
-<p>The functionality of Blockchain technology goes beyond its usage in/for peer-to-peer transactions. Every blockchain exists in stratified layers which are meant to facilitate its functionality at an optimal level. Basically, a blockchain is made up of five (5) layers and these layers play a distinct role in achieving this. Each layer is integral to assuring the security, transparency, and efficiency of transactions, and together, they make the blockchain a system that can handle all aspects of the development process, from storing and managing data to creating and deploying applications.</p>
+<p>We often forget that different CSS properties can take our designs from good to visually appealing. Today, let’s explore 10 of these underutilized CSS properties that can give your designs a new appearance.</p>
 
-<p>Join me on this exciting read as we find out more about these layers:</p>
+<h2>
+  
+  
+  <strong>1.</strong> <code>clip-path</code> — Visual Shapeshifter
+</h2>
 
-<p><strong>1. Hardware/Infrastructure layer:</strong> The hardware/infrastructure layer refers to the physical framework that supports the blockchain network, which is basically made up of the nodes that contribute to the network's computing power. These nodes communicate with each other by exchanging information about the state of the network, responsible for verifying and recording transactions on the blockchain, as well as help to maintain the security and integrity of the network.</p>
+<p>The <code>clip-path</code> property shapes web elements like cookies. You can shape an element to match an SVG or to seem unique. It’s that simple and creative!<br>
+</p>
 
-<p><strong>2. Data layer:</strong> The data layer of a blockchain network is where the transaction details are stored. Each block in the blockchain contains a set of transactions, along with other information such as the hash of the previous block and the timestamp of the block. In addition to this, the public key of the recipient and the private key of the sender are also stored in each block. The public key is used to identify the recipient of the transaction, while the private key is used to sign the transaction.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">circle</span> <span class="p">{</span>
+    <span class="nx">clip</span><span class="o">-</span><span class="nx">path</span><span class="p">:</span> <span class="nx">circle</span><span class="p">(</span><span class="mi">50</span><span class="o">%</span> <span class="nx">at</span> <span class="mi">50</span><span class="o">%</span> <span class="mi">50</span><span class="o">%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
 
-<p><strong>3. Network layer:</strong> The network layer of a blockchain network is a complex and critical part of a blockchain network that ensures that nodes can communicate with each other and that the data on the blockchain is secure. It links nodes, broadcasts transactions, and distributes data throughout the network, to ensure that all nodes in the network are aware of any transactions that take place, and this is essential for the security and transparency of the network.</p>
+</div>
 
-<p><strong>4. Consensus layer:</strong> The consensus layer of a blockchain network ensures that all nodes in the network agree on the validity of each transaction. It does this by using a consensus mechanism, such as Proof of Work (PoW) or Proof of Stake (PoS) to maintain a set of logic that the nodes in the network follow to agree on the validity of transactions.</p>
 
-<p><strong>5. Application layer:</strong> The application layer is the most topmost/visible layer of the blockchain architecture. It is where applications are built, deployed, and via which users interact with the blockchain for a variety of purposes. Smart contracts, Decentralized applications (dApps), and other software such as wallets and browsers are examples of tools that run on top of the application layer.</p>
+<p>With the power of the <code>clip-path</code> property, you have the ability to create cool animations and transitions, all without using heavy images or overly complex scripts.</p>
+<h2>
+  
+  
+  2. object-fit — Perfect Fit Every Time
+</h2>
 
- </details> 
- <hr /> 
+<p>Think of <code>object-fit</code> as the tailor of the web. It defines how <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> elements resize themselves within their containers.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">img</span> <span class="p">{</span>
+    <span class="nx">object</span><span class="o">-</span><span class="nx">fit</span><span class="p">:</span> <span class="nx">cover</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
- #### - [Zalgo Font Generator: Elevate Your Content with Creepy Text](https://dev.to/zalgotextgenerators/zalgo-font-generator-elevate-your-content-with-creepy-text-1b85) 
- <details><summary>Article</summary> <p>In the world of content creation, standing out is key to capturing your audience's attention. Whether you're a blogger, social media influencer, or website owner, finding unique ways to present your content can make a significant difference. </p>
+</div>
 
-<p>One intriguing method to elevate your content is by using the <strong><a href="https://zalgotextgenerators.com/">Zalgo font generator</a></strong>, which allows you to add a spooky and unsettling touch to your text. </p>
 
-<p>In this blog post, we'll delve into the world of Zalgo fonts, exploring what they are, how they work, and how you can use them to create engaging and creepy content.</p>
+<p>When resizing media, it maintains the original aspect ratio. No more odd cropping or stretching.</p>
+<h2>
+  
+  
+  3. backdrop-filter — Background Magician
+</h2>
 
-<p><strong>What is a Zalgo Font?</strong></p>
+<p>With the <code>backdrop-filter</code>, you can add effects like blurs or color changes to the backgrounds of your elements, making them dynamic and vibrant.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">backdrop</span> <span class="p">{</span>
+    <span class="nx">backdrop</span><span class="o">-</span><span class="nx">filter</span><span class="p">:</span> <span class="nx">blur</span><span class="p">(</span><span class="mi">5</span><span class="nx">px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>To understand Zalgo fonts, we first need to introduce you to Zalgo himself. Zalgo is a mythical and malevolent character often associated with chaos and corruption. </p>
+</div>
 
-<p>Zalgo is known for distorting and corrupting text, creating an eerie and unsettling visual experience. </p>
 
-<p>The Zalgo font is designed to mimic this distortion, turning ordinary text into something that appears to be infected with the chaos of Zalgo himself.</p>
+<p>Use effects like glossy glass to make your website look better. It’s a great way to make things like pop-ups or sidebars stand out.</p>
+<h2>
+  
+  
+  4. calc() — Calculator for Style
+</h2>
 
-<p>Zalgo fonts consist of characters with additional diacritic marks, such as dots, lines, and slashes, placed above and below the standard characters. </p>
+<p>You can do math in your stylesheets with the <code>calc()</code> function. This means you can adjust sizes or positions when needed.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">container</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nx">calc</span><span class="p">(</span><span class="mi">100</span><span class="o">%</span> <span class="o">-</span> <span class="mi">20</span><span class="nx">px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>These marks disrupt the text's regular flow, making it appear unstable and unsettling. When used correctly, Zalgo fonts can evoke a sense of dread and unease in your readers,</p>
+</div>
 
-<p>Making them perfect for horror-themed content, Halloween promotions, or any situation where you want to create a creepy atmosphere.</p>
 
-<p><strong>How Does a Zalgo Font Generator Work?</strong></p>
+<p>At its best, flexibility. Adjust sizes, positions, and margins. This is very beneficial for designs that require responsiveness.</p>
+<h2>
+  
+  
+  5. contain — Element Isolator
+</h2>
 
-<p>Creating Zalgo text manually can be a painstaking task, as you need to meticulously add diacritic marks to each character. </p>
+<p>Some parts of a website can stand on their own thanks to the <code>contain</code> feature. Some parts of a website can stand on their own thanks to the <code>contain</code> feature.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">independent</span> <span class="p">{</span>
+    <span class="nl">contain</span><span class="p">:</span> <span class="nx">content</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>Thankfully, Zalgo font generators are available online to simplify the process. These tools allow you to input your text, and they automatically generate the distorted Zalgo version for you.</p>
+</div>
 
-<p>Here's a step-by-step guide on how a Zalgo font generator typically works:</p>
 
-<p><strong>Input Text:</strong> Begin by entering the text you want to transform into Zalgo font. It can be a sentence, a paragraph, or even an entire article.</p>
+<p>Performance is key. By highlighting non-impacting elements, you improve browsing speed and experience.</p>
 
-<p><strong>Customization:</strong> Some generators offer customization options, allowing you to control the level of distortion. You can choose between mild, moderate, or extreme distortion based on your preference.</p>
+<p><iframe class="tweet-embed" id="tweet-1697878041962139711-662" src="https://platform.twitter.com/embed/Tweet.html?id=1697878041962139711">
+</iframe>
 
-<p><strong>Generate:</strong> Once you've inputted your text and made any desired adjustments, click the "Generate" button. The tool will then process your text and provide you with the Zalgo-fied version.</p>
+  // Detect dark theme
+  var iframe = document.getElementById('tweet-1697878041962139711-662');
+  if (document.body.className.includes('dark-theme')) {
+    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1697878041962139711&amp;theme=dark"
+  }
 
-<p><strong>Copy and Paste:</strong> The generator will often display the distorted text, which you can easily copy and paste into your content, whether it's a blog post, social media caption, or website.</p>
 
-<p><strong>Where to Find Zalgo Font Generators</strong></p>
 
-<p>Finding a Zalgo font generator is a breeze, as many free online tools are readily available. A quick internet search for "Zalgo font generator" will yield a plethora of options. Some of the popular ones include:</p>
+</p>
+<h2>
+  
+  
+  6. mix-blend-mode — Digital Painter’s Delight
+</h2>
 
-<p><strong>Zalgo Text Generator:</strong> This straightforward online tool allows you to input your text and choose from various levels of distortion. It provides a preview of your Zalgo text and makes it easy to copy and paste into your content.</p>
+<p>Think of your content as paint on a canvas. With <code>mix-blend-mode</code>, you can decide how this “paint” works with layers below it.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">blend</span> <span class="p">{</span>
+    <span class="nx">mix</span><span class="o">-</span><span class="nx">blend</span><span class="o">-</span><span class="nx">mode</span><span class="p">:</span> <span class="nx">multiply</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p><strong>Zalgo Text Generator by Tchouky:</strong> Tchouky's generator offers advanced customization options, including the ability to select specific diacritic marks and their placements. This level of control allows you to create truly unique and unsettling Zalgo text.</p>
+</div>
 
-<p><strong>Zalgo Text Generator by MegaCoolText:</strong> MegaCoolText's generator is user-friendly and offers quick access to Zalgo text. It's an excellent choice for those who want to add a creepy touch to their content without diving too deep into customization.</p>
 
-<p><strong>Creative Uses for Zalgo Fonts</strong></p>
+<p>Get creative by stacking web elements in new ways. This can give your designs a richer, more interactive look.</p>
+<h2>
+  
+  
+  7. writing mode — Typography’s Flexible Friend
+</h2>
 
-<p>Now that you're familiar with Zalgo fonts and how to generate them, let's explore some creative ways you can incorporate them into your content:</p>
+<p>Flipping the script, literally. Writing mode changes your text’s direction, making it horizontal or vertical.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">vertical</span><span class="o">-</span><span class="nx">text</span> <span class="p">{</span>
+    <span class="nx">writing</span><span class="o">-</span><span class="nx">mode</span><span class="p">:</span> <span class="nx">vertical</span><span class="o">-</span><span class="nx">rl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>**</p>
+</div>
 
-<ul>
-<li>Spooky Stories and Creepypasta
-**
-If you're a writer or blogger specializing in horror stories or creepypasta, Zalgo fonts can add an extra layer of horror to your narratives. Use Zalgo text for eerie character dialogue, ominous messages, or to emphasize chilling moments in your tales.</li>
-</ul>
 
-<p>**</p>
+<p>It’s not simply for languages that write vertically. This property gives titles, pull quotes, and sidebar notes a new, eye-catching design look.</p>
+<h2>
+  
+  
+  8. grid-template-areas — Making Layouts Intuitive
+</h2>
 
-<ul>
-<li>Halloween Promotions and Events
-**
-When Halloween approaches, businesses and event organizers often seek ways to create a spooky atmosphere. Incorporating Zalgo fonts into your promotional materials, such as flyers, social media posts, or email campaigns, can set the perfect tone for your Halloween-themed offerings.</li>
-</ul>
+<p>With the help of this feature, you can give each <code>grid</code> space a name, giving you a bird’s-eye view of your layout.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">grid</span> <span class="p">{</span>
+    <span class="nx">grid</span><span class="o">-</span><span class="nx">template</span><span class="o">-</span><span class="nx">areas</span><span class="p">:</span> 
+    <span class="dl">"</span><span class="s2">header header</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">sidebar content</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">footer footer</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>**</p>
+</div>
 
-<ul>
-<li>Social Media Posts
-**
-Social media is all about catching the eye and sparking engagement. Zalgo fonts can make your posts stand out in crowded feeds. Consider using them for attention-grabbing headlines, intriguing captions, or to convey a sense of mystery.</li>
-</ul>
 
-<p>**</p>
+<p>Design becomes more intuitive. It simplifies managing responsive designs and makes your grid structures easy to grasp at a glance.</p>
+<h2>
+  
+  
+  9. will-change — Future Predictor
+</h2>
 
-<ul>
-<li>Website Design
-**
-If you maintain a website, using Zalgo fonts strategically in your design can make your site memorable and unique. Just be cautious not to overdo it; a little Zalgo goes a long way in creating a creepy aesthetic.</li>
-</ul>
+<p>Give browsers a heads-up about changes you’ll make to an element. It’s like telling a friend to expect a surprise so they’re better prepared.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">.</span><span class="nx">animation</span><span class="o">-</span><span class="nx">target</span> <span class="p">{</span>
+    <span class="nx">will</span><span class="o">-</span><span class="nx">change</span><span class="p">:</span> <span class="nx">transform</span><span class="p">,</span> <span class="nx">opacity</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>**</p>
+</div>
 
-<ul>
-<li>Video and Streaming Content
-**
-For content creators on platforms like YouTube and Twitch, Zalgo text can be used in video titles, thumbnails, or overlays to add an element of horror or suspense to your content.</li>
-</ul>
 
-<p><strong>Tips for Using Zalgo Fonts Effectively</strong></p>
+<p>By hinting at what will change, browsers can prep themselves, ensuring smooth animations and transitions with fewer jerks or delays.</p>
+<h2>
+  
+  
+  10. :is() — Simplifying Selectors
+</h2>
 
-<p>While Zalgo fonts can be a captivating addition to your content, it's essential to use them thoughtfully. Here are some tips to ensure you make the most of this eerie typography:</p>
+<p>The :is() will-change helps tidy up your styles. It groups similar things together, so you don’t have to repeat yourself.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">:</span><span class="nx">is</span><span class="p">(</span><span class="nx">h1</span><span class="p">,</span> <span class="nx">h2</span><span class="p">,</span> <span class="nx">h3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">margin</span><span class="o">-</span><span class="nx">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p><strong>Legibility:</strong> While the goal is to create an unsettling atmosphere, make sure your text remains somewhat legible. Extreme distortion may frustrate readers rather than engage them.</p>
+</div>
 
-<p><strong>Consistency:</strong> If you choose to use Zalgo fonts, do so consistently throughout your content. This helps maintain a coherent style and prevents the text from feeling randomly distorted.</p>
 
-<p><strong>Emphasize Key Points:</strong> Use Zalgo fonts sparingly to highlight specific words or phrases, drawing attention to critical elements of your content.</p>
+<p>Efficiency and cleanliness are the future of coding. When you streamline your stylesheets, you make your code tidier and ensure you follow the DRY principle.</p>
+<h2>
+  
+  
+  Conclusion
+</h2>
 
-<p><strong>Responsive Design:</strong> Ensure that your Zalgo text displays correctly on various devices and browsers. Test it across platforms to guarantee a smooth user experience.</p>
+<p>Web designers are like artists, but our canvas is digital. Trying new tools can lead to amazing discoveries. So, dive into these CSS properties; they might inspire your next design.</p>
 
-<p><strong>Audience Appropriateness:</strong> Consider your audience and the context in which you're using Zalgo fonts. They may not be suitable for all types of content or demographics.</p>
+<p>Are you an early adopter who has used some of these properties? Or Perhaps you’ve discovered other CSS gems on your design journey?</p>
 
-<p><strong>Conclusion</strong></p>
+<p>We’d love to hear from you! Share your insights, experiences, and tips in the comments below.</p>
 
-<p>The Zalgo font generator offers a creative and captivating way to elevate your content with creepy text. </p>
+<p>If you found this article useful or have more insights on the topic, feel free to connect with me on <a href="https://twitter.com/mainulspace"><strong>Twitter</strong></a> and <a href="https://www.linkedin.com/in/mainulspace/"><strong>LinkedIn</strong></a>. Let’s continue the conversation there!</p>
+<h2>
+  
+  
+  Read Next...
+</h2>
 
-<p>Whether you're a writer, content creator, or marketer, you can use Zalgo fonts to add an eerie and unsettling atmosphere to your work. </p>
 
-<p>Just remember to use them thoughtfully, maintaining legibility and considering your audience's preferences. </p>
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/10-lesser-known-javascript-array-methods-you-mightve-missed-32b3" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>10 Lesser-Known JavaScript Array Methods You Might’ve Missed</h2>
+      <h3>Mainul Hasan ・ Sep 5</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#coding</span>
+      </div>
+    </div>
+  </a>
+</div>
 
-<p>With the right balance, Zalgo fonts can be a powerful tool to make your content memorable and engaging, leaving a haunting impression on your readers or viewers.</p>
 
-<p><strong>Read More:</strong> <strong><a href="https://youdontneedwp.com/zalgotextgenerators/my-new-post-bf6ef44f-71ca-4b75-a992-619021dd8c19">The Art and Utility of Using a Fancy Text Generator</a></strong></p>
+
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/chatgpt-my-co-developer-for-mundane-tasks-3jjo" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>ChatGPT: My Co-Developer for Mundane Tasks</h2>
+      <h3>Mainul Hasan ・ Sep 8</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#chatgpt</span>
+        <span class="ltag__link__tag">#ai</span>
+        <span class="ltag__link__tag">#productivity</span>
+        <span class="ltag__link__tag">#programmers</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/short-circuit-evaluation-making-your-code-more-concise-2jne" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Short-Circuit Evaluation: Making Your Code More Concise</h2>
+      <h3>Mainul Hasan ・ Sep 7</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#optimization</span>
+        <span class="ltag__link__tag">#coding</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
 
  </details> 
  <hr /> 
