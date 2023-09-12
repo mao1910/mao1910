@@ -118,6 +118,411 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Next.js: How <Suspense /> and Components Streaming works?](https://dev.to/charnog/nextjs-how-and-components-streaming-works-30ao) 
+ <details><summary>Article</summary> <blockquote>
+<p>There is a distinct difference between ‘suspense’ and ‘surprise’, and yet many pictures continually confuse the two. I’ll explain what I mean. We are now having a very innocent little chat. Let’s suppose that there is a bomb underneath this table between us. Nothing happens, and then all of a sudden, ‘Boom!’ There is an explosion. The public is surprised, but prior to this surprise, it has seen an absolutely ordinary scene, of no special consequence.</p>
+
+<p>Alfred Hitchcock</p>
+</blockquote>
+
+<p>In this article, we'll dive into the specifics of the <code>&lt;Suspense /&gt;</code> tag as it relates to Next.js and Server Side Rendering (SSR) feature. We'll delve deeper to see what happens at the HTTP protocol level when you wrap your components with the  tag. Let's begin.</p>
+
+<h3>
+  
+  
+  Streaming, what is it?
+</h3>
+
+<p>Before we dive into "Components Streaming" it's essential to understand what HTTP streaming is in and of itself. When your User Agent (for example, a browser or a <code>curl</code> command) sends an HTTP request to a server, the server replies with something like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
+Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
+Content-Length: 12␍␊
+Content-Type: text/plain␍␊
+␍␊
+Hello World!
+</code></pre>
+
+</div>
+
+
+
+<p>I've added the ␍␊ to HTTP response texts because it carries a special meaning in HTTP.</p>
+
+<p>The first line, <code>HTTP/1.1 200 OK</code>, tells us that everything is fine and the server has responded with a 200 OK code. Following this, we have three lines that are known as headers. In our example, these three headers are <code>Date</code>, <code>Content-Length</code>, and <code>Content-Type</code>. We can think of them as key-value pairs, where the keys and values are delimited by a <code>:</code> sign.</p>
+
+<p>Following the headers, there's an empty line, serving as a delimiter between the header and the body sections. After this line, we encounter the content itself. Given the prior information from the headers, our browser understands two things:</p>
+
+<ol>
+<li>It needs to download 12 bytes of content (the string <code>Hello World!</code> comprises just 12 characters).</li>
+<li>Once downloaded, it can display this content or provide it to the callback of a fetch request.</li>
+</ol>
+
+<p>In other words, we can deduce that the end of the response body will occur once we've read 12 bytes following a new line.</p>
+
+<p>Now, what happens if we omit the <code>Content-Length</code> header from our server response? When the <code>Content-Length</code> header is absent, many HTTP servers will implicitly add a <code>Transfer-Encoding: chunked</code> header. This type of response can be interpreted as, "Hi, I'm the server, and I'm not sure how much content there will be, so I'll send the data in chunks." So a response will look like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
+Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
+Transfer-Encoding: chunked␍␊
+Content-Type: text/plain␍␊
+␍␊
+5␍␊
+Hello␍␊
+</code></pre>
+
+</div>
+
+
+
+<p>At this point, we haven't received the entire message, only the first 5 bytes. Notice how the format of the body differs: first, the size of the chunk is sent, followed by the content of the chunk itself. At the end of each chunk, the server adds a ␍␊ sequence.</p>
+
+<p>Now, let's consider receiving the second chunk. How might that appear?<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
+Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
+Transfer-Encoding: chunked␍␊
+Content-Type: text/plain␍␊
+␍␊
+5␍␊
+Hello␍␊
+7␍␊
+ World!␍␊
+</code></pre>
+
+</div>
+
+
+
+<p>We've received an additional 7 bytes of the response. But what transpired between <code>Hello␍␊</code> and <code>7␍␊</code>? How was the response processed in that interval? Imagine that before sending the 7, the server took 10 seconds pondering the next word. If you were to inspect the Network tab of your browser's Developer Tools during this pause, you'd see the response from the server had started and remained "in progress" throughout these 10 seconds. This is because the server hadn't indicated the end of the response.</p>
+
+<p>So, how does the browser determine when the response should be treated as "completed"? There's a convention for that. The server must send a <code>0␍␊␍␊</code> sequence. In layman's terms, it's saying, "I'm sending you a chunk that has zero length, signifying there's nothing more to come." In the Network tab, this sequence will mark the moment the request has concluded.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
+Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
+Transfer-Encoding: chunked␍␊
+Content-Type: text/plain␍␊
+␍␊
+5␍␊
+Hello␍␊
+7␍␊
+ World!␍␊
+0␍␊
+␍␊
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  The Nuances of HTTP Transmission
+</h3>
+
+<p>In the realm of HTTP headers, understanding the distinction between <code>Content-Length: &lt;number&gt;</code> and <code>Transfer-Encoding: chunked</code> is crucial. At a first glance, <code>Content-Length: &lt;number&gt;</code> might suggest that data isn't streamed, but this isn't entirely accurate. While it's true that this header indicates the total length of the data to be received, it doesn't imply that data is transmitted as a single massive chunk. Underneath the HTTP layer, protocols like TCP/IP dictate the actual transmission mechanics, which inherently involves breaking data down into smaller packets. So, while the <code>Content-Length</code> header gives a system the signal that once it accumulates the specified amount of data, it's ready for rendering, the actual data transfer is executed incrementally at a lower level. Some contemporary browsers, capitalizing on this inherent packetization, initiate the rendering process even before the entire data is received. This is particularly beneficial for specific data formats that lend themselves to progressive rendering. On the other hand, the <code>Transfer-Encoding: chunked</code> header offers more explicit control over data streaming at the HTTP level, marking each chunk of data as it's sent. This provides even more flexibility, especially for dynamically generated content or when the full content length is unknown at the outset.</p>
+
+<h3>
+  
+  
+  <code>&lt;Suspense /&gt;</code>
+</h3>
+
+<p>Alright, now we've grasped one foundational concept that's pivotal for Component Streaming in Next.js. Before delving into <code>&lt;Suspense /&gt;</code>, let's first articulate the problem it addresses. Sometimes, seeing is more instructive than a lengthy explanation. So, let's craft a helper function for illustration:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">wait</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">ms</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">data</span><span class="p">:</span> <span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span> <span class="nx">ms</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This function will assist us in simulating exceedingly prolonged, fake requests.</p>
+
+<p>To start, initialize a Next.js app using npx <a href="mailto:create-next-app@latest">create-next-app@latest</a>. Clear out any unnecessary elements, and paste the following code into <code>app/page.tsx</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">wait</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/helpers/wait</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Denis</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">dynamic</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">force-dynamic</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">MyComponent</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This structure provides a simple page layout: a text block containing “Some text” and a component that waits for 10 seconds before outputting the data.</p>
+
+<p>Now, execute <code>npm run build &amp;&amp; npm run start</code> followed by a <code>curl localhost:3000</code> (or try to open it in a browser) command. What do we observe?</p>
+
+<p>We experience a delay of 10 seconds before receiving the entire page content, including both “Some text” and “Denis”. For users, this means they won't be able to view the “Some text” content while <code>&lt;MyComponent /&gt;</code> is fetching its data. This is far from ideal; the browser tab's spinner would keep spinning for a solid 10 seconds before displaying any content to the user.</p>
+
+<p>However, by wrapping our component with the <code>&lt;Suspense/&gt;</code> tag and trying again, we observe an instantaneous response. Let's delve into this method. We encase our component in <code>&lt;Suspense&gt;</code> and also assign a fallback prop with the value "We are loading...".<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="dl">"</span><span class="s2">We are loading...</span><span class="dl">"</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">MyComponent</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Suspense</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now let us open it in a browser.<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oCXP9oNI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rm7w4l9x17v00u0v51f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oCXP9oNI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rm7w4l9x17v00u0v51f.png" alt="When you inspect the Network tab in DevTools, you'll observe that the server's response is still ongoing or &quot;hasn't yet completed.&quot; Examining the &quot;Response Headers&quot; section of the request, you'll find the &quot;Transfer-Encoding: chunked&quot; entry." width="800" height="200"></a></p>
+
+<p>Now, we observe that the string provided as the fallback prop for <code>&lt;Suspense /&gt;</code> temporarily stands in for the <code>&lt;MyComponent /&gt;</code>. After the 10-second wait, we're then presented with the actual content. Let's scrutinize the HTML response we've received.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="c">&lt;!-- Omitted --&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"__className_20951f"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span><span class="c">&lt;!--$?--&gt;</span>
+    <span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"B:0"</span><span class="nt">&gt;&lt;/template&gt;</span>
+    Waiting for MyComponent...<span class="c">&lt;!--/$--&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/_next/static/chunks/webpack-f0069ae2f14f3de1.js"</span> <span class="na">async=</span><span class="s">""</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">push</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span><span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* Omitted */</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* Omitted */</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* Omitted */</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* We haven't received a chunk that closes this tag...
+</span></code></pre>
+
+</div>
+
+
+
+<p>While we haven't yet received the complete page, we can already view its content in the browser. But why is that possible? This behavior is due to the error tolerance of modern browsers. Consider a scenario where you visit a website, but because a developer forgot to close a tag, the site doesn't display correctly. Although browser developers could enforce strict error-free HTML, such a decision would degrade the user experience. As users, we expect web pages to load and display their content, regardless of minor errors in the underlying code. To ensure this, browsers implement numerous mechanisms under the hood to compensate for such issues. For instance, if there's an opened </p> tag that hasn't been closed, the browser will automatically "close" it. This is done in an effort to deliver the best possible viewing experience, even when faced with imperfect HTML.
+
+<p>And it's evident that Next capitalizes on this inherent browser behavior when implementing Component Streaming. By pushing chunks of content as they become available and leveraging browsers' ability to interpret and render partial or even slightly malformed content, Next.js ensures faster perceived load times and enhances user experience.</p>
+
+<p>The strength of this approach lies in its alignment with the realities of web browsing. Users generally prefer immediate feedback, even if it's incremental, over waiting for an entire page to load. By sending parts of a page as soon as they're ready, Next.js optimally meets this preference.</p>
+
+<p>Now, observe this segment:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="c">&lt;!--$?--&gt;</span>
+  <span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"B:0"</span><span class="nt">&gt;&lt;/template&gt;</span>
+  Waiting for MyComponent...
+<span class="c">&lt;!--/$--&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We can spot our placeholder text adjacent to an empty <code>&lt;template&gt;</code> tag bearing the <code>B:0</code> id. Further, we can discern that the response from <code>localhost:3000</code> is still underway. The trailing script tag remains unclosed. Next.js uses a placeholder template to make room for forthcoming HTML that will be populated with the next chunk.</p>
+
+<p>After the next chunk has arrived, we now have the following markup (I’ve added some newlines to make it more readable)...</p>
+
+<p><em>Don't attempt to unminify the code of the $RC function in your head. This is the <code>completeBoundary</code> function, and you can find a commented version <a href="https://github.com/facebook/react/blob/b9be4537c2459f8fc0312b796570003620bc8600/packages/react-dom-bindings/src/server/fizz-instruction-set/ReactDOMFizzInstructionSetShared.js#L46">here</a>.</em><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!--$?--&gt;</span>
+<span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"B:0"</span><span class="nt">&gt;&lt;/template&gt;</span>
+Waiting for MyComponent...
+<span class="c">&lt;!--/$--&gt;</span>
+
+<span class="c">&lt;!-- &lt;script&gt; tags omitted --&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">hidden</span> <span class="na">id=</span><span class="s">"S:0"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Denis<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$RC</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">c</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+    <span class="nx">c</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">previousSibling</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+        <span class="nx">b</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">$!</span><span class="dl">"</span><span class="p">,</span>
+          <span class="nx">a</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">data-dgst</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+      <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">e</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+        <span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">nextSibling</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">do</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="mi">8</span> <span class="o">===</span> <span class="nx">a</span><span class="p">.</span><span class="nx">nodeType</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="dl">"</span><span class="s2">/$</span><span class="dl">"</span> <span class="o">===</span> <span class="nx">d</span><span class="p">)</span>
+              <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">f</span><span class="p">)</span>
+                <span class="k">break</span><span class="p">;</span>
+              <span class="k">else</span>
+                <span class="nx">f</span><span class="o">--</span><span class="p">;</span>
+            <span class="k">else</span>
+              <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span> <span class="o">!==</span> <span class="nx">d</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">$?</span><span class="dl">"</span> <span class="o">!==</span> <span class="nx">d</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">$!</span><span class="dl">"</span> <span class="o">!==</span> <span class="nx">d</span> <span class="o">||</span> <span class="nx">f</span><span class="o">++</span>
+          <span class="p">}</span>
+          <span class="nx">d</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">nextSibling</span><span class="p">;</span>
+          <span class="nx">e</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+          <span class="nx">a</span> <span class="o">=</span> <span class="nx">d</span>
+        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">;)</span>
+          <span class="nx">e</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span>
+        <span class="nx">b</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span>
+      <span class="p">}</span>
+      <span class="nx">b</span><span class="p">.</span><span class="nx">_reactRetry</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">_reactRetry</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="p">;</span>
+  <span class="nx">$RC</span><span class="p">(</span><span class="dl">"</span><span class="s2">B:0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">S:0</span><span class="dl">"</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We receive a hidden <code>&lt;div&gt;</code> with the <code>id="S:0"</code>. This contains the markup for <code>&lt;MyComponent /&gt;</code>. Alongside this, we are presented with an intriguing script that defines a global variable, <code>$RC</code>. This variable references a function that performs some operations with <code>getElementById</code> and <code>insertBefore</code>.</p>
+
+<p>The concluding statement in the script, <code>$RC("B:0", "S:0")</code>, invokes the aforementioned function and supplies <code>"B:0"</code> and <code>"S:0"</code> as arguments. As we've deduced, <code>B:0</code> corresponds to the ID of the template that previously held our fallback. Concurrently, <code>S:0</code> matches the ID of the newly acquired <code>&lt;div&gt;</code>. To distill this information, the <code>$RC</code> function essentially instructs: "Retrieve the markup from the S:0 div and position it where the <code>B:0</code> template resides."</p>
+
+<p>Let's refine that for clarity:</p>
+
+<ol>
+<li>
+<strong>Initiating the Chunked Transfer</strong>: Next.js begins by sending the Transfer-Encoding: chunked header, signaling the browser that the response length is undetermined at this stage.</li>
+<li>
+<strong>Executing Home Page</strong>: As the Home page executes, it encounters no await operations. This means no data fetching is blocking the response from being sent immediately.</li>
+<li>
+<strong>Handling the Suspense</strong>: Upon reaching the  tag, it uses the fallback value for immediate rendering, while also inserting a placeholder <code>&lt;template /&gt;</code> tag. This will be used later to insert the actual HTML once it's ready.</li>
+<li>
+<strong>Initial Response to the Browser</strong>: What's been rendered so far is sent to the browser. Yet, the "0␍␊␍␊" sequence hasn't been sent, indicating the browser should expect more data to come.</li>
+<li>
+<strong>Component Data Request</strong>: The server communicates with MyComponent, requesting its data and essentially saying, "We need your content, let us know when you're ready."</li>
+<li>
+<strong>Component Rendering</strong>: After MyComponent fetches its data, it renders and produces the corresponding HTML.</li>
+<li>
+<strong>Sending the Component's HTML</strong>: This HTML is then sent to the browser as a new chunk.</li>
+<li>
+<strong>JavaScript Attachment</strong>: The browser's JavaScript then appends this new chunk of HTML to the previously placed  tag from step #3.</li>
+<li>
+<strong>Termination Sequence</strong>: Finally, the server sends the termination sequence, signaling the end of the response.</li>
+</ol>
+
+<h3>
+  
+  
+  Diving into Multiple <code>&lt;Suspense /&gt;</code>
+</h3>
+
+<p>Handling a singular <code>&lt;Suspense /&gt;</code> tag is straightforward, but what if a page has multiple of them? How does Next.js cope with this situation? Interestingly, the core approach doesn't deviate much. Here's what changes when managing multiple <code>&lt;Suspense /&gt;</code> tags:</p>
+
+<p><strong>Fallbacks at the Forefront</strong>: Each <code>&lt;Suspense /&gt;</code> tag comes equipped with its own fallback. During the rendering phase, all these fallback values are leveraged simultaneously, ensuring that every suspended component offers a provisional visual cue to the user. This is an extension of the third point from our previous list.</p>
+
+<p><strong>Unified Request for Content</strong>: Just as with a single <code>&lt;Suspense /&gt;</code>, Next.js sends out a unified call to all components wrapped within the <code>&lt;Suspense /&gt;</code> tags. It's essentially broadcasting, "Provide your content as soon as you're ready."</p>
+
+<p><strong>Waiting for All Components</strong>: The termination sequence is of utmost importance, signaling the end of a response. However, in cases with multiple <code>&lt;Suspense /&gt;</code> tags, the termination sequence is held back until every single component has sent its content. This ensures that the browser knows to expect, and subsequently render, the content from all components, providing a holistic page-view to the end user.</p>
+
+<p>The advent of features like <code>&lt;Suspense /&gt;</code> in Next.js underscores the framework's dedication to enhancing user experience. By tapping into the innate behavior of browsers and optimizing content delivery, Next.js ensures users encounter minimal wait times and see content as swiftly as possible. This deep dive into the inner workings of component streaming and chunked transfer encoding reveals the intricate dance of protocols, rendering, and real-time adjustments that takes place behind the scenes. As web developers, understanding these nuances not only makes us better at our craft but also equips us to deliver seamless and responsive digital experiences for our users. Embrace the future of web development with Next.js, where efficiency meets elegance.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Mastering React Styling: A Beginner's Guide](https://dev.to/cybermaxi7/mastering-react-styling-a-beginners-guide-1lel) 
+ <details><summary>Article</summary> <p>Styling is a crucial aspect of building visually appealing and user-friendly web applications. In the React ecosystem, developers have a plethora of styling options to choose from. But why are there so many options? The answer lies in React's flexibility and lack of a built-in styling solution. React gives developers the freedom to choose their preferred styling approach. Let's explore some of the common styling options in React, each with its own characteristics and use cases. 🎨</p>
+
+<p><strong>Why So Many Styling Options?</strong><br>
+React is an opinionated library; it doesn't impose a specific styling approach. Instead, it grants developers the liberty to pick the method that resonates most with their project's needs. Let's delve into some of the common styling options in React, each with its own distinct characteristics and use cases. 🚀</p>
+
+<p><strong>1. Inline-CSS</strong><br>
+✨<br>
+<strong>Where</strong>: JSX elements<br>
+<strong>How</strong>: style props<br>
+<strong>Scope</strong>: JSX elements<br>
+<strong>Based on</strong>: CSS<br>
+Inline-CSS offers simplicity in styling React components. You define styles directly within your JSX code using the style prop. It's convenient for quick styling but can become unwieldy for complex designs.</p>
+
+<p><strong>2. CSS or Sass Files</strong><br>
+✨<br>
+<strong>Where</strong>: External files<br>
+<strong>How</strong>: className prop<br>
+<strong>Scope</strong>: Entire app<br>
+<strong>Based on</strong>: CSS<br>
+Using external CSS or Sass files allows you to maintain separate stylesheets for your React components. You apply styles using the className prop. This approach provides global styling across your entire application but may lead to class name conflicts.</p>
+
+<p><strong>3. CSS Modules</strong><br>
+✨<br>
+<strong>Where</strong>: One external file per component<br>
+<strong>How</strong>: className prop<br>
+<strong>Scope</strong>: Component<br>
+<strong>Based on</strong>: CSS<br>
+CSS Modules offer a solution to class name collision issues. You create dedicated CSS files for each component and import them using module syntax. This approach encapsulates styles within each component, preventing unintended side effects.</p>
+
+<p><strong>4. CSS in JavaScript (Styled Components)</strong><br>
+✨<br>
+<strong>Where</strong>: External file or component file<br>
+<strong>How</strong>: Creates new component<br>
+<strong>Scope</strong>: Component<br>
+<strong>Based on</strong>: JavaScript<br>
+Styled Components, a popular library, allows you to write CSS-in-JS. You create styled components as JavaScript functions. This approach offers component-level styling and leverages JavaScript's power to generate dynamic styles.</p>
+
+<p><strong>5. Utility-First CSS (e.g., Tailwind CSS)</strong><br>
+✨<br>
+<strong>Where</strong>: JSX elements<br>
+<strong>How</strong>: className props<br>
+<strong>Scope</strong>: JSX elements<br>
+<strong>Based on</strong>: CSS</p>
+
+<p>Utility-first CSS frameworks like Tailwind CSS provide a set of utility classes that you apply directly to JSX elements. This approach encourages rapid development by applying pre-defined styles using class names.</p>
+
+<p><strong>6. UI Libraries</strong><br>
+✨<br>
+In addition to the traditional styling methods, React developers have the option to leverage UI libraries such as <strong>Material-UI (MUI)</strong>, <strong>Chakra UI</strong>, <strong>Mantine</strong>, and many more. These libraries offer pre-designed components with consistent styling and extensive customization options, simplifying the styling process and enhancing the development experience.</p>
+
+<p>In conclusion, the diverse landscape of styling options in React caters to various preferences and project requirements. Whether you gravitate toward the simplicity of inline styles or harness the power of CSS-in-JS, React provides the flexibility to choose the styling approach that best suits your specific needs. Exploring these options empowers you to craft beautiful and functional React applications that captivate users and make your coding journey an exciting one. Happy styling! 🎉🎨 </p>
+
+ </details> 
+ <hr /> 
+
  #### - [Trending Discussions of the Week - 9/12/23](https://dev.to/devteam/trending-discussions-of-the-week-91223-4kim) 
  <details><summary>Article</summary> <p>Each week, we curate the most popular <a href="https://dev.to/t/discuss">#discuss posts</a> on DEV to bring them to you in one comprehensive list. From coding tips to career advice, you'll find a range of topics that are buzzing in the DEV community.</p>
 
@@ -859,211 +1264,6 @@ Hello, World!
 <p>The LogRocket Redux middleware package adds an extra layer of visibility into your user sessions. LogRocket logs all actions and state from your Redux stores.</p>
 
 <p>Modernize how you debug your Next.js apps — <a href="https://lp.logrocket.com/blg/nextjs-signup">start monitoring for free</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [Display website icons in the VSCode markdown preview](https://dev.to/rxliuli/display-website-icons-in-the-vscode-markdown-preview-30cd) 
- <details><summary>Article</summary> <p>A quick inspiration realized: in the markdown preview of VSCode, in addition to displaying the link itself, if it's a popular website, such as GitHub, Twitter, Google, etc., the corresponding logo will be added in front of it.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--z02twdkv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/trwhmcl5riee17codb3b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--z02twdkv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/trwhmcl5riee17codb3b.png" alt="Image description" width="800" height="536"></a></p>
-
-<p>It has been published to the VSCode extension store: <a href="https://marketplace.visualstudio.com/items?itemName=rxliuli.markdown-link-logo">https://marketplace.visualstudio.com/items?itemName=rxliuli.markdown-link-logo</a></p>
-
-<p>Inspiration source: <a href="https://discourse.joplinapp.org/t/32608">https://discourse.joplinapp.org/t/32608</a></p>
-
-<p>Have fun! ✨</p>
-
- </details> 
- <hr /> 
-
- #### - [Top 7 Featured DEV Posts from the Past Week](https://dev.to/devteam/top-7-featured-dev-posts-from-the-past-week-4bfl) 
- <details><summary>Article</summary> <p><em>Every Tuesday we round up the previous week's top posts based on traffic, engagement, and a hint of editorial curation. The typical week starts on Monday and ends on Sunday, but don't worry, we take into account posts that are published later in the week.</em> </p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/novu" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bfplM013--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gCeTLZWd--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_66%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/5804/9ecf6e75-6501-4491-874c-c566f65f4a5a.gif" alt="novu" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KwegWDPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--XMD6J2pd--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/820341/5d291561-0d60-40cf-a9d3-959dab08f1ac.png" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/novu/building-a-real-time-chat-with-websockets-novel-and-clerk-40ac" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>💬 Building a real-time chat with Websockets, Novel and Clerk 🚀🚀</h2>
-      <h3>Nevo David for novu ・ Sep 7</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#react</span>
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#tutorial</span>
-      </div>
-    </div>
-  </a>
-</div>
- In this tutorial, @nevodavid will run you through the process of building a chat application. By the end, you’ll learn how to authenticate users with Clerk, send real-time messages via Socket.io in a React and Node.js application, and add Novel WYSIWYG editor to a React app.
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/srbhr" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zvjec-E4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--0FUG9Nnn--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/236396/60927154-7b76-4cb0-a9ed-9d148487daff.png" alt="srbhr">
-    </div>
-  </a>
-  <a href="/srbhr/swirl-an-open-source-search-engine-with-llms-and-chatgpt-to-provide-all-the-answers-you-need-1amc" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Swirl: An open-source search engine with LLMs and ChatGPT to provide all the answers you need 🌌</h2>
-      <h3>Saurabh Rai ・ Sep 6</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#python</span>
-        <span class="ltag__link__tag">#ai</span>
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#machinelearning</span>
-      </div>
-    </div>
-  </a>
-</div>
- A lot of time is spent going through all of the different folders and searches needed to find what you’re looking for. @srbhr found the solution to this problem in Swirl Search, an engine that can look through multiple platforms and generate data using an LLM. 
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/jacktt" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LE3Wxc0z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--do6bDySg--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1105551/7d1507de-34a6-43fe-be56-324409393281.jpeg" alt="jacktt">
-    </div>
-  </a>
-  <a href="/jacktt/creating-dynamic-readmemd-file-388o" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Creating Dynamic README.md File</h2>
-      <h3>Jack ・ Sep 10</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#git</span>
-        <span class="ltag__link__tag">#cicd</span>
-        <span class="ltag__link__tag">#devops</span>
-        <span class="ltag__link__tag">#go</span>
-      </div>
-    </div>
-  </a>
-</div>
- @jacktt has a weather widget in their GitHub bio that updates every six hours. How is this possible? Through the power of GitHub Actions!
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/cherryramatis" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XrqrJivM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--HdxEGYoi--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1025053/e8911f4d-800d-4a5c-8817-422b3c43beeb.jpeg" alt="cherryramatis">
-    </div>
-  </a>
-  <a href="/cherryramatis/linux-filters-how-to-streamline-text-like-a-boss-2dp4" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Linux filters - How to streamline text like a boss</h2>
-      <h3>Cherry Ramatis ・ Sep 11</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#ruby</span>
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#linux</span>
-        <span class="ltag__link__tag">#vim</span>
-      </div>
-    </div>
-  </a>
-</div>
- In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting with @cherryramatis!
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/thevinitgupta" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2RRtXlkG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vs5K5D68--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/656476/af6e11c2-127a-4c54-9c06-ab48fee365af.png" alt="thevinitgupta">
-    </div>
-  </a>
-  <a href="/thevinitgupta/discover-bun-a-faster-modern-javascript-runtime-5fob" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Discover Bun - A Faster, Modern JavaScript Runtime</h2>
-      <h3>Vinit Gupta ・ Sep 10</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#codenewbie</span>
-        <span class="ltag__link__tag">#opensource</span>
-      </div>
-    </div>
-  </a>
-</div>
- Bun is the new Javascript Runtime built from scratch to serve the modern Javascript ecosystem. But do we even need another JavaScirpt tool? Here’s @thevinitgupta with the answer to this question and more. 
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/opensauced" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--02eXwIRh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--NCYBd-LB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2498/a16cc27c-33f9-40b6-92a8-4a43f70a96ef.png" alt="OpenSauced" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--e-TUTFD8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--6jsOd2Rx--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/19970/6dc0f11e-a4da-4762-aed8-11f70143d31b.jpeg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/opensauced/moneyball-for-engineers-4ki9" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Moneyball for engineers</h2>
-      <h3>Brian Douglas for OpenSauced ・ Sep 6</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#100daysofoss</span>
-      </div>
-    </div>
-  </a>
-</div>
- @bdougieyo shows how green squares on GitHub are a framework that no longer holds value because it encourages the wrong metrics. Here’s how OpenSauced handles this issue. 
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/wasp" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--h1s4XEpp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--BiCuq3V3--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/3369/c86918f8-76a9-4b01-accf-cc257f9ee56f.png" alt="Wasp" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NtbuKyFr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--UAY6642a--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/982343/99b7a039-13b3-4eb5-820b-da74b180ddf6.jpeg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/wasp/build-your-own-ai-meme-generator-learn-how-to-use-openais-function-calls-1p21" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Build your own AI Meme Generator &amp; learn how to use OpenAI's function calls ☎️</h2>
-      <h3>vincanger for Wasp ・ Sep 6</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#ai</span>
-        <span class="ltag__link__tag">#fullstack</span>
-        <span class="ltag__link__tag">#tutorial</span>
-      </div>
-    </div>
-  </a>
-</div>
- In this two-part tutorial, we’re going to build a full-stack instant Meme Generator app with @vincanger! The tools you’ll need are React &amp; NodeJS w/ TypeScript, OpenAI’s Function Calling API, and ImgFlip.com’s meme creator API.
-
-
-
-
-<p><em>That's it for our weekly Top 7 for this Tuesday! Keep an eye on dev.to this week for daily content and discussions...and be sure to keep an eye on this series in the future. You might just be in it!</em></p>
 
  </details> 
  <hr /> 
