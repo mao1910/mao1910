@@ -118,359 +118,451 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [🛠️ 10 Exceptional Developer Tools Launched in 2023 🚀](https://dev.to/permit_io/10-exceptional-developer-tools-launched-in-2023-42a8) 
- <details><summary>Article</summary> <h2>
-  
-  
-  The 2023 Trends in Developer Tools
-</h2>
-
-<p>During a retrospective meeting recently, we noted that we used more developer tools in the first half of this year than we did in the whole of 2021 and 2022 combined. The way developers like us use various tools to enhance our work seems to have shifted significantly in 2023.</p>
-
-<p>Initially, it might appear that Large Language Models (LLM) and Artificial Intelligence (AI) are the primary drivers behind this surge in developer tool usage. On closer inspection, we discovered that only about 20% of the tools we are using are related to LLM and AI.</p>
-
-<p>In this inspection, we uncovered a few emerging trends that have been shaping the developer landscape in 2023. These include serverless computing, observability platforms, event-driven architectures, and many others. We have focused on tools that demonstrate how these emerging trends boost developers' productivity and enable them to create software more efficiently.</p>
-
-<p>In this article, we aim to showcase the most exciting developer tools that were launched in 2023. Each of these tools reflects the innovative spirit driven by these new trends in the software industry. If you're a software developer looking to enhance your productivity, these tools are certainly worth exploring.</p>
-
-<h2>
-  
-  
-  1. From Product to Code - <a href="https://www.lottielab.com/"><u>Lottielab</u></a>
-</h2>
-
-<p>While web browsers are becoming increasingly robust and capable of handling complex animations, the process of creating them remains a challenge. Lottie is an interactive web application that provides a user-friendly interface for creating animations for your web applications, with no prior coding experience required. What's more, Lottie supports the import of vector files from other popular tools and even offers a Figma plugin that streamlines collaboration between product and engineering teams.</p>
-
-<p>Our initial expectations for Lottie were modest, as is often the case with tools in this category. However, we were pleasantly surprised to find that Lottie leverages every web development trend to create a state-of-the-art product. Many features that were previously inaccessible to us are now just a few clicks away.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TGZXQVog--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/VtlOzHutSkCtaVJBrro0" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TGZXQVog--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/VtlOzHutSkCtaVJBrro0" alt="lottie.png" title="lottie.png" width="800" height="470"></a></p>
-
-<h2>
-  
-  
-  2. Writing Code - <a href="https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat"><u>GitHub Copilot Chat</u></a>
-</h2>
-
-<p>In October 2021, GitHub released Copilot, fundamentally changing the way developers write code. It's rare to find a developer today who isn't using Copilot or one of the other AI-powered code assistants in their daily work. In 2023, just when we thought nothing could surprise us, GitHub introduced Copilot Chat. With a simple VSCode plugin, developers can now obtain answers to their daily tasks from Copilot Chat.</p>
-
-<p>While it may seem like a natural extension of Copilot, we discovered that Copilot Chat has the potential to revolutionize our workflow. For instance, when developing SDKs for various programming languages, we can seek design input in languages we're not familiar with and receive answers from Copilot Chat. Moreover, for deeper insights, we can inquire about the reasons behind its decisions, providing us with objective answers.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tvyetqm_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/ECOfELRsSnCkDcr36ZDM" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tvyetqm_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/ECOfELRsSnCkDcr36ZDM" alt="ui-demo.webp" title="ui-demo.webp" width="800" height="497"></a></p>
-
-<h2>
-  
-  
-  3. Debugging - <a href="http://www.mirrord.dev/"><u>mirrord</u></a>
-</h2>
-
-<p>While Kubernetes and other Cloud-Native technologies open up new possibilities in cloud architectures, they also make debugging much more challenging. If you're developing a distributed product that extensively relies on Kubernetes features, you're likely familiar with the challenges of debugging Kubernetes architectures on your local machine.</p>
-
-<p>Mirrord, an open-source tool, offers a novel approach to debugging k8s clusters locally by mirroring only the relevant parts of the cluster to your local machine. Leveraging context from the cloud and remote access to other services, mirrord provides a comprehensive view of your cluster without the need to run it locally. We found that the more we embrace the cloud-native paradigm, the more we rely on mirrord to debug our services locally, saving us valuable developer hours every week.</p>
-
-<h2>
-  
-  
-  4. Deploying - <a href="https://www.winglang.io/"><u>Wing Language</u></a>
-</h2>
-
-<p>Infrastructure as code and defining deployment configurations isn't a new concept. However, just when we thought this space couldn't see disruption, Wing Language emerged with the intention of transforming everything. Wing's approach is to replace the imperative code used for application runtime and the declarative code used for infrastructure deployment with a new language that combines both aspects.</p>
-
-<p>Wing doesn't aim to replace all your application code but excels in what can be called the "Frontend of the Backend." It provides a robust SDK for all things related to cloud infrastructure, along with an imperative language for the operations your API typically performs. When we adopted Wing for our new project, we found that it significantly reduced our time to production and facilitated the creation of flexible, easily maintainable code.</p>
-
-<h2>
-  
-  
-  5. Integrate - <a href="https://runalloy.com/unified-api/"><u>Alloy Unified API</u></a>
-</h2>
-
-<p>It's common for modern applications to rely on other apps for extra functionality. These applications may include payment gateways, authentication systems, analytics tools, and more. While integrating with such APIs is relatively straightforward initially, it can become a maintenance and scaling nightmare as your application grows.</p>
-
-<p>Alloy Unified API is a new tool designed to solve this problem by providing a unified API for all the integrations you need. With Alloy, you can define a single data model that connects multiple APIs, ensuring that you always receive relevant real-time data. We found Alloy to be invaluable when integrating our marketing and customer metrics with our product APIs, saving us considerable time and resources.</p>
-
-<h2>
-  
-  
-  6. Authenticate - <a href="https://www.descope.com"><u>Descope</u></a>
-</h2>
-
-<p>While authentication SaaS toolkits have been around for a while, they often fall short of addressing the fundamental needs of modern distributed applications. Descope is a new authentication-as-a-service solution that prioritizes defining authentication workflows as first-class citizens.</p>
-
-<p>With Descope, you don't configure each part of the service as a separate entity but instead define the authentication flow and let Descope handle the rest. For instance, if you want your application to support login via email, phone, and social media, you can define the authentication flow for each and let Descope take care of the rest. Furthermore, Descope employs passwordless methods (biometrics, magic links, etc.) to enhance security and user-friendliness. Descope checks almost every item on the modern authentication checklist, making it a valuable tool for any contemporary application.</p>
-
-<h2>
-  
-  
-  7. Authorize - <a href="https://io.permit.io/blog-ph"><u>Permit.io</u></a>
-</h2>
-
-<p>Authorization is an integral part of almost any application out there, yet building it yourself in the context of modern architectures, and distributed systems can be challenging, not to mention time-consuming. Almost every permission decision in today's applications is based on multiple factors, including the user, the device, the location, the time, and more. Moreover, they often move away from using Role-Based Access Control (RBAC) in favor of more complex models (Such as Relationship and Attribute-Based Access Control -ReBAC/ABAC) to define permissions.</p>
-
-<p>Permit.io, <a href="https://io.permit.io/blog-ph"><u>recently launched on Product Hunt</u></a>, is a cloud service that simplifies permission definition through a user-friendly low-code UI interface. It supports all permission models (RBAC/ABAC/ReBAC) and seamlessly integrates with your application using their SDK, providing real-time insights into your permissions. Permit.io also offers detailed audit logs, Policy as Code for configuring permissions, GitOps features, rapid authorization decision times, and more - potentially saving months of development time.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lvW88Y59--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/uHFIbH5oQSOgRp0DnGPQ" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lvW88Y59--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/uHFIbH5oQSOgRp0DnGPQ" alt="Low-Code UI Simplification (5).png" title="Low-Code UI Simplification (5).png" width="800" height="479"></a></p>
-
-<h2>
-  
-  
-  8. Observe - <a href="https://www.keephq.dev"><u>Keep</u></a>
-</h2>
-
-<p>In recent years, our application observability stacks have grown with an abundance of tools, each addressing different aspects of the observability puzzle. While these tools are essential for staying on top of the cloud game, they often flood us with data and alerts, turning observability into a full-time job.</p>
-
-<p>Keep, an open-source tool that recently started offering a cloud service, takes a unique approach to address this issue through workflow automation. Instead of drowning in complex dashboards, you can create workflows that trigger when anomalies occur, allowing Keep to manage the rest. We initially used Keep to automate Slack messages for a specific use case in our application, but we soon realized its power in simplifying our dashboard complexity and reducing alert noise.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QROxx8-h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/bmP4WNUhQXGAJo8KGH7M" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QROxx8-h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/bmP4WNUhQXGAJo8KGH7M" alt="2UsV4cKmxMClrRWzqWBAfPORydU_builder.png" title="2UsV4cKmxMClrRWzqWBAfPORydU\_builder.png" width="800" height="484"></a></p>
-
-<h2>
-  
-  
-  9. Listen - <a href="https://trigger.dev/"><u>Trigger.dev</u></a>
-</h2>
-
-<p>While event-driven architecture isn't a novel concept, it has gained significant traction in recent years. With the native support of platforms like Vercel (Next.js) and Serverless, building event-driven applications has become more accessible. However, one crucial aspect was missing: creating long-running jobs that listen to events and trigger additional events based on business logic.</p>
-
-<p>Trigger.dev is an open-source framework (with a cloud service) that simplifies the creation of event-driven applications. You can easily download their SDK and build long-running jobs directly into your codebase, complete with features like API integrations, webhooks, scheduling, and delays. We found Trigger.dev invaluable when developing a simple application that listens to events from our marketing tools and triggers events in our application, saving us significant time and resources.</p>
-
-<h2>
-  
-  
-  10. AI Agents (Launching Soon) - <a href="https://www.fine.dev"><u>Fine.dev</u></a>
-</h2>
-
-<p>While LLM and AI have gained popularity for solving various developer challenges, the user experience of these tools often focuses on the AI component rather than the developer's needs. Fine.dev seeks to bridge this gap by introducing AI agents into the realm of developers.</p>
-
-<p>With Fine.dev, you can define custom AI agents that help developers with specific tasks tailored to their unique problems. Think of it as a chat agent but one that can be customized for specific stacks, technologies, applications, and more. We recently started using Fine.dev, and it feels like the missing piece in the AI puzzle. While it's currently in beta, we encourage you to join the waitlist and give it a try when it becomes available.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In this article, we've showcased the most exciting developer tools launched in 2023. Each of these tools embodies the innovative spirit driven by new trends in the software industry. Whether or not you intend to use them in production immediately, supporting early-stage developer tools has a significant impact on the industry. It fosters innovation and contributes to the future of our field.</p>
-
-<p>Want to learn more about useful dev tools? Join our Slack community and chat to other developers use low-code tools to create better applications.</p>
-
- </details> 
- <hr /> 
-
- #### - [Motion - Tailwind CSS Template Builder](https://dev.to/rarestoma/motion-tailwind-css-template-builder-3nm) 
- <details><summary>Article</summary> <p>Hi everyone!</p>
-
-<p>We recently launched a new theme to Loopple, a Drag &amp; Drop Website Template Builder for Tailwind CSS that aims to help developers to speed up their development process.</p>
-
-<p>Motion is built on top of Tailwind CSS and has the following features 50+ components included (more coming soon).</p>
-
-<p>Links:</p>
-
-<ul>
-<li><a href="https://www.loopple.com/theme/motion-landing-library">Motion Landing Library Builder</a></li>
-<li><a href="https://www.loopple.com/components/tailwind/category/motion-landing-library">Motion Landing Library Builder - Sections/Components</a></li>
-<li><a href="https://www.loopple.com/tailwind">More Tailwind Builders</a></li>
-<li>
-<a href="https://www.loopple.com/">Loopple</a> - Loopple website</li>
-</ul>
-
-<p>Any feedback is really helpfull and highly appreciated!</p>
-
-<p>Thank you!</p>
-
- </details> 
- <hr /> 
-
- #### - [In React, You Don't Need To Start Your Component Name With Capital First Letter](https://dev.to/myogeshchavan97/in-react-you-dont-need-to-start-your-component-name-with-capital-first-letter-51la) 
- <details><summary>Article</summary> <p><iframe width="710" height="399" src="https://www.youtube.com/embed/02NHq5EFwCI">
-</iframe>
-</p>
-
-<p>In React, we always start the component name with capital first letter.</p>
-
-<p>But you don't have to do that.</p>
-
-<p><strong>This is also a popular React interview question.</strong></p>
-
-<p>So I have published a YouTube video explaining the same.</p>
-
-<p>In this video, you will learn:</p>
-
-<p>✅ Why do we start the component name with a capital first letter</p>
-
-<p>✅ What will happen when we don't start the component name with a capital first letter</p>
-
-<p>✅ Behind the scene generated code when we start or don't start the component name with a capital first letter</p>
-
-<p>✅ Why you don't need to start the component name with a capital first letter</p>
-
-<p>and much more...</p>
-
-<h2>
-  
-  
-  Closing Points
-</h2>
-
-<p>If you're looking to enhance your skills in JavaScript, React, and Node.js with the MERN stack, then my <a href="https://www.youtube.com/@codingmastery_dev">YouTube Channel</a> is the perfect resource for you.</p>
-
-<p>The videos in this channel cover a range of topics related to JavaScript, React, and Node.js, including tutorials, code walkthroughs, tips and tricks, best practices, and much more.</p>
-
-<p>Whether you're a beginner or an experienced developer, our content is tailored to help you learn and grow.</p>
-
-<p>You can take a look at the below playlists also.</p>
-
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=l83AlOG3elw&amp;list=PLSJnlFr3D-mGIHFpo80ylsaBErtueSpYS">Master ES6 Features</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=aQ0ZcY5N8vw&amp;list=PLSJnlFr3D-mEUWnAwAtjDFPDLPt-Ene4T">Beginners Guide To React</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=tkVqm4VdpJA&amp;list=PLSJnlFr3D-mFm7-cdhnHdBvUdxUp-a9HL">Learn React Concepts</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=0YoT44j3Jg4">How to Build Unsplash Image Search App Using React</a> </p></li>
-<li><p><a href="https://www.youtube.com/watch?v=GDe8DFZcgoI&amp;list=PLSJnlFr3D-mEn4JLpA4F7UCAX_e5Nmx3q">Express JS + MongoDB Crash Course</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=ILcb7BD9R90&amp;list=PLSJnlFr3D-mEBWnL0XGa_hpGyiXoI_BIN">Learn Latest Webpack For Production</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=ha2Fh4Vi7xo&amp;list=PLSJnlFr3D-mEmCOE1mjlnsr1A8t5Zrmub">Redux Toolkit Crash Course</a></p></li>
-</ul>
-
-<p><strong>If you found this article and video useful, don't forget to subscribe to my <a href="https://www.youtube.com/@codingmastery_dev">YouTube Channel</a> and hit the bell icon so you will not miss any future video notifications.</strong></p>
-
-
-
-
-<p><strong>Want to stay up to date with regular content regarding JavaScript, React, Node.js?</strong> <a href="https://www.linkedin.com/in/yogesh-chavan97/"><strong>Follow me on LinkedIn</strong></a><strong>.</strong></p>
-
- </details> 
- <hr /> 
-
- #### - [Creating Your First Droplet - DigitalOcean Tutorials](https://dev.to/devarshishimpi/creating-your-first-droplet-digitalocean-tutorials-b16) 
+ #### - [Angular State Management: A Comparison of the Different Options Available](https://dev.to/chintanonweb/angular-state-management-a-comparison-of-the-different-options-available-100e) 
  <details><summary>Article</summary> <h2>
   
   
   Introduction
 </h2>
 
-<p>Welcome to another exciting tutorial on DigitalOcean! Today, we are going to dive deeper into the concept of a droplet.</p>
-
-<p>Feel free to checkout the below video I made for this tutorial as well.</p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/_WA8f7k_9Nw">
-</iframe>
-</p>
+<p>Angular, a robust JavaScript framework for building web applications, requires effective state management to handle complex data interactions. As applications grow in complexity, it becomes essential to manage and synchronize the application state efficiently. This article explores and compares various state management options available in Angular, using examples to illustrate their use cases.</p>
 
 <h2>
   
   
-  But what exactly is a droplet?
+  Understanding State Management
 </h2>
 
-<p>To understand a droplet, let's start with some internet magic. When you enter a web address like <code>google.com</code> in your browser, your computer and operating system work behind the scenes to translate that address into something called an <strong>IP address</strong>. You can actually see the IP address your computer used by navigating to a tool like <a href="https://tools.keycdn.com/geo">KeyCDN IP Location finder</a>.</p>
+<p>Before delving into different state management options, let's clarify why state management matters in Angular applications. State refers to the data and user interface (UI) conditions within an application. It can be categorized as follows:</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XqIkCFNP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/whkfm001494r80zdakd8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XqIkCFNP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/whkfm001494r80zdakd8.png" alt="google-homepage" width="800" height="402"></a></p>
+<ol>
+<li><p><strong>Local Component State:</strong> Specific to a single component, this includes data and UI-related information relevant only to that component.</p></li>
+<li><p><strong>Global Application State:</strong> Shared and accessible across multiple components or the entire application, this state requires careful management.</p></li>
+</ol>
 
-<p><strong>An IP address</strong> is associated with a computer somewhere on our planet. It represents the computer that sends you all the web content you see on your screen. For example, when you visit Google's homepage, that IP address is responsible for delivering all the HTML elements to your browser.</p>
+<p>Now, let's examine the state management options for Angular and provide examples for each.</p>
+
+<h2>
+  
+  
+  Local Component State
+</h2>
 
 <h3>
   
   
-  If you are considering hosting your own website, here are the basics:
+  1. <strong>Component Inputs and Outputs</strong>
 </h3>
 
-<ol>
-<li> Get yourself a computer <em>you probably already have one</em>.</li>
-<li> Obtain a public IP address for your computer, which connects it to the internet.</li>
-<li> Optionally, register a domain name <em>like google.com</em> for easy access.</li>
-<li> Configure your computer to respond to requests, similar to how Google does it.</li>
-</ol>
+<p><strong>Example:</strong></p>
 
-<p>Now, here comes the interesting part. DigitalOcean helps you skip the first two steps altogether. When you create a droplet on DigitalOcean, you essentially get a virtual computer located anywhere in the world, complete with its own unique IP address.</p>
+<p>Suppose you have a parent component <code>App</code> and a child component <code>ProductList</code>. You want to pass a list of products from <code>App</code> to <code>ProductList</code>.<br>
+</p>
 
-<p>In other words, a droplet is like your personal virtual computer that is ready to serve your web content to the world. It saves you the hassle of setting up physical hardware and obtaining a public IP address.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="c">&lt;!-- app.component.html --&gt;</span>
+<span class="nt">&lt;app-product-list</span> <span class="na">[products]=</span><span class="s">"productList"</span><span class="nt">&gt;&lt;/app-product-list&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// app.component.ts</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nl">productList</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[...];</span> <span class="c1">// List of products</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// product-list.component.ts</span>
+<span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">products</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[];</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  2. <strong>ngModel</strong>
+</h3>
+
+<p><strong>Example:</strong></p>
+
+<p>Consider a form in a component where you want to manage form-related state using <code>ngModel</code>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="c">&lt;!-- product-edit.component.html --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">[(ngModel)]=</span><span class="s">"product.name"</span> <span class="nt">/&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// product-edit.component.ts</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">ProductEditComponent</span> <span class="p">{</span>
+  <span class="nl">product</span><span class="p">:</span> <span class="nx">Product</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Product Name</span><span class="dl">'</span> <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  3. <strong>ViewChild and ContentChild</strong>
+</h3>
+
+<p><strong>Example:</strong></p>
+
+<p>Suppose you want to access and manipulate the state of child components within a parent component.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// parent.component.ts</span>
+<span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="nx">ChildComponent</span><span class="p">)</span> <span class="nx">childComponent</span><span class="p">:</span> <span class="nx">ChildComponent</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// child.component.ts</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">ChildComponent</span> <span class="p">{</span>
+  <span class="c1">// Child component logic</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
 
 <h2>
   
   
-  Creating a droplet with DigitalOcean
+  Global Application State
 </h2>
 
-<p>Now that we understand the basics, let's take a look at the step-by-step process of creating a droplet on DigitalOcean using Ubuntu as the operating system.</p>
+<h3>
+  
+  
+  1. <strong>Services</strong>
+</h3>
 
-<ol>
-<li>Sign in to your <a href="https://m.do.co/c/645d44d1a7a1">DigitalOcean</a> account or create a new one if you don't have an account already.</li>
-</ol>
+<p><strong>Example:</strong></p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--f4bQROxz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oioxmxabgvkhf04xmopc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--f4bQROxz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oioxmxabgvkhf04xmopc.png" alt="digitalocean-dashboard" width="800" height="399"></a></p>
+<p>Imagine you need to share authentication status across multiple components.<br>
+</p>
 
-<ol>
-<li><p>Once you're logged in, navigate to the dashboard and click on the <strong>"Create"</strong> button. Choose the option to create a droplet.</p></li>
-<li><p>Select the region of the droplet you want create into. If you are just starting out! Prefer selecting the closest region to you for faster network access and less lag!</p></li>
-</ol>
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// auth.service.ts</span>
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AuthService</span> <span class="p">{</span>
+  <span class="nx">isAuthenticated</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zXR-I-0b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m92pidxlwyvbs9djml7e.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zXR-I-0b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m92pidxlwyvbs9djml7e.png" alt="digitalocean-region" width="800" height="410"></a></p>
+</div>
 
-<ol>
-<li> Select the operating system you want to use, for this tutorial, we will go with Ubuntu 22.04 LTS.</li>
-</ol>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vXhNyKas--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5tl7sxngizynpdk64jjg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vXhNyKas--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5tl7sxngizynpdk64jjg.png" alt="digitalocean-os" width="800" height="409"></a></p>
 
-<ol>
-<li> Next, choose the plan and region that best fit your needs. We'll be going with the basic $6 plan.</li>
-</ol>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qrpJUByF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1zlnh7tenjaveem4s49d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qrpJUByF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1zlnh7tenjaveem4s49d.png" alt="digitalocean-plans" width="800" height="402"></a></p>
 
-<ol>
-<li><p>You can optionally set up authentication methods such as password authentication or SSH keys. We'll going with the password authentication method for this tutorial.</p></li>
-<li><p>Finally, give it a name and click on the <strong>"Create Droplet"</strong> button to initiate the creation process.</p></li>
-</ol>
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// app.component.ts</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">authService</span><span class="p">:</span> <span class="nx">AuthService</span><span class="p">)</span> <span class="p">{}</span>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--T8_BuUsZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lyy3ke3rjcxllcgu37ct.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--T8_BuUsZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lyy3ke3rjcxllcgu37ct.png" alt="digitalocean-cdroplet" width="800" height="401"></a></p>
+  <span class="nx">login</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">isAuthenticated</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  2. <strong>RxJS and BehaviorSubject</strong>
+</h3>
+
+<p><strong>Example:</strong></p>
+
+<p>Suppose you have a real-time chat application where you need to manage and display messages.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// chat.service.ts</span>
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">ChatService</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">messagesSubject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BehaviorSubject</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([]);</span>
+  <span class="nx">messages$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">messagesSubject</span><span class="p">.</span><span class="nx">asObservable</span><span class="p">();</span>
+
+  <span class="nx">addMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">currentMessages</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">messagesSubject</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="nx">currentMessages</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">messagesSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">currentMessages</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// chat.component.ts</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">ChatComponent</span> <span class="p">{</span>
+  <span class="nl">messages</span><span class="p">:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">chatService</span><span class="p">:</span> <span class="nx">ChatService</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chatService</span><span class="p">.</span><span class="nx">messages$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">messages</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">sendMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">chatService</span><span class="p">.</span><span class="nx">addMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  3. <strong>NgRx Store</strong>
+</h3>
+
+<p><strong>Example:</strong></p>
+
+<p>For managing a shopping cart in an e-commerce app, you can utilize NgRx Store.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// cart.actions.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createAction</span><span class="p">,</span> <span class="nx">props</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@ngrx/store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">addToCart</span> <span class="o">=</span> <span class="nx">createAction</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">[Cart] Add Item</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">props</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">item</span><span class="p">:</span> <span class="nx">Product</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// cart.reducer.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createReducer</span><span class="p">,</span> <span class="nx">on</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@ngrx/store</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">addToCart</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./cart.actions</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">initialState</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">const</span> <span class="nx">_cartReducer</span> <span class="o">=</span> <span class="nx">createReducer</span><span class="p">(</span>
+  <span class="nx">initialState</span><span class="p">,</span>
+  <span class="nx">on</span><span class="p">(</span><span class="nx">addToCart</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="p">{</span> <span class="nx">item</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">state</span><span class="p">,</span> <span class="nx">item</span><span class="p">])</span>
+<span class="p">);</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">cartReducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">_cartReducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  4. <strong>Akita</strong>
+</h3>
+
+<p><strong>Example:</strong></p>
+
+<p>Suppose you want to manage the list of user notifications across your application.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// notification.store.ts</span>
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
+<span class="p">@</span><span class="nd">StoreConfig</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">notifications</span><span class="dl">'</span> <span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">NotificationStore</span> <span class="kd">extends</span> <span class="nx">EntityStore</span><span class="o">&lt;</span><span class="nx">NotificationState</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">initialState</span><span class="p">:</span> <span class="nx">NotificationState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">notifications</span><span class="p">:</span> <span class="p">[],</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">NotificationState</span> <span class="p">{</span>
+  <span class="nl">notifications</span><span class="p">:</span> <span class="nx">Notification</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// notification.service.ts</span>
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">NotificationService</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">notificationStore</span><span class="p">:</span> <span class="nx">NotificationStore</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="nx">addNotification</span><span class="p">(</span><span class="nx">notification</span><span class="p">:</span> <span class="nx">Notification</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">notificationStore</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">notification</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
 
 <h2>
   
   
-  Connecting to our newly created droplet
+  A Comparison of State Management Options
 </h2>
 
-<p>After creating your droplet, you will receive the necessary information to access and manage it. To access the droplet, you can use SSH to connect to it.<br>
-</p>
+<p>Let's compare these state management options based on key criteria, using examples where applicable:</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>ssh root@&lt;yourdropletipaddress&gt;
-</code></pre>
+<h3>
+  
+  
+  1. <strong>Complexity</strong>
+</h3>
 
-</div>
+<ul>
+<li>
+<strong>Component Inputs and Outputs:</strong> Low complexity, suitable for simple scenarios.</li>
+<li>
+<strong>ngModel:</strong> Low complexity, ideal for form-related state.</li>
+<li>
+<strong>ViewChild and ContentChild:</strong> Moderate complexity, useful for interacting with child components.</li>
+<li>
+<strong>Services:</strong> Moderate complexity, good for simple to moderately complex applications (e.g., authentication).</li>
+<li>
+<strong>RxJS and BehaviorSubject:</strong> Moderate to high complexity, suitable for complex applications with reactive data (e.g., real-time chat).</li>
+<li>
+<strong>NgRx Store:</strong> High complexity, best for large and complex applications with strict state management (e.g., shopping cart).</li>
+<li>
+<strong>Akita:</strong> Moderate complexity, offers a balance between simplicity and power (e.g., user notifications).</li>
+</ul>
 
+<h3>
+  
+  
+  2. <strong>Scalability</strong>
+</h3>
 
+<ul>
+<li>
+<strong>Component Inputs and Outputs:</strong> Limited scalability for sharing state beyond parent-child relationships.</li>
+<li>
+<strong>ngModel:</strong> Limited scalability for form-related state.</li>
+<li>
+<strong>ViewChild and ContentChild:</strong> Limited scalability for state management across components.</li>
+<li>
+<strong>Services:</strong> Scalable for medium-sized applications (e.g., authentication).</li>
+<li>
+<strong>RxJS and BehaviorSubject:</strong> Scalable for complex applications with a need for reactive state (e.g., real-time chat).</li>
+<li>
+<strong>NgRx Store:</strong> Highly scalable for large and complex applications (e.g., shopping cart).</li>
+<li>
+<strong>Akita:</strong> Scalable for applications of varying sizes (e.g., user notifications).</li>
+</ul>
 
-<p>Once connected to your droplet via SSH, it is a good practice to update the packages on your server. Simply run the appropriate commands to apply updates and upgrade any outdated software.</p>
+<h3>
+  
+  
+  3. <strong>Developer Experience</strong>
+</h3>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Fiww4-U0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzpin1m3z4loo0b10zsv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Fiww4-U0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzpin1m3z4loo0b10zsv.png" alt="droplet-created" width="800" height="398"></a></p>
+<ul>
+<li>
+<strong>Component Inputs and Outputs:</strong> Easy to grasp and use.</li>
+<li>
+<strong>ngModel:</strong> Simple for form state but may not be suitable for complex state management.</li>
+<li>
+<strong>ViewChild and ContentChild:</strong> Requires understanding of component hierarchies.</li>
+<li>
+<strong>Services:</strong> Straightforward and widely used.</li>
+<li>
+<strong>RxJS and BehaviorSubject:</strong> Requires a good understanding of reactive programming but offers powerful tools.</li>
+<li>
+<strong>NgRx Store:</strong> Requires a deep understanding of NgRx concepts but provides strong structure.</li>
+<li>
+<strong>Akita:</strong> Offers a balance between simplicity and power, making it developer-friendly.</li>
+</ul>
 
-<p>For Ubuntu, you can use the following commands:<br>
-</p>
+<h3>
+  
+  
+  4. <strong>Community and Ecosystem</strong>
+</h3>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>sudo apt update &amp;&amp; sudo apt upgrade -y
-</code></pre>
+<ul>
+<li>
+<strong>Component Inputs and Outputs:</strong> Widely used in Angular, with ample community support.</li>
+</ul>
 
-</div>
+<h2>
+  
+  
+  - <strong>ngModel:</strong> Part of the Angular core, well-supported.
+</h2>
 
+<p><strong>ViewChild and ContentChild:</strong> Part of Angular, with community resources available.</p>
 
-
-<p>Moreover, installing useful tools like neofetch can provide you with system information at a glance. To install neofetch, you can use the following command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>sudo apt install neofetch -y
-</code></pre>
-
-</div>
-
-
-
-<p>After successful installation, you can run the <code>neofetch</code> command to see your system's configuration details.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--k-Dz7L5J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eef4rj34pinwiqgz6mb4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--k-Dz7L5J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eef4rj34pinwiqgz6mb4.png" alt="do-neofetch" width="800" height="405"></a></p>
-
-<p>Stay tuned for more DigitalOcean tutorials where we will dive deeper into other exciting features and functionalities.</p>
-
-<p>In the meantime, feel free to explore the <a href="https://www.youtube.com/watch?v=T6a4OxTDc4M&amp;list=PLHb-q3SQD4ifZ5fLtvGI69UGKh-XEDHQa">playlist</a> I have created on DigitalOcean where you can find more informative videos. Happy hosting!</p>
+<ul>
+<li>
+<strong>Services:</strong> Widely adopted in Angular applications.</li>
+<li>
+<strong>RxJS and BehaviorSubject:</strong> Popular in the Angular community, extensive resources available.</li>
+<li>
+<strong>NgRx Store:</strong> Strong community and ecosystem, well-documented.</li>
+<li>
+<strong>Akita:</strong> Growing community and ecosystem, with good documentation.</li>
+</ul>
 
 <h2>
   
@@ -478,474 +570,1322 @@
   Conclusion
 </h2>
 
-<p>By following these steps, you are now well on your way to creating your first droplet on DigitalOcean and configuring it to serve your web content. With DigitalOcean's user-friendly interface and powerful infrastructure, hosting your website becomes a seamless experience.</p>
-
-<p>Feel free to checkout the below video I made for this tutorial as well.</p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/_WA8f7k_9Nw">
-</iframe>
-</p>
-
-<p><strong>Thanks for reading till the end! Please consider supporting me on my socials!</strong></p>
-
-<p><strong><a href="https://www.youtube.com/@devarshishimpi">Youtube</a><br>
-<a href="https://github.com/devarshishimpi">Github</a><br>
-<a href="https://twitter.com/devarshishimpi">Twitter</a><br>
-<a href="https://www.linkedin.com/in/devarshi-shimpi/">Linkedin</a></strong></p>
-
-<p><em>This post includes affiliate links; I may receive compensation if you purchase products or services from the different links provided in this article.</em></p>
+<p>In Angular, effective state management is crucial for building robust and scalable applications. Your choice of state management option depends on factors like the complexity of your application, your familiarity with reactive programming, and your specific requirements. Whether you opt for simple component inputs and outputs, leverage services, or embrace libraries like NgRx or Akita, ensure that your choice aligns with your project's needs and your team's expertise. Remember that there's no one-size-fits-all solution, and the right choice may vary from one project to another.</p>
 
  </details> 
  <hr /> 
 
- #### - [Part 4 (c): Unit Testing: How to Build a To-do App with Vue.Js](https://dev.to/miracool/part-4-c-unit-testing-how-to-build-a-to-do-app-with-vuejs-2dli) 
- <details><summary>Article</summary> <p>Welcome back! In our previous article, we explored the core features of our app and introduced three essential utility components: <code>BaseButton</code>,<code>BaseModal</code>, and <code>BaseInput</code>. In this section, we'll dive into the world of unit testing and learn how to ensure that our utility components work as expected.</p>
+ #### - [Exploring Steganography in the Wild - Part 1](https://dev.to/ranggakd/exploring-steganography-in-the-wild-part-1-5hll) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  
+  Outlines
+  <ul>
+<li>Introduction</li>
+<li>Steganography</li>
+<li>Digital Images and Pixels</li>
+<li>Color Models</li>
+<li>Binary Code</li>
+<li>What To Expect</li>
+<li>Project Setup</li>
+<li>
+Core Concepts
 
-<p>We'll continue enhancing our To-Do App by adding comprehensive unit tests for the <a href="https://dev.to/miracool/part-4-b-how-to-build-a-to-do-app-with-vue-js-creating-reusable-ui-5en8">utility components built in the previous section</a>. Our goal is to build a robust application while ensuring that critical parts of its functionality are thoroughly tested. Let's dive into the test coverage.</p>
+<ul>
+<li>Mapping Techniques</li>
+<li>Bit Manipulation for Hiding Images</li>
+<li>Bit Manipulation for Revealing Images</li>
+<li>Bit Manipulation for Reconstructing Images</li>
+</ul>
+</li>
+<li>
+Implementation Details
 
-<p>If you've followed this series from the beginning, you won't have any problem adding tests to your project. However, if you are new, kindly check <a href="https://dev.to/miracool/part-4-a-project-how-to-build-a-mini-app-with-vuejs-3nc2">here for more information on how to get started</a>.</p>
+<ul>
+<li>Supported Image Formats</li>
+<li>Code Structure</li>
+<li>Explanation of Helper Functions</li>
+<li>Explanation of Steganograph Class</li>
+</ul>
+</li>
+<li>
+Results and Visualization
+
+<ul>
+<li>Visual Examples of Pre-Encoded Images</li>
+<li>Visual Examples of Encoded Images</li>
+<li>Visual Examples of Decoded Images</li>
+<li>Visual Examples of Reconstructed Images</li>
+</ul>
+</li>
+<li>Evaluation Metrics</li>
+<li>Limitations and Future Work</li>
+<li>
+Conclusion
+
+<ul>
+<li>Summing Up the Journey</li>
+<li>Technical Achievements</li>
+<li>Key Takeaways</li>
+</ul>
+</li>
+<li>
+Additional Sections
+</li>
+</ul>
+
+
 
 <h2>
   
   
-  Writing Tests for BaseButton
+  Introduction
 </h2>
 
-<p>Understanding the <code>BaseButton</code> component is important if we are going to write an effective test that covers all scenarios that are expected. Let's briefly recap the key features of the BaseButton component.</p>
+</h2>
+<p>Welcome to a fascinating exploration of steganography and its applications. Steganography is a technique often cloaked in mystery, yet it serves practical purposes that extend from cybersecurity to digital watermarking. In this blog post, we'll delve into the nitty-gritty details of how steganography is applied to digital images.</p>
+
+<h3>
+  
+  
+  Steganography
+</h3>
+
+<blockquote>
+<p>Steganography is the practice of representing information within another message or physical object, in such a manner that the presence of the information is not evident to human inspection - <a href="https://en.wikipedia.org/wiki/Steganography">Wikipedia</a>.</p>
+</blockquote>
+
+<p>In simpler terms, steganography is akin to embedding a covert message within another overt message—in our case, hiding one image within another. </p>
+
+<h3>
+  
+  
+  Digital Images and Pixels
+</h3>
+
+<blockquote>
+<p>A digital image is an image composed of picture elements, also known as pixels, each with finite, discrete quantities of numeric representation for its intensity or gray level that is an output from its two-dimensional functions fed as input by its spatial coordinates denoted with x, y on the x-axis and y-axis, respectively - <a href="https://en.wikipedia.org/wiki/Digital_image">Wikipedia</a>.</p>
+</blockquote>
+
+<p>Imagine a digital image as an intricate mosaic composed of minuscule tiles, known as pixels. Each pixel contributes to the overall image by adding its own splash of color. The more pixels you have, the more vivid and detailed your image becomes.</p>
+
+<h3>
+  
+  
+  Color Models
+</h3>
+
+<blockquote>
+<p>Color models are tools central to color theory that define the color spectrum based on presence or absence of a few primary colors - <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/rth2.12308">onlinelibrary.wiley.com</a></p>
+</blockquote>
+
+<p>Think of color models as the recipe books for digital artists. Just like mixing primary colors in art class, color models help us understand how to blend different amounts of red, green, and blue light to produce various hues. In this discussion, we'll focus on the RGB (Red-Green-Blue) color model, which is the cornerstone for reproducing a wide array of colors in digital media.</p>
+
+<blockquote>
+<p>The name of the model comes from the initials of the three additive primary colors, red, green, and blue. The main purpose of the RGB color model is for the sensing, representation, and display of images in electronic systems, such as televisions and computers - <a href="https://en.wikipedia.org/wiki/RGB_color_model">Wikipedia</a>.</p>
+</blockquote>
+
+<h3>
+  
+  
+  Binary Code
+</h3>
+
+<blockquote>
+<p>Binary code is a system of representing information using only two symbols, typically 0 and 1 - <a href="https://www.britannica.com/technology/binary-code">Britannica</a></p>
+</blockquote>
+
+<p>In the realm of digital images, each pixel's color information is represented by 8-bit binary digits. This means each pixel can display one of (2^8) or 256 possible colors.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---is9Oyqz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q41hsl3rg4dgdfbk98lo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---is9Oyqz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q41hsl3rg4dgdfbk98lo.png" alt="8 bit binary digit" width="800" height="123"></a></p>
+
+<blockquote>
+<p>In computing, the most significant bit (MSb) represents the highest-order place of a binary integer. Similarly, the least significant bit (LSb) is the bit position in a binary integer representing the binary 1s place of the integer - <a href="https://en.wikipedia.org/wiki/Bit_numbering">Wikipedia</a></p>
+</blockquote>
+
+<p>The concept of most significant bit (MSb) and least significant bit (LSb) is crucial here. Altering the MSb can have a profound impact on a pixel's color, while changes to the LSb are usually subtle.</p>
+
+<p>The <strong>leftmost bit</strong> is the <strong>most significant bit</strong>. We change this bit and it will affect tremendously on the value. For example, we flip the leftmost bit of the binary value of 165 from <code>1</code> to <code>0</code> (from 10100101 into 00100101) it will change the decimal value from 165 into 37.</p>
+
+<p>On the other hand, the <strong>rightmost bit</strong> is the <strong>least significant bit</strong>. We change this bit and it won't affect tremendously on the value. For example, we flip the rightmost bit of the binary value of 165 from <code>1</code> to <code>0</code> (from <code>10100101</code> into <code>10100100</code>) it will change the decimal value from 165 into 164.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8AeMmHmK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75wnkg7oqf56ltb5zl4u.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8AeMmHmK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75wnkg7oqf56ltb5zl4u.png" alt="pixels" width="800" height="298"></a></p>
+
+<p>So, let's tie it all together: each pixel in a digital image comprises three color values (RGB), each represented by an 8-bit binary digit. We'll exploit the "insignificance" of the least significant bits to embed one image into another without causing noticeable changes to the host image. This is the magic key to image-based steganography. We'll change the <strong>less significant bits</strong> of one image to include the <strong>most significant bits</strong> of another.</p>
+
+<h3>
+  
+  
+  What To Expect
+</h3>
+
+<p>In this technical dev blog post, you'll find:</p>
 
 <ul>
-<li>It's a reusable button component.</li>
-<li>It accepts props for label, variant, and disabled.</li>
-<li>The button's appearance and behavior depend on these props.</li>
-<li>It emits a custom 'clk' event when clicked.</li>
+<li>A deep dive into <strong>steganography</strong>, particularly the art of concealing one image within another.</li>
+<li>A focus on <strong>LSB steganography</strong>, which involves manipulating the least significant bits of pixels in a cover image to hide another image.</li>
+<li>Practical <strong>code examples</strong> and vivid <strong>visualizations</strong> to help you understand the process of hiding and retrieving images.</li>
+<li>A discussion on the <strong>challenges</strong> and <strong>limitations</strong> one might encounter, such as the quality of the concealed image.</li>
 </ul>
 
-<p><code>src/components/utility/BaseButton.vue</code><br>
+<p>So, buckle up for an exciting journey through the world of steganography!</p>
+
+<h2>
+  
+  
+  Project Setup
+</h2>
+
+<p>Before diving into the technicalities of steganography, it's essential to set up your workspace properly. This ensures that you can effortlessly follow along with the examples and get the most out of this exploration. Whether you're a seasoned coder or just dipping your toes into the Python ecosystem, I've got you covered.</p>
+
+<p>I've created a Google Colab-compatible Jupyter Notebook to make this process seamless. The notebook is designed with a user-friendly UI/UX and hides the raw code, so you can focus on learning. And the best part? The code is pre-validated to run without hitches on the first try!</p>
+
+<p><a href="https://github.com/ranggakd/steganography/blob/main/Exploring_Steganography_In_The_Wild_Part_1.ipynb" class="ltag_cta ltag_cta--branded">Just click the 'Open in Colab' badge to get started!</a>
+</p>
+
+<p>If you're new to Google Colab or Python in general, don't worry! Here's an introductory <a href="https://www.youtube.com/watch?v=RLYoEyIHL6A">video on Google Colab for Beginners</a> to help you get started.</p>
+
+<p>For those who are more experienced and might prefer to run the project locally, here are the Python package requirements to set up your environment:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nx">button</span>
-      <span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">['p-3 text-center w-full rounded-4xl', variantClass ]</span><span class="dl">"</span>
-      <span class="p">:</span><span class="nx">disabled</span><span class="o">=</span><span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span>
-      <span class="p">:</span><span class="nx">aria</span><span class="o">-</span><span class="nx">disabled</span><span class="o">=</span><span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span>
-      <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">handleClick</span><span class="dl">"</span>
-      <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span>
-   <span class="o">&gt;</span>
-    <span class="p">{{</span> <span class="nx">label</span> <span class="p">}}</span>
-  <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-      <span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">BaseButton</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-         <span class="na">label</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-         <span class="na">variant</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-            <span class="na">default</span><span class="p">:</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span><span class="p">,</span>
-         <span class="p">},</span>
-         <span class="na">disabled</span><span class="p">:</span> <span class="nb">Boolean</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nx">variantClass</span><span class="p">(){</span>
-            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">disabled</span><span class="p">){</span>
-               <span class="k">return</span>  <span class="s2">`variant-</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">variant</span><span class="p">}</span><span class="s2">-disabled`</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">return</span> <span class="s2">`variant-</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">variant</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
-         <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">clk</span><span class="dl">'</span><span class="p">);</span>
-         <span class="p">},</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
-   <span class="cm">/* variant style */</span>
-   <span class="p">.</span><span class="nx">variant</span><span class="o">-</span><span class="nx">primary</span> <span class="p">{</span>
-      <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">414066</span><span class="p">;</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="nx">fff</span><span class="p">;</span>
-   <span class="p">}</span>
-   <span class="p">.</span><span class="nx">variant</span><span class="o">-</span><span class="nx">primary</span><span class="o">-</span><span class="nx">disabled</span> <span class="p">{</span>
-      <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">414066</span><span class="nx">c3</span><span class="p">;</span>
-      <span class="nl">cursor</span><span class="p">:</span> <span class="nx">not</span><span class="o">-</span><span class="nx">allowed</span><span class="p">;</span>
-   <span class="p">}</span>
-   <span class="p">.</span><span class="nx">variant</span><span class="o">-</span><span class="nx">secondary</span> <span class="p">{</span>
-      <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">4</span><span class="nx">C6640</span><span class="p">;</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="nx">fff</span><span class="p">;</span>
-   <span class="p">}</span>
-   <span class="p">.</span><span class="nx">variant</span><span class="o">-</span><span class="nx">secondary</span><span class="o">-</span><span class="nx">disabled</span> <span class="p">{</span>
-      <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">4</span><span class="nx">c6640b4</span><span class="p">;</span>
-      <span class="nl">cursor</span><span class="p">:</span> <span class="nx">not</span><span class="o">-</span><span class="nx">allowed</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-<p>In this component, the  element's appearance and behavior are dynamically controlled by the <code>variant</code> prop. The <code>variantClass</code> computed property generates a CSS class based on the prop's value. If the button is <code>disabled</code>, it appends the -disabled suffix to the variant prop's value, creating a specific class like <code>variant-primary-disabled</code> or <code>variant-secondary-disabled</code>. These classes are then applied to the button, altering its visual style and behavior. For instance, if the variant prop is set to 'primary' and disabled is true, the button will have the <code>variant-primary-disabled</code> class, giving it a disabled appearance with a different background color and a 'not-allowed' cursor. This dynamic class assignment ensures flexible and reusable button styling based on the variant prop, making it easy to create different button styles throughout the application.</p>
-
-<p><code>src/components/__test__/__utils/BaseButton.spec.ts</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">describe</span><span class="p">,</span> <span class="nx">it</span><span class="p">,</span> <span class="nx">expect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vitest</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">mount</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@vue/test-utils</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">AppButton</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../utility/BaseButton.vue</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">AppButton</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">renders primary button properly</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nx">mount</span><span class="p">(</span><span class="nx">AppButton</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Click me</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">variant</span><span class="p">:</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">disabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">});</span>
-
-    <span class="c1">// Check if the button has the correct label</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">text</span><span class="p">()).</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">Click me</span><span class="dl">'</span><span class="p">);</span>
-    <span class="c1">// Check if the button has the correct classes for primary variant</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">classes</span><span class="p">()).</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">variant-primary</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">classes</span><span class="p">()).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">variant-primary-disabled</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">renders disabled primary button properly</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nx">mount</span><span class="p">(</span><span class="nx">AppButton</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Click me</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">variant</span><span class="p">:</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">disabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">});</span>
-
-    <span class="c1">// Check if the button has the correct classes for disabled primary variant</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">classes</span><span class="p">()).</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">variant-primary-disabled</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">classes</span><span class="p">()).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">variant-primary</span><span class="dl">'</span><span class="p">);</span>    
-    <span class="c1">// Check if the 'disabled' attribute is set correctly</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">attributes</span><span class="p">(</span><span class="dl">'</span><span class="s1">aria-disabled</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">});</span>
+<pre class="highlight plaintext"><code>Python 3.7.12
+matplotlib==3.2.2
+matplotlib-inline==0.1.3
+matplotlib-venn==0.11.6
+numpy==1.21.5
+Pillow==7.1.2
+scikit-learn==1.0.2
 </code></pre>
 
 </div>
 
 
+<p>Once you have your environment set up, you'll be ready to delve into the world of steganography with me!</p>
+<h2>
+  
+  
+  Core Concepts
+</h2>
+<h3>
+  
+  
+  Mapping Techniques
+</h3>
 
-<p>In the provided unit tests for the <code>BaseButton</code> component, there are several assertions made to ensure that the component behaves correctly. Assertions are statements that check whether a certain condition or expectation holds true. </p>
+<p>Before diving into the nitty-gritty details, it's crucial to understand the four types of binary value mappings that we'll be using:</p>
 
-<p>Test Case 1 - Renders Primary Button Properly:</p>
+<ol>
+<li><p><strong>Left-Half Bits Mapping (LHB Map)</strong><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s---l1TfxpW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z8waj507ym60iv90kkmn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---l1TfxpW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z8waj507ym60iv90kkmn.png" alt="left half bits" width="800" height="336"></a><br>
+Think of this mapping as a way to extract the <strong>left-half bits</strong> values from the <strong>cover image</strong> within the <strong>merged image</strong>.</p></li>
+<li><p><strong>Right-Half Bits Mapping (RHB Map)</strong><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cprCBtzW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fdvnm9ww1skc8m87ddly.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cprCBtzW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fdvnm9ww1skc8m87ddly.png" alt="right half bits" width="800" height="336"></a><br>
+This mapping aims to extract the <strong>left-half bits</strong> values of the <strong>hidden image</strong> from the <strong>merged image</strong>.</p></li>
+<li><p><strong>Whole Bits Mapping (MB Map)</strong><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RLhIUVNN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/olbs0eakha61k7js5mn2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RLhIUVNN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/olbs0eakha61k7js5mn2.png" alt="merged bits" width="800" height="336"></a><br>
+This mapping is utilized to construct the <strong>whole bits</strong> values of the <strong>merged image</strong>, using the <strong>left-half bits</strong> values from both the <strong>cover</strong> and <strong>hidden images</strong>.</p></li>
+<li><p><strong>Possible Right-Half Bits Mapping (RRHB Map)</strong><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4ciXH9gd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6cgi1flq2ia5u17wn8g.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4ciXH9gd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6cgi1flq2ia5u17wn8g.png" alt="reconstruction bits" width="800" height="336"></a><br>
+In this case, we'll <strong>randomly</strong> pick possible <strong>half bits values</strong> as we don't store the information about the half bits beforehand. The aim here is to construct the <strong>right-half bits</strong> values of the <strong>unmerged left-half bits</strong> image for <strong>both the unmerged cover</strong> and <strong>hidden images</strong>.</p></li>
+</ol>
+<h3>
+  
+  
+  Bit Manipulation for Hiding Images
+</h3>
+
+<p>Now that we've understood the mapping types, let's look at how these mappings play a crucial role in hiding—or encoding—one image within another.</p>
+<h4>
+  
+  
+  Encoding Process
+</h4>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EIC6iA_f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m31fxuw51jexpya6d7av.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EIC6iA_f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m31fxuw51jexpya6d7av.png" alt="encode flow" width="427" height="592"></a></p>
+
+<p>Here's a summarized flow of the encoding process:</p>
 
 <ul>
-<li>In this test, we mount the <code>AppButton</code> component with specific props: <code>label</code> is set to 'Click me', <code>variant</code> is set to 'primary', and <code>disabled</code> is false.</li>
-<li>We then check if the button correctly displays the label 'Click me' using <code>expect(wrapper.text()).toContain('Click me')</code>.</li>
-<li>Next, we ensure that the button has the class variant-primary, indicating it's a primary button, with expect(wrapper.classes()).toContain('variant-primary'). Additionally, we confirm that it does not have the variant-primary-disabled class, which is expected for disabled primary buttons.</li>
-</ul>
-
-<p>Test Case 2 - Renders Disabled Primary Button Properly:</p>
+<li>
+<strong>Choose Images</strong>: Initially, you have to pick two images:
 
 <ul>
-<li>In this test, we mount the <code>AppButton</code> component with props: <code>label</code> set to 'Click me', <code>variant</code> set to 'primary', and <code>disabled</code> set to <code>true</code>.</li>
-<li>We validate that the button now has the <code>variant-primary-disabled</code> class, indicating it's a disabled primary button, using <code>expect(wrapper.classes()).toContain('variant-primary-disabled')</code>.</li>
-<li>To ensure it's not mistakenly identified as a standard primary button, we confirm that it does not have the variant-primary class with <code>expect(wrapper.classes()).not.toContain('variant-primary')</code>.</li>
-<li>Finally, we check if the <code>aria-disabled</code> attribute is set to 'true' using <code>expect(wrapper.attributes('aria-disabled')).toBe('true')</code>.</li>
+<li>A "Cover Image," which will serve as the shell where your secret image will reside.</li>
+<li>A "Hidden Image," which is the secret image you wish to hide within the cover image.</li>
 </ul>
+</li>
+<li>
+<strong>Extract and Map LHB (Left-Half Bits)</strong>: The "Hidden Image" undergoes LHB (Left-Half Bits) Mapping. This extracts the left-half bits from the hidden image and maps them to create a new image called "Left-half bits Hidden Image."</li>
+<li>
+<strong>Position the New Image</strong>: The "Left-half bits Hidden Image" is then positioned within the "Cover Image" according to specified criteria (e.g., upper left corner, lower right corner, etc.).</li>
+<li>
+<strong>Merge</strong>: Finally, the "Cover Image" and the positioned "Left-half bits Hidden Image" are merged together. This forms the "Merged Image," which looks like your original cover image but has the hidden image embedded within it.</li>
+</ul>
+<h3>
+  
+  
+  Bit Manipulation for Revealing Images
+</h3>
+
+<p>Let's shift our focus to how we can extract—or decode—the hidden image from the merged image.</p>
+<h4>
+  
+  
+  Decoding Process
+</h4>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RmSE3UFi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ew4ma9azc97n0a6kqezy.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RmSE3UFi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ew4ma9azc97n0a6kqezy.png" alt="decode flow" width="448" height="443"></a></p>
+
+<p>Here's a quick rundown of the decoding process:</p>
+
+<ul>
+<li>
+<strong>Use Merged Image</strong>: The initial step in decoding involves taking the "Merged Image," which contains both the "Cover Image" and the "Hidden Image."</li>
+<li>
+<strong>Extract Bits</strong>: The "Merged Image" is then divided into its component "left-half bits" (LHB) and "right-half bits" (RHB). These are different portions of the image's pixel data.</li>
+<li>
+<strong>Retrieve Images</strong>: The "left-half bits" are used to reconstruct an "Unmerged Left-half bits Cover Image," effectively extracting what used to be the cover image. Note that the right-half bits for this image are still zero. The "right-half bits" are used to reconstruct a "Unmerged Left-half bits Hidden Image," effectively extracting what used to be the hidden image, also with zero right-half bits. The position of this hidden image within the merged image is accounted for during this step.</li>
+</ul>
+<h3>
+  
+  
+  Bit Manipulation for Reconstructing Images
+</h3>
+
+<p>Finally, let's look at how we can reconstruct the original images from their half-bit versions.</p>
+<h4>
+  
+  
+  Reconstruction Process
+</h4>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8Vzfn3HO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u5zdbnnx5ecxm361s44v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8Vzfn3HO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u5zdbnnx5ecxm361s44v.png" alt="reconstruction flow" width="542" height="443"></a></p>
+
+<p>Here's how the reconstruction process works:</p>
+
+<ul>
+<li>
+<strong>Use Unmerged Bits</strong>: Use the unmerged left-half bits of both the cover and hidden images.</li>
+<li>
+<strong>Map Right-Half Bits</strong>: Use the "RRHB Mapping" to generate possible right-half bits values randomly.</li>
+<li>
+<strong>Reconstruct Images</strong>: The result is a reconstructed cover and hidden image.</li>
+</ul>
+
+<p>I hope these explanations provide a clearer understanding of the steganography techniques involved in hiding, revealing, and reconstructing images.</p>
+<h2>
+  
+  
+  Implementation Details
+</h2>
+<h3>
+  
+  
+  Supported Image Formats
+</h3>
+
+<p>In this exploration, we'll limit our focus to only two image formats: PNG and JPEG. This limitation helps keep our exploration straightforward.</p>
+<h3>
+  
+  
+  Code Structure
+</h3>
+
+<p>Before diving into the code's functionality, it's essential to get a grasp of its structure. Below is a snippet that outlines the main components of the code.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">.</span>
+├── get_bits_dict<span class="o">(</span>start: int, end: int, recon: bool <span class="o">=</span> False<span class="o">)</span> -&gt; Dict[int, int]
+├── get_merged_bits_array<span class="o">()</span> -&gt; np.ndarray
+├── dict_to_nparray<span class="o">(</span>d: dict<span class="o">)</span> -&gt; np.ndarray
+├── dict_to_2darray<span class="o">(</span>d: dict<span class="o">)</span> -&gt; np.ndarray
+└── Steganograph
+    ├── Object Attributes
+    │     ├── ispng: bool
+    │     ├── original_cover_image: numpy array
+    │     ├── original_hidden_image: numpy array
+    │     ├── left_half_bits_hidden_image: numpy array, default None
+    │     ├── merged_image: numpy array, default None
+    │     ├── unmerged_left_half_bits_cover_image: numpy array, default None
+    │     ├── unmerged_left_half_bits_hidden_image: numpy array, default None
+    │     ├── reconstructed_cover_image: numpy array, default None
+    │     └── reconstructed_hidden_image: numpy array, default None
+    ├──── Methods
+    │     ├── encode<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
+    │     ├── decode<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
+    │     ├── encode_decode<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
+    │     ├── reconstruct<span class="o">()</span>
+    │     ├── encode_decode_recon<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
+    │     ├── is_two_images_identical<span class="o">(</span>opt: int <span class="o">=</span> 0<span class="o">)</span> -&gt; bool
+    │     ├── save_image<span class="o">(</span>opt: int <span class="o">=</span> 0<span class="o">)</span>
+    │     ├── plot_original<span class="o">()</span>
+    │     ├── plot_left_half_bits<span class="o">()</span>
+    │     ├── plot_merged_image<span class="o">()</span>
+    │     ├── plot_unmerged_left_half_bits<span class="o">()</span>
+    │     └── plot_recon<span class="o">()</span>
+    └──── Class Attributes
+          ├── __lhb_lookup: lhb <span class="c">#Left half bits array lookup</span>
+          ├── __rhb_lookup: rhb <span class="c">#Right half bits array lookup</span>
+          ├── __mb_lookup: mb <span class="c">#Merged bits 2D array lookup</span>
+          ├── __rrhb_lookup: rrhb <span class="c">#Reconstruction right half bits dict lookup</span>
+          ├── __format: tuple <span class="o">(</span><span class="s1">'jpeg'</span>, <span class="s1">'png'</span><span class="o">)</span>
+          ├── __rgb: tuple <span class="o">(</span><span class="s1">'RGB'</span>, <span class="s1">'Red'</span>, <span class="s1">'Green'</span>, <span class="s1">'Blue'</span><span class="o">)</span>
+          └── __pos: tuple <span class="o">(</span><span class="s1">'upper_left'</span>, <span class="s1">'upper_right'</span>, <span class="s1">'lower_left'</span>, <span class="s1">'lower_right'</span><span class="o">)</span>
+</code></pre>
+
+</div>
+
+<h3>
+  
+  
+  Explanation of Helper Functions
+</h3>
+
+<p>The code incorporates several helper functions tailored for the art of steganography. Here's a brief rundown:</p>
+
+<ol>
+<li>
+<p><strong>get_bits_dict</strong>: This function produces a dictionary that maps an integer (ranging from 0 to 255) to another integer. The mapping varies based on whether the process is for reconstruction. In the standard case, it extracts the <strong>left-half bits</strong>, whereas for reconstruction, it extracts the <strong>right-half bits</strong>.<br>
+</p>
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+</li>
+<li>
+<p><strong>dict_to_nparray</strong>: Converting the dictionary from <code>get_bits_dict</code> into a numpy array facilitates faster lookup operations.<br></p>
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+</li>
+<li>
+<p><strong>get_merged_bits_array</strong>: This function constructs a 2D array where each cell at index <code>[i][j]</code> holds the merged <strong>left-half bits (cover image)</strong> of <code>i</code> and <strong>the left-half bits (hidden image)</strong> of <code>j</code>.<br></p>
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+</li>
+<li>
+<p><strong>dict_to_2darray</strong>: This works similarly to <code>dict_to_nparray</code>, but it reshapes the array into a 2D structure, particularly useful for image reconstruction.<br></p>
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+</li>
+<li>
+
+<p><strong>Respective function callings for later</strong>:<br>
+</p>
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<ul>
+<li>Generates a numpy array for quick look-up of the left-half bits of a given number.</li>
+<li>Creates a numpy array for speedy retrieval of the right-half bits of a number.</li>
+<li>Constructs a 2D numpy array for efficient look-up of the merged bits of two numbers.</li>
+<li>Builds a 2D numpy array for quick reference of the right-half bits of a number during the reconstruction phase.</li>
+</ul>
+
+
+</li>
+</ol>
+
+<h3>
+  
+  
+  Explanation of Steganograph Class
+</h3>
+
+<h4>
+  
+  
+  Explanation of the <code>__init__</code> Method:
+</h4>
+
+<p>The <code>__init__</code> method initializes an instance of the <code>Steganograph</code> class.</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h5>
+  
+  
+  Parameters:
+</h5>
+
+<ul>
+<li>
+<code>cover_image_filepath</code>: File path for the cover image (supports only JPEG or PNG formats).</li>
+<li>
+<code>hidden_image_filepath</code>: File path for the hidden image (supports only JPEG or PNG formats).</li>
+</ul>
+
+<h5>
+  
+  
+  Steps:
+</h5>
+
+<ol>
+<li><p><strong>Determine Image Formats</strong>: The method first determines the format (JPEG or PNG) of both the cover image and the hidden image using the <code>imghdr.what()</code> function. The formats are stored in <code>format_ci</code> and <code>format_hi</code> variables.</p></li>
+<li><p><strong>Validation</strong>: It checks whether both images have valid formats. If the formats don't match any in the class' <code>__format</code> attribute, it raises a <code>TypeError</code>.</p></li>
+<li><p><strong>Check Format Uniformity</strong>: It checks if both images have the same format. If not, it raises a <code>TypeError</code>.</p></li>
+<li><p><strong>PNG Format Flag</strong>: Sets the <code>ispng</code> flag to True if the format is PNG; otherwise, sets it to False.</p></li>
+<li><p><strong>Read Images</strong>: Reads the images into <code>original_cover_image</code> and <code>original_hidden_image</code> using the <code>plt.imread()</code> function from Matplotlib.</p></li>
+<li><p><strong>Invoke <code>read_and_adjust_images</code></strong>: Calls the method <code>read_and_adjust_images()</code> to perform additional adjustments on the images.</p></li>
+<li><p><strong>Set Initial States</strong>: Initializes the other attributes to None, as these would be populated by other methods later.</p></li>
+</ol>
+
+<h4>
+  
+  
+  Explanation of the <code>read_and_adjust_images</code> Method:
+</h4>
+
+<p>This method adjusts the read images for further processing, especially for PNG images. By the end of these methods, the class instance is well-prepared with loaded and adjusted images, and is ready for encoding and decoding operations.</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h5>
+  
+  
+  Steps:
+</h5>
+
+<ol>
+<li>
+<strong>Check if PNG</strong>: If the images are in PNG format (<code>ispng</code> is True):
+
+<ul>
+<li>
+<strong>Ignore Alpha Channel</strong>: If the images have an alpha (A) channel, it ignores it for now.</li>
+<li>
+<strong>Normalization</strong>: PNG images are often read in a normalized format where the pixel values are floats between 0 and 1. This method multiplies them by 255 and rounds off to convert them to integers.</li>
+<li>
+<strong>Type Casting</strong>: It then casts the numpy arrays to 'uint8' type, ensuring that they are 8-bit unsigned integers.</li>
+</ul>
+</li>
+</ol>
+
+<h4>
+  
+  
+  Explanation of the <code>encode</code> Method:
+</h4>
+
+<p>The <code>encode</code> method is responsible for creating a simple steganograph—merging a hidden image into a cover image in a way that it can later be extracted.</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h5>
+  
+  
+  Parameters:
+</h5>
+
+<ul>
+<li>
+<code>pos</code>: Specifies where the hidden image will be located in relation to the cover image. Default is <code>'upper_left'</code>.</li>
+</ul>
+
+<h5>
+  
+  
+  Steps:
+</h5>
+
+<ol>
+<li><p><strong>Position Validation</strong>: It validates whether the given position <code>pos</code> is one of the four pre-defined positions (<code>upper_left</code>, <code>upper_right</code>, <code>lower_left</code>, <code>lower_right</code>). If not, it raises a <code>ValueError</code>.</p></li>
+<li><p><strong>Get Left Half Bits</strong>: It calls <code>get_left_half_bits</code> to extract the left half-bits of the hidden image and stores them in the <code>left_half_bits_hidden_image</code> attribute.</p></li>
+<li><p><strong>Merge Half Bits</strong>: It then calls <code>merge_two_half_bits</code> to merge the modified hidden image with the cover image.</p></li>
+</ol>
+
+<h5>
+  
+  
+  Explanation of the <code>get_left_half_bits</code> Method:
+</h5>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h6>
+  
+  
+  Parameters:
+</h6>
+
+<ul>
+<li>
+<code>img_arr</code>: The image array that you want to extract the left half-bits from.</li>
+</ul>
+
+<h6>
+  
+  
+  Steps:
+</h6>
+
+<ol>
+<li><p><strong>Lookup</strong>: It looks up the left half-bits of the image array <code>img_arr</code> using a pre-defined lookup table <code>__lhb_lookup</code>.</p></li>
+<li><p><strong>Return</strong>: It returns the left half-bits.</p></li>
+</ol>
+
+<h5>
+  
+  
+  Explanation of the <code>merge_two_half_bits</code> Method:
+</h5>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h6>
+  
+  
+  Parameters:
+</h6>
+
+<ul>
+<li>
+<code>pos</code>: The position where the hidden image will be located in relation to the cover image.</li>
+</ul>
+
+<h6>
+  
+  
+  Steps:
+</h6>
+
+<ol>
+<li><p><strong>Copy Original Cover Image</strong>: It first creates a copy of the original cover image and stores it in <code>self.merged_image</code>.</p></li>
+<li><p><strong>Get Slicing Range</strong>: It calls the <code>get_slicing</code> method to determine the slice where the hidden image will be placed.</p></li>
+<li><p><strong>Merge the Half Bits</strong>: It merges the cover image and the modified hidden image together to create the final merged image (steganograph). It does this by using a pre-defined 2D lookup table <code>__mb_lookup</code> for each channel (RGB).</p></li>
+<li><p><strong>Type Casting</strong>: Finally, it casts the <code>merged_image</code> into 'uint8' type.</p></li>
+</ol>
+
+<h5>
+  
+  
+  Explanation of the <code>get_slicing</code> Method:
+</h5>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h6>
+  
+  
+  Parameters:
+</h6>
+
+<ul>
+<li>
+<code>large_shape</code>: A tuple representing the shape of the larger array, which is the cover image in this case.</li>
+<li>
+<code>small_shape</code>: A tuple representing the shape of the smaller array, which is the hidden image.</li>
+<li>
+<code>pos</code>: The position where the hidden image will be located in relation to the cover image. Valid options are 'upper_left', 'upper_right', 'lower_left', and 'lower_right'.</li>
+</ul>
+
+<h6>
+  
+  
+  Steps:
+</h6>
+
+<ol>
+<li><p><strong>Extract Shape Information</strong>: The method first extracts the shape information of both the larger and smaller arrays. This information includes the number of rows and columns in each array.</p></li>
+<li><p><strong>Calculate Slicing Range</strong>: Based on the <code>pos</code> value, the function calculates the range in the larger array where the smaller array will be placed. This is done using numpy slice notation (<code>np.s_</code>).</p></li>
+<li><p><strong>Error Handling</strong>: If an invalid <code>pos</code> value is provided, a <code>ValueError</code> is raised.</p></li>
+<li><p><strong>Return</strong>: The function returns the calculated slicing range, which can be used as a slice object for numpy arrays. This slice object will then be used to place the hidden image in the specified position within the cover image.</p></li>
+</ol>
+
+<p>By the end of the <code>encode</code> method, you'll have a steganograph where the hidden image is merged into the cover image at the specified position.</p>
+
+<h4>
+  
+  
+  Explanation of the <code>decode</code> Method:
+</h4>
+
+<p>The <code>decode</code> method aims to break down the steganograph created by the <code>encode</code> method to recover the original hidden and cover images.</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h5>
+  
+  
+  Parameters:
+</h5>
+
+<ul>
+<li>
+<code>pos</code>: This parameter specifies where the hidden image was embedded within the cover image. The default is <code>'upper_left'</code>.</li>
+</ul>
+
+<h5>
+  
+  
+  Steps:
+</h5>
+
+<ol>
+<li><p><strong>Validation</strong>: First, the method checks if <code>self.merged_image</code> is <code>None</code>. If it is, it raises a <code>TypeError</code>. It also validates that the position <code>pos</code> is one of the acceptable positions. If not, a <code>ValueError</code> is raised.</p></li>
+<li><p><strong>Unmerge</strong>: It calls the <code>unmerge_two_half_bits</code> method to separate the cover and hidden images from the merged image.</p></li>
+</ol>
+
+<h5>
+  
+  
+  Explanation of the <code>unmerge_two_half_bits</code> Method:
+</h5>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h6>
+  
+  
+  Parameters:
+</h6>
+
+<ul>
+<li>
+<code>pos</code>: Specifies the original position where the hidden image was embedded within the cover image.</li>
+</ul>
+
+<h6>
+  
+  
+  Steps:
+</h6>
+
+<ol>
+<li><p><strong>Slice Definition</strong>: Calls the <code>get_slicing</code> method to determine the slice range based on the <code>pos</code> value, i.e., where exactly the hidden image is located in the merged image.</p></li>
+<li><p><strong>Extract Left Half Bits of Cover Image</strong>: Uses the <code>get_left_half_bits</code> method to extract the left half bits of the merged image and assigns them to <code>self.unmerged_left_half_bits_cover_image</code>.</p></li>
+<li><p><strong>Extract Right Half Bits of Hidden Image</strong>: Similarly, it calls the <code>get_right_half_bits</code> method to extract the right half bits of the merged image. However, it does so only for the area specified by the slicing range returned by <code>get_slicing</code>.</p></li>
+</ol>
+
+<h5>
+  
+  
+  Explanation of the <code>get_right_half_bits</code> Method:
+</h5>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h6>
+  
+  
+  Parameters:
+</h6>
+
+<ul>
+<li>
+<code>img_arr</code>: The image array that you want to extract the right half-bits from.</li>
+</ul>
+
+<h6>
+  
+  
+  Steps:
+</h6>
+
+<ol>
+<li><p><strong>Lookup</strong>: It looks up the right half-bits of the image array <code>img_arr</code> using a pre-defined lookup table <code>__rhb_lookup</code>.</p></li>
+<li><p><strong>Return</strong>: It returns the right half-bits.</p></li>
+</ol>
+
+<p>In summary, the <code>decode</code> method and its supporting methods work together to reverse the steganographic process, extracting the hidden image and cover image from the merged image.</p>
+
+<h4>
+  
+  
+  Explanation of the <code>reconstruct</code> Method:
+</h4>
+
+<p>The <code>reconstruct</code> method aims to restore the original cover and hidden images from their left-half bits images, which were previously separated during the decoding process.</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h5>
+  
+  
+  Steps:
+</h5>
+
+<ol>
+<li><p><strong>Validation</strong>: The method checks that <code>self.unmerged_left_half_bits_cover_image</code> and <code>self.unmerged_left_half_bits_hidden_image</code> are not <code>None</code>. If either of them is <code>None</code>, it raises a <code>TypeError</code>, prompting you to run the <code>decode()</code> method first.</p></li>
+<li><p><strong>Reconstruct Cover Image</strong>: The <code>reconstruct_right_half_bits</code> method is called to reconstruct the right-half bits of the cover image. The reconstructed image is stored in <code>self.reconstructed_cover_image</code>.</p></li>
+<li><p><strong>Reconstruct Hidden Image</strong>: Similarly, the <code>reconstruct_right_half_bits</code> method is used to reconstruct the right-half bits of the hidden image. The reconstructed image is stored in <code>self.reconstructed_hidden_image</code>.</p></li>
+</ol>
+
+<h5>
+  
+  
+  Explanation of the <code>reconstruct_right_half_bits</code> Method:
+</h5>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h6>
+  
+  
+  Parameters:
+</h6>
+
+<ul>
+<li>
+<code>im_arr</code>: The left-half bits of an image as a numpy array.</li>
+<li>
+<code>seed</code>: A seed for the random number generator, defaulting to 1999.</li>
+</ul>
+
+<h6>
+  
+  
+  Steps:
+</h6>
+
+<ol>
+<li><p><strong>Random Seed</strong>: The <code>np.random.seed</code> function is used to set the random seed to ensure that the random process is reproducible.</p></li>
+<li><p><strong>Flattening Image</strong>: The <code>ravel()</code> method is used to flatten the <code>im_arr</code>, essentially turning it into a one-dimensional array (<code>flat_im_arr</code>).</p></li>
+<li><p><strong>Random Indices</strong>: A random set of indices (<code>random_indices</code>) is generated using <code>np.random.randint</code>, with the size of the array based on the shape of <code>flat_im_arr</code>. This will simulate the random selection of right-half bits for each corresponding left-half bit.</p></li>
+<li><p><strong>Reconstruction</strong>: The lookup table <code>__rrhb_lookup</code> is used in conjunction with <code>random_indices</code> to get a set of right-half bits for each corresponding left-half bit in <code>flat_im_arr</code>. The result (<code>reconstructed_flat</code>) is a one-dimensional array containing the reconstructed right-half bits.</p></li>
+<li><p><strong>Reshaping</strong>: The reconstructed one-dimensional array is reshaped back into its original shape (<code>shape</code>) to form the reconstructed image.</p></li>
+<li><p><strong>Type Casting</strong>: Finally, the numpy array is cast to the type <code>'uint8'</code>.</p></li>
+<li><p><strong>Return</strong>: The reconstructed image, now having both left and right half-bits, is returned.</p></li>
+</ol>
+
+<p>In summary, the <code>reconstruct</code> method and its sub-method <code>reconstruct_right_half_bits</code> work together to restore the original cover and hidden images from their left-half bits versions. This final step completes the round-trip process of encoding, decoding, and reconstructing the images.</p>
+
+<p>For the complete code and a more detailed walkthrough, check out the Jupyter Notebook linked below:</p>
+
+<p><a href="https://github.com/ranggakd/steganography/blob/main/Exploring_Steganography_In_The_Wild_Part_1.ipynb" class="ltag_cta ltag_cta--branded">Just click the 'Open in Colab' badge to get started!</a>
+</p>
 
 <h2>
   
   
-  Writing Tests for BaseInput
+  Results and Visualization
 </h2>
 
-<p>The "BaseInput" component is a versatile input field that supports dynamic styling on focus, error handling, and two-way data binding. It features an input element, a label, and optional error message display. This component is highly customizable and allows for easy integration of input forms into Vue.js applications, providing a user-friendly and accessible experience.</p>
+<p>Having delved into the theory and implementation details, it's time to see our steganography technique in action. We'll examine the visual changes and quality metrics at each stage of the process—encoding, decoding, and reconstruction.</p>
 
-<p><code>src/components/utility/BaseInput.vue</code><br>
+<h3>
+  
+  
+  Visual Examples of Pre-Encoded Images
+</h3>
+
+<p>First, let's consider our "Cover Image" and "Hidden Image." The image below serves as our cover:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QJ3Scyjx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a6pthkxaqi3s6lm09c0h.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QJ3Scyjx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a6pthkxaqi3s6lm09c0h.jpeg" alt="Attack Titan.jpeg as cover image" width="800" height="471"></a></p>
+
+<p>Next, we have the hidden image:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--w7I3XrUI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g6girqpd6r1kh2uwjqrr.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--w7I3XrUI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g6girqpd6r1kh2uwjqrr.jpeg" alt="Eren.jpeg as hidden image" width="800" height="450"></a></p>
+
+<p>For a deeper understanding, let's examine the RGB plot of these images. Click on the image below to enlarge it.</p>
+
+<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xuvhejsjvn1rrn4pyel2.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jKseRiAw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xuvhejsjvn1rrn4pyel2.png" alt="RGB plot of cover and hidden images" width="800" height="261"></a></p>
+
+<h3>
+  
+  
+  Visual Examples of Encoded Images
+</h3>
+
+<p>After encoding, we obtain two new images: the "Left Half Bits Hidden Image" and the "Merged Image."</p>
+
+<h4>
+  
+  
+  Left Half Bits Hidden Image
+</h4>
+
+<p>The encoded "Left Half Bits Hidden Image" noticeably loses some quality compared to the original hidden image. For instance, the gradients do not blend as smoothly.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Cc8jXmoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ezx3qelhemiy83ykzp2q.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Cc8jXmoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ezx3qelhemiy83ykzp2q.jpeg" alt="LHB of hidden image" width="800" height="450"></a></p>
+
+<p>Here's the RGB plot for a more in-depth analysis:</p>
+
+<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7llj143tqsg7cphdrhlq.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CiNvILe0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7llj143tqsg7cphdrhlq.png" alt="RGB plot of left half bits hidden image" width="800" height="127"></a></p>
+
+<h4>
+  
+  
+  Merged Image
+</h4>
+
+<p>At first glance, the "Merged Image" looks almost identical to the original cover image. However, a keen eye might spot a subtle face formation in the upper-left corner.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WG4qEdRL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6symdv85lqgs0yeeyei0.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WG4qEdRL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6symdv85lqgs0yeeyei0.jpeg" alt="Merged image" width="800" height="471"></a></p>
+
+<p>For a more analytical view, let's check the RGB plot:</p>
+
+<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ejj0u216s9j05kpir4m6.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--hAfBtg-C--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ejj0u216s9j05kpir4m6.png" alt="RGB plot of merged image" width="800" height="126"></a></p>
+
+<h3>
+  
+  
+  Visual Examples of Decoded Images
+</h3>
+
+<p>Next, we decode the merged image to obtain the "Unmerged Left Half Bits Cover Image" and the "Unmerged Left Half Bits Hidden Image." Both of these images show a loss in quality and coherence, similar to what we observed with the left half bits hidden image.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XDiGrY82--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/re8cawehxdod4hbhh9nr.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XDiGrY82--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/re8cawehxdod4hbhh9nr.jpeg" alt="Unmerged left half bits cover image" width="800" height="471"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RVZrbun2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hu47pp54m6ye6d7jdpdh.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RVZrbun2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hu47pp54m6ye6d7jdpdh.jpeg" alt="Unmerged left half bits hidden image" width="800" height="450"></a></p>
+
+<p>Take a look at the RGB breakdown for further insights:</p>
+
+<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/axxptrt2csnz4ohlwave.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--V7nESzmS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/axxptrt2csnz4ohlwave.png" alt="RGB plot of unmerged images" width="800" height="261"></a></p>
+
+<h3>
+  
+  
+  Visual Examples of Reconstructed Images
+</h3>
+
+<p>Finally, we move on to the reconstruction stage, where we aim to approximate the original images as closely as possible.</p>
+
+<h4>
+  
+  
+  Reconstructed Cover Image
+</h4>
+
+<p>When compared to the unmerged version, the reconstructed cover image appears slightly brighter. However, it's essential to note that the image quality is still not on par with the original. Gradients, for example, do not blend as smoothly as they should.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Glpzy1Gg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ghx71nxua4yozr1evvcc.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Glpzy1Gg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ghx71nxua4yozr1evvcc.jpeg" alt="Reconstructed cover image" width="800" height="471"></a></p>
+
+<h4>
+  
+  
+  Reconstructed Hidden Image
+</h4>
+
+<p>A similar trend is observed in the reconstructed hidden image. Though somewhat brighter than the unmerged version, the quality still falls short of the original.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3L9OGVHX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3wndidfw1mvuq6lgex1.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3L9OGVHX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3wndidfw1mvuq6lgex1.jpeg" alt="Reconstructed hidden image" width="800" height="450"></a></p>
+
+<h4>
+  
+  
+  RGB Breakdown of Reconstructed Images
+</h4>
+
+<p>For a more analytical perspective, let's examine the RGB plots of these reconstructed images:</p>
+
+<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gokpzyk4gq71zkh6iwvy.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--U7WTMIrd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gokpzyk4gq71zkh6iwvy.png" alt="RGB plot of reconstructed images" width="800" height="261"></a></p>
+
+<h3>
+  
+  
+  Evaluation Metrics
+</h3>
+
+<p>For the evaluation, I utilized the Root Mean Square Error (RMSE) and Mean Absolute Error (MAE) metrics. These metrics help to quantify the differences between the images at different stages of the steganography process. While I can't speak to their application in formal steganalysis, they do offer a way to gauge the effectiveness of the encoding and decoding steps. If you have insights or recommendations on other metrics that might be more suitable, especially from a steganalysis point of view, feel free to share.</p>
+
+<p>For instance, comparing the "Left Half Bits Hidden Image" with the original hidden image yielded the following results:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">label</span> 
-      <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">size-2xl</span><span class="dl">"</span>
-      <span class="p">:</span><span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">label</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">input</span> 
-         <span class="p">:</span><span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span>
-         <span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">[isFocused &amp;&amp; 'focused']</span><span class="dl">"</span>
-         <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">p-2 border-2 border-[#eee] w-full rounded-xl</span><span class="dl">"</span>
-         <span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
-         <span class="p">:</span><span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">placeHolder</span><span class="dl">"</span>
-         <span class="p">@</span><span class="nd">focus</span><span class="o">=</span><span class="dl">"</span><span class="s2">isFocused = true</span><span class="dl">"</span>
-         <span class="p">@</span><span class="nd">blur</span><span class="o">=</span><span class="dl">"</span><span class="s2">isFocused = false</span><span class="dl">"</span>
-         <span class="p">@</span><span class="nd">input</span><span class="o">=</span><span class="dl">"</span><span class="s2">handleText</span><span class="dl">"</span>
-         <span class="p">:</span><span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">value</span><span class="dl">"</span>
-         <span class="p">:</span><span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span>
-         <span class="p">:</span><span class="nx">aria</span><span class="o">-</span><span class="nx">describedby</span><span class="o">=</span><span class="dl">"</span><span class="s2">`${id}-description`</span><span class="dl">"</span>
-      <span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> 
-         <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span> 
-         <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">h-[10px] mt-1</span><span class="dl">"</span><span class="o">&gt;</span>
-         <span class="o">&lt;</span><span class="nx">span</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-[red]</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">msg</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>   <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-      <span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">BaseInput</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-         <span class="na">id</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-         <span class="na">label</span><span class="p">:</span><span class="nb">String</span><span class="p">,</span>
-         <span class="na">text</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-         <span class="na">placeHolder</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-         <span class="na">value</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span> <span class="p">,</span> <span class="nb">Number</span><span class="p">],</span>
-         <span class="na">error</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">type</span><span class="p">:</span> <span class="nb">Boolean</span><span class="p">,</span>
-            <span class="na">default</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-         <span class="p">},</span>
-         <span class="na">msg</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
-            <span class="na">msg</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-         <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="nx">data</span><span class="p">(){</span>
-         <span class="k">return</span> <span class="p">{</span>
-           <span class="na">isFocused</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-         <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nx">handleText</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-           <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">update:modelValue</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">)</span>
-         <span class="p">}</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">style</span> <span class="nx">scoped</span><span class="o">&gt;</span>
-<span class="p">.</span><span class="nx">focused</span><span class="p">{</span>
-   <span class="nl">outline</span><span class="p">:</span> <span class="mi">2</span><span class="nx">px</span> <span class="nx">solid</span> <span class="err">#</span><span class="mi">414066</span><span class="p">;</span>
-   <span class="nx">box</span><span class="o">-</span><span class="nx">shadow</span><span class="p">:</span> <span class="mi">0</span><span class="nx">px</span> <span class="mi">2</span><span class="nx">px</span> <span class="mi">5</span><span class="nx">px</span> <span class="nx">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">.</span><span class="mi">3</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-<p><code>src/components/__test__/__utils/BaseInput.spec.ts</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">describe</span><span class="p">,</span> <span class="nx">it</span><span class="p">,</span> <span class="nx">expect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vitest</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">mount</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@vue/test-utils</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">AppInput</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../utility/BaseInput.vue</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">AppInput</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">renders input and label properly</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nx">mount</span><span class="p">(</span><span class="nx">AppInput</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">input-id</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Username</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">placeHolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Enter your username</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">value</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">});</span>
-
-    <span class="kd">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">wrapper</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">wrapper</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">);</span>
-
-    <span class="c1">// Check if the label and input are rendered correctly</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">label</span><span class="p">.</span><span class="nx">exists</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">exists</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-
-    <span class="c1">// Check if the label text and input placeholder are set correctly</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">label</span><span class="p">.</span><span class="nx">text</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">Username</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">attributes</span><span class="p">(</span><span class="dl">'</span><span class="s1">placeholder</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">Enter your username</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">applies focus styles on input when focused</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nx">mount</span><span class="p">(</span><span class="nx">AppInput</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">input-id</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Username</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">placeHolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Enter your username</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">value</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">});</span>
-
-    <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">wrapper</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">);</span>
-
-    <span class="c1">// Check if focus styles are not applied initially</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">classes</span><span class="p">()).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">focused</span><span class="dl">'</span><span class="p">);</span>
-
-    <span class="c1">// Simulate focusing on the input</span>
-    <span class="k">await</span> <span class="nx">input</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="dl">'</span><span class="s1">focus</span><span class="dl">'</span><span class="p">);</span>
-
-    <span class="c1">// Check if focus styles are applied</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">classes</span><span class="p">()).</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">focused</span><span class="dl">'</span><span class="p">);</span>
-
-    <span class="c1">// Simulate blurring the input</span>
-    <span class="k">await</span> <span class="nx">input</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="dl">'</span><span class="s1">blur</span><span class="dl">'</span><span class="p">);</span>
-
-    <span class="c1">// Check if focus styles are removed after blurring</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">classes</span><span class="p">()).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">'</span><span class="s1">focused</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">emits input event when input value changes</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-   <span class="kd">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nx">mount</span><span class="p">(</span><span class="nx">AppInput</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">input-id</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Username</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">placeHolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Enter your username</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">value</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-      <span class="p">},</span>
-   <span class="p">});</span>
-
-   <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">wrapper</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">);</span>
-
-   <span class="c1">// Simulate typing into the input</span>
-   <span class="k">await</span> <span class="nx">input</span><span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="dl">'</span><span class="s1">john_doe</span><span class="dl">'</span><span class="p">);</span>
-
-   <span class="c1">// Check if the input event is emitted with the new value</span>
-   <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">emitted</span><span class="p">(</span><span class="dl">'</span><span class="s1">update:modelValue</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
-   <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">emitted</span><span class="p">(</span><span class="dl">'</span><span class="s1">update:modelValue</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">toEqual</span><span class="p">([</span><span class="dl">'</span><span class="s1">john_doe</span><span class="dl">'</span><span class="p">]);</span>
- <span class="p">});</span>
-<span class="p">});</span>
+<pre class="highlight plaintext"><code>RMSE    : 8.868079206151936
+MAE     : 7.579809053497942
 </code></pre>
 
 </div>
 
 
-
-<p>Test Case 1 - Renders input and label properly: This test ensures that the "AppInput" component correctly renders both an input field and a label. It checks the following:</p>
-
-<ul>
-<li>Verifies that a  element exists in the component's rendered output.
-Verifies that an  element exists in the component's rendered output.</li>
-<li>Checks if the label text is set to "Username" as expected.
-Verifies that the input element's placeholder attribute is set to "Enter your username."</li>
-</ul>
-
-<p>Test Case 2 - Applies focus styles on input when focused: This test checks whether the component correctly applies focus styles to the input field when it receives focus and removes them when it loses focus. It does the following:</p>
-
-<ul>
-<li>Initially checks that the input element does not have the "focused" class.</li>
-<li>Simulates focusing on the input element.</li>
-<li>Checks if the "focused" class is added to the input element.</li>
-<li>Simulates blurring the input element.</li>
-<li>Checks if the "focused" class is removed from the input element.</li>
-</ul>
-
-<p>Test Case 3 - Emits input event when input value changes: - - This test ensures that the component emits an "input" event when the input field's value changes. It verifies the following:</p>
-
-<ul>
-<li>Simulates typing the text "john_doe" into the input field.</li>
-<li>Checks if the "update:modelValue" event is emitted.</li>
-<li>Verifies that the emitted event contains the expected value, which is "john_doe."</li>
-</ul>
-
-<p>These test cases collectively ensure that the "AppInput" component works as expected, rendering elements correctly, applying styles appropriately.</p>
-
-<h2>
-  
-  
-  Writing Tests for BaseModal
-</h2>
-
-<p><code>src/components/utility/BaseModal.vue</code><br>
+<p>This indicates that the two images are indeed different. However, when comparing the "Left Half Bits Hidden Image" with the "Unmerged Left Half Bits Hidden Image," the result was:<br>
 </p>
-
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex items-center justify-center h-[100%] bg-[#242222b7] w-full</span><span class="dl">"</span><span class="o">&gt;</span>   
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">bg-[#fff] w-1/5 h-2/5 flex flex-col drop-shadow-sm rounded-lg</span><span class="dl">"</span><span class="o">&gt;</span>
-         <span class="o">&lt;</span><span class="nx">span</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex items-center justify-end  p-4 right-0</span><span class="dl">"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">font</span><span class="o">-</span><span class="nx">awesome</span><span class="o">-</span><span class="nx">icon</span> 
-            <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">handleClose</span><span class="dl">"</span>
-            <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">mb-5 text-2xl c-tst cursor-pointer</span><span class="dl">"</span> <span class="p">:</span><span class="nx">icon</span><span class="o">=</span><span class="dl">"</span><span class="s2">['fa', 'times']</span><span class="dl">"</span> <span class="o">/&gt;</span> 
-         <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>         <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex flex-col items-center justify-center w-full</span><span class="dl">"</span><span class="o">&gt;</span>    
-            <span class="o">&lt;</span><span class="nx">font</span><span class="o">-</span><span class="nx">awesome</span><span class="o">-</span><span class="nx">icon</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-7xl mb-5 text-[green]</span><span class="dl">"</span> <span class="p">:</span><span class="nx">icon</span><span class="o">=</span><span class="dl">"</span><span class="s2">['fa', 'circle-check']</span><span class="dl">"</span> <span class="o">/&gt;</span>
-            <span class="o">&lt;</span><span class="nx">h1</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-4xl font-popins font-bold</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Success</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>         <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>   <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-      <span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">AppModal</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nx">handleClose</span><span class="p">(){</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">close</span><span class="dl">'</span><span class="p">)</span>
-         <span class="p">}</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-<p>This component, named "AppModal," represents a simple modal dialog for displaying success messages or notifications. It features a centered design with a semi-transparent dark background, a white content container with a drop shadow, and a close button (represented by a "times" icon) at the upper right corner. When the close button is clicked, it emits a 'close' event, allowing parent components to control the modal's closure behavior. The modal's content includes a large green checkmark icon and a bold "Success" text, making it suitable for conveying positive messages or feedback to users in a clean and visually appealing manner.</p>
-
-<p><code>src/components/__test__/__utils/BaseModal.spec.ts</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">describe</span><span class="p">,</span> <span class="nx">it</span><span class="p">,</span> <span class="nx">expect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vitest</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">mount</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@vue/test-utils</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">BaseModal</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../utility/BaseModal.vue</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">FontAwesomeIcon</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@fortawesome/vue-fontawesome</span><span class="dl">'</span><span class="p">;</span> 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">library</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@fortawesome/fontawesome-svg-core</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">faTimes</span><span class="p">,</span> <span class="nx">faCircleCheck</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@fortawesome/free-solid-svg-icons</span><span class="dl">'</span><span class="p">;</span>
-<span class="nx">library</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">faTimes</span><span class="p">,</span> <span class="nx">faCircleCheck</span><span class="p">);</span>
-
-
-<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">BaseModal</span><span class="dl">'</span> <span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-   <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">emits close event when close button is clicked</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nx">mount</span><span class="p">(</span><span class="nx">BaseModal</span> <span class="p">,</span> <span class="p">{</span>
-         <span class="na">global</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
-               <span class="nx">FontAwesomeIcon</span><span class="p">,</span>
-            <span class="p">}</span>
-         <span class="p">}</span>
-      <span class="p">})</span>
-
-      <span class="c1">// Lets assume this selector is correct</span>
-      <span class="kd">const</span> <span class="nx">closeButton</span> <span class="o">=</span> <span class="nx">wrapper</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">.c-tst</span><span class="dl">'</span><span class="p">);</span> 
-      <span class="c1">// Simulate clicking the close button</span>
-      <span class="k">await</span> <span class="nx">closeButton</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
-      <span class="c1">// Check if the close event is emitted</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">.</span><span class="nx">emitted</span><span class="p">(</span><span class="dl">'</span><span class="s1">close</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
-   <span class="p">})</span>
-<span class="p">})</span>
+<pre class="highlight plaintext"><code>RMSE    : 0.0
+MAE     : 0.0
 </code></pre>
 
 </div>
 
 
+<p>This confirms that the encoding and decoding processes were executed correctly, as the two images are logically the same.</p>
 
-<p>This code checks if the component emits a 'close' event when a close button is clicked.it mounts the BaseModal component, simulates a click on the close button, and verifies if the 'close' event is emitted. It also imports Font Awesome icons for rendering.</p>
+<p>Once again, for the complete code and walkthrough, just run the Jupyter Notebook linked below:</p>
 
-<p>Test Case 1 - Emits 'close' Event on Close Button Click:</p>
+<p><a href="https://github.com/ranggakd/steganography/blob/main/Exploring_Steganography_In_The_Wild_Part_1.ipynb" class="ltag_cta ltag_cta--branded">Just click the 'Open in Colab' badge to get started!</a>
+</p>
+
+<p>This concludes the "Results and Visualization" section, where we've explored the visual aspects and quality metrics of images at every stage—encoding, decoding, and reconstruction. These visual examples and metrics serve as a comprehensive evaluation of our steganography technique.</p>
+<h2>
+  
+  
+  Limitations and Future Work
+</h2>
+
+<p>In this section, we delve into the limitations of the current implementation and discuss opportunities for future enhancements.</p>
+
+<ol>
+<li><p><strong>Image Channel Handling</strong>: The code is designed to work specifically with RGB color spaces. This makes it less versatile when dealing with other color spaces or grayscale images.</p></li>
+<li><p><strong>Limited File Format Support</strong>: The code currently supports only PNG and JPEG formats, potentially excluding users with images in other formats.</p></li>
+<li><p><strong>Code Complexity</strong>: The codebase is somewhat intricate, which might make it less accessible for individuals who are not familiar with the project's specifics.</p></li>
+<li><p><strong>Error Handling</strong>: While some error-handling mechanisms exist, they may not be comprehensive enough to address all potential edge cases.</p></li>
+<li><p><strong>Hard-Coded Values</strong>: The presence of hard-coded values in the code reduces its flexibility and adaptability.</p></li>
+<li><p><strong>Google Colab Dependency</strong>: The code relies on Google Colab-specific libraries, making it less portable for users who may prefer other development environments.</p></li>
+<li><p><strong>Lack of Modularization</strong>: The code is not modular, which could complicate future efforts to extend its functionality or maintain it.</p></li>
+</ol>
+<h2>
+  
+  
+  Conclusion
+</h2>
+<h3>
+  
+  
+  Summing Up the Journey
+</h3>
 
 <ul>
-<li><p><code>it('emits close event when close button is clicked', async() =&gt; { ... });</code>: This is the description of the first test case.</p></li>
-<li><p><code>const wrapper = mount(BaseModal , { ... });</code>: It mounts (renders) the <code>BaseModal</code> component for testing.</p></li>
-<li><p><code>const closeButton = wrapper.find('.c-tst');</code>: It selects the close button within the <code>BaseModal</code> component. The <code>.c-tst</code> class selector is assumed to be correct.</p></li>
-<li><p><code>await closeButton.trigger('click');</code>: It simulates a click on the close button using the <code>trigger</code> method. The <code>await</code> keyword is used because this operation is asynchronous.</p></li>
-<li><p><code>expect(wrapper.emitted('close')).toBeTruthy();</code>: It verifies that the 'close' event is emitted by the <code>BaseModal</code> component. If the event is emitted, the test passes; otherwise, it fails.</p></li>
+<li><p><strong>Enlightening and Challenging</strong>: Our exploration into steganography has been a revealing journey, showcasing both the potential and the challenges of this field.</p></li>
+<li><p><strong>Practical Applications</strong>: We demonstrated how one image could be hidden within another, a technique with various real-world applications such as digital watermarking and secure communications.</p></li>
+<li><p><strong>Identified Limitations</strong>: Like any scientific endeavor, our work has its constraints, from the limitations in color channel handling to dependencies on specific platforms like Google Colab. These offer avenues for future research and refinement.</p></li>
+</ul>
+<h3>
+  
+  
+  Technical Achievements
+</h3>
+
+<ul>
+<li><p><strong>Bit Manipulation</strong>: One of the technical milestones of this project is the successful implementation of bit manipulation techniques to encode and decode images.</p></li>
+<li><p><strong>Visual Proof</strong>: We provided visual examples to demonstrate our techniques in action. While the hidden image is not perfectly concealed in our experiments, we believe that in scenarios with more detailed and crowded cover images, the concealment could be more effective.</p></li>
+<li><p><strong>Quantitative Analysis</strong>: We've used metrics such as RMSE and MAE to measure differences between original and manipulated images. While these metrics offer insights, they may not be specifically tailored for steganalysis. If you have expertise in steganalysis, your feedback in the comments would be highly valuable.</p></li>
+</ul>
+<h3>
+  
+  
+  Key Takeaways
+</h3>
+<h4>
+  
+  
+  The Complexity of Simplicity
+</h4>
+
+<p>What seemed like a straightforward task—hiding one image within another—unfolded into a labyrinth of complexities. The project has underscored the intricacies of image manipulation and bit-level operations.</p>
+<h4>
+  
+  
+  Robustness and Flexibility are Paramount
+</h4>
+
+<p>The limitations we've faced have highlighted the importance of robust and flexible code. As we continue to refine this project, the lessons learned here will be invaluable.</p>
+<h4>
+  
+  
+  Continuous Learning and Improvement
+</h4>
+
+<p>The world of steganography is vast, and there's so much more to explore. Your feedback and contributions are not just welcome but are essential for the continuous improvement of this project.</p>
+<h4>
+  
+  
+  The Future is Open
+</h4>
+
+<p>The avenues for future work are promising. They range from refining the current code to make it more versatile to exploring more advanced steganographic techniques. With ongoing research and collaboration, the sky is the limit for what can be achieved.</p>
+<h2>
+  
+  
+  Additional Sections
+</h2>
+
+<ul>
+<li>
+<strong>Code Repository</strong>: You can find the complete code and notebooks on <a href="https://github.com/ranggakd/steganography/">GitHub</a>.</li>
 </ul>
 
-<p>Run the test by typing the command <code>npm run test</code> on your terminal. The result below shows that the test passed for all three components. <br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5ROYmz7u--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7h23ayqqlt7bdszrouch.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5ROYmz7u--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7h23ayqqlt7bdszrouch.png" alt="Image description" width="800" height="450"></a></p>
+
+<div class="ltag-github-readme-tag">
+  <div class="readme-overview">
+    <h2>
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
+      <a href="https://github.com/ranggakd">
+        ranggakd
+      </a> / <a href="https://github.com/ranggakd/steganography">
+        steganography
+      </a>
+    </h2>
+    <h3>
+      Exploring Steganography In The Wild
+    </h3>
+  </div>
+  <div class="ltag-github-body">
+    
+<div id="readme" class="md">
+<h1>
+steganography</h1>
+<p>Exploring Steganography In The Wild</p>
+<h2>
+Table of Contents</h2>
+<ul>
+<li><a href="https://github.com/ranggakd/steganography/Exploring_Steganography_In_The_Wild_Part_1.ipynb">Basic Steganography</a></li>
+</ul>
+</div>
+
+  </div>
+  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/ranggakd/steganography">View on GitHub</a></div>
+</div>
+
+
+
+<ul>
+<li>
+<strong>References</strong>: <a href="https://towardsdatascience.com/steganography-hiding-an-image-inside-another-77ca66b2acb1">Steganography: Hiding an image inside another</a>
+</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Blood pressure tracker with Microsoft Lists and Power Automate](https://dev.to/jaloplo/blood-pressure-tracker-with-microsoft-lists-and-power-automate-45jp) 
+ <details><summary>Article</summary> <p>This article will showcase a real-life scenario with practical applications for your daily routine. The focus will be on recording heart rates and establishing a historical record. The tools at play in this process are <em>Microsoft Lists</em> and <em>Power Automate</em>. With <em>Microsoft Lists</em>, data storage and management are made seamless. This includes storing systolic and diastolic readings along with corresponding dates. In parallel, <em>Power Automate</em> streamlines data input.</p>
+
+<p>Harnessing the capabilities of <em>Microsoft Lists</em> and <em>Power Automate</em>, you can design a system that effortlessly oversees and tracks your heart rate trends over time. This proves especially beneficial for those keen on maintaining optimal cardiovascular well-being or receiving medical advice to routinely monitor their heart rates.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GScc2AiH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fe70e0e64-929c-4e2d-b832-f254bca9ccae_2718x1032.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GScc2AiH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fe70e0e64-929c-4e2d-b832-f254bca9ccae_2718x1032.png" alt="Blood pressure list in Microsoft Lists.png" width="800" height="304"></a></p>
+
+<h2>
+  
+  
+  The Importance of Blood Pressure for Wellbeing
+</h2>
+
+<p>Maintaining a healthy blood pressure is crucial for overall wellbeing, as high blood pressure can lead to a range of health problems. Here are some reasons why focusing on blood pressure is important:</p>
+
+<ol>
+<li><p><strong>Reducing the risk of heart disease and stroke</strong>: High blood pressure can cause damage to blood vessels, making them weak, stiff, or narrower, which can lead to heart disease and stroke.</p></li>
+<li><p><strong>Improving brain health</strong>: High blood pressure has been linked to cognitive decline and an increased risk of stroke, which can have a negative impact on brain health.</p></li>
+<li><p><strong>Enhancing mental health</strong>: Recent research has shown that higher blood pressure is associated with greater well-being and fewer depressive symptoms, while the presence of hypertension is linked to more depressive symptoms and lower well-being.</p></li>
+<li><p><strong>Preventing kidney disease</strong>: High blood pressure can damage the blood vessels in the kidneys, leading to kidney disease.</p></li>
+<li><p><strong>Managing stress</strong>: While the link between stress and high blood pressure is still being studied, stress is known to contribute to risk factors like a poor diet and excessive alcohol consumption, which can lead to high blood pressure.</p></li>
+</ol>
+
+<p>By making small but positive changes to our lifestyle, such as getting more exercise, quitting smoking, and eating a healthy diet, we can prevent and manage high blood pressure. It's important to focus on one change at a time, as this can help us feel less overwhelmed and more capable of making positive changes. Additionally, managing stress through techniques like meditation and deep breathing can also help to control blood pressure.</p>
+
+<h2>
+  
+  
+  Step-by-step implementation guide
+</h2>
+
+<ol>
+<li><strong>List creation and configuration</strong></li>
+</ol>
+
+<p>Begin by creating a list in <em>Microsoft Lists</em>. To achieve this, log in to your <em>Microsoft 365</em> application by visiting <a href="https://microsoft365.com">https://microsoft365.com</a>. Once logged in, access the waffle menu and choose the <code>Lists</code> option. Proceed to click on <code>New List</code> and then select the <code>Blank List</code> template.</p>
+
+<p>Now, it's time to establish the necessary columns to ensure accurate data recording. To accomplish this, we will include two number-type columns named <code>Systole</code> and <code>Diastole</code>. This arrangement enables precise monitoring of both values.</p>
+
+<p>Additionally, create an extra column to indicate the date of each measurement. Make sure this column differs from the <code>Creation Date</code> column to accommodate potential earlier dates in the records.</p>
+
+
+<div class="crayons-card c-embed text-styles text-styles--secondary">
+      <div class="c-embed__cover">
+        <a href="https://www.youtube.com/shorts/g1N1S4a3koc" class="c-link s:max-w-50 align-middle" rel="noopener noreferrer">
+          <img alt="" src="https://res.cloudinary.com/practicaldev/image/fetch/s--WoOQUmig--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://i.ytimg.com/vi/g1N1S4a3koc/hq2.jpg%3Fsqp%3D-oaymwEoCOADEOgC8quKqQMcGADwAQH4AbYIgALGCooCDAgAEAEYESByKCwwDw%3D%3D%26rs%3DAOn4CLAlJz009daZfyBM1P7bxsBYpdebhg" height="360" class="m-0" width="480">
+        </a>
+      </div>
+    <div class="c-embed__body">
+      <h2 class="fs-xl lh-tight">
+        <a href="https://www.youtube.com/shorts/g1N1S4a3koc" rel="noopener noreferrer" class="c-link">
+          Microsoft Lists list creation for Blood pressure tracker - YouTube
+        </a>
+      </h2>
+        <p class="truncate-at-3">
+          In this video, we'll guide you through creating a blood pressure monitoring system using Microsoft Lists. Learn how to set up and manage your health data eff...
+        </p>
+      <div class="color-secondary fs-s flex items-center">
+          <img alt="favicon" class="c-embed__favicon m-0 mr-2 radius-0" src="https://res.cloudinary.com/practicaldev/image/fetch/s--kC1kATEk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.youtube.com/s/desktop/223e107e/img/favicon.ico" width="16" height="16">
+        youtube.com
+      </div>
+    </div>
+</div>
+
+
+<p>The remaining consideration is how to handle the <code>Title</code> field. In this instance, we will utilize it to specify the method of information insertion, either manual or automatic. This will involve incorporating relevant text, given that the field is of text type.</p>
+
+<p>With these steps complete, you are now prepared to record blood pressure readings. This will entail manually entering values for <code>Title</code>, <code>Systole</code>, <code>Diastole</code>, and the measurement date.</p>
+
+<p>Having established the desired data structure within the table, the next step is to streamline data entry. To achieve this, we'll utilize <em>Power Automate</em> to create a workflow that automates information addition to the list.</p>
+
+<ol>
+<li><strong>Power Automate flow creation and configuration</strong></li>
+</ol>
+
+<p>From the <em>Microsoft 365</em> application, access the waffle menu and select <code>Power Automate</code>. On the left side, click on <code>Create</code> and opt for the <code>Instant Cloud Flow</code> choice. Assign a suitable name, such as <code>Personal Blood Pressure Monitoring</code>, and select <code>Manually trigger a flow</code> as the trigger method.</p>
+
+<blockquote>
+<p>Alternatively, you can opt for an automatic flow creation by describing the flow you want, like <code>Write to a SharePoint List after Receiving Two Parameters</code>. This approach generates the flow and its steps automatically.</p>
+</blockquote>
+
+<p>Within the flow editing interface, expand the trigger to include the two data pieces needed to initiate the flow. Both pieces will be classified as <code>Number</code> type and named <code>Systole</code> and <code>Diastole</code>. This information is all that's required to populate the data in the list.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/_YrD4rCLs_k">
+</iframe>
+</p>
+
+<p>Next, add an action to create an item in a <em>SharePoint</em> list. As the list is located under <code>Our Lists</code>, input the site's address in the designated field. To do this, copy the URL from the list's address, stopping just before <code>/Lists</code>.</p>
+
+<p>Proceed to select the relevant list by specifying the <code>List Name</code> field. The list's columns will be integrated into the flow action, allowing you to input the necessary information. For <code>Systole</code>, choose the <code>Systole</code> variable linked to the trigger data. Repeat this for the <code>Diastole</code> column.</p>
+
+<p>For the <code>Measurement Date</code> column, choose the variable linked to the <em>Power Automate</em> execution's timestamp. No additional action is needed, as the values will be saved correctly.</p>
+
+<p>Lastly, fill in the <code>Title</code> field with a text indicating that the record was generated via <em>Power Automate,</em> such as <code>Created from Power Automate</code>.</p>
+
+<h2>
+  
+  
+  Simplicity for user experience
+</h2>
+
+<p>With the assistance of <em>Power Automate</em>, the concern of data entry is effortlessly resolved. Your sole task involves inputting your personal blood pressure readings. Employing the user-friendly <em>Power Automate</em> mobile application, initiating the workflow is an uncomplicated process, preceded by the entry of these values.</p>
+
+<p>In essence, <em>Power Automate</em> transcends being merely a workflow engine; it possesses the capacity to initiate workflows based on user inputs. This functionality offers a seamless and straightforward approach, providing an intuitive, standardized, and readily accessible interface that significantly enhances interaction with individuals.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WetsAYif--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F74856610-de5a-4b54-be8a-aee2b6358c44_505x489.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WetsAYif--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F74856610-de5a-4b54-be8a-aee2b6358c44_505x489.png" alt="Blood pressure - Power Automate.png" width="505" height="489"></a></p>
+
+<h2>
+  
+  
+  Process enhancements
+</h2>
+
+<p>There are several ways to improve this process. One approach is to use formatters on the columns, which can highlight values that are either unusually high or low for each measurement. Additionally, you can incorporate a different kind of trigger, like initiating the process through an email or an API call. This integration allows the process to seamlessly become a part of other interconnected workflows.</p>
+
+<p>Please share your thoughts in the comments section regarding any additional enhancements you believe could be implemented. Your input could contribute to refining and simplifying the process or making it more comprehensive.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>By utilizing the capabilities of <em>Microsoft Lists</em> and <em>Power Automate</em>, you can establish a system that effortlessly monitors and tracks changes in your heart rate over time. This is particularly beneficial for individuals prioritizing their cardiovascular well-being or those advised to regularly monitor their heart rates.</p>
+
+<p>Moreover, this example isn't just a standalone case. It serves as a clear and efficient template that can be readily adapted for similar processes. The streamlined implementation of <em>Microsoft Lists</em> and <em>Power Automate</em> can be applied to various scenarios, ensuring quick and effective monitoring tailored to specific needs. This approach promotes simplicity and effectiveness, allowing you to swiftly implement solutions that require meticulous tracking, thus fostering a culture of efficiency in various domains.</p>
+
+<h2>
+  
+  
+  References
+</h2>
+
+<ul>
+<li><em>Microsoft Lists list creation for Blood pressure tracker video: <a href="https://youtube.com/shorts/g1N1S4a3koc">https://youtube.com/shorts/g1N1S4a3koc</a></em></li>
+<li><em>Power Automate flow creation for Blood pressure tracker video: <a href="https://youtu.be/_YrD4rCLs_k">https://youtu.be/_YrD4rCLs_k</a></em></li>
+<li><em>Blood Pressure and Your Brain: <a href="https://www.helpguide.org/articles/healthy-living/blood-pressure-and-your-brain.htm">https://www.helpguide.org/articles/healthy-living/blood-pressure-and-your-brain.htm</a></em></li>
+<li><em>Blood Pressure Matters: <a href="https://newsinhealth.nih.gov/2016/01/blood-pressure-matters">https://newsinhealth.nih.gov/2016/01/blood-pressure-matters</a></em></li>
+<li><em>Associations between mental health and blood pressure: <a href="https://www.mpg.de/20163652/0413-nepf-how-high-blood-pressure-affects-mental-health-149575-x">https://www.mpg.de/20163652/0413-nepf-how-high-blood-pressure-affects-mental-health-149575-x</a></em></li>
+<li><em>How Human Connection Can Help Lower Your Blood Pressure: <a href="https://www.dignityhealth.org/articles/how-human-connection-can-help-lower-your-blood-pressure">https://www.dignityhealth.org/articles/how-human-connection-can-help-lower-your-blood-pressure</a></em></li>
+<li><em>Blood pressure and your brain: <a href="https://www.health.harvard.edu/heart-health/blood-pressure-and-your-brain">https://www.health.harvard.edu/heart-health/blood-pressure-and-your-brain</a></em></li>
+<li><em>Managing Stress to Control High Blood Pressure: <a href="https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure/managing-stress-to-control-high-blood-pressure">https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure/managing-stress-to-control-high-blood-pressure</a></em></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Rubyist Hangout Thread](https://dev.to/ben/rubyist-hangout-thread-33hc) 
+ <details><summary>Article</summary> <p>Well, hello! It's time for our weekly Ruby enthusiasts' meetup, where we celebrate Ruby's 28-year legacy and everything community-approved, Ruby or not. Share with us:<br>
+🌟 Spotlight a Fellow Member: Highlight a Ruby enthusiast's accomplishments.<br>
+📖 Share an Intriguing Read: Recommend compelling tech articles.<br>
+🌐 Current Buzz in the Sphere: Keep us informed on Ruby-related news!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Beyond Work, What Are Your Goals for the Next 5 Years?](https://dev.to/codenewbieteam/beyond-work-what-are-your-goals-for-the-next-5-years-5eea) 
+ <details><summary>Article</summary> <p><em>Get a glimpse into the daily experiences, work routines, and unique perspectives of tech professionals, both novice and experienced alike, in "A Day in the Life."</em></p>
+
+<blockquote>
+<p>What's a non-work-related goal you'd like to accomplish in the next five years?</p>
+</blockquote>
+
+<p>Follow the <a href="https://dev.to/codenewbieteam">CodeNewbie Org</a> and <a href="https://dev.to/t/codenewbie">#codenewbie</a> for more discussions and online camaraderie!</p>
+
+<p><em><div class="ltag__user ltag__user__id__2167">
+  <a href="/codenewbieteam" class="ltag__user__link profile-image-link">
+    <div class="ltag__user__pic">
+      <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" alt="codenewbieteam image"></a>
+    </div>
+  </a>
+  <div class="ltag__user__content">
+    <h2>
+      <a href="/codenewbieteam" class="ltag__user__link">CodeNewbie</a>
+      Follow
+    </h2>
+    <div class="ltag__user__summary">
+      <a href="/codenewbieteam" class="ltag__user__link">
+        The most supportive community of programmers and people learning to code.  Part of the DEV family.
+
+
+      </a>
+    </div>
+  </div>
+</div>
+</em></p>
 
  </details> 
  <hr /> 
