@@ -118,6 +118,481 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Angular Signals: what's all the fuss about?](https://dev.to/sparkfabrik/angular-signals-whats-all-the-fuss-about-3hm5) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
+
+<p>In the last couple of months the word <a href="https://angular.io/guide/signals">signals</a> has been said a lot in the Angular communities. Everybody already seems to either love them madly or reject them passionately.<br><br>
+But for those of us who are late to the hype train: what are they? And what can they do or not do?<br><br>
+Worry no more with FOMO as by the end of this article you will have a more comprehensive idea of where signals come from, how they work, and more importantly how they fit into the RxJS observables world.</p>
+<h2>
+  
+  
+  Genesis
+</h2>
+
+<p>Let's start with the basics: why were they created? One may think that it was just a matter of "let's add a new feature to the framework", but it's not that simple. And it's not even a matter of <em>copying</em> what other frameworks are doing, as signals are not a new concept, they have been around for a while, and they are used in other libraries like <a href="https://preactjs.com/guide/v10/signals/">Preact</a> or frameworks like <a href="https://www.solidjs.com/docs/latest/api#createsignal">SolidJS</a>. Indeed, SolidJS author himself says signals have been around "<a href="https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob">since the dawn of declarative JavaScript Frameworks</a>".<br><br>
+This is not a case of "monkey see, monkey do", but rather a case of <em>"let's see what we can do better"</em>.<br>
+The reasoning behind these changes can be well represented by this quote by the tech lead of the Angular team, Alex Rickabaugh:</p>
+
+<blockquote>
+<p>The nature of web applications is always evolving, the performance requirements evolve, the web platform itself is evolving. So Angular needs to be stable, but not stagnant”. And so signals were born.</p>
+</blockquote>
+
+<p>As a matter of fact, for the last decade, Angular's team listened to the users' most requested features to improve the developer experience. Amongst other things, some reoccurring requests concerned the necessity to <strong>simplify</strong> the usage of Angular, requiring <strong>less boilerplate</strong> code, augmented <strong>performances</strong>, more <strong>reactivity</strong>, and <strong>finer control</strong> over the components.<br><br>
+(Following this <a href="https://github.com/angular/angular/discussions/49090">link</a> you will find the PR that answered these requests, introducing signals for the first time.)</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zetbIeb6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cbw63nx379ah66mzmwrg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zetbIeb6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cbw63nx379ah66mzmwrg.png" alt="Ikea signals meme" width="800" height="248"></a></p>
+<h3>
+  
+  
+  Change detection
+</h3>
+
+<p>To gain a better understanding of these requests, we must first digress a little bit, explaining a fundamental concept of Angular: <a href="https://angular.io/guide/change-detection">change detection</a>.<br><br>
+At the time of writing the framework uses a library called <em>zone.js</em> to control the various changes of state inside the application.</p>
+
+<p><em>Zone.js</em> tracks all the browser's events and every time it sees that something has changed, it starts a change detection cycle, in which it checks the components tree of the app to see if something has been modified, updating the views that need to be updated. On the one hand, this behavior is extremely useful because it automatically manages these checks, on the other hand, it underperforms because it constantly checks <strong>all</strong> of the components, sometimes even when there is no need to update anything.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FiXQgvpx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4k264acxvyz8744ttkhn.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FiXQgvpx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4k264acxvyz8744ttkhn.gif" alt="Zone.js change detection gif" width="312" height="243"></a></p>
+
+<p>An alternative strategy can be to use <em>zone.js with OnPush</em> in every component. This makes it so that the component that uses it is not checked during a change detection cycle unless explicitly marked with the <code>markForCheck()</code> function.<br><br>
+This behavior may seem similar to the one before, but the main difference is that <code>markForCheck()</code> doesn't automatically trigger the change detection for its component, but it just marks it to be checked on the next change detection cycle scheduled by zone.js .<br><br>
+The downside to this strategy is that it marks not just the component that raised the <code>markForCheck()</code> flag, but <strong>also its parent nodes</strong>. So we have fewer components checked than before, but there is still some, let's say over-checking spillage.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Dg4igrWx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/18ypvvldeflfu5fjcwoo.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Dg4igrWx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/18ypvvldeflfu5fjcwoo.gif" alt="Zone.js with onpush change detection gif" width="284" height="247"></a></p>
+
+<p>With <em>signals</em>, however, change detection is much more precise, indicating <strong>only</strong> the component, or components, that have undergone some changes.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QAk9HCGz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b2r5uaig4lpb9yhiqswa.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QAk9HCGz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b2r5uaig4lpb9yhiqswa.gif" alt="Signals change detection gif" width="250" height="245"></a></p>
+<h2>
+  
+  
+  But what is a signal?
+</h2>
+
+<p>A signal can be seen as a box around a value, and it can alert interested consumers when its value changes.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jmPZM5-V--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/47c7j94pijfcaxu1rhfv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jmPZM5-V--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/47c7j94pijfcaxu1rhfv.png" alt="Box with value" width="427" height="333"></a></p>
+
+<p>It can contain every kind of value, from primitive ones to more complex data structures. The value of a signal is always read using a getter function, which is what allows Angular to track when it has been used.<br><br>
+<strong>Side note:</strong> as a signal contains a value, it must always be initialized, or by default, it will be equal to <code>undefined</code>, which is not ideal.</p>
+
+<p>A signal can be of one of two categories:</p>
+
+<ul>
+<li>
+<a href="https://angular.io/guide/signals#computed-signals">Writable</a>, which contains a value that can be directly edited</li>
+<li>
+<a href="https://angular.io/guide/signals#writable-signals">Computed</a>, in which the value is derived from other signals; in this case, we can't directly modify the computed value but this type has the added plus that it has a lazy approach. This means that its value will be re-evaluated not when the signals it checks are updated, but when a consumer tries to read the derived computed value, which makes it useful to do complex operations like array filtering.</li>
+</ul>
+<h2>
+  
+  
+  Signals VS observables
+</h2>
+
+<p>By now, the more careful reader would probably start to think <em>"By this explanation, signals seem to be a copy of RxJS observables, as they seem to do the same thing, so are we reinventing the wheel here ?"</em>.<br><br>
+To answer this question we need to open another small parenthesis before continuing, to get a clearer context for the ones among us who don't know what observables are.</p>
+<h3>
+  
+  
+  What is an observable?
+</h3>
+
+<p>An <a href="https://rxjs.dev/guide/observable">observable</a> is a collection of objects which can be observed in time, they are part of alibrary called <a href="https://rxjs.dev/guide/overview">RxJS</a> which is often used in tandem with the Angular framework to manage asynchronous events. Unlike a normal array it does not keep memory of the elements, it just emits them.<br><br>
+To get a silly visual aid: we can imagine an observable as a fast food employee manning the drive-through window: it just knows that it has to deliver bags of objects to consumers as time passes, in an uninterrupted line of customers that go by during the day.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PhU_zSju--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1sqd412rsfu9a1cugtkn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PhU_zSju--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1sqd412rsfu9a1cugtkn.png" alt="Observable as a drive through employee delivering data object to consumer" width="800" height="395"></a></p>
+
+<p>As much as they can work with synchronous data, observables shine in working with asynchronous events (clicking on keyboard keys, mouse clicks, HTTP calls responses) or notifications (a completed or failed process). But they are not perfect, as observables require a manual subscription, and of course a manual un-subscription. Moreover, the data is not readily available but has to be extracted from the emitted values stream first.<br>
+On the other hand, signals don't need a manual subscription, or more precisely, they have an implicit quasi-subscription automatically managed when a consumer starts listening to a signal's value.<br>
+In addition, a signal can be called and read directly, immediately obtaining the value it encapsulates.<br>
+These may seem like minor differences, but for <em>simpler</em> actions signals require much less code and, more importantly, less RxJS experience, which can be extremely powerful but also really difficult for new (and even not-so-new) devs.</p>
+<h2>
+  
+  
+  Are we going to use only signals?
+</h2>
+
+<p>So, the one-million-dollar question is: are signals better than observables?<br>
+Well, it depends.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2DAo6R-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wuwm9yoenydihkj8wpp9.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2DAo6R-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wuwm9yoenydihkj8wpp9.jpg" alt="It depends written over oranges apples meme" width="746" height="500"></a></p>
+
+<p>If you need to observe (no pun intended) values that change with time, without knowing when they do change, so asynchronously, you will be better off using observables. Instead, if time isn't something you need to keep in the equation, you will need only signals, which are simpler to use.<br>
+Realistically, in the future, we will most likely use signals for most use cases, and only in some particular circumstances we will need all the power of observables.</p>
+
+<p>Having reflected upon these differences, you can see how titles that claim that the end of RxJS in favor of signals is imminent are just click-bait. It's just a matter of knowing when to use the right tool for the right job.<br>
+More so, the RxJS team, seeing the big picture, has already implemented two functions that allow the <a href="https://angular.io/api/core/rxjs-interop">interoperability between signals and observables</a>:<br>
+<code>toObservable()</code>and <code>toSignal()</code>, allowing the management of complex data flux or asynchronous data without having to give up the usage of signals.<br>
+I want to highlight this point, as I think it's one of the key concepts of Angular and its libraries: to always allow retro compatibility, letting new and old functionalities live side-by-side without the risk of breaking anything, which is not to be taken for granted. So let's keep feuds to important matters, like if you can add heavy cream to a carbonara sauce (pro tip: never).</p>
+<h2>
+  
+  
+  Practical examples
+</h2>
+
+<p>Here are some practical examples before and after the usage of signals. They were made by <a href="https://www.youtube.com/@deborah_kurata">Deborah Kurata</a>, an amazing tech content creator. At this <a href="https://github.com/DeborahK/Angular-Signals">GitHub link</a> you will find the GitHub repository in which you can find her complete project.<br>
+These examples are based upon a shopping app, in which we can add items to a cart, and then we can see the total price of the items in the cart. On the left we have the observables version, on the right the signals one. (<strong>Note:</strong> here I will call the signals version "after" and the observables one "before" for simplicity's sake. Also, the code is simplified for the sake of brevity, but the full code is available in the GitHub repo. Last but not least, instead of <em>Observable</em> observables, here are used <em>Subject</em> observables; <a href="https://rxjs.dev/guide/subject">an RxJS Subject is a special type of Observable that allows values to be multicasted to many Observers</a>, so for simplicity's sake I will refer to them just as <em>observables</em>).</p>
+
+<p>Let's start with something simple: the differences in the HTML and TS files of the cart-total component. The differences are not huge, but they are there. Especially in the HTML file, in the <em>before</em> version, we have to use the async pipe to subscribe to the observable, while in the <em>after</em> version we can just call the signal directly; this can make a difference in streamlining the code if we have to use other pipes, as in the case of <code>| number</code>.</p>
+
+<p><code>cart-total.component.html before</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;div</span>
+  <span class="na">class=</span><span class="s">"card border-secondary"</span>
+  <span class="na">*ngIf=</span><span class="s">"(cartItems$ | async)?.length; else noItems"</span>
+<span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header text-secondary fw-bold"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-12"</span><span class="nt">&gt;</span>Cart Total<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Subtotal:<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
+        {{subTotal$ | async | number:'1.2-2'}}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Delivery:<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span>
+        <span class="na">class=</span><span class="s">"col-md-4"</span>
+        <span class="na">style=</span><span class="s">"text-align:right"</span>
+        <span class="na">*ngIf=</span><span class="s">"deliveryFee$ | async as deliveryFee"</span>
+      <span class="nt">&gt;</span>
+        {{deliveryFee | number:'1.2-2'}}
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span>
+        <span class="na">class=</span><span class="s">"col-md-4"</span>
+        <span class="na">style=</span><span class="s">"text-align:right;color:red"</span>
+        <span class="na">*ngIf=</span><span class="s">"!(deliveryFee$ | async)"</span>
+      <span class="nt">&gt;</span>
+        Free
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Estimated Tax:<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
+        {{tax$ | async | number:'1.2-2'}}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;&lt;b&gt;</span>Total:<span class="nt">&lt;/b&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;b&gt;</span>{{totalPrice$ | async | number:'1.2-2'}}<span class="nt">&lt;/b&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>cart-total.component.html after</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card border-secondary"</span> <span class="na">*ngIf=</span><span class="s">"cartItems().length; else noItems"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header text-secondary fw-bold"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-12"</span><span class="nt">&gt;</span>Cart Total<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Subtotal:<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
+        {{subTotal() | number:'1.2-2'}}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Delivery:<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span> <span class="na">*ngIf=</span><span class="s">"deliveryFee()"</span><span class="nt">&gt;</span>
+        {{deliveryFee() | number:'1.2-2'}}
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span>
+        <span class="na">class=</span><span class="s">"col-md-4"</span>
+        <span class="na">style=</span><span class="s">"text-align:right;color:red"</span>
+        <span class="na">*ngIf=</span><span class="s">"!deliveryFee()"</span>
+      <span class="nt">&gt;</span>
+        Free
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Estimated Tax:<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
+        {{tax() | number:'1.2-2'}}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;&lt;b&gt;</span>Total:<span class="nt">&lt;/b&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;b&gt;</span>{{totalPrice() | number:'1.2-2'}}<span class="nt">&lt;/b&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>cart-total.component.ts before</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartTotalComponent</span> <span class="p">{</span>
+  <span class="nx">cartItems$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">cartItems$</span><span class="p">;</span>
+
+  <span class="nx">subTotal$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">;</span>
+
+  <span class="nx">deliveryFee$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">deliveryFee$</span><span class="p">;</span>
+
+  <span class="nx">tax$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">tax$</span><span class="p">;</span>
+
+  <span class="nx">totalPrice$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">totalPrice$</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">cartService</span><span class="p">:</span> <span class="nx">CartService</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>cart-total.component.ts after</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartTotalComponent</span> <span class="p">{</span>
+  <span class="nx">cartService</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">(</span><span class="nx">CartService</span><span class="p">);</span>
+
+  <span class="nx">cartItems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">;</span>
+
+  <span class="nx">subTotal</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">;</span>
+
+  <span class="nx">deliveryFee</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">deliveryFee</span><span class="p">;</span>
+
+  <span class="nx">tax</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">tax</span><span class="p">;</span>
+
+  <span class="nx">totalPrice</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The most important differences, however, are in the cart service. In the <em>before</em> version, we have to manually subscribe to the observable, and then manually un-subscribe from it, which is not ideal. Especially considering that we will have to do it for <em>all</em> of the observables we use. In the <em>after</em> version, we can just call the signal directly, and it will be automatically managed by Angular.<br>
+Another important difference is that in the <em>before</em> version we have to manually manage the initialization of the observables, while in the <em>after</em> version we can just initialize the signals with the value we want them to have.<br>
+Also, in the <em>before</em> version, if we need to derive a value from other values, we have to use RxJS functions concatenated by .pipe(), which can make the code difficult to read for someone who doesn't know this library very well, while in the <em>after</em> version we can just use the <code>computed()</code> signal type, resulting in a much easier to understand code. We can also see how in the <em>before</em> version we have to use the <code>next()</code> function to update the value of the observable, specifying an action, while in the <em>after</em> version we can just update the value of the signal directly. Lastly, in the <em>after</em> version we don't need the <code>modifyCart()</code> function, as we can just update the value of the signal directly in the function, making following the flow of data more fluid.</p>
+
+<p><code>cart.service.ts before</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartService</span> <span class="p">{</span>
+  <span class="c1">// Add item action</span>
+  <span class="k">private</span> <span class="nx">itemSubject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subject</span><span class="o">&lt;</span><span class="nx">Action</span><span class="o">&lt;</span><span class="nx">CartItem</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+  <span class="nx">itemAction$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">asObservable</span><span class="p">();</span>
+
+  <span class="nx">cartItems$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">itemAction$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+    <span class="nx">scan</span><span class="p">(</span>
+      <span class="p">(</span><span class="nx">items</span><span class="p">,</span> <span class="nx">itemAction</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">modifyCart</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span> <span class="nx">itemAction</span><span class="p">),</span>
+      <span class="p">[]</span> <span class="k">as</span> <span class="nx">CartItem</span><span class="p">[]</span>
+    <span class="p">),</span>
+    <span class="nx">shareReplay</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">);</span>
+
+  <span class="c1">// Total up the extended price for each item</span>
+  <span class="nx">subTotal$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartItems$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
+    <span class="nx">map</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="nx">items</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
+        <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">*</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">cost_in_credits</span><span class="p">),</span>
+        <span class="mi">0</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">);</span>
+
+  <span class="c1">// Delivery is free if spending more than 100,000 credits</span>
+  <span class="nx">deliveryFee$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">t</span> <span class="o">&lt;</span> <span class="mi">100000</span> <span class="p">?</span> <span class="mi">999</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)));</span>
+
+  <span class="c1">// Tax could be based on shipping address zip code</span>
+  <span class="nx">tax$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span> <span class="mf">10.75</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">));</span>
+
+  <span class="c1">// Total price</span>
+  <span class="nx">totalPrice$</span> <span class="o">=</span> <span class="nx">combineLatest</span><span class="p">([</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">,</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">deliveryFee$</span><span class="p">,</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tax$</span><span class="p">,</span>
+  <span class="p">]).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">(([</span><span class="nx">st</span><span class="p">,</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">t</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="nx">st</span> <span class="o">+</span> <span class="nx">d</span> <span class="o">+</span> <span class="nx">t</span><span class="p">));</span>
+
+  <span class="c1">// Add the vehicle to the cart as an Action&lt;CartItem&gt;</span>
+  <span class="nx">addToCart</span><span class="p">(</span><span class="nx">vehicle</span><span class="p">:</span> <span class="nx">Vehicle</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">({</span>
+      <span class="na">item</span><span class="p">:</span> <span class="p">{</span> <span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+      <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">add</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Remove the item from the cart</span>
+  <span class="nx">removeFromCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">({</span>
+      <span class="na">item</span><span class="p">:</span> <span class="p">{</span> <span class="na">vehicle</span><span class="p">:</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
+      <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">delete</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">updateInCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">({</span>
+      <span class="na">item</span><span class="p">:</span> <span class="p">{</span> <span class="na">vehicle</span><span class="p">:</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">,</span> <span class="nx">quantity</span> <span class="p">},</span>
+      <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">update</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Return the updated array of cart items</span>
+  <span class="k">private</span> <span class="nx">modifyCart</span><span class="p">(</span>
+    <span class="nx">items</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">[],</span>
+    <span class="nx">operation</span><span class="p">:</span> <span class="nx">Action</span><span class="o">&lt;</span><span class="nx">CartItem</span><span class="o">&gt;</span>
+  <span class="p">):</span> <span class="nx">CartItem</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">operation</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">add</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Determine if the item is already in the cart</span>
+      <span class="kd">const</span> <span class="nx">itemInCart</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
+        <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
+      <span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">itemInCart</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// If so, update the quantity</span>
+        <span class="nx">itemInCart</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
+          <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">itemInCart</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="p">?</span> <span class="nx">itemInCart</span> <span class="p">:</span> <span class="nx">item</span>
+        <span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[...</span><span class="nx">items</span><span class="p">,</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">];</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">operation</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">update</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
+          <span class="p">?</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span>
+          <span class="p">:</span> <span class="nx">item</span>
+      <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">operation</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">delete</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+        <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">!==</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">[...</span><span class="nx">items</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>cart.service.ts after</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartService</span> <span class="p">{</span>
+  <span class="c1">// Manage state with signals</span>
+  <span class="nx">cartItems</span> <span class="o">=</span> <span class="nx">signal</span><span class="o">&lt;</span><span class="nx">CartItem</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([]);</span>
+
+  <span class="c1">// Total up the extended price for each item</span>
+  <span class="nx">subTotal</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">().</span><span class="nx">reduce</span><span class="p">(</span>
+      <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">*</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">cost_in_credits</span><span class="p">),</span>
+      <span class="mi">0</span>
+    <span class="p">)</span>
+  <span class="p">);</span>
+
+  <span class="c1">// Delivery is free if spending more than 100,000 credits</span>
+  <span class="nx">deliveryFee</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">100000</span> <span class="p">?</span> <span class="mi">999</span> <span class="p">:</span> <span class="mi">0</span><span class="p">));</span>
+
+  <span class="c1">// Tax could be based on shipping address zip code</span>
+  <span class="nx">tax</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">()</span> <span class="o">*</span> <span class="mf">10.75</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">);</span>
+
+  <span class="c1">// Total price</span>
+  <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(</span>
+    <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">()</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">deliveryFee</span><span class="p">()</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">tax</span><span class="p">()</span>
+  <span class="p">);</span>
+
+  <span class="c1">// Add the vehicle to the cart</span>
+  <span class="c1">// If the item is already in the cart, increase the quantity</span>
+  <span class="nx">addToCart</span><span class="p">(</span><span class="nx">vehicle</span><span class="p">:</span> <span class="nx">Vehicle</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">().</span><span class="nx">findIndex</span><span class="p">(</span>
+      <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
+    <span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Not already in the cart, so add with default quantity of 1</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">mutate</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">items</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// Already in the cart, so increase the quantity by 1</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">mutate</span><span class="p">(</span>
+        <span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
+          <span class="p">(</span><span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">quantity</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">})</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Remove the item from the cart</span>
+  <span class="nx">removeFromCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="c1">// Update the cart with a new array containing</span>
+    <span class="c1">// all but the filtered out deleted item</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">update</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="nx">items</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">!==</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">updateInCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Update the cart with a new array containing</span>
+    <span class="c1">// the updated item and all other original items</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">update</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
+      <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
+          <span class="p">?</span> <span class="p">{</span> <span class="na">vehicle</span><span class="p">:</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">,</span> <span class="nx">quantity</span> <span class="p">}</span>
+          <span class="p">:</span> <span class="nx">item</span>
+      <span class="p">)</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Now that we can see the big picture we can reflect on the initial users' requests made to the Angular team and it will be clear that they have been heard and answered.<br><br>
+Thanks to signals we will have more simplicity in usage to track values for changes in the apps, especially for those who are beginning to work with the framework, greatly reducing boilerplate code.<br>
+They will give the apps more <strong>reactivity</strong>, giving a <strong>boost to performances</strong> more than even the zone.js + onPush strategy could, without losing any functionality. They will allow much <strong>finer control</strong> over single components and the value changes inside them, automatically managing the subscription/un-subscription part.<br><br>
+But, as we have seen, signals will not replace observables completely, they will instead co-exist with them in harmony.<br><br>
+Let's make <del>love</del> code, not war.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Creating a CSS-only Card Slider with Tailwind CSS](https://dev.to/cruip_com/creating-a-css-only-card-slider-with-tailwind-css-44do) 
  <details><summary>Article</summary> <h4>
   
@@ -792,186 +1267,61 @@ but there are also a lot of frameworks facilitating the usage of CSS and JavaScr
  </details> 
  <hr /> 
 
- #### - [Angular State Management: A Comparison of the Different Options Available](https://dev.to/chintanonweb/angular-state-management-a-comparison-of-the-different-options-available-100e) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
+ #### - [Merge CSV files in Ruby efficiently](https://dev.to/gabrielchuan/merge-csv-files-in-ruby-efficiently-41b) 
+ <details><summary>Article</summary> <p><iframe class="tweet-embed" id="tweet-1701424107206922378-732" src="https://platform.twitter.com/embed/Tweet.html?id=1701424107206922378">
+</iframe>
 
-<p>Angular, a robust JavaScript framework for building web applications, requires effective state management to handle complex data interactions. As applications grow in complexity, it becomes essential to manage and synchronize the application state efficiently. This article explores and compares various state management options available in Angular, using examples to illustrate their use cases.</p>
+  // Detect dark theme
+  var iframe = document.getElementById('tweet-1701424107206922378-732');
+  if (document.body.className.includes('dark-theme')) {
+    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1701424107206922378&amp;theme=dark"
+  }
+
+
+
+</p>
+
+<p>Ever had issues merging CSV files in Ruby? </p>
 
 <h2>
   
   
-  Understanding State Management
+  ⚰️ Typical problems
 </h2>
 
-<p>Before delving into different state management options, let's clarify why state management matters in Angular applications. State refers to the data and user interface (UI) conditions within an application. It can be categorized as follows:</p>
-
-<ol>
-<li><p><strong>Local Component State:</strong> Specific to a single component, this includes data and UI-related information relevant only to that component.</p></li>
-<li><p><strong>Global Application State:</strong> Shared and accessible across multiple components or the entire application, this state requires careful management.</p></li>
-</ol>
-
-<p>Now, let's examine the state management options for Angular and provide examples for each.</p>
-
+<p>• you load into memory (problem if csvs are large)<br>
+• parse line-by-line (slow)</p>
 <h2>
   
   
-  Local Component State
+  💡 Solution
 </h2>
 
-<h3>
-  
-  
-  1. <strong>Component Inputs and Outputs</strong>
-</h3>
-
-<p><strong>Example:</strong></p>
-
-<p>Suppose you have a parent component <code>App</code> and a child component <code>ProductList</code>. You want to pass a list of products from <code>App</code> to <code>ProductList</code>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="c">&lt;!-- app.component.html --&gt;</span>
-<span class="nt">&lt;app-product-list</span> <span class="na">[products]=</span><span class="s">"productList"</span><span class="nt">&gt;&lt;/app-product-list&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// app.component.ts</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-  <span class="nl">productList</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[...];</span> <span class="c1">// List of products</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// product-list.component.ts</span>
-<span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">products</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[];</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  2. <strong>ngModel</strong>
-</h3>
-
-<p><strong>Example:</strong></p>
-
-<p>Consider a form in a component where you want to manage form-related state using <code>ngModel</code>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="c">&lt;!-- product-edit.component.html --&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">[(ngModel)]=</span><span class="s">"product.name"</span> <span class="nt">/&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// product-edit.component.ts</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">ProductEditComponent</span> <span class="p">{</span>
-  <span class="nl">product</span><span class="p">:</span> <span class="nx">Product</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Product Name</span><span class="dl">'</span> <span class="p">};</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  3. <strong>ViewChild and ContentChild</strong>
-</h3>
-
-<p><strong>Example:</strong></p>
-
-<p>Suppose you want to access and manipulate the state of child components within a parent component.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// parent.component.ts</span>
-<span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="nx">ChildComponent</span><span class="p">)</span> <span class="nx">childComponent</span><span class="p">:</span> <span class="nx">ChildComponent</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// child.component.ts</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">ChildComponent</span> <span class="p">{</span>
-  <span class="c1">// Child component logic</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
+<p>Use sqlite instead! Theoretically, it can handle large csvs, and is very fast.</p>
 
 
 <h2>
   
   
-  Global Application State
+  How does it work?
 </h2>
-
 <h3>
   
   
-  1. <strong>Services</strong>
+  Preparing the columns
 </h3>
 
-<p><strong>Example:</strong></p>
+<p>We will have to first extract each csv columns, and transform it into a string that SQLite can accept. Spaces, etc are removed.</p>
 
-<p>Imagine you need to share authentication status across multiple components.<br>
+<p><strong>Not acceptable:</strong> <code>Column 1</code><br>
+<strong>Acceptable:</strong> <code>Column_1</code><br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// auth.service.ts</span>
-<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">AuthService</span> <span class="p">{</span>
-  <span class="nx">isAuthenticated</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// app.component.ts</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">authService</span><span class="p">:</span> <span class="nx">AuthService</span><span class="p">)</span> <span class="p">{}</span>
-
-  <span class="nx">login</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">isAuthenticated</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<pre class="highlight ruby"><code><span class="c1"># Sanitizes the column name so we can create a sqlite column with it</span>
+<span class="k">def</span> <span class="nf">sanitize_name</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">name</span><span class="p">.</span><span class="nf">strip</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[^\w\ufeff]/</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">).</span><span class="nf">downcase</span>
+<span class="k">end</span>
 </code></pre>
 
 </div>
@@ -981,50 +1331,33 @@ but there are also a lot of frameworks facilitating the usage of CSS and JavaScr
 <h3>
   
   
-  2. <strong>RxJS and BehaviorSubject</strong>
+  Load the csv into SQLite
 </h3>
 
-<p><strong>Example:</strong></p>
+<p>We then use the transformed column names, which are compatible with SQLite to then create the tables with the corresponding columns.</p>
 
-<p>Suppose you have a real-time chat application where you need to manage and display messages.<br>
+<p>Once that's done, we insert each row into the corresponding SQLite table.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// chat.service.ts</span>
-<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">ChatService</span> <span class="p">{</span>
-  <span class="k">private</span> <span class="nx">messagesSubject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BehaviorSubject</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([]);</span>
-  <span class="nx">messages$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">messagesSubject</span><span class="p">.</span><span class="nx">asObservable</span><span class="p">();</span>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="ss">headers: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
+    <span class="n">original_headers</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">headers</span>
+    <span class="n">sanitized_headers</span> <span class="o">=</span> <span class="n">original_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="p">}</span>
 
-  <span class="nx">addMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">currentMessages</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">messagesSubject</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
-    <span class="nx">currentMessages</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">messagesSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">currentMessages</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
+    <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
+      CREATE TABLE </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="sh"> (
+        </span><span class="si">#{</span><span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="s2">"</span><span class="si">#{</span><span class="n">header</span><span class="si">}</span><span class="s2"> TEXT"</span> <span class="si">}</span><span class="sh">.join(', ')}
+      );
+</span><span class="no">    SQL</span>
 
-</div>
+    <span class="n">csv</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
+      <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> VALUES (</span><span class="si">#{</span><span class="p">([</span><span class="s1">'?'</span><span class="p">]</span> <span class="o">*</span> <span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">size</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span> <span class="n">row</span><span class="p">.</span><span class="nf">fields</span>
+    <span class="k">end</span>
 
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// chat.component.ts</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">ChatComponent</span> <span class="p">{</span>
-  <span class="nl">messages</span><span class="p">:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
-
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">chatService</span><span class="p">:</span> <span class="nx">ChatService</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">chatService</span><span class="p">.</span><span class="nx">messages$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">messages</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">;</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="nx">sendMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">chatService</span><span class="p">.</span><span class="nx">addMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+    <span class="n">original_headers</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">sanitized_headers</span><span class="p">).</span><span class="nf">to_h</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 </code></pre>
 
 </div>
@@ -1034,97 +1367,45 @@ but there are also a lot of frameworks facilitating the usage of CSS and JavaScr
 <h3>
   
   
-  3. <strong>NgRx Store</strong>
+  Merging columns
 </h3>
 
-<p><strong>Example:</strong></p>
+<p>To merge 2 separate columns, ensure that both CSVs have the same column names. Open it in a text editor and manually edit it.</p>
 
-<p>For managing a shopping cart in an e-commerce app, you can utilize NgRx Store.<br>
+<p>The following code then uses a SQLite query to join both CSVs together on that selected column to merge on.</p>
+
+<p>For this to work, we assume that columns on both files have the exact same value. If they don't, you will have to edit the code to transform them.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// cart.actions.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">createAction</span><span class="p">,</span> <span class="nx">props</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@ngrx/store</span><span class="dl">'</span><span class="p">;</span>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">merge_csv_files</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">key_column</span><span class="p">)</span>
+  <span class="n">db</span> <span class="o">=</span> <span class="no">SQLite3</span><span class="o">::</span><span class="no">Database</span><span class="p">.</span><span class="nf">new</span> <span class="s1">'temp.sqlite'</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">addToCart</span> <span class="o">=</span> <span class="nx">createAction</span><span class="p">(</span>
-  <span class="dl">'</span><span class="s1">[Cart] Add Item</span><span class="dl">'</span><span class="p">,</span>
-  <span class="nx">props</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">item</span><span class="p">:</span> <span class="nx">Product</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="p">);</span>
-</code></pre>
+  <span class="n">header_mapping1</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="s1">'table1'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+  <span class="n">header_mapping2</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file2</span><span class="p">,</span> <span class="s1">'table2'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
 
-</div>
+  <span class="n">sanitized_key_column</span> <span class="o">=</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">key_column</span><span class="p">)</span>
 
+  <span class="n">merged</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute2</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
+    SELECT * FROM table1
+    INNER JOIN table2
+    ON table1.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh"> = table2.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh">;
+</span><span class="no">  SQL</span>
 
+  <span class="n">original_headers</span> <span class="o">=</span> <span class="n">merged</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">sanitized_header</span><span class="o">|</span>
+    <span class="n">header_mapping1</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">header_mapping2</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">sanitized_header</span>
+  <span class="k">end</span>
 
+  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
+    <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">original_headers</span>
+    <span class="n">merged</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span> <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">row</span> <span class="p">}</span>
+  <span class="k">end</span>
 
+  <span class="c1"># db.execute "DROP TABLE table1"</span>
+  <span class="c1"># db.execute "DROP TABLE table2"</span>
+<span class="k">end</span>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// cart.reducer.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">createReducer</span><span class="p">,</span> <span class="nx">on</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@ngrx/store</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">addToCart</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./cart.actions</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">initialState</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
-
-<span class="kd">const</span> <span class="nx">_cartReducer</span> <span class="o">=</span> <span class="nx">createReducer</span><span class="p">(</span>
-  <span class="nx">initialState</span><span class="p">,</span>
-  <span class="nx">on</span><span class="p">(</span><span class="nx">addToCart</span><span class="p">,</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="p">{</span> <span class="nx">item</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">state</span><span class="p">,</span> <span class="nx">item</span><span class="p">])</span>
-<span class="p">);</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">cartReducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">_cartReducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  4. <strong>Akita</strong>
-</h3>
-
-<p><strong>Example:</strong></p>
-
-<p>Suppose you want to manage the list of user notifications across your application.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// notification.store.ts</span>
-<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
-<span class="p">@</span><span class="nd">StoreConfig</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">notifications</span><span class="dl">'</span> <span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">NotificationStore</span> <span class="kd">extends</span> <span class="nx">EntityStore</span><span class="o">&lt;</span><span class="nx">NotificationState</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">initialState</span><span class="p">:</span> <span class="nx">NotificationState</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">notifications</span><span class="p">:</span> <span class="p">[],</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="kr">interface</span> <span class="nx">NotificationState</span> <span class="p">{</span>
-  <span class="nl">notifications</span><span class="p">:</span> <span class="nx">Notification</span><span class="p">[];</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// notification.service.ts</span>
-<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">NotificationService</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">notificationStore</span><span class="p">:</span> <span class="nx">NotificationStore</span><span class="p">)</span> <span class="p">{}</span>
-
-  <span class="nx">addNotification</span><span class="p">(</span><span class="nx">notification</span><span class="p">:</span> <span class="nx">Notification</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">notificationStore</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">notification</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="n">merge_csv_files</span><span class="p">(</span><span class="s1">'external.csv'</span><span class="p">,</span> <span class="s1">'notion.csv'</span><span class="p">,</span> <span class="s1">'output.csv'</span><span class="p">,</span> <span class="s1">'Name'</span><span class="p">)</span>
 </code></pre>
 
 </div>
@@ -1134,1242 +1415,108 @@ but there are also a lot of frameworks facilitating the usage of CSS and JavaScr
 <h2>
   
   
-  A Comparison of State Management Options
+  What can be improved?
 </h2>
 
-<p>Let's compare these state management options based on key criteria, using examples where applicable:</p>
-
 <h3>
   
   
-  1. <strong>Complexity</strong>
+  Transforming mapped columns before comparing them
 </h3>
 
-<ul>
-<li>
-<strong>Component Inputs and Outputs:</strong> Low complexity, suitable for simple scenarios.</li>
-<li>
-<strong>ngModel:</strong> Low complexity, ideal for form-related state.</li>
-<li>
-<strong>ViewChild and ContentChild:</strong> Moderate complexity, useful for interacting with child components.</li>
-<li>
-<strong>Services:</strong> Moderate complexity, good for simple to moderately complex applications (e.g., authentication).</li>
-<li>
-<strong>RxJS and BehaviorSubject:</strong> Moderate to high complexity, suitable for complex applications with reactive data (e.g., real-time chat).</li>
-<li>
-<strong>NgRx Store:</strong> High complexity, best for large and complex applications with strict state management (e.g., shopping cart).</li>
-<li>
-<strong>Akita:</strong> Moderate complexity, offers a balance between simplicity and power (e.g., user notifications).</li>
-</ul>
-
-<h3>
-  
-  
-  2. <strong>Scalability</strong>
-</h3>
-
-<ul>
-<li>
-<strong>Component Inputs and Outputs:</strong> Limited scalability for sharing state beyond parent-child relationships.</li>
-<li>
-<strong>ngModel:</strong> Limited scalability for form-related state.</li>
-<li>
-<strong>ViewChild and ContentChild:</strong> Limited scalability for state management across components.</li>
-<li>
-<strong>Services:</strong> Scalable for medium-sized applications (e.g., authentication).</li>
-<li>
-<strong>RxJS and BehaviorSubject:</strong> Scalable for complex applications with a need for reactive state (e.g., real-time chat).</li>
-<li>
-<strong>NgRx Store:</strong> Highly scalable for large and complex applications (e.g., shopping cart).</li>
-<li>
-<strong>Akita:</strong> Scalable for applications of varying sizes (e.g., user notifications).</li>
-</ul>
-
-<h3>
-  
-  
-  3. <strong>Developer Experience</strong>
-</h3>
-
-<ul>
-<li>
-<strong>Component Inputs and Outputs:</strong> Easy to grasp and use.</li>
-<li>
-<strong>ngModel:</strong> Simple for form state but may not be suitable for complex state management.</li>
-<li>
-<strong>ViewChild and ContentChild:</strong> Requires understanding of component hierarchies.</li>
-<li>
-<strong>Services:</strong> Straightforward and widely used.</li>
-<li>
-<strong>RxJS and BehaviorSubject:</strong> Requires a good understanding of reactive programming but offers powerful tools.</li>
-<li>
-<strong>NgRx Store:</strong> Requires a deep understanding of NgRx concepts but provides strong structure.</li>
-<li>
-<strong>Akita:</strong> Offers a balance between simplicity and power, making it developer-friendly.</li>
-</ul>
-
-<h3>
-  
-  
-  4. <strong>Community and Ecosystem</strong>
-</h3>
-
-<ul>
-<li>
-<strong>Component Inputs and Outputs:</strong> Widely used in Angular, with ample community support.</li>
-</ul>
-
-<h2>
-  
-  
-  - <strong>ngModel:</strong> Part of the Angular core, well-supported.
-</h2>
-
-<p><strong>ViewChild and ContentChild:</strong> Part of Angular, with community resources available.</p>
-
-<ul>
-<li>
-<strong>Services:</strong> Widely adopted in Angular applications.</li>
-<li>
-<strong>RxJS and BehaviorSubject:</strong> Popular in the Angular community, extensive resources available.</li>
-<li>
-<strong>NgRx Store:</strong> Strong community and ecosystem, well-documented.</li>
-<li>
-<strong>Akita:</strong> Growing community and ecosystem, with good documentation.</li>
-</ul>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In Angular, effective state management is crucial for building robust and scalable applications. Your choice of state management option depends on factors like the complexity of your application, your familiarity with reactive programming, and your specific requirements. Whether you opt for simple component inputs and outputs, leverage services, or embrace libraries like NgRx or Akita, ensure that your choice aligns with your project's needs and your team's expertise. Remember that there's no one-size-fits-all solution, and the right choice may vary from one project to another.</p>
-
- </details> 
- <hr /> 
-
- #### - [Exploring Steganography in the Wild - Part 1](https://dev.to/ranggakd/exploring-steganography-in-the-wild-part-1-5hll) 
- <details><summary>Article</summary> <h2>
-  
-  
-  
-  Outlines
-  <ul>
-<li>Introduction</li>
-<li>Steganography</li>
-<li>Digital Images and Pixels</li>
-<li>Color Models</li>
-<li>Binary Code</li>
-<li>What To Expect</li>
-<li>Project Setup</li>
-<li>
-Core Concepts
-
-<ul>
-<li>Mapping Techniques</li>
-<li>Bit Manipulation for Hiding Images</li>
-<li>Bit Manipulation for Revealing Images</li>
-<li>Bit Manipulation for Reconstructing Images</li>
-</ul>
-</li>
-<li>
-Implementation Details
-
-<ul>
-<li>Supported Image Formats</li>
-<li>Code Structure</li>
-<li>Explanation of Helper Functions</li>
-<li>Explanation of Steganograph Class</li>
-</ul>
-</li>
-<li>
-Results and Visualization
-
-<ul>
-<li>Visual Examples of Pre-Encoded Images</li>
-<li>Visual Examples of Encoded Images</li>
-<li>Visual Examples of Decoded Images</li>
-<li>Visual Examples of Reconstructed Images</li>
-</ul>
-</li>
-<li>Evaluation Metrics</li>
-<li>Limitations and Future Work</li>
-<li>
-Conclusion
-
-<ul>
-<li>Summing Up the Journey</li>
-<li>Technical Achievements</li>
-<li>Key Takeaways</li>
-</ul>
-</li>
-<li>
-Additional Sections
-</li>
-</ul>
-
-
-
-<h2>
-  
-  
-  Introduction
-</h2>
-
-</h2>
-<p>Welcome to a fascinating exploration of steganography and its applications. Steganography is a technique often cloaked in mystery, yet it serves practical purposes that extend from cybersecurity to digital watermarking. In this blog post, we'll delve into the nitty-gritty details of how steganography is applied to digital images.</p>
-
-<h3>
-  
-  
-  Steganography
-</h3>
-
-<blockquote>
-<p>Steganography is the practice of representing information within another message or physical object, in such a manner that the presence of the information is not evident to human inspection - <a href="https://en.wikipedia.org/wiki/Steganography">Wikipedia</a>.</p>
-</blockquote>
-
-<p>In simpler terms, steganography is akin to embedding a covert message within another overt message—in our case, hiding one image within another. </p>
-
-<h3>
-  
-  
-  Digital Images and Pixels
-</h3>
-
-<blockquote>
-<p>A digital image is an image composed of picture elements, also known as pixels, each with finite, discrete quantities of numeric representation for its intensity or gray level that is an output from its two-dimensional functions fed as input by its spatial coordinates denoted with x, y on the x-axis and y-axis, respectively - <a href="https://en.wikipedia.org/wiki/Digital_image">Wikipedia</a>.</p>
-</blockquote>
-
-<p>Imagine a digital image as an intricate mosaic composed of minuscule tiles, known as pixels. Each pixel contributes to the overall image by adding its own splash of color. The more pixels you have, the more vivid and detailed your image becomes.</p>
-
-<h3>
-  
-  
-  Color Models
-</h3>
-
-<blockquote>
-<p>Color models are tools central to color theory that define the color spectrum based on presence or absence of a few primary colors - <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/rth2.12308">onlinelibrary.wiley.com</a></p>
-</blockquote>
-
-<p>Think of color models as the recipe books for digital artists. Just like mixing primary colors in art class, color models help us understand how to blend different amounts of red, green, and blue light to produce various hues. In this discussion, we'll focus on the RGB (Red-Green-Blue) color model, which is the cornerstone for reproducing a wide array of colors in digital media.</p>
-
-<blockquote>
-<p>The name of the model comes from the initials of the three additive primary colors, red, green, and blue. The main purpose of the RGB color model is for the sensing, representation, and display of images in electronic systems, such as televisions and computers - <a href="https://en.wikipedia.org/wiki/RGB_color_model">Wikipedia</a>.</p>
-</blockquote>
-
-<h3>
-  
-  
-  Binary Code
-</h3>
-
-<blockquote>
-<p>Binary code is a system of representing information using only two symbols, typically 0 and 1 - <a href="https://www.britannica.com/technology/binary-code">Britannica</a></p>
-</blockquote>
-
-<p>In the realm of digital images, each pixel's color information is represented by 8-bit binary digits. This means each pixel can display one of (2^8) or 256 possible colors.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---is9Oyqz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q41hsl3rg4dgdfbk98lo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---is9Oyqz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q41hsl3rg4dgdfbk98lo.png" alt="8 bit binary digit" width="800" height="123"></a></p>
-
-<blockquote>
-<p>In computing, the most significant bit (MSb) represents the highest-order place of a binary integer. Similarly, the least significant bit (LSb) is the bit position in a binary integer representing the binary 1s place of the integer - <a href="https://en.wikipedia.org/wiki/Bit_numbering">Wikipedia</a></p>
-</blockquote>
-
-<p>The concept of most significant bit (MSb) and least significant bit (LSb) is crucial here. Altering the MSb can have a profound impact on a pixel's color, while changes to the LSb are usually subtle.</p>
-
-<p>The <strong>leftmost bit</strong> is the <strong>most significant bit</strong>. We change this bit and it will affect tremendously on the value. For example, we flip the leftmost bit of the binary value of 165 from <code>1</code> to <code>0</code> (from 10100101 into 00100101) it will change the decimal value from 165 into 37.</p>
-
-<p>On the other hand, the <strong>rightmost bit</strong> is the <strong>least significant bit</strong>. We change this bit and it won't affect tremendously on the value. For example, we flip the rightmost bit of the binary value of 165 from <code>1</code> to <code>0</code> (from <code>10100101</code> into <code>10100100</code>) it will change the decimal value from 165 into 164.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8AeMmHmK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75wnkg7oqf56ltb5zl4u.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8AeMmHmK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/75wnkg7oqf56ltb5zl4u.png" alt="pixels" width="800" height="298"></a></p>
-
-<p>So, let's tie it all together: each pixel in a digital image comprises three color values (RGB), each represented by an 8-bit binary digit. We'll exploit the "insignificance" of the least significant bits to embed one image into another without causing noticeable changes to the host image. This is the magic key to image-based steganography. We'll change the <strong>less significant bits</strong> of one image to include the <strong>most significant bits</strong> of another.</p>
-
-<h3>
-  
-  
-  What To Expect
-</h3>
-
-<p>In this technical dev blog post, you'll find:</p>
-
-<ul>
-<li>A deep dive into <strong>steganography</strong>, particularly the art of concealing one image within another.</li>
-<li>A focus on <strong>LSB steganography</strong>, which involves manipulating the least significant bits of pixels in a cover image to hide another image.</li>
-<li>Practical <strong>code examples</strong> and vivid <strong>visualizations</strong> to help you understand the process of hiding and retrieving images.</li>
-<li>A discussion on the <strong>challenges</strong> and <strong>limitations</strong> one might encounter, such as the quality of the concealed image.</li>
-</ul>
-
-<p>So, buckle up for an exciting journey through the world of steganography!</p>
-
-<h2>
-  
-  
-  Project Setup
-</h2>
-
-<p>Before diving into the technicalities of steganography, it's essential to set up your workspace properly. This ensures that you can effortlessly follow along with the examples and get the most out of this exploration. Whether you're a seasoned coder or just dipping your toes into the Python ecosystem, I've got you covered.</p>
-
-<p>I've created a Google Colab-compatible Jupyter Notebook to make this process seamless. The notebook is designed with a user-friendly UI/UX and hides the raw code, so you can focus on learning. And the best part? The code is pre-validated to run without hitches on the first try!</p>
-
-<p><a href="https://github.com/ranggakd/steganography/blob/main/Exploring_Steganography_In_The_Wild_Part_1.ipynb" class="ltag_cta ltag_cta--branded">Just click the 'Open in Colab' badge to get started!</a>
-</p>
-
-<p>If you're new to Google Colab or Python in general, don't worry! Here's an introductory <a href="https://www.youtube.com/watch?v=RLYoEyIHL6A">video on Google Colab for Beginners</a> to help you get started.</p>
-
-<p>For those who are more experienced and might prefer to run the project locally, here are the Python package requirements to set up your environment:<br>
+<p>It would be great to add support for easily mapping columns with a specified transformer method. An example of how this could work:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Python 3.7.12
-matplotlib==3.2.2
-matplotlib-inline==0.1.3
-matplotlib-venn==0.11.6
-numpy==1.21.5
-Pillow==7.1.2
-scikit-learn==1.0.2
+<pre class="highlight ruby"><code><span class="n">merge_csv_files</span><span class="p">(</span><span class="s1">'external.csv'</span><span class="p">,</span> <span class="s1">'notion.csv'</span><span class="p">,</span> <span class="s1">'output.csv'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Name'</span><span class="p">],</span> <span class="p">{</span><span class="s1">'Name'</span> <span class="o">=&gt;</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:normalize_domain</span><span class="p">)})</span>
 </code></pre>
 
 </div>
 
 
-<p>Once you have your environment set up, you'll be ready to delve into the world of steganography with me!</p>
-<h2>
-  
-  
-  Core Concepts
-</h2>
-<h3>
-  
-  
-  Mapping Techniques
-</h3>
-
-<p>Before diving into the nitty-gritty details, it's crucial to understand the four types of binary value mappings that we'll be using:</p>
-
-<ol>
-<li><p><strong>Left-Half Bits Mapping (LHB Map)</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s---l1TfxpW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z8waj507ym60iv90kkmn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---l1TfxpW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z8waj507ym60iv90kkmn.png" alt="left half bits" width="800" height="336"></a><br>
-Think of this mapping as a way to extract the <strong>left-half bits</strong> values from the <strong>cover image</strong> within the <strong>merged image</strong>.</p></li>
-<li><p><strong>Right-Half Bits Mapping (RHB Map)</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cprCBtzW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fdvnm9ww1skc8m87ddly.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cprCBtzW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fdvnm9ww1skc8m87ddly.png" alt="right half bits" width="800" height="336"></a><br>
-This mapping aims to extract the <strong>left-half bits</strong> values of the <strong>hidden image</strong> from the <strong>merged image</strong>.</p></li>
-<li><p><strong>Whole Bits Mapping (MB Map)</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RLhIUVNN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/olbs0eakha61k7js5mn2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RLhIUVNN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/olbs0eakha61k7js5mn2.png" alt="merged bits" width="800" height="336"></a><br>
-This mapping is utilized to construct the <strong>whole bits</strong> values of the <strong>merged image</strong>, using the <strong>left-half bits</strong> values from both the <strong>cover</strong> and <strong>hidden images</strong>.</p></li>
-<li><p><strong>Possible Right-Half Bits Mapping (RRHB Map)</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4ciXH9gd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6cgi1flq2ia5u17wn8g.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4ciXH9gd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6cgi1flq2ia5u17wn8g.png" alt="reconstruction bits" width="800" height="336"></a><br>
-In this case, we'll <strong>randomly</strong> pick possible <strong>half bits values</strong> as we don't store the information about the half bits beforehand. The aim here is to construct the <strong>right-half bits</strong> values of the <strong>unmerged left-half bits</strong> image for <strong>both the unmerged cover</strong> and <strong>hidden images</strong>.</p></li>
-</ol>
-<h3>
-  
-  
-  Bit Manipulation for Hiding Images
-</h3>
-
-<p>Now that we've understood the mapping types, let's look at how these mappings play a crucial role in hiding—or encoding—one image within another.</p>
-<h4>
-  
-  
-  Encoding Process
-</h4>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EIC6iA_f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m31fxuw51jexpya6d7av.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EIC6iA_f--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m31fxuw51jexpya6d7av.png" alt="encode flow" width="427" height="592"></a></p>
-
-<p>Here's a summarized flow of the encoding process:</p>
-
-<ul>
-<li>
-<strong>Choose Images</strong>: Initially, you have to pick two images:
-
-<ul>
-<li>A "Cover Image," which will serve as the shell where your secret image will reside.</li>
-<li>A "Hidden Image," which is the secret image you wish to hide within the cover image.</li>
-</ul>
-</li>
-<li>
-<strong>Extract and Map LHB (Left-Half Bits)</strong>: The "Hidden Image" undergoes LHB (Left-Half Bits) Mapping. This extracts the left-half bits from the hidden image and maps them to create a new image called "Left-half bits Hidden Image."</li>
-<li>
-<strong>Position the New Image</strong>: The "Left-half bits Hidden Image" is then positioned within the "Cover Image" according to specified criteria (e.g., upper left corner, lower right corner, etc.).</li>
-<li>
-<strong>Merge</strong>: Finally, the "Cover Image" and the positioned "Left-half bits Hidden Image" are merged together. This forms the "Merged Image," which looks like your original cover image but has the hidden image embedded within it.</li>
-</ul>
-<h3>
-  
-  
-  Bit Manipulation for Revealing Images
-</h3>
-
-<p>Let's shift our focus to how we can extract—or decode—the hidden image from the merged image.</p>
-<h4>
-  
-  
-  Decoding Process
-</h4>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RmSE3UFi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ew4ma9azc97n0a6kqezy.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RmSE3UFi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ew4ma9azc97n0a6kqezy.png" alt="decode flow" width="448" height="443"></a></p>
-
-<p>Here's a quick rundown of the decoding process:</p>
-
-<ul>
-<li>
-<strong>Use Merged Image</strong>: The initial step in decoding involves taking the "Merged Image," which contains both the "Cover Image" and the "Hidden Image."</li>
-<li>
-<strong>Extract Bits</strong>: The "Merged Image" is then divided into its component "left-half bits" (LHB) and "right-half bits" (RHB). These are different portions of the image's pixel data.</li>
-<li>
-<strong>Retrieve Images</strong>: The "left-half bits" are used to reconstruct an "Unmerged Left-half bits Cover Image," effectively extracting what used to be the cover image. Note that the right-half bits for this image are still zero. The "right-half bits" are used to reconstruct a "Unmerged Left-half bits Hidden Image," effectively extracting what used to be the hidden image, also with zero right-half bits. The position of this hidden image within the merged image is accounted for during this step.</li>
-</ul>
-<h3>
-  
-  
-  Bit Manipulation for Reconstructing Images
-</h3>
-
-<p>Finally, let's look at how we can reconstruct the original images from their half-bit versions.</p>
-<h4>
-  
-  
-  Reconstruction Process
-</h4>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8Vzfn3HO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u5zdbnnx5ecxm361s44v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8Vzfn3HO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u5zdbnnx5ecxm361s44v.png" alt="reconstruction flow" width="542" height="443"></a></p>
-
-<p>Here's how the reconstruction process works:</p>
-
-<ul>
-<li>
-<strong>Use Unmerged Bits</strong>: Use the unmerged left-half bits of both the cover and hidden images.</li>
-<li>
-<strong>Map Right-Half Bits</strong>: Use the "RRHB Mapping" to generate possible right-half bits values randomly.</li>
-<li>
-<strong>Reconstruct Images</strong>: The result is a reconstructed cover and hidden image.</li>
-</ul>
-
-<p>I hope these explanations provide a clearer understanding of the steganography techniques involved in hiding, revealing, and reconstructing images.</p>
-<h2>
-  
-  
-  Implementation Details
-</h2>
-<h3>
-  
-  
-  Supported Image Formats
-</h3>
-
-<p>In this exploration, we'll limit our focus to only two image formats: PNG and JPEG. This limitation helps keep our exploration straightforward.</p>
-<h3>
-  
-  
-  Code Structure
-</h3>
-
-<p>Before diving into the code's functionality, it's essential to get a grasp of its structure. Below is a snippet that outlines the main components of the code.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">.</span>
-├── get_bits_dict<span class="o">(</span>start: int, end: int, recon: bool <span class="o">=</span> False<span class="o">)</span> -&gt; Dict[int, int]
-├── get_merged_bits_array<span class="o">()</span> -&gt; np.ndarray
-├── dict_to_nparray<span class="o">(</span>d: dict<span class="o">)</span> -&gt; np.ndarray
-├── dict_to_2darray<span class="o">(</span>d: dict<span class="o">)</span> -&gt; np.ndarray
-└── Steganograph
-    ├── Object Attributes
-    │     ├── ispng: bool
-    │     ├── original_cover_image: numpy array
-    │     ├── original_hidden_image: numpy array
-    │     ├── left_half_bits_hidden_image: numpy array, default None
-    │     ├── merged_image: numpy array, default None
-    │     ├── unmerged_left_half_bits_cover_image: numpy array, default None
-    │     ├── unmerged_left_half_bits_hidden_image: numpy array, default None
-    │     ├── reconstructed_cover_image: numpy array, default None
-    │     └── reconstructed_hidden_image: numpy array, default None
-    ├──── Methods
-    │     ├── encode<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
-    │     ├── decode<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
-    │     ├── encode_decode<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
-    │     ├── reconstruct<span class="o">()</span>
-    │     ├── encode_decode_recon<span class="o">(</span>pos: str <span class="o">=</span> <span class="s1">'upper_left'</span><span class="o">)</span>
-    │     ├── is_two_images_identical<span class="o">(</span>opt: int <span class="o">=</span> 0<span class="o">)</span> -&gt; bool
-    │     ├── save_image<span class="o">(</span>opt: int <span class="o">=</span> 0<span class="o">)</span>
-    │     ├── plot_original<span class="o">()</span>
-    │     ├── plot_left_half_bits<span class="o">()</span>
-    │     ├── plot_merged_image<span class="o">()</span>
-    │     ├── plot_unmerged_left_half_bits<span class="o">()</span>
-    │     └── plot_recon<span class="o">()</span>
-    └──── Class Attributes
-          ├── __lhb_lookup: lhb <span class="c">#Left half bits array lookup</span>
-          ├── __rhb_lookup: rhb <span class="c">#Right half bits array lookup</span>
-          ├── __mb_lookup: mb <span class="c">#Merged bits 2D array lookup</span>
-          ├── __rrhb_lookup: rrhb <span class="c">#Reconstruction right half bits dict lookup</span>
-          ├── __format: tuple <span class="o">(</span><span class="s1">'jpeg'</span>, <span class="s1">'png'</span><span class="o">)</span>
-          ├── __rgb: tuple <span class="o">(</span><span class="s1">'RGB'</span>, <span class="s1">'Red'</span>, <span class="s1">'Green'</span>, <span class="s1">'Blue'</span><span class="o">)</span>
-          └── __pos: tuple <span class="o">(</span><span class="s1">'upper_left'</span>, <span class="s1">'upper_right'</span>, <span class="s1">'lower_left'</span>, <span class="s1">'lower_right'</span><span class="o">)</span>
-</code></pre>
-
-</div>
-
-<h3>
-  
-  
-  Explanation of Helper Functions
-</h3>
-
-<p>The code incorporates several helper functions tailored for the art of steganography. Here's a brief rundown:</p>
-
-<ol>
-<li>
-<p><strong>get_bits_dict</strong>: This function produces a dictionary that maps an integer (ranging from 0 to 255) to another integer. The mapping varies based on whether the process is for reconstruction. In the standard case, it extracts the <strong>left-half bits</strong>, whereas for reconstruction, it extracts the <strong>right-half bits</strong>.<br>
-</p>
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-</li>
-<li>
-<p><strong>dict_to_nparray</strong>: Converting the dictionary from <code>get_bits_dict</code> into a numpy array facilitates faster lookup operations.<br></p>
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-</li>
-<li>
-<p><strong>get_merged_bits_array</strong>: This function constructs a 2D array where each cell at index <code>[i][j]</code> holds the merged <strong>left-half bits (cover image)</strong> of <code>i</code> and <strong>the left-half bits (hidden image)</strong> of <code>j</code>.<br></p>
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-</li>
-<li>
-<p><strong>dict_to_2darray</strong>: This works similarly to <code>dict_to_nparray</code>, but it reshapes the array into a 2D structure, particularly useful for image reconstruction.<br></p>
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-</li>
-<li>
-
-<p><strong>Respective function callings for later</strong>:<br>
-</p>
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<ul>
-<li>Generates a numpy array for quick look-up of the left-half bits of a given number.</li>
-<li>Creates a numpy array for speedy retrieval of the right-half bits of a number.</li>
-<li>Constructs a 2D numpy array for efficient look-up of the merged bits of two numbers.</li>
-<li>Builds a 2D numpy array for quick reference of the right-half bits of a number during the reconstruction phase.</li>
-</ul>
-
-
-</li>
-</ol>
-
-<h3>
-  
-  
-  Explanation of Steganograph Class
-</h3>
-
-<h4>
-  
-  
-  Explanation of the <code>__init__</code> Method:
-</h4>
-
-<p>The <code>__init__</code> method initializes an instance of the <code>Steganograph</code> class.</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h5>
-  
-  
-  Parameters:
-</h5>
-
-<ul>
-<li>
-<code>cover_image_filepath</code>: File path for the cover image (supports only JPEG or PNG formats).</li>
-<li>
-<code>hidden_image_filepath</code>: File path for the hidden image (supports only JPEG or PNG formats).</li>
-</ul>
-
-<h5>
-  
-  
-  Steps:
-</h5>
-
-<ol>
-<li><p><strong>Determine Image Formats</strong>: The method first determines the format (JPEG or PNG) of both the cover image and the hidden image using the <code>imghdr.what()</code> function. The formats are stored in <code>format_ci</code> and <code>format_hi</code> variables.</p></li>
-<li><p><strong>Validation</strong>: It checks whether both images have valid formats. If the formats don't match any in the class' <code>__format</code> attribute, it raises a <code>TypeError</code>.</p></li>
-<li><p><strong>Check Format Uniformity</strong>: It checks if both images have the same format. If not, it raises a <code>TypeError</code>.</p></li>
-<li><p><strong>PNG Format Flag</strong>: Sets the <code>ispng</code> flag to True if the format is PNG; otherwise, sets it to False.</p></li>
-<li><p><strong>Read Images</strong>: Reads the images into <code>original_cover_image</code> and <code>original_hidden_image</code> using the <code>plt.imread()</code> function from Matplotlib.</p></li>
-<li><p><strong>Invoke <code>read_and_adjust_images</code></strong>: Calls the method <code>read_and_adjust_images()</code> to perform additional adjustments on the images.</p></li>
-<li><p><strong>Set Initial States</strong>: Initializes the other attributes to None, as these would be populated by other methods later.</p></li>
-</ol>
-
-<h4>
-  
-  
-  Explanation of the <code>read_and_adjust_images</code> Method:
-</h4>
-
-<p>This method adjusts the read images for further processing, especially for PNG images. By the end of these methods, the class instance is well-prepared with loaded and adjusted images, and is ready for encoding and decoding operations.</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h5>
-  
-  
-  Steps:
-</h5>
-
-<ol>
-<li>
-<strong>Check if PNG</strong>: If the images are in PNG format (<code>ispng</code> is True):
-
-<ul>
-<li>
-<strong>Ignore Alpha Channel</strong>: If the images have an alpha (A) channel, it ignores it for now.</li>
-<li>
-<strong>Normalization</strong>: PNG images are often read in a normalized format where the pixel values are floats between 0 and 1. This method multiplies them by 255 and rounds off to convert them to integers.</li>
-<li>
-<strong>Type Casting</strong>: It then casts the numpy arrays to 'uint8' type, ensuring that they are 8-bit unsigned integers.</li>
-</ul>
-</li>
-</ol>
-
-<h4>
-  
-  
-  Explanation of the <code>encode</code> Method:
-</h4>
-
-<p>The <code>encode</code> method is responsible for creating a simple steganograph—merging a hidden image into a cover image in a way that it can later be extracted.</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h5>
-  
-  
-  Parameters:
-</h5>
-
-<ul>
-<li>
-<code>pos</code>: Specifies where the hidden image will be located in relation to the cover image. Default is <code>'upper_left'</code>.</li>
-</ul>
-
-<h5>
-  
-  
-  Steps:
-</h5>
-
-<ol>
-<li><p><strong>Position Validation</strong>: It validates whether the given position <code>pos</code> is one of the four pre-defined positions (<code>upper_left</code>, <code>upper_right</code>, <code>lower_left</code>, <code>lower_right</code>). If not, it raises a <code>ValueError</code>.</p></li>
-<li><p><strong>Get Left Half Bits</strong>: It calls <code>get_left_half_bits</code> to extract the left half-bits of the hidden image and stores them in the <code>left_half_bits_hidden_image</code> attribute.</p></li>
-<li><p><strong>Merge Half Bits</strong>: It then calls <code>merge_two_half_bits</code> to merge the modified hidden image with the cover image.</p></li>
-</ol>
-
-<h5>
-  
-  
-  Explanation of the <code>get_left_half_bits</code> Method:
-</h5>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h6>
-  
-  
-  Parameters:
-</h6>
-
-<ul>
-<li>
-<code>img_arr</code>: The image array that you want to extract the left half-bits from.</li>
-</ul>
-
-<h6>
-  
-  
-  Steps:
-</h6>
-
-<ol>
-<li><p><strong>Lookup</strong>: It looks up the left half-bits of the image array <code>img_arr</code> using a pre-defined lookup table <code>__lhb_lookup</code>.</p></li>
-<li><p><strong>Return</strong>: It returns the left half-bits.</p></li>
-</ol>
-
-<h5>
-  
-  
-  Explanation of the <code>merge_two_half_bits</code> Method:
-</h5>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h6>
-  
-  
-  Parameters:
-</h6>
-
-<ul>
-<li>
-<code>pos</code>: The position where the hidden image will be located in relation to the cover image.</li>
-</ul>
-
-<h6>
-  
-  
-  Steps:
-</h6>
-
-<ol>
-<li><p><strong>Copy Original Cover Image</strong>: It first creates a copy of the original cover image and stores it in <code>self.merged_image</code>.</p></li>
-<li><p><strong>Get Slicing Range</strong>: It calls the <code>get_slicing</code> method to determine the slice where the hidden image will be placed.</p></li>
-<li><p><strong>Merge the Half Bits</strong>: It merges the cover image and the modified hidden image together to create the final merged image (steganograph). It does this by using a pre-defined 2D lookup table <code>__mb_lookup</code> for each channel (RGB).</p></li>
-<li><p><strong>Type Casting</strong>: Finally, it casts the <code>merged_image</code> into 'uint8' type.</p></li>
-</ol>
-
-<h5>
-  
-  
-  Explanation of the <code>get_slicing</code> Method:
-</h5>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h6>
-  
-  
-  Parameters:
-</h6>
-
-<ul>
-<li>
-<code>large_shape</code>: A tuple representing the shape of the larger array, which is the cover image in this case.</li>
-<li>
-<code>small_shape</code>: A tuple representing the shape of the smaller array, which is the hidden image.</li>
-<li>
-<code>pos</code>: The position where the hidden image will be located in relation to the cover image. Valid options are 'upper_left', 'upper_right', 'lower_left', and 'lower_right'.</li>
-</ul>
-
-<h6>
-  
-  
-  Steps:
-</h6>
-
-<ol>
-<li><p><strong>Extract Shape Information</strong>: The method first extracts the shape information of both the larger and smaller arrays. This information includes the number of rows and columns in each array.</p></li>
-<li><p><strong>Calculate Slicing Range</strong>: Based on the <code>pos</code> value, the function calculates the range in the larger array where the smaller array will be placed. This is done using numpy slice notation (<code>np.s_</code>).</p></li>
-<li><p><strong>Error Handling</strong>: If an invalid <code>pos</code> value is provided, a <code>ValueError</code> is raised.</p></li>
-<li><p><strong>Return</strong>: The function returns the calculated slicing range, which can be used as a slice object for numpy arrays. This slice object will then be used to place the hidden image in the specified position within the cover image.</p></li>
-</ol>
-
-<p>By the end of the <code>encode</code> method, you'll have a steganograph where the hidden image is merged into the cover image at the specified position.</p>
-
-<h4>
-  
-  
-  Explanation of the <code>decode</code> Method:
-</h4>
-
-<p>The <code>decode</code> method aims to break down the steganograph created by the <code>encode</code> method to recover the original hidden and cover images.</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h5>
-  
-  
-  Parameters:
-</h5>
-
-<ul>
-<li>
-<code>pos</code>: This parameter specifies where the hidden image was embedded within the cover image. The default is <code>'upper_left'</code>.</li>
-</ul>
-
-<h5>
-  
-  
-  Steps:
-</h5>
-
-<ol>
-<li><p><strong>Validation</strong>: First, the method checks if <code>self.merged_image</code> is <code>None</code>. If it is, it raises a <code>TypeError</code>. It also validates that the position <code>pos</code> is one of the acceptable positions. If not, a <code>ValueError</code> is raised.</p></li>
-<li><p><strong>Unmerge</strong>: It calls the <code>unmerge_two_half_bits</code> method to separate the cover and hidden images from the merged image.</p></li>
-</ol>
-
-<h5>
-  
-  
-  Explanation of the <code>unmerge_two_half_bits</code> Method:
-</h5>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h6>
-  
-  
-  Parameters:
-</h6>
-
-<ul>
-<li>
-<code>pos</code>: Specifies the original position where the hidden image was embedded within the cover image.</li>
-</ul>
-
-<h6>
-  
-  
-  Steps:
-</h6>
-
-<ol>
-<li><p><strong>Slice Definition</strong>: Calls the <code>get_slicing</code> method to determine the slice range based on the <code>pos</code> value, i.e., where exactly the hidden image is located in the merged image.</p></li>
-<li><p><strong>Extract Left Half Bits of Cover Image</strong>: Uses the <code>get_left_half_bits</code> method to extract the left half bits of the merged image and assigns them to <code>self.unmerged_left_half_bits_cover_image</code>.</p></li>
-<li><p><strong>Extract Right Half Bits of Hidden Image</strong>: Similarly, it calls the <code>get_right_half_bits</code> method to extract the right half bits of the merged image. However, it does so only for the area specified by the slicing range returned by <code>get_slicing</code>.</p></li>
-</ol>
-
-<h5>
-  
-  
-  Explanation of the <code>get_right_half_bits</code> Method:
-</h5>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h6>
-  
-  
-  Parameters:
-</h6>
-
-<ul>
-<li>
-<code>img_arr</code>: The image array that you want to extract the right half-bits from.</li>
-</ul>
-
-<h6>
-  
-  
-  Steps:
-</h6>
-
-<ol>
-<li><p><strong>Lookup</strong>: It looks up the right half-bits of the image array <code>img_arr</code> using a pre-defined lookup table <code>__rhb_lookup</code>.</p></li>
-<li><p><strong>Return</strong>: It returns the right half-bits.</p></li>
-</ol>
-
-<p>In summary, the <code>decode</code> method and its supporting methods work together to reverse the steganographic process, extracting the hidden image and cover image from the merged image.</p>
-
-<h4>
-  
-  
-  Explanation of the <code>reconstruct</code> Method:
-</h4>
-
-<p>The <code>reconstruct</code> method aims to restore the original cover and hidden images from their left-half bits images, which were previously separated during the decoding process.</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h5>
-  
-  
-  Steps:
-</h5>
-
-<ol>
-<li><p><strong>Validation</strong>: The method checks that <code>self.unmerged_left_half_bits_cover_image</code> and <code>self.unmerged_left_half_bits_hidden_image</code> are not <code>None</code>. If either of them is <code>None</code>, it raises a <code>TypeError</code>, prompting you to run the <code>decode()</code> method first.</p></li>
-<li><p><strong>Reconstruct Cover Image</strong>: The <code>reconstruct_right_half_bits</code> method is called to reconstruct the right-half bits of the cover image. The reconstructed image is stored in <code>self.reconstructed_cover_image</code>.</p></li>
-<li><p><strong>Reconstruct Hidden Image</strong>: Similarly, the <code>reconstruct_right_half_bits</code> method is used to reconstruct the right-half bits of the hidden image. The reconstructed image is stored in <code>self.reconstructed_hidden_image</code>.</p></li>
-</ol>
-
-<h5>
-  
-  
-  Explanation of the <code>reconstruct_right_half_bits</code> Method:
-</h5>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h6>
-  
-  
-  Parameters:
-</h6>
-
-<ul>
-<li>
-<code>im_arr</code>: The left-half bits of an image as a numpy array.</li>
-<li>
-<code>seed</code>: A seed for the random number generator, defaulting to 1999.</li>
-</ul>
-
-<h6>
-  
-  
-  Steps:
-</h6>
-
-<ol>
-<li><p><strong>Random Seed</strong>: The <code>np.random.seed</code> function is used to set the random seed to ensure that the random process is reproducible.</p></li>
-<li><p><strong>Flattening Image</strong>: The <code>ravel()</code> method is used to flatten the <code>im_arr</code>, essentially turning it into a one-dimensional array (<code>flat_im_arr</code>).</p></li>
-<li><p><strong>Random Indices</strong>: A random set of indices (<code>random_indices</code>) is generated using <code>np.random.randint</code>, with the size of the array based on the shape of <code>flat_im_arr</code>. This will simulate the random selection of right-half bits for each corresponding left-half bit.</p></li>
-<li><p><strong>Reconstruction</strong>: The lookup table <code>__rrhb_lookup</code> is used in conjunction with <code>random_indices</code> to get a set of right-half bits for each corresponding left-half bit in <code>flat_im_arr</code>. The result (<code>reconstructed_flat</code>) is a one-dimensional array containing the reconstructed right-half bits.</p></li>
-<li><p><strong>Reshaping</strong>: The reconstructed one-dimensional array is reshaped back into its original shape (<code>shape</code>) to form the reconstructed image.</p></li>
-<li><p><strong>Type Casting</strong>: Finally, the numpy array is cast to the type <code>'uint8'</code>.</p></li>
-<li><p><strong>Return</strong>: The reconstructed image, now having both left and right half-bits, is returned.</p></li>
-</ol>
-
-<p>In summary, the <code>reconstruct</code> method and its sub-method <code>reconstruct_right_half_bits</code> work together to restore the original cover and hidden images from their left-half bits versions. This final step completes the round-trip process of encoding, decoding, and reconstructing the images.</p>
-
-<p>For the complete code and a more detailed walkthrough, check out the Jupyter Notebook linked below:</p>
-
-<p><a href="https://github.com/ranggakd/steganography/blob/main/Exploring_Steganography_In_The_Wild_Part_1.ipynb" class="ltag_cta ltag_cta--branded">Just click the 'Open in Colab' badge to get started!</a>
-</p>
 
 <h2>
   
   
-  Results and Visualization
+  Full code
 </h2>
 
-<p>Having delved into the theory and implementation details, it's time to see our steganography technique in action. We'll examine the visual changes and quality metrics at each stage of the process—encoding, decoding, and reconstruction.</p>
 
-<h3>
-  
-  
-  Visual Examples of Pre-Encoded Images
-</h3>
-
-<p>First, let's consider our "Cover Image" and "Hidden Image." The image below serves as our cover:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QJ3Scyjx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a6pthkxaqi3s6lm09c0h.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QJ3Scyjx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a6pthkxaqi3s6lm09c0h.jpeg" alt="Attack Titan.jpeg as cover image" width="800" height="471"></a></p>
-
-<p>Next, we have the hidden image:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--w7I3XrUI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g6girqpd6r1kh2uwjqrr.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--w7I3XrUI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g6girqpd6r1kh2uwjqrr.jpeg" alt="Eren.jpeg as hidden image" width="800" height="450"></a></p>
-
-<p>For a deeper understanding, let's examine the RGB plot of these images. Click on the image below to enlarge it.</p>
-
-<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xuvhejsjvn1rrn4pyel2.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jKseRiAw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xuvhejsjvn1rrn4pyel2.png" alt="RGB plot of cover and hidden images" width="800" height="261"></a></p>
-
-<h3>
-  
-  
-  Visual Examples of Encoded Images
-</h3>
-
-<p>After encoding, we obtain two new images: the "Left Half Bits Hidden Image" and the "Merged Image."</p>
-
-<h4>
-  
-  
-  Left Half Bits Hidden Image
-</h4>
-
-<p>The encoded "Left Half Bits Hidden Image" noticeably loses some quality compared to the original hidden image. For instance, the gradients do not blend as smoothly.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Cc8jXmoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ezx3qelhemiy83ykzp2q.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Cc8jXmoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ezx3qelhemiy83ykzp2q.jpeg" alt="LHB of hidden image" width="800" height="450"></a></p>
-
-<p>Here's the RGB plot for a more in-depth analysis:</p>
-
-<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7llj143tqsg7cphdrhlq.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CiNvILe0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7llj143tqsg7cphdrhlq.png" alt="RGB plot of left half bits hidden image" width="800" height="127"></a></p>
-
-<h4>
-  
-  
-  Merged Image
-</h4>
-
-<p>At first glance, the "Merged Image" looks almost identical to the original cover image. However, a keen eye might spot a subtle face formation in the upper-left corner.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WG4qEdRL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6symdv85lqgs0yeeyei0.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WG4qEdRL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6symdv85lqgs0yeeyei0.jpeg" alt="Merged image" width="800" height="471"></a></p>
-
-<p>For a more analytical view, let's check the RGB plot:</p>
-
-<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ejj0u216s9j05kpir4m6.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--hAfBtg-C--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ejj0u216s9j05kpir4m6.png" alt="RGB plot of merged image" width="800" height="126"></a></p>
-
-<h3>
-  
-  
-  Visual Examples of Decoded Images
-</h3>
-
-<p>Next, we decode the merged image to obtain the "Unmerged Left Half Bits Cover Image" and the "Unmerged Left Half Bits Hidden Image." Both of these images show a loss in quality and coherence, similar to what we observed with the left half bits hidden image.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XDiGrY82--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/re8cawehxdod4hbhh9nr.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XDiGrY82--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/re8cawehxdod4hbhh9nr.jpeg" alt="Unmerged left half bits cover image" width="800" height="471"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RVZrbun2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hu47pp54m6ye6d7jdpdh.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RVZrbun2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hu47pp54m6ye6d7jdpdh.jpeg" alt="Unmerged left half bits hidden image" width="800" height="450"></a></p>
-
-<p>Take a look at the RGB breakdown for further insights:</p>
-
-<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/axxptrt2csnz4ohlwave.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--V7nESzmS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/axxptrt2csnz4ohlwave.png" alt="RGB plot of unmerged images" width="800" height="261"></a></p>
-
-<h3>
-  
-  
-  Visual Examples of Reconstructed Images
-</h3>
-
-<p>Finally, we move on to the reconstruction stage, where we aim to approximate the original images as closely as possible.</p>
-
-<h4>
-  
-  
-  Reconstructed Cover Image
-</h4>
-
-<p>When compared to the unmerged version, the reconstructed cover image appears slightly brighter. However, it's essential to note that the image quality is still not on par with the original. Gradients, for example, do not blend as smoothly as they should.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Glpzy1Gg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ghx71nxua4yozr1evvcc.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Glpzy1Gg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ghx71nxua4yozr1evvcc.jpeg" alt="Reconstructed cover image" width="800" height="471"></a></p>
-
-<h4>
-  
-  
-  Reconstructed Hidden Image
-</h4>
-
-<p>A similar trend is observed in the reconstructed hidden image. Though somewhat brighter than the unmerged version, the quality still falls short of the original.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3L9OGVHX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3wndidfw1mvuq6lgex1.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3L9OGVHX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g3wndidfw1mvuq6lgex1.jpeg" alt="Reconstructed hidden image" width="800" height="450"></a></p>
-
-<h4>
-  
-  
-  RGB Breakdown of Reconstructed Images
-</h4>
-
-<p>For a more analytical perspective, let's examine the RGB plots of these reconstructed images:</p>
-
-<p><a href="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gokpzyk4gq71zkh6iwvy.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--U7WTMIrd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gokpzyk4gq71zkh6iwvy.png" alt="RGB plot of reconstructed images" width="800" height="261"></a></p>
-
-<h3>
-  
-  
-  Evaluation Metrics
-</h3>
-
-<p>For the evaluation, I utilized the Root Mean Square Error (RMSE) and Mean Absolute Error (MAE) metrics. These metrics help to quantify the differences between the images at different stages of the steganography process. While I can't speak to their application in formal steganalysis, they do offer a way to gauge the effectiveness of the encoding and decoding steps. If you have insights or recommendations on other metrics that might be more suitable, especially from a steganalysis point of view, feel free to share.</p>
-
-<p>For instance, comparing the "Left Half Bits Hidden Image" with the original hidden image yielded the following results:<br>
-</p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>RMSE    : 8.868079206151936
-MAE     : 7.579809053497942
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'csv'</span>
+<span class="nb">require</span> <span class="s1">'sqlite3'</span>
+<span class="nb">require</span> <span class="s1">'pry'</span> <span class="c1"># add binding.pry in code to see inspect how it works</span>
+
+<span class="c1"># Sanitizes the column name so we can create a sqlite column with it</span>
+<span class="k">def</span> <span class="nf">sanitize_name</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">name</span><span class="p">.</span><span class="nf">strip</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[^\w\ufeff]/</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">).</span><span class="nf">downcase</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="ss">headers: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
+    <span class="n">original_headers</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">headers</span>
+    <span class="n">sanitized_headers</span> <span class="o">=</span> <span class="n">original_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="p">}</span>
+
+    <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
+      CREATE TABLE </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="sh"> (
+        </span><span class="si">#{</span><span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="s2">"</span><span class="si">#{</span><span class="n">header</span><span class="si">}</span><span class="s2"> TEXT"</span> <span class="si">}</span><span class="sh">.join(', ')}
+      );
+</span><span class="no">    SQL</span>
+
+    <span class="n">csv</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
+      <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> VALUES (</span><span class="si">#{</span><span class="p">([</span><span class="s1">'?'</span><span class="p">]</span> <span class="o">*</span> <span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">size</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span> <span class="n">row</span><span class="p">.</span><span class="nf">fields</span>
+    <span class="k">end</span>
+
+    <span class="n">original_headers</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">sanitized_headers</span><span class="p">).</span><span class="nf">to_h</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">merge_csv_files</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">key_column</span><span class="p">)</span>
+  <span class="n">db</span> <span class="o">=</span> <span class="no">SQLite3</span><span class="o">::</span><span class="no">Database</span><span class="p">.</span><span class="nf">new</span> <span class="s1">'temp.sqlite'</span>
+
+  <span class="n">header_mapping1</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="s1">'table1'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+  <span class="n">header_mapping2</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file2</span><span class="p">,</span> <span class="s1">'table2'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+
+  <span class="n">sanitized_key_column</span> <span class="o">=</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">key_column</span><span class="p">)</span>
+
+  <span class="n">merged</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute2</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
+    SELECT * FROM table1
+    INNER JOIN table2
+    ON table1.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh"> = table2.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh">;
+</span><span class="no">  SQL</span>
+
+  <span class="n">original_headers</span> <span class="o">=</span> <span class="n">merged</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">sanitized_header</span><span class="o">|</span>
+    <span class="n">header_mapping1</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">header_mapping2</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">sanitized_header</span>
+  <span class="k">end</span>
+
+  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
+    <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">original_headers</span>
+    <span class="n">merged</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span> <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">row</span> <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="c1"># db.execute "DROP TABLE table1"</span>
+  <span class="c1"># db.execute "DROP TABLE table2"</span>
+<span class="k">end</span>
+
+<span class="n">merge_csv_files</span><span class="p">(</span><span class="s1">'external.csv'</span><span class="p">,</span> <span class="s1">'notion.csv'</span><span class="p">,</span> <span class="s1">'output.csv'</span><span class="p">,</span> <span class="s1">'Name'</span><span class="p">)</span>
 </code></pre>
 
 </div>
 
 
-<p>This indicates that the two images are indeed different. However, when comparing the "Left Half Bits Hidden Image" with the "Unmerged Left Half Bits Hidden Image," the result was:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>RMSE    : 0.0
-MAE     : 0.0
-</code></pre>
 
-</div>
-
-
-<p>This confirms that the encoding and decoding processes were executed correctly, as the two images are logically the same.</p>
-
-<p>Once again, for the complete code and walkthrough, just run the Jupyter Notebook linked below:</p>
-
-<p><a href="https://github.com/ranggakd/steganography/blob/main/Exploring_Steganography_In_The_Wild_Part_1.ipynb" class="ltag_cta ltag_cta--branded">Just click the 'Open in Colab' badge to get started!</a>
-</p>
-
-<p>This concludes the "Results and Visualization" section, where we've explored the visual aspects and quality metrics of images at every stage—encoding, decoding, and reconstruction. These visual examples and metrics serve as a comprehensive evaluation of our steganography technique.</p>
 <h2>
   
   
-  Limitations and Future Work
+  Liked it?
 </h2>
 
-<p>In this section, we delve into the limitations of the current implementation and discuss opportunities for future enhancements.</p>
+<p>Please support me by following more of my content on Dev and <a href="https://twitter.com/GabrielChuan">Twitter</a>!</p>
 
-<ol>
-<li><p><strong>Image Channel Handling</strong>: The code is designed to work specifically with RGB color spaces. This makes it less versatile when dealing with other color spaces or grayscale images.</p></li>
-<li><p><strong>Limited File Format Support</strong>: The code currently supports only PNG and JPEG formats, potentially excluding users with images in other formats.</p></li>
-<li><p><strong>Code Complexity</strong>: The codebase is somewhat intricate, which might make it less accessible for individuals who are not familiar with the project's specifics.</p></li>
-<li><p><strong>Error Handling</strong>: While some error-handling mechanisms exist, they may not be comprehensive enough to address all potential edge cases.</p></li>
-<li><p><strong>Hard-Coded Values</strong>: The presence of hard-coded values in the code reduces its flexibility and adaptability.</p></li>
-<li><p><strong>Google Colab Dependency</strong>: The code relies on Google Colab-specific libraries, making it less portable for users who may prefer other development environments.</p></li>
-<li><p><strong>Lack of Modularization</strong>: The code is not modular, which could complicate future efforts to extend its functionality or maintain it.</p></li>
-</ol>
-<h2>
-  
-  
-  Conclusion
-</h2>
-<h3>
-  
-  
-  Summing Up the Journey
-</h3>
+<p>Let me know in the comments how this could be improved, and whether you'd like me to explore more about using SQLite to parse and manipulate CSVs in Ruby. I think there is a lot of potential on what could be achieved with this approach.</p>
 
-<ul>
-<li><p><strong>Enlightening and Challenging</strong>: Our exploration into steganography has been a revealing journey, showcasing both the potential and the challenges of this field.</p></li>
-<li><p><strong>Practical Applications</strong>: We demonstrated how one image could be hidden within another, a technique with various real-world applications such as digital watermarking and secure communications.</p></li>
-<li><p><strong>Identified Limitations</strong>: Like any scientific endeavor, our work has its constraints, from the limitations in color channel handling to dependencies on specific platforms like Google Colab. These offer avenues for future research and refinement.</p></li>
-</ul>
-<h3>
-  
-  
-  Technical Achievements
-</h3>
-
-<ul>
-<li><p><strong>Bit Manipulation</strong>: One of the technical milestones of this project is the successful implementation of bit manipulation techniques to encode and decode images.</p></li>
-<li><p><strong>Visual Proof</strong>: We provided visual examples to demonstrate our techniques in action. While the hidden image is not perfectly concealed in our experiments, we believe that in scenarios with more detailed and crowded cover images, the concealment could be more effective.</p></li>
-<li><p><strong>Quantitative Analysis</strong>: We've used metrics such as RMSE and MAE to measure differences between original and manipulated images. While these metrics offer insights, they may not be specifically tailored for steganalysis. If you have expertise in steganalysis, your feedback in the comments would be highly valuable.</p></li>
-</ul>
-<h3>
-  
-  
-  Key Takeaways
-</h3>
-<h4>
-  
-  
-  The Complexity of Simplicity
-</h4>
-
-<p>What seemed like a straightforward task—hiding one image within another—unfolded into a labyrinth of complexities. The project has underscored the intricacies of image manipulation and bit-level operations.</p>
-<h4>
-  
-  
-  Robustness and Flexibility are Paramount
-</h4>
-
-<p>The limitations we've faced have highlighted the importance of robust and flexible code. As we continue to refine this project, the lessons learned here will be invaluable.</p>
-<h4>
-  
-  
-  Continuous Learning and Improvement
-</h4>
-
-<p>The world of steganography is vast, and there's so much more to explore. Your feedback and contributions are not just welcome but are essential for the continuous improvement of this project.</p>
-<h4>
-  
-  
-  The Future is Open
-</h4>
-
-<p>The avenues for future work are promising. They range from refining the current code to make it more versatile to exploring more advanced steganographic techniques. With ongoing research and collaboration, the sky is the limit for what can be achieved.</p>
-<h2>
-  
-  
-  Additional Sections
-</h2>
-
-<ul>
-<li>
-<strong>Code Repository</strong>: You can find the complete code and notebooks on <a href="https://github.com/ranggakd/steganography/">GitHub</a>.</li>
-</ul>
-
-
-<div class="ltag-github-readme-tag">
-  <div class="readme-overview">
-    <h2>
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
-      <a href="https://github.com/ranggakd">
-        ranggakd
-      </a> / <a href="https://github.com/ranggakd/steganography">
-        steganography
-      </a>
-    </h2>
-    <h3>
-      Exploring Steganography In The Wild
-    </h3>
-  </div>
-  <div class="ltag-github-body">
-    
-<div id="readme" class="md">
-<h1>
-steganography</h1>
-<p>Exploring Steganography In The Wild</p>
-<h2>
-Table of Contents</h2>
-<ul>
-<li><a href="https://github.com/ranggakd/steganography/Exploring_Steganography_In_The_Wild_Part_1.ipynb">Basic Steganography</a></li>
-</ul>
-</div>
-
-  </div>
-  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/ranggakd/steganography">View on GitHub</a></div>
-</div>
-
-
-
-<ul>
-<li>
-<strong>References</strong>: <a href="https://towardsdatascience.com/steganography-hiding-an-image-inside-another-77ca66b2acb1">Steganography: Hiding an image inside another</a>
-</li>
-</ul>
+<p>Originally <a href="https://x.com/GabrielChuan/status/1701424107206922378?s=20">tweeted on X here</a>.</p>
 
  </details> 
  <hr /> 
