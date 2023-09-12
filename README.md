@@ -118,6 +118,89 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Motion - Tailwind CSS Template Builder](https://dev.to/rarestoma/motion-tailwind-css-template-builder-3nm) 
+ <details><summary>Article</summary> <p>Hi everyone!</p>
+
+<p>We recently launched a new theme to Loopple, a Drag &amp; Drop Website Template Builder for Tailwind CSS that aims to help developers to speed up their development process.</p>
+
+<p>Motion is built on top of Tailwind CSS and has the following features 50+ components included (more coming soon).</p>
+
+<p>Links:</p>
+
+<ul>
+<li><a href="https://www.loopple.com/theme/motion-landing-library">Motion Landing Library Builder</a></li>
+<li><a href="https://www.loopple.com/components/tailwind/category/motion-landing-library">Motion Landing Library Builder - Sections/Components</a></li>
+<li><a href="https://www.loopple.com/tailwind">More Tailwind Builders</a></li>
+<li>
+<a href="https://www.loopple.com/">Loopple</a> - Loopple website</li>
+</ul>
+
+<p>Any feedback is really helpfull and highly appreciated!</p>
+
+<p>Thank you!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [In React, You Don't Need To Start Your Component Name With Capital First Letter](https://dev.to/myogeshchavan97/in-react-you-dont-need-to-start-your-component-name-with-capital-first-letter-51la) 
+ <details><summary>Article</summary> <p><iframe width="710" height="399" src="https://www.youtube.com/embed/02NHq5EFwCI">
+</iframe>
+</p>
+
+<p>In React, we always start the component name with capital first letter.</p>
+
+<p>But you don't have to do that.</p>
+
+<p><strong>This is also a popular React interview question.</strong></p>
+
+<p>So I have published a YouTube video explaining the same.</p>
+
+<p>In this video, you will learn:</p>
+
+<p>✅ Why do we start the component name with a capital first letter</p>
+
+<p>✅ What will happen when we don't start the component name with a capital first letter</p>
+
+<p>✅ Behind the scene generated code when we start or don't start the component name with a capital first letter</p>
+
+<p>✅ Why you don't need to start the component name with a capital first letter</p>
+
+<p>and much more...</p>
+
+<h2>
+  
+  
+  Closing Points
+</h2>
+
+<p>If you're looking to enhance your skills in JavaScript, React, and Node.js with the MERN stack, then my <a href="https://www.youtube.com/@codingmastery_dev">YouTube Channel</a> is the perfect resource for you.</p>
+
+<p>The videos in this channel cover a range of topics related to JavaScript, React, and Node.js, including tutorials, code walkthroughs, tips and tricks, best practices, and much more.</p>
+
+<p>Whether you're a beginner or an experienced developer, our content is tailored to help you learn and grow.</p>
+
+<p>You can take a look at the below playlists also.</p>
+
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=l83AlOG3elw&amp;list=PLSJnlFr3D-mGIHFpo80ylsaBErtueSpYS">Master ES6 Features</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=aQ0ZcY5N8vw&amp;list=PLSJnlFr3D-mEUWnAwAtjDFPDLPt-Ene4T">Beginners Guide To React</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=tkVqm4VdpJA&amp;list=PLSJnlFr3D-mFm7-cdhnHdBvUdxUp-a9HL">Learn React Concepts</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=0YoT44j3Jg4">How to Build Unsplash Image Search App Using React</a> </p></li>
+<li><p><a href="https://www.youtube.com/watch?v=GDe8DFZcgoI&amp;list=PLSJnlFr3D-mEn4JLpA4F7UCAX_e5Nmx3q">Express JS + MongoDB Crash Course</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=ILcb7BD9R90&amp;list=PLSJnlFr3D-mEBWnL0XGa_hpGyiXoI_BIN">Learn Latest Webpack For Production</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=ha2Fh4Vi7xo&amp;list=PLSJnlFr3D-mEmCOE1mjlnsr1A8t5Zrmub">Redux Toolkit Crash Course</a></p></li>
+</ul>
+
+<p><strong>If you found this article and video useful, don't forget to subscribe to my <a href="https://www.youtube.com/@codingmastery_dev">YouTube Channel</a> and hit the bell icon so you will not miss any future video notifications.</strong></p>
+
+
+
+
+<p><strong>Want to stay up to date with regular content regarding JavaScript, React, Node.js?</strong> <a href="https://www.linkedin.com/in/yogesh-chavan97/"><strong>Follow me on LinkedIn</strong></a><strong>.</strong></p>
+
+ </details> 
+ <hr /> 
+
  #### - [Creating Your First Droplet - DigitalOcean Tutorials](https://dev.to/devarshishimpi/creating-your-first-droplet-digitalocean-tutorials-b16) 
  <details><summary>Article</summary> <h2>
   
@@ -1050,140 +1133,6 @@ and typing the following:</p>
   <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/dedSyn4ps3/response-generator-example">View on GitHub</a></div>
 </div>
 
-
- </details> 
- <hr /> 
-
- #### - [Solving "Move Zeroes" Leet code Question.](https://dev.to/leetcode/solving-move-zeroes-leet-code-question-8k2) 
- <details><summary>Article</summary> <h2>
-  
-  
-  283. Move Zeroes
-</h2>
-
-<p>Type: Easy<br>
-Liked by 15.2K<br>
-Disliked by 380.</p>
-
-<p><strong>Companies that asked this question</strong><br>
-<em>Companies: No of times asked</em><br>
-Yandex 8<br>
-Apple 3<br>
-Amazon 3<br>
-Facebook 11<br>
-Bloomberg 6<br>
-Google 4<br>
-Adobe 3<br>
-Microsoft 2<br>
-Uber 2<br>
-Oracle 2<br>
-Splunk 2<br>
-Tesla 2<br>
-tcs 6<br>
-Expedia 4<br>
-VMware 3<br>
-Goldman Sachs 3<br>
-ByteDance 3<br>
-JPMorgan 3<br>
-TikTok 3<br>
-LinkedIn 2<br>
-Yahoo 2<br>
-IBM 2<br>
-Morgan Stanley 2<br>
-ServiceNow 2<br>
-Salesforce 2<br>
-Zoho 2<br>
-Infosys 2<br>
-Nvidia 2<br>
-Samsung 2<br>
-Wix 1</p>
-
-<p>Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.</p>
-
-<p>Note that you must do this in-place without making a copy of the array.</p>
-
-<p><strong>Example 1:</strong><br>
-Input: nums = <code>[0,1,0,3,12]</code><br>
-Output: <code>[1,3,12,0,0]</code></p>
-
-<p><strong>Example 2:</strong><br>
-Input: nums = <code>[0]</code><br>
-Output: <code>[0]</code></p>
-
-<p><strong>Constraints:</strong></p>
-
-<p><code>1 &lt;= nums.length &lt;= 104</code><br>
-<code>-231 &lt;= nums[i] &lt;= 231 - 1</code></p>
-
-<h1>
-  
-  
-  Intuition
-</h1>
-
-<p>We want to move all the <code>zeros</code> to the end of the <code>array</code> while keeping the <code>non-zero</code> elements in their relative order.</p>
-
-<h1>
-  
-  
-  Approach
-</h1>
-
-<p>We maintain <code>two pointers: i</code> to iterate through the <code>array</code> and <code>nonZeroIndex</code> to keep track of the <code>position</code> where we should insert non-zero elements. When we encounter a non-zero element, we <code>swap</code> it with the element at nonZeroIndex and then increment nonZeroIndex.</p>
-
-<h1>
-  
-  
-  Complexity
-</h1>
-
-<p><strong>Time complexity:</strong><br>
-The code iterates through the array once, so the time complexity is   <code>O(n)</code>, where <code>n</code> is the length of the array.</p>
-
-<p><strong>Space complexity:</strong><br>
-The code uses a constant amount of extra space, so the space complexity is <code>O(1)</code>.</p>
-
-<h1>
-  
-  
-  Code
-</h1>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>class Solution {
-    public void moveZeroes(int[] nums) {
-        int nonZeroIndex = 0; 
-        for (int i = 0; i &lt; nums.length; i++) {
-            if (nums[i] != 0) {
-                int temp = nums[i];
-                nums[i] = nums[nonZeroIndex];
-                nums[nonZeroIndex] = temp;
-                nonZeroIndex++; 
-            }
-        }
-    }
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Happy coding,<br>
-shiva</p>
-
- </details> 
- <hr /> 
-
- #### - [Bleeding-edge Project Using Everything New In Next.js 13📚](https://dev.to/apestein/bleeding-edge-project-using-everything-new-in-nextjs-13-4mlg) 
- <details><summary>Article</summary> <p>Project using bleeding-edge stack. Drizzle ORM + Neon postgres + Clerk auth + Shadcn/ui + everything new in Next.js 13 (server components, server actions, streaming ui, parallel routes, intercepting routes). Fully edge runtime deployed. I wrote a breakdown and talked about some tricky / difficult things while building this project. This will be a good reference project for people looking to learn Next.js app router. Project uses 100% server actions and include features such as ability to search show catalog, SaaS subscription service with Stripe, optimistic update, and infinite scrolling.</p>
-
-<p>Repo: <a href="https://github.com/Apestein/nextflix">https://github.com/Apestein/nextflix</a></p>
-
-<p>Live: <a href="https://nextflix-blush.vercel.app/">https://nextflix-blush.vercel.app/</a></p>
 
  </details> 
  <hr /> 
