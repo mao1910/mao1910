@@ -118,6 +118,550 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Picnic-TUI - Where Go and Groceries Create a Command-Line Feast](https://dev.to/simonmartyr/picnic-tui-where-go-and-groceries-create-a-command-line-feast-1op4) 
+ <details><summary>Article</summary> <p>During some downtime I decided I would really like to try to learn Go. It was a language I had some exposure to in past client projects, and my coworkers who used it gave it glowing reviews. Some of which were even using it for side projects, such as doing analytics on property prices in the area through the use of web scrapers. Something which is very useful in Amsterdam.</p>
+
+<p>I didn’t initially have a real goal or use case for the language but that didn’t hold me back from giving it a shot. </p>
+
+<h2>
+  
+  
+  My learning route
+</h2>
+
+<p>When learning any new programming language I like to approach it in the following steps:</p>
+
+<ol>
+<li>Learn the basics of the syntax and get a feel for the language.</li>
+<li>Try out some basic algorithms - solve some leet code problems.
+</li>
+<li>Make a basic to-do app.</li>
+<li>Enhance that app work to work with a database or HTTP endpoint etc.</li>
+<li>Build more silly apps.</li>
+</ol>
+
+<p>Like most beginners, I started with the <a href="https://go.dev/tour/welcome/1">a tour of go</a> and got a quick feel for the language. I feel all languages should copy a tour of go as its a delightful introduction to the language which builds confidence quickly.</p>
+
+<p>I continued with my learning plan </p>
+
+<ul>
+<li>Invert a binary tree on leet code.</li>
+<li>Made a basic to-do app.</li>
+<li>Remade it to work with Gin and SQL.</li>
+</ul>
+
+<h2>
+  
+  
+  Step 5 build more silly apps
+</h2>
+
+<p>In the words of Ben Davis: <a href="https://www.youtube.com/watch?v=OqdBixi_y1s">https://www.youtube.com/watch?v=OqdBixi_y1s</a> </p>
+
+<p>Just build stuff.</p>
+
+<h3>
+  
+  
+  A web scraper
+</h3>
+
+<p>Inspired by my coworker’s web scraper project and Claud’s <a href="https://dev.to/claudbytes/build-a-web-scraper-with-go-3jod">Article</a>. I made a basic web scraper app to perform silly analytics on my company’s website. To answer questions such as: </p>
+
+<ul>
+<li>Who has the longest profile description?</li>
+<li>What is the frequency of the different job titles?</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--T42kxL3R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mlcth6nwez7mad5nthrb.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--T42kxL3R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mlcth6nwez7mad5nthrb.jpg" alt="Graph results of the scraper" width="650" height="403"></a></p>
+
+<p>Credit to the package <a href="https://github.com/daoleno/tgraph">tgraph</a> for giving me the ability to draw these cool graphs in the terminal with the results.</p>
+
+<h3>
+  
+  
+  Pokemon CLI
+</h3>
+
+<p>It was at this point I was getting a lot of joy out of writing command line applications. I had also just learnt of the existence of <a href="https://github.com/Rigellute/spotify-tui">spotify-tui</a> and wanted to explore more I could build such applications. So building interfaces for APIs felt like a good way to try this out. </p>
+
+<p>The <a href="https://pokeapi.co">PokeApi</a> is a resource I like to use whilst getting familiar with making HTTP calls in a new language. So I threw together such a simple app to leverage all the various methods the API offered.  </p>
+
+<h2>
+  
+  
+  Time to do the groceries
+</h2>
+
+<p>In between learning Go I got curious if there was an API for the app I use for doing my groceries? I am an avid user of the Picnic, Picnic is an online supermarket who operate in Europe. Customers of Picnic do so exclusively via their mobile application.  </p>
+
+<p>However the thought crossed my mind, what if I could automate aspects of my weekly shop? Something like a script that pre-loads my basket in advance, that could be useful.</p>
+
+<p>Fortunately for me I came across <a href="https://github.com/MRVDH/picnic-api/">https://github.com/MRVDH/picnic-api/</a> an unofficial Node.js package for the picnic API. This was perfect, I made a few scripts using the node module mission accomplished.</p>
+
+<h3>
+  
+  
+  Enter Picnic-TUI
+</h3>
+
+<p>Now that I got a taste of what I could do with the Picnic API the natural follow up was to make a wrapper for the API and terminal user interface in Go.</p>
+
+<p>The goal in my mind at this point being, if at any point in the day, I want to add something to my order I could do so from the comfort of my terminal and not have to reach for my phone. This is not a bash at Picnic’s mobile app, I simply wanted to reduce the distraction which is my phone.</p>
+
+<p>Picture it, you are writing code in your favourite terminal based text editor (lets say neovim) and you are  configuring a new Spring bean. It is in this moment you remember you need beans. Simple you hit <code>:term</code> run <code>picnic-tui</code> add them straight to your basket and get back into the code. </p>
+
+<h2>
+  
+  
+  The API
+</h2>
+
+<p>Using the documentation from <a href="https://github.com/MRVDH/picnic-api/">https://github.com/MRVDH/picnic-api/</a>  this allowed me to produce the base for a Go wrapper <a href="https://github.com/simonmartyr/picnic-api">https://github.com/simonmartyr/picnic-api</a>. </p>
+
+<p>At this point I had the functionalities for:</p>
+
+<ul>
+<li>Authenticating</li>
+<li>Getting user information</li>
+<li>Searching for products</li>
+<li>Adjusting the cart</li>
+<li>Selecting delivery slots</li>
+</ul>
+
+<h3>
+  
+  
+  Sniffing the rest
+</h3>
+
+<p>At this point I was really satisfied with everything I could do with the API. But I wanted to try and make a more complete experience. Would it be possible to finalise an order? How would the payment flow go?</p>
+
+<p>As I mentioned I had expended all the knowledge I had acquired from the Node library so that left me with one option. Intercepting all the outgoing requires from my phone to Picnic to learn all of the APIs I had not captured.</p>
+
+<p>To accomplish this I used the tool <a href="https://www.charlesproxy.com/">https://www.charlesproxy.com</a>. Conveniently Charles Proxy also has an iOS application which allowed me intercept all outgoing request from my iPhone.   </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_F0An0dR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/45brpus2abe2g32oi6yh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_F0An0dR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/45brpus2abe2g32oi6yh.png" alt="Charles screenshot" width="300" height="522"></a></p>
+
+<p>This gave me all the information I needed to identify the endpoints and payloads I would need to succeed my goal. </p>
+
+<h2>
+  
+  
+  A note on the authentication parts
+</h2>
+
+<p>I found it curious and would welcome any response if any Picnic developers happen to be reading. When a client authenticates with the API they send the user’s username and password as well as a client id. The detail I found interesting was the password needs to be MD5 hashed prior to being sent. I’m curious as to why, and curious if that MD5 hashed password is persisted as is or additionally encrypted.</p>
+
+<p>Upon a successful authentication, a JWT is issued which can then be used as a header for endpoints which require authentication. A behaviour I did observer however is, the tokens specify an expiration time (of one day), but the server continues to accept expired tokens.</p>
+
+<p>I believe the intention is that clients would persist the users credentials on device in a secure enclave. Likely storing the MD5 hashed password rather than in plain text. Each day or when it believes its token has expired the application calls the authentication endpoint to get a new one.</p>
+
+<p>Ideally the tokens do not continue to live, as if a token did fall into the wrong hands, that person would continue to have access and the real user would be none the wiser.</p>
+
+<h3>
+  
+  
+  Time to checkout
+</h3>
+
+<p>Prior to intercepting the http requests the checkout flow was unknown to me. From observing the endpoints I learnt that at the moment a user invokes a checkout request the API performs the following actions:</p>
+
+<ul>
+<li>Request to start the checkout.</li>
+<li>If articles in the cart produce an error (such as alcohol) prompt user (ask if user is 18+).</li>
+<li>Upon successful confirmation a request is sent to start the checkout again with the relevant resolve key.</li>
+<li>At this point a request for payment can be initiated which returns a payment link for the customer to complete their payment.</li>
+</ul>
+
+<p>Due to the payment being simply an ideal link, I wanted to explore if I could render a QR code in the terminal to complete an order.</p>
+
+<h2>
+  
+  
+  The TUI
+</h2>
+
+<p>With my API library complete, it was time to set my focus on producing a terminal UI. My inspiration was to replicate the feel of Spotify-TUI. The interface of Spotify-TUI was simple but effective in its implementation. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9GtEiHGf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b06jacoh7025qfiudy7m.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9GtEiHGf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b06jacoh7025qfiudy7m.jpg" alt="Screenshot of Spotify-tui" width="800" height="362"></a></p>
+
+<p>The interface combined multiple intractable views in which the user can navigate the core functionality of Spotify. This application adjusted my expectations on what a terminal based ui could achieve. </p>
+
+<p>Additionally I had an appreciation for the detail to include vim motions in many aspects of their interface for example ‘/’ to search, the option to use ‘h’, ‘j’, ‘k’, ‘l’ in place of arrow keys. From top to bottom the developers demonstrate a lot of passion and care.</p>
+
+<h3>
+  
+  
+  The Picnic Application
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Fo5WY8Qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ecgpmzhtyq3y40dbcd9d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Fo5WY8Qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ecgpmzhtyq3y40dbcd9d.png" alt="Screen shots of the picnic app" width="800" height="515"></a></p>
+
+<p>The images above show screenshots from the Picnic mobile application. Typically a user would search the application for different articles of food they wish to have delivered and add them to their basket. When they are satisfied with their selection, the user schedules a delivery date and pays for the order. When the time comes around for the oder to be delivered, the application can even show the route the driver is taking, so they are aware as to what time their delivery should arrive.</p>
+
+<p>Within my application, I wanted to only support the functionality to create an order. Rendering the route information of the ongoing delivery would be very cool, but for my needs didn’t add value.</p>
+
+<h3>
+  
+  
+  Evolution of the screens
+</h3>
+
+<p>Spotify-TUI was developed in Rust, therefore I couldn’t simply use the same UI framework. Within Go a popular choice is tview <a href="https://github.com/rivo/tview">https://github.com/rivo/tview</a>  which provides many similar UI widgets which covered all my needs.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2Ocz6CwB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r58n123o6otyyxa4g5ta.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2Ocz6CwB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r58n123o6otyyxa4g5ta.jpg" alt="first version of screens" width="800" height="177"></a></p>
+
+<p>I initially started with the main screen. I wanted to explore how much I could do with the product searching and manipulating the basket. </p>
+
+<p>It was surprising to me how simple it was to get the barebones going. One widget I relied on heavily in tview was flex views. They work similar to flex boxs in the web world, where you can add a collection of different views into a flex view and those widgets would be arranged and sized correctly.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight go"><code><span class="k">func</span> <span class="n">newMainPage</span><span class="p">()</span> <span class="o">*</span><span class="n">MainPage</span> <span class="p">{</span>
+    <span class="c">//reduced for simplicity    </span>
+<span class="n">leftFlex</span> <span class="o">:=</span> <span class="n">tview</span><span class="o">.</span><span class="n">NewFlex</span><span class="p">()</span><span class="o">.</span><span class="n">SetDirection</span><span class="p">(</span><span class="n">tview</span><span class="o">.</span><span class="n">FlexRow</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">Search</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">ArticleImage</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">ArticleInfo</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span>
+
+    <span class="n">flex</span> <span class="o">:=</span> <span class="n">tview</span><span class="o">.</span><span class="n">NewFlex</span><span class="p">()</span><span class="o">.</span>
+        <span class="n">AddItem</span><span class="p">(</span><span class="n">leftFlex</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">Articles</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">Basket</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span>
+
+    <span class="n">mainPage</span><span class="o">.</span><span class="n">Flex</span> <span class="o">=</span> <span class="n">tview</span><span class="o">.</span><span class="n">NewFlex</span><span class="p">()</span><span class="o">.</span><span class="n">SetDirection</span><span class="p">(</span><span class="n">tview</span><span class="o">.</span><span class="n">FlexRow</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">AddItem</span><span class="p">(</span><span class="n">flex</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mainPage</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>When you add an item to flex view, you can instruct to tview if that item has a fixed size or the proportions of the view and if that view should be focused (meaning the screen highlights that view making it listen to interactions). </p>
+
+<h3>
+  
+  
+  Main Page
+</h3>
+
+<p>One idea that I had with the main page that I was curious to pull off was, how would I see the products in the terminal?</p>
+
+<p>tview included an image widget that required a reference to an image. So within the API I wrote a method to query the image url and pass the response body through a png decoder and see what happens.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight go"><code><span class="k">func</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">Client</span><span class="p">)</span> <span class="n">GetArticleImage</span><span class="p">(</span><span class="n">articleImageId</span> <span class="kt">string</span><span class="p">,</span> <span class="n">size</span> <span class="n">ImageSize</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">url</span><span class="p">,</span> <span class="n">urlErr</span> <span class="o">:=</span> <span class="n">c</span><span class="o">.</span><span class="n">GetArticleImageUrl</span><span class="p">(</span><span class="n">articleImageId</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">urlErr</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">urlErr</span>
+    <span class="p">}</span>
+    <span class="n">res</span><span class="p">,</span> <span class="n">resErr</span> <span class="o">:=</span> <span class="n">c</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">resErr</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">resErr</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">StatusCode</span> <span class="o">!=</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">parseError</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">articleImage</span><span class="p">,</span> <span class="n">imageErr</span> <span class="o">:=</span> <span class="n">png</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">imageErr</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">imageErr</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="n">articleImage</span><span class="p">,</span> <span class="no">nil</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Success, I could see what peanut butter looks like in the terminal. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QT2xVNSo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3cn3okm0p0n34fvn6i8.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QT2xVNSo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3cn3okm0p0n34fvn6i8.jpg" alt="rendering of screen with product image" width="800" height="168"></a></p>
+
+<h3>
+  
+  
+  Delivery Page
+</h3>
+
+<p>I attempted initially to have the delivery slots as a dynamic element that appeared on the main page. However this felt clunky and overall a bad end user experience.  </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6pbZ_OZ_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/95nkdatdtrkvtn4x4mtc.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6pbZ_OZ_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/95nkdatdtrkvtn4x4mtc.jpg" alt="first delivery screen" width="291" height="347"></a></p>
+
+<p>My first iteration of the delivery view was to create a list of all the slot with an item highlighted when the day changed. It felt natural at this point to move this content into its own page by leveraging the tview pages widget. </p>
+
+<p>This widget allows you to set different views as a page within your application and dynamically switch to them when needed. </p>
+
+<p>For the delivery page I experimented with the idea to generate content into a flex view. The idea was simple, each time there was a new day, create a new list of options and add that to a growing flex view. </p>
+
+<p>The API only returned the possible delivery slots for the next seven days, so I knew it shouldn’t grow out of control.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bwpIsBjv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/88u46bpcboipcsb81yy2.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bwpIsBjv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/88u46bpcboipcsb81yy2.jpg" alt="better delivery screen" width="800" height="210"></a></p>
+
+<p>With the experiment a success, I cleaned up the view by not having all lists look like they were being interacted with at the same time. Additionally I highlighted which slot was currently selected and which were the more environmental options.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rzQ1WV2I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c2e73tfv76tqoboq1zpk.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rzQ1WV2I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c2e73tfv76tqoboq1zpk.jpg" alt="styled delivery screen" width="800" height="208"></a></p>
+
+<h3>
+  
+  
+  Checkout Page
+</h3>
+
+<p>The checkout page was fun, because as mentioned above there is a sequence of events in order to complete the order. </p>
+
+<p>The biggest part of the puzzle was, how would I render the payment QR code? </p>
+
+<p>Luckily the library <a href="https://github.com/skip2/go-qrcode">https://github.com/skip2/go-qrcode</a> allowed for a QR code to be generated as a string allowing that string to be presented inside a text view.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight go"><code><span class="k">func</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">CheckoutPage</span><span class="p">)</span> <span class="n">renderPaymentLink</span><span class="p">(</span><span class="n">url</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">q</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">Highest</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">PaymentLink</span><span class="o">.</span><span class="n">SetText</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">ToSmallString</span><span class="p">(</span><span class="no">true</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">Instructions</span><span class="o">.</span><span class="n">SetText</span><span class="p">(</span><span class="s">"Scan QR code to complete or ESC to cancel"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--P_tGf_CQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/un09dkbcbu6qppbsjg3u.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--P_tGf_CQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/un09dkbcbu6qppbsjg3u.jpg" alt="checkout page with qr" width="800" height="174"></a></p>
+
+<p>The other challenge inside the checkout page was to present different checks and errors based on the content of the cart. </p>
+
+<p>Within the API, I decided that errors produced by the checkout should be wrapped in their own error object allowing for the page to dynamically handle them. </p>
+
+<p>For example, if the cart contains alcohol, the user is instructed to confirm they are 18+ or if they haven’t met the minimum order price modals are presented to the user with directions of what to do. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3VZ1sUjz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spur988uj3oejhfx19b0.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3VZ1sUjz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spur988uj3oejhfx19b0.jpg" alt="checkout page warning" width="800" height="174"></a></p>
+
+<p>If all actions are successfully resolved the screen presents the QR code allowing for the completion of the order.  </p>
+
+<h2>
+  
+  
+  Final words
+</h2>
+
+<p>I reached my goal and successfully made a complete order and had my perfect cli tool to manage my groceries. </p>
+
+<p>More importantly it gave me a great platform to experiment and learn more about Go. This experience really reenforced to me if you can find something that gives you joy to build your learning will go faster and you will get more out of it. </p>
+
+<p>If you wish to checkout the source code of the API or TUI check them out here:</p>
+
+<ul>
+<li><a href="https://github.com/simonmartyr/picnic-tui">picnic-tui</a></li>
+<li><a href="https://github.com/simonmartyr/picnic-api">picnic-api</a></li>
+</ul>
+
+<h2>
+  
+  
+  Links and references
+</h2>
+
+<ul>
+<li><a href="https://go.dev/tour/welcome/1">A tour of go</a></li>
+<li><a href="https://www.youtube.com/watch?v=OqdBixi_y1s">How I would Re-learn Go - Ben Davis</a></li>
+<li><a href="https://dev.to/claudbytes/build-a-web-scraper-with-go-3jod">Building a web scraper with Go</a></li>
+<li><a href="https://github.com/Rigellute/spotify-tui">Spotify-Tui</a></li>
+<li><a href="https://github.com/MRVDH/picnic-api/">Picnic-API for Node.js</a></li>
+<li><a href="https://www.charlesproxy.com">Charles web debugging proxy</a></li>
+<li><a href="https://github.com/rivo/tview">Tview</a></li>
+<li><a href="https://github.com/skip2/go-qrcode">Go-qrcode</a></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Eliminating Bugs Using the Tong Motion Approach](https://dev.to/codenameone/eliminating-bugs-using-the-tong-motion-approach-32ch) 
+ <details><summary>Article</summary> <ul>
+<li>
+Understanding the Process of Elimination in Debugging
+
+<ul>
+<li>The Basics</li>
+<li>Using External Tools</li>
+</ul>
+
+
+</li>
+<li>
+The Power of Unit Tests in Debugging
+
+<ul>
+<li>Benefits of Mocking Frameworks</li>
+</ul>
+
+
+</li>
+<li>The Challenges with Flaky Issues</li>
+<li>
+The Concept of the 'Tong Motion'
+
+<ul>
+<li>Applying the Tong Motion to Debugging</li>
+</ul>
+
+
+</li>
+<li>An Illustrative Case: Debugging a Server Performance Issue</li>
+<li>Wrapping Up</li>
+</ul>
+
+<p>Software debugging can often feel like a never-ending maze. Just when you think you're on the right track, you hit a dead-end. But, by employing the age-old technique of the process of elimination, and using the analogy of the 'Tong Motion,' we can navigate this maze more effectively.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/K4FRRG4pnEM">
+</iframe>
+</p>
+
+<p>As a sidenote, if you like the content of this and the other posts in this series check out my <a href="https://www.amazon.com/dp/1484290410/"><strong>Debugging book</strong></a> that covers this subject. If you have friends that are learning to code I'd appreciate a reference to my <a href="https://www.amazon.com/Java-Basics-Practical-Introduction-Full-Stack-ebook/dp/B0CCPGZ8W1/"><strong>Java Basics book</strong></a>. If you want to get back to Java after a while check out my <a href="https://www.amazon.com/Java-21-Explore-cutting-edge-features/dp/9355513925/"><strong>Java 8 to 21 book</strong></a>.</p>
+
+<p><a></a></p>
+
+<h2>
+  
+  
+  Understanding the Process of Elimination in Debugging
+</h2>
+
+<p><a></a></p>
+
+<h3>
+  
+  
+  The Basics
+</h3>
+
+<p>The process of elimination in debugging is straightforward in principle: continuously rule out non-problematic components until the root cause reveals itself. This can be achieved either by commenting out lines of code or using debugging techniques, such as the 'force return', which bypasses specific code paths.</p>
+
+<p><a></a></p>
+
+<h3>
+  
+  
+  Using External Tools
+</h3>
+
+<p>For front-end issues, replicating the problem using tools like curl or postman is valuable. It helps us determine if the bug is within the front-end code or elsewhere. This way, we can quickly narrow our focus, not merely addressing the symptoms but locating the actual bug.</p>
+
+<p><a></a></p>
+
+<h2>
+  
+  
+  The Power of Unit Tests in Debugging
+</h2>
+
+<p>Unit tests are our best allies when it comes to debugging. By focusing on isolated units, they hone in on potential problem areas.</p>
+
+<p><a></a></p>
+
+<h3>
+  
+  
+  Benefits of Mocking Frameworks
+</h3>
+
+<p>Mocking frameworks like Mockito come in handy as they can simulate large parts of the application. This way, we can drill down on the exact problem, circumventing potential disturbances. Moreover, using mocks can prevent regression and make our test cases cleaner.</p>
+
+<p>However, while there are best practices regarding the extent of mocking, when debugging a specific problem, it's more pragmatic to mock as much as necessary to distill the problem to its essence.</p>
+
+<p><a></a></p>
+
+<h2>
+  
+  
+  The Challenges with Flaky Issues
+</h2>
+
+<p>The elimination technique is less straightforward with flaky issues - those bugs that appear irregularly or whose behavior changes as code is eliminated. The key strategy here is to <strong>focus on negatives</strong>. In simpler terms, if removing a certain block doesn't cause the problem to appear, it doesn't automatically indict that block. The absence could be due to the bug's unpredictable nature. Hence, it's crucial only to trust instances where the problem consistently reproduces.</p>
+
+<p><a></a></p>
+
+<h2>
+  
+  
+  The Concept of the 'Tong Motion'
+</h2>
+
+<p>Think of tongs. They grasp from both sides. Similarly, almost all software has at least two primary interfaces or points of input/output. For instance:</p>
+
+<ul>
+<li><p><strong>Enterprise Web Apps</strong>: Web UI on one side and the database on the other.</p></li>
+<li><p><strong>Operating System Kernel</strong>: User space app on one end and computer hardware on the other.</p></li>
+<li><p><strong>Video Games</strong>: The joystick and screen API on one side and the game database on the other.</p></li>
+</ul>
+
+<p><a></a></p>
+
+<h3>
+  
+  
+  Applying the Tong Motion to Debugging
+</h3>
+
+<p>Using the example of an enterprise web app:</p>
+
+<ol>
+<li><p><strong>Mocking the Web Tier</strong>: Begin by using tools like curl or postman to eliminate front-end issues.</p></li>
+<li><p><strong>Mocking the Database</strong>: Replace the actual database with mock data.</p></li>
+<li><p><strong>Narrowing Down Further</strong>: If the problem persists, move to testing the presentation tier directly, thereby eliminating the database from the equation.</p></li>
+<li><p><strong>Digging Deeper</strong>: Invoke the business method directly and mock its dependencies. This way, you are narrowing down on the actual method causing the issue while excluding the rest of the application.</p></li>
+</ol>
+
+<p>One common pitfall is neglecting one prong of the tongs or misplacing the other. It's crucial to ensure both sides are appropriately positioned; otherwise, it might skew the results. If stuck, consider investigating from the opposite side, and then revert when needed.</p>
+
+<p><a></a></p>
+
+<h2>
+  
+  
+  An Illustrative Case: Debugging a Server Performance Issue
+</h2>
+
+<p>In a real-world scenario, while tackling a server performance issue, I employed the 'Tong Motion' technique. By replacing web calls with curl requests, I shifted focus to the problematic area. At the same time, I enhanced database logging to monitor its output as problematic SQL was replicated through curl. This dual-sided approach helped unearth a bug in the Object Relational Mapping layer.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8rLSjHV3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m121zs8x7buo7ulnxqgs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8rLSjHV3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m121zs8x7buo7ulnxqgs.png" alt="Image description" width="800" height="403"></a></p>
+
+<p>This concrete example comprises of the following stages:</p>
+
+<ol>
+<li>
+<p>The tongs start by mocking the web tier with curl or postman. This eliminates front-end related issues.</p>
+
+<p>The other side of the tong motion replaces the database with mock data.  </p>
+</li>
+<li><p>If the issue can be reproduced we can further squeeze the tongs by invoking the presentation tier method directly in a test case.<br><br>
+We can then eliminate the database entirely from the equation by mocking it in a test case.</p></li>
+<li><p>Finally, we can invoke the business method directly eliminating the presentation tier aspect.<br><br>
+We can mock its dependencies which means we narrow down on a specific method that’s at fault while eliminating the rest of the application.</p></li>
+</ol>
+
+<p><a></a></p>
+
+<h2>
+  
+  
+  Wrapping Up
+</h2>
+
+<p>Debugging can be a daunting process. However, with the right techniques, like the process of elimination and the 'Tong Motion' approach, it becomes a more manageable task. Always remember to tackle issues methodically and from all angles to find and fix the root cause effectively.</p>
+
+<p>Abstract: Once we press the merge button that code is no longer our responsibility. If it performs sub-optimally or has a bug it is now the problem of the DevOps team, the SRE, etc. Unfortunately, those teams work with a different toolset. If my code uses up too much RAM they will increase RAM. If the code runs slower they will increase CPU. If the code crashes they will increase concurrent instances.</p>
+
+<p>If none of that helps they will call you up at 2AM. A lot of these problems are visible before they become a disastrous middle of the night call. Yes. DevOps should control production, but the information they gather from production is useful for all of us.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [you may need this - bash script](https://dev.to/scorcism/you-may-need-this-bash-script-p0e) 
  <details><summary>Article</summary> <p>I created a bash script for handling</p>
 
@@ -457,7 +1001,7 @@ Github: <a href="https://github.com/steven-tey/dub">https://github.com/steven-te
 <h2>
   
   
-  Responively App - Swastika
+  Responsivel App - Swastika
 </h2>
 
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7qUrIEEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6sn3ui4m8kawik1u9v6q.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7qUrIEEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6sn3ui4m8kawik1u9v6q.jpg" alt="Responively App" width="800" height="539"></a></p>
@@ -628,580 +1172,6 @@ Github: <a href="https://github.com/medusajs/medusa">https://github.com/medusajs
 <p>Overall, Bun can be really great on performance and deliver some amazing results. But we can't forget that it is currently on it's first version and can be very unstable on production, that's why I wouldn't recommend trading NodeJS by Bun on bigger projects. NodeJS is still the most reliable and trusted runtime environment to deal with JavaScript applications. However, Bun seems to be getting closer every step to take Node's crown. I was able to watch the early development of Bun since 0.3, times when running bun install would result on a segfault. Being able to see it grow it's own community and compete with giants like NodeJS is so nice.</p>
 
 <p>Thanks for reading it, feel free to share your thoughts!!  </p>
-
- </details> 
- <hr /> 
-
- #### - [How to Set up Telesign for SMS in Appwrite](https://dev.to/hackmamba/how-to-set-up-telesign-for-sms-in-appwrite-319g) 
- <details><summary>Article</summary> <p>Improving user engagement and interaction in web applications is crucial, and seamless communication is key. In today's interconnected digital world, SMS is still a powerful way to reach users quickly and efficiently. Incorporating this strong communication tool into a web application powered by Appwrite is easy.</p>
-
-<p>In this article, we will discover the process of authenticating users through their phone numbers with the help of Appwrite's phone authentication APIs and Telesign. Find the project repository <a href="https://github.com/Olanetsoft/setup-telesign-for-sms-in-appwrite">here</a>.</p>
-
-<h2>
-  
-  
-  Technology Overview
-</h2>
-
-<p><a href="https://www.telesign.com/?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Telesign</a> is an identity and customer engagement solution that provides sets of APIs for registering and verifying users using SMS, Voice, and phone number intelligence.</p>
-
-<h2>
-  
-  
-  Prerequisites
-</h2>
-
-<p>To fully grasp the concepts presented in this tutorial, the following are required:</p>
-
-<ul>
-<li>Basic understanding of JavaScript and React</li>
-<li>Docker installed</li>
-<li>Telesign <a href="https://portal.telesign.com/signup?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">account</a>
-</li>
-</ul>
-
-<h2>
-  
-  
-  Getting started
-</h2>
-
-<p>To create a Next.js starter project, we should first navigate to the desired directory and run the command below in our terminal.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>    npx create-next-app@latest setup-telesign-for-sms-in-appwrite <span class="o">&amp;&amp;</span> <span class="nb">cd </span>setup-telesign-for-sms-in-appwrite
-</code></pre>
-
-</div>
-
-
-
-<p>After running the command, we will be prompted to answer sets of questions. We can do so as shown below:</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Would you like to use TypeScript? &lt;No&gt;
-Would you like to use ESLint? &lt;No&gt; 
-Would you like to use Tailwind CSS? &lt;Yes&gt;
-Would you like to use `src/` directory? &lt;Yes&gt;
-Would you like to use App Router? (recommended) &lt;Yes&gt;
-Would you like to customize the default import alias? &lt;Yes&gt;
-What import alias would you like configured? @/* &lt;Press Enter&gt;
-</code></pre>
-
-</div>
-
-<p>The command creates a Next.js project called <code>next_telesign</code> and navigates into the project directory.</p>
-
-<p>Next, we need to add Appwrite as a dependency. To do this, run the command below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>    npm <span class="nb">install </span>appwrite
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Set up Telesign as an SMS provider
-</h2>
-
-<p>Let's begin by logging in to our Telesign portal and making sure to save the <code>Customer ID</code> and <code>API Keys.</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8DpgPewN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691014986917_Screenshot%2B2023-07-28%2Bat%2B21.45.43.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8DpgPewN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691014986917_Screenshot%2B2023-07-28%2Bat%2B21.45.43.png" alt="Copy customer ID and API key on Telesign dashboard" width="800" height="377"></a></p>
-
-<p>Lastly, we need to create and verify a test number. Any number we configure and verify here can receive SMS. To do this, we need to navigate to the <code>**Manage test numbers**</code> screen.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AcnGeYDL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_5AE13241508A7E6925D3E7C46F98F97DA032E1B5D4814111659BD6450C922200_1691151291583_CDGHDA68.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AcnGeYDL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_5AE13241508A7E6925D3E7C46F98F97DA032E1B5D4814111659BD6450C922200_1691151291583_CDGHDA68.jpg" alt="Manage test numbers" width="800" height="375"></a></p>
-
-<p>Click the <code>**Add a Number**</code> button, input the required details, <code>**Submit**</code>, and <code>**Verify**</code>.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Ok1Kdew7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119191_Screenshot%2B2023-07-30%2Bat%2B15.47.47.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ok1Kdew7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119191_Screenshot%2B2023-07-30%2Bat%2B15.47.47.png" alt="Add a number" width="800" height="375"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--v6Co-ZV2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119220_Screenshot%2B2023-07-30%2Bat%2B15.49.44.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v6Co-ZV2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119220_Screenshot%2B2023-07-30%2Bat%2B15.49.44.png" alt="Fill in the required information and verify" width="800" height="377"></a></p>
-
-<h2>
-  
-  
-  Configure and create a project on Appwrite
-</h2>
-
-<p>To get started, first, we need to create an Appwrite instance in a preferred directory by running the command below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>    docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="se">\</span>
-        <span class="nt">--volume</span> /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
-        <span class="nt">--volume</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">"</span>/appwrite:/usr/src/code/appwrite:rw <span class="se">\</span>
-        <span class="nt">--entrypoint</span><span class="o">=</span><span class="s2">"install"</span> <span class="se">\</span>
-        appwrite/appwrite:latest
-</code></pre>
-
-</div>
-
-
-
-<p>On creation, we should see an <code>appwrite</code> folder with two files.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VFb2FpKw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_9813CFC6C5B2163D17C6B733CCD2F7F4E13D8D4D744ED2740D99BCB62D05C011_1690503400192_Screenshot%2B2023-07-27%2Bat%2B00.19.24.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VFb2FpKw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_9813CFC6C5B2163D17C6B733CCD2F7F4E13D8D4D744ED2740D99BCB62D05C011_1690503400192_Screenshot%2B2023-07-27%2Bat%2B00.19.24.png" alt="Appwrite folder" width="424" height="144"></a></p>
-
-<p>Secondly, we need to add Telesign as an SMS provider by modifying the environment variables in the <code>.env</code> file as shown below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>    <span class="nv">_APP_SMS_PROVIDER</span><span class="o">=</span>sms://&lt;REPLACE WITH CREDENTIAL ID&gt;:&lt;REPLACE WITH API KEYS&gt;@telesign
-    <span class="nv">_APP_SMS_FROM</span><span class="o">=</span>&lt;REPLACE WITH THE PHONE NUMBER WE USED IN WHEN VERIFYING TELESIGN&gt;
-</code></pre>
-
-</div>
-
-
-
-<p>We must also ensure that the API Key provided by Telesign is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding">URL encoded</a> because it contains non-alphanumeric characters. To do this, we can navigate to the <a href="https://www.urlencoder.org/">URLEncoder online platform</a>, paste our API key, click the <strong>Encode</strong> button, and then copy the resulting encoded format.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gI1ajHwy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691018362683_Screenshot%2B2023-07-30%2Bat%2B15.18.07.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gI1ajHwy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691018362683_Screenshot%2B2023-07-30%2Bat%2B15.18.07.png" alt="Edited env variable" width="800" height="508"></a></p>
-
-<p>Lastly, we need to sync the changes we made on the <code>.env</code> file with our Appwrite server. To do this, we must run the command below inside the <code>appwrite</code> directory.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>    docker-compose up <span class="nt">-d</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Set up a project on Appwrite</strong><br>
-To get started, we need to navigate to the specified hostname and port <code>http://localhost:80</code>, log in, click the <strong>Create project</strong> button, input <code>next_telesign</code> as the name, and then click <code>**Create**</code><strong>.</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FmBrXhcM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_C9210607DAFF6D80615947ED6BE237716E98BADEF0416B60FACF081B1CAEFB80_1687518026974_Screenshot%2B2023-06-23%2Bat%2B11.38.55.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FmBrXhcM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_C9210607DAFF6D80615947ED6BE237716E98BADEF0416B60FACF081B1CAEFB80_1687518026974_Screenshot%2B2023-06-23%2Bat%2B11.38.55.png" alt="Create project on Appwrite" width="800" height="379"></a></p>
-<h2>
-  
-  
-  Appwrite + Telesign in Next.js
-</h2>
-
-<p>Let's begin by going to our project's main directory and creating a new folder named <code>helper</code>. Inside this folder, create a file called <code>utils.js</code> and insert the code snippet provided below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Client</span><span class="p">,</span> <span class="nx">Account</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">appwrite</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">//create client</span>
-<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">();</span>
-<span class="nx">client</span><span class="p">.</span><span class="nx">setEndpoint</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost/v1</span><span class="dl">"</span><span class="p">).</span><span class="nx">setProject</span><span class="p">(</span><span class="dl">"</span><span class="s2">REPLACE WITH PROJECT ID</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">//create account</span>
-<span class="kd">const</span> <span class="nx">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Account</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
-
-<span class="c1">//authenticate user with phone number</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">phoneAuth</span> <span class="o">=</span> <span class="p">(</span><span class="nx">phone_number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">account</span><span class="p">.</span><span class="nx">createPhoneSession</span><span class="p">(</span><span class="dl">"</span><span class="s2">unique()</span><span class="dl">"</span><span class="p">,</span> <span class="nx">phone_number</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="c1">//validate phone session</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">validateSMS</span> <span class="o">=</span> <span class="p">(</span><span class="nx">userID</span><span class="p">,</span> <span class="nx">secret</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">account</span><span class="p">.</span><span class="nx">updatePhoneSession</span><span class="p">(</span><span class="nx">userID</span><span class="p">,</span> <span class="nx">secret</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The snippet above does the following:</p>
-
-<ul>
-<li>Imports the required dependency.</li>
-<li>Uses the <code>Client</code> and <code>Account</code> class to set up an Appwrite instance by specifying the endpoint and corresponding project ID.</li>
-<li>Creates a <code>phoneAuth</code> and <code>validateSMS</code> function that uses the <code>createPhoneSession</code> and <code>updatePhoneSession</code> methods to create a user and validate the user using the code sent via SMS, respectively.</li>
-</ul>
-
-<p>Secondly, we need to update the <code>page.js</code> file inside the  <code>app</code> directory to include states and methods required by our application.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>    <span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">phoneAuth</span><span class="p">,</span> <span class="nx">validateSMS</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../helper/utils</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
-    <span class="na">phone</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-    <span class="na">otp</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-  <span class="p">});</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">user</span><span class="p">,</span> <span class="nx">setUser</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">isPhoneVerify</span><span class="p">,</span> <span class="nx">setIsPhoneVerify</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">isLoading</span><span class="p">,</span> <span class="nx">setIsLoading</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">handleChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setValue</span><span class="p">({</span> <span class="p">...</span><span class="nx">value</span><span class="p">,</span> <span class="p">[</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">});</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-    <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-    <span class="nx">phoneAuth</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">phone</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">setUser</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">userId</span><span class="p">);</span>
-        <span class="nx">setIsPhoneVerify</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error getting phone session!</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
-        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">handleValidatePhone</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-    <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-    <span class="nx">validateSMS</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">value</span><span class="p">.</span><span class="nx">otp</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span>
-          <span class="s2">`User successfully verified using for user with ID </span><span class="p">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">userId</span><span class="p">}</span><span class="s2">, country Code </span><span class="p">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">countryCode</span><span class="p">}</span><span class="s2">, and expires on </span><span class="p">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">expire</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
-        <span class="p">);</span>
-        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error validating session!</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
-        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-screen h-screen bg-white</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="c1">//UI AND IMPLEMENTATION GOES HERE</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>The snippet above does the following:</p>
-
-<ul>
-<li>Imports the required dependencies</li>
-<li>Creates state properties to manage application state</li>
-<li>Creates a <code>handleChange</code> function to control inputs</li>
-<li>Creates a <code>handleSubmit</code> function that uses the <code>phoneAuth</code> function to create a user</li>
-<li>Creates a <code>handleValidatePhone</code> function that uses the <code>validateSMS</code> function to verify the created user using the secret key sent via SMS</li>
-</ul>
-
-<p>Lastly, we need to update the UI to display forms for creating and verifying users dynamically.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">//IMPORTS GOES HERE</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">//STATES AND METHOD GOES HERE</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-screen h-screen bg-white</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Head</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Appwrite</span> <span class="o">+</span> <span class="nx">Telesign</span> <span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">Generated by create next app</span><span class="dl">"</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">icon</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">/favicon.ico</span><span class="dl">"</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/Head</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">py-4 px-4 lg:py-10 lg:px-10 w-full</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex justify-center mb-8</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-2xl font-medium text-gray-700</span><span class="dl">"</span><span class="o">&gt;</span>
-            <span class="nx">Appwrite</span> <span class="o">+</span> <span class="nx">Telesign</span>
-          <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex justify-center</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="p">{</span><span class="nx">isPhoneVerify</span> <span class="p">?</span> <span class="p">(</span>
-            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">px-4 py-2 border rounded-lg w-full lg:w-2/4</span><span class="dl">"</span><span class="o">&gt;</span>
-              <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border-b h-8 mb-4</span><span class="dl">"</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">h3</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-gray-700</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Verify</span> <span class="nx">phone</span> <span class="nx">number</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
-</span>              <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>              <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleValidatePhone</span><span class="p">}</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">fieldset</span><span class="o">&gt;</span>
-                  <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-gray-400 mb-4 block</span><span class="dl">"</span><span class="o">&gt;</span>
-                    <span class="nx">OTP</span>
-                  <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
-</span>                  <span class="o">&lt;</span><span class="nx">input</span>
-                    <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">otp</span><span class="dl">"</span>
-                    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border w-full rounded-sm mb-6 p-2</span><span class="dl">"</span>
-                    <span class="nx">required</span>
-                    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">.</span><span class="nx">otp</span><span class="p">}</span>
-                    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span>
-                    <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span>
-                  <span class="o">/&gt;</span>
-                <span class="o">&lt;</span><span class="sr">/fieldset</span><span class="err">&gt;
-</span>                <span class="o">&lt;</span><span class="nx">button</span>
-                  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-white px-8 py-2 rounded-sm bg-blue-600 hover:bg-blue-700</span><span class="dl">"</span>
-                  <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoading</span><span class="p">}</span>
-                <span class="o">&gt;</span>
-                  <span class="nx">Validate</span> <span class="nx">OTP</span>
-                <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>              <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>          <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
-            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">px-4 py-2 border rounded-lg w-full lg:w-2/4</span><span class="dl">"</span><span class="o">&gt;</span>
-              <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border-b h-8 mb-4</span><span class="dl">"</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">h3</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-gray-700</span><span class="dl">"</span><span class="o">&gt;</span>
-                  <span class="nx">Authenticate</span> <span class="kd">with</span> <span class="nx">your</span> <span class="nx">phone</span> <span class="nx">number</span>
-                <span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
-</span>              <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>              <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">fieldset</span><span class="o">&gt;</span>
-                  <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-gray-400 mb-4 block</span><span class="dl">"</span><span class="o">&gt;</span>
-                    <span class="nx">Phone</span> <span class="nx">number</span>
-                  <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
-</span>                  <span class="o">&lt;</span><span class="nx">input</span>
-                    <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">phone</span><span class="dl">"</span>
-                    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border w-full rounded-sm mb-6 p-2</span><span class="dl">"</span>
-                    <span class="nx">required</span>
-                    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">.</span><span class="nx">phone</span><span class="p">}</span>
-                    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span>
-                    <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span>
-                  <span class="o">/&gt;</span>
-                <span class="o">&lt;</span><span class="sr">/fieldset</span><span class="err">&gt;
-</span>                <span class="o">&lt;</span><span class="nx">button</span>
-                  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-white px-8 py-2 rounded-sm bg-blue-600 hover:bg-blue-700</span><span class="dl">"</span>
-                  <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoading</span><span class="p">}</span>
-                <span class="o">&gt;</span>
-                  <span class="nx">Submit</span>
-                <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>              <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>          <span class="p">)}</span>
-        <span class="o">&lt;</span><span class="sr">/section</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now that we have completed that task, we may begin running a development server using the following command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>    npm run dev
-</code></pre>
-
-</div>
-
-
-
-<p>We should have something similar to what is shown below.</p>
-
-<p><a href="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWI2ZmdldWY4dmlkY3VpaDBrZ2kzN3A5aTY1eTFjZnNxaHo0cTRlZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xpH3cBIwZgCK5i4dJE/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWI2ZmdldWY4dmlkY3VpaDBrZ2kzN3A5aTY1eTFjZnNxaHo0cTRlZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xpH3cBIwZgCK5i4dJE/giphy.gif" alt="How to set up Telesign for SMS in Appwrite" width="480" height="222"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>This post discussed how to set up phone authentication in Next.js using Appwrite and Telesign. With Appwrite, developers can save application development time by leveraging intuitive authentication APIs without the associated technical overheads.</p>
-
-<p>These resources might also be helpful:</p>
-
-<ul>
-<li><a href="https://appwrite.io/docs/configuration?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Appwrite Self-hosting configuration</a></li>
-<li><a href="https://appwrite.io/docs?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Appwrite official documentation</a></li>
-<li><a href="https://appwrite.io/docs/sms-delivery?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Appwrite SMS provider support</a></li>
-<li><a href="https://developer.telesign.com/enterprise/docs?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Telesign official documentation</a></li>
-<li><a href="https://www.istockphoto.com/vector/social-media-and-digital-marketing-concept-speech-bubble-with-social-icons-vector-gm1445432493-483842928">Cover image credit to iStockphoto</a></li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [5 Git Commands You Shouldn’t Ignore](https://dev.to/mainulspace/5-git-commands-you-shouldnt-ignore-2c19) 
- <details><summary>Article</summary> <p>You’re probably already a pro at using Git’s ‘A-list’ commands: git commit, git push, and git pull. But beyond these, there are powerful commands that often fly under the radar. Not only can they save you time, but they can also change the way you think about version control.</p>
-
-<h2>
-  
-  
-  1. Git Stash: Safe Your Coding
-</h2>
-
-<p>Imagine You’re deep into coding a new feature, and suddenly, a high-priority bug report interrupts you. You don’t have to rush to commit your half-done code.</p>
-
-<p>Instead, you can just “stash” it away safely. This lets you fix the urgent bugs first and then easily get back to your feature work.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">stash</span> <span class="nx">save</span> <span class="dl">"</span><span class="s2">Work in progress for new feature</span><span class="dl">"</span>
-</code></pre>
-
-</div>
-
-<h2>
-  
-  
-  2. Git Bisect: Bug Detective
-</h2>
-
-<p>Finding a new bug is like looking for a needle in a haystack of commits. Don’t bother going through each one individually — <code>git bisect</code> is a more efficient way to find bugs.</p>
-
-<p>Using a binary search algorithm, it quickly identifies the problematic commit causing the problem.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">start</span>
-<span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">bad</span>
-<span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">good</span> <span class="p">[</span><span class="nx">good_commit</span><span class="p">]</span>
-</code></pre>
-
-</div>
-
-<h2>
-  
-  
-  3. Git Cherry-Pick: Selective Genius Import
-</h2>
-
-<p>Imagine you’ve spotted a great fix or feature in another branch. Instead of dragging along all the other commits through a merge, why not <code>‘cherry-pick’</code> just the genius you need?<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">cherry</span><span class="o">-</span><span class="nx">pick</span> <span class="p">[</span><span class="nx">commit_hash</span><span class="p">]</span>
-</code></pre>
-
-</div>
-
-
-<p><iframe class="tweet-embed" id="tweet-1701233753266225623-201" src="https://platform.twitter.com/embed/Tweet.html?id=1701233753266225623">
-</iframe>
-
-  // Detect dark theme
-  var iframe = document.getElementById('tweet-1701233753266225623-201');
-  if (document.body.className.includes('dark-theme')) {
-    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1701233753266225623&amp;theme=dark"
-  }
-
-
-
-</p>
-<h2>
-  
-  
-  4. Git Reflog: Undo Button for Git
-</h2>
-
-<p>Have you ever wished you could roll back a botched git command? Enter <code>git reflog</code>. It keeps a record of every move you’ve made, making it easy to turn back the clock and recover lost commits.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">reflog</span>
-</code></pre>
-
-</div>
-
-<h2>
-  
-  
-  5. Git Rebase -i: Commit Curator
-</h2>
-
-<p>Before you release your excellent new feature, cleaning up your commit history is a good idea. Interactive Rebase (<code>git rebase -i</code>) lets you reorder, squash, or amend commits, creating a polished history that’s easy to follow.<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">rebase</span> <span class="o">-</span><span class="nx">i</span> <span class="p">[</span><span class="nx">base_commit</span><span class="p">]</span>
-</code></pre>
-
-</div>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Git offers so much more than the popular commands we use daily. These less-used commands can supercharge your workflow, make it easy to track bugs, and even save your day in case of emergency commits.</p>
-
-<p>So, exploring these Git’s lesser-known features and learning will make your coding workflow smoother. Not only will you become a more capable developer, but you will also take your version control to new heights.</p>
-
-<p>Which of these Git commands are new to you? Have you encountered a situation where one could have been a lifesaver? Share your experiences, tips, and tricks in the comments below.</p>
-
-<p>Feel free to connect with me on <a href="https://twitter.com/mainulspace"><strong>Twitter</strong></a> or <a href="https://www.linkedin.com/in/mainulspace/"><strong>LinkedIn</strong></a>.</p>
-<h2>
-  
-  
-  Read Next...
-</h2>
-
-
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/10-lesser-known-javascript-array-methods-you-mightve-missed-32b3" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>10 Lesser-Known JavaScript Array Methods You Might’ve Missed</h2>
-      <h3>Mainul Hasan ・ Sep 5</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#programming</span>
-        <span class="ltag__link__tag">#coding</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/10-underutilized-css-properties-every-developer-should-know-2ia0" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>10 Underutilized CSS Properties Every Developer Should Know</h2>
-      <h3>Mainul Hasan ・ Sep 11</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#css</span>
-        <span class="ltag__link__tag">#programming</span>
-        <span class="ltag__link__tag">#frontend</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/are-you-using-javascript-right-know-when-to-go-asynchronous-4731" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Are You Using JavaScript Right? Know When to Go Asynchronous</h2>
-      <h3>Mainul Hasan ・ Sep 4</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#promises</span>
-        <span class="ltag__link__tag">#callback</span>
-        <span class="ltag__link__tag">#asyncawait</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
 
  </details> 
  <hr /> 
