@@ -118,6 +118,225 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Top 7 Featured DEV Posts from the Past Week](https://dev.to/devteam/top-7-featured-dev-posts-from-the-past-week-4bfl) 
+ <details><summary>Article</summary> <p><em>Every Tuesday we round up the previous week's top posts based on traffic, engagement, and a hint of editorial curation. The typical week starts on Monday and ends on Sunday, but don't worry, we take into account posts that are published later in the week.</em> </p>
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/novu" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bfplM013--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gCeTLZWd--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_66%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/5804/9ecf6e75-6501-4491-874c-c566f65f4a5a.gif" alt="novu" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KwegWDPQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--XMD6J2pd--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/820341/5d291561-0d60-40cf-a9d3-959dab08f1ac.png" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/novu/building-a-real-time-chat-with-websockets-novel-and-clerk-40ac" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>💬 Building a real-time chat with Websockets, Novel and Clerk 🚀🚀</h2>
+      <h3>Nevo David for novu ・ Sep 7</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#react</span>
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#tutorial</span>
+      </div>
+    </div>
+  </a>
+</div>
+ In this tutorial, @nevodavid will run you through the process of building a chat application. By the end, you’ll learn how to authenticate users with Clerk, send real-time messages via Socket.io in a React and Node.js application, and add Novel WYSIWYG editor to a React app.
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/srbhr" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zvjec-E4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--0FUG9Nnn--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/236396/60927154-7b76-4cb0-a9ed-9d148487daff.png" alt="srbhr">
+    </div>
+  </a>
+  <a href="/srbhr/swirl-an-open-source-search-engine-with-llms-and-chatgpt-to-provide-all-the-answers-you-need-1amc" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Swirl: An open-source search engine with LLMs and ChatGPT to provide all the answers you need 🌌</h2>
+      <h3>Saurabh Rai ・ Sep 6</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#python</span>
+        <span class="ltag__link__tag">#ai</span>
+        <span class="ltag__link__tag">#opensource</span>
+        <span class="ltag__link__tag">#machinelearning</span>
+      </div>
+    </div>
+  </a>
+</div>
+ A lot of time is spent going through all of the different folders and searches needed to find what you’re looking for. @srbhr found the solution to this problem in Swirl Search, an engine that can look through multiple platforms and generate data using an LLM. 
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/jacktt" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LE3Wxc0z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--do6bDySg--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1105551/7d1507de-34a6-43fe-be56-324409393281.jpeg" alt="jacktt">
+    </div>
+  </a>
+  <a href="/jacktt/creating-dynamic-readmemd-file-388o" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Creating Dynamic README.md File</h2>
+      <h3>Jack ・ Sep 10</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#git</span>
+        <span class="ltag__link__tag">#cicd</span>
+        <span class="ltag__link__tag">#devops</span>
+        <span class="ltag__link__tag">#go</span>
+      </div>
+    </div>
+  </a>
+</div>
+ @jacktt has a weather widget in their GitHub bio that updates every six hours. How is this possible? Through the power of GitHub Actions!
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/cherryramatis" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XrqrJivM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--HdxEGYoi--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1025053/e8911f4d-800d-4a5c-8817-422b3c43beeb.jpeg" alt="cherryramatis">
+    </div>
+  </a>
+  <a href="/cherryramatis/linux-filters-how-to-streamline-text-like-a-boss-2dp4" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Linux filters - How to streamline text like a boss</h2>
+      <h3>Cherry Ramatis ・ Sep 11</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#ruby</span>
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#linux</span>
+        <span class="ltag__link__tag">#vim</span>
+      </div>
+    </div>
+  </a>
+</div>
+ In this comprehensive guide, we'll explore the general definition of Unix philosophy, investigate the key elements of a well written script, and learn the building blocks of scripting with @cherryramatis!
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/thevinitgupta" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2RRtXlkG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vs5K5D68--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/656476/af6e11c2-127a-4c54-9c06-ab48fee365af.png" alt="thevinitgupta">
+    </div>
+  </a>
+  <a href="/thevinitgupta/discover-bun-a-faster-modern-javascript-runtime-5fob" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Discover Bun - A Faster, Modern JavaScript Runtime</h2>
+      <h3>Vinit Gupta ・ Sep 10</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#codenewbie</span>
+        <span class="ltag__link__tag">#opensource</span>
+      </div>
+    </div>
+  </a>
+</div>
+ Bun is the new Javascript Runtime built from scratch to serve the modern Javascript ecosystem. But do we even need another JavaScirpt tool? Here’s @thevinitgupta with the answer to this question and more. 
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/opensauced" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--02eXwIRh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--NCYBd-LB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2498/a16cc27c-33f9-40b6-92a8-4a43f70a96ef.png" alt="OpenSauced" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--e-TUTFD8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--6jsOd2Rx--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/19970/6dc0f11e-a4da-4762-aed8-11f70143d31b.jpeg" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/opensauced/moneyball-for-engineers-4ki9" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Moneyball for engineers</h2>
+      <h3>Brian Douglas for OpenSauced ・ Sep 6</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#opensource</span>
+        <span class="ltag__link__tag">#100daysofoss</span>
+      </div>
+    </div>
+  </a>
+</div>
+ @bdougieyo shows how green squares on GitHub are a framework that no longer holds value because it encourages the wrong metrics. Here’s how OpenSauced handles this issue. 
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/wasp" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--h1s4XEpp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--BiCuq3V3--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/3369/c86918f8-76a9-4b01-accf-cc257f9ee56f.png" alt="Wasp" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NtbuKyFr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--UAY6642a--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/982343/99b7a039-13b3-4eb5-820b-da74b180ddf6.jpeg" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/wasp/build-your-own-ai-meme-generator-learn-how-to-use-openais-function-calls-1p21" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Build your own AI Meme Generator &amp; learn how to use OpenAI's function calls ☎️</h2>
+      <h3>vincanger for Wasp ・ Sep 6</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#ai</span>
+        <span class="ltag__link__tag">#fullstack</span>
+        <span class="ltag__link__tag">#tutorial</span>
+      </div>
+    </div>
+  </a>
+</div>
+ In this two-part tutorial, we’re going to build a full-stack instant Meme Generator app with @vincanger! The tools you’ll need are React &amp; NodeJS w/ TypeScript, OpenAI’s Function Calling API, and ImgFlip.com’s meme creator API.
+
+
+
+
+<p><em>That's it for our weekly Top 7 for this Tuesday! Keep an eye on dev.to this week for daily content and discussions...and be sure to keep an eye on this series in the future. You might just be in it!</em></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [What are your takeaways from the Apple event?](https://dev.to/ben/what-are-your-takeaways-from-the-apple-event-24f7) 
+ <details><summary>Article</summary> <div class="crayons-card c-embed text-styles text-styles--secondary">
+      <div class="c-embed__cover">
+        <a href="https://www.apple.com/apple-events/event-stream/" class="c-link s:max-w-50 align-middle" rel="noopener noreferrer">
+          <img alt="" src="https://res.cloudinary.com/practicaldev/image/fetch/s--nHaObXn8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.apple.com/v/apple-events/event-stream/n/images/overview/meta/overview__bcphzsdb4fpu_og.png%3F202309040815" height="420" class="m-0" width="800">
+        </a>
+      </div>
+    <div class="c-embed__body">
+      <h2 class="fs-xl lh-tight">
+        <a href="https://www.apple.com/apple-events/event-stream/" rel="noopener noreferrer" class="c-link">
+          Apple Events - Special Event Stream - Apple
+        </a>
+      </h2>
+        <p class="truncate-at-3">
+          Watch the Apple event online.
+        </p>
+      <div class="color-secondary fs-s flex items-center">
+        apple.com
+      </div>
+    </div>
+</div>
+
+
+<p>What are your thoughts and feelings about what Apple announced today?</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Understanding Variable Declaration in JavaScript: let vs. var](https://dev.to/iamcymentho/understanding-variable-declaration-in-javascript-let-vs-var-50an) 
  <details><summary>Article</summary> <p><strong>Introduction:</strong></p>
 
@@ -441,93 +660,6 @@ print(f"The sentiment is: {label}")
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YRQevSo1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/65sme5o4o9gzahh156m8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YRQevSo1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/65sme5o4o9gzahh156m8.png" alt="amazing feature" width="800" height="488"></a></p>
 
 <p><em><strong>Congratulations</strong></em> on completing this beginner-friendly tutorial on sentiment analysis using Hugging Face's transformers library! By now, you should have a solid understanding of how to use pre-trained models to analyze the sentiment of text. You've learned how to tokenize text, run it through a model, and interpret the output—all within a SingleStore Notebook environment. </p>
-
- </details> 
- <hr /> 
-
- #### - [Calling service in Angular](https://dev.to/inexperienced_coder/calling-service-in-angular-4a1o) 
- <details><summary>Article</summary> <p>I'm working on an angular project, and I'm stuck.  I've created a service that does an API request and stores the data in an interface.  I have a method in a component that passes an identifier to the service to update the API URL.  The structure of my project looks like this.</p>
-
-<p>-app module<br>
-   ----data-component<br>
-   ----map-component<br>
--request service</p>
-
-<p>I believe the issue is in my data.component.ts file.  My app.component.html file references each component and places them side by side, but the data component doesn't update when changes are made to the variable. I know the correct information is being stored because I have console logs in place to check the values.   The files I'm working with are listed below: </p>
-
-<p>Map.component.ts: </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gR7PPBoq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pb6hpckvjaqblays35o9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gR7PPBoq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pb6hpckvjaqblays35o9.png" alt="Image description" width="644" height="595"></a></p>
-
-<p>request.service.ts:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jwlzovx4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7pf5nyz7xgaru9ffohco.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jwlzovx4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7pf5nyz7xgaru9ffohco.png" alt="Image description" width="742" height="693"></a></p>
-
-<p>data.component.ts:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zzbXPjRK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ntqki67vskx13p5ugb8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zzbXPjRK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ntqki67vskx13p5ugb8.png" alt="Image description" width="800" height="510"></a></p>
-
-<p>For reference, this is a school project, and I'm not looking for anyone to re-write my code.  I'm looking for some direction on why my service isn't reloading when I pass the updated information to it.  I feel like I may be over-complicating the issue. </p>
-
- </details> 
- <hr /> 
-
- #### - [useState Hook in React](https://dev.to/parmita17/usestate-hook-in-react-296o) 
- <details><summary>Article</summary> <p>To handle multiple states using the useState hook in react, you can call the useState function multiple times, once for each state you want to manage. Here's an example:</p>
-
-<p><code>import { useState } from 'react';</code><br>
-<code>function MyComponent(props){</code><br>
-<code>const [count,setCount]  = useState(0);</code><br>
-<code>const [text, setText] = useState('');</code><br>
-<code>function handleIncrement(){</code><br>
-<code>setCount(count + 1);</code><br>
-<code>}</code><br>
-<code>function handleTextChange(event){</code><br>
-<code>setText(event.target.value);</code><br>
-<code>}</code><br>
-<code>return (</code><br>
-<code>&lt;div&gt;</code><br>
-<code>&lt;P&gt;Count : {count}&lt;p&gt;</code><br>
-<code>&lt;button onClick = {handleIncrement}&gt;Increment&lt;/button&gt;</code><br>
-<code>&lt;br /&gt;</code><br>
-<code>&lt;input type="text" value= {text} onChange ={handleTextChange}/&gt;</code><br>
-<code>&lt;p&gt; Text: {text}&lt;/p&gt;</code><br>
-<code>&lt;/div&gt;</code><br>
-<code>);}</code></p>
-
-<p>In this example , we're managing two states using <code>useState:count</code> and <code>text</code>. We're also defining two functions : <code>handleIncrement</code>, which updates the <code>count</code> state when a button is clicked, and <code>handleTextChange</code> , which updates the <code>text</code> state when the text input changes.<br>
-By calling <code>useState</code> twice , we're creating two independent pieces of state that can be managed separately. We're also using destructing to assign the current value of each state and its corresponding setter and its corresponding setter function to separate variables(<code>count</code> and <code>setCount</code>, and <code>text</code> and <code>setText</code>).<br>
-Overall, using multiple useState hooks can help you manage multiple pieces of state in a clean and organized way.<br>
-<strong>Other Alternative:</strong><br>
-We can also manage multiple states using a single useState hook by passing an object as the initial state and using destructing to access individual state variables and their corresponding update functions.<br>
-Here's an example:<br>
-<code>import {useState} from 'react';</code><br>
-<code>function MyComponent(props){</code><br>
-<code>const[state, setState] = useState({count: 0, text: ''});</code><br>
-<code>function handleIncrement(){</code><br>
-<code>setState(</code><br>
-<code>prevState =&gt; ({ ...prevState, count: prevState.count + 1})</code><br>
-<code>);}</code><br>
-<code>function handleTextChange(event){</code><br>
-<code>setState(</code><br>
-<code>prevState =&gt;({ ...prevState, text: event.target.value}</code><br>
-<code>));</code><br>
-<code>}</code><br>
-<code>return (</code><br>
-<code>&lt;div&gt;</code><br>
-<code>&lt;p&gt; Count: {state.count}&lt;/p&gt;</code><br>
-<code>&lt;button onClick ={handleIncrement}&gt;Increment&lt;/button&gt;</code><br>
-<code>&lt;br/&gt;</code><br>
-<code>&lt;input type="text"</code><br>
-<code>value={state.text} onChange ={handleTextChange} /&gt;</code><br>
-<code>&lt;p&gt;Text: {state.text}&lt;/p&gt;</code><br>
-<code>&lt;/div&gt;);}</code></p>
-
-<p>In this example, we're still managing two pieces of state(<code>count</code> and <code>text</code>), but we're using a single <code>useState</code> hook to initialize both states as properties of an object(<code>state</code>). We're also using destructing to access individual state variables(<code>count</code> and <code>text</code>) and their corresponding update functions(<code>setState</code>).</p>
-
-<p>To update a piece of state, we're using the functional update form of <code>setState</code>, which takes a callback function that receives the previous state as an argument and returns the new state. We're spreading the previous state using the spread operator(<code>...prevState</code>) to create a new object with all the previous state properties, and then updating the property we want to change(<code>count</code> or <code>text</code>) using object property shorthand.</p>
-
-<p>Using a single <code>useSate</code> hook to manage multiple pieces of state can be a convenient way to keep related state together and reduce boilerplate code. However, it can also make code more complex and harder to read, especially if you have many pieces of state or complex state updates. So it's up to you to decide which approach works best for you for your specific use case.</p>
 
  </details> 
  <hr /> 
