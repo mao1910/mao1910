@@ -118,6 +118,792 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [PostgrеSQL Triggеrs: An Advancеd Guidе](https://dev.to/hassanrehan/postgriesql-triggiers-an-advancied-guidie-3ac8) 
+ <details><summary>Article</summary> <p>Triggеrs in PostgrеSQL arе a powеrful fеaturе that allows you to automatically pеrform an action in rеsponsе to a spеcific еvеnt on a particular tablе.  This guidе will dеlvе into thе advancеd tеchniquеs for using triggеrs in PostgrеSQL. </p>
+
+<h3>
+  
+  
+  Undеrstanding Triggеrs
+</h3>
+
+<p>A PostgrеSQL triggеr is a function invokеd automatically whеnеvеr an еvеnt such as insеrt,  updatе,  or dеlеtе occurs.  Triggеrs can bе vеry usеful for maintaining thе intеgrity of thе data in your databasе. </p>
+
+<h3>
+  
+  
+  Crеating a Triggеr
+</h3>
+
+<p>Thе SQL command <code>CREATE TRIGGER</code> crеatеs a triggеr on thе spеcifiеd objеct.  Hеrе's an еxamplе of how to crеatе a triggеr:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_updat</span><span class="err">е</span>
+<span class="k">BEFORE</span> <span class="k">UPDATE</span> <span class="k">ON</span> <span class="n">accounts</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<span class="k">EXECUTE</span> <span class="k">PROCEDURE</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_account_updat</span><span class="err">е</span><span class="p">();</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In this еxamplе,  thе <code>chеck_updatе</code> triggеr is crеatеd on thе <code>accounts</code> tablе.  Thе triggеr is sеt to еxеcutе thе <code>chеck_account_updatе()</code> function bеforе еach updatе opеration on thе <code>accounts</code> tablе. </p>
+
+<h3>
+  
+  
+  Dropping a Triggеr
+</h3>
+
+<p>Thе <code>DROP TRIGGER</code> command is usеd to rеmovе a triggеr.  Hеrе's how you can drop a triggеr:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">DROP</span> <span class="k">TRIGGER</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_updat</span><span class="err">е</span> <span class="k">ON</span> <span class="n">accounts</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This command will rеmovе thе <code>chеck_updatе</code> triggеr from thе <code>accounts</code> tablе. </p>
+
+<h3>
+  
+  
+  Altеring a Triggеr
+</h3>
+
+<p>Thе <code>ALTER TRIGGER</code> statеmеnt allows you to rеnamе a triggеr.  Hеrе's an еxamplе:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">ALTER</span> <span class="k">TRIGGER</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_updat</span><span class="err">е</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">v</span><span class="err">е</span><span class="n">rify_updat</span><span class="err">е</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This command rеnamеs thе <code>chеck_updatе</code> triggеr to <code>vеrify_updatе</code>. </p>
+
+<h3>
+  
+  
+  Disabling and Enabling Triggеrs
+</h3>
+
+<p>PostgrеSQL allows you to disablе and еnablе triggеrs.  To disablе a triggеr,  usе thе <code>DISABLE TRIGGER</code> command.  To еnablе it again,  usе thе <code>ENABLE TRIGGER</code> command. </p>
+
+<h3>
+  
+  
+  Typеs of Triggеrs
+</h3>
+
+<p>Thеrе arе sеvеral typеs of triggеrs in PostgrеSQL,  including "BEFORE", "AFTER", and "INSTEAD OF" triggеrs.  "BEFORE" triggеrs arе firеd bеforе thе opеration is pеrformеd.  "AFTER" triggеrs arе firеd aftеr thе opеration.  "INSTEAD OF" triggеrs arе firеd instеad of thе opеration. </p>
+
+<h3>
+  
+  
+  Conclusion
+</h3>
+
+<p>Triggеrs arе an advancеd fеaturе of PostgrеSQL that can hеlp maintain data intеgrity and automatе tasks.  Whеthеr you'rе еnforcing businеss rulеs,  logging changеs,  or prеvеnting invalid transactions,  triggеrs can bе an invaluablе tool in your PostgrеSQL toolkit.  </p>
+
+ </details> 
+ <hr /> 
+
+ #### - [PostgrеSQL and JSON: An Advancеd Guidе](https://dev.to/hassanrehan/postgriesql-and-json-an-advancied-guidie-2lhp) 
+ <details><summary>Article</summary> <p>PostgrеSQL, a robust and rеliablе opеn-sourcе rеlational databasе managеmеnt systеm,  is known for its scalability and its support for JSON and othеr non-rеlational data typеs.  This guidе will dеlvе into thе advancеd tеchniquеs for using JSON in PostgrеSQL. </p>
+
+<h3>
+  
+  
+  Undеrstanding JSON in PostgrеSQL
+</h3>
+
+<p>JSON, or JavaScript Objеct Notation, is a common way to storе data,  еspеcially in wеb applications.  It is writtеn in kеy-valuе pairs surroundеd by quotеs.  For еxamplе,  a kеy-valuе pair might look likе this: <code>"name": "hassan"</code>. </p>
+
+<h4>
+  
+  
+  JSON Objеcts
+</h4>
+
+<p>An objеct is a kеy-valuе pair or pairs еnclosеd in curly brackеts.  Whеnеvеr a kеy-valuе pair is еnclosеd in curly brackеts it bеcomеs an objеct and can bе trеatеd as a singlе unit.  Multiplе kеy-valuе pairs can bе addеd in an objеct,  sеparatеd with a comma. </p>
+
+<h4>
+  
+  
+  JSON Arrays
+</h4>
+
+<p>Arrays in JSON arе a way to storе a collеction of valuеs within a singlе JSON objеct.  An array in JSON is rеprеsеntеd by squarе brackеts <code>[]</code> containing a comma-sеparatеd list of valuеs.  Arrays in JSON can also bе nеstеd,  mеaning that an array can contain othеr arrays or objеcts as valuеs. </p>
+
+<h3>
+  
+  
+  JSONB in PostgrеSQL
+</h3>
+
+<p>JSONB (JSON Binary) is a data typе in PostgrеSQL that allows you to storе and manipulatе JSON data in a morе еffеctivе and еfficiеnt way than thе rеgular JSON data typе.  JSONB storеs JSON data in a binary format, which еnablеs fastеr indеxing and quеry pеrformancе comparеd to thе rеgular JSON data typе. </p>
+
+<h3>
+  
+  
+  Working with JSON arrays in PostgrеSQL
+</h3>
+
+<p>Working with JSON arrays in PostgrеSQL involvеs various opеrations,  such as insеrting,  quеrying,  and manipulating JSON data. </p>
+
+<h4>
+  
+  
+  Insеrting JSON arrays into tablеs
+</h4>
+
+<p>To insеrt JSON arrays into a tablе in PostgrеSQL,  you can usе thе <code>INSERT INTO</code> statеmеnt along with thе <code>VALUES</code> clausе to spеcify thе JSON array as a string. <br>
+First create the table:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">orders</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">serial</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">info</span> <span class="n">json</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now to insert the JSON:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">orders</span> <span class="p">(</span><span class="n">info</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">(</span>
+    <span class="s1">'{
+        "customer": "John Doe",
+        "items": [
+            {"product": "Apple", "quantity": 1},
+            {"product": "Orange", "quantity": 2}
+        ]
+    }'</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Extracting Values from a JSON Object
+</h4>
+
+<p>You can use the <code>-&gt;</code> operator to extract values from a JSON object. For example, if you have a table <code>orders</code> with a JSON column <code>info</code>, you can extract the 'customer' field like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;</span> <span class="s1">'customer'</span> <span class="k">AS</span> <span class="n">customer</span> <span class="k">FROM</span> <span class="n">orders</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Filtering JSON Data Using a WHERE Clause
+</h4>
+
+<p>You can use the <code>-&gt;</code> and <code>-&gt;&gt;</code> operators in a WHERE clause to filter rows based on the values in a JSON object. For example, to find out who bought 'keyboard', you can use the following query:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;&gt;</span> <span class="s1">'customer'</span> <span class="k">AS</span> <span class="n">customer</span> <span class="k">FROM</span> <span class="n">orders</span> <span class="k">WHERE</span> <span class="n">info</span> <span class="o">-&gt;</span> <span class="s1">'items'</span> <span class="o">-&gt;&gt;</span> <span class="s1">'product'</span> <span class="o">=</span> <span class="s1">'keyboard'</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Getting Data from an Array in a JSON Object
+</h4>
+
+<p>You can use the <code>-&gt;</code> operator to get data from an array in a JSON object. For example, to get all products sold, you can use the following query:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;</span> <span class="s1">'items'</span> <span class="o">-&gt;&gt;</span> <span class="s1">'product'</span> <span class="k">as</span> <span class="n">product</span> <span class="k">FROM</span> <span class="n">orders</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">product</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Retrieving Nested Values from a JSON Object
+</h4>
+
+<p>You can chain the <code>-&gt;</code> operator to retrieve nested values from a JSON object. For example, to get all customers in form of text, you can use the following query:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;&gt;</span> <span class="s1">'customer'</span> <span class="k">AS</span> <span class="n">customer</span> <span class="k">FROM</span> <span class="n">orders</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Checking if a JSON Object Contains a Value
+</h4>
+
+<p>You can use the <code>@&gt;</code> operator to check if a JSON object contains a value. For example, to check if an order contains a specific item, you can use the following query:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">@&gt;</span> <span class="s1">'{"items": [{"product": "Diaper"}]}'</span> <span class="k">FROM</span> <span class="n">orders</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The flexibility and power of PostgreSQL's JSON support make it an excellent choice for applications that need to work with complex data structures.</p>
+
+<h3>
+  
+  
+  Conclusion
+</h3>
+
+<p>PostgrеSQL's support for JSON makеs it an еxcеllеnt choicе for applications that nееd to storе and manipulatе complеx data structurеs.  Whеthеr you'rе working with simplе kеy-valuе pairs or complеx nеstеd arrays,  PostgrеSQL's advancеd fеaturеs makе it еasy to work with JSON data. </p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Displaying cacheable content with a partial component in Angular](https://dev.to/ayyash/displaying-cacheable-content-with-a-partial-component-in-angular-286h) 
+ <details><summary>Article</summary> <p>After creating a <a href="https://garage.sekrab.com/posts/localstorage-wrapper-service-in-angular">localstroage wrapper</a>, and a <a href="https://garage.sekrab.com/posts/a-cache-decorator-in-angular">data cache decorator</a>, let's put them together to create a data service that handles all cacheable data. Also, let's create a a component that displays the cacheable content based on a specific target.</p>
+
+<p>Here is a quick summary of what we previously accomplished</p>
+
+<h4>
+  
+  
+  LocalStorage wrapper service in Angular
+</h4>
+
+<p>We created a <code>window.localStorage</code> wrapper in Angular to control the data modeling of what gets saved in <code>localStorage</code>, the data model we came to was the following<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="kr">interface</span> <span class="nx">IStorage</span> <span class="p">{</span>
+  <span class="nl">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+  <span class="nl">expiresin</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">timestamp</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then we created a data service specifically to save recurring data with specific data model, and cache it instead of querying the server every time.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="kr">interface</span> <span class="nx">IData</span> <span class="p">{</span>
+  <span class="nl">value</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So we ended up with a line like this</p>
+
+<p><code>this.countries$ = this.dataService.GetCountries();</code></p>
+
+<p>That created entries like this</p>
+
+<p><code>garage.en.countries.0</code></p>
+
+<h4>
+  
+  
+  A cache decorator in Angular
+</h4>
+
+<p>Then we created a decorator to save any <code>http</code> call with any data model in the <code>localStorage</code>. So we had lines like this<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="p">@</span><span class="nd">DataCache</span><span class="p">()</span>
+<span class="nx">GetCountries</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(...);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Today, we will use the decorator for the data service, and go beyond that to create a partial component that understands it should display the value, of a specific data key.</p>
+
+<h3>
+  
+  
+  An example of Foods
+</h3>
+
+<p>Say the cacheable content is food group, the groups are known: "vegetables, milk, fruits, grain". The value to be displayed (could be multilingual comes from a unique point in an API, let's assume it is like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32424234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fruits"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fruits"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>Let's not bring in all languages, only one language really matters for the user. So the API should handle this properly by reading <code>Accept-Language</code> header.</p>
+
+<p>Then let's assume an API call (e.g. <code>/api/foods</code>) returns a list of items, one of properties is <code>group</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"344234"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Breakfast"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fruits"</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>I want to be able to display the <code>value</code> by fetching the correct <code>key</code> like this<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">*ngFor=</span><span class="s">"let food in foods"</span><span class="nt">&gt;</span>
+        {{ food.name }} <span class="nt">&lt;span&gt;</span>{{ getValue(food.group) }} 
+      <span class="nt">&lt;span&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The target, is to figure out what this <code>getValue</code> really is, let's begin with the service itself.</p>
+
+<h3>
+  
+  
+  The service
+</h3>
+
+<p>I will continue where we left off in our previous data caching hunt in <a href="https://stackblitz.com/edit/angular-cachable-content?file=src%2Fapp%2Fservices%2Fdata.service.ts">StackBlitz</a>. We will create a new API call for food groups. To get groups, we need to implement this function</p>
+
+<p><code>this.groups$ = this.dataService.GetGroups();</code></p>
+
+<p>So in our data service, we will create a new <code>GetGroups</code> method, and we will also adapt the service to use the decorator instead. (Notice how we use the argument <code>withArgs</code> to pass an <code>id</code> to the entry key.)<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// new data service (services/data.service)</span>
+<span class="c1">// now that we are using data decorator, we can create a new function for every data group</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">DataService</span> <span class="p">{</span>
+<span class="kd">constructor</span><span class="p">(</span>
+  <span class="k">private</span> <span class="nx">_http</span><span class="p">:</span> <span class="nx">HttpService</span><span class="p">,</span>
+  <span class="c1">// make this public to use with decorator</span>
+  <span class="k">public</span> <span class="nx">storageService</span><span class="p">:</span> <span class="nx">StorageService</span>
+<span class="p">)</span> <span class="p">{}</span>
+
+  <span class="p">@</span><span class="nd">DataCache</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Countries</span><span class="dl">'</span><span class="p">,</span> <span class="na">expiresin</span><span class="p">:</span> <span class="mi">8000</span> <span class="p">})</span>
+  <span class="nx">GetCountries</span><span class="p">():</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_countriesUrl</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
+      <span class="nx">map</span><span class="p">((</span><span class="na">response</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">DataClass</span><span class="p">.</span><span class="nx">NewInstances</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="nx">response</span><span class="p">);</span>
+      <span class="p">})</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// if we need an id, we just pass withArgs</span>
+  <span class="p">@</span><span class="nd">DataCache</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Cities</span><span class="dl">'</span><span class="p">,</span> <span class="na">withArgs</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
+  <span class="nx">GetCities</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_citiesUrl</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">'</span><span class="s1">:id</span><span class="dl">'</span><span class="p">,</span> <span class="nx">id</span><span class="p">)).</span><span class="nx">pipe</span><span class="p">(</span>
+      <span class="nx">map</span><span class="p">((</span><span class="na">response</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">DataClass</span><span class="p">.</span><span class="nx">NewInstances</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="nx">response</span><span class="p">);</span>
+      <span class="p">})</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// our new groups here</span>
+  <span class="p">@</span><span class="nd">DataCache</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Groups</span><span class="dl">'</span> <span class="p">})</span>
+  <span class="nx">GetGroups</span><span class="p">():</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_groupsUrl</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
+      <span class="nx">map</span><span class="p">((</span><span class="na">response</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">DataClass</span><span class="p">.</span><span class="nx">NewInstances</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="nx">response</span><span class="p">);</span>
+      <span class="p">})</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So far we recreated what we already have in data service. The use of which did not change a bit in our component. Now we are going to focus on groups.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// This still acts the same way, gets countries and caches them</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">groups$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataService</span><span class="p">.</span><span class="nx">GetGroups</span><span class="p">();</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Get single food by key
+</h3>
+
+<p>My goal is to end up with a partial in which I pass the <code>key</code>, and the <code>type</code> (identifier), to get the <code>value</code> from the cache. <strong>If cache is not initiated yet, it should initiate it and save it.</strong></p>
+
+<p><code>&lt;cr-data type="Groups" key="milk"&gt;&lt;/cr-data&gt;</code></p>
+
+<p>We expect the API to return the <code>key</code> of the group, instead of the whole package of <code>key</code>, <code>id</code>, and <code>value</code>.</p>
+
+<h3>
+  
+  
+  Type versus Enum
+</h3>
+
+<p>We previously used <code>Enums</code> and it was fine, except that in our case if we are to use an <code>Enum</code>, we must get reference to it in our template code, like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// in data model</span>
+<span class="k">export</span> <span class="kr">enum</span> <span class="nx">EnumDataType</span> <span class="p">{</span>
+  <span class="nx">Groups</span><span class="p">,</span>
+     <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// in component template code</span>
+<span class="nx">enumDataType</span> <span class="o">=</span> <span class="nx">EnumDataType</span><span class="p">;</span>
+
+<span class="c1">// then in template</span>
+<span class="s2">`
+&lt;cr-data [type]="enumDataType.Groups" ...&gt;
+`</span>
+</code></pre>
+
+</div>
+
+
+
+<p>What I found out is that <code>Types</code> in <code>typescript</code> are easier to work with. They validate, and they don't need to be brought in to component.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// in data model</span>
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">TypeDataType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Country</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Category</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Rate</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">City</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Groups</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// then in template</span>
+<span class="s2">`
+&lt;cr-data type='Groups' ...&gt;
+`</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This is much cleaner. Why <code>Groups</code> and not <code>Group</code>? Coming right up.</p>
+
+<h3>
+  
+  
+  Data partial component
+</h3>
+
+<p>Let's create the code for the <strong>partial component</strong>, we need two <strong>inputs</strong> at least (we can combine them into an object but it doesn't really itch that much). We also need to inject the <code>dataService</code>. The template is simply an <code>async</code> <code>observable</code> that displays the <code>value</code> when the data is available.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// data.partial</span>
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cr-data</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">template</span><span class="p">:</span> <span class="s2">`{{ (data$ | async)?.value }}`</span><span class="p">,</span>
+    <span class="c1">//...</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">DataPartialComponent</span> <span class="p">{</span>
+    <span class="c1">// an observable</span>
+    <span class="nx">data$</span><span class="p">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span> <span class="o">|</span> <span class="kc">undefined</span><span class="o">&gt;</span><span class="p">;</span>
+
+        <span class="c1">// we need key, and type</span>
+    <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="kd">type</span><span class="p">:</span> <span class="nx">TypeDataType</span><span class="p">;</span>
+
+        <span class="c1">// inject the service</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">_dataService</span><span class="p">:</span> <span class="nx">DataService</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now whenever the <code>key</code> is set, we need to get data by <code>key</code> and <code>type</code>. We can do that <code>AfterViewInit</code> or <code>OnInit</code>, but a <code>setter</code> is more ready for change detection.</p>
+
+<blockquote>
+<p>Note, a setter alone won't guarantee that the property will change, to implement proper change detection mechanism, other strategies are needed, like changing the value <code>changeDetection</code> to <code>Default</code> instead of <code>OnPush</code>, or injecting <code>ChangeDetectorRef</code> and explicitly calling <code>detectChanges</code>(). But this is another Tuesday.<br>
+</p>
+</blockquote>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="kd">set</span> <span class="nx">key</span><span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">data$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_dataService</span><span class="p">.</span><span class="nx">GetSingleDataByKey</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="kd">type</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Right. Let's implement the <code>GetSingleDataBykey</code>.</p>
+
+<h3>
+  
+  
+  GetSingleDataByKey
+</h3>
+
+<p>So back to our data service, let's create a generic get item by key. We have the <code>type</code>, and we are going to use it to <strong>construct a method name</strong> and call it. In <code>JavaScript</code>, calling a method in a class is as simple as this:</p>
+
+<p><code>className[sometVar]();</code></p>
+
+<p>Let's also check if the function exists before we call it. Because we are using types, we can add extra checks to align the type <code>Country</code> with <code>GetCountries</code>, but today, I am happy with using <code>Countries</code> as the type all the way. So that is why I chose <code>Groups</code> instead of <code>Group</code>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="nx">GetSingleDataByKey</span><span class="p">(</span><span class="kd">type</span><span class="p">:</span> <span class="nx">TypeDataType</span><span class="p">,</span> <span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span> <span class="o">|</span> <span class="kc">undefined</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="c1">// WATCH: observable of null</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// use the type to find GetSomething() then call it.</span>
+  <span class="kd">const</span> <span class="nx">getFunction</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="dl">'</span><span class="s1">Get</span><span class="dl">'</span><span class="o">+</span><span class="kd">type</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">getFunction</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">getFunction</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
+    <span class="c1">// find element with the same key</span>
+    <span class="nx">map</span><span class="p">((</span><span class="na">data</span><span class="p">:</span> <span class="nx">IData</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="nx">key</span><span class="p">)));</span>
+<span class="p">}</span>
+
+<span class="c1">// changed types to be aligned with method names in services/data.model</span>
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">TypeDataType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Countries</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Categories</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Rates</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Cities</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Groups</span><span class="dl">'</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Putting this to test:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>Groups names:
+<span class="nt">&lt;cr-data</span> <span class="na">type=</span><span class="s">"Groups"</span> <span class="na">key=</span><span class="s">"fruits"</span><span class="nt">&gt;&lt;/cr-data&gt;</span>.
+<span class="nt">&lt;cr-data</span> <span class="na">type=</span><span class="s">"Groups"</span> <span class="na">key=</span><span class="s">"milk"</span><span class="nt">&gt;&lt;/cr-data&gt;</span>.
+<span class="nt">&lt;cr-data</span> <span class="na">type=</span><span class="s">"Groups"</span> <span class="na">key=</span><span class="s">"vegetables"</span><span class="nt">&gt;&lt;/cr-data&gt;</span>.
+
+// Displays:
+Groups names: Fruits. Milk. Vegetables.
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>PS. keep cleaning the <code>localStorage</code> before testing, this one always drives me crazy.</p>
+</blockquote>
+
+<h3>
+  
+  
+  Ranting: pipes
+</h3>
+
+<p>To have a pipe we must mimic the function of an <code>async</code> pipe and build on it. Since we need to subscribe, I'd rather save the data locally in the pipe until next time. Here is the thing, in <a href="https://angular.io/guide/pipes#caching-http-requests">Angular documentation</a> you can read those two lines:</p>
+
+<ul>
+<li>  Each binding gets its own pipe instance.</li>
+<li>  Each pipe instance caches its own URL and data and calls the server only once.</li>
+</ul>
+
+<p><strong>This sounds better than it really means.</strong> It does in no way mean the data is cached in client throughout the application session, nor does it mean that multiple pipes on the same page get to use the cached version, and no, it also does not mean that the same props will trigger a reuse of the cached data. It just means that <strong>on the same route, for the same pipe usage</strong>, when change detection take place,<strong> if the properties did not change, the cached data will be returned</strong>.</p>
+
+<p>PS: pure pipes by definition do that out of the box, but this is an <code>impure</code> pipe that must be told to do so.</p>
+
+<p>Verdict: Pipes are smelly. Partial components are good for the job.</p>
+
+<h3>
+  
+  
+  Decorator enhancement
+</h3>
+
+<p>Going back to our decorator, there is a slight enhancement we can introduce. When there is a list of items that will use the cached data concurrently, the API call will be made multiple times.</p>
+
+<p>How to prevent concurrent calls when the data in storage is not set yet? Well, we can be sophisticated, and we can be really simple. The simple solution is to add a <strong>lock</strong>, and <code>timeout</code> the call if the lock is true. The second call, is between 50% to 100% cached. 50% if you have a slow API, 100% if you have an adequate <code>timeout</code>. We don't want to complicate things, so it should do.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// services/data.decorator</span>
+<span class="c1">// enhancement to prevent concurrent calls</span>
+
+<span class="c1">// add a basket of locks</span>
+<span class="kd">const</span> <span class="nx">locks</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="nx">boolean</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">DataCache</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="nx">IStorageService</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">options</span><span class="p">?:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">ICached</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">:</span> <span class="nx">T</span><span class="p">,</span> <span class="nx">propertyKey</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">descriptor</span><span class="p">:</span> <span class="nx">PropertyDescriptor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">originalMethod</span> <span class="o">=</span> <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">cacheKey</span> <span class="o">=</span> <span class="nx">options</span><span class="p">?.</span><span class="nx">key</span> <span class="o">||</span> <span class="s2">`</span><span class="p">${</span><span class="nx">target</span><span class="p">.</span><span class="kd">constructor</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">.</span><span class="p">${</span><span class="nx">propertyKey</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+
+    <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(...</span><span class="nx">args</span><span class="p">:</span> <span class="kr">any</span><span class="p">[]):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span> <span class="p">{</span>
+
+      <span class="kd">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">options</span><span class="p">?.</span><span class="nx">withArgs</span> <span class="p">?</span> <span class="s2">`</span><span class="p">${</span><span class="nx">cacheKey</span><span class="p">}</span><span class="s2">_</span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">args</span><span class="p">)}</span><span class="s2">`</span> <span class="p">:</span> <span class="nx">cacheKey</span><span class="p">;</span>
+
+      <span class="c1">// wrap it in a fireOff function</span>
+      <span class="kd">const</span> <span class="nx">fireOff</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="na">_data</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">storageService</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">_data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="nx">_data</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Cached </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">cacheKey</span><span class="p">));</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="c1">// lock first by adding a new entry</span>
+          <span class="nx">locks</span><span class="p">[</span><span class="nx">cacheKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+          <span class="k">return</span> <span class="nx">originalMethod</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">args</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
+            <span class="nx">tap</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="k">this</span><span class="p">.</span><span class="nx">storageService</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">options</span><span class="p">?.</span><span class="nx">expiresin</span><span class="p">);</span>
+            <span class="p">}),</span>
+            <span class="nx">finalize</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="c1">// unlock by removing</span>
+              <span class="k">delete</span> <span class="nx">locks</span><span class="p">[</span><span class="nx">cacheKey</span><span class="p">];</span>
+            <span class="p">})</span>
+          <span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">};</span>
+
+      <span class="c1">// check if locked, wait some miliseconds and fireOff anyway (no second check)</span>
+      <span class="c1">// the timeout can be configurable and depends on project needs</span>
+      <span class="k">return</span> <span class="nx">locks</span><span class="p">[</span><span class="nx">cacheKey</span><span class="p">]</span> <span class="p">?</span> <span class="nx">timer</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">switchMap</span><span class="p">(</span><span class="nx">fireOff</span><span class="p">))</span> <span class="p">:</span> <span class="nx">fireOff</span><span class="p">();</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">descriptor</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We can keep the <code>timeout</code> value in a <strong>configuration</strong> file, or better yet pass it as an option. I find this to be quite project-specific, and an abstraction I do not wish to add to the basic seed. So we'll leave it at that.</p>
+
+<p>Now watching the network tab in a page that has a list of items that call the data service, the first call is an <strong>API call</strong>, all the rest are*<em> local fetching</em><em>. (Cannot showcase that in StackBlitz because there is no real <code>http</code> call, but a simple console log in the mock data file, will show that the groups are fetched once). This might produce a nasty effect of </em><em>slower label display</em>*, it feels like a nasty cloud provider with baggage and things to do 😎. No seriously, the effect is acceptable and does not hinder experience. To get rid of it however, we just need to check the cache first and return in case anything exists.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// services/data.decorator</span>
+
+<span class="c1">// ...</span>
+  <span class="c1">// check data first</span>
+  <span class="kd">const</span> <span class="nx">_data</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">storageService</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// if localStroage exist, return</span>
+    <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="nx">_data</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// then fireoff</span>
+  <span class="kd">const</span> <span class="nx">fireOff</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>That's it, that's enough. Thanks for reading this far though.</p>
+
+<h3>
+  
+  
+  RESOURCES
+</h3>
+
+<ul>
+<li>  <a href="https://angular.io/guide/pipes#caching-http-requests">Angular documentation</a>
+</li>
+<li>  <a href="https://stackblitz.com/edit/angular-cachable-content">StackBlitz project</a>
+</li>
+</ul>
+
+<h3>
+  
+  
+  RELATED POSTS
+</h3>
+
+<ul>
+<li><p><a href="https://garage.sekrab.com/posts/localstorage-wrapper-service-in-angular">LocalStorage wrapper service in Angular</a></p></li>
+<li><p><a href="https://garage.sekrab.com/posts/a-cache-decorator-in-angular">A cache decorator in Angular</a></p></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
  #### - [Angular Signals: what's all the fuss about?](https://dev.to/sparkfabrik/angular-signals-whats-all-the-fuss-about-3hm5) 
  <details><summary>Article</summary> <h2>
   
@@ -593,930 +1379,111 @@ Let's make <del>love</del> code, not war.</p>
  </details> 
  <hr /> 
 
- #### - [Creating a CSS-only Card Slider with Tailwind CSS](https://dev.to/cruip_com/creating-a-css-only-card-slider-with-tailwind-css-44do) 
- <details><summary>Article</summary> <h4>
-  
-  
-  <strong><a href="https://cruip-tutorials.vercel.app/card-slider/">Live Demo</a> / <a href="https://github.com/cruip/cruip-tutorials/blob/main/card-slider/index.html">Download</a></strong>
-</h4>
-
-<p>A <strong>card slider</strong> is a clever component that displays multiple layers of information. What makes this element unique is the ability to showcase an extensive amount of content in a limited space, and make the information accessible in a single click.</p>
-
-<p>This approach, like many others, doesn’t work well with extensive content, but not all, so it’s up to you to decide when to implement it and how.</p>
-
-<p>In this tutorial, we’ll show you how to create a <strong>CSS-only</strong> common variant of this component using <strong>Tailwind CSS</strong>, and we will guide you on how to efficiently and intuitively use it for your projects.</p>
-
-<p>Just a heads-up before we dive in. We’re drawing inspiration from this awesome <a href="https://codepen.io/JuniVersal/pen/zNyMRd">Codepen</a> created by Julia Geisendorf for our tutorial. Now, since we’re sticking to a pure CSS approach, I gotta be upfront: the widget we’re crafting might not hit the perfect accessibility mark.</p>
-
-<p>Ready? Let’s get started!</p>
+ #### - [Mastering Version Control: Best Practices with Git for Development Teams](https://dev.to/sajeeb_me/mastering-version-control-best-practices-with-git-for-development-teams-1meo) 
+ <details><summary>Article</summary> <p>Version control is the backbone of effective software development, and Git stands at the forefront as the go-to tool for managing source code. In this article, we will explore best practices for mastering Git in your development team, focusing on clarity, comprehensibility, and efficiency.</p>
 
 <h2>
   
   
-  Figuring out the component structure
+  Why Version Control Matters
 </h2>
 
-<p>Alrighty, before we dive into coding, it’s important to outline the structure of the component we’re about to build and decide on the native HTML elements we’ll be using.</p>
+<p>Before diving into Git best practices, it's important to understand why version control is so crucial for development teams. Version control systems (VCS) like Git offer several benefits:</p>
 
-<p>Since we’re aiming to create a clickable stack of cards without relying on JavaScript, we’ll employ a set of <strong>radio buttons</strong> to manage the active card’s state. Additionally, we’ll attach a <code>label</code> to each card, serving as the trigger to activate the respective card. Once this groundwork is laid, we’ll apply transition effects to make the animations visually engaging.</p>
+<ol>
+<li><p><strong>Collaboration</strong>: Multiple developers can work on the same codebase simultaneously without conflicts. Changes can be merged systematically.</p></li>
+<li><p><strong>History and Accountability</strong>: Every change made to the codebase is tracked, providing a historical record of who made each change and when. This helps trace and resolve issues.</p></li>
+<li><p><strong>Backup and Recovery</strong>: Your codebase is stored in a centralized repository, providing a backup of your work. You can recover previous states of the code easily.</p></li>
+<li><p><strong>Branching</strong>: Developers can create branches to work on features or bug fixes independently. This isolates changes until they are ready to be merged.</p></li>
+</ol>
 
-<p>Let’s be honest here – managing all these elements solely with CSS is going to be a bit tricky, and there might be necessary adjustments or enhancements, especially when integrating additional cards into the slider. As mentioned earlier, it’s crucial to view this component as more of an experimental project rather than a solution ready for production websites.</p>
-
-<p>So, let’s proceed to establish the structure of our component:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"px-12"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"max-w-lg mx-auto relative"</span><span class="nt">&gt;</span>
-
-          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-01"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/01"</span> <span class="na">checked</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-02"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/02"</span><span class="nt">&gt;</span>
-          <span class="c">&lt;!-- ... more radio buttons  --&gt;</span>
-
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"absolute inset-0 scale-[67.5%] z-20"</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-              <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"absolute inset-0 scale-[67.5%] z-20"</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-02"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-              <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-
-          <span class="c">&lt;!-- ... more cards --&gt;</span>
-
-      <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/section&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Alright, let’s break it down. We have a set of <code>&lt;input type="radio"&gt;</code> elements. These are hidden from view using the Tailwind CSS class <code>sr-only</code>. These inputs play a crucial role as triggers to activate our corresponding cards.</p>
-
-<p>Alongside these inputs, we have a series of <code>div</code> containers housing our cards. These containers are absolutely positioned and layered on top of each other. Additionally, we’ve attached a <code>label</code> to each card. These labels serve as the mechanism for activating the respective cards, and they cover the entire card area by utilizing the <code>absolute inset-0</code> classes.</p>
-
-<p>It’s worth noting that we’ve already set up classes like <code>peer/01</code>, <code>peer/02</code>, and so forth. These <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state">pseudo-classes</a> are key players in styling the card associated with the active input. This is achieved by leveraging the <code>peer-checked</code> modifier on the corresponding <code>div</code>.</p>
+<p>Now, let's explore some best practices for using Git effectively in development teams.</p>
 
 <h2>
   
   
-  Defining the style for the active card
+  Best Practices for Git Usage
 </h2>
 
-<p>Let’s start by assuming that the initial card is the active one – no coincidence here, the first radio button holds the <code>checked</code> attribute. With this foundation, let’s explore how we can employ the <code>peer-checked</code> modifier to define the style for this active card:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-      absolute inset-0 scale-[67.5%] z-20
-      peer-checked/01:relative
-      peer-checked/01:z-50
-      peer-checked/01:translate-x-0
-      peer-checked/01:scale-100
-      peer-checked/01:[&amp;&gt;label]:pointer-events-none            
-  "</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In a nutshell, we’re giving instructions to the card that when its corresponding radio button gets checked, it needs to be relatively positioned, get a higher z-index compared to the rest, maintain zero translation, and maintain a scale of 1. Also, we’re specifying that the label for the active card should not be clickable; otherwise, users won’t be able to interact with the elements within the card.</p>
-
-<p>These classes will be duplicated for each card, with the only change being the reference number for the <code>peer-checked</code> modifier. For instance, for the second card, we’ll have something like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-      absolute inset-0 scale-[67.5%] z-20
-      peer-checked/02:relative
-      peer-checked/02:z-50
-      peer-checked/02:translate-x-0
-      peer-checked/02:scale-100
-      peer-checked/02:[&amp;&gt;label]:pointer-events-none            
-  "</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-02"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
+<h3>
   
   
-  Styling the sibling cards to the active one
-</h2>
+  1. <strong>Clear and Concise Commit Messages</strong>
+</h3>
 
-<p>Now comes the tricky part. We need to define the style for the cards adjacent to the active one. To achieve this, we’ll be adding a set of custom classes to each card. It might not be the most elegant solution, but it’s the only option we’ve got to bring this component to life with pure CSS.</p>
-
-<p>Before we dive in, let’s summarize how the style of the sibling cards should shape up:</p>
+<p>Your Git history is essentially a story of your code's evolution. To ensure this story is comprehensible, write clear and concise commit messages:</p>
 
 <ul>
-<li>  <strong>Card -3</strong>: Should maintain the translation value of <strong>Card -2</strong> (<code>-translate-x-40</code>), and fade out (<code>opacity-0</code>).</li>
-<li>  <strong>Card -2</strong>: Should translate left (<code>-translate-x-40</code>), have a lower <code>z-index</code> compared to the active card (<code>z-30</code>). Scaling isn’t necessary here, as it’ll inherit the minimal scaling set by <code>scale-[67.5%]</code>.</li>
-<li>  <strong>Card -1</strong>: Should translate left (<code>-translate-x-20</code>), scale down (<code>scale-[83.75%]</code>), and have a lower <code>z-index</code> compared to the active card (<code>z-40</code>).</li>
-<li>  <strong>Card attiva</strong>
-</li>
-<li>  <strong>Card -1</strong>: Should translate right (<code>translate-x-20</code>), scale down (<code>scale-[83.75%]</code>), and have a lower <code>z-index</code> compared to the active card (<code>z-40</code>).</li>
-<li>  <strong>Card +2</strong>: Should translate right (<code>translate-x-40</code>), have a lower <code>z-index</code> compared to the active card (<code>z-30</code>). Scaling isn’t necessary here, as it’ll inherit the minimal scaling set by <code>scale-[67.5%]</code>.</li>
-<li>  <strong>Card +3</strong>: Should maintain the translation value of <strong>Card +2</strong> (<code>translate-x-40</code>), and fade out (<code>opacity-0</code>).</li>
+<li><p>Use descriptive commit messages that accurately portray the changes made.</p></li>
+<li><p>Employ the imperative mood in your commit messages (e.g., "Add feature" instead of "Added feature").</p></li>
+<li><p>Keep commits small and focused on a single change. This improves code review and makes it easier to pinpoint issues if they arise.</p></li>
 </ul>
 
-<p>Following this blueprint, we’ll define custom classes for each card. So, let’s complete the <strong>first card</strong>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-      absolute inset-0 scale-[67.5%] z-20
-      peer-checked/01:relative
-      peer-checked/01:z-50
-      peer-checked/01:translate-x-0
-      peer-checked/01:scale-100
-      peer-checked/01:[&amp;&gt;label]:pointer-events-none
-      peer-checked/02:-translate-x-20
-      peer-checked/02:scale-[83.75%]
-      peer-checked/02:z-40
-      peer-checked/03:-translate-x-40
-      peer-checked/03:z-30
-      peer-checked/04:-translate-x-40
-      peer-checked/04:opacity-0
-      peer-checked/05:-translate-x-40
-  "</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>So, when the active card is the second one (<code>peer-checked/02:</code>), we need to apply the conditions previously outlined for the <strong>Card -1</strong>.</p>
-
-<p>When the active card is the third one (<code>peer-checked/03:</code>), we’ll apply the conditions previously specified for the <strong>Card -2</strong>.</p>
-
-<p>And so on.</p>
-
-<p>Now, let’s wrap up styling for the <strong>second card</strong>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-      absolute inset-0 scale-[67.5%] z-20
-      peer-checked/01:translate-x-20
-      peer-checked/01:scale-[83.75%]
-      peer-checked/01:z-40
-      peer-checked/02:relative
-      peer-checked/02:z-50
-      peer-checked/02:translate-x-0
-      peer-checked/02:scale-100
-      peer-checked/02:[&amp;&gt;label]:pointer-events-none
-      peer-checked/03:-translate-x-20
-      peer-checked/03:scale-[83.75%]
-      peer-checked/03:z-40
-      peer-checked/04:-translate-x-40
-      peer-checked/04:z-30
-      peer-checked/05:-translate-x-40 
-      peer-checked/05:opacity-0
-  "</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>So, this logic needs to be extended to all the other cards too. It’s not overly complex, but it does demand a careful eye.</p>
-
-<h2>
+<h3>
   
   
-  Managing focus with keyboard navigation
-</h2>
+  2. <strong>Commit Early and Often</strong>
+</h3>
 
-<p>As we mentioned earlier, this component we’re building isn’t perfectly accessible. However, we can definitely enhance its accessibility by highlighting the active card when the corresponding radio button is focused.</p>
+<p>Committing frequently is a fundamental practice in Git. It allows you to monitor code changes over time and simplifies the process of reverting changes when necessary. Consider these points:</p>
 
-<p>To achieve this, all we need to do is add the classes <code>peer-focus-visible/01:[&amp;_article]:ring</code> and <code>peer-focus-visible/01:[&amp;_article]:ring-indigo-300</code> to each card. These classes will apply a focus ring to the active card and remove it when the card is no longer active. As you may guess, we’ll need to replicate these classes for each card, changing the reference number of the <code>peer-focus-visible</code> modifier.</p>
-
-<p>Therefore, when the active card receives focus, you’ll be able to navigate between the cards using the keyboard’s right and left arrow keys, or the up and down arrow keys.</p>
-
-<p><strong>Ceveats</strong> – Since we never hide the inactive cards using the <code>display: none</code> property, this creates an issue during tab navigation. For example, if you’ve focused on card 3 and press the tab key, the focus will move to the first interactive element of card 1, instead of navigating within the content of card 3. This is an undesired behavior that, unfortunately, cannot be resolved with CSS alone.</p>
-
-<h2>
-  
-  
-  Putting the complete code together
-</h2>
-
-<p>Now that we’ve explained how the component works and how it’s structured, let’s put together the complete code:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"px-12"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"max-w-lg mx-auto relative"</span><span class="nt">&gt;</span>
-
-          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-01"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/01"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-02"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/02"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-03"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/03"</span> <span class="na">checked</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-04"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/04"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-05"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/05"</span><span class="nt">&gt;</span>
-
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-              peer-focus-visible/01:[&amp;_article]:ring
-              peer-focus-visible/01:[&amp;_article]:ring-indigo-300
-              peer-checked/01:relative
-              peer-checked/01:z-50
-              peer-checked/01:translate-x-0
-              peer-checked/01:scale-100
-              peer-checked/01:[&amp;&gt;label]:pointer-events-none
-              peer-checked/02:-translate-x-20
-              peer-checked/02:scale-[83.75%]
-              peer-checked/02:z-40
-              peer-checked/03:-translate-x-40
-              peer-checked/03:z-30
-              peer-checked/04:-translate-x-40                    
-              peer-checked/04:opacity-0
-              peer-checked/05:-translate-x-40
-          "</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
-                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
-                  <span class="nt">&lt;/header&gt;</span>
-                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
-                      <span class="nt">&lt;/p&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                      <span class="nt">&lt;/p&gt;</span>
-                  <span class="nt">&lt;/div&gt;</span>
-                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
-                  <span class="nt">&lt;/footer&gt;</span>
-              <span class="nt">&lt;/article&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-              peer-focus-visible/02:[&amp;_article]:ring
-              peer-focus-visible/02:[&amp;_article]:ring-indigo-300                        
-              peer-checked/01:translate-x-20
-              peer-checked/01:scale-[83.75%]
-              peer-checked/01:z-40
-              peer-checked/02:relative
-              peer-checked/02:z-50
-              peer-checked/02:translate-x-0
-              peer-checked/02:scale-100
-              peer-checked/02:[&amp;&gt;label]:pointer-events-none
-              peer-checked/03:-translate-x-20
-              peer-checked/03:scale-[83.75%]
-              peer-checked/03:z-40
-              peer-checked/04:-translate-x-40
-              peer-checked/04:z-30
-              peer-checked/05:-translate-x-40 
-              peer-checked/05:opacity-0
-          "</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-02"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
-                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
-                  <span class="nt">&lt;/header&gt;</span>
-                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
-                      <span class="nt">&lt;/p&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                      <span class="nt">&lt;/p&gt;</span>
-                  <span class="nt">&lt;/div&gt;</span>
-                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
-                  <span class="nt">&lt;/footer&gt;</span>
-              <span class="nt">&lt;/article&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-              peer-focus-visible/03:[&amp;_article]:ring
-              peer-focus-visible/03:[&amp;_article]:ring-indigo-300                          
-              peer-checked/01:translate-x-40
-              peer-checked/01:z-30
-              peer-checked/02:translate-x-20
-              peer-checked/02:scale-[83.75%]
-              peer-checked/02:z-40
-              peer-checked/03:relative
-              peer-checked/03:z-50
-              peer-checked/03:translate-x-0
-              peer-checked/03:scale-100
-              peer-checked/03:[&amp;&gt;label]:pointer-events-none
-              peer-checked/04:-translate-x-20
-              peer-checked/04:scale-[83.75%]
-              peer-checked/04:z-40
-              peer-checked/05:-translate-x-40
-              peer-checked/05:z-30                  
-          "</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-03"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
-                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
-                  <span class="nt">&lt;/header&gt;</span>
-                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
-                      <span class="nt">&lt;/p&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                      <span class="nt">&lt;/p&gt;</span>
-                  <span class="nt">&lt;/div&gt;</span>
-                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
-                  <span class="nt">&lt;/footer&gt;</span>
-              <span class="nt">&lt;/article&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-              peer-focus-visible/04:[&amp;_article]:ring
-              peer-focus-visible/04:[&amp;_article]:ring-indigo-300                          
-
-              peer-checked/01:translate-x-40 
-              peer-checked/01:opacity-0
-
-              peer-checked/02:translate-x-40
-              peer-checked/02:z-30
-
-              peer-checked/03:translate-x-20
-              peer-checked/03:scale-[83.75%]
-              peer-checked/03:z-40
-
-              peer-checked/04:relative
-              peer-checked/04:z-50
-              peer-checked/04:translate-x-0
-              peer-checked/04:scale-100
-              peer-checked/04:[&amp;&gt;label]:pointer-events-none
-
-              peer-checked/05:-translate-x-20
-              peer-checked/05:scale-[83.75%]
-              peer-checked/05:z-40
-          "</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-04"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
-                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
-                  <span class="nt">&lt;/header&gt;</span>
-                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
-                      <span class="nt">&lt;/p&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                      <span class="nt">&lt;/p&gt;</span>
-                  <span class="nt">&lt;/div&gt;</span>
-                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
-                  <span class="nt">&lt;/footer&gt;</span>
-              <span class="nt">&lt;/article&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>  
-
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
-              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-              peer-focus-visible/05:[&amp;_article]:ring
-              peer-focus-visible/05:[&amp;_article]:ring-indigo-300                          
-              peer-checked/01:translate-x-40 
-              peer-checked/02:translate-x-40 
-              peer-checked/02:opacity-0
-              peer-checked/03:translate-x-40
-              peer-checked/03:z-30
-              peer-checked/04:translate-x-20
-              peer-checked/04:scale-[83.75%]
-              peer-checked/04:z-40
-              peer-checked/05:relative
-              peer-checked/05:z-50
-              peer-checked/05:translate-x-0
-              peer-checked/05:scale-100
-              peer-checked/05:[&amp;&gt;label]:pointer-events-none
-          "</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-05"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
-              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
-                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
-                  <span class="nt">&lt;/header&gt;</span>
-                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
-                      <span class="nt">&lt;/p&gt;</span>
-                      <span class="nt">&lt;p&gt;</span>
-                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                      <span class="nt">&lt;/p&gt;</span>
-                  <span class="nt">&lt;/div&gt;</span>
-                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
-                  <span class="nt">&lt;/footer&gt;</span>
-              <span class="nt">&lt;/article&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>                  
-      <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/section&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Conclusions
-</h2>
-
-<p>Now that you have learned how to build a card slider like the one in the tutorial, you can use your creativity to create multiple variants of this component for your user interfaces.</p>
-
-<p>Are you hungry for more guides, tips, and tricks like this one? Check out our section of <a href="https://cruip.com/tutorials/?swcfpc=1">Tailwind CSS tutorials</a></p>
-
- </details> 
- <hr /> 
-
- #### - [GitHub: Composite Actions vs Reusable Workflows [Updated 2023]](https://dev.to/n3wt0n/github-composite-actions-vs-reusable-workflows-updated-2023-bl8) 
- <details><summary>Article</summary> <p>Understanding the differences between Composite Actions and Reusable Workflows in GitHub Actions can be more complex than you think… especially after the latest changes GitHub made.</p>
-
-<p>But hey, I’m here for you. Let’s find out together what those 2 features have in common, what the differences are, and when you should use one instead of the other.</p>
+<ul>
+<li><p>Commit as soon as you complete a task or resolve a bug. This provides a granular history of your work.</p></li>
+<li><p>Attach descriptive commit messages to each commit to facilitate understanding.</p></li>
+</ul>
 
 <h3>
   
   
-  Into
+  3. <strong>Avoid Committing Half-Done Work</strong>
 </h3>
 
-<p>I’ve already written an <a href="https://dev.to/n3wt0n/composite-actions-vs-reusable-workflows-what-is-the-difference-github-actions-11kd">article</a> and made a <a href="https://youtu.be/4lH_7b5lmjo">video</a> on this subject before, however that was almost 1 and a half years ago and, as many pointed out in the comments , GitHub has substantially changed the featureset since… so it’s time for an updated comparison.</p>
+<p>Only commit code that is complete and tested. Committing incomplete work can lead to confusion and hinder collaboration. Here's how to avoid this pitfall:</p>
 
-<p>Btw if you want to have a deep dive into either Composite Actions or Reusable Workflows, be sure to check the in-depth videos I made about them (<a href="https://youtu.be/4lH_7b5lmjo">here</a> and <a href="https://youtu.be/lRypYtmbKMs">here</a>).</p>
+<ul>
+<li><p>Utilize branches to isolate incomplete changes, keeping the main branch clean.</p></li>
+<li><p>Employ feature flags to hide unfinished features from end-users.</p></li>
+<li><p>Enforce code reviews to ensure that code is complete and adequately tested before merging.</p></li>
+</ul>
 
 <h3>
   
   
-  Video
+  4. <strong>Test Before Committing</strong>
 </h3>
 
-<p>As usual, if you are a <strong>visual learner</strong>, or simply prefer to watch and listen instead of reading, here you have <strong>the video with the whole explanation</strong>.</p>
+<p>Testing your code before committing is vital for maintaining a stable and functional codebase:</p>
 
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/zc19mR3O4a4">
-</iframe>
-</p>
-
-<p><a href="https://youtu.be/zc19mR3O4a4">Link to the video: https://youtu.be/zc19mR3O4a4</a></p>
-
-<p>If you rather prefer reading, well... let's just continue :)</p>
+<ul>
+<li><p>Write automated tests for your code to ensure its correctness and reliability.</p></li>
+<li><p>Execute these tests before committing your changes to prevent introducing regressions.</p></li>
+<li><p>Implement continuous integration (CI) to automate test execution with every commit, ensuring code quality.</p></li>
+</ul>
 
 <h3>
   
   
-  About Composite Actins and Reusable Workflows
+  5. <strong>Documentation Matters</strong>
 </h3>
 
-<p>In general, <strong>Reusable Workflows</strong> are a way to avoid duplication as you can reuse the same workflow in multiple other workflows, and perhaps create a library of proven and effective workflows that can be centrally maintained.</p>
+<p>Clear and concise documentation enhances the overall understanding of your project. Incorporate these practices into your workflow:</p>
 
-<p><strong>Composite Actions</strong>, instead, allows you to combine multiple steps within one action. For example, you can use this feature to bundle together multiple run commands into an action, and then have a workflow that executes the bundled commands as a single step using that action.</p>
-
-<p>And this brings me to the first difference between the 2: Visibility and Logging.</p>
-
-<h3>
-  
-  
-  1. Visibility and Logging
-</h3>
-
-<p>I think this point is <strong>pretty important</strong> but often overlooked. </p>
-
-<p>With Reusable Workflows you have a <strong>very rich log</strong> of what is happening, and every single job and step is logged independently in real time as you can see below:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--i_k_A4Tq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxl2e30bs806z7myo098.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i_k_A4Tq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxl2e30bs806z7myo098.png" alt="Reusable Workflows Logs" width="800" height="500"></a></p>
-
-<p>This specific workflow has 2 jobs in it, and each job is logged together with its steps. All clear and organized.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4fvlqmml--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kgtnwp0ligtx0auwj1qo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4fvlqmml--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kgtnwp0ligtx0auwj1qo.png" alt="Composite Actions Logs" width="800" height="500"></a></p>
-
-<p>This is not the case, however, with Composite Actions. As we have just seen, Composite Actions are a way to <em>group</em> multiple steps in one… this also means that when executing that step you don’t have visibility on all of the parts.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3ypaadj1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kl7hrc3amerl4orjrd5x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3ypaadj1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kl7hrc3amerl4orjrd5x.png" alt="Multiple Jobs" width="800" height="500"></a></p>
-
-<p>All you have is a <strong>single log</strong> of a single step... even if it contains multiple steps.</p>
-
-<h3>
-  
-  
-  2. Jobs
-</h3>
-
-<p>Another difference, which is the <strong>biggest difference</strong> in my opinion, is about Jobs.</p>
-
-<p>As we have said before, Composite Actions allow you to only have a flat list of steps. Therefore, you <strong>cannot have multiple jobs</strong> in a single Composite Action. </p>
-
-<p>In fact, a Composite Action doesn’t even specify a <code>job</code> keyword, but uses <code>runs</code> instead, and can only be consumed from within a job in the caller repository.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--J_WcdKHJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jslsko9fkfy33way3daw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J_WcdKHJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jslsko9fkfy33way3daw.png" alt="No Jobs in Composite Actions" width="800" height="500"></a></p>
-
-<p>Because of this, you can see a Composite Action basically like any other action you have on the marketplace.</p>
-
-<p>The story is different, however, for Reusable Workflows.</p>
-
-<p>They do <strong>define jobs</strong> inside them, and because of that you can have as many jobs as you want in a single Reusable Workflow.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bNK1mgi1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r8jrmt9jj5dxbkltayt8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bNK1mgi1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r8jrmt9jj5dxbkltayt8.png" alt="Jobs in Reusable Workflows" width="800" height="500"></a></p>
-
-<p>And since they do use jobs, and you have to specify where the job will run, we can take this a little further: if your job needs to run on a specific runner or machine, you need to use Reusable Workflows.</p>
-
-<h3>
-  
-  
-  3. Calling them
-</h3>
-
-<p>Next, and actually last, difference between Composite Actions and Reusable Workflows is <strong>how you call them</strong>, and this tightly relates to what we have seen previously.</p>
-
-<p>Reusable workflows are called <strong>directly within a job definition</strong>, and not from within a job step. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tP3V0baF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/05civa9bq8gjxxrkvnev.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tP3V0baF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/05civa9bq8gjxxrkvnev.png" alt="Calling a Reusable Workflow" width="800" height="478"></a></p>
-
-<p>You cannot, therefore, use <code>GITHUB_ENV</code> to pass values to job steps in the caller workflow. And, more importantly, you cannot add additional steps to the job which calls the reusable workflow.</p>
-
-<p>Composite Actions, instead, can exclusively be called and used as a step in a job, which also means there could be (and that is usually the case) other steps in the job before and or after the Composite Action.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--K1BDKvjq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8fvmk8ct8ow9b7vrbybh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--K1BDKvjq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8fvmk8ct8ow9b7vrbybh.png" alt="Calling a Composite Action" width="800" height="433"></a></p>
-
-<p>Make sure to keep this difference in mind when designing your Actions Workflows.</p>
-
-<h3>
-  
-  
-  Conclusions
-</h3>
-
-<p>There used to be many more differences between Composite Actions and Reusable Workflow, but as of recording this video, the only ones still standing are the 3 differences we have just seen.</p>
-
-<p>So, to recap, Reusable Workflows make it simpler to spin up new repositories and projects and immediately start using automation and CI/CD workflows with GitHub Actions that you know will work, and to reduce code duplication. </p>
-
-<p>Composite Actions, on the other hand, allow you to pack multiple tasks and operations in a single step, to be reused inside a job.</p>
-
-<p>Let me know in the comments below if you noticed any other point in which those 2 features differ, and if you prefer using Composite Actions, or Reusable Workflows… or both 😉</p>
-
-<p>Also, check out <a href="https://youtu.be/lTAkB7P1qV0">this video</a>, in which I talk about the new GitHub Actions Larger Runners and how to use them.</p>
-
-<p><strong>Like, share and follow me</strong> 🚀 for more content:</p>
-
-<p>🆘 <a href="https://geni.us/cdconsult">Get Help With DevOps</a><br>
-📽 <a href="https://www.youtube.com/CoderDave">YouTube</a><br>
-☕ <a href="https://buymeacoffee.com/CoderDave">Buy me a coffee</a><br>
-📧 <a href="https://coderdave.io/newsletter">Newsletter</a><br>
-🌐 <a href="https://coderdave.io">CoderDave.io Website</a><br>
-👕 <a href="https://geni.us/cdmerch">Merch</a><br>
-👦🏻 <a href="https://www.facebook.com/CoderDaveYT">Facebook page</a><br>
-🐱‍💻 <a href="https://github.com/n3wt0n">GitHub</a><br>
-👲🏻 <a href="https://www.twitter.com/davide.benvegnu">Twitter</a><br>
-👴🏻 <a href="https://www.linkedin.com/in/davidebenvegnu/">LinkedIn</a><br>
-🔉 <a href="https://geni.us/cdpodcast">Podcast</a><br>
-💖 <a href="https://patreon.com/CoderDave">Patreon</a></p>
-
-<p><a href="https://www.buymeacoffee.com/CoderDave"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wYWufrCi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="545" height="153"></a></p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/zc19mR3O4a4">
-</iframe>
-</p>
-
- </details> 
- <hr /> 
-
- #### - [Frontend vs. Backend](https://dev.to/hasanelsherbiny/frontend-vs-backend-5edk) 
- <details><summary>Article</summary> <p>if you are new to the world of the web development ,you will have to know some important terms, two of these terms are frontend and backend.<br>
-so what are these two terms?<br>
-most of web applications are based on the model called Client Server model.</p>
+<ul>
+<li><p>Write comprehensive README files explaining the project's purpose, installation, and usage.</p></li>
+<li><p>Document your Git workflow and best practices to maintain consistency within your team.</p></li>
+</ul>
 
 <h2>
   
   
-  Client Server Model
+  Conclusion
 </h2>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WH2z1NS8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gem5g1pnztud16eq9080.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WH2z1NS8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gem5g1pnztud16eq9080.png" alt="client server model" width="800" height="480"></a></p>
-
-<p>in this model your website (the application you have created) is hosted on a Computer (called server) this application is waiting for incoming requests to start to handle it, in this scenario the waiting application is called Backend (consider it as the backstage).</p>
-
-<p>and the caller is called frontend which initiate the request or ask for a specific resource (exists on the server).</p>
-
-<h2>
-  
-  
-  sounds good but why?
-</h2>
-
-<p>why don't we place everything on the frontend and this is gonna be faster and high latency.<br>
-the problem here is:</p>
-
-<ol>
-<li><p>difference between resources at the each caller client<br>
-What if the caller client  wants to execute a process requires high processing power and high memory requirements?<br>
-in this case our theory will fall.</p></li>
-<li><p>if we placed everything at the frontend if user's device is lost or broken the stored data is lost too.</p></li>
-<li><p>different client's platforms <br>
-our application can be used be different consumers with different platforms and it can cause a change of expected behavior of our code.</p></li>
-</ol>
-
-<p>ok let's do everything on the backend.<br>
-in this case will have much headache on the server requiring us to increase resources allocated to the server.</p>
-
-<p>for these problems the client server model is handy and the optimal solution is to use mixture between the backend and frontend.</p>
-
-<p>the backend should has the pardon of executing processes requiring high resources as mentioned before and also must be responsible for accessing the database and carrying out transactions based on each user's roles.</p>
-
-<p>the frontend should expose easy to use and pretty UI to the user and any interaction between the user and the UI should be executed at frontend to reduce ovehead of the server.</p>
-
-<h2>
-  
-  
-  What technologies you need for the backend?
-</h2>
-
-<p>a lot of Programming languages and frameworks are there for developing backend, most common are:</p>
-
-<ol>
-<li>PHP</li>
-<li>Asp.net (C#-Vb.net)</li>
-<li>Ruby on rails (ruby)</li>
-<li>Node.Js (javascript)</li>
-<li>Spring (java)
-## What technologies you need for the frontend?
-Mainly you need HTML , CSS and JavaScript for frontend development
-but there are also a lot of frameworks facilitating the usage of CSS and JavaScript. </li>
-</ol>
-
- </details> 
- <hr /> 
-
- #### - [Merge CSV files in Ruby efficiently](https://dev.to/gabrielchuan/merge-csv-files-in-ruby-efficiently-41b) 
- <details><summary>Article</summary> <p><iframe class="tweet-embed" id="tweet-1701424107206922378-732" src="https://platform.twitter.com/embed/Tweet.html?id=1701424107206922378">
-</iframe>
-
-  // Detect dark theme
-  var iframe = document.getElementById('tweet-1701424107206922378-732');
-  if (document.body.className.includes('dark-theme')) {
-    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1701424107206922378&amp;theme=dark"
-  }
-
-
-
-</p>
-
-<p>Ever had issues merging CSV files in Ruby? </p>
-
-<h2>
-  
-  
-  ⚰️ Typical problems
-</h2>
-
-<p>• you load into memory (problem if csvs are large)<br>
-• parse line-by-line (slow)</p>
-<h2>
-  
-  
-  💡 Solution
-</h2>
-
-<p>Use sqlite instead! Theoretically, it can handle large csvs, and is very fast.</p>
-
-
-<h2>
-  
-  
-  How does it work?
-</h2>
-<h3>
-  
-  
-  Preparing the columns
-</h3>
-
-<p>We will have to first extract each csv columns, and transform it into a string that SQLite can accept. Spaces, etc are removed.</p>
-
-<p><strong>Not acceptable:</strong> <code>Column 1</code><br>
-<strong>Acceptable:</strong> <code>Column_1</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="c1"># Sanitizes the column name so we can create a sqlite column with it</span>
-<span class="k">def</span> <span class="nf">sanitize_name</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">name</span><span class="p">.</span><span class="nf">strip</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[^\w\ufeff]/</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">).</span><span class="nf">downcase</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Load the csv into SQLite
-</h3>
-
-<p>We then use the transformed column names, which are compatible with SQLite to then create the tables with the corresponding columns.</p>
-
-<p>Once that's done, we insert each row into the corresponding SQLite table.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="ss">headers: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
-    <span class="n">original_headers</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">headers</span>
-    <span class="n">sanitized_headers</span> <span class="o">=</span> <span class="n">original_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="p">}</span>
-
-    <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
-      CREATE TABLE </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="sh"> (
-        </span><span class="si">#{</span><span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="s2">"</span><span class="si">#{</span><span class="n">header</span><span class="si">}</span><span class="s2"> TEXT"</span> <span class="si">}</span><span class="sh">.join(', ')}
-      );
-</span><span class="no">    SQL</span>
-
-    <span class="n">csv</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
-      <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> VALUES (</span><span class="si">#{</span><span class="p">([</span><span class="s1">'?'</span><span class="p">]</span> <span class="o">*</span> <span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">size</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span> <span class="n">row</span><span class="p">.</span><span class="nf">fields</span>
-    <span class="k">end</span>
-
-    <span class="n">original_headers</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">sanitized_headers</span><span class="p">).</span><span class="nf">to_h</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Merging columns
-</h3>
-
-<p>To merge 2 separate columns, ensure that both CSVs have the same column names. Open it in a text editor and manually edit it.</p>
-
-<p>The following code then uses a SQLite query to join both CSVs together on that selected column to merge on.</p>
-
-<p>For this to work, we assume that columns on both files have the exact same value. If they don't, you will have to edit the code to transform them.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">merge_csv_files</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">key_column</span><span class="p">)</span>
-  <span class="n">db</span> <span class="o">=</span> <span class="no">SQLite3</span><span class="o">::</span><span class="no">Database</span><span class="p">.</span><span class="nf">new</span> <span class="s1">'temp.sqlite'</span>
-
-  <span class="n">header_mapping1</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="s1">'table1'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-  <span class="n">header_mapping2</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file2</span><span class="p">,</span> <span class="s1">'table2'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-
-  <span class="n">sanitized_key_column</span> <span class="o">=</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">key_column</span><span class="p">)</span>
-
-  <span class="n">merged</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute2</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
-    SELECT * FROM table1
-    INNER JOIN table2
-    ON table1.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh"> = table2.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh">;
-</span><span class="no">  SQL</span>
-
-  <span class="n">original_headers</span> <span class="o">=</span> <span class="n">merged</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">sanitized_header</span><span class="o">|</span>
-    <span class="n">header_mapping1</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">header_mapping2</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">sanitized_header</span>
-  <span class="k">end</span>
-
-  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
-    <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">original_headers</span>
-    <span class="n">merged</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span> <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">row</span> <span class="p">}</span>
-  <span class="k">end</span>
-
-  <span class="c1"># db.execute "DROP TABLE table1"</span>
-  <span class="c1"># db.execute "DROP TABLE table2"</span>
-<span class="k">end</span>
-
-<span class="n">merge_csv_files</span><span class="p">(</span><span class="s1">'external.csv'</span><span class="p">,</span> <span class="s1">'notion.csv'</span><span class="p">,</span> <span class="s1">'output.csv'</span><span class="p">,</span> <span class="s1">'Name'</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  What can be improved?
-</h2>
-
-<h3>
-  
-  
-  Transforming mapped columns before comparing them
-</h3>
-
-<p>It would be great to add support for easily mapping columns with a specified transformer method. An example of how this could work:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="n">merge_csv_files</span><span class="p">(</span><span class="s1">'external.csv'</span><span class="p">,</span> <span class="s1">'notion.csv'</span><span class="p">,</span> <span class="s1">'output.csv'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Name'</span><span class="p">],</span> <span class="p">{</span><span class="s1">'Name'</span> <span class="o">=&gt;</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:normalize_domain</span><span class="p">)})</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Full code
-</h2>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'csv'</span>
-<span class="nb">require</span> <span class="s1">'sqlite3'</span>
-<span class="nb">require</span> <span class="s1">'pry'</span> <span class="c1"># add binding.pry in code to see inspect how it works</span>
-
-<span class="c1"># Sanitizes the column name so we can create a sqlite column with it</span>
-<span class="k">def</span> <span class="nf">sanitize_name</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">name</span><span class="p">.</span><span class="nf">strip</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[^\w\ufeff]/</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">).</span><span class="nf">downcase</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="ss">headers: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
-    <span class="n">original_headers</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">headers</span>
-    <span class="n">sanitized_headers</span> <span class="o">=</span> <span class="n">original_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="p">}</span>
-
-    <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
-      CREATE TABLE </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="sh"> (
-        </span><span class="si">#{</span><span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">header</span><span class="o">|</span> <span class="s2">"</span><span class="si">#{</span><span class="n">header</span><span class="si">}</span><span class="s2"> TEXT"</span> <span class="si">}</span><span class="sh">.join(', ')}
-      );
-</span><span class="no">    SQL</span>
-
-    <span class="n">csv</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
-      <span class="n">db</span><span class="p">.</span><span class="nf">execute</span> <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> VALUES (</span><span class="si">#{</span><span class="p">([</span><span class="s1">'?'</span><span class="p">]</span> <span class="o">*</span> <span class="n">sanitized_headers</span><span class="p">.</span><span class="nf">size</span><span class="p">).</span><span class="nf">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span> <span class="n">row</span><span class="p">.</span><span class="nf">fields</span>
-    <span class="k">end</span>
-
-    <span class="n">original_headers</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">sanitized_headers</span><span class="p">).</span><span class="nf">to_h</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">merge_csv_files</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">key_column</span><span class="p">)</span>
-  <span class="n">db</span> <span class="o">=</span> <span class="no">SQLite3</span><span class="o">::</span><span class="no">Database</span><span class="p">.</span><span class="nf">new</span> <span class="s1">'temp.sqlite'</span>
-
-  <span class="n">header_mapping1</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file1</span><span class="p">,</span> <span class="s1">'table1'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-  <span class="n">header_mapping2</span> <span class="o">=</span> <span class="n">load_csv_to_sqlite</span><span class="p">(</span><span class="n">file2</span><span class="p">,</span> <span class="s1">'table2'</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
-
-  <span class="n">sanitized_key_column</span> <span class="o">=</span> <span class="n">sanitize_name</span><span class="p">(</span><span class="n">key_column</span><span class="p">)</span>
-
-  <span class="n">merged</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">execute2</span> <span class="o">&lt;&lt;-</span><span class="no">SQL</span><span class="sh">
-    SELECT * FROM table1
-    INNER JOIN table2
-    ON table1.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh"> = table2.</span><span class="si">#{</span><span class="n">sanitized_key_column</span><span class="si">}</span><span class="sh">;
-</span><span class="no">  SQL</span>
-
-  <span class="n">original_headers</span> <span class="o">=</span> <span class="n">merged</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">sanitized_header</span><span class="o">|</span>
-    <span class="n">header_mapping1</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">header_mapping2</span><span class="p">[</span><span class="n">sanitized_header</span><span class="p">]</span> <span class="o">||</span> <span class="n">sanitized_header</span>
-  <span class="k">end</span>
-
-  <span class="no">CSV</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
-    <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">original_headers</span>
-    <span class="n">merged</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span> <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">row</span> <span class="p">}</span>
-  <span class="k">end</span>
-
-  <span class="c1"># db.execute "DROP TABLE table1"</span>
-  <span class="c1"># db.execute "DROP TABLE table2"</span>
-<span class="k">end</span>
-
-<span class="n">merge_csv_files</span><span class="p">(</span><span class="s1">'external.csv'</span><span class="p">,</span> <span class="s1">'notion.csv'</span><span class="p">,</span> <span class="s1">'output.csv'</span><span class="p">,</span> <span class="s1">'Name'</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Liked it?
-</h2>
-
-<p>Please support me by following more of my content on Dev and <a href="https://twitter.com/GabrielChuan">Twitter</a>!</p>
-
-<p>Let me know in the comments how this could be improved, and whether you'd like me to explore more about using SQLite to parse and manipulate CSVs in Ruby. I think there is a lot of potential on what could be achieved with this approach.</p>
-
-<p>Originally <a href="https://x.com/GabrielChuan/status/1701424107206922378?s=20">tweeted on X here</a>.</p>
+<p>Git is an indispensable tool for development teams worldwide. By adhering to these best practices, your team can harness Git's power to maintain a clear and comprehensible Git history. Committing early and often, testing before committing, writing meaningful commit messages, and avoiding half-done work are just a few of the best practices that will help you get the most out of Git.</p>
+
+<blockquote>
+<p>Mastering Git is a journey that pays off in terms of code quality, collaboration, and the ability to effectively manage your codebase over time. So, commit to these best practices, and your team will reap the benefits of a well-structured version control system.</p>
+</blockquote>
 
  </details> 
  <hr /> 
