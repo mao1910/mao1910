@@ -118,282 +118,381 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Programming Languages as Super Heroes Comics!!](https://dev.to/idurar/programming-languages-as-super-heroes-comics-1e9h) 
- <details><summary>Article</summary> <p>Hello Everyone, Today we Might Bring something a little Different for you! </p>
+ #### - [you may need this - bash script](https://dev.to/scorcism/you-may-need-this-bash-script-p0e) 
+ <details><summary>Article</summary> <p>I created a bash script for handling</p>
 
-<p>We on the team had a very creative idea and thought about giving some programming languages to AI and ask them how would they be if they were Superheros in a comic book, Can you imagine reading a super history about Python &amp; Java helping the city? Haha!</p>
+<p><code>git add.</code>, <code>git commit -m ""</code> and <code>git push</code></p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--direlYkQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ks2uv0y4ot4khm81krun.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--direlYkQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ks2uv0y4ot4khm81krun.gif" alt="Image description" width="480" height="268"></a></p>
+<p>Don't ask why,<br>
+Yes, I will tell<br>
+For a developer, these 3 commands are the most important to work on on a daily basis.</p>
 
+<p>But it's a little bit time-consuming—not much, but 2 seconds, I can say.</p>
 
-
-
+<p>So I created this script.<br>
+Follow me.</p>
 <h3>
   
   
-  The Python Power
+  Create a file
 </h3>
 
-<p>I honestly didn't see python as strong, I thought it would look more lie Reed Richards on the comics, but no, We got ourself Captain America!</p>
-
-<p>So For those Python users, you're as Strong as Captain America!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nLPOVLz2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1s9cjo4txq0suqartwpd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nLPOVLz2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1s9cjo4txq0suqartwpd.png" alt="Image description" width="512" height="640"></a></p>
-
-
-
-
-<h3>
-  
-  
-  Flash? Or JavaScript
-</h3>
-
-<p>Okay, I really like his look like reverse flash, that's why JavaScript is trying to run and beat C++ haha!</p>
-
-<p>Maybe you guys are that fast, uh!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--D_DpdZdA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3vl16u59s94ddjfxr5l7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--D_DpdZdA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3vl16u59s94ddjfxr5l7.png" alt="Image description" width="512" height="640"></a></p>
-
-
-
-
-<h3>
-  
-  
-  Java!
-</h3>
-
-<p>This is my favourite so far because java is always there trying to sneaky on us but remember that if you write your code in java it will be read anywhere </p>
-
-<p>Write once, run anywhere</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--hyVlgSuh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/acjihvqjqk2tz4fqpf6j.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--hyVlgSuh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/acjihvqjqk2tz4fqpf6j.png" alt="Image description" width="512" height="640"></a></p>
-
-
-
-
-<h3>
-  
-  
-  The super Power of R
-</h3>
-
-<p>Okay, this is giving vibes more like Journalist, so who it is? it can't be anyone in the office that you work at or anyone in the streets but he's always on the look out.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--q6DTfmv9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uyf124h9pqgoyatu9nmh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--q6DTfmv9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uyf124h9pqgoyatu9nmh.png" alt="Image description" width="800" height="800"></a></p>
-
-
-
-
-<h3>
-  
-  
-  C++ and his powers
-</h3>
-
-<p>Okay, this is very strange but he kinda looks like Super man and batman at the same time?</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fRq6QQLw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fzra4ocwxyo9vm7fgs3w.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fRq6QQLw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fzra4ocwxyo9vm7fgs3w.png" alt="Image description" width="800" height="800"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ⭐️IDURAR⭐️
-</h3>
-
-<p>IDURAR is Open Source ERP / CRM (Invoice / Inventory / Accounting / HR).</p>
-
-<ul>
-<li>Ant design framework</li>
-<li>Build with Mern stack Node.js / Express.js / MongoDb / React.js</li>
-<li>Redux state manager✨</li>
-<li>ERP/CRM</li>
-<li>Inventory &amp; Accounting </li>
-</ul>
-
-<p><a href="https://github.com/idurar/idurar-erp-crm"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--an9llBxu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5q8hkcx90gfqlgz3qban.png" alt="Open Source ERP / CRM " width="800" height="414"></a></p>
-
-<p>Github Repository: <a href="https://github.com/idurar/idurar-erp-crm">https://github.com/idurar/idurar-erp-crm</a></p>
-
-
-
-
-<h3>
-  
-  
-  Thank You everyone
-</h3>
-
-<p>Don't forget to Leave a Star on our project!!</p>
-
-<p>I hope you liked to see our Super Heroes and if you have any other idea for programming languages, why don't you share with us in the comments, so we can do more heroes!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lA9rwv2x--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g7zaovu65m3nsj0uh1yx.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lA9rwv2x--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g7zaovu65m3nsj0uh1yx.gif" alt="Image description" width="480" height="200"></a></p>
-
-<p>Best regards,<br>
-The <a href="https://github.com/idurar/idurar-erp-crm">idurar-erp-crm</a> Team</p>
-
- </details> 
- <hr /> 
-
- #### - [NEXT.Js Link routing on steroids](https://dev.to/chocoscoding/nextjs-link-routing-on-steroids-1i06) 
- <details><summary>Article</summary> <p>When building things with Next.JS 13, I previously had two main problems when using Next.JS  component:</p>
-
-<ul>
-<li>I sometimes had to compromise on the server components' awesomeness when dealing with more complex routing scenarios. 
-e.g Using a route that requires a params
-</li>
-</ul>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useParams</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/navigation</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/link</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">Normal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">useParams</span><span class="p">();</span>
+<pre class="highlight shell"><code>vim gitpush.sh
+</code></pre>
 
-  <span class="c1">//current page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Membership/Request</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Membership/Members */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/groups/</span><span class="p">${</span><span class="nx">params</span><span class="o">!</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">/manage/Membership/Members`</span><span class="si">}</span><span class="p">&gt;</span>Membership<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Community/Members */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/groups/</span><span class="p">${</span><span class="nx">params</span><span class="o">!</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">/manage/Community/Members`</span><span class="si">}</span><span class="p">&gt;</span>Community<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Content */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/groups/</span><span class="p">${</span><span class="nx">params</span><span class="o">!</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">/manage/Content`</span><span class="si">}</span><span class="p">&gt;</span>Content<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/groups/</span><span class="p">${</span><span class="nx">params</span><span class="o">!</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="si">}</span><span class="p">&gt;</span>Content<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
+</div>
 
+<h3>
+  
+  
+  The <strong>Code</strong>
+</h3>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c">#!/bin/bash</span>
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+git push
 </code></pre>
 
 </div>
 
 
+<p>Each line explanation: </p>
 
-<ul>
-<li>Some unnecessarily overly long link strings in my href attributes. 😫
-</li>
-</ul>
+<p><code>#! -&gt; bash shebang</code></p>
 
+<p>git add . -&gt; add all the files to staging</p>
+
+<p>git commit -m "" -&gt; write changes permanently.</p>
+
+<p>git push -&gt; push to the remote origin.</p>
+<h3>
+  
+  
+  Exit <strong>the vim</strong>
+</h3>
 <div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/link</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">Normal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-<span class="c1">//current page: http://localhost:3000/main/portfolio/flyingDay/info/colorScheme</span>
-<span class="k">return</span> <span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/flyingDay/info/colorScheme/secondary */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/main/portfolio/flyingDay/info/colorScheme/secondary`</span><span class="si">}</span><span class="p">&gt;</span>secondary<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/flyingDay/info/typography */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/main/portfolio/flyingDay/info/typography`</span><span class="si">}</span><span class="p">&gt;</span>typography<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/HappyMan */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/main/portfolio/HappyMan`</span><span class="si">}</span><span class="p">&gt;</span>HappyMan<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/flyingDay */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/main/portfolio/flyingDay/info`</span><span class="si">}</span><span class="p">&gt;</span>main info<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
+<pre class="highlight plaintext"><code>a. Enter `Esc`
 
+b. Enter `:`
+
+c: Enter `wq`
+
+![exit vim](https://imgur.com/XA9IOdC.png)
 </code></pre>
 
 </div>
+<p>The entire file should be like this:</p>
 
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LCDqXDx0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/PglpMBb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LCDqXDx0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/PglpMBb.png" alt="entire process" width="644" height="396"></a></p>
 
-
-<p>This becomes a lot more stressful and repetitive when building large web apps and you have to go through these... right???</p>
-
-<p>But guess what? Building large web applications doesn't have to be a constant source of stress and repetition! 😄 NEXT.js has introduced an amazing feature that will make you smile. 😊 Now, creating cleaner and more efficient links is a breeze, without giving up on server components.</p>
-
-<p>You can now create links as if routes are just like navigating through folders. Just like you would import from a files tree: </p>
-
-<p>So basically treat every / or route as a folder.</p>
-
-<p><code>abc</code> --- i want to replace something in this path with abc</p>
-
-<p><code>./abc</code> --- i want to replace something in this path with abc</p>
-
-<p><code>../abc</code> --- i want to replace something in the parent path above the last path with abc</p>
-
-<p><code>../../abc</code> --- i want to replace something 2 paths above the last path with abc</p>
-
-<p><code>../../../abc</code> --- i want to replace something 3 pathsabove the last path with abc</p>
-
-<p>Here's how it looks in action:<br>
+<p>Now we need to give execute permission to the file.<br>
+Follow the command.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/link</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">Normal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">//current page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Membership/Request</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Membership/Members */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`Members`</span><span class="si">}</span><span class="p">&gt;</span>Membership<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`./Members`</span><span class="si">}</span><span class="p">&gt;</span>Membership<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Community/Members */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`../Community/Members`</span><span class="si">}</span><span class="p">&gt;</span>Community<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h/manage/Content */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`../Content`</span><span class="si">}</span><span class="p">&gt;</span>Content<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/groups/2vz8t6svg7y63e56788h7h */</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`../../`</span><span class="si">}</span><span class="p">&gt;</span>Content<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
+<pre class="highlight shell"><code><span class="nb">chmod </span>700 gitpush.sh
 </code></pre>
 
 </div>
 
 
+
+<p>Command breakdown<br>
+chmod: This is used to change the file permissions.<br>
+700: 700 is divided into 3 groups: a) 7, b) 0, and c) 0.</p>
+
+<p><strong>a</strong>) refers to the current user.<br>
+<strong>b</strong>) refers to the group<br>
+<strong>c</strong>) refers to other users in the system.</p>
+
+<p>Group <strong>a</strong> is 7, which means the current user has all the permissions. You can understand this by</p>
+
+<p>[<br>
+  4: for read,<br>
+  2 for write,<br>
+  1 for execute<br>
+  ]</p>
+
+<p>So, 7 = 4 + 2 + 1, so the current user will have all the permissions.</p>
+
+<p>0 means no permissions.</p>
+
+<p>The entire steps will look like:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6CG8-wY2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/CbtNfLo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6CG8-wY2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/CbtNfLo.png" alt="entire step" width="644" height="370"></a></p>
+
+<p>The gameplay:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0seh-4Du--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/9Jj7Hhk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0seh-4Du--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/9Jj7Hhk.png" alt="gameplay" width="800" height="210"></a></p>
+
+<p>As you can see, I have used the absolute path of the file with just the commit message. Liek simple.</p>
+
+<p>But, <br>
+In bash, we can use alias to avoid typing the file path every time.</p>
+
+<p>Follow me:</p>
+<h3>
+  
+  
+  Go to the Home directory
+</h3>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd</span> ~
+</code></pre>
+
+</div>
+
+<h3>
+  
+  
+  Open your shell script; I'm using zsh.
+</h3>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>vim .zshrc
+</code></pre>
+
+</div>
+
+
+<p>If you are using bash, it must be <code>.bashrc</code>. You can check that by<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">echo</span> <span class="nv">$SHELL</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  The core command
+</h3>
 
 
 
 <div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/link</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">Normal</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-<span class="c1">//current page: http://localhost:3000/main/portfolio/flyingDay/info/colorScheme</span>
-<span class="k">return</span> <span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/flyingDay/info/colorScheme/secondary */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`colorScheme/secondary`</span><span class="si">}</span><span class="p">&gt;</span>secondary<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/flyingDay/info/typography */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`typography`</span><span class="si">}</span><span class="p">&gt;</span>typography<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/HappyMan */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`../../HappyMan`</span><span class="si">}</span><span class="p">&gt;</span>HappyMan<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* go to page: http://localhost:3000/main/portfolio/flyingDay */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`../`</span><span class="si">}</span><span class="p">&gt;</span>main info<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
+<pre class="highlight shell"><code><span class="nb">alias</span> <span class="nt">-g</span> <span class="nv">gitpush</span><span class="o">=</span><span class="s1">'/home/scor32k/blogs/scripts/gitpush.sh $1'</span>
 </code></pre>
 
 </div>
 
 
 
-<p><strong>With this method (path based href), We can:</strong></p>
+<p>restart the shell (close the terminal and open again). This will globally set the alias.</p>
 
-<ul>
-<li>Avoid always using useParams hook.</li>
-<li>Be flexible in changing hrefs.</li>
-<li>Avoid too long href links in our code.</li>
-</ul>
+<p>Now the fun<br>
+Follow</p>
 
-<p>You can view the idea discussion on this feature <a href="https://github.com/vercel/next.js/discussions/53533">here</a>, </p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sG2AG2mW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/rkkWiJV.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sG2AG2mW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/rkkWiJV.png" alt="final" width="800" height="256"></a></p>
 
-<p>On a scale of 1 - 10, what do you rate this feature ?<br>
-If you have any questions, contributions or critique on this, I would love to hear them 🤗</p>
+<p>I have only used<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git push <span class="s2">"commit message"</span>
+</code></pre>
+
+</div>
+
+
+
+<p>and all three imp git commands are done.</p>
+
+<p>This was just a fun project. I thought of creating</p>
 
  </details> 
  <hr /> 
 
- #### - [Advanced React.js Concepts: A Deep Dive](https://dev.to/alisamirali/advanced-reactjs-concepts-a-deep-dive-2ni8) 
- <details><summary>Article</summary> <p><strong>Unleashing the power of advanced React.js! Dive into cutting-edge concepts and master the art. Level up your skills now!</strong></p>
+ #### - [Our Team's Favourite Open Source Projects Right Now](https://dev.to/rigdev/our-teams-favourite-open-source-projects-right-now-4jlc) 
+ <details><summary>Article</summary> <p>At Rig.dev, we love open source. It's not just about writing code; it's about sharing solutions, solving problems - all as a community. We asked everyone on our team to show their current favourite open source project. Why? Because we're always on the hunt for cool tools and we thought you might be too.</p>
+
+<p>The answers we got are all over the map, and that's what makes this so interesting. Some of us are into hardcore frameworks, while others are vibing with smaller, simpler projects that solve everyday challenges. Either way, we're stoked about these open source projects that are making our lives easier and we think you might find a few new favourites in this list too.</p>
+
+<h2>
+  
+  
+  A humble favor 🤗:
+</h2>
+
+<p>I'm on a mission to reach 1k stars for Rig.dev. Would you consider supporting by giving it a star on Github? It encourages me and the rest of the team to produce new, high-quality content weekly.</p>
+
+<p>Our Github: <a href="http://go.rig.dev/devto/our-favourite-open-source-projects/github">https://github.com/rigdev/rig</a></p>
+
+<h2>
+  
+  
+  OpenTF - Benjamin
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XBKcZIic--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iel8tqko33ylxosoxyfd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XBKcZIic--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iel8tqko33ylxosoxyfd.png" alt="OpenTF" width="800" height="388"></a></p>
+
+<blockquote>
+<p>“<em>It is important that the main tool used for IaaC truly is OSS.</em>” <br>
+<strong>Benjamin, Senior Software Engineer</strong></p>
+</blockquote>
+
+<p>OpenTF is a fork of Terraform, an open-source infrastructure as code (IaC) tool that allows you to safely and efficiently build, change, and version infrastructure. OpenTF is still under development, but it aims to be a fully open-source, community-driven alternative to Terraform.</p>
+
+<p>The origin of OpenTF is the Terraform OSS community's concern over HashiCorp's decision to switch the Terraform license from the Apache 2.0 license to the Business Source License (BSL). The BSL is a more restrictive license that could make it more difficult for organizations to use Terraform in certain circumstances.</p>
+
+<p>Website: <a href="https://opentf.org">https://opentf.org</a><br>
+Github: <a href="https://github.com/opentffoundation/opentf">https://github.com/opentffoundation/opentf</a></p>
+
+<h2>
+  
+  
+  bpython - Matias
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2NU5Za76--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/52u4lo4gheheshle9cts.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2NU5Za76--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/52u4lo4gheheshle9cts.gif" alt="bpython" width="615" height="670"></a></p>
+
+<blockquote>
+<p>“<em>It is much nicer to use than the built-in python interpreter.</em>”<br>
+<strong>Matias, Software Engineer</strong></p>
+</blockquote>
+
+<p>bpython is a Python interpreter with a fancy curses interface. It adds several features common to IDEs, such as syntax highlighting, expected parameter list, auto-indentation, and autocompletion. It is released under the MIT License.</p>
+
+<p>bpython was created by David Paleino in 2004. The original goal of bpython was to provide a more interactive and user-friendly experience than the standard Python interpreter. bpython has since become a popular choice for Python developers, and is used by a wide range of people, from beginners to experienced professionals.</p>
+
+<p>Website: <a href="https://www.bpython-interpreter.org">https://www.bpython-interpreter.org</a><br>
+Github: <a href="https://github.com/bpython/bpython">https://github.com/bpython/bpython</a></p>
+
+<h2>
+  
+  
+  Llama 2 - Christian
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KZ2YxGAd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pq91e41s6gogit22g7rj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KZ2YxGAd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pq91e41s6gogit22g7rj.png" alt="Llama 2" width="800" height="449"></a></p>
+
+<blockquote>
+<p>“<em>In the spirit of open sourcing modern technologies, and removing the veil of mystery from large language models, i think it is worth mentioning Llama 2 - Meta’s newest large language model that they have open sourced</em>”<br>
+<strong>Christian, Founding Engineer</strong></p>
+</blockquote>
+
+<p>Llama 2 is an open-source, large language model (LLM) developed by Meta AI Research. It is a collection of pretrained and fine-tuned LLMs ranging in scale from 7 billion to 70 billion parameters. The fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases.</p>
+
+<p>Website: <a href="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/">https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/</a><br>
+Github: <a href="https://github.com/facebookresearch/llama">https://github.com/facebookresearch/llama</a></p>
+
+<h2>
+  
+  
+  Vue 3 + Nuxt - Nicky
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--iv_tIhMf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/469wsqxnxd6m60qmo0xa.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--iv_tIhMf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/469wsqxnxd6m60qmo0xa.png" alt="Vue 3 + Nuxt" width="800" height="388"></a></p>
+
+<blockquote>
+<p>“<em>I've worked with multiple JS frameworks, but my go-to is Vue, combined with Nuxt. I love the simplicity of it! It has a gentle learning curve that allows developers to quickly grasp the fundamentals and start building applications. Nuxt.js, on the other hand, provides a solid structure and conventions for building Vue applications, making it easier to organize your codebase. Besides that, the performance is great, and the reactivity system is just world class.</em>”<br>
+<strong>Nicky, Frontend Tech Lead</strong></p>
+</blockquote>
+
+<p>Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable and can be used to build anything from simple single-page applications to complex enterprise applications.</p>
+
+<p>Nuxt.js is a framework that builds on top of Vue.js to make it easier to create server-rendered applications. It provides a number of features, such as built-in routing, state management, and templating, that make it easy to create SEO-friendly and performant applications.</p>
+
+<p><strong>Vue</strong><br>
+Website: <a href="https://vuejs.org">https://vuejs.org</a><br>
+Github: <a href="https://github.com/vuejs/core">https://github.com/vuejs/core</a></p>
+
+<p><strong>Nuxt</strong><br>
+Website: <a href="https://nuxt.com">https://nuxt.com</a><br>
+Github: <a href="https://github.com/nuxt">https://github.com/nuxt</a></p>
+
+<h2>
+  
+  
+  Open Foundry - Jack
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2jmU2DX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/irrke0pzk7g5qge4a65f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2jmU2DX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/irrke0pzk7g5qge4a65f.png" alt="Open Foundry" width="800" height="388"></a></p>
+
+<blockquote>
+<p>“<em>Open-foundry has always been a great resource for unique and interesting fonts that I can experiment with.</em>”<br>
+<strong>Jack, Designer</strong></p>
+</blockquote>
+
+<p>Open Foundry is a website that curates and distributes open-source fonts. It was founded in 2020 by a group of designers and developers who wanted to make it easier for people to find and use high-quality open-source fonts. Open Foundry has a catalog of over 1,000 fonts, all of which are free to download and use.</p>
+
+<p>The fonts are carefully curated by the Open Foundry team to ensure that they are of high quality and meet the needs of a variety of users. In addition to providing a catalog of fonts, Open Foundry also offers a blog, forum, and knowledge base that provide resources for designers, developers, and anyone else who wants to use open-source fonts.</p>
+
+<p>Website: <a href="https://open-foundry.com">https://open-foundry.com</a></p>
+
+<h2>
+  
+  
+  Dub.co - Thor
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uaZfR9Mr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/67oa2m9ttdn093kzyexc.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uaZfR9Mr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/67oa2m9ttdn093kzyexc.gif" alt="Dub.co" width="600" height="440"></a></p>
+
+<blockquote>
+<p>“<em>I like how Steven is working in public and how fast he moves. This has, together with a range of other projects, inspired us to launch earlier than what feels comfortable to maximise the amount of feedback we can get from the community at the current stage.</em>”<br>
+<strong>Thor, Co-founder</strong></p>
+</blockquote>
+
+<p>Dub is an open-source link management tool for modern marketing teams to create, share, and track short links. It was created by Steven Tey in 2022 and is currently used by over 1,000 companies.</p>
+
+<p>Dub solves the problem of long, clunky URLs by shortening them into more memorable and shareable links. It also provides detailed analytics on link clicks, so marketers can track the performance of their campaigns.</p>
+
+<p>In addition to shortening links, Dub also allows users to create custom domains, add UTM parameters, and set expiration dates for links. It also integrates with other popular marketing tools, such as Google Analytics and Salesforce.</p>
+
+<p>Website: <a href="https://dub.co">https://dub.co</a><br>
+Github: <a href="https://github.com/steven-tey/dub">https://github.com/steven-tey/dub</a></p>
+
+<h2>
+  
+  
+  Responively App - Swastika
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7qUrIEEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6sn3ui4m8kawik1u9v6q.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7qUrIEEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6sn3ui4m8kawik1u9v6q.jpg" alt="Responively App" width="800" height="539"></a></p>
+
+<blockquote>
+<p>“<em>I use it while working on frontend projects. It previews all the target screens side-by-side. Pretty convenient while testing/debugging.</em>”<br>
+<strong>Swastika, Developer Advocate</strong></p>
+</blockquote>
+
+<p>Created by a team of web developers who were frustrated with the lack of good tools for responsive web development, Responsively App wanted to create a tool that would make it easy for web developers to test their websites on a variety of devices and screen resolutions. </p>
+
+<p>Responsively App allows developers to preview web pages on a variety of devices, emulate different screen resolutions and aspect ratios, zoom in and out of web pages, take screenshots, and share web pages with others.</p>
+
+<p>Website: <a href="https://responsively.app">https://responsively.app</a><br>
+Github: <a href="https://github.com/responsively-org/responsively-app">https://github.com/responsively-org/responsively-app</a></p>
+
+<h2>
+  
+  
+  Medusa - Niklas
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--H9m7vsBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/90i7drajsv9ktbckfdm3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--H9m7vsBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/90i7drajsv9ktbckfdm3.png" alt="Medusa" width="800" height="518"></a></p>
+
+<blockquote>
+<p>“<em>I’ve previously worked with various platforms such as Shopify, Magento and Woocommerce (Wordpress) and none of them checked all the boxes. Medusa seems like a very promising platform, and I'm excited to see how it develops in the future.</em>” <br>
+<strong>Niklas, Growth Lead</strong></p>
+</blockquote>
+
+<p>MedusaJS is an open-source commerce platform that provides a set of modular building blocks for building rich, reliable, and performant commerce applications. It is designed to be flexible and future-proof, with MIT-licensed modules that give developers full control over their commerce stack.</p>
+
+<p>MedusaJS was created by a team of developers who were frustrated with the limitations of traditional commerce platforms. They wanted to create a platform that would be easy to use, scalable, and adaptable to the needs of businesses of all sizes.</p>
+
+<p>Website: <a href="https://medusajs.com">https://medusajs.com</a><br>
+Github: <a href="https://github.com/medusajs/medusa">https://github.com/medusajs/medusa</a></p>
 
 
 
@@ -401,630 +500,708 @@ If you have any questions, contributions or critique on this, I would love to he
 <h2>
   
   
-  The Basics of React.js
+  Support our own Open-Source project on Github
 </h2>
 
-<p><strong>- Components and JSX</strong></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--t_o4MBpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7tohgkvvgnzksod3wccm.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--t_o4MBpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7tohgkvvgnzksod3wccm.gif" alt="Working hard" width="513" height="432"></a></p>
 
-<p>React applications are built using components. Components are like building blocks that encapsulate the logic and the UI of a part of the application. They can be reusable and allow developers to create complex user interfaces by composing smaller components together.</p>
+<p>We're on a journey to become a favourite project for developers, and while we're still in the building phase, we would love it, if you'd consider starring us on GitHub 🌟: <a href="http://go.rig.dev/devto/our-favourite-open-source-projects/github">https://github.com/rigdev/rig</a></p>
 
-<p>In React, JSX (JavaScript XML) is used to describe the structure of components. It provides a syntax that looks similar to HTML, making it easier for developers to visualize the UI components.</p>
-
-
-
-
-<p><strong>- State and Props</strong></p>
-
-<p>In React, state and props are used to manage data within components.</p>
-
-<p>State: It represents the local state of a component and can be changed over time. When the state updates, React will automatically re-render the component to reflect the changes.</p>
-
-<p>Props: Short for "properties," props are used to pass data from a parent component to a child component. Props are read-only and cannot be changed by the child component.</p>
-
-
-
-
-<p><strong>- Virtual DOM</strong></p>
-
-<p>React uses a virtual DOM to optimize the rendering process. The virtual DOM is a lightweight copy of the actual DOM, and any changes made to the UI are first done on the virtual DOM. React then calculates the difference between the previous and updated virtual DOMs and efficiently updates only the necessary parts of the actual DOM, reducing rendering time.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  Advanced React.js Concepts
-</h2>
-
-<p><strong>- React Hooks</strong></p>
-
-<p>Introduced in React 16.8, React Hooks are functions that allow developers to use state and other React features without writing a class. Hooks, such as useState and useEffect, enable functional components to have stateful logic and side effects.</p>
-
-<p>Hooks make code more concise and readable, and they provide an elegant solution for managing state in functional components.</p>
-
-
-
-
-<p><strong>- Context API</strong></p>
-
-<p>The Context API is a way to share data across the component tree without explicitly passing props at every level. It allows developers to create a global state that can be accessed by any component within the tree.</p>
-
-<p>Using the Context API eliminates the need for "prop drilling," making the data flow more efficient and organized.</p>
-
-
-
-
-<p><strong>- React Router</strong></p>
-
-<p>React Router is a popular library used for handling navigation in React applications. It allows developers to create multiple routes, enabling users to navigate between different pages or views in a single-page application.</p>
-
-<p>With React Router, developers can implement dynamic and client-side routing, providing a seamless user experience.</p>
-
-
-
-
-<p><strong>- Error Boundaries</strong></p>
-
-<p>Error Boundaries are a feature in React that helps catch errors that occur during rendering, in lifecycle methods, and in the constructors of the whole component tree. By using Error Boundaries, developers can prevent the entire application from crashing when an error occurs in a specific component.</p>
-
-<p>Error Boundaries improve the overall stability of the application and provide better error handling.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  React Performance Optimization
-</h2>
-
-<p><strong>- Memoization</strong></p>
-
-<p>Memoization is a technique used to optimize expensive calculations or functions by caching the results. In React, the useMemo hook can be used to memoize the result of a function and recompute it only if the dependencies change.</p>
-
-<p>By memorizing calculations, React can avoid unnecessary recalculations and improve rendering performance.</p>
-
-
-
-
-<p><strong>- Lazy Loading</strong></p>
-
-<p>Lazy loading is a method used to defer the loading of non-essential resources until they are needed. In React, components can be lazy-loaded using React.lazy function and Suspense component.</p>
-
-<p>Lazy loading reduces the initial bundle size, resulting in faster load times for the initial page.</p>
-
-
-
-
-<p><strong>- Code Splitting</strong></p>
-
-<p>Code splitting involves breaking down the application's code into smaller chunks or bundles, which are loaded on demand. This technique reduces the initial loading time of the application.</p>
-
-<p>React applications can benefit from code splitting, especially when dealing with large codebases.</p>
-
-
-
-
-<p><strong>- Debouncing and Throttling</strong></p>
-
-<p>Debouncing and throttling are techniques used to control the rate at which a function is called. Debouncing delays the execution of a function until a specified time has passed since the last time it was invoked. Throttling limits the number of times a function can be called over a certain period.</p>
-
-<p>By using these techniques, developers can improve performance by reducing unnecessary function calls.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  React Testing
-</h2>
-
-<p><strong>- Unit Testing With Jest</strong></p>
-
-<p>Jest is a popular testing framework that is widely used for unit testing React components. It allows developers to write test cases to ensure that individual components behave as expected.</p>
-
-<p>Unit testing helps identify and fix bugs early in the development process.</p>
-
-
-
-
-<p><strong>- Integration Testing With React Testing Library</strong></p>
-
-<p>The React Testing Library provides utilities for testing React components in a more realistic way by simulating user interactions.</p>
-
-<p>Integration testing ensures that different components work together as intended and helps validate the application's overall functionality.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  React Best Practices
-</h2>
-
-<p><strong>- Folder Structure</strong></p>
-
-<p>A well-organized folder structure can make a significant difference in the development process. Grouping related components, styles, and utilities together make it easier to locate and update code.</p>
-
-
-
-
-<p><strong>- DRY Principle (Don't Repeat Yourself)</strong></p>
-
-<p>The DRY principle advocates for avoiding code duplication. In React, developers should strive to reuse components and logic whenever possible.</p>
-
-
-
-
-<p><strong>- Stateless Functional Components</strong></p>
-
-<p>Stateless functional components, also known as functional or presentational components, are a recommended best practice in React. These components do not maintain state and only receive data through props. By using stateless functional components, the code becomes more modular and easier to test.</p>
-
-
-
-
-<p><strong>- Using PropTypes</strong></p>
-
-<p>PropTypes is a library that helps in type-checking the props passed to components. By specifying the expected data types and whether certain props are required, developers can catch bugs and ensure that components receive the correct data.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  Advanced Styling in React
-</h2>
-
-<p><strong>- CSS Modules</strong></p>
-
-<p>CSS Modules allow developers to write modular and scoped CSS in their components. The CSS rules defined within a component only apply to that specific component, preventing unintended styling conflicts.</p>
-
-<p>CSS Modules enhance code maintainability and make it easier to manage styles in larger applications.</p>
-
-
-
-
-<p><strong>- Styled Components</strong></p>
-
-<p>Styled Components is a popular library that enables developers to write CSS directly within their JavaScript code. It uses tagged template literals to create styled-components.</p>
-
-<p>Styled Components offer a more dynamic and flexible approach to styling, making it easy to manage component styles based on props and states.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  React State Management
-</h2>
-
-<p><strong>- Redux</strong></p>
-
-<p>Redux is a predictable state management library that follows the Flux architecture. It centralizes the application's state in a single store and allows components to access and modify the state using reducers and actions.</p>
-
-<p>Redux provides a clear separation of concerns and simplifies data flow in large applications.</p>
-
-
-
-
-<p><strong>- MobX</strong></p>
-
-<p>MobX is another popular state management library that offers a more flexible and reactive approach to managing state. It automatically tracks the dependencies between observables and updates components when the state changes.</p>
-
-<p>MobX is known for its simplicity and ease of integration with React applications.</p>
-
-
-
-
-<p><strong>- Server-Side Rendering (SSR) With React</strong></p>
-
-<p>Server-Side Rendering is a technique used to render a React application on the server before sending it to the client. This improves initial loading times and enhances SEO by providing search engines with fully rendered HTML content.</p>
-
-<p>SSR can be achieved using libraries like Next.js, which simplifies the process of implementing server-side rendering in React applications.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  React Security Best Practices
-</h2>
-
-<p><strong>- XSS Prevention</strong></p>
-
-<p>Cross-Site Scripting (XSS) is a common security vulnerability that allows attackers to inject malicious scripts into web pages. Developers can prevent XSS attacks by properly sanitizing user input and using libraries like DOMPurify to sanitize HTML.</p>
-
-
-
-
-<p><strong>- CSRF Protection</strong></p>
-
-<p>Cross-Site Request Forgery (CSRF) is another security threat that involves an attacker tricking users into unknowingly performing actions on a website. To protect against CSRF attacks, developers should use CSRF tokens and enforce strict CORS policies.</p>
-
-
-
-
-
-
-
-<h2>
-  
-  
-  The Future of React
-</h2>
-
-<p>React continues to evolve, and its future looks promising. Some trends and developments to watch for include:</p>
-
-<ul>
-<li><p><strong>React Concurrent Mode:</strong> Concurrent Mode is an upcoming feature that will allow React to perform rendering in a more incremental and interruptible way. This will result in smoother user experiences, especially for applications with complex UIs.</p></li>
-<li><p><strong>React Server Components:</strong> Server Components aim to take server-side rendering to the next level. They will allow developers to offload component rendering to the server, leading to even faster load times.</p></li>
-<li><p><strong>Improved React Performance:</strong> The React team is continually working on optimizing React's performance, making it faster and more efficient.</p></li>
-</ul>
-
-
-
-
-
-
-
-<p><a href="https://linktr.ee/AliSamir">Find me around the web 🌐</a></p>
+<p>What's your favourite Open-Source project? Share yours! 🚀</p>
 
  </details> 
  <hr /> 
 
- #### - [FLaNK Stack Weekly for 12 September 2023](https://dev.to/tspannhw/flank-stack-weekly-for-12-september-2023-eom) 
+ #### - [NestJS: Bun vs NodeJS](https://dev.to/mourishitz/running-nestjs-server-with-bun-4cdl) 
  <details><summary>Article</summary> <h2>
   
   
-  12-September-2023
+  What is Bun?
 </h2>
 
-<h3>
-  
-  
-  FLiPN-FLaNK Stack Weekly
-</h3>
+<p>Bun JS or Bun Sh is an all-in-one toolkit for JavaScript and TypeScript, it offers a powerful toolkit with its CLI, it is currently available for Linux, MacOS and WSL users. To install it, run:</p>
 
-<p>Tim Spann @PaaSDev</p>
+<p><code>curl -fsSL https://bun.sh/install | bash</code></p>
 
-<p><a href="https://www.threads.net/@tspannhw">https://www.threads.net/@tspannhw</a></p>
-
-<p><a href="https://medium.com/@tspann/subscribe">https://medium.com/@tspann/subscribe</a></p>
-
-<p>Get your new Apache NiFi for Dummies!</p>
-
-<p><a href="https://www.cloudera.com/campaign/apache-nifi-for-dummies.html">https://www.cloudera.com/campaign/apache-nifi-for-dummies.html</a></p>
-
-<p><a href="https://ossinsight.io/analyze/tspannhw">https://ossinsight.io/analyze/tspannhw</a></p>
+<p>To see more of what Bun is and what it can do, check the <a href="https://bun.sh/docs">official documentation</a>.</p>
 
 <h2>
   
   
-  Always remember September 11
+  Why doing that?
 </h2>
+
+<p>We all know that NodeJS deals with it pretty well, but Bun is a really promising deal, so why not?? We programmers love to test and see what happens, especially to try out new things! </p>
 
 <h2>
   
   
-  Josh Long Megatip
+  Getting started
 </h2>
 
-<p>Download @graalvm Java 21 release, start a @SpringBoot 3.2+ and <br>
-@GraalVM-ready project on <a href="http://start.spring.io">http://start.spring.io</a>, configure  @Java<br>
- 21, and set <code>spring.threads.virtual.enabled=true</code>, and then enjoy: Loom and <br>
-@GraalVM native images!</p>
+<p>So now that we've got our bun CLI up and running, lets use nest CLI to generate two separate projects. They will be fully installed, built and run using both npm and bun so we can see the difference on first hand.</p>
 
-<h3>
+<h5>
   
   
-  CODE + COMMUNITY
-</h3>
+  Note: all the benchmarking will be tested with <a href="https://github.com/wg/wrk/">wrk</a> using Arch Linux x86_64 environment.
+</h5>
 
-<p>Please join my meetup group NJ/NYC/Philly/Virtual. </p>
-
-<p><a href="http://www.meetup.com/futureofdata-princeton/">http://www.meetup.com/futureofdata-princeton/</a></p>
-
-<p><a href="https://www.meetup.com/futureofdata-newyork/">https://www.meetup.com/futureofdata-newyork/</a></p>
-
-<p><a href="https://www.meetup.com/futureofdata-philadelphia/">https://www.meetup.com/futureofdata-philadelphia/</a></p>
-
-<p>*<em>This is Issue #102 *</em></p>
-
-<p><a href="https://github.com/tspannhw/FLiPStackWeekly">https://github.com/tspannhw/FLiPStackWeekly</a></p>
-
-<p><a href="https://www.linkedin.com/pulse/schedule-2023-tim-spann-/">https://www.linkedin.com/pulse/schedule-2023-tim-spann-/</a></p>
-
-<p><a href="https://www.cloudera.com/solutions/dim-developer.html">https://www.cloudera.com/solutions/dim-developer.html</a></p>
-
-<p>My latest talk will be streaming on September 13th on NiFi, Kafka, Flink and LLM.</p>
-
-<p><a href="https://www.cloudera.com/about/events/cloudera-now-cdp.html">https://www.cloudera.com/about/events/cloudera-now-cdp.html</a></p>
-
-<p>Flink got added to OSS Chat!   <a href="https://osschat.io/chat?project=Flink">https://osschat.io/chat?project=Flink</a></p>
-
-<h4>
+<h2>
   
   
-  Releases
-</h4>
+  1. Dependency Install
+</h2>
 
-<p>NiFi 1.23.2</p>
+<p>After "nest newing" both projects, its time to see the first feature available on Bun, which is the package manager.</p>
 
-<p>MiNiFi C++ Agent 1.15<br>
-<a href="https://nifi.apache.org/minifi/download.html">https://nifi.apache.org/minifi/download.html</a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--llx4LJKq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t0bbb17e5xsz9npzdwdd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--llx4LJKq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t0bbb17e5xsz9npzdwdd.png" alt="npm install" width="616" height="246"></a><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--BN9SxIh0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5eecugkuq6nif83r7lb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--BN9SxIh0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5eecugkuq6nif83r7lb.png" alt="bun install" width="544" height="850"></a></p>
 
-<h4>
+<p>We can already see some improvement here! Bun install is blasting fast and wins the first challenge.</p>
+
+<h2>
   
   
-  Recent Talk
-</h4>
+  2. Development Server
+</h2>
 
-<p><a href="https://www.slideshare.net/bunkertor/aidevday-datainmotion-to-supercharge-ai">https://www.slideshare.net/bunkertor/aidevday-datainmotion-to-supercharge-ai</a></p>
+<p>We can't ignore the fact that a good development experience is a must have when it comes to frameworks. As both Bun and Node supports runtimes such as 'npm run start' we will have to see which one is the best when it comes to developing on real time. At the moment, NestJS is not using Bun.serve() to create a web server, so the comparisons we are making are all with the default NestJS provider.</p>
 
-<h4>
+<p>Let's run both projects on different ports. Bun will be running on 3333 and Node will run on 4444 so we can easily see them acting.<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SJaFJsDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1mgzahy7fm60frvvdi41.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SJaFJsDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1mgzahy7fm60frvvdi41.png" alt="Servers up" width="800" height="242"></a></p>
+
+<p>Without any change, let's compare them with wrk. Note: we are not running them concurrently at the same time, which means that the following results were achieved with all the computational power dedicated to one and only one test at a time.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6-Uh1inp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lp87mipomtk7xohpai81.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6-Uh1inp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lp87mipomtk7xohpai81.jpeg" alt="http tests on dev server" width="800" height="632"></a></p>
+
+<p>We can see that Bun not only handles more requests per second (almost 2.4K requests more) but it has an average latency 30ms faster. This one is a solid win for Bun.</p>
+
+<p>But this section ain't over, we still have something <strong>ALL</strong> developers love, and this is hot-reload. To enable hot-reload on NestJS using node, we need a service like nodemon to do that for us. Meanwhile on Bun we have the --watch arg that can be passed on bun start command. We have yet another type of hot-reload on Bun natively! But the watch key runs on file changes (which is the best for real time developers)</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p0M6uTPw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rp4t3rfk3ya5h2ce8f8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p0M6uTPw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rp4t3rfk3ya5h2ce8f8.png" alt="Bun hot reloader" width="800" height="342"></a></p>
+
+<p>Our little Chinese bread Bun is now 2x0 against the big guy NodeJS.</p>
+
+<h2>
   
   
-  Articles
-</h4>
+  3. Testing
+</h2>
 
-<p><a href="https://medium.com/@tspann/streaming-llm-with-apache-nifi-huggingface-ad2f0d367468">https://medium.com/@tspann/streaming-llm-with-apache-nifi-huggingface-ad2f0d367468</a></p>
+<p>As we are too busy to write them from scratch, I guess we are going with the auto-generated test files from NestJS.</p>
 
-<p><a href="https://blog.cloudera.com/how-to-ensure-supply-chain-security-for-ai-applications/">https://blog.cloudera.com/how-to-ensure-supply-chain-security-for-ai-applications/</a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1jeeCZl1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3bi9615sjmotksz3s7r9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1jeeCZl1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3bi9615sjmotksz3s7r9.png" alt="Test runners" width="800" height="274"></a></p>
 
-<p><a href="https://www.cloudera.com/about/news-and-blogs/press-releases/09-07-23-cloudera-signs-strategic-collaboration-agreement-with-aws.html">https://www.cloudera.com/about/news-and-blogs/press-releases/09-07-23-cloudera-signs-strategic-collaboration-agreement-with-aws.html</a></p>
+<p>WOOOOW, it seems NodeJS won't throw away the towel. Unlike the http requests battle, this one is by such a small difference that we don't feel comfortable using it. Our tiebreaker was expected to be the native test modules, but both NodeJS and Bun are loaded with a test runner, and as we are only considering Jest results, NodeJS can take this one and make it a 2x1 difference for Bun.</p>
 
-<p><a href="https://www.infoq.com/news/2023/09/java-21-so-far/">https://www.infoq.com/news/2023/09/java-21-so-far/</a></p>
-
-<p><a href="https://blog.cloudera.com/how-financial-services-and-insurance-streamline-ai-initiatives-with-a-hybrid-data-platform/">https://blog.cloudera.com/how-financial-services-and-insurance-streamline-ai-initiatives-with-a-hybrid-data-platform/</a></p>
-
-<p><a href="https://medium.com/cloudera-inc/building-an-effective-nifi-flow-b5aa1b816380">https://medium.com/cloudera-inc/building-an-effective-nifi-flow-b5aa1b816380</a></p>
-
-<p><a href="https://medium.com/@nifi.notes/building-an-effective-nifi-flow-queryrecord-cca5ba51afd5">https://medium.com/@nifi.notes/building-an-effective-nifi-flow-queryrecord-cca5ba51afd5</a></p>
-
-<p><a href="https://medium.com/cloudera-inc/building-an-effective-nifi-flow-partitionrecord-b342a8efc50c">https://medium.com/cloudera-inc/building-an-effective-nifi-flow-partitionrecord-b342a8efc50c</a></p>
-
-<p><a href="https://medium.com/cloudera-inc/building-an-effective-nifi-flow-routetext-5068a3b4efb3">https://medium.com/cloudera-inc/building-an-effective-nifi-flow-routetext-5068a3b4efb3</a></p>
-
-<h4>
+<h2>
   
   
-  Videos
-</h4>
+  4. Build and deployment
+</h2>
 
-<p><a href="https://www.youtube.com/watch?v=uLk4fTh2sXM">https://www.youtube.com/watch?v=uLk4fTh2sXM</a></p>
+<p>Let's now build our giant Hello World NestJS application and see how it performs on raw using both "node dist/main.js" and  "bun run dist/main.js" as well as the build time.</p>
 
-<p><a href="https://www.youtube.com/watch?v=nXjsk5CGygE">https://www.youtube.com/watch?v=nXjsk5CGygE</a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4gm5zyXx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07o047s1sl7oc5sohp3d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4gm5zyXx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07o047s1sl7oc5sohp3d.png" alt="Build time" width="800" height="151"></a></p>
 
-<p><a href="https://www.youtube.com/watch?v=menGbueOAK8&amp;ab_channel=DatainMotion-LearnHowToStream">https://www.youtube.com/watch?v=menGbueOAK8&amp;ab_channel=DatainMotion-LearnHowToStream</a></p>
+<p>And another tiny difference on our comparison, only 500ms difference for Bun! This tiny differences can be justified by the fact that we are testing such a small project. It is worth mentioning though that this is not over! We still need to compare performance running compiled projects.</p>
 
-<p>AICamp - AI Dev Day - NYC 2023 - August 23, 2023 - NiFi + LLM<br>
-<a href="https://youtu.be/l0wPG9zXod0?si=Fhy0K0cNwLK29Py8&amp;t=6820">https://youtu.be/l0wPG9zXod0?si=Fhy0K0cNwLK29Py8&amp;t=6820</a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1ZUVmkXB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/68t94jbbqvczv1sihy0c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1ZUVmkXB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/68t94jbbqvczv1sihy0c.png" alt="Builds running" width="800" height="161"></a></p>
 
-<p><a href="https://youtu.be/B2ORocuzSzM?si=PrHtCM2UZZhT1UZk">https://youtu.be/B2ORocuzSzM?si=PrHtCM2UZZhT1UZk</a></p>
+<p>When in doubt, benchmark it out!</p>
 
-<p><a href="https://www.youtube.com/watch?app=desktop&amp;v=fyB8aUgT14w&amp;feature=youtu.be#dialog">https://www.youtube.com/watch?app=desktop&amp;v=fyB8aUgT14w&amp;feature=youtu.be#dialog</a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sH7RM4_h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nsj5r7l8g2akes30vpsm.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sH7RM4_h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nsj5r7l8g2akes30vpsm.jpeg" alt="http tests on build" width="800" height="632"></a></p>
 
-<p><a href="https://youtu.be/fyB8aUgT14w?si=AiONqsP0zs0vERzs">https://youtu.be/fyB8aUgT14w?si=AiONqsP0zs0vERzs</a></p>
+<p>And again a solid one for Bun, it's worth noticing that when dealing with compiled NestJS, Bun handles almost 10 thousand requests more then when running it on a development server, holly cow!</p>
 
-<p><a href="https://www.youtube.com/watch?v=OhtYGIioIAI">https://www.youtube.com/watch?v=OhtYGIioIAI</a></p>
+<p>Also, we can now compare the development server and build server on both Node and Bun. While Bun cut the average latency by half and more then double requests per second. Node also shows some better results by reducing latency and passing Bun on max requests per second by almost 1k.</p>
 
-<p><a href="https://www.youtube.com/watch?v=FAPYyJ2HpdM&amp;ab_channel=Cloudera%2CInc">https://www.youtube.com/watch?v=FAPYyJ2HpdM&amp;ab_channel=Cloudera%2CInc</a>.</p>
+<p>In general, Node performance is pretty decent, meanwhile Bun is just stunningly powerful. This was a really great test but Bun takes it on 3x1.</p>
 
-<p><a href="https://youtu.be/Giw9IOJQ8hE?si=PGNOzJBo7p1idNmK">https://youtu.be/Giw9IOJQ8hE?si=PGNOzJBo7p1idNmK</a></p>
-
-<h4>
+<h2>
   
   
-  Events
-</h4>
+  Conclusion
+</h2>
 
-<p>September 13, 2023:   Cloudera Now<br>
-<a href="https://www.cloudera.com/about/events/cloudera-now-cdp.html?internal_keyplay=ALL&amp;internal_campaign=FY24-Q3_AMER_Cloudera_Now_WEB_H10&amp;cid=701Hr0000025VuVIAU&amp;internal_link=h10">https://www.cloudera.com/about/events/cloudera-now-cdp.html?internal_keyplay=ALL&amp;internal_campaign=FY24-Q3_AMER_Cloudera_Now_WEB_H10&amp;cid=701Hr0000025VuVIAU&amp;internal_link=h10</a></p>
+<p>Overall, Bun can be really great on performance and deliver some amazing results. But we can't forget that it is currently on it's first version and can be very unstable on production, that's why I wouldn't recommend trading NodeJS by Bun on bigger projects. NodeJS is still the most reliable and trusted runtime environment to deal with JavaScript applications. However, Bun seems to be getting closer every step to take Node's crown. I was able to watch the early development of Bun since 0.3, times when running bun install would result on a segfault. Being able to see it grow it's own community and compete with giants like NodeJS is so nice.</p>
 
-<p>September 14, 2023: SkillUpSeries: Enable a Streaming Change Data Capture (CDC) Solution.  Virtual.<br>
-<a href="https://attend.cloudera.com/skillupseriesseptember14">https://attend.cloudera.com/skillupseriesseptember14</a></p>
-
-<p>Sept 21, 2023:  Sao Paulo, Brazil.   Evolve<br>
-<a href="https://br.cloudera.com/about/events/evolve/sao-paulo.html">https://br.cloudera.com/about/events/evolve/sao-paulo.html</a></p>
-
-<p>October 7-10, 2023:  Halifax, CA.   Community over Code.<br>
-<a href="https://communityovercode.org/">https://communityovercode.org/</a></p>
-
-<p>October 8, 2023:  Streaming Track, Room 102<br>
-<a href="https://communityovercode.org/schedule/#Oct8">https://communityovercode.org/schedule/#Oct8</a><br>
-<a href="https://communityovercode.org/schedule-list/#SG007">https://communityovercode.org/schedule-list/#SG007</a><br>
-<a href="https://communityovercode.org/schedule-list/#SG011">https://communityovercode.org/schedule-list/#SG011</a></p>
-
-<p>October 10, 2023:  Internet of Things Track, Room 109<br>
-<a href="https://communityovercode.org/schedule/#Oct10">https://communityovercode.org/schedule/#Oct10</a><br>
-<a href="https://communityovercode.org/schedule-list/#IOT001">https://communityovercode.org/schedule-list/#IOT001</a></p>
-
-<p>October 18, 2023:  2-Hours to Data Innovation:   Data Flow<br>
-<a href="https://www.cloudera.com/about/events/hands-on-lab-series-2-hours-to-data-innovation.html">https://www.cloudera.com/about/events/hands-on-lab-series-2-hours-to-data-innovation.html</a></p>
-
-<p>November 1, 2023: Open Source Finance Forum.  Virtual.<br>
-<a href="https://events.linuxfoundation.org/open-source-finance-forum-new-york/">https://events.linuxfoundation.org/open-source-finance-forum-new-york/<br>
-</a></p>
-
-<p>November 1, 2023 7PM EST:  AI Dev World.  Hybrid<br>
-<a href="https://aidevworld.com/conference/">https://aidevworld.com/conference/</a></p>
-
-<p>November 2, 2023:  Evolve. NYC<br>
-<a href="https://www.cloudera.com/about/events/evolve/new-york.html#register">https://www.cloudera.com/about/events/evolve/new-york.html#register</a></p>
-
-<p>November 7, 2023: XtremeJ 2023. Virtual.<br>
-<a href="https://xtremej.dev/2023/schedule/">https://xtremej.dev/2023/schedule/</a></p>
-
-<p>November 8, 2023: Flink Forward, Seattle.<br>
-<a href="https://www.flink-forward.org/seattle-2023">https://www.flink-forward.org/seattle-2023</a></p>
-
-<p>November 21, 2023: JCon World. Virtual.<br>
-<a href="https://sched.co/1RRWm">https://sched.co/1RRWm</a></p>
-
-<p>November 22, 2023: Big Data Conference.   Hybrid<br><br>
-<a href="https://bigdataconference.eu/">https://bigdataconference.eu/</a><br>
-<a href="https://events.pinetool.ai/3079/#sessions/101077">https://events.pinetool.ai/3079/#sessions/101077</a></p>
-
-<p>Cloudera Events<br>
-<a href="https://www.cloudera.com/about/events.html">https://www.cloudera.com/about/events.html</a></p>
-
-<p>More Events:<br>
-<a href="https://www.linkedin.com/pulse/schedule-2023-tim-spann-/">https://www.linkedin.com/pulse/schedule-2023-tim-spann-/</a></p>
-
-<h4>
-  
-  
-  Code
-</h4>
-
-<ul>
-<li><a href="https://github.com/tspannhw/FLaNK-SaoPauloBrazil">https://github.com/tspannhw/FLaNK-SaoPauloBrazil</a></li>
-<li><a href="https://github.com/tspannhw/FLaNK-HuggingFace-BLOOM-LLM">https://github.com/tspannhw/FLaNK-HuggingFace-BLOOM-LLM</a></li>
-<li><a href="https://github.com/tspannhw/FLaNK-Halifax">https://github.com/tspannhw/FLaNK-Halifax</a></li>
-</ul>
-
-<h4>
-  
-  
-  Tools
-</h4>
-
-<ul>
-<li><a href="https://github.com/Ghassen-Chaabouni/machine_learning_games">https://github.com/Ghassen-Chaabouni/machine_learning_games</a></li>
-<li><a href="https://github.com/nyaggah/bedframe">https://github.com/nyaggah/bedframe</a></li>
-<li><a href="https://github.com/KillianLucas/open-interpreter">https://github.com/KillianLucas/open-interpreter</a></li>
-<li><a href="https://github.com/hstreamdb/hstream">https://github.com/hstreamdb/hstream</a></li>
-<li><a href="https://github.com/RecipeUI/RecipeUI">https://github.com/RecipeUI/RecipeUI</a></li>
-<li><a href="https://owasp.org/API-Security/editions/2023/en/0x11-t10/">https://owasp.org/API-Security/editions/2023/en/0x11-t10/</a></li>
-<li><a href="https://github.com/ulid/spec">https://github.com/ulid/spec</a></li>
-<li><a href="https://github.com/huxi/sulky/tree/master/sulky-ulid">https://github.com/huxi/sulky/tree/master/sulky-ulid</a></li>
-<li><a href="https://github.com/georgian-io/LLM-Finetuning-Hub">https://github.com/georgian-io/LLM-Finetuning-Hub</a></li>
-<li><a href="https://endoflife.date/java">https://endoflife.date/java</a></li>
-<li><a href="https://joshlong.com/jl/blogPost/how-to-setup-java21-early.html">https://joshlong.com/jl/blogPost/how-to-setup-java21-early.html</a></li>
-<li>
-<a href="https://github.com/OpenBMB/ChatDev">https://github.com/OpenBMB/ChatDev</a>?</li>
-<li><a href="https://github.com/cofactoryai/textbase">https://github.com/cofactoryai/textbase</a></li>
-<li><a href="https://github.com/google-research/weatherbench2">https://github.com/google-research/weatherbench2</a></li>
-<li><a href="http://www.jnosql.org/docs/supported_dbs.html">http://www.jnosql.org/docs/supported_dbs.html</a></li>
-<li><a href="https://www.kickstarter.com/projects/seeed/sensecap-t1000-track-what-you-care-with-no-boundaries">https://www.kickstarter.com/projects/seeed/sensecap-t1000-track-what-you-care-with-no-boundaries</a></li>
-<li><a href="https://github.com/daijro/hrequests">https://github.com/daijro/hrequests</a></li>
-<li><a href="https://github.com/adrianseeley/FastMJPG">https://github.com/adrianseeley/FastMJPG</a></li>
-<li><a href="https://github.com/stanfordnlp/dspy">https://github.com/stanfordnlp/dspy</a></li>
-<li><a href="https://github.com/stanfordnlp/dspy/blob/main/intro.ipynb">https://github.com/stanfordnlp/dspy/blob/main/intro.ipynb</a></li>
-<li><a href="https://github.com/wasmerio/wasmer-java">https://github.com/wasmerio/wasmer-java</a></li>
-<li><a href="https://github.com/ververica/flink-cdc-connectors">https://github.com/ververica/flink-cdc-connectors</a></li>
-<li><a href="https://github.com/Ironclad/rivet">https://github.com/Ironclad/rivet</a></li>
-<li><a href="https://thenewstack.io/dive-a-simple-app-for-viewing-the-contents-of-a-docker-image/">https://thenewstack.io/dive-a-simple-app-for-viewing-the-contents-of-a-docker-image/</a></li>
-<li><a href="https://github.com/wagoodman/dive">https://github.com/wagoodman/dive</a></li>
-<li><a href="https://github.com/reata/sqllineage">https://github.com/reata/sqllineage</a></li>
-<li><a href="https://github.com/jseguillon/kubechat-poc">https://github.com/jseguillon/kubechat-poc</a></li>
-<li><a href="https://medium.com/paypal-tech/scaling-kafka-to-support-paypals-data-growth-a0b4da420fab">https://medium.com/paypal-tech/scaling-kafka-to-support-paypals-data-growth-a0b4da420fab</a></li>
-<li><a href="https://github.com/microsoft/SynapseML">https://github.com/microsoft/SynapseML</a></li>
-</ul>
-
-<p>© 2020-2023 Tim Spann</p>
+<p>Thanks for reading it, feel free to share your thoughts!!  </p>
 
  </details> 
  <hr /> 
 
- #### - [The best C# REPL is in your terminal](https://dev.to/asimmon/the-best-c-repl-is-in-your-terminal-3coa) 
- <details><summary>Article</summary> <p>A <strong>Read-Eval-Print-Loop</strong> (REPL) is an interactive program that reads your input, evaluates it, prints the result, and loops back to the beginning. It's a great way to experiment with a programming language and an excellent method for learning a new language. C# has many REPLs; some are web-based, others are desktop applications, and some are command-line tools. There's <a href="https://dotnetfiddle.net/">.NET Fiddle</a>, <a href="https://try.dot.net/">Try .NET</a>, the popular <a href="https://www.linqpad.net/">LINQPad</a>, the <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2016/january/essential-net-csharp-scripting">built-in csi.exe</a>, and many more.</p>
+ #### - [How to Set up Telesign for SMS in Appwrite](https://dev.to/hackmamba/how-to-set-up-telesign-for-sms-in-appwrite-319g) 
+ <details><summary>Article</summary> <p>Improving user engagement and interaction in web applications is crucial, and seamless communication is key. In today's interconnected digital world, SMS is still a powerful way to reach users quickly and efficiently. Incorporating this strong communication tool into a web application powered by Appwrite is easy.</p>
 
-<p>But there's one C# REPL that I find above all others. It runs in your terminal, is easy to install, and easy to use. The included Intellisense, documentation and suggested overloads increases productivity. It supports theming, and when I use this REPL, I almost feel like I'm coding in a regular IDE. I always have a terminal open, so it's very convenient to have such an advanced C# REPL in it, available in a few keystrokes.</p>
+<p>In this article, we will discover the process of authenticating users through their phone numbers with the help of Appwrite's phone authentication APIs and Telesign. Find the project repository <a href="https://github.com/Olanetsoft/setup-telesign-for-sms-in-appwrite">here</a>.</p>
 
-<p>The C# REPL I'm talking about is simply called... <a href="https://fuqua.io/CSharpRepl/">C# REPL</a>. It's an open-source project created by <a href="https://github.com/waf">Will Fuqua</a>, and as of today, it has over 2k GitHub stars. It is distributed as a .NET tool and is cross-platform. In this blog post, I'm going to show you how to install it on <a href="https://aka.ms/terminal">Windows Terminal</a>, but you can install it on any terminal emulator you prefer.</p>
+<h2>
+  
+  
+  Technology Overview
+</h2>
 
-<p>Here's a full feature list, taken from the project's README:</p>
+<p><a href="https://www.telesign.com/?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Telesign</a> is an identity and customer engagement solution that provides sets of APIs for registering and verifying users using SMS, Voice, and phone number intelligence.</p>
+
+<h2>
+  
+  
+  Prerequisites
+</h2>
+
+<p>To fully grasp the concepts presented in this tutorial, the following are required:</p>
 
 <ul>
-<li>Syntax highlighting via ANSI escape sequences</li>
-<li>Intellisense with documentation and overload navigation</li>
-<li>Automatic formatting of typed input</li>
-<li>NuGet package installation</li>
-<li>Reference local assemblies, solutions, and projects</li>
-<li>Dump and explore objects with syntax highlighting and rich Spectre.Console formatting</li>
-<li>OpenAI integration (bring your own API key)</li>
-<li>Navigate to source via Source Link</li>
-<li>IL disassembly (both Debug and Release mode)</li>
-<li>Fast and flicker-free rendering. A "diff" algorithm is used to only render what's changed.</li>
+<li>Basic understanding of JavaScript and React</li>
+<li>Docker installed</li>
+<li>Telesign <a href="https://portal.telesign.com/signup?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">account</a>
+</li>
 </ul>
 
 <h2>
   
   
-  Installing and customizing C# REPL
+  Getting started
 </h2>
 
-<p>The first step is to install C# REPL as a .NET tool. You can do that by running the following command:<br>
+<p>To create a Next.js starter project, we should first navigate to the desired directory and run the command below in our terminal.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>dotnet tool install -g csharprepl
+<pre class="highlight shell"><code>    npx create-next-app@latest setup-telesign-for-sms-in-appwrite <span class="o">&amp;&amp;</span> <span class="nb">cd </span>setup-telesign-for-sms-in-appwrite
 </code></pre>
 
 </div>
 
 
 
-<p>At this point, you can run <code>csharprepl</code> to begin. C# REPL can be updated with <code>dotnet tool update -g csharprepl</code>.</p>
+<p>After running the command, we will be prompted to answer sets of questions. We can do so as shown below:</p>
 
-<p>Next, you'll want to create a new, dedicated Windows Terminal profile for C# REPL. Open Windows Terminal, click the down arrow icon, and choose "Settings". Then, click "Add a new profile". Give it a name, like "C# REPL", an icon if you want, and set the command to <code>csharprepl</code>. Here's how it looks:</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Would you like to use TypeScript? &lt;No&gt;
+Would you like to use ESLint? &lt;No&gt; 
+Would you like to use Tailwind CSS? &lt;Yes&gt;
+Would you like to use `src/` directory? &lt;Yes&gt;
+Would you like to use App Router? (recommended) &lt;Yes&gt;
+Would you like to customize the default import alias? &lt;Yes&gt;
+What import alias would you like configured? @/* &lt;Press Enter&gt;
+</code></pre>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ZQBDZAuk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3nps1fqrmhb1a1x8ldcf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ZQBDZAuk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3nps1fqrmhb1a1x8ldcf.png" alt="Windows terminal profile settings" width="800" height="302"></a></p>
+</div>
 
-<p>C# REPL comes with many arguments you can use to customize it. Check the full list of arguments by running <code>csharprepl --help</code>. Some of the most useful ones are:</p>
+<p>The command creates a Next.js project called <code>next_telesign</code> and navigates into the project directory.</p>
+
+<p>Next, we need to add Appwrite as a dependency. To do this, run the command below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>    npm <span class="nb">install </span>appwrite
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Set up Telesign as an SMS provider
+</h2>
+
+<p>Let's begin by logging in to our Telesign portal and making sure to save the <code>Customer ID</code> and <code>API Keys.</code></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8DpgPewN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691014986917_Screenshot%2B2023-07-28%2Bat%2B21.45.43.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8DpgPewN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691014986917_Screenshot%2B2023-07-28%2Bat%2B21.45.43.png" alt="Copy customer ID and API key on Telesign dashboard" width="800" height="377"></a></p>
+
+<p>Lastly, we need to create and verify a test number. Any number we configure and verify here can receive SMS. To do this, we need to navigate to the <code>**Manage test numbers**</code> screen.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AcnGeYDL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_5AE13241508A7E6925D3E7C46F98F97DA032E1B5D4814111659BD6450C922200_1691151291583_CDGHDA68.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AcnGeYDL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_5AE13241508A7E6925D3E7C46F98F97DA032E1B5D4814111659BD6450C922200_1691151291583_CDGHDA68.jpg" alt="Manage test numbers" width="800" height="375"></a></p>
+
+<p>Click the <code>**Add a Number**</code> button, input the required details, <code>**Submit**</code>, and <code>**Verify**</code>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Ok1Kdew7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119191_Screenshot%2B2023-07-30%2Bat%2B15.47.47.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ok1Kdew7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119191_Screenshot%2B2023-07-30%2Bat%2B15.47.47.png" alt="Add a number" width="800" height="375"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--v6Co-ZV2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119220_Screenshot%2B2023-07-30%2Bat%2B15.49.44.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v6Co-ZV2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691016119220_Screenshot%2B2023-07-30%2Bat%2B15.49.44.png" alt="Fill in the required information and verify" width="800" height="377"></a></p>
+
+<h2>
+  
+  
+  Configure and create a project on Appwrite
+</h2>
+
+<p>To get started, first, we need to create an Appwrite instance in a preferred directory by running the command below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>    docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="se">\</span>
+        <span class="nt">--volume</span> /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
+        <span class="nt">--volume</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">"</span>/appwrite:/usr/src/code/appwrite:rw <span class="se">\</span>
+        <span class="nt">--entrypoint</span><span class="o">=</span><span class="s2">"install"</span> <span class="se">\</span>
+        appwrite/appwrite:latest
+</code></pre>
+
+</div>
+
+
+
+<p>On creation, we should see an <code>appwrite</code> folder with two files.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VFb2FpKw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_9813CFC6C5B2163D17C6B733CCD2F7F4E13D8D4D744ED2740D99BCB62D05C011_1690503400192_Screenshot%2B2023-07-27%2Bat%2B00.19.24.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VFb2FpKw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_9813CFC6C5B2163D17C6B733CCD2F7F4E13D8D4D744ED2740D99BCB62D05C011_1690503400192_Screenshot%2B2023-07-27%2Bat%2B00.19.24.png" alt="Appwrite folder" width="424" height="144"></a></p>
+
+<p>Secondly, we need to add Telesign as an SMS provider by modifying the environment variables in the <code>.env</code> file as shown below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>    <span class="nv">_APP_SMS_PROVIDER</span><span class="o">=</span>sms://&lt;REPLACE WITH CREDENTIAL ID&gt;:&lt;REPLACE WITH API KEYS&gt;@telesign
+    <span class="nv">_APP_SMS_FROM</span><span class="o">=</span>&lt;REPLACE WITH THE PHONE NUMBER WE USED IN WHEN VERIFYING TELESIGN&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>We must also ensure that the API Key provided by Telesign is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding">URL encoded</a> because it contains non-alphanumeric characters. To do this, we can navigate to the <a href="https://www.urlencoder.org/">URLEncoder online platform</a>, paste our API key, click the <strong>Encode</strong> button, and then copy the resulting encoded format.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gI1ajHwy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691018362683_Screenshot%2B2023-07-30%2Bat%2B15.18.07.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gI1ajHwy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_FB5164F66C28F1E6D20D2FD8A79E9914531452C73044C880AB9366151B6EBAF1_1691018362683_Screenshot%2B2023-07-30%2Bat%2B15.18.07.png" alt="Edited env variable" width="800" height="508"></a></p>
+
+<p>Lastly, we need to sync the changes we made on the <code>.env</code> file with our Appwrite server. To do this, we must run the command below inside the <code>appwrite</code> directory.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>    docker-compose up <span class="nt">-d</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Set up a project on Appwrite</strong><br>
+To get started, we need to navigate to the specified hostname and port <code>http://localhost:80</code>, log in, click the <strong>Create project</strong> button, input <code>next_telesign</code> as the name, and then click <code>**Create**</code><strong>.</strong></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FmBrXhcM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_C9210607DAFF6D80615947ED6BE237716E98BADEF0416B60FACF081B1CAEFB80_1687518026974_Screenshot%2B2023-06-23%2Bat%2B11.38.55.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FmBrXhcM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://paper-attachments.dropboxusercontent.com/s_C9210607DAFF6D80615947ED6BE237716E98BADEF0416B60FACF081B1CAEFB80_1687518026974_Screenshot%2B2023-06-23%2Bat%2B11.38.55.png" alt="Create project on Appwrite" width="800" height="379"></a></p>
+<h2>
+  
+  
+  Appwrite + Telesign in Next.js
+</h2>
+
+<p>Let's begin by going to our project's main directory and creating a new folder named <code>helper</code>. Inside this folder, create a file called <code>utils.js</code> and insert the code snippet provided below:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Client</span><span class="p">,</span> <span class="nx">Account</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">appwrite</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">//create client</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">();</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">setEndpoint</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost/v1</span><span class="dl">"</span><span class="p">).</span><span class="nx">setProject</span><span class="p">(</span><span class="dl">"</span><span class="s2">REPLACE WITH PROJECT ID</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">//create account</span>
+<span class="kd">const</span> <span class="nx">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Account</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
+
+<span class="c1">//authenticate user with phone number</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">phoneAuth</span> <span class="o">=</span> <span class="p">(</span><span class="nx">phone_number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">account</span><span class="p">.</span><span class="nx">createPhoneSession</span><span class="p">(</span><span class="dl">"</span><span class="s2">unique()</span><span class="dl">"</span><span class="p">,</span> <span class="nx">phone_number</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">//validate phone session</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">validateSMS</span> <span class="o">=</span> <span class="p">(</span><span class="nx">userID</span><span class="p">,</span> <span class="nx">secret</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">account</span><span class="p">.</span><span class="nx">updatePhoneSession</span><span class="p">(</span><span class="nx">userID</span><span class="p">,</span> <span class="nx">secret</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The snippet above does the following:</p>
 
 <ul>
-<li>
-<code>--using|-u</code>: Add using statement, so you don't have to type the full namespace.</li>
-<li>
-<code>--reference|-r</code>: Reference assemblies, NuGet packages, and csproj files.</li>
-<li>
-<code>--framework|-f</code>: Reference a shared framework, like ASP.NET Core (<code>Microsoft.AspNetCore.App</code>), .NET Desktop (<code>Microsoft.WindowsDesktop.App</code>), or the default option, .NET Core (<code>Microsoft.NETCore.App</code>).</li>
+<li>Imports the required dependency.</li>
+<li>Uses the <code>Client</code> and <code>Account</code> class to set up an Appwrite instance by specifying the endpoint and corresponding project ID.</li>
+<li>Creates a <code>phoneAuth</code> and <code>validateSMS</code> function that uses the <code>createPhoneSession</code> and <code>updatePhoneSession</code> methods to create a user and validate the user using the code sent via SMS, respectively.</li>
 </ul>
 
-<p>My personal setup references the ASP.NET Core framework and adds a few using statements I often use. Here's how it looks:<br>
+<p>Secondly, we need to update the <code>page.js</code> file inside the  <code>app</code> directory to include states and methods required by our application.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>@echo off
-csharprepl <span class="nt">-f</span> <span class="s2">"Microsoft.AspNetCore.App"</span> <span class="nt">-u</span> <span class="s2">"System"</span> <span class="nt">-u</span> <span class="s2">"System.Collections.Generic"</span> <span class="nt">-u</span> <span class="s2">"System.IO"</span> <span class="nt">-u</span> <span class="s2">"System.Linq"</span> <span class="nt">-u</span> <span class="s2">"System.Net.Http"</span> <span class="nt">-u</span> <span class="s2">"System.Threading"</span> <span class="nt">-u</span> <span class="s2">"System.Threading.Tasks"</span> <span class="nt">-u</span> <span class="s2">"System.Net.Http.Json"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.AspNetCore.Builder"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.AspNetCore.Hosting"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.AspNetCore.Http"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.AspNetCore.Routing"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.Extensions.Configuration"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.Extensions.DependencyInjection"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.Extensions.Hosting"</span> <span class="nt">-u</span> <span class="s2">"Microsoft.Extensions.Logging"</span> <span class="nt">-u</span> <span class="s2">"System.Text.RegularExpressions"</span> <span class="nt">-u</span> <span class="s2">"System.Text.Json"</span>
+<pre class="highlight javascript"><code>    <span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/head</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">phoneAuth</span><span class="p">,</span> <span class="nx">validateSMS</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../helper/utils</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
+    <span class="na">phone</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">otp</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">user</span><span class="p">,</span> <span class="nx">setUser</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isPhoneVerify</span><span class="p">,</span> <span class="nx">setIsPhoneVerify</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isLoading</span><span class="p">,</span> <span class="nx">setIsLoading</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">handleChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setValue</span><span class="p">({</span> <span class="p">...</span><span class="nx">value</span><span class="p">,</span> <span class="p">[</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">phoneAuth</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">phone</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setUser</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">userId</span><span class="p">);</span>
+        <span class="nx">setIsPhoneVerify</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error getting phone session!</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">handleValidatePhone</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">validateSMS</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">value</span><span class="p">.</span><span class="nx">otp</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span>
+          <span class="s2">`User successfully verified using for user with ID </span><span class="p">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">userId</span><span class="p">}</span><span class="s2">, country Code </span><span class="p">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">countryCode</span><span class="p">}</span><span class="s2">, and expires on </span><span class="p">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">expire</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+        <span class="p">);</span>
+        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error validating session!</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+        <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-screen h-screen bg-white</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="c1">//UI AND IMPLEMENTATION GOES HERE</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
 </code></pre>
 
 </div>
 
 
 
-<p>Then, create a Windows batch file and select it as the command to run instead of <code>csharprepl</code> in the Windows Terminal profile settings.</p>
+<p>The snippet above does the following:</p>
 
-<p>What do you think about C# REPL in the terminal? Do you have other favorite REPLs or suggestions to enhance the experience? I'd love to hear your insights and recommendations in the comments!</p>
+<ul>
+<li>Imports the required dependencies</li>
+<li>Creates state properties to manage application state</li>
+<li>Creates a <code>handleChange</code> function to control inputs</li>
+<li>Creates a <code>handleSubmit</code> function that uses the <code>phoneAuth</code> function to create a user</li>
+<li>Creates a <code>handleValidatePhone</code> function that uses the <code>validateSMS</code> function to verify the created user using the secret key sent via SMS</li>
+</ul>
+
+<p>Lastly, we need to update the UI to display forms for creating and verifying users dynamically.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">//IMPORTS GOES HERE</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//STATES AND METHOD GOES HERE</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">w-screen h-screen bg-white</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Appwrite</span> <span class="o">+</span> <span class="nx">Telesign</span> <span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">Generated by create next app</span><span class="dl">"</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">icon</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">/favicon.ico</span><span class="dl">"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/Head</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">py-4 px-4 lg:py-10 lg:px-10 w-full</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex justify-center mb-8</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-2xl font-medium text-gray-700</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="nx">Appwrite</span> <span class="o">+</span> <span class="nx">Telesign</span>
+          <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex justify-center</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">isPhoneVerify</span> <span class="p">?</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">px-4 py-2 border rounded-lg w-full lg:w-2/4</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border-b h-8 mb-4</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h3</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-gray-700</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Verify</span> <span class="nx">phone</span> <span class="nx">number</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleValidatePhone</span><span class="p">}</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">fieldset</span><span class="o">&gt;</span>
+                  <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-gray-400 mb-4 block</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="nx">OTP</span>
+                  <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                  <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">otp</span><span class="dl">"</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border w-full rounded-sm mb-6 p-2</span><span class="dl">"</span>
+                    <span class="nx">required</span>
+                    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">.</span><span class="nx">otp</span><span class="p">}</span>
+                    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span>
+                  <span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="sr">/fieldset</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">button</span>
+                  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-white px-8 py-2 rounded-sm bg-blue-600 hover:bg-blue-700</span><span class="dl">"</span>
+                  <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoading</span><span class="p">}</span>
+                <span class="o">&gt;</span>
+                  <span class="nx">Validate</span> <span class="nx">OTP</span>
+                <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">px-4 py-2 border rounded-lg w-full lg:w-2/4</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border-b h-8 mb-4</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h3</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-gray-700</span><span class="dl">"</span><span class="o">&gt;</span>
+                  <span class="nx">Authenticate</span> <span class="kd">with</span> <span class="nx">your</span> <span class="nx">phone</span> <span class="nx">number</span>
+                <span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">fieldset</span><span class="o">&gt;</span>
+                  <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-gray-400 mb-4 block</span><span class="dl">"</span><span class="o">&gt;</span>
+                    <span class="nx">Phone</span> <span class="nx">number</span>
+                  <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                  <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">phone</span><span class="dl">"</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">border w-full rounded-sm mb-6 p-2</span><span class="dl">"</span>
+                    <span class="nx">required</span>
+                    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">.</span><span class="nx">phone</span><span class="p">}</span>
+                    <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span>
+                  <span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="sr">/fieldset</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">button</span>
+                  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-sm text-white px-8 py-2 rounded-sm bg-blue-600 hover:bg-blue-700</span><span class="dl">"</span>
+                  <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoading</span><span class="p">}</span>
+                <span class="o">&gt;</span>
+                  <span class="nx">Submit</span>
+                <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>              <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="p">)}</span>
+        <span class="o">&lt;</span><span class="sr">/section</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now that we have completed that task, we may begin running a development server using the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>    npm run dev
+</code></pre>
+
+</div>
+
+
+
+<p>We should have something similar to what is shown below.</p>
+
+<p><a href="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWI2ZmdldWY4dmlkY3VpaDBrZ2kzN3A5aTY1eTFjZnNxaHo0cTRlZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xpH3cBIwZgCK5i4dJE/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWI2ZmdldWY4dmlkY3VpaDBrZ2kzN3A5aTY1eTFjZnNxaHo0cTRlZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xpH3cBIwZgCK5i4dJE/giphy.gif" alt="How to set up Telesign for SMS in Appwrite" width="480" height="222"></a></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>This post discussed how to set up phone authentication in Next.js using Appwrite and Telesign. With Appwrite, developers can save application development time by leveraging intuitive authentication APIs without the associated technical overheads.</p>
+
+<p>These resources might also be helpful:</p>
+
+<ul>
+<li><a href="https://appwrite.io/docs/configuration?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Appwrite Self-hosting configuration</a></li>
+<li><a href="https://appwrite.io/docs?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Appwrite official documentation</a></li>
+<li><a href="https://appwrite.io/docs/sms-delivery?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Appwrite SMS provider support</a></li>
+<li><a href="https://developer.telesign.com/enterprise/docs?utm_source=hackmamba&amp;utm_medium=hackmamba-blog">Telesign official documentation</a></li>
+<li><a href="https://www.istockphoto.com/vector/social-media-and-digital-marketing-concept-speech-bubble-with-social-icons-vector-gm1445432493-483842928">Cover image credit to iStockphoto</a></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [5 Git Commands You Shouldn’t Ignore](https://dev.to/mainulspace/5-git-commands-you-shouldnt-ignore-2c19) 
+ <details><summary>Article</summary> <p>You’re probably already a pro at using Git’s ‘A-list’ commands: git commit, git push, and git pull. But beyond these, there are powerful commands that often fly under the radar. Not only can they save you time, but they can also change the way you think about version control.</p>
+
+<h2>
+  
+  
+  1. Git Stash: Safe Your Coding
+</h2>
+
+<p>Imagine You’re deep into coding a new feature, and suddenly, a high-priority bug report interrupts you. You don’t have to rush to commit your half-done code.</p>
+
+<p>Instead, you can just “stash” it away safely. This lets you fix the urgent bugs first and then easily get back to your feature work.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">stash</span> <span class="nx">save</span> <span class="dl">"</span><span class="s2">Work in progress for new feature</span><span class="dl">"</span>
+</code></pre>
+
+</div>
+
+<h2>
+  
+  
+  2. Git Bisect: Bug Detective
+</h2>
+
+<p>Finding a new bug is like looking for a needle in a haystack of commits. Don’t bother going through each one individually — <code>git bisect</code> is a more efficient way to find bugs.</p>
+
+<p>Using a binary search algorithm, it quickly identifies the problematic commit causing the problem.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">start</span>
+<span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">bad</span>
+<span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">good</span> <span class="p">[</span><span class="nx">good_commit</span><span class="p">]</span>
+</code></pre>
+
+</div>
+
+<h2>
+  
+  
+  3. Git Cherry-Pick: Selective Genius Import
+</h2>
+
+<p>Imagine you’ve spotted a great fix or feature in another branch. Instead of dragging along all the other commits through a merge, why not <code>‘cherry-pick’</code> just the genius you need?<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">cherry</span><span class="o">-</span><span class="nx">pick</span> <span class="p">[</span><span class="nx">commit_hash</span><span class="p">]</span>
+</code></pre>
+
+</div>
+
+
+<p><iframe class="tweet-embed" id="tweet-1701233753266225623-201" src="https://platform.twitter.com/embed/Tweet.html?id=1701233753266225623">
+</iframe>
+
+  // Detect dark theme
+  var iframe = document.getElementById('tweet-1701233753266225623-201');
+  if (document.body.className.includes('dark-theme')) {
+    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1701233753266225623&amp;theme=dark"
+  }
+
+
+
+</p>
+<h2>
+  
+  
+  4. Git Reflog: Undo Button for Git
+</h2>
+
+<p>Have you ever wished you could roll back a botched git command? Enter <code>git reflog</code>. It keeps a record of every move you’ve made, making it easy to turn back the clock and recover lost commits.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">reflog</span>
+</code></pre>
+
+</div>
+
+<h2>
+  
+  
+  5. Git Rebase -i: Commit Curator
+</h2>
+
+<p>Before you release your excellent new feature, cleaning up your commit history is a good idea. Interactive Rebase (<code>git rebase -i</code>) lets you reorder, squash, or amend commits, creating a polished history that’s easy to follow.<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">git</span> <span class="nx">rebase</span> <span class="o">-</span><span class="nx">i</span> <span class="p">[</span><span class="nx">base_commit</span><span class="p">]</span>
+</code></pre>
+
+</div>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Git offers so much more than the popular commands we use daily. These less-used commands can supercharge your workflow, make it easy to track bugs, and even save your day in case of emergency commits.</p>
+
+<p>So, exploring these Git’s lesser-known features and learning will make your coding workflow smoother. Not only will you become a more capable developer, but you will also take your version control to new heights.</p>
+
+<p>Which of these Git commands are new to you? Have you encountered a situation where one could have been a lifesaver? Share your experiences, tips, and tricks in the comments below.</p>
+
+<p>Feel free to connect with me on <a href="https://twitter.com/mainulspace"><strong>Twitter</strong></a> or <a href="https://www.linkedin.com/in/mainulspace/"><strong>LinkedIn</strong></a>.</p>
+<h2>
+  
+  
+  Read Next...
+</h2>
+
+
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/10-lesser-known-javascript-array-methods-you-mightve-missed-32b3" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>10 Lesser-Known JavaScript Array Methods You Might’ve Missed</h2>
+      <h3>Mainul Hasan ・ Sep 5</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#coding</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/10-underutilized-css-properties-every-developer-should-know-2ia0" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>10 Underutilized CSS Properties Every Developer Should Know</h2>
+      <h3>Mainul Hasan ・ Sep 11</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#css</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#frontend</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/are-you-using-javascript-right-know-when-to-go-asynchronous-4731" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Are You Using JavaScript Right? Know When to Go Asynchronous</h2>
+      <h3>Mainul Hasan ・ Sep 4</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#promises</span>
+        <span class="ltag__link__tag">#callback</span>
+        <span class="ltag__link__tag">#asyncawait</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
 
  </details> 
  <hr /> 
