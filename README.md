@@ -118,6 +118,680 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Creating a CSS-only Card Slider with Tailwind CSS](https://dev.to/cruip_com/creating-a-css-only-card-slider-with-tailwind-css-44do) 
+ <details><summary>Article</summary> <h4>
+  
+  
+  <strong><a href="https://cruip-tutorials.vercel.app/card-slider/">Live Demo</a> / <a href="https://github.com/cruip/cruip-tutorials/blob/main/card-slider/index.html">Download</a></strong>
+</h4>
+
+<p>A <strong>card slider</strong> is a clever component that displays multiple layers of information. What makes this element unique is the ability to showcase an extensive amount of content in a limited space, and make the information accessible in a single click.</p>
+
+<p>This approach, like many others, doesn’t work well with extensive content, but not all, so it’s up to you to decide when to implement it and how.</p>
+
+<p>In this tutorial, we’ll show you how to create a <strong>CSS-only</strong> common variant of this component using <strong>Tailwind CSS</strong>, and we will guide you on how to efficiently and intuitively use it for your projects.</p>
+
+<p>Just a heads-up before we dive in. We’re drawing inspiration from this awesome <a href="https://codepen.io/JuniVersal/pen/zNyMRd">Codepen</a> created by Julia Geisendorf for our tutorial. Now, since we’re sticking to a pure CSS approach, I gotta be upfront: the widget we’re crafting might not hit the perfect accessibility mark.</p>
+
+<p>Ready? Let’s get started!</p>
+
+<h2>
+  
+  
+  Figuring out the component structure
+</h2>
+
+<p>Alrighty, before we dive into coding, it’s important to outline the structure of the component we’re about to build and decide on the native HTML elements we’ll be using.</p>
+
+<p>Since we’re aiming to create a clickable stack of cards without relying on JavaScript, we’ll employ a set of <strong>radio buttons</strong> to manage the active card’s state. Additionally, we’ll attach a <code>label</code> to each card, serving as the trigger to activate the respective card. Once this groundwork is laid, we’ll apply transition effects to make the animations visually engaging.</p>
+
+<p>Let’s be honest here – managing all these elements solely with CSS is going to be a bit tricky, and there might be necessary adjustments or enhancements, especially when integrating additional cards into the slider. As mentioned earlier, it’s crucial to view this component as more of an experimental project rather than a solution ready for production websites.</p>
+
+<p>So, let’s proceed to establish the structure of our component:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"px-12"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"max-w-lg mx-auto relative"</span><span class="nt">&gt;</span>
+
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-01"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/01"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-02"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/02"</span><span class="nt">&gt;</span>
+          <span class="c">&lt;!-- ... more radio buttons  --&gt;</span>
+
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"absolute inset-0 scale-[67.5%] z-20"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+              <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"absolute inset-0 scale-[67.5%] z-20"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-02"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+              <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+
+          <span class="c">&lt;!-- ... more cards --&gt;</span>
+
+      <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Alright, let’s break it down. We have a set of <code>&lt;input type="radio"&gt;</code> elements. These are hidden from view using the Tailwind CSS class <code>sr-only</code>. These inputs play a crucial role as triggers to activate our corresponding cards.</p>
+
+<p>Alongside these inputs, we have a series of <code>div</code> containers housing our cards. These containers are absolutely positioned and layered on top of each other. Additionally, we’ve attached a <code>label</code> to each card. These labels serve as the mechanism for activating the respective cards, and they cover the entire card area by utilizing the <code>absolute inset-0</code> classes.</p>
+
+<p>It’s worth noting that we’ve already set up classes like <code>peer/01</code>, <code>peer/02</code>, and so forth. These <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state">pseudo-classes</a> are key players in styling the card associated with the active input. This is achieved by leveraging the <code>peer-checked</code> modifier on the corresponding <code>div</code>.</p>
+
+<h2>
+  
+  
+  Defining the style for the active card
+</h2>
+
+<p>Let’s start by assuming that the initial card is the active one – no coincidence here, the first radio button holds the <code>checked</code> attribute. With this foundation, let’s explore how we can employ the <code>peer-checked</code> modifier to define the style for this active card:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+      absolute inset-0 scale-[67.5%] z-20
+      peer-checked/01:relative
+      peer-checked/01:z-50
+      peer-checked/01:translate-x-0
+      peer-checked/01:scale-100
+      peer-checked/01:[&amp;&gt;label]:pointer-events-none            
+  "</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In a nutshell, we’re giving instructions to the card that when its corresponding radio button gets checked, it needs to be relatively positioned, get a higher z-index compared to the rest, maintain zero translation, and maintain a scale of 1. Also, we’re specifying that the label for the active card should not be clickable; otherwise, users won’t be able to interact with the elements within the card.</p>
+
+<p>These classes will be duplicated for each card, with the only change being the reference number for the <code>peer-checked</code> modifier. For instance, for the second card, we’ll have something like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+      absolute inset-0 scale-[67.5%] z-20
+      peer-checked/02:relative
+      peer-checked/02:z-50
+      peer-checked/02:translate-x-0
+      peer-checked/02:scale-100
+      peer-checked/02:[&amp;&gt;label]:pointer-events-none            
+  "</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-02"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Styling the sibling cards to the active one
+</h2>
+
+<p>Now comes the tricky part. We need to define the style for the cards adjacent to the active one. To achieve this, we’ll be adding a set of custom classes to each card. It might not be the most elegant solution, but it’s the only option we’ve got to bring this component to life with pure CSS.</p>
+
+<p>Before we dive in, let’s summarize how the style of the sibling cards should shape up:</p>
+
+<ul>
+<li>  <strong>Card -3</strong>: Should maintain the translation value of <strong>Card -2</strong> (<code>-translate-x-40</code>), and fade out (<code>opacity-0</code>).</li>
+<li>  <strong>Card -2</strong>: Should translate left (<code>-translate-x-40</code>), have a lower <code>z-index</code> compared to the active card (<code>z-30</code>). Scaling isn’t necessary here, as it’ll inherit the minimal scaling set by <code>scale-[67.5%]</code>.</li>
+<li>  <strong>Card -1</strong>: Should translate left (<code>-translate-x-20</code>), scale down (<code>scale-[83.75%]</code>), and have a lower <code>z-index</code> compared to the active card (<code>z-40</code>).</li>
+<li>  <strong>Card attiva</strong>
+</li>
+<li>  <strong>Card -1</strong>: Should translate right (<code>translate-x-20</code>), scale down (<code>scale-[83.75%]</code>), and have a lower <code>z-index</code> compared to the active card (<code>z-40</code>).</li>
+<li>  <strong>Card +2</strong>: Should translate right (<code>translate-x-40</code>), have a lower <code>z-index</code> compared to the active card (<code>z-30</code>). Scaling isn’t necessary here, as it’ll inherit the minimal scaling set by <code>scale-[67.5%]</code>.</li>
+<li>  <strong>Card +3</strong>: Should maintain the translation value of <strong>Card +2</strong> (<code>translate-x-40</code>), and fade out (<code>opacity-0</code>).</li>
+</ul>
+
+<p>Following this blueprint, we’ll define custom classes for each card. So, let’s complete the <strong>first card</strong>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+      absolute inset-0 scale-[67.5%] z-20
+      peer-checked/01:relative
+      peer-checked/01:z-50
+      peer-checked/01:translate-x-0
+      peer-checked/01:scale-100
+      peer-checked/01:[&amp;&gt;label]:pointer-events-none
+      peer-checked/02:-translate-x-20
+      peer-checked/02:scale-[83.75%]
+      peer-checked/02:z-40
+      peer-checked/03:-translate-x-40
+      peer-checked/03:z-30
+      peer-checked/04:-translate-x-40
+      peer-checked/04:opacity-0
+      peer-checked/05:-translate-x-40
+  "</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So, when the active card is the second one (<code>peer-checked/02:</code>), we need to apply the conditions previously outlined for the <strong>Card -1</strong>.</p>
+
+<p>When the active card is the third one (<code>peer-checked/03:</code>), we’ll apply the conditions previously specified for the <strong>Card -2</strong>.</p>
+
+<p>And so on.</p>
+
+<p>Now, let’s wrap up styling for the <strong>second card</strong>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+      absolute inset-0 scale-[67.5%] z-20
+      peer-checked/01:translate-x-20
+      peer-checked/01:scale-[83.75%]
+      peer-checked/01:z-40
+      peer-checked/02:relative
+      peer-checked/02:z-50
+      peer-checked/02:translate-x-0
+      peer-checked/02:scale-100
+      peer-checked/02:[&amp;&gt;label]:pointer-events-none
+      peer-checked/03:-translate-x-20
+      peer-checked/03:scale-[83.75%]
+      peer-checked/03:z-40
+      peer-checked/04:-translate-x-40
+      peer-checked/04:z-30
+      peer-checked/05:-translate-x-40 
+      peer-checked/05:opacity-0
+  "</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+      <span class="nt">&lt;article&gt;</span>Card content<span class="nt">&lt;/article&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So, this logic needs to be extended to all the other cards too. It’s not overly complex, but it does demand a careful eye.</p>
+
+<h2>
+  
+  
+  Managing focus with keyboard navigation
+</h2>
+
+<p>As we mentioned earlier, this component we’re building isn’t perfectly accessible. However, we can definitely enhance its accessibility by highlighting the active card when the corresponding radio button is focused.</p>
+
+<p>To achieve this, all we need to do is add the classes <code>peer-focus-visible/01:[&amp;_article]:ring</code> and <code>peer-focus-visible/01:[&amp;_article]:ring-indigo-300</code> to each card. These classes will apply a focus ring to the active card and remove it when the card is no longer active. As you may guess, we’ll need to replicate these classes for each card, changing the reference number of the <code>peer-focus-visible</code> modifier.</p>
+
+<p>Therefore, when the active card receives focus, you’ll be able to navigate between the cards using the keyboard’s right and left arrow keys, or the up and down arrow keys.</p>
+
+<p><strong>Ceveats</strong> – Since we never hide the inactive cards using the <code>display: none</code> property, this creates an issue during tab navigation. For example, if you’ve focused on card 3 and press the tab key, the focus will move to the first interactive element of card 1, instead of navigating within the content of card 3. This is an undesired behavior that, unfortunately, cannot be resolved with CSS alone.</p>
+
+<h2>
+  
+  
+  Putting the complete code together
+</h2>
+
+<p>Now that we’ve explained how the component works and how it’s structured, let’s put together the complete code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"px-12"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"max-w-lg mx-auto relative"</span><span class="nt">&gt;</span>
+
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-01"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/01"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-02"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/02"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-03"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/03"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-04"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/04"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"article-05"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"slider"</span> <span class="na">class=</span><span class="s">"sr-only peer/05"</span><span class="nt">&gt;</span>
+
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+              peer-focus-visible/01:[&amp;_article]:ring
+              peer-focus-visible/01:[&amp;_article]:ring-indigo-300
+              peer-checked/01:relative
+              peer-checked/01:z-50
+              peer-checked/01:translate-x-0
+              peer-checked/01:scale-100
+              peer-checked/01:[&amp;&gt;label]:pointer-events-none
+              peer-checked/02:-translate-x-20
+              peer-checked/02:scale-[83.75%]
+              peer-checked/02:z-40
+              peer-checked/03:-translate-x-40
+              peer-checked/03:z-30
+              peer-checked/04:-translate-x-40                    
+              peer-checked/04:opacity-0
+              peer-checked/05:-translate-x-40
+          "</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
+                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
+                  <span class="nt">&lt;/header&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                      <span class="nt">&lt;/p&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                      <span class="nt">&lt;/p&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;/footer&gt;</span>
+              <span class="nt">&lt;/article&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+              peer-focus-visible/02:[&amp;_article]:ring
+              peer-focus-visible/02:[&amp;_article]:ring-indigo-300                        
+              peer-checked/01:translate-x-20
+              peer-checked/01:scale-[83.75%]
+              peer-checked/01:z-40
+              peer-checked/02:relative
+              peer-checked/02:z-50
+              peer-checked/02:translate-x-0
+              peer-checked/02:scale-100
+              peer-checked/02:[&amp;&gt;label]:pointer-events-none
+              peer-checked/03:-translate-x-20
+              peer-checked/03:scale-[83.75%]
+              peer-checked/03:z-40
+              peer-checked/04:-translate-x-40
+              peer-checked/04:z-30
+              peer-checked/05:-translate-x-40 
+              peer-checked/05:opacity-0
+          "</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-02"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
+                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
+                  <span class="nt">&lt;/header&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                      <span class="nt">&lt;/p&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                      <span class="nt">&lt;/p&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;/footer&gt;</span>
+              <span class="nt">&lt;/article&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+              peer-focus-visible/03:[&amp;_article]:ring
+              peer-focus-visible/03:[&amp;_article]:ring-indigo-300                          
+              peer-checked/01:translate-x-40
+              peer-checked/01:z-30
+              peer-checked/02:translate-x-20
+              peer-checked/02:scale-[83.75%]
+              peer-checked/02:z-40
+              peer-checked/03:relative
+              peer-checked/03:z-50
+              peer-checked/03:translate-x-0
+              peer-checked/03:scale-100
+              peer-checked/03:[&amp;&gt;label]:pointer-events-none
+              peer-checked/04:-translate-x-20
+              peer-checked/04:scale-[83.75%]
+              peer-checked/04:z-40
+              peer-checked/05:-translate-x-40
+              peer-checked/05:z-30                  
+          "</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-03"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
+                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
+                  <span class="nt">&lt;/header&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                      <span class="nt">&lt;/p&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                      <span class="nt">&lt;/p&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;/footer&gt;</span>
+              <span class="nt">&lt;/article&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+              peer-focus-visible/04:[&amp;_article]:ring
+              peer-focus-visible/04:[&amp;_article]:ring-indigo-300                          
+
+              peer-checked/01:translate-x-40 
+              peer-checked/01:opacity-0
+
+              peer-checked/02:translate-x-40
+              peer-checked/02:z-30
+
+              peer-checked/03:translate-x-20
+              peer-checked/03:scale-[83.75%]
+              peer-checked/03:z-40
+
+              peer-checked/04:relative
+              peer-checked/04:z-50
+              peer-checked/04:translate-x-0
+              peer-checked/04:scale-100
+              peer-checked/04:[&amp;&gt;label]:pointer-events-none
+
+              peer-checked/05:-translate-x-20
+              peer-checked/05:scale-[83.75%]
+              peer-checked/05:z-40
+          "</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-04"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
+                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
+                  <span class="nt">&lt;/header&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                      <span class="nt">&lt;/p&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                      <span class="nt">&lt;/p&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;/footer&gt;</span>
+              <span class="nt">&lt;/article&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>  
+
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"
+              absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+              peer-focus-visible/05:[&amp;_article]:ring
+              peer-focus-visible/05:[&amp;_article]:ring-indigo-300                          
+              peer-checked/01:translate-x-40 
+              peer-checked/02:translate-x-40 
+              peer-checked/02:opacity-0
+              peer-checked/03:translate-x-40
+              peer-checked/03:z-30
+              peer-checked/04:translate-x-20
+              peer-checked/04:scale-[83.75%]
+              peer-checked/04:z-40
+              peer-checked/05:relative
+              peer-checked/05:z-50
+              peer-checked/05:translate-x-0
+              peer-checked/05:scale-100
+              peer-checked/05:[&amp;&gt;label]:pointer-events-none
+          "</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"absolute inset-0"</span> <span class="na">for=</span><span class="s">"article-05"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"bg-white p-6 rounded-lg shadow-2xl"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"inline-flex rounded-full shadow mb-3"</span> <span class="na">src=</span><span class="s">"./icon.svg"</span> <span class="na">width=</span><span class="s">"44"</span> <span class="na">height=</span><span class="s">"44"</span> <span class="na">alt=</span><span class="s">"Icon"</span> <span class="nt">/&gt;</span>
+                      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-xl font-bold text-slate-900"</span><span class="nt">&gt;</span>Focus on the big picture<span class="nt">&lt;/h1&gt;</span>
+                  <span class="nt">&lt;/header&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-sm leading-relaxed text-slate-500 space-y-4 mb-2"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          Many desktop publishing packages and web page editors now use Pinky as their default model text, and a search for more variants will uncover many web sites still in their infancy.
+                      <span class="nt">&lt;/p&gt;</span>
+                      <span class="nt">&lt;p&gt;</span>
+                          All the generators tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                      <span class="nt">&lt;/p&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"text-sm font-medium text-indigo-500 hover:underline"</span> <span class="na">href=</span><span class="s">"#0"</span><span class="nt">&gt;</span>Read more -&gt;<span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;/footer&gt;</span>
+              <span class="nt">&lt;/article&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>                  
+      <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Conclusions
+</h2>
+
+<p>Now that you have learned how to build a card slider like the one in the tutorial, you can use your creativity to create multiple variants of this component for your user interfaces.</p>
+
+<p>Are you hungry for more guides, tips, and tricks like this one? Check out our section of <a href="https://cruip.com/tutorials/?swcfpc=1">Tailwind CSS tutorials</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [GitHub: Composite Actions vs Reusable Workflows [Updated 2023]](https://dev.to/n3wt0n/github-composite-actions-vs-reusable-workflows-updated-2023-bl8) 
+ <details><summary>Article</summary> <p>Understanding the differences between Composite Actions and Reusable Workflows in GitHub Actions can be more complex than you think… especially after the latest changes GitHub made.</p>
+
+<p>But hey, I’m here for you. Let’s find out together what those 2 features have in common, what the differences are, and when you should use one instead of the other.</p>
+
+<h3>
+  
+  
+  Into
+</h3>
+
+<p>I’ve already written an <a href="https://dev.to/n3wt0n/composite-actions-vs-reusable-workflows-what-is-the-difference-github-actions-11kd">article</a> and made a <a href="https://youtu.be/4lH_7b5lmjo">video</a> on this subject before, however that was almost 1 and a half years ago and, as many pointed out in the comments , GitHub has substantially changed the featureset since… so it’s time for an updated comparison.</p>
+
+<p>Btw if you want to have a deep dive into either Composite Actions or Reusable Workflows, be sure to check the in-depth videos I made about them (<a href="https://youtu.be/4lH_7b5lmjo">here</a> and <a href="https://youtu.be/lRypYtmbKMs">here</a>).</p>
+
+<h3>
+  
+  
+  Video
+</h3>
+
+<p>As usual, if you are a <strong>visual learner</strong>, or simply prefer to watch and listen instead of reading, here you have <strong>the video with the whole explanation</strong>.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/zc19mR3O4a4">
+</iframe>
+</p>
+
+<p><a href="https://youtu.be/zc19mR3O4a4">Link to the video: https://youtu.be/zc19mR3O4a4</a></p>
+
+<p>If you rather prefer reading, well... let's just continue :)</p>
+
+<h3>
+  
+  
+  About Composite Actins and Reusable Workflows
+</h3>
+
+<p>In general, <strong>Reusable Workflows</strong> are a way to avoid duplication as you can reuse the same workflow in multiple other workflows, and perhaps create a library of proven and effective workflows that can be centrally maintained.</p>
+
+<p><strong>Composite Actions</strong>, instead, allows you to combine multiple steps within one action. For example, you can use this feature to bundle together multiple run commands into an action, and then have a workflow that executes the bundled commands as a single step using that action.</p>
+
+<p>And this brings me to the first difference between the 2: Visibility and Logging.</p>
+
+<h3>
+  
+  
+  1. Visibility and Logging
+</h3>
+
+<p>I think this point is <strong>pretty important</strong> but often overlooked. </p>
+
+<p>With Reusable Workflows you have a <strong>very rich log</strong> of what is happening, and every single job and step is logged independently in real time as you can see below:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--i_k_A4Tq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxl2e30bs806z7myo098.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i_k_A4Tq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxl2e30bs806z7myo098.png" alt="Reusable Workflows Logs" width="800" height="500"></a></p>
+
+<p>This specific workflow has 2 jobs in it, and each job is logged together with its steps. All clear and organized.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4fvlqmml--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kgtnwp0ligtx0auwj1qo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4fvlqmml--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kgtnwp0ligtx0auwj1qo.png" alt="Composite Actions Logs" width="800" height="500"></a></p>
+
+<p>This is not the case, however, with Composite Actions. As we have just seen, Composite Actions are a way to <em>group</em> multiple steps in one… this also means that when executing that step you don’t have visibility on all of the parts.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3ypaadj1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kl7hrc3amerl4orjrd5x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3ypaadj1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kl7hrc3amerl4orjrd5x.png" alt="Multiple Jobs" width="800" height="500"></a></p>
+
+<p>All you have is a <strong>single log</strong> of a single step... even if it contains multiple steps.</p>
+
+<h3>
+  
+  
+  2. Jobs
+</h3>
+
+<p>Another difference, which is the <strong>biggest difference</strong> in my opinion, is about Jobs.</p>
+
+<p>As we have said before, Composite Actions allow you to only have a flat list of steps. Therefore, you <strong>cannot have multiple jobs</strong> in a single Composite Action. </p>
+
+<p>In fact, a Composite Action doesn’t even specify a <code>job</code> keyword, but uses <code>runs</code> instead, and can only be consumed from within a job in the caller repository.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--J_WcdKHJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jslsko9fkfy33way3daw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J_WcdKHJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jslsko9fkfy33way3daw.png" alt="No Jobs in Composite Actions" width="800" height="500"></a></p>
+
+<p>Because of this, you can see a Composite Action basically like any other action you have on the marketplace.</p>
+
+<p>The story is different, however, for Reusable Workflows.</p>
+
+<p>They do <strong>define jobs</strong> inside them, and because of that you can have as many jobs as you want in a single Reusable Workflow.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bNK1mgi1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r8jrmt9jj5dxbkltayt8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bNK1mgi1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r8jrmt9jj5dxbkltayt8.png" alt="Jobs in Reusable Workflows" width="800" height="500"></a></p>
+
+<p>And since they do use jobs, and you have to specify where the job will run, we can take this a little further: if your job needs to run on a specific runner or machine, you need to use Reusable Workflows.</p>
+
+<h3>
+  
+  
+  3. Calling them
+</h3>
+
+<p>Next, and actually last, difference between Composite Actions and Reusable Workflows is <strong>how you call them</strong>, and this tightly relates to what we have seen previously.</p>
+
+<p>Reusable workflows are called <strong>directly within a job definition</strong>, and not from within a job step. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tP3V0baF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/05civa9bq8gjxxrkvnev.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tP3V0baF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/05civa9bq8gjxxrkvnev.png" alt="Calling a Reusable Workflow" width="800" height="478"></a></p>
+
+<p>You cannot, therefore, use <code>GITHUB_ENV</code> to pass values to job steps in the caller workflow. And, more importantly, you cannot add additional steps to the job which calls the reusable workflow.</p>
+
+<p>Composite Actions, instead, can exclusively be called and used as a step in a job, which also means there could be (and that is usually the case) other steps in the job before and or after the Composite Action.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--K1BDKvjq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8fvmk8ct8ow9b7vrbybh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--K1BDKvjq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8fvmk8ct8ow9b7vrbybh.png" alt="Calling a Composite Action" width="800" height="433"></a></p>
+
+<p>Make sure to keep this difference in mind when designing your Actions Workflows.</p>
+
+<h3>
+  
+  
+  Conclusions
+</h3>
+
+<p>There used to be many more differences between Composite Actions and Reusable Workflow, but as of recording this video, the only ones still standing are the 3 differences we have just seen.</p>
+
+<p>So, to recap, Reusable Workflows make it simpler to spin up new repositories and projects and immediately start using automation and CI/CD workflows with GitHub Actions that you know will work, and to reduce code duplication. </p>
+
+<p>Composite Actions, on the other hand, allow you to pack multiple tasks and operations in a single step, to be reused inside a job.</p>
+
+<p>Let me know in the comments below if you noticed any other point in which those 2 features differ, and if you prefer using Composite Actions, or Reusable Workflows… or both 😉</p>
+
+<p>Also, check out <a href="https://youtu.be/lTAkB7P1qV0">this video</a>, in which I talk about the new GitHub Actions Larger Runners and how to use them.</p>
+
+<p><strong>Like, share and follow me</strong> 🚀 for more content:</p>
+
+<p>🆘 <a href="https://geni.us/cdconsult">Get Help With DevOps</a><br>
+📽 <a href="https://www.youtube.com/CoderDave">YouTube</a><br>
+☕ <a href="https://buymeacoffee.com/CoderDave">Buy me a coffee</a><br>
+📧 <a href="https://coderdave.io/newsletter">Newsletter</a><br>
+🌐 <a href="https://coderdave.io">CoderDave.io Website</a><br>
+👕 <a href="https://geni.us/cdmerch">Merch</a><br>
+👦🏻 <a href="https://www.facebook.com/CoderDaveYT">Facebook page</a><br>
+🐱‍💻 <a href="https://github.com/n3wt0n">GitHub</a><br>
+👲🏻 <a href="https://www.twitter.com/davide.benvegnu">Twitter</a><br>
+👴🏻 <a href="https://www.linkedin.com/in/davidebenvegnu/">LinkedIn</a><br>
+🔉 <a href="https://geni.us/cdpodcast">Podcast</a><br>
+💖 <a href="https://patreon.com/CoderDave">Patreon</a></p>
+
+<p><a href="https://www.buymeacoffee.com/CoderDave"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wYWufrCi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="545" height="153"></a></p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/zc19mR3O4a4">
+</iframe>
+</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Frontend vs. Backend](https://dev.to/hasanelsherbiny/frontend-vs-backend-5edk) 
+ <details><summary>Article</summary> <p>if you are new to the world of the web development ,you will have to know some important terms, two of these terms are frontend and backend.<br>
+so what are these two terms?<br>
+most of web applications are based on the model called Client Server model.</p>
+
+<h2>
+  
+  
+  Client Server Model
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WH2z1NS8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gem5g1pnztud16eq9080.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WH2z1NS8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gem5g1pnztud16eq9080.png" alt="client server model" width="800" height="480"></a></p>
+
+<p>in this model your website (the application you have created) is hosted on a Computer (called server) this application is waiting for incoming requests to start to handle it, in this scenario the waiting application is called Backend (consider it as the backstage).</p>
+
+<p>and the caller is called frontend which initiate the request or ask for a specific resource (exists on the server).</p>
+
+<h2>
+  
+  
+  sounds good but why?
+</h2>
+
+<p>why don't we place everything on the frontend and this is gonna be faster and high latency.<br>
+the problem here is:</p>
+
+<ol>
+<li><p>difference between resources at the each caller client<br>
+What if the caller client  wants to execute a process requires high processing power and high memory requirements?<br>
+in this case our theory will fall.</p></li>
+<li><p>if we placed everything at the frontend if user's device is lost or broken the stored data is lost too.</p></li>
+<li><p>different client's platforms <br>
+our application can be used be different consumers with different platforms and it can cause a change of expected behavior of our code.</p></li>
+</ol>
+
+<p>ok let's do everything on the backend.<br>
+in this case will have much headache on the server requiring us to increase resources allocated to the server.</p>
+
+<p>for these problems the client server model is handy and the optimal solution is to use mixture between the backend and frontend.</p>
+
+<p>the backend should has the pardon of executing processes requiring high resources as mentioned before and also must be responsible for accessing the database and carrying out transactions based on each user's roles.</p>
+
+<p>the frontend should expose easy to use and pretty UI to the user and any interaction between the user and the UI should be executed at frontend to reduce ovehead of the server.</p>
+
+<h2>
+  
+  
+  What technologies you need for the backend?
+</h2>
+
+<p>a lot of Programming languages and frameworks are there for developing backend, most common are:</p>
+
+<ol>
+<li>PHP</li>
+<li>Asp.net (C#-Vb.net)</li>
+<li>Ruby on rails (ruby)</li>
+<li>Node.Js (javascript)</li>
+<li>Spring (java)
+## What technologies you need for the frontend?
+Mainly you need HTML , CSS and JavaScript for frontend development
+but there are also a lot of frameworks facilitating the usage of CSS and JavaScript. </li>
+</ol>
+
+ </details> 
+ <hr /> 
+
  #### - [Angular State Management: A Comparison of the Different Options Available](https://dev.to/chintanonweb/angular-state-management-a-comparison-of-the-different-options-available-100e) 
  <details><summary>Article</summary> <h2>
   
@@ -1696,196 +2370,6 @@ Table of Contents</h2>
 <strong>References</strong>: <a href="https://towardsdatascience.com/steganography-hiding-an-image-inside-another-77ca66b2acb1">Steganography: Hiding an image inside another</a>
 </li>
 </ul>
-
- </details> 
- <hr /> 
-
- #### - [Blood pressure tracker with Microsoft Lists and Power Automate](https://dev.to/jaloplo/blood-pressure-tracker-with-microsoft-lists-and-power-automate-45jp) 
- <details><summary>Article</summary> <p>This article will showcase a real-life scenario with practical applications for your daily routine. The focus will be on recording heart rates and establishing a historical record. The tools at play in this process are <em>Microsoft Lists</em> and <em>Power Automate</em>. With <em>Microsoft Lists</em>, data storage and management are made seamless. This includes storing systolic and diastolic readings along with corresponding dates. In parallel, <em>Power Automate</em> streamlines data input.</p>
-
-<p>Harnessing the capabilities of <em>Microsoft Lists</em> and <em>Power Automate</em>, you can design a system that effortlessly oversees and tracks your heart rate trends over time. This proves especially beneficial for those keen on maintaining optimal cardiovascular well-being or receiving medical advice to routinely monitor their heart rates.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GScc2AiH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fe70e0e64-929c-4e2d-b832-f254bca9ccae_2718x1032.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GScc2AiH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fe70e0e64-929c-4e2d-b832-f254bca9ccae_2718x1032.png" alt="Blood pressure list in Microsoft Lists.png" width="800" height="304"></a></p>
-
-<h2>
-  
-  
-  The Importance of Blood Pressure for Wellbeing
-</h2>
-
-<p>Maintaining a healthy blood pressure is crucial for overall wellbeing, as high blood pressure can lead to a range of health problems. Here are some reasons why focusing on blood pressure is important:</p>
-
-<ol>
-<li><p><strong>Reducing the risk of heart disease and stroke</strong>: High blood pressure can cause damage to blood vessels, making them weak, stiff, or narrower, which can lead to heart disease and stroke.</p></li>
-<li><p><strong>Improving brain health</strong>: High blood pressure has been linked to cognitive decline and an increased risk of stroke, which can have a negative impact on brain health.</p></li>
-<li><p><strong>Enhancing mental health</strong>: Recent research has shown that higher blood pressure is associated with greater well-being and fewer depressive symptoms, while the presence of hypertension is linked to more depressive symptoms and lower well-being.</p></li>
-<li><p><strong>Preventing kidney disease</strong>: High blood pressure can damage the blood vessels in the kidneys, leading to kidney disease.</p></li>
-<li><p><strong>Managing stress</strong>: While the link between stress and high blood pressure is still being studied, stress is known to contribute to risk factors like a poor diet and excessive alcohol consumption, which can lead to high blood pressure.</p></li>
-</ol>
-
-<p>By making small but positive changes to our lifestyle, such as getting more exercise, quitting smoking, and eating a healthy diet, we can prevent and manage high blood pressure. It's important to focus on one change at a time, as this can help us feel less overwhelmed and more capable of making positive changes. Additionally, managing stress through techniques like meditation and deep breathing can also help to control blood pressure.</p>
-
-<h2>
-  
-  
-  Step-by-step implementation guide
-</h2>
-
-<ol>
-<li><strong>List creation and configuration</strong></li>
-</ol>
-
-<p>Begin by creating a list in <em>Microsoft Lists</em>. To achieve this, log in to your <em>Microsoft 365</em> application by visiting <a href="https://microsoft365.com">https://microsoft365.com</a>. Once logged in, access the waffle menu and choose the <code>Lists</code> option. Proceed to click on <code>New List</code> and then select the <code>Blank List</code> template.</p>
-
-<p>Now, it's time to establish the necessary columns to ensure accurate data recording. To accomplish this, we will include two number-type columns named <code>Systole</code> and <code>Diastole</code>. This arrangement enables precise monitoring of both values.</p>
-
-<p>Additionally, create an extra column to indicate the date of each measurement. Make sure this column differs from the <code>Creation Date</code> column to accommodate potential earlier dates in the records.</p>
-
-
-<div class="crayons-card c-embed text-styles text-styles--secondary">
-      <div class="c-embed__cover">
-        <a href="https://www.youtube.com/shorts/g1N1S4a3koc" class="c-link s:max-w-50 align-middle" rel="noopener noreferrer">
-          <img alt="" src="https://res.cloudinary.com/practicaldev/image/fetch/s--WoOQUmig--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://i.ytimg.com/vi/g1N1S4a3koc/hq2.jpg%3Fsqp%3D-oaymwEoCOADEOgC8quKqQMcGADwAQH4AbYIgALGCooCDAgAEAEYESByKCwwDw%3D%3D%26rs%3DAOn4CLAlJz009daZfyBM1P7bxsBYpdebhg" height="360" class="m-0" width="480">
-        </a>
-      </div>
-    <div class="c-embed__body">
-      <h2 class="fs-xl lh-tight">
-        <a href="https://www.youtube.com/shorts/g1N1S4a3koc" rel="noopener noreferrer" class="c-link">
-          Microsoft Lists list creation for Blood pressure tracker - YouTube
-        </a>
-      </h2>
-        <p class="truncate-at-3">
-          In this video, we'll guide you through creating a blood pressure monitoring system using Microsoft Lists. Learn how to set up and manage your health data eff...
-        </p>
-      <div class="color-secondary fs-s flex items-center">
-          <img alt="favicon" class="c-embed__favicon m-0 mr-2 radius-0" src="https://res.cloudinary.com/practicaldev/image/fetch/s--kC1kATEk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.youtube.com/s/desktop/223e107e/img/favicon.ico" width="16" height="16">
-        youtube.com
-      </div>
-    </div>
-</div>
-
-
-<p>The remaining consideration is how to handle the <code>Title</code> field. In this instance, we will utilize it to specify the method of information insertion, either manual or automatic. This will involve incorporating relevant text, given that the field is of text type.</p>
-
-<p>With these steps complete, you are now prepared to record blood pressure readings. This will entail manually entering values for <code>Title</code>, <code>Systole</code>, <code>Diastole</code>, and the measurement date.</p>
-
-<p>Having established the desired data structure within the table, the next step is to streamline data entry. To achieve this, we'll utilize <em>Power Automate</em> to create a workflow that automates information addition to the list.</p>
-
-<ol>
-<li><strong>Power Automate flow creation and configuration</strong></li>
-</ol>
-
-<p>From the <em>Microsoft 365</em> application, access the waffle menu and select <code>Power Automate</code>. On the left side, click on <code>Create</code> and opt for the <code>Instant Cloud Flow</code> choice. Assign a suitable name, such as <code>Personal Blood Pressure Monitoring</code>, and select <code>Manually trigger a flow</code> as the trigger method.</p>
-
-<blockquote>
-<p>Alternatively, you can opt for an automatic flow creation by describing the flow you want, like <code>Write to a SharePoint List after Receiving Two Parameters</code>. This approach generates the flow and its steps automatically.</p>
-</blockquote>
-
-<p>Within the flow editing interface, expand the trigger to include the two data pieces needed to initiate the flow. Both pieces will be classified as <code>Number</code> type and named <code>Systole</code> and <code>Diastole</code>. This information is all that's required to populate the data in the list.</p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/_YrD4rCLs_k">
-</iframe>
-</p>
-
-<p>Next, add an action to create an item in a <em>SharePoint</em> list. As the list is located under <code>Our Lists</code>, input the site's address in the designated field. To do this, copy the URL from the list's address, stopping just before <code>/Lists</code>.</p>
-
-<p>Proceed to select the relevant list by specifying the <code>List Name</code> field. The list's columns will be integrated into the flow action, allowing you to input the necessary information. For <code>Systole</code>, choose the <code>Systole</code> variable linked to the trigger data. Repeat this for the <code>Diastole</code> column.</p>
-
-<p>For the <code>Measurement Date</code> column, choose the variable linked to the <em>Power Automate</em> execution's timestamp. No additional action is needed, as the values will be saved correctly.</p>
-
-<p>Lastly, fill in the <code>Title</code> field with a text indicating that the record was generated via <em>Power Automate,</em> such as <code>Created from Power Automate</code>.</p>
-
-<h2>
-  
-  
-  Simplicity for user experience
-</h2>
-
-<p>With the assistance of <em>Power Automate</em>, the concern of data entry is effortlessly resolved. Your sole task involves inputting your personal blood pressure readings. Employing the user-friendly <em>Power Automate</em> mobile application, initiating the workflow is an uncomplicated process, preceded by the entry of these values.</p>
-
-<p>In essence, <em>Power Automate</em> transcends being merely a workflow engine; it possesses the capacity to initiate workflows based on user inputs. This functionality offers a seamless and straightforward approach, providing an intuitive, standardized, and readily accessible interface that significantly enhances interaction with individuals.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WetsAYif--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F74856610-de5a-4b54-be8a-aee2b6358c44_505x489.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WetsAYif--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://substackcdn.com/image/fetch/w_1456%2Cc_limit%2Cf_webp%2Cq_auto:good%2Cfl_progressive:steep/https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F74856610-de5a-4b54-be8a-aee2b6358c44_505x489.png" alt="Blood pressure - Power Automate.png" width="505" height="489"></a></p>
-
-<h2>
-  
-  
-  Process enhancements
-</h2>
-
-<p>There are several ways to improve this process. One approach is to use formatters on the columns, which can highlight values that are either unusually high or low for each measurement. Additionally, you can incorporate a different kind of trigger, like initiating the process through an email or an API call. This integration allows the process to seamlessly become a part of other interconnected workflows.</p>
-
-<p>Please share your thoughts in the comments section regarding any additional enhancements you believe could be implemented. Your input could contribute to refining and simplifying the process or making it more comprehensive.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>By utilizing the capabilities of <em>Microsoft Lists</em> and <em>Power Automate</em>, you can establish a system that effortlessly monitors and tracks changes in your heart rate over time. This is particularly beneficial for individuals prioritizing their cardiovascular well-being or those advised to regularly monitor their heart rates.</p>
-
-<p>Moreover, this example isn't just a standalone case. It serves as a clear and efficient template that can be readily adapted for similar processes. The streamlined implementation of <em>Microsoft Lists</em> and <em>Power Automate</em> can be applied to various scenarios, ensuring quick and effective monitoring tailored to specific needs. This approach promotes simplicity and effectiveness, allowing you to swiftly implement solutions that require meticulous tracking, thus fostering a culture of efficiency in various domains.</p>
-
-<h2>
-  
-  
-  References
-</h2>
-
-<ul>
-<li><em>Microsoft Lists list creation for Blood pressure tracker video: <a href="https://youtube.com/shorts/g1N1S4a3koc">https://youtube.com/shorts/g1N1S4a3koc</a></em></li>
-<li><em>Power Automate flow creation for Blood pressure tracker video: <a href="https://youtu.be/_YrD4rCLs_k">https://youtu.be/_YrD4rCLs_k</a></em></li>
-<li><em>Blood Pressure and Your Brain: <a href="https://www.helpguide.org/articles/healthy-living/blood-pressure-and-your-brain.htm">https://www.helpguide.org/articles/healthy-living/blood-pressure-and-your-brain.htm</a></em></li>
-<li><em>Blood Pressure Matters: <a href="https://newsinhealth.nih.gov/2016/01/blood-pressure-matters">https://newsinhealth.nih.gov/2016/01/blood-pressure-matters</a></em></li>
-<li><em>Associations between mental health and blood pressure: <a href="https://www.mpg.de/20163652/0413-nepf-how-high-blood-pressure-affects-mental-health-149575-x">https://www.mpg.de/20163652/0413-nepf-how-high-blood-pressure-affects-mental-health-149575-x</a></em></li>
-<li><em>How Human Connection Can Help Lower Your Blood Pressure: <a href="https://www.dignityhealth.org/articles/how-human-connection-can-help-lower-your-blood-pressure">https://www.dignityhealth.org/articles/how-human-connection-can-help-lower-your-blood-pressure</a></em></li>
-<li><em>Blood pressure and your brain: <a href="https://www.health.harvard.edu/heart-health/blood-pressure-and-your-brain">https://www.health.harvard.edu/heart-health/blood-pressure-and-your-brain</a></em></li>
-<li><em>Managing Stress to Control High Blood Pressure: <a href="https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure/managing-stress-to-control-high-blood-pressure">https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure/managing-stress-to-control-high-blood-pressure</a></em></li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Rubyist Hangout Thread](https://dev.to/ben/rubyist-hangout-thread-33hc) 
- <details><summary>Article</summary> <p>Well, hello! It's time for our weekly Ruby enthusiasts' meetup, where we celebrate Ruby's 28-year legacy and everything community-approved, Ruby or not. Share with us:<br>
-🌟 Spotlight a Fellow Member: Highlight a Ruby enthusiast's accomplishments.<br>
-📖 Share an Intriguing Read: Recommend compelling tech articles.<br>
-🌐 Current Buzz in the Sphere: Keep us informed on Ruby-related news!</p>
-
- </details> 
- <hr /> 
-
- #### - [Beyond Work, What Are Your Goals for the Next 5 Years?](https://dev.to/codenewbieteam/beyond-work-what-are-your-goals-for-the-next-5-years-5eea) 
- <details><summary>Article</summary> <p><em>Get a glimpse into the daily experiences, work routines, and unique perspectives of tech professionals, both novice and experienced alike, in "A Day in the Life."</em></p>
-
-<blockquote>
-<p>What's a non-work-related goal you'd like to accomplish in the next five years?</p>
-</blockquote>
-
-<p>Follow the <a href="https://dev.to/codenewbieteam">CodeNewbie Org</a> and <a href="https://dev.to/t/codenewbie">#codenewbie</a> for more discussions and online camaraderie!</p>
-
-<p><em><div class="ltag__user ltag__user__id__2167">
-  <a href="/codenewbieteam" class="ltag__user__link profile-image-link">
-    <div class="ltag__user__pic">
-      <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" alt="codenewbieteam image"></a>
-    </div>
-  </a>
-  <div class="ltag__user__content">
-    <h2>
-      <a href="/codenewbieteam" class="ltag__user__link">CodeNewbie</a>
-      Follow
-    </h2>
-    <div class="ltag__user__summary">
-      <a href="/codenewbieteam" class="ltag__user__link">
-        The most supportive community of programmers and people learning to code.  Part of the DEV family.
-
-
-      </a>
-    </div>
-  </div>
-</div>
-</em></p>
 
  </details> 
  <hr /> 
