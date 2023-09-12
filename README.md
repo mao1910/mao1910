@@ -118,12 +118,365 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Solving "Move Zeroes" Leet code Question.](https://dev.to/leetcode/solving-move-zeroes-leet-code-question-8k2) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  283. Move Zeroes
+</h2>
+
+<p>Type: Easy<br>
+Liked by 15.2K<br>
+Disliked by 380.</p>
+
+<p><strong>Companies that asked this question</strong><br>
+<em>Companies: No of times asked</em><br>
+Yandex 8<br>
+Apple 3<br>
+Amazon 3<br>
+Facebook 11<br>
+Bloomberg 6<br>
+Google 4<br>
+Adobe 3<br>
+Microsoft 2<br>
+Uber 2<br>
+Oracle 2<br>
+Splunk 2<br>
+Tesla 2<br>
+tcs 6<br>
+Expedia 4<br>
+VMware 3<br>
+Goldman Sachs 3<br>
+ByteDance 3<br>
+JPMorgan 3<br>
+TikTok 3<br>
+LinkedIn 2<br>
+Yahoo 2<br>
+IBM 2<br>
+Morgan Stanley 2<br>
+ServiceNow 2<br>
+Salesforce 2<br>
+Zoho 2<br>
+Infosys 2<br>
+Nvidia 2<br>
+Samsung 2<br>
+Wix 1</p>
+
+<p>Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.</p>
+
+<p>Note that you must do this in-place without making a copy of the array.</p>
+
+<p><strong>Example 1:</strong><br>
+Input: nums = <code>[0,1,0,3,12]</code><br>
+Output: <code>[1,3,12,0,0]</code></p>
+
+<p><strong>Example 2:</strong><br>
+Input: nums = <code>[0]</code><br>
+Output: <code>[0]</code></p>
+
+<p><strong>Constraints:</strong></p>
+
+<p><code>1 &lt;= nums.length &lt;= 104</code><br>
+<code>-231 &lt;= nums[i] &lt;= 231 - 1</code></p>
+
+<h1>
+  
+  
+  Intuition
+</h1>
+
+<p>We want to move all the <code>zeros</code> to the end of the <code>array</code> while keeping the <code>non-zero</code> elements in their relative order.</p>
+
+<h1>
+  
+  
+  Approach
+</h1>
+
+<p>We maintain <code>two pointers: i</code> to iterate through the <code>array</code> and <code>nonZeroIndex</code> to keep track of the <code>position</code> where we should insert non-zero elements. When we encounter a non-zero element, we <code>swap</code> it with the element at nonZeroIndex and then increment nonZeroIndex.</p>
+
+<h1>
+  
+  
+  Complexity
+</h1>
+
+<p><strong>Time complexity:</strong><br>
+The code iterates through the array once, so the time complexity is   <code>O(n)</code>, where <code>n</code> is the length of the array.</p>
+
+<p><strong>Space complexity:</strong><br>
+The code uses a constant amount of extra space, so the space complexity is <code>O(1)</code>.</p>
+
+<h1>
+  
+  
+  Code
+</h1>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>class Solution {
+    public void moveZeroes(int[] nums) {
+        int nonZeroIndex = 0; 
+        for (int i = 0; i &lt; nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[i];
+                nums[i] = nums[nonZeroIndex];
+                nums[nonZeroIndex] = temp;
+                nonZeroIndex++; 
+            }
+        }
+    }
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>Happy coding,<br>
+shiva</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Bleeding-edge Project Using Everything New In Next.js 13📚](https://dev.to/apestein/bleeding-edge-project-using-everything-new-in-nextjs-13-4mlg) 
  <details><summary>Article</summary> <p>Project using bleeding-edge stack. Drizzle ORM + Neon postgres + Clerk auth + Shadcn/ui + everything new in Next.js 13 (server components, server actions, streaming ui, parallel routes, intercepting routes). Fully edge runtime deployed. I wrote a breakdown and talked about some tricky / difficult things while building this project. This will be a good reference project for people looking to learn Next.js app router. Project uses 100% server actions and include features such as ability to search show catalog, SaaS subscription service with Stripe, optimistic update, and infinite scrolling.</p>
 
 <p>Repo: <a href="https://github.com/Apestein/nextflix">https://github.com/Apestein/nextflix</a></p>
 
 <p>Live: <a href="https://nextflix-blush.vercel.app/">https://nextflix-blush.vercel.app/</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Learning basic SQL with me:](https://dev.to/jnx257/learning-basic-sql-with-me-29f7) 
+ <details><summary>Article</summary> <p><em>The main objective of this article is to learn basic SQL commands and the structure of SQL..</em></p>
+
+<h2>
+  
+  
+  Okay, let's start with Wikipedia's definition of SQL:
+</h2>
+
+<blockquote>
+<p>SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS). It is particularly useful in handling structured data, i.e., data incorporating relations among entities and variables</p>
+</blockquote>
+
+<p><strong>So, basically, SQL is a language that we can use to access/manipulate databases..</strong></p>
+
+
+
+
+<h2>
+  
+  
+  RDBMS
+</h2>
+
+<p><strong>RDBMS</strong> stands for <strong>Relational Database Management System</strong>. But what does it mean? SQL forms the foundation for all RDBMS systems, and nearly all technologies utilize SQL as their basis.</p>
+
+<p>SQL continues to serve as a fundamental pattern, but now we employ various technologies that build upon SQL, each with its own distinct characteristics.</p>
+
+<p><em>most used are:</em></p>
+
+<ul>
+<li>    <strong>MySQL</strong>: created by Oracle, It's a option that give us free and paid services; </li>
+<li>   <strong>PostgreSQL</strong>: most common In web, PostgreSQL is a Opensource software;</li>
+<li>   <strong>Oracle</strong>: know by your security, is most common in big companies  ;</li>
+<li>   <strong>SQL Server</strong>: developed by Microsoft, got free versions and paid ones.</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IjyTNkd2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5ad0ispfrba6i95cwnxx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IjyTNkd2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5ad0ispfrba6i95cwnxx.png" alt="Image description" width="551" height="244"></a></p>
+
+
+
+
+<h2>
+  
+  
+  Consistences of SQL
+</h2>
+
+<p>So, we already know how data is managed in SQL. But it's important to understand what we can do with SQL. SQL can be divided into three main categories:</p>
+
+<ul>
+<li><p>Data Definition Language (DDL): Deals with schema creation and modification. The <code>CREATE TABLE</code> statement allows you to create a new table in the database, and the <code>ALTER TABLE</code> statement changes the structure of an existing table.</p></li>
+<li><p>Data Manipulation Language (DML): Provides constructs to query data, such as the <code>SELECT</code> statement, and to update data, such as <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> statements.</p></li>
+<li><p>Data Control Language (DCL): Consists of statements that deal with user authorization and security, such as <code>GRANT</code> and <code>REVOKE</code> statements.</p></li>
+</ul>
+
+
+
+
+<h1>
+  
+  
+  Main commands in SQL:
+</h1>
+
+<h3>
+  
+  
+  Before we explore some commands, take a look at this website to test everything:
+</h3>
+
+<p><em>In this tutorial I will use <a href="https://www.db-fiddle.com/">DB Fiddle</a>. DB-Fiddle supports various SQL databases, including MySQL, PostgreSQL, and SQLite, and provides a simple interface for testing SQL queries.</em></p>
+
+<p>First thing that we will do in SQL will be a Student table with the following columns:  (student_id, student_name, student_email, student_pw, student_birth)</p>
+
+<p>The syntax for creating a table in SQL:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span> 
+<span class="n">columns_name</span> <span class="k">data</span> <span class="k">type</span>
+<span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>For the Student table example, it would be:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">students</span> <span class="p">(</span>
+<span class="n">student_id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+<span class="cm">/* you can divide our arguments in SQL by the column title and the data type
+like in this first case we have:
+ INT = integer
+ PRIMARY KEY =  a constrain that says our data is unique values for each row in the table.
+This ensures that no two rows can have the same value in the primary key column(s)
+ */</span>
+
+
+<span class="c1">-- btw this is a comment line in SQL, everything inside of it wont be read.</span>
+<span class="cm">/* and this 
+is a multi-line comment, I think its obvious the difference between those two.
+*/</span> 
+<span class="n">student_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> 
+<span class="n">student_email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="n">student_password</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<span class="n">student_birth</span> <span class="nb">DATE</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Once we have created our table in SQL, we need to add data to it to explore what's inside and manipulate this information. Let's do it:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">students</span> <span class="p">(</span><span class="n">student_id</span><span class="p">,</span> <span class="n">student_name</span><span class="p">,</span> <span class="n">student_email</span><span class="p">,</span> <span class="n">student_password</span><span class="p">,</span> <span class="n">student_birth</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Gabriel Galileo'</span><span class="p">,</span> <span class="s1">'gabriel.galileo@gmail.com'</span><span class="p">,</span> <span class="s1">'encrypted_password'</span><span class="p">,</span> <span class="nv">"20-03-1997"</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This is just a small example by adding one person called Gabriel Galileo to our database. You can copy this and add it to your own display on DB Fiddle.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">students</span> <span class="p">(</span><span class="n">student_id</span><span class="p">,</span> <span class="n">student_name</span><span class="p">,</span> <span class="n">student_email</span><span class="p">,</span> <span class="n">student_password</span><span class="p">,</span> <span class="n">student_birth</span><span class="p">)</span>
+<span class="k">VALUES</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Gabriel Galileo'</span><span class="p">,</span> <span class="s1">'gabriel.galileo@gmail.com'</span><span class="p">,</span> <span class="s1">'encrypted_password'</span><span class="p">,</span> <span class="s1">'1997-03-20'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Soren Kierkegaard'</span><span class="p">,</span> <span class="s1">'soren.kierke@gmail.com'</span><span class="p">,</span> <span class="s1">'another_password'</span><span class="p">,</span> <span class="s1">'2002-05-25'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Immanuel Kant'</span><span class="p">,</span> <span class="s1">'immanuel.kant@gmail.com'</span><span class="p">,</span> <span class="s1">'secure_password'</span><span class="p">,</span> <span class="s1">'2003-03-10'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Jesus Christ'</span><span class="p">,</span> <span class="s1">'godson@gmail.com'</span><span class="p">,</span> <span class="s1">'strong_password'</span><span class="p">,</span> <span class="s1">'1970-11-25'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'Karl Marx'</span><span class="p">,</span> <span class="s1">'communist@gmail.com'</span><span class="p">,</span> <span class="s1">'good_password'</span><span class="p">,</span> <span class="s1">'2008-01-25'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">'Renato Cariani'</span><span class="p">,</span> <span class="s1">'renatao.monstro@gmail.com'</span><span class="p">,</span> <span class="s1">'password123'</span><span class="p">,</span> <span class="s1">'1993-06-25'</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">'Aristoteles'</span><span class="p">,</span> <span class="s1">'aristoteles@gmail.com'</span><span class="p">,</span> <span class="s1">'idkmannnn'</span><span class="p">,</span> <span class="s1">'1997-08-12'</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>After done previous commands the <a href="https://www.db-fiddle.com/">DB Fiddle</a><br>
+should be like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AigJH2ll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4w1szv3s7fjhe4wky6be.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AigJH2ll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4w1szv3s7fjhe4wky6be.png" alt="Image description" width="800" height="296"></a></p>
+
+<p>Now that we know how to create a table, add data to it, and query it, we have some basic SQL methods at our hands. Now, let's see how to manipulate the data we have created.</p>
+
+<p>Imagine we made a mistake in the first student's name; it should be "Galileo Galilei," not "Gabriel Galilei." What should we do? Like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code>
+<span class="c1">-- Basic SELECT query to retrieve all data from the students table</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span><span class="p">;</span>
+
+<span class="c1">-- Selecting specific columns</span>
+<span class="k">SELECT</span> <span class="n">student_id</span><span class="p">,</span> <span class="n">student_name</span> <span class="k">FROM</span> <span class="n">students</span><span class="p">;</span>
+
+<span class="c1">-- Using WHERE clause to filter data</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">WHERE</span> <span class="n">student_birth</span> <span class="o">&lt;</span> <span class="s1">'2002-01-01'</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>After knowing how to create a table, adding data to it and querying it. We got in our hands some basic SQL Methods, but let's go some further and see how manipulate those data we have created.</p>
+
+<p>Imagine we made a mistake in the first student's name; it should be "Galileo Galilei," not "Gabriel Galilei." What should we do? Like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code>
+ <span class="k">UPDATE</span> <span class="n">students</span> <span class="k">SET</span> <span class="n">student_name</span> <span class="o">=</span> <span class="s1">'Galileu Galilei'</span><span class="p">,</span> <span class="n">student_email</span> <span class="o">=</span> <span class="nv">"galileu.galilei@gmail.com"</span> <span class="k">WHERE</span> <span class="n">student_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">WHERE</span> <span class="n">student_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>and It's done, if we check in display has to be:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vIWAH1DJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1mqhku8f0334i75mjzb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vIWAH1DJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1mqhku8f0334i75mjzb.png" alt="Image description" width="800" height="107"></a></p>
+
+<p>Crap... We added someone who isn't a student in our table, we got to delete this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">WHERE</span> <span class="n">student_name</span> <span class="o">=</span> <span class="nv">"Renato Cariani"</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>yes, that's what I'm talking about. </p>
+
+<p>Now we have covered the most basic commands in SQL. Of course, there is much more to learn, even at the beginner level. But I believe that the best way to improve your knowledge is by doing it. I will apply this knowledge in my login (API) application(which I've already apply a NoSQL DB {mongooDB}).</p>
+
+<p>Please check it out in <a href="https://github.com/jnx257">my github</a> :crying: and know more about me at <a href="https://twitter.com/kozu8uwu">my X/twitter</a>. Thanks a lot!</p>
+
+<p><u>if you see any issue in this text pls text me! &lt;3</u></p>
+
+<p>sources:</p>
+
+<ul>
+<li><a href="https://www.sqltutorial.org/">https://www.sqltutorial.org/</a></li>
+<li>
+<a href="https://www.w3schools.com/sql/">https://www.w3schools.com/sql/</a>
+and some other sources, sorry I don't remember D: </li>
+</ul>
 
  </details> 
  <hr /> 
@@ -454,531 +807,6 @@ addons:
 </ol>
 
 <p>Espero que você tenha descoberto ao menos uma nova extensão que vai facilitar o seu trabalho ao final desse texto. :)</p>
-
- </details> 
- <hr /> 
-
- #### - [Social bookmarks in the Fediverse](https://dev.to/andypiper/social-bookmarks-in-the-fediverse-5bki) 
- <details><summary>Article</summary> <p>Last week, there was a flurry of interest in a new addition to the <a href="https://en.wikipedia.org/wiki/Fediverse">#Fediverse</a>: <a href="https://techcrunch.com/2023/09/08/with-postmarks-social-bookmarking-is-back-but-this-time-its-built-on-the-fediverse/">Postmarks</a>. It's social bookmarking (like Digg, del.icio.us, or more recently, Pinboard), now with <a href="https://activitypub.rocks/">ActivityPub</a> support. Neat!</p>
-
-<h3>
-  
-  
-  Organising stuff, "back in the day"
-</h3>
-
-<p>Back in the 2000s I was a huge fan of a site called del.icio.us, and the original iteration of our weekly podcast - currently called <a href="https://gamesatwork.biz">Games at Work dot Biz</a> - was named Dogear Nation. Back when Michael and Michael kicked off that show, there was a podcast called Digg Nation which tried to round up the interesting community links and trends from the week on Digg. IBM at the time had an internal version of a social bookmarking / folksonomical platform similar to del.icio.us called "dogear" (like, folding the page of a book to mark it), so <a href="https://andypiper.co.uk/2009/01/05/co-hosting-dogear-nation-in-2009/">Dogear Nation encouraged listeners to tag links</a> on del.icio.us for us to discuss each week... del.icio.us was bought by Yahoo! in 2005, and eventually, went away.</p>
-
-<p>Fast forward 15 years to our current podcast, and we still love it when listeners share links for us to discuss, but there's less of an organised way to do it!</p>
-
-<h3>
-  
-  
-  Join the Federation
-</h3>
-
-<p>Unlike the centralised "Web 2.0"-based, largely corporate-owned sites that dominate the current web, the Fediverse is a set of related services that share some common protocols (ActivityPub is one, but there are others involved) and are loosely-connected. As well as each service usually having some form of "flagship" instance, it is is also very common to encourage diversity by location and interests, and often self-hosting, so it won't be possible for <em>an unsavoury billionaire</em> to buy the things you use, or misuse and steal the data that you've put into them. Your network and your data are your own.</p>
-
-<p>I'm very active across a range of sites and services that are analogous to those you might be familiar with. On Mastodon, for instance, I currently do some work with <a href="https://joinmastodon.org">Mastodon gGmbH</a>, the non-profit behind the project and host of two of the larger service instances; and although my original account was on one of those instances, at the end of last year I moved my account (taking the related network of connections with me) to a much smaller server run by a former coworker, mostly populated by other former coworkers, but I'm still connected with users across the rest of the Fediverse.</p>
-
-<p>You can also find me on <a href="https://pixelfed.social/@andypiper">PixelFed</a> (Instagram-like photo sharing), on <a href="https://lemmy.world/u/andypiper">Lemmy</a> (Reddit-like groups and communities), on PeerTube (YouTube-like video channels) where <a href="https://diode.zone/@andypiper">I live on the diode.zone instance</a> for makers and electronics enthusiasts, on <a href="https://bookrastinating.com/@andypiper">Bookwyrm</a> (GoodReads-like community), and so on. Basically there are a number of "me" out there, in spaces where it makes sense. Essentially, if you're on Mastodon and you're interested in my videos, you can follow my PeerTube account from Mastodon without having to sign up for PeerTube. It's pretty cool.</p>
-
-<blockquote>
-<p>I strongly believe that federated services are the best opportunity for us to maintain a free and open Web.<br>
-    - me, 2023</p>
-</blockquote>
-
-<h3>
-  
-  
-  So, Postmarks?
-</h3>
-
-<p>Yes! Postmarks is a single-user, super small and simple server for managing your own bookmarks. When I add a bookmark <a href="https://pipesmarks.glitch.me">on my own Postmarks server</a>, my Postmarks account effectively publishes the new entry to the rest of the Fediverse as an activity. So, if you're interested in what I'm bookmarking and you have a Mastodon account, you can follow <code>@andypiper@pipesmarks.glitch.me</code> and you'll see the new entries as they get added. If you're not interested, don't follow my account, and we're all good. Oh, and it supports Atom feeds for different tags (categories), too.</p>
-
-<p>Postmarks runs on <a href="https://glitch.com">Glitch</a> - or, anywhere else you can stand up a Node.js / Express app. Personally I love Glitch, and <a href="https://glitch.com/@andypiper">I've been using it for many years</a> now for hosting demos and trying out different projects - in fact, <a href="https://andypiper.me">my main links page</a> <a href="https://dev.to/andypiper/a-quick-glitch-bio-break-1c6a">runs on Glitch</a>. The Postmarks developer <a href="https://casey.kolderup.org/">Casey Kolderup</a> works there, and Casey has made it really straightforward to remix directly on Glitch, or <a href="https://github.com/ckolderup/postmarks">import from GitHub</a> there or to another service of your choice - it has very few dependencies.</p>
-
-<h3>
-  
-  
-  Getting involved
-</h3>
-
-<p>My usual pattern for reading and saving content is whilst mobile. There's a bookmarklet that's part of the project, but no easy way to add it to my system for links to end up on Postmarks from my phone or tablet. I turned to Apple Shortcuts to help out.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--W6WYdmPw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nk6zruodxiyiptfps6x4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--W6WYdmPw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nk6zruodxiyiptfps6x4.png" alt="A screenshot of Apple Shortcuts on iPadOS 17 beta, showing the sequence of steps to send a link to Postmarks" width="800" height="1084"></a><br>
-<em>A screenshot of Apple Shortcuts on iPadOS 17 beta, showing the sequence of steps to send a link to Postmarks</em></p>
-
-<p>This does not do too much - it takes a link from the share sheet or clipboard, and opens the add bookmark page popup in a browser tab. At the moment<a href="https://github.com/ckolderup/postmarks/issues/61"> there's no full API for Postmarks</a>, so this is a bit of a stopgap or workaround. Annoyingly, it will also leave you with an empty browser tab you'll need to close, but it works.</p>
-
-<p>If you'd like to try the automation, you can <a href="https://routinehub.co/shortcut/16547/">get it via RoutineHub</a>, which links to the Shortcut in iCloud. You'll be prompted to add the hostname of your Postmarks instance, and you will already need to have signed in to that site in your web browser of choice.</p>
-
-<p>Beyond that, Glitch makes it easy to hack on features, because everything runs in the browser, including a code editor. So far I've been adding small features such as <a href="https://github.com/ckolderup/postmarks/pull/84">support for the nodeinfo endpoint used by other Fediverse servers</a>, and a slightly improved Atom feed. There's <a href="https://github.com/ckolderup/postmarks/issues?q=is%3Aissue+author%3Aandypiper+">lots I can think of to add</a>, but not so much time to play - this is giving me a chance to learn a bit more about ActivityPub internals, as well as "scratching an itch".</p>
-
-<p>I'm also <a href="https://cerritos.glitch.me">playing with</a> another single-user ActivityPub server, <a href="https://shuttlecraft.net/">Shuttlecraft</a>, but that's a post for another day.</p>
-
- </details> 
- <hr /> 
-
- #### - [Exploring concurrent rate limiters, mutexes, semaphores](https://dev.to/shalvah/diving-into-concurrent-rate-limiters-mutexes-semaphores-42i6) 
- <details><summary>Article</summary> <p>This is a dump of my learnings and experiments while going down a little rabbit hole.</p>
-
-<h1>
-  
-  
-  Concurrent rate limiters
-</h1>
-
-<p>I was studying <a href="https://github.com/sidekiq/sidekiq/wiki/Ent-Rate-Limiting">Sidekiq's page on rate limiters</a>. The first type of rate limiting mentioned is the concurrent limiter: only <em>n</em> tasks are allowed to run at any point in time. Note that this is independent of time units (e.g. per second), or how long they take to run. The only limitation is the number of concurrent tasks/requests.</p>
-
-<p>So I asked myself, how would I implement a concurrent rate limiter? I'm fairly familiar with locking (via Redis and the database, for instance), so that was what came to mind, but in its usual form, that only works as a mutex (number of allowed tasks, <em>n</em> = 1). I wasn't sure about how to implement that when <em>n</em> &gt; 1. Decided to dig into it from first principles.</p>
-
-<h2>
-  
-  
-  Concurrency control scenarios
-</h2>
-
-<p>In this case, that meant stepping back to think about concurrency control in general, and the scenarios I know of.</p>
-
-<p>The first scenario is <strong>process-local</strong>: you have multiple threads within a process, and you want to ensure only <em>n</em> threads can access a resource at once. I already knew how to do this:</p>
-
-<ul>
-<li>when <em>n</em> = 1, use a <a href="https://vaneyckt.io/posts/ruby_concurrency_in_praise_of_the_mutex/">mutex</a>. Only the thread with the lock on the mutex can execute; others have to wait.</li>
-<li>when <em>n</em> &gt; 1, use a <a href="https://en.wikipedia.org/wiki/Semaphore_(programming)">semaphore</a>. I wasn't too familiar with semaphores, so I decided to brush up.</li>
-</ul>
-
-<p>Semaphores are similar to mutexes, but they are less about guaranteeing exclusive access and more about keeping track of who has access. A semaphore starts out with a fixed number of "permits". A thread can request a permit (similar to acquiring a lock), and that reduces the number of available permits. When all permits are in use, any requesting threads will have to wait until one is released. In this sense, a semaphore is kinda like a bouncer at a club—it regulates the number of people who can get in.</p>
-
-<h3>
-  
-  
-  Semaphores via mutexes
-</h3>
-
-<p>There are many semaphore implementations available for Ruby. I decided to implement one myself. The key thing is that the semaphore governs access to a resource (the number of permits), so we need a way to ensure the semaphore can do this job safely. I used Ruby's native Mutex to achieve this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Semaphore</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">max_permits</span><span class="p">)</span>
-    <span class="vi">@max_permits</span> <span class="o">=</span> <span class="n">max_permits</span>
-    <span class="vi">@used_permits</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="vi">@mutex</span> <span class="o">=</span> <span class="no">Mutex</span><span class="p">.</span><span class="nf">new</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">permit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-    <span class="n">acquire</span>
-    <span class="n">block</span><span class="p">.</span><span class="nf">call</span>
-    <span class="n">release</span>
-  <span class="k">end</span>
-
-  <span class="kp">private</span>
-
-  <span class="k">def</span> <span class="nf">acquire</span>
-    <span class="n">acquired</span> <span class="o">=</span> <span class="kp">false</span>
-    <span class="k">until</span> <span class="n">acquired</span>
-      <span class="vi">@mutex</span><span class="p">.</span><span class="nf">synchronize</span> <span class="k">do</span>
-        <span class="n">acquired</span> <span class="o">=</span> <span class="n">permit_acquired?</span>
-      <span class="k">end</span>
-
-      <span class="nb">sleep</span> <span class="mf">0.05</span> <span class="k">unless</span> <span class="n">acquired</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">permit_acquired?</span>
-    <span class="k">if</span> <span class="vi">@used_permits</span> <span class="o">&lt;</span> <span class="vi">@max_permits</span>
-      <span class="vi">@used_permits</span> <span class="o">+=</span> <span class="mi">1</span>
-      <span class="k">return</span> <span class="kp">true</span>
-    <span class="k">end</span>
-
-    <span class="kp">false</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">release</span>
-    <span class="vi">@mutex</span><span class="p">.</span><span class="nf">synchronize</span> <span class="k">do</span>
-      <span class="vi">@used_permits</span> <span class="o">-=</span> <span class="mi">1</span> <span class="k">if</span> <span class="vi">@used_permits</span> <span class="o">&gt;</span> <span class="mi">0</span>
-    <span class="k">end</span>
-
-    <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@max_permits</span> <span class="o">-</span> <span class="vi">@used_permits</span><span class="si">}</span><span class="s2"> permit(s) available"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Usage:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="n">semaphore</span> <span class="o">=</span> <span class="no">Semaphore</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">t1</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">semaphore</span><span class="p">.</span><span class="nf">permit</span> <span class="k">do</span>
-    <span class="nb">puts</span> <span class="s1">'Thread 1 acquired semaphore'</span>
-    <span class="nb">sleep</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">)</span>
-    <span class="nb">p</span> <span class="s2">"Thread 1 releasing"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">t2</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">semaphore</span><span class="p">.</span><span class="nf">permit</span> <span class="k">do</span>
-    <span class="nb">puts</span> <span class="s1">'Thread 2 acquired semaphore'</span>
-    <span class="nb">sleep</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">)</span>
-    <span class="nb">p</span> <span class="s2">"Thread 2 releasing"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">t3</span> <span class="o">=</span> <span class="no">Thread</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
-  <span class="n">semaphore</span><span class="p">.</span><span class="nf">permit</span> <span class="k">do</span>
-    <span class="nb">puts</span> <span class="s1">'Thread 3 acquired semaphore'</span>
-    <span class="nb">sleep</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">)</span>
-    <span class="nb">p</span> <span class="s2">"Thread 3 releasing"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">].</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:join</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Sample output:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Thread 1 acquired semaphore
-Thread 2 acquired semaphore
-"Thread 2 releasing"
-1 permit(s) available
-Thread 3 acquired semaphore
-"Thread 1 releasing"
-1 permit(s) available
-"Thread 3 releasing"
-2 permit(s) available
-</code></pre>
-
-</div>
-
-
-
-<p>This approach checks whether there are any available permits and returns one if so. Otherwise, it will sleep for 0.05 seconds and check again. The mutex guarantees that we can safely increment or decrement the number of permits without race conditions. This is a basic implementation, btw; one important thing missing is wait timeouts—we shouldn't have to wait forever.</p>
-
-<p>Also note that there is no expiry on a permit—a client could get a permit and refuse to release it! Apparently, that's by design; semaphores don't control what you do with the permit. The onus is on you to be responsible with it.</p>
-
-<h3>
-  
-  
-  Fair semaphores
-</h3>
-
-<p>This approach suffers from <em>unfairness</em>. Suppose thread A has been waiting for a permit to become available, and finally, another thread releases one. If at that moment, thread A is still sleeping, and a new thread (thread B) is launched, B might acquire the permit instead of A. In essence, an unlucky thread could wait for a very long time (or forever!) while newer threads get a permit. This is like if the bouncer selected people at random, instead of who's been waiting the longest.</p>
-
-<p>Also, the constant sleeping and waking up (polling) is suboptimal. We're giving the Ruby interpreter and OS more work to do (constantly scheduling and waking up the thread) when there might not be actually any permits available, and we're potentially taking time away from threads which have actual work to do.</p>
-
-<p>So I decided to try a different approach, using Ruby's <code>Thread::Queue</code>. <code>Thread::Queue</code> is a queue data structure designed for concurrent use; requesting an item (via <code>#pop</code>) will either return an item if one is available, or block until another thread adds one to the queue (via <code>#push</code>). So we model the list of permits as a queue (you can put anything you want in the queue, as long as it's the same number as the permits). Acquiring = popping, releasing = pushing.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Semaphore</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">max_permits</span><span class="p">)</span>
-    <span class="vi">@permits</span> <span class="o">=</span> <span class="no">Thread</span><span class="o">::</span><span class="no">Queue</span><span class="p">.</span><span class="nf">new</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">max_permits</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">permit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-    <span class="n">acquire</span>
-    <span class="n">block</span><span class="p">.</span><span class="nf">call</span>
-    <span class="n">release</span>
-  <span class="k">end</span>
-
-  <span class="kp">private</span>
-
-  <span class="k">def</span> <span class="nf">acquire</span>
-    <span class="vi">@permits</span><span class="p">.</span><span class="nf">pop</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">release</span>
-    <span class="vi">@permits</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@permits</span><span class="p">.</span><span class="nf">size</span><span class="si">}</span><span class="s2"> permit(s) available"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This works too (and the code is also much shorter). I'm not a 100% certain the waiting threads are served in order of who asked first (the docs don't say exactly that), but I think that's the case.</p>
-
-<h3>
-  
-  
-  Condition variables
-</h3>
-
-<p>After this, I took a look at the semaphore class in the popular library, <a href="https://github.com/ruby-concurrency/concurrent-ruby/">concurrent-ruby</a> to see how they implement it, and I learnt about something new: <a href="https://vaneyckt.io/posts/ruby_concurrency_in_praise_of_condition_variables/">condition variables</a>. And Ruby comes with this included!</p>
-
-<p>The name sounds super technical, but it's quite approachable in reality: a condition variable lets you tell other threads waiting on a resource that it's now available. It's meant to be used with a mutex. Instead of having the thread constantly poll, as in my initial implementation, the thread sleeps forever (or with a timeout), and gets woken up by the condition variable when a new permit is available. Here's the new implementation:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Semaphore</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">max_permits</span><span class="p">)</span>
-    <span class="vi">@max_permits</span> <span class="o">=</span> <span class="n">max_permits</span>
-    <span class="vi">@used_permits</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="vi">@mutex</span> <span class="o">=</span> <span class="no">Mutex</span><span class="p">.</span><span class="nf">new</span>
-    <span class="vi">@condition_variable</span> <span class="o">=</span> <span class="no">ConditionVariable</span><span class="p">.</span><span class="nf">new</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">permit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-    <span class="n">acquire</span>
-    <span class="n">block</span><span class="p">.</span><span class="nf">call</span>
-    <span class="n">release</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">acquire</span>
-    <span class="vi">@mutex</span><span class="p">.</span><span class="nf">synchronize</span> <span class="k">do</span>
-      <span class="k">until</span> <span class="n">permit_acquired?</span>
-        <span class="vi">@condition_variable</span><span class="p">.</span><span class="nf">wait</span><span class="p">(</span><span class="vi">@mutex</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">permit_acquired?</span>
-    <span class="k">if</span> <span class="vi">@used_permits</span> <span class="o">&lt;</span> <span class="vi">@max_permits</span>
-      <span class="vi">@used_permits</span> <span class="o">+=</span> <span class="mi">1</span>
-      <span class="k">return</span> <span class="kp">true</span>
-    <span class="k">end</span>
-
-    <span class="kp">false</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">release</span>
-    <span class="vi">@mutex</span><span class="p">.</span><span class="nf">synchronize</span> <span class="k">do</span>
-      <span class="vi">@used_permits</span> <span class="o">-=</span> <span class="mi">1</span> <span class="k">if</span> <span class="vi">@used_permits</span> <span class="o">&gt;</span> <span class="mi">0</span>
-    <span class="k">end</span>
-    <span class="vi">@condition_variable</span><span class="p">.</span><span class="nf">signal</span>
-
-    <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@max_permits</span> <span class="o">-</span> <span class="vi">@used_permits</span><span class="si">}</span><span class="s2"> permit(s) available"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Rather than polling (sleep-wake-check-sleep), we just sleep (<code>@condition_variable.wait</code>), and then when another thread is done, they call <code>@condition_variable.signal</code>, which will wake up <em>the first</em> waiting thread (so it's fair, yay). It reminds me a bit of events in JavaScript.</p>
-
-<h2>
-  
-  
-  Distributed concurrency control
-</h2>
-
-<p>Okay, good diversion; now, back to concurrent scenarios. We've looked at process-local scenarios. The second scenario is <strong>system-local</strong>, but separate processes. This is, for example, when you have multiple web server processes running on the same machine, and you want to control access to a shared resource.</p>
-
-<p>Processes don't share memory, so our mutex/semaphore can't live inside any single process. We have to use an external datastore, such as a cache (eg Redis), or a database (PostgreSQL). You could even use a file or what-have-you.</p>
-
-<p>A third scenario is in a <strong>distributed system</strong>: the processes are on separate machines. This is an extension of the above case, so the same approaches as above apply, but obviously in a distributed way (the datastore has to live on an external location all the processes can access).</p>
-
-<p>Okay, so how could we implement mutexes (<em>n</em> = 1) here?</p>
-
-<h3>
-  
-  
-  Aside: things to keep in mind
-</h3>
-
-<p>When dealing with locks, you want to avoid <em>starvation</em> (ie, an unruly/crashed client holding on to the lock and blocking everyone else). A common (but imperfect) way to avoid this is to set a <em>lock expiry</em> (how long a given client can hold a lock). This way, if a client is unable to release the lock (for instance, if they crashed), it will automatically be released after a while.</p>
-
-<p>You also want to limit <em>contention</em>, typically by setting a <em>wait timeout</em> (how long a client should wait for when another client is using the lock). If you don't set a wait timeout, you could end up with other processes hanging forever because a lock is in use. Sometimes that might be desired, but more likely you probably want to quit and try again later. Either way, you should decide on your wait timeout policy for your clients.</p>
-
-<h3>
-  
-  
-  Mutex with Redis
-</h3>
-
-<p>A common pattern is to set a key in Redis, something like <code>SET some-lock-key some-value NX EX expiry-in-seconds</code>.</p>
-
-<ul>
-<li>
-<code>NX</code> will set the key only if it doesn't already exists. If the key already exists, it means another process has the lock, and you need to retry.</li>
-<li>
-<code>EX</code> (or <code>PX</code>) sets a time when the lock expires, so a crashed process doesn't keep on hanging on to the lock</li>
-<li>To release the lock, you can use <code>DEL</code> to delete the key. (But you shouldn't! See below.)</li>
-</ul>
-
-<p>This works, but has a few flaws:</p>
-
-<ul>
-<li>Processes need to poll Redis until they get the lock, or give up. We already saw why polling is suboptimal.</li>
-<li>Lock expiry is, at best, a guess. You're <em>hoping</em> all your clients will finish in that time. But if one process somehow doesn't finish in time, the lock would erroneously expire, and you could end up with two concurrent processes (!)</li>
-<li>If the above happens, and the first process tries to release the lock with <code>DEL</code>, it would delete the lock now held by the second process. The Redis docs have <a href="https://redis.io/docs/manual/patterns/distributed-locks/#:~:text=Correct%20Implementation%20with%20a%20Single%20Instance">details</a> on how to correctly delete a lock.</li>
-<li>In a distributed Redis cluster, a lock could be acquired multiple times. Distributed locking is probably a topic for another day, though. Patterns like <a href="https://redis.io/docs/manual/patterns/distributed-locks/">Redlock</a> are suggested (but also <a href="http://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html">criticized</a>).</li>
-</ul>
-
-<h3>
-  
-  
-  Mutex with PostgreSQL
-</h3>
-
-<p>For SQL, I like <a href="https://shiroyasha.io/advisory-locks-and-how-to-use-them.html">Postgres' advisory locks</a>. Running <code>SELECT pg_advisory_lock(123)</code> will give this client a lock called <code>123</code>, and all other clients who run that same statement will have to wait until the first client releases the lock.</p>
-
-<p>With Postgres' advisory locks, you don't need a lock expiry, since the lock is bound to the session or transaction. If the client crashes, PG will release the lock. Wait timeouts aren't directly supported, but you can achieve this by using <a href="https://postgresqlco.nf/doc/en/param/lock_timeout/">the <code>lock_timeout</code> setting</a> (combined with transaction-level locks if you don't want global wait timeouts):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">BEGIN</span><span class="p">;</span> <span class="c1">-- Start transaction</span>
-<span class="k">SET</span> <span class="k">LOCAL</span> <span class="n">lock_timeout</span> <span class="o">=</span> <span class="s1">'10s'</span><span class="p">;</span> <span class="c1">-- Error if no lock acquired after 10s</span>
-<span class="k">SELECT</span> <span class="n">pg_advisory_xact_lock</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span> <span class="c1">-- Get a transaction-level lock</span>
-
-<span class="c1">-- Execute the rest of your code</span>
-
-<span class="k">COMMIT</span><span class="p">;</span> <span class="c1">-- End transaction; lock is released automatically</span>
-</code></pre>
-
-</div>
-
-
-
-<p>MySQL also has advisory locks (although they are not transaction-bound) and wait timeouts:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">GET_LOCK</span><span class="p">(</span><span class="s1">'my_lock'</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">-- Error if no lock acquired after 10s</span>
-<span class="k">SELECT</span> <span class="n">RELEASE_LOCK</span><span class="p">(</span><span class="s1">'my_lock'</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>I love Redis, but I think I prefer SQL databases for mutexes. Since the Redis API does not expose any concept of a lock, we try to emulate it with the <code>SET NX</code> pattern or more complicated algorithms, which is why we have to do the "lock expiry" dance. PostgreSQL, on the other hand, has locks as a first-class function, which means it can provide better guarantees, such as the fact that locks will always be released when the session ends.</p>
-
-<h2>
-  
-  
-  Semaphore with Redis
-</h2>
-
-<p>How about semaphores (<em>n</em> &gt; 1)? At first I was thinking of something using <a href="https://redis.io/docs/interact/transactions/">Redis transactions</a> (<code>MULTI</code>) and <code>WATCH</code>, something like this (not valid code):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight ruby"><code><span class="no">WATCH</span> <span class="n">semaphore</span><span class="o">-</span><span class="n">permits</span><span class="o">-</span><span class="n">used</span>
-<span class="n">max</span> <span class="o">=</span> <span class="no">GET</span> <span class="n">semaphore</span><span class="o">-</span><span class="n">permits</span><span class="o">-</span><span class="n">max</span>
-<span class="n">used</span> <span class="o">=</span> <span class="no">GET</span> <span class="n">semaphore</span><span class="o">-</span><span class="n">permits</span><span class="o">-</span><span class="n">used</span>
-<span class="k">return</span> <span class="k">unless</span> <span class="n">used</span> <span class="o">&lt;</span> <span class="n">max</span> <span class="c1"># No permits available</span>
-
-<span class="no">MULTI</span>
-<span class="no">INCR</span> <span class="n">semaphore</span><span class="o">-</span><span class="n">permits</span><span class="o">-</span><span class="n">used</span>
-<span class="no">EXEC</span>
-</code></pre>
-
-</div>
-
-
-
-<p><code>WATCH</code> will fail the transaction if the <code>semaphore-permits-used</code> is modified by another client, so this serves as a mutex for the permits. But this implementation seems pretty complex to me; it involves us switching between our app code and Redis multiple times (or making this a Redis script). i haven't had the chance to try it yet, though.</p>
-
-<p>Turns out, you can implement a semaphore in Redis quite simply with blocking list operations (akin to what we did with <code>Thread::Queue</code> in Ruby):</p>
-
-<ul>
-<li>First, put <em>n</em> items in a list in Redis (say <code>semaphore-available-permits</code>)</li>
-<li>To acquire a permit, call <code>BLPOP semaphore-available-permits</code>. This will pop one item from the list. If there's none available, it will block until some other client pushes one. You can also specify a wait timeout: <code>BLPOP semaphore-available-permits &lt;wait-timeout&gt;</code>.</li>
-<li>To release a permit, call <code>RPUSH semaphore-available-permits</code>. If there are clients waiting for a permit, the longest waiting client will automatically get the newly released permit (so it's a fair semaphore).</li>
-</ul>
-
-<p>It's still a bit ugly, because that first step is crucial (otherwise clients would wait forever). The best approach there is to either have each client check if the semaphore has been initialized (e.g. by checking if a certain key exists), and initialize it themselves if not; alternatively, you could have an explicit initialization step that creates the permits when your app starts up.</p>
-
-<h2>
-  
-  
-  Semaphore with Postgres
-</h2>
-
-<p>Unfortunately, advisory locks don't help here. We need a good ol' database table to keep track of our semaphores.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">global_semaphores</span> <span class="p">(</span>
-  <span class="n">semaphore_name</span> <span class="nb">TEXT</span><span class="p">,</span>
-  <span class="n">max_permits</span> <span class="nb">INTEGER</span><span class="p">,</span>
-  <span class="n">used_permits</span> <span class="nb">INTEGER</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>To kick things off, we create the semaphore with capacity <em>n</em> = 4:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">global_semaphores</span> <span class="p">(</span><span class="nv">"my_semaphore"</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Checking out and releasing a permit is straightforward: update the <code>used_permits</code> count. But, to ensure exclusive access, we must use a transaction:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">UPDATE</span> <span class="n">global_semaphores</span> 
-  <span class="k">SET</span> <span class="n">used_permits</span> <span class="o">=</span> <span class="n">used_permits</span> <span class="o">+</span> <span class="mi">1</span>
-  <span class="k">WHERE</span> <span class="n">semaphore_name</span> <span class="o">=</span> <span class="nv">"my_semaphore"</span>
-  <span class="k">AND</span> <span class="n">used_permits</span> <span class="o">&lt;</span> <span class="n">max_permits</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The <code>UPDATE</code> statement will automatically lock the matching row (our semaphore) until it finishes executing, so no transaction needed (unless we want to specify a local timeout). All we need to do is check if the row was updated; if so, we have our permit.</p>
-
-<p>To release the permit, it's the reverse:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">UPDATE</span> <span class="n">global_semaphores</span> 
-  <span class="k">SET</span> <span class="n">used_permits</span> <span class="o">=</span> <span class="n">used_permits</span> <span class="o">-</span> <span class="mi">1</span>
-  <span class="k">WHERE</span> <span class="n">semaphore_name</span> <span class="o">=</span> <span class="nv">"my_semaphore"</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>One downside here is that there's no easy way to block while waiting for a new permit to be available. We'll have to rely on polling.</p>
-
-<p>I find it quite interesting the differences in approach between Redis and PG here: an explicit list of permit items (Redis) vs a counter (Postgres). I think you could use either approach in both, but it would be more complicated. (I actually had an initial implementation in Postgres that used multiple rows and transactional isolation, but it was def more complex.) Postgres' transactional guarantees make it easier to work with a single counter (= a single row), while Redis' list data structure and blocking options make that approach straightforward.</p>
-
-<h1>
-  
-  
-  Putting it all together: concurrent rate limiter
-</h1>
-
-<p>We're almost there! Actually, we're there. A concurrent rate limiter is essentially a semaphore. The max number of permits = the max number of concurrent tasks.</p>
-
-<p>However, the Sidekiq version also includes lock expiry, so I spent some time thinking about it. My conclusion: there's no "nice" way to do it. The permit expiry approach I could think of (or find in the wild) was:</p>
-
-<ul>
-<li>When a client gets a permit successfully, it must record that permit and its acquisition time (in a hash in Redis, or a row in a table in Postgres)</li>
-<li>When the client releases the permit, it can then delete the hash entry or row</li>
-<li>You either have an external process that regularly checks for permits that are too old and force-releases them, or have a newly-connecting client do that check themselves.</li>
-</ul>
-
-<p>I think that's it for that exploration. It was quite interesting racking my brain about semaphores and guarantees. My current conclusions are that I'd prefer to use Postgres for mutexes and Redis for semaphores. It was also a revelation that semaphores don't provide any guarantee of expiry, so you must program carefully around that.</p>
 
  </details> 
  <hr /> 
