@@ -118,1060 +118,690 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Picnic-TUI - Where Go and Groceries Create a Command-Line Feast](https://dev.to/simonmartyr/picnic-tui-where-go-and-groceries-create-a-command-line-feast-1op4) 
- <details><summary>Article</summary> <p>During some downtime I decided I would really like to try to learn Go. It was a language I had some exposure to in past client projects, and my coworkers who used it gave it glowing reviews. Some of which were even using it for side projects, such as doing analytics on property prices in the area through the use of web scrapers. Something which is very useful in Amsterdam.</p>
+ #### - [useState Hook in React](https://dev.to/parmita17/usestate-hook-in-react-296o) 
+ <details><summary>Article</summary> <p>To handle multiple states using the useState hook in react, you can call the useState function multiple times, once for each state you want to manage. Here's an example:</p>
 
-<p>I didn’t initially have a real goal or use case for the language but that didn’t hold me back from giving it a shot. </p>
+<p><code>import { useState } from 'react';</code><br>
+<code>function MyComponent(props){</code><br>
+<code>const [count,setCount]  = useState(0);</code><br>
+<code>const [text, setText] = useState('');</code><br>
+<code>function handleIncrement(){</code><br>
+<code>setCount(count + 1);</code><br>
+<code>}</code><br>
+<code>function handleTextChange(event){</code><br>
+<code>setText(event.target.value);</code><br>
+<code>}</code><br>
+<code>return (</code><br>
+<code>&lt;div&gt;</code><br>
+<code>&lt;P&gt;Count : {count}&lt;p&gt;</code><br>
+<code>&lt;button onClick = {handleIncrement}&gt;Increment&lt;/button&gt;</code><br>
+<code>&lt;br /&gt;</code><br>
+<code>&lt;input type="text" value= {text} onChange ={handleTextChange}/&gt;</code><br>
+<code>&lt;p&gt; Text: {text}&lt;/p&gt;</code><br>
+<code>&lt;/div&gt;</code><br>
+<code>);}</code></p>
 
-<h2>
-  
-  
-  My learning route
-</h2>
+<p>In this example , we're managing two states using <code>useState:count</code> and <code>text</code>. We're also defining two functions : <code>handleIncrement</code>, which updates the <code>count</code> state when a button is clicked, and <code>handleTextChange</code> , which updates the <code>text</code> state when the text input changes.<br>
+By calling <code>useState</code> twice , we're creating two independent pieces of state that can be managed separately. We're also using destructing to assign the current value of each state and its corresponding setter and its corresponding setter function to separate variables(<code>count</code> and <code>setCount</code>, and <code>text</code> and <code>setText</code>).<br>
+Overall, using multiple useState hooks can help you manage multiple pieces of state in a clean and organized way.<br>
+<strong>Other Alternative:</strong><br>
+We can also manage multiple states using a single useState hook by passing an object as the initial state and using destructing to access individual state variables and their corresponding update functions.<br>
+Here's an example:<br>
+<code>import {useState} from 'react';</code><br>
+<code>function MyComponent(props){</code><br>
+<code>const[state, setState] = useState({count: 0, text: ''});</code><br>
+<code>function handleIncrement(){</code><br>
+<code>setState(</code><br>
+<code>prevState =&gt; ({ ...prevState, count: prevState.count + 1})</code><br>
+<code>);}</code><br>
+<code>function handleTextChange(event){</code><br>
+<code>setState(</code><br>
+<code>prevState =&gt;({ ...prevState, text: event.target.value}</code><br>
+<code>));</code><br>
+<code>}</code><br>
+<code>return (</code><br>
+<code>&lt;div&gt;</code><br>
+<code>&lt;p&gt; Count: {state.count}&lt;/p&gt;</code><br>
+<code>&lt;button onClick ={handleIncrement}&gt;Increment&lt;/button&gt;</code><br>
+<code>&lt;br/&gt;</code><br>
+<code>&lt;input type="text"</code><br>
+<code>value={state.text} onChange ={handleTextChange} /&gt;</code><br>
+<code>&lt;p&gt;Text: {state.text}&lt;/p&gt;</code><br>
+<code>&lt;/div&gt;);}</code></p>
 
-<p>When learning any new programming language I like to approach it in the following steps:</p>
+<p>In this example, we're still managing two pieces of state(<code>count</code> and <code>text</code>), but we're using a single <code>useState</code> hook to initialize both states as properties of an object(<code>state</code>). We're also using destructing to access individual state variables(<code>count</code> and <code>text</code>) and their corresponding update functions(<code>setState</code>).</p>
 
-<ol>
-<li>Learn the basics of the syntax and get a feel for the language.</li>
-<li>Try out some basic algorithms - solve some leet code problems.
-</li>
-<li>Make a basic to-do app.</li>
-<li>Enhance that app work to work with a database or HTTP endpoint etc.</li>
-<li>Build more silly apps.</li>
-</ol>
+<p>To update a piece of state, we're using the functional update form of <code>setState</code>, which takes a callback function that receives the previous state as an argument and returns the new state. We're spreading the previous state using the spread operator(<code>...prevState</code>) to create a new object with all the previous state properties, and then updating the property we want to change(<code>count</code> or <code>text</code>) using object property shorthand.</p>
 
-<p>Like most beginners, I started with the <a href="https://go.dev/tour/welcome/1">a tour of go</a> and got a quick feel for the language. I feel all languages should copy a tour of go as its a delightful introduction to the language which builds confidence quickly.</p>
+<p>Using a single <code>useSate</code> hook to manage multiple pieces of state can be a convenient way to keep related state together and reduce boilerplate code. However, it can also make code more complex and harder to read, especially if you have many pieces of state or complex state updates. So it's up to you to decide which approach works best for you for your specific use case.</p>
 
-<p>I continued with my learning plan </p>
+ </details> 
+ <hr /> 
+
+ #### - [Unity New Pricing in 2024 is Crazy](https://dev.to/godot/unity-new-pricing-in-2024-is-crazy-3hnn) 
+ <details><summary>Article</summary> <p><em>Unity’s new pricing update sparks controversy among developers</em></p>
+
+<p>Unity, one of the most popular game engines in the world, has announced a new pricing and packaging update that will affect games that exceed certain revenue and install thresholds, according to the official <a href="https://blog.unity.com/news/plan-pricing-and-packaging-updates">blog post</a>. The update aims to “align Unity’s success with the success of our customers” and to “ensure Unity remains a sustainable platform for all developers”.</p>
+
+<p>The update introduces a runtime fee for games that generate more than $200,000 in revenue and have more than 200,000 installs in a month. The fee varies depending on the game’s price, ranging from $0.01 to $0.15 per install. Only games that meet the following thresholds qualify for the Unity Runtime Fee:</p>
 
 <ul>
-<li>Invert a binary tree on leet code.</li>
-<li>Made a basic to-do app.</li>
-<li>Remade it to work with Gin and SQL.</li>
+<li>
+<strong>Unity Personal and Unity Plus</strong>: Those that have made $200,000 USD or more in the last 12 months AND have at least 200,000 lifetime game installs.</li>
+<li>
+<strong>Unity Pro and Unity Enterprise</strong>: Those that have made $1,000,000 USD or more in the last 12 months AND have at least 1,000,000 lifetime game installs.</li>
 </ul>
 
-<h2>
-  
-  
-  Step 5 build more silly apps
-</h2>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--v509DtE9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sdc5vlfuoxik1qu9eyb2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v509DtE9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sdc5vlfuoxik1qu9eyb2.png" alt="unity new pricing 2024" width="715" height="627"></a></p>
 
-<p>In the words of Ben Davis: <a href="https://www.youtube.com/watch?v=OqdBixi_y1s">https://www.youtube.com/watch?v=OqdBixi_y1s</a> </p>
+<p>The update has generated a lot of discussion and criticism from the developer community, especially from indie developers who fear that the fee will hurt their profitability and creativity. Many users have expressed their opinions and concerns on Reddit, where <a href="https://old.reddit.com/r/Unity3D/comments/16gqv1s/unity_plan_pricing_and_packaging_updates/">the post</a> has received hundreds of upvotes and hundred of comments.</p>
 
-<p>Just build stuff.</p>
-
-<h3>
-  
-  
-  A web scraper
-</h3>
-
-<p>Inspired by my coworker’s web scraper project and Claud’s <a href="https://dev.to/claudbytes/build-a-web-scraper-with-go-3jod">Article</a>. I made a basic web scraper app to perform silly analytics on my company’s website. To answer questions such as: </p>
+<p>Some of the common questions and issues raised by the users are:</p>
 
 <ul>
-<li>Who has the longest profile description?</li>
-<li>What is the frequency of the different job titles?</li>
+<li><p>How will Unity track and enforce the fee? What if users install games offline or on multiple devices?</p></li>
+<li><p>How will the fee affect games that are sold at low prices or have large install bases? What if users uninstall and reinstall games frequently?</p></li>
+<li><p>How will the fee impact Unity’s reputation and competitiveness? Will developers switch to other engines, such as Unreal Engine or Godot?</p></li>
+<li><p>How will the fee affect the quality and diversity of games made with Unity? Will developers avoid making innovative or experimental games that might attract a large audience?</p></li>
 </ul>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--T42kxL3R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mlcth6nwez7mad5nthrb.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--T42kxL3R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mlcth6nwez7mad5nthrb.jpg" alt="Graph results of the scraper" width="650" height="403"></a></p>
+<p>The update is expected to take effect in January 2024, giving developers some time to adjust their plans and expectations. However, many developers are already unhappy and worried about the future of Unity and their games.</p>
 
-<p>Credit to the package <a href="https://github.com/daoleno/tgraph">tgraph</a> for giving me the ability to draw these cool graphs in the terminal with the results.</p>
-
-<h3>
-  
-  
-  Pokemon CLI
-</h3>
-
-<p>It was at this point I was getting a lot of joy out of writing command line applications. I had also just learnt of the existence of <a href="https://github.com/Rigellute/spotify-tui">spotify-tui</a> and wanted to explore more I could build such applications. So building interfaces for APIs felt like a good way to try this out. </p>
-
-<p>The <a href="https://pokeapi.co">PokeApi</a> is a resource I like to use whilst getting familiar with making HTTP calls in a new language. So I threw together such a simple app to leverage all the various methods the API offered.  </p>
-
-<h2>
-  
-  
-  Time to do the groceries
-</h2>
-
-<p>In between learning Go I got curious if there was an API for the app I use for doing my groceries? I am an avid user of the Picnic, Picnic is an online supermarket who operate in Europe. Customers of Picnic do so exclusively via their mobile application.  </p>
-
-<p>However the thought crossed my mind, what if I could automate aspects of my weekly shop? Something like a script that pre-loads my basket in advance, that could be useful.</p>
-
-<p>Fortunately for me I came across <a href="https://github.com/MRVDH/picnic-api/">https://github.com/MRVDH/picnic-api/</a> an unofficial Node.js package for the picnic API. This was perfect, I made a few scripts using the node module mission accomplished.</p>
-
-<h3>
-  
-  
-  Enter Picnic-TUI
-</h3>
-
-<p>Now that I got a taste of what I could do with the Picnic API the natural follow up was to make a wrapper for the API and terminal user interface in Go.</p>
-
-<p>The goal in my mind at this point being, if at any point in the day, I want to add something to my order I could do so from the comfort of my terminal and not have to reach for my phone. This is not a bash at Picnic’s mobile app, I simply wanted to reduce the distraction which is my phone.</p>
-
-<p>Picture it, you are writing code in your favourite terminal based text editor (lets say neovim) and you are  configuring a new Spring bean. It is in this moment you remember you need beans. Simple you hit <code>:term</code> run <code>picnic-tui</code> add them straight to your basket and get back into the code. </p>
-
-<h2>
-  
-  
-  The API
-</h2>
-
-<p>Using the documentation from <a href="https://github.com/MRVDH/picnic-api/">https://github.com/MRVDH/picnic-api/</a>  this allowed me to produce the base for a Go wrapper <a href="https://github.com/simonmartyr/picnic-api">https://github.com/simonmartyr/picnic-api</a>. </p>
-
-<p>At this point I had the functionalities for:</p>
+<p>TL;DR Keypoints:</p>
 
 <ul>
-<li>Authenticating</li>
-<li>Getting user information</li>
-<li>Searching for products</li>
-<li>Adjusting the cart</li>
-<li>Selecting delivery slots</li>
+<li><p>The change doesn't really affect you if you are below threshold.</p></li>
+<li><p><strong>Unity Runtime Fee</strong>: Starting from January 1, 2024, Unity will charge a small flat fee for each game install after the game has passed a minimum revenue and lifetime install threshold. The fee varies by region and subscription plan.</p></li>
+<li><p><strong>Unity Subscription Plans Update</strong>: In November 2023, Unity will add new tools and services to its subscription plans at no extra cost. These include Unity DevOps, Unity Asset Manager, Unity Sentis, and Team Administration.</p></li>
+<li><p><strong>Unity Plus Retirement</strong>: Unity Plus is no longer available for new subscribers as of September 12, 2023. Existing subscribers will receive an offer to upgrade to Unity Pro for one year at the same price.</p></li>
 </ul>
 
-<h3>
-  
-  
-  Sniffing the rest
-</h3>
 
-<p>At this point I was really satisfied with everything I could do with the API. But I wanted to try and make a more complete experience. Would it be possible to finalise an order? How would the payment flow go?</p>
 
-<p>As I mentioned I had expended all the knowledge I had acquired from the Node library so that left me with one option. Intercepting all the outgoing requires from my phone to Picnic to learn all of the APIs I had not captured.</p>
-
-<p>To accomplish this I used the tool <a href="https://www.charlesproxy.com/">https://www.charlesproxy.com</a>. Conveniently Charles Proxy also has an iOS application which allowed me intercept all outgoing request from my iPhone.   </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_F0An0dR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/45brpus2abe2g32oi6yh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_F0An0dR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/45brpus2abe2g32oi6yh.png" alt="Charles screenshot" width="300" height="522"></a></p>
-
-<p>This gave me all the information I needed to identify the endpoints and payloads I would need to succeed my goal. </p>
-
-<h2>
-  
-  
-  A note on the authentication parts
-</h2>
-
-<p>I found it curious and would welcome any response if any Picnic developers happen to be reading. When a client authenticates with the API they send the user’s username and password as well as a client id. The detail I found interesting was the password needs to be MD5 hashed prior to being sent. I’m curious as to why, and curious if that MD5 hashed password is persisted as is or additionally encrypted.</p>
-
-<p>Upon a successful authentication, a JWT is issued which can then be used as a header for endpoints which require authentication. A behaviour I did observer however is, the tokens specify an expiration time (of one day), but the server continues to accept expired tokens.</p>
-
-<p>I believe the intention is that clients would persist the users credentials on device in a secure enclave. Likely storing the MD5 hashed password rather than in plain text. Each day or when it believes its token has expired the application calls the authentication endpoint to get a new one.</p>
-
-<p>Ideally the tokens do not continue to live, as if a token did fall into the wrong hands, that person would continue to have access and the real user would be none the wiser.</p>
-
-<h3>
-  
-  
-  Time to checkout
-</h3>
-
-<p>Prior to intercepting the http requests the checkout flow was unknown to me. From observing the endpoints I learnt that at the moment a user invokes a checkout request the API performs the following actions:</p>
 
 <ul>
-<li>Request to start the checkout.</li>
-<li>If articles in the cart produce an error (such as alcohol) prompt user (ask if user is 18+).</li>
-<li>Upon successful confirmation a request is sent to start the checkout again with the relevant resolve key.</li>
-<li>At this point a request for payment can be initiated which returns a payment link for the customer to complete their payment.</li>
-</ul>
-
-<p>Due to the payment being simply an ideal link, I wanted to explore if I could render a QR code in the terminal to complete an order.</p>
-
-<h2>
-  
-  
-  The TUI
-</h2>
-
-<p>With my API library complete, it was time to set my focus on producing a terminal UI. My inspiration was to replicate the feel of Spotify-TUI. The interface of Spotify-TUI was simple but effective in its implementation. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9GtEiHGf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b06jacoh7025qfiudy7m.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9GtEiHGf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b06jacoh7025qfiudy7m.jpg" alt="Screenshot of Spotify-tui" width="800" height="362"></a></p>
-
-<p>The interface combined multiple intractable views in which the user can navigate the core functionality of Spotify. This application adjusted my expectations on what a terminal based ui could achieve. </p>
-
-<p>Additionally I had an appreciation for the detail to include vim motions in many aspects of their interface for example ‘/’ to search, the option to use ‘h’, ‘j’, ‘k’, ‘l’ in place of arrow keys. From top to bottom the developers demonstrate a lot of passion and care.</p>
-
-<h3>
-  
-  
-  The Picnic Application
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Fo5WY8Qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ecgpmzhtyq3y40dbcd9d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Fo5WY8Qi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ecgpmzhtyq3y40dbcd9d.png" alt="Screen shots of the picnic app" width="800" height="515"></a></p>
-
-<p>The images above show screenshots from the Picnic mobile application. Typically a user would search the application for different articles of food they wish to have delivered and add them to their basket. When they are satisfied with their selection, the user schedules a delivery date and pays for the order. When the time comes around for the oder to be delivered, the application can even show the route the driver is taking, so they are aware as to what time their delivery should arrive.</p>
-
-<p>Within my application, I wanted to only support the functionality to create an order. Rendering the route information of the ongoing delivery would be very cool, but for my needs didn’t add value.</p>
-
-<h3>
-  
-  
-  Evolution of the screens
-</h3>
-
-<p>Spotify-TUI was developed in Rust, therefore I couldn’t simply use the same UI framework. Within Go a popular choice is tview <a href="https://github.com/rivo/tview">https://github.com/rivo/tview</a>  which provides many similar UI widgets which covered all my needs.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2Ocz6CwB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r58n123o6otyyxa4g5ta.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2Ocz6CwB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r58n123o6otyyxa4g5ta.jpg" alt="first version of screens" width="800" height="177"></a></p>
-
-<p>I initially started with the main screen. I wanted to explore how much I could do with the product searching and manipulating the basket. </p>
-
-<p>It was surprising to me how simple it was to get the barebones going. One widget I relied on heavily in tview was flex views. They work similar to flex boxs in the web world, where you can add a collection of different views into a flex view and those widgets would be arranged and sized correctly.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight go"><code><span class="k">func</span> <span class="n">newMainPage</span><span class="p">()</span> <span class="o">*</span><span class="n">MainPage</span> <span class="p">{</span>
-    <span class="c">//reduced for simplicity    </span>
-<span class="n">leftFlex</span> <span class="o">:=</span> <span class="n">tview</span><span class="o">.</span><span class="n">NewFlex</span><span class="p">()</span><span class="o">.</span><span class="n">SetDirection</span><span class="p">(</span><span class="n">tview</span><span class="o">.</span><span class="n">FlexRow</span><span class="p">)</span><span class="o">.</span>
-        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">Search</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
-        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">ArticleImage</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
-        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">ArticleInfo</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span>
-
-    <span class="n">flex</span> <span class="o">:=</span> <span class="n">tview</span><span class="o">.</span><span class="n">NewFlex</span><span class="p">()</span><span class="o">.</span>
-        <span class="n">AddItem</span><span class="p">(</span><span class="n">leftFlex</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
-        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">Articles</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span><span class="o">.</span>
-        <span class="n">AddItem</span><span class="p">(</span><span class="n">mainPage</span><span class="o">.</span><span class="n">Basket</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span>
-
-    <span class="n">mainPage</span><span class="o">.</span><span class="n">Flex</span> <span class="o">=</span> <span class="n">tview</span><span class="o">.</span><span class="n">NewFlex</span><span class="p">()</span><span class="o">.</span><span class="n">SetDirection</span><span class="p">(</span><span class="n">tview</span><span class="o">.</span><span class="n">FlexRow</span><span class="p">)</span><span class="o">.</span>
-        <span class="n">AddItem</span><span class="p">(</span><span class="n">flex</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">mainPage</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>When you add an item to flex view, you can instruct to tview if that item has a fixed size or the proportions of the view and if that view should be focused (meaning the screen highlights that view making it listen to interactions). </p>
-
-<h3>
-  
-  
-  Main Page
-</h3>
-
-<p>One idea that I had with the main page that I was curious to pull off was, how would I see the products in the terminal?</p>
-
-<p>tview included an image widget that required a reference to an image. So within the API I wrote a method to query the image url and pass the response body through a png decoder and see what happens.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight go"><code><span class="k">func</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">Client</span><span class="p">)</span> <span class="n">GetArticleImage</span><span class="p">(</span><span class="n">articleImageId</span> <span class="kt">string</span><span class="p">,</span> <span class="n">size</span> <span class="n">ImageSize</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">url</span><span class="p">,</span> <span class="n">urlErr</span> <span class="o">:=</span> <span class="n">c</span><span class="o">.</span><span class="n">GetArticleImageUrl</span><span class="p">(</span><span class="n">articleImageId</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">urlErr</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">urlErr</span>
-    <span class="p">}</span>
-    <span class="n">res</span><span class="p">,</span> <span class="n">resErr</span> <span class="o">:=</span> <span class="n">c</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resErr</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">resErr</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">StatusCode</span> <span class="o">!=</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">parseError</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="n">articleImage</span><span class="p">,</span> <span class="n">imageErr</span> <span class="o">:=</span> <span class="n">png</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">imageErr</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">imageErr</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="o">&amp;</span><span class="n">articleImage</span><span class="p">,</span> <span class="no">nil</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Success, I could see what peanut butter looks like in the terminal. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QT2xVNSo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3cn3okm0p0n34fvn6i8.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QT2xVNSo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3cn3okm0p0n34fvn6i8.jpg" alt="rendering of screen with product image" width="800" height="168"></a></p>
-
-<h3>
-  
-  
-  Delivery Page
-</h3>
-
-<p>I attempted initially to have the delivery slots as a dynamic element that appeared on the main page. However this felt clunky and overall a bad end user experience.  </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6pbZ_OZ_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/95nkdatdtrkvtn4x4mtc.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6pbZ_OZ_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/95nkdatdtrkvtn4x4mtc.jpg" alt="first delivery screen" width="291" height="347"></a></p>
-
-<p>My first iteration of the delivery view was to create a list of all the slot with an item highlighted when the day changed. It felt natural at this point to move this content into its own page by leveraging the tview pages widget. </p>
-
-<p>This widget allows you to set different views as a page within your application and dynamically switch to them when needed. </p>
-
-<p>For the delivery page I experimented with the idea to generate content into a flex view. The idea was simple, each time there was a new day, create a new list of options and add that to a growing flex view. </p>
-
-<p>The API only returned the possible delivery slots for the next seven days, so I knew it shouldn’t grow out of control.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bwpIsBjv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/88u46bpcboipcsb81yy2.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bwpIsBjv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/88u46bpcboipcsb81yy2.jpg" alt="better delivery screen" width="800" height="210"></a></p>
-
-<p>With the experiment a success, I cleaned up the view by not having all lists look like they were being interacted with at the same time. Additionally I highlighted which slot was currently selected and which were the more environmental options.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rzQ1WV2I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c2e73tfv76tqoboq1zpk.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rzQ1WV2I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c2e73tfv76tqoboq1zpk.jpg" alt="styled delivery screen" width="800" height="208"></a></p>
-
-<h3>
-  
-  
-  Checkout Page
-</h3>
-
-<p>The checkout page was fun, because as mentioned above there is a sequence of events in order to complete the order. </p>
-
-<p>The biggest part of the puzzle was, how would I render the payment QR code? </p>
-
-<p>Luckily the library <a href="https://github.com/skip2/go-qrcode">https://github.com/skip2/go-qrcode</a> allowed for a QR code to be generated as a string allowing that string to be presented inside a text view.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight go"><code><span class="k">func</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">CheckoutPage</span><span class="p">)</span> <span class="n">renderPaymentLink</span><span class="p">(</span><span class="n">url</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">q</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">Highest</span><span class="p">)</span>
-    <span class="n">c</span><span class="o">.</span><span class="n">PaymentLink</span><span class="o">.</span><span class="n">SetText</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">ToSmallString</span><span class="p">(</span><span class="no">true</span><span class="p">))</span>
-    <span class="n">c</span><span class="o">.</span><span class="n">Instructions</span><span class="o">.</span><span class="n">SetText</span><span class="p">(</span><span class="s">"Scan QR code to complete or ESC to cancel"</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--P_tGf_CQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/un09dkbcbu6qppbsjg3u.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--P_tGf_CQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/un09dkbcbu6qppbsjg3u.jpg" alt="checkout page with qr" width="800" height="174"></a></p>
-
-<p>The other challenge inside the checkout page was to present different checks and errors based on the content of the cart. </p>
-
-<p>Within the API, I decided that errors produced by the checkout should be wrapped in their own error object allowing for the page to dynamically handle them. </p>
-
-<p>For example, if the cart contains alcohol, the user is instructed to confirm they are 18+ or if they haven’t met the minimum order price modals are presented to the user with directions of what to do. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3VZ1sUjz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spur988uj3oejhfx19b0.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3VZ1sUjz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spur988uj3oejhfx19b0.jpg" alt="checkout page warning" width="800" height="174"></a></p>
-
-<p>If all actions are successfully resolved the screen presents the QR code allowing for the completion of the order.  </p>
-
-<h2>
-  
-  
-  Final words
-</h2>
-
-<p>I reached my goal and successfully made a complete order and had my perfect cli tool to manage my groceries. </p>
-
-<p>More importantly it gave me a great platform to experiment and learn more about Go. This experience really reenforced to me if you can find something that gives you joy to build your learning will go faster and you will get more out of it. </p>
-
-<p>If you wish to checkout the source code of the API or TUI check them out here:</p>
-
-<ul>
-<li><a href="https://github.com/simonmartyr/picnic-tui">picnic-tui</a></li>
-<li><a href="https://github.com/simonmartyr/picnic-api">picnic-api</a></li>
-</ul>
-
-<h2>
-  
-  
-  Links and references
-</h2>
-
-<ul>
-<li><a href="https://go.dev/tour/welcome/1">A tour of go</a></li>
-<li><a href="https://www.youtube.com/watch?v=OqdBixi_y1s">How I would Re-learn Go - Ben Davis</a></li>
-<li><a href="https://dev.to/claudbytes/build-a-web-scraper-with-go-3jod">Building a web scraper with Go</a></li>
-<li><a href="https://github.com/Rigellute/spotify-tui">Spotify-Tui</a></li>
-<li><a href="https://github.com/MRVDH/picnic-api/">Picnic-API for Node.js</a></li>
-<li><a href="https://www.charlesproxy.com">Charles web debugging proxy</a></li>
-<li><a href="https://github.com/rivo/tview">Tview</a></li>
-<li><a href="https://github.com/skip2/go-qrcode">Go-qrcode</a></li>
+<li>So, are you using Unity3D right now? </li>
+<li>What do you think about these upcoming changes? </li>
+<li>Any plans on looking into different Game Engine?</li>
+<li>Would you consider joining the <a href="https://godot.community">Godot Community</a>?</li>
 </ul>
 
  </details> 
  <hr /> 
 
- #### - [Eliminating Bugs Using the Tong Motion Approach](https://dev.to/codenameone/eliminating-bugs-using-the-tong-motion-approach-32ch) 
- <details><summary>Article</summary> <ul>
-<li>
-Understanding the Process of Elimination in Debugging
+ #### - [How to Effectively Use Caching to Improve Microservices Performance](https://dev.to/amplication/how-to-effectively-use-caching-to-improve-microservices-performance-21c1) 
+ <details><summary>Article</summary> <h1>
+  
+  
+  Introduction
+</h1>
+
+<p>In the dynamic landscape of modern software development, microservices have emerged as a powerful architectural paradigm, offering scalability, flexibility, and agility. However, maintaining optimal performance becomes a crucial challenge as microservices systems grow in complexity and scale. This is where caching becomes a key strategy to enhance microservices' efficiency.</p>
+
+<p>This article will dive into the art of leveraging caching techniques to their fullest potential and ultimately boosting the performance of microservices.</p>
+
+<h1>
+  
+  
+  What are Microservices?
+</h1>
+
+<p><a href="https://www.writergate.com/editor/xshmqazeeq1s/6g3f0i7bu3i7">Microservices</a> are a distinctive architectural strategy that partitions applications into compact, self-contained services, each tasked with a distinct business function.</p>
+
+<p>These services are crafted to operate autonomously, enabling simpler development, deployment, and scalability.</p>
+
+<p>This approach promotes agility, scalability, and effectiveness within software development.</p>
+
+<h1>
+  
+  
+  What is Caching?
+</h1>
+
+<p><a href="https://aws.amazon.com/caching/">Caching</a> is a technique used in computer systems to store frequently accessed data or computation results in a temporary storage area called a "cache."</p>
+
+<p>The primary purpose of caching is to speed up data retrieval and improve system performance by reducing the need to repeat time-consuming operations, such as database queries or complex computations.</p>
+
+<p>Caching is widely used in various computing systems, including web browsers, databases, content delivery networks (CDNs), microservices, and many other applications. </p>
+
+<h1>
+  
+  
+  <strong>What are the Different Types of Caching Strategies?</strong>
+</h1>
+
+<p>There are different types of caching strategies. We will explore database caching, edge caching, API caching, and local caching.</p>
+
+<h2>
+  
+  
+  <strong>Database caching</strong>
+</h2>
+
+<p><a href="https://www.prisma.io/dataguide/managing-databases/introduction-database-caching">Database caching</a> involves storing frequently accessed or computationally expensive data from a database in a cache to improve the performance and efficiency of data retrieval operations. Caching reduces the need to repeatedly query the database for the same data, which can be slow and resource-intensive. Instead, cached data is readily available in memory, leading to faster response times and lower load on the database. There are a few different database caching strategies. Let's discuss them.</p>
+
+<h3>
+  
+  
+  <strong>Cache aside:</strong>
+</h3>
+
+<p>In a cache-aside setup, the database cache is positioned adjacent to the database itself. When the application needs specific data, it initially examines the cache. The data is promptly delivered if the cache contains the required data (<strong>referred to as a cache hit)</strong>. </p>
+
+<p>Alternatively, if the cache lacks the necessary data (<strong>a cache miss</strong>), the application will proceed to query the database. The application then stores the retrieved data in the cache, making it accessible for future queries. This strategy proves particularly advantageous for applications that heavily prioritize reading tasks. The below image depicts the steps in the cache-aside approach.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XnqOYJm8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/0.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XnqOYJm8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/0.png" alt="" width="650" height="324"></a></p>
+
+
+
+<p>(image source: <a href="https://www.prisma.io/dataguide/managing-databases/introduction-database-caching">prisma.io</a>)</p>
+
+<h3>
+  
+  
+  <strong>Read through:</strong>
+</h3>
+
+<p>In a read-through cache configuration, the cache is positioned between the application and the database, forming a linear connection. This approach ensures that the application exclusively communicates with the cache when performing read operations. The data is promptly provided if the cache contains the requested data (cache hit). In instances of cache misses, the cache will retrieve the missing data from the database and then return it to the application. However, the application continues to interact directly with the database for data write operations. The below image depicts the steps in the read-through approach.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--x5cEQBsC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--x5cEQBsC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/1.png" alt="" width="800" height="399"></a></p>
+
+
+
+<p>(image source: <a href="https://www.prisma.io/dataguide/managing-databases/introduction-database-caching">prisma.io</a>)</p>
+
+<h3>
+  
+  
+  <strong>Write through:</strong>
+</h3>
+
+<p>Unlike the previous strategies we discussed, this strategy involves initially writing data to the cache instead of the database, and the cache promptly mirrors this write to the database. The setup can still be conceptualized similarly to the read-through strategy, forming a linear connection with the cache at the center. The below image depicts the steps in the write-through approach.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--h-lZLGcr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--h-lZLGcr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/2.png" alt="" width="650" height="324"></a></p>
+
+
+
+<p>(image source: <a href="https://www.prisma.io/dataguide/managing-databases/introduction-database-caching">prisma.io</a>)</p>
+
+<h3>
+  
+  
+  <strong>Write back:</strong>
+</h3>
+
+<p>The write-back approach functions nearly identical to the write-through strategy, with a single crucial distinction. In the write-back strategy, the application initiates the writing process directly to the cache as in the write-through case. However, in this case, the cache doesn't promptly mirror the write to the database; instead, it performs the database write after a certain delay. The below image depicts the steps in the write-back approach.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eMfose6H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eMfose6H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/3.png" alt="" width="650" height="324"></a></p>
+
+
+
+<p>(image source: <a href="https://www.prisma.io/dataguide/managing-databases/introduction-database-caching">prisma.io</a>)</p>
+
+<h3>
+  
+  
+  <strong>Write around:</strong>
+</h3>
+
+<p>A write-around caching approach can be integrated with either a cache-aside or a read-through strategy. In this setup, data is consistently written to the database, and retrieved data is directed to the cache. When a cache miss occurs, the application proceeds to access the database for reading and subsequently updates the cache to enhance future access. The below image depicts the steps in the write-around approach.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9Eg__Wpp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9Eg__Wpp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/4.png" alt="" width="650" height="324"></a></p>
+
+
+
+<p>(image source: <a href="https://www.prisma.io/dataguide/managing-databases/introduction-database-caching">prisma.io</a>)</p>
+
+<h2>
+  
+  
+  <strong>Edge caching</strong>
+</h2>
+
+<p><a href="https://learn.microsoft.com/en-us/iis/media/iis-media-services/edge-caching-for-media-delivery">Edge caching</a>, also known as content delivery caching, involves the storage of content and data at geographically distributed edge server locations closer to end users. This technique is used to improve the delivery speed and efficiency of web applications, APIs, and other online content. Edge caching reduces latency by serving content from servers located near the user, minimizing the distance data needs to travel across the internet backbone. This is mostly useful for static content like media, HTML, CSS, etc.</p>
+
+<h2>
+  
+  
+  <strong>API Caching</strong>
+</h2>
+
+<p><a href="https://rapidapi.com/guides/api-caching">API caching</a> involves the temporary storage of API responses to improve the performance and efficiency of interactions between clients and APIs. Caching API responses can significantly reduce the need for repeated requests to the API server, thereby reducing latency and decreasing the load on both the client and the server. This technique is particularly useful for improving the responsiveness of applications that rely heavily on external data sources through APIs.</p>
+
+<h2>
+  
+  
+  <strong>Local caching</strong>
+</h2>
+
+<p>Local caching, also known as client-side caching or browser caching, refers to the practice of storing data, files, or resources on the client's side (such as a user's device or web browser) to enhance the performance of web applications and reduce the need for repeated requests to remote servers. By storing frequently used data locally, local caching minimizes the latency associated with retrieving data from remote servers and contributes to faster page loads and improved user experiences.</p>
+
+<h1>
+  
+  
+  <strong>What are the Benefits of using Caching in Microservices?</strong>
+</h1>
+
+<p>Utilizing caching in a microservices architecture can offer a multitude of benefits that contribute to improved performance, scalability, and efficiency. Here are some key advantages of incorporating caching into microservices:</p>
 
 <ul>
-<li>The Basics</li>
-<li>Using External Tools</li>
+<li>  <strong>Enhanced Performance &amp; Lower Latency:</strong> Caching reduces the need to repeatedly fetch data from slower data sources, such as databases or external APIs. Cached data can be quickly retrieved from the faster cache memory, leading to reduced latency and faster response times for microservices.</li>
+<li>  <strong>Reduced Load on Data Sources:</strong> By serving frequently requested data from the cache, microservices can alleviate the load on backend data sources. This ensures that databases and other resources are not overwhelmed with redundant requests, freeing up resources for other critical tasks.</li>
+<li>  <strong>Improved Scalability:</strong> Caching allows microservices to handle increased traffic and load more effectively. With cached data, microservices can serve a larger number of requests without overloading backend systems, leading to better overall scalability.</li>
+<li>  <strong>Optimized Data Processing:</strong> Microservices can preprocess and store frequently used data in the cache, allowing for more complex computations or transformations to be performed on cached data. This can result in more efficient data processing pipelines.</li>
+<li>  <strong>Offline Access and Resilience:</strong> In scenarios where microservices need to operate in offline or disconnected environments, caching can provide access to previously fetched data, ensuring continued functionality.</li>
 </ul>
 
+<h1>
+  
+  
+  <strong>Key Considerations When Implementing Caching in Microservices</strong>
+</h1>
 
-</li>
-<li>
-The Power of Unit Tests in Debugging
+<p>Implementing caching in a microservices architecture requires careful consideration to ensure that the caching strategy aligns with the specific needs and characteristics of the architecture. Here are some key considerations to keep in mind when implementing caching in microservices:</p>
 
 <ul>
-<li>Benefits of Mocking Frameworks</li>
+<li>  <strong>Data Volatility and Freshness:</strong> Evaluate the volatility of your data. Caching might not be suitable for data that changes frequently, as it could lead to serving stale information. Determine whether data can be cached for a certain period or whether it requires real-time updates.</li>
+<li>  <strong>Data Granularity:</strong> Identify the appropriate level of granularity for caching. Determine whether to cache individual items, aggregated data, or entire responses. Fine-tuning granularity can impact cache hit rates and efficiency.</li>
+<li>  <strong>Cache Invalidation:</strong> Plan how to invalidate cached data when it becomes outdated. Consider strategies such as time-based expiration, manual invalidation, or event-based invalidation triggered by data changes. This is arguably the most challenging part of implementing caching successfully. I recommend giving this careful thought during system design, particularly if you're not very experienced with caching.</li>
+<li>  <strong>Cache Eviction Policies:</strong> Choose appropriate eviction policies to handle cache capacity limitations. Common strategies include Least Recently Used (LRU), Least Frequently Used (LFU), and Time-To-Live (TTL) based eviction.</li>
+<li>  <strong>Cache Consistency:</strong> Assess whether data consistency across microservices is critical. Depending on the use case, you might need to implement cache synchronization mechanisms to ensure data integrity.</li>
+<li>  <strong>Cold Start:</strong> Consider how to handle cache "cold starts" when a cache is empty or invalidated, and a high volume of requests is received simultaneously. Implement fallback mechanisms to gracefully handle such situations. Consider implementing an artificial cache warm-up when starting the service from a "cold" state.</li>
+<li>  <strong>Cache Placement:</strong> Decide where to place the cache – whether it's inside the microservices themselves, at the API gateway, or in a separate caching layer. Each option has its benefits and trade-offs in terms of ease of management and efficiency.</li>
+<li>  <strong>Cache Segmentation:</strong> Segment your cache based on data access patterns. Different microservices might have distinct data access requirements, and segmenting the cache can lead to better cache utilization and hit rates.</li>
+<li>  <strong>Cache Key Design:</strong> Design cache keys thoughtfully to ensure uniqueness and avoid conflicts. Include relevant identifiers that accurately represent the data being cached. Choose keys that are native to the consuming microservices.</li>
+<li>  <strong>Cloud-Based Caching Services:</strong> Evaluate the use of cloud-based caching services, such as <a href="https://aws.amazon.com/elasticache/">Amazon ElastiCache</a> or <a href="https://redis.com/redis-enterprise-cloud/overview/">Redis Cloud</a>, for managed caching solutions that offer scalability, resilience, and reduced maintenance overhead.</li>
 </ul>
 
+<h2>
+  
+  
+  <strong>Overview of Popular Caching Tools</strong>
+</h2>
 
-</li>
-<li>The Challenges with Flaky Issues</li>
-<li>
-The Concept of the 'Tong Motion'
+<h3>
+  
+  
+  <strong>Redis</strong>
+</h3>
+
+<p>Redis is an open-source data structure store that functions as a database, cache, messaging system, and stream processor. It supports various data structures like strings, hashes, lists, sets, sorted sets with range queries, bitmaps, <a href="https://redis.io/docs/data-types/probabilistic/hyperloglogs/">hyperloglogs</a>, geospatial indexes, and streams. Redis offers built-in features such as replication, scripting in Lua, LRU (Least Recently Used) eviction, transactions, and multiple levels of data persistence. Additionally, it ensures high availability through Redis Sentinel and automatic partitioning via Redis Cluster. The below image depicts how Redis is traditionally used.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Nc9soX2B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/5.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Nc9soX2B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/5.jpeg" alt="" width="800" height="442"></a></p>
+
+
+
+<p>Redis prioritizes speed by utilizing an in-memory dataset. Depending on your needs, Redis can make your data persistent by periodically saving the dataset to disk or logging each command to disk. You also have the option to disable persistence if your requirement is solely a feature-rich, networked, in-memory cache. Redis can be a valuable tool for improving the performance of microservices architectures. It offers fast data retrieval, caching capabilities, and support for various data structures.</p>
+
+<p>It's important to note that while Redis can significantly enhance microservices performance, it also introduces some considerations, such as <a href="https://www.designgurus.io/blog/cache-invalidation-strategies">cache invalidation</a> strategies, data persistence, and memory management. Proper design and careful consideration of your microservices' data access patterns and requirements are crucial for effectively leveraging Redis to improve performance.</p>
+
+<p>💡Pro Tip: <a href="https://amplication.com/">Amplication</a> now offers a <a href="https://github.com/amplication/plugins/tree/master/plugins/cache-redis">Redis Plugin</a> that can help you integrate Redis into your microservices more easily than ever before.</p>
+
+<h2>
+  
+  
+  <strong>Memcached</strong>
+</h2>
+
+<p>Memcached is another popular in-memory caching system that can be used to improve the performance of microservices. Similar to Redis, Memcached is designed to store and retrieve data quickly from memory, making it well-suited for scenarios where fast data access is crucial. It is a fast and distributed system for caching memory objects. While it's versatile, its initial purpose was to enhance the speed of dynamic web applications by reducing the workload on databases. It's like a brief memory boost for your applications.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tC7dJy3l--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tC7dJy3l--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://static-assets.amplication.com/blog/how-to-use-caching-to-improve-microservices-peformance/6.png" alt="" width="251" height="468"></a></p>
+
+
+
+<p>Memcached can redistribute memory surplus from certain parts of your system to address shortages in other areas. This optimization aims to enhance memory utilization and efficiency.</p>
+
+<p>Consider the two deployment scenarios depicted in the diagram:</p>
 
 <ul>
-<li>Applying the Tong Motion to Debugging</li>
+<li>  In the first scenario (top), each node operates independently. However, this approach is inefficient, with the cache size being a fraction of the web farm's actual capacity. It's also labor-intensive to maintain cache consistency across nodes.</li>
+<li>  With Memcached, all servers share a common memory pool (bottom). This ensures that a specific item is consistently stored and retrieved from the same location across the entire web cluster. As demand and data access requirements increase with your application's expansion, this strategy aligns scalability for both server count and data volume.</li>
 </ul>
 
+<p>Though the illustration shows only two web servers for simplicity, this concept holds as the server count grows. For instance, while the first scenario provides a cache size of 64MB with fifty servers, the second scenario yields a substantial 3.2GB cache size. It's essential to note that you can opt not to use your web server's memory for caching. Many users of Memcached choose dedicated machines specifically designed as Memcached servers.</p>
 
-</li>
-<li>An Illustrative Case: Debugging a Server Performance Issue</li>
-<li>Wrapping Up</li>
-</ul>
-
-<p>Software debugging can often feel like a never-ending maze. Just when you think you're on the right track, you hit a dead-end. But, by employing the age-old technique of the process of elimination, and using the analogy of the 'Tong Motion,' we can navigate this maze more effectively.</p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/K4FRRG4pnEM">
-</iframe>
-</p>
-
-<p>As a sidenote, if you like the content of this and the other posts in this series check out my <a href="https://www.amazon.com/dp/1484290410/"><strong>Debugging book</strong></a> that covers this subject. If you have friends that are learning to code I'd appreciate a reference to my <a href="https://www.amazon.com/Java-Basics-Practical-Introduction-Full-Stack-ebook/dp/B0CCPGZ8W1/"><strong>Java Basics book</strong></a>. If you want to get back to Java after a while check out my <a href="https://www.amazon.com/Java-21-Explore-cutting-edge-features/dp/9355513925/"><strong>Java 8 to 21 book</strong></a>.</p>
-
-<p><a></a></p>
-
-<h2>
-  
-  
-  Understanding the Process of Elimination in Debugging
-</h2>
-
-<p><a></a></p>
-
-<h3>
-  
-  
-  The Basics
-</h3>
-
-<p>The process of elimination in debugging is straightforward in principle: continuously rule out non-problematic components until the root cause reveals itself. This can be achieved either by commenting out lines of code or using debugging techniques, such as the 'force return', which bypasses specific code paths.</p>
-
-<p><a></a></p>
-
-<h3>
-  
-  
-  Using External Tools
-</h3>
-
-<p>For front-end issues, replicating the problem using tools like curl or postman is valuable. It helps us determine if the bug is within the front-end code or elsewhere. This way, we can quickly narrow our focus, not merely addressing the symptoms but locating the actual bug.</p>
-
-<p><a></a></p>
-
-<h2>
-  
-  
-  The Power of Unit Tests in Debugging
-</h2>
-
-<p>Unit tests are our best allies when it comes to debugging. By focusing on isolated units, they hone in on potential problem areas.</p>
-
-<p><a></a></p>
-
-<h3>
-  
-  
-  Benefits of Mocking Frameworks
-</h3>
-
-<p>Mocking frameworks like Mockito come in handy as they can simulate large parts of the application. This way, we can drill down on the exact problem, circumventing potential disturbances. Moreover, using mocks can prevent regression and make our test cases cleaner.</p>
-
-<p>However, while there are best practices regarding the extent of mocking, when debugging a specific problem, it's more pragmatic to mock as much as necessary to distill the problem to its essence.</p>
-
-<p><a></a></p>
-
-<h2>
-  
-  
-  The Challenges with Flaky Issues
-</h2>
-
-<p>The elimination technique is less straightforward with flaky issues - those bugs that appear irregularly or whose behavior changes as code is eliminated. The key strategy here is to <strong>focus on negatives</strong>. In simpler terms, if removing a certain block doesn't cause the problem to appear, it doesn't automatically indict that block. The absence could be due to the bug's unpredictable nature. Hence, it's crucial only to trust instances where the problem consistently reproduces.</p>
-
-<p><a></a></p>
-
-<h2>
-  
-  
-  The Concept of the 'Tong Motion'
-</h2>
-
-<p>Think of tongs. They grasp from both sides. Similarly, almost all software has at least two primary interfaces or points of input/output. For instance:</p>
-
-<ul>
-<li><p><strong>Enterprise Web Apps</strong>: Web UI on one side and the database on the other.</p></li>
-<li><p><strong>Operating System Kernel</strong>: User space app on one end and computer hardware on the other.</p></li>
-<li><p><strong>Video Games</strong>: The joystick and screen API on one side and the game database on the other.</p></li>
-</ul>
-
-<p><a></a></p>
-
-<h3>
-  
-  
-  Applying the Tong Motion to Debugging
-</h3>
-
-<p>Using the example of an enterprise web app:</p>
-
-<ol>
-<li><p><strong>Mocking the Web Tier</strong>: Begin by using tools like curl or postman to eliminate front-end issues.</p></li>
-<li><p><strong>Mocking the Database</strong>: Replace the actual database with mock data.</p></li>
-<li><p><strong>Narrowing Down Further</strong>: If the problem persists, move to testing the presentation tier directly, thereby eliminating the database from the equation.</p></li>
-<li><p><strong>Digging Deeper</strong>: Invoke the business method directly and mock its dependencies. This way, you are narrowing down on the actual method causing the issue while excluding the rest of the application.</p></li>
-</ol>
-
-<p>One common pitfall is neglecting one prong of the tongs or misplacing the other. It's crucial to ensure both sides are appropriately positioned; otherwise, it might skew the results. If stuck, consider investigating from the opposite side, and then revert when needed.</p>
-
-<p><a></a></p>
-
-<h2>
-  
-  
-  An Illustrative Case: Debugging a Server Performance Issue
-</h2>
-
-<p>In a real-world scenario, while tackling a server performance issue, I employed the 'Tong Motion' technique. By replacing web calls with curl requests, I shifted focus to the problematic area. At the same time, I enhanced database logging to monitor its output as problematic SQL was replicated through curl. This dual-sided approach helped unearth a bug in the Object Relational Mapping layer.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8rLSjHV3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m121zs8x7buo7ulnxqgs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8rLSjHV3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m121zs8x7buo7ulnxqgs.png" alt="Image description" width="800" height="403"></a></p>
-
-<p>This concrete example comprises of the following stages:</p>
-
-<ol>
-<li>
-<p>The tongs start by mocking the web tier with curl or postman. This eliminates front-end related issues.</p>
-
-<p>The other side of the tong motion replaces the database with mock data.  </p>
-</li>
-<li><p>If the issue can be reproduced we can further squeeze the tongs by invoking the presentation tier method directly in a test case.<br><br>
-We can then eliminate the database entirely from the equation by mocking it in a test case.</p></li>
-<li><p>Finally, we can invoke the business method directly eliminating the presentation tier aspect.<br><br>
-We can mock its dependencies which means we narrow down on a specific method that’s at fault while eliminating the rest of the application.</p></li>
-</ol>
-
-<p><a></a></p>
-
-<h2>
-  
-  
-  Wrapping Up
-</h2>
-
-<p>Debugging can be a daunting process. However, with the right techniques, like the process of elimination and the 'Tong Motion' approach, it becomes a more manageable task. Always remember to tackle issues methodically and from all angles to find and fix the root cause effectively.</p>
-
-<p>Abstract: Once we press the merge button that code is no longer our responsibility. If it performs sub-optimally or has a bug it is now the problem of the DevOps team, the SRE, etc. Unfortunately, those teams work with a different toolset. If my code uses up too much RAM they will increase RAM. If the code runs slower they will increase CPU. If the code crashes they will increase concurrent instances.</p>
-
-<p>If none of that helps they will call you up at 2AM. A lot of these problems are visible before they become a disastrous middle of the night call. Yes. DevOps should control production, but the information they gather from production is useful for all of us.</p>
-
- </details> 
- <hr /> 
-
- #### - [you may need this - bash script](https://dev.to/scorcism/you-may-need-this-bash-script-p0e) 
- <details><summary>Article</summary> <p>I created a bash script for handling</p>
-
-<p><code>git add.</code>, <code>git commit -m ""</code> and <code>git push</code></p>
-
-<p>Don't ask why,<br>
-Yes, I will tell<br>
-For a developer, these 3 commands are the most important to work on on a daily basis.</p>
-
-<p>But it's a little bit time-consuming—not much, but 2 seconds, I can say.</p>
-
-<p>So I created this script.<br>
-Follow me.</p>
-<h3>
-  
-  
-  Create a file
-</h3>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>vim gitpush.sh
-</code></pre>
-
-</div>
-
-<h3>
-  
-  
-  The <strong>Code</strong>
-</h3>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c">#!/bin/bash</span>
-git add <span class="nb">.</span>
-git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
-git push
-</code></pre>
-
-</div>
-
-
-<p>Each line explanation: </p>
-
-<p><code>#! -&gt; bash shebang</code></p>
-
-<p>git add . -&gt; add all the files to staging</p>
-
-<p>git commit -m "" -&gt; write changes permanently.</p>
-
-<p>git push -&gt; push to the remote origin.</p>
-<h3>
-  
-  
-  Exit <strong>the vim</strong>
-</h3>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>a. Enter `Esc`
-
-b. Enter `:`
-
-c: Enter `wq`
-
-![exit vim](https://imgur.com/XA9IOdC.png)
-</code></pre>
-
-</div>
-<p>The entire file should be like this:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LCDqXDx0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/PglpMBb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LCDqXDx0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/PglpMBb.png" alt="entire process" width="644" height="396"></a></p>
-
-<p>Now we need to give execute permission to the file.<br>
-Follow the command.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">chmod </span>700 gitpush.sh
-</code></pre>
-
-</div>
-
-
-
-<p>Command breakdown<br>
-chmod: This is used to change the file permissions.<br>
-700: 700 is divided into 3 groups: a) 7, b) 0, and c) 0.</p>
-
-<p><strong>a</strong>) refers to the current user.<br>
-<strong>b</strong>) refers to the group<br>
-<strong>c</strong>) refers to other users in the system.</p>
-
-<p>Group <strong>a</strong> is 7, which means the current user has all the permissions. You can understand this by</p>
-
-<p>[<br>
-  4: for read,<br>
-  2 for write,<br>
-  1 for execute<br>
-  ]</p>
-
-<p>So, 7 = 4 + 2 + 1, so the current user will have all the permissions.</p>
-
-<p>0 means no permissions.</p>
-
-<p>The entire steps will look like:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6CG8-wY2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/CbtNfLo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6CG8-wY2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/CbtNfLo.png" alt="entire step" width="644" height="370"></a></p>
-
-<p>The gameplay:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0seh-4Du--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/9Jj7Hhk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0seh-4Du--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/9Jj7Hhk.png" alt="gameplay" width="800" height="210"></a></p>
-
-<p>As you can see, I have used the absolute path of the file with just the commit message. Liek simple.</p>
-
-<p>But, <br>
-In bash, we can use alias to avoid typing the file path every time.</p>
-
-<p>Follow me:</p>
-<h3>
-  
-  
-  Go to the Home directory
-</h3>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">cd</span> ~
-</code></pre>
-
-</div>
-
-<h3>
-  
-  
-  Open your shell script; I'm using zsh.
-</h3>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>vim .zshrc
-</code></pre>
-
-</div>
-
-
-<p>If you are using bash, it must be <code>.bashrc</code>. You can check that by<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">echo</span> <span class="nv">$SHELL</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  The core command
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">alias</span> <span class="nt">-g</span> <span class="nv">gitpush</span><span class="o">=</span><span class="s1">'/home/scor32k/blogs/scripts/gitpush.sh $1'</span>
-</code></pre>
-
-</div>
-
-
-
-<p>restart the shell (close the terminal and open again). This will globally set the alias.</p>
-
-<p>Now the fun<br>
-Follow</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sG2AG2mW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/rkkWiJV.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sG2AG2mW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://imgur.com/rkkWiJV.png" alt="final" width="800" height="256"></a></p>
-
-<p>I have only used<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git push <span class="s2">"commit message"</span>
-</code></pre>
-
-</div>
-
-
-
-<p>and all three imp git commands are done.</p>
-
-<p>This was just a fun project. I thought of creating</p>
-
- </details> 
- <hr /> 
-
- #### - [Our Team's Favourite Open Source Projects Right Now](https://dev.to/rigdev/our-teams-favourite-open-source-projects-right-now-4jlc) 
- <details><summary>Article</summary> <p>At Rig.dev, we love open source. It's not just about writing code; it's about sharing solutions, solving problems - all as a community. We asked everyone on our team to show their current favourite open source project. Why? Because we're always on the hunt for cool tools and we thought you might be too.</p>
-
-<p>The answers we got are all over the map, and that's what makes this so interesting. Some of us are into hardcore frameworks, while others are vibing with smaller, simpler projects that solve everyday challenges. Either way, we're stoked about these open source projects that are making our lives easier and we think you might find a few new favourites in this list too.</p>
-
-<h2>
-  
-  
-  A humble favor 🤗:
-</h2>
-
-<p>I'm on a mission to reach 1k stars for Rig.dev. Would you consider supporting by giving it a star on Github? It encourages me and the rest of the team to produce new, high-quality content weekly.</p>
-
-<p>Our Github: <a href="http://go.rig.dev/devto/our-favourite-open-source-projects/github">https://github.com/rigdev/rig</a></p>
-
-<h2>
-  
-  
-  OpenTF - Benjamin
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XBKcZIic--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iel8tqko33ylxosoxyfd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XBKcZIic--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iel8tqko33ylxosoxyfd.png" alt="OpenTF" width="800" height="388"></a></p>
-
-<blockquote>
-<p>“<em>It is important that the main tool used for IaaC truly is OSS.</em>” <br>
-<strong>Benjamin, Senior Software Engineer</strong></p>
-</blockquote>
-
-<p>OpenTF is a fork of Terraform, an open-source infrastructure as code (IaC) tool that allows you to safely and efficiently build, change, and version infrastructure. OpenTF is still under development, but it aims to be a fully open-source, community-driven alternative to Terraform.</p>
-
-<p>The origin of OpenTF is the Terraform OSS community's concern over HashiCorp's decision to switch the Terraform license from the Apache 2.0 license to the Business Source License (BSL). The BSL is a more restrictive license that could make it more difficult for organizations to use Terraform in certain circumstances.</p>
-
-<p>Website: <a href="https://opentf.org">https://opentf.org</a><br>
-Github: <a href="https://github.com/opentffoundation/opentf">https://github.com/opentffoundation/opentf</a></p>
-
-<h2>
-  
-  
-  bpython - Matias
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2NU5Za76--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/52u4lo4gheheshle9cts.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2NU5Za76--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/52u4lo4gheheshle9cts.gif" alt="bpython" width="615" height="670"></a></p>
-
-<blockquote>
-<p>“<em>It is much nicer to use than the built-in python interpreter.</em>”<br>
-<strong>Matias, Software Engineer</strong></p>
-</blockquote>
-
-<p>bpython is a Python interpreter with a fancy curses interface. It adds several features common to IDEs, such as syntax highlighting, expected parameter list, auto-indentation, and autocompletion. It is released under the MIT License.</p>
-
-<p>bpython was created by David Paleino in 2004. The original goal of bpython was to provide a more interactive and user-friendly experience than the standard Python interpreter. bpython has since become a popular choice for Python developers, and is used by a wide range of people, from beginners to experienced professionals.</p>
-
-<p>Website: <a href="https://www.bpython-interpreter.org">https://www.bpython-interpreter.org</a><br>
-Github: <a href="https://github.com/bpython/bpython">https://github.com/bpython/bpython</a></p>
-
-<h2>
-  
-  
-  Llama 2 - Christian
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KZ2YxGAd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pq91e41s6gogit22g7rj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KZ2YxGAd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pq91e41s6gogit22g7rj.png" alt="Llama 2" width="800" height="449"></a></p>
-
-<blockquote>
-<p>“<em>In the spirit of open sourcing modern technologies, and removing the veil of mystery from large language models, i think it is worth mentioning Llama 2 - Meta’s newest large language model that they have open sourced</em>”<br>
-<strong>Christian, Founding Engineer</strong></p>
-</blockquote>
-
-<p>Llama 2 is an open-source, large language model (LLM) developed by Meta AI Research. It is a collection of pretrained and fine-tuned LLMs ranging in scale from 7 billion to 70 billion parameters. The fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases.</p>
-
-<p>Website: <a href="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/">https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/</a><br>
-Github: <a href="https://github.com/facebookresearch/llama">https://github.com/facebookresearch/llama</a></p>
-
-<h2>
-  
-  
-  Vue 3 + Nuxt - Nicky
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--iv_tIhMf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/469wsqxnxd6m60qmo0xa.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--iv_tIhMf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/469wsqxnxd6m60qmo0xa.png" alt="Vue 3 + Nuxt" width="800" height="388"></a></p>
-
-<blockquote>
-<p>“<em>I've worked with multiple JS frameworks, but my go-to is Vue, combined with Nuxt. I love the simplicity of it! It has a gentle learning curve that allows developers to quickly grasp the fundamentals and start building applications. Nuxt.js, on the other hand, provides a solid structure and conventions for building Vue applications, making it easier to organize your codebase. Besides that, the performance is great, and the reactivity system is just world class.</em>”<br>
-<strong>Nicky, Frontend Tech Lead</strong></p>
-</blockquote>
-
-<p>Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable and can be used to build anything from simple single-page applications to complex enterprise applications.</p>
-
-<p>Nuxt.js is a framework that builds on top of Vue.js to make it easier to create server-rendered applications. It provides a number of features, such as built-in routing, state management, and templating, that make it easy to create SEO-friendly and performant applications.</p>
-
-<p><strong>Vue</strong><br>
-Website: <a href="https://vuejs.org">https://vuejs.org</a><br>
-Github: <a href="https://github.com/vuejs/core">https://github.com/vuejs/core</a></p>
-
-<p><strong>Nuxt</strong><br>
-Website: <a href="https://nuxt.com">https://nuxt.com</a><br>
-Github: <a href="https://github.com/nuxt">https://github.com/nuxt</a></p>
-
-<h2>
-  
-  
-  Open Foundry - Jack
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2jmU2DX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/irrke0pzk7g5qge4a65f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2jmU2DX8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/irrke0pzk7g5qge4a65f.png" alt="Open Foundry" width="800" height="388"></a></p>
-
-<blockquote>
-<p>“<em>Open-foundry has always been a great resource for unique and interesting fonts that I can experiment with.</em>”<br>
-<strong>Jack, Designer</strong></p>
-</blockquote>
-
-<p>Open Foundry is a website that curates and distributes open-source fonts. It was founded in 2020 by a group of designers and developers who wanted to make it easier for people to find and use high-quality open-source fonts. Open Foundry has a catalog of over 1,000 fonts, all of which are free to download and use.</p>
-
-<p>The fonts are carefully curated by the Open Foundry team to ensure that they are of high quality and meet the needs of a variety of users. In addition to providing a catalog of fonts, Open Foundry also offers a blog, forum, and knowledge base that provide resources for designers, developers, and anyone else who wants to use open-source fonts.</p>
-
-<p>Website: <a href="https://open-foundry.com">https://open-foundry.com</a></p>
-
-<h2>
-  
-  
-  Dub.co - Thor
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uaZfR9Mr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/67oa2m9ttdn093kzyexc.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uaZfR9Mr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/67oa2m9ttdn093kzyexc.gif" alt="Dub.co" width="600" height="440"></a></p>
-
-<blockquote>
-<p>“<em>I like how Steven is working in public and how fast he moves. This has, together with a range of other projects, inspired us to launch earlier than what feels comfortable to maximise the amount of feedback we can get from the community at the current stage.</em>”<br>
-<strong>Thor, Co-founder</strong></p>
-</blockquote>
-
-<p>Dub is an open-source link management tool for modern marketing teams to create, share, and track short links. It was created by Steven Tey in 2022 and is currently used by over 1,000 companies.</p>
-
-<p>Dub solves the problem of long, clunky URLs by shortening them into more memorable and shareable links. It also provides detailed analytics on link clicks, so marketers can track the performance of their campaigns.</p>
-
-<p>In addition to shortening links, Dub also allows users to create custom domains, add UTM parameters, and set expiration dates for links. It also integrates with other popular marketing tools, such as Google Analytics and Salesforce.</p>
-
-<p>Website: <a href="https://dub.co">https://dub.co</a><br>
-Github: <a href="https://github.com/steven-tey/dub">https://github.com/steven-tey/dub</a></p>
-
-<h2>
-  
-  
-  Responsivel App - Swastika
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7qUrIEEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6sn3ui4m8kawik1u9v6q.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7qUrIEEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6sn3ui4m8kawik1u9v6q.jpg" alt="Responively App" width="800" height="539"></a></p>
-
-<blockquote>
-<p>“<em>I use it while working on frontend projects. It previews all the target screens side-by-side. Pretty convenient while testing/debugging.</em>”<br>
-<strong>Swastika, Developer Advocate</strong></p>
-</blockquote>
-
-<p>Created by a team of web developers who were frustrated with the lack of good tools for responsive web development, Responsively App wanted to create a tool that would make it easy for web developers to test their websites on a variety of devices and screen resolutions. </p>
-
-<p>Responsively App allows developers to preview web pages on a variety of devices, emulate different screen resolutions and aspect ratios, zoom in and out of web pages, take screenshots, and share web pages with others.</p>
-
-<p>Website: <a href="https://responsively.app">https://responsively.app</a><br>
-Github: <a href="https://github.com/responsively-org/responsively-app">https://github.com/responsively-org/responsively-app</a></p>
-
-<h2>
-  
-  
-  Medusa - Niklas
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--H9m7vsBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/90i7drajsv9ktbckfdm3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--H9m7vsBs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/90i7drajsv9ktbckfdm3.png" alt="Medusa" width="800" height="518"></a></p>
-
-<blockquote>
-<p>“<em>I’ve previously worked with various platforms such as Shopify, Magento and Woocommerce (Wordpress) and none of them checked all the boxes. Medusa seems like a very promising platform, and I'm excited to see how it develops in the future.</em>” <br>
-<strong>Niklas, Growth Lead</strong></p>
-</blockquote>
-
-<p>MedusaJS is an open-source commerce platform that provides a set of modular building blocks for building rich, reliable, and performant commerce applications. It is designed to be flexible and future-proof, with MIT-licensed modules that give developers full control over their commerce stack.</p>
-
-<p>MedusaJS was created by a team of developers who were frustrated with the limitations of traditional commerce platforms. They wanted to create a platform that would be easy to use, scalable, and adaptable to the needs of businesses of all sizes.</p>
-
-<p>Website: <a href="https://medusajs.com">https://medusajs.com</a><br>
-Github: <a href="https://github.com/medusajs/medusa">https://github.com/medusajs/medusa</a></p>
-
-
-
-
-<h2>
-  
-  
-  Support our own Open-Source project on Github
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--t_o4MBpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7tohgkvvgnzksod3wccm.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--t_o4MBpB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7tohgkvvgnzksod3wccm.gif" alt="Working hard" width="513" height="432"></a></p>
-
-<p>We're on a journey to become a favourite project for developers, and while we're still in the building phase, we would love it, if you'd consider starring us on GitHub 🌟: <a href="http://go.rig.dev/devto/our-favourite-open-source-projects/github">https://github.com/rigdev/rig</a></p>
-
-<p>What's your favourite Open-Source project? Share yours! 🚀</p>
-
- </details> 
- <hr /> 
-
- #### - [NestJS: Bun vs NodeJS](https://dev.to/mourishitz/running-nestjs-server-with-bun-4cdl) 
- <details><summary>Article</summary> <h2>
-  
-  
-  What is Bun?
-</h2>
-
-<p>Bun JS or Bun Sh is an all-in-one toolkit for JavaScript and TypeScript, it offers a powerful toolkit with its CLI, it is currently available for Linux, MacOS and WSL users. To install it, run:</p>
-
-<p><code>curl -fsSL https://bun.sh/install | bash</code></p>
-
-<p>To see more of what Bun is and what it can do, check the <a href="https://bun.sh/docs">official documentation</a>.</p>
-
-<h2>
-  
-  
-  Why doing that?
-</h2>
-
-<p>We all know that NodeJS deals with it pretty well, but Bun is a really promising deal, so why not?? We programmers love to test and see what happens, especially to try out new things! </p>
-
-<h2>
-  
-  
-  Getting started
-</h2>
-
-<p>So now that we've got our bun CLI up and running, lets use nest CLI to generate two separate projects. They will be fully installed, built and run using both npm and bun so we can see the difference on first hand.</p>
-
-<h5>
-  
-  
-  Note: all the benchmarking will be tested with <a href="https://github.com/wg/wrk/">wrk</a> using Arch Linux x86_64 environment.
-</h5>
-
-<h2>
-  
-  
-  1. Dependency Install
-</h2>
-
-<p>After "nest newing" both projects, its time to see the first feature available on Bun, which is the package manager.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--llx4LJKq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t0bbb17e5xsz9npzdwdd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--llx4LJKq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t0bbb17e5xsz9npzdwdd.png" alt="npm install" width="616" height="246"></a><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--BN9SxIh0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5eecugkuq6nif83r7lb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--BN9SxIh0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l5eecugkuq6nif83r7lb.png" alt="bun install" width="544" height="850"></a></p>
-
-<p>We can already see some improvement here! Bun install is blasting fast and wins the first challenge.</p>
-
-<h2>
-  
-  
-  2. Development Server
-</h2>
-
-<p>We can't ignore the fact that a good development experience is a must have when it comes to frameworks. As both Bun and Node supports runtimes such as 'npm run start' we will have to see which one is the best when it comes to developing on real time. At the moment, NestJS is not using Bun.serve() to create a web server, so the comparisons we are making are all with the default NestJS provider.</p>
-
-<p>Let's run both projects on different ports. Bun will be running on 3333 and Node will run on 4444 so we can easily see them acting.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SJaFJsDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1mgzahy7fm60frvvdi41.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SJaFJsDW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1mgzahy7fm60frvvdi41.png" alt="Servers up" width="800" height="242"></a></p>
-
-<p>Without any change, let's compare them with wrk. Note: we are not running them concurrently at the same time, which means that the following results were achieved with all the computational power dedicated to one and only one test at a time.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6-Uh1inp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lp87mipomtk7xohpai81.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6-Uh1inp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lp87mipomtk7xohpai81.jpeg" alt="http tests on dev server" width="800" height="632"></a></p>
-
-<p>We can see that Bun not only handles more requests per second (almost 2.4K requests more) but it has an average latency 30ms faster. This one is a solid win for Bun.</p>
-
-<p>But this section ain't over, we still have something <strong>ALL</strong> developers love, and this is hot-reload. To enable hot-reload on NestJS using node, we need a service like nodemon to do that for us. Meanwhile on Bun we have the --watch arg that can be passed on bun start command. We have yet another type of hot-reload on Bun natively! But the watch key runs on file changes (which is the best for real time developers)</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p0M6uTPw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rp4t3rfk3ya5h2ce8f8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p0M6uTPw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rp4t3rfk3ya5h2ce8f8.png" alt="Bun hot reloader" width="800" height="342"></a></p>
-
-<p>Our little Chinese bread Bun is now 2x0 against the big guy NodeJS.</p>
-
-<h2>
-  
-  
-  3. Testing
-</h2>
-
-<p>As we are too busy to write them from scratch, I guess we are going with the auto-generated test files from NestJS.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1jeeCZl1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3bi9615sjmotksz3s7r9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1jeeCZl1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3bi9615sjmotksz3s7r9.png" alt="Test runners" width="800" height="274"></a></p>
-
-<p>WOOOOW, it seems NodeJS won't throw away the towel. Unlike the http requests battle, this one is by such a small difference that we don't feel comfortable using it. Our tiebreaker was expected to be the native test modules, but both NodeJS and Bun are loaded with a test runner, and as we are only considering Jest results, NodeJS can take this one and make it a 2x1 difference for Bun.</p>
-
-<h2>
+<h1>
   
   
-  4. Build and deployment
-</h2>
-
-<p>Let's now build our giant Hello World NestJS application and see how it performs on raw using both "node dist/main.js" and  "bun run dist/main.js" as well as the build time.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4gm5zyXx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07o047s1sl7oc5sohp3d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4gm5zyXx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07o047s1sl7oc5sohp3d.png" alt="Build time" width="800" height="151"></a></p>
-
-<p>And another tiny difference on our comparison, only 500ms difference for Bun! This tiny differences can be justified by the fact that we are testing such a small project. It is worth mentioning though that this is not over! We still need to compare performance running compiled projects.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1ZUVmkXB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/68t94jbbqvczv1sihy0c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1ZUVmkXB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/68t94jbbqvczv1sihy0c.png" alt="Builds running" width="800" height="161"></a></p>
-
-<p>When in doubt, benchmark it out!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--sH7RM4_h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nsj5r7l8g2akes30vpsm.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sH7RM4_h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nsj5r7l8g2akes30vpsm.jpeg" alt="http tests on build" width="800" height="632"></a></p>
-
-<p>And again a solid one for Bun, it's worth noticing that when dealing with compiled NestJS, Bun handles almost 10 thousand requests more then when running it on a development server, holly cow!</p>
-
-<p>Also, we can now compare the development server and build server on both Node and Bun. While Bun cut the average latency by half and more then double requests per second. Node also shows some better results by reducing latency and passing Bun on max requests per second by almost 1k.</p>
+  <strong>Amplication for building Microservices</strong>
+</h1>
 
-<p>In general, Node performance is pretty decent, meanwhile Bun is just stunningly powerful. This was a really great test but Bun takes it on 3x1.</p>
+<p>If you're eager to explore microservices architecture and seeking an excellent entry point, consider <a href="https://amplication.com/">Amplication</a>. Amplication is an open-source, user-friendly backend generation platform that simplifies the process of crafting resilient and scalable microservices applications 20x faster. With a large and growing <a href="https://amplication.com/plugins">library of plugins</a>, you have the freedom to use exactly the tools and technologies you need for each of your microservices.</p>
 
-<h2>
+<h1>
   
   
   Conclusion
+</h1>
+
+<p>By incorporating caching intelligently, microservices can transcend limitations, reducing latency, relieving database pressure, and scaling with newfound ease. The journey through the nuances of caching strategies unveils its potential to elevate not only response times but also the overall user experience.</p>
+
+<p>In conclusion, the marriage of microservices and caching isn't just a technological union – it's a gateway to unlocking huge performance gains. As technology continues to evolve, this synergy will undoubtedly remain a cornerstone in the perpetual quest for optimal microservices performance.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Bun: The Next Big Thing in Javascript](https://dev.to/kalashin1/bun-the-next-big-thing-in-javascript-jeg) 
+ <details><summary>Article</summary> <p><a href="https://bun.sh/">Bun</a> is a Javascript runtime that claims to be 4x faster than <a href="https://nodejs.org">NodeJS</a>. Bun is an all-in-one Javascript runtime &amp; toolkit. Bun ships as a single executable that can be installed on your computer. Bun is written in <a href="https://ziglang.org/">Zig</a>, a low-level general-purpose programming language. Zig is an imperative, general-purpose, statically typed, compiled system programming language. Zig is supposed to be a replacement for C and C++. Zig is designed to be smaller and simpler to program in while also offering modern features,  so you'd expect applications built with Zig to be quite fast, a feature that spills into Bun.</p>
+
+<p>Bun also ships as a package manager that can be installed with the <code>npm install bun</code> command, which Bun also claims will be the last npm command you ever run, I'll keep an eye on this because the bum package manager claims to be 33X faster than npm when installing packages and all existing npm packages can be installed with the bun package manager.</p>
+
+<p>Bun is also a test runner and it is a direct replacement for existing test runners because it claims to be 32X faster than Jest+Babel and 8X than Vitest. These are crazy numbers. A stable 1.0 version of Bun was recently released in September 2023. </p>
+
+<p>Bun is designed with three main goals in mind;</p>
+
+<ul>
+<li>Speed</li>
+<li>Simplicity</li>
+<li>Providing a full development ecosystem</li>
+</ul>
+
+<p>In today's post, I'm going to go over 6 reasons why I think Bun is the next big thing since Typescript. Here are the main talking points;</p>
+
+<ul>
+<li>Full compatibility with NodeJS </li>
+<li>Out-of-the-box support for Typescript </li>
+<li>Consistent module imports </li>
+<li>Default Watch Mode </li>
+<li>Bun Internal APIs </li>
+<li>Compact Development Experience </li>
+<li>Why should you care?</li>
+</ul>
+
+<h2>
+  
+  
+  Full compatibility with NodeJS
 </h2>
 
-<p>Overall, Bun can be really great on performance and deliver some amazing results. But we can't forget that it is currently on it's first version and can be very unstable on production, that's why I wouldn't recommend trading NodeJS by Bun on bigger projects. NodeJS is still the most reliable and trusted runtime environment to deal with JavaScript applications. However, Bun seems to be getting closer every step to take Node's crown. I was able to watch the early development of Bun since 0.3, times when running bun install would result on a segfault. Being able to see it grow it's own community and compete with giants like NodeJS is so nice.</p>
+<p>Bun is intended to be a direct replacement for NodeJS, it offers full support for all of the existing NodeJS APIs and you will feel just at home like you're working with NodeJS. This is important because most developers would rather just stick to what works especially if they have to start adapting to using newer APIs. The full compatibility with NodeJS will significantly reduce the learning or adoption curve.</p>
 
-<p>Thanks for reading it, feel free to share your thoughts!!  </p>
+<h2>
+  
+  
+  Out-of-the-box support for Typescript
+</h2>
+
+<p>Bun has first-class support for Typescript and it will directly execute your Typescript modules without any further compilation step. This can significantly reduce your overall build step because you are not worried about converting your Typescript to valid Javascript, which has already been taken care of.</p>
+
+<h2>
+  
+  
+  Consistent module imports
+</h2>
+
+<p>Bun allows you to do what I call a "consistent module import" This catchy phrase just means that Bun reduces all your worries about <code>moduleResolution</code>. You can use <code>import {} from 'file'</code> or <code>require('module')</code> in any of your modules and you can even mix them in the same file and everything will work just fine, eliminating the need to configure and use a consistent module Resolution throughout your codebase.</p>
+
+<h2>
+  
+  
+  Default Watch Mode
+</h2>
+
+<p>Bun has a default watch mode in which you can run your apps. This will allow you to preview live changes in your applications as they happen without having to configure them or install a package for that. This is in stark contrast to NodeJS where you have to install the <code>nodemon</code> package if you want to develop your application in watch mode. This is another bonus to your overall workflow because you don't need to set up nodemon for any of your future projects on Bun.</p>
+
+<h2>
+  
+  
+  Internal APIs
+</h2>
+
+<p>Buns also has its internal APIs that are different from the core NodeJS APIs. Although they offer the same functionalities as the NodeJS API they're more elegant and simpler to use when compared to Nodejs core APIs. There is the <code>Bun. serve({})</code> which allows you to quickly spin up a server. Compare this to how many lines of code it would take to spin up a server in NodeJS. There are also APIs for reading and writing to files that are more elegant than what we currently have in NodeJS.</p>
+
+<h2>
+  
+  
+  Compact Development Experience
+</h2>
+
+<p>The overall goal of Bun is to provide developers with a complete toolbox for developing applications from a single platform. Most of the existing steps in application setup and development are already taken care of by Bun. Allowing you to focus on developing your application as fast as possible as opposed to trying to set up your development environment first. Gone are the days of <code>npm I demon, gone are also the days of</code>npm i -D @types/package`. This is another reason why Bun is so easy to use.</p>
+
+<p>There are other awesome features of Bum that we had to skip in this post for time's sake nonetheless here is a quick breakdown;</p>
+
+<ul>
+<li>Bun implements most of the Existing Web APIs directly into the run time, things like fetch, alert, confirm, etc.</li>
+<li>Bun supports <code>.jsx</code> and <code>.tsx</code> files out of the box. </li>
+<li>Bun has the fastest package manager with an install speed of less than half a second.</li>
+</ul>
+
+<h2>
+  
+  
+  Why should you care?
+</h2>
+
+<p>Does this mean that we should all uninstall our NodeJS and start installing Bun, this is a highly unlikely situation because people adopt things slowly, so it's going to take some time before we see a large-scale adoption of Bun if at all it happens. Besides there are also some drawbacks to getting started with Bun.</p>
+
+<ul>
+<li>It is only available for installation on Linux and Mac OS, there is no Windows-compatible version of Bun, The only way to get around this is to install the WSL version.</li>
+</ul>
+
+<p>I found this to be very annoying as I am currently using a Windows PC and I don't want to set up WSL on it. But anyway let me know what your thoughts are on Bun, do you think that It will replace NodeJS and npm? How fast do you think that could happen if at all it will happen? What would you like me to write about Next Still on the Bun? I will see you in the next post.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [16 Essential Tools Every Freelancer Must Try 🚀💯](https://dev.to/madza/16-essential-tools-every-freelancer-must-try-5h8) 
+ <details><summary>Article</summary> <p>Freelancing offers more flexibility and allows you to work from anywhere. But it can also be challenging to stay organized and productive. That's where the right tools come in.</p>
+
+<p>In this article, we'll take a look at 16 essential tools that every freelancer could benefit from. These tools will help you with everything from managing your clients to improving your workflow.</p>
+
+<p>Whether you're a new freelancer or you've been at it for a while, these tools will help you take your productivity to the next level.</p>
+
+<p>I've included direct links, descriptions, and visuals so that you can get an initial impression of each tool right away.</p>
+
+
+
+
+<h3>
+  
+  
+  1. <a href="https://www.clientmanager.io/">ClientManager.io</a> (Sponsored)
+</h3>
+
+<p>A client onboarding and management tool for freelancers and agencies. It helps you to streamline your client workflow, from initial contact to project completion.</p>
+
+<p>It comes with features you need to effectively run your business:</p>
+
+<ul>
+<li><p>Onboarding: Collect client information through a shareable URL.</p></li>
+<li><p>Client Dashboard: Management with a user-friendly dashboard.</p></li>
+<li><p>Calendar Dashboard: An overview of important events and tasks.</p></li>
+<li><p>Tasks: Handle projects with a sleek and intuitive user interface.</p></li>
+<li><p>Proposal Builder: Generate and e-sign proposals.</p></li>
+<li><p>Contract Builder: Create and e-sign contracts for client agreements.</p></li>
+<li><p>Collaboration: Enhance teamwork by tagging, mentioning, and assigning team members within tasks and client dashboards.</p></li>
+<li><p>Time Tracking: Record task durations for cost-to-client calculations.</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--aphkod7x--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694159092172/0a63b67c-d713-4289-8ea8-429f224e8bbe.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aphkod7x--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694159092172/0a63b67c-d713-4289-8ea8-429f224e8bbe.gif" alt="" width="800" height="451"></a></p>
+
+<h3>
+  
+  
+  2. <a href="https://justgetflux.com/">f.lux</a>
+</h3>
+
+<p>A utility that changes the color temperature of your computer screen at night to make it easier on your eyes.</p>
+
+<p>It reduces blue light exposure during the evening, promoting better sleep and reducing eye strain, enhancing productivity and well-being for those working from home or irregular hours.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VZK7rAVQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://justgetflux.com/images/flux-windows.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VZK7rAVQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://justgetflux.com/images/flux-windows.jpg" alt="" width="800" height="466"></a></p>
+
+<h3>
+  
+  
+  3. <a href="https://www.worldtimebuddy.com/">WorldTimeBuddy</a>
+</h3>
+
+<p>A web app that simplifies scheduling and communication across different time zones, making it easier to coordinate meetings, deadlines, and collaborations with clients and team members worldwide.</p>
+
+<p>This tool enhances efficiency and helps avoid scheduling conflicts, crucial for those working in distributed environments.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fMY5tCjc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694086740182/f59e8fc0-1a06-4f5e-b880-b1a0bc2f5eaa.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fMY5tCjc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694086740182/f59e8fc0-1a06-4f5e-b880-b1a0bc2f5eaa.png" alt="" width="800" height="493"></a></p>
+
+<h3>
+  
+  
+  4. <a href="https://app.grammarly.com/">Grammarly</a>
+</h3>
+
+<p>A writing assistant that can help freelancers and remote workers improve their writing. It can help to catch grammar mistakes, improve clarity, and make writing more concise.</p>
+
+<p>Especially recommended if you are working with international clients and English is not your native language.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1zm7Y9yf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694088864033/0c4bb95f-070c-44bb-8882-b6457b09fcf1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1zm7Y9yf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694088864033/0c4bb95f-070c-44bb-8882-b6457b09fcf1.png" alt="" width="638" height="276"></a></p>
+
+<h3>
+  
+  
+  5. <a href="https://hemingwayapp.com/">Hemingway</a>
+</h3>
+
+<p>An editor that helps to simplify and improve your writing by highlighting complex sentences and errors, making your communication more clear.</p>
+
+<p>For freelancers who rely on written communication, it enhances professionalism and ensures effective collaboration.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AKbBY16j--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694086981807/7f2b5d70-9c91-4029-a8c8-d8b1cba5d092.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AKbBY16j--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694086981807/7f2b5d70-9c91-4029-a8c8-d8b1cba5d092.png" alt="" width="800" height="566"></a></p>
+
+<h3>
+  
+  
+  6. <a href="https://blaze.today/">TextBlaze</a>
+</h3>
+
+<p>An extension that allows users to save time by quickly inserting frequently used phrases, making communication and documentation more efficient.</p>
+
+<p>This productivity tool is especially valuable for those who often are required to compose template-like blocks of text.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_R0Vjlqq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694088433769/03be901a-5bb4-404f-889a-ccd4e1448b6e.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_R0Vjlqq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694088433769/03be901a-5bb4-404f-889a-ccd4e1448b6e.png" alt="" width="599" height="380"></a></p>
+
+<h3>
+  
+  
+  7. <a href="https://icons8.com/lunacy">Lunacy</a>
+</h3>
+
+<p>A user-friendly graphic design software that allows you to create stunning designs without any prior experience.</p>
+
+<p>It comes with built-in tools for vectors, photos, UI kits, and more, making it a great solution for graphic design needs.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LwQsWSdS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087171434/f36cd329-8c8f-40fa-b6a5-d97ca3c192d4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LwQsWSdS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087171434/f36cd329-8c8f-40fa-b6a5-d97ca3c192d4.png" alt="" width="800" height="458"></a></p>
+
+<h3>
+  
+  
+  8. <a href="https://bitwarden.com/">Bitwarden</a>
+</h3>
+
+<p>A password manager that allows users to generate, save, and securely manage their login credentials.</p>
+
+<p>It employs zero-knowledge encryption, ensuring that only users have access to their stored data.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--D0LydnKm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/agqpvxr68pt38iko3bcb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--D0LydnKm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/agqpvxr68pt38iko3bcb.png" alt="Image description" width="800" height="496"></a></p>
+
+<h3>
+  
+  
+  9. <a href="https://www.seafile.com/en/home/">Seafile</a>
+</h3>
+
+<p>An open-source, self-hosted file sync and share solution that combines the convenience of cloud storage with control and security.</p>
+
+<p>An excellent choice for individuals and organizations seeking robust file management and collaboration capabilities.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--CiNndzyW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087360408/bf602371-66f5-41ce-b6a4-4b0d08279730.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CiNndzyW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087360408/bf602371-66f5-41ce-b6a4-4b0d08279730.png" alt="" width="800" height="396"></a></p>
+
+<h3>
+  
+  
+  10. <a href="https://app.prntscr.com/en/">LightShot</a>
+</h3>
+
+<p>A user-friendly screenshot tool for both Mac and Windows. Its primary benefit is enabling users to capture screenshots quickly and easily.</p>
+
+<p>With just two button clicks, you can select any area on your desktop and capture a screenshot.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ytIPjw9g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://images.sftcdn.net/images/t_app-cover-l%2Cf_auto/p/ee0bbaaa-96d1-11e6-b60f-00163ed833e7/1502041650/lightshot-screen-capture-LightShot-for-windows.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ytIPjw9g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://images.sftcdn.net/images/t_app-cover-l%2Cf_auto/p/ee0bbaaa-96d1-11e6-b60f-00163ed833e7/1502041650/lightshot-screen-capture-LightShot-for-windows.jpg" alt="" width="800" height="395"></a></p>
+
+<h3>
+  
+  
+  11. <a href="https://miro.com/">Miro</a>
+</h3>
+
+<p>A visual collaboration platform to come up with creative ideas and build on them with the help of sticky notes, images, mind maps, videos, drawing capabilities, and a lot more.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bvoZtdrd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://images.ctfassets.net/w6r2i5d8q73s/ifhHRGY4qJGWzAgpNxWXB/dcd39222682f854fbd9ed93af1dd1a89/diagramming_02_product-image_EN_jumbo_16_9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bvoZtdrd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://images.ctfassets.net/w6r2i5d8q73s/ifhHRGY4qJGWzAgpNxWXB/dcd39222682f854fbd9ed93af1dd1a89/diagramming_02_product-image_EN_jumbo_16_9.png" alt="" width="800" height="447"></a></p>
+
+<h3>
+  
+  
+  12. <a href="https://www.getmailbird.com/">Mailbird</a>
+</h3>
+
+<p>A feature-rich email client that simplifies email management, enhances productivity and provides valuable resources for effective online communication.</p>
+
+<p>Perfect for remote workers managing multiple clients at the same time. The tool will allow you to categorize and search emails, as well as receive instant notifications, and a lot more.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bhAismyA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087571360/06a6432b-8d6c-4800-ab11-dcaf88e3d230.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bhAismyA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087571360/06a6432b-8d6c-4800-ab11-dcaf88e3d230.png" alt="" width="766" height="527"></a></p>
+
+<h3>
+  
+  
+  13. <a href="https://www.rocket.chat/">Rocket.chat</a>
+</h3>
+
+<p>An open-source communication and collaboration platform.</p>
+
+<p>It offers real-time chat, video conferencing, file sharing, and more, making it a powerful tool for any remote worker or distributed team.</p>
+
+<p><a href="https://camo.githubusercontent.com/20d4abcfe19a5093f6f15052a2d3f210a140eda4e9994d35ab207fae295368c8/68747470733a2f2f676c6f62616c2d75706c6f6164732e776562666c6f772e636f6d2f3631316131396239383533623734313461306636623366362f3633313963373262626438616635633863323265666162365f6865726f496d6167652e77656270" class="article-body-image-wrapper"><img src="https://camo.githubusercontent.com/20d4abcfe19a5093f6f15052a2d3f210a140eda4e9994d35ab207fae295368c8/68747470733a2f2f676c6f62616c2d75706c6f6164732e776562666c6f772e636f6d2f3631316131396239383533623734313461306636623366362f3633313963373262626438616635633863323265666162365f6865726f496d6167652e77656270" alt="" width="1598" height="1214"></a></p>
+
+<h3>
+  
+  
+  14. <a href="https://openvidu.io/openvidu-call">OpenVidu</a>
+</h3>
+
+<p>A video conferencing application with an open-source license, so you can adapt it to your needs and deploy it on the cloud or a personal server.</p>
+
+<p>Provides features such as multiparty, screen share, chat, mosaic or dominant speaker layouts, device selection, and virtual background.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wZeShA85--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087769094/c593d763-0e0c-4a91-b8ea-f785f254aab0.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wZeShA85--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087769094/c593d763-0e0c-4a91-b8ea-f785f254aab0.png" alt="" width="800" height="368"></a></p>
+
+<h3>
+  
+  
+  15. <a href="https://tinywow.com/">TinyWow</a>
+</h3>
+
+<p>A convenient online toolbox that leverages AI technology to offer a variety of utilities for writing, PDF manipulation, and image editing, all while maintaining user privacy.</p>
+
+<p>Get free versions of hundreds of valuable utilities you usually pay for.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--J51HUiFl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087980140/8c06208a-e9f7-41f6-83ac-11dc0c633a64.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J51HUiFl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1694087980140/8c06208a-e9f7-41f6-83ac-11dc0c633a64.png" alt="" width="630" height="353"></a></p>
+
+<h3>
+  
+  
+  16. <a href="https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca">Momentum</a>
+</h3>
+
+<p>An extension to achieve your goals more consistently. Featuring to-do lists, weather, daily photos, and encouraging quotes.</p>
+
+<p>Replace the new tab page with a personal dashboard to help you get focused, stay organized, and keep motivated to achieve your goals.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IovOeVWv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://miro.medium.com/v2/resize:fit:1400/1%2AYDcid5mumjDVTYi6uaOh4g.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IovOeVWv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://miro.medium.com/v2/resize:fit:1400/1%2AYDcid5mumjDVTYi6uaOh4g.png" alt="" width="800" height="378"></a></p>
+
+
+
+
+<p>Writing has always been my passion and it gives me pleasure to help and inspire people. If you have any questions, feel free to reach out!</p>
+
+<p>Connect me on <a href="https://twitter.com/madzadev">Twitter</a>, <a href="https://www.linkedin.com/in/madzadev/">LinkedIn</a>, and <a href="https://github.com/madzadev">GitHub</a>!</p>
+
+<p>Visit my <a href="https://madza.dev/blog">Blog</a> for more articles like this.</p>
 
  </details> 
  <hr /> 
