@@ -118,6 +118,167 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Creating Your First Droplet - DigitalOcean Tutorials](https://dev.to/devarshishimpi/creating-your-first-droplet-digitalocean-tutorials-b16) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
+
+<p>Welcome to another exciting tutorial on DigitalOcean! Today, we are going to dive deeper into the concept of a droplet.</p>
+
+<p>Feel free to checkout the below video I made for this tutorial as well.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/_WA8f7k_9Nw">
+</iframe>
+</p>
+
+<h2>
+  
+  
+  But what exactly is a droplet?
+</h2>
+
+<p>To understand a droplet, let's start with some internet magic. When you enter a web address like <code>google.com</code> in your browser, your computer and operating system work behind the scenes to translate that address into something called an <strong>IP address</strong>. You can actually see the IP address your computer used by navigating to a tool like <a href="https://tools.keycdn.com/geo">KeyCDN IP Location finder</a>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XqIkCFNP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/whkfm001494r80zdakd8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XqIkCFNP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/whkfm001494r80zdakd8.png" alt="google-homepage" width="800" height="402"></a></p>
+
+<p><strong>An IP address</strong> is associated with a computer somewhere on our planet. It represents the computer that sends you all the web content you see on your screen. For example, when you visit Google's homepage, that IP address is responsible for delivering all the HTML elements to your browser.</p>
+
+<h3>
+  
+  
+  If you are considering hosting your own website, here are the basics:
+</h3>
+
+<ol>
+<li> Get yourself a computer <em>you probably already have one</em>.</li>
+<li> Obtain a public IP address for your computer, which connects it to the internet.</li>
+<li> Optionally, register a domain name <em>like google.com</em> for easy access.</li>
+<li> Configure your computer to respond to requests, similar to how Google does it.</li>
+</ol>
+
+<p>Now, here comes the interesting part. DigitalOcean helps you skip the first two steps altogether. When you create a droplet on DigitalOcean, you essentially get a virtual computer located anywhere in the world, complete with its own unique IP address.</p>
+
+<p>In other words, a droplet is like your personal virtual computer that is ready to serve your web content to the world. It saves you the hassle of setting up physical hardware and obtaining a public IP address.</p>
+
+<h2>
+  
+  
+  Creating a droplet with DigitalOcean
+</h2>
+
+<p>Now that we understand the basics, let's take a look at the step-by-step process of creating a droplet on DigitalOcean using Ubuntu as the operating system.</p>
+
+<ol>
+<li>Sign in to your <a href="https://m.do.co/c/645d44d1a7a1">DigitalOcean</a> account or create a new one if you don't have an account already.</li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--f4bQROxz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oioxmxabgvkhf04xmopc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--f4bQROxz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oioxmxabgvkhf04xmopc.png" alt="digitalocean-dashboard" width="800" height="399"></a></p>
+
+<ol>
+<li><p>Once you're logged in, navigate to the dashboard and click on the <strong>"Create"</strong> button. Choose the option to create a droplet.</p></li>
+<li><p>Select the region of the droplet you want create into. If you are just starting out! Prefer selecting the closest region to you for faster network access and less lag!</p></li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zXR-I-0b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m92pidxlwyvbs9djml7e.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zXR-I-0b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m92pidxlwyvbs9djml7e.png" alt="digitalocean-region" width="800" height="410"></a></p>
+
+<ol>
+<li> Select the operating system you want to use, for this tutorial, we will go with Ubuntu 22.04 LTS.</li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vXhNyKas--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5tl7sxngizynpdk64jjg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vXhNyKas--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5tl7sxngizynpdk64jjg.png" alt="digitalocean-os" width="800" height="409"></a></p>
+
+<ol>
+<li> Next, choose the plan and region that best fit your needs. We'll be going with the basic $6 plan.</li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qrpJUByF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1zlnh7tenjaveem4s49d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qrpJUByF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1zlnh7tenjaveem4s49d.png" alt="digitalocean-plans" width="800" height="402"></a></p>
+
+<ol>
+<li><p>You can optionally set up authentication methods such as password authentication or SSH keys. We'll going with the password authentication method for this tutorial.</p></li>
+<li><p>Finally, give it a name and click on the <strong>"Create Droplet"</strong> button to initiate the creation process.</p></li>
+</ol>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--T8_BuUsZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lyy3ke3rjcxllcgu37ct.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--T8_BuUsZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lyy3ke3rjcxllcgu37ct.png" alt="digitalocean-cdroplet" width="800" height="401"></a></p>
+
+<h2>
+  
+  
+  Connecting to our newly created droplet
+</h2>
+
+<p>After creating your droplet, you will receive the necessary information to access and manage it. To access the droplet, you can use SSH to connect to it.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>ssh root@&lt;yourdropletipaddress&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>Once connected to your droplet via SSH, it is a good practice to update the packages on your server. Simply run the appropriate commands to apply updates and upgrade any outdated software.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Fiww4-U0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzpin1m3z4loo0b10zsv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Fiww4-U0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzpin1m3z4loo0b10zsv.png" alt="droplet-created" width="800" height="398"></a></p>
+
+<p>For Ubuntu, you can use the following commands:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sudo apt update &amp;&amp; sudo apt upgrade -y
+</code></pre>
+
+</div>
+
+
+
+<p>Moreover, installing useful tools like neofetch can provide you with system information at a glance. To install neofetch, you can use the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sudo apt install neofetch -y
+</code></pre>
+
+</div>
+
+
+
+<p>After successful installation, you can run the <code>neofetch</code> command to see your system's configuration details.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--k-Dz7L5J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eef4rj34pinwiqgz6mb4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--k-Dz7L5J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eef4rj34pinwiqgz6mb4.png" alt="do-neofetch" width="800" height="405"></a></p>
+
+<p>Stay tuned for more DigitalOcean tutorials where we will dive deeper into other exciting features and functionalities.</p>
+
+<p>In the meantime, feel free to explore the <a href="https://www.youtube.com/watch?v=T6a4OxTDc4M&amp;list=PLHb-q3SQD4ifZ5fLtvGI69UGKh-XEDHQa">playlist</a> I have created on DigitalOcean where you can find more informative videos. Happy hosting!</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>By following these steps, you are now well on your way to creating your first droplet on DigitalOcean and configuring it to serve your web content. With DigitalOcean's user-friendly interface and powerful infrastructure, hosting your website becomes a seamless experience.</p>
+
+<p>Feel free to checkout the below video I made for this tutorial as well.</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/_WA8f7k_9Nw">
+</iframe>
+</p>
+
+<p><strong>Thanks for reading till the end! Please consider supporting me on my socials!</strong></p>
+
+<p><strong><a href="https://www.youtube.com/@devarshishimpi">Youtube</a><br>
+<a href="https://github.com/devarshishimpi">Github</a><br>
+<a href="https://twitter.com/devarshishimpi">Twitter</a><br>
+<a href="https://www.linkedin.com/in/devarshi-shimpi/">Linkedin</a></strong></p>
+
+<p><em>This post includes affiliate links; I may receive compensation if you purchase products or services from the different links provided in this article.</em></p>
+
+ </details> 
+ <hr /> 
+
  #### - [Part 4 (c): Unit Testing: How to Build a To-do App with Vue.Js](https://dev.to/miracool/part-4-c-unit-testing-how-to-build-a-to-do-app-with-vuejs-2dli) 
  <details><summary>Article</summary> <p>Welcome back! In our previous article, we explored the core features of our app and introduced three essential utility components: <code>BaseButton</code>,<code>BaseModal</code>, and <code>BaseInput</code>. In this section, we'll dive into the world of unit testing and learn how to ensure that our utility components work as expected.</p>
 
@@ -570,6 +731,329 @@ Verifies that the input element's placeholder attribute is set to "Enter your us
  </details> 
  <hr /> 
 
+ #### - [Using PowerShell Forms for Repetitive (Work) Tasks](https://dev.to/dedsyn4ps3/using-powershell-forms-for-repetitive-work-tasks-cm7) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dGOHd3oU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b68ewlh04u8zdx22kj9k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dGOHd3oU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b68ewlh04u8zdx22kj9k.png" alt="TL;DR" width="800" height="149"></a></p>
+
+
+<div class="ltag-github-readme-tag">
+  <div class="readme-overview">
+    <h2>
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
+      <a href="https://github.com/dedSyn4ps3">
+        dedSyn4ps3
+      </a> / <a href="https://github.com/dedSyn4ps3/response-generator-example">
+        response-generator-example
+      </a>
+    </h2>
+    <h3>
+      
+    </h3>
+  </div>
+  <div class="ltag-github-body">
+    
+<div id="readme" class="md">
+<h1>
+Response Generator</h1>
+<br>
+<div>
+  <a rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34"><img src="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34" height="400" width="100%"></a>
+</div>
+<div>
+  <h4>
+<b>A simple Windows form utility for generating quick response messages</b>
+</h4>
+</div>
+<br>
+<h2>
+About 🗃</h2>
+<p>As IT Support Professionals, we are constantly sending correspondance to various clients and end users
+Very rarely do we help only one or two customer groups each day, and because of that fact, it's normal
+for us to have to create tailored response messages with contact info specific to that client.</p>
+<br>
+<blockquote>
+<p>This repository is meant to supplement the <a href="https://medium.com/@erutherford_nullreturn/using-powershell-forms-for-repetitive-tasks-eeef814bee4" rel="nofollow">Medium article</a>: <strong>"Using PowerShell Forms for Repetitive Tasks"</strong></p>
+</blockquote>
+<br>
+<h2>
+Getting Started 🖥</h2>
+<p>The utility was designed as straightforward, custom module meant to be easily imported into a <code>powershell</code> session
+and invoked by the user. In order for this module to be imported, it's important to locate the designated system path
+to place this project's inner directory in. The easiest way to find that location is by opening a powershell terminal
+and typing the following:</p>
+<div class="highlight highlight-source-powershell notranslate position-relative overflow-auto js-code-highlight">
+<pre>PS <span class="pl-k">&gt;</span> <span class="pl-smi">$<span class="pl-c1">env:</span></span></pre>…
+</div>
+</div>
+  </div>
+  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/dedSyn4ps3/response-generator-example">View on GitHub</a></div>
+</div>
+
+
+<h2>
+  
+  
+  PowerShell...Seriously?
+</h2>
+
+<p>Yes, really! I know that many of the excellent articles many of us read each day tend to follow the more flashy, exciting languages that dominate headlines as a result of their growing popularity and expansive use-cases. While that's all well and good, many of us that may work in IT aren't fortunate enough to use many of these new fancy releases in our day to day roles...usually because of this thing called Access Control Lists and Group Policy Objects (that's right, good ol' Active Directory management).<br>
+There is a way, however, that many in IT are able to utilize automation and scripting that in most situations is allowed by GPO (depending on your role of course), and that's by utilizing Window's very own powerhouse scripting language, PowerShell!</p>
+<h2>
+  
+  
+  Quick Recap
+</h2>
+
+<p>For those who may not be all that familiar with what PowerShell is, and just how powerful it can be for developers, here's a brief intro:</p>
+
+<blockquote>
+<p>PowerShell is a modern command shell that includes the best features of other popular shells. Unlike most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell includes the following features:</p>
+
+<ul>
+<li>Robust command-line history</li>
+<li>Tab completion and command prediction (See about_PSReadLine)</li>
+<li>Supports command and parameter aliases</li>
+<li>Pipeline for chaining commands</li>
+<li>In-console help system, similar to Unix man pages</li>
+</ul>
+</blockquote>
+
+<p>At its inception, PowerShell was originally developed on and designed to be a better and more feature-rich shell experience for Windows users and system administrators. As the project continued to grow and blossom, a decision was made by Microsoft to develop a cross-platform version of PowerShell and make it open source for the broader community to contribute to...<strong>and thus, PowerShell Core was born!</strong></p>
+
+<p>Sometimes this can be slightly confusing to new programmers that are trying to understand the differences between the PowerShell they see built in to their Windows device, and PS Core installs that they see online. It all comes down to the version of .NET that they run on:</p>
+
+<blockquote>
+<p>Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the release of PowerShell 6.0, PowerShell became an open source project built on .NET Core 2.0. Moving from the .NET Framework to .NET Core allowed PowerShell to become a cross-platform solution.</p>
+</blockquote>
+
+<p>The project outlined in this article is solely dependent on <strong>Windows PowerShell</strong>. It will not function if ran on any version of PS Core, regardless of whether you're running it on Windows, macOS, or Linux. If you're wondering why that is exactly, it's due to the fact that the Windows Forms API that we will use is only part of the native .NET Framework included in all recent versions of Windows.</p>
+<h2>
+  
+  
+  Harness the Strength of PowerShell
+</h2>
+
+<p><strong>The goal of our project is pretty straightforward:</strong></p>
+
+<ul>
+<li>Streamline and automate the generation of response emails for customers</li>
+<li>Build a custom PowerShell module to incorporate this functionality</li>
+<li>Create a simple graphical interface using the Forms API to interact with the module</li>
+</ul>
+
+<p>Because this project is merely a starting point for future applications, its structure will be pretty mundane. Even so, it demonstrates a great way for organizing any future module projects.</p>
+
+<p>We're going to put together a relatively simple <code>ResponseGenerator</code> UI using .NET Forms via PowerShell. It provides a means of quick email response generation depending on the client ID chosen by the user. The following will be its structure:</p>
+
+<p>.<br>
+├── ResponseCore.ps1<br>
+├── ResponseForm.ps1<br>
+├── ResponseGenerator.psd1<br>
+├── ResponseGenerator.psm1<br>
+└── assets<br>
+└── coding.ico</p>
+<h2>
+  
+  
+  Building A Module
+</h2>
+
+<p>As I mentioned previously, <strong>the best approach for building our utility is to create a dedicated module for it</strong>. PowerShell modules are similar in structure to Python package directories and modules in other languages, so they should feel relatively familiar to many of you.</p>
+
+<p>At their simplest, new modules can be made up of a single file, though in most scenarios they will consist of several files located in a central root directory. One very important factor to keep in mind when building a new module:</p>
+
+<p><strong>The root directory should be named exactly the same as the module file itself.</strong></p>
+
+<p>To start out, we’ll go ahead and create the module directory and primary declaration file for our utility by running the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>PS &gt; New-Item -Type Directory -Path "ResponseGenerator"
+PS &gt; Set-Location -Path ./ResponseGenerator &amp;&amp; New-Item -Type File -Path "ResponseGenerator.psm1"
+</code></pre>
+
+</div>
+
+
+<p>You may have noticed already that the extension of our newly created file is <code>.psm1</code>. These particular files are the “core” of a PowerShell module, in our case, <strong>ResponseGenerator</strong>.</p>
+
+<p>It will be the primary entry point of our utility, but will only contain a handful of code. The primary body of our module code will be spread out between two other files, which we will create right now:<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>PS &gt; New-Item -Type File -Path "ResponseForm.ps1" &amp;&amp; New-Item -Type File -Path "ResponseCore.ps1"
+</code></pre>
+
+</div>
+
+
+<p><em><strong>NOTE:</strong> Don’t worry about creating the psd1 file just yet, we'll get to it soon enough!</em></p>
+<h2>
+  
+  
+  Creating the Form
+</h2>
+
+<p>Now that we’ve got our core files in place, we can start adding the code needed to generate a nice looking graphical utility!</p>
+
+<p>The following Gist shows how we declare our callback functions for specific button presses, as well as creating a ComboBox for storing the entire list of contacts to choose from, and a few quick response button shortcuts:</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+
+<h2>
+  
+  
+  Adding the Rest
+</h2>
+
+<p>The only thing left to do for our module at this point is to finish adding the remaining core functions and contact info arrays to the other file in our project, <code>ResponseCore.ps1</code>:</p>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<h2>
+  
+  
+  Wrapping Things Up
+</h2>
+
+<p>Now that all of our utility code is written, the last thing to do to finish our PowerShell module is creating a <code>.psd1</code> Module Manifest. This file allows developers to add fine-grained details about their module, as well as limit which functions are exported for use in the command line.</p>
+
+<p>PowerShell provides a handy <code>cmdlet</code> (pronounced command-let) to generate this for us, which we can pass various arguments to in order to overwrite the default values for important fields:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>New-ModuleManifest `
+-Path "$PWD\ResponseGenerator.psd1" `
+-Author "dedSyn4ps3" `
+-RootModule ResponseGenerator.psm1 `
+-Description "This module helps generate response messages"
+</code></pre>
+
+</div>
+
+
+<p>This will create the last piece of our utility! There is a line of code in this manifest that I recommend making a slight adjustment to, however. It’s good practice to not export every single function declared in your module, and by default the manifest generator does just that.</p>
+
+<p>Simply scroll down a ways until you see the field declaring FunctionsToExport and update it with the primary entry point to our utility, <strong>which we declared previously in the module file</strong>:<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>FunctionsToExport = 'Invoke-ResponseGenerator'
+</code></pre>
+
+</div>
+
+<h2>
+  
+  
+  Run It!
+</h2>
+
+<p>And with that, you’ve successfully put together a PowerShell module that can be imported and run from the command line! When it comes to custom modules, <strong>it’s extremely convenient to be able to call it from our shell without having to specify the actual location path of the module directory.</strong></p>
+
+<p>In order to import and run our utility by name, it’s imperative that the module directory be placed in the designated location for all PowerShell modules for your user! This may very from system to system, so to be sure, simply type the following in your shell to find out the exact location to place the new module:<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>PS &gt; $env:PSModulePath
+</code></pre>
+
+</div>
+
+
+<p>With the module directory placed where it needs to go, importing and calling the main entry point is as simple as invoking any other command from our shell:<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># import the custom module
+PS &gt; Import-Module ResponseGenerator
+
+# start the utility by calling it's invoke method
+PS &gt; Invoke-ResponseGenerator
+</code></pre>
+
+</div>
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vU8WpKQa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o0rrhr0exqjl20xuqlac.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vU8WpKQa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o0rrhr0exqjl20xuqlac.png" alt="Tip" width="586" height="393"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9vBT9sE4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x9gvqnomstygl13htndb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9vBT9sE4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x9gvqnomstygl13htndb.png" alt="The End Result" width="800" height="198"></a></p>
+<h2>
+  
+  
+  Project Code
+</h2>
+
+<p>The entire project repository can be found on Github, and I highly encourage those looking for a great way to kickstart their PowerShell automation to check it out!</p>
+
+<p>Also be sure to give me a like if you found this article interesting, and be sure to subscribe for upcoming articles! And if you're on Medium as well, <a href="https://medium.com/@erutherford_nullreturn">check me out there</a> for early viewing! ✨</p>
+
+
+<div class="ltag-github-readme-tag">
+  <div class="readme-overview">
+    <h2>
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
+      <a href="https://github.com/dedSyn4ps3">
+        dedSyn4ps3
+      </a> / <a href="https://github.com/dedSyn4ps3/response-generator-example">
+        response-generator-example
+      </a>
+    </h2>
+    <h3>
+      
+    </h3>
+  </div>
+  <div class="ltag-github-body">
+    
+<div id="readme" class="md">
+<h1>
+Response Generator</h1>
+<br>
+<div>
+  <a rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34"><img src="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34" height="400" width="100%"></a>
+</div>
+
+<div>
+  <h4>
+<b>A simple Windows form utility for generating quick response messages</b>
+</h4>
+</div>
+
+
+
+<h2>
+About 🗃</h2>
+
+<p>As IT Support Professionals, we are constantly sending correspondance to various clients and end users
+Very rarely do we help only one or two customer groups each day, and because of that fact, it's normal
+for us to have to create tailored response messages with contact info specific to that client.</p>
+<br>
+<blockquote>
+<p>This repository is meant to supplement the <a href="https://medium.com/@erutherford_nullreturn/using-powershell-forms-for-repetitive-tasks-eeef814bee4" rel="nofollow">Medium article</a>: <strong>"Using PowerShell Forms for Repetitive Tasks"</strong></p>
+</blockquote>
+<br>
+<h2>
+Getting Started 🖥</h2>
+<p>The utility was designed as straightforward, custom module meant to be easily imported into a <code>powershell</code> session
+and invoked by the user. In order for this module to be imported, it's important to locate the designated system path
+to place this project's inner directory in. The easiest way to find that location is by opening a powershell terminal
+and typing the following:</p>
+<div class="highlight highlight-source-powershell notranslate position-relative overflow-auto js-code-highlight">
+<pre>PS <span class="pl-k">&gt;</span> <span class="pl-smi">$<span class="pl-c1">env:</span></span></pre>…
+</div>
+</div>
+  </div>
+  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/dedSyn4ps3/response-generator-example">View on GitHub</a></div>
+</div>
+
+
+ </details> 
+ <hr /> 
+
  #### - [Solving "Move Zeroes" Leet code Question.](https://dev.to/leetcode/solving-move-zeroes-leet-code-question-8k2) 
  <details><summary>Article</summary> <h2>
   
@@ -700,542 +1184,6 @@ shiva</p>
 <p>Repo: <a href="https://github.com/Apestein/nextflix">https://github.com/Apestein/nextflix</a></p>
 
 <p>Live: <a href="https://nextflix-blush.vercel.app/">https://nextflix-blush.vercel.app/</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Learning basic SQL with me:](https://dev.to/jnx257/learning-basic-sql-with-me-29f7) 
- <details><summary>Article</summary> <p><em>The main objective of this article is to learn basic SQL commands and the structure of SQL..</em></p>
-
-<h2>
-  
-  
-  Okay, let's start with Wikipedia's definition of SQL:
-</h2>
-
-<blockquote>
-<p>SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS). It is particularly useful in handling structured data, i.e., data incorporating relations among entities and variables</p>
-</blockquote>
-
-<p><strong>So, basically, SQL is a language that we can use to access/manipulate databases..</strong></p>
-
-
-
-
-<h2>
-  
-  
-  RDBMS
-</h2>
-
-<p><strong>RDBMS</strong> stands for <strong>Relational Database Management System</strong>. But what does it mean? SQL forms the foundation for all RDBMS systems, and nearly all technologies utilize SQL as their basis.</p>
-
-<p>SQL continues to serve as a fundamental pattern, but now we employ various technologies that build upon SQL, each with its own distinct characteristics.</p>
-
-<p><em>most used are:</em></p>
-
-<ul>
-<li>    <strong>MySQL</strong>: created by Oracle, It's a option that give us free and paid services; </li>
-<li>   <strong>PostgreSQL</strong>: most common In web, PostgreSQL is a Opensource software;</li>
-<li>   <strong>Oracle</strong>: know by your security, is most common in big companies  ;</li>
-<li>   <strong>SQL Server</strong>: developed by Microsoft, got free versions and paid ones.</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IjyTNkd2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5ad0ispfrba6i95cwnxx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IjyTNkd2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5ad0ispfrba6i95cwnxx.png" alt="Image description" width="551" height="244"></a></p>
-
-
-
-
-<h2>
-  
-  
-  Consistences of SQL
-</h2>
-
-<p>So, we already know how data is managed in SQL. But it's important to understand what we can do with SQL. SQL can be divided into three main categories:</p>
-
-<ul>
-<li><p>Data Definition Language (DDL): Deals with schema creation and modification. The <code>CREATE TABLE</code> statement allows you to create a new table in the database, and the <code>ALTER TABLE</code> statement changes the structure of an existing table.</p></li>
-<li><p>Data Manipulation Language (DML): Provides constructs to query data, such as the <code>SELECT</code> statement, and to update data, such as <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> statements.</p></li>
-<li><p>Data Control Language (DCL): Consists of statements that deal with user authorization and security, such as <code>GRANT</code> and <code>REVOKE</code> statements.</p></li>
-</ul>
-
-
-
-
-<h1>
-  
-  
-  Main commands in SQL:
-</h1>
-
-<h3>
-  
-  
-  Before we explore some commands, take a look at this website to test everything:
-</h3>
-
-<p><em>In this tutorial I will use <a href="https://www.db-fiddle.com/">DB Fiddle</a>. DB-Fiddle supports various SQL databases, including MySQL, PostgreSQL, and SQLite, and provides a simple interface for testing SQL queries.</em></p>
-
-<p>First thing that we will do in SQL will be a Student table with the following columns:  (student_id, student_name, student_email, student_pw, student_birth)</p>
-
-<p>The syntax for creating a table in SQL:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span> 
-<span class="n">columns_name</span> <span class="k">data</span> <span class="k">type</span>
-<span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>For the Student table example, it would be:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">students</span> <span class="p">(</span>
-<span class="n">student_id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-<span class="cm">/* you can divide our arguments in SQL by the column title and the data type
-like in this first case we have:
- INT = integer
- PRIMARY KEY =  a constrain that says our data is unique values for each row in the table.
-This ensures that no two rows can have the same value in the primary key column(s)
- */</span>
-
-
-<span class="c1">-- btw this is a comment line in SQL, everything inside of it wont be read.</span>
-<span class="cm">/* and this 
-is a multi-line comment, I think its obvious the difference between those two.
-*/</span> 
-<span class="n">student_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> 
-<span class="n">student_email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-<span class="n">student_password</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-<span class="n">student_birth</span> <span class="nb">DATE</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Once we have created our table in SQL, we need to add data to it to explore what's inside and manipulate this information. Let's do it:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">students</span> <span class="p">(</span><span class="n">student_id</span><span class="p">,</span> <span class="n">student_name</span><span class="p">,</span> <span class="n">student_email</span><span class="p">,</span> <span class="n">student_password</span><span class="p">,</span> <span class="n">student_birth</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Gabriel Galileo'</span><span class="p">,</span> <span class="s1">'gabriel.galileo@gmail.com'</span><span class="p">,</span> <span class="s1">'encrypted_password'</span><span class="p">,</span> <span class="nv">"20-03-1997"</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This is just a small example by adding one person called Gabriel Galileo to our database. You can copy this and add it to your own display on DB Fiddle.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">students</span> <span class="p">(</span><span class="n">student_id</span><span class="p">,</span> <span class="n">student_name</span><span class="p">,</span> <span class="n">student_email</span><span class="p">,</span> <span class="n">student_password</span><span class="p">,</span> <span class="n">student_birth</span><span class="p">)</span>
-<span class="k">VALUES</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Gabriel Galileo'</span><span class="p">,</span> <span class="s1">'gabriel.galileo@gmail.com'</span><span class="p">,</span> <span class="s1">'encrypted_password'</span><span class="p">,</span> <span class="s1">'1997-03-20'</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Soren Kierkegaard'</span><span class="p">,</span> <span class="s1">'soren.kierke@gmail.com'</span><span class="p">,</span> <span class="s1">'another_password'</span><span class="p">,</span> <span class="s1">'2002-05-25'</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Immanuel Kant'</span><span class="p">,</span> <span class="s1">'immanuel.kant@gmail.com'</span><span class="p">,</span> <span class="s1">'secure_password'</span><span class="p">,</span> <span class="s1">'2003-03-10'</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Jesus Christ'</span><span class="p">,</span> <span class="s1">'godson@gmail.com'</span><span class="p">,</span> <span class="s1">'strong_password'</span><span class="p">,</span> <span class="s1">'1970-11-25'</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'Karl Marx'</span><span class="p">,</span> <span class="s1">'communist@gmail.com'</span><span class="p">,</span> <span class="s1">'good_password'</span><span class="p">,</span> <span class="s1">'2008-01-25'</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">'Renato Cariani'</span><span class="p">,</span> <span class="s1">'renatao.monstro@gmail.com'</span><span class="p">,</span> <span class="s1">'password123'</span><span class="p">,</span> <span class="s1">'1993-06-25'</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">'Aristoteles'</span><span class="p">,</span> <span class="s1">'aristoteles@gmail.com'</span><span class="p">,</span> <span class="s1">'idkmannnn'</span><span class="p">,</span> <span class="s1">'1997-08-12'</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>After done previous commands the <a href="https://www.db-fiddle.com/">DB Fiddle</a><br>
-should be like this:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AigJH2ll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4w1szv3s7fjhe4wky6be.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AigJH2ll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4w1szv3s7fjhe4wky6be.png" alt="Image description" width="800" height="296"></a></p>
-
-<p>Now that we know how to create a table, add data to it, and query it, we have some basic SQL methods at our hands. Now, let's see how to manipulate the data we have created.</p>
-
-<p>Imagine we made a mistake in the first student's name; it should be "Galileo Galilei," not "Gabriel Galilei." What should we do? Like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code>
-<span class="c1">-- Basic SELECT query to retrieve all data from the students table</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span><span class="p">;</span>
-
-<span class="c1">-- Selecting specific columns</span>
-<span class="k">SELECT</span> <span class="n">student_id</span><span class="p">,</span> <span class="n">student_name</span> <span class="k">FROM</span> <span class="n">students</span><span class="p">;</span>
-
-<span class="c1">-- Using WHERE clause to filter data</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">WHERE</span> <span class="n">student_birth</span> <span class="o">&lt;</span> <span class="s1">'2002-01-01'</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>After knowing how to create a table, adding data to it and querying it. We got in our hands some basic SQL Methods, but let's go some further and see how manipulate those data we have created.</p>
-
-<p>Imagine we made a mistake in the first student's name; it should be "Galileo Galilei," not "Gabriel Galilei." What should we do? Like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code>
- <span class="k">UPDATE</span> <span class="n">students</span> <span class="k">SET</span> <span class="n">student_name</span> <span class="o">=</span> <span class="s1">'Galileu Galilei'</span><span class="p">,</span> <span class="n">student_email</span> <span class="o">=</span> <span class="nv">"galileu.galilei@gmail.com"</span> <span class="k">WHERE</span> <span class="n">student_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">WHERE</span> <span class="n">student_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>and It's done, if we check in display has to be:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vIWAH1DJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1mqhku8f0334i75mjzb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vIWAH1DJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1mqhku8f0334i75mjzb.png" alt="Image description" width="800" height="107"></a></p>
-
-<p>Crap... We added someone who isn't a student in our table, we got to delete this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code>
-<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">WHERE</span> <span class="n">student_name</span> <span class="o">=</span> <span class="nv">"Renato Cariani"</span><span class="p">;</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">students</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>yes, that's what I'm talking about. </p>
-
-<p>Now we have covered the most basic commands in SQL. Of course, there is much more to learn, even at the beginner level. But I believe that the best way to improve your knowledge is by doing it. I will apply this knowledge in my login (API) application(which I've already apply a NoSQL DB {mongooDB}).</p>
-
-<p>Please check it out in <a href="https://github.com/jnx257">my github</a> :crying: and know more about me at <a href="https://twitter.com/kozu8uwu">my X/twitter</a>. Thanks a lot!</p>
-
-<p><u>if you see any issue in this text pls text me! &lt;3</u></p>
-
-<p>sources:</p>
-
-<ul>
-<li><a href="https://www.sqltutorial.org/">https://www.sqltutorial.org/</a></li>
-<li>
-<a href="https://www.w3schools.com/sql/">https://www.w3schools.com/sql/</a>
-and some other sources, sorry I don't remember D: </li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [EKS and NetworkPolicies: the story so far](https://dev.to/aws-builders/eks-and-networkpolicies-the-story-so-far-3f45) 
- <details><summary>Article</summary> <p>On my monthly "let´s keep up with AWS news" live stream, one of the news caught my eye as <strong>game changer</strong>, and it was this one:</p>
-
-<ul>
-<li>
-<a href="https://aws.amazon.com/about-aws/whats-new/2023/08/amazon-vpc-cni-kubernetes-networkpolicy-enforcement/">Amazon VPC CNI now supports Kubernetes NetworkPolicy enforcement</a>~</li>
-</ul>
-
-<p>Let's have a peek on what this is about and why it is a game changer.</p>
-
-<h2>
-  
-  
-  Kubernetes NetworkPolicies
-</h2>
-
-<p><a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">NetworkPolicies</a> are often overlooked, but it is basically the major security feature of Kubernetes that grants you the hability to control the conectivity between your applications (and also the rest of the world!).</p>
-
-<p>Many people get the feeling that the concept of <strong>namespaces</strong> provides isolation for applications running under, but it <strong>does not provide network isolation by default</strong>.</p>
-
-<p>You can create a namespace <strong>app1</strong> and grant access for your <strong>Team A</strong> to deploy their applications. But if you allow <strong>Team B</strong> to run <strong>jobs</strong> on a namespace <strong>app2</strong>, even if they will not be able to modify app1 deployments, their jobs will be able to connect to the app1 deployments:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># Checking IPs for the applications:</span>
-<span class="nv">$ </span>kubectl get pods <span class="nt">-A</span> <span class="nt">-o</span> <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{range .items[*]}{.metadata.namespace}/{.metadata.name}: {.status.podIP}{"\n"}{end}'</span> |
-fgrep app
-app1/backend-84bf889f7f-nrxbr: 192.168.130.72
-app1/frontend-54d8796d8c-2fzsk: 192.168.140.197
-app2/job-f8dd4484b-kmxkm: 192.168.138.201
-
-<span class="nv">$ </span><span class="k">for </span>i <span class="k">in </span>192.168.130.72 192.168.140.197<span class="p">;</span> <span class="k">do</span> <span class="se">\</span>
-    kubectl <span class="nt">-n</span> app2 <span class="nb">exec </span>job-f8dd4484b-kmxkm <span class="nt">--</span> curl <span class="nv">$i</span> <span class="nt">-so</span> /dev/null <span class="nt">-w</span> <span class="s1">'%{HTTP_CODE}'</span> <span class="se">\</span>
-  <span class="k">done
-</span>200
-200
-</code></pre>
-
-</div>
-
-
-
-<p>This may not sound like a problem to you, but it is certainly not the most desireable situation, specially if most of your security is invested into the LoadBalancers/Web Application Firewalls that are outside the security perimeter of your cluster - it turns your cluster into a lateral movement extravaganza if someone not intended manages to get access to it.</p>
-
-<h2>
-  
-  
-  Securing the application
-</h2>
-
-<p>In order to block traffic from other namespaces to your application, you have to apply a <strong>NetworkPolicy</strong> that denies all incoming traffic:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'---
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: default-deny-ingress
-  namespace: app1
-spec:
-  podSelector: {}
-  policyTypes:
-  - Ingress
-'</span> | kubectl apply <span class="nt">-f</span> -
-</code></pre>
-
-</div>
-
-
-
-<p>Syntax might look weird at a glance, but it applies to all pods (podSelector: {}) allowing <strong>nothing</strong> because there is no <strong>ingress</strong> block defined at the top level of spec.</p>
-
-<p>After these rules get applied, no one will be able to access pods on namespace <strong>app1</strong>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span><span class="k">for </span>i <span class="k">in </span>192.168.130.72 192.168.140.197<span class="p">;</span> <span class="k">do
-    </span>kubectl <span class="nt">-n</span> app2 <span class="nb">exec </span>job-f8dd4484b-kmxkm <span class="nt">--</span> curl <span class="nt">--connect-timeout</span> 2 <span class="nv">$i</span> <span class="nt">-so</span> /dev/null <span class="nt">-w</span> <span class="s1">'%{HTTP_CODE}\n'</span>
-  <span class="k">done
-</span>000
-<span class="nb">command </span>terminated with <span class="nb">exit </span>code 28
-000
-<span class="nb">command </span>terminated with <span class="nb">exit </span>code 28
-</code></pre>
-
-</div>
-
-
-
-<p>Problem is <strong>not even applications on app1 will be able to access each other</strong>. Once you apply any networkpolicy of a type (ingress or egress), all traffic that is not specificly allowed will be <strong>denied</strong>.</p>
-
-<p>So if you have a frontend/backend combo like below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>$ kubectl -n app1 get pods -o name
-pod/backend-84bf889f7f-nrxbr
-pod/frontend-54d8796d8c-2fzsk
-</code></pre>
-
-</div>
-
-
-
-<p>You should allow incoming conections to backend only from the <strong>frontend</strong> deployment, and frontend might get its connections from a <strong>Load Balancer</strong> outside the cluster.</p>
-
-<p>To allow frontend to access backend, one would leverage the <strong>kubernetes labels</strong> to make the rule <strong>dynamic</strong>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>kubectl <span class="nt">-n</span> app1 get pods <span class="nt">--show-labels</span> | <span class="nb">tr</span> <span class="nt">-s</span> <span class="s1">' '</span> | <span class="nb">cut</span> <span class="nt">-f1</span>,6 <span class="nt">-d</span><span class="s1">' '</span>
-NAME LABELS
-backend-84bf889f7f-nrxbr <span class="nv">app</span><span class="o">=</span>backend,pod-template-hash<span class="o">=</span>84bf889f7f
-frontend-54d8796d8c-2fzsk <span class="nv">app</span><span class="o">=</span>frontend,pod-template-hash<span class="o">=</span>54d8796d8c
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Backend</strong> pods will always have the label <strong>app=backend</strong>, and <strong>Frontend</strong> pods will have the label <strong>app=frontend</strong>; this will tell the NetworkPolicy Controller to update the rules every time a new pod is created (or destroyed).<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># Conecting to the **service** backend from the pod frontend</span>
-<span class="nv">$ </span>kubectl <span class="nt">-n</span> app1 <span class="nb">exec </span>deploy/frontend <span class="nt">--</span> curl <span class="nt">--connect-timeout</span> 2 <span class="nt">-so</span> /dev/null http://backend  <span class="nt">-w</span> <span class="s1">'%{http_code}'</span>
-000
-<span class="nb">command </span>terminated with <span class="nb">exit </span>code 28
-
-<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'---
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: frontend-to-backend
-  namespace: app1 
-spec:
-  podSelector:
-    matchLabels:
-      app: backend
-  policyTypes:
-    - Ingress
-  ingress:
-    - from:
-        - podSelector:
-            matchLabels:
-              app: frontend
-      ports:
-        - protocol: TCP
-          port: 80
-'</span> | kubectl apply <span class="nt">-f</span> -
-
-<span class="c"># Retesting:</span>
-<span class="nv">$ </span> kubectl <span class="nt">-n</span> app1 <span class="nb">exec </span>deploy/frontend <span class="nt">--</span> curl <span class="nt">--connect-timeout</span> 2 <span class="nt">-so</span> /dev/null http://backend  <span class="nt">-w</span> <span class="s1">'%{http_code}'</span>
-200
-</code></pre>
-
-</div>
-
-
-
-<p>Unfortunately, there is no easy way to restrict access to the frontend pods from the load balancers, because they're not hosted inside the cluster. </p>
-
-<p>(You can use <a href="https://docs.aws.amazon.com/eks/latest/userguide/security-groups-for-pods.html">Security Groups for Pods</a> for that!)</p>
-
-<p>The best you can do is to limit connections from the subnets where the load balancers will create their ENIs (or use their ips, if you feel bold!):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'---
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: lb-to-frontend
-  namespace: app1
-spec:
-  podSelector:
-    matchLabels:
-      app: frontend
-  policyTypes:
-    - Ingress
-  ingress:
-    - from:
-        - ipBlock:
-            cidr: 192.168.0.0/19
-        - ipBlock:
-            cidr: 192.168.32.0/19
-        - ipBlock:
-            cidr: 192.168.64.0/19
-      ports:
-        - protocol: TCP
-          port: 80
-'</span> | kubectl apply <span class="nt">-f</span> - 
-</code></pre>
-
-</div>
-
-
-
-<p>Of course, anything else that is created on those subnets will be able to access the frontend pods on namespace app1.</p>
-
-<p>The backend pod, otherwise, won't be able to start any connection to the frontend:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>k <span class="nt">-n</span> app1 <span class="nb">exec</span> <span class="nt">-it</span> deploy/backend <span class="nt">--</span> curl frontend:80 <span class="nt">-so</span> /dev/null <span class="nt">-w</span> <span class="s1">'%{http_code}'</span> <span class="nt">--connect-timeout</span> 2
-000
-</code></pre>
-
-</div>
-
-
-
-<p>Kubernetes NetworkPolicies allow an incredible degree of microsegmentation with little to no effort, even allowing for the devs themselves to be responsible to translate their integrations in a declarative way.</p>
-
-<p>But of course, there is always a catch.</p>
-
-<h2>
-  
-  
-  NetworkPolicy Controller
-</h2>
-
-<p>Unfortunately, Netpols are one of the few native Kubernetes Resources that <strong>do not have a default controller assigned to it</strong> - the other major one would be <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingresses</a>.</p>
-
-<p>Even though it's clearly stated in the docs, as quoted bellow:</p>
-
-<blockquote>
-<p>Network policies <strong>are implemented by the network plugin</strong>. To use network policies, <strong>you must be using a networking solution which supports NetworkPolicy</strong>. Creating a NetworkPolicy resource <strong>without a controller</strong> that implements it <strong>will have no effect</strong>.<br>
-<a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/#prerequisites">source</a></p>
-</blockquote>
-
-<p>It's still easy for people miss it, specially if they are less kubernetes-savy than they should be when using this type of technology.</p>
-
-<p>And yes, I've been asked before "why my netpols are not working" before. People just assume that it should work.</p>
-
-<p>So, if you install an EKS cluster right now and reproduce the same configurations I have listed here, <strong>nothing will work</strong>.</p>
-
-<p>At least for a while, because things changed!</p>
-
-<h2>
-  
-  
-  EKS and NetworkPolicies
-</h2>
-
-<p>Until August 2023, the only way use NetworkPolicies was to deploy a third party software called <a href="https://www.tigera.io/project-calico/">Project Calico</a>. It's a full fledged CNI, but one would enable only the Policy part as <a href="https://docs.aws.amazon.com/eks/latest/userguide/calico.html">described in the official EKS docs</a>.</p>
-
-<p>But now, things changed! If you install a new EKS Cluster with the CNI version 1.14.0 or above, <a href="https://aws.amazon.com/about-aws/whats-new/2023/08/amazon-vpc-cni-kubernetes-networkpolicy-enforcement/">it now supports NetworkPolicies natively!</a>!</p>
-
-<p>All you have to do is to create your EKS Cluster with the following on your eksctl yaml:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>...
-addons:
-- name: vpc-cni 
-  version: 1.14.0
-  configurationValues: |-
-    enableNetworkPolicy: <span class="s2">"true"</span>    
-  attachPolicyARNs:
-  - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
-...
-</code></pre>
-
-</div>
-
-
-
-<p>And that's it! Awesome news for EKS users!</p>
-
-<h2>
-  
-  
-  Final notes
-</h2>
-
-<p>I believe it's worth noting that AWS CNI native NetworkPolicies make use of <a href="https://ebpf.io/"><strong>eBPF</strong></a> and not <strong>iptables</strong> as many of the other solutions available.</p>
-
-<p>It does not support port translation from Services:</p>
-
-<blockquote>
-<p>For any of your Kubernetes services, the service port must be the same as the container port. If you're using named ports, use the same name in the service spec too.</p>
-</blockquote>
-
-<p>For a brief period during creation, the pod will not have any restrictions applied to it: </p>
-
-<blockquote>
-<p>The Amazon VPC CNI plugin for Kubernetes configures network policies for pods in parallel with the pod provisioning. Until all of the policies are configured for the new pod, containers in the new pod will start with a default allow policy. All ingress and egress traffic is allowed to and from the new pods unless they are resolved against the existing policies.</p>
-</blockquote>
-
-<p>It's also not supported on Fargate or Windows nodes. </p>
-
-<h2>
-  
-  
-  Links
-</h2>
-
-<ul>
-<li><a href="https://aws.amazon.com/about-aws/whats-new/2023/08/amazon-vpc-cni-kubernetes-networkpolicy-enforcement/">https://aws.amazon.com/about-aws/whats-new/2023/08/amazon-vpc-cni-kubernetes-networkpolicy-enforcement/</a></li>
-<li><a href="https://aws.amazon.com/blogs/containers/amazon-vpc-cni-now-supports-kubernetes-network-policies/">https://aws.amazon.com/blogs/containers/amazon-vpc-cni-now-supports-kubernetes-network-policies/</a></li>
-</ul>
 
  </details> 
  <hr /> 
