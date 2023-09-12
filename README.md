@@ -118,729 +118,605 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [PostgrеSQL Triggеrs: An Advancеd Guidе](https://dev.to/hassanrehan/postgriesql-triggiers-an-advancied-guidie-3ac8) 
- <details><summary>Article</summary> <p>Triggеrs in PostgrеSQL arе a powеrful fеaturе that allows you to automatically pеrform an action in rеsponsе to a spеcific еvеnt on a particular tablе.  This guidе will dеlvе into thе advancеd tеchniquеs for using triggеrs in PostgrеSQL. </p>
-
-<h3>
-  
-  
-  Undеrstanding Triggеrs
-</h3>
-
-<p>A PostgrеSQL triggеr is a function invokеd automatically whеnеvеr an еvеnt such as insеrt,  updatе,  or dеlеtе occurs.  Triggеrs can bе vеry usеful for maintaining thе intеgrity of thе data in your databasе. </p>
-
-<h3>
-  
-  
-  Crеating a Triggеr
-</h3>
-
-<p>Thе SQL command <code>CREATE TRIGGER</code> crеatеs a triggеr on thе spеcifiеd objеct.  Hеrе's an еxamplе of how to crеatе a triggеr:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_updat</span><span class="err">е</span>
-<span class="k">BEFORE</span> <span class="k">UPDATE</span> <span class="k">ON</span> <span class="n">accounts</span>
-<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
-<span class="k">EXECUTE</span> <span class="k">PROCEDURE</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_account_updat</span><span class="err">е</span><span class="p">();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this еxamplе,  thе <code>chеck_updatе</code> triggеr is crеatеd on thе <code>accounts</code> tablе.  Thе triggеr is sеt to еxеcutе thе <code>chеck_account_updatе()</code> function bеforе еach updatе opеration on thе <code>accounts</code> tablе. </p>
-
-<h3>
-  
-  
-  Dropping a Triggеr
-</h3>
-
-<p>Thе <code>DROP TRIGGER</code> command is usеd to rеmovе a triggеr.  Hеrе's how you can drop a triggеr:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">DROP</span> <span class="k">TRIGGER</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_updat</span><span class="err">е</span> <span class="k">ON</span> <span class="n">accounts</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This command will rеmovе thе <code>chеck_updatе</code> triggеr from thе <code>accounts</code> tablе. </p>
-
-<h3>
-  
-  
-  Altеring a Triggеr
-</h3>
-
-<p>Thе <code>ALTER TRIGGER</code> statеmеnt allows you to rеnamе a triggеr.  Hеrе's an еxamplе:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">ALTER</span> <span class="k">TRIGGER</span> <span class="n">ch</span><span class="err">е</span><span class="n">ck_updat</span><span class="err">е</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">v</span><span class="err">е</span><span class="n">rify_updat</span><span class="err">е</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This command rеnamеs thе <code>chеck_updatе</code> triggеr to <code>vеrify_updatе</code>. </p>
-
-<h3>
-  
-  
-  Disabling and Enabling Triggеrs
-</h3>
-
-<p>PostgrеSQL allows you to disablе and еnablе triggеrs.  To disablе a triggеr,  usе thе <code>DISABLE TRIGGER</code> command.  To еnablе it again,  usе thе <code>ENABLE TRIGGER</code> command. </p>
-
-<h3>
-  
-  
-  Typеs of Triggеrs
-</h3>
-
-<p>Thеrе arе sеvеral typеs of triggеrs in PostgrеSQL,  including "BEFORE", "AFTER", and "INSTEAD OF" triggеrs.  "BEFORE" triggеrs arе firеd bеforе thе opеration is pеrformеd.  "AFTER" triggеrs arе firеd aftеr thе opеration.  "INSTEAD OF" triggеrs arе firеd instеad of thе opеration. </p>
-
-<h3>
-  
-  
-  Conclusion
-</h3>
-
-<p>Triggеrs arе an advancеd fеaturе of PostgrеSQL that can hеlp maintain data intеgrity and automatе tasks.  Whеthеr you'rе еnforcing businеss rulеs,  logging changеs,  or prеvеnting invalid transactions,  triggеrs can bе an invaluablе tool in your PostgrеSQL toolkit.  </p>
-
- </details> 
- <hr /> 
-
- #### - [PostgrеSQL and JSON: An Advancеd Guidе](https://dev.to/hassanrehan/postgriesql-and-json-an-advancied-guidie-2lhp) 
- <details><summary>Article</summary> <p>PostgrеSQL, a robust and rеliablе opеn-sourcе rеlational databasе managеmеnt systеm,  is known for its scalability and its support for JSON and othеr non-rеlational data typеs.  This guidе will dеlvе into thе advancеd tеchniquеs for using JSON in PostgrеSQL. </p>
-
-<h3>
-  
-  
-  Undеrstanding JSON in PostgrеSQL
-</h3>
-
-<p>JSON, or JavaScript Objеct Notation, is a common way to storе data,  еspеcially in wеb applications.  It is writtеn in kеy-valuе pairs surroundеd by quotеs.  For еxamplе,  a kеy-valuе pair might look likе this: <code>"name": "hassan"</code>. </p>
-
-<h4>
-  
-  
-  JSON Objеcts
-</h4>
-
-<p>An objеct is a kеy-valuе pair or pairs еnclosеd in curly brackеts.  Whеnеvеr a kеy-valuе pair is еnclosеd in curly brackеts it bеcomеs an objеct and can bе trеatеd as a singlе unit.  Multiplе kеy-valuе pairs can bе addеd in an objеct,  sеparatеd with a comma. </p>
-
-<h4>
-  
-  
-  JSON Arrays
-</h4>
-
-<p>Arrays in JSON arе a way to storе a collеction of valuеs within a singlе JSON objеct.  An array in JSON is rеprеsеntеd by squarе brackеts <code>[]</code> containing a comma-sеparatеd list of valuеs.  Arrays in JSON can also bе nеstеd,  mеaning that an array can contain othеr arrays or objеcts as valuеs. </p>
-
-<h3>
-  
-  
-  JSONB in PostgrеSQL
-</h3>
-
-<p>JSONB (JSON Binary) is a data typе in PostgrеSQL that allows you to storе and manipulatе JSON data in a morе еffеctivе and еfficiеnt way than thе rеgular JSON data typе.  JSONB storеs JSON data in a binary format, which еnablеs fastеr indеxing and quеry pеrformancе comparеd to thе rеgular JSON data typе. </p>
-
-<h3>
-  
-  
-  Working with JSON arrays in PostgrеSQL
-</h3>
-
-<p>Working with JSON arrays in PostgrеSQL involvеs various opеrations,  such as insеrting,  quеrying,  and manipulating JSON data. </p>
-
-<h4>
-  
-  
-  Insеrting JSON arrays into tablеs
-</h4>
-
-<p>To insеrt JSON arrays into a tablе in PostgrеSQL,  you can usе thе <code>INSERT INTO</code> statеmеnt along with thе <code>VALUES</code> clausе to spеcify thе JSON array as a string. <br>
-First create the table:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">orders</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">serial</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-    <span class="n">info</span> <span class="n">json</span> <span class="k">NOT</span> <span class="k">NULL</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now to insert the JSON:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">orders</span> <span class="p">(</span><span class="n">info</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span>
-    <span class="s1">'{
-        "customer": "John Doe",
-        "items": [
-            {"product": "Apple", "quantity": 1},
-            {"product": "Orange", "quantity": 2}
-        ]
-    }'</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Extracting Values from a JSON Object
-</h4>
-
-<p>You can use the <code>-&gt;</code> operator to extract values from a JSON object. For example, if you have a table <code>orders</code> with a JSON column <code>info</code>, you can extract the 'customer' field like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;</span> <span class="s1">'customer'</span> <span class="k">AS</span> <span class="n">customer</span> <span class="k">FROM</span> <span class="n">orders</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Filtering JSON Data Using a WHERE Clause
-</h4>
-
-<p>You can use the <code>-&gt;</code> and <code>-&gt;&gt;</code> operators in a WHERE clause to filter rows based on the values in a JSON object. For example, to find out who bought 'keyboard', you can use the following query:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;&gt;</span> <span class="s1">'customer'</span> <span class="k">AS</span> <span class="n">customer</span> <span class="k">FROM</span> <span class="n">orders</span> <span class="k">WHERE</span> <span class="n">info</span> <span class="o">-&gt;</span> <span class="s1">'items'</span> <span class="o">-&gt;&gt;</span> <span class="s1">'product'</span> <span class="o">=</span> <span class="s1">'keyboard'</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Getting Data from an Array in a JSON Object
-</h4>
-
-<p>You can use the <code>-&gt;</code> operator to get data from an array in a JSON object. For example, to get all products sold, you can use the following query:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;</span> <span class="s1">'items'</span> <span class="o">-&gt;&gt;</span> <span class="s1">'product'</span> <span class="k">as</span> <span class="n">product</span> <span class="k">FROM</span> <span class="n">orders</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">product</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Retrieving Nested Values from a JSON Object
-</h4>
-
-<p>You can chain the <code>-&gt;</code> operator to retrieve nested values from a JSON object. For example, to get all customers in form of text, you can use the following query:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">-&gt;&gt;</span> <span class="s1">'customer'</span> <span class="k">AS</span> <span class="n">customer</span> <span class="k">FROM</span> <span class="n">orders</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Checking if a JSON Object Contains a Value
-</h4>
-
-<p>You can use the <code>@&gt;</code> operator to check if a JSON object contains a value. For example, to check if an order contains a specific item, you can use the following query:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">SELECT</span> <span class="n">info</span> <span class="o">@&gt;</span> <span class="s1">'{"items": [{"product": "Diaper"}]}'</span> <span class="k">FROM</span> <span class="n">orders</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The flexibility and power of PostgreSQL's JSON support make it an excellent choice for applications that need to work with complex data structures.</p>
-
-<h3>
-  
-  
-  Conclusion
-</h3>
-
-<p>PostgrеSQL's support for JSON makеs it an еxcеllеnt choicе for applications that nееd to storе and manipulatе complеx data structurеs.  Whеthеr you'rе working with simplе kеy-valuе pairs or complеx nеstеd arrays,  PostgrеSQL's advancеd fеaturеs makе it еasy to work with JSON data. </p>
-
- </details> 
- <hr /> 
-
- #### - [Displaying cacheable content with a partial component in Angular](https://dev.to/ayyash/displaying-cacheable-content-with-a-partial-component-in-angular-286h) 
- <details><summary>Article</summary> <p>After creating a <a href="https://garage.sekrab.com/posts/localstorage-wrapper-service-in-angular">localstroage wrapper</a>, and a <a href="https://garage.sekrab.com/posts/a-cache-decorator-in-angular">data cache decorator</a>, let's put them together to create a data service that handles all cacheable data. Also, let's create a a component that displays the cacheable content based on a specific target.</p>
-
-<p>Here is a quick summary of what we previously accomplished</p>
-
-<h4>
-  
-  
-  LocalStorage wrapper service in Angular
-</h4>
-
-<p>We created a <code>window.localStorage</code> wrapper in Angular to control the data modeling of what gets saved in <code>localStorage</code>, the data model we came to was the following<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kr">interface</span> <span class="nx">IStorage</span> <span class="p">{</span>
-  <span class="nl">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
-  <span class="nl">expiresin</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nl">timestamp</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Then we created a data service specifically to save recurring data with specific data model, and cache it instead of querying the server every time.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="kr">interface</span> <span class="nx">IData</span> <span class="p">{</span>
-  <span class="nl">value</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>So we ended up with a line like this</p>
-
-<p><code>this.countries$ = this.dataService.GetCountries();</code></p>
-
-<p>That created entries like this</p>
-
-<p><code>garage.en.countries.0</code></p>
-
-<h4>
-  
-  
-  A cache decorator in Angular
-</h4>
-
-<p>Then we created a decorator to save any <code>http</code> call with any data model in the <code>localStorage</code>. So we had lines like this<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="p">@</span><span class="nd">DataCache</span><span class="p">()</span>
-<span class="nx">GetCountries</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">http</span><span class="p">.</span><span class="kd">get</span><span class="p">(...);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Today, we will use the decorator for the data service, and go beyond that to create a partial component that understands it should display the value, of a specific data key.</p>
-
-<h3>
-  
-  
-  An example of Foods
-</h3>
-
-<p>Say the cacheable content is food group, the groups are known: "vegetables, milk, fruits, grain". The value to be displayed (could be multilingual comes from a unique point in an API, let's assume it is like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32424234"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fruits"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fruits"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>Let's not bring in all languages, only one language really matters for the user. So the API should handle this properly by reading <code>Accept-Language</code> header.</p>
-
-<p>Then let's assume an API call (e.g. <code>/api/foods</code>) returns a list of items, one of properties is <code>group</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"344234"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Breakfast"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fruits"</span><span class="w">
-        </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>I want to be able to display the <code>value</code> by fetching the correct <code>key</code> like this<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">*ngFor=</span><span class="s">"let food in foods"</span><span class="nt">&gt;</span>
-        {{ food.name }} <span class="nt">&lt;span&gt;</span>{{ getValue(food.group) }} 
-      <span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The target, is to figure out what this <code>getValue</code> really is, let's begin with the service itself.</p>
-
-<h3>
-  
-  
-  The service
-</h3>
-
-<p>I will continue where we left off in our previous data caching hunt in <a href="https://stackblitz.com/edit/angular-cachable-content?file=src%2Fapp%2Fservices%2Fdata.service.ts">StackBlitz</a>. We will create a new API call for food groups. To get groups, we need to implement this function</p>
-
-<p><code>this.groups$ = this.dataService.GetGroups();</code></p>
-
-<p>So in our data service, we will create a new <code>GetGroups</code> method, and we will also adapt the service to use the decorator instead. (Notice how we use the argument <code>withArgs</code> to pass an <code>id</code> to the entry key.)<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// new data service (services/data.service)</span>
-<span class="c1">// now that we are using data decorator, we can create a new function for every data group</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">DataService</span> <span class="p">{</span>
-<span class="kd">constructor</span><span class="p">(</span>
-  <span class="k">private</span> <span class="nx">_http</span><span class="p">:</span> <span class="nx">HttpService</span><span class="p">,</span>
-  <span class="c1">// make this public to use with decorator</span>
-  <span class="k">public</span> <span class="nx">storageService</span><span class="p">:</span> <span class="nx">StorageService</span>
-<span class="p">)</span> <span class="p">{}</span>
-
-  <span class="p">@</span><span class="nd">DataCache</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Countries</span><span class="dl">'</span><span class="p">,</span> <span class="na">expiresin</span><span class="p">:</span> <span class="mi">8000</span> <span class="p">})</span>
-  <span class="nx">GetCountries</span><span class="p">():</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_countriesUrl</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
-      <span class="nx">map</span><span class="p">((</span><span class="na">response</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">DataClass</span><span class="p">.</span><span class="nx">NewInstances</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="nx">response</span><span class="p">);</span>
-      <span class="p">})</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="c1">// if we need an id, we just pass withArgs</span>
-  <span class="p">@</span><span class="nd">DataCache</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Cities</span><span class="dl">'</span><span class="p">,</span> <span class="na">withArgs</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
-  <span class="nx">GetCities</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_citiesUrl</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">'</span><span class="s1">:id</span><span class="dl">'</span><span class="p">,</span> <span class="nx">id</span><span class="p">)).</span><span class="nx">pipe</span><span class="p">(</span>
-      <span class="nx">map</span><span class="p">((</span><span class="na">response</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">DataClass</span><span class="p">.</span><span class="nx">NewInstances</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="nx">response</span><span class="p">);</span>
-      <span class="p">})</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="c1">// our new groups here</span>
-  <span class="p">@</span><span class="nd">DataCache</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Groups</span><span class="dl">'</span> <span class="p">})</span>
-  <span class="nx">GetGroups</span><span class="p">():</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_groupsUrl</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
-      <span class="nx">map</span><span class="p">((</span><span class="na">response</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">DataClass</span><span class="p">.</span><span class="nx">NewInstances</span><span class="p">(</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="nx">response</span><span class="p">);</span>
-      <span class="p">})</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>So far we recreated what we already have in data service. The use of which did not change a bit in our component. Now we are going to focus on groups.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// This still acts the same way, gets countries and caches them</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">groups$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataService</span><span class="p">.</span><span class="nx">GetGroups</span><span class="p">();</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Get single food by key
-</h3>
-
-<p>My goal is to end up with a partial in which I pass the <code>key</code>, and the <code>type</code> (identifier), to get the <code>value</code> from the cache. <strong>If cache is not initiated yet, it should initiate it and save it.</strong></p>
-
-<p><code>&lt;cr-data type="Groups" key="milk"&gt;&lt;/cr-data&gt;</code></p>
-
-<p>We expect the API to return the <code>key</code> of the group, instead of the whole package of <code>key</code>, <code>id</code>, and <code>value</code>.</p>
-
-<h3>
-  
-  
-  Type versus Enum
-</h3>
-
-<p>We previously used <code>Enums</code> and it was fine, except that in our case if we are to use an <code>Enum</code>, we must get reference to it in our template code, like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// in data model</span>
-<span class="k">export</span> <span class="kr">enum</span> <span class="nx">EnumDataType</span> <span class="p">{</span>
-  <span class="nx">Groups</span><span class="p">,</span>
-     <span class="c1">// ...</span>
-<span class="p">}</span>
-
-<span class="c1">// in component template code</span>
-<span class="nx">enumDataType</span> <span class="o">=</span> <span class="nx">EnumDataType</span><span class="p">;</span>
-
-<span class="c1">// then in template</span>
-<span class="s2">`
-&lt;cr-data [type]="enumDataType.Groups" ...&gt;
-`</span>
-</code></pre>
-
-</div>
-
-
-
-<p>What I found out is that <code>Types</code> in <code>typescript</code> are easier to work with. They validate, and they don't need to be brought in to component.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// in data model</span>
-<span class="k">export</span> <span class="kd">type</span> <span class="nx">TypeDataType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Country</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Category</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Rate</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">City</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Groups</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="c1">// then in template</span>
-<span class="s2">`
-&lt;cr-data type='Groups' ...&gt;
-`</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This is much cleaner. Why <code>Groups</code> and not <code>Group</code>? Coming right up.</p>
-
-<h3>
-  
-  
-  Data partial component
-</h3>
-
-<p>Let's create the code for the <strong>partial component</strong>, we need two <strong>inputs</strong> at least (we can combine them into an object but it doesn't really itch that much). We also need to inject the <code>dataService</code>. The template is simply an <code>async</code> <code>observable</code> that displays the <code>value</code> when the data is available.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// data.partial</span>
-<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cr-data</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">template</span><span class="p">:</span> <span class="s2">`{{ (data$ | async)?.value }}`</span><span class="p">,</span>
-    <span class="c1">//...</span>
-<span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">DataPartialComponent</span> <span class="p">{</span>
-    <span class="c1">// an observable</span>
-    <span class="nx">data$</span><span class="p">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span> <span class="o">|</span> <span class="kc">undefined</span><span class="o">&gt;</span><span class="p">;</span>
-
-        <span class="c1">// we need key, and type</span>
-    <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-    <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="kd">type</span><span class="p">:</span> <span class="nx">TypeDataType</span><span class="p">;</span>
-
-        <span class="c1">// inject the service</span>
-    <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">_dataService</span><span class="p">:</span> <span class="nx">DataService</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now whenever the <code>key</code> is set, we need to get data by <code>key</code> and <code>type</code>. We can do that <code>AfterViewInit</code> or <code>OnInit</code>, but a <code>setter</code> is more ready for change detection.</p>
-
-<blockquote>
-<p>Note, a setter alone won't guarantee that the property will change, to implement proper change detection mechanism, other strategies are needed, like changing the value <code>changeDetection</code> to <code>Default</code> instead of <code>OnPush</code>, or injecting <code>ChangeDetectorRef</code> and explicitly calling <code>detectChanges</code>(). But this is another Tuesday.<br>
-</p>
-</blockquote>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="kd">set</span> <span class="nx">key</span><span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">data$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_dataService</span><span class="p">.</span><span class="nx">GetSingleDataByKey</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="kd">type</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Right. Let's implement the <code>GetSingleDataBykey</code>.</p>
-
-<h3>
-  
-  
-  GetSingleDataByKey
-</h3>
-
-<p>So back to our data service, let's create a generic get item by key. We have the <code>type</code>, and we are going to use it to <strong>construct a method name</strong> and call it. In <code>JavaScript</code>, calling a method in a class is as simple as this:</p>
-
-<p><code>className[sometVar]();</code></p>
-
-<p>Let's also check if the function exists before we call it. Because we are using types, we can add extra checks to align the type <code>Country</code> with <code>GetCountries</code>, but today, I am happy with using <code>Countries</code> as the type all the way. So that is why I chose <code>Groups</code> instead of <code>Group</code>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="nx">GetSingleDataByKey</span><span class="p">(</span><span class="kd">type</span><span class="p">:</span> <span class="nx">TypeDataType</span><span class="p">,</span> <span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">IData</span> <span class="o">|</span> <span class="kc">undefined</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="c1">// WATCH: observable of null</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="c1">// use the type to find GetSomething() then call it.</span>
-  <span class="kd">const</span> <span class="nx">getFunction</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="dl">'</span><span class="s1">Get</span><span class="dl">'</span><span class="o">+</span><span class="kd">type</span><span class="p">];</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">getFunction</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">getFunction</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
-    <span class="c1">// find element with the same key</span>
-    <span class="nx">map</span><span class="p">((</span><span class="na">data</span><span class="p">:</span> <span class="nx">IData</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="nx">key</span><span class="p">)));</span>
-<span class="p">}</span>
-
-<span class="c1">// changed types to be aligned with method names in services/data.model</span>
-<span class="k">export</span> <span class="kd">type</span> <span class="nx">TypeDataType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Countries</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Categories</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Rates</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Cities</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">Groups</span><span class="dl">'</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Putting this to test:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>Groups names:
-<span class="nt">&lt;cr-data</span> <span class="na">type=</span><span class="s">"Groups"</span> <span class="na">key=</span><span class="s">"fruits"</span><span class="nt">&gt;&lt;/cr-data&gt;</span>.
-<span class="nt">&lt;cr-data</span> <span class="na">type=</span><span class="s">"Groups"</span> <span class="na">key=</span><span class="s">"milk"</span><span class="nt">&gt;&lt;/cr-data&gt;</span>.
-<span class="nt">&lt;cr-data</span> <span class="na">type=</span><span class="s">"Groups"</span> <span class="na">key=</span><span class="s">"vegetables"</span><span class="nt">&gt;&lt;/cr-data&gt;</span>.
-
-// Displays:
-Groups names: Fruits. Milk. Vegetables.
-</code></pre>
-
-</div>
-
-
-
-<blockquote>
-<p>PS. keep cleaning the <code>localStorage</code> before testing, this one always drives me crazy.</p>
-</blockquote>
-
-<h3>
-  
-  
-  Ranting: pipes
-</h3>
-
-<p>To have a pipe we must mimic the function of an <code>async</code> pipe and build on it. Since we need to subscribe, I'd rather save the data locally in the pipe until next time. Here is the thing, in <a href="https://angular.io/guide/pipes#caching-http-requests">Angular documentation</a> you can read those two lines:</p>
+ #### - [Build an AI Meme Generator with OpenAI's function calls, Part 2: Cron Jobs ⏰☎️](https://dev.to/wasp/build-an-ai-meme-generator-with-openais-function-calls-part-2-cron-jobs-54nm) 
+ <details><summary>Article</summary> <ul>
+<li>
+TL;DR
 
 <ul>
-<li>  Each binding gets its own pipe instance.</li>
-<li>  Each pipe instance caches its own URL and data and calls the server only once.</li>
+<li>Before We Begin</li>
 </ul>
 
-<p><strong>This sounds better than it really means.</strong> It does in no way mean the data is cached in client throughout the application session, nor does it mean that multiple pipes on the same page get to use the cached version, and no, it also does not mean that the same props will trigger a reuse of the cached data. It just means that <strong>on the same route, for the same pipe usage</strong>, when change detection take place,<strong> if the properties did not change, the cached data will be returned</strong>.</p>
 
-<p>PS: pure pipes by definition do that out of the box, but this is an <code>impure</code> pipe that must be told to do so.</p>
+</li>
+<li>
+Part 2
 
-<p>Verdict: Pipes are smelly. Partial components are good for the job.</p>
+<ul>
+<li>
+Fetching &amp; Updating Templates w/ Cron Jobs
+
+<ul>
+<li>Defining our Daily Cron Job</li>
+<li>Testing</li>
+</ul>
+
+
+</li>
+<li>
+Editing Memes
+
+<ul>
+<li>Server-Side Code</li>
+<li>Client-Side Code</li>
+</ul>
+
+
+</li>
+<li>Deleting Memes</li>
+<li>Conclusion</li>
+</ul>
+</li>
+</ul>
+
+<p></p>
+
+<h1>
+  
+  
+  TL;DR
+</h1>
+
+<p>In this two-part tutorial, we’re going to build a full-stack instant Meme Generator app using:</p>
+
+<ul>
+<li>React &amp; NodeJS w/ TypeScript</li>
+<li>OpenAI’s <a href="https://platform.openai.com/docs/guides/gpt/function-calling">Function Calling API</a>
+</li>
+<li>ImgFlip.com’s <a href="https://imgflip.com/api">meme creator API</a>
+</li>
+</ul>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/4rTXljsphQ8">
+</iframe>
+</p>
+
+<p>You can check out a deployed version of the app we’re going to build here: <a href="https://damemerator.netlify.app">The Memerator</a></p>
+
+<p>If you just want to see the code for the finished app, check out the <a href="https://github.com/vincanger/memerator">Memerator’s GitHub Repo</a></p>
+
+<p><a href="https://dev.to/wasp/build-your-own-ai-meme-generator-learn-how-to-use-openais-function-calls-1p21">In Part 1 of this tutorial</a> we built the instant meme generation functionality of the app.</p>
+
+<p>In order to create a meme image using ImgFlip.com’s API, we had to send a request with:</p>
+
+<ul>
+<li>the meme template <code>id</code> we want to use</li>
+<li>and the two text blocks that will accompany the meme, e.g. <code>text0</code> and <code>text1</code>
+</li>
+</ul>
+
+<p>Rather than doing this manually, we used OpenAI’s API to ask GPT to generate the meme text boxes for us. </p>
+
+<p>To do this, we used their <code>function calling</code> feature to describe the function that includes our ImgFlip API request. This made sure that OpenAI’s response would always contain two text arguments in JSON format so that we could pass them correctly to the <a href="http://ImgFlip.com">ImgFlip.com</a> API.</p>
+
+<p>The result is that we could get our app to instantly generate meme Images for us by just submitting some topics! 🤯</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rrsx2pW6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cj3iwdmm2y4w3zxl9qbd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rrsx2pW6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cj3iwdmm2y4w3zxl9qbd.png" alt="Image description" width="564" height="499"></a></p>
+
+<p>Now, in Part 2 of this tutorial, we will:</p>
+
+<ul>
+<li>add a daily recurring cron job to fetch more meme templates</li>
+<li>implement <code>edit</code> and <code>delete</code> meme functionality</li>
+</ul>
+
+<p>Oh, and if you get stuck / have any questions, feel free to hop into the <a href="https://discord.gg/rzdnErX">Wasp Discord Server</a> and ask us!</p>
+
+<p>Now let’s go 🚀</p>
+
+<p></p>
+
+<h2>
+  
+  
+  Before We Begin
+</h2>
+
+<p>We’re working hard at <a href="https://wasp-lang.dev">Wasp</a> to help you build web apps as easily as possible — including making these tutorials, which are released weekly!</p>
+
+<p>We would be super grateful if you could help us out by starring our repo on GitHub: <a href="https://www.github.com/wasp-lang/wasp">https://www.github.com/wasp-lang/wasp</a> 🙏</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XGQQslmS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://media1.giphy.com/media/ZfK4cXKJTTay1Ava29/giphy.gif%3Fcid%3D7941fdc6pmqo30ll0e4rzdiisbtagx97sx5t0znx4lk0auju%26ep%3Dv1_gifs_search%26rid%3Dgiphy.gif%26ct%3Dg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XGQQslmS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://media1.giphy.com/media/ZfK4cXKJTTay1Ava29/giphy.gif%3Fcid%3D7941fdc6pmqo30ll0e4rzdiisbtagx97sx5t0znx4lk0auju%26ep%3Dv1_gifs_search%26rid%3Dgiphy.gif%26ct%3Dg" alt="https://media1.giphy.com/media/ZfK4cXKJTTay1Ava29/giphy.gif?cid=7941fdc6pmqo30ll0e4rzdiisbtagx97sx5t0znx4lk0auju&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" width="480" height="400"></a></p>
+
+<p><a href="https://www.github.com/wasp-lang/wasp" class="ltag_cta ltag_cta--branded">⭐️ Thanks For Your Support 🙏</a>
+</p>
+
+<p></p>
+
+<h1>
+  
+  
+  Part 2.
+</h1>
+
+<p>So we’ve got ourselves a really good basis for an app at this point.</p>
+
+<p>We’re using <a href="https://platform.openai.com/docs/guides/gpt/function-calling">OpenAI’s function calling feature</a> to explain a function to GPT, and get it to return results for us in a format we can use to call that function.</p>
+
+<p>This allows us to be certain GPT’s result will be usable in further parts of our application and opens up the door to creating AI agents.</p>
+
+<p>If you think about it, we’ve basically got ourselves a really simple Meme generating “agent”. How cool is that?!</p>
+
+<p></p>
+
+<h2>
+  
+  
+  Fetching &amp; Updating Templates with Cron Jobs
+</h2>
+
+<p>To be able to generate our meme images via <a href="https://imgflip.com/api">ImgFlip’s API</a>, we have to choose and send a meme template <code>id</code> to the API, along with the text arguments we want to fill it in with.</p>
+
+<p>For example, the <code>Grandma Finds Internet</code> meme template has the following <code>id</code>:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1dk6LR8e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zoo4uainls9jxq7fzysv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1dk6LR8e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zoo4uainls9jxq7fzysv.png" alt="Image description" width="800" height="254"></a></p>
+
+<p>But the only way for us to get available meme templates from ImgFlip is to send a <code>GET</code> request to<br>
+<a href="https://api.imgflip.com/get_memes">https://api.imgflip.com/get_memes</a>. And according to ImgFlip, the <strong>/get-memes</strong> endpoint works like this:</p>
+
+<blockquote>
+<p>Gets an array of popular memes that may be captioned with this API. The size of this array and the order of memes may change at any time. When this description was written, it returned 100 memes ordered by how many times they were captioned in the last 30 days</p>
+</blockquote>
+
+<p>So it returns a list of the top 100 memes from the last 30 days. And as this is always changing, we can run a daily cron job to fetch the list and update our database with any new templates that don’t already exist in it.</p>
+
+<p>We know this will work because the ImgFlip docs for the <strong>/caption-image</strong> endpoint — which we use to create a meme image — says this:</p>
+
+<blockquote>
+<p><em>key:</em> template_id<br>
+<em>value:</em> A template ID as returned by the <strong>get_memes</strong> response. Any ID that was ever returned from the <strong>get_memes</strong> response should work for this parameter…</p>
+</blockquote>
+
+<p>Awesome!</p>
+
+<p></p>
+<h3>
+  
+  
+  Defining our Daily Cron Job
+</h3>
+
+<p>Now, to create an automatically <a href="https://wasp-lang.dev/docs/advanced/jobs">recurring cron job in Wasp</a> is really easy. </p>
+
+<p>First, go to your <code>main.wasp</code> file and add:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="nx">job</span> <span class="nx">storeMemeTemplates</span> <span class="p">{</span>
+  <span class="nl">executor</span><span class="p">:</span> <span class="nx">PgBoss</span><span class="p">,</span>
+  <span class="nx">perform</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">fn</span><span class="p">:</span> <span class="k">import</span> <span class="p">{</span> <span class="nx">fetchAndStoreMemeTemplates</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@server/workers.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">schedule</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// daily at 7 a.m.</span>
+    <span class="nl">cron</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0 7 * * *</span><span class="dl">"</span> 
+  <span class="p">},</span>
+  <span class="nx">entities</span><span class="p">:</span> <span class="p">[</span><span class="nx">Template</span><span class="p">],</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This is telling Wasp to run the <code>fetchAndStoreMemeTemplates</code> function every day at 7 a.m.</p>
+
+<p>Next, create a new file in <code>src/server</code> called <code>workers.ts</code> and add the function:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchAndStoreMemeTemplates</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">_args</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="nx">context</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">.... &gt;&lt;&gt;&lt;&gt;&lt; get meme templates cron starting &gt;&lt;&gt;&lt;&gt;&lt; ....</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.imgflip.com/get_memes</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">promises</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">memes</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="na">meme</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">context</span><span class="p">.</span><span class="nx">entities</span><span class="p">.</span><span class="nx">Template</span><span class="p">.</span><span class="nx">upsert</span><span class="p">({</span>
+        <span class="na">where</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">id</span> <span class="p">},</span>
+        <span class="na">create</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">id</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="na">name</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+          <span class="na">url</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span>
+          <span class="na">width</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span>
+          <span class="na">height</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span>
+          <span class="na">boxCount</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">box_count</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">update</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+
+    <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">promises</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">error fetching meme templates: </span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You can see that we send a <code>GET</code> request to the proper endpoint, then we loop through the array of memes it returns to us add any new templates to the database.</p>
+
+<p>Notice that we use Prisma’s <code>upsert</code> method here. This allows us to create a new entity in the database if it doesn’t already exist. If it does, we don’t do anything, which is why <code>update</code> is left blank.</p>
+
+<p>We use <code>[Promise.all()</code> to call that array of promises](<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all</a>) correctly.</p>
+
+<p></p>
 
 <h3>
   
   
-  Decorator enhancement
+  Testing
 </h3>
 
-<p>Going back to our decorator, there is a slight enhancement we can introduce. When there is a list of items that will use the cached data concurrently, the API call will be made multiple times.</p>
+<p>Now, assuming you’ve got your app running with <code>wasp start</code>, you will see the cron job run in the console every day at 7 a.m.</p>
 
-<p>How to prevent concurrent calls when the data in storage is not set yet? Well, we can be sophisticated, and we can be really simple. The simple solution is to add a <strong>lock</strong>, and <code>timeout</code> the call if the lock is true. The second call, is between 50% to 100% cached. 50% if you have a slow API, 100% if you have an adequate <code>timeout</code>. We don't want to complicate things, so it should do.<br>
+<p>If you want to test that the cron job is working correctly, you could run it on a faster schedule. Let’s try that now by changing it in our <code>main.wasp</code> file to run every minute:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// services/data.decorator</span>
-<span class="c1">// enhancement to prevent concurrent calls</span>
+<pre class="highlight tsx"><code><span class="c1">//...</span>
+  <span class="nx">schedule</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// runs every minute.</span>
+    <span class="nl">cron</span><span class="p">:</span> <span class="dl">"</span><span class="s2">* * * * *</span><span class="dl">"</span> 
+  <span class="p">},</span>
+</code></pre>
 
-<span class="c1">// add a basket of locks</span>
-<span class="kd">const</span> <span class="nx">locks</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="nx">boolean</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{};</span>
+</div>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">DataCache</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="nx">IStorageService</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">options</span><span class="p">?:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">ICached</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">:</span> <span class="nx">T</span><span class="p">,</span> <span class="nx">propertyKey</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">descriptor</span><span class="p">:</span> <span class="nx">PropertyDescriptor</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">originalMethod</span> <span class="o">=</span> <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">cacheKey</span> <span class="o">=</span> <span class="nx">options</span><span class="p">?.</span><span class="nx">key</span> <span class="o">||</span> <span class="s2">`</span><span class="p">${</span><span class="nx">target</span><span class="p">.</span><span class="kd">constructor</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">.</span><span class="p">${</span><span class="nx">propertyKey</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
 
-    <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(...</span><span class="nx">args</span><span class="p">:</span> <span class="kr">any</span><span class="p">[]):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span> <span class="p">{</span>
 
-      <span class="kd">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">options</span><span class="p">?.</span><span class="nx">withArgs</span> <span class="p">?</span> <span class="s2">`</span><span class="p">${</span><span class="nx">cacheKey</span><span class="p">}</span><span class="s2">_</span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">args</span><span class="p">)}</span><span class="s2">`</span> <span class="p">:</span> <span class="nx">cacheKey</span><span class="p">;</span>
+<p>First, your terminal where you ran <code>wasp start</code> to start your app should output the following:<br>
+</p>
 
-      <span class="c1">// wrap it in a fireOff function</span>
-      <span class="kd">const</span> <span class="nx">fireOff</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="na">_data</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">storageService</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">_data</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="nx">_data</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Cached </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">cacheKey</span><span class="p">));</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="c1">// lock first by adding a new entry</span>
-          <span class="nx">locks</span><span class="p">[</span><span class="nx">cacheKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-          <span class="k">return</span> <span class="nx">originalMethod</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">args</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
-            <span class="nx">tap</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-              <span class="k">this</span><span class="p">.</span><span class="nx">storageService</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">options</span><span class="p">?.</span><span class="nx">expiresin</span><span class="p">);</span>
-            <span class="p">}),</span>
-            <span class="nx">finalize</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-              <span class="c1">// unlock by removing</span>
-              <span class="k">delete</span> <span class="nx">locks</span><span class="p">[</span><span class="nx">cacheKey</span><span class="p">];</span>
-            <span class="p">})</span>
-          <span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="o">[</span>Server]  🔍 Validating environment variables...
+<span class="o">[</span>Server]  🚀 <span class="s2">"Username and password"</span> auth initialized
+<span class="o">[</span>Server]  Starting pg-boss...
+<span class="o">[</span>Server]  pg-boss started!
+<span class="o">[</span>Server]  Server listening on port 3001
+</code></pre>
 
-      <span class="c1">// check if locked, wait some miliseconds and fireOff anyway (no second check)</span>
-      <span class="c1">// the timeout can be configurable and depends on project needs</span>
-      <span class="k">return</span> <span class="nx">locks</span><span class="p">[</span><span class="nx">cacheKey</span><span class="p">]</span> <span class="p">?</span> <span class="nx">timer</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">switchMap</span><span class="p">(</span><span class="nx">fireOff</span><span class="p">))</span> <span class="p">:</span> <span class="nx">fireOff</span><span class="p">();</span>
-    <span class="p">};</span>
-    <span class="k">return</span> <span class="nx">descriptor</span><span class="p">;</span>
+</div>
+
+
+
+<p>…followed shortly after by:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="o">[</span>Server]  .... <span class="o">&gt;</span>&lt;<span class="o">&gt;</span>&lt;<span class="o">&gt;</span>&lt; get meme templates cron starting <span class="o">&gt;</span>&lt;<span class="o">&gt;</span>&lt;<span class="o">&gt;</span>&lt; ....
+</code></pre>
+
+</div>
+
+
+
+<p>Great. We’ve got an automatically recurring cron job going.</p>
+
+<p>You can check your database for saved templates by opening another terminal window and running:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>wasp db studio 
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FBVxTeCV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yldqge5186hegvzjyo30.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FBVxTeCV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yldqge5186hegvzjyo30.png" alt="Image description" width="631" height="344"></a></p>
+
+<p></p>
+
+<h2>
+  
+  
+  Editing Memes
+</h2>
+
+<p>Unfortunately, sometimes GPT’s results have some mistakes. Or sometimes the idea is really good, but we want to further modify it to make it even better.</p>
+
+<p>Well, that’s pretty simple for us to do since we can just make another call to <a href="https://imgflip.com/api">ImgFlip’s API</a>.</p>
+
+<p>So let’s set do that by setting up a dedicated page where we:</p>
+
+<ul>
+<li>fetch that specific meme based on its <code>id</code>
+</li>
+<li>display a form to allow the user to edit the meme <code>text</code>
+</li>
+<li>send that info to a server-side Action which calls the ImgFlip API, generates a new image URL, and updates our <code>Meme</code> entity in the DB.</li>
+</ul>
+
+<p></p>
+
+<h3>
+  
+  
+  Server-Side Code
+</h3>
+
+<p>To make sure we can fetch the individual meme we want to edit, we first need to set up a Query that does this.</p>
+
+<p>Go to your <code>main.wasp</code> file and add this Query declaration:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="nx">query</span> <span class="nx">getMeme</span> <span class="p">{</span>
+  <span class="nl">fn</span><span class="p">:</span> <span class="k">import</span> <span class="p">{</span> <span class="nx">getMeme</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@server/queries.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">entities</span><span class="p">:</span> <span class="p">[</span><span class="nx">Meme</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now go to <code>src/server/queries.ts</code> and add the following function:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Meme</span><span class="p">,</span> <span class="nx">Template</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@wasp/entities</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">GetAllMemes</span><span class="p">,</span> <span class="nx">GetMeme</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@wasp/queries/types</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">GetMemeArgs</span> <span class="o">=</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+<span class="kd">type</span> <span class="nx">GetMemeResult</span> <span class="o">=</span> <span class="nx">Meme</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="na">template</span><span class="p">:</span> <span class="nx">Template</span> <span class="p">};</span>
+
+<span class="c1">//...</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getMeme</span><span class="p">:</span> <span class="nx">GetMeme</span><span class="o">&lt;</span><span class="nx">GetMemeArgs</span><span class="p">,</span> <span class="nx">GetMemeResult</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">id</span> <span class="p">},</span> <span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">context</span><span class="p">.</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">HttpError</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">meme</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">context</span><span class="p">.</span><span class="nx">entities</span><span class="p">.</span><span class="nx">Meme</span><span class="p">.</span><span class="nx">findUniqueOrThrow</span><span class="p">({</span>
+    <span class="na">where</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">id</span> <span class="p">},</span>
+    <span class="na">include</span><span class="p">:</span> <span class="p">{</span> <span class="na">template</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">meme</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We’re just fetching the single meme based on its <code>id</code> from the database.</p>
+
+<p>We’re also including the related meme <code>Template</code> so that we have access to its <code>id</code> as well, because we need to send this to the ImgFlip API too.</p>
+
+<p>Pretty simple!</p>
+
+<p>Now let’s create our <code>editMeme</code> action by going to our <code>main.wasp</code> file and adding the following Action:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">//...</span>
+
+<span class="nx">action</span> <span class="nx">editMeme</span> <span class="p">{</span>
+  <span class="nl">fn</span><span class="p">:</span> <span class="k">import</span> <span class="p">{</span> <span class="nx">editMeme</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@server/actions.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">entities</span><span class="p">:</span> <span class="p">[</span><span class="nx">Meme</span><span class="p">,</span> <span class="nx">Template</span><span class="p">,</span> <span class="nx">User</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Next, move over to the <code>server/actions.ts</code> file and let’s add the following server-side function:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">//... other imports</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">EditMeme</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@wasp/actions/types</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">//... other types</span>
+<span class="kd">type</span> <span class="nx">EditMemeArgs</span> <span class="o">=</span> <span class="nb">Pick</span><span class="o">&lt;</span><span class="nx">Meme</span><span class="p">,</span> <span class="dl">'</span><span class="s1">id</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">text0</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">text1</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">editMeme</span><span class="p">:</span> <span class="nx">EditMeme</span><span class="o">&lt;</span><span class="nx">EditMemeArgs</span><span class="p">,</span> <span class="nx">Meme</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">text0</span><span class="p">,</span> <span class="nx">text1</span> <span class="p">},</span> <span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">context</span><span class="p">.</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">HttpError</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span> <span class="dl">'</span><span class="s1">You must be logged in</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">meme</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">context</span><span class="p">.</span><span class="nx">entities</span><span class="p">.</span><span class="nx">Meme</span><span class="p">.</span><span class="nx">findUniqueOrThrow</span><span class="p">({</span>
+    <span class="na">where</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">id</span> <span class="p">},</span>
+    <span class="na">include</span><span class="p">:</span> <span class="p">{</span> <span class="na">template</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="p">});</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">context</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">isAdmin</span> <span class="o">&amp;&amp;</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">userId</span> <span class="o">!==</span> <span class="nx">context</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">HttpError</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="dl">'</span><span class="s1">You are not the creator of this meme</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">memeUrl</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">generateMemeImage</span><span class="p">({</span>
+    <span class="na">templateId</span><span class="p">:</span> <span class="nx">meme</span><span class="p">.</span><span class="nx">template</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+    <span class="na">text0</span><span class="p">:</span> <span class="nx">text0</span><span class="p">,</span>
+    <span class="na">text1</span><span class="p">:</span> <span class="nx">text1</span><span class="p">,</span>
+  <span class="p">});</span>
+
+  <span class="kd">const</span> <span class="nx">newMeme</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">context</span><span class="p">.</span><span class="nx">entities</span><span class="p">.</span><span class="nx">Meme</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span>
+    <span class="na">where</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">id</span> <span class="p">},</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">text0</span><span class="p">:</span> <span class="nx">text0</span><span class="p">,</span>
+      <span class="na">text1</span><span class="p">:</span> <span class="nx">text1</span><span class="p">,</span>
+      <span class="na">url</span><span class="p">:</span> <span class="nx">memeUrl</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">newMeme</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>As you can see, this function expects the <code>id</code> of the already existing meme, along with the new <code>text</code> boxes. That’s because we’re letting the user manually input/edit the text that GPT generated, rather than making another request the the OpenAI API.</p>
+
+<p>Next, we look for that specific meme in our database, and if we don’t find it we throw an error (<code>findUniqueOrThrow</code>).</p>
+
+<p>We check to make sure that that meme belongs to the user that is currently making the request, because we don’t want a different user to edit a meme that doesn’t belong to them.</p>
+
+<p>Then we send the template <code>id</code> of that meme along with the new text to our previously created <code>generateMemeImage</code> function. This function calls the ImgFlip API and returns the url of the newly created meme image.</p>
+
+<p>We then <code>update</code> the database to save the new URL to our Meme.</p>
+
+<p>Awesome!</p>
+
+<p></p>
+
+<h3>
+  
+  
+  Client-Side Code
+</h3>
+
+<p>Let’s start by adding a new route and page to our <code>main.wasp</code> file:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">//...</span>
+
+<span class="nx">route</span> <span class="nx">EditMemeRoute</span> <span class="p">{</span> <span class="nl">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/meme/:id</span><span class="dl">"</span><span class="p">,</span> <span class="nx">to</span><span class="p">:</span> <span class="nx">EditMemePage</span> <span class="p">}</span>
+<span class="nx">page</span> <span class="nx">EditMemePage</span> <span class="p">{</span>
+  <span class="nl">component</span><span class="p">:</span> <span class="k">import</span> <span class="p">{</span> <span class="nx">EditMemePage</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@client/pages/EditMemePage</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">authRequired</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>There are two important things to notice:</p>
+
+<ol>
+<li>the path includes the <code>:id</code> parameter, which means we can access page for any meme in our database by going to, e.g. <code>memerator.com/meme/5</code>
+</li>
+<li>by using the <code>authRequired</code> option, we tell Wasp to automatically block this page from unauthorized users. Nice!</li>
+</ol>
+
+<p>Now, create this page by adding a new file called <code>EditMemePage.tsx</code> to <code>src/client/pages</code>. Add the following code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">FormEventHandler</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@wasp/queries</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">editMeme</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@wasp/actions/editMeme</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">getMeme</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@wasp/queries/getMeme</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useParams</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AiOutlineEdit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-icons/ai</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">EditMemePage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// http://localhost:3000/meme/573f283c-24e2-4c45-b6b9-543d0b7cc0c7</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useParams</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">text0</span><span class="p">,</span> <span class="nx">setText0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">text1</span><span class="p">,</span> <span class="nx">setText1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isLoading</span><span class="p">,</span> <span class="nx">setIsLoading</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">meme</span><span class="p">,</span> <span class="na">isLoading</span><span class="p">:</span> <span class="nx">isMemeLoading</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="nx">memeError</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="nx">getMeme</span><span class="p">,</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">id</span> <span class="p">});</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">meme</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">setText0</span><span class="p">(</span><span class="nx">meme</span><span class="p">.</span><span class="nx">text0</span><span class="p">);</span>
+      <span class="nx">setText1</span><span class="p">(</span><span class="nx">meme</span><span class="p">.</span><span class="nx">text1</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">meme</span><span class="p">]);</span>
+
+  <span class="kd">const</span> <span class="nx">handleSubmit</span><span class="p">:</span> <span class="nx">FormEventHandler</span><span class="o">&lt;</span><span class="nx">HTMLFormElement</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+      <span class="k">await</span> <span class="nx">editMeme</span><span class="p">({</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">text0</span><span class="p">,</span> <span class="nx">text1</span> <span class="p">});</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="na">error</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error generating meme: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+      <span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span>
   <span class="p">};</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isMemeLoading</span><span class="p">)</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">Loading...</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">memeError</span><span class="p">)</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">Error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">memeError</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'p-4'</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">'text-3xl font-bold mb-4'</span><span class="p">&gt;</span>Edit Meme<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">handleSubmit</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'flex gap-2 items-end'</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'mb-2'</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">htmlFor</span><span class="p">=</span><span class="s">'text0'</span> <span class="na">className</span><span class="p">=</span><span class="s">'block font-bold mb-2'</span><span class="p">&gt;</span>
+              Text 0:
+            <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">textarea</span>
+              <span class="na">id</span><span class="p">=</span><span class="s">'text0'</span>
+              <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">text0</span><span class="si">}</span>
+              <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setText0</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+              <span class="na">className</span><span class="p">=</span><span class="s">'border rounded px-2 py-1'</span>
+            <span class="p">/&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'mb-2'</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">label</span> <span class="na">htmlFor</span><span class="p">=</span><span class="s">'text1'</span> <span class="na">className</span><span class="p">=</span><span class="s">'block font-bold mb-2'</span><span class="p">&gt;</span>
+              Text 1:
+            <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'flex items-center mb-2'</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">textarea</span>
+                <span class="na">id</span><span class="p">=</span><span class="s">'text1'</span>
+                <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">text1</span><span class="si">}</span>
+                <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setText1</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span>
+                <span class="na">className</span><span class="p">=</span><span class="s">'border rounded px-2 py-1'</span>
+              <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">button</span>
+          <span class="na">type</span><span class="p">=</span><span class="s">'submit'</span>
+          <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="s2">`flex items-center gap-1 bg-primary-200 hover:bg-primary-300 border-2 text-black text-sm py-1 px-2 rounded </span><span class="p">${</span>
+            <span class="nx">isLoading</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">opacity-50 cursor-not-allowed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">cursor-pointer</span><span class="dl">'</span>
+          <span class="p">}</span><span class="s2"> $}`</span><span class="si">}</span>
+        <span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">AiOutlineEdit</span> <span class="p">/&gt;</span>
+          <span class="si">{</span><span class="o">!</span><span class="nx">isLoading</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">Save Meme</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Saving...</span><span class="dl">'</span><span class="si">}</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="o">!!</span><span class="nx">meme</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'mt-4  mb-2 bg-gray-100 rounded-lg p-4'</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">meme</span><span class="p">.</span><span class="nx">url</span><span class="si">}</span> <span class="na">width</span><span class="p">=</span><span class="s">'500px'</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'flex flex-col items-start mt-2'</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="p">=</span><span class="s">'text-sm text-gray-700'</span><span class="p">&gt;</span>Topics: <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="p">=</span><span class="s">'text-sm italic text-gray-500'</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">meme</span><span class="p">.</span><span class="nx">topics</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="p">=</span><span class="s">'text-sm text-gray-700'</span><span class="p">&gt;</span>Audience: <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="p">=</span><span class="s">'text-sm italic text-gray-500'</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">meme</span><span class="p">.</span><span class="nx">audience</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="p">=</span><span class="s">'text-sm text-gray-700'</span><span class="p">&gt;</span>ImgFlip Template: <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="p">=</span><span class="s">'text-sm italic text-gray-500'</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">meme</span><span class="p">.</span><span class="nx">template</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">)</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -848,642 +724,1792 @@ Groups names: Fruits. Milk. Vegetables.
 
 
 
-<p>We can keep the <code>timeout</code> value in a <strong>configuration</strong> file, or better yet pass it as an option. I find this to be quite project-specific, and an abstraction I do not wish to add to the basic seed. So we'll leave it at that.</p>
+<p>Some things to notice here are:</p>
 
-<p>Now watching the network tab in a page that has a list of items that call the data service, the first call is an <strong>API call</strong>, all the rest are*<em> local fetching</em><em>. (Cannot showcase that in StackBlitz because there is no real <code>http</code> call, but a simple console log in the mock data file, will show that the groups are fetched once). This might produce a nasty effect of </em><em>slower label display</em>*, it feels like a nasty cloud provider with baggage and things to do 😎. No seriously, the effect is acceptable and does not hinder experience. To get rid of it however, we just need to check the cache first and return in case anything exists.<br>
+<ol>
+<li>because we’re using dynamic routes (<code>/meme/:id</code>), we pull the URL paramater <code>id</code> from the url with <code>useParams</code> hook.</li>
+<li>we then pass that <code>id</code> within the <code>getMemes</code> Query to fetch that specific meme to edit: <code>useQuery(getMeme, { id: id })</code>
+
+<ol>
+<li>remember, our server-side action depends on this <code>id</code> in order to fetch the meme from our database</li>
+</ol>
+
+
+</li>
+</ol>
+
+<p>The rest of the page is just our form for calling the <code>editMeme</code> Action, as well as displaying the meme we want to edit.</p>
+
+<p>That’s great!</p>
+
+<p>Now that we have that <code>EditMemePage</code>, we need a way to navigate to it from the home page.</p>
+
+<p>To do that, go back to the <code>Home.tsx</code> file, add the following imports at the top, and find the comment that says <code>{/* TODO: implement edit and delete meme features */}</code> and replace it with the following code:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// services/data.decorator</span>
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@wasp/router</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AiOutlineEdit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-icons/ai</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="c1">// ...</span>
-  <span class="c1">// check data first</span>
-  <span class="kd">const</span> <span class="nx">_data</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">storageService</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">_data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// if localStroage exist, return</span>
-    <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="nx">_data</span><span class="p">);</span>
-  <span class="p">}</span>
+<span class="c1">//...</span>
 
-  <span class="c1">// then fireoff</span>
-  <span class="kd">const</span> <span class="nx">fireOff</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-  <span class="p">}</span>
-
+<span class="p">{</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">isAdmin</span> <span class="o">||</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">memeIdea</span><span class="p">.</span><span class="nx">userId</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">'flex items-center mt-2'</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">memeIdea</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span> <span class="na">params</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">memeIdea</span><span class="p">.</span><span class="nx">id</span> <span class="p">}</span><span class="si">}</span> <span class="na">to</span><span class="p">=</span><span class="si">{</span><span class="s2">`/meme/:id`</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">'flex items-center gap-1 bg-primary-200 hover:bg-primary-300 border-2 text-black text-xs py-1 px-2 rounded'</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">AiOutlineEdit</span> <span class="p">/&gt;</span>
+        Edit Meme
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+    <span class="si">{</span><span class="cm">/* TODO: add delete meme functionality */</span><span class="si">}</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">)}</span>
 </code></pre>
 
 </div>
 
 
 
-<p>That's it, that's enough. Thanks for reading this far though.</p>
+<p>What’s really cool about this, is that Wasp’s <code>Link</code> component will give you <a href="https://wasp-lang.dev/docs/advanced/links">type-safe routes</a>, by making sure you’re following the pattern you defined in your <code>main.wasp</code> file.</p>
 
-<h3>
+<p>And with that, so long as the authenticated user was the creator of the meme (or is an admin), the <code>Edit Meme</code> button will show up and direct the user to the <code>EditMemePage</code></p>
+
+<p>Give it a try now. It should look like this:</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/ymSr2eRXz9c">
+</iframe>
+</p>
+
+<p></p>
+
+<h2>
   
   
-  RESOURCES
-</h3>
+  Deleting Memes
+</h2>
 
-<ul>
-<li>  <a href="https://angular.io/guide/pipes#caching-http-requests">Angular documentation</a>
-</li>
-<li>  <a href="https://stackblitz.com/edit/angular-cachable-content">StackBlitz project</a>
-</li>
-</ul>
+<p>Ok. When I initially started writing this tutorial, I thought I’d also explain how to add <code>delete</code> meme functionality to the app as well.</p>
 
-<h3>
+<p>But seeing as we’ve gotten this far, and as the entire two-part tutorial is pretty long, I figured you should be able to implement yourself by this point.</p>
+
+<p>So I’ll leave you guide as to how to implement it yourself. Think of it as a bit of homework:</p>
+
+<ol>
+<li>define the <code>deleteMeme</code> Action in your <code>main.wasp</code> file</li>
+<li>export the async function from the <code>actions.ts</code> file</li>
+<li>import the Action in your client-side code</li>
+<li>create a button which takes the meme’s <code>id</code> as an argument in your <code>deleteMeme</code> Action.</li>
+</ol>
+
+<p>If you get stuck, you can use the <code>editMeme</code> section as a guide. Or you can check out the <a href="https://github.com/vincanger/memerator/">finished app’s GitHub repo</a> for the completed code!</p>
+
+<p></p>
+
+<h1>
   
   
-  RELATED POSTS
-</h3>
+  Conclusion
+</h1>
 
-<ul>
-<li><p><a href="https://garage.sekrab.com/posts/localstorage-wrapper-service-in-angular">LocalStorage wrapper service in Angular</a></p></li>
-<li><p><a href="https://garage.sekrab.com/posts/a-cache-decorator-in-angular">A cache decorator in Angular</a></p></li>
-</ul>
+<p>There you have it! Your own instant meme generator 🤖😆</p>
+
+<p>BTW, If you found this useful, <strong>please show us your support by <a href="https://github.com/wasp-lang/wasp">giving us a star on GitHub</a></strong>! It will help us continue to make more stuff just like it. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---pOWaxHX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--tnDxibZC--/c_limit%252Cf_auto%252Cfl_progressive%252Cq_66%252Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--OCpry2p9--/c_limit%25252Cf_auto%25252Cfl_progressive%25252Cq_66%25252Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bky8z46ii7ayejprrqw3.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---pOWaxHX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--tnDxibZC--/c_limit%252Cf_auto%252Cfl_progressive%252Cq_66%252Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--OCpry2p9--/c_limit%25252Cf_auto%25252Cfl_progressive%25252Cq_66%25252Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bky8z46ii7ayejprrqw3.gif" alt="https://res.cloudinary.com/practicaldev/image/fetch/s--tnDxibZC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--OCpry2p9--/c_limit%252Cf_auto%252Cfl_progressive%252Cq_66%252Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bky8z46ii7ayejprrqw3.gif" width="" height=""></a></p>
+
+<p><a href="https://www.github.com/wasp-lang/wasp" class="ltag_cta ltag_cta--branded">⭐️ Thanks For Your Support 🙏</a>
+</p>
 
  </details> 
  <hr /> 
 
- #### - [Angular Signals: what's all the fuss about?](https://dev.to/sparkfabrik/angular-signals-whats-all-the-fuss-about-3hm5) 
+ #### - [How to Learn Programming in 2023](https://dev.to/scofieldidehen/how-to-learn-programming-in-2023-2981) 
+ <details><summary>Article</summary> <p>In today's digital age, the role of programmers is more important than ever. Programming skills are highly valued and sought after in almost every industry. There is a huge demand for developers with the right technical abilities, from tech startups to established corporations.</p>
+
+<p>Whether considering changing careers or starting, now is an exciting time to become a programmer. With the right dedication and focus, anyone can gain the necessary expertise to succeed as a professional developer.</p>
+
+<h4>What Does a Programmer Do?</h4>
+
+<p>Computer programmers write, test, and maintain the code that allows software applications and programs to function.</p>
+
+<p>They take designs and specifications provided by software developers and engineers and turn them into logical sequences of instructions that computers can follow. Some common tasks programmers perform include:</p>
+
+<ul>
+    <li>Writing code in various programming languages like Python, Java, C++, etc.</li>
+    <li>Debugging, testing, and refining code until the program operates correctly</li>
+    <li>Collaborating with software developers to get a clear understanding of what functionality is needed</li>
+    <li>Developing algorithms and flowcharts to outline the program processes logically</li>
+    <li>Updating and expanding existing programs as needed</li>
+    <li>Evaluating code to ensure it is valid, efficient, and meets industry standards</li>
+    <li>Documenting every process thoroughly for reference.</li>
+</ul>
+
+<p>Programmers are integral to software deployment, building customized applications for end users and companies. They bring ideas to life using lines of code and their technical capabilities.</p>
+
+<h4>Top Skills Needed to Become a Programmer</h4>
+
+<p>While some programming skills can be developed over time on the job, some vital abilities are required to start a programming career.</p>
+
+<p>Here are some of the most important skills every aspiring programmer should focus on building:</p>
+
+<p><strong>Logical Thinking:</strong> Programming requires strong logical thinking abilities. You need to be able to break down complex problems analytically into smaller components and define logical steps to solve them. Thinking logically will help you develop solutions and troubleshoot issues.</p>
+
+<p><strong>Attention to Detail:</strong> Good programmers have meticulous attention to detail. You must be extremely careful about the syntax, the spelling of code components, punctuation usage, and more. Missing small details can cause major issues.</p>
+
+<p><strong>Patience and Perseverance:</strong> Debugging code and fixing flaws requires patience and perseverance. Issues often take significant time and effort to resolve fully. You must be willing to work through problems slowly.</p>
+
+<p><strong>Communication Skills:</strong> Programmers work closely with others like designers, product managers, and end users. Strong written and verbal communication skills help in collaborations and explaining your work.</p>
+
+<p><strong>Problem Solving:</strong> Identifying issues quickly and offering solutions is critical. Programmers need excellent problem-solving to develop code that handles expected and edge-case scenarios.</p>
+
+<p><strong>Creativity:</strong> While programming involves logic, creativity comes in when designing solutions. You must be able to think creatively for innovation.</p>
+
+<h4>Programming Languages to Learn</h4>
+
+<p>While mastering a single language is a good start, learning multiple languages allows programmers to be versatile and exposes them to different techniques. Here are 5 of the top programming languages to consider learning:</p>
+
+<p><strong>Python</strong> – A very popular multipurpose language used for web development, data science, artificial intelligence, automation, and more. Python has a simple syntax and is a good first language.</p>
+
+<p><strong>JavaScript</strong> – The core language for web development and front-end programming. JavaScript allows the creation of interactive interfaces and dynamic behaviors.</p>
+
+<p><strong>Java</strong> – An object-oriented language well-suited for back-end development and Android apps. Java is robust and widely adopted by enterprises.</p>
+
+<p><strong>C++</strong> – A powerful general-purpose language with wide industry usage. C++ is commonly used for game engines, desktop apps, and high-performance computing.</p>
+
+<p><strong>Go</strong> – A relatively new systems programming language fast gaining popularity. Go is useful for building web services, network servers, and more.</p>
+
+<h4>The Importance of Gaining Practical Coding Experience</h4>
+
+<p>While learning syntax and concepts is critical, nothing beats hands-on coding experience when becoming a skilled programmer. Here are impactful ways to gain practical knowledge:</p>
+
+<ul>
+    <li>Take on freelance programming projects – Small gigs let you code for actual clients to augment skills.</li>
+    <li>Build your programs – Create projects that interest you outside of work/education for practice.</li>
+    <li>Contribute to open source projects – Make contributions like fixing bugs on open source tools used by many.</li>
+    <li>Follow programming tutorials/courses – Interactive, hands-on tutorials are a great learning method.</li>
+    <li>Participate in hackathons – Rapidly build prototypes and get experience during timed hacking events.</li>
+    <li>Intern or volunteer to code – Look for opportunities to code at tech companies through internships or volunteering.</li>
+    <li>Ask colleagues for help – Experienced developers are often happy to mentor you if approached respectfully,</li>
+</ul>
+
+<p>Gaining significant experience writing code and seeing your work in action is invaluable prep for a coding career.</p>
+
+<h4>Formal Education for Programmers</h4>
+
+<p>While self-learning is completely viable, pursuing formal education has major advantages:</p>
+
+<p><strong>Earn a programming certificate or diploma</strong> – Many trade schools and technical institutes offer intensive certificate programs focused on coding skills. These can be completed much faster than degree programs.</p>
+
+<p><strong>Obtain an undergraduate CS degree</strong> – Majoring in computer science or software engineering gives you a broad computer systems and programming foundation. This is the traditional path to becoming a developer.</p>
+
+<p><strong>Get a Master's in CS</strong> – For those with an undergrad degree in another field, an MS in computer science can be obtained through a 1-2 year program to switch careers.</p>
+
+<p><strong>Specialize with advanced degrees</strong> – Further studies like a Master's or Ph.D. allow specializing in fields like artificial intelligence, cybersecurity, graphics, and more.</p>
+
+<p><strong>Learn online</strong> – Many reputed universities now offer affordable online CS degrees, allowing remote learning, such as <a href="https://pll.harvard.edu/subject/programming" rel="noopener noreferrer nofollow">Harvard</a>, <a href="https://news.stanford.edu/2021/03/22/famous-stanford-coding-course-free-online/" rel="noopener noreferrer nofollow">Standford</a>, <a href="https://www.edx.org/learn/coding" rel="noopener noreferrer nofollow">EDX</a>, and many others.</p>
+
+<p>Formal degrees open up additional job prospects and higher starting salaries. However, they require long-term investments of time and tuition costs. Weigh the benefits of self-guided learning for your goals.</p>
+
+<h4>Essential Self-Learning Resources</h4>
+
+<p>For those focused on quickly developing skills and transitioning to programming outside of formal education, self-guided learning using the abundance of available resources online is the way to go. Here are some of the best resources:</p>
+
+<p><strong>MOOCs (Massive Open Online Courses)</strong> – Platforms like Coursera, Udacity, and edX offer free courses from top universities covering programming languages, theory, and specializations. These are very comprehensive.</p>
+
+<p><strong>Coding Bootcamps</strong> – Intensive bootcamps like <a href="https://www.lewagon.com/" rel="noopener noreferrer nofollow">Le Wagon</a>, General Assembly, and Thinkful include project-based learning and career support through partnerships with tech firms.</p>
+
+<p><strong>Online Learning Platforms</strong> – <a href="https://www.codecademy.com/" rel="noopener noreferrer nofollow">Codecademy,</a> <a href="https://www.freecodecamp.org/" rel="noopener noreferrer nofollow">FreeCodeCamp</a>, <a href="https://www.udemy.com/" rel="noopener noreferrer nofollow">Udemy</a>, and <a href="https://www.skillshare.com/" rel="noopener noreferrer nofollow">Skillshare</a> have extensive programming courses, including interactive coding environments. Paid courses are affordable.</p>
+
+<p><strong>Coding Challenge Websites</strong> – Platforms like <a href="https://www.hackerrank.com/" rel="noopener noreferrer nofollow">HackerRank</a>, <a href="https://www.codility.com/" rel="noopener noreferrer nofollow">Codility</a>, and <a href="https://leetcode.com/" rel="noopener noreferrer nofollow">LeetCode</a> have challenged libraries to practice coding questions and develop problem-solving speed.</p>
+
+<p><strong>Programming Documentation</strong> – Official language docs like <a href="http://Python.org" rel="noopener noreferrer nofollow">Python.org</a> and Mozilla Developer Network offer tutorials and references for syntax, libraries, and more.</p>
+
+<p><strong>YouTube Channels/Podcasts</strong> – Programming content creators share tutorials, projects, and explanations of concepts via free video and audio.</p>
+
+<p><strong>Coding Meetups</strong> – Local meetup groups offer workshops, collaboration opportunities, and advice for programmers of all skill levels.</p>
+
+<p><strong>Programming Books</strong> – Highly-rated books provide structured introductions to coding fundamentals and languages.</p>
+
+<p>Using a combination of these resources is an effective way to start programming and build a portfolio.</p>
+
+<h4>Getting Hired as a New Programmer</h4>
+
+<p>Once you have acquired sufficient programming skills from self-learning and/or formal education, the next step is getting hired for an entry-level coding job. Here are tips for landing your first programming position:</p>
+
+<p><strong>Building an impressive portfolio</strong> – Create a portfolio highlighting real-world projects and code samples that convey your abilities. Share via GitHub or a personal site.</p>
+
+<p><strong>Networking</strong> – Attend local tech meetups and conferences to connect with the programmer community, partners, and potential employers.</p>
+
+<p><strong>Looking for internships</strong> – Paid/unpaid internships allow for gaining experience and making professional connections.</p>
+
+<p><strong>Applying to code apprenticeships</strong> – Programs like Andela provide training and facilitate matching apprentices with tech firms.</p>
+
+<p><strong>Perfecting your resume</strong> – Tailor your resume to each position and include relevant skills, projects, and coding languages used.</p>
+
+<p><strong>Acquiring professional certificates</strong> – Completing certifications in languages or frameworks signals focused knowledge.</p>
+
+<p><strong>Showcasing soft skills</strong> – During interviews, demonstrate communication ability, creativity, problem-solving, and passion for programming.</p>
+
+<p><strong>Considering contract roles</strong> – Contract coding allows gaining more experience before pursuing a full-time job.</p>
+
+<p><strong>Expanding your search</strong> – Look at startups and smaller companies alongside larger corporations.</p>
+
+<p>Persistence and continually improving based on failures in the job hunt process are important. Be open to relocating if needed.</p>
+
+<h4>Future Programming Career Advancement</h4>
+
+<p>Once working in an entry-level coding role, programmers should continue learning new skills and expanding their capabilities to advance their careers over time through:</p>
+
+<p><strong>Learning additional languages</strong> – Master languages like C and Java to open up more back-end development roles.</p>
+
+<p><strong>Picking up new frameworks/toolsets</strong> – Gain expertise in trending frameworks like React, Angular, Node.js, etc. Update skills regularly.</p>
+
+<p><strong>Improving speed and efficiency</strong> – Push yourself to write optimized code and solve problems faster through practice.</p>
+
+<p><strong>Gaining domain knowledge</strong> – Understand the business/industry you work in and learn associated programming needs.</p>
+
+<p><strong>Cultivating soft skills</strong> – Develop team leadership, project management, and communication abilities.</p>
+
+<p><strong>Earning advanced </strong>certifications demonstrates a commitment to specializations like security, AI, cloud computing, etc.</p>
+
+<p><strong>Transitioning into architect roles</strong> – Architects design complex systems and high-level software structures.</p>
+
+<p><strong>Shifting to engineering management</strong> – Experienced coders can manage teams of software engineers.</p>
+
+<p><strong>Embracing roles beyond coding</strong> – Move into product management, technical sales/marketing, startup funding, etc.</p>
+
+<p><strong>Contracting as a consultant</strong> – Work as an independent contractor across different projects.</p>
+
+<p>There are many avenues beyond coding for career growth once fundamentals are strong. Ambition and continued learning enable advancing to senior programming or related leadership roles.</p>
+
+<h4>Conclusion</h4>
+
+<p>Demand for skilled programmers continues to rise rapidly. Now is an opportune time to start your programming journey. Master fundamental concepts, build projects, and gain hands-on experience.</p>
+
+<p>Learn in-demand languages, expand your skills continuously, and be patient in your job search. With hard work and perseverance, an exciting career in programming awaits, allowing you to bring ideas to life through code while reaping financial and creative rewards. The possibilities in the digital age are endless for programmers who stay focused and flexible.</p>
+
+<p>I hope you enjoyed reading this guide and feel motivated to start your programming journey.</p>
+
+<p>If you find this post exciting, find more exciting posts on <a href="http://blog.learnhub.africa/" rel="noopener noreferrer nofollow">Learnhub Blog</a>; we write everything tech from <a href="https://blog.learnhub.africa/category/cloud-computing/" rel="noopener noreferrer nofollow">Cloud computing</a> to <a href="https://blog.learnhub.africa/category/frontend/" rel="noopener noreferrer nofollow">Frontend Dev</a>, <a href="https://blog.learnhub.africa/category/security/" rel="noopener noreferrer nofollow">Cybersecurity</a>, <a href="https://blog.learnhub.africa/category/data-science/" rel="noopener noreferrer nofollow">AI</a>, and <a href="https://blog.learnhub.africa/category/blockchain/" rel="noopener noreferrer nofollow">Blockchain</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [17 years of frustration: The best lesson I've learned about teaching](https://dev.to/apetryla/the-best-lesson-ive-learned-about-teaching-in-17-years-of-frustration-3pcc) 
+ <details><summary>Article</summary> <p>Once, a young boy received a book as a gift from his grandparents. The boy's grandpa loved to play the accordion, so it was no surprise that the book was called 'Jaunasis pianistas' (The Young Pianist). However, it was still magical to the boy. He had been dreaming of learning how to play since he first saw the instrument. The excitement couldn't be held any longer. He turned the first page.</p>
+
+<p>'The mind is not a vessel to be filled, but a fire to be kindled,' he read on the first page. It was the foreword to a teacher.</p>
+
+
+
+
+<p>But this is not a story about learning piano or music. It's a story about teachers and teaching.</p>
+
+<p>In my 6th grade, I had to choose a secondary language at school. Between German and Russian, the first one looked more interesting to me. So I chose it. What I didn't know is that for the next 5 years, I would have to endure a teacher who smiled at the beginning of the lesson and screamed at the end. She got angry when somebody made a mistake and called people idiots when they couldn't remember new words.</p>
+
+<p>Five years is a long time. She did manage to fill my head with German words and grammar rules. But along with that, she filled me with pure anger towards the language and everything related to it.</p>
+
+<p>At the end of the 10th grade, she came to us with her typical fake smile, saying how much fun it would be if we chose German for higher grades. Finally, I could tell her what I thought in her own language.</p>
+
+
+
+
+<p>The last 12 years were enough not only to bury the words I used to know but also the hatred. Yesterday, I took the book again and started 'den Staub entfernen' (to dust off). It took me 12 years to get back to the starting point. For those who still have a "but" in their heads, I emphasize: a bad teacher can't teach you anything, even in 17 years (I think we could safely approximate this to a lifetime.)</p>
+
+<p>Was I the only one? No, I wasn't. My friends experienced the same frustration, and my classmates endured similar difficulties. Even the younger pupils were not spared from the challenges. Among them was my brother, who is ten years younger than me. He, too, had the misfortune of "learning" from the same "teacher." Later on, he switched schools but unfortunately ended up with an even worse teacher. I did try to advise him to choose a different secondary language, but like me, he wanted to learn German."</p>
+
+<p>Yesterday, I mentioned to him that I had started learning the language again. He gave me a long, deep look, but with all my effort, I couldn't decipher what was happening in his head.</p>
+
+
+
+
+<p>'The mind is not a vessel to be filled, but a fire to be kindled.' - Plutarch.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [The Benefits of Using JavaScript Libraries in Startup Projects](https://dev.to/plazarev/the-benefits-of-using-javascript-libraries-in-startup-projects-1p9p) 
+ <details><summary>Article</summary> <p>The application development software industry has been on the upswing lately. According to <a href="https://www.statista.com/outlook/tmo/software/application-development-software/worldwide#analyst-opinion">Statista</a>, this segment has shown a growth rate of more than 5% in recent years and this positive dynamics is expected to continue in the future. And this is hardly surprising since these tools can significantly facilitate the overall application development process. </p>
+
+<p>In the area of web development, JavaScript libraries often become such a magic bullet that helps developers to bring their ideas to life with less time and effort. </p>
+
+<p>JavaScript libraries are beneficial for startups that are in the early stages of software product development. Drawing an analogy with the famous words of Archimedes on the need for a lever and a place to stand for moving the world, it can be said that many startup dev teams often require app development software to achieve their coding objectives. </p>
+
+<p>In this article, we’ll consider why JavaScript libraries benefit startup projects and how to obtain such tools without spending a fortune.</p>
+
+<h1>
+  
+  
+  Reasons for Using JavaScript Libraries in Your Startup Project
+</h1>
+
+<p>Inadequate or <a href="https://www.statista.com/statistics/1293880/global-work-challenges-for-software-developers/#:~:text=Among%20the%20most%20important%20challenges,part%2Dremote%20team%20in%202022">insufficient work tools are frequently named</a> among the most important challenges that developers experience during app building. Here it is often referred to as business-oriented software that focuses on process automation and data analytics to gain more business insights and increase efficiency. </p>
+
+<p>Therefore, it is crucial to choose the right technology stack when starting a new business undertaking on the web. That’s where JavaScript libraries come into play.</p>
+
+<p>There are plenty of open-source JavaScript libraries available on GitHub. These tools can help to deliver a lot of useful things absolutely free of charge. However, despite the appeal of such solutions, they have some significant drawbacks that may affect the delivery of a big project. </p>
+
+<p>First and foremost, you can hardly count on the possibility to implement complex functionalities and get timely technical support with open-source libraries. With paid JavaScript libraries, you won’t have to worry about these aspects when working on your first web project.</p>
+
+<p>Moreover, commercial JavaScript libraries also provide many other benefits that will be useful in the development process:</p>
+
+<p><strong>• High performance</strong></p>
+
+<p>Performance is one of the main success factors for any modern web app. That is why vendors of application development software always pay special attention to the ability of their products to process large amounts of data without any delays. They use special techniques such as smart rendering or dynamic loading to ensure a good user experience under heavy loads. With performant JavaScript libraries, developers also receive the scalability reserve required for adding extra functionalities to the app in the future.</p>
+
+<p><strong>• Enhanced customizability</strong></p>
+
+<p>Comprehensive APIs of JavaScript libraries enable dev teams to adopt a personalized approach to the user interface implementation. In other words, it is possible to customize any UI element in accordance with specific project requirements.</p>
+
+<p><strong>• Regular updates and bug fixes</strong></p>
+
+<p>New product versions are one more significant advantage of paid JavaScript libraries. They allow enriching software with new features as well as improving the current ones. Such updates contribute to the maturity and stability of their library’s codebase and help the product to stay relevant with time.</p>
+
+<p><strong>• Detailed documentation</strong></p>
+
+<p>Commercial JavaScript libraries commonly come not only with extensive functional capabilities but also with all-encompassing documentation. It helps developers to reduce the learning curve and make the most of all available features.</p>
+
+<p><strong>• Learning materials</strong></p>
+
+<p>In addition to documentation, JavaScript libraries are also frequently complemented with other useful auxiliaries such as demos, samples, tutorials, videos, etc. Thanks to that, dev teams get vivid examples of how to use this or that feature as well as step-by-step instructions on some tricky configuration or customization stages.</p>
+
+<p><strong>• Integrations with popular JavaScript frameworks and server-side technologies</strong></p>
+
+<p>It is hard to imagine a modern web application built without any front-end frameworks (React, Angular, Vue, etc.) and other technologies on the back-end such as Node.js. These tools make the lives of developers so much easier by providing the basis for a future app. Therefore, it is not surprising that well-established JavaScript libraries include integrations with popular tools from the rich JavaScript ecosystem.</p>
+
+<p><strong>• Free trial versions</strong></p>
+
+<p>As it is said, first try then trust. All reliable providers of JavaScript components always back up descriptions of their products to test them in practice. For this purpose, vendors offer short-term trial versions of their products.</p>
+
+<p>As you can see, solid commercial JavaScript libraries can be a worthy long-term investment. But here comes one of the main pain points of many startups, namely, financing. Not all new businesses can afford to purchase some advanced tools, because of tight budgets and lack of investments. The ongoing political and economic crisis makes the matter even worse. </p>
+
+<p>But fortunately, some vendors of application development tools are aware of the financial limitations of startups and come up with various discount programs to give them a helping hand in the early stages of their work.</p>
+
+<p>Let us consider one of such juicy deals provided by the DHTMLX company.</p>
+
+<h1>
+  
+  
+  New DHTMLX Discount Program for Startups
+</h1>
+
+<p>The DHTMLX company specializes in JavaScript UI components aimed to speed up the development of feature-packed web apps with a focus on various business activities such as project management, data analysis, and content management. Last month, the company decided to launch a new discount program specifically intended for startups.</p>
+
+<p>This initiative implies a <a href="https://dhtmlx.com/docs/startups/">70% discount for top DHTMLX products</a>. The package provided by DHTMLX in this program includes the Suite library with numerous popular UI widgets as well as some sophisticated JavaScript components for project management apps such as Gantt and Scheduler. </p>
+
+<p>In addition to a huge discount, dev teams can quickly solve any issues with the help of highly-qualified tech support, use all included components in SaaS projects, and take advantage of a considerable base of support materials (demos, snippets, tutorials, etc.). You can get acquainted with this program in more detail by visiting the official page of the project.</p>
+
+<p>Summarizing the above, it is safe to say that JavaScript libraries can be a great addition to the technology stack of any web development team. Open-source tools can be suitable for small projects that are not aimed at obtaining material profits, while commercial libraries are great for more complex and long-term projects. Some vendors of commercial JS libraries such as DHTMLX even offer special discounts for startups to help them in the opening phases of their projects.</p>
+
+<p><strong><em>The article is <a href="https://startupnation.com/grow-your-business/software/the-benefits-of-using-javascript-libraries-in-startup-projects/">originally published on StartupNation</a>.</em></strong></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Building a Role-Based Access Control System with JWT in Spring Boot](https://dev.to/alphaaman/building-a-role-based-access-control-system-with-jwt-in-spring-boot-a7l) 
  <details><summary>Article</summary> <h2>
   
   
   Introduction
 </h2>
 
-<p>In the last couple of months the word <a href="https://angular.io/guide/signals">signals</a> has been said a lot in the Angular communities. Everybody already seems to either love them madly or reject them passionately.<br><br>
-But for those of us who are late to the hype train: what are they? And what can they do or not do?<br><br>
-Worry no more with FOMO as by the end of this article you will have a more comprehensive idea of where signals come from, how they work, and more importantly how they fit into the RxJS observables world.</p>
-<h2>
-  
-  
-  Genesis
-</h2>
+<p>Welcome to my blog, where we'll embark on an exciting journey into the realm of web application security! If you're new to the world of Spring Boot or just beginning to explore the intricacies of authentication and authorization, you've come to the right place. In this inaugural article, I'm thrilled to share my take on a topic that resonates with developers of all levels: Building a Role-Based Access Control System with JWT in Spring Boot.</p>
 
-<p>Let's start with the basics: why were they created? One may think that it was just a matter of "let's add a new feature to the framework", but it's not that simple. And it's not even a matter of <em>copying</em> what other frameworks are doing, as signals are not a new concept, they have been around for a while, and they are used in other libraries like <a href="https://preactjs.com/guide/v10/signals/">Preact</a> or frameworks like <a href="https://www.solidjs.com/docs/latest/api#createsignal">SolidJS</a>. Indeed, SolidJS author himself says signals have been around "<a href="https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob">since the dawn of declarative JavaScript Frameworks</a>".<br><br>
-This is not a case of "monkey see, monkey do", but rather a case of <em>"let's see what we can do better"</em>.<br>
-The reasoning behind these changes can be well represented by this quote by the tech lead of the Angular team, Alex Rickabaugh:</p>
+<p>In this blog series, we'll dive deep into the world of Spring Security and explore how JSON Web Tokens (JWT) can amplify its capabilities. I'll guide you step by step, from laying the foundation with a solid Spring Boot setup, all the way to implementing role-based access control using JWT tokens.</p>
+
+<p><strong>In this blog, we'll cover the following topics:</strong></p>
+
+<ul>
+<li>Creating Different Roles and Assigning it to Users</li>
+<li>Registering Users and Administrators</li>
+<li>Generating JWT Tokens and Authentication</li>
+<li>Performing Role-Based Actions</li>
+</ul>
+
+<p><em>Prerequisites</em><br>
+Before we dive into the exciting world of building a role-based access control system with JWT in Spring Boot, let's ensure that you have the necessary tools and environment ready. Here's what you'll need to get started:</p>
+
+<p><code>Java Development Kit (JDK)</code>: Make sure you have a compatible version of JDK installed on your machine. Spring Boot usually works well with JDK 8 or higher.</p>
+
+<p><code>Integrated Development Environment (IDE)</code>: Choose an IDE that suits your preferences. IntelliJ IDEA and Eclipse are popular choices for Spring Boot development.</p>
+
+<p><code>Maven or Gradle</code>: You'll need either Maven or Gradle as a build tool to manage your project dependencies.</p>
+
+<p><strong>Setting up the Environment:</strong><br>
+Spring Boot Project Initialization: Create a new Spring Boot project using either Spring Initializr web tool <a href="https://start.spring.io/">here</a> or your IDE's project creation wizard. </p>
+
+<p>Here is my setup you can follow:<br>
+Project: Maven<br>
+Spring Boot Version:2.7.3 (if not available then use 3.1.3 then change it later in pom.xml)<br>
+Java Version:17<br>
+Dependencies:<br>
+1.Spring Data JPA<br>
+2.Spring web<br>
+3.Spring Security<br>
+4.MySQL Driver<br>
+5.JSON WEB TOKEN </p>
+
+<p>You will not find JSON web Token there you have to add it manually<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;dependency&gt;
+     &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+     &lt;artifactId&gt;jjwt&lt;/artifactId&gt;
+     &lt;version&gt;0.9.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>Here is full pom.xml<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.7.3&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+    &lt;groupId&gt;com.alpha&lt;/groupId&gt;
+    &lt;artifactId&gt;alpha&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;alpha&lt;/name&gt;
+    &lt;description&gt;Demo project for Spring Boot Role based Authentication using JWT &lt;/description&gt;
+    &lt;properties&gt;
+        &lt;java.version&gt;17&lt;/java.version&gt;
+    &lt;/properties&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+            &lt;artifactId&gt;jjwt&lt;/artifactId&gt;
+            &lt;version&gt;0.9.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>application.properties<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>jwt.token.validity=18000
+jwt.signing.key=YourSignInKey
+jwt.authorities.key=roles
+jwt.token.prefix=Bearer
+jwt.header.string=Authorization
+
+spring.datasource.url=jdbc:mysql://localhost:3306/yourdb
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.user.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+server.port=8080
+</code></pre>
+
+</div>
+
+
+
+<p>This is a configuration file for a Spring Boot application.  </p>
+
+<ul>
+<li>The first line sets the validity duration for JSON Web Tokens (JWT) to 18000 seconds (5 hours). </li>
+<li>The second line specifies the signing key to be used for generating and validating JWTs. </li>
+<li>The third line defines the key for extracting authorities/roles from a JWT. </li>
+<li>The fourth line sets the prefix for JWT tokens to "Bearer". </li>
+<li>The fifth line specifies the header string to be used for JWT tokens in HTTP requests. </li>
+<li>The next few lines configure the MySQL database connection for the application, including the URL, username, and password. </li>
+<li>The line <code>spring.jpa.show-sql=true</code> enables the display of SQL statements executed by Hibernate. </li>
+<li>The line <code>spring.jpa.hibernate.ddl-auto=update</code> configures Hibernate to automatically update the database schema based on the entity classes. </li>
+<li>The line <code>spring.user.datasource.driver-class-name=com.mysql.jdbc.Driver</code> specifies the driver class for the user datasource. </li>
+<li>The line <code>spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect</code> sets the Hibernate dialect for MySQL. </li>
+<li>The last line sets the server port to 8080. </li>
+</ul>
 
 <blockquote>
-<p>The nature of web applications is always evolving, the performance requirements evolve, the web platform itself is evolving. So Angular needs to be stable, but not stagnant”. And so signals were born.</p>
+<p>"As you can see, here is the clear folder structure."<br>
+</p>
 </blockquote>
 
-<p>As a matter of fact, for the last decade, Angular's team listened to the users' most requested features to improve the developer experience. Amongst other things, some reoccurring requests concerned the necessity to <strong>simplify</strong> the usage of Angular, requiring <strong>less boilerplate</strong> code, augmented <strong>performances</strong>, more <strong>reactivity</strong>, and <strong>finer control</strong> over the components.<br><br>
-(Following this <a href="https://github.com/angular/angular/discussions/49090">link</a> you will find the PR that answered these requests, introducing signals for the first time.)</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>src
+└── main
+    ├── java
+    │   └── com
+    │       └── alpha
+    │           ├── config (Package)
+    │           │   ├── JwtAuthenticationFilter.java
+    │           │   ├── PasswordEncoder.java
+    │           │   ├── TokenProvider.java
+    │           │   ├── UnauthorizedEntryPoint.java
+    │           │   └── WebSecurityConfig.java
+    │           ├── controller (Package)
+    │           │   └── UserController.java
+    │           ├── dao (Package)
+    │           │   ├── RoleDao.java
+    │           │   └── UserDao.java
+    │           ├── model (Package)
+    │           │   ├── AuthToken.java
+    │           │   ├── LoginUser.java
+    │           │   ├── Role.java
+    │           │   ├── User.java
+    │           │   └── UserDto.java
+    │           ├── service (Package)
+    │           │   ├── impl
+    │           │   │   ├── RoleServiceImpl.java
+    │           │   │   └── UserServiceImpl.java
+    │           │   ├── RoleService.java
+    │           │   └── UserService.java
+    │           └── AlphaApplication.java
+    └── resources
+        └── application.properties
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zetbIeb6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cbw63nx379ah66mzmwrg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zetbIeb6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cbw63nx379ah66mzmwrg.png" alt="Ikea signals meme" width="800" height="248"></a></p>
-<h3>
-  
-  
-  Change detection
-</h3>
+</code></pre>
 
-<p>To gain a better understanding of these requests, we must first digress a little bit, explaining a fundamental concept of Angular: <a href="https://angular.io/guide/change-detection">change detection</a>.<br><br>
-At the time of writing the framework uses a library called <em>zone.js</em> to control the various changes of state inside the application.</p>
+</div>
 
-<p><em>Zone.js</em> tracks all the browser's events and every time it sees that something has changed, it starts a change detection cycle, in which it checks the components tree of the app to see if something has been modified, updating the views that need to be updated. On the one hand, this behavior is extremely useful because it automatically manages these checks, on the other hand, it underperforms because it constantly checks <strong>all</strong> of the components, sometimes even when there is no need to update anything.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FiXQgvpx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4k264acxvyz8744ttkhn.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FiXQgvpx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4k264acxvyz8744ttkhn.gif" alt="Zone.js change detection gif" width="312" height="243"></a></p>
 
-<p>An alternative strategy can be to use <em>zone.js with OnPush</em> in every component. This makes it so that the component that uses it is not checked during a change detection cycle unless explicitly marked with the <code>markForCheck()</code> function.<br><br>
-This behavior may seem similar to the one before, but the main difference is that <code>markForCheck()</code> doesn't automatically trigger the change detection for its component, but it just marks it to be checked on the next change detection cycle scheduled by zone.js .<br><br>
-The downside to this strategy is that it marks not just the component that raised the <code>markForCheck()</code> flag, but <strong>also its parent nodes</strong>. So we have fewer components checked than before, but there is still some, let's say over-checking spillage.</p>
+<p>Let's get started!</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Dg4igrWx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/18ypvvldeflfu5fjcwoo.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Dg4igrWx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/18ypvvldeflfu5fjcwoo.gif" alt="Zone.js with onpush change detection gif" width="284" height="247"></a></p>
+<p>Now we will start with understanding the config package</p>
 
-<p>With <em>signals</em>, however, change detection is much more precise, indicating <strong>only</strong> the component, or components, that have undergone some changes.</p>
+<p>Spring Security is a powerful and highly customizable security framework provided by the Spring Framework for Java applications. Its primary purpose is to handle authentication, authorization, and various security aspects in web and enterprise applications. Spring Security is often used to secure web applications, RESTful APIs, and other components of a software system.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QAk9HCGz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b2r5uaig4lpb9yhiqswa.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QAk9HCGz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b2r5uaig4lpb9yhiqswa.gif" alt="Signals change detection gif" width="250" height="245"></a></p>
-<h2>
-  
-  
-  But what is a signal?
-</h2>
+<p><strong>Authentication:</strong><br>
+Authentication is the process of confirming the identity of a person or entity. It ensures that the person or entity is who they claim to be before granting access to something. It's like checking someone's ID before allowing them to enter a secure area.<br>
+Imagine a professional cricket match. Before a player can step onto the field, they must prove their identity. They do this by showing their official player card with their name, photo, and a unique ID number. The match officials, like the umpires and team captains, examine the card to ensure it matches the player's appearance and is on the list of authorized players. Once confirmed, the player is authenticated and allowed to participate in the game.</p>
 
-<p>A signal can be seen as a box around a value, and it can alert interested consumers when its value changes.</p>
+<p><strong>Authorization:</strong><br>
+Authorization comes after authentication and determines what actions or resources an authenticated person or entity is allowed to access or perform. It specifies the level of access and control based on roles, permissions, or rules.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jmPZM5-V--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/47c7j94pijfcaxu1rhfv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jmPZM5-V--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/47c7j94pijfcaxu1rhfv.png" alt="Box with value" width="427" height="333"></a></p>
+<p>Once a cricket player is authenticated and on the field, authorization kicks in. Each player has a specific role (e.g., batsman, bowler, fielder) with associated actions they can perform. For example, a bowler is authorized to bowl, a batsman is authorized to bat, and a wicketkeeper is authorized to keep wickets. The coach or captain may have special authorization to make strategic decisions during the match, like changing the batting order or field placements.</p>
 
-<p>It can contain every kind of value, from primitive ones to more complex data structures. The value of a signal is always read using a getter function, which is what allows Angular to track when it has been used.<br><br>
-<strong>Side note:</strong> as a signal contains a value, it must always be initialized, or by default, it will be equal to <code>undefined</code>, which is not ideal.</p>
+<p>lets move on to our config files one by one </p>
 
-<p>A signal can be of one of two categories:</p>
+<p><strong>CORSFilter :</strong> <br>
+CORSFilter class is responsible for handling CORS-related settings in a web application. It intercepts incoming HTTP requests, adds the necessary CORS headers to the response, and then allows the request to continue processing using chain.doFilter(req, res). This filter helps control and secure how resources on the server are accessed by different origins in a web application.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.config;
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+
+public class CORSFilter implements Filter {
+
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+        HttpServletResponse response = (HttpServletResponse) res;
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Authorization, Origin, Accept, Access-Control-Request-Method, Access-Control-Request-Headers");
+        chain.doFilter(req, res);
+    }
+
+    public void init(FilterConfig filterConfig) {}
+
+    public void destroy() {}
+
+}
+</code></pre>
+
+</div>
+
+
+
+<p>This class implements the Filter interface, which is part of the Java Servlet API. Filters are used to perform actions on HTTP requests and responses as they pass through the application.</p>
 
 <ul>
 <li>
-<a href="https://angular.io/guide/signals#computed-signals">Writable</a>, which contains a value that can be directly edited</li>
+doFilter method :-
+This method is required when implementing the Filter interface. It is called for each incoming HTTP request.
+Inside this method, the code is responsible for adding necessary CORS headers to the HTTP response.
+CORS headers are used to control and define the policy for cross-origin requests. They specify who can access the resources of a web page and what operations are permitted from different origins.
+The code in this method sets various CORS headers, such as <code>Access-Control-Allow-Origin</code>, <code>Access-Control-Allow-Methods</code>, and others. These headers dictate which domains are allowed to access the resources, which HTTP methods are permitted, and other CORS-related policies.</li>
+</ul>
+
+<p>The <code>init</code> method is used for initialization tasks that the filter may need when it's first created.</p>
+
+<p>The <code>destroy</code> method is called when the filter is being removed or shut down. </p>
+
+<p><strong>WebSecurityConfig</strong> <br>
+ This class is responsible for configuring security settings, such as authentication, authorization, and request filtering, in a Spring Boot web application. It also integrates custom components, like the JwtAuthenticationFilter, to handle specific security <br>
+requirements. This configuration is a common setup for securing RESTful APIs or web applications using Spring Security.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.annotation.Resource;
+
+@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Resource(name = "userService")
+    private UserDetailsService userDetailsService;
+
+    @Autowired
+    private PasswordEncoder encoder;
+
+    @Autowired
+    private UnauthorizedEntryPoint unauthorizedEntryPoint;
+
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(encoder.encoder());
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.cors().and().csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/users/authenticate", "/users/register").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling().authenticationEntryPoint(unauthorizedEntryPoint).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+    }
+
+    @Override
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Bean
+    public JwtAuthenticationFilter authenticationTokenFilterBean() throws Exception {
+        return new JwtAuthenticationFilter();
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p><code>@Configuration:</code> Indicates that this class contains configuration settings for the application.<br>
+<code>@EnableWebSecurity:</code> Enables Spring Security features for the web application.<br>
+<code>@EnableGlobalMethodSecurity(prePostEnabled = true):</code> Enables method-level security annotations such as <code>@PreAuthorize</code> and <code>@PostAuthorize</code>.</p>
+
+<p><code>@Resource:</code> Injects the <code>UserDetailsService</code> bean, likely responsible for user-related operations.<br>
+<code>@Autowired:</code> Injects instances of <code>PasswordEncoder</code> and <code>UnauthorizedEntryPoint</code> beans, which are used for password hashing and handling unauthorized access, respectively.</p>
+
+<p><code>configure(AuthenticationManagerBuilder auth) Method:</code></p>
+
+<ul>
+<li>This method configures the authentication manager.</li>
+<li>It specifies that the <code>userDetailsService</code> bean should be used for user authentication and sets the password encoder.</li>
+</ul>
+
+<p><code>configure(HttpSecurity http) Method:</code></p>
+
+<ul>
+<li>This method configures the HTTP security settings.</li>
+<li>It includes settings for CORS (Cross-Origin Resource Sharing), CSRF (Cross-Site Request Forgery), and URL permissions.</li>
+<li>It specifies which URLs are accessible without authentication ("/users/authenticate" and "/users/register") and requires authentication for all other requests.</li>
+<li>It sets an authentication entry point for handling unauthorized access and defines the session management policy as STATELESS.</li>
+<li>The addFilterBefore method adds a custom <code>JwtAuthenticationFilter</code> before the <code>UsernamePasswordAuthenticationFilter</code> to handle JWT (JSON Web Token) authentication.</li>
+</ul>
+
+<p><code>authenticationManagerBean() Method:</code></p>
+
+<ul>
+<li>This method declares an AuthenticationManager bean, which is used for user authentication.</li>
+</ul>
+
+<p><code>JwtAuthenticationFilter Bean:</code></p>
+
+<ul>
+<li>This method declares a bean for the JwtAuthenticationFilter, which is a custom filter used for JWT-based authentication.</li>
+</ul>
+
+<p><strong>TokenProvider</strong> <br>
+This class is responsible for handling JWTs in a Spring Boot application's security flow. It can generate tokens, extract user information from tokens, validate tokens, and create authentication tokens for users based on the information stored in the JWTs.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.config;
+
+import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Date;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+@Component
+public class TokenProvider implements Serializable {
+
+    @Value("${jwt.token.validity}")
+    public long TOKEN_VALIDITY;
+
+    @Value("${jwt.signing.key}")
+    public String SIGNING_KEY;
+
+    @Value("${jwt.authorities.key}")
+    public String AUTHORITIES_KEY;
+
+    public String getUsernameFromToken(String token) {
+        return getClaimFromToken(token, Claims::getSubject);
+    }
+
+    public Date getExpirationDateFromToken(String token) {
+        return getClaimFromToken(token, Claims::getExpiration);
+    }
+
+    public &lt;T&gt; T getClaimFromToken(String token, Function&lt;Claims, T&gt; claimsResolver) {
+        final Claims claims = getAllClaimsFromToken(token);
+        return claimsResolver.apply(claims);
+    }
+
+    private Claims getAllClaimsFromToken(String token) {
+        return Jwts.parser()
+                .setSigningKey(SIGNING_KEY)
+                .parseClaimsJws(token)
+                .getBody();
+    }
+
+    private Boolean isTokenExpired(String token) {
+        final Date expiration = getExpirationDateFromToken(token);
+        return expiration.before(new Date());
+    }
+
+    public String generateToken(Authentication authentication) {
+         String authorities = authentication.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.joining(","));
+
+        return Jwts.builder()
+                .setSubject(authentication.getName())
+                .claim(AUTHORITIES_KEY, authorities)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + TOKEN_VALIDITY*1000))
+                .signWith(SignatureAlgorithm.HS256, SIGNING_KEY)
+                .compact();
+    }
+
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        final String username = getUsernameFromToken(token);
+        return (username.equals(userDetails.getUsername()) &amp;&amp; !isTokenExpired(token));
+    }
+
+    UsernamePasswordAuthenticationToken getAuthenticationToken(final String token, final Authentication existingAuth, final UserDetails userDetails) {
+
+        final JwtParser jwtParser = Jwts.parser().setSigningKey(SIGNING_KEY);
+
+        final Jws&lt;Claims&gt; claimsJws = jwtParser.parseClaimsJws(token);
+
+        final Claims claims = claimsJws.getBody();
+
+        final Collection&lt;? extends GrantedAuthority&gt; authorities =
+                Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
+                        .map(SimpleGrantedAuthority::new)
+                        .collect(Collectors.toList());
+
+        return new UsernamePasswordAuthenticationToken(userDetails, "", authorities);
+    }
+
+}
+</code></pre>
+
+</div>
+
+
+
+<p><code>@Component:</code> Marks this class as a Spring component, allowing it to be automatically scanned and registered as a bean in the Spring application context.</p>
+
+<ul>
+<li>getUsernameFromToken(String token): This method extracts the username (subject) from a JWT token.</li>
+<li>getExpirationDateFromToken(String token): Retrieves the expiration date from a JWT token.</li>
+<li>getClaimFromToken(String token, Function claimsResolver): A generic method to extract claims from a JWT token.</li>
+<li>getAllClaimsFromToken(String token): Parses and retrieves all claims (payload) from a JWT token.</li>
+<li>isTokenExpired(String token): Checks whether a JWT token has expired based on its expiration date.</li>
+<li>generateToken(Authentication authentication): Generates a new JWT token based on the provided Authentication object. It includes the subject (username), authorities, issuance time, and expiration time.</li>
+<li>validateToken(String token, UserDetails userDetails): Validates a JWT token against the provided UserDetails. It checks if the token's subject matches the user's username and if the token is not expired.</li>
+<li>getAuthenticationToken(final String token, final Authentication existingAuth, final UserDetails userDetails): This method parses a JWT token to create an Authentication object containing the user's authorities. It's used for authenticating users based on JWT tokens.</li>
+</ul>
+
+<p><strong>JwtAuthenticationFilter</strong> <br>
+JwtAuthenticationFilter is responsible for intercepting incoming requests, extracting JWTs from request headers, and authenticating users based on the tokens. It ensures that authenticated users have their security context set, allowing them to access protected resources within the application.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.config;
+
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.SignatureException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import javax.annotation.Resource;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    @Value("${jwt.header.string}")
+    public String HEADER_STRING;
+
+    @Value("${jwt.token.prefix}")
+    public String TOKEN_PREFIX;
+
+    @Resource(name = "userService")
+    private UserDetailsService userDetailsService;
+
+    @Autowired
+    private TokenProvider jwtTokenUtil;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
+        String header = req.getHeader(HEADER_STRING);
+        String username = null;
+        String authToken = null;
+
+        if (header != null &amp;&amp; header.startsWith(TOKEN_PREFIX)) {
+            authToken = header.replace(TOKEN_PREFIX, "");
+
+            try {
+                username = jwtTokenUtil.getUsernameFromToken(authToken);
+            } catch (IllegalArgumentException e) {
+                logger.error("Error occurred while retrieving Username from Token", e);
+            } catch (ExpiredJwtException e) {
+                logger.warn("The token has expired", e);
+            } catch (SignatureException e) {
+                logger.error("Authentication Failed. Invalid username or password.");
+            }
+        } else {
+            logger.warn("Bearer string not found, ignoring the header");
+        }
+
+        if (username != null &amp;&amp; SecurityContextHolder.getContext().getAuthentication() == null) {
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+            if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+                UsernamePasswordAuthenticationToken authentication = jwtTokenUtil.getAuthenticationToken(authToken, SecurityContextHolder.getContext().getAuthentication(), userDetails);
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(req));
+                logger.info("User authenticated: " + username + ", setting security context");
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+        }
+
+        chain.doFilter(req, res);
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>This class extends <code>OncePerRequestFilter</code>, which ensures that this filter is applied only once per request.</li>
 <li>
-<a href="https://angular.io/guide/signals#writable-signals">Computed</a>, in which the value is derived from other signals; in this case, we can't directly modify the computed value but this type has the added plus that it has a lazy approach. This means that its value will be re-evaluated not when the signals it checks are updated, but when a consumer tries to read the derived computed value, which makes it useful to do complex operations like array filtering.</li>
+<code>doFilterInternal</code> Method:This method is the core of the filter and is called for each incoming HTTP request.</li>
+<li>The method first checks if a JWT is present in the request header and if it starts with the defined token prefix ("Bearer ").</li>
+<li>If a valid token is found, it attempts to extract the username from the token using the TokenProvider class.</li>
+<li>It catches exceptions for various token-related errors, such as token expiration (<code>ExpiredJwtException</code>) and invalid signatures (<code>SignatureException</code>), and logs them.</li>
+<li>If a valid username is obtained from the token and there is no existing authentication context, it loads the user details from the <code>UserDetailsService</code> based on the username.</li>
+<li>It then validates the token against the user details using the <code>TokenProvider</code>. If the token is valid, it creates an <code>UsernamePasswordAuthenticationToken</code> containing the user details and sets the authentication details.</li>
+<li>Finally, it sets the authenticated user's security context using <code>SecurityContextHolder</code>.</li>
+<li>After handling authentication, the filter continues the request processing by invoking <code>chain.doFilter(req, res)</code>.</li>
 </ul>
-<h2>
-  
-  
-  Signals VS observables
-</h2>
 
-<p>By now, the more careful reader would probably start to think <em>"By this explanation, signals seem to be a copy of RxJS observables, as they seem to do the same thing, so are we reinventing the wheel here ?"</em>.<br><br>
-To answer this question we need to open another small parenthesis before continuing, to get a clearer context for the ones among us who don't know what observables are.</p>
-<h3>
-  
-  
-  What is an observable?
-</h3>
-
-<p>An <a href="https://rxjs.dev/guide/observable">observable</a> is a collection of objects which can be observed in time, they are part of alibrary called <a href="https://rxjs.dev/guide/overview">RxJS</a> which is often used in tandem with the Angular framework to manage asynchronous events. Unlike a normal array it does not keep memory of the elements, it just emits them.<br><br>
-To get a silly visual aid: we can imagine an observable as a fast food employee manning the drive-through window: it just knows that it has to deliver bags of objects to consumers as time passes, in an uninterrupted line of customers that go by during the day.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PhU_zSju--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1sqd412rsfu9a1cugtkn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PhU_zSju--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1sqd412rsfu9a1cugtkn.png" alt="Observable as a drive through employee delivering data object to consumer" width="800" height="395"></a></p>
-
-<p>As much as they can work with synchronous data, observables shine in working with asynchronous events (clicking on keyboard keys, mouse clicks, HTTP calls responses) or notifications (a completed or failed process). But they are not perfect, as observables require a manual subscription, and of course a manual un-subscription. Moreover, the data is not readily available but has to be extracted from the emitted values stream first.<br>
-On the other hand, signals don't need a manual subscription, or more precisely, they have an implicit quasi-subscription automatically managed when a consumer starts listening to a signal's value.<br>
-In addition, a signal can be called and read directly, immediately obtaining the value it encapsulates.<br>
-These may seem like minor differences, but for <em>simpler</em> actions signals require much less code and, more importantly, less RxJS experience, which can be extremely powerful but also really difficult for new (and even not-so-new) devs.</p>
-<h2>
-  
-  
-  Are we going to use only signals?
-</h2>
-
-<p>So, the one-million-dollar question is: are signals better than observables?<br>
-Well, it depends.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2DAo6R-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wuwm9yoenydihkj8wpp9.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2DAo6R-_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wuwm9yoenydihkj8wpp9.jpg" alt="It depends written over oranges apples meme" width="746" height="500"></a></p>
-
-<p>If you need to observe (no pun intended) values that change with time, without knowing when they do change, so asynchronously, you will be better off using observables. Instead, if time isn't something you need to keep in the equation, you will need only signals, which are simpler to use.<br>
-Realistically, in the future, we will most likely use signals for most use cases, and only in some particular circumstances we will need all the power of observables.</p>
-
-<p>Having reflected upon these differences, you can see how titles that claim that the end of RxJS in favor of signals is imminent are just click-bait. It's just a matter of knowing when to use the right tool for the right job.<br>
-More so, the RxJS team, seeing the big picture, has already implemented two functions that allow the <a href="https://angular.io/api/core/rxjs-interop">interoperability between signals and observables</a>:<br>
-<code>toObservable()</code>and <code>toSignal()</code>, allowing the management of complex data flux or asynchronous data without having to give up the usage of signals.<br>
-I want to highlight this point, as I think it's one of the key concepts of Angular and its libraries: to always allow retro compatibility, letting new and old functionalities live side-by-side without the risk of breaking anything, which is not to be taken for granted. So let's keep feuds to important matters, like if you can add heavy cream to a carbonara sauce (pro tip: never).</p>
-<h2>
-  
-  
-  Practical examples
-</h2>
-
-<p>Here are some practical examples before and after the usage of signals. They were made by <a href="https://www.youtube.com/@deborah_kurata">Deborah Kurata</a>, an amazing tech content creator. At this <a href="https://github.com/DeborahK/Angular-Signals">GitHub link</a> you will find the GitHub repository in which you can find her complete project.<br>
-These examples are based upon a shopping app, in which we can add items to a cart, and then we can see the total price of the items in the cart. On the left we have the observables version, on the right the signals one. (<strong>Note:</strong> here I will call the signals version "after" and the observables one "before" for simplicity's sake. Also, the code is simplified for the sake of brevity, but the full code is available in the GitHub repo. Last but not least, instead of <em>Observable</em> observables, here are used <em>Subject</em> observables; <a href="https://rxjs.dev/guide/subject">an RxJS Subject is a special type of Observable that allows values to be multicasted to many Observers</a>, so for simplicity's sake I will refer to them just as <em>observables</em>).</p>
-
-<p>Let's start with something simple: the differences in the HTML and TS files of the cart-total component. The differences are not huge, but they are there. Especially in the HTML file, in the <em>before</em> version, we have to use the async pipe to subscribe to the observable, while in the <em>after</em> version we can just call the signal directly; this can make a difference in streamlining the code if we have to use other pipes, as in the case of <code>| number</code>.</p>
-
-<p><code>cart-total.component.html before</code><br>
+<p><strong>BCryptPasswordEncoder</strong><br>
+This bean can be used throughout the application for securely hashing and verifying passwords, especially in the context of user authentication and security. It's a common practice to configure and manage password encoding components like this in Spring applications to enhance <code>security</code>.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;div</span>
-  <span class="na">class=</span><span class="s">"card border-secondary"</span>
-  <span class="na">*ngIf=</span><span class="s">"(cartItems$ | async)?.length; else noItems"</span>
-<span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header text-secondary fw-bold"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-12"</span><span class="nt">&gt;</span>Cart Total<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
+<pre class="highlight plaintext"><code>package com.alpha.config;
 
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Subtotal:<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
-        {{subTotal$ | async | number:'1.2-2'}}
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Delivery:<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span>
-        <span class="na">class=</span><span class="s">"col-md-4"</span>
-        <span class="na">style=</span><span class="s">"text-align:right"</span>
-        <span class="na">*ngIf=</span><span class="s">"deliveryFee$ | async as deliveryFee"</span>
-      <span class="nt">&gt;</span>
-        {{deliveryFee | number:'1.2-2'}}
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span>
-        <span class="na">class=</span><span class="s">"col-md-4"</span>
-        <span class="na">style=</span><span class="s">"text-align:right;color:red"</span>
-        <span class="na">*ngIf=</span><span class="s">"!(deliveryFee$ | async)"</span>
-      <span class="nt">&gt;</span>
-        Free
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Estimated Tax:<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
-        {{tax$ | async | number:'1.2-2'}}
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+@Configuration
+public class PasswordEncoder {
 
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;&lt;b&gt;</span>Total:<span class="nt">&lt;/b&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;b&gt;</span>{{totalPrice$ | async | number:'1.2-2'}}<span class="nt">&lt;/b&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+    @Bean
+    public BCryptPasswordEncoder encoder(){
+        return new BCryptPasswordEncoder();
+    }
+}
 </code></pre>
 
 </div>
 
 
-
-<p><code>cart-total.component.html after</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card border-secondary"</span> <span class="na">*ngIf=</span><span class="s">"cartItems().length; else noItems"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header text-secondary fw-bold"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-12"</span><span class="nt">&gt;</span>Cart Total<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Subtotal:<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
-        {{subTotal() | number:'1.2-2'}}
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Delivery:<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span> <span class="na">*ngIf=</span><span class="s">"deliveryFee()"</span><span class="nt">&gt;</span>
-        {{deliveryFee() | number:'1.2-2'}}
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span>
-        <span class="na">class=</span><span class="s">"col-md-4"</span>
-        <span class="na">style=</span><span class="s">"text-align:right;color:red"</span>
-        <span class="na">*ngIf=</span><span class="s">"!deliveryFee()"</span>
-      <span class="nt">&gt;</span>
-        Free
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>Estimated Tax:<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
-        {{tax() | number:'1.2-2'}}
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;&lt;b&gt;</span>Total:<span class="nt">&lt;/b&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">style=</span><span class="s">"text-align:right"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;b&gt;</span>{{totalPrice() | number:'1.2-2'}}<span class="nt">&lt;/b&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p><code>cart-total.component.ts before</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartTotalComponent</span> <span class="p">{</span>
-  <span class="nx">cartItems$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">cartItems$</span><span class="p">;</span>
-
-  <span class="nx">subTotal$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">;</span>
-
-  <span class="nx">deliveryFee$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">deliveryFee$</span><span class="p">;</span>
-
-  <span class="nx">tax$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">tax$</span><span class="p">;</span>
-
-  <span class="nx">totalPrice$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">totalPrice$</span><span class="p">;</span>
-
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">cartService</span><span class="p">:</span> <span class="nx">CartService</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><code>cart-total.component.ts after</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartTotalComponent</span> <span class="p">{</span>
-  <span class="nx">cartService</span> <span class="o">=</span> <span class="nx">inject</span><span class="p">(</span><span class="nx">CartService</span><span class="p">);</span>
-
-  <span class="nx">cartItems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">;</span>
-
-  <span class="nx">subTotal</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">;</span>
-
-  <span class="nx">deliveryFee</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">deliveryFee</span><span class="p">;</span>
-
-  <span class="nx">tax</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">tax</span><span class="p">;</span>
-
-  <span class="nx">totalPrice</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartService</span><span class="p">.</span><span class="nx">totalPrice</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The most important differences, however, are in the cart service. In the <em>before</em> version, we have to manually subscribe to the observable, and then manually un-subscribe from it, which is not ideal. Especially considering that we will have to do it for <em>all</em> of the observables we use. In the <em>after</em> version, we can just call the signal directly, and it will be automatically managed by Angular.<br>
-Another important difference is that in the <em>before</em> version we have to manually manage the initialization of the observables, while in the <em>after</em> version we can just initialize the signals with the value we want them to have.<br>
-Also, in the <em>before</em> version, if we need to derive a value from other values, we have to use RxJS functions concatenated by .pipe(), which can make the code difficult to read for someone who doesn't know this library very well, while in the <em>after</em> version we can just use the <code>computed()</code> signal type, resulting in a much easier to understand code. We can also see how in the <em>before</em> version we have to use the <code>next()</code> function to update the value of the observable, specifying an action, while in the <em>after</em> version we can just update the value of the signal directly. Lastly, in the <em>after</em> version we don't need the <code>modifyCart()</code> function, as we can just update the value of the signal directly in the function, making following the flow of data more fluid.</p>
-
-<p><code>cart.service.ts before</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartService</span> <span class="p">{</span>
-  <span class="c1">// Add item action</span>
-  <span class="k">private</span> <span class="nx">itemSubject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subject</span><span class="o">&lt;</span><span class="nx">Action</span><span class="o">&lt;</span><span class="nx">CartItem</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-  <span class="nx">itemAction$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">asObservable</span><span class="p">();</span>
-
-  <span class="nx">cartItems$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">itemAction$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
-    <span class="nx">scan</span><span class="p">(</span>
-      <span class="p">(</span><span class="nx">items</span><span class="p">,</span> <span class="nx">itemAction</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">modifyCart</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span> <span class="nx">itemAction</span><span class="p">),</span>
-      <span class="p">[]</span> <span class="k">as</span> <span class="nx">CartItem</span><span class="p">[]</span>
-    <span class="p">),</span>
-    <span class="nx">shareReplay</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-  <span class="p">);</span>
-
-  <span class="c1">// Total up the extended price for each item</span>
-  <span class="nx">subTotal$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartItems$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span>
-    <span class="nx">map</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
-      <span class="nx">items</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">*</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">cost_in_credits</span><span class="p">),</span>
-        <span class="mi">0</span>
-      <span class="p">)</span>
-    <span class="p">)</span>
-  <span class="p">);</span>
-
-  <span class="c1">// Delivery is free if spending more than 100,000 credits</span>
-  <span class="nx">deliveryFee$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">t</span> <span class="o">&lt;</span> <span class="mi">100000</span> <span class="p">?</span> <span class="mi">999</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)));</span>
-
-  <span class="c1">// Tax could be based on shipping address zip code</span>
-  <span class="nx">tax$</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">((</span><span class="nx">t</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span> <span class="mf">10.75</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">));</span>
-
-  <span class="c1">// Total price</span>
-  <span class="nx">totalPrice$</span> <span class="o">=</span> <span class="nx">combineLatest</span><span class="p">([</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">subTotal$</span><span class="p">,</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">deliveryFee$</span><span class="p">,</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">tax$</span><span class="p">,</span>
-  <span class="p">]).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">(([</span><span class="nx">st</span><span class="p">,</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">t</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="nx">st</span> <span class="o">+</span> <span class="nx">d</span> <span class="o">+</span> <span class="nx">t</span><span class="p">));</span>
-
-  <span class="c1">// Add the vehicle to the cart as an Action&lt;CartItem&gt;</span>
-  <span class="nx">addToCart</span><span class="p">(</span><span class="nx">vehicle</span><span class="p">:</span> <span class="nx">Vehicle</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">({</span>
-      <span class="na">item</span><span class="p">:</span> <span class="p">{</span> <span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
-      <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">add</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Remove the item from the cart</span>
-  <span class="nx">removeFromCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">({</span>
-      <span class="na">item</span><span class="p">:</span> <span class="p">{</span> <span class="na">vehicle</span><span class="p">:</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
-      <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">delete</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="nx">updateInCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">itemSubject</span><span class="p">.</span><span class="nx">next</span><span class="p">({</span>
-      <span class="na">item</span><span class="p">:</span> <span class="p">{</span> <span class="na">vehicle</span><span class="p">:</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">,</span> <span class="nx">quantity</span> <span class="p">},</span>
-      <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">update</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Return the updated array of cart items</span>
-  <span class="k">private</span> <span class="nx">modifyCart</span><span class="p">(</span>
-    <span class="nx">items</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">[],</span>
-    <span class="nx">operation</span><span class="p">:</span> <span class="nx">Action</span><span class="o">&lt;</span><span class="nx">CartItem</span><span class="o">&gt;</span>
-  <span class="p">):</span> <span class="nx">CartItem</span><span class="p">[]</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">operation</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">add</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// Determine if the item is already in the cart</span>
-      <span class="kd">const</span> <span class="nx">itemInCart</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
-      <span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">itemInCart</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// If so, update the quantity</span>
-        <span class="nx">itemInCart</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
-          <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">itemInCart</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="p">?</span> <span class="nx">itemInCart</span> <span class="p">:</span> <span class="nx">item</span>
-        <span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[...</span><span class="nx">items</span><span class="p">,</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">];</span>
-      <span class="p">}</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">operation</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">update</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
-        <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
-          <span class="p">?</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span>
-          <span class="p">:</span> <span class="nx">item</span>
-      <span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">operation</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">delete</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">items</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">!==</span> <span class="nx">operation</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="p">[...</span><span class="nx">items</span><span class="p">];</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><code>cart.service.ts after</code><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CartService</span> <span class="p">{</span>
-  <span class="c1">// Manage state with signals</span>
-  <span class="nx">cartItems</span> <span class="o">=</span> <span class="nx">signal</span><span class="o">&lt;</span><span class="nx">CartItem</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([]);</span>
-
-  <span class="c1">// Total up the extended price for each item</span>
-  <span class="nx">subTotal</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">().</span><span class="nx">reduce</span><span class="p">(</span>
-      <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">*</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">cost_in_credits</span><span class="p">),</span>
-      <span class="mi">0</span>
-    <span class="p">)</span>
-  <span class="p">);</span>
-
-  <span class="c1">// Delivery is free if spending more than 100,000 credits</span>
-  <span class="nx">deliveryFee</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">100000</span> <span class="p">?</span> <span class="mi">999</span> <span class="p">:</span> <span class="mi">0</span><span class="p">));</span>
-
-  <span class="c1">// Tax could be based on shipping address zip code</span>
-  <span class="nx">tax</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">()</span> <span class="o">*</span> <span class="mf">10.75</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">);</span>
-
-  <span class="c1">// Total price</span>
-  <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(</span>
-    <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">subTotal</span><span class="p">()</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">deliveryFee</span><span class="p">()</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">tax</span><span class="p">()</span>
-  <span class="p">);</span>
-
-  <span class="c1">// Add the vehicle to the cart</span>
-  <span class="c1">// If the item is already in the cart, increase the quantity</span>
-  <span class="nx">addToCart</span><span class="p">(</span><span class="nx">vehicle</span><span class="p">:</span> <span class="nx">Vehicle</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">().</span><span class="nx">findIndex</span><span class="p">(</span>
-      <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
-    <span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// Not already in the cart, so add with default quantity of 1</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">mutate</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">items</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}));</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// Already in the cart, so increase the quantity by 1</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">mutate</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
-          <span class="p">(</span><span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">vehicle</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">quantity</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">})</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Remove the item from the cart</span>
-  <span class="nx">removeFromCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
-    <span class="c1">// Update the cart with a new array containing</span>
-    <span class="c1">// all but the filtered out deleted item</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">update</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
-      <span class="nx">items</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">!==</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="nx">updateInCart</span><span class="p">(</span><span class="nx">cartItem</span><span class="p">:</span> <span class="nx">CartItem</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Update the cart with a new array containing</span>
-    <span class="c1">// the updated item and all other original items</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">cartItems</span><span class="p">.</span><span class="nx">update</span><span class="p">((</span><span class="nx">items</span><span class="p">)</span> <span class="o">=&gt;</span>
-      <span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
-        <span class="nx">item</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">name</span>
-          <span class="p">?</span> <span class="p">{</span> <span class="na">vehicle</span><span class="p">:</span> <span class="nx">cartItem</span><span class="p">.</span><span class="nx">vehicle</span><span class="p">,</span> <span class="nx">quantity</span> <span class="p">}</span>
-          <span class="p">:</span> <span class="nx">item</span>
-      <span class="p">)</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Now that we can see the big picture we can reflect on the initial users' requests made to the Angular team and it will be clear that they have been heard and answered.<br><br>
-Thanks to signals we will have more simplicity in usage to track values for changes in the apps, especially for those who are beginning to work with the framework, greatly reducing boilerplate code.<br>
-They will give the apps more <strong>reactivity</strong>, giving a <strong>boost to performances</strong> more than even the zone.js + onPush strategy could, without losing any functionality. They will allow much <strong>finer control</strong> over single components and the value changes inside them, automatically managing the subscription/un-subscription part.<br><br>
-But, as we have seen, signals will not replace observables completely, they will instead co-exist with them in harmony.<br><br>
-Let's make <del>love</del> code, not war.</p>
-
- </details> 
- <hr /> 
-
- #### - [Mastering Version Control: Best Practices with Git for Development Teams](https://dev.to/sajeeb_me/mastering-version-control-best-practices-with-git-for-development-teams-1meo) 
- <details><summary>Article</summary> <p>Version control is the backbone of effective software development, and Git stands at the forefront as the go-to tool for managing source code. In this article, we will explore best practices for mastering Git in your development team, focusing on clarity, comprehensibility, and efficiency.</p>
-
-<h2>
-  
-  
-  Why Version Control Matters
-</h2>
-
-<p>Before diving into Git best practices, it's important to understand why version control is so crucial for development teams. Version control systems (VCS) like Git offer several benefits:</p>
-
-<ol>
-<li><p><strong>Collaboration</strong>: Multiple developers can work on the same codebase simultaneously without conflicts. Changes can be merged systematically.</p></li>
-<li><p><strong>History and Accountability</strong>: Every change made to the codebase is tracked, providing a historical record of who made each change and when. This helps trace and resolve issues.</p></li>
-<li><p><strong>Backup and Recovery</strong>: Your codebase is stored in a centralized repository, providing a backup of your work. You can recover previous states of the code easily.</p></li>
-<li><p><strong>Branching</strong>: Developers can create branches to work on features or bug fixes independently. This isolates changes until they are ready to be merged.</p></li>
-</ol>
-
-<p>Now, let's explore some best practices for using Git effectively in development teams.</p>
-
-<h2>
-  
-  
-  Best Practices for Git Usage
-</h2>
-
-<h3>
-  
-  
-  1. <strong>Clear and Concise Commit Messages</strong>
-</h3>
-
-<p>Your Git history is essentially a story of your code's evolution. To ensure this story is comprehensible, write clear and concise commit messages:</p>
 
 <ul>
-<li><p>Use descriptive commit messages that accurately portray the changes made.</p></li>
-<li><p>Employ the imperative mood in your commit messages (e.g., "Add feature" instead of "Added feature").</p></li>
-<li><p>Keep commits small and focused on a single change. This improves code review and makes it easier to pinpoint issues if they arise.</p></li>
+<li>
+<code>BCryptPasswordEncoder</code> is a popular password hashing library in the Spring Security framework. It's used to securely hash and verify passwords.</li>
+<li>In this configuration, the <code>BCryptPasswordEncoder</code> bean is created and returned by the <code>encoder()</code> method. This bean can then be injected into other parts of the application, such as Spring Security configurations, to handle password encoding and decoding.</li>
 </ul>
 
-<h3>
-  
-  
-  2. <strong>Commit Early and Often</strong>
-</h3>
+<p><strong>UnauthorizedEntryPoint</strong><br>
+UnauthorizedEntryPoint class is responsible for handling unauthorized access to protected resources in a Spring Security-enabled application. When an unauthenticated user attempts to access a protected resource, this class sends an HTTP response with a status code of 401, indicating that the request lacks valid authentication. This response informs the client that they need to provide proper authentication credentials to access the resource.<br>
+</p>
 
-<p>Committing frequently is a fundamental practice in Git. It allows you to monitor code changes over time and simplifies the process of reverting changes when necessary. Consider these points:</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.config;
+
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.Serializable;
+
+
+@Component
+public class UnauthorizedEntryPoint implements AuthenticationEntryPoint, Serializable {
+
+    @Override
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException {
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthenticated");
+    }
+
+}
+</code></pre>
+
+</div>
+
+
+
+<p>This class implements the <code>AuthenticationEntryPoint</code> interface, which is part of Spring Security. The <code>AuthenticationEntryPoint</code> interface is responsible for handling authentication-related exceptions, particularly unauthorized access.</p>
 
 <ul>
-<li><p>Commit as soon as you complete a task or resolve a bug. This provides a granular history of your work.</p></li>
-<li><p>Attach descriptive commit messages to each commit to facilitate understanding.</p></li>
+<li>The <code>commence</code> method is the main method of this class, and it's called when an authentication exception occurs during an HTTP request.</li>
+<li>
+<p>It takes three parameters:</p>
+
+<p>1.<code>HttpServletRequest request</code>: Represents the incoming HTTP <br>
+   request.<br>
+ 2.<code>HttpServletResponse response</code>: Represents the HTTP response <br>
+   that will be sent back to the client.<br>
+ 3.<code>AuthenticationException authException</code>: Represents the <br>
+   authentication exception that occurred, typically due to <br>
+   unauthorized access.</p>
+</li>
+<li><p>In this method, it sends an HTTP response with a status code of <code>401 Unauthorized</code> and a message of "Unauthenticated." This is a standard response for indicating that the request lacks valid authentication credentials or authorization.</p></li>
 </ul>
 
-<h3>
-  
-  
-  3. <strong>Avoid Committing Half-Done Work</strong>
-</h3>
+<p>okay lets start with our model classes</p>
 
-<p>Only commit code that is complete and tested. Committing incomplete work can lead to confusion and hinder collaboration. Here's how to avoid this pitfall:</p>
+<p><strong>User</strong><br>
+The User class represents a user entity with attributes like username, password, email, phone, name, and roles. It also defines a many-to-many relationship with the Role entity, allowing users to have multiple roles.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.util.Set;
+
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
+
+    @Column
+    private String username;
+
+    @Column
+    @JsonIgnore
+    private String password;
+
+    @Column
+    private String email;
+
+    @Column
+    private String phone;
+
+    @Column
+    private String name;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "USER_ROLES",
+            joinColumns = {
+            @JoinColumn(name = "USER_ID")
+            },
+            inverseJoinColumns = {
+            @JoinColumn(name = "ROLE_ID") })
+    private Set&lt;Role&gt; roles;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set&lt;Role&gt; getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set&lt;Role&gt; roles) {
+        this.roles = roles;
+    }
+}
+</code></pre>
+
+</div>
+
+
 
 <ul>
-<li><p>Utilize branches to isolate incomplete changes, keeping the main branch clean.</p></li>
-<li><p>Employ feature flags to hide unfinished features from end-users.</p></li>
-<li><p>Enforce code reviews to ensure that code is complete and adequately tested before merging.</p></li>
+<li>This defines a <code>many-to-many</code> relationship between the User entity and the Role entity. Users can have multiple roles, and roles can be associated with multiple users.</li>
+<li>The <code>@ManyToMany</code> annotation indicates a many-to-many relationship.</li>
+<li>The <code>fetch = FetchType.EAGER</code> attribute specifies that roles should be eagerly fetched when loading a user.</li>
+<li>The <code>cascade = CascadeType.ALL</code> attribute specifies that if operations like persist, merge, remove, etc., are performed on a User <code>entity</code>, the same operations should be cascaded to its associated Role entities.</li>
+<li>The <code>@JoinTable</code> annotation is used to define the name of the join table that holds the relationship between users and roles. It specifies the columns used for joining the tables.</li>
 </ul>
 
-<h3>
-  
-  
-  4. <strong>Test Before Committing</strong>
-</h3>
+<p><strong>Role</strong><br>
+the Role class represents a user role entity with attributes like name and description. It is designed to be persisted in a database table and can be associated with users through a many-to-many relationship, as indicated by the User entity's relationship mapping that references Role.<br>
+</p>
 
-<p>Testing your code before committing is vital for maintaining a stable and functional codebase:</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.model;
 
-<ul>
-<li><p>Write automated tests for your code to ensure its correctness and reliability.</p></li>
-<li><p>Execute these tests before committing your changes to prevent introducing regressions.</p></li>
-<li><p>Implement continuous integration (CI) to automate test execution with every commit, ensuring code quality.</p></li>
-</ul>
+import javax.persistence.*;
 
-<h3>
-  
-  
-  5. <strong>Documentation Matters</strong>
-</h3>
+@Entity
+public class Role {
 
-<p>Clear and concise documentation enhances the overall understanding of your project. Incorporate these practices into your workflow:</p>
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
 
-<ul>
-<li><p>Write comprehensive README files explaining the project's purpose, installation, and usage.</p></li>
-<li><p>Document your Git workflow and best practices to maintain consistency within your team.</p></li>
-</ul>
+    @Column
+    private String name;
 
-<h2>
-  
-  
-  Conclusion
-</h2>
+    @Column
+    private String description;
 
-<p>Git is an indispensable tool for development teams worldwide. By adhering to these best practices, your team can harness Git's power to maintain a clear and comprehensible Git history. Committing early and often, testing before committing, writing meaningful commit messages, and avoiding half-done work are just a few of the best practices that will help you get the most out of Git.</p>
+    // Getter for id
+    public long getId() {
+        return id;
+    }
 
-<blockquote>
-<p>Mastering Git is a journey that pays off in terms of code quality, collaboration, and the ability to effectively manage your codebase over time. So, commit to these best practices, and your team will reap the benefits of a well-structured version control system.</p>
-</blockquote>
+    // Setter for id
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter for description
+    public String getDescription() {
+        return description;
+    }
+
+    // Setter for description
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>the Role class represents a user role entity with attributes like name and description. It is designed to be persisted in a database table and can be associated with users through a many-to-many relationship, as indicated by the User entity's relationship mapping that references Role.</p>
+
+<p><strong>AuthToken</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.model;
+
+/**
+ * Represents an authentication token.
+ */
+public class AuthToken {
+    private String token;
+
+    /**
+     * Constructs a new AuthToken object.
+     */
+    public AuthToken() {
+    }
+
+    /**
+     * Constructs a new AuthToken object with the specified token.
+     * 
+     * @param token the authentication token
+     */
+    public AuthToken(String token) {
+        this.token = token;
+    }
+
+    /**
+     * Returns the authentication token.
+     * 
+     * @return the authentication token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * Sets the authentication token.
+     * 
+     * @param token the authentication token to be set
+     */
+    public void setToken(String token) {
+        this.token = token;
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p><strong>LoginUser</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.model;
+
+public class LoginUser {
+    private String username;
+    private String password;
+
+    // Getters and Setters for username
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    // Getters and Setters for password
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p><strong>UserDto</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.model;
+
+public class UserDto {
+
+    private String username;
+    private String password;
+    private String email;
+    private String phone;
+    private String name;
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public User getUserFromDto(){
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setEmail(email);
+        user.setPhone(phone);
+        user.setName(name);
+
+        return user;
+    }
+
+}
+</code></pre>
+
+</div>
+
+
+
+<p><code>DAO</code> is a Spring Data JPA repository interface typically used for performing CRUD (Create, Read, Update, Delete) operations on the  entity class. Let's break down its key components:</p>
+
+<p><strong>UserDao</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.dao;
+
+import com.alpha.model.User;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserDao extends CrudRepository&lt;User, Long&gt; {
+    User findByUsername(String username);
+}
+</code></pre>
+
+</div>
+
+
+
+<p><strong>RoleDao</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.dao;
+
+import com.alpha.model.Role;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RoleDao extends CrudRepository&lt;Role, Long&gt; {
+    Role findRoleByName(String name);
+}
+</code></pre>
+
+</div>
+
+
+
+<p>You can use <code>JPARepository</code> also.</p>
+
+<p><strong>Service Layer</strong></p>
+
+<p>We will now proceed to define service interfaces for our User and Role services. These service interfaces will serve as blueprints for the actual service implementations and will encapsulate the core business logic.</p>
+
+<p>As a best practice, using interfaces for service definitions promotes separation of concerns and allows for easy switching of implementations, such as when using mocking frameworks for testing.<br>
+<code>RoleService</code><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.service;
+
+// Importing the Role model
+import com.alpha.model.Role;
+
+// Declaring the RoleService interface
+public interface RoleService {
+    // Method to find a Role by its name
+    Role findByName(String name);
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>UserService</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.service;
+
+import com.alpha.model.User;
+import com.alpha.model.UserDto;
+
+import java.util.List;
+
+public interface UserService {
+
+    // Saves a user
+    User save(UserDto user);
+
+    // Retrieves all users
+    List&lt;User&gt; findAll();
+
+    // Retrieves a user by username
+    User findOne(String username);
+
+    User createEmployee(UserDto user);
+
+}
+</code></pre>
+
+</div>
+
+
+
+<p>Now we will implement our service logic <br>
+<strong>RoleServiceImpl</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.service.impl;
+
+import com.alpha.dao.RoleDao;
+import com.alpha.model.Role;
+import com.alpha.service.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service(value = "roleService")
+public class RoleServiceImpl implements RoleService {
+
+    @Autowired
+    private RoleDao roleDao;
+
+    @Override
+    public Role findByName(String name) {
+        // Find role by name using the roleDao
+        Role role = roleDao.findRoleByName(name);
+        return role;
+    }
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>UserServiceImpl</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.service.impl;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import com.alpha.dao.UserDao;
+import com.alpha.model.Role;
+import com.alpha.model.User;
+import com.alpha.model.UserDto;
+import com.alpha.service.RoleService;
+import com.alpha.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service(value = "userService")
+public class UserServiceImpl implements UserDetailsService, UserService {
+
+    @Autowired
+    private RoleService roleService;
+
+    @Autowired
+    private UserDao userDao;
+
+    @Autowired
+    private BCryptPasswordEncoder bcryptEncoder;
+
+    // Load user by username
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userDao.findByUsername(username);
+        if(user == null){
+            throw new UsernameNotFoundException("Invalid username or password.");
+        }
+        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthority(user));
+    }
+
+    // Get user authorities
+    private Set&lt;SimpleGrantedAuthority&gt; getAuthority(User user) {
+        Set&lt;SimpleGrantedAuthority&gt; authorities = new HashSet&lt;&gt;();
+        user.getRoles().forEach(role -&gt; {
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
+        });
+        return authorities;
+    }
+
+    // Find all users
+    public List&lt;User&gt; findAll() {
+        List&lt;User&gt; list = new ArrayList&lt;&gt;();
+        userDao.findAll().iterator().forEachRemaining(list::add);
+        return list;
+    }
+
+    // Find user by username
+    @Override
+    public User findOne(String username) {
+        return userDao.findByUsername(username);
+    }
+
+    // Save user
+    @Override
+    public User save(UserDto user) {
+
+        User nUser = user.getUserFromDto();
+        nUser.setPassword(bcryptEncoder.encode(user.getPassword()));
+
+        // Set default role as USER
+        Role role = roleService.findByName("USER");
+        Set&lt;Role&gt; roleSet = new HashSet&lt;&gt;();
+        roleSet.add(role);
+
+        // If email domain is admin.edu, add ADMIN role
+        if(nUser.getEmail().split("@")[1].equals("admin.edu")){
+            role = roleService.findByName("ADMIN");
+            roleSet.add(role);
+        }
+
+        nUser.setRoles(roleSet);
+        return userDao.save(nUser);
+    }
+
+    @Override
+    public User createEmployee(UserDto user) {
+        User nUser = user.getUserFromDto();
+        nUser.setPassword(bcryptEncoder.encode(user.getPassword()));
+
+        Role employeeRole = roleService.findByName("EMPLOYEE");
+        Role customerRole = roleService.findByName("USER");
+
+        Set&lt;Role&gt; roleSet = new HashSet&lt;&gt;();
+        if (employeeRole != null) {
+            roleSet.add(employeeRole);
+        }
+        if (customerRole != null) {
+            roleSet.add(customerRole);
+        }
+
+        nUser.setRoles(roleSet);
+        return userDao.save(nUser);
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>lets create our controller class</p>
+
+<p>The initial step for a user is to complete the registration process. At a minimum, users are required to provide a username and password. By invoking the service method to save the user, this essential step is completed.</p>
+
+<p>To access the application's APIs securely, users must include a server-generated JWT (JSON Web Token). All the necessary groundwork for this has been laid out in our <code>TokenProvider</code>. We utilize the <code>generateToken</code> method and include the resulting token in the response, ensuring secure access to the APIs.<br>
+<strong>UserController</strong><br>
+<code>UserController</code> class handles user-related HTTP requests, including registration and authentication. It also demonstrates role-based access control for specific resources. The actual business logic for user operations is delegated to the UserService and <code>TokenProvider</code> components.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>package com.alpha.controller;
+
+import com.alpha.config.TokenProvider;
+import com.alpha.model.AuthToken;
+import com.alpha.model.LoginUser;
+import com.alpha.model.User;
+import com.alpha.model.UserDto;
+import com.alpha.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private TokenProvider jwtTokenUtil;
+
+    @Autowired
+    private UserService userService;
+
+    /**
+     * Generates a token for the given user credentials.
+     *
+     * @param loginUser The user's login credentials.
+     * @return A response entity containing the generated token.
+     * @throws AuthenticationException if authentication fails.
+     */
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    public ResponseEntity&lt;?&gt; generateToken(@RequestBody LoginUser loginUser) throws AuthenticationException {
+        final Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        loginUser.getUsername(),
+                        loginUser.getPassword()
+                )
+        );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        final String token = jwtTokenUtil.generateToken(authentication);
+        return ResponseEntity.ok(new AuthToken(token));
+    }
+
+    /**
+     * Saves a new user.
+     *
+     * @param user The user to be saved.
+     * @return The saved user.
+     */
+    @RequestMapping(value="/register", method = RequestMethod.POST)
+    public User saveUser(@RequestBody UserDto user){
+        return userService.save(user);
+    }
+
+    /**
+     * Returns a message that can only be accessed by users with the 'ADMIN' role.
+     *
+     * @return A message that can only be accessed by admins.
+     */
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(value="/adminping", method = RequestMethod.GET)
+    public String adminPing(){
+        return "Only Admins Can Read This";
+    }
+
+    /**
+     * Returns a message that can be accessed by any user.
+     *
+     * @return A message that can be accessed by any user.
+     */
+    @PreAuthorize("hasRole('USER')")
+    @RequestMapping(value="/userping", method = RequestMethod.GET)
+    public String userPing(){
+        return "Any User Can Read This";
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(value="/create/employee", method = RequestMethod.POST)
+    public User createEmployee(@RequestBody UserDto user){
+        return userService.createEmployee(user);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(value="/find/all", method = RequestMethod.GET)
+    public List&lt;User&gt; getAllList(){
+        return userService.findAll();
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(value="/find/by/username", method = RequestMethod.GET)
+    public User getAllList(@RequestParam String username){
+        return userService.findOne(username);
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>These methods demonstrate role-based access control using Spring Security's <code>@PreAuthorize</code> annotation. <code>adminPing</code> can be accessed only by users with the 'ADMIN' role, while <code>userPing</code> can be accessed by users with the 'USER' role.</p>
+
+<p>Before testing your apis you need to add some roles into your db<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>INSERT INTO role (id, description, name) VALUES (1, 'Admin role', 'ADMIN');
+INSERT INTO role (id, description, name) VALUES (2, 'Employee role', 'EMPLOYEE');
+INSERT INTO role (id, description, name) VALUES (3, 'User role', 'USER');
+</code></pre>
+
+</div>
+
+
+
+<p>Finally you can test your apis in postman<br>
+I have created collection for <a href="https://blue-flare-124005.postman.co/workspace/Spring-learning~a70a9e71-4aaf-4e10-aef0-f5ad15d16832/collection/27657088-4734fb4b-4e9c-44e7-a9dd-7985677b43c5?action=share&amp;creator=27657088">postman</a></p>
+
+<p>Here is the whole code is in my <a href="https://github.com/alphaaman/Spring-RBAC-Using-JWT">github</a></p>
+
+<p>If you find any doubt feel free to contact me on  <a href="https://www.instagram.com/_alpha_golf/?hl=en">Instagram</a><br>
+Thanks for reading !<br>
+Happy Coding !</p>
 
  </details> 
  <hr /> 
