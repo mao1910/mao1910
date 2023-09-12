@@ -118,6 +118,609 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Creating a Dockerfile for your Go Backend](https://dev.to/sadeedpv/creating-a-dockerfile-for-your-go-backend-20n5) 
+ <details><summary>Article</summary> <p>This is a step-by-step comprehensive guide on how to create a docker image for your Go backend for absolute beginners. In this article, you will learn to build Docker image from scratch, and deploy and run your Go application.</p>
+
+<h3>
+  
+  
+  PREQUISITES
+</h3>
+
+<ul>
+<li>Install Go version <code>1.21.0</code> or later. Visit the <a href="https://go.dev/dl/">Download Page for Go</a> to install the toolchain.</li>
+<li>Basic understanding of Golang fundamentals.</li>
+<li>Docker running locally, Install Docker from <a href="https://docs.docker.com/desktop/">here</a>.</li>
+<li>An IDE/Text-editor and a command-line terminal application.</li>
+</ul>
+
+<h2>
+  
+  
+  Creating a Go Backend
+</h2>
+
+<p>In this tutorial, I will be using the <code>Echo</code> framework to build the backend. You can learn more about <code>Echo</code> <a href="https://echo.labstack.com/">here</a>.</p>
+
+<blockquote>
+<p>Feel free to create your own backend with/without frameworks.</p>
+</blockquote>
+
+<p>Here is an example <code>main.go</code> file:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"net/http"</span>
+    <span class="s">"os"</span>
+
+    <span class="s">"github.com/labstack/echo/v4"</span>
+    <span class="s">"github.com/labstack/echo/v4/middleware"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">e</span> <span class="o">:=</span> <span class="n">echo</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
+
+    <span class="c">// Middleware</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Use</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">Logger</span><span class="p">())</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Use</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">Recover</span><span class="p">())</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="n">echo</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span><span class="p">,</span> <span class="s">"Hello, World!"</span><span class="p">)</span>
+    <span class="p">})</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s">"/health"</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="n">echo</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span><span class="p">,</span> <span class="s">"Health is OK!!"</span><span class="p">)</span>
+    <span class="p">})</span>
+
+    <span class="n">httpPort</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"PORT"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">httpPort</span> <span class="o">==</span> <span class="s">""</span> <span class="p">{</span>
+        <span class="n">httpPort</span> <span class="o">=</span> <span class="s">"8080"</span>
+    <span class="p">}</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">Fatal</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="s">":"</span> <span class="o">+</span> <span class="n">httpPort</span><span class="p">))</span>
+<span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>As you can see, we have two endpoints,</p>
+
+<ul>
+<li>
+<code>/</code> which returns <code>Hello, World!</code>
+</li>
+<li>
+<code>/health</code> which return <code>Health is OK!!</code>
+</li>
+</ul>
+
+<blockquote>
+<p>Don't forget to add <code>PORT</code> in you <code>.env</code> file:<br>
+</p>
+</blockquote>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>PORT=8000
+</code></pre>
+
+</div>
+
+
+
+<p>You should also initialize new module in current directory using the command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>go mod init &lt;your-module-package&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>To add the dependencies mentioned in the <code>main.go</code> file, use the command<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>go mod tidy
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Testing your application
+</h2>
+
+<p>Let’s start our application and make sure it’s running properly.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>go run main.go
+</code></pre>
+
+</div>
+
+
+
+<p>Let's try out our application:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>curl http://localhost:8080/
+<span class="nv">$ </span>curl http://localhost:8080/health
+</code></pre>
+
+</div>
+
+
+
+<p>You should get the following output:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Hello, World!
+Health is OK!!
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Creating the Dockerfile
+</h2>
+
+<p>Here is the full Dockerfile with the explanation<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># syntax=docker/dockerfile:1
+
+FROM golang:1.21.0
+
+# Set destination for COPY
+WORKDIR /app
+
+# Download Go modules
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the source code. Note the slash at the end, as explained in
+# https://docs.docker.com/engine/reference/builder/#copy
+COPY *.go ./
+
+# Build
+RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
+
+# Optional:
+# To bind to a TCP port, runtime parameters must be supplied to the docker command.
+# But we can document in the Dockerfile what ports
+# the application is going to listen on by default.
+# https://docs.docker.com/engine/reference/builder/#expose
+EXPOSE 8080
+
+# Run
+CMD ["/docker-gs-ping"]
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Building the Docker image
+</h2>
+
+<p>After you've created the Dockerfile, now it's time to build a docker image from it with the <code>build</code> command. </p>
+
+<p>The build command optionally takes a <code>--tag</code> flag. This flag is used to label the image with a string value, which is easy for humans to read and recognize. If you do not pass a <code>--tag</code>, Docker will use <code>latest</code> as the default value.</p>
+
+<p>Let's build our docker image!!<br>
+Run the following command from the root directory<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>docker build --tag echo .
+</code></pre>
+
+</div>
+
+
+
+<p>And Voila!! We built a docker image for our backend.<br>
+To list the images, use <code>docker image ls</code> command or <code>docker images</code> command.</p>
+<h2>
+  
+  
+  Run the docker image
+</h2>
+
+<p>In order to run the docker image, we can use the <code>docker run</code> command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>docker run &lt;image-name&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>In my case, the command will look something like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>docker run echo
+</code></pre>
+
+</div>
+
+
+
+<p>And Voila!! We got our server up and running; but wait, if you try to access one of your endpoints now, it will give you the following error:</p>
+
+<blockquote>
+<p>Failed to connect to localhost port 8080: Connection refused</p>
+</blockquote>
+
+<p>So, we have to expose port 8080 to port 8080 on the host. To do that, all you have to do is:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>docker run -p 8080:8080 echo
+</code></pre>
+
+</div>
+
+
+
+<p>Now let’s rerun the curl command<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>$ curl http://localhost:8080/
+Hello, World!
+</code></pre>
+
+</div>
+
+
+
+<p>Success! We were able to connect to the application running inside of our container on port 8080. Press <strong>Ctrl + C</strong> to stop the container.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Data fetching in Next.js with getServerSideProps and getStaticProps](https://dev.to/logrocket/data-fetching-in-nextjs-with-getserversideprops-and-getstaticprops-4pcl) 
+ <details><summary>Article</summary> <p><strong>Written by <a href="https://blog.logrocket.com/author/yeluwande/">Yomi Eluwande</a>✏️</strong></p>
+
+<p>In Next.js, data fetching methods play a crucial role in enabling server-side rendering (SSR), static site generation (SSG), and client-side data fetching for your React components. These methods allow you to fetch data from various sources (e.g., APIs, databases, external services) and use that data to pre-render pages or hydrate them on the client side. </p>
+
+<p>In this article, we’ll explore the <code>getInitialProps</code>, <code>getServerSideProps</code>, and <code>getStaticProps</code> data fetching methods. We’ll take a look at the role <code>getInitialProps</code> played in previous versions of Next.js and the transition to newer and better data fetching methods. </p>
+
+<p><em>Jump ahead</em>:</p>
+
+<ul>
+<li>  Understanding <code>getInitialProps</code>
+</li>
+<li>  Transitioning to <code>getServerSideProps</code> and <code>getStaticProps</code>
+</li>
+<li>  A deep dive into the <code>getServerSideProps</code> lifecycle
+</li>
+<li>  The role of <code>getInitialProps</code> in Next.js 13
+</li>
+<li>  Optimizing <code>getServerSideProps</code> for performance in Next.js 13
+</li>
+<li>  Migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code>
+</li>
+</ul>
+
+<h2>
+  
+  
+  Understanding <code>getInitialProps</code> <a>
+</a>
+</h2>
+
+<p><code>getInitialProps</code> is a method used in older versions of Next.js (versions prior to 9.3) to fetch data on the server side before rendering a page. It was the primary data fetching method used in Next.js before newer data fetching methods like <a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props"><code>getServerSideProps</code></a> and <a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props"><code>getStaticProps</code></a> were introduced. </p>
+
+<p>In older versions of Next.js, <code>getInitialProps</code> was the primary data fetching mechanism for both SSR and client-side rendering. It allowed developers to perform custom data fetching logic for each page and pass the fetched data as props to the page component:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// In older versions of Next.js, you would define getInitialProps like this:</span>
+
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Render the list of posts</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Latest</span> <span class="nx">Blog</span> <span class="nx">Posts</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="p">))}</span>
+      <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">HomePage</span><span class="p">.</span><span class="nx">getInitialProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Fetch data from an API</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="c1">// Return the data as props</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">HomePage</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In this example, the <code>getInitialProps</code> method fetches the list of blog posts from the API server-side. When a user visits the homepage, the server will pre-render the page with the fetched data and serve it as a complete HTML page. This approach helps with SEO, improves initial page load times, and ensures that the page has the necessary data before being served to the client.</p>
+
+<h2>
+  
+  
+  Transitioning to <code>getServerSideProps</code> and <code>getStaticProps</code> <a>
+</a>
+</h2>
+
+<p>The transition from <code>getInitialProps</code> to <code>getServerSideProps</code> and <code>getStaticProps</code> in Next.js represented a significant improvement in data fetching and rendering strategies. This change was introduced to simplify data fetching, enhance performance, and provide better predictability in terms of when and where data is fetched. </p>
+
+<p>Let’s start by looking at what the <code>getServerSideProps</code> and <code>getStaticProps</code> lifecycles are useful for, and how they each mark pages for rendering. </p>
+
+<p><code>getServerSideProps</code> is a data fetching method that was introduced in Next.js 9.3. It is used specifically for server-side rendering (SSR). Unlike <code>getInitialProps</code>, <code>getServerSideProps</code> is only executed on the server side during the initial page request and not on subsequent client-side navigations. This change improves performance by reducing duplicate data fetching and provides better predictability of server-side data fetching. </p>
+
+<p><code>getStaticProps</code> is another data fetching method that was introduced in Next.js 9.3, and it is used for static site generation (SSG). When using <code>getStaticProps</code>, Next.js pre-renders the page at build time and fetches the data during the build process. The pre-rendered HTML pages are then served to users directly from the CDN, offering faster page loads and reducing server load. </p>
+
+<p>These new data fetching methods ensured better performance by reducing unnecessary data fetching and improving the performance of your Next.js application by fetching data more intelligently. With <code>getServerSideProps</code>, you know that data is fetched only during the initial server-side request, making it easier to understand when and where data is retrieved, and with <code>getStaticProps</code>, the data will only be fetched at build time. </p>
+
+<p>With the introduction of <code>getStaticProps</code> and <code>getServerSideProps</code>, Next.js users now have two different data fetching methods that are used to mark pages for rendering either at build time or upon each request respectively. </p>
+
+<p>When a user requests a page that uses <code>getServerSideProps</code>, the server will execute this function, fetch the data, and pass it as props to the page component. The page is then rendered on the server with the fetched data and sent to the client as a complete HTML page. This approach is known as <a href="https://blog.logrocket.com/improve-app-performance-react-server-side-rendering/">server-side rendering</a> (SSR), and it ensures that the page always has the most up-to-date data when accessed by users. </p>
+
+<p>With <code>getStaticProps</code>, you get the option to pre-render pages at build time, generating static HTML files with the fetched data. When you use <code>getStaticProps</code>, Next.js runs the function during the build process (not on each request) and fetches the data needed for the page. The fetched data is then used to pre-render the page into a static HTML file, which is saved in the build output directory (e.g., the <code>build</code> folder). </p>
+
+<p>Now, when a user visits a page that was pre-rendered with <code>getStaticProps</code>, Next.js serves the static HTML page directly from a CDN, improving page load times and reducing server load. This approach is called popularly known as <a href="https://blog.logrocket.com/using-static-site-generation-modern-react-frameworks/">static site generation</a> (SSG), and it is ideal for pages with content that doesn't change frequently.</p>
+
+<h2>
+  
+  
+  A deep dive into the <code>getServerSideProps</code> lifecycle <a>
+</a>
+</h2>
+
+<p>As mentioned above, the <code>getServerSideProps</code> lifecycle is used to fetch data on the server side and pre-render the page with the fetched data before sending it to the client. Unlike <code>getStaticProps</code>, <code>getServerSideProps</code> executes on each request, making it suitable for pages that require dynamic data or data that changes frequently. </p>
+
+<p>The <code>getServerSideProps</code> function takes a context object as a parameter that contains page data such as <code>params</code>, <code>res</code>, <code>req</code>, <code>query</code>, etc. Here's a breakdown of how the <code>getServerSideProps</code> lifecycle works:</p>
+
+<ol>
+<li> When a user requests a page that uses <code>getServerSideProps</code>, the server-side code is executed first</li>
+<li> The <code>getServerSideProps</code> function is called, and it fetches the necessary data from external APIs, databases, or other sources</li>
+<li> The fetched data is then passed as props to the page component</li>
+<li> The page is pre-rendered on the server with the fetched data and sent as a complete HTML page to the client</li>
+<li> The client-side JavaScript takes over once the page is loaded, and any subsequent interactions are handled on the client side</li>
+</ol>
+
+<p>When compared to the <code>getInitialProps</code> lifecycle, <code>getServerSideProps</code> is much cleaner and more predictable in terms of fetching data, especially when it comes to context switching between server operations and client operations. </p>
+
+<p>With <code>getInitialProps</code>, operations were being executed on both the server and client side, which sometimes led to duplicate data fetching during client-side navigation. But with <code>getServerSideProps</code>, there was a clear understanding that data fetching logic in the <code>getServerSideProps</code> lifecycle would be executed only on the server side during the initial request, eliminating the duplicate data fetching that might occur with <code>getInitialProps</code>. </p>
+
+<p><strong>Example use cases for <code>getServerSideProps</code>:</strong></p>
+
+<ul>
+<li>  <strong>Real-time data</strong>: If your page requires real-time data that changes frequently (e.g., live chat messages, real-time analytics), you can use <code>getServerSideProps</code> to fetch the latest data on each request</li>
+<li>  <strong>Authenticated data</strong>: When dealing with authenticated data that is user-specific and changes based on the user's session or permissions, <code>getServerSideProps</code> is well-suited for fetching this data securely on the server side</li>
+<li>  <strong>Dynamic pages</strong>: For pages with dynamic routes, where the content depends on the route parameters, <code>getServerSideProps</code> can fetch the data for the specific route during each request</li>
+</ul>
+
+<p>In summary, <code>getServerSideProps</code> offers a more straightforward and efficient way to fetch data on the server side, especially for pages that require server-side rendering and frequently changing data. It provides better control over data fetching, improved performance, and a smoother transition from the <code>getInitialProps</code> lifecycle.</p>
+
+<h2>
+  
+  
+  The role of <code>getInitialProps</code> in Next.js 13 <a>
+</a>
+</h2>
+
+<p>Despite the transition to newer data fetching methods, Next.js has maintained support for <code>getInitialProps</code> for backward compatibility. This is because there might be existing projects that rely on <code>getInitialProps</code> and transitioning all of them to the newer methods might be impractical in some cases. </p>
+
+<p>To handle edge cases where <code>getInitialProps</code> might still be necessary, consider the following scenarios:</p>
+
+<ul>
+<li>  <strong>Complex data fetching logic</strong>: If your data fetching logic is complex and can't be easily achieved with <code>getStaticProps</code> or <code>getServerSideProps</code>, you might continue using <code>getInitialProps</code>
+</li>
+<li>  <strong>Custom SSR logic</strong>: If you need custom server-side rendering logic that can't be achieved with the newer methods, you might choose to use <code>getInitialProps</code>
+</li>
+<li>  <strong>Legacy projects</strong>: If you're working on a legacy project that was built using older versions of Next.js and heavily relies on <code>getInitialProps</code>, it might be more practical to continue using it rather than rewriting everything</li>
+</ul>
+
+<h2>
+  
+  
+  Optimizing <code>getServerSideProps</code> for performance in Next.js 13 <a>
+</a>
+</h2>
+
+<p><code>getServerSideProps</code> runs on every request, which means that if you're doing a lot of data fetching or computations, it can slow down your site. There are a few things you can do to optimize the use of <code>getServerSideProps</code> for performance in Next.js 13. </p>
+
+<p>One is to make sure you're returning the required <code>props</code> object with the <code>props</code> property, which can help reduce the number of repetitive calls. When you call <code>getServerSideProps</code>, Next.js creates a server-side request to fetch the data. This request can be quite expensive, especially if you're doing a lot of computations. If you return the required <code>props</code> object, Next.js will memoize the request and reuse the result for subsequent calls. This is important because it means that Next.js doesn't have to make multiple requests to the server to get the same data, which can significantly improve performance. </p>
+
+<p>Another way to optimize the use of <code>getServerSideProps</code> in your project is by taking advantage of smarter caching. It works by caching the results of your request based on the content that was requested. For example, if a user requests a specific page, Next.js will only cache the data for that page. This means that if another user requests a different page, it won't have to load the entire site from scratch, which can save a lot of time. This is different from traditional caching, which simply stores the entire site in a cache and serves it to all users. </p>
+
+<p>Another benefit of smarter caching is that it allows for "incremental updates". This means that if you make a small change to your code, only the affected parts of the site will be updated in the cache.</p>
+
+<h2>
+  
+  
+  Migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code> <a>
+</a>
+</h2>
+
+<p>Migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code> involves updating your data fetching logic to the new data fetching methods introduced in Next.js. The migration process depends on whether you want to achieve server-side rendering (SSR) or static site generation (SSG). Here's a detailed overview of the steps involved in the migration: </p>
+
+<p><strong>Migrating to <code>getServerSideProps</code> (SSR):</strong></p>
+
+<ol>
+<li> <strong>Remove</strong> <code>getInitialProps</code>: If your page components use <code>getInitialProps</code>, you need to remove it from those components</li>
+<li> <strong>Replace</strong> <code>getInitialProps</code> <strong>with</strong> <code>getServerSideProps</code>: Replace the <code>getInitialProps</code> method with the <code>getServerSideProps</code> method in your page components. The structure of <code>getServerSideProps</code> is different from <code>getInitialProps</code>, and it returns an object with the <code>props</code> key containing the fetched data</li>
+<li> <strong>Pass props to the component</strong>: With <code>getServerSideProps</code>, the fetched data will be automatically passed as props to the page component. You can access this data using the <code>props</code> parameter of your page component</li>
+</ol>
+
+<p>Let's consider a simple example where you have a blog application, and you want to fetch a list of blog posts from an external API to display on the homepage:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// Before migrating from getInitialProps</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Render the list of posts</span>
+<span class="p">};</span>
+
+<span class="nx">HomePage</span><span class="p">.</span><span class="nx">getInitialProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Fetch data from an API</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="c1">// Return the data as props</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="c1">// After migrating to getServerSideProps</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Render the list of posts</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Fetch data from an API</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="c1">// Return the data as props</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Migrating to <code>getStaticProps</code> (SSG):</strong></p>
+
+<ol>
+<li> <strong>Remove</strong> <code>getInitialProps</code>: If your page components use <code>getInitialProps</code>, you need to remove it from those components</li>
+<li> <strong>Replace</strong> <code>getInitialProps</code> <strong>with</strong> <code>getStaticProps</code>: Replace the <code>getInitialProps</code> method with the <code>getStaticProps</code> method in your page components. Like <code>getServerSideProps</code>, the structure of <code>getStaticProps</code> is different from <code>getInitialProps</code>, and it returns an object with the <code>props</code> key containing the fetched data</li>
+<li> <strong>Data revalidation (optional)</strong>: With <code>getStaticProps</code>, you can also include the <code>revalidate</code> option in the returned object to specify how often the data should be revalidated and regenerated. This is useful when you want to update the data periodically without redeploying your application</li>
+</ol>
+
+<p>Using the same example use case as above, here is our code before and after migrating from <code>getInitialProps</code> and <code>getStaticProps</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// Before migrating from getInitialProps</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Render the list of posts</span>
+<span class="p">};</span>
+
+<span class="nx">HomePage</span><span class="p">.</span><span class="nx">getInitialProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Fetch data from an API</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="c1">// Return the data as props</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="c1">// After migrating to getStaticProps</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Render the list of posts</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Fetch data from an API</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+  <span class="c1">// Return the data as props</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In summary, migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code> involves updating the data fetching logic and method signatures to improve performance, predictability, and context switching in your Next.js application. Depending on your use case, you can choose between <code>getServerSideProps</code> for server-side rendering or <code>getStaticProps</code> for static site generation.</p>
+
+
+
+
+<h2>
+  
+  
+  <a href="https://lp.logrocket.com/blg/nextjs-signup">LogRocket</a>: Full visibility into production Next.js apps
+</h2>
+
+<p>Debugging Next applications can be difficult, especially when users experience issues that are difficult to reproduce. If you’re interested in monitoring and tracking state, automatically surfacing JavaScript errors, and tracking slow network requests and component load time, <a href="https://lp.logrocket.com/blg/nextjs-signup">try LogRocket</a>.</p>
+
+<p><a href="https://lp.logrocket.com/blg/nextjs-signup"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ajjeExJ2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://blog.logrocket.com/wp-content/uploads/2017/03/1d0cd-1s_rmyo6nbrasp-xtvbaxfg.png" alt="LogRocket Signup" width="800" height="451"></a></p>
+
+<p><a href="https://lp.logrocket.com/blg/nextjs-signup">LogRocket</a> is like a DVR for web and mobile apps, recording literally everything that happens on your Next.js app. Instead of guessing why problems happen, you can aggregate and report on what state your application was in when an issue occurred. LogRocket also monitors your app's performance, reporting with metrics like client CPU load, client memory usage, and more.</p>
+
+<p>The LogRocket Redux middleware package adds an extra layer of visibility into your user sessions. LogRocket logs all actions and state from your Redux stores.</p>
+
+<p>Modernize how you debug your Next.js apps — <a href="https://lp.logrocket.com/blg/nextjs-signup">start monitoring for free</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Display website icons in the VSCode markdown preview](https://dev.to/rxliuli/display-website-icons-in-the-vscode-markdown-preview-30cd) 
+ <details><summary>Article</summary> <p>A quick inspiration realized: in the markdown preview of VSCode, in addition to displaying the link itself, if it's a popular website, such as GitHub, Twitter, Google, etc., the corresponding logo will be added in front of it.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--z02twdkv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/trwhmcl5riee17codb3b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--z02twdkv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/trwhmcl5riee17codb3b.png" alt="Image description" width="800" height="536"></a></p>
+
+<p>It has been published to the VSCode extension store: <a href="https://marketplace.visualstudio.com/items?itemName=rxliuli.markdown-link-logo">https://marketplace.visualstudio.com/items?itemName=rxliuli.markdown-link-logo</a></p>
+
+<p>Inspiration source: <a href="https://discourse.joplinapp.org/t/32608">https://discourse.joplinapp.org/t/32608</a></p>
+
+<p>Have fun! ✨</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Top 7 Featured DEV Posts from the Past Week](https://dev.to/devteam/top-7-featured-dev-posts-from-the-past-week-4bfl) 
  <details><summary>Article</summary> <p><em>Every Tuesday we round up the previous week's top posts based on traffic, engagement, and a hint of editorial curation. The typical week starts on Monday and ends on Sunday, but don't worry, we take into account posts that are published later in the week.</em> </p>
 
@@ -333,333 +936,6 @@
 
 
 <p>What are your thoughts and feelings about what Apple announced today?</p>
-
- </details> 
- <hr /> 
-
- #### - [Understanding Variable Declaration in JavaScript: let vs. var](https://dev.to/iamcymentho/understanding-variable-declaration-in-javascript-let-vs-var-50an) 
- <details><summary>Article</summary> <p><strong>Introduction:</strong></p>
-
-<p>In the world of <code>JavaScript</code>, variable declaration is a fundamental concept. However, with the introduction of <code>ES6</code>, new ways of declaring variables emerged, leading to a critical question: What's the difference between let and var? In this comprehensive guide, we'll unravel the distinctions between these two, exploring their scopes, hoisting behavior, and re-declaration rules. By the end, you'll have a solid grasp of when to use let and when to stick with var in your <code>JavaScript</code> projects.</p>
-
-<p><code>**Var:**</code></p>
-
-<p><code>var</code>was the original way to declare variables in <code>JavaScript</code>. It has a function-level scope, meaning it is function-scoped. Variables declared with var are hoisted to the top of their containing function or global scope, which can sometimes lead to unexpected behavior.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wDqnXm2h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/72hiaeqnw91vqf4715py.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wDqnXm2h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/72hiaeqnw91vqf4715py.png" alt="javascript" width="517" height="135"></a></p>
-
-<p>In this example, <code>x</code> is accessible outside of the if block because of hoisting.</p>
-
-<p><code>**Let:**</code></p>
-
-<p>let was introduced in <code>ECMAScript 6 (ES6)</code> and provides a block-level scope. Variables declared with let are only accessible within the nearest enclosing block, which can be a function, loop, or any block of code.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--MWIpGlke--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hwmfm5oznx1ubcqa3iwr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MWIpGlke--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hwmfm5oznx1ubcqa3iwr.png" alt="javascript" width="514" height="140"></a></p>
-
-<p>Here,<code>y</code>is not accessible outside of the if block because it's block-scoped.</p>
-
-<p><strong>Key Differences:</strong></p>
-
-<p><code>Scope:</code></p>
-
-<p><code>var</code>has function-level scope.<br>
-<code>let</code>has block-level scope.</p>
-
-<p><strong>Hoisting:</strong></p>
-
-<p>Variables declared with var are hoisted to the top of their containing function or global scope.<br>
-Variables declared with let are hoisted to the top of their containing block but are not initialized until the declaration is encountered.</p>
-
-<p><strong>Re-declaration:</strong></p>
-
-<p>Variables declared with var can be re-declared within the same scope without an error.<br>
-Variables declared with let cannot be re-declared within the same scope.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--L2Vdoqop--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0kfx2l51iww3l01b6he9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--L2Vdoqop--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0kfx2l51iww3l01b6he9.png" alt="javascript" width="515" height="115"></a></p>
-
-<p><code>Recommendation:</code></p>
-
-<p>It's generally recommended to use let and const (for constants) over var in modern JavaScript because they provide better scoping and help prevent unexpected bugs in your code. Use let when you need to reassign a variable, and use const when the variable's value should not change.</p>
-
-<p>Understanding the scoping and behavior of <code>let</code>and <code>var</code>is crucial for writing clean and maintainable <code>JavaScript</code>code.</p>
-
-<p><code>LinkedIn Account</code> : <a href="https://www.linkedin.com/in/matthew-odumosu/">LinkedIn</a><br>
-<code>Twitter Account</code>: <a href="https://twitter.com/iamcymentho">Twitter</a><br>
-<strong>Credit</strong>: Graphics sourced from <a href="https://www.digitalocean.com/community/tutorials/understanding-variables-scope-hoisting-in-javascript">Digital Ocean</a></p>
-
- </details> 
- <hr /> 
-
- #### - [How to block ChatGPT from scraping your website.](https://dev.to/ricovz/how-to-block-chatgpt-from-scraping-your-website-593c) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
-
-<p>In today's digital day and age, web scraping and parsing have become common techniques for various applications, including data collection, content analysis, and most presently teaching AI models. While these practices can be legitimate and beneficial, there are instances where you don't want a language model trained on your data, leading to concerns about privacy, security, and unauthorized data extraction. In this article, we will discuss how to block <a href="https://openai.com/blog/chatgpt">ChatGPT</a> (OpenAI), a popular AI language model, from scraping and using your website to train their AI models. </p>
-
-<h2>
-  
-  
-  Understanding ChatGPT
-</h2>
-
-<p>ChatGPT is an AI language model developed by OpenAI, known for its ability to generate human-like text based on input prompts. It is widely used for various applications, including chatbots, content generation, and data analysis. ChatGPT can access and parse information from websites through <a href="https://openai.com/blog/chatgpt-plugins">plugins</a> and <a href="https://platform.openai.com/docs/gptbot">OpenAIs web crawler</a>, making it essential for website owners who don't want their data trained on by AI models to block its access. </p>
-
-<h2>
-  
-  
-  Blocking ChatGPT from your website
-</h2>
-
-<h3>
-  
-  
-  Method 1. Robots.txt file
-</h3>
-
-<p>The robots.txt file is a standard method for communicating with web crawlers and bots, including ChatGPT. You can specify which parts of your website are off-limits for crawling by adding rules to this file. To block ChatGPT from your entire website, add the following lines to your robots.txt file:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>User-agent: ChatGPT-User
-User-agent: GPTBot
-Disallow: /
-</code></pre>
-
-</div>
-
-
-
-<p>Or if you would like to block ChatGPT only from certain places on your website you can do the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>User-agent: ChatGPT-User
-User-agent: GPTBot
-Allow: /can-be-scraped/
-Disallow: /will-be-blocked
-</code></pre>
-
-</div>
-
-
-
-<p>However, one major downside of the robots.txt method is that it can't actually enforce the instructions. While OpenAI themselves state they will not crawl your website if you disallow their User-agent and I believe this to be true, you can never be sure.</p>
-
-<h3>
-  
-  
-  Method 2. Web Application Firewall (WAF)
-</h3>
-
-<p>A web application firewall is a specific form of application firewall that filters, monitors, and blocks traffic to your website. In the case of ChatGPT and its GPTBot web-crawler you have 2 options to block access to your website, you're able to use both if you want to.</p>
-
-<ol>
-<li>The first method is similar to the robots.txt method; blocking its user-agent. OpenAI web crawler will always have the user-agent of "GPTBot" and all ChatGPT plugins will have the user-agent "ChatGPT-User". By blocking the user-agents "GPTBot" &amp; "ChatGPT-User" you will be blocking its access to your website. If you use Cloudflare, here is a guide to user-agent blocking: <a href="https://developers.cloudflare.com/waf/tools/user-agent-blocking/">https://developers.cloudflare.com/waf/tools/user-agent-blocking/</a>
-</li>
-<li>The second method: blocking IP Ranges. OpenAI has published the IP Ranges they use for GPTBot &amp; ChatGPT plugins. You can find them here: <a href="https://openai.com/gptbot-ranges.txt">https://openai.com/gptbot-ranges.txt</a>. Those are just applicable to OpenAIs web crawler, if you would also like to block the ChatGPT plugins you should also block <code>23.98.142.176/28</code>. By blocking these IP Ranges you can be confident ChatGPT will be unable to scrape your website, even if they decide to ignore robots.txt or change their user-agent in the future. </li>
-</ol>
-
-<p>Written by: <a href="https://rico.sh">Rico van Zelst</a></p>
-
-<p>Thank you for reading! If you enjoyed this post and want to explore more of my work, visit my personal website at <a href="https://rico.sh">rico.sh</a>. There, you'll find in-depth articles, tutorials, and resources on <a href="https://rico.sh/categories/web-development/">web development</a>. Don't miss out – let's continue this journey together!"</p>
-
- </details> 
- <hr /> 
-
- #### - [Hugging Face 101: A Tutorial for Absolute Beginners!](https://dev.to/pavanbelagatti/hugging-face-101-a-tutorial-for-absolute-beginners-3b0l) 
- <details><summary>Article</summary> <p>Welcome to this beginner-friendly tutorial on sentiment analysis using <a href="https://huggingface.co/docs/transformers/index">Hugging Face's transformers</a> library! Sentiment analysis is a Natural Language Processing (NLP) technique used to determine the emotional tone or attitude expressed in a piece of text. </p>
-
-<p>In this tutorial, you'll learn how to leverage pre-trained machine learning models from <a href="https://huggingface.co/">Hugging Face</a> to perform sentiment analysis on various text examples. We'll walk you through the entire process, from installing the required packages to running and interpreting the model's output, all within a <a href="https://www.singlestore.com/cloud-trial/?utm_campaign=singlestore-for-ai&amp;utm_medium=referral&amp;utm_source=devtoarticle&amp;utm_term=huggingface">SingleStore Notebook</a> environment, just like Jupyter Notebook. </p>
-
-<p>By the end of this tutorial, you'll be equipped with the knowledge to use Hugging Face Transformers as a Library for analyzing the sentiment of text data.</p>
-
-<h2>
-  
-  
-  What is Hugging Face🤗?
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6wbT5am---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxfq7dnrvbmmzebq27xp.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6wbT5am---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxfq7dnrvbmmzebq27xp.png" alt="What is Hugging Face🤗" width="800" height="213"></a></p>
-
-<p>Hugging Face🤗 is a community specializing in Natural Language Processing (NLP) and artificial intelligence (AI). Founded in 2016, the company has made significant contributions to the field of NLP by democratizing access to state-of-the-art machine learning models and tools. </p>
-
-<p>Hugging Face has a strong community focus. They provide a platform where researchers and developers can share their trained models, thereby fostering collaboration and accelerating progress in the field.</p>
-
-<p>NLP stands for Natural Language Processing, which is a field of artificial intelligence that focuses on the interaction between computers and human language. Hugging Face is known for its contributions to NLP through its open-source libraries, pre-trained models, and community platforms.</p>
-
-<h2>
-  
-  
-  Hugging Face🤗 Transformers as a Library:
-</h2>
-
-<p>Hugging Face's Transformers library is an open-source library for NLP and machine learning. It provides a wide variety of pre-trained models and architectures like BERT, GPT-2, T5, and many others. The library is designed to be highly modular and easy to use, allowing for the quick development of both research and production projects. It supports multiple languages and tasks like text classification, question-answering, text generation, translation, and more.</p>
-
-<h2>
-  
-  
-  Prerequisites
-</h2>
-
-<p>Before you start with this tutorial, make sure you have the following prerequisites in place:</p>
-
-<ul>
-<li>The only prerequisite for this tutorial is SingleStore Notebook.
-The tutorial is designed to be followed in a SingleStore Notebook. If you haven't installed SingleStore Notebook yet, you can do so by <a href="https://www.singlestore.com/cloud-trial/?utm_campaign=singlestore-for-ai&amp;utm_medium=referral&amp;utm_source=devtoarticle&amp;utm_term=huggingface">signing up at SingleStore</a> and then selecting the Notebook feature.</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1CVbOzi_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uskchv84vfgvyeknnoht.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1CVbOzi_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uskchv84vfgvyeknnoht.png" alt="start with singlestore notebooks" width="550" height="774"></a></p>
-
-<p>Create a new blank Notebook.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XS436P5U--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1b764lw2oq47fs22fxrr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XS436P5U--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1b764lw2oq47fs22fxrr.png" alt="new notebook" width="800" height="961"></a></p>
-
-<p>You will land on a SingleStore Notebook dashboard.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dbZ6Qr0u--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t7iuccys89tzt3dlqp9o.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dbZ6Qr0u--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t7iuccys89tzt3dlqp9o.png" alt="SingleStore Notebook dashboard" width="800" height="339"></a></p>
-
-<p>From here, we will use it as our python playground to execute our commands.</p>
-<h4>
-  
-  
-  Step 1: Install Required Packages
-</h4>
-
-<p>First, you'll need to install the transformers library from Hugging Face. You can do this using pip:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>!pip install transformers
-</code></pre>
-
-</div>
-
-
-
-<p>PyTorch is a prerequisite for using the Hugging Face transformers library.</p>
-
-<p>You can install PyTorch by running the following command in your SingleStore Notebook:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>!pip install torch
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Restart the Kernel</strong>: After installing, you may need to restart the SingleStore Notebook kernel to ensure that the newly installed packages are recognized. You can usually do this by clicking on "Kernel" in the menu and then selecting "Restart Kernel".</p>
-
-<h4>
-  
-  
-  Step 2: Import Libraries
-</h4>
-
-<p>Import the necessary Python libraries.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import torch
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Step 3: Load Pre-trained Model and Tokenizer
-</h4>
-
-<p>Load a pre-trained model and its corresponding tokenizer. For this example, let's use the distilbert-base-uncased-finetuned-sst-2-english model for sentiment analysis.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
-model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Step 4: Preprocess Text
-</h4>
-
-<p>Tokenize the text you want to analyze.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>text = "I love programming!"
-tokens = tokenizer(text, padding=True, truncation=True, return_tensors="pt")
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Step 5: Model Inference
-</h4>
-
-<p>Pass the tokenized text through the model.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>with torch.no_grad():
-    outputs = model(**tokens)
-    logits = outputs.logits
-    probabilities = torch.softmax(logits, dim=1)
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Step 6: Interpret Results
-</h4>
-
-<p>Interpret the model's output to get the sentiment.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>label_ids = torch.argmax(probabilities, dim=1)
-labels = ['Negative', 'Positive']
-label = labels[label_ids]
-print(f"The sentiment is: {label}")
-</code></pre>
-
-</div>
-
-
-
-<p>This should output either "Positive" or "Negative" based on the sentiment of the text.</p>
-
-<p>Make sure you are executing your code in the SingleStore's Notebook playground.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--MGtM9yBk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ab0s284dhkvgu9u0fr0y.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MGtM9yBk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ab0s284dhkvgu9u0fr0y.png" alt="SingleStore's Notebook playground" width="800" height="543"></a></p>
-
-<p>Let's modify the text we want to analyze from "I love programming!" to "I hate programming!". You should see a Negative sentiment analysis.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JPGn0tO_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zqpbd180v07ilozdbqug.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JPGn0tO_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zqpbd180v07ilozdbqug.png" alt="Negative sentiment analysis" width="800" height="579"></a></p>
-
-<p>Let's analyze one more sentence "SingleStore's Notebook feature is just mind blowing!" and see the response. (it should be positive as expected)</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YRQevSo1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/65sme5o4o9gzahh156m8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YRQevSo1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/65sme5o4o9gzahh156m8.png" alt="amazing feature" width="800" height="488"></a></p>
-
-<p><em><strong>Congratulations</strong></em> on completing this beginner-friendly tutorial on sentiment analysis using Hugging Face's transformers library! By now, you should have a solid understanding of how to use pre-trained models to analyze the sentiment of text. You've learned how to tokenize text, run it through a model, and interpret the output—all within a SingleStore Notebook environment. </p>
 
  </details> 
  <hr /> 
