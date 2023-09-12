@@ -118,6 +118,286 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Build an AI SMS Chatbot with Replicate, LLaMA 2, and LangChain](https://dev.to/twilio/build-an-ai-sms-chatbot-with-replicate-llama-2-and-langchain-3i72) 
+ <details><summary>Article</summary> <p>Recently, Meta and Microsoft introduced the second generation of the LLaMA LLM (Large Language Model) to help developers and organizations to build generative AI-powered tools and experiences. Read on to learn how to build an AI SMS chatbot that answers questions like Ahsoka (from Star Wars) using LangChain templating, LLaMa 2, Replicate, and Twilio Programmable Messaging!<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YtzI9bA---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c11hzs7x148okb1zjlj3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YtzI9bA---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c11hzs7x148okb1zjlj3.png" alt="SMS example" width="800" height="197"></a><br>
+Do you prefer learning via video more? Check out <a href="https://www.tiktok.com/@lizziepikachu/video/7278020285750889774">this TikTok summarizing this tutorial</a> in 1 minute!</p>
+<h3>
+  
+  
+  Prerequisites
+</h3>
+
+<ol>
+<li>A Twilio account - <a href="https://www.twilio.com/try-twilio">sign up for a free Twilio account here</a>
+</li>
+<li>A Twilio phone number with SMS capabilities - <a href="https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console">learn how to buy a Twilio Phone Number here</a>
+</li>
+<li>Replicate account to host the LlaMA 2 model – <a href="https://replicate.com/signin?next=/">make a Replicate account here</a>
+</li>
+<li>Python installed - <a href="https://www.python.org/downloads/">download Python here</a>
+</li>
+<li>
+<a href="https://ngrok.com/download">ngrok</a>, a handy utility to connect the development version of our Python application running on your machine to a public URL that Twilio can access.</li>
+</ol>
+
+<p>⚠️ <strong>ngrok is needed for the development version of the application because your computer is likely behind a router or firewall, so it isn’t directly reachable on the Internet. You can also choose to automate ngrok as shown in this article.</strong></p>
+<h3>
+  
+  
+  Replicate
+</h3>
+
+<p>Replicate offers a cloud API and tools so you can more easily run machine learning models, abstracting away some lower-level machine learning concepts and handling infrastructure so you can focus more on your own applications. You can run open-source models that others have published, or package and publish your own, either publicly or privately.</p>
+<h3>
+  
+  
+  Configuration
+</h3>
+
+<p>Since you will be installing some Python packages for this project, you will need to make a new project directory and a <a href="https://docs.python.org/3/tutorial/venv.html">virtual environment</a>.</p>
+
+<p>If you're using a Unix or macOS system, open a terminal and enter the following commands:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">mkdir </span>replicate-llama-ai-sms-chatbot  
+<span class="nb">cd </span>replicate-llama-ai-sms-chatbot  
+python3 <span class="nt">-m</span> venv venv 
+<span class="nb">source </span>venv/bin/activate 
+pip <span class="nb">install </span>langchain replicate flask twilio
+</code></pre>
+
+</div>
+
+
+
+<p>If you're following this tutorial on Windows, enter the following commands in a command prompt window:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">mkdir </span>replicate-llama-ai-sms-chatbot  
+<span class="nb">cd </span>replicate-llama-ai-sms-chatbot   
+python <span class="nt">-m</span> venv venv 
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate 
+pip <span class="nb">install </span>langchain replicate flask twilio
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://replicate.com/account/api-tokens">Grab your default Replicate API Token or create a new one here</a>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GbpFlrL6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aat6zydxbdnq8sohcc4x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GbpFlrL6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aat6zydxbdnq8sohcc4x.png" alt="Replicate console" width="800" height="226"></a><br>
+On the command line run<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">export </span><span class="nv">REPLICATE_API_TOKEN</span><span class="o">={</span>replace with your api token<span class="o">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now it's time to write some code!</p>
+
+<h3>
+  
+  
+  Code
+</h3>
+
+<p>Make a file called <em>app.py</em> and place the following import statements at the top.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">langchain</span> <span class="kn">import</span> <span class="n">LLMChain</span><span class="p">,</span> <span class="n">PromptTemplate</span>
+<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">Replicate</span>
+<span class="kn">from</span> <span class="nn">langchain.memory</span> <span class="kn">import</span> <span class="n">ConversationBufferWindowMemory</span>
+<span class="kn">from</span> <span class="nn">twilio.twiml.messaging_response</span> <span class="kn">import</span> <span class="n">MessagingResponse</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Though LLaMA 2 is tuned for chat, templates are still helpful so the LLM knows what behavior is expected of it. This starting prompt is similar to ChatGPT so it should behave similarly.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="n">template</span> <span class="o">=</span> <span class="s">"""Assistant is a large language model.
+
+Assistant is designed to be able to assist with a wide range of tasks, from answering simple questions to providing in-depth explanations and discussions on a wide range of topics. As a language model, Assistant is able to generate human-like text based on the input it receives, allowing it to engage in natural-sounding conversations and provide responses that are coherent and relevant to the topic at hand.
+
+Assistant is constantly learning and improving, and its capabilities are constantly evolving. It is able to process and understand large amounts of text, and can use this knowledge to provide accurate and informative responses to a wide range of questions. Additionally, Assistant is able to generate its own text based on the input it receives, allowing it to engage in discussions and provide explanations and descriptions on a wide range of topics.
+
+Overall, Assistant is a powerful tool that can help with a wide range of tasks and provide valuable insights and information on a wide range of topics. Whether you need help with a specific question or just want to have a conversation about a particular topic, Assistant is here to assist. 
+
+I want you to act as Ahsoka giving advice and answering questions. You will reply with what she would say.
+SMS: {sms_input}
+Assistant:"""</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="p">(</span><span class="n">input_variables</span><span class="o">=</span><span class="p">[</span><span class="s">"sms_input"</span><span class="p">],</span> <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Next, make a LLM Chain, one of the core components of LangChain. This allows us to chain together prompts and make a prompt history. The model is formatted as the model name followed by the version–in this case, the model is LlaMA 2, a 13-billion parameter language model from Meta fine-tuned for chat completions. <code>max_length</code> is 4096, the maximum number of tokens (called the <em>context window</em>) the LLM can accept as input when generating responses.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="n">sms_chain</span> <span class="o">=</span> <span class="n">LLMChain</span><span class="p">(</span>
+    <span class="n">llm</span> <span class="o">=</span> <span class="n">Replicate</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s">"a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5"</span><span class="p">),</span> 
+    <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+    <span class="n">memory</span><span class="o">=</span><span class="n">ConversationBufferWindowMemory</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">llm_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">"max_length"</span><span class="p">:</span> <span class="mi">4096</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Finally, make a Flask app to accept inbound text messages, pass that to the LLM Chain, and return the output as an outbound text message with Twilio Programmable Messaging.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/sms"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">sms</span><span class="p">():</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">MessagingResponse</span><span class="p">()</span>
+    <span class="n">inb_msg</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'Body'</span><span class="p">].</span><span class="n">lower</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">sms_chain</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sms_input</span><span class="o">=</span><span class="n">inb_msg</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">resp</span><span class="p">.</span><span class="n">message</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>On the command line, run <code>python app.py</code> to start the Flask app.</p>
+
+<h3>
+  
+  
+  Configure a Twilio Number for the SMS Chatbot
+</h3>
+
+<p>Now, your Flask app will need to be visible from the web so Twilio can send requests to it. ngrok lets you do this. With ngrok installed, run <code>ngrok http 5000</code> in a new terminal tab in the directory your code is in.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nsM06Uhj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2kgwrxcxdfgo9tkrp42o.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nsM06Uhj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2kgwrxcxdfgo9tkrp42o.png" alt="ngrok terminal tab" width="800" height="334"></a><br>
+You should see the screen above. Grab that ngrok <strong>Forwarding URL</strong> to configure your Twilio number: select your Twilio number under <strong>Active Numbers</strong> in your <a href="https://www.twilio.com/console/phone-numbers/incoming">Twilio console</a>, scroll to the <strong>Messaging</strong> section, and then modify the phone number’s routing by pasting the ngrok URL with the <em>/sms</em> path in the textbox corresponding to when <strong>A Message Comes In</strong> as shown below:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YFXGG5Ul--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s6lgkzfqevilybi3al5s.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YFXGG5Ul--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s6lgkzfqevilybi3al5s.png" alt="configure phone number" width="800" height="335"></a><br>
+Click <strong>Save</strong> and now your Twilio phone number is configured so that it maps to your web application server running locally on your computer and your application can run. Text your Twilio number a question relating to the text file and get an answer from that file over SMS!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NqUl4lle--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3xi0flyo9fdgq4okmwgd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NqUl4lle--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3xi0flyo9fdgq4okmwgd.png" alt="SMS example" width="800" height="226"></a><br>
+You can view the <a href="https://github.com/elizabethsiegle/replicate-llama2-sms-chatbot">complete code on GitHub here</a>.</p>
+
+<h3>
+  
+  
+  What's Next for Twilio, LangChain, Replicate, and LLaMA 2?
+</h3>
+
+<p>There is so much fun for developers to have around building with LLMs! You can modify existing LangChain and LLM projects to use LLaMA 2 instead of GPT, build a web interface using <a href="https://streamlit.io/">Streamlit</a> instead of SMS, fine-tune LLaMA 2 with your own data, and more! I can't wait to see what you build–let me know online what you're working on!</p>
+
+<ul>
+<li>Twitter: <a href="https://twitter.com/lizziepika">@lizziepika</a>
+</li>
+<li>GitHub: <a href="https://github.com/elizabethsiegle">elizabethsiegle</a>
+</li>
+<li>Email: <a href="mailto:lsiegle@twilio.com">lsiegle@twilio.com</a>
+</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Unlocking the Potential of Large Language Models (LLMs) for Business Insights](https://dev.to/devnenyasha/unlocking-the-potential-of-large-language-models-llms-for-business-insights-23n9) 
+ <details><summary>Article</summary> <p>In the domain of computerized reasoning and normal language handling, Large Language Models (LLMs) have arisen as integral assets that are changing the manner in which organizations work. These models, like GPT-3, are not just about creating human-like text; they are tied in with opening the capability of information and language for significant bits of knowledge. In this article, we will investigate how LLMs can change the universe of business by giving important bits of knowledge and driving informed navigation.</p>
+
+<p>The Ascent of LLMs</p>
+
+<p>Large Language Models like GPT-3 are the finish of long stretches of exploration and development in AI. They are gigantic brain networks prepared on huge measures of text information from the web. This preparation empowers them to grasp settings, produce intelligent text, and play out an extensive variety of language-related errands with striking capability.</p>
+
+<p>From Text Age to Knowledge Age</p>
+
+<p>While text age is one of the most apparent utilizations of LLMs, their true capacity goes a long way past exploratory writing or chatbots. Organizations are tackling the force of LLMs to acquire profound experiences from printed information sources:</p>
+
+<ol>
+<li>Information Examination and Rundown:</li>
+</ol>
+
+<p>LLMs can filter through piles of unstructured information, extricating key data and summing up it in a conceivable organization. This smoothes out information examination processes, making it more straightforward for organizations to pursue information-driven choices.</p>
+
+<ol>
+<li>Statistical surveying and Serious Examination:</li>
+</ol>
+
+<p>By breaking down news stories, web-based entertainment discussions, and industry reports, LLMs can give continuous bits of knowledge into market patterns and contender techniques. This permits organizations to adjust rapidly to changing economic situations.</p>
+
+<ol>
+<li>Client Criticism and Opinion Investigation:</li>
+</ol>
+
+<p>LLMs succeed at opinion investigation. They can evaluate client audits and virtual entertainment presents to measure public feeling about items and administrations, assisting organizations with recognizing regions for development.</p>
+
+<ol>
+<li>Mechanized Announcing:</li>
+</ol>
+
+<p>Organizations can mechanize the formation of reports, synopses, and documentation utilizing LLMs. This lessens manual exertion and guarantees consistency in revealing.</p>
+
+<p>Contextual analyses in real life</p>
+
+<p>We should take a gander at a couple of genuine instances of how organizations are utilizing LLMs for bits of knowledge:</p>
+
+<ol>
+<li>Medical services Diagnostics:</li>
+</ol>
+
+<p>In the clinical field, LLMs are utilized to dissect patient records and clinical writing, assisting specialists with making precise determinations and treatment proposals.</p>
+
+<ol>
+<li>Monetary Administrations:</li>
+</ol>
+
+<p>Banks and monetary establishments use LLMs to break down news stories and monetary reports for venture experiences, risk appraisal, and misrepresentation discovery.</p>
+
+<ol>
+<li>Web-based business Personalization:</li>
+</ol>
+
+<p>Online retailers use LLMs to examine client perusing conduct and prescribe items custom-made to individual inclinations, supporting deals, and consumer loyalty.</p>
+
+<p>Difficulties and Contemplations</p>
+
+<p>While LLMs offer colossal potential, they additionally accompany difficulties and moral contemplations. Predisposition in preparing information, mindful computer-based intelligence improvement, and information security are a portion of the issues that should be tended to while sending LLMs in business settings.</p>
+
+<p>Future Patterns</p>
+
+<p>As LLM innovation keeps on developing, we can expect significantly further developed applications in regions like robotized content age, remote helpers, and redid instructive materials.</p>
+
+<p>Conclusion</p>
+
+<p>Huge Language Models have the ability to change how organizations work by opening significant bits of knowledge from text-based information sources. From information examination to statistical surveying and then some, LLMs are becoming important instruments for informed navigation. Notwithstanding, organizations should proceed cautiously, guaranteeing moral use and capable advancement as they outfit the capability of these strong simulated intelligence models. As we push ahead, LLMs will keep on assuming a significant part in forming the fate of business knowledge.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Next.js: How <Suspense /> and Components Streaming works?](https://dev.to/charnog/nextjs-how-and-components-streaming-works-30ao) 
  <details><summary>Article</summary> <blockquote>
 <p>There is a distinct difference between ‘suspense’ and ‘surprise’, and yet many pictures continually confuse the two. I’ll explain what I mean. We are now having a very innocent little chat. Let’s suppose that there is a bomb underneath this table between us. Nothing happens, and then all of a sudden, ‘Boom!’ There is an explosion. The public is surprised, but prior to this surprise, it has seen an absolutely ordinary scene, of no special consequence.</p>
@@ -467,6 +747,342 @@ Waiting for MyComponent...
  </details> 
  <hr /> 
 
+ #### - [Validating SSH keys on Laravel](https://dev.to/devlopez/validating-ssh-keys-on-laravel-2545) 
+ <details><summary>Article</summary> <p>When we're called to develop an application, we should keep in mind that we might have to deal with various types of problems, some of which we may never have imagined facing. However, sometimes we need to step out of our comfort zone.</p>
+
+<h2>
+  
+  
+  Understanding the Problem
+</h2>
+
+<p>A few days ago, I was tasked with building a feature that would receive a developer's public key and later send it to Laravel forge, allowing the user to have SSH access to the respective servers.</p>
+
+<blockquote>
+<p>Awesome, Matheusão, how am I going to validate this type of data?</p>
+</blockquote>
+
+<p>Initially, we think about validating the basics, such as the length of the string, whether it already exists in the database, etc:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nullable'</span><span class="p">,</span> <span class="s1">'string'</span><span class="p">,</span> <span class="s1">'unique:users,ssh_key'</span><span class="p">,</span> <span class="s1">'max:5000'</span><span class="p">]</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Okay, but what if the user passes, I don't know, all the letters of the alphabet? Unfortunately, it will pass the validation 🙁.</p>
+
+<h2>
+  
+  
+  In Search of the Perfect Validation
+</h2>
+
+<p>I did a lot of research on how to perform this validation. In many blogs, I saw many people recommending using native functions like <strong><code>openssl_verify</code></strong>, <strong><code>openssl_get_publickey</code></strong>, or <strong><code>openssl_pkey_get_details</code></strong>, but unfortunately, they didn't work for what I needed (Remember, an SSH key is different from an SSL key, so these functions won't work). In other forums, I saw people suggesting using the package <a href="https://phpseclib.com/">https://phpseclib.com/</a>. But think about it, why install a package when you're only going to use one class and one of its methods?</p>
+
+<p>I see this as completely unnecessary coupling, but anyway...</p>
+
+<h2>
+  
+  
+  Going a Bit Deeper
+</h2>
+
+<p>After some research, I found that we can use <code>ssh-keygen</code> to validate this string for us, but how?</p>
+
+<p>For this, we can use two flags, <code>-l</code> to get the fingerprint and <code>-f</code> to specify the file path. So our command would look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>ssh-keygen <span class="nt">-lf</span> /path/to/my/file.pub
+</code></pre>
+
+</div>
+
+
+
+<p>And this way, we can check if our SSH key is valid or not.</p>
+
+<h2>
+  
+  
+  Creating Our Validation Command
+</h2>
+
+<p>Laravel introduced a component called <a href="https://laravel.com/docs/10.x/processes">Process</a> starting from version 10, which is nothing more than a wrapper around Symfony's <a href="https://symfony.com/doc/current/components/process.html">Process</a> component. It's with this little guy that we're going to work our magic.</p>
+
+<blockquote>
+<p>Of course, we could use the <code>exec</code> function, a native PHP function. However, if you think you don't need to use this wrapper, feel free to do so 🙂👍🏻.</p>
+</blockquote>
+
+<p>Let's think about what we need to do:</p>
+
+<ul>
+<li>We need to receive the string containing the user's key.</li>
+<li>We need to save this string somewhere accessible.</li>
+<li>We need to call the <code>ssh-keygen</code> command with the file path.</li>
+<li>We need to delete the file after validation.</li>
+</ul>
+
+<h2>
+  
+  
+  Setting Things Up
+</h2>
+
+<p>Let's create a directory inside <code>storage/app</code> called ssh. Don't forget to exclude this new directory from your version control:</p>
+
+<p><em>storage/app/.gitignore</em><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>*
+!public/
+!.gitignore
+!ssh/
+</code></pre>
+
+</div>
+
+
+
+<p><em>storage/app/ssh/.gitignore</em><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>*
+!.gitignore
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Writing Our Class
+</h2>
+
+<p>Now we can create our class that will interact with <code>ssh-keygen</code>.</p>
+
+<p><strong><em>App/Terminal/ValidateSsh.php</em></strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Terminal</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">Illuminate\Support\Facades\Process</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Support\Str</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ValidateSsh</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$keyPath</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="nv">$content</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span> <span class="o">=</span> <span class="nf">storage_path</span><span class="p">(</span><span class="s1">'app/ssh/'</span> <span class="mf">.</span> <span class="nc">Str</span><span class="o">::</span><span class="nf">uuid</span><span class="p">()</span> <span class="mf">.</span> <span class="s1">'.pub'</span><span class="p">);</span>
+
+        <span class="nb">file_put_contents</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">content</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">():</span> <span class="kt">bool</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nc">Process</span><span class="o">::</span><span class="nf">run</span><span class="p">(</span>
+            <span class="n">command</span><span class="o">:</span> <span class="s1">'ssh-keygen -lf '</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span> <span class="mf">.</span> <span class="s1">' &amp;&amp; rm '</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">-&gt;</span><span class="nf">successful</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Great, our class is ready to be used.</p>
+
+<ul>
+<li>It receives the content and saves it with a random name.</li>
+<li>It checks the file, and if successful, it deletes it as well.</li>
+</ul>
+
+<p>Now, let's write our tests.</p>
+
+<p><strong><em>tests/Unit/Terminal/ValidateSshTest.php</em></strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">use</span> <span class="nc">App\Terminal\ValidateSsh</span><span class="p">;</span>
+
+<span class="nf">it</span><span class="p">(</span><span class="s1">'should return true if process if file is valid'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">string</span> <span class="nv">$key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
+
+    <span class="nf">expect</span><span class="p">(</span><span class="nv">$validateSsh</span><span class="p">())</span><span class="o">-&gt;</span><span class="nf">toBeTruthy</span><span class="p">();</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="nf">with</span><span class="p">([</span>
+    <span class="s1">'RSA'</span>   <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
+    <span class="s1">'EDCSA'</span> <span class="o">=&gt;</span> <span class="s1">'ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFvXWSVYzRnjxYsz/xKjOjAaPjzg98MMHaDulQYczTX28xlsMmFkviCeCCv7CLh19ydoH4LNKpvgTGiMXz8ib68= worker@envoyer.'</span><span class="p">,</span>
+<span class="p">]);</span>
+
+<span class="nf">it</span><span class="p">(</span><span class="s1">'should return false if ssh file is invalid'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="s1">'a simple text file'</span><span class="p">);</span>
+
+    <span class="nf">expect</span><span class="p">(</span><span class="nv">$validateSsh</span><span class="p">())</span><span class="o">-&gt;</span><span class="nf">toBeFalsy</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Writing Our Rule
+</h2>
+
+<p>Think it's over? Not at all. The responsibility of the <code>ValidateSsh</code> class is only to check if the key is valid or not.</p>
+
+<p>Let's create a rule so that we can use this validation.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>php artisan make:rule IsSshKeyValid
+</code></pre>
+
+</div>
+
+
+
+<p>Great, now we can do the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Rules</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">App\Terminal\ValidateSsh</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Closure</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Contracts\Validation\ValidationRule</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Illuminate\Translation\PotentiallyTranslatedString</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">IsSshKeyValid</span> <span class="kd">implements</span> <span class="nc">ValidationRule</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @param Closure(string): PotentiallyTranslatedString $fail
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span>
+        <span class="kt">string</span> <span class="nv">$attribute</span><span class="p">,</span>
+        <span class="kt">mixed</span> <span class="nv">$value</span><span class="p">,</span>
+        <span class="kt">Closure</span> <span class="nv">$fail</span>
+    <span class="p">):</span> <span class="kt">void</span> <span class="p">{</span>
+        <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$validateSsh</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$fail</span><span class="p">(</span><span class="s1">'The :attribute is not a valid SSH key.'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>With this, we're ready to write our HTTP tests ❤️</p>
+
+<h2>
+  
+  
+  Testing Our HTTP Call
+</h2>
+
+<p>Before moving on to the HTTP tests, we need to add our rule to our validation rules:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'nullable'</span><span class="p">,</span>
+    <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'unique:users,ssh_key'</span><span class="p">,</span>
+    <span class="s1">'max:5000'</span><span class="p">,</span>
+    <span class="k">new</span> <span class="nc">IsSshKeyValid</span><span class="p">(),</span>
+<span class="p">],</span>
+</code></pre>
+
+</div>
+
+
+
+<p>And our tests for this field can look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="nf">it</span><span class="p">(</span><span class="s1">'should validate `ssh_key` field'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">mixed</span> <span class="nv">$value</span><span class="p">,</span> <span class="kt">string</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">login</span><span class="p">();</span>
+
+    <span class="nf">postJson</span><span class="p">(</span><span class="nf">route</span><span class="p">(</span><span class="s1">'api.users.store'</span><span class="p">),</span> <span class="p">[</span><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">])</span>
+        <span class="o">-&gt;</span><span class="nf">assertUnprocessable</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="nf">assertJsonValidationErrors</span><span class="p">([</span><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="nv">$error</span><span class="p">]);</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="nf">with</span><span class="p">([</span>
+    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.string'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">])],</span>
+    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nb">str_repeat</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">5001</span><span class="p">),</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.max.string'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">,</span> <span class="s1">'max'</span> <span class="o">=&gt;</span> <span class="mi">5000</span><span class="p">])],</span>
+    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'The ssh key is not a valid SSH key.'</span><span class="p">],</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="nc">User</span><span class="o">::</span><span class="nf">factory</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="nf">create</span><span class="p">([</span>
+                <span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
+            <span class="p">]);</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="n">ssh_key</span><span class="p">,</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.unique'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">])];</span>
+    <span class="p">},</span>
+<span class="p">]);</span>
+
+<span class="nf">it</span><span class="p">(</span><span class="s1">'should store an user'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nf">login</span><span class="p">();</span>
+
+    <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'name'</span>    <span class="o">=&gt;</span> <span class="s1">'Matheus Santos'</span><span class="p">,</span>
+        <span class="s1">'email'</span>   <span class="o">=&gt;</span> <span class="s1">'matheusao@my-company.com'</span><span class="p">,</span>
+        <span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="nf">postJson</span><span class="p">(</span><span class="nf">route</span><span class="p">(</span><span class="s1">'api.users.store'</span><span class="p">),</span> <span class="nv">$data</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="nf">assertCreated</span><span class="p">();</span>
+
+    <span class="nf">assertDatabaseHas</span><span class="p">(</span><span class="nc">Users</span><span class="o">::</span><span class="n">class</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Cool, right?</p>
+
+<p>Now, I can register users in my system without worrying about those funny folks who might enter "aaaaaaa" in the <code>ssh_key</code> field 😃.</p>
+
+<p>And remember, sometimes we need to think outside the box to find solutions to some problems. The more open-minded we are, the faster we can make progress and learn new things.</p>
+
+<p>Cheers, and until next time 😗 🧀</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Mastering React Styling: A Beginner's Guide](https://dev.to/cybermaxi7/mastering-react-styling-a-beginners-guide-1lel) 
  <details><summary>Article</summary> <p>Styling is a crucial aspect of building visually appealing and user-friendly web applications. In the React ecosystem, developers have a plethora of styling options to choose from. But why are there so many options? The answer lies in React's flexibility and lack of a built-in styling solution. React gives developers the freedom to choose their preferred styling approach. Let's explore some of the common styling options in React, each with its own characteristics and use cases. 🎨</p>
 
@@ -519,751 +1135,6 @@ Styled Components, a popular library, allows you to write CSS-in-JS. You create 
 In addition to the traditional styling methods, React developers have the option to leverage UI libraries such as <strong>Material-UI (MUI)</strong>, <strong>Chakra UI</strong>, <strong>Mantine</strong>, and many more. These libraries offer pre-designed components with consistent styling and extensive customization options, simplifying the styling process and enhancing the development experience.</p>
 
 <p>In conclusion, the diverse landscape of styling options in React caters to various preferences and project requirements. Whether you gravitate toward the simplicity of inline styles or harness the power of CSS-in-JS, React provides the flexibility to choose the styling approach that best suits your specific needs. Exploring these options empowers you to craft beautiful and functional React applications that captivate users and make your coding journey an exciting one. Happy styling! 🎉🎨 </p>
-
- </details> 
- <hr /> 
-
- #### - [Trending Discussions of the Week - 9/12/23](https://dev.to/devteam/trending-discussions-of-the-week-91223-4kim) 
- <details><summary>Article</summary> <p>Each week, we curate the most popular <a href="https://dev.to/t/discuss">#discuss posts</a> on DEV to bring them to you in one comprehensive list. From coding tips to career advice, you'll find a range of topics that are buzzing in the DEV community.</p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/soumyadeepdey" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FX2C9J2w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--6m4jFga3--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1076361/716116a4-39c9-403c-b8d3-c1fc37bc71a6.jpeg" alt="soumyadeepdey">
-    </div>
-  </a>
-  <a href="/soumyadeepdey/what-inspired-you-to-became-a-coder-4cpc" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>What Inspired You To Became A Coder? 🤔</h2>
-      <h3>Soumyadeep Dey ☑️ ・ Aug 30</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#watercooler</span>
-        <span class="ltag__link__tag">#discuss</span>
-      </div>
-    </div>
-  </a>
-</div>
- Sharing your dev journey will certainly inspire others, so @soumyadeepdey asks, how did you start your craft?
-
-
-
-
-<div class="ltag__link">
-  <a href="/shricodev" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KIwDD-kM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--co_N_NJO--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1127015/6decf81a-012a-4ee2-8dc5-951ccc4a1024.jpg" alt="shricodev">
-    </div>
-  </a>
-  <a href="/shricodev/devs-share-something-that-you-know-that-most-dont-17e9" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Dev's, share something you know that most don't</h2>
-      <h3>Shrijal Acharya ・ Aug 29</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#discuss</span>
-        <span class="ltag__link__tag">#programming</span>
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#opensource</span>
-      </div>
-    </div>
-  </a>
-</div>
- There's so much knowledge out there to learn that you have to know at least one niche or esoteric bit. Here's where to drop that strange trivia -- share it with @shricodev!
-
-
-
-
-<div class="ltag__link">
-  <a href="/jimmymcbride" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FEi_wnAz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--2NblZIoG--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/262904/ff7cff24-237b-45bb-b64e-27be6acc2355.png" alt="jimmymcbride">
-    </div>
-  </a>
-  <a href="/jimmymcbride/more-than-money-finding-deeper-value-in-coding-5c17" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>More Than Money: Finding Deeper Value in Coding</h2>
-      <h3>Jimmy McBride ・ Sep 8</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#codenewbie</span>
-        <span class="ltag__link__tag">#discuss</span>
-        <span class="ltag__link__tag">#career</span>
-        <span class="ltag__link__tag">#programming</span>
-      </div>
-    </div>
-  </a>
-</div>
- A lot of people, younger @jimmymcbride included, came into programming with the promises of huge six-figure salaries. So, the question is: what do you find valuable from coding outside of the pay?
-
-
-
-
-<div class="ltag__link">
-  <a href="/gregorojstersek" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aXn1U6sR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--W9HVw0Ck--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1124995/e9534064-7c77-44ad-a180-ed8b14e7cf83.jpeg" alt="gregorojstersek">
-    </div>
-  </a>
-  <a href="/gregorojstersek/what-to-look-for-when-hiring-a-new-engineer-for-your-team-ndb" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>What to look for when hiring a new engineer for your team?</h2>
-      <h3>Gregor Ojstersek ・ Aug 25</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#hiring</span>
-        <span class="ltag__link__tag">#discuss</span>
-        <span class="ltag__link__tag">#career</span>
-        <span class="ltag__link__tag">#interview</span>
-      </div>
-    </div>
-  </a>
-</div>
-@gregorojstersek normally looks for engineers that can reasonably articulate things and can demonstrate drive, motivation for learning, as well as being a good team player. Tell us more about your team's hiring standards in the comments below!
-
-
-
-
-<div class="ltag__link">
-  <a href="/apetryla" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--q4bGE8tW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--HhcThIul--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1034978/8035c203-c843-4622-882d-6f2ac5839209.jpg" alt="apetryla">
-    </div>
-  </a>
-  <a href="/apetryla/mastering-conflict-resolution-8-expert-tips-to-transform-challenging-interactions-into-opportunities-4c6k" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Mastering Conflict Resolution: 8 Expert Tips to Transform Challenging Interactions into Opportunities</h2>
-      <h3>Aidas Petryla ・ Sep 7</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#career</span>
-        <span class="ltag__link__tag">#discuss</span>
-        <span class="ltag__link__tag">#management</span>
-      </div>
-    </div>
-  </a>
-</div>
- @apetryla shares some great ways to turn interactions into opportunities with conflict resolution! Share some strategies you use to navigate conflicts in the comments of this discussion!
-
-
-<h3>
-  
-  
-  📚 Explore More in Our Code Chatter Series
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eYMzeofR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4zglc488wgld8ut1321u.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eYMzeofR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4zglc488wgld8ut1321u.jpg" alt="Code Chatter image" width="800" height="336"></a> Want to dive deeper into the world of developer discussions and insights? Check out our <a href="https://dev.to/thepracticaldev/series/24494">Code Chatter Series</a> and join us as we explore the coding world, one witty question at a time.</p>
-
-
-<div class="ltag__link">
-  <a href="/devteam" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vzeA_jD8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--CMkjYEfB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg" alt="The DEV Team" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Q9agcq3k--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vHKcEiTe--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/3/13d3b32a-d381-4549-b95e-ec665768ce8f.png" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/devteam/code-pet-peeves-whats-yours-158l" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Code Pet Peeves: What's Yours?</h2>
-      <h3>dev.to staff for The DEV Team ・ Sep 6</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#discuss</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
- </details> 
- <hr /> 
-
- #### - [Creating a Dockerfile for your Go Backend](https://dev.to/sadeedpv/creating-a-dockerfile-for-your-go-backend-20n5) 
- <details><summary>Article</summary> <p>This is a step-by-step comprehensive guide on how to create a docker image for your Go backend for absolute beginners. In this article, you will learn to build Docker image from scratch, and deploy and run your Go application. Here is the full source code of the GitHub <a href="https://github.com/Sadeedpv/docker-example">repo</a></p>
-
-<h3>
-  
-  
-  PREQUISITES
-</h3>
-
-<ul>
-<li>Install Go version <code>1.21.0</code> or later. Visit the <a href="https://go.dev/dl/">Download Page for Go</a> to install the toolchain.</li>
-<li>Basic understanding of Golang fundamentals.</li>
-<li>Docker running locally, Install Docker from <a href="https://docs.docker.com/desktop/">here</a>.</li>
-<li>An IDE/Text-editor and a command-line terminal application.</li>
-</ul>
-
-<h2>
-  
-  
-  Creating a Go Backend
-</h2>
-
-<p>In this tutorial, I will be using the <code>Echo</code> framework to build the backend. You can learn more about <code>Echo</code> <a href="https://echo.labstack.com/">here</a>.</p>
-
-<blockquote>
-<p>Feel free to create your own backend with/without frameworks.</p>
-</blockquote>
-
-<p>Here is an example <code>main.go</code> file:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight go"><code><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="p">(</span>
-    <span class="s">"net/http"</span>
-    <span class="s">"os"</span>
-
-    <span class="s">"github.com/labstack/echo/v4"</span>
-    <span class="s">"github.com/labstack/echo/v4/middleware"</span>
-<span class="p">)</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">e</span> <span class="o">:=</span> <span class="n">echo</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
-
-    <span class="c">// Middleware</span>
-    <span class="n">e</span><span class="o">.</span><span class="n">Use</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">Logger</span><span class="p">())</span>
-    <span class="n">e</span><span class="o">.</span><span class="n">Use</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">Recover</span><span class="p">())</span>
-
-    <span class="n">e</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="n">echo</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span><span class="p">,</span> <span class="s">"Hello, World!"</span><span class="p">)</span>
-    <span class="p">})</span>
-
-    <span class="n">e</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s">"/health"</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="n">echo</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span><span class="p">,</span> <span class="s">"Health is OK!!"</span><span class="p">)</span>
-    <span class="p">})</span>
-
-    <span class="n">httpPort</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"PORT"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">httpPort</span> <span class="o">==</span> <span class="s">""</span> <span class="p">{</span>
-        <span class="n">httpPort</span> <span class="o">=</span> <span class="s">"8080"</span>
-    <span class="p">}</span>
-
-    <span class="n">e</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">Fatal</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="s">":"</span> <span class="o">+</span> <span class="n">httpPort</span><span class="p">))</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>As you can see, we have two endpoints,</p>
-
-<ul>
-<li>
-<code>/</code> which returns <code>Hello, World!</code>
-</li>
-<li>
-<code>/health</code> which return <code>Health is OK!!</code>
-</li>
-</ul>
-
-<blockquote>
-<p>Don't forget to add <code>PORT</code> in you <code>.env</code> file:<br>
-</p>
-</blockquote>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>PORT=8000
-</code></pre>
-
-</div>
-
-
-
-<p>You should also initialize new module in current directory using the command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>go mod init &lt;your-module-package&gt;
-</code></pre>
-
-</div>
-
-
-
-<p>To add the dependencies mentioned in the <code>main.go</code> file, use the command<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>go mod tidy
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Testing your application
-</h2>
-
-<p>Let’s start our application and make sure it’s running properly.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>go run main.go
-</code></pre>
-
-</div>
-
-
-
-<p>Let's try out our application:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>curl http://localhost:8080/
-<span class="nv">$ </span>curl http://localhost:8080/health
-</code></pre>
-
-</div>
-
-
-
-<p>You should get the following output:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Hello, World!
-Health is OK!!
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Creating the Dockerfile
-</h2>
-
-<p>Here is the full Dockerfile with the explanation<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code># syntax=docker/dockerfile:1
-
-FROM golang:1.21.0
-
-# Set destination for COPY
-WORKDIR /app
-
-# Download Go modules
-COPY go.mod go.sum ./
-RUN go mod download
-
-# Copy the source code. Note the slash at the end, as explained in
-# https://docs.docker.com/engine/reference/builder/#copy
-COPY *.go ./
-
-# Build
-RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
-
-# Optional:
-# To bind to a TCP port, runtime parameters must be supplied to the docker command.
-# But we can document in the Dockerfile what ports
-# the application is going to listen on by default.
-# https://docs.docker.com/engine/reference/builder/#expose
-EXPOSE 8080
-
-# Run
-CMD ["/docker-gs-ping"]
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Building the Docker image
-</h2>
-
-<p>After you've created the Dockerfile, now it's time to build a docker image from it with the <code>build</code> command. </p>
-
-<p>The build command optionally takes a <code>--tag</code> flag. This flag is used to label the image with a string value, which is easy for humans to read and recognize. If you do not pass a <code>--tag</code>, Docker will use <code>latest</code> as the default value.</p>
-
-<p>Let's build our docker image!!<br>
-Run the following command from the root directory<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>docker build --tag echo .
-</code></pre>
-
-</div>
-
-
-
-<p>And Voila!! We built a docker image for our backend.<br>
-To list the images, use <code>docker image ls</code> command or <code>docker images</code> command.</p>
-<h2>
-  
-  
-  Run the docker image
-</h2>
-
-<p>In order to run the docker image, we can use the <code>docker run</code> command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>docker run &lt;image-name&gt;
-</code></pre>
-
-</div>
-
-
-
-<p>In my case, the command will look something like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>docker run echo
-</code></pre>
-
-</div>
-
-
-
-<p>And Voila!! We got our server up and running; but wait, if you try to access one of your endpoints now, it will give you the following error:</p>
-
-<blockquote>
-<p>Failed to connect to localhost port 8080: Connection refused</p>
-</blockquote>
-
-<p>So, we have to expose port 8080 to port 8080 on the host. To do that, all you have to do is:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>docker run -p 8080:8080 echo
-</code></pre>
-
-</div>
-
-
-
-<p>Now let’s rerun the curl command<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>$ curl http://localhost:8080/
-Hello, World!
-</code></pre>
-
-</div>
-
-
-
-<p>Success! We were able to connect to the application running inside of our container on port 8080. Press <strong>Ctrl + C</strong> to stop the container.</p>
-
- </details> 
- <hr /> 
-
- #### - [Data fetching in Next.js with getServerSideProps and getStaticProps](https://dev.to/logrocket/data-fetching-in-nextjs-with-getserversideprops-and-getstaticprops-4pcl) 
- <details><summary>Article</summary> <p><strong>Written by <a href="https://blog.logrocket.com/author/yeluwande/">Yomi Eluwande</a>✏️</strong></p>
-
-<p>In Next.js, data fetching methods play a crucial role in enabling server-side rendering (SSR), static site generation (SSG), and client-side data fetching for your React components. These methods allow you to fetch data from various sources (e.g., APIs, databases, external services) and use that data to pre-render pages or hydrate them on the client side. </p>
-
-<p>In this article, we’ll explore the <code>getInitialProps</code>, <code>getServerSideProps</code>, and <code>getStaticProps</code> data fetching methods. We’ll take a look at the role <code>getInitialProps</code> played in previous versions of Next.js and the transition to newer and better data fetching methods. </p>
-
-<p><em>Jump ahead</em>:</p>
-
-<ul>
-<li>  Understanding <code>getInitialProps</code>
-</li>
-<li>  Transitioning to <code>getServerSideProps</code> and <code>getStaticProps</code>
-</li>
-<li>  A deep dive into the <code>getServerSideProps</code> lifecycle
-</li>
-<li>  The role of <code>getInitialProps</code> in Next.js 13
-</li>
-<li>  Optimizing <code>getServerSideProps</code> for performance in Next.js 13
-</li>
-<li>  Migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code>
-</li>
-</ul>
-
-<h2>
-  
-  
-  Understanding <code>getInitialProps</code> <a>
-</a>
-</h2>
-
-<p><code>getInitialProps</code> is a method used in older versions of Next.js (versions prior to 9.3) to fetch data on the server side before rendering a page. It was the primary data fetching method used in Next.js before newer data fetching methods like <a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props"><code>getServerSideProps</code></a> and <a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props"><code>getStaticProps</code></a> were introduced. </p>
-
-<p>In older versions of Next.js, <code>getInitialProps</code> was the primary data fetching mechanism for both SSR and client-side rendering. It allowed developers to perform custom data fetching logic for each page and pass the fetched data as props to the page component:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// In older versions of Next.js, you would define getInitialProps like this:</span>
-
-<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Render the list of posts</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Latest</span> <span class="nx">Blog</span> <span class="nx">Posts</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
-        <span class="p">{</span><span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="p">))}</span>
-      <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="nx">HomePage</span><span class="p">.</span><span class="nx">getInitialProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Fetch data from an API</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="c1">// Return the data as props</span>
-  <span class="k">return</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">};</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">HomePage</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, the <code>getInitialProps</code> method fetches the list of blog posts from the API server-side. When a user visits the homepage, the server will pre-render the page with the fetched data and serve it as a complete HTML page. This approach helps with SEO, improves initial page load times, and ensures that the page has the necessary data before being served to the client.</p>
-
-<h2>
-  
-  
-  Transitioning to <code>getServerSideProps</code> and <code>getStaticProps</code> <a>
-</a>
-</h2>
-
-<p>The transition from <code>getInitialProps</code> to <code>getServerSideProps</code> and <code>getStaticProps</code> in Next.js represented a significant improvement in data fetching and rendering strategies. This change was introduced to simplify data fetching, enhance performance, and provide better predictability in terms of when and where data is fetched. </p>
-
-<p>Let’s start by looking at what the <code>getServerSideProps</code> and <code>getStaticProps</code> lifecycles are useful for, and how they each mark pages for rendering. </p>
-
-<p><code>getServerSideProps</code> is a data fetching method that was introduced in Next.js 9.3. It is used specifically for server-side rendering (SSR). Unlike <code>getInitialProps</code>, <code>getServerSideProps</code> is only executed on the server side during the initial page request and not on subsequent client-side navigations. This change improves performance by reducing duplicate data fetching and provides better predictability of server-side data fetching. </p>
-
-<p><code>getStaticProps</code> is another data fetching method that was introduced in Next.js 9.3, and it is used for static site generation (SSG). When using <code>getStaticProps</code>, Next.js pre-renders the page at build time and fetches the data during the build process. The pre-rendered HTML pages are then served to users directly from the CDN, offering faster page loads and reducing server load. </p>
-
-<p>These new data fetching methods ensured better performance by reducing unnecessary data fetching and improving the performance of your Next.js application by fetching data more intelligently. With <code>getServerSideProps</code>, you know that data is fetched only during the initial server-side request, making it easier to understand when and where data is retrieved, and with <code>getStaticProps</code>, the data will only be fetched at build time. </p>
-
-<p>With the introduction of <code>getStaticProps</code> and <code>getServerSideProps</code>, Next.js users now have two different data fetching methods that are used to mark pages for rendering either at build time or upon each request respectively. </p>
-
-<p>When a user requests a page that uses <code>getServerSideProps</code>, the server will execute this function, fetch the data, and pass it as props to the page component. The page is then rendered on the server with the fetched data and sent to the client as a complete HTML page. This approach is known as <a href="https://blog.logrocket.com/improve-app-performance-react-server-side-rendering/">server-side rendering</a> (SSR), and it ensures that the page always has the most up-to-date data when accessed by users. </p>
-
-<p>With <code>getStaticProps</code>, you get the option to pre-render pages at build time, generating static HTML files with the fetched data. When you use <code>getStaticProps</code>, Next.js runs the function during the build process (not on each request) and fetches the data needed for the page. The fetched data is then used to pre-render the page into a static HTML file, which is saved in the build output directory (e.g., the <code>build</code> folder). </p>
-
-<p>Now, when a user visits a page that was pre-rendered with <code>getStaticProps</code>, Next.js serves the static HTML page directly from a CDN, improving page load times and reducing server load. This approach is called popularly known as <a href="https://blog.logrocket.com/using-static-site-generation-modern-react-frameworks/">static site generation</a> (SSG), and it is ideal for pages with content that doesn't change frequently.</p>
-
-<h2>
-  
-  
-  A deep dive into the <code>getServerSideProps</code> lifecycle <a>
-</a>
-</h2>
-
-<p>As mentioned above, the <code>getServerSideProps</code> lifecycle is used to fetch data on the server side and pre-render the page with the fetched data before sending it to the client. Unlike <code>getStaticProps</code>, <code>getServerSideProps</code> executes on each request, making it suitable for pages that require dynamic data or data that changes frequently. </p>
-
-<p>The <code>getServerSideProps</code> function takes a context object as a parameter that contains page data such as <code>params</code>, <code>res</code>, <code>req</code>, <code>query</code>, etc. Here's a breakdown of how the <code>getServerSideProps</code> lifecycle works:</p>
-
-<ol>
-<li> When a user requests a page that uses <code>getServerSideProps</code>, the server-side code is executed first</li>
-<li> The <code>getServerSideProps</code> function is called, and it fetches the necessary data from external APIs, databases, or other sources</li>
-<li> The fetched data is then passed as props to the page component</li>
-<li> The page is pre-rendered on the server with the fetched data and sent as a complete HTML page to the client</li>
-<li> The client-side JavaScript takes over once the page is loaded, and any subsequent interactions are handled on the client side</li>
-</ol>
-
-<p>When compared to the <code>getInitialProps</code> lifecycle, <code>getServerSideProps</code> is much cleaner and more predictable in terms of fetching data, especially when it comes to context switching between server operations and client operations. </p>
-
-<p>With <code>getInitialProps</code>, operations were being executed on both the server and client side, which sometimes led to duplicate data fetching during client-side navigation. But with <code>getServerSideProps</code>, there was a clear understanding that data fetching logic in the <code>getServerSideProps</code> lifecycle would be executed only on the server side during the initial request, eliminating the duplicate data fetching that might occur with <code>getInitialProps</code>. </p>
-
-<p><strong>Example use cases for <code>getServerSideProps</code>:</strong></p>
-
-<ul>
-<li>  <strong>Real-time data</strong>: If your page requires real-time data that changes frequently (e.g., live chat messages, real-time analytics), you can use <code>getServerSideProps</code> to fetch the latest data on each request</li>
-<li>  <strong>Authenticated data</strong>: When dealing with authenticated data that is user-specific and changes based on the user's session or permissions, <code>getServerSideProps</code> is well-suited for fetching this data securely on the server side</li>
-<li>  <strong>Dynamic pages</strong>: For pages with dynamic routes, where the content depends on the route parameters, <code>getServerSideProps</code> can fetch the data for the specific route during each request</li>
-</ul>
-
-<p>In summary, <code>getServerSideProps</code> offers a more straightforward and efficient way to fetch data on the server side, especially for pages that require server-side rendering and frequently changing data. It provides better control over data fetching, improved performance, and a smoother transition from the <code>getInitialProps</code> lifecycle.</p>
-
-<h2>
-  
-  
-  The role of <code>getInitialProps</code> in Next.js 13 <a>
-</a>
-</h2>
-
-<p>Despite the transition to newer data fetching methods, Next.js has maintained support for <code>getInitialProps</code> for backward compatibility. This is because there might be existing projects that rely on <code>getInitialProps</code> and transitioning all of them to the newer methods might be impractical in some cases. </p>
-
-<p>To handle edge cases where <code>getInitialProps</code> might still be necessary, consider the following scenarios:</p>
-
-<ul>
-<li>  <strong>Complex data fetching logic</strong>: If your data fetching logic is complex and can't be easily achieved with <code>getStaticProps</code> or <code>getServerSideProps</code>, you might continue using <code>getInitialProps</code>
-</li>
-<li>  <strong>Custom SSR logic</strong>: If you need custom server-side rendering logic that can't be achieved with the newer methods, you might choose to use <code>getInitialProps</code>
-</li>
-<li>  <strong>Legacy projects</strong>: If you're working on a legacy project that was built using older versions of Next.js and heavily relies on <code>getInitialProps</code>, it might be more practical to continue using it rather than rewriting everything</li>
-</ul>
-
-<h2>
-  
-  
-  Optimizing <code>getServerSideProps</code> for performance in Next.js 13 <a>
-</a>
-</h2>
-
-<p><code>getServerSideProps</code> runs on every request, which means that if you're doing a lot of data fetching or computations, it can slow down your site. There are a few things you can do to optimize the use of <code>getServerSideProps</code> for performance in Next.js 13. </p>
-
-<p>One is to make sure you're returning the required <code>props</code> object with the <code>props</code> property, which can help reduce the number of repetitive calls. When you call <code>getServerSideProps</code>, Next.js creates a server-side request to fetch the data. This request can be quite expensive, especially if you're doing a lot of computations. If you return the required <code>props</code> object, Next.js will memoize the request and reuse the result for subsequent calls. This is important because it means that Next.js doesn't have to make multiple requests to the server to get the same data, which can significantly improve performance. </p>
-
-<p>Another way to optimize the use of <code>getServerSideProps</code> in your project is by taking advantage of smarter caching. It works by caching the results of your request based on the content that was requested. For example, if a user requests a specific page, Next.js will only cache the data for that page. This means that if another user requests a different page, it won't have to load the entire site from scratch, which can save a lot of time. This is different from traditional caching, which simply stores the entire site in a cache and serves it to all users. </p>
-
-<p>Another benefit of smarter caching is that it allows for "incremental updates". This means that if you make a small change to your code, only the affected parts of the site will be updated in the cache.</p>
-
-<h2>
-  
-  
-  Migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code> <a>
-</a>
-</h2>
-
-<p>Migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code> involves updating your data fetching logic to the new data fetching methods introduced in Next.js. The migration process depends on whether you want to achieve server-side rendering (SSR) or static site generation (SSG). Here's a detailed overview of the steps involved in the migration: </p>
-
-<p><strong>Migrating to <code>getServerSideProps</code> (SSR):</strong></p>
-
-<ol>
-<li> <strong>Remove</strong> <code>getInitialProps</code>: If your page components use <code>getInitialProps</code>, you need to remove it from those components</li>
-<li> <strong>Replace</strong> <code>getInitialProps</code> <strong>with</strong> <code>getServerSideProps</code>: Replace the <code>getInitialProps</code> method with the <code>getServerSideProps</code> method in your page components. The structure of <code>getServerSideProps</code> is different from <code>getInitialProps</code>, and it returns an object with the <code>props</code> key containing the fetched data</li>
-<li> <strong>Pass props to the component</strong>: With <code>getServerSideProps</code>, the fetched data will be automatically passed as props to the page component. You can access this data using the <code>props</code> parameter of your page component</li>
-</ol>
-
-<p>Let's consider a simple example where you have a blog application, and you want to fetch a list of blog posts from an external API to display on the homepage:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// Before migrating from getInitialProps</span>
-
-<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Render the list of posts</span>
-<span class="p">};</span>
-
-<span class="nx">HomePage</span><span class="p">.</span><span class="nx">getInitialProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Fetch data from an API</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="c1">// Return the data as props</span>
-  <span class="k">return</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">};</span>
-<span class="p">};</span>
-
-<span class="c1">// After migrating to getServerSideProps</span>
-
-<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Render the list of posts</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// Fetch data from an API</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="c1">// Return the data as props</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">},</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Migrating to <code>getStaticProps</code> (SSG):</strong></p>
-
-<ol>
-<li> <strong>Remove</strong> <code>getInitialProps</code>: If your page components use <code>getInitialProps</code>, you need to remove it from those components</li>
-<li> <strong>Replace</strong> <code>getInitialProps</code> <strong>with</strong> <code>getStaticProps</code>: Replace the <code>getInitialProps</code> method with the <code>getStaticProps</code> method in your page components. Like <code>getServerSideProps</code>, the structure of <code>getStaticProps</code> is different from <code>getInitialProps</code>, and it returns an object with the <code>props</code> key containing the fetched data</li>
-<li> <strong>Data revalidation (optional)</strong>: With <code>getStaticProps</code>, you can also include the <code>revalidate</code> option in the returned object to specify how often the data should be revalidated and regenerated. This is useful when you want to update the data periodically without redeploying your application</li>
-</ol>
-
-<p>Using the same example use case as above, here is our code before and after migrating from <code>getInitialProps</code> and <code>getStaticProps</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// Before migrating from getInitialProps</span>
-
-<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Render the list of posts</span>
-<span class="p">};</span>
-
-<span class="nx">HomePage</span><span class="p">.</span><span class="nx">getInitialProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Fetch data from an API</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="c1">// Return the data as props</span>
-  <span class="k">return</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">};</span>
-<span class="p">};</span>
-
-<span class="c1">// After migrating to getStaticProps</span>
-
-<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Render the list of posts</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// Fetch data from an API</span>
-  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="c1">// Return the data as props</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">props</span><span class="p">:</span> <span class="p">{</span> <span class="nx">posts</span> <span class="p">},</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In summary, migrating from <code>getInitialProps</code> to <code>getServerSideProps</code> or <code>getStaticProps</code> involves updating the data fetching logic and method signatures to improve performance, predictability, and context switching in your Next.js application. Depending on your use case, you can choose between <code>getServerSideProps</code> for server-side rendering or <code>getStaticProps</code> for static site generation.</p>
-
-
-
-
-<h2>
-  
-  
-  <a href="https://lp.logrocket.com/blg/nextjs-signup">LogRocket</a>: Full visibility into production Next.js apps
-</h2>
-
-<p>Debugging Next applications can be difficult, especially when users experience issues that are difficult to reproduce. If you’re interested in monitoring and tracking state, automatically surfacing JavaScript errors, and tracking slow network requests and component load time, <a href="https://lp.logrocket.com/blg/nextjs-signup">try LogRocket</a>.</p>
-
-<p><a href="https://lp.logrocket.com/blg/nextjs-signup"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ajjeExJ2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://blog.logrocket.com/wp-content/uploads/2017/03/1d0cd-1s_rmyo6nbrasp-xtvbaxfg.png" alt="LogRocket Signup" width="800" height="451"></a></p>
-
-<p><a href="https://lp.logrocket.com/blg/nextjs-signup">LogRocket</a> is like a DVR for web and mobile apps, recording literally everything that happens on your Next.js app. Instead of guessing why problems happen, you can aggregate and report on what state your application was in when an issue occurred. LogRocket also monitors your app's performance, reporting with metrics like client CPU load, client memory usage, and more.</p>
-
-<p>The LogRocket Redux middleware package adds an extra layer of visibility into your user sessions. LogRocket logs all actions and state from your Redux stores.</p>
-
-<p>Modernize how you debug your Next.js apps — <a href="https://lp.logrocket.com/blg/nextjs-signup">start monitoring for free</a>.</p>
 
  </details> 
  <hr /> 
