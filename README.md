@@ -118,6 +118,16 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Bleeding-edge Project Using Everything New In Next.js 13📚](https://dev.to/apestein/bleeding-edge-project-using-everything-new-in-nextjs-13-4mlg) 
+ <details><summary>Article</summary> <p>Project using bleeding-edge stack. Drizzle ORM + Neon postgres + Clerk auth + Shadcn/ui + everything new in Next.js 13 (server components, server actions, streaming ui, parallel routes, intercepting routes). Fully edge runtime deployed. I wrote a breakdown and talked about some tricky / difficult things while building this project. This will be a good reference project for people looking to learn Next.js app router. Project uses 100% server actions and include features such as ability to search show catalog, SaaS subscription service with Stripe, optimistic update, and infinite scrolling.</p>
+
+<p>Repo: <a href="https://github.com/Apestein/nextflix">https://github.com/Apestein/nextflix</a></p>
+
+<p>Live: <a href="https://nextflix-blush.vercel.app/">https://nextflix-blush.vercel.app/</a></p>
+
+ </details> 
+ <hr /> 
+
  #### - [EKS and NetworkPolicies: the story so far](https://dev.to/aws-builders/eks-and-networkpolicies-the-story-so-far-3f45) 
  <details><summary>Article</summary> <p>On my monthly "let´s keep up with AWS news" live stream, one of the news caught my eye as <strong>game changer</strong>, and it was this one:</p>
 
@@ -969,215 +979,6 @@ Thread 3 acquired semaphore
 </ul>
 
 <p>I think that's it for that exploration. It was quite interesting racking my brain about semaphores and guarantees. My current conclusions are that I'd prefer to use Postgres for mutexes and Redis for semaphores. It was also a revelation that semaphores don't provide any guarantee of expiry, so you must program carefully around that.</p>
-
- </details> 
- <hr /> 
-
- #### - [This Context API Mistake Ruins Your Whole React App (All Components Re-Render)](https://dev.to/ubahthebuilder/this-context-api-mistake-ruins-your-whole-react-app-all-components-re-render-2k63) 
- <details><summary>Article</summary> <p>It can’t be overstated how much of a key role performance plays when it comes to user experience.</p>
-
-<p>Nothing can make a user leave your app quicker than a sluggish or laggy user interface (UI), and often times this results from poor coding practices on the part of the developer.</p>
-
-<p>A lot of React developers use the context API in a way that results in pointless UI rerenders and ultimately a slow application. While its effect might be subtle in smaller apps, it becomes quite noticeable in large applications.</p>
-
-<p>So what is this bug we’re going to be talking about? Read on to find out!</p>
-
-<blockquote>
-<p>Sidenote: If you’re new to learning web development, and you’re looking for the best resource to help with that, I strongly recommend <a href="https://gumroad.com/a/834147443/dvfyN">HTML to React: The Ultimate Guide</a>.</p>
-</blockquote>
-
-<h2>
-  
-  
-  The Problem of Rerendering The Whole Application
-</h2>
-
-<p>Consider the following App component, which returns a main element housing two custom components: <strong>ExampleComponent1</strong> and <strong>ExampleComponent2</strong>. Inside <strong>ExampleComponent1</strong>, we’re keeping track of the <strong>count</strong> state:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">main</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">ExampleComponent1</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="nx">ExampleComponent2</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent1</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">}</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent2</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now let’s say we later on discover that <strong>ExampleComponent2</strong> will also need access to the <strong>count</strong> state.</p>
-
-<p>What you typically do is lift the state up to the parent component. But oftentimes, in real-world scenarios, a lot of other components might need access to the same state.</p>
-
-<p>Rather than manually passing down the props into the various components, the better approach would be to use the context API. Let’s bring it into our App component:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">,</span> <span class="nx">useContext</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
-
-<span class="kd">const</span> <span class="nx">CountContext</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">main</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">CountContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{{</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">}}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ExampleComponent1</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ExampleComponent2</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/CountContext.Provider</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent1</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">CountContext</span><span class="p">)</span>
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">}</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent2</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Basically, you’re to wrap the part of your app that needs access to the global state in the Context Provider component.</p>
-
-<p>You’d then pass the variables you want the children components to access, which, in our case, is the <strong>count</strong> variable and <strong>setCount()</strong> method.</p>
-
-<p>Now here comes the mistake.</p>
-
-<p>Keep in mind that we’re consuming the context in ExampleComponent1, but not in ExampleComponent2. The idea is that, when we change the state in the parent App component, it’s only the components using the context that get re-rendered.</p>
-
-<p>But the reality is that both components nested in the provider will be rerendered when the state changes.</p>
-
-<p>To demonstrate this, let’s log different messages from both components and add a button in ExampleComponent1 that, when clicked, updates the state:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// App component goes here</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent1</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">CountContext</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ExampleComponent1 rendering</span><span class="dl">"</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">1</span> 
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span> <span class="nx">Click</span> <span class="nx">me</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">ExampleComponent2</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ExampleComponent2 rendering</span><span class="dl">"</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Example</span> <span class="nx">component</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Because only the first component is using the context, the second should not be affected when we click the button to update the state, right?</p>
-
-<p>Wrong!</p>
-
-<p>When you open your browser’s console, refresh the page, and click the button, you’ll see the messages in both components being logged there. This means that both ExampleComponent1 and ExampleComponent2 have been re-rendered.</p>
-
-<p>Now imagine that you have the provider high up in your component tree. The whole app will likely rerender every time you make a change. This is very inefficient and could result in significantly lowered performance in large applications.</p>
-
-<h2>
-  
-  
-  The Solution is to Put The React Context in a Separate File
-</h2>
-
-<p>The solution to this problem is quite straightforward.</p>
-
-<p>You’d start by creating a new folder named <strong>contexts</strong> inside of the <strong>src/</strong> directory within your project’s directory structure.</p>
-
-<p>Then inside the <strong>src/contexts</strong> directory, create a file named <strong>count-contexts.jsx</strong> and paste in the following code:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">CountContext</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">CountContextProvider</span><span class="p">({</span><span class="nx">children</span><span class="p">})</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">CountContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{{</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">}}</span><span class="o">&gt;</span>
-      <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="sr">/CountContext.Provider</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>You’re basically moving the context provider, along with the global state, to a separate file. And this time, the provider component accepts the children from the parent.</p>
-
-<p>Now in your App component, import the <strong>CountContextProvider</strong> and the CountContext variable from the newly created file, then use the former to wrap the children elements:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">CountContextProvider</span><span class="p">,</span> <span class="p">{</span><span class="nx">CountContext</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./contexts/count-context</span><span class="dl">'</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">main</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">CountContextProvider</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ExampleComponent1</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ExampleComponent2</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/CountContextProvider</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// Other components</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now when you save the file, open your browser’s console, refresh the browser, and click the button, you’ll notice that only ExampleComponent1 is being re-rendered. And this is because it’s the only one using the context.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>If you’re building a large application with a lot of components requiring the same state, then it’s crucial that you use the technique we covered in this article to improve your app’s performance, and consequently, the user’s experience.</p>
-
-<p>Want to collaborate with me? <a href="https://forms.gle/2h3UKhM55KZPNXm5A">Fill out this form</a>.</p>
 
  </details> 
  <hr /> 
