@@ -118,6 +118,142 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [🛠️ 10 Exceptional Developer Tools Launched in 2023 🚀](https://dev.to/permit_io/10-exceptional-developer-tools-launched-in-2023-42a8) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  The 2023 Trends in Developer Tools
+</h2>
+
+<p>During a retrospective meeting recently, we noted that we used more developer tools in the first half of this year than we did in the whole of 2021 and 2022 combined. The way developers like us use various tools to enhance our work seems to have shifted significantly in 2023.</p>
+
+<p>Initially, it might appear that Large Language Models (LLM) and Artificial Intelligence (AI) are the primary drivers behind this surge in developer tool usage. On closer inspection, we discovered that only about 20% of the tools we are using are related to LLM and AI.</p>
+
+<p>In this inspection, we uncovered a few emerging trends that have been shaping the developer landscape in 2023. These include serverless computing, observability platforms, event-driven architectures, and many others. We have focused on tools that demonstrate how these emerging trends boost developers' productivity and enable them to create software more efficiently.</p>
+
+<p>In this article, we aim to showcase the most exciting developer tools that were launched in 2023. Each of these tools reflects the innovative spirit driven by these new trends in the software industry. If you're a software developer looking to enhance your productivity, these tools are certainly worth exploring.</p>
+
+<h2>
+  
+  
+  1. From Product to Code - <a href="https://www.lottielab.com/"><u>Lottielab</u></a>
+</h2>
+
+<p>While web browsers are becoming increasingly robust and capable of handling complex animations, the process of creating them remains a challenge. Lottie is an interactive web application that provides a user-friendly interface for creating animations for your web applications, with no prior coding experience required. What's more, Lottie supports the import of vector files from other popular tools and even offers a Figma plugin that streamlines collaboration between product and engineering teams.</p>
+
+<p>Our initial expectations for Lottie were modest, as is often the case with tools in this category. However, we were pleasantly surprised to find that Lottie leverages every web development trend to create a state-of-the-art product. Many features that were previously inaccessible to us are now just a few clicks away.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TGZXQVog--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/VtlOzHutSkCtaVJBrro0" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TGZXQVog--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/VtlOzHutSkCtaVJBrro0" alt="lottie.png" title="lottie.png" width="800" height="470"></a></p>
+
+<h2>
+  
+  
+  2. Writing Code - <a href="https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat"><u>GitHub Copilot Chat</u></a>
+</h2>
+
+<p>In October 2021, GitHub released Copilot, fundamentally changing the way developers write code. It's rare to find a developer today who isn't using Copilot or one of the other AI-powered code assistants in their daily work. In 2023, just when we thought nothing could surprise us, GitHub introduced Copilot Chat. With a simple VSCode plugin, developers can now obtain answers to their daily tasks from Copilot Chat.</p>
+
+<p>While it may seem like a natural extension of Copilot, we discovered that Copilot Chat has the potential to revolutionize our workflow. For instance, when developing SDKs for various programming languages, we can seek design input in languages we're not familiar with and receive answers from Copilot Chat. Moreover, for deeper insights, we can inquire about the reasons behind its decisions, providing us with objective answers.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tvyetqm_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/ECOfELRsSnCkDcr36ZDM" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tvyetqm_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/ECOfELRsSnCkDcr36ZDM" alt="ui-demo.webp" title="ui-demo.webp" width="800" height="497"></a></p>
+
+<h2>
+  
+  
+  3. Debugging - <a href="http://www.mirrord.dev/"><u>mirrord</u></a>
+</h2>
+
+<p>While Kubernetes and other Cloud-Native technologies open up new possibilities in cloud architectures, they also make debugging much more challenging. If you're developing a distributed product that extensively relies on Kubernetes features, you're likely familiar with the challenges of debugging Kubernetes architectures on your local machine.</p>
+
+<p>Mirrord, an open-source tool, offers a novel approach to debugging k8s clusters locally by mirroring only the relevant parts of the cluster to your local machine. Leveraging context from the cloud and remote access to other services, mirrord provides a comprehensive view of your cluster without the need to run it locally. We found that the more we embrace the cloud-native paradigm, the more we rely on mirrord to debug our services locally, saving us valuable developer hours every week.</p>
+
+<h2>
+  
+  
+  4. Deploying - <a href="https://www.winglang.io/"><u>Wing Language</u></a>
+</h2>
+
+<p>Infrastructure as code and defining deployment configurations isn't a new concept. However, just when we thought this space couldn't see disruption, Wing Language emerged with the intention of transforming everything. Wing's approach is to replace the imperative code used for application runtime and the declarative code used for infrastructure deployment with a new language that combines both aspects.</p>
+
+<p>Wing doesn't aim to replace all your application code but excels in what can be called the "Frontend of the Backend." It provides a robust SDK for all things related to cloud infrastructure, along with an imperative language for the operations your API typically performs. When we adopted Wing for our new project, we found that it significantly reduced our time to production and facilitated the creation of flexible, easily maintainable code.</p>
+
+<h2>
+  
+  
+  5. Integrate - <a href="https://runalloy.com/unified-api/"><u>Alloy Unified API</u></a>
+</h2>
+
+<p>It's common for modern applications to rely on other apps for extra functionality. These applications may include payment gateways, authentication systems, analytics tools, and more. While integrating with such APIs is relatively straightforward initially, it can become a maintenance and scaling nightmare as your application grows.</p>
+
+<p>Alloy Unified API is a new tool designed to solve this problem by providing a unified API for all the integrations you need. With Alloy, you can define a single data model that connects multiple APIs, ensuring that you always receive relevant real-time data. We found Alloy to be invaluable when integrating our marketing and customer metrics with our product APIs, saving us considerable time and resources.</p>
+
+<h2>
+  
+  
+  6. Authenticate - <a href="https://www.descope.com"><u>Descope</u></a>
+</h2>
+
+<p>While authentication SaaS toolkits have been around for a while, they often fall short of addressing the fundamental needs of modern distributed applications. Descope is a new authentication-as-a-service solution that prioritizes defining authentication workflows as first-class citizens.</p>
+
+<p>With Descope, you don't configure each part of the service as a separate entity but instead define the authentication flow and let Descope handle the rest. For instance, if you want your application to support login via email, phone, and social media, you can define the authentication flow for each and let Descope take care of the rest. Furthermore, Descope employs passwordless methods (biometrics, magic links, etc.) to enhance security and user-friendliness. Descope checks almost every item on the modern authentication checklist, making it a valuable tool for any contemporary application.</p>
+
+<h2>
+  
+  
+  7. Authorize - <a href="https://io.permit.io/blog-ph"><u>Permit.io</u></a>
+</h2>
+
+<p>Authorization is an integral part of almost any application out there, yet building it yourself in the context of modern architectures, and distributed systems can be challenging, not to mention time-consuming. Almost every permission decision in today's applications is based on multiple factors, including the user, the device, the location, the time, and more. Moreover, they often move away from using Role-Based Access Control (RBAC) in favor of more complex models (Such as Relationship and Attribute-Based Access Control -ReBAC/ABAC) to define permissions.</p>
+
+<p>Permit.io, <a href="https://io.permit.io/blog-ph"><u>recently launched on Product Hunt</u></a>, is a cloud service that simplifies permission definition through a user-friendly low-code UI interface. It supports all permission models (RBAC/ABAC/ReBAC) and seamlessly integrates with your application using their SDK, providing real-time insights into your permissions. Permit.io also offers detailed audit logs, Policy as Code for configuring permissions, GitOps features, rapid authorization decision times, and more - potentially saving months of development time.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lvW88Y59--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/uHFIbH5oQSOgRp0DnGPQ" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lvW88Y59--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/uHFIbH5oQSOgRp0DnGPQ" alt="Low-Code UI Simplification (5).png" title="Low-Code UI Simplification (5).png" width="800" height="479"></a></p>
+
+<h2>
+  
+  
+  8. Observe - <a href="https://www.keephq.dev"><u>Keep</u></a>
+</h2>
+
+<p>In recent years, our application observability stacks have grown with an abundance of tools, each addressing different aspects of the observability puzzle. While these tools are essential for staying on top of the cloud game, they often flood us with data and alerts, turning observability into a full-time job.</p>
+
+<p>Keep, an open-source tool that recently started offering a cloud service, takes a unique approach to address this issue through workflow automation. Instead of drowning in complex dashboards, you can create workflows that trigger when anomalies occur, allowing Keep to manage the rest. We initially used Keep to automate Slack messages for a specific use case in our application, but we soon realized its power in simplifying our dashboard complexity and reducing alert noise.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QROxx8-h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/bmP4WNUhQXGAJo8KGH7M" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QROxx8-h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://media.graphassets.com/bmP4WNUhQXGAJo8KGH7M" alt="2UsV4cKmxMClrRWzqWBAfPORydU_builder.png" title="2UsV4cKmxMClrRWzqWBAfPORydU\_builder.png" width="800" height="484"></a></p>
+
+<h2>
+  
+  
+  9. Listen - <a href="https://trigger.dev/"><u>Trigger.dev</u></a>
+</h2>
+
+<p>While event-driven architecture isn't a novel concept, it has gained significant traction in recent years. With the native support of platforms like Vercel (Next.js) and Serverless, building event-driven applications has become more accessible. However, one crucial aspect was missing: creating long-running jobs that listen to events and trigger additional events based on business logic.</p>
+
+<p>Trigger.dev is an open-source framework (with a cloud service) that simplifies the creation of event-driven applications. You can easily download their SDK and build long-running jobs directly into your codebase, complete with features like API integrations, webhooks, scheduling, and delays. We found Trigger.dev invaluable when developing a simple application that listens to events from our marketing tools and triggers events in our application, saving us significant time and resources.</p>
+
+<h2>
+  
+  
+  10. AI Agents (Launching Soon) - <a href="https://www.fine.dev"><u>Fine.dev</u></a>
+</h2>
+
+<p>While LLM and AI have gained popularity for solving various developer challenges, the user experience of these tools often focuses on the AI component rather than the developer's needs. Fine.dev seeks to bridge this gap by introducing AI agents into the realm of developers.</p>
+
+<p>With Fine.dev, you can define custom AI agents that help developers with specific tasks tailored to their unique problems. Think of it as a chat agent but one that can be customized for specific stacks, technologies, applications, and more. We recently started using Fine.dev, and it feels like the missing piece in the AI puzzle. While it's currently in beta, we encourage you to join the waitlist and give it a try when it becomes available.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In this article, we've showcased the most exciting developer tools launched in 2023. Each of these tools embodies the innovative spirit driven by new trends in the software industry. Whether or not you intend to use them in production immediately, supporting early-stage developer tools has a significant impact on the industry. It fosters innovation and contributes to the future of our field.</p>
+
+<p>Want to learn more about useful dev tools? Join our Slack community and chat to other developers use low-code tools to create better applications.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Motion - Tailwind CSS Template Builder](https://dev.to/rarestoma/motion-tailwind-css-template-builder-3nm) 
  <details><summary>Article</summary> <p>Hi everyone!</p>
 
@@ -810,329 +946,6 @@ Verifies that the input element's placeholder attribute is set to "Enter your us
 
 <p>Run the test by typing the command <code>npm run test</code> on your terminal. The result below shows that the test passed for all three components. <br>
 <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5ROYmz7u--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7h23ayqqlt7bdszrouch.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5ROYmz7u--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7h23ayqqlt7bdszrouch.png" alt="Image description" width="800" height="450"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Using PowerShell Forms for Repetitive (Work) Tasks](https://dev.to/dedsyn4ps3/using-powershell-forms-for-repetitive-work-tasks-cm7) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dGOHd3oU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b68ewlh04u8zdx22kj9k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dGOHd3oU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b68ewlh04u8zdx22kj9k.png" alt="TL;DR" width="800" height="149"></a></p>
-
-
-<div class="ltag-github-readme-tag">
-  <div class="readme-overview">
-    <h2>
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
-      <a href="https://github.com/dedSyn4ps3">
-        dedSyn4ps3
-      </a> / <a href="https://github.com/dedSyn4ps3/response-generator-example">
-        response-generator-example
-      </a>
-    </h2>
-    <h3>
-      
-    </h3>
-  </div>
-  <div class="ltag-github-body">
-    
-<div id="readme" class="md">
-<h1>
-Response Generator</h1>
-<br>
-<div>
-  <a rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34"><img src="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34" height="400" width="100%"></a>
-</div>
-<div>
-  <h4>
-<b>A simple Windows form utility for generating quick response messages</b>
-</h4>
-</div>
-<br>
-<h2>
-About 🗃</h2>
-<p>As IT Support Professionals, we are constantly sending correspondance to various clients and end users
-Very rarely do we help only one or two customer groups each day, and because of that fact, it's normal
-for us to have to create tailored response messages with contact info specific to that client.</p>
-<br>
-<blockquote>
-<p>This repository is meant to supplement the <a href="https://medium.com/@erutherford_nullreturn/using-powershell-forms-for-repetitive-tasks-eeef814bee4" rel="nofollow">Medium article</a>: <strong>"Using PowerShell Forms for Repetitive Tasks"</strong></p>
-</blockquote>
-<br>
-<h2>
-Getting Started 🖥</h2>
-<p>The utility was designed as straightforward, custom module meant to be easily imported into a <code>powershell</code> session
-and invoked by the user. In order for this module to be imported, it's important to locate the designated system path
-to place this project's inner directory in. The easiest way to find that location is by opening a powershell terminal
-and typing the following:</p>
-<div class="highlight highlight-source-powershell notranslate position-relative overflow-auto js-code-highlight">
-<pre>PS <span class="pl-k">&gt;</span> <span class="pl-smi">$<span class="pl-c1">env:</span></span></pre>…
-</div>
-</div>
-  </div>
-  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/dedSyn4ps3/response-generator-example">View on GitHub</a></div>
-</div>
-
-
-<h2>
-  
-  
-  PowerShell...Seriously?
-</h2>
-
-<p>Yes, really! I know that many of the excellent articles many of us read each day tend to follow the more flashy, exciting languages that dominate headlines as a result of their growing popularity and expansive use-cases. While that's all well and good, many of us that may work in IT aren't fortunate enough to use many of these new fancy releases in our day to day roles...usually because of this thing called Access Control Lists and Group Policy Objects (that's right, good ol' Active Directory management).<br>
-There is a way, however, that many in IT are able to utilize automation and scripting that in most situations is allowed by GPO (depending on your role of course), and that's by utilizing Window's very own powerhouse scripting language, PowerShell!</p>
-<h2>
-  
-  
-  Quick Recap
-</h2>
-
-<p>For those who may not be all that familiar with what PowerShell is, and just how powerful it can be for developers, here's a brief intro:</p>
-
-<blockquote>
-<p>PowerShell is a modern command shell that includes the best features of other popular shells. Unlike most shells that only accept and return text, PowerShell accepts and returns .NET objects. The shell includes the following features:</p>
-
-<ul>
-<li>Robust command-line history</li>
-<li>Tab completion and command prediction (See about_PSReadLine)</li>
-<li>Supports command and parameter aliases</li>
-<li>Pipeline for chaining commands</li>
-<li>In-console help system, similar to Unix man pages</li>
-</ul>
-</blockquote>
-
-<p>At its inception, PowerShell was originally developed on and designed to be a better and more feature-rich shell experience for Windows users and system administrators. As the project continued to grow and blossom, a decision was made by Microsoft to develop a cross-platform version of PowerShell and make it open source for the broader community to contribute to...<strong>and thus, PowerShell Core was born!</strong></p>
-
-<p>Sometimes this can be slightly confusing to new programmers that are trying to understand the differences between the PowerShell they see built in to their Windows device, and PS Core installs that they see online. It all comes down to the version of .NET that they run on:</p>
-
-<blockquote>
-<p>Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the release of PowerShell 6.0, PowerShell became an open source project built on .NET Core 2.0. Moving from the .NET Framework to .NET Core allowed PowerShell to become a cross-platform solution.</p>
-</blockquote>
-
-<p>The project outlined in this article is solely dependent on <strong>Windows PowerShell</strong>. It will not function if ran on any version of PS Core, regardless of whether you're running it on Windows, macOS, or Linux. If you're wondering why that is exactly, it's due to the fact that the Windows Forms API that we will use is only part of the native .NET Framework included in all recent versions of Windows.</p>
-<h2>
-  
-  
-  Harness the Strength of PowerShell
-</h2>
-
-<p><strong>The goal of our project is pretty straightforward:</strong></p>
-
-<ul>
-<li>Streamline and automate the generation of response emails for customers</li>
-<li>Build a custom PowerShell module to incorporate this functionality</li>
-<li>Create a simple graphical interface using the Forms API to interact with the module</li>
-</ul>
-
-<p>Because this project is merely a starting point for future applications, its structure will be pretty mundane. Even so, it demonstrates a great way for organizing any future module projects.</p>
-
-<p>We're going to put together a relatively simple <code>ResponseGenerator</code> UI using .NET Forms via PowerShell. It provides a means of quick email response generation depending on the client ID chosen by the user. The following will be its structure:</p>
-
-<p>.<br>
-├── ResponseCore.ps1<br>
-├── ResponseForm.ps1<br>
-├── ResponseGenerator.psd1<br>
-├── ResponseGenerator.psm1<br>
-└── assets<br>
-└── coding.ico</p>
-<h2>
-  
-  
-  Building A Module
-</h2>
-
-<p>As I mentioned previously, <strong>the best approach for building our utility is to create a dedicated module for it</strong>. PowerShell modules are similar in structure to Python package directories and modules in other languages, so they should feel relatively familiar to many of you.</p>
-
-<p>At their simplest, new modules can be made up of a single file, though in most scenarios they will consist of several files located in a central root directory. One very important factor to keep in mind when building a new module:</p>
-
-<p><strong>The root directory should be named exactly the same as the module file itself.</strong></p>
-
-<p>To start out, we’ll go ahead and create the module directory and primary declaration file for our utility by running the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>PS &gt; New-Item -Type Directory -Path "ResponseGenerator"
-PS &gt; Set-Location -Path ./ResponseGenerator &amp;&amp; New-Item -Type File -Path "ResponseGenerator.psm1"
-</code></pre>
-
-</div>
-
-
-<p>You may have noticed already that the extension of our newly created file is <code>.psm1</code>. These particular files are the “core” of a PowerShell module, in our case, <strong>ResponseGenerator</strong>.</p>
-
-<p>It will be the primary entry point of our utility, but will only contain a handful of code. The primary body of our module code will be spread out between two other files, which we will create right now:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>PS &gt; New-Item -Type File -Path "ResponseForm.ps1" &amp;&amp; New-Item -Type File -Path "ResponseCore.ps1"
-</code></pre>
-
-</div>
-
-
-<p><em><strong>NOTE:</strong> Don’t worry about creating the psd1 file just yet, we'll get to it soon enough!</em></p>
-<h2>
-  
-  
-  Creating the Form
-</h2>
-
-<p>Now that we’ve got our core files in place, we can start adding the code needed to generate a nice looking graphical utility!</p>
-
-<p>The following Gist shows how we declare our callback functions for specific button presses, as well as creating a ComboBox for storing the entire list of contacts to choose from, and a few quick response button shortcuts:</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-
-<h2>
-  
-  
-  Adding the Rest
-</h2>
-
-<p>The only thing left to do for our module at this point is to finish adding the remaining core functions and contact info arrays to the other file in our project, <code>ResponseCore.ps1</code>:</p>
-
-
-<div class="ltag_gist-liquid-tag">
-  
-</div>
-
-
-<h2>
-  
-  
-  Wrapping Things Up
-</h2>
-
-<p>Now that all of our utility code is written, the last thing to do to finish our PowerShell module is creating a <code>.psd1</code> Module Manifest. This file allows developers to add fine-grained details about their module, as well as limit which functions are exported for use in the command line.</p>
-
-<p>PowerShell provides a handy <code>cmdlet</code> (pronounced command-let) to generate this for us, which we can pass various arguments to in order to overwrite the default values for important fields:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>New-ModuleManifest `
--Path "$PWD\ResponseGenerator.psd1" `
--Author "dedSyn4ps3" `
--RootModule ResponseGenerator.psm1 `
--Description "This module helps generate response messages"
-</code></pre>
-
-</div>
-
-
-<p>This will create the last piece of our utility! There is a line of code in this manifest that I recommend making a slight adjustment to, however. It’s good practice to not export every single function declared in your module, and by default the manifest generator does just that.</p>
-
-<p>Simply scroll down a ways until you see the field declaring FunctionsToExport and update it with the primary entry point to our utility, <strong>which we declared previously in the module file</strong>:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>FunctionsToExport = 'Invoke-ResponseGenerator'
-</code></pre>
-
-</div>
-
-<h2>
-  
-  
-  Run It!
-</h2>
-
-<p>And with that, you’ve successfully put together a PowerShell module that can be imported and run from the command line! When it comes to custom modules, <strong>it’s extremely convenient to be able to call it from our shell without having to specify the actual location path of the module directory.</strong></p>
-
-<p>In order to import and run our utility by name, it’s imperative that the module directory be placed in the designated location for all PowerShell modules for your user! This may very from system to system, so to be sure, simply type the following in your shell to find out the exact location to place the new module:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>PS &gt; $env:PSModulePath
-</code></pre>
-
-</div>
-
-
-<p>With the module directory placed where it needs to go, importing and calling the main entry point is as simple as invoking any other command from our shell:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code># import the custom module
-PS &gt; Import-Module ResponseGenerator
-
-# start the utility by calling it's invoke method
-PS &gt; Invoke-ResponseGenerator
-</code></pre>
-
-</div>
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vU8WpKQa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o0rrhr0exqjl20xuqlac.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vU8WpKQa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o0rrhr0exqjl20xuqlac.png" alt="Tip" width="586" height="393"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9vBT9sE4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x9gvqnomstygl13htndb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9vBT9sE4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x9gvqnomstygl13htndb.png" alt="The End Result" width="800" height="198"></a></p>
-<h2>
-  
-  
-  Project Code
-</h2>
-
-<p>The entire project repository can be found on Github, and I highly encourage those looking for a great way to kickstart their PowerShell automation to check it out!</p>
-
-<p>Also be sure to give me a like if you found this article interesting, and be sure to subscribe for upcoming articles! And if you're on Medium as well, <a href="https://medium.com/@erutherford_nullreturn">check me out there</a> for early viewing! ✨</p>
-
-
-<div class="ltag-github-readme-tag">
-  <div class="readme-overview">
-    <h2>
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
-      <a href="https://github.com/dedSyn4ps3">
-        dedSyn4ps3
-      </a> / <a href="https://github.com/dedSyn4ps3/response-generator-example">
-        response-generator-example
-      </a>
-    </h2>
-    <h3>
-      
-    </h3>
-  </div>
-  <div class="ltag-github-body">
-    
-<div id="readme" class="md">
-<h1>
-Response Generator</h1>
-<br>
-<div>
-  <a rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34"><img src="https://camo.githubusercontent.com/57aba7606717cb122d183f127a6357dd2ff664d6238882f3d055e25702059aba/68747470733a2f2f696d616765732d7769786d702d6564333061383662386334636138383737373335393463322e7769786d702e636f6d2f662f62636536316332642d663038652d346366662d616233332d3633363062646666643665382f64656e7a716e332d34343432366239302d616162392d343938332d626638382d6366323937353231653161352e706e672f76312f66696c6c2f775f313238302c685f3830302c737472702f6461726b6d7973745f706f7765727368656c6c5f77616c6c70617065725f5f3235363078313630305f5f62795f626173746172646f70657261746f725f64656e7a716e332d66756c6c766965772e706e673f746f6b656e3d65794a30655841694f694a4b563151694c434a68624763694f694a49557a49314e694a392e65794a7a645749694f694a31636d3436595842774f6a646c4d4751784f4467354f4449794e6a517a4e7a4e684e5759775a4451784e5756684d4751794e6d55774969776961584e7a496a6f6964584a754f6d467763446f335a54426b4d5467344f5467794d6a59304d7a637a5954566d4d4751304d54566c5954426b4d6a5a6c4d434973496d39696169493657317437496d686c6157646f64434936496a77394f444177496977696347463061434936496c77765a6c7776596d4e6c4e6a466a4d6d51745a6a41345a53303059325a6d4c5746694d7a4d744e6a4d324d474a6b5a6d5a6b4e6d55345843396b5a5735366357347a4c5451304e444932596a6b774c574668596a6b744e446b344d7931695a6a67344c574e6d4d6a6b334e5449785a5446684e533577626d63694c434a336157523061434936496a77394d5449344d434a3958563073496d46315a43493657794a31636d343663325679646d6c6a5a5470706257466e5a53357663475679595852706232357a496c31392e68766d452d65424246756e5535455f48416e2d43434c4e4b4131595f444c704530786c5571745459434b34" height="400" width="100%"></a>
-</div>
-
-<div>
-  <h4>
-<b>A simple Windows form utility for generating quick response messages</b>
-</h4>
-</div>
-
-
-
-<h2>
-About 🗃</h2>
-
-<p>As IT Support Professionals, we are constantly sending correspondance to various clients and end users
-Very rarely do we help only one or two customer groups each day, and because of that fact, it's normal
-for us to have to create tailored response messages with contact info specific to that client.</p>
-<br>
-<blockquote>
-<p>This repository is meant to supplement the <a href="https://medium.com/@erutherford_nullreturn/using-powershell-forms-for-repetitive-tasks-eeef814bee4" rel="nofollow">Medium article</a>: <strong>"Using PowerShell Forms for Repetitive Tasks"</strong></p>
-</blockquote>
-<br>
-<h2>
-Getting Started 🖥</h2>
-<p>The utility was designed as straightforward, custom module meant to be easily imported into a <code>powershell</code> session
-and invoked by the user. In order for this module to be imported, it's important to locate the designated system path
-to place this project's inner directory in. The easiest way to find that location is by opening a powershell terminal
-and typing the following:</p>
-<div class="highlight highlight-source-powershell notranslate position-relative overflow-auto js-code-highlight">
-<pre>PS <span class="pl-k">&gt;</span> <span class="pl-smi">$<span class="pl-c1">env:</span></span></pre>…
-</div>
-</div>
-  </div>
-  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/dedSyn4ps3/response-generator-example">View on GitHub</a></div>
-</div>
-
 
  </details> 
  <hr /> 
