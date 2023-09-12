@@ -118,8 +118,164 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Trending Discussions of the Week - 9/12/23](https://dev.to/devteam/trending-discussions-of-the-week-91223-4kim) 
+ <details><summary>Article</summary> <p>Each week, we curate the most popular <a href="https://dev.to/t/discuss">#discuss posts</a> on DEV to bring them to you in one comprehensive list. From coding tips to career advice, you'll find a range of topics that are buzzing in the DEV community.</p>
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/soumyadeepdey" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FX2C9J2w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--6m4jFga3--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1076361/716116a4-39c9-403c-b8d3-c1fc37bc71a6.jpeg" alt="soumyadeepdey">
+    </div>
+  </a>
+  <a href="/soumyadeepdey/what-inspired-you-to-became-a-coder-4cpc" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>What Inspired You To Became A Coder? 🤔</h2>
+      <h3>Soumyadeep Dey ☑️ ・ Aug 30</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#watercooler</span>
+        <span class="ltag__link__tag">#discuss</span>
+      </div>
+    </div>
+  </a>
+</div>
+ Sharing your dev journey will certainly inspire others, so @soumyadeepdey asks, how did you start your craft?
+
+
+
+
+<div class="ltag__link">
+  <a href="/shricodev" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KIwDD-kM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--co_N_NJO--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1127015/6decf81a-012a-4ee2-8dc5-951ccc4a1024.jpg" alt="shricodev">
+    </div>
+  </a>
+  <a href="/shricodev/devs-share-something-that-you-know-that-most-dont-17e9" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Dev's, share something you know that most don't</h2>
+      <h3>Shrijal Acharya ・ Aug 29</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#opensource</span>
+      </div>
+    </div>
+  </a>
+</div>
+ There's so much knowledge out there to learn that you have to know at least one niche or esoteric bit. Here's where to drop that strange trivia -- share it with @shricodev!
+
+
+
+
+<div class="ltag__link">
+  <a href="/jimmymcbride" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FEi_wnAz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--2NblZIoG--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/262904/ff7cff24-237b-45bb-b64e-27be6acc2355.png" alt="jimmymcbride">
+    </div>
+  </a>
+  <a href="/jimmymcbride/more-than-money-finding-deeper-value-in-coding-5c17" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>More Than Money: Finding Deeper Value in Coding</h2>
+      <h3>Jimmy McBride ・ Sep 8</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#codenewbie</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#career</span>
+        <span class="ltag__link__tag">#programming</span>
+      </div>
+    </div>
+  </a>
+</div>
+ A lot of people, younger @jimmymcbride included, came into programming with the promises of huge six-figure salaries. So, the question is: what do you find valuable from coding outside of the pay?
+
+
+
+
+<div class="ltag__link">
+  <a href="/gregorojstersek" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aXn1U6sR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--W9HVw0Ck--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1124995/e9534064-7c77-44ad-a180-ed8b14e7cf83.jpeg" alt="gregorojstersek">
+    </div>
+  </a>
+  <a href="/gregorojstersek/what-to-look-for-when-hiring-a-new-engineer-for-your-team-ndb" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>What to look for when hiring a new engineer for your team?</h2>
+      <h3>Gregor Ojstersek ・ Aug 25</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#hiring</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#career</span>
+        <span class="ltag__link__tag">#interview</span>
+      </div>
+    </div>
+  </a>
+</div>
+@gregorojstersek normally looks for engineers that can reasonably articulate things and can demonstrate drive, motivation for learning, as well as being a good team player. Tell us more about your team's hiring standards in the comments below!
+
+
+
+
+<div class="ltag__link">
+  <a href="/apetryla" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--q4bGE8tW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--HhcThIul--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1034978/8035c203-c843-4622-882d-6f2ac5839209.jpg" alt="apetryla">
+    </div>
+  </a>
+  <a href="/apetryla/mastering-conflict-resolution-8-expert-tips-to-transform-challenging-interactions-into-opportunities-4c6k" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Mastering Conflict Resolution: 8 Expert Tips to Transform Challenging Interactions into Opportunities</h2>
+      <h3>Aidas Petryla ・ Sep 7</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#career</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#management</span>
+      </div>
+    </div>
+  </a>
+</div>
+ @apetryla shares some great ways to turn interactions into opportunities with conflict resolution! Share some strategies you use to navigate conflicts in the comments of this discussion!
+
+
+<h3>
+  
+  
+  📚 Explore More in Our Code Chatter Series
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eYMzeofR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4zglc488wgld8ut1321u.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eYMzeofR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4zglc488wgld8ut1321u.jpg" alt="Code Chatter image" width="800" height="336"></a> Want to dive deeper into the world of developer discussions and insights? Check out our <a href="https://dev.to/thepracticaldev/series/24494">Code Chatter Series</a> and join us as we explore the coding world, one witty question at a time.</p>
+
+
+<div class="ltag__link">
+  <a href="/devteam" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vzeA_jD8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--CMkjYEfB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg" alt="The DEV Team" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Q9agcq3k--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vHKcEiTe--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/3/13d3b32a-d381-4549-b95e-ec665768ce8f.png" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/devteam/code-pet-peeves-whats-yours-158l" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Code Pet Peeves: What's Yours?</h2>
+      <h3>dev.to staff for The DEV Team ・ Sep 6</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#discuss</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+ </details> 
+ <hr /> 
+
  #### - [Creating a Dockerfile for your Go Backend](https://dev.to/sadeedpv/creating-a-dockerfile-for-your-go-backend-20n5) 
- <details><summary>Article</summary> <p>This is a step-by-step comprehensive guide on how to create a docker image for your Go backend for absolute beginners. In this article, you will learn to build Docker image from scratch, and deploy and run your Go application.</p>
+ <details><summary>Article</summary> <p>This is a step-by-step comprehensive guide on how to create a docker image for your Go backend for absolute beginners. In this article, you will learn to build Docker image from scratch, and deploy and run your Go application. Here is the full source code of the GitHub <a href="https://github.com/Sadeedpv/docker-example">repo</a></p>
 
 <h3>
   
@@ -908,34 +1064,6 @@ Hello, World!
 
 
 <p><em>That's it for our weekly Top 7 for this Tuesday! Keep an eye on dev.to this week for daily content and discussions...and be sure to keep an eye on this series in the future. You might just be in it!</em></p>
-
- </details> 
- <hr /> 
-
- #### - [What are your takeaways from the Apple event?](https://dev.to/ben/what-are-your-takeaways-from-the-apple-event-24f7) 
- <details><summary>Article</summary> <div class="crayons-card c-embed text-styles text-styles--secondary">
-      <div class="c-embed__cover">
-        <a href="https://www.apple.com/apple-events/event-stream/" class="c-link s:max-w-50 align-middle" rel="noopener noreferrer">
-          <img alt="" src="https://res.cloudinary.com/practicaldev/image/fetch/s--nHaObXn8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.apple.com/v/apple-events/event-stream/n/images/overview/meta/overview__bcphzsdb4fpu_og.png%3F202309040815" height="420" class="m-0" width="800">
-        </a>
-      </div>
-    <div class="c-embed__body">
-      <h2 class="fs-xl lh-tight">
-        <a href="https://www.apple.com/apple-events/event-stream/" rel="noopener noreferrer" class="c-link">
-          Apple Events - Special Event Stream - Apple
-        </a>
-      </h2>
-        <p class="truncate-at-3">
-          Watch the Apple event online.
-        </p>
-      <div class="color-secondary fs-s flex items-center">
-        apple.com
-      </div>
-    </div>
-</div>
-
-
-<p>What are your thoughts and feelings about what Apple announced today?</p>
 
  </details> 
  <hr /> 
