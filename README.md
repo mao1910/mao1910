@@ -118,6 +118,173 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [What is your Why?](https://dev.to/acoh3n/what-is-your-why-j9b) 
+ <details><summary>Article</summary> <p>I believe we all entered the field of programming for various reasons. It could be to earn a living, pursue a sought-after career, or simply because we love building stuff. Whatever the reason, we're here.</p>
+
+<p>However, if I'm being perfectly honest, while all these are good reasons, none would provide me with more than the bare minimum level of happiness at what I do almost every day for many hours.</p>
+
+<p>Yet, while I had my fair share of miserable days on the job like everyone else, more often than not, I am truly eager to do my thing at work. </p>
+
+<p>So today, while I was running, I found myself in a bit of an introspective mood and wondered what is my personal Why? Why do I still love programming so much after all these years. </p>
+
+<p>I always knew it had something to do with people. Seeing someone using something I wrote and maybe even liking it never ceases to give me a kick. But I felt there was a deeper desire. </p>
+
+<p>After a little back and forth with myself I reduced it to something that felt really true for me: <strong>to reduce the suffering of someone else</strong>. Okay, I know it sounds a bit overly dramatic, but hear me out here for a minute. </p>
+
+<p>Our profession is riddled with sharp objects we all occasionally bump into. People much smarter than myself say that it takes <a href="https://norvig.com/21-days.html">a very long</a> time to even begin to master it, there is formidable math and sophisticated algorithms lurking at every corner, then there are new languages, tools, frameworks and paradigms jumping on us every other day that threaten to undermine everything we've learned for the past however many years. </p>
+
+<p>So when I get to brighten someone's day through my work in even the smallest way, damn it it feels good. </p>
+
+<p>It could be a user that with the help of something I wrote suddenly feels much more productive, or it could be as "small" as assisting a colleague by showing them how to use some tool that I take for granted, but is life-changing for them. </p>
+
+<p>That's why I relish at the opportunity to spend that extra hour at making my API just a tiny bit simpler, or clean up and refactor some messy code, or write that extra page of documentation or test. Because someone (including myself) will experience just a tiny bit less frustration and pain down the road when they try to use it. </p>
+
+<p>And whenever I get to see it first hand it gives me the energy to wake up the next day and do it all over again. </p>
+
+<p>So now I'd like to invite you to find your personal Why, and to please share it with us.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Extensões do Visual Studio Code para um Front-end](https://dev.to/manzoliric/extensoes-do-visual-studio-code-para-um-front-end-2pgk) 
+ <details><summary>Article</summary> <p>Hoje vim trazer extensões do Visual Studio Code que eu uso e que me ajudam muito no dia a dia, esse post foi inspirado no post <a href="https://dev.to/laryssa/extensoes-do-visual-studio-code-para-um-sre-2nj5">Extensões do Visual Studio Code para um SRE</a> da <a href="https://dev.to/laryssa">Laryssa Araujo</a> onde ela mostra as ferramentas que ela usa no dia a dia como uma SRE.</p>
+
+<p>Não vou falar sobre todas as extensões que eu tenho instalado aqui, tenho algumas para mexer com Elixir/Phoenix, Docker e etc... vou falar apenas das que eu mais uso e que me ajudam no dia a dia como Front-end.</p>
+
+<ol>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag</a>: Essa extensão é muito útil para quem trabalha com HTML, ela renomeia a tag de abertura e fechamento automaticamente, evitando que você tenha que ficar renomeando as tags manualmente.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a>: Essa extensão é muito útil para corrigir erros de digitação, ela verifica a palavra e mostra se existe algum erro de digitação, exemplo quando escrevemos <code>lenght</code> ao invés de <code>length</code>, que acontece muito comigo.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian">Brazilian Portuguese - Code Spell Checker</a>: Essa extensão é uma extensão da extensão anterior, ela adiciona um dicionário de palavras em português, para que a extensão anterior possa verificar as palavras em português.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=SimonSiefke.svg-preview">Svg Preview</a>: Essa extensão mostra uma prévia do SVG direto no VSCode, assim você não precisa abrir o arquivo no navegador para ver o svg.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-community-material-theme">Community Material Theme</a>: Essa extensão é apenas o tema que eu mais gosto, gosto de usar a versão <code>Material Theme Darker</code>.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">Material Icon Theme</a>: Essa extensão é apenas o tema de ícones que eu mais gosto.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">Import Cost</a>: Essa extensão mostra o tamanho do pacote que você está importando, assim você pode ver se o pacote é muito grande e se vale a pena usar ele.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">Git Lens</a>: Essa extensão é bem completa, tem muita coisa, mas para falar a verdade eu uso muito ela para verificar quem fez a última alteração no arquivo direto no VSCode e também conseguir ir direto para o arquivo no GitHub ou Pull Request.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot">GitHub Copilot</a>: Essa extensão não tem muito que dizer, é o famoso GitHub Copilot, tem me ajudado bastante a criar códigos que são mais repetitivos,e também funciona muito bem para documentação e comentários.</p></li>
+<li><p><a href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">EditorConfig for VS Code</a>: Essa extensão é muito útil para quem trabalha em projetos com várias pessoas, ela ajuda a manter o padrão de código, como por exemplo, <code>indent_style</code>, <code>indent_size</code>, <code>insert_final_newline</code> e etc... criamos um arquivo <code>.editorconfig</code> na raiz do projeto e configuramos o que queremos que seja o padrão.</p></li>
+</ol>
+
+ </details> 
+ <hr /> 
+
+ #### - [PHP e o Machine Learning](https://dev.to/lenog/php-e-o-machine-learning-3b2b) 
+ <details><summary>Article</summary> <p>Nos últimos anos, o Machine Learning se tornou uma ferramenta indispensável em uma ampla variedade de aplicações, desde recomendação de produtos até diagnóstico médico. Embora seja comumente associado a linguagens como Python e R, é possível aplicar técnicas de Machine Learning em PHP com a ajuda da biblioteca Rubix.</p>
+
+<p>O PHP é uma linguagem de programação amplamente utilizada para desenvolvimento web, e muitos desenvolvedores já estão familiarizados com ela. A introdução do Rubix oferece uma maneira poderosa de aproveitar os recursos de Machine Learning em PHP e expandir o escopo de projetos em que a linguagem pode ser aplicada.</p>
+
+
+
+
+<h2>
+  
+  
+  O que é o Rubix?
+</h2>
+
+<p>O Rubix é uma biblioteca de código aberto para Machine Learning em PHP que foi desenvolvida para ser amigável e acessível para desenvolvedores PHP. Ele oferece suporte para uma ampla variedade de algoritmos de Machine Learning, como regressão linear, árvores de decisão, k-means e muito mais.</p>
+
+<p>O Rubix fornece uma API intuitiva e bem documentada que permite aos desenvolvedores criar e treinar modelos de Machine Learning, realizar previsões e avaliar o desempenho dos modelos. Além disso, a biblioteca possui recursos de pré-processamento de dados e validação cruzada para ajudar a garantir que os modelos sejam construídos de maneira eficaz.</p>
+
+
+
+
+<h2>
+  
+  
+  Por que usar Machine Learning em PHP com o Rubix?
+</h2>
+
+<p>Há várias razões pelas quais pode ser benéfico utilizar o Rubix para Machine Learning em PHP:</p>
+
+<p><strong>Integração Simples:</strong> O Rubix é fácil de integrar em projetos PHP existentes. Você pode incorporar facilmente funcionalidades de Machine Learning em seu aplicativo da web ou sistema existente.</p>
+
+<p><strong>Familiaridade com PHP:</strong> Para desenvolvedores que já estão familiarizados com PHP, não é necessário aprender uma nova linguagem como Python ou R para trabalhar com Machine Learning. Isso pode economizar tempo e esforço.</p>
+
+<p><strong>Ecossistema PHP:</strong> O Rubix se encaixa bem no ecossistema PHP e pode ser facilmente combinado com outras bibliotecas e frameworks PHP, aproveitando todo o ecossistema de PHP.</p>
+
+<p><strong>Comunidade Ativa:</strong> O Rubix tem uma comunidade ativa de desenvolvedores que contribuem para a biblioteca e oferecem suporte. Isso significa que você pode obter ajuda e encontrar recursos online facilmente.</p>
+
+
+
+
+<h2>
+  
+  
+  Como começar com o Rubix
+</h2>
+
+<p>Para começar a usar o Rubix para Machine Learning em PHP, siga estas etapas:</p>
+
+<p><strong>Instalação:</strong> Você pode instalar o Rubix usando o Composer, que é uma ferramenta de gerenciamento de dependências PHP. Basta adicionar a biblioteca Rubix ao seu arquivo composer.json e executar o comando composer install.</p>
+
+<p><strong>Carregando Dados:</strong> O primeiro passo é carregar seus dados em uma estrutura de dados compatível com o Rubix. Isso pode ser feito com arrays ou objetos, dependendo do seu caso de uso.</p>
+
+<p><strong>Pré-processamento de Dados:</strong> O Rubix fornece ferramentas para pré-processar seus dados, como normalização e codificação de variáveis categóricas.</p>
+
+<p><strong>Construção do Modelo:</strong> Escolha um algoritmo de Machine Learning e construa um modelo usando a API do Rubix.</p>
+
+<p><strong>Treinamento do Modelo:</strong> Alimente seus dados de treinamento no modelo para que ele aprenda os padrões nos dados.</p>
+
+<p><strong>Avaliação do Modelo:</strong> Avalie o desempenho do modelo usando métricas apropriadas, como precisão, recall e F1-score.</p>
+
+<p><strong>Previsões:</strong> Use o modelo treinado para fazer previsões em novos dados.</p>
+
+<p><strong>Iteração:</strong> Refine seu modelo, ajuste hiperparâmetros e continue melhorando seu desempenho.</p>
+
+
+
+
+<h2>
+  
+  
+  Exemplo de uso do Rubix
+</h2>
+
+<p>Aqui está um exemplo simples de como usar o Rubix para criar um modelo de regressão linear em PHP:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>use Rubix\ML\Regressors\LinearRegression;
+
+// Carregar dados
+$data = [...]; // Seus dados aqui
+
+// Inicializar o modelo
+$estimator = new LinearRegression();
+
+// Treinar o modelo
+$estimator-&gt;train($data);
+
+// Fazer uma previsão
+$prediction = $estimator-&gt;predict([1.5, 2.0, 3.7]);
+
+echo 'Previsão: ' . $prediction;
+</code></pre>
+
+</div>
+
+
+
+<p>Este é apenas um exemplo básico, e o Rubix oferece suporte a uma ampla variedade de algoritmos e técnicas de Machine Learning para atender a diferentes necessidades.</p>
+
+<p>Para um exemplo prático e mais preciso, disponibilizei no meu GitHub um projeto simples de Machine Learning que, usando uma planílha com o histórico de vendas de diversos carros e suas características, com milhares de registros, consegue prever se um carro novo que não consta na planílha seria provavelmente vendido ou não, de acordo com suas características. O projeto está disponível no link: <a href="https://github.com/leo-nog/php-simple-machine-learning">https://github.com/leo-nog/php-simple-machine-learning</a></p>
+
+
+
+
+<h2>
+  
+  
+  Conclusão
+</h2>
+
+<p>O Rubix é uma biblioteca valiosa que permite que os desenvolvedores de PHP explorem e aproveitem os benefícios do Machine Learning em seus projetos. Com sua API intuitiva e ampla gama de recursos, o Rubix torna mais fácil do que nunca criar modelos de Machine Learning em PHP e aplicá-los em diversos domínios.</p>
+
+<p>Se você é um desenvolvedor PHP que deseja adicionar recursos de Machine Learning aos seus projetos, o Rubix é uma excelente escolha que oferece potencial e flexibilidade para atender às suas necessidades. Comece a explorar o mundo do Machine Learning com PHP e o Rubix e descubra o que você pode alcançar.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [If you have these three things, then you’re a user (and not a programmer)](https://dev.to/noriller/if-you-have-these-three-things-then-youre-a-user-and-not-a-programmer-45nk) 
  <details><summary>Article</summary> <p>2023/09/13 is the 256 day of the year or in other words, Programmer’s Day.</p>
 
@@ -407,531 +574,6 @@ You can view the <a href="https://github.com/elizabethsiegle/replicate-llama2-sm
 <li>Email: <a href="mailto:lsiegle@twilio.com">lsiegle@twilio.com</a>
 </li>
 </ul>
-
- </details> 
- <hr /> 
-
- #### - [Unlocking the Potential of Large Language Models (LLMs) for Business Insights](https://dev.to/devnenyasha/unlocking-the-potential-of-large-language-models-llms-for-business-insights-23n9) 
- <details><summary>Article</summary> <p>In the domain of computerized reasoning and normal language handling, Large Language Models (LLMs) have arisen as integral assets that are changing the manner in which organizations work. These models, like GPT-3, are not just about creating human-like text; they are tied in with opening the capability of information and language for significant bits of knowledge. In this article, we will investigate how LLMs can change the universe of business by giving important bits of knowledge and driving informed navigation.</p>
-
-<p>The Ascent of LLMs</p>
-
-<p>Large Language Models like GPT-3 are the finish of long stretches of exploration and development in AI. They are gigantic brain networks prepared on huge measures of text information from the web. This preparation empowers them to grasp settings, produce intelligent text, and play out an extensive variety of language-related errands with striking capability.</p>
-
-<p>From Text Age to Knowledge Age</p>
-
-<p>While text age is one of the most apparent utilizations of LLMs, their true capacity goes a long way past exploratory writing or chatbots. Organizations are tackling the force of LLMs to acquire profound experiences from printed information sources:</p>
-
-<ol>
-<li>Information Examination and Rundown:</li>
-</ol>
-
-<p>LLMs can filter through piles of unstructured information, extricating key data and summing up it in a conceivable organization. This smoothes out information examination processes, making it more straightforward for organizations to pursue information-driven choices.</p>
-
-<ol>
-<li>Statistical surveying and Serious Examination:</li>
-</ol>
-
-<p>By breaking down news stories, web-based entertainment discussions, and industry reports, LLMs can give continuous bits of knowledge into market patterns and contender techniques. This permits organizations to adjust rapidly to changing economic situations.</p>
-
-<ol>
-<li>Client Criticism and Opinion Investigation:</li>
-</ol>
-
-<p>LLMs succeed at opinion investigation. They can evaluate client audits and virtual entertainment presents to measure public feeling about items and administrations, assisting organizations with recognizing regions for development.</p>
-
-<ol>
-<li>Mechanized Announcing:</li>
-</ol>
-
-<p>Organizations can mechanize the formation of reports, synopses, and documentation utilizing LLMs. This lessens manual exertion and guarantees consistency in revealing.</p>
-
-<p>Contextual analyses in real life</p>
-
-<p>We should take a gander at a couple of genuine instances of how organizations are utilizing LLMs for bits of knowledge:</p>
-
-<ol>
-<li>Medical services Diagnostics:</li>
-</ol>
-
-<p>In the clinical field, LLMs are utilized to dissect patient records and clinical writing, assisting specialists with making precise determinations and treatment proposals.</p>
-
-<ol>
-<li>Monetary Administrations:</li>
-</ol>
-
-<p>Banks and monetary establishments use LLMs to break down news stories and monetary reports for venture experiences, risk appraisal, and misrepresentation discovery.</p>
-
-<ol>
-<li>Web-based business Personalization:</li>
-</ol>
-
-<p>Online retailers use LLMs to examine client perusing conduct and prescribe items custom-made to individual inclinations, supporting deals, and consumer loyalty.</p>
-
-<p>Difficulties and Contemplations</p>
-
-<p>While LLMs offer colossal potential, they additionally accompany difficulties and moral contemplations. Predisposition in preparing information, mindful computer-based intelligence improvement, and information security are a portion of the issues that should be tended to while sending LLMs in business settings.</p>
-
-<p>Future Patterns</p>
-
-<p>As LLM innovation keeps on developing, we can expect significantly further developed applications in regions like robotized content age, remote helpers, and redid instructive materials.</p>
-
-<p>Conclusion</p>
-
-<p>Huge Language Models have the ability to change how organizations work by opening significant bits of knowledge from text-based information sources. From information examination to statistical surveying and then some, LLMs are becoming important instruments for informed navigation. Notwithstanding, organizations should proceed cautiously, guaranteeing moral use and capable advancement as they outfit the capability of these strong simulated intelligence models. As we push ahead, LLMs will keep on assuming a significant part in forming the fate of business knowledge.</p>
-
- </details> 
- <hr /> 
-
- #### - [Next.js: How <Suspense /> and Components Streaming works?](https://dev.to/charnog/nextjs-how-and-components-streaming-works-30ao) 
- <details><summary>Article</summary> <blockquote>
-<p>There is a distinct difference between ‘suspense’ and ‘surprise’, and yet many pictures continually confuse the two. I’ll explain what I mean. We are now having a very innocent little chat. Let’s suppose that there is a bomb underneath this table between us. Nothing happens, and then all of a sudden, ‘Boom!’ There is an explosion. The public is surprised, but prior to this surprise, it has seen an absolutely ordinary scene, of no special consequence.</p>
-
-<p>Alfred Hitchcock</p>
-</blockquote>
-
-<p>In this article, we'll dive into the specifics of the <code>&lt;Suspense /&gt;</code> tag as it relates to Next.js and Server Side Rendering (SSR) feature. We'll delve deeper to see what happens at the HTTP protocol level when you wrap your components with the  tag. Let's begin.</p>
-
-<h3>
-  
-  
-  Streaming, what is it?
-</h3>
-
-<p>Before we dive into "Components Streaming" it's essential to understand what HTTP streaming is in and of itself. When your User Agent (for example, a browser or a <code>curl</code> command) sends an HTTP request to a server, the server replies with something like:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
-Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
-Content-Length: 12␍␊
-Content-Type: text/plain␍␊
-␍␊
-Hello World!
-</code></pre>
-
-</div>
-
-
-
-<p>I've added the ␍␊ to HTTP response texts because it carries a special meaning in HTTP.</p>
-
-<p>The first line, <code>HTTP/1.1 200 OK</code>, tells us that everything is fine and the server has responded with a 200 OK code. Following this, we have three lines that are known as headers. In our example, these three headers are <code>Date</code>, <code>Content-Length</code>, and <code>Content-Type</code>. We can think of them as key-value pairs, where the keys and values are delimited by a <code>:</code> sign.</p>
-
-<p>Following the headers, there's an empty line, serving as a delimiter between the header and the body sections. After this line, we encounter the content itself. Given the prior information from the headers, our browser understands two things:</p>
-
-<ol>
-<li>It needs to download 12 bytes of content (the string <code>Hello World!</code> comprises just 12 characters).</li>
-<li>Once downloaded, it can display this content or provide it to the callback of a fetch request.</li>
-</ol>
-
-<p>In other words, we can deduce that the end of the response body will occur once we've read 12 bytes following a new line.</p>
-
-<p>Now, what happens if we omit the <code>Content-Length</code> header from our server response? When the <code>Content-Length</code> header is absent, many HTTP servers will implicitly add a <code>Transfer-Encoding: chunked</code> header. This type of response can be interpreted as, "Hi, I'm the server, and I'm not sure how much content there will be, so I'll send the data in chunks." So a response will look like:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
-Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
-Transfer-Encoding: chunked␍␊
-Content-Type: text/plain␍␊
-␍␊
-5␍␊
-Hello␍␊
-</code></pre>
-
-</div>
-
-
-
-<p>At this point, we haven't received the entire message, only the first 5 bytes. Notice how the format of the body differs: first, the size of the chunk is sent, followed by the content of the chunk itself. At the end of each chunk, the server adds a ␍␊ sequence.</p>
-
-<p>Now, let's consider receiving the second chunk. How might that appear?<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
-Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
-Transfer-Encoding: chunked␍␊
-Content-Type: text/plain␍␊
-␍␊
-5␍␊
-Hello␍␊
-7␍␊
- World!␍␊
-</code></pre>
-
-</div>
-
-
-
-<p>We've received an additional 7 bytes of the response. But what transpired between <code>Hello␍␊</code> and <code>7␍␊</code>? How was the response processed in that interval? Imagine that before sending the 7, the server took 10 seconds pondering the next word. If you were to inspect the Network tab of your browser's Developer Tools during this pause, you'd see the response from the server had started and remained "in progress" throughout these 10 seconds. This is because the server hadn't indicated the end of the response.</p>
-
-<p>So, how does the browser determine when the response should be treated as "completed"? There's a convention for that. The server must send a <code>0␍␊␍␊</code> sequence. In layman's terms, it's saying, "I'm sending you a chunk that has zero length, signifying there's nothing more to come." In the Network tab, this sequence will mark the moment the request has concluded.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK␍␊
-Date: Mon, 27 Jul 2009 12:28:53 GMT␍␊
-Transfer-Encoding: chunked␍␊
-Content-Type: text/plain␍␊
-␍␊
-5␍␊
-Hello␍␊
-7␍␊
- World!␍␊
-0␍␊
-␍␊
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  The Nuances of HTTP Transmission
-</h3>
-
-<p>In the realm of HTTP headers, understanding the distinction between <code>Content-Length: &lt;number&gt;</code> and <code>Transfer-Encoding: chunked</code> is crucial. At a first glance, <code>Content-Length: &lt;number&gt;</code> might suggest that data isn't streamed, but this isn't entirely accurate. While it's true that this header indicates the total length of the data to be received, it doesn't imply that data is transmitted as a single massive chunk. Underneath the HTTP layer, protocols like TCP/IP dictate the actual transmission mechanics, which inherently involves breaking data down into smaller packets. So, while the <code>Content-Length</code> header gives a system the signal that once it accumulates the specified amount of data, it's ready for rendering, the actual data transfer is executed incrementally at a lower level. Some contemporary browsers, capitalizing on this inherent packetization, initiate the rendering process even before the entire data is received. This is particularly beneficial for specific data formats that lend themselves to progressive rendering. On the other hand, the <code>Transfer-Encoding: chunked</code> header offers more explicit control over data streaming at the HTTP level, marking each chunk of data as it's sent. This provides even more flexibility, especially for dynamically generated content or when the full content length is unknown at the outset.</p>
-
-<h3>
-  
-  
-  <code>&lt;Suspense /&gt;</code>
-</h3>
-
-<p>Alright, now we've grasped one foundational concept that's pivotal for Component Streaming in Next.js. Before delving into <code>&lt;Suspense /&gt;</code>, let's first articulate the problem it addresses. Sometimes, seeing is more instructive than a lengthy explanation. So, let's craft a helper function for illustration:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">wait</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">ms</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">data</span><span class="p">:</span> <span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span> <span class="nx">ms</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This function will assist us in simulating exceedingly prolonged, fake requests.</p>
-
-<p>To start, initialize a Next.js app using npx <a href="mailto:create-next-app@latest">create-next-app@latest</a>. Clear out any unnecessary elements, and paste the following code into <code>app/page.tsx</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">wait</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/helpers/wait</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Denis</span><span class="dl">"</span> <span class="p">});</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">dynamic</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">force-dynamic</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;&gt;</span>
-      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">MyComponent</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This structure provides a simple page layout: a text block containing “Some text” and a component that waits for 10 seconds before outputting the data.</p>
-
-<p>Now, execute <code>npm run build &amp;&amp; npm run start</code> followed by a <code>curl localhost:3000</code> (or try to open it in a browser) command. What do we observe?</p>
-
-<p>We experience a delay of 10 seconds before receiving the entire page content, including both “Some text” and “Denis”. For users, this means they won't be able to view the “Some text” content while <code>&lt;MyComponent /&gt;</code> is fetching its data. This is far from ideal; the browser tab's spinner would keep spinning for a solid 10 seconds before displaying any content to the user.</p>
-
-<p>However, by wrapping our component with the <code>&lt;Suspense/&gt;</code> tag and trying again, we observe an instantaneous response. Let's delve into this method. We encase our component in <code>&lt;Suspense&gt;</code> and also assign a fallback prop with the value "We are loading...".<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;&gt;</span>
-      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="dl">"</span><span class="s2">We are loading...</span><span class="dl">"</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">MyComponent</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;/</span><span class="nc">Suspense</span><span class="p">&gt;</span>
-    <span class="p">&lt;/&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now let us open it in a browser.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oCXP9oNI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rm7w4l9x17v00u0v51f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oCXP9oNI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5rm7w4l9x17v00u0v51f.png" alt="When you inspect the Network tab in DevTools, you'll observe that the server's response is still ongoing or &quot;hasn't yet completed.&quot; Examining the &quot;Response Headers&quot; section of the request, you'll find the &quot;Transfer-Encoding: chunked&quot; entry." width="800" height="200"></a></p>
-
-<p>Now, we observe that the string provided as the fallback prop for <code>&lt;Suspense /&gt;</code> temporarily stands in for the <code>&lt;MyComponent /&gt;</code>. After the 10-second wait, we're then presented with the actual content. Let's scrutinize the HTML response we've received.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="c">&lt;!-- Omitted --&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"__className_20951f"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span><span class="c">&lt;!--$?--&gt;</span>
-    <span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"B:0"</span><span class="nt">&gt;&lt;/template&gt;</span>
-    Waiting for MyComponent...<span class="c">&lt;!--/$--&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/_next/static/chunks/webpack-f0069ae2f14f3de1.js"</span> <span class="na">async=</span><span class="s">""</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">push</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span><span class="nt">&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* Omitted */</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* Omitted */</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* Omitted */</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span><span class="nb">self</span><span class="p">.</span><span class="nx">__next_f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="cm">/* We haven't received a chunk that closes this tag...
-</span></code></pre>
-
-</div>
-
-
-
-<p>While we haven't yet received the complete page, we can already view its content in the browser. But why is that possible? This behavior is due to the error tolerance of modern browsers. Consider a scenario where you visit a website, but because a developer forgot to close a tag, the site doesn't display correctly. Although browser developers could enforce strict error-free HTML, such a decision would degrade the user experience. As users, we expect web pages to load and display their content, regardless of minor errors in the underlying code. To ensure this, browsers implement numerous mechanisms under the hood to compensate for such issues. For instance, if there's an opened </p> tag that hasn't been closed, the browser will automatically "close" it. This is done in an effort to deliver the best possible viewing experience, even when faced with imperfect HTML.
-
-<p>And it's evident that Next capitalizes on this inherent browser behavior when implementing Component Streaming. By pushing chunks of content as they become available and leveraging browsers' ability to interpret and render partial or even slightly malformed content, Next.js ensures faster perceived load times and enhances user experience.</p>
-
-<p>The strength of this approach lies in its alignment with the realities of web browsing. Users generally prefer immediate feedback, even if it's incremental, over waiting for an entire page to load. By sending parts of a page as soon as they're ready, Next.js optimally meets this preference.</p>
-
-<p>Now, observe this segment:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="c">&lt;!--$?--&gt;</span>
-  <span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"B:0"</span><span class="nt">&gt;&lt;/template&gt;</span>
-  Waiting for MyComponent...
-<span class="c">&lt;!--/$--&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We can spot our placeholder text adjacent to an empty <code>&lt;template&gt;</code> tag bearing the <code>B:0</code> id. Further, we can discern that the response from <code>localhost:3000</code> is still underway. The trailing script tag remains unclosed. Next.js uses a placeholder template to make room for forthcoming HTML that will be populated with the next chunk.</p>
-
-<p>After the next chunk has arrived, we now have the following markup (I’ve added some newlines to make it more readable)...</p>
-
-<p><em>Don't attempt to unminify the code of the $RC function in your head. This is the <code>completeBoundary</code> function, and you can find a commented version <a href="https://github.com/facebook/react/blob/b9be4537c2459f8fc0312b796570003620bc8600/packages/react-dom-bindings/src/server/fizz-instruction-set/ReactDOMFizzInstructionSetShared.js#L46">here</a>.</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
-
-<span class="c">&lt;!--$?--&gt;</span>
-<span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"B:0"</span><span class="nt">&gt;&lt;/template&gt;</span>
-Waiting for MyComponent...
-<span class="c">&lt;!--/$--&gt;</span>
-
-<span class="c">&lt;!-- &lt;script&gt; tags omitted --&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">hidden</span> <span class="na">id=</span><span class="s">"S:0"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Denis<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;script&gt;</span>
-  <span class="nx">$RC</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">c</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
-    <span class="nx">c</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">previousSibling</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span>
-        <span class="nx">b</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">$!</span><span class="dl">"</span><span class="p">,</span>
-          <span class="nx">a</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">data-dgst</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
-      <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">e</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
-        <span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">nextSibling</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">do</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="mi">8</span> <span class="o">===</span> <span class="nx">a</span><span class="p">.</span><span class="nx">nodeType</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="dl">"</span><span class="s2">/$</span><span class="dl">"</span> <span class="o">===</span> <span class="nx">d</span><span class="p">)</span>
-              <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">f</span><span class="p">)</span>
-                <span class="k">break</span><span class="p">;</span>
-              <span class="k">else</span>
-                <span class="nx">f</span><span class="o">--</span><span class="p">;</span>
-            <span class="k">else</span>
-              <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span> <span class="o">!==</span> <span class="nx">d</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">$?</span><span class="dl">"</span> <span class="o">!==</span> <span class="nx">d</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">$!</span><span class="dl">"</span> <span class="o">!==</span> <span class="nx">d</span> <span class="o">||</span> <span class="nx">f</span><span class="o">++</span>
-          <span class="p">}</span>
-          <span class="nx">d</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">nextSibling</span><span class="p">;</span>
-          <span class="nx">e</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
-          <span class="nx">a</span> <span class="o">=</span> <span class="nx">d</span>
-        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">a</span><span class="p">);</span>
-        <span class="k">for</span> <span class="p">(;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">;)</span>
-          <span class="nx">e</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span>
-        <span class="nx">b</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span>
-      <span class="p">}</span>
-      <span class="nx">b</span><span class="p">.</span><span class="nx">_reactRetry</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">_reactRetry</span><span class="p">()</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="p">;</span>
-  <span class="nx">$RC</span><span class="p">(</span><span class="dl">"</span><span class="s2">B:0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">S:0</span><span class="dl">"</span><span class="p">)</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We receive a hidden <code>&lt;div&gt;</code> with the <code>id="S:0"</code>. This contains the markup for <code>&lt;MyComponent /&gt;</code>. Alongside this, we are presented with an intriguing script that defines a global variable, <code>$RC</code>. This variable references a function that performs some operations with <code>getElementById</code> and <code>insertBefore</code>.</p>
-
-<p>The concluding statement in the script, <code>$RC("B:0", "S:0")</code>, invokes the aforementioned function and supplies <code>"B:0"</code> and <code>"S:0"</code> as arguments. As we've deduced, <code>B:0</code> corresponds to the ID of the template that previously held our fallback. Concurrently, <code>S:0</code> matches the ID of the newly acquired <code>&lt;div&gt;</code>. To distill this information, the <code>$RC</code> function essentially instructs: "Retrieve the markup from the S:0 div and position it where the <code>B:0</code> template resides."</p>
-
-<p>Let's refine that for clarity:</p>
-
-<ol>
-<li>
-<strong>Initiating the Chunked Transfer</strong>: Next.js begins by sending the Transfer-Encoding: chunked header, signaling the browser that the response length is undetermined at this stage.</li>
-<li>
-<strong>Executing Home Page</strong>: As the Home page executes, it encounters no await operations. This means no data fetching is blocking the response from being sent immediately.</li>
-<li>
-<strong>Handling the Suspense</strong>: Upon reaching the  tag, it uses the fallback value for immediate rendering, while also inserting a placeholder <code>&lt;template /&gt;</code> tag. This will be used later to insert the actual HTML once it's ready.</li>
-<li>
-<strong>Initial Response to the Browser</strong>: What's been rendered so far is sent to the browser. Yet, the "0␍␊␍␊" sequence hasn't been sent, indicating the browser should expect more data to come.</li>
-<li>
-<strong>Component Data Request</strong>: The server communicates with MyComponent, requesting its data and essentially saying, "We need your content, let us know when you're ready."</li>
-<li>
-<strong>Component Rendering</strong>: After MyComponent fetches its data, it renders and produces the corresponding HTML.</li>
-<li>
-<strong>Sending the Component's HTML</strong>: This HTML is then sent to the browser as a new chunk.</li>
-<li>
-<strong>JavaScript Attachment</strong>: The browser's JavaScript then appends this new chunk of HTML to the previously placed  tag from step #3.</li>
-<li>
-<strong>Termination Sequence</strong>: Finally, the server sends the termination sequence, signaling the end of the response.</li>
-</ol>
-
-<h3>
-  
-  
-  Diving into Multiple <code>&lt;Suspense /&gt;</code>
-</h3>
-
-<p>Handling a singular <code>&lt;Suspense /&gt;</code> tag is straightforward, but what if a page has multiple of them? How does Next.js cope with this situation? Interestingly, the core approach doesn't deviate much. Here's what changes when managing multiple <code>&lt;Suspense /&gt;</code> tags:</p>
-
-<p><strong>Fallbacks at the Forefront</strong>: Each <code>&lt;Suspense /&gt;</code> tag comes equipped with its own fallback. During the rendering phase, all these fallback values are leveraged simultaneously, ensuring that every suspended component offers a provisional visual cue to the user. This is an extension of the third point from our previous list.</p>
-
-<p><strong>Unified Request for Content</strong>: Just as with a single <code>&lt;Suspense /&gt;</code>, Next.js sends out a unified call to all components wrapped within the <code>&lt;Suspense /&gt;</code> tags. It's essentially broadcasting, "Provide your content as soon as you're ready."</p>
-
-<p><strong>Waiting for All Components</strong>: The termination sequence is of utmost importance, signaling the end of a response. However, in cases with multiple <code>&lt;Suspense /&gt;</code> tags, the termination sequence is held back until every single component has sent its content. This ensures that the browser knows to expect, and subsequently render, the content from all components, providing a holistic page-view to the end user.</p>
-
-<p>The advent of features like <code>&lt;Suspense /&gt;</code> in Next.js underscores the framework's dedication to enhancing user experience. By tapping into the innate behavior of browsers and optimizing content delivery, Next.js ensures users encounter minimal wait times and see content as swiftly as possible. This deep dive into the inner workings of component streaming and chunked transfer encoding reveals the intricate dance of protocols, rendering, and real-time adjustments that takes place behind the scenes. As web developers, understanding these nuances not only makes us better at our craft but also equips us to deliver seamless and responsive digital experiences for our users. Embrace the future of web development with Next.js, where efficiency meets elegance.</p>
-
- </details> 
- <hr /> 
-
- #### - [My Programming Journey So Far](https://dev.to/manishmehra/my-programming-journey-so-far-50oh) 
- <details><summary>Article</summary> <p>By mid-2020, the school had ended. All things were in captivity: the covid pandemic. The year passed in the blink of an eye. By the end of 2020, I enrolled in a three-year computer-related degree. I knew programming but didn’t know no more than printing Hello World.</p>
-
-<p>Starting in 2021, I began my programming journey with CS50, a popular, free introductory course on computer science and programming. The course gave me a good overview and exposed me to concepts like memory and algorithms like binary search(which I will forget soon).</p>
-
-<p>However, I avoided further learning the hard parts of computer science and focused on advancing toward the big picture. The big picture was to build functional and interactive websites for myself. That was my primary focus, and it has evolved somewhat since then. Nonetheless, this goal was sufficient to keep me motivated.</p>
-
-<p>After this course, I spent just a week or two learning HTML and then dedicated the next two to three months to the challenging task of centering the div, which, to this day, I find one of the most challenging aspects of web development.</p>
-
-<p>I was excited to learn Javascript after this.</p>
-
-<p>My first encounter with JavaScript was strange. In CS50(C language), I have known about certain data types like int, char, and bool. You can only store these kinds of values in your variable. But in Javascript, I was assigning my variable to something like a dom node. I was dumbfounded.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const button =  document.getElementById("#button")
-</code></pre>
-
-</div>
-
-
-
-<p>I couldn’t wrap my head around it. So I proceeded with memorizing, believing it to be a rule allowed in JavaScript.</p>
-
-<p>Two to three months later, I could build a simple to-do list with JavaScript, display and hide modal, and make a navbar slide.</p>
-
-<h2>
-  
-  
-  Learning React.js
-</h2>
-
-<p>React Js came into my life. Some called it a library, some a framework, and some were confused. Angular JS was its competitor, the awful frontend framework made by Google, as proclaimed. And Vue Js was also around the corner at that time. Despite all the confusion, I went with React JS and not the hated Angular.</p>
-
-<p>Initially, React Js was confusing. Till now, I have been working on one file with javascript. With React Js, there are many files and folders. It took me 2-3 months to grasp this new environment, the naming conventions, and the use of the terminal and dependency system.</p>
-
-<p>Eventually, it all started to make sense. And I could build a simple UI with React, which was unfathomably painful with JavaScript alone.</p>
-
-<h2>
-  
-  
-  Building Things Together
-</h2>
-
-<p>I joined a Discord server for programming by the end of 2021. Though most people were writing their first line of code, few surpassed that beginner's phase and were looking for opportunities to grow their skills. I saw messages asking to collaborate on projects. I responded to one of the random messages offering my aid in building the project. It turns out to be a good learning opportunity later.</p>
-
-<p>In the team, there were two scrawny-looking college kids. Both were passionate and took the self-taught route. Before joining me, the project was set up with React Js on Frontend and Firebase as backend/database.</p>
-
-<p>The project was a research papers website, where users can log in and download the papers. We built the project over two months. It was fun. We explored tools like git, project management tools, and wireframing software like Adobe XD.</p>
-
-<p>After this project, we collaborated on another project where we decided to build our backend. Since we already knew Javascript, learning the backend seemed less overwhelming. With Node.js/express, we can easily set up a server and create APIs for our react app to consume. The popular database choice with node/express app was MongoDB. We moved with it. MongoDB turned out to be easy to get started.</p>
-
-<p>After working on this project for a few months on and off, this project went nowhere. The cause of failure was our vague requirements. Continuing the project felt like a meaningless pursuit. So we dropped it. In the end, we lost nothing and gained a few more skills.</p>
-
-<h2>
-  
-  
-  The Work Experience
-</h2>
-
-<p>After a year and a half of learning to program(2022), I stumbled across an opportunity to work for a small startup as a React Developer. This opportunity was offered to me by someone from an online community where we occasionally discuss books, ideas, arts, and things in general. This person referred me, and the next day, I received a call from the energetic CEO. We talked about general things. At the end, he asked if I could sit for the interview. I couldn't say no. After a few days, the senior developer of the team interviewed me.</p>
-
-<p>The questions revolved around React Js. The interview lasted no more than 10 minutes. I was expected only to know basic things like how useEffect hook works and styling components. I was stunned when the interview ended early and thought I missed the mark. </p>
-
-<p>The next day, I got a call. The team welcomed me. </p>
-
-<p>After a few days, I was staring at the massive code base. It wasn’t basic as I guessed from the interview. It terrified me, and I was fool enough to suggest to my senior that we needed to rewrite the whole codebase with Next JS. The excuse I made was terrible SEO because it was Single Page App. The suggestion felt reasonable, at least to me, since our website needed to rank higher on Google. The senior explained that this optimization is not required as we are still in the initial phase. Our primary focus is to build the features and improve functionality instead of doing the optimizations. And the codebase was only one year old and has worked for the requirement so far.</p>
-
-<p>I got comfortable with the codebase over the next few weeks by making small changes, slowly fixing bugs, adding functionality, and pushing design changes. I realized I didn't have to know the whole codebase. I only need to understand the piece of code related to the bug, feature, or improvement I was dealing with.</p>
-
-<p>Our team was remote, so I had the flexibility to attend my college when it was required. I moved to the office for the next few months and work fully onsite. The office was in a different state(Chennai, India), a distance of more than 1,700km(1,000 miles) from my state(Delhi, India). Moreover, the language, culture, and food were different. Despite I moved. I was excited about the opportunity to work closely with the product owners, and it was a good travel opportunity.</p>
-
-<p>I returned after three months and continued working till my graduation. During all this time, I learned a lot from my senior developers, how building software works in the real world, working with a team, effectively communicating my thoughts, and the list is endless. I was grateful for the opportunity. The people I worked with were chilled, supportive, and humble. There could not have been a better place for me to kickstart my career.</p>
-
-<p>In July 2023, after ten months of working, I decided to take a break from work and quit this job. I also just graduated. My motives for the break were to fill those gaps in my knowledge that I was painfully aware of. And to take some time to plan my career and start fresh again in a new place.</p>
-
-
-
-
-<p>It’s been two months since I left the job and the graduation. I've started learning a new language(Java), studying data structures and algorithms(I’m very inconsistent here), and revisiting the Javascript fundamentals. Also, a few days ago, I picked a book called The Pragmatic Programmer.</p>
-
-<p>In all my attempts, it barely feels like progress is being made. It's a strange phase. I’m not a beginner, or an intermediate or advanced. It's more like starting anew, and the process is painfully slow and monotonous. </p>
-
-<p>Learning is great, but the reality is I can't dedicate myself full-time to it. It would be fantastic if I could, but I need to manage my finances. Without a stable income, I can't sustain this programming journey.</p>
-
-<p>So, a few days ago I decided to apply for the junior role in my local and if I get the job, I’ll have to manage my time and continue learning things on the side.</p>
-
-<p>Till now, I’ve gotten 2-3 rejections with no interviews out of the 50+ applications I applied and the rest haven’t responded. It feels worse than rejection. Most jobs require a minimum of 4-5 years of experience, and all the junior-level posts have applicants from 500 to 3k. It’s overwhelming and hopeless to see, but that’s the current state of affairs.</p>
-
-<p>I also realized my resume is not up to the mark. Other than 10 months of experience. I don’t have good projects to showcase my skills. There's this basic node js web scraper that fetches the news headlines from different sites, and my react app consumes the API and shows these news headlines.</p>
-
-<p>I’ll keep applying and continue learning things.</p>
-
-<h2>
-  
-  
-  Final Thoughts
-</h2>
-
-<p>When I was learning to program back then, the big picture that kept me motivated was the idea of building websites for myself. Now, I can easily create a website. This big picture has evolved. Building things is great, and programming gives you the ability to do so. However, building useful, reliable things is what I'm striving for now. To achieve that, I must hone my craft and improve. I know I'm still far from my goal, but I'll continue working to get better every day. </p>
 
  </details> 
  <hr /> 
