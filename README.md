@@ -118,6 +118,693 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [An In-Depth Manual for Backing Up Data from Your NAS Device](https://dev.to/jhighsmith0033/an-in-depth-manual-for-backing-up-data-from-your-nas-device-1kc5) 
+ <details><summary>Article</summary> <p>In today's digital age, data is a priceless commodity. Whether it's cherished family photos, important work documents, or your extensive media collection, losing data can be catastrophic. That's where Network-Attached Storage (NAS) devices come into play. These compact, yet powerful devices allow you to store and access your data efficiently within your local network. However, just like any other storage solution, NAS devices are not immune to data loss. To safeguard your valuable data, it's essential to have a robust backup strategy in place. In this in-depth manual, we'll guide you through the process of <a href="https://hackaday.io/page/20942-a-comprehensive-guide-on-how-to-backup-data-from-nas">backing up data from your NAS device.</a></p>
+
+<p><strong>1. Choose Your Backup Solution</strong><br>
+Before diving into the backup process, you'll need to select a backup solution that suits your needs. There are several options available:</p>
+
+<p>a. Built-in NAS Backup Tools: Many NAS devices come with built-in backup utilities. These tools are often user-friendly and integrated seamlessly with the device's interface. Popular options include Synology's Hyper Backup and QNAP's Hybrid Backup Sync.</p>
+
+<p>b. Third-Party Backup Software: If your NAS device lacks robust built-in backup options or if you want more advanced features, consider third-party backup software. Popular choices include Acronis True Image, Veeam Backup &amp; Replication, and Duplicati.</p>
+
+<p>c. Cloud Backup Services: For added redundancy, consider using a cloud backup service like Dropbox, Google Drive, or Amazon S3. These services can automatically synchronize your NAS data to the cloud.</p>
+
+<p><strong>2. Determine Your Backup Schedule</strong><br>
+Once you've chosen your backup solution, it's time to decide how frequently you want to back up your data. Your backup schedule should strike a balance between data protection and system performance. Common backup schedules include:</p>
+
+<p>a. Continuous Backup: This option ensures that your data is backed up in real-time or at very short intervals. It offers the highest level of data protection but may impact NAS performance.</p>
+
+<p>b. Daily or Weekly Backup: For most home users, a daily or weekly backup schedule is sufficient. This balances data protection with minimal impact on device performance.</p>
+
+<p>c. Monthly or On-Demand Backup: If your data doesn't change frequently, you can opt for monthly or on-demand backups to save resources.</p>
+
+<p><strong>3. Select Backup Destinations</strong><br>
+You should have multiple backup destinations to ensure data redundancy. Here are some common choices:</p>
+
+<p>a. External Hard Drives: Connect an external USB hard drive to your NAS for local backups. Ensure you regularly swap out these drives to prevent data loss from physical damage or theft.</p>
+
+<p>b. Network Drives: Backing up to another NAS device on your network provides an extra layer of redundancy.</p>
+
+<p>c. Cloud Storage: As mentioned earlier, cloud services like Dropbox, Google Drive, or Amazon S3 can be excellent remote backup options.</p>
+
+<p><strong>4. Set Up Your Backup Job</strong><br>
+Now it's time to configure your backup job using your chosen backup solution. Here's a simplified guide for a common scenario:</p>
+
+<p>a. Install and configure the backup software on your NAS device or a connected computer.</p>
+
+<p>b. Select the source: Choose the data you want to back up. It could be specific folders or the entire NAS.</p>
+
+<p>c. Choose the destination: Select where you want to store your backups, such as an external hard drive, network drive, or cloud storage.</p>
+
+<p>d. Configure the schedule: Set up how often and when your backups will occur.</p>
+
+<p>e. Set retention policies: Define how long you want to keep your backup versions.</p>
+
+<p>f. Monitor and verify: Regularly check your backup job status and perform test restores to ensure data integrity.</p>
+
+<p><strong>5. Implement Security Measures</strong><br>
+Data security is paramount. Ensure that your backup solution offers encryption options for data in transit and at rest. Also, protect your NAS device with strong passwords and consider enabling two-factor authentication if supported.</p>
+
+<p><strong>6. Regularly Test Your Backups</strong><br>
+Backing up your data is only half the battle. Regularly testing your backups ensures that you can successfully recover your data when needed. Conduct test restores periodically to confirm the integrity of your backup copies.</p>
+
+<p><strong>7. Stay Informed and Updated</strong><br>
+Technology evolves, and so should your backup strategy. Stay informed about updates to your NAS firmware, backup software, and any security vulnerabilities. Regularly update your backup strategy to adapt to changing needs and technologies.</p>
+
+<p>In conclusion, backing up data from your NAS device is a critical task that should not be overlooked. With the right backup solution, schedule, and destinations, you can ensure that your precious data remains safe and recoverable in case of unforeseen disasters. Implementing a robust backup strategy is an investment in the security and longevity of your digital assets.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Mastering React Query: Navigating the Waters of Data Fetching and Error Handling](https://dev.to/xanyl/mastering-react-query-navigating-the-waters-of-data-fetching-and-error-handling-4d2l) 
+ <details><summary>Article</summary> <p><strong>Introduction:</strong></p>
+
+<p>In the ever-evolving world of front-end development, data fetching is the backbone of modern web applications. But as we sail through the sea of APIs and databases, we encounter the tempestuous challenges of errors that can threaten to sink our React apps. In this article, we'll embark on a journey of mastering React Query, armed with code and personal stories, to ensure that your app's data fetching is smooth sailing.</p>
+
+<p><strong>Setting Sail: The Importance of Error Handling</strong></p>
+
+<p>Imagine your React app as a sturdy ship, venturing into the vast ocean of data. Just as a ship needs a solid structure to weather storms, your app needs robust error handling to handle the unpredictability of data fetching. React Query provides three powerful strategies to navigate these waters:</p>
+
+<p><strong>1. The Standard Way: Using Error Boundaries</strong></p>
+
+<p>Like a ship equipped with lifeboats, React Query introduces Error Boundaries. These serve as safety nets for your app, catching and handling errors gracefully during data fetching.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-query</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">'</span><span class="s1">myData</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fetchDataFunction</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nc">ErrorBoundary</span> <span class="na">error</span><span class="p">=</span><span class="si">{</span><span class="nx">error</span><span class="si">}</span> <span class="p">/&gt;;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="c1">// Your component's content goes here</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>2. Using Axios or Fetch: Choosing the Right Sails</strong></p>
+
+<p>Much like selecting sails for your ship, you have choices when it comes to data fetching methods. You can opt for the well-established Axios or the lightweight Fetch API to reduce your app's bundle size.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-query</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/data</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Failed to fetch data</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">'</span><span class="s1">myData</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fetchData</span><span class="p">);</span>
+
+  <span class="c1">// Handle data and error as needed</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>3. Harnessing the Power of onError Callback: Personal Stories of Resilience</strong></p>
+
+<p>React Query also equips you with the <code>onError</code> callback, much like having a seasoned sailor on board who can take immediate action when things go wrong. Let me share a personal story:</p>
+
+<p><em>Personal Story</em>: In a recent project, we faced an unforeseen storm of errors during data fetching. The <code>onError</code> callback allowed us to log and report errors efficiently, making troubleshooting a breeze. It's like having a reliable crew member who always has your back.</p>
+
+<p><strong>Final Thoughts: Smooth Sailing Ahead</strong></p>
+
+<p>As we navigate the unpredictable waters of data fetching, mastering React Query's error handling strategies is essential. By implementing these methods and keeping an eye on React Query's evolution, you'll ensure your React apps remain resilient and provide a seamless user experience.</p>
+
+<p><em>Personal Encouragement</em>: Remember, even the most experienced sailors encounter rough seas. But with the right tools, knowledge, and a supportive community, you can conquer any challenges that come your way in the vast world of front-end development.</p>
+
+<p><strong>Additional Resources:</strong></p>
+
+<ul>
+<li><a href="https://react-query.tanstack.com/">React Query Documentation</a></li>
+<li><a href="https://react-query.tanstack.com/guides/error-handling">Handling Errors in React Query</a></li>
+</ul>
+
+<p>Feel free to embark on your own journey, share your experiences, and keep the spirit of exploration alive in the ever-changing world of front-end development.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Use Cases for IIFEs](https://dev.to/bytebodger/use-cases-for-iifes-5gdg) 
+ <details><summary>Article</summary> <p>First, I'd like to lead this article with a confession:  </p>
+
+<p>Whenever I'm presented with a programming concept, I immediately start searching my brain for practical ways that I would <em>use</em> that concept.  If I can't think of a practical application for that concept, I might technically "understand" it - but I'll never truly <em>master</em> it.</p>
+
+<p>This can be a bit of a mental roadblock for me because someone says, "Hey, you should consider using [INSERT CONCEPT HERE]," and I nod and read a few basic articles about the concept.  But unless I can envision a logical scenario where I'll <em>use</em> that concept, it just sits in the back of my brain, gathering dust, and doing me little good in daily programming endeavors.</p>
+
+<p>For many years, the Immediately Invoked Function Expression (IIFE) was exactly this type of concept.  Sure, I understood what an IIFE <em>was</em>.  But they never really "clicked" for me because there was never any time when I thought, "Oh, wait.  I should use an IIFE here!"</p>
+
+<p>For whatever reason, I've actually started using IIFEs recently with some regularity.  So I figured I'd write up this article because it might help others who've never really grasped their utility.<br>
+<br><br></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7sf3va-R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8k7feqc3wgxba5v9vnb1.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7sf3va-R--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8k7feqc3wgxba5v9vnb1.jpg" alt="Image description" width="800" height="313"></a></p>
+<h2>
+  
+  
+  What is an IIFE?
+</h2>
+
+<p>The fully-articulated name of an IIFE basically tells you what it is.  It's a function expression that's... immediately invoked.  It differs from an <em>anonymous</em> function in that anonymous functions can still be called numerous times, like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">))</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the example above, this is the <em>anonymous</em> function:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>It's "anonymous" because it's not stored in a variable.  So it has no "handle" that we can use to manually call the function at other points in our code.  But it's not an <em>immediately invoked function expression</em> because it's not run... <em>immediately</em>.  Instead, it is run once for each item that's passed into the Array prototype function <code>.forEach()</code>.</p>
+
+<p>IIFEs have a special syntax that tells the JavaScript engine to run the logic inside them <em>immediately after they're defined</em>.  That syntax looks like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">))()</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the example above, the IIFE will console-log the value of <code>item</code> (<code>1</code>).  And that's fine, except...  When I look at an example like the one shown above, the IIFE just feels utterly... pointless.  I mean, if all you want to do is console-log the value of <code>item</code>, then why wouldn't you just do this?<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Of course, for this (totally simplistic) example, there really is no logical reason to use an IIFE.  And it's that basic bit of common sense that always led me to write off IIFEs as a near-pointless language construct.</p>
+
+<p>To be clear, I've occasionally encountered IIFEs that were written by <em>other</em> devs.  But sooooo many times, when I see IIFEs "in the wild", I still end up scratching my head as to why the original developer even chose to use it in the first place.  My thinking went like this:</p>
+
+<ol>
+<li><p>IIFEs are just a block of <em>immediately-invoked</em> code.<br></p></li>
+<li><p>So if I want that code to be <em>immediately-invoked</em>, then why wouldn't I simply... write the code - without wrapping it inside an IIFE???</p></li>
+</ol>
+
+<p>But as I stated above, I've found several scenarios where they can truly be useful.  I hope that the following examples will help you to grasp their utility as they have for me.<br>
+<br><br></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XBFfpbrD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bth2h1zv0bi8ipoay67t.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XBFfpbrD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bth2h1zv0bi8ipoay67t.jpg" alt="Image description" width="800" height="313"></a></p>
+<h2>
+  
+  
+  Libraries
+</h2>
+
+<p>Let's say that you have a single file that contains a "library" of utility functions.  That may look something like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// conversionUtilities.js</span>
+<span class="kd">const</span> <span class="nx">convertUserDBToUI</span> <span class="o">=</span> <span class="nx">userDB</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+    <span class="na">firstName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">first_name</span><span class="p">,</span>
+    <span class="na">lastName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">last_name</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">convertUserUIToDB</span> <span class="o">=</span> <span class="nx">userUI</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">user_id</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+    <span class="na">first_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+    <span class="na">last_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The functions above simply take objects that are formatted for the UI and converts them into objects that are formatted for the DB (and vice versa).  </p>
+
+<p>Of course, if these are truly meant to be "utility" functions (meaning that you'll probably need to call on them from various places throughout your application), you'll need to <code>export</code> these functions so they can be imported at other places in the app.  That would look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// conversionUtilities.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">convertUserDBToUI</span> <span class="o">=</span> <span class="nx">userDB</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+    <span class="na">firstName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">first_name</span><span class="p">,</span>
+    <span class="na">lastName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">last_name</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">convertUserUIToDB</span> <span class="o">=</span> <span class="nx">userUI</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">user_id</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+    <span class="na">first_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+    <span class="na">last_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The code above would work just fine.  However, it may lead to some extraneous <code>import</code> statements throughout your code, because anytime you need to use two-or-more of these functions in a single file, you'll need to include two-or-more <code>import</code> statements in those files.  When you're creating "library" files that contain many related <em>utility</em> functions, it can often be useful to have them contained within a single <code>export</code>.</p>
+
+<p>One way you could accomplish this is with a <code>class</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// conversionUtilities.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Convert</span> <span class="o">=</span> <span class="kd">class</span> <span class="p">{</span>
+  <span class="nx">userDBToUI</span><span class="p">(</span><span class="nx">userDB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+      <span class="na">firstName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">first_name</span><span class="p">,</span>
+      <span class="na">lastName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">last_name</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">userUIToDB</span><span class="p">(</span><span class="nx">userUI</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">user_id</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">first_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+      <span class="na">last_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Once again, the code above works just fine.  Here are some benefits of the above code:</p>
+
+<ol>
+<li><p>We no longer need to repeat <code>convert</code> in every one of the method names, because it's implied in the name of the class.<br></p></li>
+<li><p>All of our utility functions are "bundled" inside a single entity - the <code>Convert</code> class - so they don't need to be imported individually.<br></p></li>
+</ol>
+
+<p>But there are also a few "downsides":</p>
+
+<ol>
+<li><p>Some (nay... <em>many</em>) JS/TS developers simply abhor using the <code>class</code> keyword.<br></p></li>
+<li><p>Anytime you need to use these utility functions, you first need to call something like <code>const convert = new Convert();</code> before using the utility functions like <code>const userUI = convert.userDBToUI(userDB);</code>.  That could become... cumbersome.<br></p></li>
+</ol>
+
+<p>You could solve the second "problem" by exporting an <em>instance</em> of the class, rather than exporting the class itself.  That would look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// conversionUtilities.js</span>
+<span class="kd">const</span> <span class="nx">Convert</span> <span class="o">=</span> <span class="kd">class</span> <span class="p">{</span>
+  <span class="nx">userDBToUI</span><span class="p">(</span><span class="nx">userDB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+      <span class="na">firstName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">first_name</span><span class="p">,</span>
+      <span class="na">lastName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">last_name</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">userUIToDB</span><span class="p">(</span><span class="nx">userUI</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">user_id</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">first_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+      <span class="na">last_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">convert</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Convert</span><span class="p">();</span>
+</code></pre>
+
+</div>
+
+
+
+<p>That saves us some keystrokes whenever we're importing the <code>Convert</code> class.  But it still rubs some devs the wrong way because we're relying on classes.  But that's OK.  Because we can accomplish the same thing with a function:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// conversionUtilities.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Convert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">userDBToUI</span> <span class="o">=</span> <span class="nx">userDB</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+      <span class="na">firstName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">first_name</span><span class="p">,</span>
+      <span class="na">lastName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">last_name</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">userUIToDB</span> <span class="o">=</span> <span class="nx">userUI</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">user_id</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">first_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+      <span class="na">last_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">userDBToUI</span><span class="p">,</span>
+    <span class="nx">userUIToDB</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Here are the benefits of this approach:</p>
+
+<ol>
+<li><p>No more "yucky" <code>class</code> keyword.<br></p></li>
+<li><p>Again, we no longer need to repeat <code>convert</code> in every one of the function names, because it's implied in the name of the exported function.<br></p></li>
+<li><p>All of our utility functions are "bundled" inside a single entity - the <code>convert</code> function - so they don't need to be imported individually.<br></p></li>
+</ol>
+
+<p>But there's still at least one "downside":</p>
+
+<ol>
+<li>Anytime you need to use these utility functions, you first need to call something like <code>const convert = Convert();</code> before using the utility functions like <code>const userUI = convert.userDBToUI(userDB);</code>.  That could become... cumbersome.
+</li>
+</ol>
+
+<p>You could solve this "problem" by exporting the <em>invocation</em> of the parent function, rather than exporting the parent function itself.  That would look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// conversionUtilities.js</span>
+<span class="kd">const</span> <span class="nx">Convert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">userDBToUI</span> <span class="o">=</span> <span class="nx">userDB</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+      <span class="na">firstName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">first_name</span><span class="p">,</span>
+      <span class="na">lastName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">last_name</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">userUIToDB</span> <span class="o">=</span> <span class="nx">userUI</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">user_id</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">first_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+      <span class="na">last_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">userDBToUI</span><span class="p">,</span>
+    <span class="nx">userUIToDB</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">convert</span> <span class="o">=</span> <span class="nx">Convert</span><span class="p">();</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Honestly, this is the primary way that I usually see this done.  But there is another way - with an IIFE - that we could do this without having to first 1) define the <code>Convert</code> function, and then 2) export the invocation of that function.  That would look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// conversionUtilities.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">convert</span> <span class="o">=</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">userDBToUI</span> <span class="o">=</span> <span class="nx">userDB</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+      <span class="na">firstName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">first_name</span><span class="p">,</span>
+      <span class="na">lastName</span><span class="p">:</span> <span class="nx">userDB</span><span class="p">.</span><span class="nx">last_name</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">userUIToDB</span> <span class="o">=</span> <span class="nx">userUI</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">user_id</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">first_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">firstName</span><span class="p">,</span>
+      <span class="na">last_name</span><span class="p">:</span> <span class="nx">userUI</span><span class="p">.</span><span class="nx">lastName</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">userDBToUI</span><span class="p">,</span>
+    <span class="nx">userUIToDB</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">})()</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Notice here that we didn't have to define the parent function, and then export <em>the invocation of that function</em>.  Instead, we used an IIFE to do it all in one statement.  Now, whenever someone imports <code>convert</code>, they'll get an object that already contains all of the utility functions inside <code>convert</code>.</p>
+
+<p>Is this some rock-solid no-brainer use case for IIFEs???  No.  As stated above, you can accomplish the same thing by:</p>
+
+<ol>
+<li><p>Exporting every single utility function individually.<br></p></li>
+<li><p>Encompassing the utility functions inside a class, and then exporting an instance of that class.<br></p></li>
+<li><p>Encompassing the utility functions inside a parent function, and then exporting the invocation of that function.<br></p></li>
+</ol>
+
+<p>Nevertheless, I find the IIFE approach to be just <em>a little bit</em> cleaner.  And it's at least <em>one</em> valid use case for IIFEs.<br><br></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--d5sYRuZK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zuuefqh9y7qgdh3xvihp.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d5sYRuZK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zuuefqh9y7qgdh3xvihp.jpg" alt="Image description" width="800" height="313"></a></p>
+
+<h2>
+  
+  
+  Swallowing Promises
+</h2>
+
+<p>Async/await can be powerful tools when dealing with data calls and other asynchronous actions.  But they can also cause a bit of a cascading headache in your code - especially in strict TypeScript code.</p>
+
+<p><code>await</code> can only be used inside an <code>async</code> function.  Imagine that you have three cascading functions that do the following:</p>
+
+<ol>
+<li><p>FunctionA handles the result of a user action (like clicking a "Submit" button).<br></p></li>
+<li><p>If the right conditions are met, FunctionA then calls some validation logic in FunctionB.<br></p></li>
+<li><p>Based on the results of the validation, FunctionB may then call FunctionC, which transmits the data to the server via an asynchronous REST call.<br></p></li>
+</ol>
+
+<p>You want to use the <code>await</code> syntax in FunctionC, which means that you need to define it as an <code>async</code> function.  </p>
+
+<p>But this means that FunctionB will now be expecting <em>a promise</em> from FunctionC.  So... you change FunctionB to be an <code>async</code> function.</p>
+
+<p>But that means that FunctionA will now be expecting <em>a promise</em> from FunctionB.  So... you change FunctionA to be an <code>async</code> function.</p>
+
+<p>But now the event handler that originally called FunctionA is also expecting <em>a promise</em>.  And depending on how strict your TypeScript environment is configured, that simply may not be an option.</p>
+
+<p>The "cascading" effect of <code>async/await</code> would look something like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">submit</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">someApiCall</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span>
+    <span class="c1">// handle API result</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">doValidation</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// check some validation</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isValid</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">submit</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// set some state vars</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">someCondition</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">doValidation</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="o">&lt;&gt;</span>
+    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="nx">Submit</span>
+    <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the example above, the TypeScript compiler will start complaining because <code>callApi()</code> is not an <code>async</code> function.  So you set <code>callApi()</code> to be <code>async</code> but... that also requires <code>doValidation()</code> to be <code>async</code>.  So you set <code>doValidation()</code> to be <code>async</code> but... that also requires <code>handleSubmit()</code> to be <code>async</code>.  So you set <code>handleSubmit()</code> to be <code>async</code> but... TypeScript might <em>still</em> complain because the <code>onClick</code> event handler is not configured to handle the resulting promise.</p>
+
+<p>At this point, you've started to shove <code>async</code> into a lot of places where you really never wanted it to be.  And to make it even worse, TypeScript will <em>still</em> complain about the fact that your <code>onClick</code> handler is not handling the resulting promise.</p>
+
+<p>[NOTE: In plain ol' vanilla JavaScript, you can simply <em>ignore</em> the resulting promise.  But you can't convert your entire project from TypeScript to JavaScript just because you don't wanna deal with all of these cascading usages of <code>async/await</code>.]</p>
+
+<p>Luckily, an IIFE can do a load of good here.  That would look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">callApi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">someApiCall</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span>
+      <span class="c1">// handle API result</span>
+    <span class="p">})()</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">doValidation</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// check some validation</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isValid</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">callApi</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// set some state vars</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">someCondition</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">doValidation</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="o">&lt;&gt;</span>
+    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="nx">Submit</span>
+    <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In the code above, we can now use <code>async/await</code> inside <code>callApi()</code> <em>without ever having to declare <code>callApi()</code> as an <code>async</code> function</em>.  This works because the asynchronous call <em>is</em> happening inside an <code>async</code> function.  It just so happens that the <code>async</code> function is... an IIFE _inside the <code>callApi()</code> function.  </p>
+
+<p>This is actually a use case for IIFEs that I use <em>a lot</em>.<br><br></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WJVP0DMi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3b75mu8f0rcdtkl1w92f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WJVP0DMi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3b75mu8f0rcdtkl1w92f.png" alt="Image description" width="800" height="313"></a></p>
+
+<h2>
+  
+  
+  In-place Logic
+</h2>
+
+<p>Finally, I wanna illustrate a scenario where <em>in-place logic</em> (i.e., the kind of logic that's provided by an IIFE) can make a lot of sense.</p>
+
+<p>I've recently been helping a friend with a bunch of EDI data transformations.  On the surface, the work is pretty simple.  You get a big data object that's supposed to be in a given format - maybe something like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">rawData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">fee</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fee</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">einz</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">fie</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fie</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">zwei</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">foe</span><span class="p">:</span> <span class="dl">'</span><span class="s1">foe</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">drei</span><span class="p">:</span> <span class="dl">'</span><span class="s1">3</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">fum</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fum</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then you have to write some transformation routine that will extract (and "massage") certain values and return a new data object in a different format, like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">getGiantSpeak</span> <span class="o">=</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">fee</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fee</span><span class="p">,</span>
+    <span class="na">fie</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fie</span><span class="p">,</span>
+    <span class="na">foe</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">foe</span><span class="p">,</span>
+    <span class="na">fum</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fum</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The "problem" arises when you realize that many of the vendors supplying the data will <em>format</em> that data in many different ways.  For example, the simple logic above works just fine as long as you assume that the values in <code>rawData</code> are simple scalar values.  </p>
+
+<p>But then you find that your data transformations are intermittently failing.  When you investigate the intermittent problems, you realize that <em>sometimes</em> the vendor is submitting <code>rawData.fie</code> as a simple string.  And <em>other times</em> they're submitting it as an <em>array of strings</em>.  So to fix this, you need to insert a little bit of logic at the point where <code>getGiantSpeak()</code> is returning the <code>fie</code> value.</p>
+
+<p>In this scenario, I find that a simple IIFE works wonders:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">rawData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">fee</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fee</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">einz</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">fie</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">fie</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fiddler</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">zwei</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">foe</span><span class="p">:</span> <span class="dl">'</span><span class="s1">foe</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">drei</span><span class="p">:</span> <span class="dl">'</span><span class="s1">3</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">fum</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fum</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">getGiantSpeak</span> <span class="o">=</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">fee</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fee</span><span class="p">,</span>
+    <span class="na">fie</span><span class="p">:</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">fie</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fie</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">else</span> 
+        <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fie</span><span class="p">;</span>
+    <span class="p">})(),</span>
+    <span class="na">foe</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">foe</span><span class="p">,</span>
+    <span class="na">fum</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fum</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>[NOTE: I realize that you can also accomplish the above logic with a simple ternary operator.  But the "real life" examples usually require some more "nuanced" logic that doesn't lend itself to a ternary operator.]</p>
+
+<p>In this scenario, the logic needed to build the new object is truly <em>single-use</em>, and it can be much cleaner to encompass it in an IIFE.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Baby steps to instantly improve your React project](https://dev.to/rajeshroyal/baby-steps-to-instantly-improve-your-react-project-56o2) 
  <details><summary>Article</summary> <p>React has established itself as a leading library for building dynamic user interfaces. While it's easy to get started with React, mastering it can be a continuous journey. To help you along the way, here are four React tips that will instantly improve your code and make your React projects more efficient, maintainable, and enjoyable.</p>
 
@@ -377,107 +1064,6 @@ Roop with stable diffusion brings a whole new level to image generation with AI,
 Also note that with AI there's always room for improvement and new things to learn.</p>
 
 <p>Thanks for reading 🤗.</p>
-
- </details> 
- <hr /> 
-
- #### - [CTF Challenges: Reconnaissance](https://dev.to/therealchiwoo/ctf-challenges-reconnaissance-1bl5) 
- <details><summary>Article</summary> <p><strong>Brief Overview</strong></p>
-
-<p>Now that our previous challenge has been solved, it's time to move on to the next topic. Like I mentioned before, MetaCTF provides 8 different topics of CTF problems, and this time, we are going to take a look at Reconnaissance.</p>
-
-<p><strong>What is Reconnaissance?</strong></p>
-
-<p>For big words like this, I swear Google is my best friend. In Cybersecurity, Reconnaissance is the information-gathering stage of ethical hacking, where you collect data about the target system. To simply put, we use techniques like foot printing and scanning to discover and collect information about a system! Think of it as... I guess a hacker gathering/collecting information about the target system!</p>
-
-<p><strong>CTF Reconnaissance Problems</strong></p>
-
-<p>For this section, I'm going to do a super duper easy peasy simple problem that allows you to understand the very basic definition of Reconnaissance, and a more difficult problem that can demonstrate the subject differently.</p>
-
-<p><strong>KANYE WEST???</strong></p>
-
-<p>Ok, let's take a look at this easy problem.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Tjff7h4m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5oh627gxfczvi2h9uknk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Tjff7h4m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5oh627gxfczvi2h9uknk.png" alt="Image description" width="800" height="155"></a></p>
-
-<p>As mentioned previously, ethical hackers use reconnaissance to gather information about their target. In this instance, it is the Ye himself!</p>
-
-<p>This problem shows the surface level definition of reconnaissance, as it makes us gather information about Kanye's iPhone password. With a simple Google search, we find his password: 000000.</p>
-
-<p><strong>Under ATT&amp;CK</strong></p>
-
-<p>Now onto something a little more difficult...</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SKe7aVF7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n1a55gwrj307rg92ffr1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SKe7aVF7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n1a55gwrj307rg92ffr1.png" alt="Image description" width="800" height="232"></a></p>
-
-<p>At first, I had a difficult time understanding the problem. It had too many acronyms that I wasn't familiar with, so I decided to click on the hint: <a href="https://attack.mitre.org">https://attack.mitre.org</a>.</p>
-
-<p>When I went on the website, there was a subsection that specifies 3 different categories for attacks: Enterprise, Mobile, and ICS. </p>
-
-<p>Going back to the CTF problem, it states <em>"what other Initial Access mechanism did the attacker use?"</em> When browsing through the 3 subcategories, I wasn't particularly sure on which one to click. With a little more research, I stumbled across this website: <a href="https://www.blackberry.com/us/en/solutions/endpoint-security/mitre-attack">https://www.blackberry.com/us/en/solutions/endpoint-security/mitre-attack</a>.</p>
-
-<p>In the website, it mentions that the Enterprise ATT&amp;CK Matrix contains a sub-matrices that focuses on pre-attack activities (PRE Matrix), attacks against specific OS (Windows, Linux, and macOS Matrices), network infrastructure attacks (Network Matrix), cloud infrastructure attacks (Cloud Matrix), and attacks against containers (Containers Matrix). </p>
-
-<p>When going back to the question, it does seem like the problem wants us to research more into the Enterprise tactics.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--luhk7Zl2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gwnl2zdevo2a4bycnu2g.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--luhk7Zl2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gwnl2zdevo2a4bycnu2g.png" alt="Image description" width="800" height="474"></a></p>
-
-<p>When I click on the Enterprise Tactics, there are a lot of sections within it. The CTF problem states that there was a "Valid Accounts" technique, and another technique with Initial Access Mechanism.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PYkcENwT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vzamg157q39qdt0esqnb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PYkcENwT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vzamg157q39qdt0esqnb.png" alt="Image description" width="800" height="563"></a></p>
-
-<p>After clicking on the Initial Access, there were a total of 9 techniques I found. I was able to narrow it down because the CTF problem stated the Threat Actor was able to get onto our network by using a VPN, which was the "External Remote Services: T1133".</p>
-
-<p>This problem did take a lot of time, as I was a little bit confused on the 3 sections: Enterprise, Mobile and ICS. </p>
-
- </details> 
- <hr /> 
-
- #### - [What is your Why?](https://dev.to/acoh3n/what-is-your-why-j9b) 
- <details><summary>Article</summary> <p>I believe we all entered the field of programming for various reasons. It could be to earn a living, pursue a sought-after career, or simply because we love building stuff. Whatever the reason, we're here.</p>
-
-<p>However, if I'm being perfectly honest, while all these are good reasons, none would provide me with more than the bare minimum level of happiness at what I do almost every day for many hours.</p>
-
-<p>Yet, while I had my fair share of miserable days on the job like everyone else, more often than not, I am truly eager to do my thing at work. </p>
-
-<p>So today, while I was running, I found myself in a bit of an introspective mood and wondered what is my personal Why? Why do I still love programming so much after all these years. </p>
-
-<p>I always knew it had something to do with people. Seeing someone using something I wrote and maybe even liking it never ceases to give me a kick. But I felt there was a deeper desire. </p>
-
-<p>After a little back and forth with myself I reduced it to something that felt really true for me: <strong>to reduce the suffering of someone else</strong>. Okay, I know it sounds a bit overly dramatic, but hear me out here for a minute. </p>
-
-<p>Our profession is riddled with sharp objects we all occasionally bump into. People much smarter than myself say that it takes <a href="https://norvig.com/21-days.html">a very long</a> time to even begin to master it, there is formidable math and sophisticated algorithms lurking at every corner, then there are new languages, tools, frameworks and paradigms jumping on us every other day that threaten to undermine everything we've learned for the past however many years. </p>
-
-<p>So when I get to brighten someone's day through my work in even the smallest way, damn it it feels good. </p>
-
-<p>It could be a user that with the help of something I wrote suddenly feels much more productive, or it could be as "small" as assisting a colleague by showing them how to use some tool that I take for granted, but is life-changing for them. </p>
-
-<p>That's why I relish at the opportunity to spend that extra hour at making my API just a tiny bit simpler, or clean up and refactor some messy code, or write that extra page of documentation or test. Because someone (including myself) will experience just a tiny bit less frustration and pain down the road when they try to use it. </p>
-
-<p>And whenever I get to see it first hand it gives me the energy to wake up the next day and do it all over again. </p>
-
-<p>So now I'd like to invite you to find your personal Why, and to please share it with us.</p>
-
- </details> 
- <hr /> 
-
- #### - [Extensões do Visual Studio Code para um Front-end](https://dev.to/manzoliric/extensoes-do-visual-studio-code-para-um-front-end-2pgk) 
- <details><summary>Article</summary> <p>Hoje vim trazer extensões do Visual Studio Code que eu uso e que me ajudam muito no dia a dia, esse post foi inspirado no post <a href="https://dev.to/laryssa/extensoes-do-visual-studio-code-para-um-sre-2nj5">Extensões do Visual Studio Code para um SRE</a> da <a href="https://dev.to/laryssa">Laryssa Araujo</a> onde ela mostra as ferramentas que ela usa no dia a dia como uma SRE.</p>
-
-<p>Não vou falar sobre todas as extensões que eu tenho instalado aqui, tenho algumas para mexer com Elixir/Phoenix, Docker e etc... vou falar apenas das que eu mais uso e que me ajudam no dia a dia como Front-end.</p>
-
-<ol>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag</a>: Essa extensão é muito útil para quem trabalha com HTML, ela renomeia a tag de abertura e fechamento automaticamente, evitando que você tenha que ficar renomeando as tags manualmente.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a>: Essa extensão é muito útil para corrigir erros de digitação, ela verifica a palavra e mostra se existe algum erro de digitação, exemplo quando escrevemos <code>lenght</code> ao invés de <code>length</code>, que acontece muito comigo.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian">Brazilian Portuguese - Code Spell Checker</a>: Essa extensão é uma extensão da extensão anterior, ela adiciona um dicionário de palavras em português, para que a extensão anterior possa verificar as palavras em português.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=SimonSiefke.svg-preview">Svg Preview</a>: Essa extensão mostra uma prévia do SVG direto no VSCode, assim você não precisa abrir o arquivo no navegador para ver o svg.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-community-material-theme">Community Material Theme</a>: Essa extensão é apenas o tema que eu mais gosto, gosto de usar a versão <code>Material Theme Darker</code>.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">Material Icon Theme</a>: Essa extensão é apenas o tema de ícones que eu mais gosto.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">Import Cost</a>: Essa extensão mostra o tamanho do pacote que você está importando, assim você pode ver se o pacote é muito grande e se vale a pena usar ele.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">Git Lens</a>: Essa extensão é bem completa, tem muita coisa, mas para falar a verdade eu uso muito ela para verificar quem fez a última alteração no arquivo direto no VSCode e também conseguir ir direto para o arquivo no GitHub ou Pull Request.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot">GitHub Copilot</a>: Essa extensão não tem muito que dizer, é o famoso GitHub Copilot, tem me ajudado bastante a criar códigos que são mais repetitivos,e também funciona muito bem para documentação e comentários.</p></li>
-<li><p><a href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">EditorConfig for VS Code</a>: Essa extensão é muito útil para quem trabalha em projetos com várias pessoas, ela ajuda a manter o padrão de código, como por exemplo, <code>indent_style</code>, <code>indent_size</code>, <code>insert_final_newline</code> e etc... criamos um arquivo <code>.editorconfig</code> na raiz do projeto e configuramos o que queremos que seja o padrão.</p></li>
-</ol>
 
  </details> 
  <hr /> 
