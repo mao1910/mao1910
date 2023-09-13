@@ -118,6 +118,92 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Create a JavaScript Tool to Generate Acronym from User Input](https://dev.to/codewithshan/create-a-javascript-tool-to-generate-acronym-from-user-input-2ib7) 
+ <details><summary>Article</summary> <p>The code provided is a JavaScript function called getAcronym that takes a string of words as input and returns the acronym formed from the first letter of each word.</p>
+
+<h2>
+  
+  
+  What is Acronymn?
+</h2>
+
+<p>An acronym is a word formed from the initial letters of a phrase or a series of words. It is used as a shorter way to represent a longer phrase or name.</p>
+
+<h3>
+  
+  
+  <strong>Here’s a step-by-step explanation to generate Acronym:</strong>
+</h3>
+
+<ol>
+<li><p>The <strong>getAcronym</strong> function is defined using the arrow function syntax (<strong>const getAcronym = (words) =&gt; { ... }</strong>).</p></li>
+<li><p>The input string words is split into an array of words using the split method and the space delimiter (words.split(" ")). This creates an array where each element represents a word in the input string.</p></li>
+<li><p>The <strong>map</strong> method is used to iterate over each word in the array. For each word, a callback function is executed, which extracts the first character of the word using the <strong>charAt(0)</strong> method and converts it to uppercase using the toUpperCase method (<strong>word.charAt(0).toUpperCase()</strong>). This creates an array of uppercase letters representing the first letters of each word.</p></li>
+<li><p>The <strong>join</strong> method is used to combine all the elements of the array into a single string. The empty string "" is used as the separator (<strong>array.join("")</strong>). This results in a string that represents the acronym formed by concatenating the uppercase letters.</p></li>
+<li><p>The acronym string is returned as the output of the <strong>getAcronym</strong> function.</p></li>
+</ol>
+
+<p>In the example usage, the getAcronym function is called with the input string “<strong>Fear of missing out</strong>”. The resulting acronym “<strong>FOMO</strong>” is then logged to the console using console.log(acronym).</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dn5PlvoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5bbba42pr3q4x252hgrw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dn5PlvoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5bbba42pr3q4x252hgrw.png" alt="Generate Acronym from User Input" width="800" height="703"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Tech Events are NOT as cool as you think (from an organizer perspective)](https://dev.to/k8adev/tech-events-are-not-as-cool-as-you-think-from-an-organizer-perspective-2b70) 
+ <details><summary>Article</summary> <p>Hello everyone! </p>
+
+<p>My name is <strong>Keit</strong>, aka <a href="https://twitter.com/k8adev">@k8dev</a>, I'm Brazilian and, besides being a programmer, I've been organizing technology events for 8 years. </p>
+
+<p>I'm currently responsible for <strong>several technology</strong> events, one of which is the renowned <strong>FRONTIN Sampa</strong>, one of the largest and most <strong>traditional</strong> technology events here in <strong>Brazil</strong>, which has a great influence on the <strong>dev community</strong>. This event takes place <strong>annually in July</strong>, in the city of <strong>São Paulo</strong>, where we cover a wide variety of topics related to front-end development and related areas.</p>
+
+<p>However, we face significant <strong>challenges</strong>, as many people <strong>don't recognize</strong> the <strong>value</strong> of this type of event, and this isn't just <strong>limited</strong> to the developer <strong>community</strong>. If I had to <strong>list</strong> my <strong>main frustrations</strong> as an <strong>organizer</strong>, they would be the following:</p>
+
+<ul>
+<li>
+<strong>Difficulties</strong> in securing sponsorship.</li>
+<li>
+<strong>Maintaining engagement</strong> before and after the event.</li>
+<li>
+<strong>Managing partnerships</strong> and communities.</li>
+</ul>
+
+<p>The event <strong>FRONTIN Sampa</strong> has always been an <strong>iconic event</strong>, even before I took over the organization in <strong>2016</strong>. However, it's important to note that without adequate <strong>financial resources</strong>, it's <strong>impossible to provide a high-quality environment</strong>, <strong>good speakers</strong> and a <strong>competent team</strong> to hold an event of this size. Here on this side of the globe, <strong>companies even show interest</strong> in participating in events, but the <strong>offered sponsorship</strong> values they want to give as sponsorship often <strong>barely cover the costs</strong> they have with <strong>their own infrastructure</strong> on the day of the event.</p>
+
+<p>As an example, the last FRONTIN Sampa generated approximately <strong>100,000.00 BRL (20,368.26 USD) in sales</strong>, while <strong>sponsorships only amounted to around 12,000.00 BRL (2,444.04 USD)</strong>, without taking barter into account. Exchanges alone are <strong>often unequal</strong> to what we deliver during the event and on social media. Even with excellent sales, if we do a <strong>quick calculation</strong>, it's clear that the <strong>equation doesn't add up</strong>. Organizing events like <strong>FRONTIN Sampa</strong> requires not only resources for the day of the event, but  there are <strong>efforts and resources</strong> needed before and after the event that are usually not accounted for. Here at FRONTIN, the company I set up to manage events, we have a number of needs such as:</p>
+
+<ul>
+<li>Social media management</li>
+<li>Graphic design</li>
+<li>Sales</li>
+<li>Content production</li>
+<li>Marketing</li>
+<li>Subscriptions to services such as Mailchimp, Google Workspace, Figma, Canvas, among others</li>
+<li>Event management</li>
+<li>Partnership and sponsorship management</li>
+<li>Public relations</li>
+<li>Accounting management</li>
+</ul>
+
+<p>And so on and so forth.</p>
+
+<p>It's <strong>almost a year of planning and execution</strong>, with <strong>monthly costs</strong> that are <strong>impossible</strong> to meet <strong>without sponsorship</strong> or personal investment. And yes! Sometimes the organizers <strong>have to take money out of their own pockets</strong> because, once again, <strong>the equation doesn't add up</strong>. We're talking about around 10,000.00 BRL or more to maintain the structure and team needed to produce the event, monitor social media, manage the community, communicate and other activities.</p>
+
+<p>We're talking about around <strong>170,000.00 BRL or 34,000 USD</strong> to produce FRONTIN Sampa this year!</p>
+
+<p>On the other hand, we have an <strong>audience</strong> who often <strong>complains about the ticket prices</strong>. We <strong>always</strong> try to offer extremely <strong>affordable tickets</strong> — which are usually <strong>not compatible</strong> with an <strong>event</strong> of such <strong>high standards</strong>, specially in the middle of a recession. We implemented <strong>strategies</strong> such as <strong>selling tickets</strong> in advance and <strong>offering half-price</strong> tickets to make the event as accessible as possible. However, it's not uncommon to come across people who don't recognize the hard work behind organizing the event and make unconstructive criticisms publicly.</p>
+
+<p>When it comes to <strong>partnerships</strong>, <strong>communities</strong> and tech <strong>influencers</strong>, many of them are more <strong>interested in the coupons and free tickets</strong> they receive <strong>than in actually helping to publicize</strong> events and build an <strong>environment</strong> where people can <strong>learn</strong>, <strong>share</strong> and <strong>have fun</strong>. What's more, managing these partnerships is often complicated, as it involves an exchange relationship. Once again, <strong>the lack of financial</strong> resources affects our ability to give proper attention to these partnerships and to follow up on the fulfillment of obligations on both sides.</p>
+
+<p>This year has been <strong>particularly challenging</strong>, with <strong>few financial resources</strong> and <strong>many</strong> events to be held to meet the <strong>community's expectations</strong>. It was so <strong>difficult</strong> that I was <strong>forced</strong> to put practically <strong>ALL MY MONEY</strong> into FRONTIN to <strong>ensure</strong> that all the <strong>events took place</strong> even though I didn't raise <strong>enough funds</strong>. This has <strong>made me rethink several times</strong> whether it is <strong>worth continuing to produce these events</strong>.</p>
+
+<p>I'm looking <strong>forward to hearing the perspective</strong> of other people who <strong>actively or voluntarily work</strong> on <strong>tech events</strong>. I'd love to talk to you and maybe find some <strong>motivation</strong> to keep going, or even companies to be joining us in the next event. I believe that our work is fundamental to <strong>creating an environment</strong> where people can connect and I truly don't want to give up.</p>
+
+<p>Thank you!</p>
+
+ </details> 
+ <hr /> 
+
  #### - [TinyMCE Rich Text Editor: Multi-Root vs Inline Editing](https://dev.to/tinymce/tinymce-rich-text-editor-multi-root-vs-inline-editing-7hh) 
  <details><summary>Article</summary> <p>TinyMCE is a familiar and versatile rich text editor that’s known for its ease of use. For more than two decades dev’s have used it out-of-the-box (or customized) because it can be integrated into web apps in many different ways. The two integration modes we’ll cover in this article are<a href="https://www.tiny.cloud/docs/tinymce/6/ie-template-creation/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog#multi-root-editing-and-document-template-creation"> Multi-Root editing</a> and <a href="https://www.tiny.cloud/docs/tinymce/6/use-tinymce-inline/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog">Inline editing</a>.</p>
 
@@ -552,365 +638,6 @@
 </h1>
 
 <p>Para saber se deve ou não construir um componente em algo é preciso pensar na funcionalidade daquilo, vai se repetir várias vezes? Vai ter que aparecer com opções diferentes em outra página? É analisar o qual móvel é esse item e se ele irá ser reutilizável ou não.</p>
-
- </details> 
- <hr /> 
-
- #### - [How to take Screenshot using Python](https://dev.to/max24816/how-to-take-screenshot-using-python-27i2) 
- <details><summary>Article</summary> <p>We will see how to take screenshot using python in desktop with the help of <a href="https://github.com/asweigart/pyautogui">pyautogui package</a> this package is used of GUI automation.</p>
-
-<p>First lets install the package by running the command<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>pip <span class="nb">install </span>pyautogui
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Take screenshot using python
-</h3>
-
-<p>To <a href="https://www.programdoc.com/blog/how-to-take-a-screenshot-using-python">take screenshot using python in desktop</a>, for this import the pyautogui module, this comes with many features, but in this will be using the screenshot method.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">pyautogui</span>
-
-<span class="n">screen</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="p">.</span><span class="n">screenshot</span><span class="p">()</span>
-<span class="n">screen</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"my_image.png"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This will take a screenshot of the entire screen and save it to the current working directory, to save the image in different directory change the path in save function.</p>
-
-<h3>
-  
-  
-  Saving screenshot to folder
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">pyautogui</span>
-
-<span class="n">screen</span> <span class="o">=</span> <span class="n">pyautogui</span><span class="p">.</span><span class="n">screenshot</span><span class="p">()</span>
-<span class="n">screen</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"test/image/my_image.png"</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
- </details> 
- <hr /> 
-
- #### - [Create extensions in no time](https://dev.to/waradu/create-extensions-in-no-time-2jhp) 
- <details><summary>Article</summary> <p>Have you ever dreamed of your own browser extension? Have you ever wished there was an extension that does this and that? Well, just create one! You only need a manifest.json to get started.</p>
-
-<h1>
-  
-  
-  Create/use the extension
-</h1>
-
-<p>Create a folder with the name of your extension and add a manifest.json file in the folder.</p>
-
-<p>In the manifest add <code>{ }</code> and create a name key in there:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>after that we need a manifest_version, version key:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>Version is just the version of your extension so it doesn't matter if its 1.0.0, 0.1.0 or 34.110.01</p>
-
-<p>Now open your browser, go to <code>edge://extensions/</code> and activate developer mode on.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VJVpXKr6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o8oso0mhl5x0hm7c3non.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VJVpXKr6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o8oso0mhl5x0hm7c3non.png" alt="developer mode" width="301" height="46"></a></p>
-
-<p>Finally drag n' drop your folder in the extensions window and search your extension in the extension list (Click "Reload" on your extension if you change anything):<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LDtdHYxQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jgodn95g6zxf6k1civyl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LDtdHYxQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jgodn95g6zxf6k1civyl.png" alt="extension" width="800" height="106"></a></p>
-
-
-<h1>
-  
-  
-  Add basic functionality
-</h1>
-<h2>
-  
-  
-  Popup window if extension is clicked
-</h2>
-
-<p>You can achieve that with just simply adding "action" &gt; "default_popup" to the manifest<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"default_popup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popup/popup.html"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>and creating an popup.html and style.css file in the popup directory:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>tutorial/
-├── popup/
-│   ├── popup.html
-│   └── style.css
-└── manifest.json
-</code></pre>
-
-</div>
-
-
-
-<p>In the popup.html create a simple popup with HTML/CSS for example:<br>
-popup.html:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Tutorial<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>Hello World!<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>style.css:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="o">*</span> <span class="p">{</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">body</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="m">#222</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="nb">sans-serif</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="n">max-content</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>it should now look like this <strong>(DO NOT FORGET THO CLICK RELOAD ON THE EXTENSION IN THE EXTENSIONS PAGE)</strong>:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--W2sWe0pN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0blqm2j4zbsdgsscakub.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--W2sWe0pN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0blqm2j4zbsdgsscakub.png" alt="example" width="280" height="148"></a></p>
-
-
-
-
-<h2>
-  
-  
-  Inject JavaScript/CSS to a page
-</h2>
-
-<p>Just add "content_scripts" &gt; "js" / "css" to the manifest<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"default_popup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popup/popup.html"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"content_scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"inject/inject.js"</span><span class="p">],</span><span class="w">
-      </span><span class="nl">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"inject/inject.css"</span><span class="p">],</span><span class="w">
-      </span><span class="nl">"matches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*//example.com*"</span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>Folder structure now:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>tutorial/
-├── popup/
-│   ├── popup.html
-│   └── style.css
-├── inject/
-│   ├── inject.js
-│   └── inject.css
-└── manifest.json
-</code></pre>
-
-</div>
-
-
-
-<p>For this tutorial I will make the background on example.com black and add a Hello World text:<br>
-inject.css:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span> <span class="cp">!important</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now just reload the extension and go to <a href="https://example.com/">example.com</a></p>
-
-<p>For JavaScript it's the same and if you want to add HTML to a page just add this to your inject.js:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">p</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">p</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">p</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">padding</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">40px</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">p</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">CLASS NAME FOR STYLING IN INJECT.CSS</span><span class="dl">"</span><span class="p">)</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now would you look at that:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YzH4JSLX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jbmnp9tb7kbglc39olgs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YzH4JSLX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jbmnp9tb7kbglc39olgs.png" alt="example.com" width="800" height="213"></a></p>
-
-
-
-
-<h2>
-  
-  
-  Add icon to extension
-</h2>
-
-<p>Add "icons" to manifest:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"manifest_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"default_popup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popup/popup.html"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"content_scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"inject/inject.js"</span><span class="p">],</span><span class="w">
-      </span><span class="nl">"css"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"inject/inject.css"</span><span class="p">],</span><span class="w">
-      </span><span class="nl">"matches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://example.com/"</span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"icons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"16"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon-16.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"32"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon-32.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"48"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon-48.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"128"</span><span class="p">:</span><span class="w"> </span><span class="s2">"icons/icon-128.png"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>After that add your icon files like that:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>tutorial/
-├── icons/
-│   ├── icon-16.png
-│   ├── icon-32.png
-│   ├── icon-64.png
-│   └── icon-128.png
-├── popup/
-│   ├── popup.html
-│   └── style.css
-├── inject/
-│   ├── inject.js
-│   └── inject.css
-└── manifest.json
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--su8zUFhh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/08z155q70xthttwov7dv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--su8zUFhh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/08z155q70xthttwov7dv.png" alt="Icon" width="192" height="51"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ncvGGrT8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/190bruxmnog6my92lryh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ncvGGrT8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/190bruxmnog6my92lryh.png" alt="Icons" width="459" height="134"></a></p>
 
  </details> 
  <hr /> 
