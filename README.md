@@ -118,6 +118,1345 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Publish an NPM Package from a GitHub Repository](https://dev.to/sh20raj/publish-an-npm-package-from-a-github-repository-4i8f) 
+ <details><summary>Article</summary> <h1>
+  
+  
+  How to Publish an NPM Package from a GitHub Repository
+</h1>
+
+<p>Publishing your JavaScript library as an NPM (Node Package Manager) package is a crucial step in sharing your code with the developer community. GitHub, a popular platform for hosting open-source projects, offers a seamless way to distribute your code by allowing you to publish NPM packages directly from your GitHub repository. In this comprehensive guide, we will walk you through the process step by step.</p>
+
+<h2>
+  
+  
+  Prerequisites
+</h2>
+
+<p>Before you start, ensure you have the following prerequisites in place:</p>
+
+<ol>
+<li><p><strong>A GitHub account</strong>: You'll need a GitHub account to host your code.</p></li>
+<li><p><strong>Node.js and NPM</strong>: Make sure you have Node.js and NPM installed on your local development environment. You can download them from the official website (<a href="https://nodejs.org/">https://nodejs.org/</a>).</p></li>
+<li><p><strong>Git</strong>: You should have Git installed on your machine. You can download it from the official website (<a href="https://git-scm.com/">https://git-scm.com/</a>).</p></li>
+<li><p><strong>A GitHub repository</strong>: Create a GitHub repository containing the code you want to publish as an NPM package.</p></li>
+</ol>
+
+<p>Now that you have the prerequisites ready, let's dive into the process.</p>
+
+<h2>
+  
+  
+  Step 1: Create a <code>package.json</code> File
+</h2>
+
+<p>The <code>package.json</code> file is a crucial configuration file for your NPM package. It provides essential information about your package, such as its name, version, and dependencies. To create a <code>package.json</code> file, you can use the <code>npm init</code> command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm init
+</code></pre>
+
+</div>
+
+
+
+<p>During the initialization process, you'll be prompted to provide the following details:</p>
+
+<ul>
+<li><p><strong>Name:</strong> This is the name of your package. It should be unique and follow NPM's naming conventions.</p></li>
+<li><p><strong>Version:</strong> The initial version of your package. Typically, it starts at <code>1.0.0</code>.</p></li>
+<li><p><strong>Description:</strong> A brief description of what your package does.</p></li>
+<li><p><strong>Entry Point:</strong> The main entry point for your package, usually <code>index.js</code>.</p></li>
+<li><p><strong>Test Command:</strong> The command to run tests for your package. You can leave this blank if your package doesn't have tests or specify a testing framework like Mocha.</p></li>
+<li><p><strong>Git Repository:</strong> The URL to your Git repository. This is used to link your NPM package to the GitHub repository.</p></li>
+<li><p><strong>Keywords:</strong> Keywords that describe your package, separated by spaces. These help others find your package on NPM.</p></li>
+<li><p><strong>Author:</strong> Your name or the name of the package author.</p></li>
+<li><p><strong>License:</strong> The license under which your package is distributed. Common options include MIT, Apache-2.0, and ISC.</p></li>
+</ul>
+
+<p>Once you've provided these details, <code>npm init</code> will generate a <code>package.json</code> file with the information you've entered.</p>
+
+<h2>
+  
+  
+  Step 2: Prepare Your Package
+</h2>
+
+<p>Make sure your GitHub repository contains all the necessary files for your package to work. This includes your package's source code files, documentation, and any other assets required for its functionality. Additionally, ensure that your package's dependencies are correctly specified in the <code>package.json</code> file, either in the <code>dependencies</code> or <code>devDependencies</code> section.</p>
+
+<h2>
+  
+  
+  Step 3: Use GitHub Codespaces (Optional)
+</h2>
+
+<p>Instead of cloning your GitHub repository to your local system, you can use GitHub Codespaces, a browser-based development environment provided by GitHub. GitHub Codespaces allows you to access a terminal and execute npm commands directly from your repository's web interface. This is particularly useful if you want to avoid setting up a local development environment.</p>
+
+<p>To access GitHub Codespaces, follow these steps:</p>
+
+<ol>
+<li><p>Go to your GitHub repository on the GitHub website.</p></li>
+<li><p>Click on the "Code" button and select "Open with Codespaces."</p></li>
+<li><p>GitHub will set up a Codespace for your repository, providing you with a browser-based development environment.</p></li>
+<li><p>In the Codespace's integrated terminal, you can execute npm commands as you normally would on your local machine.</p></li>
+</ol>
+
+<h2>
+  
+  
+  Step 4: Log In to Your NPM Account
+</h2>
+
+<p>Before you can publish your package to the NPM registry, you need to log in to your NPM account using the <code>npm adduser</code> or <code>npm login</code> command. This step is crucial for authenticating yourself with NPM and gaining permission to publish packages. When you run the command, you'll be prompted to enter your NPM username, password, and email address.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm adduser
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Step 5: Publish Your Package to NPM
+</h2>
+
+<p>With your package and <code>package.json</code> file ready, you can now publish your package to the NPM registry. Use the <code>npm publish</code> command to do this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm publish
+</code></pre>
+
+</div>
+
+
+
+<p>By default, the package will be published with the "public" access level, meaning it can be installed by anyone. The <code>--access public</code> flag ensures your package is publicly accessible on NPM.</p>
+
+<h2>
+  
+  
+  Step 6: Congratulations! Check on the NPM Website
+</h2>
+
+<p>After successfully publishing your package, you can visit the NPM website (<a href="https://www.npmjs.com/">https://www.npmjs.com/</a>) to see your package listed. It will be available for other developers to discover and use in their projects.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Publishing an NPM package from a GitHub repository is a straightforward process once you have the necessary prerequisites in place. By following these steps and providing the required details during <code>npm init</code>, you can share your JavaScript library with the broader developer community. Whether you choose to develop locally or use GitHub Codespaces, the process remains accessible and efficient. Remember to keep your package up-to-date by creating new releases and maintaining the <code>package.json</code> file. Happy coding and sharing!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Building Your Professional Portfolio Website: A Step-by-Step Guide](https://dev.to/templatesjungle/building-your-professional-portfolio-website-a-step-by-step-guide-252e) 
+ <details><summary>Article</summary> <p>A good portfolio website is a crucial tool for showcasing your work, skills, and expertise to potential employers or clients. To create an effective portfolio website, consider the following key elements:</p>
+
+<h2>
+  
+  
+  Clear and Engaging Presentation:
+</h2>
+
+<p>Use a clean and visually appealing design that reflects your personal or brand style.<br>
+Organize your content logically, with a clear navigation menu that's easy to understand.</p>
+
+<h2>
+  
+  
+  High-Quality Content:
+</h2>
+
+<p>Showcase your best work, emphasizing quality over quantity.<br>
+Include detailed descriptions or case studies for each project, explaining your role, goals, and outcomes.</p>
+
+<p>Use high-resolution images and multimedia elements to visually represent your work.</p>
+
+<h2>
+  
+  
+  About Me/Introduction:
+</h2>
+
+<p>Provide a brief and engaging "About Me" section that introduces yourself, your background, and your passion for your work.</p>
+
+<p>Share your unique selling points, such as your skills, experience, and what sets you apart from others in your field.</p>
+
+<h2>
+  
+  
+  Contact Information:
+</h2>
+
+<p>Make it easy for visitors to get in touch with you by including a contact form or clear contact details.</p>
+
+<p>Consider adding links to your professional social media profiles, like LinkedIn.</p>
+
+<h2>
+  
+  
+  Testimonials and Recommendations:
+</h2>
+
+<p>Include client testimonials or recommendations from colleagues to build trust and credibility.</p>
+
+<p>Showcase positive feedback from those who have worked with you.</p>
+
+<h2>
+  
+  
+  Responsive Design:
+</h2>
+
+<p>Ensure your website is responsive and mobile-friendly, as many visitors will access it from various devices.<br>
+Test your website's performance on different screen sizes and browsers.</p>
+
+<h2>
+  
+  
+  User-Friendly Navigation:
+</h2>
+
+<p>Keep navigation simple and intuitive, allowing visitors to explore your portfolio without confusion.<br>
+Use clear headings and labels for menu items.</p>
+
+<h2>
+  
+  
+  Blog or Insights Section (Optional):
+</h2>
+
+<p>Share your thoughts, industry insights, or project updates through a blog section if relevant to your field.</p>
+
+<p>Regularly update your blog to demonstrate your expertise and stay engaged with your audience.</p>
+
+<h2>
+  
+  
+  Call to Action (CTA):
+</h2>
+
+<p>Encourage visitors to take specific actions, such as contacting you, subscribing to your newsletter, or exploring your work further.</p>
+
+<p>Place CTAs strategically throughout your website.</p>
+
+<h2>
+  
+  
+  SEO Optimization:
+</h2>
+
+<p>Use relevant keywords in your content to improve search engine visibility.</p>
+
+<p>Include meta descriptions and alt tags for images to enhance SEO.</p>
+
+<h2>
+  
+  
+  Performance Optimization:
+</h2>
+
+<p>Ensure fast loading times by optimizing images and using efficient coding practices.</p>
+
+<p>Monitor website performance and address any issues promptly.</p>
+
+<h2>
+  
+  
+  Regular Updates:
+</h2>
+
+<p>Keep your portfolio up to date with your latest work and achievements.</p>
+
+<p>Remove outdated content or projects that no longer represent your skills.</p>
+
+<h2>
+  
+  
+  Privacy and Security:
+</h2>
+
+<p>Implement security measures to protect your website and visitors' data.</p>
+
+<p>Ensure that any forms or contact methods are secure.<br>
+Analytics and Tracking:</p>
+
+<p>Use analytics tools to track visitor behavior and gather insights into how people interact with your portfolio.</p>
+
+<p>Use these insights to make improvements over time.</p>
+
+<p>Remember that your portfolio website should not only showcase your work but also reflect your personality and professionalism. </p>
+
+<p>Regularly update and refine it to ensure it remains an effective tool for presenting your skills and attracting opportunities in your field.</p>
+
+<h2>
+  
+  
+  Creating a portfolio website using free HTML and CSS templates
+</h2>
+
+<p>Creating a portfolio website using free HTML and CSS templates is a great way to showcase your work and skills to potential employers or clients. Below, I'll guide you through the process step by step:</p>
+
+<h2>
+  
+  
+  Step 1: Choose a Free HTML/CSS Portfolio Template
+</h2>
+
+<p>There are several websites where you can find free HTML/CSS portfolio templates. Some popular sources include:</p>
+
+<ul>
+<li><a href="https://html5up.net/">HTML5 UP</a></li>
+<li><a href="https://www.w3schools.com/">W3Schools</a></li>
+<li><a href="https://startbootstrap.com/">Start Bootstrap</a></li>
+<li><a href="https://templatesjungle.com/">TemplatesJungle</a></li>
+<li><a href="https://uijunkie.com/">UIJunkie</a></li>
+<li><a href="https://themes.getbootstrap.com/">Bootstrap Themes</a></li>
+</ul>
+
+<p>Choose a template that suits your style and the type of work you want to showcase. If you are familiar to WordPress you can also find tons of <a href="https://pogothemes.com/">free WordPress Themes</a> for your portfolio.</p>
+
+<h2>
+  
+  
+  Step 2: Download the Template
+</h2>
+
+<p>Once you've found a template you like, download it to your computer. You'll usually receive a ZIP file containing all the necessary HTML, CSS, JavaScript, and image files.</p>
+
+<h2>
+  
+  
+  Step 3: Unzip the Template
+</h2>
+
+<p>Extract the contents of the ZIP file to a folder on your computer. You'll see files and folders for HTML, CSS, images, and potentially JavaScript.</p>
+
+<h2>
+  
+  
+  Step 4: Customize the Template
+</h2>
+
+<p>Open the HTML files in a text editor (e.g., Visual Studio Code, Sublime Text, or Notepad++).</p>
+
+<p><strong>Update Content</strong>: Replace the template content with your own information. Look for sections like "About Me," "Portfolio," and "Contact." Update your name, bio, projects, and contact details.</p>
+
+<p><strong>Images</strong>: Replace the sample images with your own project screenshots. Make sure to optimize your images for the web to ensure faster page loading.</p>
+
+<p><strong>Styling</strong>: If you have some CSS skills, you can customize the template's styles to match your personal branding. Most templates provide a separate CSS file for customization.</p>
+
+<h2>
+  
+  
+  Step 5: Test Locally
+</h2>
+
+<p>Before uploading your website, test it locally by opening the HTML file in your web browser. Ensure that all links work correctly and that your content displays as expected.</p>
+
+<h2>
+  
+  
+  Step 6: Hosting Your Portfolio
+</h2>
+
+<p>To make your portfolio website accessible on the internet, you'll need a domain name and web hosting. There are free and paid options available:</p>
+
+<p><strong>Free Hosting</strong>: You can use platforms like <a href="https://github.com/">GitHub</a> Pages or Netlify to host your portfolio for free.</p>
+
+<p><strong>Paid Hosting</strong>: Consider purchasing a domain name (e.g., yourname.com) and hosting from providers like Bluehost, SiteGround, or HostGator. Most of these hosting providers offer easy one-click installations for websites.</p>
+
+<h2>
+  
+  
+  Step 7: Upload Your Files
+</h2>
+
+<p>Upload your HTML, CSS, JavaScript, and image files to your chosen hosting platform. Follow their instructions to set up your domain and publish your website.</p>
+
+<h2>
+  
+  
+  Step 8: Test Online
+</h2>
+
+<p>Once your website is live, test it on different devices and browsers to ensure it looks and functions correctly.</p>
+
+<h2>
+  
+  
+  Step 9: Promote Your Portfolio
+</h2>
+
+<p>Share your portfolio on social media, professional networking sites like LinkedIn, and with potential clients or employers. Regularly update your portfolio with new projects to showcase your latest work.</p>
+
+<p>Congratulations! You now have a functional portfolio website created using <a href="https://templatesjungle.com/free-html-css-templates/">free HTML and CSS templates</a>. It's a valuable tool for showcasing your skills and attracting opportunities in your field.</p>
+
+<p>I would suggest you to look for <a href="https://templatesjungle.com/free-portfolio-website-templates/">free Portfolio templates</a> first before you go for the paid versions. Because there are already too many free HTML CSS templates in the market for every website need.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Building a Job Board with Next.js, Chakra UI, and Directus](https://dev.to/directus/building-a-job-board-with-nextjs-chakra-ui-and-directus-3df5) 
+ <details><summary>Article</summary> <p>Job boards are an ideal way to connect job seekers to career opportunities. However, creating one involves far more than putting up postings. As developers, we need to incorporate essential features like job listing management, search functionality, and more.</p>
+
+<p>A well-designed job board allows employers to effortlessly post and manage job openings. It also enables job seekers to browse through jobs using intuitive filtering and searching.</p>
+
+<p>In this tutorial, we will cover the development of the core components of a job board step-by-step, using Next.js for the frontend and Directus as the backend tool to manage job data.</p>
+
+<p>Here's a quick overview of how the job board looks to job seekers:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wlpn_RVE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://marketing.directus.app/assets/57e3e75d-d240-4a6f-b751-0af945983d73.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wlpn_RVE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://marketing.directus.app/assets/57e3e75d-d240-4a6f-b751-0af945983d73.gif" alt="Job Portal Overview" width="800" height="437"></a></p>
+
+<p><strong>TL;DR: If you'd like to immediately access the code repository, get it <a href="https://github.com/directus-community/job-board">here</a></strong></p>
+
+<h2>
+  
+  
+  Prerequisites
+</h2>
+
+<p>To follow along with this tutorial, you need to have the following:</p>
+
+<ul>
+<li>A Directus self-hosted or cloud account</li>
+<li>Familiarity with TypeScript, React and Next.js</li>
+<li>Basic knowledge of Chakra UI - a React component library.</li>
+</ul>
+
+<h2>
+  
+  
+  Setting up the Jobs Collection in Directus
+</h2>
+
+<p>Before we can start fetching and displaying job listings, we need to define the data model that will store our job data in Directus.</p>
+
+<p>Log in to your Directus app and navigate to Settings &gt; Data Model. Click the + icon to create a new collection called “jobs”.</p>
+
+<p>Add the following fields and save:</p>
+
+<ul>
+<li>
+<strong>title</strong>  (Type: String, Interface: Input)</li>
+<li>
+<strong>company</strong> (Type: String, Interface: Input)</li>
+<li>
+<strong>location</strong> (Type: String, Interface: Input)</li>
+<li>
+<strong>logo</strong> (Type: UUID, Interface: Image)</li>
+<li>
+<strong>tags</strong> (Type: JSON, Interface: Tags)</li>
+<li>
+<strong>remote</strong> (Type: Boolean, Interface: Toggle)</li>
+<li>
+<strong>datePosted</strong> (Type: DateTime, Interface: DateTime)</li>
+<li>
+<strong>salaryRange</strong> (Type: String, Interface: Input)</li>
+<li>
+<strong>content</strong> (Type: Text, Interface: WYSIWYG)</li>
+</ul>
+
+<h3>
+  
+  
+  Adding Content to the Jobs Collection
+</h3>
+
+<p>With the data model in place, we're now ready to populate our collection with some real job listings.</p>
+
+<p>From the Directus sidebar, navigate to "Content Module" and select the "Jobs" collection we created earlier.</p>
+
+<p>Go ahead and add a few sample jobs to have content to work with as we build out the frontend interface. You can always come back later to enter more postings as needed.</p>
+
+<h2>
+  
+  
+  Building the Frontend Application
+</h2>
+
+<p>With the backend in place, we need to set up a working frontend interface to display the job listings.</p>
+
+<h3>
+  
+  
+  Installing Next.js
+</h3>
+
+<p>In your terminal, run the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>npx create-next-app@latest job-board
+
+cd job-board
+</code></pre>
+
+</div>
+
+
+
+<p>On installation, choose the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Would you like to use TypeScript? Yes
+Would you like to use ESLint? Yes
+Would you like to use Tailwind CSS? No 
+Would you like to use `src/` directory? Yes
+Would you like to use App Router? (recommended) No
+Would you like to customize the default import alias?  Yes
+What import alias would you like configured? @/*
+</code></pre>
+
+</div>
+
+
+
+<p>Remove boilerplate code from <code>index.tsx</code> and update meta tags:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/head</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Job Board<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="p">=</span><span class="s">'description'</span> <span class="na">content</span><span class="p">=</span><span class="s">'Job board app to connect job seekers to opportunities'</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="p">=</span><span class="s">'viewport'</span> <span class="na">content</span><span class="p">=</span><span class="s">'width=device-width, initial-scale=1'</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">'icon'</span> <span class="na">href</span><span class="p">=</span><span class="s">'/favicon.ico'</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Find Your Dream Job<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Start your local server using the command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>npm run dev
+</code></pre>
+
+</div>
+
+
+
+<p>You should have your app running at <strong><a href="http://localhost:3000">http://localhost:3000</a></strong></p>
+
+<h3>
+  
+  
+  Installing the required dependencies
+</h3>
+
+<p>Run the following command in your terminal:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>npm install @directus/sdk @chakra-ui/react @emotion/react @emotion/styled framer-motion react-icons
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Directus SDK for fetching jobs</li>
+<li>Chakra UI for styling (Emotion and Framer are Chakra UI dependencies)</li>
+<li>React icons</li>
+</ul>
+
+<h3>
+  
+  
+  Setting up Chakra UI
+</h3>
+
+<p>To use Chakra UI in your project, you need to set up the <code>ChakraProvider</code> at the root of your application.</p>
+
+<p>Go to <code>pages/_app.tsx</code> and wrap the Component with the <code>ChakraProvider</code>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// pages/_app.tsx</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">AppProps</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/app</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ChakraProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@chakra-ui/react</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">pageProps</span> <span class="p">}:</span> <span class="nx">AppProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">ChakraProvider</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Component</span> <span class="si">{</span><span class="p">...</span><span class="nx">pageProps</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">ChakraProvider</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Displaying the Job Listings
+</h2>
+
+<p>To display the job listings from Directus, we need to set up the types for our jobs and also create two components: the <code>JobCard</code> and <code>JobList</code> components.</p>
+
+<h3>
+  
+  
+  Defining the Types for the Jobs
+</h3>
+
+<p>Since we’re working with TypeScript, to ensure type safety when working with job data from Directus, let’s set up an interface that defines the expected shape of each job object.</p>
+
+<p>At the root of your project, create a new directory called lib, and inside it, a new file called <code>directus.ts</code>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">Job</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">company</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">location</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">datePosted</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">logo</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">tags</span><span class="p">:</span> <span class="nx">string</span><span class="p">[];</span>
+  <span class="nl">remote</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">salaryRange</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">type</span> <span class="nx">Schema</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">jobs</span><span class="p">:</span> <span class="nx">Job</span><span class="p">[];</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Building the Job Card Component
+</h3>
+
+<p>Create a <code>src/job-card.tsx</code> file and input this code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Avatar</span><span class="p">,</span> <span class="nx">Box</span><span class="p">,</span> <span class="nx">HStack</span><span class="p">,</span> <span class="nx">Heading</span><span class="p">,</span> <span class="nx">Icon</span><span class="p">,</span> <span class="nx">LinkBox</span><span class="p">,</span> <span class="nx">LinkOverlay</span><span class="p">,</span> <span class="nx">Stack</span><span class="p">,</span> <span class="nx">Tag</span><span class="p">,</span> <span class="nx">Text</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@chakra-ui/react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">NextLink</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">MdBusiness</span><span class="p">,</span> <span class="nx">MdLocationPin</span><span class="p">,</span> <span class="nx">MdOutlineAttachMoney</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-icons/md</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Job</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/lib/directus</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">friendlyTime</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/lib/friendly-time</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">JobCardProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">Job</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">JobCard</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">JobCardProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">company</span><span class="p">,</span> <span class="nx">location</span><span class="p">,</span> <span class="nx">datePosted</span><span class="p">,</span> <span class="nx">logo</span><span class="p">,</span> <span class="nx">tags</span><span class="p">,</span> <span class="nx">remote</span><span class="p">,</span> <span class="nx">salaryRange</span>  <span class="p">}</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Box</span>
+      <span class="na">border</span><span class="p">=</span><span class="s">'1px solid'</span>
+      <span class="na">borderColor</span><span class="p">=</span><span class="s">'gray.300'</span>
+      <span class="na">borderRadius</span><span class="p">=</span><span class="s">'md'</span>
+      <span class="na">_hover</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">borderColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">black</span><span class="dl">'</span><span class="p">,</span> <span class="na">boxShadow</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sm</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span>
+      <span class="na">p</span><span class="p">=</span><span class="s">'6'</span>
+      <span class="si">{</span><span class="p">...</span><span class="nx">rest</span><span class="si">}</span>
+    <span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">LinkBox</span> <span class="na">as</span><span class="p">=</span><span class="s">'article'</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Stack</span> <span class="na">direction</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">column</span><span class="dl">'</span><span class="p">,</span> <span class="na">lg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">row</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span> <span class="na">spacing</span><span class="p">=</span><span class="s">'8'</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Avatar</span> <span class="na">size</span><span class="p">=</span><span class="s">'lg'</span> <span class="na">name</span><span class="p">=</span><span class="si">{</span><span class="nx">title</span><span class="si">}</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">logo</span><span class="si">}</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Box</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nc">LinkOverlay</span> <span class="na">as</span><span class="p">=</span><span class="si">{</span><span class="nx">NextLink</span><span class="si">}</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="s2">`/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="si">}</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nc">Heading</span> <span class="na">size</span><span class="p">=</span><span class="s">'md'</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nc">Heading</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nc">LinkOverlay</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nc">Text</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">company</span><span class="si">}</span><span class="p">&lt;/</span><span class="nc">Text</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nc">Stack</span> <span class="na">mt</span><span class="p">=</span><span class="s">'2'</span> <span class="na">spacing</span><span class="p">=</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nc">HStack</span> <span class="na">spacing</span><span class="p">=</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Icon</span> <span class="na">as</span><span class="p">=</span><span class="si">{</span><span class="nx">MdLocationPin</span><span class="si">}</span> <span class="na">boxSize</span><span class="p">=</span><span class="si">{</span><span class="mi">4</span><span class="si">}</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Text</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">location</span><span class="si">}</span><span class="p">&lt;/</span><span class="nc">Text</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nc">HStack</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nc">HStack</span> <span class="na">spacing</span><span class="p">=</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Icon</span> <span class="na">as</span><span class="p">=</span><span class="si">{</span><span class="nx">MdBusiness</span><span class="si">}</span> <span class="na">boxSize</span><span class="p">=</span><span class="si">{</span><span class="mi">4</span><span class="si">}</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Text</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">remote</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">Remote</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Onsite</span><span class="dl">'</span><span class="si">}</span><span class="p">&lt;/</span><span class="nc">Text</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nc">HStack</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nc">HStack</span> <span class="na">spacing</span><span class="p">=</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Icon</span> <span class="na">as</span><span class="p">=</span><span class="si">{</span><span class="nx">MdOutlineAttachMoney</span><span class="si">}</span> <span class="na">boxSize</span><span class="p">=</span><span class="si">{</span><span class="mi">4</span><span class="si">}</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nc">Text</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">salaryRange</span><span class="si">}</span><span class="p">&lt;/</span><span class="nc">Text</span><span class="p">&gt;</span>
+              <span class="p">&lt;/</span><span class="nc">HStack</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nc">Stack</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nc">Box</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">HStack</span> <span class="na">spacing</span><span class="p">=</span><span class="si">{</span><span class="mi">2</span><span class="si">}</span> <span class="na">flex</span><span class="p">=</span><span class="s">'1'</span><span class="p">&gt;</span>
+            <span class="si">{</span><span class="nx">tags</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+              <span class="p">&lt;</span><span class="nc">Tag</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span> <span class="na">colorScheme</span><span class="p">=</span><span class="s">'gray'</span><span class="p">&gt;</span>
+                <span class="si">{</span><span class="nx">tag</span><span class="si">}</span>
+              <span class="p">&lt;/</span><span class="nc">Tag</span><span class="p">&gt;</span>
+            <span class="p">))</span><span class="si">}</span>
+          <span class="p">&lt;/</span><span class="nc">HStack</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Text</span> <span class="na">alignSelf</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">left</span><span class="dl">'</span><span class="p">,</span> <span class="na">lg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">center</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+            Posted <span class="si">{</span><span class="nx">friendlyTime</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">datePosted</span><span class="p">))</span><span class="si">}</span>
+          <span class="p">&lt;/</span><span class="nc">Text</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Stack</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">LinkBox</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Box</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Inside the <code>lib</code> directory and add a <code>friendly-time.ts</code> file to format the code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">friendlyTime</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">:</span> <span class="nb">Date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">())</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">/</span> <span class="mi">31536000</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">interval</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> years ago</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">interval</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">/</span> <span class="mi">2592000</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">interval</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> months ago</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">interval</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">/</span> <span class="mi">86400</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">interval</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> days ago</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">interval</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">interval</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> hours ago</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">interval</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">interval</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> minutes ago</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">seconds</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> seconds ago</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>This component is styled and built using the <code>Box</code>,<code>Stack</code>, <code>HStack</code>, and more components from Chakra UI</li>
+<li>The posted date is displayed using the <code>friendlyTime</code> code to format the <code>datePosted</code> into a user-friendly time format (e.g., "2 days ago")</li>
+</ul>
+
+<h3>
+  
+  
+  Building the Job List Component
+</h3>
+
+<p>Inside the components directory, create a <code>job-list.tsx</code> file that shows the list of jobs<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Stack</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@chakra-ui/react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">JobCard</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./job-card</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Job</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/lib/directus</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">JobListProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">Job</span><span class="p">[];</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">JobList</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">JobListProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Stack</span> <span class="na">spacing</span><span class="p">=</span><span class="s">'4'</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">job</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nc">JobCard</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span> <span class="na">data</span><span class="p">=</span><span class="si">{</span><span class="nx">job</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">))</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nc">Stack</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Fetching the Jobs from Directus
+</h3>
+
+<p>A crucial part of the job board is being able to fetch and display the latest job listings. To accomplish this, we’re going to use the Directus SDK.</p>
+
+<p>At the root of your project, create a <code>.env</code> file and add your Directus URL<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>DIRECTUS_URL=add-your-directus-url-here
+</code></pre>
+
+</div>
+
+
+
+<p>To share a single instance of the Directus SDK between multiple pages in this project, we need to set up a helper file that can be imported later.</p>
+
+<p>Inside the <code>directus.ts</code> file, create a Directus client by importing the <code>createDirectus</code> hook and <code>rest</code> composable.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createDirectus</span><span class="p">,</span> <span class="nx">rest</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@directus/sdk</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">Job</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">company</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">location</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">datePosted</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">logo</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">tags</span><span class="p">:</span> <span class="nx">string</span><span class="p">[];</span>
+  <span class="nl">remote</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">salaryRange</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Schema</span> <span class="p">{</span>
+  <span class="nl">jobs</span><span class="p">:</span> <span class="nx">Job</span><span class="p">[];</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">directus</span> <span class="o">=</span> <span class="nx">createDirectus</span><span class="o">&lt;</span><span class="nx">Schema</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DIRECTUS_URL</span><span class="o">!</span><span class="p">).</span><span class="kd">with</span><span class="p">(</span><span class="nx">rest</span><span class="p">());</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">directus</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now, go over to <code>index.tsx</code> and update the code to render the jobs<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">JobList</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/components/job-list</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Box</span><span class="p">,</span> <span class="nx">Heading</span><span class="p">,</span> <span class="nx">Stack</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@chakra-ui/react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">readItems</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@directus/sdk</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/head</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">directus</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Job</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../lib/directus</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">({</span> <span class="nx">jobs</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">jobs</span><span class="p">:</span> <span class="nx">Job</span><span class="p">[]</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Job Board<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span>
+          <span class="na">name</span><span class="p">=</span><span class="s">'description'</span>
+          <span class="na">content</span><span class="p">=</span><span class="s">'Job board app to connect job seekers to opportunities'</span>
+        <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="p">=</span><span class="s">'viewport'</span> <span class="na">content</span><span class="p">=</span><span class="s">'width=device-width, initial-scale=1'</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">'icon'</span> <span class="na">href</span><span class="p">=</span><span class="s">'/favicon.ico'</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Box</span> <span class="na">p</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">12</span><span class="dl">'</span><span class="p">,</span> <span class="na">lg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">24</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Stack</span> <span class="na">mb</span><span class="p">=</span><span class="s">'8'</span> <span class="na">maxW</span><span class="p">=</span><span class="s">'sm'</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nc">Heading</span><span class="p">&gt;</span>Find Your Dream Job<span class="p">&lt;/</span><span class="nc">Heading</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nc">Stack</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">JobList</span> <span class="na">data</span><span class="p">=</span><span class="si">{</span><span class="nx">jobs</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Box</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">jobs</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">directus</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span>
+      <span class="nx">readItems</span><span class="p">(</span><span class="dl">'</span><span class="s1">jobs</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">limit</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="na">fields</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">],</span>
+      <span class="p">})</span>
+    <span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">jobs</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">notFound</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Format the image field to have the full URL</span>
+    <span class="nx">jobs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">job</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">job</span><span class="p">.</span><span class="nx">logo</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DIRECTUS_URL</span><span class="p">}</span><span class="s2">assets/</span><span class="p">${</span><span class="nx">job</span><span class="p">.</span><span class="nx">logo</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">jobs</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error fetching jobs:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">notFound</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You should have something like this on your frontend</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6tMlP4al--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://marketing.directus.app/assets/9fb98c51-69e4-4e0e-940d-33028f8270eb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6tMlP4al--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://marketing.directus.app/assets/9fb98c51-69e4-4e0e-940d-33028f8270eb.png" alt="Job Board " width="800" height="440"></a></p>
+
+<h2>
+  
+  
+  Displaying the Job Detail
+</h2>
+
+<p>With the ability to fetch job listings from Directus established, the next step is to dynamically display each job's content on individual job pages. Next.js provides a streamlined way to do this through its automatic static and server-side rendering features.</p>
+
+<p>But first, we need to build out a <code>JobContent</code> Component.</p>
+
+<h3>
+  
+  
+  Building the Job Content Component
+</h3>
+
+<p>Within the <code>components</code> folder, create a <code>job-content.tsx</code> file to show the job content for each job<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Job</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/lib/directus</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Avatar</span><span class="p">,</span> <span class="nx">Box</span><span class="p">,</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">HStack</span><span class="p">,</span> <span class="nx">Heading</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@chakra-ui/react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">JobContentProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">Job</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">JobContent</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">JobContentProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">logo</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">company</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Box</span> <span class="na">px</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">12</span><span class="dl">'</span><span class="p">,</span> <span class="na">lg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">24</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Button</span> <span class="na">as</span><span class="p">=</span><span class="si">{</span><span class="nx">Link</span><span class="si">}</span> <span class="na">href</span><span class="p">=</span><span class="s">'/'</span><span class="p">&gt;</span>
+        Back to jobs
+      <span class="p">&lt;/</span><span class="nc">Button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Box</span> <span class="na">py</span><span class="p">=</span><span class="s">'16'</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">HStack</span> <span class="na">spacing</span><span class="p">=</span><span class="s">'4'</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Avatar</span> <span class="na">size</span><span class="p">=</span><span class="s">'lg'</span> <span class="na">name</span><span class="p">=</span><span class="si">{</span><span class="nx">title</span><span class="si">}</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">logo</span><span class="si">}</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Heading</span> <span class="na">size</span><span class="p">=</span><span class="s">'lg'</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">company</span><span class="si">}</span><span class="p">&lt;/</span><span class="nc">Heading</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">HStack</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Box</span> <span class="na">maxW</span><span class="p">=</span><span class="s">'3xl'</span> <span class="na">dangerouslySetInnerHTML</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">__html</span><span class="p">:</span> <span class="nx">content</span> <span class="p">}</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Box</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Box</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To dynamically render the job pages, create a <code>[jobId].tsx</code> in the <code>pages</code> directory and put the following code in it:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">readItem</span><span class="p">,</span> <span class="nx">readItems</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@directus/sdk</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">GetStaticPaths</span><span class="p">,</span> <span class="nx">GetStaticProps</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">directus</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../lib/directus</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Box</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@chakra-ui/react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">JobContent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/components/job-content</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Job</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../lib/directus</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">JobDetailsProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">job</span><span class="p">:</span> <span class="nx">Job</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">JobDetails</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">JobDetailsProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">job</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Box</span> <span class="na">p</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">12</span><span class="dl">'</span><span class="p">,</span> <span class="na">lg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">24</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">JobContent</span> <span class="na">data</span><span class="p">=</span><span class="si">{</span><span class="nx">job</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Box</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getStaticPaths</span><span class="p">:</span> <span class="nx">GetStaticPaths</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">jobs</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">directus</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span>
+      <span class="nx">readItems</span><span class="p">(</span><span class="dl">'</span><span class="s1">jobs</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">limit</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="na">fields</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">],</span>
+      <span class="p">})</span>
+    <span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">paths</span> <span class="o">=</span> <span class="nx">jobs</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">job</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// Access the data property to get the array of jobs</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">params</span><span class="p">:</span> <span class="p">{</span> <span class="na">jobId</span><span class="p">:</span> <span class="nx">job</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="p">},</span>
+      <span class="p">};</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">paths</span><span class="p">:</span> <span class="nx">paths</span> <span class="o">||</span> <span class="p">[],</span>
+      <span class="na">fallback</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error fetching paths:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">paths</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="na">fallback</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getStaticProps</span><span class="p">:</span> <span class="nx">GetStaticProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">jobId</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">params</span><span class="p">?.</span><span class="nx">jobId</span> <span class="k">as</span> <span class="kr">string</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">job</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">directus</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span>
+      <span class="nx">readItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">jobs</span><span class="dl">'</span><span class="p">,</span> <span class="nx">jobId</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">fields</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">],</span>
+      <span class="p">})</span>
+    <span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">job</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">job</span><span class="p">.</span><span class="nx">logo</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DIRECTUS_URL</span><span class="p">}</span><span class="s2">assets/</span><span class="p">${</span><span class="nx">job</span><span class="p">.</span><span class="nx">logo</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">job</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error fetching job:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">notFound</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The code fetches and renders dynamic job details using static site generation with Next.js.</p>
+
+<ul>
+<li>
+<p>Static Paths Generation (<code>getStaticPaths</code>):</p>
+
+<ul>
+<li>Implements the <code>getStaticPath</code>s function, a part of Next.js's static site generation.</li>
+<li>Requests job data using Directus's <code>readItems</code> function with <code>limit: -1</code> to fetch all job IDs.</li>
+<li>Maps retrieved job IDs to an array of <code>params</code> objects to generate dynamic routes.</li>
+<li>Sets the paths array to the generated paths and <code>fallback</code> to<code>false</code> (no fallback behavior).</li>
+</ul>
+
+
+</li>
+<li>
+
+<p>Static Props Generation (<code>getStaticProps</code>):</p>
+
+<ul>
+<li>Implements the <code>getStaticProps</code> function, used in static site generation to fetch data for a specific page.</li>
+<li>Extracts the<code>jobId</code> parameter from the context object to identify the requested job.</li>
+<li>Requests detailed job information using Directus's <code>readItem</code> function for the specified job.</li>
+<li>Modifies the job object by appending the <code>logo</code> URL with the <code>DIRECTUS_URL</code>.</li>
+<li>Returns fetched job data within the <code>props</code> object.</li>
+</ul>
+
+
+</li>
+</ul>
+
+<p>Now, whenever you click on a job, you’ll be able to see all the details about that job</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OiHmC3Hx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://marketing.directus.app/assets/3699c2b7-b8b4-4443-af40-f1e4557fa6e1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OiHmC3Hx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://marketing.directus.app/assets/3699c2b7-b8b4-4443-af40-f1e4557fa6e1.png" alt="Job Detail" width="800" height="911"></a></p>
+
+<h2>
+  
+  
+  Implementing the Search Functionality
+</h2>
+
+<p>To enable users to search for jobs by title in our application, we need to build out the functionality for querying the jobs data store based on the job title field. We also need to build out the search input UI to handle this.</p>
+
+<p>In <code>index.tsx</code> update the code as follows:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span> <span class="nl">jobs</span><span class="p">:</span> <span class="nx">Job</span><span class="p">[]</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">jobs</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">searchQuery</span> <span class="o">=</span> <span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">search</span><span class="p">?.</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">searchResult</span> <span class="o">=</span> <span class="nx">searchQuery</span>
+    <span class="p">?</span> <span class="nx">jobs</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">job</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">job</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchQuery</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+      <span class="p">})</span>
+    <span class="p">:</span> <span class="nx">jobs</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Job Board<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span>
+          <span class="na">name</span><span class="p">=</span><span class="s">'description'</span>
+          <span class="na">content</span><span class="p">=</span><span class="s">'Job board app to connect job seekers to opportunities'</span>
+        <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="p">=</span><span class="s">'viewport'</span> <span class="na">content</span><span class="p">=</span><span class="s">'width=device-width, initial-scale=1'</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="p">=</span><span class="s">'icon'</span> <span class="na">href</span><span class="p">=</span><span class="s">'/favicon.ico'</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Box</span> <span class="na">p</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">12</span><span class="dl">'</span><span class="p">,</span> <span class="na">lg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">24</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Stack</span> <span class="na">mb</span><span class="p">=</span><span class="s">'8'</span> <span class="na">direction</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">column</span><span class="dl">'</span><span class="p">,</span> <span class="na">md</span><span class="p">:</span> <span class="dl">'</span><span class="s1">row</span><span class="dl">'</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nc">Heading</span> <span class="na">flex</span><span class="p">=</span><span class="s">'1'</span><span class="p">&gt;</span>Find Your Dream Job<span class="p">&lt;/</span><span class="nc">Heading</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nc">InputGroup</span> <span class="na">w</span><span class="p">=</span><span class="s">'auto'</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nc">InputLeftElement</span> <span class="na">color</span><span class="p">=</span><span class="s">'gray.400'</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nc">FaSearch</span> <span class="p">/&gt;</span>
+              <span class="p">&lt;/</span><span class="nc">InputLeftElement</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nc">Input</span>
+                <span class="na">placeholder</span><span class="p">=</span><span class="s">'Search jobs...'</span>
+                <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                  <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+                  <span class="nx">router</span><span class="p">.</span><span class="nx">replace</span><span class="p">({</span>
+                    <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">search</span><span class="p">:</span> <span class="nx">value</span> <span class="p">},</span>
+                  <span class="p">});</span>
+                <span class="p">}</span><span class="si">}</span>
+              <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span><span class="nc">InputGroup</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nc">Stack</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">JobList</span> <span class="na">data</span><span class="p">=</span><span class="si">{</span><span class="nx">searchResult</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Box</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>We use the <code>useRouter</code> hook from Next.js to access the query parameters from the URL.</li>
+<li>If a search query was provided, we filter the jobs array to only include those whose title matched the search query in a case-insensitive manner. If no search query was present, we simply set the <code>searchResult</code> to the original jobs array without any filtering.</li>
+</ul>
+
+<p><a href="https://github.com/directus-community/job-board">Here's the repository to find the code</a></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In this tutorial, you've learned how to fetch job data from a Directus instance, display it on your app, and implement search functionality.</p>
+
+<p>Some natural next steps could include:</p>
+
+<ul>
+<li>Implementing user authentication via JWT tokens to allow job seekers to create custom profiles, save jobs, and track application status</li>
+<li>Integrating email and notification systems to allow job alerts to be automatically sent to users when new jobs are posted</li>
+<li>Adding advanced filtering and sorting of job results beyond just search title</li>
+</ul>
+
+<p>If you have any questions or need further assistance, please feel free to drop by our <a href="https://directus.chat/">Discord server</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [ChatGPT: The Good, the Bad, and the Risky for Developers](https://dev.to/mainulspace/chatgpt-the-good-the-bad-and-the-risky-for-developers-5ag2) 
+ <details><summary>Article</summary> <p>While exploring ChatGPT, I’ve seen both good and bad. Yes, it boosts my work efficiency. It reduces coding errors and automates boring tasks. But there’s a downside too. This guide dives into those less-talked-about issues. They could affect your skills, your work ethic, and even your job.</p>
+
+<h2>
+  
+  
+  1. Over-reliance on Automation
+</h2>
+
+<p>Automating repetitive tasks is good. Every developer loves that. However, relying too much on tools like ChatGPT can be risky. You could forget your core coding skills. You may end up just supervising automated processes, rather than coding yourself.</p>
+
+<p>These days I’m using ChatGPT extensively to handle all my debugging. Over time, I lost touch with the essential skill of troubleshooting independently. When ChatGPT couldn’t solve a tough problem, I found myself completely stumped.</p>
+
+<h2>
+  
+  
+  2. Ethical and Data Privacy Considerations
+</h2>
+
+<p>Let’s not forget what’s behind ChatGPT. It’s a machine trained on lots of data. Some of that could be sensitive or private. If you work on apps that handle user data, think about what that means.</p>
+
+<p>Take a healthcare app as an example. Using code from ChatGPT without a careful check could risk leaking patient data. Always double-check the code you use.</p>
+
+<h2>
+  
+  
+  3. Accuracy and Reliability Issues
+</h2>
+
+<p>ChatGPT has limits. It’s not always right. Some developers have trusted it too much and faced problems. For instance, they found bugs or security risks in the code.</p>
+
+<p>I had a similar experience. I used ChatGPT to write some backend scripts. At first, things looked fine. Later, I found security flaws. Always validate the code you get from AI tools.</p>
+
+<h2>
+  
+  
+  4. Creativity and Problem-Solving
+</h2>
+
+<p>AI tools can offer quick fixes, but they lack the human ability to think or strategize. By leaning too much on ChatGPT for solutions, you risk undermining your ability to solve problems in innovative ways.</p>
+
+<p>For example, if you rely on ChatGPT to generate algorithms during team brainstorming sessions, you may miss out. This can discourage teamwork. It can also limit the fresh, innovative ideas that only humans can bring.</p>
+
+<p><iframe class="tweet-embed" id="tweet-1697297004009836544-592" src="https://platform.twitter.com/embed/Tweet.html?id=1697297004009836544">
+</iframe>
+
+  // Detect dark theme
+  var iframe = document.getElementById('tweet-1697297004009836544-592');
+  if (document.body.className.includes('dark-theme')) {
+    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1697297004009836544&amp;theme=dark"
+  }
+
+
+
+ </p>
+<h2>
+  
+  
+  5. The Hidden Costs
+</h2>
+
+<p>A wooden box labeled “Hidden Costs” symbolizes the unexpected drawbacks and expenses of relying on ChatGPT for coding tasks.</p>
+
+<p>Many AI tools like ChatGPT offer free versions, but their best features often require a premium subscription. However, the actual cost isn’t just monetary; it’s also the time you’ll spend fixing and validating the code generated by the AI.</p>
+
+<p>For instance, I invested in a premium ChatGPT subscription to speed up my development process. Yet, the AI’s code wasn’t perfect and had several issues. As a result, I spent more time debugging than I had planned. This not only erased the time I had hoped to save but also added unexpected expenses.</p>
+<h2>
+  
+  
+  6. Dependency Risk
+</h2>
+
+<p>Using ChatGPT too much can weaken your coding skills and even change the job landscape. This can make computers more important than people in the coding world. The result? A new wave of coders who don’t understand the basics of coding.</p>
+
+<p>Research shows that depending too much on AI coding assistants like ChatGPT can stifle creativity. Instead of coming up with new ideas, coders may just become executors, executing tasks without really thinking them through.</p>
+<h2>
+  
+  
+  7. Accessibility and Usability
+</h2>
+
+<p>ChatGPT’s user-friendly design is a double-edged sword. While it makes coding tasks more convenient, it can also create a false sense of security. Developers may overlook mistakes in the code it generates.</p>
+
+<p>In a recent survey, something surprising came to light. A substantial 40% of developers have used code from ChatGPT without double-checking it. This choice could risk the reliability of their projects.</p>
+<h2>
+  
+  
+  8. Intellectual Property Concerns
+</h2>
+
+<p>Who owns the code that an AI creates? This is a new and complicated legal area. It can raise questions about who owns your project.</p>
+
+<p>If a big part of your project code comes from an AI like ChatGPT, you might face legal challenges that affect how you can use or sell your work.</p>
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>As AI keeps growing in software development, it’s key to weigh the good with the bad. ChatGPT can be a helpful tool for some tasks but use it wisely. After all, tech should boost your skills, not take your place.</p>
+
+<p>Have you faced any challenges or ethical dilemmas while using ChatGPT? Share your experiences and suggestions in the comments below.</p>
+
+<p>Feel free to connect with me on <a href="https://twitter.com/mainulspace"><strong>Twitter</strong></a> or <a href="https://www.linkedin.com/in/mainulspace/"><strong>LinkedIn</strong></a>.</p>
+<h2>
+  
+  
+  Read Next...
+</h2>
+
+
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/chatgpt-my-co-developer-for-mundane-tasks-3jjo" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>ChatGPT: My Co-Developer for Mundane Tasks</h2>
+      <h3>Mainul Hasan ・ Sep 8</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#chatgpt</span>
+        <span class="ltag__link__tag">#ai</span>
+        <span class="ltag__link__tag">#productivity</span>
+        <span class="ltag__link__tag">#programmers</span>
+      </div>
+    </div>
+  </a>
+</div>
+<br>
+<div class="ltag__link">
+  <a href="/mainulspace" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
+    </div>
+  </a>
+  <a href="/mainulspace/decoding-software-testing-a-deep-dive-into-quality-assurance-2nf0" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Decoding Software Testing: A Deep Dive into Quality Assurance</h2>
+      <h3>Mainul Hasan ・ Sep 10</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#softwaredevelopment</span>
+        <span class="ltag__link__tag">#qualityassurance</span>
+        <span class="ltag__link__tag">#softwaretesting</span>
+        <span class="ltag__link__tag">#testingmethodologies</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+ </details> 
+ <hr /> 
+
  #### - [Don't sound like a robot: use CSS to Control Text-to-Speech](https://dev.to/ingosteinke/using-css-to-control-text-to-speech-1i0d) 
  <details><summary>Article</summary> <p>Websites often sound like a vintage science-fiction robot when using a screen reader / text-to-speech output to read the text aloud.</p>
 
@@ -229,607 +1568,6 @@
 </div>
 
 
-
- </details> 
- <hr /> 
-
- #### - [Welcome Thread - v242](https://dev.to/devteam/welcome-thread-v242-1b40) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Gdn3Xetw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6agkv5naqrzx56oc6l5.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Gdn3Xetw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6agkv5naqrzx56oc6l5.gif" alt="Hello in flashing colors on a grey background with surrounding clouds" width="480" height="480"></a></p>
-
-
-
-
-<ol>
-<li><p>Leave a comment below to introduce yourself! You can talk about what brought you here, what you're learning, or just a fun fact about yourself.</p></li>
-<li><p>Reply to someone's comment, either with a question or just a hello. 👋 </p></li>
-<li><p>If you are new to coding, want to help beginners in their programming journey, or just want another awesome place to connect with fellow developers, check out the <a href="https://dev.to/codenewbieteam">CodeNewbie Org</a>!</p></li>
-</ol>
-
- </details> 
- <hr /> 
-
- #### - [🕰️My C# Time Machine: 13 Lessons From a 10-Year Voyage](https://dev.to/bytehide/my-c-time-machine-13-lessons-from-a-10-year-voyage-27j2) 
- <details><summary>Article</summary> <p>Reflecting on my decade-long journey with C#, I find myself back at the beginning. A time when each line of code was an experiment, each bug a stumbling block on the path to progress. Solutions danced just out of reach, teasingly close yet confoundingly elusive. But every hurdle surmounted, every victorious moment when code ran flawlessly, brought with it a sense of accomplishment that made every setback worthwhile.</p>
-
-<p>In hindsight, the wisdom cultivated through evenings hovered over my keyboard becomes glaringly apparent. I find myself craving a path back to the past, an opportunity to guide my younger self. To unravel the intricacies of logic in C#, to master the art of debugging, to explain the principles of object-oriented programming.</p>
-
-<p>How I wish I could illuminate this path of discovery, soothing the sting of trial by fire. Fast forward through hours of relentless debugging and lead my past self swiftly towards the realm of C# proficiency.</p>
-
-<p>If you are setting out on your journey with C#, or find yourself in the labyrinth of code somewhere along the way, the lessons I’ve learned may serve as your guiding light. I offer you these 13 pearls, insights skimmed from a decadal voyage across the ocean of C#. Embrace these lessons as a compass, pointing you towards a code-laden horizon.</p>
-
-<p>Embark on this journey as we delve into “My C# Time Machine: 13 Lessons From a 10-Year Voyage,” offering you a collection of lessons I wish I’d had at the start of my C# exploration.</p>
-
-<h2>
-  
-  
-  Part I: OOP, Handle Errors, Tooling
-</h2>
-
-<p>In the initial days of my exploration with code, the words I would whisper to my past self in those still, early mornings would be:</p>
-
-<blockquote>
-<p>“OOP- Encounter It, Understand It, Use It!”</p>
-</blockquote>
-
-<p>Why, you might ask?</p>
-
-<p>Impressively complex and incredibly error-prone coding constructs were the result of my early inability to grasp Object-Oriented Programming (OOP) fully. I remember building a class, “EtchASketch,” with a bunch of commands and functions. But fundamental concepts like inheritance, polymorphism, abstraction, and encapsulation were like closed books to my past self.</p>
-
-<p>Once I built a good understanding of these pillars of OOP, my code became efficient, the complex class transformed into smaller, logical parts interacting with each other seamlessly.</p>
-
-<p>In the world of coding, you must prepare for unexpected situations; harsh yet crucial learnings came from my experiences with error handling. I remember clearly, during a crucial demonstration, our application crashed due to an unhandled <a href="https://www.bytehide.com/blog/5-good-practices-for-error-handling-in-c">exception</a> caused by a NULL reference.</p>
-
-<p>This was a painful lesson about always expecting the unexpected with code, as the snippet below demonstrates, where I try to divide by zero. Using appropriate error handling methods such as the <a href="https://www.bytehide.com/blog/try-catch-csharp">try-catch</a> block could have avoided those early mishaps:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">try</span>
-<span class="p">{</span>
-   <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-   <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">5</span> <span class="p">/</span> <span class="n">x</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">e</span><span class="p">)</span>
-<span class="p">{</span>
-   <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"An error occurred: "</span> <span class="p">+</span> <span class="n">e</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>On a third note, it’s essential to use the right tools. So many of my early challenges could have been tamed more easily with the correct toolset at hand.</p>
-
-<blockquote>
-<p>“Explore Visual Studio. Discover the power of JetBrains Rider. These are your main gears in this technical journey!”</p>
-</blockquote>
-
-<p>Debugging features, hot reload, file organization – these integrated development environments had everything I needed. Ignoring them early in my career cost me time and effort, a mistake rectified as I became more comfortable with the tools of the trade.</p>
-
-<h2>
-  
-  
-  Part II: LINQ, ASP.NET Core, Delegates
-</h2>
-
-<p>Drifting into our fourth chapter, we find ourselves inside the elegant dance of the Language Integrated Query – or as we coders know it, <a href="https://www.bytehide.com/blog/linq-csharp">LINQ</a>. Describing it wouldn’t be enough, allow me to share a simple code snippet to illustrate its simplicity and power.</p>
-
-<p>Before LINQ, you would write a <a href="https://www.bytehide.com/blog/foreach-loop-csharp">foreach</a> loop to find all odd numbers in a <a href="https://www.bytehide.com/blog/list-csharp">list</a>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;()</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
-<span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">oddNumbers</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;();</span>
-
-<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">num</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="p">%</span> <span class="m">2</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">oddNumbers</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the world of LINQ, this operation gets simpler:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;()</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
-<span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">oddNumbers</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">n</span> <span class="p">=&gt;</span> <span class="n">n</span><span class="p">%</span><span class="m">2</span> <span class="p">!=</span> <span class="m">0</span><span class="p">).</span><span class="nf">ToList</span><span class="p">();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>LINQ translates raw SQL-like queries into the native language of C#. It simplifies complex operations and brings forth a more readable and maintainable code experience.</p>
-
-<p>Venturing into the fifth revelation, we encounter the mighty ASP.NET Core. An important tool in any C# developer’s arsenal, especially when interacting with web development, let’s take a look at the “Hello, World!” example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nf">CreateHostBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">).</span><span class="nf">Build</span><span class="p">().</span><span class="nf">Run</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="n">IHostBuilder</span> <span class="nf">CreateHostBuilder</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">=&gt;</span>
-        <span class="n">Host</span><span class="p">.</span><span class="nf">CreateDefaultBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-            <span class="p">.</span><span class="nf">ConfigureWebHostDefaults</span><span class="p">(</span><span class="n">webBuilder</span> <span class="p">=&gt;</span>
-            <span class="p">{</span>
-                <span class="n">webBuilder</span><span class="p">.</span><span class="n">UseStartup</span><span class="p">&lt;</span><span class="n">Startup</span><span class="p">&gt;();</span>
-            <span class="p">});</span>
-<span class="p">}</span>
-
-<span class="k">public</span> <span class="k">class</span> <span class="nc">Startup</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IWebHostEnvironment</span> <span class="n">env</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">app</span><span class="p">.</span><span class="nf">UseRouting</span><span class="p">();</span>
-        <span class="n">app</span><span class="p">.</span><span class="nf">UseEndpoints</span><span class="p">(</span><span class="n">endpoints</span> <span class="p">=&gt;</span>
-        <span class="p">{</span>
-            <span class="n">endpoints</span><span class="p">.</span><span class="nf">MapGet</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="k">async</span> <span class="n">context</span> <span class="p">=&gt;</span>
-            <span class="p">{</span>
-                <span class="k">await</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="nf">WriteAsync</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>ASP.NET Core simplifies web application setup, effortlessly handling the server and routing for us. It shifts our focus from the repetitive boilerplate configurations to solving real problems that address user needs.</p>
-
-<p>Our narrative concludes with the sixth revelation – the power of Delegates and Events. Invoking a delegate allows you to create a customizable method that can be passed as a parameter. Here’s a basic demonstration:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="c1">// A delegate type for encapsulating a method that takes an int and returns void:</span>
-<span class="k">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="nf">IntMethod</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
-
-<span class="k">public</span> <span class="k">class</span> <span class="nc">MyClass</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="n">IntMethod</span> <span class="n">myDelegate</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="nf">MyClass</span><span class="p">(</span><span class="n">IntMethod</span> <span class="n">passedDelegate</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">myDelegate</span> <span class="p">=</span> <span class="n">passedDelegate</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">void</span> <span class="nf">InvokeDelegate</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nf">myDelegate</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this minimal example, the delegate <code>IntMethod</code> is defined to encapsulate a method that takes an integer parameter and returns <code>void</code>. Using delegates and events adds a new level of dynamism to your C# program and significantly improves the structure of your code.</p>
-
-<h2>
-  
-  
-  Part III: NuGet, Code Readability, NUnit
-</h2>
-
-<p>Seventh on my list: the Package Savior, NuGet. I wrangled with dependencies, wrestled with DLLs vying for dominance, battling for the peace of compile-time. Then NuGet appeared, the unsung hero, the gentle giant of package management. It came bearing gifts, offering easier dependency management across projects, making what was once a difficult trek a mere stroll in the park.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="c1">// Before NuGet, manually handling dependencies</span>
-<span class="n">Copy</span> <span class="n">DLLs</span> <span class="p">&gt;</span> <span class="n">Add</span> <span class="n">reference</span> <span class="p">&gt;</span> <span class="n">Repeat</span> <span class="k">for</span> <span class="n">other</span> <span class="n">projects</span>
-
-<span class="c1">// After NuGet, simplified dependency management</span>
-<span class="n">Install</span><span class="p">-</span><span class="n">Package</span> <span class="n">ExamplePackage</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Lesson eight, a simple one, yet it had a profound impact on my codesmithing: the art of crafting readable code. Sometimes, the most complex solution isn’t the best; sometimes it’s the most simple one. Deciphering old, cryptic code is like reaching back through time and questioning your past judgements. You’ll thank yourself for the present of readable, maintainable code.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="c1">// Cryptic code</span>
-<span class="nf">DoThing</span><span class="p">(</span><span class="m">42</span><span class="p">);</span>
-
-<span class="c1">// Clear, readable code</span>
-<span class="nf">CalculateAgeOfUniverseInYears</span><span class="p">(</span><span class="m">42</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The ninth revelation hails from the realm of <a href="https://www.bytehide.com/blog/unit-testing-csharp">unit testing</a> – NUnit. Boldly I wrote code, untested and raw, only to watch it spectacularly implode. The idea of “write, test, fix, repeat” quickly transformed from a playful game to an essential ritual. NUnit became the gatekeeper, ensuring each line of code performed its destined task without disturbing the peaceful harmony of the overall system.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="c1">// Without NUnit, code testing is haphazard</span>
-<span class="k">public</span> <span class="k">void</span> <span class="nf">WriteCode</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Code</span> <span class="n">code</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Code</span><span class="p">();</span>
-    <span class="c1">// Write code</span>
-    <span class="n">code</span><span class="p">.</span><span class="nf">Write</span><span class="p">();</span>
-    <span class="c1">// Hope and pray it works</span>
-<span class="p">}</span>
-
-<span class="c1">// With NUnit, code testing is organized and effective</span>
-<span class="p">[</span><span class="n">Test</span><span class="p">]</span>
-<span class="k">public</span> <span class="k">void</span> <span class="nf">WriteCodeTest</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Code</span> <span class="n">code</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Code</span><span class="p">();</span>
-    <span class="c1">// Write code</span>
-    <span class="n">code</span><span class="p">.</span><span class="nf">Write</span><span class="p">();</span>
-    <span class="c1">// Test with NUnit assert function</span>
-    <span class="n">Assert</span><span class="p">.</span><span class="nf">IsTrue</span><span class="p">(</span><span class="n">code</span><span class="p">.</span><span class="n">works</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Stepping into double digits, the tenth item on my list is ConfigureAwait. I should have paid more attention to Async/Await. I was young, ambitious and– as it turns out– terribly naive. I charged headfirst into programming tasks concurrently, imagining immediate rewards and increased efficiency. Instead, the overlooking of ConfigureAwait left applications hanging and threads starving.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="c1">// Without ConfigureAwait</span>
-<span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">HeavyTaskAsync</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">await</span> <span class="nf">HeavyProcess</span><span class="p">();</span>
-    <span class="nf">ContinueAfterHeavyProcess</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// With ConfigureAwait</span>
-<span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">HeavyTaskAsync</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">await</span> <span class="nf">HeavyProcess</span><span class="p">().</span><span class="nf">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
-    <span class="nf">ContinueAfterHeavyProcess</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Eleventh in line shines a light outside of the C#. The more languages you know, the better you become in each. A programmer spreading the net wider learns about different voices, approaches, and patterns. It’s like stepping out of your neighbourhood– everything you discover, you bring back home and apply to your own work.</p>
-
-<p>Twelfth, the principle of simplicity as a beacon of brilliance. Learn to dispose of unwanted code, the rambles that clutter your digital realm. Don’t add new floors on a shaky old foundation– start afresh with sturdier materials.</p>
-
-<p>Thirteenth, isn’t a lesson but an insight. Coding is a lifelong journey, not a destination. Each bug approached with a fresh perspective, each day an opportunity to acquire, apply and diversify knowledge. Coding isn’t an art; it’s a living, breathing way of life.</p>
-
-<p>They say you truly become a coder when you spend more time reading and deciphering code than writing it. Yes, code-readability is paramount.</p>
-
-<p>As I find myself nearing the end of this introspective journey, a decade-long liaison with C#, I realise coding isn’t just sequences of logical operations. It flowers from a seed of an idea, mutating through iterations, graced by failures and triumphs. It’s a constant learning, a dynamic evolution that transforms not just the creator, but the creation too. And so, we code, in pursuit of that zenith of perfection, armed with the knowledge that the journey is the destination. So, keep coding, keep learning, and most importantly, keep growing.</p>
-
- </details> 
- <hr /> 
-
- #### - [Examining Blockchain Transaction Speed: Real Performance vs. Marketing Claims](https://dev.to/fromaline/examining-blockchain-transaction-speed-real-performance-vs-marketing-claims-417g) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
-
-<p>In the ever-changing world of blockchain technology, there's often a lot of talk about how many transactions it can handle per second. But let's take a closer look beyond the marketing hype and dive into the actual world of blockchain speed, without all the complicated terms and fancy talk.</p>
-
-<h2>
-  
-  
-  Understanding Blockchain Speed
-</h2>
-
-<p>In the world of blockchain, you often see big flashy numbers like "maximum transactions per second" advertised on websites and in marketing materials. But as people who use blockchain tech, we can tell fact from fiction. Today we will explore the real-time transaction speed versus those big "maximum transactions per second" claims that might change how you see things.</p>
-
-<h2>
-  
-  
-  Setting the Stage: Real-Time vs. Maximum Theoretical Throughput
-</h2>
-
-<p>We expect there to be a difference between how many transactions a blockchain can handle in real-time and what's often advertised as the maximum throughput. Our goal is to dig deep and provide a detailed understanding that goes beyond surface-level numbers.</p>
-
-<h2>
-  
-  
-  Our Approach: Revealing Actual Network Activity
-</h2>
-
-<p>Our method involves connecting to blockchain networks, fetching transactions, and calculating the average TPS based on data from the last 100 blocks. Every blockchain has its own pace with varying block times, but we're not going to take block time into consideration today for simplicity purposes.</p>
-
-<h2>
-  
-  
-  Examining Well-Known Blockchain Projects
-</h2>
-
-<p>Let's take a good look at some well-known blockchain networks – Solana, Arbitrum, Avalanche, Ethereum, and Bitcoin – and see how they really perform.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Cb7LZchR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/66o2zpzwsocwr0dja1ue.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Cb7LZchR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/66o2zpzwsocwr0dja1ue.png" alt="Solana" width="800" height="300"></a></p>
-
-<p>Solana might have said they can do "65,000 transactions per second" on their website, but in reality, they're clocking in at a pretty impressive 299.91! That's a huge 217 times more than what they claimed.</p>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--E3e_KxyV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mf27z4b0gy7h1wjcdyn9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--E3e_KxyV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mf27z4b0gy7h1wjcdyn9.png" alt="Arbitrum" width="800" height="300"></a></p>
-
-<p>Arbitrum advertised a solid "40,000 transactions per second," but our investigation shows that they're really doing just 8.07 transactions per second. That's a massive difference of 4956 times – a real wake-up call for accurate reporting.</p>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LPXimZ0h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qld9uuxxfwgkcsn7v8p2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LPXimZ0h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qld9uuxxfwgkcsn7v8p2.png" alt="Avalanche" width="800" height="300"></a></p>
-
-<p>Avalanche claimed "4,500 transactions per second," but the actual speed is much lower at 2.01 transactions per second. This significant difference of 2500 times shows the importance of being transparent about real-world performance.</p>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--q5LFdZgd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wi5wplx6vwcibxti2dar.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--q5LFdZgd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wi5wplx6vwcibxti2dar.png" alt="Ethereum" width="800" height="300"></a></p>
-
-<p>Ethereum hasn't been making big claims about speed. Their maximum recorded speed is 56, and their current speed is around 11.14 transactions per second. While it's just five times less, it shows they're not overhyping their capabilities.</p>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XEKP3fri--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mc4qdvoky4h9pwv2rgum.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XEKP3fri--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mc4qdvoky4h9pwv2rgum.png" alt="Bitcoin" width="800" height="300"></a></p>
-
-<p>Bitcoin has never tried to be the fastest. Theoretically, it can handle about 7 transactions per second, but in practice, it's around 4.18. It's just 1.67 times less, but Bitcoin is all about trustworthiness and resilience.</p>
-
-<h2>
-  
-  
-  Closing Thoughts: More Than Just Numbers
-</h2>
-
-<p>These findings highlight the big difference between what blockchain projects say they can do and what they actually do in the real world. While big numbers can be impressive, they're not the only measure of success. What really matters is how these technologies are adopted and used.</p>
-
-<h2>
-  
-  
-  Data Source and Verification
-</h2>
-
-<p>We got our data from <a href="https://chainspect.app/">chainspect.app</a> 🚀, but we encourage you to double-check our analysis. Blockchain's strength lies in its transparency and being able to verify things for yourself. Explore, scrutinize, and let the truth speak for itself.</p>
-
- </details> 
- <hr /> 
-
- #### - [My Frustrations With the Context API in React](https://dev.to/mohammadfaisal/my-frustrations-with-the-context-api-in-react-379m) 
- <details><summary>Article</summary> <p>To read more articles like this, <a href="https://www.mohammadfaisal.dev/blog">visit my blog</a></p>
-
-<p>State management in React has come a long way. <a href="https://redux.js.org/">Redux</a> is the longtime industry standard, but after the introduction of the <a href="https://reactjs.org/docs/context.html">Context API</a>, many argue that the days of Redux are over.</p>
-
-<p>I have had the privilege to work with both and use them in large projects.</p>
-
-<p>I can understand the advantages that the Context API brings to the table, but I am going with Redux for my next project.</p>
-
-<p>In a way, this is a love letter to Redux. Let’s begin!</p>
-
-<h2>
-  
-  
-  Middleware Support
-</h2>
-
-<p>Middleware is an integral part of my workflow. I use them to show alerts based on the response of remote API calls without ever getting the result back to the component. Some other use cases can be:</p>
-
-<ul>
-<li><p>Logging</p></li>
-<li><p>Crash Reporting</p></li>
-<li><p>Talking to an asynchronous API</p></li>
-<li><p>Routing</p></li>
-</ul>
-
-<p>Here is how to do it with Redux:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">middleware</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">...</span><span class="nx">getDefaultMiddleware</span><span class="p">(),</span>
-    <span class="nx">errorMiddleware</span><span class="p">,</span>
-    <span class="nx">loggerMiddleware</span><span class="p">,</span>
-<span class="p">];</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">rootStore</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">({</span>
-    <span class="na">reducer</span><span class="p">:</span> <span class="nx">rootReducer</span><span class="p">,</span>
-    <span class="nx">middleware</span><span class="p">,</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>These are features that can hardly be ignored in most large-scale projects.</p>
-
-<p>Implementing them with the Context API is possible, but Redux has made it much more manageable. Unfortunately, I find it unnecessarily complex to implement this with Context.</p>
-
-<h2>
-  
-  
-  Provider Hell
-</h2>
-
-<p>Whether you’re using the Context API or Redux, it’s advised to keep the size of each reducer/context small for better understanding.</p>
-
-<p>That's not an issue with Redux, as we can use <code>combineReducer()</code> to combine multiple reducers into a single store and wrap our whole application with that.</p>
-
-<p>But in the Context API, you must wrap your component with the contexts that it actually needs. It creates a <em>provider hell</em> when your application grows large in size.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">UserComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">Context1</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">}</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Context2</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value2</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Context3</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value3</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">Context4</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value4</span><span class="p">}</span><span class="o">&gt;</span>
-
-            <span class="p">{</span><span class="nx">YOUR_COMPONENT_CODE</span><span class="p">}</span>
-
-          <span class="o">&lt;</span><span class="sr">/Context4</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/Context3</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/Context2</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/Context1</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Yes, I am aware that there are some neat techniques to avoid this issue, like creating an HOC with the required context and wrapping the component with that HOC.</p>
-
-<p>But imagine how many different considerations you have to keep in mind while coding. The situation gets worse when someone else comes and tries to dig through your code.</p>
-
-<p>So why should we make our lives harder?</p>
-
-<h2>
-  
-  
-  Familiar Data Flow
-</h2>
-
-<p>Redux has been used by so many projects that there is a high chance that most junior developers have encountered it at some point in their careers.</p>
-
-<p>A typical Redux data flow looks like this: Component -&gt; Actions -&gt; (Middlewares) -&gt; Reducers -&gt; Component.</p>
-
-<p>The workflow and structure of the code are predictable. I think it’s a huge advantage when working on a large project where developers are constantly coming and going.</p>
-
-<p>When using Context, you don’t know where your contexts are. Each developer has their own way of organizing things. This can lead to some unnecessary overhead for others, which is costly.</p>
-
-<h2>
-  
-  
-  Performance
-</h2>
-
-<p>You saw this coming. Context has known issues with performance because whenever any part of the context is updated, the whole sub-tree re-renders.</p>
-
-<p>Let’s say we wrap two components with a context. This context holds two values: <code>userDetails</code> and <code>orderList</code>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-  <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">userDetails</span><span class="p">:</span> <span class="p">{},</span>
-    <span class="na">orderList</span><span class="p">:</span> <span class="p">{}</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Context</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">}</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">UserComponent</span> <span class="o">/&gt;</span> 
-    <span class="o">&lt;</span><span class="nx">OrderComponent</span> <span class="o">/&gt;</span>
-  <span class="o">&lt;</span><span class="sr">/Context</span><span class="err">&gt;
-</span><span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The <code>UserComponent</code> depends on the value of <code>userDetails</code>, whereas <code>OrderComponent</code> depends on <code>orderList</code>.</p>
-
-<p>Now if <code>userDetails</code> updates, both components re-render (although it has nothing to do with <code>OrderComponent</code>).</p>
-
-<p>Do you see how an extensive application can misuse Context and create huge performance issues?</p>
-
-<p>Yes, there are solutions like splitting the context or memorizing the component before updating. But with the help of <a href="https://redux-toolkit.js.org/api/createSelector">selectors</a>, we can avoid this problem altogether. Why reinvent the wheel?</p>
-
-<h2>
-  
-  
-  Clear Separation
-</h2>
-
-<p>Redux creates a clear separation of concerns. You can remove almost 100% of your data manipulation from your component.</p>
-
-<p>Most modern applications depend on some kind of remote data anyway. So by using selectors, you can pre-process data before entering into the component.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p_NV_MT5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2656/1%2AeFg5VVaOjqCKx0EP4VWhUw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p_NV_MT5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2656/1%2AeFg5VVaOjqCKx0EP4VWhUw.png" alt="Source: [Hacker Noon](https://hackernoon.com/https-medium-com-heypb-react-redux-workflow-in-4-steps-beginner-friendly-guide-4aea9d56f5bd)" width="800" height="642"></a></p>
-
-<p>It’s a huge win when developing a large application before everybody knows where data comes from and how it’s being modified.</p>
-
-<p>With Context, you don’t have the privilege to do that — or at least it’s tricky to achieve.</p>
-
-<h2>
-  
-  
-  Debugging
-</h2>
-
-<p>Regarding debugging, Redux provides an excellent toolkit that makes the debugging experience a breeze.</p>
-
-<p>With the introduction of the <a href="https://redux-toolkit.js.org/api/configureStore">redux-toolkit</a>, it has become easier. You turn it on, and the rest is handled by Redux.</p>
-
-<p>With Context, it’s much more challenging to visualize the changes happening. However, you can mitigate the problem by keeping your context small and predictable.</p>
-
-<h2>
-  
-  
-  Plugin Support
-</h2>
-
-<p>Redux has rich plugin support that can facilitate many side functionalities that are time-consuming to implement and hard to maintain.</p>
-
-<p>You can think of almost anything and be pleasantly surprised that someone else has already implemented the solution. Some of the most popular ones are:</p>
-
-<ul>
-<li><p>redux-persist</p></li>
-<li><p>redux-thunk</p></li>
-<li><p>redux-form</p></li>
-<li><p>reselect</p></li>
-</ul>
-
-<p>These plugins can improve the quality of your application. You have to learn some extra things, but they can reduce the hassle in the long run.</p>
-
-<h2>
-  
-  
-  Size
-</h2>
-
-<p>In terms of size, you can argue that Redux needs additional resources to function, increasing the bundle size.</p>
-
-<p>I agree with that, but is it that important when you have the benefits of a rich developer experience and a respectable community?</p>
-
-<h2>
-  
-  
-  Final Thoughts
-</h2>
-
-<p>Don’t get me wrong: If you can use Context correctly, most of these problems are solvable. Some might argue that it’s a safer option because it’s built-in.</p>
-
-<p>I agree, but libraries and packages are there for a reason. For smaller projects, the Context API is OK. But for larger ones, I think going with Redux is the safer route.</p>
-
-<p>Let me know what you think in the comments. Have a great day!</p>
-
-<h3>
-  
-  
-  Resources
-</h3>
-
-<ul>
-<li>Redux toolkit: <a href="https://redux-toolkit.js.org/">https://redux-toolkit.js.org/</a>
-</li>
-</ul>
-
-<p><strong>Get in touch with me via <a href="https://www.linkedin.com/in/56faisal/">LinkedIn</a>or my <a href="https://www.mohammadfaisal.dev/">Personal Website</a>.</strong></p>
 
  </details> 
  <hr /> 
