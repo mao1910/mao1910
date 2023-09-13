@@ -118,6 +118,194 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [XSS Attack - Why strip_tags is not enough](https://dev.to/rodrigojavornik/xss-attack-why-striptags-is-not-enough-5gmo) 
+ <details><summary>Article</summary> <p>In PHP, it is common to use the <code>strip_tags()</code> function as a way to prevent XSS intrusion. However, this function does not even work to mitigate this type of attack, giving a false sense of security. But why?</p>
+
+<h2>
+  
+  
+  What is XSS?
+</h2>
+
+<p>XSS (Cross-Site Scripting) is a form of attack that occurs when an attacker exploits a vulnerability in a web application to insert malicious scripts into its pages. These scripts are executed in the browsers of the application's users and can compromise sensitive information, allow session theft, redirect to other sites, etc.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---Cb68CjW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/feo4fipn297d3w3yq0yj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---Cb68CjW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/feo4fipn297d3w3yq0yj.png" alt="how xss attack works" width="800" height="460"></a></p>
+
+<h2>
+  
+  
+  Why strip_tags don't work?
+</h2>
+
+<p>The <code>strip_tags()</code> function is commonly used to remove HTML and PHP tags from a string. However, it is not designed to handle all forms of malicious input that can lead to XSS (Cross-Site Scripting) attacks. </p>
+
+<p>Here are some reasons why <code>strip_tags()</code> falls short in mitigating XSS attacks:</p>
+
+<ol>
+<li>
+<strong>Attribute-based attacks:</strong> XSS attacks can occur through attributes such as onmouseover or onclick, which can execute JavaScript code when triggered. <code>strip_tags()</code> does not remove or sanitize these attributes, allowing potential XSS vulnerabilities to remain.</li>
+<li>
+<strong>Tag obfuscation:</strong> Attackers can obfuscate the HTML tags and their attributes to bypass <code>strip_tags()</code>. They can use techniques such as mixing case variations, HTML entity encoding, or JavaScript-based obfuscation. <code>strip_tags()</code> alone cannot effectively handle these obfuscated tags.</li>
+<li>
+<strong>Context-awareness:</strong> XSS vulnerabilities can vary depending on the context in which the user input is displayed. <code>strip_tags()</code> does not have knowledge of the specific context and may allow certain tags or attributes that can still lead to XSS attacks.</li>
+</ol>
+
+<p>An example of malicious string that can be used in an XSS attack is as follows:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>this is a XSS attack &lt;script&gt;alert(“hello world”)&lt;script&gt;
+</code></pre>
+
+</div>
+
+
+<p>If we apply the <code>strip_tags()</code> function, we obtain the following result:<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>this is a XSS attack alert(“hello world”)
+</code></pre>
+
+</div>
+
+
+<p>Okay, in this case, it was indeed possible to clean the malicious code from the string. However, the attacker can use the following code:<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>this is a XSS attack &amp;lt;script&amp;gt; alert('oi') &amp;lt;/script&amp;gt;
+</code></pre>
+
+</div>
+
+
+<p>The <code>strip_tags()</code> function will not sanitize the string in a way that prevents the injection of code into the page.</p>
+<h2>
+  
+  
+  How to prevent it?
+</h2>
+
+<p>The good way to deal with untrusted data is:</p>
+
+<blockquote>
+<p>Filter on input, escape on output</p>
+</blockquote>
+
+<p>This means that you handle the received data (filter), but only transform it (escape or encode) when you send it as output to another system that requires encoding.</p>
+
+<p>There is no way around it. In the data sanitization phase, the only way to effectively prevent XSS attacks is by using a specific library, such as:</p>
+
+<ul>
+<li><a href="https://github.com/voku/anti-xss">AntiXSS</a></li>
+<li><a href="http://htmlpurifier.org/">HTML Purifier</a></li>
+</ul>
+
+<p>These libraries provide robust mechanisms for preventing XSS attacks by sanitizing and properly handling user input and output.</p>
+
+<p>Here, we are going to use the AntiXSS library.<br>
+Now we can sanitize our strings in a much safer way:<br>
+</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nc">voku\helper\AntiXSS</span><span class="p">;</span>
+
+<span class="k">require_once</span> <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$antiXss</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AntiXSS</span><span class="p">();</span>
+<span class="nv">$xssString</span> <span class="o">=</span> <span class="s2">"this is a XSS attack &amp;lt;script&amp;gt; alert('oi') &amp;lt;/script&amp;gt;"</span><span class="p">;</span>
+<span class="nv">$clearString</span> <span class="o">=</span> <span class="nv">$antiXss</span><span class="o">-&gt;</span><span class="nf">xss_clean</span><span class="p">(</span><span class="nv">$xssString</span><span class="p">);</span>
+
+<span class="c1">//this is a XSS attack</span>
+<span class="k">echo</span> <span class="nv">$clearString</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+<p>In the phase of outputting data, you can use template engines like <a href="https://twig.symfony.com">Twig</a> or <a href="https://laravel.com/docs/10.x/blade">Blade</a> or <a href="https://www.php.net/manual/en/function.htmlspecialchars.php">htmlspecialchars</a> function.</p>
+
+<p>Great! Now we have a good way to sanitize XSS.</p>
+
+<p>It's worth mentioning that sanitization is just one of the steps in preventing XSS. But that is a topic for another text...</p>
+
+
+<h3>
+  
+  
+  Do you like data sanitization? Then take a look at my PHP data sanitization library!
+</h3>
+
+
+<div class="ltag-github-readme-tag">
+  <div class="readme-overview">
+    <h2>
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
+      <a href="https://github.com/rodrigojavornik">
+        rodrigojavornik
+      </a> / <a href="https://github.com/rodrigojavornik/PHPCleanup">
+        PHPCleanup
+      </a>
+    </h2>
+    <h3>
+      A PHP Sanitation Library
+    </h3>
+  </div>
+  <div class="ltag-github-body">
+    
+<div id="readme" class="md">
+<h1>
+PHP Cleanup</h1>
+<h4>
+A powerful sanitization library for PHP and Laravel. No dependencies</h4>
+<h2>
+Installation</h2>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto js-code-highlight">
+<pre>composer require rodrigojavornik/php-cleanup</pre>
+
+</div>
+<h2>
+Usage</h2>
+<div class="highlight highlight-text-html-php notranslate position-relative overflow-auto js-code-highlight">
+<pre><span class="pl-k">use</span> <span class="pl-v">PHPCleanup</span>\<span class="pl-v">Sanitize</span>
+<span class="pl-v">Sanitize</span>::<span class="pl-en">input</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' &lt;h1&gt;Hello World&lt;/h1&gt; '</span>);<span class="pl-c">//Hello World</span>
+<span class="pl-v">Sanitize</span>::<span class="pl-en">trim</span>()-&gt;<span class="pl-en">captalize</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' string    '</span>);<span class="pl-c">//String</span>
+<span class="pl-v">Sanitize</span>::<span class="pl-en">trim</span>()-&gt;<span class="pl-en">lowercase</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' MY name IS    '</span>);<span class="pl-c">//my name is</span>
+<span class="pl-v">Sanitize</span>::<span class="pl-en">onlyNumbers</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' abc1234'</span>);<span class="pl-c">//1234</span></pre>
+
+</div>
+<h2>
+Available filters</h2>
+<ul>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#captalize">captalize</a>: Capitalize a string;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#captalizeall">captalizeAll</a>: Capitalize all string;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#datetime">dateTime</a>: Transform a string in DateTime object;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#email">email</a>: Removes all characters not allowed in an email address;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#escape">escape</a>: Applies htmlspecialchars to value;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#formatnumber">formatNumber</a>: Format a number with grouped thousands;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#input">input</a>: Strip one whitespace from the beginning and end of a string and remove any HTML and PHP tags;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#keys">keys</a>:  applies sanitaze to elements of an array;</li>
+<li>
+<a href="https://github.com/rodrigojavornik/PHPCleanup#lowercase">lowercase</a>…</li>
+</ul>
+</div>
+  </div>
+  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/rodrigojavornik/PHPCleanup">View on GitHub</a></div>
+</div>
+
+
+
+ </details> 
+ <hr /> 
+
  #### - [Tips for Acing Technical Interviews: Lessons from Both Sides of the Table](https://dev.to/pacheco/tips-for-acing-technical-interviews-lessons-from-both-sides-of-the-table-5262) 
  <details><summary>Article</summary> <p>Preparing for a technical interview can be challenging, but there are a few things you can do to increase your chances of success. As someone who has conducted many technical interviews, I've learned some valuable lessons that I believe can help interviewees prepare for successful interviews. In this blog post, I'll be sharing three key tips for interviewees.</p>
 
@@ -276,7 +464,7 @@ Cheers!!😊</p>
  </details> 
  <hr /> 
 
- #### - [Analyzing data accurancy with Puppeteer and Axios( example: book prices )](https://dev.to/qa1980/analyzing-book-prices-with-puppeteer-and-axios-example-book-prices--4hbm) 
+ #### - [Analyzing data accurancy with Puppeteer and Axios( example: book prices )](https://dev.to/qaproengineer/analyzing-book-prices-with-puppeteer-and-axios-example-book-prices--4hbm) 
  <details><summary>Article</summary> <div class="highlight js-code-highlight">
 <pre class="highlight plaintext"><code>const puppeteer = require("puppeteer");
 const axios = require("axios");
@@ -679,38 +867,6 @@ Unlock enterprise-grade features, functions, and UI components completely free f
 <p><a href="https://twitter.com/sebastienlorber/status/1701293733822541931"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WuiOLNhm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/meme.jpg" alt="alt" width="682" height="967"></a></p>
 
 <p>See ya! 👋</p>
-
- </details> 
- <hr /> 
-
- #### - [Create a JavaScript Tool to Generate Acronym from User Input](https://dev.to/codewithshan/create-a-javascript-tool-to-generate-acronym-from-user-input-2ib7) 
- <details><summary>Article</summary> <p>The code provided is a JavaScript function called getAcronym that takes a string of words as input and returns the acronym formed from the first letter of each word.</p>
-
-<h2>
-  
-  
-  What is Acronymn?
-</h2>
-
-<p>An acronym is a word formed from the initial letters of a phrase or a series of words. It is used as a shorter way to represent a longer phrase or name.</p>
-
-<h3>
-  
-  
-  <strong>Here’s a step-by-step explanation to generate Acronym:</strong>
-</h3>
-
-<ol>
-<li><p>The <strong>getAcronym</strong> function is defined using the arrow function syntax (<strong>const getAcronym = (words) =&gt; { ... }</strong>).</p></li>
-<li><p>The input string words is split into an array of words using the split method and the space delimiter (words.split(" ")). This creates an array where each element represents a word in the input string.</p></li>
-<li><p>The <strong>map</strong> method is used to iterate over each word in the array. For each word, a callback function is executed, which extracts the first character of the word using the <strong>charAt(0)</strong> method and converts it to uppercase using the toUpperCase method (<strong>word.charAt(0).toUpperCase()</strong>). This creates an array of uppercase letters representing the first letters of each word.</p></li>
-<li><p>The <strong>join</strong> method is used to combine all the elements of the array into a single string. The empty string "" is used as the separator (<strong>array.join("")</strong>). This results in a string that represents the acronym formed by concatenating the uppercase letters.</p></li>
-<li><p>The acronym string is returned as the output of the <strong>getAcronym</strong> function.</p></li>
-</ol>
-
-<p>In the example usage, the getAcronym function is called with the input string “<strong>Fear of missing out</strong>”. The resulting acronym “<strong>FOMO</strong>” is then logged to the console using console.log(acronym).</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dn5PlvoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5bbba42pr3q4x252hgrw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dn5PlvoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5bbba42pr3q4x252hgrw.png" alt="Generate Acronym from User Input" width="800" height="703"></a></p>
 
  </details> 
  <hr /> 
