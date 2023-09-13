@@ -118,6 +118,91 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [If you have these three things, then you’re a user (and not a programmer)](https://dev.to/noriller/if-you-have-these-three-things-then-youre-a-user-and-not-a-programmer-45nk) 
+ <details><summary>Article</summary> <p>2023/09/13 is the 256 day of the year or in other words, Programmer’s Day.</p>
+
+<p>Take this chance to congratulate yourself, your colleagues, or a programmer friend.</p>
+
+<blockquote>
+<p><strong>Disclaimer</strong>: the author take no responsibility for the trip to the nearest dark place your programmer friend might be in.</p>
+</blockquote>
+
+<h2>
+  
+  
+  Programmer or user?
+</h2>
+
+<p>In other years ([<a href="https://dev.to/noriller/if-you-have-these-three-things-you-can-be-a-programmer-too-v2-2e56">2022</a>, <a href="https://dev.to/noriller/if-you-have-this-three-things-you-can-be-a-programmer-too-28b8">2021</a>]) I’ve talked about things that make you a Programmer, but this time around I enumerated a few things that might show that you might not be a programmer, but (<em>suspense noises</em>) just a user.</p>
+
+<p>Please note that everyone <em>is</em> a user of something, that is not a problem. But if you say you’re a programmer, but all you do is be a user, then you have a <code>TypeError: User is not of type Programmer</code>.</p>
+
+<h2>
+  
+  
+  1. You don't read error messages
+</h2>
+
+<p>I’ve worked a lot with digitally illiterate people of many levels and the one thing that stood out was how fast they would click an error message out of view.</p>
+
+<p>Then there I went, did what they were doing, <strong>actually</strong> read the error message, and <em>magic!</em> solved the problem.</p>
+
+<p>I saw “programmers” who do something similar, choosing to ignore any error messages, trying to run whatever they’re doing again, and, of course, failing.</p>
+
+<p>Sometimes, all it takes is just reading the error messages. Other times, you read, google it, open the first link, and follow the instructions. <em>Presto!</em></p>
+
+<p>Other times, you have to bang your two neurons a little harder, tracing the steps of the software to pinpoint the exact point of failure, and then facepalm yourself hard enough because it was something so simple.</p>
+
+<p>Finally, a few times you read the error, then backtraced the problem and still you and ChatGPT have no idea how to solve it. So, you read the <strong><a href="https://stackoverflow.com/help/how-to-ask">How do I ask a good question?</a></strong> page from StackOverflow and wherever you usually do a good question so people can easily help you.</p>
+
+<h2>
+  
+  
+  2. You’re content with software
+</h2>
+
+<p>The more junior you are the more you probably think: “I can do it better”.</p>
+
+<p>On the other side, the more senior you get, probably the more pissed you get with badly written websites and apps. You also probably appreciate good interactions a lot more.</p>
+
+<p>This is if you’re a programmer, but when you’re a user… You just don’t care.</p>
+
+<p>You might think you can just jump the hoops and loops and all those problems are nothing to get worked over. You’re complacent and only the very worst will make you complain or abandon it.</p>
+
+<p>No matter who you are, we always end up drawing a line where from one point forward we are programmers but the rest we are users. The question is where did you draw yours?</p>
+
+<p>The language? The framework? The meta framework? The libs? Just whatever you’re doing?</p>
+
+<p>Some people might never have thought about actually influencing the things and tools they use every day. You might not have time or skill to actually fix something, but you see something you use and feel like it could be improved with something or you have the same problem over and over… have you ever tried opening an Issue in the project repo?</p>
+
+<p>Maybe more people have the same problem or more people would enjoy the improvements of your idea, someone might jump into implementing that if only they see your Issue. But when you just don’t care enough, then nothing will happen.</p>
+
+<h2>
+  
+  
+  3. You’re superstitious (it’s how it was always done)
+</h2>
+
+<p>This one touches the other ones. The superstitious “programmer” (or user) is someone who does things because “it was how it was always done”.</p>
+
+<p>I can argue that you don’t actually know what in the name of binary you’re doing, because you just copy and paste code, change things here and there, and hope it works. I’ve met that kind of “programmer” and nowadays one of its names is ChatGPT.</p>
+
+<p>ChatGPT is a grand example because it doesn't know anything. It just saw enough it can just spill enough bullshit that sometimes it actually makes sense and works.</p>
+
+<p>jQuery still works to this day, but is it the best way of doing things today? While jumping at the newest framework would definitely make you a programmer, it’s not something sustainable.</p>
+
+<p>A programmer has to evaluate both ends and find the one that is the best choice for today and for the foreseeable future, always considering where they are coming from.</p>
+
+<p>In a new project, this is easier, but in a legacy project this might be a rewrite or more likely, adding a new way of doing things where you don’t need to rewrite things already working, but gives you a better tool to migrate crucial parts and create new features.</p>
+
+
+
+
+<p>Cover Photo by <a href="https://unsplash.com/@thisisengineering?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">ThisisEngineering RAEng</a> on <a href="https://unsplash.com/photos/iQqRM0XJvn8?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+
+ </details> 
+ <hr /> 
+
  #### - [Build an AI SMS Chatbot with Replicate, LLaMA 2, and LangChain](https://dev.to/twilio/build-an-ai-sms-chatbot-with-replicate-llama-2-and-langchain-3i72) 
  <details><summary>Article</summary> <p>Recently, Meta and Microsoft introduced the second generation of the LLaMA LLM (Large Language Model) to help developers and organizations to build generative AI-powered tools and experiences. Read on to learn how to build an AI SMS chatbot that answers questions like Ahsoka (from Star Wars) using LangChain templating, LLaMa 2, Replicate, and Twilio Programmable Messaging!<br>
 <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YtzI9bA---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c11hzs7x148okb1zjlj3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YtzI9bA---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c11hzs7x148okb1zjlj3.png" alt="SMS example" width="800" height="197"></a><br>
@@ -747,394 +832,106 @@ Waiting for MyComponent...
  </details> 
  <hr /> 
 
- #### - [Validating SSH keys on Laravel](https://dev.to/devlopez/validating-ssh-keys-on-laravel-2545) 
- <details><summary>Article</summary> <p>When we're called to develop an application, we should keep in mind that we might have to deal with various types of problems, some of which we may never have imagined facing. However, sometimes we need to step out of our comfort zone.</p>
+ #### - [My Programming Journey So Far](https://dev.to/manishmehra/my-programming-journey-so-far-50oh) 
+ <details><summary>Article</summary> <p>By mid-2020, the school had ended. All things were in captivity: the covid pandemic. The year passed in the blink of an eye. By the end of 2020, I enrolled in a three-year computer-related degree. I knew programming but didn’t know no more than printing Hello World.</p>
+
+<p>Starting in 2021, I began my programming journey with CS50, a popular, free introductory course on computer science and programming. The course gave me a good overview and exposed me to concepts like memory and algorithms like binary search(which I will forget soon).</p>
+
+<p>However, I avoided further learning the hard parts of computer science and focused on advancing toward the big picture. The big picture was to build functional and interactive websites for myself. That was my primary focus, and it has evolved somewhat since then. Nonetheless, this goal was sufficient to keep me motivated.</p>
+
+<p>After this course, I spent just a week or two learning HTML and then dedicated the next two to three months to the challenging task of centering the div, which, to this day, I find one of the most challenging aspects of web development.</p>
+
+<p>I was excited to learn Javascript after this.</p>
+
+<p>My first encounter with JavaScript was strange. In CS50(C language), I have known about certain data types like int, char, and bool. You can only store these kinds of values in your variable. But in Javascript, I was assigning my variable to something like a dom node. I was dumbfounded.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>const button =  document.getElementById("#button")
+</code></pre>
+
+</div>
+
+
+
+<p>I couldn’t wrap my head around it. So I proceeded with memorizing, believing it to be a rule allowed in JavaScript.</p>
+
+<p>Two to three months later, I could build a simple to-do list with JavaScript, display and hide modal, and make a navbar slide.</p>
 
 <h2>
   
   
-  Understanding the Problem
+  Learning React.js
 </h2>
 
-<p>A few days ago, I was tasked with building a feature that would receive a developer's public key and later send it to Laravel forge, allowing the user to have SSH access to the respective servers.</p>
+<p>React Js came into my life. Some called it a library, some a framework, and some were confused. Angular JS was its competitor, the awful frontend framework made by Google, as proclaimed. And Vue Js was also around the corner at that time. Despite all the confusion, I went with React JS and not the hated Angular.</p>
 
-<blockquote>
-<p>Awesome, Matheusão, how am I going to validate this type of data?</p>
-</blockquote>
+<p>Initially, React Js was confusing. Till now, I have been working on one file with javascript. With React Js, there are many files and folders. It took me 2-3 months to grasp this new environment, the naming conventions, and the use of the terminal and dependency system.</p>
 
-<p>Initially, we think about validating the basics, such as the length of the string, whether it already exists in the database, etc:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'nullable'</span><span class="p">,</span> <span class="s1">'string'</span><span class="p">,</span> <span class="s1">'unique:users,ssh_key'</span><span class="p">,</span> <span class="s1">'max:5000'</span><span class="p">]</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Okay, but what if the user passes, I don't know, all the letters of the alphabet? Unfortunately, it will pass the validation 🙁.</p>
+<p>Eventually, it all started to make sense. And I could build a simple UI with React, which was unfathomably painful with JavaScript alone.</p>
 
 <h2>
   
   
-  In Search of the Perfect Validation
+  Building Things Together
 </h2>
 
-<p>I did a lot of research on how to perform this validation. In many blogs, I saw many people recommending using native functions like <strong><code>openssl_verify</code></strong>, <strong><code>openssl_get_publickey</code></strong>, or <strong><code>openssl_pkey_get_details</code></strong>, but unfortunately, they didn't work for what I needed (Remember, an SSH key is different from an SSL key, so these functions won't work). In other forums, I saw people suggesting using the package <a href="https://phpseclib.com/">https://phpseclib.com/</a>. But think about it, why install a package when you're only going to use one class and one of its methods?</p>
+<p>I joined a Discord server for programming by the end of 2021. Though most people were writing their first line of code, few surpassed that beginner's phase and were looking for opportunities to grow their skills. I saw messages asking to collaborate on projects. I responded to one of the random messages offering my aid in building the project. It turns out to be a good learning opportunity later.</p>
 
-<p>I see this as completely unnecessary coupling, but anyway...</p>
+<p>In the team, there were two scrawny-looking college kids. Both were passionate and took the self-taught route. Before joining me, the project was set up with React Js on Frontend and Firebase as backend/database.</p>
+
+<p>The project was a research papers website, where users can log in and download the papers. We built the project over two months. It was fun. We explored tools like git, project management tools, and wireframing software like Adobe XD.</p>
+
+<p>After this project, we collaborated on another project where we decided to build our backend. Since we already knew Javascript, learning the backend seemed less overwhelming. With Node.js/express, we can easily set up a server and create APIs for our react app to consume. The popular database choice with node/express app was MongoDB. We moved with it. MongoDB turned out to be easy to get started.</p>
+
+<p>After working on this project for a few months on and off, this project went nowhere. The cause of failure was our vague requirements. Continuing the project felt like a meaningless pursuit. So we dropped it. In the end, we lost nothing and gained a few more skills.</p>
 
 <h2>
   
   
-  Going a Bit Deeper
+  The Work Experience
 </h2>
 
-<p>After some research, I found that we can use <code>ssh-keygen</code> to validate this string for us, but how?</p>
+<p>After a year and a half of learning to program(2022), I stumbled across an opportunity to work for a small startup as a React Developer. This opportunity was offered to me by someone from an online community where we occasionally discuss books, ideas, arts, and things in general. This person referred me, and the next day, I received a call from the energetic CEO. We talked about general things. At the end, he asked if I could sit for the interview. I couldn't say no. After a few days, the senior developer of the team interviewed me.</p>
 
-<p>For this, we can use two flags, <code>-l</code> to get the fingerprint and <code>-f</code> to specify the file path. So our command would look like this:<br>
-</p>
+<p>The questions revolved around React Js. The interview lasted no more than 10 minutes. I was expected only to know basic things like how useEffect hook works and styling components. I was stunned when the interview ended early and thought I missed the mark. </p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>ssh-keygen <span class="nt">-lf</span> /path/to/my/file.pub
-</code></pre>
+<p>The next day, I got a call. The team welcomed me. </p>
 
-</div>
+<p>After a few days, I was staring at the massive code base. It wasn’t basic as I guessed from the interview. It terrified me, and I was fool enough to suggest to my senior that we needed to rewrite the whole codebase with Next JS. The excuse I made was terrible SEO because it was Single Page App. The suggestion felt reasonable, at least to me, since our website needed to rank higher on Google. The senior explained that this optimization is not required as we are still in the initial phase. Our primary focus is to build the features and improve functionality instead of doing the optimizations. And the codebase was only one year old and has worked for the requirement so far.</p>
+
+<p>I got comfortable with the codebase over the next few weeks by making small changes, slowly fixing bugs, adding functionality, and pushing design changes. I realized I didn't have to know the whole codebase. I only need to understand the piece of code related to the bug, feature, or improvement I was dealing with.</p>
+
+<p>Our team was remote, so I had the flexibility to attend my college when it was required. I moved to the office for the next few months and work fully onsite. The office was in a different state(Chennai, India), a distance of more than 1,700km(1,000 miles) from my state(Delhi, India). Moreover, the language, culture, and food were different. Despite I moved. I was excited about the opportunity to work closely with the product owners, and it was a good travel opportunity.</p>
+
+<p>I returned after three months and continued working till my graduation. During all this time, I learned a lot from my senior developers, how building software works in the real world, working with a team, effectively communicating my thoughts, and the list is endless. I was grateful for the opportunity. The people I worked with were chilled, supportive, and humble. There could not have been a better place for me to kickstart my career.</p>
+
+<p>In July 2023, after ten months of working, I decided to take a break from work and quit this job. I also just graduated. My motives for the break were to fill those gaps in my knowledge that I was painfully aware of. And to take some time to plan my career and start fresh again in a new place.</p>
 
 
 
-<p>And this way, we can check if our SSH key is valid or not.</p>
+
+<p>It’s been two months since I left the job and the graduation. I've started learning a new language(Java), studying data structures and algorithms(I’m very inconsistent here), and revisiting the Javascript fundamentals. Also, a few days ago, I picked a book called The Pragmatic Programmer.</p>
+
+<p>In all my attempts, it barely feels like progress is being made. It's a strange phase. I’m not a beginner, or an intermediate or advanced. It's more like starting anew, and the process is painfully slow and monotonous. </p>
+
+<p>Learning is great, but the reality is I can't dedicate myself full-time to it. It would be fantastic if I could, but I need to manage my finances. Without a stable income, I can't sustain this programming journey.</p>
+
+<p>So, a few days ago I decided to apply for the junior role in my local and if I get the job, I’ll have to manage my time and continue learning things on the side.</p>
+
+<p>Till now, I’ve gotten 2-3 rejections with no interviews out of the 50+ applications I applied and the rest haven’t responded. It feels worse than rejection. Most jobs require a minimum of 4-5 years of experience, and all the junior-level posts have applicants from 500 to 3k. It’s overwhelming and hopeless to see, but that’s the current state of affairs.</p>
+
+<p>I also realized my resume is not up to the mark. Other than 10 months of experience. I don’t have good projects to showcase my skills. There's this basic node js web scraper that fetches the news headlines from different sites, and my react app consumes the API and shows these news headlines.</p>
+
+<p>I’ll keep applying and continue learning things.</p>
 
 <h2>
   
   
-  Creating Our Validation Command
+  Final Thoughts
 </h2>
 
-<p>Laravel introduced a component called <a href="https://laravel.com/docs/10.x/processes">Process</a> starting from version 10, which is nothing more than a wrapper around Symfony's <a href="https://symfony.com/doc/current/components/process.html">Process</a> component. It's with this little guy that we're going to work our magic.</p>
-
-<blockquote>
-<p>Of course, we could use the <code>exec</code> function, a native PHP function. However, if you think you don't need to use this wrapper, feel free to do so 🙂👍🏻.</p>
-</blockquote>
-
-<p>Let's think about what we need to do:</p>
-
-<ul>
-<li>We need to receive the string containing the user's key.</li>
-<li>We need to save this string somewhere accessible.</li>
-<li>We need to call the <code>ssh-keygen</code> command with the file path.</li>
-<li>We need to delete the file after validation.</li>
-</ul>
-
-<h2>
-  
-  
-  Setting Things Up
-</h2>
-
-<p>Let's create a directory inside <code>storage/app</code> called ssh. Don't forget to exclude this new directory from your version control:</p>
-
-<p><em>storage/app/.gitignore</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>*
-!public/
-!.gitignore
-!ssh/
-</code></pre>
-
-</div>
-
-
-
-<p><em>storage/app/ssh/.gitignore</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>*
-!.gitignore
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Writing Our Class
-</h2>
-
-<p>Now we can create our class that will interact with <code>ssh-keygen</code>.</p>
-
-<p><strong><em>App/Terminal/ValidateSsh.php</em></strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="cp">&lt;?php</span>
-
-<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-
-<span class="kn">namespace</span> <span class="nn">App\Terminal</span><span class="p">;</span>
-
-<span class="kn">use</span> <span class="nc">Illuminate\Support\Facades\Process</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Illuminate\Support\Str</span><span class="p">;</span>
-
-<span class="kd">class</span> <span class="nc">ValidateSsh</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$keyPath</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
-        <span class="k">private</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="nv">$content</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span> <span class="o">=</span> <span class="nf">storage_path</span><span class="p">(</span><span class="s1">'app/ssh/'</span> <span class="mf">.</span> <span class="nc">Str</span><span class="o">::</span><span class="nf">uuid</span><span class="p">()</span> <span class="mf">.</span> <span class="s1">'.pub'</span><span class="p">);</span>
-
-        <span class="nb">file_put_contents</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">content</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">():</span> <span class="kt">bool</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nc">Process</span><span class="o">::</span><span class="nf">run</span><span class="p">(</span>
-            <span class="n">command</span><span class="o">:</span> <span class="s1">'ssh-keygen -lf '</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span> <span class="mf">.</span> <span class="s1">' &amp;&amp; rm '</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">keyPath</span><span class="p">,</span>
-        <span class="p">)</span><span class="o">-&gt;</span><span class="nf">successful</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Great, our class is ready to be used.</p>
-
-<ul>
-<li>It receives the content and saves it with a random name.</li>
-<li>It checks the file, and if successful, it deletes it as well.</li>
-</ul>
-
-<p>Now, let's write our tests.</p>
-
-<p><strong><em>tests/Unit/Terminal/ValidateSshTest.php</em></strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="cp">&lt;?php</span>
-
-<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-
-<span class="kn">use</span> <span class="nc">App\Terminal\ValidateSsh</span><span class="p">;</span>
-
-<span class="nf">it</span><span class="p">(</span><span class="s1">'should return true if process if file is valid'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">string</span> <span class="nv">$key</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
-
-    <span class="nf">expect</span><span class="p">(</span><span class="nv">$validateSsh</span><span class="p">())</span><span class="o">-&gt;</span><span class="nf">toBeTruthy</span><span class="p">();</span>
-<span class="p">})</span><span class="o">-&gt;</span><span class="nf">with</span><span class="p">([</span>
-    <span class="s1">'RSA'</span>   <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
-    <span class="s1">'EDCSA'</span> <span class="o">=&gt;</span> <span class="s1">'ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFvXWSVYzRnjxYsz/xKjOjAaPjzg98MMHaDulQYczTX28xlsMmFkviCeCCv7CLh19ydoH4LNKpvgTGiMXz8ib68= worker@envoyer.'</span><span class="p">,</span>
-<span class="p">]);</span>
-
-<span class="nf">it</span><span class="p">(</span><span class="s1">'should return false if ssh file is invalid'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="s1">'a simple text file'</span><span class="p">);</span>
-
-    <span class="nf">expect</span><span class="p">(</span><span class="nv">$validateSsh</span><span class="p">())</span><span class="o">-&gt;</span><span class="nf">toBeFalsy</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Writing Our Rule
-</h2>
-
-<p>Think it's over? Not at all. The responsibility of the <code>ValidateSsh</code> class is only to check if the key is valid or not.</p>
-
-<p>Let's create a rule so that we can use this validation.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>php artisan make:rule IsSshKeyValid
-</code></pre>
-
-</div>
-
-
-
-<p>Great, now we can do the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="cp">&lt;?php</span>
-
-<span class="k">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-
-<span class="kn">namespace</span> <span class="nn">App\Rules</span><span class="p">;</span>
-
-<span class="kn">use</span> <span class="nc">App\Terminal\ValidateSsh</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Closure</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Illuminate\Contracts\Validation\ValidationRule</span><span class="p">;</span>
-<span class="kn">use</span> <span class="nc">Illuminate\Translation\PotentiallyTranslatedString</span><span class="p">;</span>
-
-<span class="kd">class</span> <span class="nc">IsSshKeyValid</span> <span class="kd">implements</span> <span class="nc">ValidationRule</span>
-<span class="p">{</span>
-    <span class="cd">/**
-     * @param Closure(string): PotentiallyTranslatedString $fail
-     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span>
-        <span class="kt">string</span> <span class="nv">$attribute</span><span class="p">,</span>
-        <span class="kt">mixed</span> <span class="nv">$value</span><span class="p">,</span>
-        <span class="kt">Closure</span> <span class="nv">$fail</span>
-    <span class="p">):</span> <span class="kt">void</span> <span class="p">{</span>
-        <span class="nv">$validateSsh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ValidateSsh</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$validateSsh</span><span class="p">())</span> <span class="p">{</span>
-            <span class="nv">$fail</span><span class="p">(</span><span class="s1">'The :attribute is not a valid SSH key.'</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>With this, we're ready to write our HTTP tests ❤️</p>
-
-<h2>
-  
-  
-  Testing Our HTTP Call
-</h2>
-
-<p>Before moving on to the HTTP tests, we need to add our rule to our validation rules:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">'nullable'</span><span class="p">,</span>
-    <span class="s1">'string'</span><span class="p">,</span>
-    <span class="s1">'unique:users,ssh_key'</span><span class="p">,</span>
-    <span class="s1">'max:5000'</span><span class="p">,</span>
-    <span class="k">new</span> <span class="nc">IsSshKeyValid</span><span class="p">(),</span>
-<span class="p">],</span>
-</code></pre>
-
-</div>
-
-
-
-<p>And our tests for this field can look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="nf">it</span><span class="p">(</span><span class="s1">'should validate `ssh_key` field'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">mixed</span> <span class="nv">$value</span><span class="p">,</span> <span class="kt">string</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">login</span><span class="p">();</span>
-
-    <span class="nf">postJson</span><span class="p">(</span><span class="nf">route</span><span class="p">(</span><span class="s1">'api.users.store'</span><span class="p">),</span> <span class="p">[</span><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">])</span>
-        <span class="o">-&gt;</span><span class="nf">assertUnprocessable</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="nf">assertJsonValidationErrors</span><span class="p">([</span><span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="nv">$error</span><span class="p">]);</span>
-<span class="p">})</span><span class="o">-&gt;</span><span class="nf">with</span><span class="p">([</span>
-    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.string'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">])],</span>
-    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nb">str_repeat</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">5001</span><span class="p">),</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.max.string'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">,</span> <span class="s1">'max'</span> <span class="o">=&gt;</span> <span class="mi">5000</span><span class="p">])],</span>
-    <span class="k">fn</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'The ssh key is not a valid SSH key.'</span><span class="p">],</span>
-    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nv">$user</span> <span class="o">=</span> <span class="nc">User</span><span class="o">::</span><span class="nf">factory</span><span class="p">()</span>
-            <span class="o">-&gt;</span><span class="nf">create</span><span class="p">([</span>
-                <span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
-            <span class="p">]);</span>
-
-        <span class="k">return</span> <span class="p">[</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="n">ssh_key</span><span class="p">,</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'validation.unique'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'attribute'</span> <span class="o">=&gt;</span> <span class="s1">'ssh key'</span><span class="p">])];</span>
-    <span class="p">},</span>
-<span class="p">]);</span>
-
-<span class="nf">it</span><span class="p">(</span><span class="s1">'should store an user'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nf">login</span><span class="p">();</span>
-
-    <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">'name'</span>    <span class="o">=&gt;</span> <span class="s1">'Matheus Santos'</span><span class="p">,</span>
-        <span class="s1">'email'</span>   <span class="o">=&gt;</span> <span class="s1">'matheusao@my-company.com'</span><span class="p">,</span>
-        <span class="s1">'ssh_key'</span> <span class="o">=&gt;</span> <span class="s1">'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD3vYKSuh7rJf+NtWn04CFyT9+nmx+i+/sP+yMN9ueJ+Rd5Ku6d9kgscK2xwlRlkcA0sethslu0WUsG81RC1lVpF6iLrc/9O45ZhEY1CB/7dofr+7ZNwu/DJtbW6YE7oyT5G97BUW763TMq/YO9/xjMToetElTEJ4hUVWdP8q93b3MVHBazk2PEuS05wzP4p5XeQnhKq4LISetJFEgI8Y+HEpK29GiU/18fhaGZvdVwOToOxTwEwBbS3fTLNkBaUTWw9q3i7S60RRncBCHppcs2irrzw7yt7ZQOnut/BIjIGESoxx+N4ZrpTmX6P5d3/9Duk40Mfwh1ftsvze6o5AW4Xi0tki8b6bsMXmO7SapqVdiMZ5/4BWOkqHWhi926qz7I9NWoZuVFAUpSoe6fObzQBRooVp7ARw7gJ4C+Q4xc1gJJkZoQ/Wj/wHkVnbLw9M5+t5GjyWgDDOr5iyoGOyIwhuEFvATzIYH0z5B6anL1n6XQmeGh5OWKJN8wE5qVNTU= worker@envoyer.io'</span><span class="p">,</span>
-    <span class="p">];</span>
-
-    <span class="nf">postJson</span><span class="p">(</span><span class="nf">route</span><span class="p">(</span><span class="s1">'api.users.store'</span><span class="p">),</span> <span class="nv">$data</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="nf">assertCreated</span><span class="p">();</span>
-
-    <span class="nf">assertDatabaseHas</span><span class="p">(</span><span class="nc">Users</span><span class="o">::</span><span class="n">class</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Cool, right?</p>
-
-<p>Now, I can register users in my system without worrying about those funny folks who might enter "aaaaaaa" in the <code>ssh_key</code> field 😃.</p>
-
-<p>And remember, sometimes we need to think outside the box to find solutions to some problems. The more open-minded we are, the faster we can make progress and learn new things.</p>
-
-<p>Cheers, and until next time 😗 🧀</p>
-
- </details> 
- <hr /> 
-
- #### - [Mastering React Styling: A Beginner's Guide](https://dev.to/cybermaxi7/mastering-react-styling-a-beginners-guide-1lel) 
- <details><summary>Article</summary> <p>Styling is a crucial aspect of building visually appealing and user-friendly web applications. In the React ecosystem, developers have a plethora of styling options to choose from. But why are there so many options? The answer lies in React's flexibility and lack of a built-in styling solution. React gives developers the freedom to choose their preferred styling approach. Let's explore some of the common styling options in React, each with its own characteristics and use cases. 🎨</p>
-
-<p><strong>Why So Many Styling Options?</strong><br>
-React is an opinionated library; it doesn't impose a specific styling approach. Instead, it grants developers the liberty to pick the method that resonates most with their project's needs. Let's delve into some of the common styling options in React, each with its own distinct characteristics and use cases. 🚀</p>
-
-<p><strong>1. Inline-CSS</strong><br>
-✨<br>
-<strong>Where</strong>: JSX elements<br>
-<strong>How</strong>: style props<br>
-<strong>Scope</strong>: JSX elements<br>
-<strong>Based on</strong>: CSS<br>
-Inline-CSS offers simplicity in styling React components. You define styles directly within your JSX code using the style prop. It's convenient for quick styling but can become unwieldy for complex designs.</p>
-
-<p><strong>2. CSS or Sass Files</strong><br>
-✨<br>
-<strong>Where</strong>: External files<br>
-<strong>How</strong>: className prop<br>
-<strong>Scope</strong>: Entire app<br>
-<strong>Based on</strong>: CSS<br>
-Using external CSS or Sass files allows you to maintain separate stylesheets for your React components. You apply styles using the className prop. This approach provides global styling across your entire application but may lead to class name conflicts.</p>
-
-<p><strong>3. CSS Modules</strong><br>
-✨<br>
-<strong>Where</strong>: One external file per component<br>
-<strong>How</strong>: className prop<br>
-<strong>Scope</strong>: Component<br>
-<strong>Based on</strong>: CSS<br>
-CSS Modules offer a solution to class name collision issues. You create dedicated CSS files for each component and import them using module syntax. This approach encapsulates styles within each component, preventing unintended side effects.</p>
-
-<p><strong>4. CSS in JavaScript (Styled Components)</strong><br>
-✨<br>
-<strong>Where</strong>: External file or component file<br>
-<strong>How</strong>: Creates new component<br>
-<strong>Scope</strong>: Component<br>
-<strong>Based on</strong>: JavaScript<br>
-Styled Components, a popular library, allows you to write CSS-in-JS. You create styled components as JavaScript functions. This approach offers component-level styling and leverages JavaScript's power to generate dynamic styles.</p>
-
-<p><strong>5. Utility-First CSS (e.g., Tailwind CSS)</strong><br>
-✨<br>
-<strong>Where</strong>: JSX elements<br>
-<strong>How</strong>: className props<br>
-<strong>Scope</strong>: JSX elements<br>
-<strong>Based on</strong>: CSS</p>
-
-<p>Utility-first CSS frameworks like Tailwind CSS provide a set of utility classes that you apply directly to JSX elements. This approach encourages rapid development by applying pre-defined styles using class names.</p>
-
-<p><strong>6. UI Libraries</strong><br>
-✨<br>
-In addition to the traditional styling methods, React developers have the option to leverage UI libraries such as <strong>Material-UI (MUI)</strong>, <strong>Chakra UI</strong>, <strong>Mantine</strong>, and many more. These libraries offer pre-designed components with consistent styling and extensive customization options, simplifying the styling process and enhancing the development experience.</p>
-
-<p>In conclusion, the diverse landscape of styling options in React caters to various preferences and project requirements. Whether you gravitate toward the simplicity of inline styles or harness the power of CSS-in-JS, React provides the flexibility to choose the styling approach that best suits your specific needs. Exploring these options empowers you to craft beautiful and functional React applications that captivate users and make your coding journey an exciting one. Happy styling! 🎉🎨 </p>
+<p>When I was learning to program back then, the big picture that kept me motivated was the idea of building websites for myself. Now, I can easily create a website. This big picture has evolved. Building things is great, and programming gives you the ability to do so. However, building useful, reliable things is what I'm striving for now. To achieve that, I must hone my craft and improve. I know I'm still far from my goal, but I'll continue working to get better every day. </p>
 
  </details> 
  <hr /> 
