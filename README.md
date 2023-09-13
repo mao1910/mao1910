@@ -118,6 +118,571 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Tips for Acing Technical Interviews: Lessons from Both Sides of the Table](https://dev.to/pacheco/tips-for-acing-technical-interviews-lessons-from-both-sides-of-the-table-5262) 
+ <details><summary>Article</summary> <p>Preparing for a technical interview can be challenging, but there are a few things you can do to increase your chances of success. As someone who has conducted many technical interviews, I've learned some valuable lessons that I believe can help interviewees prepare for successful interviews. In this blog post, I'll be sharing three key tips for interviewees.</p>
+
+<h2>
+  
+  
+  Preparation is Essential
+</h2>
+
+<p>Preparation is key when it comes to tech interviews. This includes researching the company, the role you're interviewing for, and the technologies you'll be working with. It's also important to practice your technical skills by working on projects, completing coding challenges, and reviewing common interview questions. Additionally, make sure to prepare questions to ask your interviewer. This not only shows your interest in the company and role, but also gives you the opportunity to learn more about the company culture, team dynamics, and potential growth opportunities.</p>
+
+<p>To have even more chances of success when it comes to preparation, keep in mind that there are huge differences in interview formats depending on the size of the company you are applying to. </p>
+
+<h2>
+  
+  
+  Differences in Interview Formats and Questions
+</h2>
+
+<p>It's important to note that the interview format and questions can vary widely depending on the size and type of company you're interviewing with. Startups, mid-size companies, and FANGs (Facebook, Amazon, Netflix, Google) all have different approaches to interviewing.</p>
+
+<h3>
+  
+  
+  Startups
+</h3>
+
+<p>Startups often have a more informal interview process and may focus more on cultural fit than technical skills. You may be asked to complete a coding challenge or technical task, but the interview may also include more casual conversations about your background, interests, and values. Startups may also be more likely to ask behavioral questions and assess your problem-solving skills.</p>
+
+<p>Another important factor is that startups are usually more focused on specific skills, like a specific language or set of frameworks. In this case, if you are applying for a job on a startup it is recommended to check the stack they use and focus your studies on those topics.</p>
+
+<h3>
+  
+  
+  Mid-Size Companies
+</h3>
+
+<p>Mid-size companies may have a more formal interview process, but still place a strong emphasis on cultural fit. They may also have a mix of technical and behavioral questions and may ask you to complete coding challenges or whiteboard exercises. Mid-size companies may also assess your ability to work collaboratively and communicate effectively.</p>
+
+<p>For the preparation steps, it is worth it to keep in mind that mid-size companies are somewhat similar to startups in that they may ask you questions more focused on a specific language or framework. On the other hand, they will also ask you algorithm-like questions so it is important to practice common algorithms.</p>
+
+<p>Another important thing to keep in mind is that, as a growing company, they may also be facing challenges with scalability and possibly database performance, so it is interesting to review common database performance improvement techniques as well as scalability strategies.</p>
+
+<p>Great resources to understand these topics are the books: <code>Designing Data-intensive Applications by Martin Kleppmann</code> and <code>System Design Interview 1 and 2</code>  </p>
+
+<h3>
+  
+  
+  FANGs
+</h3>
+
+<p>FANGs often have a rigorous and structured interview process that heavily emphasizes technical skills. You can expect multiple rounds of interviews, including coding challenges, whiteboard exercises, and technical discussions with multiple interviewers. FANGs may also ask behavioral questions, but the focus is typically on assessing your technical abilities and problem-solving skills.</p>
+
+<p>In this case, you should focus most of your time on algorithm questions and solve the questions on <code>Leetcode</code> since they are very close to what is asked.</p>
+
+<p>System design questions are also very heavy and it is recommended that you practice designing and presenting it. For this topic, I recommend resources like <a href="https://bytebytego.com/">ByteByteGo</a>.</p>
+
+<p>The process on FANGs is very heavy, so if that is your goal I suggest you practice a lot and even find some friends to do some mock interviews together.</p>
+
+<p>In summary, it's important to understand the differences in interview formats and questions between startups, mid-size companies, and FANGs. By researching the company and preparing accordingly, you can increase your chances of success in the interview process. Remember to focus on communication skills, preparation, and honesty, and approach the interview with confidence and a willingness to learn and grow.</p>
+
+<h2>
+  
+  
+  Communication is Key
+</h2>
+
+<p>While technical skills are important, communication skills are just as crucial in tech interviews. Being able to articulate your ideas and communicate effectively with your interviewer can demonstrate your abilities and potential as a candidate. Even if you don't know the answer to a particular question, being able to explain your reasoning and thought process can show that you have a strong foundation of knowledge and are capable of learning quickly.</p>
+
+<p>As most of the interviews nowadays are online, a quick tip I can give you is to write a script to facilitate remembering things. Even if it is related to your skills and experience, when we are under pressure it is very hard to articulate well while remembering things and considering the best answers.<br>
+You are often going to be asked to talk about specific situations in your experience. It can be related to dealing with conflicts, deadlines, bad decisions and much more. Following the tip above, you could also keep a cheat sheet of the best personal stories of your experience. Further, I recommend you to follow the STAR (Situation, Task, Action and Result) method when answering these questions, it has been proven a very efficient method to express your experience and your hability to deal with certain situations.</p>
+
+<h3>
+  
+  
+  Honesty is the Best Policy
+</h3>
+
+<p>It can be tempting to exaggerate your skills or experiences during a tech interview, especially if you feel like you're not fully qualified for the position. However, being dishonest or misleading during an interview can have serious consequences. If you're hired for a role that you're not fully qualified for, it can lead to frustration and disappointment for both you and the company. Additionally, if you're caught in a lie during the interview process, it can damage your reputation and potentially harm future job prospects. Instead of trying to fake your way through an interview, be honest about your skills and experiences, and focus on how you can learn and grow in the role.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In conclusion, technical interviews can be challenging, but with the right preparation, communication skills, and honesty, you can increase your chances of success. Remember to research the company, understand the differences in interview formats, and practice your technical skills and communication skills. By following these tips, you'll be well on your way to acing your next tech interview.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [React Native Error: A navigator cannot contain multiple 'Screen' components with the same name ...](https://dev.to/emmyjaff/react-native-error-a-navigator-cannot-contain-multiple-screen-components-with-the-same-name--e7m) 
+ <details><summary>Article</summary> <p>Have you ever come across this error in the React Native journey? Here's a quick explanation and a resolution concept, then a basic approach with this concept to resolve this error.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Ma0cCihZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s0emqkej76exq3ha1f56.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ma0cCihZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s0emqkej76exq3ha1f56.png" alt="React Native duplicate screen error on iOS emulator" width="800" height="1734"></a></p>
+
+<h1>
+  
+  
+  1 understanding the error message and the source of the error...
+</h1>
+
+<p>Interestingly, this error logs a vivid description of what the problem is and a list of possible locations that caused this problem. It's like a nested tree to the path for this very error.<br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--stOb0WhD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dxr728fp58at9dp37neu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--stOb0WhD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dxr728fp58at9dp37neu.png" alt="React Native duplicate screen error" width="800" height="254"></a></p>
+
+<p><em><strong>Notice the error message in the terminal and see the explicit message.</strong></em><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code> ERROR  Error: A navigator cannot contain multiple 'Screen' components with the same name (found duplicate screen named 'Message')
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ctfjazdh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/en731qoatq6m4l62qg7w.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ctfjazdh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/en731qoatq6m4l62qg7w.png" alt="React Native duplicate screen error" width="800" height="254"></a></p>
+
+<p>For my own case study, the screen duplicated is the "Message" screen. Follow the texts marked with red</p>
+
+<p>And the source is the <em>BottomTabNavigation</em>. Follow the text marked with blue.</p>
+
+<p>This is the same approach to understanding the errors you find, just read the error messages a little more, and this is the case with a ton of other errors.</p>
+
+<h1>
+  
+  
+  2 What is this error saying?
+</h1>
+
+<p>Simply, that a particular screen is created twice in the navigation.</p>
+
+<h1>
+  
+  
+  3 Investigating
+</h1>
+
+<p>search through your root cause, for me, you've guessed it right, the <strong>BottomTabNavigation</strong> component.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--iR5dkIm5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/808cp108c4no9f3b3o8q.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--iR5dkIm5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/808cp108c4no9f3b3o8q.png" alt="code snippet for BottomTabNavigation" width="453" height="855"></a></p>
+
+<h1>
+  
+  
+  4 Fixing
+</h1>
+
+<p>At this point, ** <em>remove the duplicate</em> **  and hurrah!!!.<br>
+You're done.<br>
+Problem solved.</p>
+
+<p>Stay tuned for more articles like this, as we go through and debug some bugs and some errors in our day to day development. Both simple and complex bugs.<br>
+Cheers!!😊</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Analyzing data accurancy with Puppeteer and Axios( example: book prices )](https://dev.to/qa1980/analyzing-book-prices-with-puppeteer-and-axios-example-book-prices--4hbm) 
+ <details><summary>Article</summary> <div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>const puppeteer = require("puppeteer");
+const axios = require("axios");
+
+const main = async () =&gt; {
+  // Launch a new browser instance
+  const browser = await puppeteer.launch({
+    headless: false,
+    defaultViewport: null,
+  });
+
+  // Create a new page
+  const page = await browser.newPage();
+
+  // Navigate to the book product details page
+  const baseUrl = "https://www.example.com/book-top-100?p=";
+
+  // define the number of pages to iterate through.
+  const pageCount = 2;
+
+  // Create a new array for the results
+  const results = [];
+
+  //Iterate through each page
+  for (let i = 1; i &lt; pageCount; i++) {
+    //construct the URL for the current page
+    const currentUrl = `${baseUrl}${i}`;
+    //navigate to the page
+    await page.goto(currentUrl);
+
+    // get all the product listing urls
+    const urls = await page.$eval("li.item.product &gt; div &gt; a", (links) =&gt;
+      links.map((link) =&gt; link.href)
+    );
+
+    for (const url of urls) {
+      await page.goto(url);
+
+      // Get all the swatches for the book
+      const swatchElements = await page.$("p.label");
+
+      // Loop through each swatch and click on it to show the price and SKU
+      for (let swatchElement of swatchElements) {
+        await swatchElement.click();
+
+        // Extract the price and SKU
+        const sku = await page.$eval(".col.data.isbn_13", (elem) =&gt;
+          elem.textContent.trim()
+        ); // extract the SKU for each selection of format.
+
+        let priceText;
+        const swatchElementType = await swatchElement.evaluate((el) =&gt;
+          el.textContent.trim()
+        );
+        if (
+          swatchElementType.includes("Audiobook") ||
+          swatchElementType.includes("eBook")
+        ) {
+          priceText = await page.$eval(
+            ".price-swatch span.price, .normal-price",
+            (prices) =&gt; prices.map((price) =&gt; price.textContent.trim())
+          );
+        } else if (
+          swatchElementType.includes("Paperback") ||
+          swatchElementType.includes("Hardcover")
+        ) {
+          priceText = await page.$eval(
+            "p.old-price, span.old-price",
+            (prices) =&gt; prices.map((price) =&gt; price.textContent.trim())
+          );
+        }
+
+        const price = priceText.flatMap((price) =&gt;
+          price.split("$").filter(Boolean)
+        ); // extract the numerical price values for this product
+
+        // Make an API call to API to extract the price values for this product then compare them against the web prices.
+        const api_book = `https://api.example.com/products/${sku}`;
+        const response = await axios.get(api_book);
+
+        const apiPrice = response.data[0].price_amount;
+        const webPrice = Number.parseFloat(price);
+
+        console.log(
+          "this the api price=" + apiPrice + " and " + "web price=" + price
+        );
+        if (webPrice == apiPrice) {
+          console.log(`Price for SKU ${sku} matches in web and api price`);
+        } else {
+          console.log(`Price for SKU ${sku} does not match in web and API`);
+          // Add the results to the array
+          results.push({
+            price,
+            apiPrice,
+            sku,
+          });
+        }
+      }
+    } // end url loop
+  }
+  //Append The results to a string with new lines
+  const resultString = results
+    .map(
+      (result) =&gt;
+        `Price: ${result.price}\nAPI Price: ${result.apiPrice}\nSKU: ${result.sku}\n`
+    )
+    .join("\n");
+  // Close the browser instance
+  await browser.close();
+
+  // Write the results to a JSON file
+  const fs = require("fs");
+  fs.writeFileSync("book-prices-details.json", JSON.stringify(resultString));
+};
+
+main();
+
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Introduction:</strong><br>
+In today's digital age, it's essential for businesses to stay competitive, especially when it comes to pricing their products. One way to do this is by regularly comparing your product prices with those of your competitors. This blog post will explain the purpose of a Puppeteer script that automates the process of extracting book prices from a website and comparing them with prices from an API.</p>
+
+<p><strong>Puppeteer and Axios:</strong><br>
+Puppeteer is a headless browser automation tool that allows you to control and interact with web pages programmatically. Axios is a popular JavaScript library for making HTTP requests. Together, they provide a powerful toolset for web scraping and data extraction.</p>
+
+<p><strong>Script Overview:</strong><br>
+The provided Puppeteer script has several key objectives:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>1.Launch a headless web browser using Puppeteer.
+2.Navigate to a specific website that lists the top 100 books.
+3.Iterate through multiple pages of book listings.
+4.Extract the URLs of individual book product pages.
+5.For each book product page, extract the price and SKU information for different book formats (e.g., Audiobook, eBook, Paperback, Hardcover).
+6.Make API calls to a price comparison service to fetch the correct prices for the books.
+7.Compare the web prices with the API prices to identify any discrepancies.
+8.Store the results in a structured format (JSON file).
+</code></pre>
+
+</div>
+
+<p><strong>Conclusion:</strong><br>
+This Puppeteer and Axios script automates the process of comparing book prices between a website and an API, helping businesses make informed pricing decisions. It demonstrates the power of web scraping and data extraction with Puppeteer and the ease of making API requests with Axios. By regularly running such scripts, businesses can stay competitive and ensure their pricing remains competitive in the market.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [This Week In React #159: Bun, Static Hermes, Next.js, React Aria Components, Next Nav, visionOS, Reanimated, Skia Fonts...](https://dev.to/sebastienlorber/this-week-in-react-159-bun-static-hermes-nextjs-react-aria-components-next-nav-visionos-reanimated-skia-fonts-3k32) 
+ <details><summary>Article</summary> <p>Hi everyone!</p>
+
+<p>This week, the runtimes are in the spotlight. Of course, we'll be talking about Bun and Static Hermes.</p>
+
+<p>I'll spare you the heated debates on Twitter this week 😅 let's stick to positive vibes.</p>
+
+<p>For React experts, check out the <a href="https://reactadvanced.com/?utm_source=email&amp;utm_medium=thisweekinreact">React Advanced</a> conf in London from 20 to 23 October (<a href="https://ti.to/gitnation/react-advanced-london-2023/discount/REACT10">-10% - code "REACT10"</a>).</p>
+
+
+
+
+<p>💡 Subscribe to the <a href="https://thisweekinreact.com?utm_source=dev_crosspost">official newsletter</a> to receive an email every week!</p>
+
+<p><a href="https://thisweekinreact.com?utm_source=dev_crosspost"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gTyULDGg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/img/TWIR_POST.png" alt="banner" width="800" height="373"></a></p>
+
+
+
+
+<h2>
+  
+  
+  💸 Sponsor
+</h2>
+
+<p><a href="https://getstream.io/video/voice-calling/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ELqYdSVr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/153/stream.jpg" alt="Enterprise Grade APIs for Feeds, Chat, &amp; Video!" width="800" height="418"></a></p>
+
+<p><a href="https://getstream.io/video/docs/react/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>Enterprise Grade APIs for Feeds, Chat, &amp; Video!</strong></a></p>
+
+<p>Stream is the maker of enterprise-grade <strong>APIs</strong> and <strong>SDKs</strong> that help product and engineering teams solve two common problems at scale: in-app chat and social activity feeds.</p>
+
+<p>With Stream, developers can integrate any type of messaging or feed experience into their app in a fraction of the time it would take to build these features from scratch. Stream Chat makes it easy for developers to integrate rich, real-time messaging into their applications.</p>
+
+<p>Stream provides robust client-side SDKs for popular frameworks such as <a href="https://getstream.io/chat/sdk/react/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>React</strong></a>, <a href="https://getstream.io/chat/sdk/react-native/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>React-Native</strong></a>, Expo, Flutter, Android, Angular, Compose, Unreal, and iOS.<br>
+Unlock enterprise-grade features, functions, and UI components completely free for your startup or side project with the Maker Account.</p>
+
+<p><a href="https://getstream.io/video/docs/react/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>Try the new React Video tutorial!</strong></a></p>
+
+
+
+
+<h2>
+  
+  
+  ⚛️ React
+</h2>
+
+<p><a href="https://bun.sh/blog/bun-v1.0"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wnT1Zynd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/bun.jpg" alt="Bun 1.0" width="800" height="341"></a></p>
+
+<p><a href="https://bun.sh/blog/bun-v1.0"><strong>Bun 1.0</strong></a></p>
+
+<p>It's impossible to miss it this week: Bun has just been released as stable v1.0. This news isn't directly related to React, but it will undoubtedly affect all React developers out there at some point.</p>
+
+<p>Bun is a complete toolchain for JavaScript and TypeScript based on Webkit and written in Zig. It is a new ultra-fast alternative to a whole host of front-end tools we use today: Node.js, npx, Babel, esbuild, swc, webpack, Jest, Vitest, npm, Yarn, pnpm... The benchmarks are super impressive and definitively real.</p>
+
+<p>Its compatibility with the existing tools and its mixed ESM/CJS support make it quite easy to adopt as a drop-in replacement. Bun is generally able to run your code as is, without any changes (otherwise it's <a href="https://twitter.com/jarredsumner/status/1700497869160268155">🐦 considered a bug</a>). React frameworks like Next.js, Remix and Astro are already supported. Using it as a replacement for npm/Yarn/pnpm or Jest/Vitest is probably a good entry point and not too risky.</p>
+
+<p><strong>Other useful links:</strong></p>
+
+<ul>
+<li>📣 <a href="https://vercel.com/changelog/bun-install-is-now-supported-with-zero-configuration">Vercel - Bun install is now supported with zero configuration</a>
+</li>
+<li>👀 <a href="https://github.com/react-native-community/cli/pull/2073">React-Native CLI PR - support Bun in init command</a>
+</li>
+<li>🐦 <a href="https://twitter.com/jarredsumner/status/1701499357080736047">Bun console supports JSX</a>
+</li>
+<li>🐦 <a href="https://twitter.com/notbrent/status/1701044351177244790">Bun + create-expo-app = 12x faster init</a>
+</li>
+<li>📜 <a href="https://adventures.nodeland.dev/archive/my-thoughts-on-bun/">Matteo Collina - My thoughts on Bun and other Adventures</a>
+</li>
+<li>📦 <a href="https://github.com/hex2f/marz">Marz - A Fast and Lightweight React Server Components Framework for Bun</a>
+</li>
+<li>🎥 <a href="https://www.youtube.com/watch?v=BsnCpESUEqM">Official launch video - Bun 1.0 is here</a>
+</li>
+<li>🎥 <a href="https://www.youtube.com/watch?v=dWqNgzZwVJQ">Fireship - Bun is disrupting JavaScript land</a>
+</li>
+<li>🎥 <a href="https://www.youtube.com/watch?v=z_66kDwxwBI">Lee Robinson - My thoughts on Bun</a>
+</li>
+</ul>
+
+
+
+
+<ul>
+<li>💸 <a href="https://www.zerotoshipped.com/">Zero To Shipped - Master Fast-Paced Fullstack Development and <strong>Finally</strong> ship that product</a>
+</li>
+<li>🐦 <a href="https://twitter.com/leeerob/status/1701775526459756620">Next.js - Redesigned console output</a>
+</li>
+<li>👀 <a href="https://community.redwoodjs.com/t/react-server-components-rsc/5081/7">RedwoodJS - Support for React Server Actions</a>: limited support for now, server actions need to be put in a separate file.</li>
+<li>👀 <a href="https://react.gg/">React.gg</a> and <a href="https://www.joyofreact.com/">The Joy of React</a>: the 2 most eagerly awaited React courses have just been released!</li>
+<li>📜 <a href="https://pilcrow.vercel.app/blog/nextjs-why">Next.js, just why?</a>
+</li>
+<li>📜 <a href="https://hasura.io/blog/scaling-frontend-app-teams-using-relay/">Scaling frontend app teams using Relay</a>
+</li>
+<li>📜 <a href="https://reacthandbook.dev/automated-testing">A Wide View of Automated Testing in React Apps</a>
+</li>
+<li>📜 <a href="https://www.jussivirtanen.fi/writing/styling-react-select-with-tailwind">Styling React Select with Tailwind</a>
+</li>
+<li>📜 <a href="https://www.40seas.com/blog/overcoming-application-complexity-with-customized-flows">Overcoming application complexity with customized Flows</a>
+</li>
+<li>📜 <a href="https://storybook.js.org/blog/automatic-visual-tests-plus-2x-faster-react-ts/">Automatic visual tests in Storybook, plus 2.2x faster build times for React+TS</a>
+</li>
+<li>📜 <a href="https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/">Painting with Math: A Gentle Study of Raymarching</a>
+</li>
+<li>📦 <a href="https://react-spectrum.adobe.com/releases/2023-09-07.html">React Aria Components - Now in beta</a>
+</li>
+<li>📦 <a href="https://github.com/ariakit/ariakit/releases/tag/@ariakit/react@0.3.0">Ariakit React 0.3</a>
+</li>
+<li>📦 <a href="https://github.com/premieroctet/next-admin">Next Admin - Full-featured admin for Next.js and Prisma</a>
+</li>
+<li>📦 <a href="https://www.next-nav.com/">Next Nav - VSCode extension to navigate and create Next.js routes</a>
+</li>
+<li>👥 <a href="https://2023.reactjsday.it/">reactjsday</a> (Verona 🇮🇹, Octobre 27) is offering us <a href="https://ti.to/grusp/reactjsday-2023/discount/media_TWIR">-10% - code "media_TWIR"</a>
+</li>
+<li>👥 <a href="https://reactadvanced.com/?utm_source=email&amp;utm_medium=thisweekinreact">React Advanced</a> (London 🇬🇧, Octobre 20-23) is offering us <a href="https://ti.to/gitnation/react-advanced-london-2023/discount/REACT10">-10% - code "REACT10"</a>
+</li>
+</ul>
+
+
+
+
+<h2>
+  
+  
+  💸 Sponsor
+</h2>
+
+<p><a href="http://highlight.io"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nnz3y05I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/highlight.jpg" alt="highlight.io - The open-source, full-stack Monitoring Platform" width="800" height="418"></a></p>
+
+<p><a href="http://highlight.io"><strong>highlight.io - The open-source, full-stack Monitoring Platform</strong></a></p>
+
+<p><a href="http://highlight.io"><strong>highlight.io</strong></a> is a truly open-source Session Replay, Error Monitoring, and Logging platform for your next project.</p>
+
+<p>Don't waste time trying to guess why a bug occurs. Instead, use highlight and get a clear picture of whatever happens in the browser and on your server-side application.</p>
+
+<p>It is super easy to install in your favorite framework: <a href="https://www.highlight.io/docs/getting-started/client-sdk/reactjs">React.js,</a> <a href="https://www.highlight.io/docs/getting-started/fullstack-frameworks/next-js">Next.js,</a> <a href="https://www.highlight.io/docs/getting-started/fullstack-frameworks/remix">Remix</a>, or anything else!</p>
+
+
+
+
+<h2>
+  
+  
+  📱 React-Native
+</h2>
+
+<p><a href="https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--x18BWimF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/hermes.jpg" alt="Static Hermes" width="800" height="450"></a></p>
+
+<p><a href="https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement"><strong>Static Hermes</strong></a></p>
+
+<p>Static Hermes was announced at React-Native EU last week. I wasn't there, so I'm trying to explain what I understood by reading the slides, as the video isn't on YouTube yet.</p>
+
+<p>Static Hermes is an experimental project that allows you to optionally compile some of your TypeScript (or Flow) code into native code. This offers significant performance gains (x10-20) compared to Hermes usual mode based in bytecode interpretation. It also enables easy integration with native APIs directly from your TypeScript code (zero-cost FFI, x15-80 faster than a JSI wrapper).</p>
+
+<p>To enable this, TypeScript must first become a "sound" language. Static Hermes will modify the semantics of JavaScript to ensure that the declared types matches the runtime types. This slide explains the concept well:</p>
+
+<p><a href="https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement?slide=14"><img src="/emails/issues/159/hermes2.jpg" alt="Static Hermes makes TypeScript sound"></a></p>
+
+<p>A very interesting idea that could maybe one day have an impact outside the React-Native ecosystem?</p>
+
+<p><strong>Other useful links:</strong></p>
+
+<ul>
+<li>📜 <a href="https://tmikov.blogspot.com/2023/09/how-to-speed-up-micro-benchmark-300x.html">How to speed up a micro-benchmark by 300x without cheating</a>
+</li>
+<li>🐦 <a href="https://twitter.com/mdj_dev/status/1700424775116493053">Plan to support Over-The-Air updates</a>
+</li>
+</ul>
+
+
+
+
+<ul>
+<li>💸 <a href="https://www.blitz-rn.com/">Blitz - Build React Native Apps Faster for iOS, Android, and Web!</a>
+</li>
+<li>🐦 <a href="https://twitter.com/thymikee/status/1700100221940662684">There's more than 1000 devs using React Native at Microsoft</a>
+</li>
+<li>🐦 <a href="https://twitter.com/o_kwasniewski/status/1701626162521190688">React-Native running natively on Apple Vision Pro simulator demo</a>
+</li>
+<li>🧵 <a href="https://twitter.com/DelphineBugner/status/1700077346852622504">React-Native EU Sketches</a>
+</li>
+<li>📜 <a href="https://www.callstack.com/blog/introducing-e2e-tests-to-react-native-core">Introducing E2E tests to React Native Core</a>
+</li>
+<li>📜 <a href="https://blog.expo.dev/expo-launch-party-recap-697d7b7739e8">Expo Launch Party Recap</a>
+</li>
+<li>📦 <a href="https://github.com/microsoft/react-native-macos/releases/tag/v0.72.0">React-Native macOS 0.72</a>
+</li>
+<li>📦 <a href="https://github.com/software-mansion/react-native-reanimated/releases/tag/3.5.0">Reanimated 3.5.0 - Windows/macOS support, createWorkletRuntime, reduceMotion...</a>
+</li>
+<li>📦 <a href="https://github.com/animate-react-native/stagger">Stagger - Cross-platform Reanimated stagger component</a>
+</li>
+<li>📦 <a href="https://github.com/infinitered/flame">Flame AI - CLI for Interactive AI-Powered React Native Upgrades</a>
+</li>
+<li>📦 <a href="https://shopify.github.io/react-native-skia/docs/text/fonts/">React-Native-Skia - Font Manager, support for system and custom fonts</a>
+</li>
+<li>📦 <a href="https://github.com/bufgix/react-native-secure-window">react-native-secure-window - Hide react native views when capturing screen</a>
+</li>
+<li>📦 <a href="https://github.com/tamagui/tamagui/releases/tag/v1.62.0">Tamagui 1.62 - Zero config support</a>
+</li>
+<li>🎙️ <a href="https://reactnativeradio.com/episodes/rnr-274-react-native-ci-automated-deployments">React Native Radio 274 - React Native CI &amp; Automated Deployments</a>
+</li>
+</ul>
+
+
+
+
+<h2>
+  
+  
+  🔀 Other
+</h2>
+
+<ul>
+<li>👀 <a href="https://nodejs.org/en/blog/announcements/nodejs16-eol">Node.js 16 End-of-Life</a>
+</li>
+<li>📜 <a href="https://beta.tauri.app/blog/roadmap-to-tauri-2-0/">Roadmap to Tauri 2.0 - The Mobile Update</a>
+</li>
+<li>📜 <a href="https://kyleshevlin.com/typescript-prevents-bad-things-and-good-things">Typescript Prevents Bad Things... and Good Things</a>
+</li>
+<li>📜 <a href="https://deno.com/blog/npm-on-deno-deploy">Announcing native npm support on Deno Deploy</a>
+</li>
+<li>📜 <a href="https://www.macarthur.me/posts/more-aggressive-cache-headers">Your Cache Headers Could Probably be More Aggressive</a>
+</li>
+<li>📜 <a href="https://www.totaltypescript.com/are-big-projects-ditching-typescript">Are Big Projects Ditching TypeScript?</a>
+</li>
+<li>📜 <a href="https://www.builder.io/blog/25-plus-ui-component-libraries">An Overview of 25+ UI Component Libraries in 2023</a>
+</li>
+<li>📜 <a href="https://snyk.io/fr/blog/javascript-runtime-compare-node-deno-bun/">Node.js vs. Deno vs. Bun: JavaScript runtime comparison</a>
+</li>
+<li>📜 <a href="https://vercel.com/blog/how-we-continued-porting-turborepo-to-rust">Vercel - Using Zig in our incremental Turborepo migration from Go to Rust</a>
+</li>
+<li>📦 <a href="https://developer.chrome.com/en/blog/new-in-chrome-117/">Chrome 117 - Array grouping, CSS subgrid, transition-behavior...</a>
+</li>
+<li>📦 <a href="https://dev.to/antoinecoulon/introducing-skott-the-new-madge-1bfl">Skott - Devtool to analyze, search and visualize dependency graphs from JS, TS and Node.js</a>
+</li>
+<li>📦 <a href="https://github.com/ealush/vest/releases/tag/vest%405.0.1">Vest 5.0 - Declarative validations framework</a>
+</li>
+</ul>
+
+
+
+
+<h2>
+  
+  
+  🤭 Fun
+</h2>
+
+<p><a href="https://twitter.com/sebastienlorber/status/1701293733822541931"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WuiOLNhm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/meme.jpg" alt="alt" width="682" height="967"></a></p>
+
+<p>See ya! 👋</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Create a JavaScript Tool to Generate Acronym from User Input](https://dev.to/codewithshan/create-a-javascript-tool-to-generate-acronym-from-user-input-2ib7) 
  <details><summary>Article</summary> <p>The code provided is a JavaScript function called getAcronym that takes a string of words as input and returns the acronym formed from the first letter of each word.</p>
 
@@ -146,498 +711,6 @@
 <p>In the example usage, the getAcronym function is called with the input string “<strong>Fear of missing out</strong>”. The resulting acronym “<strong>FOMO</strong>” is then logged to the console using console.log(acronym).</p>
 
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dn5PlvoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5bbba42pr3q4x252hgrw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dn5PlvoQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5bbba42pr3q4x252hgrw.png" alt="Generate Acronym from User Input" width="800" height="703"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Tech Events are NOT as cool as you think (from an organizer perspective)](https://dev.to/k8adev/tech-events-are-not-as-cool-as-you-think-from-an-organizer-perspective-2b70) 
- <details><summary>Article</summary> <p>Hello everyone! </p>
-
-<p>My name is <strong>Keit</strong>, aka <a href="https://twitter.com/k8adev">@k8dev</a>, I'm Brazilian and, besides being a programmer, I've been organizing technology events for 8 years. </p>
-
-<p>I'm currently responsible for <strong>several technology</strong> events, one of which is the renowned <strong>FRONTIN Sampa</strong>, one of the largest and most <strong>traditional</strong> technology events here in <strong>Brazil</strong>, which has a great influence on the <strong>dev community</strong>. This event takes place <strong>annually in July</strong>, in the city of <strong>São Paulo</strong>, where we cover a wide variety of topics related to front-end development and related areas.</p>
-
-<p>However, we face significant <strong>challenges</strong>, as many people <strong>don't recognize</strong> the <strong>value</strong> of this type of event, and this isn't just <strong>limited</strong> to the developer <strong>community</strong>. If I had to <strong>list</strong> my <strong>main frustrations</strong> as an <strong>organizer</strong>, they would be the following:</p>
-
-<ul>
-<li>
-<strong>Difficulties</strong> in securing sponsorship.</li>
-<li>
-<strong>Maintaining engagement</strong> before and after the event.</li>
-<li>
-<strong>Managing partnerships</strong> and communities.</li>
-</ul>
-
-<p>The event <strong>FRONTIN Sampa</strong> has always been an <strong>iconic event</strong>, even before I took over the organization in <strong>2016</strong>. However, it's important to note that without adequate <strong>financial resources</strong>, it's <strong>impossible to provide a high-quality environment</strong>, <strong>good speakers</strong> and a <strong>competent team</strong> to hold an event of this size. Here on this side of the globe, <strong>companies even show interest</strong> in participating in events, but the <strong>offered sponsorship</strong> values they want to give as sponsorship often <strong>barely cover the costs</strong> they have with <strong>their own infrastructure</strong> on the day of the event.</p>
-
-<p>As an example, the last FRONTIN Sampa generated approximately <strong>100,000.00 BRL (20,368.26 USD) in sales</strong>, while <strong>sponsorships only amounted to around 12,000.00 BRL (2,444.04 USD)</strong>, without taking barter into account. Exchanges alone are <strong>often unequal</strong> to what we deliver during the event and on social media. Even with excellent sales, if we do a <strong>quick calculation</strong>, it's clear that the <strong>equation doesn't add up</strong>. Organizing events like <strong>FRONTIN Sampa</strong> requires not only resources for the day of the event, but  there are <strong>efforts and resources</strong> needed before and after the event that are usually not accounted for. Here at FRONTIN, the company I set up to manage events, we have a number of needs such as:</p>
-
-<ul>
-<li>Social media management</li>
-<li>Graphic design</li>
-<li>Sales</li>
-<li>Content production</li>
-<li>Marketing</li>
-<li>Subscriptions to services such as Mailchimp, Google Workspace, Figma, Canvas, among others</li>
-<li>Event management</li>
-<li>Partnership and sponsorship management</li>
-<li>Public relations</li>
-<li>Accounting management</li>
-</ul>
-
-<p>And so on and so forth.</p>
-
-<p>It's <strong>almost a year of planning and execution</strong>, with <strong>monthly costs</strong> that are <strong>impossible</strong> to meet <strong>without sponsorship</strong> or personal investment. And yes! Sometimes the organizers <strong>have to take money out of their own pockets</strong> because, once again, <strong>the equation doesn't add up</strong>. We're talking about around 10,000.00 BRL or more to maintain the structure and team needed to produce the event, monitor social media, manage the community, communicate and other activities.</p>
-
-<p>We're talking about around <strong>170,000.00 BRL or 34,000 USD</strong> to produce FRONTIN Sampa this year!</p>
-
-<p>On the other hand, we have an <strong>audience</strong> who often <strong>complains about the ticket prices</strong>. We <strong>always</strong> try to offer extremely <strong>affordable tickets</strong> — which are usually <strong>not compatible</strong> with an <strong>event</strong> of such <strong>high standards</strong>, specially in the middle of a recession. We implemented <strong>strategies</strong> such as <strong>selling tickets</strong> in advance and <strong>offering half-price</strong> tickets to make the event as accessible as possible. However, it's not uncommon to come across people who don't recognize the hard work behind organizing the event and make unconstructive criticisms publicly.</p>
-
-<p>When it comes to <strong>partnerships</strong>, <strong>communities</strong> and tech <strong>influencers</strong>, many of them are more <strong>interested in the coupons and free tickets</strong> they receive <strong>than in actually helping to publicize</strong> events and build an <strong>environment</strong> where people can <strong>learn</strong>, <strong>share</strong> and <strong>have fun</strong>. What's more, managing these partnerships is often complicated, as it involves an exchange relationship. Once again, <strong>the lack of financial</strong> resources affects our ability to give proper attention to these partnerships and to follow up on the fulfillment of obligations on both sides.</p>
-
-<p>This year has been <strong>particularly challenging</strong>, with <strong>few financial resources</strong> and <strong>many</strong> events to be held to meet the <strong>community's expectations</strong>. It was so <strong>difficult</strong> that I was <strong>forced</strong> to put practically <strong>ALL MY MONEY</strong> into FRONTIN to <strong>ensure</strong> that all the <strong>events took place</strong> even though I didn't raise <strong>enough funds</strong>. This has <strong>made me rethink several times</strong> whether it is <strong>worth continuing to produce these events</strong>.</p>
-
-<p>I'm looking <strong>forward to hearing the perspective</strong> of other people who <strong>actively or voluntarily work</strong> on <strong>tech events</strong>. I'd love to talk to you and maybe find some <strong>motivation</strong> to keep going, or even companies to be joining us in the next event. I believe that our work is fundamental to <strong>creating an environment</strong> where people can connect and I truly don't want to give up.</p>
-
-<p>Thank you!</p>
-
- </details> 
- <hr /> 
-
- #### - [TinyMCE Rich Text Editor: Multi-Root vs Inline Editing](https://dev.to/tinymce/tinymce-rich-text-editor-multi-root-vs-inline-editing-7hh) 
- <details><summary>Article</summary> <p>TinyMCE is a familiar and versatile rich text editor that’s known for its ease of use. For more than two decades dev’s have used it out-of-the-box (or customized) because it can be integrated into web apps in many different ways. The two integration modes we’ll cover in this article are<a href="https://www.tiny.cloud/docs/tinymce/6/ie-template-creation/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog#multi-root-editing-and-document-template-creation"> Multi-Root editing</a> and <a href="https://www.tiny.cloud/docs/tinymce/6/use-tinymce-inline/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog">Inline editing</a>.</p>
-
-<p>As a developer building web applications, understanding the capabilities and limitations of each mode is key to choosing the right one to suit your needs. Let's do a deep dive into how they compare.</p>
-
-<h3>
-  
-  
-  Multi-Root Editing
-</h3>
-
-<p><a href="https://www.tiny.cloud/tinymce/features/editable-document-sections/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog">Multi-root editing</a>  lets you have multiple TinyMCE editor instances on a single page. Each instance renders in its own iframe, isolating it from the rest of the page.</p>
-
-<p>For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">tinymce</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#editor1</span><span class="dl">'</span>
-<span class="p">});</span>
-
-<span class="nx">tinymce</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span> 
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#editor2</span><span class="dl">'</span> 
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This approach enables greater control and customization since you can configure each editor separately:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>
-<span class="nx">tinymce</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#editor1</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">plugins</span><span class="p">:</span> <span class="dl">'</span><span class="s1">lists table</span><span class="dl">'</span> <span class="c1">// Simple formatting for content area</span>
-<span class="p">});</span>
-
-<span class="nx">tinymce</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#editor2</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">plugins</span><span class="p">:</span> <span class="dl">'</span><span class="s1">paste code</span><span class="dl">'</span> <span class="c1">// Code editing features for sidebar</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>With multi-root you can also build reusable templates. For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">tinymce</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#templateEditor</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">content</span><span class="p">:</span> <span class="nx">templateHTML</span><span class="p">,</span> 
-  <span class="na">editable_root</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">editable_class</span><span class="p">:</span> <span class="dl">'</span><span class="s1">editable</span><span class="dl">'</span> 
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Where <code>templateHTML</code> contains locked and editable sections. Include the CSS class configured with the <code>editable_class</code> option in your HTML to enforce an editable section. Users can then create new documents based on your templates.</p>
-
-<p>Multi-root is optimal for:</p>
-
-<ul>
-<li>Complex pages with multiple editable sections</li>
-<li>Granular editor customization</li>
-<li>Building reusable templates</li>
-<li>Isolating editor instances</li>
-</ul>
-
-<h3>
-  
-  
-  Inline Editing
-</h3>
-
-<p><a href="https://www.tiny.cloud/blog/inline-editor/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog">Inline editing</a> provides distraction-free editing directly on page elements, without iframes. For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">tinymce</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.editable</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">inline</span><span class="p">:</span> <span class="kc">true</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Inline mode delivers seamless <a href="https://www.tiny.cloud/blog/wysiwyg/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog">WYSIWYG</a> – users edit the actual content on the page. The minimalist UI keeps the focus on content creation.</p>
-
-<p>Inline editing is ideal for:</p>
-
-<ul>
-<li>Simple content like blog posts and articles</li>
-<li>Minimal, focused editing</li>
-<li>True WYSIWYG experience</li>
-<li>Distraction-free editor</li>
-</ul>
-
-<p>However, inline mode does have some limitations:</p>
-
-<ul>
-<li>No support for mobile devices</li>
-<li>Lacks certain features like comments</li>
-<li>Only works on block elements like <code>div</code> and <code>p</code>
-</li>
-</ul>
-
-<p>So while inline editing provides a smooth experience for basic needs, multi-root is more full-featured and customizable.</p>
-
-<p>Explore further resources on both modes:</p>
-
-<ul>
-<li><a href="https://www.tiny.cloud/docs/tinymce/6/content-behavior-options/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog#editable_root">Multi-Root Editing documentation</a></li>
-<li><a href="https://www.tiny.cloud/docs/tinymce/6/inline-editor-options/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog">Inline Editing documentation</a></li>
-<li><a href="https://www.tiny.cloud/docs/tinymce/6/ie-template-creation/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog#multi-root-editing-and-document-template-creation">Multi-Root Editing How-to</a></li>
-<li><a href="https://www.tiny.cloud/docs/tinymce/6/use-tinymce-inline/?utm_campaign=devrel_devto_tiny&amp;utm_source=devto&amp;utm_medium=blog">Inline Editing How-to</a></li>
-</ul>
-
-<h3>
-  
-  
-  Choosing the Right Mode
-</h3>
-
-<p>When integrating TinyMCE into a web application, carefully consider which editing mode fits your use case best.</p>
-
-<p>Multi-root brings power and flexibility for complex pages and reusable templates. Inline editing enables seamless distraction-free editing for simple content.</p>
-
-<p>As a developer, experiment with both modes early in development. Choose the optimal TinyMCE integration strategy tailored to your users and their needs. With the right approach, you can deliver the great editing experience that users expect in a modern web app.</p>
-
- </details> 
- <hr /> 
-
- #### - ["Mastering Leadership": CodeNewbie Podcast S25E5](https://dev.to/codenewbieteam/mastering-leadership-codenewbie-podcast-s25e5-pha) 
- <details><summary>Article</summary> <p>In our fifth episode of Season 25 of the CodeNewbie Podcast, <a class="mentioned-user" href="https://dev.to/saronyitbarek">@saronyitbarek</a> talks about overcoming addiction, evolving as a leader, and finding your pathway to your best self with <a href="https://twitter.com/yourCodeCoach">Brian Jenney</a>, Senior Software Engineering Manager at Clorox.</p>
-
-
-<div class="crayons-card c-embed text-styles text-styles--secondary">
-    <a href="https://www.codenewbie.org/podcast/mastering-leadership" rel="noopener noreferrer">
-      codenewbie.org
-    </a>
-</div>
-
-
-<p>Brian is a software engineering manager who transitioned into tech at 30. He is a JavaScript enthusiast who enjoys teaching and mentoring others and runs a business teaching others how to code and accelerate their developer careers.</p>
-
-<ul>
-<li><p><a href="https://podcasts.apple.com/us/podcast/codenewbie/id919219256?i=1000627711000">Listen on Apple Podcasts</a></p></li>
-<li><p><a href="https://open.spotify.com/episode/1mshmSLfjyWJmVZRnKkjLg?si=cf44d1bf06ce4984">Listen on Spotify</a></p></li>
-</ul>
-
-<p>Or find the episode wherever you find your podcasts. </p>
-
-
-
-
-<h3>
-  
-  
-  We will see you next week, happy coding y'all! Love you!
-</h3>
-
-<p>PS: Make sure to follow the CodeNewbie podcast on your chosen platform and leave us a review!</p>
-
- </details> 
- <hr /> 
-
- #### - [Guia de Components - para quem tem pressa!](https://dev.to/aninhapardini/guia-de-components-para-quem-tem-pressa-47n3) 
- <details><summary>Article</summary> <p>Um Shadow Dom como é mais conhecido os componentes no JS Vanilla, são como cápsulas que contém seus elementos com escopo próprio, e que também é possível escolher se quer que ele seja editável ou não variando o seu mode entre “open” ou “closed”.</p>
-
-<h1>
-  
-  
-  Uma base simples
-</h1>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>
-<span class="kd">class</span> <span class="nx">Component</span> <span class="kd">extends</span> <span class="nx">HTMLElement</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">();</span> <span class="c1">// Chamar o construtor da classe pai (HTMLElement)</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span> <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span> <span class="p">});</span>
-
-    <span class="c1">// Criar o elemento h1 dentro da sombra</span>
-    <span class="kd">const</span> <span class="nx">componentRoot</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">h1</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">componentRoot</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// propiedade</span>
-
-    <span class="c1">// Estilizar o componente</span>
-    <span class="kd">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">style</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">style</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`h1 { color: red; }`</span><span class="p">;</span>
-
-    <span class="c1">// Adicionar elementos à sombra</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">componentRoot</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Registrar o elemento personalizado</span>
-<span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="dl">"</span><span class="s2">my-component</span><span class="dl">"</span><span class="p">,</span> <span class="nx">Component</span><span class="p">);</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>Chamando dentro da página:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./src/Components/CardNews.js"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>⚠️ <em>O defer é importante para que o component seja carregado apenas depois que o dom da página se carregue.</em></p>
-
-<p>&lt;———- ————-&gt;</p>
-
-<h1>
-  
-  
-  ✨ Ainda melhor!
-</h1>
-
-<p>Para melhorar e deixar o código do componente <em>mais limpo</em>, você pode seguir algumas práticas e simplificações!</p>
-
-<ol>
-<li>Use <strong>aspas consistentes</strong> para atributos de strings;</li>
-<li>Utilize a notação de <strong>template literals</strong> para melhorar a legibilidade de strings longas;</li>
-<li>Separe o estilo CSS em uma string de template literal;</li>
-<li>Use o <em>build()</em> e <em>styles()</em> para organizar os códigos de construção e estilização;
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>
-<span class="kd">class</span> <span class="nx">ComponentExpert</span> <span class="kd">extends</span> <span class="nx">HTMLElement</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">();</span> <span class="c1">// Chamar o construtor da classe pai (HTMLElement)</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span> <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span> <span class="p">});</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">build</span><span class="p">());</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">styles</span><span class="p">());</span>
-  <span class="p">}</span>
-
-  <span class="nx">build</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">componentRoot</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">componentRoot</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">);</span>
-
-    <span class="kd">const</span> <span class="nx">childDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">childDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">child</span><span class="dl">"</span><span class="p">);</span>
-
-    <span class="kd">const</span> <span class="nx">titleDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">h1</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">titleDiv</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`Hello </span><span class="p">${(</span><span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">)</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
-
-    <span class="kd">const</span> <span class="nx">linkDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">linkDiv</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Link Util</span><span class="dl">"</span><span class="p">;</span>
-    <span class="nx">linkDiv</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">link</span><span class="dl">"</span><span class="p">)</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">https://linkdefault.com.br</span><span class="dl">"</span><span class="p">;</span>
-
-    <span class="nx">childDiv</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">linkDiv</span><span class="p">);</span>
-    <span class="nx">childDiv</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">titleDiv</span><span class="p">);</span>
-
-    <span class="nx">componentRoot</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">childDiv</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="nx">componentRoot</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nx">styles</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">style</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">style</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`
-      .root {
-        width: 100%;
-        background-color: #dedede;
-      }
-
-      .child {
-        width: 50%;
-        background-color: pink;
-      }
-
-      .child h1 {
-        color: #dedede;
-      }
-    `</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="nx">style</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="dl">"</span><span class="s2">component-card</span><span class="dl">"</span><span class="p">,</span> <span class="nx">ComponentExpert</span><span class="p">);</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>É uma boa conduta em uma props definir um valor padrão para ela, para caso os dados não sejam carregados ou o usuário não tenha enviado os parâmetros.</p>
-
-<h1>
-  
-  
-  🔍 Usando functions ao seu favor!
-</h1>
-
-<p>As funções vieram para ser usadas de forma que <strong>facilite o trabalho</strong> e <strong>legibilidade</strong> do código, então é importante utiliza-lá para deixar seu código mais <strong>funcional</strong>! </p>
-
-<p>Neste código eu usei algumas formas de <em>armazenar valores</em>, <em>concatenar</em> e <em>validar</em>, além de usar a <em>desestruturação</em> a meu favor no objeto <em>attributes</em>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>
-<span class="kd">class</span> <span class="nx">ComponentExpert</span> <span class="kd">extends</span> <span class="nx">HTMLElement</span> <span class="p">{</span>
-    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="p">();</span> <span class="c1">// Chamar o construtor da classe pai (HTMLElement)</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">attachShadow</span><span class="p">({</span> <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">open</span><span class="dl">"</span> <span class="p">});</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">build</span><span class="p">());</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">shadowDom</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">styles</span><span class="p">());</span>
-    <span class="p">}</span>
-
-    <span class="nx">build</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">function</span> <span class="nx">createCustomElement</span><span class="p">(</span><span class="nx">elementType</span><span class="p">,</span> <span class="nx">classNames</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">attributes</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">content</span> <span class="o">=</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">elementType</span><span class="p">);</span>
-
-            <span class="c1">// Adicione classes CSS</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">classNames</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(...</span><span class="nx">classNames</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="c1">// Adicione atributos</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">attributes</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="c1">// Adicione conteúdo</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">content</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">element</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">content</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nx">element</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Conteúdo do elemento </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">elementType</span><span class="p">;</span>
-
-            <span class="p">}</span>
-
-            <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
-        <span class="p">}</span>
-
-        <span class="c1">// Exemplo de uso:</span>
-        <span class="kd">const</span> <span class="nx">componentRoot</span> <span class="o">=</span> <span class="nx">createCustomElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">main</span><span class="dl">'</span><span class="p">],</span> <span class="p">{</span>
-            <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">main</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">data-custom</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span>
-        <span class="p">});</span>
-
-        <span class="kd">const</span> <span class="nx">childElement</span> <span class="o">=</span> <span class="nx">createCustomElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">child</span><span class="dl">'</span><span class="p">],</span> <span class="p">{</span>
-            <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">childDiv</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">data-custom</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">child</span><span class="dl">'</span><span class="p">,</span>
-        <span class="p">});</span>
-
-        <span class="nx">componentRoot</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">childElement</span><span class="p">);</span>
-
-        <span class="kd">const</span> <span class="nx">titleElement</span> <span class="o">=</span> <span class="nx">createCustomElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">h1</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">child</span><span class="dl">'</span><span class="p">],</span> <span class="p">{</span>
-            <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Título do elemento</span><span class="dl">'</span><span class="p">,</span>
-            <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">data-custom</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span>
-        <span class="p">},</span> <span class="dl">'</span><span class="s1">Título</span><span class="dl">'</span><span class="p">);</span>
-
-        <span class="nx">childElement</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">titleElement</span><span class="p">);</span>
-
-        <span class="k">return</span> <span class="nx">componentRoot</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nx">styles</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">style</span><span class="dl">"</span><span class="p">);</span>
-        <span class="nx">style</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`
-            .root {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                color: #333333;
-
-                background-color: #dedede;
-            }
-
-            .child {
-                width: 50%;
-                display: flex;
-                justify-content: flex-start;
-                aling-itens: center;
-
-                background-color: #d78795;
-
-            }
-
-            .child .title {
-                color: #dedede;
-
-            }
-        `</span><span class="p">;</span>
-
-        <span class="k">return</span> <span class="nx">style</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">customElements</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="dl">"</span><span class="s2">component-card</span><span class="dl">"</span><span class="p">,</span> <span class="nx">ComponentExpert</span><span class="p">);</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>Quanto mais você deixar dinâmico seu componente e seus elementos mais ele vai ser flexível a diversas situações, um componente pode ser aplicado a uma navbar, um widget de notícia, um header, há várias opções!</p>
-
-<h1>
-  
-  
-  Quando fazer um componente?
-</h1>
-
-<p>Para saber se deve ou não construir um componente em algo é preciso pensar na funcionalidade daquilo, vai se repetir várias vezes? Vai ter que aparecer com opções diferentes em outra página? É analisar o qual móvel é esse item e se ele irá ser reutilizável ou não.</p>
 
  </details> 
  <hr /> 
