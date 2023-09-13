@@ -118,6 +118,186 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Enhanced Image Generation With Stable Diffusion and Roop.](https://dev.to/jamesbright/enhanced-image-generation-with-stable-diffusion-and-roop-1c49) 
+ <details><summary>Article</summary> <p>In this post, we will go through the installation process and usage of stable diffusion for text-to-image or image-to-image generation.<br>
+text-to-image generation has to do with generating realistic images by using just text prompts, while image-to-image takes the game a little bit further by using a sample image in addition to test prompts to generate ultra realistic images that has features of the sample image.<br>
+Adding roop AI model to the picture further enhances the art by improving the quality of image generated to a perfection level. we will see how shortly, so let's started.</p>
+<h2>
+  
+  
+  <strong>Install Stable Diffision</strong>
+</h2>
+
+<p>First, we need to install AUTOMATIC111 for stable diffision  on our system. i will be going through with the installation for mac, but not to worry windows and linux has similar process, you only need to use their respective package managers as AUTOMATIC111 runs solely on the terminal with a web ui on the browser.</p>
+
+<p><strong>Step 1: Install homebrew package manager on mac</strong><br>
+If homebrew is not yet installed on your mac, please open a command line like <a href="https://iterm2.com/downloads.html">iterm2</a> and run the commands below to install homebrew.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zrLMEnep--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/texlbte88x263xoiozfe.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zrLMEnep--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/texlbte88x263xoiozfe.png" alt="Image description" width="800" height="520"></a></p>
+
+<p><strong>Step 2: install additional packages</strong><br>
+After the installation completes, we need to install several other packages like python(if not installed), cmake, protobuf, rust, git, and wget. run the command below to install them.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>brew install cmake protobuf rust python@3.10 git wget
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Step 3: Clone AUTOMATIC111 Repo</strong><br>
+To make AUTOMATIC111 work on the local environment which is our macbook, windows or linux, we need to get a copy of it saved locally. we can achieve that by cloning it. cd into the home directory (cd $HOME) and run the command below to do that.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>cd $HOME &amp;&amp; git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Step 4: Download the model file.</strong><br>
+Once we have gotten a copy of AUTOMATIC111 for stable diffusion, next would be to download the model. please note that it is about 4GB of data, so you might want to make a coffee while it downloads.<br>
+<a href="https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt">v1-5-pruned-emaonly.ckpt</a></p>
+
+<p><strong>Step 5: Move models file to model directory</strong><br>
+When download is completed, you need to move the model .ckpt file to stable-diffusion-webui/models/Stable-diffusion folder which is inside the AUTOMATIC111 we cloned.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--MJ30Ufj2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh8ly17htiulvsljvt4e.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MJ30Ufj2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh8ly17htiulvsljvt4e.png" alt="Image description" width="800" height="380"></a></p>
+
+<p>After doing so, the folder will contain two files as above.</p>
+
+<p><strong>Step 6: Download Roop model</strong><br>
+Download Roop inswapper model and place it same way as above but in the models/roop folder. when done the folder will look as below.<br>
+<a href="https://drive.google.com/file/d/1krOLgjW2tAPaqV-Bw4YALz0xT5zlb5HF/view?pli=1">inswapper_128.onnx</a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tF_RDORb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mhft6zbnfvu49hcposc3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tF_RDORb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mhft6zbnfvu49hcposc3.png" alt="Image description" width="800" height="375"></a></p>
+
+<p><strong>Finally: Run AUTOMATIC111</strong><br>
+To run AUTOMATIC111 and load the web ui in browser, enter the command below. please note that this might take a while on the first run as there are additional packages to be downloaded.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>cd ~/stable-diffusion-webui
+./webui.sh --precision full --no-half --skip-torch-cuda-test
+</code></pre>
+
+</div>
+
+
+
+<p>please skip the additional options if you are using a GPU enabled device. just run<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>./webui.sh 
+</code></pre>
+
+</div>
+
+
+
+<p>the image below on the terminal..</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--k1SqGvuI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qwr0pgjwyin888qu9yhu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--k1SqGvuI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qwr0pgjwyin888qu9yhu.png" alt="Image description" width="800" height="500"></a></p>
+
+<p>indicates that the webui has been loaded successfully.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--k1Nw8MN8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z6zq315qr688qy8o36wh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--k1Nw8MN8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z6zq315qr688qy8o36wh.png" alt="Image description" width="800" height="500"></a></p>
+
+<p>finally we can start generating some cool images. let's enter a simple prompt "image of monalisa in a wonderland, photo realistic, colorful, hyper sensitive with birds and windy background".<br>
+enter the prompt in text2img box and click on generate button. then relax a bit while our image gets generated.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0gF60tlM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/03esmex3k8acdc1s1ply.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0gF60tlM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/03esmex3k8acdc1s1ply.png" alt="Image description" width="800" height="500"></a><br>
+After some minutes, our image gets successfully generated as you can see. Did pretty well for a painting right?, it also took into consideration the elements in the prompt. but we can do much better.</p>
+
+<p><strong>Adding Roop to the picture</strong><br>
+This is where Roop comes into play, to generate high quality content, we need to enable roop extension and use img2img to feed in a sample image we can use for the generation.<br>
+click on "extension tab", then "install from url". enter github repo link of roop <a href="https://github.com/s0md3v/sd-webui-roop">sd-webui-roop</a> and click "Install".</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qzOHLbQI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e5jsilk6tpddsi29mpoq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qzOHLbQI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e5jsilk6tpddsi29mpoq.png" alt="Image description" width="800" height="500"></a></p>
+
+<p>next click on img2img select an image, scroll down and click on roop. upload yet another image also make sure "enable" is checked then enter some prompt and click on generate. you will be amazed at the result. i generated the image below following the steps with a simple prompt "as a pirate".</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pMMJVfyk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f8d0pfex83vue0fxsgi8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pMMJVfyk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f8d0pfex83vue0fxsgi8.png" alt="Image description" width="800" height="500"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--C_zK9zmC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iexj2slvey7nzv1msmmc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--C_zK9zmC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iexj2slvey7nzv1msmmc.png" alt="Image description" width="800" height="500"></a></p>
+
+<p>Besides, the two great men in the source photos are Salva and Julien. my mentors at ALX/Holberton school. I don't even know if doing this is legal 🤭.</p>
+
+<p><strong>Conclusion</strong><br>
+Roop with stable diffusion brings a whole new level to image generation with AI, there's a lot of options you can try to see which works best...like selecting a sampling method, batch count range, an upscaler and so on. I encourage you to check them out.<br>
+Also note that with AI there's always room for improvement and new things to learn.</p>
+
+<p>Thanks for reading 🤗.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [CTF Challenges: Reconnaissance](https://dev.to/therealchiwoo/ctf-challenges-reconnaissance-1bl5) 
+ <details><summary>Article</summary> <p><strong>Brief Overview</strong></p>
+
+<p>Now that our previous challenge has been solved, it's time to move on to the next topic. Like I mentioned before, MetaCTF provides 8 different topics of CTF problems, and this time, we are going to take a look at Reconnaissance.</p>
+
+<p><strong>What is Reconnaissance?</strong></p>
+
+<p>For big words like this, I swear Google is my best friend. In Cybersecurity, Reconnaissance is the information-gathering stage of ethical hacking, where you collect data about the target system. To simply put, we use techniques like foot printing and scanning to discover and collect information about a system! Think of it as... I guess a hacker gathering/collecting information about the target system!</p>
+
+<p><strong>CTF Reconnaissance Problems</strong></p>
+
+<p>For this section, I'm going to do a super duper easy peasy simple problem that allows you to understand the very basic definition of Reconnaissance, and a more difficult problem that can demonstrate the subject differently.</p>
+
+<p><strong>KANYE WEST???</strong></p>
+
+<p>Ok, let's take a look at this easy problem.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Tjff7h4m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5oh627gxfczvi2h9uknk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Tjff7h4m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5oh627gxfczvi2h9uknk.png" alt="Image description" width="800" height="155"></a></p>
+
+<p>As mentioned previously, ethical hackers use reconnaissance to gather information about their target. In this instance, it is the Ye himself!</p>
+
+<p>This problem shows the surface level definition of reconnaissance, as it makes us gather information about Kanye's iPhone password. With a simple Google search, we find his password: 000000.</p>
+
+<p><strong>Under ATT&amp;CK</strong></p>
+
+<p>Now onto something a little more difficult...</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SKe7aVF7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n1a55gwrj307rg92ffr1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SKe7aVF7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n1a55gwrj307rg92ffr1.png" alt="Image description" width="800" height="232"></a></p>
+
+<p>At first, I had a difficult time understanding the problem. It had too many acronyms that I wasn't familiar with, so I decided to click on the hint: <a href="https://attack.mitre.org">https://attack.mitre.org</a>.</p>
+
+<p>When I went on the website, there was a subsection that specifies 3 different categories for attacks: Enterprise, Mobile, and ICS. </p>
+
+<p>Going back to the CTF problem, it states <em>"what other Initial Access mechanism did the attacker use?"</em> When browsing through the 3 subcategories, I wasn't particularly sure on which one to click. With a little more research, I stumbled across this website: <a href="https://www.blackberry.com/us/en/solutions/endpoint-security/mitre-attack">https://www.blackberry.com/us/en/solutions/endpoint-security/mitre-attack</a>.</p>
+
+<p>In the website, it mentions that the Enterprise ATT&amp;CK Matrix contains a sub-matrices that focuses on pre-attack activities (PRE Matrix), attacks against specific OS (Windows, Linux, and macOS Matrices), network infrastructure attacks (Network Matrix), cloud infrastructure attacks (Cloud Matrix), and attacks against containers (Containers Matrix). </p>
+
+<p>When going back to the question, it does seem like the problem wants us to research more into the Enterprise tactics.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--luhk7Zl2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gwnl2zdevo2a4bycnu2g.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--luhk7Zl2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gwnl2zdevo2a4bycnu2g.png" alt="Image description" width="800" height="474"></a></p>
+
+<p>When I click on the Enterprise Tactics, there are a lot of sections within it. The CTF problem states that there was a "Valid Accounts" technique, and another technique with Initial Access Mechanism.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PYkcENwT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vzamg157q39qdt0esqnb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PYkcENwT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vzamg157q39qdt0esqnb.png" alt="Image description" width="800" height="563"></a></p>
+
+<p>After clicking on the Initial Access, there were a total of 9 techniques I found. I was able to narrow it down because the CTF problem stated the Threat Actor was able to get onto our network by using a VPN, which was the "External Remote Services: T1133".</p>
+
+<p>This problem did take a lot of time, as I was a little bit confused on the 3 sections: Enterprise, Mobile and ICS. </p>
+
+ </details> 
+ <hr /> 
+
  #### - [What is your Why?](https://dev.to/acoh3n/what-is-your-why-j9b) 
  <details><summary>Article</summary> <p>I believe we all entered the field of programming for various reasons. It could be to earn a living, pursue a sought-after career, or simply because we love building stuff. Whatever the reason, we're here.</p>
 
@@ -281,299 +461,6 @@ echo 'Previsão: ' . $prediction;
 <p>O Rubix é uma biblioteca valiosa que permite que os desenvolvedores de PHP explorem e aproveitem os benefícios do Machine Learning em seus projetos. Com sua API intuitiva e ampla gama de recursos, o Rubix torna mais fácil do que nunca criar modelos de Machine Learning em PHP e aplicá-los em diversos domínios.</p>
 
 <p>Se você é um desenvolvedor PHP que deseja adicionar recursos de Machine Learning aos seus projetos, o Rubix é uma excelente escolha que oferece potencial e flexibilidade para atender às suas necessidades. Comece a explorar o mundo do Machine Learning com PHP e o Rubix e descubra o que você pode alcançar.</p>
-
- </details> 
- <hr /> 
-
- #### - [If you have these three things, then you’re a user (and not a programmer)](https://dev.to/noriller/if-you-have-these-three-things-then-youre-a-user-and-not-a-programmer-45nk) 
- <details><summary>Article</summary> <p>2023/09/13 is the 256 day of the year or in other words, Programmer’s Day.</p>
-
-<p>Take this chance to congratulate yourself, your colleagues, or a programmer friend.</p>
-
-<blockquote>
-<p><strong>Disclaimer</strong>: the author take no responsibility for the trip to the nearest dark place your programmer friend might be in.</p>
-</blockquote>
-
-<h2>
-  
-  
-  Programmer or user?
-</h2>
-
-<p>In other years ([<a href="https://dev.to/noriller/if-you-have-these-three-things-you-can-be-a-programmer-too-v2-2e56">2022</a>, <a href="https://dev.to/noriller/if-you-have-this-three-things-you-can-be-a-programmer-too-28b8">2021</a>]) I’ve talked about things that make you a Programmer, but this time around I enumerated a few things that might show that you might not be a programmer, but (<em>suspense noises</em>) just a user.</p>
-
-<p>Please note that everyone <em>is</em> a user of something, that is not a problem. But if you say you’re a programmer, but all you do is be a user, then you have a <code>TypeError: User is not of type Programmer</code>.</p>
-
-<h2>
-  
-  
-  1. You don't read error messages
-</h2>
-
-<p>I’ve worked a lot with digitally illiterate people of many levels and the one thing that stood out was how fast they would click an error message out of view.</p>
-
-<p>Then there I went, did what they were doing, <strong>actually</strong> read the error message, and <em>magic!</em> solved the problem.</p>
-
-<p>I saw “programmers” who do something similar, choosing to ignore any error messages, trying to run whatever they’re doing again, and, of course, failing.</p>
-
-<p>Sometimes, all it takes is just reading the error messages. Other times, you read, google it, open the first link, and follow the instructions. <em>Presto!</em></p>
-
-<p>Other times, you have to bang your two neurons a little harder, tracing the steps of the software to pinpoint the exact point of failure, and then facepalm yourself hard enough because it was something so simple.</p>
-
-<p>Finally, a few times you read the error, then backtraced the problem and still you and ChatGPT have no idea how to solve it. So, you read the <strong><a href="https://stackoverflow.com/help/how-to-ask">How do I ask a good question?</a></strong> page from StackOverflow and wherever you usually do a good question so people can easily help you.</p>
-
-<h2>
-  
-  
-  2. You’re content with software
-</h2>
-
-<p>The more junior you are the more you probably think: “I can do it better”.</p>
-
-<p>On the other side, the more senior you get, probably the more pissed you get with badly written websites and apps. You also probably appreciate good interactions a lot more.</p>
-
-<p>This is if you’re a programmer, but when you’re a user… You just don’t care.</p>
-
-<p>You might think you can just jump the hoops and loops and all those problems are nothing to get worked over. You’re complacent and only the very worst will make you complain or abandon it.</p>
-
-<p>No matter who you are, we always end up drawing a line where from one point forward we are programmers but the rest we are users. The question is where did you draw yours?</p>
-
-<p>The language? The framework? The meta framework? The libs? Just whatever you’re doing?</p>
-
-<p>Some people might never have thought about actually influencing the things and tools they use every day. You might not have time or skill to actually fix something, but you see something you use and feel like it could be improved with something or you have the same problem over and over… have you ever tried opening an Issue in the project repo?</p>
-
-<p>Maybe more people have the same problem or more people would enjoy the improvements of your idea, someone might jump into implementing that if only they see your Issue. But when you just don’t care enough, then nothing will happen.</p>
-
-<h2>
-  
-  
-  3. You’re superstitious (it’s how it was always done)
-</h2>
-
-<p>This one touches the other ones. The superstitious “programmer” (or user) is someone who does things because “it was how it was always done”.</p>
-
-<p>I can argue that you don’t actually know what in the name of binary you’re doing, because you just copy and paste code, change things here and there, and hope it works. I’ve met that kind of “programmer” and nowadays one of its names is ChatGPT.</p>
-
-<p>ChatGPT is a grand example because it doesn't know anything. It just saw enough it can just spill enough bullshit that sometimes it actually makes sense and works.</p>
-
-<p>jQuery still works to this day, but is it the best way of doing things today? While jumping at the newest framework would definitely make you a programmer, it’s not something sustainable.</p>
-
-<p>A programmer has to evaluate both ends and find the one that is the best choice for today and for the foreseeable future, always considering where they are coming from.</p>
-
-<p>In a new project, this is easier, but in a legacy project this might be a rewrite or more likely, adding a new way of doing things where you don’t need to rewrite things already working, but gives you a better tool to migrate crucial parts and create new features.</p>
-
-
-
-
-<p>Cover Photo by <a href="https://unsplash.com/@thisisengineering?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">ThisisEngineering RAEng</a> on <a href="https://unsplash.com/photos/iQqRM0XJvn8?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Build an AI SMS Chatbot with Replicate, LLaMA 2, and LangChain](https://dev.to/twilio/build-an-ai-sms-chatbot-with-replicate-llama-2-and-langchain-3i72) 
- <details><summary>Article</summary> <p>Recently, Meta and Microsoft introduced the second generation of the LLaMA LLM (Large Language Model) to help developers and organizations to build generative AI-powered tools and experiences. Read on to learn how to build an AI SMS chatbot that answers questions like Ahsoka (from Star Wars) using LangChain templating, LLaMa 2, Replicate, and Twilio Programmable Messaging!<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YtzI9bA---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c11hzs7x148okb1zjlj3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YtzI9bA---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c11hzs7x148okb1zjlj3.png" alt="SMS example" width="800" height="197"></a><br>
-Do you prefer learning via video more? Check out <a href="https://www.tiktok.com/@lizziepikachu/video/7278020285750889774">this TikTok summarizing this tutorial</a> in 1 minute!</p>
-<h3>
-  
-  
-  Prerequisites
-</h3>
-
-<ol>
-<li>A Twilio account - <a href="https://www.twilio.com/try-twilio">sign up for a free Twilio account here</a>
-</li>
-<li>A Twilio phone number with SMS capabilities - <a href="https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console">learn how to buy a Twilio Phone Number here</a>
-</li>
-<li>Replicate account to host the LlaMA 2 model – <a href="https://replicate.com/signin?next=/">make a Replicate account here</a>
-</li>
-<li>Python installed - <a href="https://www.python.org/downloads/">download Python here</a>
-</li>
-<li>
-<a href="https://ngrok.com/download">ngrok</a>, a handy utility to connect the development version of our Python application running on your machine to a public URL that Twilio can access.</li>
-</ol>
-
-<p>⚠️ <strong>ngrok is needed for the development version of the application because your computer is likely behind a router or firewall, so it isn’t directly reachable on the Internet. You can also choose to automate ngrok as shown in this article.</strong></p>
-<h3>
-  
-  
-  Replicate
-</h3>
-
-<p>Replicate offers a cloud API and tools so you can more easily run machine learning models, abstracting away some lower-level machine learning concepts and handling infrastructure so you can focus more on your own applications. You can run open-source models that others have published, or package and publish your own, either publicly or privately.</p>
-<h3>
-  
-  
-  Configuration
-</h3>
-
-<p>Since you will be installing some Python packages for this project, you will need to make a new project directory and a <a href="https://docs.python.org/3/tutorial/venv.html">virtual environment</a>.</p>
-
-<p>If you're using a Unix or macOS system, open a terminal and enter the following commands:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">mkdir </span>replicate-llama-ai-sms-chatbot  
-<span class="nb">cd </span>replicate-llama-ai-sms-chatbot  
-python3 <span class="nt">-m</span> venv venv 
-<span class="nb">source </span>venv/bin/activate 
-pip <span class="nb">install </span>langchain replicate flask twilio
-</code></pre>
-
-</div>
-
-
-
-<p>If you're following this tutorial on Windows, enter the following commands in a command prompt window:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">mkdir </span>replicate-llama-ai-sms-chatbot  
-<span class="nb">cd </span>replicate-llama-ai-sms-chatbot   
-python <span class="nt">-m</span> venv venv 
-venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate 
-pip <span class="nb">install </span>langchain replicate flask twilio
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://replicate.com/account/api-tokens">Grab your default Replicate API Token or create a new one here</a>.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GbpFlrL6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aat6zydxbdnq8sohcc4x.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GbpFlrL6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aat6zydxbdnq8sohcc4x.png" alt="Replicate console" width="800" height="226"></a><br>
-On the command line run<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">export </span><span class="nv">REPLICATE_API_TOKEN</span><span class="o">={</span>replace with your api token<span class="o">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now it's time to write some code!</p>
-
-<h3>
-  
-  
-  Code
-</h3>
-
-<p>Make a file called <em>app.py</em> and place the following import statements at the top.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
-<span class="kn">from</span> <span class="nn">langchain</span> <span class="kn">import</span> <span class="n">LLMChain</span><span class="p">,</span> <span class="n">PromptTemplate</span>
-<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">Replicate</span>
-<span class="kn">from</span> <span class="nn">langchain.memory</span> <span class="kn">import</span> <span class="n">ConversationBufferWindowMemory</span>
-<span class="kn">from</span> <span class="nn">twilio.twiml.messaging_response</span> <span class="kn">import</span> <span class="n">MessagingResponse</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Though LLaMA 2 is tuned for chat, templates are still helpful so the LLM knows what behavior is expected of it. This starting prompt is similar to ChatGPT so it should behave similarly.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="n">template</span> <span class="o">=</span> <span class="s">"""Assistant is a large language model.
-
-Assistant is designed to be able to assist with a wide range of tasks, from answering simple questions to providing in-depth explanations and discussions on a wide range of topics. As a language model, Assistant is able to generate human-like text based on the input it receives, allowing it to engage in natural-sounding conversations and provide responses that are coherent and relevant to the topic at hand.
-
-Assistant is constantly learning and improving, and its capabilities are constantly evolving. It is able to process and understand large amounts of text, and can use this knowledge to provide accurate and informative responses to a wide range of questions. Additionally, Assistant is able to generate its own text based on the input it receives, allowing it to engage in discussions and provide explanations and descriptions on a wide range of topics.
-
-Overall, Assistant is a powerful tool that can help with a wide range of tasks and provide valuable insights and information on a wide range of topics. Whether you need help with a specific question or just want to have a conversation about a particular topic, Assistant is here to assist. 
-
-I want you to act as Ahsoka giving advice and answering questions. You will reply with what she would say.
-SMS: {sms_input}
-Assistant:"""</span>
-
-<span class="n">prompt</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="p">(</span><span class="n">input_variables</span><span class="o">=</span><span class="p">[</span><span class="s">"sms_input"</span><span class="p">],</span> <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Next, make a LLM Chain, one of the core components of LangChain. This allows us to chain together prompts and make a prompt history. The model is formatted as the model name followed by the version–in this case, the model is LlaMA 2, a 13-billion parameter language model from Meta fine-tuned for chat completions. <code>max_length</code> is 4096, the maximum number of tokens (called the <em>context window</em>) the LLM can accept as input when generating responses.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="n">sms_chain</span> <span class="o">=</span> <span class="n">LLMChain</span><span class="p">(</span>
-    <span class="n">llm</span> <span class="o">=</span> <span class="n">Replicate</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s">"a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5"</span><span class="p">),</span> 
-    <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
-    <span class="n">memory</span><span class="o">=</span><span class="n">ConversationBufferWindowMemory</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-    <span class="n">llm_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">"max_length"</span><span class="p">:</span> <span class="mi">4096</span><span class="p">}</span>
-<span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Finally, make a Flask app to accept inbound text messages, pass that to the LLM Chain, and return the output as an outbound text message with Twilio Programmable Messaging.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-
-
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/sms"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">sms</span><span class="p">():</span>
-    <span class="n">resp</span> <span class="o">=</span> <span class="n">MessagingResponse</span><span class="p">()</span>
-    <span class="n">inb_msg</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'Body'</span><span class="p">].</span><span class="n">lower</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">sms_chain</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sms_input</span><span class="o">=</span><span class="n">inb_msg</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-    <span class="n">resp</span><span class="p">.</span><span class="n">message</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>On the command line, run <code>python app.py</code> to start the Flask app.</p>
-
-<h3>
-  
-  
-  Configure a Twilio Number for the SMS Chatbot
-</h3>
-
-<p>Now, your Flask app will need to be visible from the web so Twilio can send requests to it. ngrok lets you do this. With ngrok installed, run <code>ngrok http 5000</code> in a new terminal tab in the directory your code is in.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nsM06Uhj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2kgwrxcxdfgo9tkrp42o.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nsM06Uhj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2kgwrxcxdfgo9tkrp42o.png" alt="ngrok terminal tab" width="800" height="334"></a><br>
-You should see the screen above. Grab that ngrok <strong>Forwarding URL</strong> to configure your Twilio number: select your Twilio number under <strong>Active Numbers</strong> in your <a href="https://www.twilio.com/console/phone-numbers/incoming">Twilio console</a>, scroll to the <strong>Messaging</strong> section, and then modify the phone number’s routing by pasting the ngrok URL with the <em>/sms</em> path in the textbox corresponding to when <strong>A Message Comes In</strong> as shown below:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YFXGG5Ul--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s6lgkzfqevilybi3al5s.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YFXGG5Ul--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s6lgkzfqevilybi3al5s.png" alt="configure phone number" width="800" height="335"></a><br>
-Click <strong>Save</strong> and now your Twilio phone number is configured so that it maps to your web application server running locally on your computer and your application can run. Text your Twilio number a question relating to the text file and get an answer from that file over SMS!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NqUl4lle--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3xi0flyo9fdgq4okmwgd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NqUl4lle--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3xi0flyo9fdgq4okmwgd.png" alt="SMS example" width="800" height="226"></a><br>
-You can view the <a href="https://github.com/elizabethsiegle/replicate-llama2-sms-chatbot">complete code on GitHub here</a>.</p>
-
-<h3>
-  
-  
-  What's Next for Twilio, LangChain, Replicate, and LLaMA 2?
-</h3>
-
-<p>There is so much fun for developers to have around building with LLMs! You can modify existing LangChain and LLM projects to use LLaMA 2 instead of GPT, build a web interface using <a href="https://streamlit.io/">Streamlit</a> instead of SMS, fine-tune LLaMA 2 with your own data, and more! I can't wait to see what you build–let me know online what you're working on!</p>
-
-<ul>
-<li>Twitter: <a href="https://twitter.com/lizziepika">@lizziepika</a>
-</li>
-<li>GitHub: <a href="https://github.com/elizabethsiegle">elizabethsiegle</a>
-</li>
-<li>Email: <a href="mailto:lsiegle@twilio.com">lsiegle@twilio.com</a>
-</li>
-</ul>
 
  </details> 
  <hr /> 
