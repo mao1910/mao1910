@@ -118,6 +118,459 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Top Cloud Tools For Cloud Computing](https://dev.to/scofieldidehen/top-cloud-tools-for-cloud-computing-3jck) 
+ <details><summary>Article</summary> <p>Cloud computing has transformed how organizations store data, develop applications, and manage IT infrastructure.</p>
+
+<p>Cloud platforms' scalability, flexibility, and cost-efficiency enable companies to focus on their core business goals instead of managing on-premises servers.</p>
+
+<p>However, organizations need to utilize various cloud-based tools to leverage the benefits of the cloud fully. This article overviews the top cloud tools across three key areas - security, management, and productivity.</p>
+
+<p>Cloud Security Tools</p>
+
+<p>Migrating to the cloud does not make an organization's data and applications more secure. Without proper safeguards, a public cloud environment can expose confidential data.</p>
+
+<p>Cloud security tools provide capabilities to control access, protect data, and monitor for threats.</p>
+
+<h2>Cloudflare</h2>
+
+<p><a href="/static/img/pixel.gif" class="article-body-image-wrapper"><img src="/static/img/pixel.gif"></a></p>
+
+<p>Cloudflare is a DNS service that provides DDoS mitigation, data loss prevention, and other security measures. Its global network protects against various cyberattacks, including network layer attacks, application layer attacks, and volumetric DDoS attacks.</p>
+
+<p>Key features include a web application firewall, rate limiting, bot mitigation, and API gateway. Cloudflare offers a free plan as well as paid plans for advanced protection.</p>
+
+<p><a href="https://www.cloudflare.com/" rel="noopener noreferrer nofollow">Get started here</a></p>
+
+<h2>Zscaler</h2>
+
+<p><a href="/static/img/pixel.gif" class="article-body-image-wrapper"><img src="/static/img/pixel.gif"></a></p>
+
+<p>Zscaler is a cloud-based security platform that is a secure internet and web gateway. Regardless of location, users connect to the Zscaler cloud, which provides full security inspection across all ports and protocols.</p>
+
+<p>Core capabilities include next-gen firewall, sandboxing, DLP, CASB, and browser isolation. Zscaler supports inline cloud firewalls, sandboxing, and zero-trust network access.</p>
+
+<p><a href="https://www.zscaler.com/" rel="noopener noreferrer nofollow">Get started here </a></p>
+
+<h2>Trend Micro</h2>
+
+<p><a href="/static/img/pixel.gif" class="article-body-image-wrapper"><img src="/static/img/pixel.gif"></a></p>
+
+<p>Trend Micro offers comprehensive cloud security solutions optimized for servers and containers. It provides consistent security across physical, virtual, and cloud environments.</p>
+
+<p>Capabilities include server security, application security, container image scanning, and cloud security posture management. Trend Micro seamlessly integrates with major cloud providers like AWS, Azure, and Google Cloud.</p>
+
+<h2>Cloud Management Tools</h2>
+
+<p>The first step is migrating infrastructure, applications, and data to the cloud. Cloud management tools enable organizations to efficiently provision, govern, and optimize their cloud environments.</p>
+
+<p>With the right management tools, companies can reduce cloud costs, ensure compliance, and improve performance.</p>
+
+<ul>
+    <li><strong>AWS CloudFormation</strong></li>
+</ul>
+
+<p>CloudFormation is an infrastructure as a code tool offered by Amazon Web Services. It allows users to define templates for repeatable provisioning and updating of AWS resources.</p>
+
+<p>CloudFormation manages the deployment, updates, and dependencies automatically. This enables consistent and efficient management at scale. Users can leverage over 500 AWS resources via CloudFormation.</p>
+
+<ul>
+    <li><strong>RightScale</strong></li>
+</ul>
+
+<p>RightScale is a unified cloud management platform designed for governance and optimization. It provides cost management, security automation, compliance, infrastructure management, and cloud analytics.</p>
+
+<p>RightScale offers cross-cloud visibility, policy-based governance, and automation workflows. With RightScale, organizations can adopt cloud best practices, control costs, and adhere to regulations.</p>
+
+<ul>
+    <li><strong>Ansible</strong></li>
+</ul>
+
+<p>Ansible is an IT automation and orchestration tool that makes deploying and managing applications simple.</p>
+
+<p>It utilizes declarative programming to automate app deployment, configuration management, intra-service orchestration, and many other IT needs on cloud infrastructure. Ansible contains over 4,000 modules for interacting with various technologies and cloud providers. Its agentless architecture provides simplicity and flexibility.</p>
+
+<h2>Cloud Productivity Tools</h2>
+
+<p>The cloud enables new ways of collaborating, communicating, and getting work done. Cloud productivity suites help employees be efficient and productive when working in the cloud. These tools provide web-based office apps, communication platforms, storage solutions, and more.</p>
+
+<ul>
+    <li><strong>Zoho Office Suite</strong></li>
+</ul>
+
+<p>Zoho provides a comprehensive office suite for creating documents, spreadsheets, presentations, and more in the cloud.</p>
+
+<p>Built-in collaboration allows teams to work together on files in real time. Zoho Office Suite deeply integrates with Zoho's business apps for CRM, marketing, support, and analytics. It offers much of the functionality of Microsoft 365 at a lower cost.</p>
+
+<ul>
+    <li><strong>Evernote</strong></li>
+</ul>
+
+<p>Evernote is a popular note-taking and document management app designed for cloud accessibility. Users can take notes, clip web content, capture screenshots, scan documents, and organize files. Evernote utilizes optical character recognition to make all content searchable. Notes sync across all devices. Evernote offers personal, professional, and business plans.</p>
+
+<p><strong>Slack</strong></p>
+
+<p>Slack transforms business communication by moving conversations out of inboxes into a unified platform. It replaces fragmented email threads with organized topic-based channels. Slack integrates with a vast ecosystem of apps for deeper workflows.</p>
+
+<p>It offers robust searching, messaging, notifications, file sharing, and calling capabilities. Technical teams widely adopt Slack, although it is useful for all organizations.</p>
+
+<h2>Conclusion</h2>
+
+<p>Transitioning to the cloud provides immense innovation, growth, and cost-reduction opportunities.</p>
+
+<p>But simply moving to the cloud does not automatically yield these benefits. Companies must leverage the most effective cloud-based tools to address security, management, and productivity needs.</p>
+
+<p>The tools discussed in this article represent leading solutions in these categories from major providers like AWS, Google Cloud, Zscaler, and Slack. By proactively addressing these areas with cloud tools, organizations can achieve the full potential of cloud computing.</p>
+
+<p>If you find this post exciting, find more exciting posts like this on <a href="http://blog.learnhub.africa/" rel="noopener noreferrer nofollow">Learnhub Blog</a>; we write everything tech from <a href="https://blog.learnhub.africa/category/cloud-computing/" rel="noopener noreferrer nofollow">Cloud computing</a> to <a href="https://blog.learnhub.africa/category/frontend/" rel="noopener noreferrer nofollow">Frontend Dev</a>, <a href="https://blog.learnhub.africa/category/security/" rel="noopener noreferrer nofollow">Cybersecurity</a>, <a href="https://blog.learnhub.africa/category/data-science/" rel="noopener noreferrer nofollow">AI</a> and <a href="https://blog.learnhub.africa/category/blockchain/" rel="noopener noreferrer nofollow">Blockchain</a>.</p>
+
+<h2>Resource</h2>
+
+<ul>
+    <li><a href="https://blog.learnhub.africa/2023/06/15/devops-tools-and-skills-every-beginner-must-have/" rel="noopener noreferrer nofollow">DevOps tools and Skills every Beginner Must have.</a></li>
+    <li><a href="https://blog.learnhub.africa/2023/06/11/building-a-scalable-and-resilient-application-with-kubernetes/" rel="noopener noreferrer nofollow">Building a Scalable and Resilient Application with Kubernetes</a></li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [7-Stage Roadmap for Data Science](https://dev.to/imadadrees/7-stage-roadmap-for-data-science-451n) 
+ <details><summary>Article</summary> <p><strong>7-Stage Roadmap for Data Science</strong></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--itPqZVnl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://cdn-images-1.medium.com/max/2000/1%2Ad7hseF0r7Stw7zrcqIwaiA.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--itPqZVnl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://cdn-images-1.medium.com/max/2000/1%2Ad7hseF0r7Stw7zrcqIwaiA.gif" alt="Your dream Roadmap" width="800" height="685"></a></p>
+
+<p>A comprehensive map with Complete Resouces</p>
+
+<blockquote>
+<p>One only needs a Road and will to move on it. (Unknown)</p>
+</blockquote>
+
+<p>Are you eager to start a transformational journey and unleash the wonder of data? If yes, buckle up because we’re about to start the Full Stack Data Science Roadmap, where each project is a problem that has to be overcome and every stage serves as a stepping stone.</p>
+
+<p>But If you are a book wizard, <a href="https://medium.com/@ImadAdrees/ultimate-guide-best-books-for-data-science-with-ratings-for-all-levels-323807758d6a">**Here</a>** is my guide to Data Science Books for <strong>You</strong>! I have covered all the books (With Individual Ratings on different metrics) needed for Data Science from Beginner to advanced levels.</p>
+
+<p>Here are the Topics I will cover in this Post:</p>
+
+<ul>
+<li><p>What is Data Science?</p></li>
+<li><p>Data Science vs. ML Engineer vs. Data Engineer</p></li>
+<li><p>What does a Data Scientist Do?</p></li>
+<li><p>The Data Science Project Lifecycle</p></li>
+<li><p>7 Stage Roadmap for Data Scientist with courses and books</p></li>
+</ul>
+
+<p>Having said that! Let’s deep dive into our Data Science Roadmap.</p>
+
+<h2>
+  
+  
+  <strong>What is a Data Science?</strong>
+</h2>
+
+<p>Data science is a superpower for comprehending information. It all revolves around the use of computers and specialised knowledge to make sense of data, which is just a tonne of information. Consider data as a huge puzzle with parts all over the place. Data scientists are similar to puzzle solvers. To view the broader picture, they take the bits (of data), clean them up, and merge them. To uncover hidden patterns and solutions, they employ mathematical and computational methods.</p>
+
+<p>Simply, data science is the art of finding valuable insights using Statistics, manipulation, visualization and deep learning model creation on the given or extracted data.</p>
+
+<p>Supercool!</p>
+
+<h2>
+  
+  
+  Data Science vs. ML Engineer vs. Data Engineer
+</h2>
+
+<p>Three unique professions within the data and analytics industry are data science, machine learning (ML) engineer, and data engineering, each with its emphasis and duties.</p>
+
+<p>A <strong>Data Engineer</strong> focuses on maintaining data pipelines, data warehouses and data lakes, ensuring data quality and reliability. <strong>ML Engineer</strong> builds and optimizes machine learning models, integrates them into applications and ensures their production efficiency. <strong>Data Scientist</strong> performs exploratory data analysis, develop and apply machine learning algorithms and predict decisions based on their findings.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6vCKkyW---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://cdn-images-1.medium.com/max/2080/1%2A-Ei4kRgmB7mE87cKllz0OA.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6vCKkyW---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://cdn-images-1.medium.com/max/2080/1%2A-Ei4kRgmB7mE87cKllz0OA.gif" alt="Data Science Roles" width="800" height="492"></a></p>
+
+<h2>
+  
+  
+  What does a Data Scientist Do?
+</h2>
+
+<p>Data Scientists should have a clear idea of what their responsibilities are.</p>
+
+<p>So, Let’s take an Example <strong>project</strong> which will explain all of these roles:</p>
+
+<p><strong>Project: Customer Churn Prediction for a Telecommunication Company</strong></p>
+
+<p><strong>The data Engineer</strong> sets up the data infrastructure and <em>Extract-Transform-Load (ETL)</em> data from different sources, the <strong>ML Engineer</strong> <em>builds</em> and <em>deploys</em> the predictive model to make real-time predictions and apply feature engineering to enhance model performance, and the <strong>Data Scientist</strong> leverages the model’s output to provides actionable <em>recommendations and strategies</em> for retaining customers.</p>
+
+<p>These roles collaborate to create a comprehensive solution that addresses the business problem of reducing customer churn for the telecommunication company.</p>
+
+<h2>
+  
+  
+  The Data Science Project Lifecycle
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eQ8FpJ2W--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2600/1%2AjzCQSSeDf3SNiPQV1UCPTw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eQ8FpJ2W--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2600/1%2AjzCQSSeDf3SNiPQV1UCPTw.png" alt="Data Science Project Lifecycle" width="800" height="615"></a></p>
+
+<p>The data science project lifecycle is an organised procedure that data scientists use to develop, generate, and deploy data-driven solutions. It consists of several steps and tasks that assist organisations in extracting insights from data to make educated decisions. The specific processes vary based on the project and organisation, however below is a broad outline of the data science project lifecycle:</p>
+
+<p><strong>Data Preparation</strong></p>
+
+<ul>
+<li>Most of the time the data we extract or supply for our problem or project is not clean. Therefore, data cleaning and preprocessing are important before exploratory data analysis(EDA). EDA helps in understanding the data’s characteristics and identifying potential relationships between variables.</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--A8RQ2MFG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2800/1%2AXU8DuKgh6eVUV7M0jhY92w.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A8RQ2MFG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2800/1%2AXU8DuKgh6eVUV7M0jhY92w.png" alt="Data Preparation" width="800" height="686"></a></p>
+
+<p><strong>Model building</strong></p>
+
+<ul>
+<li>Data scientists build algorithmic models using clean data. While building a model, start with simple algorithms or models like Regression then try complex models such as Neural Networks. Assess the model performance using evaluation metrics specific to the problem such as F1, RMSE etc.</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vNvKcL3P--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/9916/0%2AEF699FfXEqfNlSGv" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vNvKcL3P--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/9916/0%2AEF699FfXEqfNlSGv" alt="Photo by [William Daigneault](https://unsplash.com/@williamdaigneault?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)" width="800" height="533"></a></p>
+
+<p><strong>Data Insights</strong></p>
+
+<ul>
+<li><p>To acquire insights into the situation, interpret the model’s predictions and feature relevance. Data visualisation and clear explanations should be used to communicate findings to stakeholders.</p></li>
+<li><p>The whole project should be documented, including data sources, preprocessing methods, model information, and findings. Make detailed reports or presentations for stakeholders.</p></li>
+</ul>
+
+<p><strong>Model Monitoring</strong></p>
+
+<ul>
+<li>The practice of continually following and analysing the performance of machine learning models deployed in a production setting is known as model monitoring in data science. It entails tracking how effectively the model performs over time, recognising any flaws or deviations from predicted behaviour, and taking appropriate remedial steps. Model monitoring is critical for ensuring that machine learning models retain their accuracy and dependability when they meet fresh data in real-world settings.</li>
+</ul>
+
+<h2>
+  
+  
+  7-Stage Roadmap for Data Science
+</h2>
+
+<p>Data Science is a rigorous field but rewards are also amazing!</p>
+
+<blockquote>
+<p>A person should choose hard ways to test his conscious and unconscious limits.</p>
+</blockquote>
+
+<p>The stages in this roadmap are organised in logical succession to help newbies become skilled data scientists while taking into account the complexity and interconnection of the skills and knowledge areas involved.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Z6jXjxa1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2048/1%2A4DbPSXBTCSKEdjrMKPPW-w.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Z6jXjxa1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2048/1%2A4DbPSXBTCSKEdjrMKPPW-w.jpeg" alt="[Skills for data science job postings research analysis by 365 team](https://365datascience.com/career-advice/career-guides/data-scientist-job-descriptions/)" width="800" height="450"></a></p>
+
+<h2>
+  
+  
+  <strong>Stage 1: The Foundation</strong>
+</h2>
+
+<p>This level focuses on creating a firm foundation by understanding core mathematical principles and obtaining programming expertise, both of which are required for data science.</p>
+
+<ol>
+<li><strong><em>Mathematics Fundamentals:</em></strong></li>
+</ol>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://epdfx.com/download/linear-algebra-author-gilbert-strang-mit_590e21eadc0d60962f959ed2_pdf">“Linear Algebra” by Gilbert Strang (Book)</a> and <a href="https://www.khanacademy.org/">Khan Academy</a> (Online Course).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://drive.google.com/file/d/0B-xGCX-DplrcNDVJTkF6azV2bWc/view">“Calculus” by James Stewart (Book)</a> and <a href="https://ocw.mit.edu/collections/mit-open-learning-library/">MIT OpenCourseWare (Online Course).</a></p></li>
+<li><p><strong>Resource</strong>: “Introduction to Probability” by Joseph K. Blitzstein and Jessica Hwang (Book) and it is also available as <a href="https://www.edx.org/learn/probability/harvard-university-introduction-to-probability">course on edx</a>.</p></li>
+</ul>
+
+<p><strong>2. *Programming Proficiency:</strong>*</p>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://wesmckinney.com/book/">“Python for Data Analysis” by Wes McKinney</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.coursera.org/learn/python">“Python Programming for Beginners” on Coursera (Online Course).</a></p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.youtube.com/user/schafer5">Corey Schafer’s Python YouTube</a> channel for tutorials.</p></li>
+</ul>
+
+<p><strong>3. *Data Handling and Exploration:</strong>*</p>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://zlib.pub/book/data-science-for-business-5jop8btfvmt0">“Data Science for Business” by Foster Provost and Tom Fawcett</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.kaggle.com/code/imoore/intro-to-exploratory-data-analysis-eda-in-python">Kaggle’s “Intro to Data Analysis”</a> (Online Course).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.youtube.com/@dataschool/videos">Data School’s YouTube channel </a>for pandas tutorials.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Stage 2: Data Wrangling
+</h2>
+
+<p>After Foundation there is data wrangling since it is critical to clean, preprocess, and manage data correctly before using machine learning algorithms. SQL and database abilities are covered in this section since they are widely utilised in data retrieval and storage.</p>
+
+<ol>
+<li><strong><em>Data Cleaning:</em></strong></li>
+</ol>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://www.youtube.com/watch?v=0hsKLYfyQZc">“Python for Data Cleaning” by Kevin Markham</a> (YouTube Playlist).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.datacamp.com/courses/data-manipulation-with-pandas">“Data Wrangling with pandas”</a> on DataCamp (Online Course).</p></li>
+</ul>
+
+<p><strong>2. *SQL and Databases:</strong>*</p>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://www-china.coursera.org/learn/sql-for-data-science">“SQL for Data Science” on Coursera</a> (Online Course).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://mode.com/sql-tutorial/">Mode Analytics SQL Tutorial</a> (Online Resource).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.codecademy.com/learn/intro-to-sql">Codecademy’s SQL course (Online Course)</a>.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Stage 3: Machine Learning Foundations
+</h2>
+
+<p>After establishing a solid understanding of data processing, students dig into the fundamental concepts of machine learning. Starting with the fundamentals of supervised and unsupervised learning, this level provides the foundation for more sophisticated machine-learning approaches.</p>
+
+<ol>
+<li><p><strong>Resource</strong>: <a href="https://pdfroom.com/books/introduction-to-machine-learning-with-python-a-guide-for-data-scientists/qjb5q6ykdxQ">“Introduction to Machine Learning with Python” by Andreas C. Müller &amp; Sarah Guido</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.coursera.org/specializations/machine-learning-introduction">Andrew Ng’s Machine Learning Course on Coursera</a> (Online Course).</p></li>
+<li><p><strong><em>Model Evaluation and Metrics:</em></strong></p></li>
+</ol>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">“Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow” by Aurélien Géron</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.coursera.org/specializations/machine-learning-introduction">“Machine Learning” by Stanford University on Coursera</a> (Online Course).</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Cuhp-bY6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2800/1%2AvUtni93I_1y4EdPBu-FaeQ.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Cuhp-bY6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/2800/1%2AvUtni93I_1y4EdPBu-FaeQ.png" alt="Machine Learning Algorithms" width="800" height="686"></a></p>
+
+<h2>
+  
+  
+  Stage 4: Advanced Machine Learning(Deep Learning)
+</h2>
+
+<p>This level immerses students in machine learning, especially deep learning. It comes after the foundational machine learning stage to ensure that learners have a firm grasp on the fundamentals before moving on to more advanced topics.</p>
+
+<ol>
+<li><p><strong>Resource</strong>: <a href="https://books.google.com.pk/books/about/Deep_Learning.html?id=Np9SDQAAQBAJ&amp;redir_esc=y">“Deep Learning” by Ian Goodfellow, Yoshua Bengio, and Aaron Courville</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://course.fast.ai/">Fast.ai’s Deep Learning for Coders course</a> (Online Course).</p></li>
+<li><p><strong>Resource</strong>: <a href="http://cs231n.stanford.edu/2020/">Stanford University’s CS231n course on Convolutional Neural Networks</a> (Online Course).</p></li>
+<li><p><strong>Model Tuning and Optimization:</strong></p></li>
+</ol>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://www.coursera.org/learn/computer-vision-with-embedded-machine-learning">“Practical Machine Learning for Computer Vision” on Coursera (Online Course)</a>.</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.youtube.com/@SebastianRaschka/playlists">Sebastian Raschka’s YouTube channel</a> for machine learning tips.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Stage 5: Data Visualization and Communication
+</h2>
+
+<p>To bridge the gap between data analysis and communicating insights to stakeholders, effective data visualisation and communication skills are provided here. This stage improves the capacity to effectively convey findings.</p>
+
+<ol>
+<li><p><strong>Resource</strong>: “<a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781119055259">Storytelling with Data” by Cole Nussbaumer Knaflic</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.youtube.com/user/datasaurusrex">Datasaurus Rex’s YouTube channel for data visualization</a>.</p></li>
+<li><p><strong>Communication Skills:</strong></p></li>
+</ol>
+
+<ul>
+<li><p><strong>Resource</strong>: <a href="https://www.oreilly.com/library/view/data-points-visualization/9781118654934/">“Data Points” by Nathan Yau</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.datacamp.com/tracks/data-scientist-with-python">DataCamp’s “Data Science Communication with Python” (Online Course)</a>.</p></li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--w8SPXJh4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/9620/0%2AwrWeUIsFtF8tkbuv" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--w8SPXJh4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn-images-1.medium.com/max/9620/0%2AwrWeUIsFtF8tkbuv" alt="Photo by [Luke Chesser](https://unsplash.com/@lukechesser?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)" width="800" height="533"></a></p>
+
+<h2>
+  
+  
+  Stage 6: Real-World Projects
+</h2>
+
+<p>It is critical to apply information in practical contexts after attaining a strong skill set. Real-world projects give a hands-on experience that reinforces and solidifies previously gained abilities.</p>
+
+<ol>
+<li><strong>Build Projects:</strong></li>
+</ol>
+
+<ul>
+<li><p>Apply your skills to real-world data science projects. Start with small projects and gradually work on more complex ones.</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.kaggle.com/">Kaggle</a> (for datasets and competitions).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://github.com/">GitHub </a>(for hosting and showcasing your projects).</p></li>
+</ul>
+
+<p><strong>2. Continuous Learning:</strong></p>
+
+<ul>
+<li><p>Stay updated with the latest trends and research in data science.</p></li>
+<li><p><strong>Resource</strong>: Blogs and forums like <a href="https://towardsdatascience.com/?gi=15be3662826a">Towards Data Science</a> (Medium), <a href="https://datascience.stackexchange.com/">Data Science Stack Exchange</a>, and <a href="https://www.reddit.com/r/datascience/">Reddit’s r/datascience</a>.</p></li>
+<li><p><strong>Resource</strong>: Subscribe to <strong>academic journals</strong> and publications in the field.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Stage 7: Networking and Career Development
+</h2>
+
+<p>Learners in this stage concentrate on professional development and career advancement. As people advance into data science professions, networking, job hunting, and specialisation become increasingly important.</p>
+
+<ol>
+<li><strong>Networking:</strong></li>
+</ol>
+
+<ul>
+<li><p>Attend data science meetups, conferences, and webinars both in-person and online.</p></li>
+<li><p><strong>Resource</strong>: <a href="http://Meetup.com">Meetup.com</a> (for finding local data science meetups).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.linkedin.com/in/imad-adrees/">LinkedIn</a> (for connecting with professionals and joining data science groups).</p></li>
+</ul>
+
+<p><strong>2. Job Search:</strong></p>
+
+<ul>
+<li><p>Create a strong resume and LinkedIn profile highlighting your skills and projects.</p></li>
+<li><p>Prepare for interviews by practising technical questions and behavioural interviews.</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.amazon.com/Cracking-Data-Science-Interview-Questions/dp/171068013X">“Cracking the Data Science Interview” by Jake VanderPlas</a> (Book).</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.glassdoor.com/index.htm">Glassdoor</a> and <a href="https://www.linkedin.com/jobs/">LinkedIn</a> Jobs (for job search).</p></li>
+</ul>
+
+<p><strong>3. Advanced Specialization:</strong></p>
+
+<ul>
+<li><p>Consider specializing in areas like Natural Language Processing (NLP), Computer Vision, or Data Engineering based on your interests.</p></li>
+<li><p><strong>Resource</strong>: Specialized courses and books in your chosen domain.</p></li>
+<li><p><strong>Resource</strong>: Online forums and communities dedicated to your specialization.(<a href="https://www.analyticsvidhya.com/blog/">AnalyticsVidhya</a>)</p></li>
+</ul>
+
+<p><strong>4. Certifications:</strong></p>
+
+<ul>
+<li><p>Consider pursuing relevant certifications such as the <a href="https://grow.google/certificates/data-analytics/#?modal_active=none">Google Data Analytics Professional Certificate</a> or <a href="https://learn.microsoft.com/en-us/certifications/azure-data-scientist/">Microsoft Certified: Azure Data Scientist Associate</a>.</p></li>
+<li><p><strong>Resource</strong>: <a href="https://www.coursera.org/">Coursera</a>, <a href="https://www.edx.org/">edX</a>, and <a href="https://learn.microsoft.com/en-us/certifications/">Microsoft Learn offer certification</a> programs.</p></li>
+</ul>
+
+<p><strong>Additional Skills</strong></p>
+
+<ol>
+<li><p><a href="https://online.hbs.edu/blog/post/data-storytelling">Storytelling</a></p></li>
+<li><p><a href="https://towardsdatascience.com/business-knowledge-for-data-science-2aa458b6d988">Business Acumen</a></p></li>
+<li><p><a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/data-ethics-what-it-means-and-what-it-takes">Ethical Data Practices</a></p></li>
+<li><p><a href="https://www.coursera.org/articles/big-data-technologies">Big Data Technologies</a></p></li>
+<li><p><a href="https://online.stanford.edu/courses/xcs234-reinforcement-learning">Reinforcement Learning</a></p></li>
+<li><p><a href="https://www.atlassian.com/git/tutorials/what-is-version-control">Version Control</a></p></li>
+<li><p><a href="https://www.simplilearn.com/soft-skills-for-data-scientist-article">Soft Skills</a></p></li>
+</ol>
+
+<h3>
+  
+  
+  Final Thoughts
+</h3>
+
+<p>The stages are ordered sequentially, however, it is crucial to remember that learning is an iterative process. As they handle more sophisticated topics and tasks, learners may return to previous stages. Furthermore, continual learning, networking, and remaining motivated are continuing activities that operate concurrently with the other stages of a data scientist’s career.</p>
+
+<p>That’s all, Thank you for reading. Hope you enjoyed learning, Don’t forget to Subscribe to my Newsletter <a href="https://imadadrees.substack.com/">**Here</a><strong>, and get the <a href="https://imadadrees.substack.com/">**DATA SCIENCE MASTERY COURSE OUTLINE</a></strong>.</p>
+
+<p>Happy Learning!</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Publish an NPM Package from a GitHub Repository](https://dev.to/sh20raj/publish-an-npm-package-from-a-github-repository-4i8f) 
  <details><summary>Article</summary> <h1>
   
@@ -1298,276 +1751,6 @@ What import alias would you like configured? @/*
 </ul>
 
 <p>If you have any questions or need further assistance, please feel free to drop by our <a href="https://directus.chat/">Discord server</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [ChatGPT: The Good, the Bad, and the Risky for Developers](https://dev.to/mainulspace/chatgpt-the-good-the-bad-and-the-risky-for-developers-5ag2) 
- <details><summary>Article</summary> <p>While exploring ChatGPT, I’ve seen both good and bad. Yes, it boosts my work efficiency. It reduces coding errors and automates boring tasks. But there’s a downside too. This guide dives into those less-talked-about issues. They could affect your skills, your work ethic, and even your job.</p>
-
-<h2>
-  
-  
-  1. Over-reliance on Automation
-</h2>
-
-<p>Automating repetitive tasks is good. Every developer loves that. However, relying too much on tools like ChatGPT can be risky. You could forget your core coding skills. You may end up just supervising automated processes, rather than coding yourself.</p>
-
-<p>These days I’m using ChatGPT extensively to handle all my debugging. Over time, I lost touch with the essential skill of troubleshooting independently. When ChatGPT couldn’t solve a tough problem, I found myself completely stumped.</p>
-
-<h2>
-  
-  
-  2. Ethical and Data Privacy Considerations
-</h2>
-
-<p>Let’s not forget what’s behind ChatGPT. It’s a machine trained on lots of data. Some of that could be sensitive or private. If you work on apps that handle user data, think about what that means.</p>
-
-<p>Take a healthcare app as an example. Using code from ChatGPT without a careful check could risk leaking patient data. Always double-check the code you use.</p>
-
-<h2>
-  
-  
-  3. Accuracy and Reliability Issues
-</h2>
-
-<p>ChatGPT has limits. It’s not always right. Some developers have trusted it too much and faced problems. For instance, they found bugs or security risks in the code.</p>
-
-<p>I had a similar experience. I used ChatGPT to write some backend scripts. At first, things looked fine. Later, I found security flaws. Always validate the code you get from AI tools.</p>
-
-<h2>
-  
-  
-  4. Creativity and Problem-Solving
-</h2>
-
-<p>AI tools can offer quick fixes, but they lack the human ability to think or strategize. By leaning too much on ChatGPT for solutions, you risk undermining your ability to solve problems in innovative ways.</p>
-
-<p>For example, if you rely on ChatGPT to generate algorithms during team brainstorming sessions, you may miss out. This can discourage teamwork. It can also limit the fresh, innovative ideas that only humans can bring.</p>
-
-<p><iframe class="tweet-embed" id="tweet-1697297004009836544-592" src="https://platform.twitter.com/embed/Tweet.html?id=1697297004009836544">
-</iframe>
-
-  // Detect dark theme
-  var iframe = document.getElementById('tweet-1697297004009836544-592');
-  if (document.body.className.includes('dark-theme')) {
-    iframe.src = "https://platform.twitter.com/embed/Tweet.html?id=1697297004009836544&amp;theme=dark"
-  }
-
-
-
- </p>
-<h2>
-  
-  
-  5. The Hidden Costs
-</h2>
-
-<p>A wooden box labeled “Hidden Costs” symbolizes the unexpected drawbacks and expenses of relying on ChatGPT for coding tasks.</p>
-
-<p>Many AI tools like ChatGPT offer free versions, but their best features often require a premium subscription. However, the actual cost isn’t just monetary; it’s also the time you’ll spend fixing and validating the code generated by the AI.</p>
-
-<p>For instance, I invested in a premium ChatGPT subscription to speed up my development process. Yet, the AI’s code wasn’t perfect and had several issues. As a result, I spent more time debugging than I had planned. This not only erased the time I had hoped to save but also added unexpected expenses.</p>
-<h2>
-  
-  
-  6. Dependency Risk
-</h2>
-
-<p>Using ChatGPT too much can weaken your coding skills and even change the job landscape. This can make computers more important than people in the coding world. The result? A new wave of coders who don’t understand the basics of coding.</p>
-
-<p>Research shows that depending too much on AI coding assistants like ChatGPT can stifle creativity. Instead of coming up with new ideas, coders may just become executors, executing tasks without really thinking them through.</p>
-<h2>
-  
-  
-  7. Accessibility and Usability
-</h2>
-
-<p>ChatGPT’s user-friendly design is a double-edged sword. While it makes coding tasks more convenient, it can also create a false sense of security. Developers may overlook mistakes in the code it generates.</p>
-
-<p>In a recent survey, something surprising came to light. A substantial 40% of developers have used code from ChatGPT without double-checking it. This choice could risk the reliability of their projects.</p>
-<h2>
-  
-  
-  8. Intellectual Property Concerns
-</h2>
-
-<p>Who owns the code that an AI creates? This is a new and complicated legal area. It can raise questions about who owns your project.</p>
-
-<p>If a big part of your project code comes from an AI like ChatGPT, you might face legal challenges that affect how you can use or sell your work.</p>
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>As AI keeps growing in software development, it’s key to weigh the good with the bad. ChatGPT can be a helpful tool for some tasks but use it wisely. After all, tech should boost your skills, not take your place.</p>
-
-<p>Have you faced any challenges or ethical dilemmas while using ChatGPT? Share your experiences and suggestions in the comments below.</p>
-
-<p>Feel free to connect with me on <a href="https://twitter.com/mainulspace"><strong>Twitter</strong></a> or <a href="https://www.linkedin.com/in/mainulspace/"><strong>LinkedIn</strong></a>.</p>
-<h2>
-  
-  
-  Read Next...
-</h2>
-
-
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/chatgpt-my-co-developer-for-mundane-tasks-3jjo" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>ChatGPT: My Co-Developer for Mundane Tasks</h2>
-      <h3>Mainul Hasan ・ Sep 8</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#chatgpt</span>
-        <span class="ltag__link__tag">#ai</span>
-        <span class="ltag__link__tag">#productivity</span>
-        <span class="ltag__link__tag">#programmers</span>
-      </div>
-    </div>
-  </a>
-</div>
-<br>
-<div class="ltag__link">
-  <a href="/mainulspace" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wqulbyOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--Tr1xwBl1--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1109530/fc878a1c-2fa0-47c6-b869-395aeb113e2d.png" alt="mainulspace">
-    </div>
-  </a>
-  <a href="/mainulspace/decoding-software-testing-a-deep-dive-into-quality-assurance-2nf0" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Decoding Software Testing: A Deep Dive into Quality Assurance</h2>
-      <h3>Mainul Hasan ・ Sep 10</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#softwaredevelopment</span>
-        <span class="ltag__link__tag">#qualityassurance</span>
-        <span class="ltag__link__tag">#softwaretesting</span>
-        <span class="ltag__link__tag">#testingmethodologies</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
- </details> 
- <hr /> 
-
- #### - [Don't sound like a robot: use CSS to Control Text-to-Speech](https://dev.to/ingosteinke/using-css-to-control-text-to-speech-1i0d) 
- <details><summary>Article</summary> <p>Websites often sound like a vintage science-fiction robot when using a screen reader / text-to-speech output to read the text aloud.</p>
-
-<p>While there might be a good reason to do so, as this tone of voice was easier to understand when playing it at double or triple speed, that's also true for other ways of speaking.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0OS4N2QS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jlczzrmi3avkezj6gw0d.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0OS4N2QS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jlczzrmi3avkezj6gw0d.png" alt="Drawing of a cartoon robot saying: I am not a robot. Human character relies: but you sound like a robot." width="800" height="600"></a></p>
-
-<p>"I am not a ro-bot" - "but you sound like a robot!"</p>
-
-<p>Scholars, actors or opera singers use an exaggerated articulation to facilitate understanding. Another example is classic radio advertisement where they often speak in a fast, high-pitched and overly excited voice to convey both emotion a lot of information in a few seconds of time.</p>
-
-<h2>
-  
-  
-  How does your website sound?
-</h2>
-
-<p>In his <a href="https://beyondtellerrand.com/events/dusseldorf-2022/speakers/vasilis-van-gemert">beyond Tellerrand 2022 talk "exclusive design", Vasilis van Gemert proved</a> that you can add an individual touch to your website using some sort of simple poetry or exclamation expressions in ALT attributes like "boing boing".</p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/TkKkAgjsfgQ">
-</iframe>
-</p>
-
-<p>Some screen readers offer different voices, often at least one female and one male one, but that's a client setting that doesn't change for a website an its content.</p>
-
-<h2>
-  
-  
-  CSS Voice Control
-</h2>
-
-<p>Now we can use CSS to declare different voices much like we use CSS to declare font families and typographic details. So we could make a Q&amp;A section sound like someone is asking and another voice is answering the questions.</p>
-
-<p>Code syntax is still an early draft, so it might change before browser support, but the <a href="https://www.w3.org/TR/css-speech-1/">current recommendation (CSS Speech Module Level 1)</a> looks quite similar to typography:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">selector</span> <span class="p">{</span>
-  <span class="nl">voice-family</span><span class="p">:</span> <span class="n">female</span><span class="p">;</span>
-  <span class="nl">voice-pitch</span><span class="p">:</span> <span class="nb">medium</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>As the property is still experimental, <a href="https://stylelint.io">stylelint</a> does not recognize it yet at the time of writing this, so let's explicitly disable the <code>property-no-unknown</code> rule only where we use it by adding a <code>stylelint-disable</code> comment and re-enable it afterwards.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">selector</span> <span class="p">{</span>
-  <span class="c">/* stylelint-disable property-no-unknown */</span>
-  <span class="nl">voice-family</span><span class="p">:</span> <span class="n">female</span><span class="p">;</span>
-  <span class="nl">voice-pitch</span><span class="p">:</span> <span class="nb">medium</span><span class="p">;</span>
-  <span class="nl">voice-stress</span><span class="p">:</span> <span class="n">moderate</span><span class="p">;</span>
-  <span class="nl">voice-rate</span><span class="p">:</span> <span class="nb">fast</span><span class="p">;</span>
-  <span class="nl">voice-volume</span><span class="p">:</span> <span class="nb">soft</span><span class="p">;</span>
-  <span class="nl">pause-after</span><span class="p">:</span> <span class="n">strong</span><span class="p">;</span>
-  <span class="nl">voice-balance</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-  <span class="c">/* stylelint-enable property-no-unknown */</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Pretty much the same like we have to do with some other helpful styles that became common practice but are not standard yet, like optimizing text rendering legibility rather than optimizing rendering speed.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">selector</span> <span class="p">{</span>
-  <span class="c">/* stylelint-disable-next-line value-keyword-case */</span>
-  <span class="nl">text-rendering</span><span class="p">:</span> <span class="n">optimizeLegibility</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Altogether, some of our base styles might look like this.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">main</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--color-primary-background</span><span class="p">);</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--color-primary-foreground</span><span class="p">);</span>
-    <span class="nl">font-family</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--font-family-default</span><span class="p">);</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--font-weight-regular</span><span class="p">);</span>
-  <span class="c">/* stylelint-disable-next-line value-keyword-case */</span>
-  <span class="nl">text-rendering</span><span class="p">:</span> <span class="n">optimizeLegibility</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--font-size-16</span><span class="p">);</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="c">/* prepare voice settings according to CSS speech draft */</span>
-  <span class="c">/* stylelint-disable property-no-unknown */</span>
-  <span class="nl">voice-family</span><span class="p">:</span> <span class="n">female</span><span class="p">;</span>
-  <span class="nl">voice-pitch</span><span class="p">:</span> <span class="nb">medium</span><span class="p">;</span>
-  <span class="nl">voice-stress</span><span class="p">:</span> <span class="n">moderate</span><span class="p">;</span>
-  <span class="nl">voice-rate</span><span class="p">:</span> <span class="nb">fast</span><span class="p">;</span>
-  <span class="nl">voice-volume</span><span class="p">:</span> <span class="nb">soft</span><span class="p">;</span>
-  <span class="nl">pause-after</span><span class="p">:</span> <span class="n">strong</span><span class="p">;</span>
-  <span class="nl">voice-balance</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-  <span class="c">/* stylelint-enable property-no-unknown */</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
 
  </details> 
  <hr /> 
