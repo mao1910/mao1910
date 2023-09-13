@@ -118,6 +118,2125 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Vue 3: Options API vs the Composition API](https://dev.to/alakkadshaw/vue-3-options-api-vs-the-composition-api-5556) 
+ <details><summary>Article</summary> <p>Options API has been the go to method of creating components in Vue. With the introduction of Vue 3, a new method of creating components was introduced called the composition API</p>
+
+<p>In this article we are going to learn about Options API and composition API, their differences and why composition API was introduced along with an example</p>
+
+<h2>
+  
+  
+  Options API: An Introduction
+</h2>
+
+<p>Options API was the default method of creating components in Vue 2. When we think of a Vue component structure that would include component logic basic options like</p>
+
+<ul>
+<li>method</li>
+<li>data</li>
+<li>computed</li>
+<li>watch</li>
+</ul>
+
+<p>We are talking about the Options API. In the Options API the method is for writing functions, data is the state of the component, computed if for derived state and so on</p>
+
+<p>This method has been the core of vue since its inception. A component created with Options API would look something like this<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="err">export</span><span class="w"> </span><span class="err">default</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">data()</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">return</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">count:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">methods:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">increment()</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">this.count++;</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">computed:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">doubleCount()</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">return</span><span class="w"> </span><span class="err">this.count</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="mi">2</span><span class="err">;</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Composition API
+</h2>
+
+<p>In the composition API developers can group the component code by functionality or logic, instead of the rigid options based structure previously envisioned by the Options API</p>
+
+<p>This makes it easier to create larger and more complex components then before and also aids in maintainability and reliability.</p>
+
+<p>To achieve reactivity and flexibility the composition API offers functions like</p>
+
+<ul>
+<li>ref</li>
+<li>reactive and</li>
+<li>computed</li>
+</ul>
+
+<p>let us look how a component is created using the composition api<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">doubleCount</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">increment</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">count</span><span class="p">,</span>
+      <span class="nx">doubleCount</span><span class="p">,</span>
+      <span class="nx">increment</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In summary, the Options API distributes the component logic based on Options type and the composition API allows for the grouping of component logic by concern or feature</p>
+
+<h2>
+  
+  
+  Creating a Project to better understand Options API vs Composition API
+</h2>
+
+<p>In this section we are going to create a project with Options API and then introduce the composition api to better understand the differences between these two APIs</p>
+
+<p>We are going to create a task manager for this example and we are going to use vite to create the project</p>
+
+<h3>
+  
+  
+  Step 1: Create a new vite project
+</h3>
+
+<p>write the below code in your terminal to create a new Vue project with vite<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm create vite@latest my-vue-app <span class="nt">--</span> <span class="nt">--template</span> vue
+
+</code></pre>
+
+</div>
+
+
+
+<p>now you have created a new project <code>cd</code> into the my-vue-app directory and run the <code>npm install</code> and <code>npm run dev</code> commands<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd </span>my-vue-app
+npm <span class="nb">install
+</span>npm run dev
+</code></pre>
+
+</div>
+
+
+
+<p>Now, Open the code in your code editor. I am using VSCode and go to the local url where your app is running</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xXEXpSJJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3496skowegzalhh5lh19.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xXEXpSJJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3496skowegzalhh5lh19.png" alt="Image description" width="416" height="812"></a></p>
+
+<h2>
+  
+  
+  Step 2: Creating the TaskList Component with the help of Options API
+</h2>
+
+<p>In this section we are going to create a TaskList component using the Options API</p>
+
+<p>in your components folder create a file called TaskList.vue and paste the below code in it<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"task-list"</span><span class="nt">&gt;</span>
+
+      <span class="c">&lt;!-- Task Input Section --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"task-input"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">v-model=</span><span class="s">"newTask"</span> <span class="na">placeholder=</span><span class="s">"Add a new task"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;button</span> <span class="err">@</span><span class="na">click=</span><span class="s">"addTask"</span><span class="nt">&gt;</span>Add<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="c">&lt;!-- Incomplete Tasks --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"incomplete-tasks"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3&gt;</span>Incomplete Tasks<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"task in incompleteTasks"</span> <span class="na">:key=</span><span class="s">"task.id"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>{{ task.title }}<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;button</span> <span class="err">@</span><span class="na">click=</span><span class="s">"completeTask(task.id)"</span><span class="nt">&gt;</span>Mark Complete<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="err">@</span><span class="na">click=</span><span class="s">"deleteTask(task.id)"</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/button&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="c">&lt;!-- Completed Tasks --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"completed-tasks"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3&gt;</span>Completed Tasks<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"task in completedTasks"</span> <span class="na">:key=</span><span class="s">"task.id"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>{{ task.title }}<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;button</span> <span class="err">@</span><span class="na">click=</span><span class="s">"incompleteTask(task.id)"</span><span class="nt">&gt;</span>Mark Incomplete<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="err">@</span><span class="na">click=</span><span class="s">"deleteTask(task.id)"</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/button&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/template&gt;</span>
+
+  <span class="nt">&lt;script&gt;</span>
+  <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">tasks</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="na">newTask</span><span class="p">:</span> <span class="dl">''</span>
+      <span class="p">};</span>
+    <span class="p">},</span>
+    <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">incompleteTasks</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">task</span><span class="p">.</span><span class="nx">completed</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="nx">completedTasks</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">completed</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">addTask</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">newTask</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+            <span class="na">id</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+            <span class="na">title</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">newTask</span><span class="p">,</span>
+            <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">});</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">newTask</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nx">deleteTask</span><span class="p">(</span><span class="nx">taskId</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">taskId</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="nx">completeTask</span><span class="p">(</span><span class="nx">taskId</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">t</span> <span class="o">=&gt;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">taskId</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="nx">task</span><span class="p">.</span><span class="nx">completed</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="p">},</span>
+      <span class="nx">incompleteTask</span><span class="p">(</span><span class="nx">taskId</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">t</span> <span class="o">=&gt;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">taskId</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="nx">task</span><span class="p">.</span><span class="nx">completed</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nt">&lt;/script&gt;</span>
+
+  <span class="nt">&lt;style </span><span class="na">scoped</span><span class="nt">&gt;</span>
+  <span class="nc">.task-list</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">80%</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">12px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.1</span><span class="p">);</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.task-input</span> <span class="p">{</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Handling data
+</h3>
+
+<p>We are using the Option APIs data function here which acts as the component's state to store information.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="err">data()</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">return</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">tasks:</span><span class="w"> </span><span class="p">[],</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">tasks</span><span class="w"> </span><span class="err">Array</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">hold</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">tasks</span><span class="w">
+    </span><span class="err">newTask:</span><span class="w"> </span><span class="err">''</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">newTask</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">which</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">hold</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">task</span><span class="w">
+  </span><span class="p">}</span><span class="err">;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Handling functionality through methods
+</h2>
+
+<p>In the Options API we can create JS function to add functionality to our components.</p>
+
+<p>These functions can be created inside the methods options. Here are some of the functions that we are creating inside the methods option</p>
+
+<p><strong>addTask</strong> : This function is used to create new tasks<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">addTask</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">newTask</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+      <span class="na">title</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">newTask</span><span class="p">,</span>
+      <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">newTask</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>  <span class="c1">// Reset the input field</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p><code>deleteTask</code> This method is used to delete a task<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">deleteTask</span><span class="p">(</span><span class="nx">taskId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">taskId</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p><code>completeTask</code> This function is used to mark a task as completed<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">completeTask</span><span class="p">(</span><span class="nx">taskId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">t</span> <span class="o">=&gt;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">taskId</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="nx">task</span><span class="p">.</span><span class="nx">completed</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>incompleteTask</code> This function is used to mark a task as incomplete, if first they were marked as complete by mistake<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">incompleteTask</span><span class="p">(</span><span class="nx">taskId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">t</span> <span class="o">=&gt;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">taskId</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="nx">task</span><span class="p">.</span><span class="nx">completed</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Computed Properties and Watchers
+</h3>
+
+<p>we can use computed properties to filter tasks</p>
+
+<p><code>incompleteTasks</code> Here we are using computed properties to filter and display only the tasks that have not been completed yet<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">incompleteTasks</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">task</span><span class="p">.</span><span class="nx">completed</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>completedTasks</code> : Likewise here we are filterning the tasks that have been completed and only showing those tasks<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">completedTasks</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">completed</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Our basic tasks list does not use watchers but if it did we can use the Option API watch property to declare the watchers there</p>
+
+<p>Now we have created the TaskList, the next thing is to include it in the App.Vue and see it working</p>
+
+<h2>
+  
+  
+  Adding the TaskList to App.Vue
+</h2>
+
+<p>open your App.Vue file and paste the following code there<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;script </span><span class="na">setup</span><span class="nt">&gt;</span>
+<span class="k">import</span> <span class="nx">TaskList</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/TaskList.vue</span><span class="dl">'</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://vitejs.dev"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/vite.svg"</span> <span class="na">class=</span><span class="s">"logo"</span> <span class="na">alt=</span><span class="s">"Vite logo"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://vuejs.org/"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"./assets/vue.svg"</span> <span class="na">class=</span><span class="s">"logo vue"</span> <span class="na">alt=</span><span class="s">"Vue logo"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;TaskList</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">scoped</span><span class="nt">&gt;</span>
+<span class="nc">.logo</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">6em</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1.5em</span><span class="p">;</span>
+  <span class="py">will-change</span><span class="p">:</span> <span class="n">filter</span><span class="p">;</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">filter</span> <span class="m">300ms</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.logo</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">filter</span><span class="p">:</span> <span class="n">drop-shadow</span><span class="p">(</span><span class="m">0</span> <span class="m">0</span> <span class="m">2em</span> <span class="m">#646cff</span><span class="n">aa</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.logo.vue</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">filter</span><span class="p">:</span> <span class="n">drop-shadow</span><span class="p">(</span><span class="m">0</span> <span class="m">0</span> <span class="m">2em</span> <span class="m">#42b883</span><span class="n">aa</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Lf618wzN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/478w3a4bdzespultyvrd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Lf618wzN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/478w3a4bdzespultyvrd.png" alt="Image description" width="800" height="858"></a></p>
+
+<p>In the app I have some logos so that it looks good.</p>
+
+<p>Let us learn what we are doing in the <code>App.vue</code> file</p>
+
+<h2>
+  
+  
+  Importing the TaskList Component
+</h2>
+
+<p>We need to import the tasklist component from the TaskList.Vue file to App.vue file<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">TaskList</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/TaskList.vue</span><span class="dl">'</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then we have the template and the scoped styles then we are having the TaskList component inside the template like<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://vitejs.dev</span><span class="dl">"</span> <span class="nx">target</span><span class="o">=</span><span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/vite.svg</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">logo</span><span class="dl">"</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">Vite logo</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://vuejs.org/</span><span class="dl">"</span> <span class="nx">target</span><span class="o">=</span><span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">./assets/vue.svg</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">logo vue</span><span class="dl">"</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">Vue logo</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">TaskList</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span></code></pre>
+
+</div>
+
+
+
+<p>and we have our app live and working</p>
+
+<h2>
+  
+  
+  Rebuilding the TaskList with Composition API
+</h2>
+
+<p>In this section we will rebuild the composition api so that you can better understand the differences between the options api and the composition api</p>
+
+<p>In the Options API we had options like</p>
+
+<ul>
+<li>data</li>
+<li>methods</li>
+<li>computed</li>
+<li>watch</li>
+</ul>
+
+<p>Let's see what we have in the composition API</p>
+
+<h2>
+  
+  
+  Handling data in composition API
+</h2>
+
+<p>Here instead of data Object we have the ref and the reactive functions.</p>
+
+<p>If we want to make a single value reactive (string, boolean, or number etc) then we can use ref and if we want to convert the whole object to reactive reference then use the reactive</p>
+
+<p>In other words for simple properties use ref and for complex properties or Objects use reactive function to make properties /data reactive reference<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span><span class="nx">ref</span><span class="p">,</span><span class="nx">reactive</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">([]);</span>
+<span class="kd">const</span> <span class="k">new</span> <span class="nx">Task</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Handling functionality in composition API
+</h2>
+
+<p>Methods in composition api are plain JS functions. There is no longer a need to describe them inside the methods Object.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">addTask</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">newTask</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">tasks</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+      <span class="na">title</span><span class="p">:</span> <span class="nx">newTask</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+      <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">});</span>
+    <span class="nx">newTask</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Computed properties and watchers in composition api
+</h2>
+
+<p>Computed properties and watchers use the  computed and watch functions<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">computed</span><span class="p">,</span> <span class="nx">watch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">incompleteTasks</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">tasks</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">task</span><span class="p">.</span><span class="nx">completed</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">completedTasks</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">tasks</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">completed</span><span class="p">));</span>
+
+<span class="nx">watch</span><span class="p">(</span><span class="nx">tasks</span><span class="p">,</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Tasks have changed!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Complete TaskList Component using Composition API
+</h2>
+
+<p>So we have converted the complete TaskList component from Options API to composition API<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">v-model=</span><span class="s">"newTask.value"</span> <span class="err">@</span><span class="na">keyup.enter=</span><span class="s">"addTask"</span> <span class="na">placeholder=</span><span class="s">"Add a new task"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"task in tasks.value"</span> <span class="na">:key=</span><span class="s">"task.id"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">v-model=</span><span class="s">"task.completed"</span><span class="nt">&gt;</span>
+        {{ task.title }}
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">TaskList</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">([]);</span>
+    <span class="kd">const</span> <span class="nx">newTask</span> <span class="o">=</span> <span class="nx">ref</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">addTask</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">newTask</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">tasks</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+          <span class="na">id</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+          <span class="na">title</span><span class="p">:</span> <span class="nx">newTask</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+          <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">});</span>
+        <span class="nx">newTask</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">tasks</span><span class="p">,</span>
+      <span class="nx">newTask</span><span class="p">,</span>
+      <span class="nx">addTask</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">scoped</span><span class="nt">&gt;</span>
+<span class="c">/*Any styling the you wish to write*/</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Summary for converting TaskList to Composition API
+</h2>
+
+<p>Setup function: Setup function is the entry point where you declare your data, functions and event listeners as composition api provides grouping by functionality</p>
+
+<p>Reactivity use ref or reactive: Make individual properties a reactive ref using ref or if you want to make the whole Object reactive reference use the reactive</p>
+
+<p>functions: All the functions are declared inside the setup function</p>
+
+<p>Template access: Anything that needs to accessed in the template must be returned from the <code>setup</code> function</p>
+
+<h2>
+  
+  
+  Advanced use-cases
+</h2>
+
+<h2>
+  
+  
+  State Management: Composition API + Pinia
+</h2>
+
+<p>Pinia is the new default state management library for Vue Js. If you want to use a store the Pinia API are pretty straightforward. You can use <code>useCoolStore()</code> pattern this is similar to Vueex 5<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">defineStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">pinia</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">useMyStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mystore</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">state</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">someStateValue</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+  <span class="p">}),</span>
+  <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">setSomeStateValue</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">someStateValue</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In this above code we are using the defineStore function of Pinia to create a new store and we are naming it mystore</p>
+
+<p>then in this store we have a single reactive state property called someStateValue and we are initialing the state property with an empty string</p>
+
+<p>To modify the value of <code>someStateValue</code> we have the function or action <code>setSomeStateValue</code></p>
+
+<p>Lastly we are exporting the state useMyStore so that other components can use it</p>
+
+<p>This article is brought to you by DeadSimpleChat, <a href="https://deadsimplechat.com">Chat API</a> and SDK for your website and APP</p>
+
+<h3>
+  
+  
+  using Pinia with composition api
+</h3>
+
+<p>let us use the useMyStore within a component that is created with composition api<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useMyStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/stores/mystore</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">useMyStore</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="p">{</span> <span class="na">someStateValue</span><span class="p">:</span> <span class="nx">store</span><span class="p">.</span><span class="nx">someStateValue</span> <span class="p">};</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>here we are importing the useMyStore function which will provide our component the access to the already defined Pinia store</p>
+
+<p>In the component and since we are using the composition api we have the setup function</p>
+
+<p>inside the setup function we have a const named store and we are assigning the useMyStore function to the store const</p>
+
+<p>This grants us access to the store state that is data and actions that is functions</p>
+
+<p>lastly we are exposing the someStateValue to the components template from the store so that we can use it for rendering the component</p>
+
+<h2>
+  
+  
+  Routing with Pinia, Vue Router and composition API
+</h2>
+
+<p>Using Vue Router with Pinia is quite easy<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span><span class="p">,</span> <span class="nx">useRoute</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-router</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">route</span> <span class="o">=</span> <span class="nx">useRoute</span><span class="p">();</span>
+
+    <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">BestRouteEver</span><span class="dl">'</span> <span class="p">});</span>
+
+    <span class="k">return</span> <span class="p">{};</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>In this example we are using the <code>useRouter</code> and the <code>useRoute</code> Hooks provided by the Vue Router.</p>
+
+<p>First we initialize the two const namely <code>router</code> and the <code>route</code></p>
+
+<p>The router gives us access to the router instance and the route gives us insight into the current route's details</p>
+
+<p>All the integration is within the setup function signifying that we are using the composition api in this example instead of the options api</p>
+
+<p>Lastly to navigate we are using the router.push function to take the application to <code>BestRouteEver</code></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In this example we learned about the Options API as well as the composition API</p>
+
+<p>Thus composition api is a better option to use then the Options API in Vue js. It is basically aims at solving the same problem but has a more logical organization of code that helps the app scale a lot better with more readable code base</p>
+
+<p>This article is brought to you by DeadSimpleChat, Chat API and SDK for your website and app</p>
+
+<p>Compositon API provides grouping of code based on logical functionality as compared to Options API which provides a more rigid structure</p>
+
+<p>You can use options api in the Vue 3 as well if you are developing small apps and are more comfortable using the options api. It is more welcoming to new developers coming on to the Vue platoform</p>
+
+<p>But for large scale apps or app that has a lot of complexcity the composition api is a better choice</p>
+
+<p>Composition API is also quite good and easy to learn once you understand the basic idea behind it</p>
+
+<p>I would suggest that composition api is even more easier to learn for a novice programmer as it provides logical or functional grouping of the code at one place which is better than a scattered approch of Options api which also has a rigid structure</p>
+
+<p>Thank you for reading I hope you liked the article</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Flet is "The fastest way to build Flutter apps in Python" - it's not :(](https://dev.to/maximsaplin/flet-is-the-fastest-way-to-build-flutter-apps-in-python-its-not--3dkm) 
+ <details><summary>Article</summary> <p>"The fastest way to build Flutter apps in Python" is the title of <a href="https://flet.dev">Flet's web page</a>. As someone coming from the Flutter world reading the line I draw an ideal picture of <em>"swapping Dart language for Python and magically having the whole power of Flutter framework at the tips of your fingers"</em>.</p>
+
+<h2>
+  
+  
+  Not Flutter
+</h2>
+
+<p>Upon inspection of the sample code written in Flet, I see no Flutter:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8QxOoVGd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7u6bb3goy1o5pyu0uis2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8QxOoVGd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7u6bb3goy1o5pyu0uis2.png" alt="Image description" width="800" height="717"></a></p>
+
+<ul>
+<li>There are no <a href="https://docs.flutter.dev/ui">widgets</a> - the cornerstone of Flutter (immutable UI configuration). There's no such concept.</li>
+<li>It has its own library of controls, you can't use the standard Flutter UI library</li>
+<li>It is imperative, i.e. you explicitly create UI elements (aka controls) and mutate their state</li>
+<li>UI updates are explicit and require <code>page.update()</code> call</li>
+</ul>
+
+<p>Philosophically, the above snippet of Flet code represents anti-Flutter, the way of doing UI that Flutter was created to move away from. Here's the quote from <a href="https://docs.flutter.dev/resources/architectural-overview">Flutter architectural overview</a>:</p>
+
+<blockquote>
+<p>Flutter is a reactive, declarative UI framework, in which the developer provides a mapping from application state to interface state, and the framework takes on the task of updating the interface at runtime when the application state changes. This model is inspired by work that came from Facebook for their own React framework, which includes a rethinking of many traditional design principles.</p>
+</blockquote>
+
+<p>While Flutter is used to power Flet behind the scenes, it is hidden deep. None of the features Flutter is famous and valued for can't be seen in Flet.</p>
+
+<h2>
+  
+  
+  Not the fastest
+</h2>
+
+<p>Flutter is known for its reach ecosystem and availability of many high-quality libraries. There're over 38000 packages at <a href="https://pub.dev">pub.dev</a> and none of those e are available to build UI in Flet.</p>
+
+<p>Besides none of the Flutter-specific materials (blogs, StackOverflow questions, docs) can be applied here. </p>
+
+<p>As long as you're not building a counter app there're few readily available modules OR docs that can make you faster.</p>
+
+<h2>
+  
+  
+  What Flet actually is
+</h2>
+
+<p>In a wide sense, Felt is a cross-platform, server-driven, imperative UI framework for Python. It uses Flutter behind the scenes to build and package UI clients that communicate with the Python backend and render the UI. It keeps developers away from Flutter clients, they are ready-made and not intended to be changed.</p>
+
+<p>In the context of the Flutter ecosystem, Flet is a <a href="https://pub.dev/packages/flet">package published at pud.dev</a> that allows you to put a widget in your app and render UI generated by Flet's Python server:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight dart"><code>  <span class="n">Widget</span> <span class="nf">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">const</span> <span class="n">MaterialApp</span><span class="p">(</span>
+      <span class="nl">title:</span> <span class="s">'Flet Flutter Demo'</span><span class="p">,</span>
+      <span class="nl">home:</span> <span class="n">FletApp</span><span class="p">(</span><span class="nl">pageUrl:</span> <span class="s">"http://localhost:8550"</span><span class="p">),</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Is it bad?
+</h2>
+
+<p>No, it's not! The creators of the package did a huge job and presented a UI framework that lets anyone who knows Python jump onto developing cross-platform apps for Windows, Linux, macOS, Android, iOS, and the Web. There's no need need to learn a new programming language. No need to learn complicated paradigms with state management, reactive UI whatever.</p>
+
+<p>However, the communication from Flet's team can be confusing and misleading.</p>
+
+<p>If someone has Flutter experience, is building an app, and comes to Flet seeking to integrate Python - the expectations will likely be inflated and wrong. I don't think this person can be convinced to forgo all the goods of Flutter and switch to a completely new UI framework which is light years behind. There're better ways to <a href="https://dev.to/maximsaplin/integrating-flutter-all-6-platforms-and-python-a-comprehensive-guide-4ipo">couple Flutter and Python</a>.</p>
+
+<p>If someone has Python knowledge but no UI development experience, is building a simple UI for any of the platforms, and wants to start fast - Flet can be the right choice.</p>
+
+<p>Yet if you're building UI that will last, Flet's imperative UI (reminding of the old good days of C++/MFC, Delphi, and ASP.NET Web Forms) can be an issue. There's a reason why we have plenty of modern UI frameworks that don't do that. With a sophisticated UI state, you will be creating a lot of hard-to-maintain and buggy code. Keeping in your head all the places that need to be manually updated (every time you have a new requirement) won't be easy. Learning a capable UI framework that promotes good practices might be a better option for building complicated UI driven apps.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Link Building for Non-Scumbags: Build Authority Without Being Awful](https://dev.to/daedtech/link-building-for-non-scumbags-build-authority-without-being-awful-5fb2) 
+ <details><summary>Article</summary> <p><em>(Editorial note: I originally <a href="https://www.hitsubscribe.com/link-building-for-non-scumbags-build-authority-without-being-awful/">published this on Hit Subscribe</a>.)</em></p>
+
+<p>If the title here seems aggressive, my hope is that you'll empathize with me by the time you're done reading.</p>
+
+<p>Throughout this post, I'm going to post screenshots of link building outreach I've received over the years.  They're not going to be relevant to the flow of the post, per se.  Instead, I'm going to invite you on a walk with me through a digital garden of spam while I explain how to earn yourself backlinks without being terrible or hiring someone else to be terrible on your behalf.</p>
+
+<p>You see, these screenshots represent how most link building outfits operate.  And they're just the tip of the iceberg of what I receive—just the ones funny enough to save.</p>
+
+<h2>Link Building: What It Is, Briefly</h2>
+
+<p>If you don't know what I'm talking about when I say link building, let's start simply.  What is link building?</p>
+
+<p>Well, for SEO purposes, the more links you have from other sites to yours, the more search engines like your site, and they'll rank your content accordingly.  So link building is an activity wherein you specifically "encourage" the world to link to your site, through a variety of tactics.  These tactics run the gamut from "create interesting content that people want to link" to "hack into some poor blogger's WordPress instance and insert 40 million links before someone kicks you out and has you arrested."</p>
+
+<h2>The Link Building State of the Art</h2>
+
+<p>Sadly, the state of the art in link building looks a lot more like the latter than the former.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--snibw_G1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--snibw_G1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links3.png" alt="" width="564" height="388"></a>Aw, you don't have to visit if you don't want to, Tony Montana, but if you do, please say hello to my little friend.  </p>
+
+<p>If you go out and google link building, I'm sure you'll hear from the world's top SEO tool vendors.  And I'm also sure that—caveated with appropriate cautions not to leverage underhanded, "black hat SEO" tactics and that the best approach is earning links via "good" content—they'll encourage you to undertake an extremely outreach- (read: spam-) heavy approach, such as:</p>
+
+<ol>
+    <li>Create a throwaway gmail address because <em>boy</em> are people going to report what you're doing as spam.</li>
+    <li>Create an email template wherein you beg for links or else mendaciously tell recipients that it's in their best interest to link to you.</li>
+    <li>Unleash that email template onto the blogosphere, like a firehose taking out a few butterflies on some flowers.</li>
+    <li>If that doesn't work, just try to bribe people.</li>
+    <li>In parallel to all of that, offer filler content with links to your site as a guest post for other sites.</li>
+    <li>If that doesn't work, try to sneak content with links onto various sites.</li>
+    <li>As a last resort, also bribe them to publish the filler content.</li>
+</ol>
+
+<p>As you might imagine, these tactics yield a low success rate.  And that means the only way to make them succeed is to execute them at incredibly high volume and low cost.</p>
+
+<h2>Why This Is a Problem for You</h2>
+
+<p>Let's assume, for the moment, that you don't have an issue with annoying people in bulk.  Or perhaps you hire a link building vendor and think, "If I don't know about it, I can tell myself it's not happening."</p>
+
+<p>And I can earnestly sympathize with either position if your job or business is on the line.  But there are issues that go beyond annoying people with email spam.</p>
+
+<p><a href="https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links6.bmp"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4b6E4_T8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links6-e1692997306571.bmp" alt="" width="700" height="567"></a>Spamming influencers among your target market wouldn't be my move, but, hey, do you.  And, bonus points for spelling my name right. </p>
+
+<p>First, this type of thing can backfire if the search engines get wind of it.  Paying directly for backlinks is what's known as "black hat SEO" and runs afoul of fair play in trying to rank, theoretically resulting in penalties.  And things like what this "best CI/CD tool" here is proposing—one-for-one link exchanges—are at best "gray hat SEO," which <em>might </em>violate search engine terms.</p>
+
+<p>So the firms doing this on your behalf, should they become too desperate, ham-fisted, or egregious about their efforts, can actually hurt more than help with SEO.</p>
+
+<p>But the bigger issue is optics.  In our world of <a href="https://dev.to/hitsubscribe/developer-marketing-an-insiders-guide-with-actionable-tips-1h7l">developer marketing</a>, for instance, the bloggers with high authority sites are often members of your target market with outsize influence among that same market.  Do you really want to introduce yourself by spamming them?</p>
+
+<p>At its peak, <a href="https://daedtech.com/">the DaedTech blog</a> was pushing a million visits per year from software developers.  That's a LOT of impressions, should a given piece of spam annoy me enough to remove those strikeouts of the company's name and put "the best CI/CD tool" on blast for spamming.</p>
+
+<h2>Backlinking Reconsidered: Our Philosophy</h2>
+
+<p>About a year and a half ago, I started to idly think about what it might look like to do things differently.  What if you wanted to go out and get links to your site (or your clients' sites), but on the subject of shoveling collateral annoyance into the world, we said, "Not today, Satan?"</p>
+
+<p>We'd started a beta run of brokering sensible links among a handful of alpha clients for what would become our PR program.  Basically, if client A mentioned a term that client B had defined on their site, we'd add a link, where non-competitive.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vdHrdR5d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links2-1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vdHrdR5d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links2-1.png" alt="" width="600" height="402"></a>Until I received this email, I had no idea they offered PhD programs in link spam. </p>
+
+<p>So we took this seed of a program and decided to start doing R&amp;D and experiments, adhering to two core principles that counter the bad state of the art:</p>
+
+<ol>
+    <li>We won't do ANY broad outreach of any kind, let alone beg, bribe, wheedle, or attempt to trick anyone's audience.</li>
+    <li>We won't do anything on anyone's site or in anyone's community that isn't harmonious with the intended use of those venues.</li>
+</ol>
+
+<p>In my career, I've found that creative constraints tend to give rise to innovation.  My hope was that by limiting ourselves in this fashion, we might find a better state of the art that eventually competes with and surpasses the trash tactics endemic to this niche.</p>
+
+<h2>Our Learning: Concrete Backlinking Tactics for Non-Scumbags</h2>
+
+<p>Fast forward to today, and I'm pleased to say this proved effective.  We began to apply our R&amp;D efforts to what became a beta and eventually a general release offering for clients.</p>
+
+<p>And during the course of that beta, we measured results and saw that our participating clients were gaining <a href="https://ahrefs.com/blog/domain-rating/">domain rating</a> at roughly twice the clip of a non-participating control group of other clients.  So we have strong signal that these tactics work, and we know for sure we're not subjecting anyone to this one-two spam punch as an introduction to our clients:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IZBdx2Go--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links4.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IZBdx2Go--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links4.jpg" alt="" width="625" height="339"></a>No updates on my end, Millie, but you might want to update your template: "100% related to your website niche: {site.name}" </p>
+
+<p>For what it's worth, here are some tactics that you can consider for your own efforts.</p>
+
+<h3>1. Hosting or Guesting on Podcasts</h3>
+
+<p>The podcast world involves a complex web of different sites and syndications.  I've hosted and paneled on a few, and I've appeared on a bunch.  So while I'm no expert, I knew enough to be dangerous and, more importantly, to turn the audio from my <a href="https://www.youtube.com/watch?v=VclKH2AvDx4&amp;list=PL15SBd-pPBwL-qMlA7IhryDbDEh7b_tOV">weekly freelance Q&amp;A livestream</a> for our community into <a href="https://www.podpage.com/hit-subscribe-freelancer-qa/">a podcast</a>.</p>
+
+<p>If you want to start a podcast, there are three primary concerns to establish, and then you'll be good to go.</p>
+
+<ol>
+    <li>You need to host the podcast somewhere like, say, <a href="https://www.podbean.com/">Podbean</a> or <a href="https://www.buzzsprout.com/">Buzzsprout</a>.</li>
+    <li>You may want to create a website for the podcast, using something like <a href="https://www.podpage.com/">Podpage</a> or <a href="https://podcastpage.io/">Podcastpage</a>.</li>
+    <li>Finally, you'll need to distribute the podcast to as many venues and apps as possible, including but not limited to Spotify, Apple, Google, Amazon, <a href="https://player.fm/">PlayerFM</a>, <a href="https://www.listennotes.com/">ListenNotes</a>, <a href="https://www.iheart.com/">iHeartRadio</a>, etc.</li>
+</ol>
+
+<p>It's a bit of a project to set this up, but the hosts and site builders help you create a pretty turnkey setup.  Once you're established, you're just uploading audio to your host, and the episodes make their way onto all kinds of different websites and venues.</p>
+
+<p>Oh, and it's worth mentioning that if you, say, link in the show notes to a recent article you've published on your site, you might earn yourself around 1,000 linking DR by uploading just a single episode.</p>
+
+<p>If you don't have any audio lying around or you don't want to do all of that, no worries.  Just appear as a guest on a few established podcasts, and their production operation will do this for you.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5zpWC-I5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/InkedLinks1234.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5zpWC-I5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/InkedLinks1234.jpg" alt="" width="700" height="403"></a></p>
+
+<h3>2. Creating Hosted Sites on High Authority Platforms</h3>
+
+<p>There are an awful lot of sites out there that are happy to host your content, especially if you pay.  And some of those sites are also happy enough to host your content on a subdomain or even subdirectory of their own (high authority) domain.</p>
+
+<p>Take the site <a href="https://write.as/">write.as</a>, for instance, which has a 70 domain authority (Moz) and a 79 domain rating (Ahrefs).  Both of those are very high scores and represent the kind of links that would probably retail for at least $400 on the gray market for backlinks.  Write.as will happily give you as many of these as you want <a href="https://write.as/pricing">for $6 per month</a>.</p>
+
+<p>There are countless sites like this, some of which are free and some of which have a nominal cost.  Interestingly, almost all of them want to offer you mapping your own domain to the content as an upsell. No need, we're good.  We'll happily use your domain and all of its domain authority/rating, even though we don't mind paying.</p>
+
+<p>The only intermediate-to-advanced thing that I would mention with this tactic is that you should make sure you're linking to your hosted microsite from somewhere that's indexed.  Basically, you want to trigger Google to crawl the page linking to your microsite so that it will then crawl the microsite itself and find your backlink.</p>
+
+<h3>3. Cost Effective Presence Establishment</h3>
+
+<p>There are an awful lot of websites out there that exist just to serve as aggregators of websites and products.  I generally think of these (and categorize them in our database) as index sites.</p>
+
+<p>Some of them, like <a href="https://www.hotfrog.com/">Hotfrog</a>, are simply business catalogs.  Others, like <a href="https://www.saashub.com/">SaaSHub</a> allow their users to rate, review, and compare your offering with others.  There are still more oblique concerns, such as job boards or sites like Glassdoor.</p>
+
+<p>These sites often confer follow links if you abide by their guidelines and submit your business.  So going out and submitting to as many of these as possible has no downside.  It's why the sites exist, and it earns you backlinks.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7lr37sZH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links1-e1693001411255.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7lr37sZH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/Links1-e1693001411255.png" alt="" width="700" height="451"></a>Danger! Dubious or not, it looks like Maxwell has baptized me with his silver spam hammer.  </p>
+
+<p>But there are other, road-less-traveled opportunities here as well.  For instance, check out <a href="https://leanpub.com/developerhegemony">this page on Leanpub</a>, where I self-published one of my books, and my magnum rantus, <a href="https://daedtech.com/developer-hegemony-the-crazy-idea-that-software-developers-should-run-software-development/">Developer Hegemony</a>.  My profile comes with a 70 DA follow backlink to daedtech.com.  Yours can too, if you create an account.</p>
+
+<p>We're building a large war chest of venues like this, and you can do that too.  Or you can use ours, which we're going to publish on the site at some point.  In the meantime, feel free to <a href="mailto:info@hitsubscribe.com">email if you're interested</a>.</p>
+
+<h3>4. Create Content Glossaries</h3>
+
+<p>Shifting from the link side of the house over to content, let's take a look at something that shifts the onus of earning links away from you.  I'm talking here about the gold standard of link building, to which spammers pay lip service before spamming you.  I'm talking about creating content on your site that attracts links.</p>
+
+<p>Content glossaries are, for my money, the best way to do this.</p>
+
+<p>Sure, creating some witty post or infographic that blows readers' doors off with its awesomeness sounds great.  But that's kind of like chasing virality.  Content glossaries, on the other hand, are much more workmanlike and likely to actually succeed.</p>
+
+<p>We work with a number of clients on creating glossaries, but I wouldn't want to play favorites here with a link.  Since I've cited <a href="https://www.atlassian.com/agile/about">Atlassian's "Agile Coach"</a> for years and we had nothing to do with it, I'll use that.</p>
+
+<p>It's a corpus of content that defines terms related to agile software development.  Sprint, scrum, planning poker, retrospective—all that fun stuff.  The glossary form makes it a series of well-organized definitions.</p>
+
+<p>Why is this good for linking?</p>
+
+<p>Well, when are you absolutely most likely to link to something, editorially speaking?  I bet it's when you want to offer a definition to your reader without interrupting your prose to define a term.  And I bet that to do it, you google the term and pick one of the first few links to use.</p>
+
+<p>Creating a content glossary is thus an excellent way to be conveniently there, a lot, when people are looking for a definition link.</p>
+
+<h3>5. Define Neologisms</h3>
+
+<p>I'm going to indulge in a tough of hypocrisy with this last one, but I hope you'll bear with me anyway.</p>
+
+<p>In the last section, I advised against chasing the dragon of link attractors in the form of infographics and such, likening that to chasing virality.  This tactic—defining neologisms (new terms)—is a similar moonshot.  However, unlike expensive infographics, this requires little cost and little effort outside of brainstorming.</p>
+
+<p>I have a series called "SEO for Non-Scumbags," and this article is called "Link Building for Non-Scumbags."  If I publish more in this series and the turn of phrase catches on, our site will serve as the original definition of a term that people use (and thus link to).</p>
+
+<p>To show you this in action, I'm going to include the only non-spam image in the entire post.</p>
+
+<p>Over a decade ago now, I wrote about an archetype that I dubbed <a href="https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/">the "expert beginner."</a>  It's about a person that exists in just about every organization of ICs of non-trivial size: the talented jerk.  Except the expert beginner is curiously unique to software circles and is basically the talented jerk without the talent.</p>
+
+<p>This categorization resonated in the software world and still, to this day, makes its way onto the front of Hacker News or Reddit probably once per year.  And because the term became popular enough to enter the industry's lexicon, here's what the backlink profile to that article looks like:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0W3u0x6e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/ExpertBeginnerLinks.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0W3u0x6e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://www.hitsubscribe.com/wp-content/uploads/2023/08/ExpertBeginnerLinks.jpg" alt="" width="800" height="269"></a></p>
+
+<p>For those keeping score at home, that cute term that I made up while on a walk with my wife earned 2,048 backlinks from 413 linking domains.</p>
+
+<p><em>Caveat emptor</em>, those results are not representative.  But even a fraction of that is valuable, and all it costs you is a little free-form creativity to give it a shot.</p>
+
+<h2>You Can Build Links Without Being a Scumbag</h2>
+
+<p>I have several purposes in posting this.  Most obviously, this is a service that we offer and have recently rolled out in general release, so I'm engaging in some pretty basic content marketing here.</p>
+
+<p>I'm also helping to codify the principles behind and tactics in the program so that as we scale and continue our database building and R&amp;D, we continue to stay true to the original concept.  I'm not looking to create some kind of SEO version of Animal Farm.</p>
+
+<p>But philosophically, I want to plant a flag that we don't have to keep grinding along in the collective rut in which we find ourselves.  You can build authority and traffic while satisfying your profit motive without being a scumbag and annoying people.  And that's really the ethos at the core of our program.</p>
+
+<h2>Subscribe for Actionable Link Venue Intel</h2>
+
+<p>Every month we send an email to friends and participants in the program, sharing at least three tactics/venues from our R&amp;D efforts.  You're welcome to join them, and we'd love to have you.</p>
+
+<p>(To sign up, navigate to the bottom of <a href="https://www.hitsubscribe.com/link-building-for-non-scumbags-build-authority-without-being-awful/">the original post</a> and submit your email address)</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to use Stack UI to build your personal portfolio](https://dev.to/krybone/how-to-use-stack-ui-to-build-your-personal-portfolio-2pme) 
+ <details><summary>Article</summary> <p>Portfolio is a personal thing, it is something where you can really show what you are capable of so let's use <a href="https://stackui.co">Stack UI</a> to build it!</p>
+
+<p><strong>Little context -</strong>  What the hell is Stack UI?</p>
+
+<p>It is a Freeform UI Library comprising freeform and reusable UI elements and components. It doesn't require any installation or documentation to use. Essentially, it simplifies the process of crafting user interfaces by allowing you to easily copy and paste necessary UI components. This ultimately results in a highly refined and optimized user interface that appears sleek and clean.</p>
+
+<p>Developers can selectively choose the necessary components for their projects, enabling them to create a customized front-end stack tailored to each project's requirements. This approach grants developers complete control over the UI components, allowing them to modify them as needed.</p>
+
+<p>So, the question is: to what extent can you make your UI lightweight, and how much control of the UI do we have?</p>
+
+<p>I recently built my own portfolio just to test the Stack UI, and it worked great! I can make my UI super lightweight, and I have full control over each component and element.</p>
+
+<p><strong>Portfolio Link -</strong> <a href="https://kaustubhdev.netlify.app/">https://kaustubhdev.netlify.app/</a></p>
+
+<p>The reusability of each and every component, in particular, stands out. I was able to create something that appears clean and simple while effectively highlighting the importance of my work!</p>
+
+<p><strong>So let's get started with tutorial</strong></p>
+
+<p><strong>Note:</strong> Ensure that you have Emmet and Prettier installed in your VS Code. Additionally, for this article, I will be using my own portfolio website as a reference.</p>
+
+<p><strong>Step 1:</strong> Choosing your Brand Colors</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--axZuvRso--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3u07msayu0i808pswmpa.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--axZuvRso--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3u07msayu0i808pswmpa.png" alt="Image description" width="800" height="450"></a></p>
+
+<p>Stack UI offers a variety of color systems from various frameworks. You can also create your own brand's color stack using the collection of colors provided by Stack UI.</p>
+
+<blockquote>
+<p>--primary-color: #fde047;<br>
+  --accent-color: #fef3c7;<br>
+  --font-color: #0f172a;<br>
+  --dark-color: #020617;<br>
+  --accent-blue-color: #93c5fd;<br>
+  --primary-dark: #000000;<br>
+  --primary-white: #ffffff;<br>
+  --link-color: #007bff;</p>
+</blockquote>
+
+<p>One of the first striking differences between Traditional UI Frameworks and Stack UI is the freedom of choice it offers when selecting the most essential colors.</p>
+
+<p>Traditional UI Libraries often come with extensive color palettes of 20 to 30 colors, or even more. However, with Stack UI being a copy-paste library, you can assign color variables that are easy to remember.</p>
+
+<p>Now, having a wide range of colors isn't necessarily a bad thing, but each additional color contributes to the size of your CSS file. The real challenge arises when you're building a large-scale web application, as it becomes difficult to recall the variable names assigned to all those colors due to their sheer number.</p>
+
+<p>By providing users with the ability to select specific color ranges that align with their brand, Stack UI makes life much easier for developers.</p>
+
+<p><strong>Step 2:</strong> Writing Code</p>
+
+<p>Stack UI is built entirely with HTML, CSS, and JS, which are fundamental languages. Therefore, a comprehensive tutorial is not necessary. However, I'll provide you with guidelines on how to structure your code.</p>
+
+<p>Before proceeding with this step, ensure that you have a wireframe prepared.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tKgG1Z6d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3fvdiz4cp9xu7li0iemf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tKgG1Z6d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3fvdiz4cp9xu7li0iemf.png" alt="Image description" width="800" height="974"></a></p>
+
+<p>What do we have here:</p>
+
+<ol>
+<li>Responsive Navigation</li>
+<li>Hero Section partitioned with 2 Flexbox Grid</li>
+<li>Tech Stack Section</li>
+<li>Big Projects with 2 Flexbox Grid [3 rows each]</li>
+<li>WordPress List and Sponsor Section</li>
+<li>Footer</li>
+<li>Buttons (2 different types: Expanding social media buttons and Shadow buttons)</li>
+</ol>
+
+<p>We have 7 specific UI components from Stack UI, and we utilize these components in various ways by customizing their CSS code to meet our specific needs.</p>
+
+<p>In this context, we replace the classes provided in the code with our own custom classes.</p>
+
+<p><strong>HTML CODE</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;html lang="en"&gt;
+&lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Kaustubh Shinde - Full Stack Web Developer&lt;/title&gt;
+        &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" /&gt;
+        &lt;link rel="stylesheet" href="assets/css/style.css"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+        &lt;nav class="main-navigation"&gt;
+                &lt;div class="top-navbar"&gt;
+                        &lt;i class="fa-solid fa-bars sidebarOpen"&gt;&lt;/i&gt;
+                        &lt;span class="logo navLogo"&gt;&lt;a href="index.html"&gt;Kaustubh Shinde&lt;/a&gt;&lt;/span&gt;
+                        &lt;div id="sidenav" class="menu"&gt;
+                                &lt;ul class="nav-links"&gt;
+                                        &lt;div class="logo-toggle"&gt;
+                                                &lt;span class="logo navLogo"&gt;&lt;a href="index.html"&gt;Kaustuh Shinde&lt;/a&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;li&gt;&lt;a href="index.html" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a href="https://stackui.hashnode.dev/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a href="https://dev.to/krybone"&gt;Dev.to&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/nav&gt;
+
+        &lt;section class="main-hero"&gt;
+                &lt;div class="head-mast"&gt;
+                        &lt;div class="flex-container"&gt;
+                                &lt;div class="item"&gt;
+                                        &lt;div class="pic"&gt;
+                                                &lt;img class="head-profile" src="assets/images/kaustubh-1.png" alt="Kaustubh Shinde"&gt;
+                                        &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="item"&gt;
+                                       &lt;div class="profile-info"&gt;
+                                                &lt;h1&gt;Hi, I am Kaustubh Shinde&lt;/h1&gt;
+                                                &lt;a class="typing" data-period="2000" data-type='[ "Full Stack Developer.", "Web Wizard.", "Web Creator."]'&gt;&lt;/a&gt;
+                                                &lt;p&gt;I am  web wizard who loves to build Productivity and Utility Applications. I specialize in &lt;b&gt;Product Design&lt;/b&gt; and &lt;b&gt;Product Development&lt;/b&gt;. &lt;br&gt;Want to Hire Me? Let's have a coffee ☕ &lt;a href="contact.html"&gt;Contact Me!&lt;/a&gt;&lt;/p&gt;
+
+                                                &lt;div class="button-container"&gt;
+                                                        &lt;a class="about-btn" href="about.html"&gt;Read complete Bio&lt;/a&gt;
+                                                        &lt;a class="about-btn" href="https://drive.google.com/file/d/1_cqjstrPtuvw8dDLZfwr-JCtF4wvjb2l/view?usp=drive_link" target="_blank"&gt;Download Resume&lt;/a&gt;
+                                                &lt;/div&gt;
+
+                                       &lt;/div&gt;
+                                &lt;/div&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class="tech-base"&gt;
+                &lt;div class="tech-stack"&gt;
+                        &lt;h3&gt;Tech Stack&lt;/h3&gt;
+                        &lt;div class="tech-icons"&gt;
+                                    &lt;div class="icon fb"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-html5"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;HTML 5&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon instagram"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-css3-alt"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;CSS 3&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon twitter"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-js"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;Javascript&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon linkedin"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-react"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;React&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon pinterest"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-vuejs"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;Vue&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon tiktok"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-php"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;PHP&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon youtube"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-bootstrap"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;Bootstrap&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon telegram"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-node-js"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;Node js&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon snapchat"&gt;
+                                        &lt;span&gt;&lt;i class="fa-solid fa-database"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;MySQL DB&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="icon github"&gt;
+                                        &lt;span&gt;&lt;i class="fa-brands fa-figma"&gt;&lt;/i&gt;&lt;/span&gt;
+                                        &lt;div class="stack-tooltip"&gt;Figma&lt;/div&gt;
+                                    &lt;/div&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class="projects"&gt;
+                &lt;div class="project-area"&gt;
+                        &lt;h3&gt;Big Projects&lt;/h3&gt;
+                        &lt;div class="flex-container project-1"&gt;
+                                &lt;div class="item"&gt;
+                                        &lt;div class="project-text"&gt;
+                                                &lt;a href="https://stackui.co" target="_blank"&gt;&lt;b&gt;Status -&lt;/b&gt; Version 2.0 in Development!&lt;/a&gt;
+                                                &lt;h1&gt;Stack UI - Freeform Open UI Library&lt;/h1&gt;
+                                                &lt;p&gt;&lt;b&gt;Stack UI&lt;/b&gt; is a Freeform Open UI Library which helps you to craft interactive user interfaces instantly, with Zero Installation and No Documentation Hurdles. &lt;br&gt;
+                                                &lt;b&gt;Currently - &lt;/b&gt;Version 1.5 is launched.&lt;/p&gt;
+
+                                                &lt;div class="button-container"&gt;
+                                                        &lt;a class="about-btn" href="https://stackui.co" target="_blank"&gt;View Project&lt;/a&gt;
+                                                        &lt;a class="about-btn" href="stackui.html"&gt;Read about Stack UI&lt;/a&gt;
+                                                &lt;/div&gt;
+                                        &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="item"&gt;
+                                        &lt;div class="project-show"&gt;
+                                                &lt;div class="pic"&gt;
+                                                        &lt;a href="https://stackui.co"&gt;&lt;img class="project-image" src="assets/images/projects/stackui.png" alt="Stack UI"&gt;&lt;/a&gt;
+                                                &lt;/div&gt;
+                                        &lt;/div&gt;
+                                &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="flex-container project-2"&gt;
+                                &lt;div class="item"&gt;
+                                        &lt;div class="project-show"&gt;
+                                                &lt;div class="pic"&gt;
+                                                        &lt;a href="https://realestate.digiforge.in/" target="_blank"&gt;&lt;img class="project-image" src="assets/images/projects/realestate.png" alt="Real Estate Website"&gt;&lt;/a&gt;
+                                                &lt;/div&gt;
+                                        &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="item"&gt;
+                                        &lt;div class="project-text"&gt;
+                                                &lt;a href="https://realestate.digiforge.in/" target="_blank"&gt;&lt;b&gt;Status -&lt;/b&gt; In Final Phase&lt;/a&gt;
+                                                &lt;h1&gt;Real Estate Website&lt;/h1&gt;
+                                                &lt;p&gt;Real Estate Website with Monthly &amp; Annual Subscription System Made with CodeIgniter 4 Bootstrap 4 and Razorpay.&lt;br&gt;&lt;b&gt;Currently - &lt;/b&gt;The Project is in Final Phase of Development you can check the demo.&lt;/p&gt;&lt;/p&gt;
+
+                                                &lt;div class="button-container"&gt;
+                                                        &lt;a class="about-btn" href="https://realestate.digiforge.in/" target="_blank"&gt;Demo Version&lt;/a&gt;
+                                                        &lt;a class="about-btn" href="realestate.html"&gt;About Project&lt;/a&gt;
+                                                &lt;/div&gt;
+                                        &lt;/div&gt;
+                                &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="flex-container project-3"&gt;
+                                &lt;div class="item"&gt;
+                                        &lt;div class="project-text"&gt;
+                                                &lt;a href="" target="_blank"&gt;&lt;b&gt;Status -&lt;/b&gt; In Development Phase&lt;/a&gt;
+                                                &lt;h1&gt;Ecommerce Website&lt;/h1&gt;
+                                                &lt;p&gt;Ecommerce Website with Made with CodeIgniter 4, Bootstrap 4 and Razorpay Checkout.&lt;br&gt;&lt;b&gt;Currently - &lt;/b&gt;The Project is in Development Phase and Demo version is not live yet.&lt;/p&gt;&lt;/p&gt;
+
+                                                &lt;div class="button-container"&gt;
+                                                        &lt;a class="about-btn" href="#" target="_blank"&gt;Demo Version&lt;/a&gt;
+                                                        &lt;a class="about-btn" href="ecommerce.html"&gt;About Project&lt;/a&gt;
+                                                &lt;/div&gt;
+                                        &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class="item"&gt;
+                                        &lt;div class="project-show"&gt;
+                                                &lt;div class="pic"&gt;
+                                                        &lt;a href="" target="_blank"&gt;&lt;img class="project-image" src="assets/images/projects/ecommerce.png" alt="Ecommerce Website"&gt;&lt;/a&gt;
+                                                &lt;/div&gt;
+                                        &lt;/div&gt;
+                                &lt;/div&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section class="wp-project"&gt;
+                &lt;div class="project-list"&gt;
+                        &lt;div class="button-container"&gt;
+                                &lt;a class="about-btn" href="wordpress.html"&gt;&lt;i class="fa-brands fa-wordpress" style="margin-right: 5px;"&gt;&lt;/i&gt;List of WordPress Projects&lt;/a&gt;
+                                &lt;a class="about-btn" href="https://stackui.co" target="_blank"&gt;&lt;i class="fa-brands fa-patreon" style="margin-right: 5px;"&gt;&lt;/i&gt;Support Stack UI on Patreon&lt;/a&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;footer class="footer-area"&gt;
+                &lt;div class="footer-links"&gt;
+                        &lt;a href="index.html"&gt;Home&lt;/a&gt;
+                        &lt;a href="https://stackui.hashnode.dev/"&gt;Blog&lt;/a&gt;
+                        &lt;a href="https://dev.to/krybone"&gt;Dev.to&lt;/a&gt;
+                        &lt;a href="about.html"&gt;About&lt;/a&gt;
+                        &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="footer-social-copyright"&gt;
+                        &lt;div class="footer-social-icons"&gt;
+                        &lt;a href="https://www.linkedin.com/in/kaustubh-shinde-wcss3/" class="social-icon"&gt;&lt;i class="fa-brands fa-linkedin"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="https://twitter.com/krybone" class="social-icon"&gt;&lt;i class="fa-brands fa-x-twitter"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href="https://stackui.hashnode.dev/" class="social-icon"&gt;&lt;i class="fa-brands fa-hashnode"&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class="footer-copyright"&gt;
+                                © 2023 Built with 💖 by &lt;a href="https://stackui.co"&gt;Stack UI&lt;/a&gt;.
+                        &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/footer&gt;
+        &lt;script src="assets/js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</div>
+
+
+
+<p><strong>CSS CODE</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>/*!
+ * Portfolio design by Kaustubh Shinde
+ * UI Library - Stack UI
+ * Author - Stack UI
+ * Version - 1.0
+ * URL: https://stackui.co
+ * Licensed under the GPL License
+ * Copyright (c) 2023 Stack UI Creator Kaustubh Shinde
+ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&amp;display=swap");
+/*-----------------------------------------
+    Initializing style and primary css
+-------------------------------------------*/
+:root {
+        --primary-color: #fde047;
+        --accent-color: #fef3c7;
+        --font-color: #0f172a;
+        --dark-color: #020617;
+        --accent-blue-color: #93c5fd;
+        --primary-dark: #000000;
+        --primary-white: #ffffff;
+        --link-color: #007bff;
+        --shadow-1: rgba(0, 0, 0, 0.09) 0px 3px 12px 0px;
+        --shadow-2: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+        --border-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+}
+html {
+        scroll-behavior: smooth;
+}
+* {
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+body {
+        font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, strong, b {
+        font-style: inherit;
+        font-weight: bold;
+}
+p {
+        color: var(--font-color);
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+}
+ul li {
+        font-family: 'Roboto', sans-serif;
+}
+a {
+        text-decoration: none;
+        color: #007bff;
+        font-family: 'Roboto', sans-serif;
+}
+.about-btn {
+        justify-content: space-between;
+        align-items: center;
+        background-clip: padding-box;
+        background-color: var(--primary-dark);
+        border: 1px solid var(--primary-dark);
+        box-sizing: border-box;
+        color: var(--primary-white);
+        cursor: pointer;
+        display: inline-flex;
+        font-size: 16px;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        min-height: 3rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+        box-shadow: var(--primary-white) 4px 4px 0 0,var(--primary-dark) 4px 4px 0 1px;
+}
+.about-btn:hover {
+        background-color: var(--primary-white);
+        color: var(--primary-dark);
+        box-shadow: var(--primary-dark) 4px 4px 0 0,var(--primary-dark) 4px 4px 0 1px;
+}
+/*-----------------------------------------
+    Navigation
+-------------------------------------------*/
+.main-navigation {
+        height: 70px;
+        width: 100%;
+        border-top: 2px solid var(--dark-color);
+        border-bottom: 2px solid var(--dark-color);
+}
+.top-navbar {
+        position: relative;
+        height: 100%;
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+.top-navbar .logo a {
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--primary-dark);
+        text-decoration: none;
+}
+.top-navbar .logo img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+}
+.top-navbar .nav-links li {
+        margin: 0 5px;
+        list-style: none;
+        display: inline-block;
+}
+.top-navbar .nav-links a {
+        display: flex;
+        align-items: center;
+}
+.top-navbar .nav-links li a {
+        position: relative;
+        font-size: 17px;
+        font-weight: 400;
+        color: var(--primary-dark);
+        text-decoration: none;
+        padding: 10px;
+}
+.top-navbar .nav-links li a:hover {
+        border: 1px solid var(--primary-dark);
+        transition: 0.2s ease;
+}
+.top-navbar .menu .logo-toggle {
+        display: none;
+}
+.top-navbar .sidebarOpen {
+        color: var(--primary-dark);
+        font-size: 25px;
+        padding: 5px;
+        cursor: pointer;
+        display: none;
+}
+@media (max-width: 790px) {
+        .top-navbar .sidebarOpen {
+                display: block;
+                font-size: 18px;
+        }
+        .top-navbar .logo-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+        .top-navbar .sidebarClose {
+                font-size: 18px;
+                color: var(--primary-white);
+                display: block;
+        }
+        .top-navbar .nav-links {
+                display: none;
+                position: fixed;
+                top: -20px;
+                left: 0;
+                width: 250px;
+                height: 100%;
+                background-color: var(--dark-color);
+                padding: 10px 10px;
+                z-index: 9999;
+                overflow: hidden;
+                transition: transform 100s ease;
+                transform: translateX(-100%);
+        }
+        .top-navbar.active .nav-links,
+        .top-navbar.active .nav-links .logo-toggle {
+              display: block;
+              transform: translateX(0%);
+        }
+        .top-navbar .nav-links li {
+                margin-bottom: 2px;
+                display: block;
+        }
+        .top-navbar .nav-links li a {
+                color: var(--primary-white);
+                font-size: 18px;
+                text-decoration: none;
+                border-bottom: 1px solid var(--primary-white);
+        }
+        .top-navbar .nav-links li a:hover {
+                color: var(--dark-color);
+                background-color: var(--primary-white);
+                border-radius: 4px;
+                transition: 0.2s ease;
+        }
+}
+/*-----------------------------------------
+    Main hero
+-------------------------------------------*/
+.main-hero {
+        background: var(--accent-color);
+        box-sizing: border-box;
+}
+.main-hero .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1280px;
+        width: 100%;
+}
+.main-hero .flex-container .item {
+        flex: 1;
+        height: auto;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 2px;
+        box-sizing: border-box;
+}
+.main-hero .flex-container .pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.main-hero .flex-container .pic img {
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        border: 4px solid var(--dark-color);
+}
+.profile-info {
+        align-self: center;
+        text-align: center;
+        margin-top: 8vh;
+        box-sizing: border-box;
+}
+.profile-info h1 {
+        font-size: 3rem;
+}
+.profile-info a.typing {
+        font-size: 1.5rem;
+        margin: 2rem;
+        font-weight: bold;
+}
+.profile-info p {
+        font-size: 1.2rem;
+        margin: 1rem;
+        line-height: 1.8rem;
+        letter-spacing: .5;
+}
+.profile-info .button-container {
+        gap: 1rem;
+        display: flex;
+        justify-content: center;
+}
+@media screen and (max-width: 768px) {
+        .profile-info .button-container {
+            flex-direction: column; /* Stack buttons vertically */
+            align-items: center; /* Center align buttons horizontally */
+            padding-top: 2vh; /* Adjust spacing */
+        }
+
+        .main-hero .flex-container .pic img {
+                height: 300px; /* Adjust the height for smaller screens */
+                width: 300px; /* Adjust the width for smaller screens */
+        }
+
+        .profile-info {
+                align-self: center;
+                text-align: center;
+                margin-top: 1vh;
+        }
+
+        .profile-info h1 {
+                font-size: 2rem;
+        }
+
+        .profile-info a.typing {
+                font-size: 1rem;
+                margin: 2rem;
+                font-weight: bold;
+        }
+
+        .profile-info p {
+                font-size: 1rem;
+                margin: 1rem;
+                line-height: 1.8rem;
+                letter-spacing: .5;
+        }
+}
+
+/* Additional responsive styles for even smaller screens */
+@media screen and (max-width: 576px) {
+        .main-hero .flex-container .pic img {
+            height: 200px; /* Adjust the height for even smaller screens */
+            width: 200px; /* Adjust the width for even smaller screens */
+        }
+
+        .profile-info {
+                align-self: center;
+                text-align: center;
+                margin-top: 1vh;
+        }
+}
+/*-----------------------------------------
+   Tech Stack
+-------------------------------------------*/
+.tech-base {
+        background: var(--accent-blue-color);
+        padding-bottom: 2rem;
+}
+.tech-base h3 {
+        font-size: 1.5rem;
+        text-align: center;
+        padding-top: 2rem;
+        text-decoration: underline;
+}
+.tech-icons {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.tech-icons a {
+        color: var(--dark-color);
+}
+.tech-icons .icon {
+        height: 45px;
+        width: 45px;
+        float: left;
+        margin: 0 10px;
+        border-radius: 50px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+        background-color: var(--primary-white);
+        border: 2px solid var(--primary-dark);
+}
+.tech-icons .icon span {
+        display: inline-block;
+        height: 45px;
+        width: 45px;
+        border-radius: 50px;
+        box-sizing: border-box;
+        line-height: 45px;
+        text-align: center;
+}
+.tech-icons .icon:hover {
+        width: 150px;
+}
+.tech-icons .icon .stack-tooltip {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 10px;
+}
+.tech-icons .icon .stack-tooltip::before {
+        display: none;
+}
+.tech-icons .icon i {
+        font-size: 20px;
+        line-height: 45px;
+}
+@media only screen and (max-width: 600px) {
+        .tech-icons .icon {
+            width: 100%;
+            margin: 0;
+            border: 1px solid var(--primary-dark);
+        }
+        .tech-icons .icon:hover {
+            width: 100%;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .tech-icons .icon {
+            height: 30px;
+            width: 30px;
+        }
+        .tech-icons .icon span {
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .tech-icons .icon i {
+            font-size: 16px;
+            line-height: 30px;
+        }
+}
+/*-----------------------------------------
+   Projects
+-------------------------------------------*/
+.project-area h3 {
+        font-size: 1.5rem;
+        text-align: center;
+        padding-top: 2rem;
+        text-decoration: underline;
+}
+.project-area  .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1280px;
+        width: 100%;
+        box-sizing: border-box;
+}
+.project-area .flex-container .item {
+        flex: 1;
+        height: auto;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 2px;
+        box-sizing: border-box;
+}
+.project-area img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 4px solid var(--primary-dark);
+}
+.project-area img:hover {
+        opacity: 0.5;
+        transition: 0.3 ease;
+}
+.project-area .project-text {
+        margin-top: 5vh;
+        align-self: center;
+        text-align: center;
+        box-sizing: border-box;
+}
+.project-area .project-text p {
+        margin: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        letter-spacing: .5;
+}
+.project-area .button-container {
+        gap: 1rem;
+        display: flex;
+        justify-content: center;
+}
+@media screen and (max-width: 768px) {
+        .project-area .flex-container .item {
+            flex-basis: calc(50% - 20px); /* 50% width with margin */
+        }
+
+        .project-area .project-text {
+            margin-top: 3vh;
+        }
+
+        .project-area .project-text p {
+                font-size: 1rem;
+        }
+
+        .project-area .button-container {
+                flex-direction: column; /* Stack buttons vertically */
+                align-items: center; /* Center align buttons horizontally */
+                padding-top: 2vh; /* Adjust spacing */
+        }
+
+        .project-area .project-1,
+        .project-area .project-3 {
+                flex-direction: column-reverse; /* Reverse the order for small screens */
+        }
+}
+@media screen and (max-width: 576px) {
+        .project-area .flex-container .item {
+            flex-basis: calc(100% - 20px); /* 100% width with margin */
+        }
+}
+.wp-project {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+        padding-bottom: 2rem;
+        box-sizing: border-box;
+        background: var(--primary-color);
+}
+.wp-project .button-container {
+        gap: 1rem;
+        display: flex;
+        margin: 0 auto;
+        padding-top: 3vh;
+        justify-content: center;
+}
+@media screen and (max-width: 768px) {
+        .wp-project {
+                padding-bottom: 2rem;
+        }
+        .wp-project .button-container {
+            flex-direction: column; /* Stack buttons vertically */
+            align-items: center; /* Center align buttons horizontally */
+            padding-top: 2vh; /* Adjust spacing */
+        }
+}
+/*-----------------------------------------
+   Page Styling 
+-------------------------------------------*/
+.page-hero .flex-container {
+        padding: 20px;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1280px;
+        width: 100%;
+}
+.page-hero {
+        background: var(--accent-color);
+}
+.page-hero .flex-container .pic,
+.page-hero .flex-container .page-heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+}
+.page-hero .flex-container .pic img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 3px solid var(--dark-color);
+}
+.page-hero .flex-container .page-heading {
+        padding: 20px;
+}
+.page-content {
+        margin: 2rem;
+        box-sizing: border-box;
+}
+.page-content .about-info {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 2px solid var(--dark-color);
+}
+.page-content .about-info h3 {
+        margin-left: 1rem;
+        text-decoration: underline;
+}
+.page-content .about-info p {
+        margin: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        letter-spacing: .5;
+}
+.page-content .about-info ul li {
+        margin-left: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        letter-spacing: .5;
+        list-style: disc;
+}
+.page-content .showcase img {
+        width: 100%;
+        box-sizing: border-box;
+        height: auto;
+        border-radius: 4px;
+        border: 4px solid var(--primary-dark);
+}
+.page-content .button-container {
+        gap: 1rem;
+        display: flex;
+        margin: 0 auto;
+        padding-top: 3vh;
+        justify-content: center;
+}
+@media screen and (max-width: 768px) {
+        .page-content .about-info p,
+        .page-content .about-info ul li {
+                font-size: 1rem;
+        }
+
+        .page-content .button-container {
+                flex-direction: column; /* Stack buttons vertically */
+                align-items: center; /* Center align buttons horizontally */
+                padding-top: 2vh; /* Adjust spacing */
+        }
+}
+/*-----------------------------------------
+   Footer
+-------------------------------------------*/
+.footer-area {
+        background-color: var(--primary-dark);
+        padding: 20px;
+        text-align: center;
+        box-sizing: border-box;
+}
+.footer-area .footer-links {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+}
+.footer-area .footer-links a {
+        color: var(--primary-white);
+        text-decoration: none;
+        margin: 0 10px;
+}
+.footer-area .footer-links a:hover {
+        border: 1px solid var(--primary-white);
+        padding: 15px;
+        transition: 0.2s ease;
+}
+.footer-area .footer-social-copyright {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background-color: var(--primary-color);
+}
+.footer-area .footer-social-icons {
+        font-size: 14px;
+}
+.footer-area .footer-social-icons .social-icon {
+        color: var(--primary-dark);
+        margin: 0 5px;
+}
+.footer-area .footer-copyright {
+        font-size: 14px;
+        color: var(--primary-dark);
+}
+@media (max-width: 768px) {
+        .footer-area .footer-social-icons {
+                font-size: 14px;
+        }
+
+        .footer-area .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+        }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>In this manner, I employed the same 7 components across different scenarios and rearranged them to create 6 distinct pages, apart from the Home page. This means a total of 7 unique components and 7 individual pages - pretty cool, right?</p>
+
+<p>The noticeable contrast between traditional frameworks and Stack UI lies in my ability to use only the code that serves my purpose. There's no unused CSS or HTML components.</p>
+
+<p>If I had chosen Bootstrap 5 or Tailwind for this small project, I would have ended up with a hefty codebase, including various dependencies that traditional frameworks typically bundle.</p>
+
+<p>Moreover, this specific approach allows me to use JavaScript only for components that require it to function. For instance, I utilized JavaScript for the <strong>Repeated typing effect</strong> and <strong>Side Navigation</strong> for responsive mode, avoiding the inclusion of unnecessary JavaScript, just as I did with CSS and HTML.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// TYping effect
+class TxtType {
+        constructor(element, toRotate, period) {
+                this.toRotate = toRotate;
+                this.element = element;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000; // Default to 2000ms if period is not specified
+                this.txt = '';
+                this.tick();
+        }
+        tick() {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
+
+                if (this.isDeleting) {
+                        this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                        this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.element.innerHTML = '&lt;span class="wrap"&gt;' + this.txt + '&lt;/span&gt;';
+
+                var that = this;
+                var delta = 200 - Math.random() * 100;
+
+                if (this.isDeleting) {
+                        delta /= 2;
+                }
+
+                if (!this.isDeleting &amp;&amp; this.txt === fullTxt) {
+                        delta = this.period;
+                        this.isDeleting = true;
+                } else if (this.isDeleting &amp;&amp; this.txt === '') {
+                        this.isDeleting = false;
+                        this.loopNum++;
+                        delta = 500;
+                }
+
+                setTimeout(function () {
+                        that.tick();
+                }, delta);
+        }
+}
+
+window.onload = function() {
+        var elements = document.getElementsByClassName('typing');
+        for (var i=0; i&lt;elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        //Inserting CSS to make it work
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typing &gt; .wrap { border-right: 0.08em solid #000}";
+        document.body.appendChild(css);
+};
+
+//Sidebar
+
+document.addEventListener("DOMContentLoaded", function() {
+        const menuIcon = document.querySelector(".sidebarOpen");
+        const sidenav = document.getElementById("sidenav");
+        const navbar = document.querySelector(".top-navbar");
+
+        menuIcon.addEventListener("click", function() {
+          sidenav.classList.toggle("active");
+          navbar.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function(event) {
+          const targetElement = event.target;
+          if (
+            !targetElement.closest(".main-navigation") &amp;&amp;
+            sidenav.classList.contains("active")
+          ) {
+            sidenav.classList.remove("active");
+            navbar.classList.remove("active");
+          }
+        });
+});
+</code></pre>
+
+</div>
+
+
+
+<p>This approach has allowed me to significantly reduce the weight of my code compared to traditional frameworks.</p>
+
+<p>What's even more remarkable is that it took me the same amount of time to build the UI as it would with Bootstrap! While Tailwind is even faster, the beauty of this approach is that it gives me the freedom to customize components to my heart's content.</p>
+
+<p><strong>Test Results</strong></p>
+
+<p>Bootstrap vs Stack UI</p>
+
+<ol>
+<li>
+<strong>Speed</strong> - Equal (Depends on the developer's proficiency.)</li>
+<li>
+<strong>Code Size</strong> - Stack UI Wins (The bundled JS and CSS code in Bootstrap is much larger, and there's no need for me to create separate style.css and script.js files since I can consolidate everything into one CSS file and one JS file.)</li>
+<li>
+<strong>Re usability</strong> - Stack UI Wins because in this instance, I used the same containers and div elements with rearrangement to create 7 pages.</li>
+</ol>
+
+<p>Tailwind vs Stack UI</p>
+
+<ol>
+<li>
+<strong>Speed</strong> - Tailwind Wins</li>
+<li>*<em>Code Size - *</em> Stack UI Wins (Large code size due to bundled code)</li>
+<li>
+<strong>Re usability</strong> - Tailwind and Stack UI are equal</li>
+</ol>
+
+<p><strong>Note</strong></p>
+
+<p>The <a href="https://stackui.co">Stack UI</a> Library is currently in its MVP stage and still requires many improvements. </p>
+
+<p>Version 2.0 will introduce a Script and Style Manager, which will be a game-changer! So, stay tuned and continue using <a href="https://stackui.co">Stack UI</a>. Your feedback will be invaluable to me..</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Book Club: Grokking Algorithms. 6: Dynamic programming and k-nearest neighbours](https://dev.to/ruthmoog/book-club-grokking-algorithms-6-dynamic-programming-and-k-nearest-neighbours-81f) 
  <details><summary>Article</summary> <h4>
   
@@ -241,1671 +2360,6 @@ The same formula can be used to calculate the distance in <em>several</em> dimen
 <li>Have you written a program using a dynamic programming formula - what did you learn when applying the formula in code? Did you use a grid?</li>
 <li>Have you worked on feature extraction? How were the features chosen? Were they the right features?</li>
 </ol>
-
- </details> 
- <hr /> 
-
- #### - [💥 Building a Next.js 13 Todo app with Prisma and passkey authentication by Hanko 🤯](https://dev.to/hanko/building-a-nextjs-13-todo-app-with-prisma-and-passkey-authentication-by-hanko-4o8a) 
- <details><summary>Article</summary> <p>In this tutorial, you’ll learn how to build a Todo app with the Next.js 13 popular “App Router” structure and understand some of the most important changes that come with it. </p>
-
-<p>We will build a fully functional Todo app:</p>
-
-<ul>
-<li>Create todo</li>
-<li>Check and delete a single item</li>
-<li>Delete all todos</li>
-</ul>
-
-<p>We will use Hanko for:</p>
-
-<ul>
-<li>Login and registration</li>
-<li>User management</li>
-<li>Logout</li>
-</ul>
-
-<p>Prisma will handle the storage.</p>
-
-
-
-
-<h2>
-  
-  
-  Where should we start? 👷🏻‍♂️
-</h2>
-
-<p>Dealing with complicated frameworks can steal the joy from the beautiful process of creating something from scratch, that’s why finding the right stack for our project is a big step. In this guide, I’ve decided to bring Next.js as the main character of this project because of the amazing opportunity to test the crazy twist they brought with all these “use server” vs “use client” implementations. Also when you are creating the new app, Next.js makes it very simple by giving you the option to integrate everything you’ll probably need like Typescript, ESLint and Tailwind CSS, and yes, we’ll use them all!</p>
-
-<h3>
-  
-  
-  Tailwind CSS
-</h3>
-
-<p>For most of the project, I will use Tailwind CSS to style, because I just find it super easy to implement and to bring life into the app, when it comes to code maintenance it’s easy to read and immediately know what is going on in the exact element and Tailwind just makes working with CSS enjoyable. </p>
-
-<h3>
-  
-  
-  Prisma
-</h3>
-
-<p>In this app, we don’t need a lot when it comes to where we will store the data, and Prisma is just perfect for what we need for the “todos” to be properly created, updated, and/or deleted.</p>
-
-<h3>
-  
-  
-  Hanko
-</h3>
-
-<p>When it comes to securing an app the first thing that comes into play is the combination of building, configuring and styling the login and sign-up on the frontend, and then the complexity of the backend with the functionality, authentication, handling errors, and all the details needed to have a successful and secure “user session”. Here is where Hanko enters the game, taking care of the login, registration, user management and logout, giving us the freedom to be able to spend more time and focus on the other parts of the project. </p>
-
-<blockquote>
-<p><em>“Build the best login you have ever seen”</em> </p>
-</blockquote>
-
-<p>Hanko is an open-source authentication solution focused on taking the development experience to a new level. You can decide what type of information your app will require for the login like email &amp; password, passkeys, email passcodes, and 3rd-party identity providers. Then you can be as creative as you like by styling Hanko's Web Components.</p>
-
-
-
-
-<h2>
-  
-  
-  We are ready to set it 🆙
-</h2>
-
-<p>Here I'll walk you through creating the project setup for the application. Make sure to have the latest version of Node.js installed.</p>
-
-<h3>
-  
-  
-  Create a new Next.js app
-</h3>
-
-<p>To create a new Next.js app, we can use the <code>create-next-app</code> or <code>create-next-app@latest</code> command-line tool followed by the name of your choice for the app. Open your terminal in Visual Studio Code and run the following command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> npx  create-next-app@latest todo-nextjs-hanko 
-</code></pre>
-
-</div>
-
-
-
-<p>This will start the process of creating the project, you will then be asked some prompts on what you will use for the app. The project configuration options should look something like:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Ab3QCzLQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8djxl7jl42xl90wpps1b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ab3QCzLQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8djxl7jl42xl90wpps1b.png" alt="Pre-config Next.js prompts" width="800" height="208"></a></p>
-
-<p>The above choices will create a new Next.js app with the chosen name, all the required dependencies for this project will also be installed.</p>
-
-<h4>
-  
-  
-  Understanding the project structure
-</h4>
-
-<p>When using version 13 of Next.js, we have the option to work with the App Router directory instead of the Pages Router, for a quick summary we could say that:</p>
-
-<ul>
-<li>The new directory named “app” is replacing “pages”</li>
-<li>“page.tsx|page.jsx” is the new “index.tsx|index.jsx” </li>
-<li>“layout.tsx” is the new “_app.tsx”</li>
-<li>Everything is a Server Component unless you make it a Client Component using the “use client” directive at the top of the file.</li>
-<li>API Routes are now Server Components or Route Handlers</li>
-</ul>
-
-<p>Remove unnecessary files, such as logos, icons, etc. If you are going to use Tailwind CSS make sure to bring your desired configuration to the <code>tailwind.config.ts</code> file, defining your color palette, fonts, breakpoints, etc.</p>
-
-<p>ℹ️ For more information about the App Router of Next.js click <a href="https://nextjs.org/docs">here</a>.</p>
-
-<h3>
-  
-  
-  Get Prisma started
-</h3>
-
-<p>Install the Prisma CLI as a development dependency in the project:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> npm install prisma --save-dev
-</code></pre>
-
-</div>
-
-
-
-<p>Set up Prisma with the init command of the Prisma CLI:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> npx prisma init --datasource-provider sqlite
-
-</code></pre>
-
-</div>
-
-
-
-<p>This creates a new <code>prisma</code> directory with your Prisma schema file and configures SQLite as your database. Once we also create the "Todo" model, the Prisma schema file should look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
-}
-
-model Todo {
-
- id String @id @default(uuid())
-  title String
-  complete Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-</code></pre>
-
-</div>
-
-
-
-<p>At this point, you have a Prisma schema but no database yet. Run the following command in your terminal to create the SQLite database and the Todo table:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> $ npx prisma migrate dev --name init
-</code></pre>
-
-</div>
-
-
-
-<p>This command did two things:</p>
-
-<ol>
-<li><p>It creates a new SQL migration file for this migration in the <code>prisma/migrations</code> directory.</p></li>
-<li><p>It runs the SQL migration file against the database.</p></li>
-</ol>
-
-<p>Because the SQLite database file didn't exist before, the command also created it inside the <code>prisma</code> directory with the name <code>dev.db</code> as defined via the environment variable in the <code>.env</code> file.</p>
-
-<p>To prevent problems when instantiating PrismaClient, on the Prisma Docs there’s a <a href="https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices">section</a> dedicated to the best practice to do it. Let’s try it by creating a <code>db.ts</code> file in the root of the app and add the following code inside:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">PrismaClient</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@prisma/client</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">globalForPrisma</span> <span class="o">=</span> <span class="nx">globalThis</span> <span class="k">as</span> <span class="nx">unknown</span> <span class="k">as</span> <span class="p">{</span>
-  <span class="na">prisma</span><span class="p">:</span> <span class="nx">PrismaClient</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">prisma</span> <span class="o">=</span> <span class="nx">globalForPrisma</span><span class="p">.</span><span class="nx">prisma</span> <span class="o">??</span> <span class="k">new</span> <span class="nx">PrismaClient</span><span class="p">();</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span><span class="p">)</span> <span class="nx">globalForPrisma</span><span class="p">.</span><span class="nx">prisma</span> <span class="o">=</span> <span class="nx">prisma</span><span class="p">;</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>ℹ️ For more information about Prisma integration click <a href="https://www.prisma.io/docs/getting-started">here</a>.</p>
-
-
-
-
-<h2>
-  
-  
-  Building the user interface 🛠️
-</h2>
-
-<p>Keeping in mind that we want to build a simple "todo app" with a nice login to protect the todos, we will only need two pages:</p>
-
-<ul>
-<li>The login page where the Hanko-auth component will play its part in handling authentication.</li>
-<li>The todo page where all the todos will be displayed. </li>
-</ul>
-
-<h3>
-  
-  
-  App structure
-</h3>
-
-<p>In the App Router directory, the <code>page.tsx</code> is like the new <code>index.tsx</code>, which means that this name will play an important role when creating a new route. You can define a page by exporting a component from a <code>page.tsx</code> file.</p>
-
-<p>Now you can update the <code>page.tsx</code> file to display "Hello World" as done below.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code> <span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Home</span><span class="p">()</span> <span class="p">{</span>
-<span class="k">return</span> <span class="p">(</span>
-<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span> 
-   <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We will get back to it later to add a nice login with Hanko.</p>
-
-<h3>
-  
-  
-  The Todo page
-</h3>
-
-<p>We will style this page using Tailwind CSS classes to simply create a centered container to display the todos. We need a form with an input to create the new todos, and every todo element will have a checkbox and a delete button. Inside the <code>app</code> directory, create a new <code>todo</code> folder with a <code>page.tsx</code> file inside of it. Use  the code below as the <code>todo/page.tsx</code> contents:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Todo</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> flex min-h-screen justify-center items-center bg-slate-50 </span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">bg-slate-300 rounded-3xl py-6  h-[400px] w-[450px] flex flex-col text-slate-800</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-3xl text-center</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">to</span> <span class="nx">dos</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-8 mt-4 mb-6</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex gap-3 items-center</span><span class="dl">"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">input</span>
-              <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
-              <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span>
-              <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">New todo</span><span class="dl">"</span>
-              <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> border border-slate-400 rounded-full flex-1  py-1 px-2 outline-none focus-within:border-slate-100 bg-slate-50 focus-within:bg-slate-100 placeholder:text-slate-300</span><span class="dl">"</span>
-              <span class="nx">required</span>
-            <span class="o">/&gt;</span>
-            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">  bg-slate-50 rounded-full p-1 border border-slate-400 text-slate-400 hover:text-slate-500 text-base hover:ring-0 hover:ring-slate-100 hover:border-slate-500</span><span class="dl">"</span><span class="o">&gt;</span>
-              <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> text-center</span><span class="dl">"</span><span class="o">&gt;</span>
-             <span class="o">+</span>
-              <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">ul</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">px-6</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex px-4</span><span class="dl">"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex gap-2 flex-1</span><span class="dl">"</span><span class="o">&gt;</span>
-              <span class="o">&lt;</span><span class="nx">input</span>
-                <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span>
-                <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">check</span><span class="dl">"</span>
-                <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">peer cursor-pointer accent-slate-300 </span><span class="dl">"</span>
-              <span class="o">/&gt;</span>
-              <span class="o">&lt;</span><span class="nx">label</span>
-                <span class="nx">htmlFor</span><span class="o">=</span><span class="dl">""</span>
-                <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">peer-checked:line-through peer-checked:text-slate-500 cursor-pointer</span><span class="dl">"</span>
-              <span class="o">&gt;</span>
-                <span class="nx">Todo</span> <span class="mi">1</span>
-              <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-slate-500  hover:text-slate-800 mr-3</span><span class="dl">"</span><span class="o">&gt;</span>
-              <span class="nx">X</span>
-            <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>🚨 For a better UI use SVGs or icons inside the buttons.</p>
-
-<p>ℹ️ For a better understanding of the Tailwind CSS classes click <a href="https://tailwindcomponents.com/cheatsheet/">here</a>.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vLwMyo4d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ii3eqzip8vz09j4h3wg3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vLwMyo4d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ii3eqzip8vz09j4h3wg3.png" alt="Image description" width="494" height="677"></a></p>
-
-
-
-
-<h2>
-  
-  
-  Todos in the making 🚧
-</h2>
-
-<p>To make our app functional, we need to be able to create a new todo, then check the todo once it’s completed and finally be able to remove a single todo from the list. </p>
-
-<h3>
-  
-  
-  API Routes in Next.js 13
-</h3>
-
-<p>When using the App Router of Next.js 13, the API Routes are replaced by Route Handlers and they are defined in a <code>route.ts|js</code> file inside the <code>app</code> directory. There  cannot be a <code>route</code> file at the same route segment level as a <code>page.tsx</code>. Read more about the Route Handlers in the <a href="https://nextjs.org/docs/app/building-your-application/routing/route-handlers">Next.js Docs</a>.</p>
-
-<p>Inside the <code>app</code> directory create an <code>api</code> folder. We will group our Route Handlers as follows: one directory <code>todo</code> with a <code>route.ts</code> which will contain the <code>POST</code> HTTP method handler for creating a new todo, and in that same directory we will use a dynamic route to <code>GET</code> and <code>DELETE</code> todos. Should look like the following example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>api
-└── todo
-    ├── [id]
-    │   └── route.ts
-    └── route.ts
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  New Todo
-</h3>
-
-<p>Let’s start by creating a todo. This is a good moment to start breaking it down into components, let’s first create a <code>components</code> folder at the root directory, then create a <code>components/todos/NewTodo.tsx</code> file and use the following as its contents:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/navigation</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">NewTodo</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">newItem</span><span class="p">,</span> <span class="nx">setNewItem</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="nx">create</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="na">e</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">SyntheticEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-    <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`/api/todo`</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">credentials</span><span class="p">:</span> <span class="dl">"</span><span class="s2">include</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">newItem</span><span class="p">,</span>
-      <span class="p">}),</span>
-    <span class="p">});</span>
-
-    <span class="nx">router</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
-    <span class="nx">setNewItem</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="p">};</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">mx-8 mt-4 mb-6</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">create</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex gap-3 items-center</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">input</span>
-          <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
-          <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span>
-          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">newItem</span><span class="p">}</span>
-          <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setNewItem</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
-          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">New todo</span><span class="dl">"</span>
-          <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> border border-slate-400 rounded-full flex-1  py-1 px-2 outline-none focus-within:border-slate-100 bg-slate-50 focus-within:bg-slate-100 placeholder:text-slate-300</span><span class="dl">"</span>
-          <span class="nx">required</span>
-        <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">button</span>
-          <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span>
-          <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">  bg-slate-50 rounded-full p-1 border border-slate-400 text-slate-400 hover:text-slate-500 text-base hover:ring-0 hover:ring-slate-100 hover:border-slate-500</span><span class="dl">"</span>
-        <span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> text-center</span><span class="dl">"</span><span class="o">&gt;+&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>This is a good example of where to bring the "use client" directive to the game, since we are using <code>useState()</code> and subscribing to interactive events. </p>
-
-<p>This is how we call Prisma to create the todo inside the <code>api/todo/route.ts</code> Route Handler:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NextResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/server</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">prisma</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/db</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">POST</span><span class="p">(</span><span class="nx">req</span><span class="p">:</span> <span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">title</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">req</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="k">await</span> <span class="nx">prisma</span><span class="p">.</span><span class="nx">todo</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-    <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="nx">title</span><span class="p">,</span> <span class="na">complete</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
-  <span class="p">});</span>
-
-  <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Created Todo</span><span class="dl">"</span> <span class="p">},</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">200</span> <span class="p">});</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>You can decide how to check for the right values to be passed and how to handle the errors in the Route Handlers. </p>
-
-<p>Let’s test the "all server components" until we say the opposite from Next.js 13 by calling Prisma from the <code>todo/page.tsx</code> file to get all our todos, then we pass them to our <code>components/todos/TodoItem.tsx</code> file to be displayed. This is how the <code>todo/page.tsx</code> should look after our changes:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NewTodo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/todos/NewTodo</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">TodoItem</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/todos/TodoItem</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">prisma</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/db</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Todo</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">todos</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">prisma</span><span class="p">.</span><span class="nx">todo</span><span class="p">.</span><span class="nx">findMany</span><span class="p">();</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> flex min-h-screen justify-center items-center bg-slate-50 </span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">bg-slate-300 rounded-3xl py-6  h-[400px] w-[450px] flex flex-col text-slate-800</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-3xl text-center</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">to</span> <span class="nx">dos</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">NewTodo</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ul</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">px-6</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">TodoItem</span>  <span class="nx">todos</span><span class="o">=</span><span class="p">{</span><span class="nx">todos</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>🚨 Client Components themselves cannot be async functions (<a href="https://nextjs.org/docs/messages/no-async-client-component">official FAQ</a>). And Prisma will break the app if you try to call it inside a Client Component.</p>
-
-<h3>
-  
-  
-  Update and Delete todo by ID ✅
-</h3>
-
-<p>Now we already have a way to create a new todo and to display the list of all the todos, in the next step we need a way to handle marking a todo as completed and to handle the deletion of a todo. Accordingly, we create <code>update</code> and <code>delete</code> functions that fetch our dynamic route. This would be the <code>components/todos/TodoItem.tsx</code> file:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/navigation</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Todo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@prisma/client</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">TodoItem</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">todos</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">todos</span><span class="p">:</span> <span class="nx">Todo</span><span class="p">[]</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="nx">update</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="na">todo</span><span class="p">:</span> <span class="nx">Todo</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`/api/todo/</span><span class="p">${</span><span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PATCH</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-        <span class="na">completed</span><span class="p">:</span> <span class="o">!</span><span class="nx">todo</span><span class="p">.</span><span class="nx">complete</span><span class="p">,</span>
-      <span class="p">}),</span>
-    <span class="p">});</span>
-    <span class="nx">router</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">deleteTodo</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="na">todo</span><span class="p">:</span> <span class="nx">Todo</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">`/api/todo/</span><span class="p">${</span><span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DELETE</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-        <span class="na">id</span><span class="p">:</span> <span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
-      <span class="p">}),</span>
-    <span class="p">});</span>
-
-    <span class="nx">router</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
-  <span class="p">};</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="p">{</span><span class="nx">todos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">todo</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">(</span>
-          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex px-4</span><span class="dl">"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex gap-2 flex-1</span><span class="dl">"</span><span class="o">&gt;</span>
-              <span class="o">&lt;</span><span class="nx">input</span>
-                <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span>
-                <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">check</span><span class="dl">"</span>
-                <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">todo</span><span class="p">.</span><span class="nx">complete</span><span class="p">}</span>
-                <span class="nx">onChange</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">update</span><span class="p">(</span><span class="nx">todo</span><span class="p">)}</span>
-                <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">peer cursor-pointer accent-slate-300 </span><span class="dl">"</span>
-              <span class="o">/&gt;</span>
-              <span class="o">&lt;</span><span class="nx">label</span>
-                <span class="nx">htmlFor</span><span class="o">=</span><span class="p">{</span><span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
-                <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">peer-checked:line-through peer-checked:text-slate-500 cursor-pointer</span><span class="dl">"</span>
-              <span class="o">&gt;</span>
-                <span class="p">{</span><span class="nx">todo</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span>
-              <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">button</span>
-              <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">deleteTodo</span><span class="p">(</span><span class="nx">todo</span><span class="p">)}</span>
-              <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-slate-500  hover:text-slate-800 mr-3</span><span class="dl">"</span>
-            <span class="o">&gt;</span>
-              <span class="nx">X</span>
-            <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="p">);</span>
-      <span class="p">})}</span>
-    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Add the following code inside the <code>api/todo/[id]/route.ts</code> Route Handler:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NextResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/server</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">prisma</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/db</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">PATCH</span><span class="p">(</span>
-  <span class="nx">req</span><span class="p">:</span> <span class="nx">Request</span><span class="p">,</span>
-  <span class="p">{</span> <span class="na">params</span><span class="p">:</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">params</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">string</span> <span class="p">}</span> <span class="p">}</span>
-<span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">completed</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">req</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="k">await</span> <span class="nx">prisma</span><span class="p">.</span><span class="nx">todo</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span>
-    <span class="na">where</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">id</span><span class="p">:</span> <span class="nx">id</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">complete</span><span class="p">:</span> <span class="nx">completed</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">});</span>
-  <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Updated</span><span class="dl">"</span> <span class="p">},</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">200</span> <span class="p">});</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">DELETE</span><span class="p">(</span><span class="nx">req</span><span class="p">:</span> <span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">req</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="k">await</span> <span class="nx">prisma</span><span class="p">.</span><span class="nx">todo</span><span class="p">.</span><span class="k">delete</span><span class="p">({</span>
-    <span class="na">where</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">id</span><span class="p">:</span> <span class="nx">id</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">});</span>
-  <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Deleted Item</span><span class="dl">"</span> <span class="p">},</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">200</span> <span class="p">});</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>ℹ️ For more information on the Prisma Client Api click <a href="https://www.prisma.io/docs/reference/api-reference/prisma-client-reference">here</a>.</p>
-
-
-
-
-<h2>
-  
-  
-  Authentication by Hanko
-</h2>
-
-<p>By now you should have a fully functional todo app running. We should start working on the security.</p>
-
-<p>If you’re familiar with Hanko you can skip the next step, otherwise keep on reading to get started with Hanko Cloud to get your Hanko API running. </p>
-
-<h3>
-  
-  
-  Hanko Cloud setup ☁️
-</h3>
-
-<p>Visit <a href="https://cloud.hanko.io/login">Hanko Cloud</a> and create an account. Then create an organization for your Hanko project. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RRi9BWGg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x8vho8qsrbkkthn6602t.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RRi9BWGg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x8vho8qsrbkkthn6602t.png" alt="Create a Hanko Organization" width="800" height="491"></a></p>
-
-<p>Then create a new project and set the App URL to your development URL (example: <a href="http://localhost:3000):">http://localhost:3000):</a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0eEhvWOz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hgfioy9p3wet6t5fe7sn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0eEhvWOz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hgfioy9p3wet6t5fe7sn.png" alt="Hanko Cloud Project" width="800" height="713"></a></p>
-
-<p>And that’s all! Now you can always return to your Hanko Cloud dashboard to see your API URL and other insights about your project, you can also change the app URL in the settings, so that once you want to move from "development" to "production", you can change it to a proper domain/URL. Take the time to discover all the features.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VMlaAqCl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jvan097duorvng3c1my0.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VMlaAqCl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jvan097duorvng3c1my0.png" alt="Hanko Cloud dashboard" width="800" height="450"></a></p>
-
-<h3>
-  
-  
-  Adding Hanko to the Next.js app
-</h3>
-
-<p>Hanko is a lightweight and easy to implement user authentication solution that makes the transition to passkeys a lot simpler. Let’s bring Hanko to the game by installing the package running the code below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm install @teamhanko/hanko-elements
-</code></pre>
-
-</div>
-
-
-
-<p>First, let’s update our "Home" page and rename the function to "Login". Import the register function from <code>@teamhanko/hanko-elements</code>, and call the function with the Hanko API URL as an argument to register the <code>&lt;hanko-auth&gt;</code>. Now include it in your JSX:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">register</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@teamhanko/hanko-elements</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">hankoApi</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">YOUR_HANKO_API_URL</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Login</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">//</span>
-    <span class="nx">register</span><span class="p">(</span><span class="nx">hankoApi</span> <span class="o">??</span> <span class="dl">""</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">},</span> <span class="p">[]);</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex min-h-screen justify-center items-center </span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">hanko</span><span class="o">-</span><span class="nx">auth</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The code snippet above should display the Hanko authentication component:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ofpKfC0H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ma10mk3z4sk7h925v03t.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ofpKfC0H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ma10mk3z4sk7h925v03t.png" alt="Hanko Authentication component" width="468" height="269"></a></p>
-
-<p>The <code>&lt;hanko-profile&gt;</code> component offers a page for managing email addresses and passkeys, and we want to get access to it. Let's create a profile button component by creating a file <code>components/Profile.tsx</code> and use the following code as its content:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">register</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@teamhanko/hanko-elements</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">hankoApi</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">YOUR_HANKO_API_URL</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">Profile</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">openState</span><span class="p">,</span> <span class="nx">setOpenState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">register</span><span class="p">(</span><span class="nx">hankoApi</span> <span class="o">??</span> <span class="dl">""</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">},</span> <span class="p">[]);</span>
-
-  <span class="kd">const</span> <span class="nx">openProfile</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setOpenState</span><span class="p">(</span><span class="o">!</span><span class="nx">openState</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">openProfile</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="nx">Profile</span>
-      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="nx">openState</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> absolute top-14 </span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">section</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> w-[450px] h-auto rounded-2xl bg-white p-5</span><span class="dl">"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">hanko</span><span class="o">-</span><span class="nx">profile</span> <span class="o">/&gt;</span>
-          <span class="o">&lt;</span><span class="sr">/section</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="p">)}</span>
-    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>It should look like this:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--c6V2FuSL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rmp0lj2lfwdg5kdzlp5c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--c6V2FuSL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rmp0lj2lfwdg5kdzlp5c.png" alt="Hanko Profile Component" width="546" height="348"></a></p>
-
-<p>Now let’s use <code>@teamhanko/hanko-elements</code> to manage user logouts by creating a logout button component. Create a file <code>components/Logout.tsx</code> and use the following as its content:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useCallback</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/navigation</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Hanko</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@teamhanko/hanko-elements</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">hankoApi</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">YOUR_HANKO_API_URL</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">Logout</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">hanko</span><span class="p">,</span> <span class="nx">setHanko</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">Hanko</span><span class="o">&gt;</span><span class="p">();</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">@teamhanko/hanko-elements</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">(({</span> <span class="nx">Hanko</span> <span class="p">})</span> <span class="o">=&gt;</span>
-      <span class="nx">setHanko</span><span class="p">(</span><span class="k">new</span> <span class="nx">Hanko</span><span class="p">(</span><span class="nx">hankoApi</span> <span class="o">??</span> <span class="dl">""</span><span class="p">))</span>
-    <span class="p">);</span>
-  <span class="p">},</span> <span class="p">[]);</span>
-
-  <span class="kd">const</span> <span class="nx">logout</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">hanko</span><span class="p">?.</span><span class="nx">user</span>
-      <span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
-        <span class="nx">router</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
-        <span class="k">return</span><span class="p">;</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">logout</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Logout</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>When a user logs out, a specific event is triggered that you can subscribe to, like redirecting to an specific page after logout:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>  <span class="kd">const</span> <span class="nx">renewSession</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">router</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">router</span><span class="p">]);</span>
-
-  <span class="nx">useEffect</span><span class="p">(</span>
-    <span class="p">()</span> <span class="o">=&gt;</span>
-      <span class="nx">hanko</span><span class="p">?.</span><span class="nx">onSessionExpired</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">renewSession</span><span class="p">();</span>
-      <span class="p">}),</span>
-
-    <span class="p">[</span><span class="nx">hanko</span><span class="p">,</span> <span class="nx">renewSession</span><span class="p">]</span>
-  <span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We will use both buttons at the top left of our <code>Todo</code> page.</p>
-
-<p>ℹ️For more information about all the events that you can "listen" from the Hanko client click <a href="https://github.com/teamhanko/hanko/blob/main/frontend/elements/README.md#events">here</a>.</p>
-
-<h3>
-  
-  
-  Customizing Hanko Components
-</h3>
-
-<p>Hanko components are very easy to customize! To change the <code>&lt;hanko-auth &gt;</code> component, inside our <code>globals.css</code> file  we can change the default values of the preconfigured CSS variables listed <a href="https://github.com/teamhanko/hanko/blob/main/frontend/elements/README.md#css-variables">here</a> to change the default color for the primary button and the border-radius for example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">:</span><span class="nx">root</span> <span class="p">{</span>
-  <span class="o">--</span><span class="nx">border</span><span class="o">-</span><span class="nx">radius</span><span class="p">:</span> <span class="mi">20</span><span class="nx">px</span><span class="p">;</span>
-  <span class="o">--</span><span class="nx">brand</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="nx">ff2e4c</span><span class="p">;</span>
-  <span class="o">--</span><span class="nx">brand</span><span class="o">-</span><span class="nx">color</span><span class="o">-</span><span class="nx">shade</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="err">#</span><span class="nx">d52845</span><span class="p">;</span>
-  <span class="o">--</span><span class="nx">brand</span><span class="o">-</span><span class="nx">color</span><span class="o">-</span><span class="nx">shade</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span> <span class="err">#</span><span class="nx">d62a4c</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--22xaZc6V--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/294pv92652mcsrnnl9hd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--22xaZc6V--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/294pv92652mcsrnnl9hd.png" alt="Hanko Login Red" width="509" height="272"></a></p>
-
-<p>ℹ️ For more information on how to customize Hanko Components click <a href="https://github.com/teamhanko/hanko/blob/main/frontend/elements/README.md#ui-customization">here</a>.</p>
-
-
-
-
-<h2>
-  
-  
-  Verifying JWT with jose library
-</h2>
-
-<p>The JWT is signed by Hanko and to secure our app we still need to verify the JWT. </p>
-
-<blockquote>
-<p><strong>What are JWTs?</strong><br>
-<em>A JSON Web Token (JWT) is a compact and self-contained way for transmitting information between parties as a JSON object in a secure way. The purpose of a JWT is to ensure the authenticity of the data.</em></p>
-</blockquote>
-
-<p>Hanko handles the authentication and signing of the JWT. On successful authentication with Hanko a cookie, which contains said JWT as its value, is set. We don’t really need to know a lot about them but it’s worth getting familiar with the parts of a JWT (header, payload and signature), and what a <a href="https://www.hanko.io/blog/understanding-jwks">JWKS</a> is. For more information you can also visit <a href="https://jwt.io/">JWT.io</a>.</p>
-
-<p>To verify the JWT we need to install the <code>jose-jwt</code> package:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm i jose
-</code></pre>
-
-</div>
-
-
-
-<p>Jose is a JavaScript module that supports JWT and provides functionality for signing and verifying tokens. </p>
-
-<p>ℹ️ For more information about Jose click <a href="https://www.npmjs.com/package/jose">here</a>. </p>
-
-<h3>
-  
-  
-  Middleware
-</h3>
-
-<p>Create a new file <code>middleware.tsx</code> in the root of your project and use the following code:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">jose</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">jose</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">NextRequest</span><span class="p">,</span> <span class="nx">NextResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/server</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">hankoApi</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">YOUR_HANKO_API_URL</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">middleware</span><span class="p">(</span><span class="nx">req</span><span class="p">:</span> <span class="nx">NextRequest</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">hanko</span><span class="dl">"</span><span class="p">)?.</span><span class="nx">value</span><span class="p">;</span>
-
-  <span class="kd">const</span> <span class="nx">JWKS</span> <span class="o">=</span> <span class="nx">jose</span><span class="p">.</span><span class="nx">createRemoteJWKSet</span><span class="p">(</span>
-    <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">hankoApi</span><span class="p">}</span><span class="s2">/.well-known/jwks.json`</span><span class="p">)</span>
-  <span class="p">);</span>
-
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">verifiedJWT</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">jose</span><span class="p">.</span><span class="nx">jwtVerify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span> <span class="nx">JWKS</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">verifiedJWT</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-<span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">));</span>
-<span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>To verify the JWT we need the token and the JWKS. We get the token from the "hanko" cookie, and then we obtain the JSON Web Key Set (JWKS) by calling the <code>createRemoteJWKSet</code> function from jose. Then we call <code>await jose.jwtVerify(token, JWKS)</code>. If the token can be verified, then the promise returned from the function resolves to a decoded token. If it cannot be verified, then the promise rejects and we can catch the error and handle it appropriately, e.g. by redirecting the user to the login/home page. If you console.log the const <code>verifiedJWT</code> you should see the decoded token showing the payload, the protectedHeader and the key. Inside the key, you should be able to see a "true" if it’s verified.</p>
-
-<p>ℹ️ For more information about Next.js Middleware click <a href="https://nextjs.org/docs/app/building-your-application/routing/middleware">here</a>.</p>
-
-<h3>
-  
-  
-  Securing the application and redirecting 🔐
-</h3>
-
-<p>We want to prevent unauthorized users from getting access to private user data. A simple way to do this is by adding the paths to be protected in the Middleware configuration. Copy the following code at the bottom of your <code>middleware.tsx</code> file:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">matcher</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">/todo</span><span class="dl">"</span><span class="p">],</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Update the <code>Login</code> page to subscribe to the events of the Hanko client and redirect to the <code>Todo</code> page after a successful login:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="dl">"</span><span class="s2">use client</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useCallback</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/navigation</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">register</span><span class="p">,</span> <span class="nx">Hanko</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@teamhanko/hanko-elements</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">hankoApi</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">YOUR_HANKO_API_URL</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Login</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">hanko</span><span class="p">,</span> <span class="nx">setHanko</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">Hanko</span><span class="o">&gt;</span><span class="p">();</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">import</span><span class="p">(</span><span class="dl">"</span><span class="s2">@teamhanko/hanko-elements</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">(({</span> <span class="nx">Hanko</span> <span class="p">})</span> <span class="o">=&gt;</span>
-      <span class="nx">setHanko</span><span class="p">(</span><span class="k">new</span> <span class="nx">Hanko</span><span class="p">(</span><span class="nx">hankoApi</span> <span class="o">??</span> <span class="dl">""</span><span class="p">))</span>
-    <span class="p">);</span>
-  <span class="p">},</span> <span class="p">[]);</span>
-
-  <span class="kd">const</span> <span class="nx">redirectAfterLogin</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">router</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">"</span><span class="s2">/todo</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">router</span><span class="p">]);</span>
-
-  <span class="nx">useEffect</span><span class="p">(</span>
-    <span class="p">()</span> <span class="o">=&gt;</span>
-      <span class="nx">hanko</span><span class="p">?.</span><span class="nx">onAuthFlowCompleted</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">redirectAfterLogin</span><span class="p">();</span>
-      <span class="p">}),</span>
-    <span class="p">[</span><span class="nx">hanko</span><span class="p">,</span> <span class="nx">redirectAfterLogin</span><span class="p">]</span>
-  <span class="p">);</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">//</span>
-    <span class="nx">register</span><span class="p">(</span><span class="nx">hankoApi</span> <span class="o">??</span> <span class="dl">""</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">},</span> <span class="p">[]);</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">flex min-h-screen justify-center items-center bg-slate-50</span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">bg-white p-5 rounded-2xl shadow-md</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">hanko</span><span class="o">-</span><span class="nx">auth</span> <span class="o">/&gt;</span>
-      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h2>
-  
-  
-  Time to display the right Todos 🪄✨
-</h2>
-
-<p>Lastly, we should only display the todos for the user that is logged in. To do so, we need to link the todos to the correct "user ID". The first step is to update the Todo model in the <code>prisma schema</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">model</span> <span class="nx">Todo</span> <span class="p">{</span>
-  <span class="nx">userId</span> <span class="nb">String</span>
-  <span class="nx">id</span> <span class="nb">String</span> <span class="p">@</span><span class="nd">id</span> <span class="p">@</span><span class="nd">default</span><span class="p">(</span><span class="nx">uuid</span><span class="p">())</span>
-  <span class="nx">title</span> <span class="nb">String</span>
-  <span class="nx">complete</span> <span class="nb">Boolean</span>
-  <span class="nx">createdAt</span> <span class="nx">DateTime</span> <span class="p">@</span><span class="nd">default</span><span class="p">(</span><span class="nx">now</span><span class="p">())</span>
-  <span class="nx">updatedAt</span> <span class="nx">DateTime</span> <span class="p">@</span><span class="nd">updatedAt</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Then run the following command to create a migration:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npx prisma migrate
-</code></pre>
-
-</div>
-
-
-
-<p>Or the following to push the schema changes directly to the database:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npx prisma db push
-</code></pre>
-
-</div>
-
-
-
-<p>Next step is to update the <code>api/todo/route.ts</code> file to get the user ID from the token, then create a new todo if there is a user ID:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NextResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/server</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">cookies</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/headers</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">jose</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">jose</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">prisma</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/db</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">userId</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">cookies</span><span class="p">().</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">hanko</span><span class="dl">"</span><span class="p">)?.</span><span class="nx">value</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="nx">jose</span><span class="p">.</span><span class="nx">decodeJwt</span><span class="p">(</span><span class="nx">token</span> <span class="o">??</span> <span class="dl">""</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">sub</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">POST</span><span class="p">(</span><span class="nx">req</span><span class="p">:</span> <span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">userID</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">userId</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">title</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">req</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="nx">userID</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">title</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">That can't be a title</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">await</span> <span class="nx">prisma</span><span class="p">.</span><span class="nx">todo</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-      <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="nx">title</span><span class="p">,</span> <span class="na">complete</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">userId</span><span class="p">:</span> <span class="nx">userID</span> <span class="o">??</span> <span class="dl">""</span> <span class="p">},</span>
-    <span class="p">});</span>
-
-    <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Created Todo</span><span class="dl">"</span> <span class="p">},</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">200</span> <span class="p">});</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="na">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Not Found</span><span class="dl">"</span> <span class="p">},</span> <span class="p">{</span> <span class="na">status</span><span class="p">:</span> <span class="mi">404</span> <span class="p">});</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>The final step is to update the Prisma call to fetch all the todos from the <code>todo/page.tsx</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Logout</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/Logout</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Profile</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/Profile</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">NewTodo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/todos/NewTodo</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">TodoItem</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/todos/TodoItem</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">prisma</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/db</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">userId</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../api/todo/route</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">Todo</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">userID</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">userId</span><span class="p">();</span>
-
-  <span class="kd">const</span> <span class="nx">todos</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">prisma</span><span class="p">.</span><span class="nx">todo</span><span class="p">.</span><span class="nx">findMany</span><span class="p">({</span>
-    <span class="na">where</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">userId</span><span class="p">:</span> <span class="p">{</span> <span class="na">equals</span><span class="p">:</span> <span class="nx">userID</span> <span class="p">},</span>
-    <span class="p">},</span>
-  <span class="p">});</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">main</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> flex flex-col min-h-screen justify-center items-center bg-slate-50 relative </span><span class="dl">"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">absolute top-4 left-16</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2"> relative py-4 space-x-6</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">Profile</span> <span class="o">/&gt;</span>
-          <span class="o">&lt;</span><span class="nx">Logout</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">bg-slate-300 rounded-3xl py-6  h-[400px] w-[450px] flex flex-col text-slate-800</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-3xl text-center</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">to</span> <span class="nx">dos</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">NewTodo</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ul</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">px-6</span><span class="dl">"</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">TodoItem</span> <span class="nx">todos</span><span class="o">=</span><span class="p">{</span><span class="nx">todos</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/main</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h3>
-  
-  
-  🤩 App demonstration
-</h3>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lxAmB5U5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jxdzm5zmkrfaf536y9rc.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lxAmB5U5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jxdzm5zmkrfaf536y9rc.gif" alt="Todo example" width="600" height="452"></a></p>
-
-
-
-
-<h2>
-  
-  
-  You made it! 🎉
-</h2>
-
-<p>Congratulations, You now have a fully functional "Todo App"!</p>
-
-<p>Thanks for staying all the way to the end, today you’ve learnt how to implement some of the Next.js new features, how to authenticate users with Hanko, and a little bit about databases with Prisma. </p>
-
-<p><a href="https://nextjs.org/docs">Next.js</a> App Router has surely been a challenge for me, the transition to learn when and how to use some of the new features can take time but from my perspective it’s totally worth the try. </p>
-
-<p>In times of constant changes, being able to count on authentication easy to integrate is almost a dream come true, <a href="https://www.hanko.io/">Hanko</a> aims to change the way developers and users experience both sides of the login.</p>
-
-<p>Thank you for reading, auf wiedersehen! 👋</p>
-
-
-
-
-<p><a href="https://github.com/teamhanko/hanko"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VjkaKPe_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ri6ktsibmrw790q17c70.png" alt="Give us a star!" width="800" height="533"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Why we launched earlier than what felt comfortable](https://dev.to/rigdev/why-we-launched-earlier-than-what-felt-comfortable-5bhm) 
- <details><summary>Article</summary> <p>It’s been 10 days since we launched Rig.dev - our open-source application platform for Kubernetes, and in all honesty, we had our worries about making our repository public for everyone. Suddenly it was about to get very real.</p>
-
-<p>Why the worry? We still had a lot of features and developer workflows we wanted to improve but had limited knowledge on what to prioritize and what to push back.</p>
-
-<p>The benefits of launching early and building in public, therefore quickly became very clear to us; show the world what we are building and get ongoing feedback from the community on <strong>if</strong> we actually address one of their problems, and if our solution is the right one.</p>
-
-<p>In this post, we have gathered some reflections and our initial learnings from launching early and building in public.</p>
-
-<h2>
-  
-  
-  Required reflection
-</h2>
-
-<p>First thing’s first. We had to be no less than excellent at explaining our solution. What was our vision? What key problems were we trying to solve for our users?</p>
-
-<p>By taking a step back and diving into these questions as a team we got a great boost in alignment on what path to take so we could build a platform that truly solved the needs of our users.</p>
-
-<h2>
-  
-  
-  Shortened feedback-cycle
-</h2>
-
-<p>One of the most important factors in our early launch was the community. Getting early (and sometimes ruthless) feedback on everything from our problem statement and wording on our website to features and documentation were absolutely essential for us in terms of refining our solution.</p>
-
-<p>And oh boy did we get feedback! Thanks to our community we now have a lot of insights into how our platform and solution is perceived, helping us improve communication over the next couple of weeks.</p>
-
-<h2>
-  
-  
-  Internal motivation
-</h2>
-
-<p>After releasing, it suddenly was clear to us that there in fact was a high level of interest in what we were working on, and that motivated us to keep pushing forward to deliver the best possible solution for our users and ourselves.</p>
-
-<p>So even though building in public can be frightening - and sometimes even demotivating due to the overwhelming amount of honest feedback - we stayed relentlessly motivated.</p>
-
-<h2>
-  
-  
-  Public Accountability
-</h2>
-
-<p>We also discovered, that the public accountability that comes along with building in public can be a strong force. We now have a community of developers waiting for new updates and releases, as well as companies waiting for us to come back with an updated version based on their feedback.</p>
-
-<p>This motivates us to continuously improve our platform and keep moving, while constantly driving ourselves to be agile in our development process.</p>
-
-<h2>
-  
-  
-  Wrap up
-</h2>
-
-<p>Overall, we hope that this has given insight into our reasoning for launching early and building in public. Until now it has been a powerful approach for us, and we're excited to see where it takes us next as we continue to grow.</p>
-
-<p>Building in public requires a well-balanced mix of engaging with the community as well as making sure we stay on course. But as our community continues to grow, we will always prioritize engaging and making sure community members feel part of the development.</p>
-
-<p>We are excited and grateful by the support we have received so far. While we're still in the building phase, we would love it, if you'd consider starring us on GitHub 🌟: <a href="http://go.rig.dev/devto/why-we-launched-earlier/github">https://github.com/rigdev/rig</a></p>
-
-<p>Also, we're actively seeking feedback, bug reports, and feature requests in our <a href="http://go.rig.dev/devto/why-we-launched-earlier/discord">Rig.dev Community Discord</a> – so please join us here!</p>
-
- </details> 
- <hr /> 
-
- #### - [Job Schedulers for Node: Bull or Agenda?](https://dev.to/appsignal/job-schedulers-for-node-bull-or-agenda-39n3) 
- <details><summary>Article</summary> <p>Whether you're familiar with job schedulers or new to the concept, two popular libraries in the Node.js ecosystem stand out: Bull and Agenda.</p>
-
-<p>These libraries provide unique features and advantages when it comes to efficient job scheduling. Let's explore the ins and outs of Bull and Agenda! 🚀</p>
-
-<h2>
-  
-  
-  Scheduling Jobs in Node.js: Conducting An Orchestra
-</h2>
-
-<p>A job scheduler can be likened to <strong>an orchestra conductor</strong> in a Node.js application. Just as a conductor leads and coordinates musicians to produce a harmonious symphony, a job scheduler orchestrates the execution of tasks in your application.</p>
-
-<p>Imagine your application as a grand orchestra, with each task representing a skilled musician. Without a conductor, each musician might play their part at their own pace, resulting in a disjointed and chaotic performance. Similarly, without a job scheduler, tasks in your application may run independently, leading to resource conflicts, delays, and suboptimal performance.</p>
-
-<p>Just as a conductor adapts to unforeseen circumstances during a live performance, a job scheduler handles exceptions and failures in your application. It gracefully manages errors, reschedules failed tasks, and ensures that the show goes on smoothly, maintaining the reliability and resilience of your application.</p>
-
-<p>Now that we've summarised the role of a job scheduler, let's turn our attention to what Bull can do.</p>
-
-<h2>
-  
-  
-  Bull for Node.js
-</h2>
-
-<p>Bull claims to be the fastest, most reliable Redis-based queue for Node.js. It is known for its high performance, scalability, and robustness. With Bull, you can create queues to manage and process jobs asynchronously, making it ideal for handling time-consuming or resource-intensive tasks.</p>
-
-<h3>
-  
-  
-  Benefits of Bull as a Job Scheduler
-</h3>
-
-<p>Using Bull as a job scheduler brings several benefits to your Node.js application:</p>
-
-<ul>
-<li>
-<strong>High performance and scalability:</strong> Bull leverages efficient algorithms and data structures to process jobs quickly. It is designed to handle high workloads and scales horizontally.</li>
-<li>
-<strong>Reliable job processing and job queues:</strong> Bull ensures reliable job processing by providing features such as job persistence, automatic retries, error handling, and priority queues.</li>
-<li>
-<strong>Advanced job scheduling options:</strong> You can schedule jobs to run at specific times, set recurring jobs using cron-like expressions, or define intervals between job executions.</li>
-<li>
-<strong>Monitoring and insights:</strong> Bull provides a built-in monitoring dashboard to track job progress, view statistics, and monitor performance metrics. This feature allows you to gain insights into the job processing pipeline, identify bottlenecks, and optimize your application's performance.</li>
-<li>
-<strong>Integration and compatibility:</strong> Bull integrates well with popular frameworks like Express or Nest.js and can easily integrate with different data stores, message brokers, and external services.</li>
-<li>
-<strong>Extensive ecosystem and community support:</strong> Bull is actively maintained and regularly updated, ensuring compatibility with the latest versions of Node.js. The community provides helpful resources, documentation, and plugins to extend Bull's functionality and address various use cases.</li>
-</ul>
-
-<p>Take note, however, of the following information from the <a href="https://github.com/OptimalBits/bull#-news-and-updates">Bull documentation</a>:</p>
-
-<blockquote>
-<p>Bull is currently in maintenance mode, we are only fixing bugs. For new features check <a href="https://github.com/taskforcesh/bullmq">BullMQ</a>, a modern rewritten implementation in Typescript. You are still very welcome to use Bull if it suits your needs, which is a safe, battle-tested library.</p>
-</blockquote>
-
-<h3>
-  
-  
-  Real-world Use Cases Where Bull Shines
-</h3>
-
-<p>Bull excels in real-world use cases where efficient job scheduling and task management are critical. In <strong>distributed systems or microservice architectures</strong>, Bull particularly shines as a job scheduler for coordinating and synchronizing tasks across multiple services or nodes. Here's a code example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// Service A - Producer</span>
-
-<span class="kd">const</span> <span class="nx">Queue</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bull</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">// Create a Bull queue</span>
-<span class="kd">const</span> <span class="nx">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Queue</span><span class="p">(</span><span class="dl">"</span><span class="s2">taskQueue</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">redis</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">host</span><span class="p">:</span> <span class="dl">"</span><span class="s2">localhost</span><span class="dl">"</span><span class="p">,</span>
-    <span class="na">port</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-
-<span class="c1">// Producer service adds jobs to the queue</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">addToQueue</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">await</span> <span class="nx">queue</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Job added to the queue:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Service B - Consumer</span>
-
-<span class="c1">// Create a Bull queue with the same name as the producer</span>
-<span class="kd">const</span> <span class="nx">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Queue</span><span class="p">(</span><span class="dl">"</span><span class="s2">taskQueue</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">redis</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">host</span><span class="p">:</span> <span class="dl">"</span><span class="s2">localhost</span><span class="dl">"</span><span class="p">,</span>
-    <span class="na">port</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-
-<span class="c1">// Consumer service processes jobs from the queue</span>
-<span class="nx">queue</span><span class="p">.</span><span class="nx">process</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">job</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Processing job:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">job</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-  <span class="c1">// Perform the necessary actions for the job</span>
-  <span class="c1">// ...</span>
-
-  <span class="c1">// Mark the job as completed</span>
-  <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">();</span>
-<span class="p">});</span>
-
-<span class="c1">// Start producing jobs</span>
-<span class="nx">addToQueue</span><span class="p">({</span> <span class="na">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Task 1</span><span class="dl">"</span> <span class="p">});</span>
-<span class="nx">addToQueue</span><span class="p">({</span> <span class="na">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Task 2</span><span class="dl">"</span> <span class="p">});</span>
-<span class="nx">addToQueue</span><span class="p">({</span> <span class="na">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Task 3</span><span class="dl">"</span> <span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, we have two services, Service A (Producer) and Service B (Consumer). They both share a Bull queue named <code>taskQueue</code>. Service A produces jobs by adding data to the queue using the <code>addToQueue</code> function. Service B consumes these jobs and processes them using the <code>queue.process</code> method.</p>
-
-<p>For instance, when <code>addToQueue({ data: 'Task 1' })</code> is called, it adds a job to the Bull queue named <code>taskQueue</code>. The job contains data <code>{ data: 'Task 1' }</code> representing the specific task or job to be processed.</p>
-
-<p>The <code>queue.add(data)</code> method adds the job to the queue, and Bull takes care of persisting the job details in the underlying Redis database. The job is then available for consumption by any connected consumer service processing jobs from the same queue.</p>
-
-<p>When <code>queue.process</code> is called in the consumer service, it sets up a worker that listens to the queue and starts processing jobs as they become available. In this case, the worker will process the job containing <code>{ data: 'Task 1' }</code> once it reaches the front of the queue.</p>
-
-<p>The job processing involves invoking the function provided to <code>queue.process</code>. In the code example, the function logs the job data (<code>console.log('Processing job:', job.data)</code>) and performs any necessary actions specific to the job.</p>
-
-<p>By calling <code>addToQueue</code> with different data for each task, you can add multiple jobs to the queue. The consumer service will process them one by one based on the order in which they were added.</p>
-
-<p>Other use cases where Bull shines include:</p>
-
-<ul>
-<li>Background processing and task offloading</li>
-<li>Task scheduling and automation</li>
-<li>Job queues and workload balancing</li>
-<li>Delayed and retry mechanisms</li>
-</ul>
-
-<p>But, as the saying goes: "Every rose has its thorn". Bull, while an exciting choice of job scheduler, also has some noteworthy drawbacks.</p>
-
-<h3>
-  
-  
-  Potential Drawbacks of Bull
-</h3>
-
-<ul>
-<li>
-<strong>Dependency on Redis:</strong> Bull relies on Redis as its underlying data store, requiring the setup and maintenance of a Redis server. This can introduce added complexity and infrastructure demands if you're not already using Redis in your application.</li>
-<li>
-<strong>Steep learning curve:</strong> Bull's wide range of features and advanced options may require developers new to job scheduling and asynchronous task management to invest time in learning and experimenting to utilize its capabilities effectively.</li>
-<li>
-<strong>Memory consumption:</strong> Bull's memory usage can increase with large job queues, necessitating careful monitoring and optimization to stay within acceptable limits, particularly in memory-constrained or high-throughput environments.</li>
-<li>
-<strong>Persistence options:</strong> Bull's reliance on Redis for persistence may not align with your preferred data store, potentially necessitating custom solutions or alternative job scheduler libraries to integrate with a different database system.</li>
-<li>
-<strong>Overkill for simple use cases:</strong> If your application has straightforward scheduling requirements or doesn't require advanced job processing features, integrating Bull may introduce unnecessary complexity. In such cases, a simpler job scheduler or task queue solution might be more suitable.</li>
-</ul>
-
-<p>This brings us to Bull’s alternative — Agenda.</p>
-
-<h2>
-  
-  
-  Agenda for Node.js
-</h2>
-
-<p>Agenda is a lightweight job scheduling library for Node.js, built on top of MongoDB. It focuses on simplicity and ease of use, making it an excellent choice for applications that require basic job scheduling capabilities without the need for complex features.</p>
-
-<h3>
-  
-  
-  Benefits of Agenda as a Job Scheduler
-</h3>
-
-<p>Here are a few notable benefits of using Agenda:</p>
-
-<ul>
-<li>
-<strong>Simple and lightweight:</strong> Agenda is designed to be lightweight and easy to use, making it a great choice for applications with simpler job scheduling requirements.</li>
-<li>
-<strong>Persistence options:</strong> Unlike Bull, Agenda supports multiple databases, including MongoDB as the default choice. This gives you the flexibility to use your preferred database system for storing job data.</li>
-<li>
-<strong>Event-driven architecture:</strong> Agenda's event-driven architecture enables seamless integration and efficient communication between application components through custom event-triggered job execution.</li>
-<li>
-<strong>Error handling and job recovery:</strong> Agenda includes built-in error handling, job recovery, retries, and concurrency control, ensuring effective management of job execution errors and recovery from failures in your application.</li>
-<li>
-<strong>Job scheduling flexibility:</strong> Agenda provides comprehensive scheduling capabilities, human-readable syntax, and complex recurring schedules for executing tasks at regular intervals or specific times.</li>
-<li>
-<strong>Active community and maintenance:</strong> Agenda has an active community and ongoing maintenance, ensuring regular updates, bug fixes, ample resources, documentation, and community support for any issues or assistance you may need.</li>
-</ul>
-
-<h3>
-  
-  
-  Examples Where Agenda Is a Good Fit
-</h3>
-
-<p>Agenda is well-suited for a range of scenarios, including recurring tasks, cron jobs, event-driven workflows, and lightweight use cases that demand a straightforward API and a minimalistic solution for job scheduling in your application.</p>
-
-<p>The following piece of code uses Agenda to execute tasks based on complex time patterns (using cron syntax):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">Agenda</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">agenda</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">agenda</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Agenda</span><span class="p">();</span>
-
-<span class="c1">// Define a job to be executed based on cron schedule</span>
-<span class="nx">agenda</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="dl">"</span><span class="s2">sendEmail</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">job</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">to</span><span class="p">,</span> <span class="nx">subject</span><span class="p">,</span> <span class="nx">body</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">job</span><span class="p">.</span><span class="nx">attrs</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-  <span class="c1">// Send email logic here</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Sending email to </span><span class="p">${</span><span class="nx">to</span><span class="p">}</span><span class="s2"> with subject: </span><span class="p">${</span><span class="nx">subject</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="c1">// Define the cron schedule for the job</span>
-<span class="nx">agenda</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="dl">"</span><span class="s2">0 8 * * *</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">sendEmail</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">to</span><span class="p">:</span> <span class="dl">"</span><span class="s2">example@example.com</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">subject</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Daily Report</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">body</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello, this is your daily report.</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="c1">// Start the agenda instance and execute jobs</span>
-<span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">await</span> <span class="nx">agenda</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Agenda started</span><span class="dl">"</span><span class="p">);</span>
-
-  <span class="c1">// Optionally, you can define additional jobs and schedules here</span>
-
-  <span class="c1">// Gracefully shut down the agenda instance</span>
-  <span class="k">await</span> <span class="nx">agenda</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
-<span class="p">})();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, we define an Agenda instance and then define a job named <code>sendEmail</code>. We specify the job's logic inside the async function. The <code>every</code> method is used to schedule the job with the cron expression <code>0 8 * * *</code>, which means that the job will run every day at 8:00 AM. The job data includes the email recipient, subject, and body.</p>
-
-<p>When the agenda starts, it will execute the job according to the defined schedule. You can add more jobs and schedules as needed within the async block. Finally, the optional <code>await agenda.stop();</code> is called to gracefully stop the Agenda instance when the application is finished.</p>
-
-<h3>
-  
-  
-  Limitations of Agenda
-</h3>
-
-<p>While Agenda offers several advantages, it also comes with some trade-offs to consider:</p>
-
-<ul>
-<li>
-<strong>Lack of advanced features:</strong> If your application requires complex job orchestration, prioritization, or extensive queue management, you may find Agenda's feature set to be less comprehensive than Bull's.</li>
-<li>
-<strong>Single process execution:</strong> By default, Agenda operates within a single process, which simplifies deployment and setup but may not scale as effectively as Bull in terms of handling high job concurrency and distributed processing.</li>
-<li>
-<strong>Less active community:</strong> While Agenda has an active community, it may have a smaller user base compared to other popular alternatives like Bull, potentially resulting in fewer available resources, documentation, and community support.</li>
-<li>
-<strong>Learning curve for complex scenarios:</strong> Agenda is user-friendly for simpler use cases, but can have a steeper learning curve for complex job scheduling needs. If your application requires intricate workflows, advanced scheduling patterns, or sophisticated error handling, a deeper understanding of Agenda's capabilities may be necessary.</li>
-</ul>
-
-<h3>
-  
-  
-  Feature Comparison between Bull and Agenda for Node.js
-</h3>
-
-<p>Here's a concise table comparing the features of each library to help you choose the optimal job scheduler for your Node.js projects.</p>
-
-<p>Let's dive into the key similarities and differences between Bull and Agenda to make an informed choice! 🚀</p>
-
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>🐂 Bull</th>
-<th>🗓️ Agenda</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Job Persistence</td>
-<td>Redis</td>
-<td>MongoDB (with support for other databases)</td>
-</tr>
-<tr>
-<td>Scalability</td>
-<td>Suitable for high job concurrency</td>
-<td>Single process, may not scale as effectively</td>
-</tr>
-<tr>
-<td>Learning Curve</td>
-<td>Moderate</td>
-<td>Relatively easy for simpler use cases</td>
-</tr>
-<tr>
-<td>Advanced Features</td>
-<td>Extensive options for job management</td>
-<td>Limited compared to more feature-rich schedulers</td>
-</tr>
-<tr>
-<td>Persistence Flexibility</td>
-<td>Tightly integrated with Redis</td>
-<td>Supports multiple databases, including MongoDB</td>
-</tr>
-<tr>
-<td>Event-Driven Architecture</td>
-<td>Not emphasized</td>
-<td>Embraces event-driven workflows</td>
-</tr>
-<tr>
-<td>Error Handling</td>
-<td>Customizable error-handling mechanisms</td>
-<td>Built-in error handling and job recovery options</td>
-</tr>
-<tr>
-<td>Community Support</td>
-<td>Widely adopted, active community</td>
-<td>Active community but with a smaller user base</td>
-</tr>
-<tr>
-<td>Scheduling Flexibility</td>
-<td>Versatile scheduling options</td>
-<td>Rich set of scheduling features, including cron</td>
-</tr>
-<tr>
-<td>Resource Consumption</td>
-<td>Potentially higher memory consumption</td>
-<td>Lightweight and optimized for lower resource usage</td>
-</tr>
-<tr>
-<td>Integration</td>
-<td>Works well with existing Redis setups</td>
-<td>Flexible integration with various tech stacks</td>
-</tr>
-<tr>
-<td>Use Case Suitability</td>
-<td>Complex job orchestration and queueing</td>
-<td>Simpler use cases and straightforward scheduling</td>
-</tr>
-</tbody>
-</table></div>
-
-<p>Ultimately, the choice between Bull and Agenda boils down to your project's specific needs and complexity. Whether you prioritize advanced features, scalability, simplicity, or specific integration requirements, use the insights gained from this comparison to make an informed decision that aligns with your development goals.</p>
-
-<p>Remember, your choice of job scheduler plays a vital role in efficient task management. Choose wisely and enjoy seamless job scheduling in your Node.js applications.</p>
-
-<h2>
-  
-  
-  Wrapping Up
-</h2>
-
-<p>In this post, we explored Bull and Agenda as job scheduler libraries for Node.js applications.</p>
-
-<p>We learned about the benefits of Bull, such as reliable job persistence and extensive features, and its real-world use cases. Additionally, we discovered Agenda's advantages, including its support for multiple databases, event-driven architecture, and rich scheduling options.</p>
-
-<p>By comparing their features, potential drawbacks, and use case suitability, we can now make informed decisions when choosing between Bull and Agenda for our specific application requirements.</p>
-
-<p>Happy job scheduling!</p>
-
-<p><strong>P.S. If you liked this post, <a href="https://blog.appsignal.com/javascript-sorcery">subscribe to our JavaScript Sorcery list</a> for a monthly deep dive into more magical JavaScript tips and tricks.</strong></p>
-
-<p><strong>P.P.S. If you need an APM for your Node.js app, go and <a href="https://www.appsignal.com/nodejs">check out the AppSignal APM for Node.js</a>.</strong></p>
-
- </details> 
- <hr /> 
-
- #### - [Top FAQs of ICO Software Development](https://dev.to/adelelara/top-faqs-of-ico-software-development-3606) 
- <details><summary>Article</summary> <p>In today's fastest evolving digital landscape, staying informed about the latest trends and technologies is Very Essantial. If you're looking to dive into the world of cryptocurrency and blockchain, understanding ICO (Initial Coin Offering) software development is essential.This information hub aims to provide you with comprehensive answers to the top FAQs about ICO software development. </p>
-
-<p>Whether you're a novice or an experienced entrepreneur, this guide will help you grasp the intricacies of launching a successful ICO platform. By the end of thi conten, you'll have a solid understanding of what ICO software development is, how it works, its popularity, the difference between tokens and ICOs, and the steps to launch your own ICO platform.</p>
-
-<h2>
-  
-  
-  What is ICO Software Development?
-</h2>
-
-<p><strong><a href="https://www.coinsclone.com/ico-software-development/?utm_source=ICO+soft&amp;utm_medium=dev.&amp;utm_campaign=UP">ICO Software Development</a></strong> refers to the creation of software and technology infrastructure required to launch and manage an Initial Coin Offering (ICO). An ICO is a fundraising method in the world of cryptocurrency, where companies or projects issue tokens to investors in exchange for cryptocurrencies like Bitcoin or Ethereum.</p>
-
-<h2>
-  
-  
-  Is ICO similar to Crowdfunding?
-</h2>
-
-<p>While both ICOs and crowdfunding involve raising funds, they have significant differences. Crowdfunding typically involves individuals contributing small amounts of money to support a project or product. In contrast, ICOs offer tokens with the potential for value appreciation, making them an investment opportunity rather than a simple donation.</p>
-
-<h2>
-  
-  
-  Which is the Best ICO Development Company?
-</h2>
-
-<p>According to my research, Coinsclone is the best ICO development company because they provide an effective <strong><a href="https://www.coinsclone.com/ico-script/?utm_source=ICO+script&amp;utm_medium=dev.&amp;utm_campaign=UP">ICO script</a></strong> as an instant solution. Coinsclone offers a range of services, including ICO script development, smart contract development, and whitepaper creation, making them a one-stop-shop for all your ICO needs.</p>
-
-<h2>
-  
-  
-  How ICO Software Works?
-</h2>
-
-<p>ICO software acts as the backbone of the entire ICO process. It includes various components, such as a user-friendly website, secure wallet integration, smart contract deployment, and token distribution mechanisms. The software ensures the transparency and security of the ICO, making it accessible to a global audience.</p>
-
-<h2>
-  
-  
-  Why is ICO So Popular?
-</h2>
-
-<p>ICO gained popularity due to its potential for high returns on investment. It allowed startups and projects to raise funds quickly, often bypassing traditional venture capital routes. Additionally, ICOs offer a decentralized and inclusive fundraising method, democratizing investment opportunities.</p>
-
-<h2>
-  
-  
-  What is ICO in Web3?
-</h2>
-
-<p>Web3 refers to the third generation of the internet, characterized by decentralization and blockchain technology. In the context of Web3, ICOs have evolved to become more transparent and community-driven, with a focus on decentralized finance (DeFi) and blockchain-based projects.</p>
-
-<h2>
-  
-  
-  What is the Difference Between Token and ICO?
-</h2>
-
-<p>Tokens are digital assets created and distributed during an ICO. They can represent various things, such as ownership in a project, utility within a platform, or even voting rights. ICO, on the other hand, is the process of raising funds by issuing and selling these tokens to investors.</p>
-
-<h2>
-  
-  
-  How Can I Launch an ICO?
-</h2>
-
-<p>Connecting with an ICO software development company is the best choice. Companies like Coinsclone offer comprehensive ICO development services, guiding you through the entire process, from concept to execution. Their expertise ensures a successful ICO launch.</p>
-
-<h2>
-  
-  
-  How Expensive is an ICO?
-</h2>
-
-<p>The cost of launching an ICO can vary widely depending on several factors. Developing an ICO from scratch can be more expensive due to the extensive development work required. On the other hand, going with an ICO script is a cost-effective choice. The cost of an ICO script typically ranges from $5000 to $7000, making it a budget-friendly option for startups and entrepreneurs.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In the ever-changing landscape of cryptocurrency and blockchain technology, ICOs continue to be a popular fundraising method. Understanding <strong><a href="https://www.coinsclone.com/ico-software-development/?utm_source=ICO+soft&amp;utm_medium=dev.&amp;utm_campaign=UP">ICO Software Development</a></strong> is essential for anyone looking to enter this exciting space. We've answered some of the most pressing FAQs, from the basics of ICOs to the steps involved in launching your own platform. Remember, knowledge is your greatest asset in the world of ICOs, and with the right guidance and expertise, you can successfully navigate this innovative fundraising method. So, whether you're a blockchain enthusiast or an aspiring entrepreneur, seize the opportunity to explore the world of ICOs and harness their potential for growth and innovation.</p>
 
  </details> 
  <hr /> 
