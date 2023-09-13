@@ -118,6 +118,632 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [🔥TOP🔥 WordPress Themes You Should KNOW...](https://dev.to/noobizdev/top-wordpress-themes-you-should-know-4bme) 
+ <details><summary>Article</summary> <p>Selecting the right WordPress theme is crucial for a blog's success. Here are the top 10 WordPress themes for blogs in 2023, compiled from various reputable sources:<br>
+<br></p>
+
+<blockquote>
+<p>We love hearing from our followers, so please give us a like and a follow!❤️❤️❤️</p>
+</blockquote>
+
+
+
+<h2>
+  
+  
+  Choosing the Right WordPress Theme
+</h2>
+
+<p>Choosing the right WordPress theme is crucial for the success of your website. Here's why it matters:<br>
+User Experience: A well-designed theme enhances user experience, making your site more appealing and easier to navigate.</p>
+
+<ol>
+<li>Branding: Your theme should align with your brand's identity, ensuring consistency in colors, fonts, and style.</li>
+<li>Performance: Themes impact your site's speed. A poorly coded theme can slow down your website, affecting SEO and user satisfaction.</li>
+<li>Responsiveness: Mobile-friendliness is vital for SEO and user engagement. A responsive theme ensures your site looks great on all devices.</li>
+<li>Security: Themes with regular updates and strong security features protect your site from vulnerabilities and hacking attempts.</li>
+<li>Customization: Choose a theme that allows you to customize elements easily without coding, giving you flexibility in design and layout.</li>
+<li>SEO Friendliness: Some themes are optimized for SEO, helping your content rank higher in search engine results.</li>
+<li>Support and Updates: Opt for themes with active developers who provide support and updates, ensuring compatibility with the latest WordPress versions.
+
+
+</li>
+</ol>
+
+<h2>
+  
+  
+  Top 10 WordPress Themes for Blogs
+</h2>
+
+<ol>
+<li>
+<strong>Hestia</strong>: A versatile, free theme suitable for blogs of all types. It's recommended by ThemeIsle as one of the best free options for 2023.</li>
+<li>
+<strong>Divi</strong>: Known for its flexibility and powerful features, Divi is a popular choice among bloggers. Elegant Themes ranks it among the top options for bloggers in 2023.</li>
+<li>
+<strong>Astra</strong>: A lightweight and customizable theme that's great for bloggers. It's mentioned as a top pick by Neil Patel.</li>
+<li>
+<strong>GeneratePress</strong>: Known for its speed and performance, GeneratePress is a free theme recommended by WPBeginner for bloggers in 2023.</li>
+<li>
+<strong>Schema Lite</strong>: A free theme known for its SEO-friendly design, making it a solid choice for bloggers. It's featured in ThemeIsle's list.</li>
+<li>
+<strong>OceanWP</strong>: Another lightweight and customizable theme suitable for bloggers. It's mentioned as a top pick by Kinsta.</li>
+<li>
+<strong>Baskerville</strong>: A minimalist theme with a focus on typography, ideal for bloggers looking for a clean and elegant design. It's a recommendation from ThemeIsle.</li>
+<li>
+<strong>Blossom</strong> Feminine: Tailored for female bloggers, this theme offers a feminine and stylish design. It's among the expert picks at WPBeginner.</li>
+<li>
+<strong>Newspaper</strong>: If you're running a news-oriented blog, the Newspaper theme offers a professional and feature-rich solution. It's featured in Elegant Themes' list.</li>
+<li>
+<strong>Soledad</strong>: A versatile theme with numerous layout options, making it suitable for various blog niches. It's mentioned in Kinsta's list of top themes for 2023.
+
+</li>
+</ol>
+
+<p>These themes offer diverse options, so you can choose the one that best suits your blog's niche and style. also</p>
+
+<p><br><br>
+You can also compare <strong><a href="https://noobizdev.tech/choosing-the-best-wordpress-themes-for-your-website/">the best WordPress Themes</a></strong> with features such as <strong>free</strong> or <strong>woocommerce</strong> or <strong>mobile friendly</strong> and with <strong>strong seo</strong> and <strong>high speed</strong> in this article...<br>
+<br></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In summary, the right WordPress theme impacts your site's appearance, performance, security, and user experience. It's a pivotal decision in building a successful online presence.</p>
+
+
+
+
+<blockquote>
+<p>If you enjoyed this post, make sure to save it for later!</p>
+
+<p>Don't forget to leave a comment if you need any help...</p>
+
+<p>Thanks for reading, See you next time... ❤️👋</p>
+
+
+</blockquote>
+
+ </details> 
+ <hr /> 
+
+ #### - [Generate New Project Code Using "create-blank-app" command and ChatGPT](https://dev.to/ngduc/generate-new-project-code-using-create-blank-app-command-and-chatgpt-1a2m) 
+ <details><summary>Article</summary> <p>Setting up a new project can be a tedious task, especially when you're dealing with multiple tech stacks. Wouldn't it be great if we could automate this process with a single command? That's where <strong>create-blank-app</strong> comes into play.</p>
+
+<p>With the advent of AI technologies in the programming world, developers are now finding more efficient ways to create project codes. One of the latest techniques involves using OpenAI's ChatGPT to generate new project code. This method simplifies and accelerates the process of initializing projects with various tech stacks. In this blog post, we introduce a tool named <strong>create-blank-app</strong> (or <strong>cba</strong> for short), which leverages this cutting-edge technique.</p>
+
+<h3>
+  
+  
+  Simplify Your Project Initialization with 'create-blank-app'
+</h3>
+
+<p><strong>create-blank-app</strong> is a powerful command-line tool designed to simplify the process of creating new apps. Users can search for tech stacks using keywords, which makes this tool highly flexible and customizable. One of the unique features of create-blank-app is its support for generative AI. With just one command, you can leverage the power of AI to kick-start your project.</p>
+
+<p>To install <strong>create-blank-app</strong>, assume you already have NodeJS installed, just run: <code>$ npm install create-blank-app -g</code></p>
+
+<h3>
+  
+  
+  Supported Tech Stacks
+</h3>
+
+<p><strong>create-blank-app</strong> supports a wide range of popular tech stacks:</p>
+
+<p>Frontend Frameworks: Vite, bun, create-react-app (CRA), create-next-app (CNA), create-nuxt-app, angular, create-web3js-app (CWA), and create-react-native-app (Expo)<br>
+Backend Framework: Express-generator-typescript<br>
+Mobile: React-native init<br>
+Bundler: Vite (vue, react, preact, lit-element, svelte app)</p>
+
+<h3>
+  
+  
+  Using ChatGPT with create-blank-app
+</h3>
+
+<p>In addition to these tech stacks, create-blank-app also supports ChatGPT to generate a new app using a prompt file. This feature turbocharges the app creation process by allowing you to leverage the power of AI.</p>
+
+<p>Steps to generate a New Project using ChatGPT:</p>
+
+<ol>
+<li>Set OpenAI api key like <code>$ export OPENAI_API_KEY=&lt;yourkey&gt;</code>
+</li>
+<li>Create an empty directory, inside, write your prompt in the <strong>"prompt" file</strong> (or "prompt.gpt4" for gpt-4 model).</li>
+<li>Outside that directory, run: <code>$ cba &lt;name&gt;</code>
+</li>
+</ol>
+
+<h3>
+  
+  
+  Wrapping Up
+</h3>
+
+<p>Embrace the future of coding with 'create-blank-app', setting up a new project with your desired tech stack is just a command away. The support for ChatGPT adds another layer of convenience, not only does it save you time and effort, but with AI-driven code generation, it also opens new possibilities. We encourage you to try it out, contribute on GitHub, and share your feedback to help us improve.</p>
+
+<ul>
+<li>Github: <a href="https://github.com/ngduc/create-blank-app">https://github.com/ngduc/create-blank-app</a>
+</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Some aspects of Merkle Tree](https://dev.to/sergeyshandar/some-aspects-of-merkle-tree-19jo) 
+ <details><summary>Article</summary> <p>Previously, I shared <a href="https://dev.to/sergeyshandar/data-vendor-lock-in-and-web3-5cm8">my thoughts</a> about how we can solve data vendor lock-in problem using <a href="https://en.wikipedia.org/wiki/Content-addressable_network">content-addressable network (CAN)</a> and <a href="https://en.wikipedia.org/wiki/Content-addressable_storage">content-addressable storage (CAS)</a> for personal use. As mentioned in the article, we don't care how our network works as long as we can download a data block for a specific hash because we can always validate the downloaded data against the hash value. There is one problem with validation. If the hash validation fails and our file is quite big (say several gigabytes),  we waste our network time and resources for nothing.</p>
+
+<p>We wouldn't have such a problem if we could validate small parts of the data block while downloading the entire data block. One of the solutions is to use <a href="https://en.wikipedia.org/wiki/Merkle_tree">Merkle Tree</a> for our hash function. There are a lot of good articles and videos about it, and I don't want to repeat them. I want to focus on some of the essential aspects of the Merkle tree that you should know if you would like to implement one.</p>
+
+<h2>
+  
+  
+  Definitions
+</h2>
+
+<p><code>f</code> is a <a href="https://en.wikipedia.org/wiki/One-way_compression_function">cryptographic compress hash function</a> that accepts two digests and returns one. For example, <code>h01 = f(h0, h1)</code>.</p>
+
+<p>We split a data block into a list of digests <code>[d0, d1, ..., dN]</code>. Let's assume that <code>N</code> is <code>2^P</code>, where <code>P</code> is the height of the corresponding Merkle tree. Our tree will look like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ecENwlmJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fu9vhl16reu0jul38l9n.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ecENwlmJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fu9vhl16reu0jul38l9n.png" alt="Merkle tree" width="691" height="703"></a></p>
+
+<h2>
+  
+  
+  Second Preimage Attack
+</h2>
+
+<p>If we know data for a specific hash, we can create a collision because the tree doesn't distinguish between hash digest and data digests. So, it's possible to send hash digests instead of actual data. In this case, the validation will succeed, but the data will differ.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tdIIE2Bk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8us8n69jfgr1kla5vbj6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tdIIE2Bk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8us8n69jfgr1kla5vbj6.png" alt="Second preimage attack" width="439" height="543"></a></p>
+
+<p>It's called <a href="https://en.wikipedia.org/wiki/Preimage_attack">second preimage attack</a>. To prevent such attacks, we need to separate data from hashes.</p>
+
+<p>We can use another hash function for the data blocks to convert them into hash digests. Let's call it <code>g</code>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8Fj6TdVe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rx2wyhc249d30s1e7no4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8Fj6TdVe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rx2wyhc249d30s1e7no4.png" alt="Fix # 1" width="661" height="823"></a></p>
+
+<p>The <code>g</code> function should differ from <code>f</code>.</p>
+
+<p>Another way to fix the issue is to extend a digest with one bit. If the bit is<br>
+set to <code>0</code>, then it's data; otherwise, it's a result of the <code>f</code> hash function.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--x3f1fqlU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lp2qdyj83655uj5h5abd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--x3f1fqlU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lp2qdyj83655uj5h5abd.png" alt="Fix # 2" width="730" height="685"></a></p>
+
+<p>Note that such extended digest should not be used to transfer secure data because short messages can be easily restored.</p>
+
+<h2>
+  
+  
+  Tails
+</h2>
+
+<p>Actual data usually is not aligned to <code>2^P</code>. One way to fix the problem is to add one bit <code>1</code> and then fill the rest with  zeros.</p>
+
+<h2>
+  
+  
+  Length Extension Attack
+</h2>
+
+<p>If we have one Merkle Tree hash, we can use it as a node in another tree and create a valid hash for a new data block. This is called <a href="https://en.wikipedia.org/wiki/Length_extension_attack">length extension attack</a>. <br>
+To solve it, we can transform a root hash into another hash before publishing it.</p>
+
+<h2>
+  
+  
+  No Shift Resistance
+</h2>
+
+<p>Merkle Tree is a very good idea to split data blocks into parts. We can even reduce traffic if some parts are the same. Or, we don't need to download some parts if we already have them in our hash table.  However, it only works if the same data parts are aligned with Merkle Tree parts. This is a big limitation of Merkle Tree.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Everything I Learnt From Making a Service Worker Build Plugin](https://dev.to/hedgehog125/everything-i-learnt-from-making-a-service-worker-build-plugin-3n64) 
+ <details><summary>Article</summary> <p>Since I've now finished my <a href="https://www.npmjs.com/package/sveltekit-adapter-versioned-worker">3rd service worker build plugin</a>, I thought I'd share what I learnt, since I had to figure out a surprising amount by myself. In addition, this post also compiles and expands on the suggestions I thought were relevant from the following:</p>
+
+<ul>
+<li>
+<a href="https://redfin.engineering/how-to-fix-the-refresh-button-when-using-service-workers-a8e27af6df68">"How to Fix the Refresh Button When Using Service Workers"</a> by Dan Fabulich</li>
+<li>
+<a href="https://www.thecodeship.com/web-development/guide-service-worker-pitfalls-best-practices/">"A guide to Service Workers - pitfalls and best practices"</a> by Ayman Farhat</li>
+<li>
+<a href="https://gist.github.com/mmazzarolo/e87a11d24f85b952ee30792316f56d47">"Service Workers Tips"</a> by Matteo Mazzarolo</li>
+<li>
+<a href="https://www.youtube.com/watch?v=Hzxy6ml-FYE">"Handling updates offline-first - HTTP 203"</a> published by Google Chrome Developers</li>
+</ul>
+
+<h1>
+  
+  
+  Quick Explanations
+</h1>
+
+<p>If you're trying to make your own build plugin, you'll need to know the APIs in more detail, but here's a quick rundown just so you can understand this post...</p>
+
+<p>Service workers intercept requests from the clients (tabs and windows) they control. When a service worker is first downloaded or when it's updated, it enters the <code>"installing"</code> stage, firing the <code>"install"</code> event. Once that event finishes (and doesn't throw), it becomes <code>"waiting"</code>. If there's no existing active service worker, this one will become it*, but otherwise it'll wait until there are no clients before becoming active. This means you can have both an active and a waiting worker simultaneously. However, you can have the waiting service worker call <code>skipWaiting</code>, which is what some of this post is about.</p>
+
+<p>*But it won't control the existing clients unless <code>clients.claim</code> is called.</p>
+
+
+
+<p>With that all out of the way, here's everything I learnt and what I now consider to be best practices for service workers...</p>
+<h1>
+  
+  
+  #0: They're Complicated
+</h1>
+
+<p>While the basics of the Service Worker API are relatively simple, things get complicated once you start trying to do things properly. Because of this, you'll likely end up making your own general service worker build plugin, rather than something specific to a particular project. This is probably a bit more sensible than making your own JavaScript framework, and you'll learn a lot, but just keep in mind that it could take months (my most recent took about 4).</p>
+
+<p>If you can, use something like <a href="https://developer.chrome.com/docs/workbox/">Workbox</a> or, if it's suitable, my own: <a href="https://www.npmjs.com/package/sveltekit-adapter-versioned-worker">Versioned Worker</a> <em>(wink wink nudge nudge)</em>.</p>
+<h1>
+  
+  
+  #1: Version Your Cache
+</h1>
+
+<p>Starting with a simpler thing: make sure you use a unique ID for each version of your app you store with the Cache API. In <a href="https://www.npmjs.com/package/sveltekit-adapter-versioned-worker">Versioned Worker</a>, I have the ID follow this format:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>{the prefix set in the config}-{the app version}
+</code></pre>
+
+</div>
+
+
+
+<p>Alternatively, you could generate a random string at build time instead of having a version number.</p>
+
+<p>Each service worker should then only serve from its own cache to avoid issues from mismatched versions. Remember that once a new service worker is installed, there'll usually still be another service worker that's active, and the new worker shouldn't interfere with it.</p>
+
+<p>This approach also makes it easier to remove old cache as you can just remove all other cache objects (not the current one) that have your prefix.</p>
+
+<h1>
+  
+  
+  #2: Put Your Service Worker in the Right Folder
+</h1>
+
+<p>In my, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register#:~:text=an%20active%20registration.-,There%20is%20frequent%20confusion%20surrounding%20the%20meaning%20and%20use%20of%20scope.%20Since%20a%20service%20worker%20can%27t%20have%20a%20scope%20broader%20than%20its%20own%20location%2C%20only%20use%20the%20scope%20option%20when%20you%20need%20a%20scope%20that%20is%20narrower%20than%20the%20default.,-Syntax">possibly also Mozilla's opinion</a>, the importance of the <code>"scope"</code> argument in <code>navigator.serviceWorker.register</code> is generally overstated. Since you can only use it to narrow the scope of a service worker, I'd instead think about what folder* you're going to have the service worker file in. Most of the time, it should be at the root of your site, meaning it has a URL like <code>example.com/service-worker.js</code>. However, if some routes have separate codebases, like if you're using GitHub pages, you probably want it to look more like this:</p>
+
+<ul>
+<li>
+<code>example.com/Text-Editor/service-worker.js</code>, which controls tabs with URLs starting with <code>example.com/Text-Editor</code>
+</li>
+<li>And <code>example.com/Cool-Game/service-worker.js</code>, which controls tabs with URLs starting with <code>example.com/Cool-Game</code>
+</li>
+</ul>
+
+<p>*Yes, I know URLs don't really have folders, but I think it's a good way to think about this.</p>
+
+<h1>
+  
+  
+  #3: Service Workers Intercept <em>All</em> Requests From Controlled Clients
+</h1>
+
+<p>Somewhat embarrassingly, I only recently found out that requests outside of the service worker's scope (including cross origin requests) are still intercepted. There are some restrictions when it comes to CORS, but the Service Worker API really does give you a lot of control. It turns out that the scope actually just dictates what clients are controlled. And all requests from controlled clients are intercepted.</p>
+
+<h1>
+  
+  
+  #4: Take Advantage of Reload Opportunities
+</h1>
+
+<p>Moving onto a more complicated one: in an SPA, you might be able to sneak in a reload for an update as part of certain actions. Pretty much any in-app navigation can work, but think about how much data you'll need to transfer and how noticeable it'll be to users. The client should also check with the service worker that it's the only client, since you don't want to have 2 versions running at once. In Versioned Worker, this process looks like a bit like this:</p>
+
+<ul>
+<li>
+<code>reloadOpportunity</code> is called, optionally with a URL to navigate to as part of it and some state to give to the new version.</li>
+<li>If there's no waiting service worker, this process stops.</li>
+<li>It asks the service worker how many clients it has.</li>
+<li>If there's more than 1, this process stops.</li>
+<li>The client then sets a SessionStorage item to mark there being some state and sends the state to the waiting service worker. Alternatively, you can just store the state in SessionStorage.</li>
+<li>The waiting service worker then holds onto the state by using <code>ExtendableMessageEvent.waitUntil</code> in the <code>message</code> listener and calls <code>skipWaiting</code>. This should ensure that the service worker remains running until the state is requested again in a second.</li>
+<li>The client either receives a message from the service worker telling it to reload, or a <code>"controllerchange"</code> event is detected, triggering a reload.</li>
+<li>The client reloads using the new version and notices the SessionStorage indicates there's some state.</li>
+<li>It asks the now active service worker for the state, then uses the data to put the app back in a similar state to before.</li>
+<li>The promise provided to the <code>waitUntil</code> resolves, allowing the browser to shut down the service worker again*.</li>
+</ul>
+
+<p>*See #5.</p>
+
+<p>And in MPAs, this is even easier, provided you implement #10.</p>
+
+<h1>
+  
+  
+  #5: When the Service Worker Starts and Stops
+</h1>
+
+<p>Service workers almost always start because of an event they received (that might even be the only time?). They can be stopped anytime there aren't any ongoing <code>ExtendableEvent</code>s, but browsers will generally let them idle for a bit while they're controlling clients. Browsers will typically kill misbehaving service workers though. For example, Chrome will kill them if either of the following happen:</p>
+
+<ul>
+<li>The main thread of the service worker is blocked for 30 seconds or more</li>
+<li>An ExtendableEvent runs for more than 5 minutes*</li>
+</ul>
+
+<p>*Though, I wonder if Chrome allows that if there are some other ongoing ExtendableEvents that are currently under that limit.</p>
+
+<p>Rather confusingly, a lot of resources state service workers "live" (they also have the quotes) forever, referring to how they're saved until the site data is cleared. So let me clear this up: saving in this context just means that the browser stores the necessary information to restart the service worker, sometimes involving a bytecode cache. It <em>doesn't</em> mean that the state of the service worker will be preserved, and therefore all the top-level code will be re-run.</p>
+
+<p><strong>More information</strong>: <a href="https://chromium.googlesource.com/chromium/src/+/main/docs/security/service-worker-security-faq.md">Service worker FAQ</a></p>
+
+<h1>
+  
+  
+  #6: Wait Until the Page has Loaded/Hydrated Before Registering
+</h1>
+
+<p>I haven't experimented too much with this one, but in Versioned Worker I do wait until hydration has finished before registering. This is so the service worker doesn't compete with the page for bandwidth and CPU time. Remember that the service worker isn't used for the very first page load anyway.</p>
+
+<h1>
+  
+  
+  #7: How the Service Worker Itself is Cached
+</h1>
+
+<p>The request for the service worker itself <em>isn't</em> intercepted by the active service worker. The same also applies to its imports (both <code>importScripts</code> and <code>import</code>) and <code>fetch</code>es. Therefore, you should avoid storing all but potentially the latter in CacheStorage.</p>
+
+<p>Starting a few years ago, all the major browsers decided to ignore the cache headers for the service worker entry. Instead, the whole file is requested (unless <code>updateViaCache</code> is set to <code>"all"</code>) and compared byte-by-byte.</p>
+
+<p>Because of this, and also because doing so breaks things, you should avoid changing the service worker filename.</p>
+
+<p>As a failsafe, the browser will also treat the HTTP cache for it as stale if it's more than 24 hours old. This also seems to apply to imports, but I haven't been able to fully verify this (the browser might just be freeing up space).</p>
+
+<h1>
+  
+  
+  #8: Use an importScripts Wrapper
+</h1>
+
+<p>Because of how the caching works, it's a good idea to use an <code>importScripts</code> wrapper for your service worker to improve the efficiency of update checks. The code looks like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// service-worker.js</span>
+<span class="nx">importScripts</span><span class="p">(</span><span class="dl">"</span><span class="s2">assets/innerSw.&lt;computed hash&gt;.js</span><span class="dl">"</span><span class="p">);</span>
+<span class="cm">/* ^ You can also use a search parameter to cache bust, like this:
+  "assets/innerSw.js?v=42"
+*/</span>
+
+<span class="c1">// assets/innerSw.&lt;computed hash&gt;.js</span>
+<span class="cm">/* &lt;the actual service worker code&gt; */</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then make sure you've left the <code>updateViaCache</code> option of <code>navigator.serviceWorker.register</code> as its default value of <code>"imports"</code>. The browser will now only download <code>service-worker.js</code> to check for updates.</p>
+
+<p><strong>Tip</strong>: If you can, <a href="https://www.keycdn.com/blog/cache-control-immutable">set your server to cache the inner service worker indefinitely</a> as we've got cache busting. Note that the HTTP cache will be ignored by the browser for the outer service worker, unless <code>updateViaCache</code> is set to <code>"all"</code>.</p>
+
+<h1>
+  
+  
+  #9: Don't Require a Service Worker to be Active
+</h1>
+
+<p>Despite browser support for service workers being good for the past few years, they should still be a progressive enhancement. This is because they aren't/can't be used in the following situations:</p>
+
+<ul>
+<li>The first load. Although if you have to, you can wait for it to install and then have it claim the client.</li>
+<li>Hard reloads.</li>
+<li>In Firefox private windows.</li>
+<li>In Firefox if cookies are disabled or set to be cleared on quit.</li>
+</ul>
+
+<h1>
+  
+  
+  #10: How to Fix the Browser's Reload and Work Around Other Quirks
+</h1>
+
+<p>Dan Fabulich already wrote <a href="https://redfin.engineering/how-to-fix-the-refresh-button-when-using-service-workers-a8e27af6df68">a whole article just on the first bit</a>, but I've got some more to add.</p>
+
+<p>The problem is that when you reload a webpage, the new page is loaded before the old one is discarded. Because of this, the browser doesn't swap out the active service worker with the waiting one.</p>
+
+<p>The main oversight in his guide is that during the first navigation into the scope of a service worker, the client isn't in <code>clients.matchAll</code>. This means that opening a 2nd in-scope tab when there's a waiting service worker will cause the 1st one to refresh*!</p>
+
+<p>*If the page is set to reload when the controller changes, which I do in Versioned Worker.</p>
+
+<p>It also doesn't work in Firefox due to a <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1113522">bug that <em>still</em> hasn't been fixed</a>. Thankfully, this can be worked around by allowing the page to be reloaded for an update within 300ms of it loading. This is pretty unnoticeable to users and surprisingly even means the PWA can update more smoothly in Firefox than Chrome, as Chrome takes about a second to reload the page. Removing the logic around checking for a waiting service worker from the active worker might fix this, but I haven't experimented with that yet.</p>
+
+<p>The other thing is that with his code, the page can get stuck loading. At least in Chrome, there just seems to be some weirdness with calling <code>skipWaiting</code> when there are ongoing requests. Because of this, I suggest calling it every 100ms until the returned promise resolves.</p>
+
+<p>Anyway, in Versioned Worker, this all looks like this:</p>
+
+<ul>
+<li>When the active service worker receives a GET request with a mode of <code>"navigate"</code>, it checks if there's a waiting worker</li>
+<li>If there is one, it checks if there's 1 client or less with <code>clients.matchAll()</code>
+</li>
+<li>If that condition is also met, it sends the reload page (more on that in a second)</li>
+<li>Otherwise it sends the page as normal</li>
+<li>If, on a non-reload page, there's a waiting service worker within 300ms of the page loading, tell the waiting service worker to potentially skip waiting</li>
+<li>If the waiting service worker gets the message, it checks if there's 1 client or less</li>
+<li>If that condition passes, <code>skipWaiting</code> is called and <code>await</code>ed with a timeout of 100ms</li>
+<li>If it times out, the active service worker is told to finish and the client is told to reload</li>
+<li>Because the active service worker was told to finish, the client is sent the reload page</li>
+</ul>
+
+<p>Then the code for the reload page is similar to this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nb">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">getRegistration</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="k">async</span> <span class="nx">registration</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nx">registration</span><span class="p">?.</span><span class="nx">waiting</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="nx">reloadOnce</span><span class="p">();</span>
+                <span class="p">}</span>
+
+                <span class="nx">sendConditionalSkip</span><span class="p">();</span>
+                <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">const</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+                    <span class="kd">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                        <span class="nb">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="p">,</span> <span class="nx">resolve</span><span class="p">,</span> <span class="p">{</span>
+                            <span class="na">once</span><span class="p">:</span> <span class="kc">true</span>
+                        <span class="p">});</span>
+                        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="kc">null</span><span class="p">),</span> <span class="mi">500</span><span class="p">);</span>
+                    <span class="p">});</span>
+
+                    <span class="k">if</span> <span class="p">(</span>
+                        <span class="nx">event</span><span class="p">?.</span><span class="nx">data</span><span class="p">?.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">vw-skipFailed</span><span class="dl">"</span> <span class="c1">// More than 1 client</span>
+                        <span class="o">||</span> <span class="p">(</span><span class="o">!</span> <span class="nx">registration</span><span class="p">.</span><span class="nx">waiting</span><span class="p">)</span>
+                    <span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">reloadOnce</span><span class="p">();</span>
+                    <span class="p">}</span>
+
+                    <span class="nx">sendConditionalSkip</span><span class="p">();</span>
+
+                    <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(),</span> <span class="mi">100</span> <span class="o">-</span> <span class="p">(</span><span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">));</span>
+                    <span class="p">});</span>
+                <span class="p">}</span>
+
+                <span class="kd">function</span> <span class="nx">sendConditionalSkip</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">registration</span><span class="p">.</span><span class="nx">waiting</span><span class="p">?.</span><span class="nx">postMessage</span><span class="p">({</span>
+                        <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">conditionalSkipWaiting</span><span class="dl">"</span>
+                    <span class="p">});</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+            <span class="nb">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">controllerchange</span><span class="dl">"</span><span class="p">,</span> <span class="nx">reloadOnce</span><span class="p">);</span>
+
+
+            <span class="kd">let</span> <span class="nx">reloading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="kd">function</span> <span class="nx">reloadOnce</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">reloading</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+                <span class="nx">reloading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+                <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+                <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Note</strong>: The "conditionalSkipWaiting" message is the same skip waiting message that was mentioned earlier. However, the active service worker won't be told to finish as part of it. Also note that if the waiting service worker tells this page that there's more than 1 client, the page will reload without an update, fixing that flaw I mentioned earlier.</p>
+
+<p>Due to back/forwards cache, it's also important that the reload page is sent with the <code>cache-control</code> header set to <code>"no-store"</code>. You should also have some code to reload the page again if the user is sent back to the old page after the app was reloaded for an update. Versioned Worker's implementation of this is a bit more complicated as it has some timeouts and other logic, but here's a basic approach:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">let</span> <span class="nx">reloading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">reloadOnce</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">reloading</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="nx">reloading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+    <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">pageshow</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Hopefully that tip was still of some use to you considering the complexity. If anyone's interested, I could see if I can make a proper tutorial on it.</p>
+
+<h1>
+  
+  
+  #11: Don't Cache non-oks
+</h1>
+
+<p>With the longest one now done, here's a simpler one... Remember that if you're using <code>Cache.put</code> that <code>fetch</code> doesn't throw for error responses. So, check if the <code>ok</code> property is <code>true</code> and handle things accordingly. If this is in an <code>"install"</code> event listener, you might want make the promise passed to <code>waitUntil</code> throw, as that'll cause the install to fail. If you're calling an <code>async</code> function for this, you can just <code>throw</code> one:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">install</span><span class="dl">"</span><span class="p">,</span> <span class="nx">installEvent</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">installEvent</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span>
+        <span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">/something</span><span class="dl">"</span><span class="p">);</span>
+            <span class="c1">// ^ Network errors will throw by themselves, so no try/catch needed</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="k">throw</span> <span class="dl">"</span><span class="s2">Install failed</span><span class="dl">"</span><span class="p">;</span>
+
+            <span class="c1">// ...</span>
+        <span class="p">})()</span>
+    <span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h1>
+  
+  
+  #12: Passthrough Fetch Listeners <em>Can</em> be Fine
+</h1>
+
+<p>A passthrough fetch listener looks like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">fetch</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchEvent</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetchEvent</span><span class="p">.</span><span class="nx">respondWith</span><span class="p">(</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">fetchEvent</span><span class="p">.</span><span class="nx">request</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Many articles say to avoid doing things like this and I think it's true to some extent. Certainly if you <em>just</em> have that code, you might as well not register a fetch listener. However, having a passthrough listener allows you to use and/or modify the response before sending it, which can be useful. For example, by default in Versioned Worker, I always call <code>respondWith</code> for same origin requests, since the alternative is more confusing and usually not worth the headache.</p>
+
+<p>So you can assess potential tradeoffs, here are the actual consequences of passthrough listeners like this:</p>
+
+<ul>
+<li>
+<a href="https://stackoverflow.com/a/64359741/8760866">The streaming of responses won't be able to be properly terminated</a>. This is particularly problematic with video and audio, which often stop responses when skipping.</li>
+<li>Request priorities might be less precise or lost entirely.</li>
+<li>There's a slight increase in the initial latency. I've typically measured 0.6ms per request when the site is served over localhost, but it might be different over the internet.</li>
+</ul>
+
+<h1>
+  
+  
+  #13: The Cache API Doesn't Support Range Requests
+</h1>
+
+<p>This combined with #12 makes offline streaming of video and audio an interesting challenge I haven't attempted yet. For now, in Versioned Worker I've just decided to treat range requests as full requests if it's in the cache list. But partial content responses can be saved if you chunk them up yourself and either store them in IndexedDB or as a virtual route (like <code>/__prefix-that-doesnt-clash__/video/1/2</code>) in CacheStorage.</p>
+
+<p>If case you're wondering, you just get an error if the response status is 206 (partial content).</p>
+
+<h1>
+  
+  
+  #14: Cache Carefully
+</h1>
+
+<p>When caching resources, it's important you think about how you'll update them. While you can't accidentally stop yourself from updating your service worker, you don't want to be fighting it while you're releasing a critical fix. I use a slightly unconventional approach in Versioned Worker of generating files that tell the service worker what's changed, so I can't comment too much on the matter, but think about your durations and the effects of them.</p>
+
+<p>Also, be careful when storing responses that were from the browser's HTTP cache, as they might be outdated already (but not necessarily stale yet). If you need to ensure a response is up-to-date, fetch it with the <code>mode</code> of <code>"no-cache"</code> to check the cache with the server or <code>"no-store"</code> to ignore the cache entirely.</p>
+
+
+
+
+
+
+<p>Phew, that's everything. Hopefully you found this useful. Let me know in the comments if you've got any questions. 👋</p>
+
+ </details> 
+ <hr /> 
+
  #### - [XSS Attack - Why strip_tags is not enough](https://dev.to/rodrigojavornik/xss-attack-why-striptags-is-not-enough-5gmo) 
  <details><summary>Article</summary> <p>In PHP, it is common to use the <code>strip_tags()</code> function as a way to prevent XSS intrusion. However, this function does not even work to mitigate this type of attack, giving a false sense of security. But why?</p>
 
@@ -302,571 +928,6 @@ Available filters</h2>
 </div>
 
 
-
- </details> 
- <hr /> 
-
- #### - [Tips for Acing Technical Interviews: Lessons from Both Sides of the Table](https://dev.to/pacheco/tips-for-acing-technical-interviews-lessons-from-both-sides-of-the-table-5262) 
- <details><summary>Article</summary> <p>Preparing for a technical interview can be challenging, but there are a few things you can do to increase your chances of success. As someone who has conducted many technical interviews, I've learned some valuable lessons that I believe can help interviewees prepare for successful interviews. In this blog post, I'll be sharing three key tips for interviewees.</p>
-
-<h2>
-  
-  
-  Preparation is Essential
-</h2>
-
-<p>Preparation is key when it comes to tech interviews. This includes researching the company, the role you're interviewing for, and the technologies you'll be working with. It's also important to practice your technical skills by working on projects, completing coding challenges, and reviewing common interview questions. Additionally, make sure to prepare questions to ask your interviewer. This not only shows your interest in the company and role, but also gives you the opportunity to learn more about the company culture, team dynamics, and potential growth opportunities.</p>
-
-<p>To have even more chances of success when it comes to preparation, keep in mind that there are huge differences in interview formats depending on the size of the company you are applying to. </p>
-
-<h2>
-  
-  
-  Differences in Interview Formats and Questions
-</h2>
-
-<p>It's important to note that the interview format and questions can vary widely depending on the size and type of company you're interviewing with. Startups, mid-size companies, and FANGs (Facebook, Amazon, Netflix, Google) all have different approaches to interviewing.</p>
-
-<h3>
-  
-  
-  Startups
-</h3>
-
-<p>Startups often have a more informal interview process and may focus more on cultural fit than technical skills. You may be asked to complete a coding challenge or technical task, but the interview may also include more casual conversations about your background, interests, and values. Startups may also be more likely to ask behavioral questions and assess your problem-solving skills.</p>
-
-<p>Another important factor is that startups are usually more focused on specific skills, like a specific language or set of frameworks. In this case, if you are applying for a job on a startup it is recommended to check the stack they use and focus your studies on those topics.</p>
-
-<h3>
-  
-  
-  Mid-Size Companies
-</h3>
-
-<p>Mid-size companies may have a more formal interview process, but still place a strong emphasis on cultural fit. They may also have a mix of technical and behavioral questions and may ask you to complete coding challenges or whiteboard exercises. Mid-size companies may also assess your ability to work collaboratively and communicate effectively.</p>
-
-<p>For the preparation steps, it is worth it to keep in mind that mid-size companies are somewhat similar to startups in that they may ask you questions more focused on a specific language or framework. On the other hand, they will also ask you algorithm-like questions so it is important to practice common algorithms.</p>
-
-<p>Another important thing to keep in mind is that, as a growing company, they may also be facing challenges with scalability and possibly database performance, so it is interesting to review common database performance improvement techniques as well as scalability strategies.</p>
-
-<p>Great resources to understand these topics are the books: <code>Designing Data-intensive Applications by Martin Kleppmann</code> and <code>System Design Interview 1 and 2</code>  </p>
-
-<h3>
-  
-  
-  FANGs
-</h3>
-
-<p>FANGs often have a rigorous and structured interview process that heavily emphasizes technical skills. You can expect multiple rounds of interviews, including coding challenges, whiteboard exercises, and technical discussions with multiple interviewers. FANGs may also ask behavioral questions, but the focus is typically on assessing your technical abilities and problem-solving skills.</p>
-
-<p>In this case, you should focus most of your time on algorithm questions and solve the questions on <code>Leetcode</code> since they are very close to what is asked.</p>
-
-<p>System design questions are also very heavy and it is recommended that you practice designing and presenting it. For this topic, I recommend resources like <a href="https://bytebytego.com/">ByteByteGo</a>.</p>
-
-<p>The process on FANGs is very heavy, so if that is your goal I suggest you practice a lot and even find some friends to do some mock interviews together.</p>
-
-<p>In summary, it's important to understand the differences in interview formats and questions between startups, mid-size companies, and FANGs. By researching the company and preparing accordingly, you can increase your chances of success in the interview process. Remember to focus on communication skills, preparation, and honesty, and approach the interview with confidence and a willingness to learn and grow.</p>
-
-<h2>
-  
-  
-  Communication is Key
-</h2>
-
-<p>While technical skills are important, communication skills are just as crucial in tech interviews. Being able to articulate your ideas and communicate effectively with your interviewer can demonstrate your abilities and potential as a candidate. Even if you don't know the answer to a particular question, being able to explain your reasoning and thought process can show that you have a strong foundation of knowledge and are capable of learning quickly.</p>
-
-<p>As most of the interviews nowadays are online, a quick tip I can give you is to write a script to facilitate remembering things. Even if it is related to your skills and experience, when we are under pressure it is very hard to articulate well while remembering things and considering the best answers.<br>
-You are often going to be asked to talk about specific situations in your experience. It can be related to dealing with conflicts, deadlines, bad decisions and much more. Following the tip above, you could also keep a cheat sheet of the best personal stories of your experience. Further, I recommend you to follow the STAR (Situation, Task, Action and Result) method when answering these questions, it has been proven a very efficient method to express your experience and your hability to deal with certain situations.</p>
-
-<h3>
-  
-  
-  Honesty is the Best Policy
-</h3>
-
-<p>It can be tempting to exaggerate your skills or experiences during a tech interview, especially if you feel like you're not fully qualified for the position. However, being dishonest or misleading during an interview can have serious consequences. If you're hired for a role that you're not fully qualified for, it can lead to frustration and disappointment for both you and the company. Additionally, if you're caught in a lie during the interview process, it can damage your reputation and potentially harm future job prospects. Instead of trying to fake your way through an interview, be honest about your skills and experiences, and focus on how you can learn and grow in the role.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>In conclusion, technical interviews can be challenging, but with the right preparation, communication skills, and honesty, you can increase your chances of success. Remember to research the company, understand the differences in interview formats, and practice your technical skills and communication skills. By following these tips, you'll be well on your way to acing your next tech interview.</p>
-
- </details> 
- <hr /> 
-
- #### - [React Native Error: A navigator cannot contain multiple 'Screen' components with the same name ...](https://dev.to/emmyjaff/react-native-error-a-navigator-cannot-contain-multiple-screen-components-with-the-same-name--e7m) 
- <details><summary>Article</summary> <p>Have you ever come across this error in the React Native journey? Here's a quick explanation and a resolution concept, then a basic approach with this concept to resolve this error.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Ma0cCihZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s0emqkej76exq3ha1f56.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ma0cCihZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s0emqkej76exq3ha1f56.png" alt="React Native duplicate screen error on iOS emulator" width="800" height="1734"></a></p>
-
-<h1>
-  
-  
-  1 understanding the error message and the source of the error...
-</h1>
-
-<p>Interestingly, this error logs a vivid description of what the problem is and a list of possible locations that caused this problem. It's like a nested tree to the path for this very error.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--stOb0WhD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dxr728fp58at9dp37neu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--stOb0WhD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dxr728fp58at9dp37neu.png" alt="React Native duplicate screen error" width="800" height="254"></a></p>
-
-<p><em><strong>Notice the error message in the terminal and see the explicit message.</strong></em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> ERROR  Error: A navigator cannot contain multiple 'Screen' components with the same name (found duplicate screen named 'Message')
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ctfjazdh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/en731qoatq6m4l62qg7w.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ctfjazdh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/en731qoatq6m4l62qg7w.png" alt="React Native duplicate screen error" width="800" height="254"></a></p>
-
-<p>For my own case study, the screen duplicated is the "Message" screen. Follow the texts marked with red</p>
-
-<p>And the source is the <em>BottomTabNavigation</em>. Follow the text marked with blue.</p>
-
-<p>This is the same approach to understanding the errors you find, just read the error messages a little more, and this is the case with a ton of other errors.</p>
-
-<h1>
-  
-  
-  2 What is this error saying?
-</h1>
-
-<p>Simply, that a particular screen is created twice in the navigation.</p>
-
-<h1>
-  
-  
-  3 Investigating
-</h1>
-
-<p>search through your root cause, for me, you've guessed it right, the <strong>BottomTabNavigation</strong> component.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--iR5dkIm5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/808cp108c4no9f3b3o8q.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--iR5dkIm5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/808cp108c4no9f3b3o8q.png" alt="code snippet for BottomTabNavigation" width="453" height="855"></a></p>
-
-<h1>
-  
-  
-  4 Fixing
-</h1>
-
-<p>At this point, ** <em>remove the duplicate</em> **  and hurrah!!!.<br>
-You're done.<br>
-Problem solved.</p>
-
-<p>Stay tuned for more articles like this, as we go through and debug some bugs and some errors in our day to day development. Both simple and complex bugs.<br>
-Cheers!!😊</p>
-
- </details> 
- <hr /> 
-
- #### - [Analyzing data accurancy with Puppeteer and Axios( example: book prices )](https://dev.to/qaproengineer/analyzing-book-prices-with-puppeteer-and-axios-example-book-prices--4hbm) 
- <details><summary>Article</summary> <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const puppeteer = require("puppeteer");
-const axios = require("axios");
-
-const main = async () =&gt; {
-  // Launch a new browser instance
-  const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: null,
-  });
-
-  // Create a new page
-  const page = await browser.newPage();
-
-  // Navigate to the book product details page
-  const baseUrl = "https://www.example.com/book-top-100?p=";
-
-  // define the number of pages to iterate through.
-  const pageCount = 2;
-
-  // Create a new array for the results
-  const results = [];
-
-  //Iterate through each page
-  for (let i = 1; i &lt; pageCount; i++) {
-    //construct the URL for the current page
-    const currentUrl = `${baseUrl}${i}`;
-    //navigate to the page
-    await page.goto(currentUrl);
-
-    // get all the product listing urls
-    const urls = await page.$eval("li.item.product &gt; div &gt; a", (links) =&gt;
-      links.map((link) =&gt; link.href)
-    );
-
-    for (const url of urls) {
-      await page.goto(url);
-
-      // Get all the swatches for the book
-      const swatchElements = await page.$("p.label");
-
-      // Loop through each swatch and click on it to show the price and SKU
-      for (let swatchElement of swatchElements) {
-        await swatchElement.click();
-
-        // Extract the price and SKU
-        const sku = await page.$eval(".col.data.isbn_13", (elem) =&gt;
-          elem.textContent.trim()
-        ); // extract the SKU for each selection of format.
-
-        let priceText;
-        const swatchElementType = await swatchElement.evaluate((el) =&gt;
-          el.textContent.trim()
-        );
-        if (
-          swatchElementType.includes("Audiobook") ||
-          swatchElementType.includes("eBook")
-        ) {
-          priceText = await page.$eval(
-            ".price-swatch span.price, .normal-price",
-            (prices) =&gt; prices.map((price) =&gt; price.textContent.trim())
-          );
-        } else if (
-          swatchElementType.includes("Paperback") ||
-          swatchElementType.includes("Hardcover")
-        ) {
-          priceText = await page.$eval(
-            "p.old-price, span.old-price",
-            (prices) =&gt; prices.map((price) =&gt; price.textContent.trim())
-          );
-        }
-
-        const price = priceText.flatMap((price) =&gt;
-          price.split("$").filter(Boolean)
-        ); // extract the numerical price values for this product
-
-        // Make an API call to API to extract the price values for this product then compare them against the web prices.
-        const api_book = `https://api.example.com/products/${sku}`;
-        const response = await axios.get(api_book);
-
-        const apiPrice = response.data[0].price_amount;
-        const webPrice = Number.parseFloat(price);
-
-        console.log(
-          "this the api price=" + apiPrice + " and " + "web price=" + price
-        );
-        if (webPrice == apiPrice) {
-          console.log(`Price for SKU ${sku} matches in web and api price`);
-        } else {
-          console.log(`Price for SKU ${sku} does not match in web and API`);
-          // Add the results to the array
-          results.push({
-            price,
-            apiPrice,
-            sku,
-          });
-        }
-      }
-    } // end url loop
-  }
-  //Append The results to a string with new lines
-  const resultString = results
-    .map(
-      (result) =&gt;
-        `Price: ${result.price}\nAPI Price: ${result.apiPrice}\nSKU: ${result.sku}\n`
-    )
-    .join("\n");
-  // Close the browser instance
-  await browser.close();
-
-  // Write the results to a JSON file
-  const fs = require("fs");
-  fs.writeFileSync("book-prices-details.json", JSON.stringify(resultString));
-};
-
-main();
-
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Introduction:</strong><br>
-In today's digital age, it's essential for businesses to stay competitive, especially when it comes to pricing their products. One way to do this is by regularly comparing your product prices with those of your competitors. This blog post will explain the purpose of a Puppeteer script that automates the process of extracting book prices from a website and comparing them with prices from an API.</p>
-
-<p><strong>Puppeteer and Axios:</strong><br>
-Puppeteer is a headless browser automation tool that allows you to control and interact with web pages programmatically. Axios is a popular JavaScript library for making HTTP requests. Together, they provide a powerful toolset for web scraping and data extraction.</p>
-
-<p><strong>Script Overview:</strong><br>
-The provided Puppeteer script has several key objectives:</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>1.Launch a headless web browser using Puppeteer.
-2.Navigate to a specific website that lists the top 100 books.
-3.Iterate through multiple pages of book listings.
-4.Extract the URLs of individual book product pages.
-5.For each book product page, extract the price and SKU information for different book formats (e.g., Audiobook, eBook, Paperback, Hardcover).
-6.Make API calls to a price comparison service to fetch the correct prices for the books.
-7.Compare the web prices with the API prices to identify any discrepancies.
-8.Store the results in a structured format (JSON file).
-</code></pre>
-
-</div>
-
-<p><strong>Conclusion:</strong><br>
-This Puppeteer and Axios script automates the process of comparing book prices between a website and an API, helping businesses make informed pricing decisions. It demonstrates the power of web scraping and data extraction with Puppeteer and the ease of making API requests with Axios. By regularly running such scripts, businesses can stay competitive and ensure their pricing remains competitive in the market.</p>
-
- </details> 
- <hr /> 
-
- #### - [This Week In React #159: Bun, Static Hermes, Next.js, React Aria Components, Next Nav, visionOS, Reanimated, Skia Fonts...](https://dev.to/sebastienlorber/this-week-in-react-159-bun-static-hermes-nextjs-react-aria-components-next-nav-visionos-reanimated-skia-fonts-3k32) 
- <details><summary>Article</summary> <p>Hi everyone!</p>
-
-<p>This week, the runtimes are in the spotlight. Of course, we'll be talking about Bun and Static Hermes.</p>
-
-<p>I'll spare you the heated debates on Twitter this week 😅 let's stick to positive vibes.</p>
-
-<p>For React experts, check out the <a href="https://reactadvanced.com/?utm_source=email&amp;utm_medium=thisweekinreact">React Advanced</a> conf in London from 20 to 23 October (<a href="https://ti.to/gitnation/react-advanced-london-2023/discount/REACT10">-10% - code "REACT10"</a>).</p>
-
-
-
-
-<p>💡 Subscribe to the <a href="https://thisweekinreact.com?utm_source=dev_crosspost">official newsletter</a> to receive an email every week!</p>
-
-<p><a href="https://thisweekinreact.com?utm_source=dev_crosspost"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gTyULDGg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/img/TWIR_POST.png" alt="banner" width="800" height="373"></a></p>
-
-
-
-
-<h2>
-  
-  
-  💸 Sponsor
-</h2>
-
-<p><a href="https://getstream.io/video/voice-calling/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ELqYdSVr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/153/stream.jpg" alt="Enterprise Grade APIs for Feeds, Chat, &amp; Video!" width="800" height="418"></a></p>
-
-<p><a href="https://getstream.io/video/docs/react/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>Enterprise Grade APIs for Feeds, Chat, &amp; Video!</strong></a></p>
-
-<p>Stream is the maker of enterprise-grade <strong>APIs</strong> and <strong>SDKs</strong> that help product and engineering teams solve two common problems at scale: in-app chat and social activity feeds.</p>
-
-<p>With Stream, developers can integrate any type of messaging or feed experience into their app in a fraction of the time it would take to build these features from scratch. Stream Chat makes it easy for developers to integrate rich, real-time messaging into their applications.</p>
-
-<p>Stream provides robust client-side SDKs for popular frameworks such as <a href="https://getstream.io/chat/sdk/react/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>React</strong></a>, <a href="https://getstream.io/chat/sdk/react-native/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>React-Native</strong></a>, Expo, Flutter, Android, Angular, Compose, Unreal, and iOS.<br>
-Unlock enterprise-grade features, functions, and UI components completely free for your startup or side project with the Maker Account.</p>
-
-<p><a href="https://getstream.io/video/docs/react/?utm_source=thisweekinreact&amp;utm_medium=sponsorship&amp;utm_content=&amp;utm_campaign=thisweekinreact_July2023_video_klmh22"><strong>Try the new React Video tutorial!</strong></a></p>
-
-
-
-
-<h2>
-  
-  
-  ⚛️ React
-</h2>
-
-<p><a href="https://bun.sh/blog/bun-v1.0"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wnT1Zynd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/bun.jpg" alt="Bun 1.0" width="800" height="341"></a></p>
-
-<p><a href="https://bun.sh/blog/bun-v1.0"><strong>Bun 1.0</strong></a></p>
-
-<p>It's impossible to miss it this week: Bun has just been released as stable v1.0. This news isn't directly related to React, but it will undoubtedly affect all React developers out there at some point.</p>
-
-<p>Bun is a complete toolchain for JavaScript and TypeScript based on Webkit and written in Zig. It is a new ultra-fast alternative to a whole host of front-end tools we use today: Node.js, npx, Babel, esbuild, swc, webpack, Jest, Vitest, npm, Yarn, pnpm... The benchmarks are super impressive and definitively real.</p>
-
-<p>Its compatibility with the existing tools and its mixed ESM/CJS support make it quite easy to adopt as a drop-in replacement. Bun is generally able to run your code as is, without any changes (otherwise it's <a href="https://twitter.com/jarredsumner/status/1700497869160268155">🐦 considered a bug</a>). React frameworks like Next.js, Remix and Astro are already supported. Using it as a replacement for npm/Yarn/pnpm or Jest/Vitest is probably a good entry point and not too risky.</p>
-
-<p><strong>Other useful links:</strong></p>
-
-<ul>
-<li>📣 <a href="https://vercel.com/changelog/bun-install-is-now-supported-with-zero-configuration">Vercel - Bun install is now supported with zero configuration</a>
-</li>
-<li>👀 <a href="https://github.com/react-native-community/cli/pull/2073">React-Native CLI PR - support Bun in init command</a>
-</li>
-<li>🐦 <a href="https://twitter.com/jarredsumner/status/1701499357080736047">Bun console supports JSX</a>
-</li>
-<li>🐦 <a href="https://twitter.com/notbrent/status/1701044351177244790">Bun + create-expo-app = 12x faster init</a>
-</li>
-<li>📜 <a href="https://adventures.nodeland.dev/archive/my-thoughts-on-bun/">Matteo Collina - My thoughts on Bun and other Adventures</a>
-</li>
-<li>📦 <a href="https://github.com/hex2f/marz">Marz - A Fast and Lightweight React Server Components Framework for Bun</a>
-</li>
-<li>🎥 <a href="https://www.youtube.com/watch?v=BsnCpESUEqM">Official launch video - Bun 1.0 is here</a>
-</li>
-<li>🎥 <a href="https://www.youtube.com/watch?v=dWqNgzZwVJQ">Fireship - Bun is disrupting JavaScript land</a>
-</li>
-<li>🎥 <a href="https://www.youtube.com/watch?v=z_66kDwxwBI">Lee Robinson - My thoughts on Bun</a>
-</li>
-</ul>
-
-
-
-
-<ul>
-<li>💸 <a href="https://www.zerotoshipped.com/">Zero To Shipped - Master Fast-Paced Fullstack Development and <strong>Finally</strong> ship that product</a>
-</li>
-<li>🐦 <a href="https://twitter.com/leeerob/status/1701775526459756620">Next.js - Redesigned console output</a>
-</li>
-<li>👀 <a href="https://community.redwoodjs.com/t/react-server-components-rsc/5081/7">RedwoodJS - Support for React Server Actions</a>: limited support for now, server actions need to be put in a separate file.</li>
-<li>👀 <a href="https://react.gg/">React.gg</a> and <a href="https://www.joyofreact.com/">The Joy of React</a>: the 2 most eagerly awaited React courses have just been released!</li>
-<li>📜 <a href="https://pilcrow.vercel.app/blog/nextjs-why">Next.js, just why?</a>
-</li>
-<li>📜 <a href="https://hasura.io/blog/scaling-frontend-app-teams-using-relay/">Scaling frontend app teams using Relay</a>
-</li>
-<li>📜 <a href="https://reacthandbook.dev/automated-testing">A Wide View of Automated Testing in React Apps</a>
-</li>
-<li>📜 <a href="https://www.jussivirtanen.fi/writing/styling-react-select-with-tailwind">Styling React Select with Tailwind</a>
-</li>
-<li>📜 <a href="https://www.40seas.com/blog/overcoming-application-complexity-with-customized-flows">Overcoming application complexity with customized Flows</a>
-</li>
-<li>📜 <a href="https://storybook.js.org/blog/automatic-visual-tests-plus-2x-faster-react-ts/">Automatic visual tests in Storybook, plus 2.2x faster build times for React+TS</a>
-</li>
-<li>📜 <a href="https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/">Painting with Math: A Gentle Study of Raymarching</a>
-</li>
-<li>📦 <a href="https://react-spectrum.adobe.com/releases/2023-09-07.html">React Aria Components - Now in beta</a>
-</li>
-<li>📦 <a href="https://github.com/ariakit/ariakit/releases/tag/@ariakit/react@0.3.0">Ariakit React 0.3</a>
-</li>
-<li>📦 <a href="https://github.com/premieroctet/next-admin">Next Admin - Full-featured admin for Next.js and Prisma</a>
-</li>
-<li>📦 <a href="https://www.next-nav.com/">Next Nav - VSCode extension to navigate and create Next.js routes</a>
-</li>
-<li>👥 <a href="https://2023.reactjsday.it/">reactjsday</a> (Verona 🇮🇹, Octobre 27) is offering us <a href="https://ti.to/grusp/reactjsday-2023/discount/media_TWIR">-10% - code "media_TWIR"</a>
-</li>
-<li>👥 <a href="https://reactadvanced.com/?utm_source=email&amp;utm_medium=thisweekinreact">React Advanced</a> (London 🇬🇧, Octobre 20-23) is offering us <a href="https://ti.to/gitnation/react-advanced-london-2023/discount/REACT10">-10% - code "REACT10"</a>
-</li>
-</ul>
-
-
-
-
-<h2>
-  
-  
-  💸 Sponsor
-</h2>
-
-<p><a href="http://highlight.io"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nnz3y05I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/highlight.jpg" alt="highlight.io - The open-source, full-stack Monitoring Platform" width="800" height="418"></a></p>
-
-<p><a href="http://highlight.io"><strong>highlight.io - The open-source, full-stack Monitoring Platform</strong></a></p>
-
-<p><a href="http://highlight.io"><strong>highlight.io</strong></a> is a truly open-source Session Replay, Error Monitoring, and Logging platform for your next project.</p>
-
-<p>Don't waste time trying to guess why a bug occurs. Instead, use highlight and get a clear picture of whatever happens in the browser and on your server-side application.</p>
-
-<p>It is super easy to install in your favorite framework: <a href="https://www.highlight.io/docs/getting-started/client-sdk/reactjs">React.js,</a> <a href="https://www.highlight.io/docs/getting-started/fullstack-frameworks/next-js">Next.js,</a> <a href="https://www.highlight.io/docs/getting-started/fullstack-frameworks/remix">Remix</a>, or anything else!</p>
-
-
-
-
-<h2>
-  
-  
-  📱 React-Native
-</h2>
-
-<p><a href="https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--x18BWimF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/hermes.jpg" alt="Static Hermes" width="800" height="450"></a></p>
-
-<p><a href="https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement"><strong>Static Hermes</strong></a></p>
-
-<p>Static Hermes was announced at React-Native EU last week. I wasn't there, so I'm trying to explain what I understood by reading the slides, as the video isn't on YouTube yet.</p>
-
-<p>Static Hermes is an experimental project that allows you to optionally compile some of your TypeScript (or Flow) code into native code. This offers significant performance gains (x10-20) compared to Hermes usual mode based in bytecode interpretation. It also enables easy integration with native APIs directly from your TypeScript code (zero-cost FFI, x15-80 faster than a JSI wrapper).</p>
-
-<p>To enable this, TypeScript must first become a "sound" language. Static Hermes will modify the semantics of JavaScript to ensure that the declared types matches the runtime types. This slide explains the concept well:</p>
-
-<p><a href="https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement?slide=14"><img src="/emails/issues/159/hermes2.jpg" alt="Static Hermes makes TypeScript sound"></a></p>
-
-<p>A very interesting idea that could maybe one day have an impact outside the React-Native ecosystem?</p>
-
-<p><strong>Other useful links:</strong></p>
-
-<ul>
-<li>📜 <a href="https://tmikov.blogspot.com/2023/09/how-to-speed-up-micro-benchmark-300x.html">How to speed up a micro-benchmark by 300x without cheating</a>
-</li>
-<li>🐦 <a href="https://twitter.com/mdj_dev/status/1700424775116493053">Plan to support Over-The-Air updates</a>
-</li>
-</ul>
-
-
-
-
-<ul>
-<li>💸 <a href="https://www.blitz-rn.com/">Blitz - Build React Native Apps Faster for iOS, Android, and Web!</a>
-</li>
-<li>🐦 <a href="https://twitter.com/thymikee/status/1700100221940662684">There's more than 1000 devs using React Native at Microsoft</a>
-</li>
-<li>🐦 <a href="https://twitter.com/o_kwasniewski/status/1701626162521190688">React-Native running natively on Apple Vision Pro simulator demo</a>
-</li>
-<li>🧵 <a href="https://twitter.com/DelphineBugner/status/1700077346852622504">React-Native EU Sketches</a>
-</li>
-<li>📜 <a href="https://www.callstack.com/blog/introducing-e2e-tests-to-react-native-core">Introducing E2E tests to React Native Core</a>
-</li>
-<li>📜 <a href="https://blog.expo.dev/expo-launch-party-recap-697d7b7739e8">Expo Launch Party Recap</a>
-</li>
-<li>📦 <a href="https://github.com/microsoft/react-native-macos/releases/tag/v0.72.0">React-Native macOS 0.72</a>
-</li>
-<li>📦 <a href="https://github.com/software-mansion/react-native-reanimated/releases/tag/3.5.0">Reanimated 3.5.0 - Windows/macOS support, createWorkletRuntime, reduceMotion...</a>
-</li>
-<li>📦 <a href="https://github.com/animate-react-native/stagger">Stagger - Cross-platform Reanimated stagger component</a>
-</li>
-<li>📦 <a href="https://github.com/infinitered/flame">Flame AI - CLI for Interactive AI-Powered React Native Upgrades</a>
-</li>
-<li>📦 <a href="https://shopify.github.io/react-native-skia/docs/text/fonts/">React-Native-Skia - Font Manager, support for system and custom fonts</a>
-</li>
-<li>📦 <a href="https://github.com/bufgix/react-native-secure-window">react-native-secure-window - Hide react native views when capturing screen</a>
-</li>
-<li>📦 <a href="https://github.com/tamagui/tamagui/releases/tag/v1.62.0">Tamagui 1.62 - Zero config support</a>
-</li>
-<li>🎙️ <a href="https://reactnativeradio.com/episodes/rnr-274-react-native-ci-automated-deployments">React Native Radio 274 - React Native CI &amp; Automated Deployments</a>
-</li>
-</ul>
-
-
-
-
-<h2>
-  
-  
-  🔀 Other
-</h2>
-
-<ul>
-<li>👀 <a href="https://nodejs.org/en/blog/announcements/nodejs16-eol">Node.js 16 End-of-Life</a>
-</li>
-<li>📜 <a href="https://beta.tauri.app/blog/roadmap-to-tauri-2-0/">Roadmap to Tauri 2.0 - The Mobile Update</a>
-</li>
-<li>📜 <a href="https://kyleshevlin.com/typescript-prevents-bad-things-and-good-things">Typescript Prevents Bad Things... and Good Things</a>
-</li>
-<li>📜 <a href="https://deno.com/blog/npm-on-deno-deploy">Announcing native npm support on Deno Deploy</a>
-</li>
-<li>📜 <a href="https://www.macarthur.me/posts/more-aggressive-cache-headers">Your Cache Headers Could Probably be More Aggressive</a>
-</li>
-<li>📜 <a href="https://www.totaltypescript.com/are-big-projects-ditching-typescript">Are Big Projects Ditching TypeScript?</a>
-</li>
-<li>📜 <a href="https://www.builder.io/blog/25-plus-ui-component-libraries">An Overview of 25+ UI Component Libraries in 2023</a>
-</li>
-<li>📜 <a href="https://snyk.io/fr/blog/javascript-runtime-compare-node-deno-bun/">Node.js vs. Deno vs. Bun: JavaScript runtime comparison</a>
-</li>
-<li>📜 <a href="https://vercel.com/blog/how-we-continued-porting-turborepo-to-rust">Vercel - Using Zig in our incremental Turborepo migration from Go to Rust</a>
-</li>
-<li>📦 <a href="https://developer.chrome.com/en/blog/new-in-chrome-117/">Chrome 117 - Array grouping, CSS subgrid, transition-behavior...</a>
-</li>
-<li>📦 <a href="https://dev.to/antoinecoulon/introducing-skott-the-new-madge-1bfl">Skott - Devtool to analyze, search and visualize dependency graphs from JS, TS and Node.js</a>
-</li>
-<li>📦 <a href="https://github.com/ealush/vest/releases/tag/vest%405.0.1">Vest 5.0 - Declarative validations framework</a>
-</li>
-</ul>
-
-
-
-
-<h2>
-  
-  
-  🤭 Fun
-</h2>
-
-<p><a href="https://twitter.com/sebastienlorber/status/1701293733822541931"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WuiOLNhm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://thisweekinreact.com/emails/issues/159/meme.jpg" alt="alt" width="682" height="967"></a></p>
-
-<p>See ya! 👋</p>
 
  </details> 
  <hr /> 
