@@ -118,6 +118,479 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Microservices: Unleashing the Power of Modular Software Architecture](https://dev.to/documatic/microservices-unleashing-the-power-of-modular-software-architecture-23h6) 
+ <details><summary>Article</summary> <h1>
+  
+  
+  Introduction
+</h1>
+
+<p>We are in a generation where technology is evolving every day and it impacts the user expectation. It also leads to change in the way we design, build, and deploy any software application. We are currently moving towards the microservices architecture when comes to building applications. It is a driving force in modern software development.</p>
+
+<p>Today monolithic applications are fewer in number as they try to encompass every feature, module, and component under a single codebase. As it hider the modern software development requirements and agility to keep up the pace with the evolving technology. The challenges are also related to the scalability of the software as you can not make changes to specific components independently. That’s why the Microservice architecture is gaining more popularity.</p>
+
+<p>In this article, we are going to learn more about the landscape of microservice architecture. We are going to look into the following topics:</p>
+
+<ul>
+<li>What is Microservices architecture?</li>
+<li>Benefits of Using Microservices</li>
+</ul>
+
+<p>Now, let’s get started.</p>
+
+<h1>
+  
+  
+  What is Microservice Architecture?
+</h1>
+
+<p>It is an approach to designing and building software applications as a collection of small, independent, and loosely coupled services. In this, every service can perform different functionality. Each service can be designed, built, deployed, and scaled independently of each other. </p>
+
+<p>The below diagram shows you the working architecture of microservices.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--33cTLT4g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xt2wekbvm28gpwcdudrw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--33cTLT4g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xt2wekbvm28gpwcdudrw.png" alt="Architecture of Microservie" width="800" height="450"></a></p>
+
+<p>As you can see in the diagram, the communication between each component is done with API. </p>
+
+<p>There are many major tech giants that use microservices to build their applications. Here are some of them:</p>
+
+<ul>
+<li>
+<strong>Amazon</strong>: They use microservices to build their services including Amazon Marketplace, Prime, and Web Services. This helps them rapidly innovate and make changes as per requirements faster.</li>
+<li>
+<strong>Netflix</strong>: It uses microservices in aspects such as streaming services, such as user recommendations, video streaming, billing, and content management.</li>
+<li>
+<strong>Paypal</strong>: It adopts microservices to enhance its payment processing, fraud detection, and user management systems.</li>
+<li>
+<strong>LinkedIn</strong>: It uses microservers to handle user connections, profile management, content delivery, and more.</li>
+<li>
+<strong>Spotify</strong>: A major audio streaming site uses microservices to deliver personalized music recommendations, playlist management, and seamless playback across devices.</li>
+</ul>
+
+<h1>
+  
+  
+  Key principle of Microservices
+</h1>
+
+<p>Let’s learn about some of the key principles of microservices architecture. It is essential to understand those principles for perfect implementation. There are various principles among them some are:</p>
+
+<h3>
+  
+  
+  Single Responsibility Principle(SRP)
+</h3>
+
+<p>Since microservices emphasize modularity, the Single Responsibility Principle is used to define each service as having a single, well-defined functionality. It helps promote modular design and maintains clear boundaries between services.</p>
+
+<h3>
+  
+  
+  Decentralized Data Management
+</h3>
+
+<p>Each service manages its own data store. It prevents tight coupling between services. Services can have their own database or it can be shared across different databases. It is not strictly defined to use a separate database for each service. As each service manages each data store, it allows data autonomy and reduces the risk of data inconsistencies.</p>
+
+<h3>
+  
+  
+  API First Design
+</h3>
+
+<p>As the API is the core for the communication between each component in this architecture, it is believed to be designed first. Microservices emphasize the importance of developing the API first. It helps in clear communication between each component. It also helps in compatibility.</p>
+
+<h3>
+  
+  
+  Scalability
+</h3>
+
+<p>Scalability simply means the capacity of the system to handle increased workload, traffic, or data without a bottleneck in the performance. Microservices enable horizontal scaling. In horizontal Scaling, we add more machines and serve to distribute the load. Thus providing each service to be scaled independently based on demand. </p>
+
+<h3>
+  
+  
+  Design for Failure
+</h3>
+
+<p>This architecture preassumes that failure will occur in the system at some point. Thus it is designed to handle failure. Services can degrade without impacting the entire system.</p>
+
+<h1>
+  
+  
+  Benefits of Using Microservices
+</h1>
+
+<p>There are various benefits that you can get by using the microservice architecture. Here are some of them:</p>
+
+<h3>
+  
+  
+  Modularity and Scalability
+</h3>
+
+<p>By using microservice architecture, you will be breaking down complex codebases into smaller and manageable components. Thus each component can be handled separately with its Software development life cycle. It allows scalability as you don’t need to make changes to the entire codebase when making changes to one component. Each component can be built, designed, deployed, and scaled separately.</p>
+
+<h3>
+  
+  
+  Rapid Development
+</h3>
+
+<p>As each component can be built and deployed separately, we can run tests separately too. This will make the development cycles faster. It also becomes faster to provide updates to the application as you will need to make a few changes.</p>
+
+<h3>
+  
+  
+  Technology Heterogeneity
+</h3>
+
+<p>Mircorservice allows you to build each component separately which means you can use different programming languages, frameworks, and stacks for different services. You can use the most efficient language and tool for that particular service. Otherwise, you can have to stick to that framework and language for the whole codebase.</p>
+
+<h3>
+  
+  
+  Team Autonomy
+</h3>
+
+<p>Due to different features being shipped through different services, you can divide the team to work on that particular service. It will give autonomy to the team and you can develop applications in parallel. This will result in faster iteration and more efficient collaboration between teams. </p>
+
+<h3>
+  
+  
+  Agility and Adaptability
+</h3>
+
+<p>Using microservices architecture, we can develop our application to be more agile. Meaning that it becomes easy to make changes to the application as per the client/user requirement changes. </p>
+
+<h1>
+  
+  
+  Limitation of Microservices
+</h1>
+
+<p>Everything comes with pros and cons. Microservices are no exception. Let’s look into some of them:</p>
+
+<h3>
+  
+  
+  Complexity of Distributed Systems
+</h3>
+
+<p>Since there are separate services for each functionality, it can be very complex to manage each service. This can cause problems such as inter-service communication, data inconsistency, and fault tolerance.</p>
+
+<h3>
+  
+  
+  Increase Operational Overhead
+</h3>
+
+<p>Building, deploying, and managing different services required sophisticated management tools. As there will be a number of services, it will increase the management cost. It can eventually lead to an increase in the operational cost of the whole project. </p>
+
+<h3>
+  
+  
+  Data Management Challenges
+</h3>
+
+<p>As there will be a database connecting to each service, it can increase the complexity of managing the database. Maintaining data integrity in a distributed environment requires careful design and implementation.</p>
+
+<h3>
+  
+  
+  Communication Challenges
+</h3>
+
+<p>Communication between each service and database is a crucial part of the microservices. They are communicated over a network. It can cause overload in the network and eventually cause network latency. Also, as the API is the key for the communication, it should be secured. It can ensure data privacy across services.</p>
+
+<h1>
+  
+  
+  Conclusion
+</h1>
+
+<p>The ever-evolving technologies have led to monolithic architecture being inadequate with the invocations. It has limitations such as scalability, agility, and flexibility. Due to this, microservices architecture is gaining popularity. It can provide a better option when comes to scalability.</p>
+
+<p>As we have seen in the article, microservices architecture can improve the application by providing modularity, agility, and rapid development. It can help large applications to be better at handling each service. However, both microservices and monolithic will exist as there are also some limitations such as communication and complexity challenges in microservices.</p>
+
+<p>I hope this article has helped you in learning the microservices architecture. Thanks for reading the article.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to Run a Competitor's Backlink Analysis: A Comprehensive Guide](https://dev.to/blog-post/how-to-run-a-competitors-backlink-analysis-a-comprehensive-guide-1a4i) 
+ <details><summary>Article</summary> <p><strong>Do you want to outrank your competitors on Google?</strong> <br>
+Link gap analysis - commonly known as competitor backlink gap analysis - can recognize any websites and pages connected to your competitor's sites but not yours. Therefore, utilizing it can help your site gain an edge.</p>
+
+<p>Links are necessary if you want higher rankings since with links, you can make good progress. However, the challenge here is getting quality links, as they are challenging to earn. </p>
+
+<p>By utilizing intelligence and data, we can pinpoint sources that provide us with relevant and quality links to acquire. <a href="https://digitalseoland.com/link-building-services-india/">Link building</a> is regarded as the ideal SEO investment as it can give your website a great push in terms of DA and Ranking . </p>
+
+<p>Several competitor backlink analysis tools nowadays can help you conduct your audit and show you results quickly. In addition, accumulating backlinks can help increase organic keyword rankings. Nonetheless, the question remains: what exactly are those competitor backlinks?</p>
+
+<p>With this comprehensive guide, you can learn how to analyze your competitor's backlinks and obtain an edge in SERPs. Understand everything from link velocity &amp; metrics to anchor text &amp; link types, and gain insights into your competitors' strategies.<br>
+Discover Your Competitor's Backlinking Secrets &amp; Outrank Them!</p>
+
+<p><strong>The Importance of Competitor Backlink Analysis</strong></p>
+
+<p>Backlink analysis helps you understand the backlinking strategies of your competitors so that you can improve your own. In addition, it provides a good insight into acquiring more links and ensuring they are of the highest quality.</p>
+
+<p>This will ensure better visibility for your website and a better return on investment in SEO efforts. Here are some reasons why you should check competitor analysis:</p>
+
+<p><strong>Gaining insights into competitors' strategies-</strong> Through an analysis of backlinks from your competitors, you can locate potential sources for your backlinks and gain insights into the highest quality sources out there. This allows you to target these sources for better results effectively.</p>
+
+<p><strong>Identifying new backlink sources-</strong> It's essential to analyze the quality of your competitors' backlinks and assess which ones bring in more traffic and provide more value. Evaluating their links will help you understand what strategies work best in your industry. </p>
+
+<p>Knowing your rival's assets and flaws will help you decide which areas to focus on for link building. This will ensure that your efforts are practical and can get you the desired results.</p>
+
+<p><strong>Enhancing your backlink profile-</strong> Constructing a link-building strategy requires utilizing your strengths and improving weaknesses. With this in mind, you can create an effective plan to reach your desired goal. </p>
+
+<p><strong>Staying ahead in the competition-</strong> Keeping an eye on your competitors' backlink activity is one way of maintaining an edge over them. </p>
+
+<p><strong>Essential Competitor Backlink Analysis Tools</strong> </p>
+
+<p>Here are a list of best competitor backlink analysis tool that can help your business rank better:</p>
+
+<p><strong>Ahrefs-</strong> Ahrefs is an SEO powerhouse with a reputation as one of the most reliable tools for online marketers and website owners. The tool has several key features that make it ideal for competitor backlink analysis. Some of the critical features are stated below:</p>
+
+<p>The tool provides incredibly detailed and valuable data on the quality of backlinks, such as Domain and URL Ratings. This can help you better understand your competitors' backlinks and identify potential sources for your link-building strategy.</p>
+
+<p>Ahrefs is widely known for possessing the most extensive backlink database available online. </p>
+
+<p>Ahrefs presents a top-notch tool to evaluate the backlink profiles of different websites and identify the areas where your link-building efforts should be concentrated.</p>
+
+<p>With this functionality, you can pinpoint backlinks shared by your competitors, giving you valuable insight into the web pages linking to multiple industry rivals.</p>
+
+<p><strong>How to use Ahrefs for competitor analysis?</strong></p>
+
+<p>Ahrefs offers a fantastic competitor backlink analysis capability that makes it easier to take advantage of fresh possibilities.</p>
+
+<p>The tool offers an invaluable resource for marketers to gain insight into their competitors' link-building plans with its historical backlink storage. <br>
+Through this, it is possible to track the changes made over time and analyze their techniques. </p>
+
+<p>This might be a priceless tool for improving the search engine rankings of your website. Here are steps to use Ahrefs:</p>
+
+<p><strong>Identify your competitors:</strong> To begin, determine who your primary rivals are in the market or specialized area you're pursuing.</p>
+
+<p><strong>Enter your competitor's domain:</strong> After locating your rivals, use Ahrefs' Site Explorer tool to enter their domain name.</p>
+
+<p><strong>Examine organic search terms:</strong> Click the "Organic Keywords" tab to find out which terms are bringing organic visitors to the websites of your rivals. You may get a sense of the keywords they are targeting and ranking for from this.</p>
+
+<p><strong>Examine backlinks:</strong> Select the "Backlinks" option to examine the backlink profile of your rivals. Try to find any prospects for link-building for your own website by keeping an eye out for high-quality websites that are linking to them.</p>
+
+<p><strong>Examine high-performing content:</strong> Check out your competitor's website's top pages using the "Top Pages" tool to discover which ones are generating the most organic traffic. Consider these pages' content, organization, and format as a starting point for developing your own high-performing content.</p>
+
+<p><strong>Monitor rankings:</strong> Ahrefs enables you to monitor the evolution of keyword ranks. The Rank Tracker tool allows you to add competitor's target keywords and track their ranks over time. This will assist you in comprehending their SEO approach and locating opportunities for development.</p>
+
+<p><strong>Examine sponsored search campaigns:</strong> Utilize Ahrefs' "Paid Search" tool to learn more about the paid advertising campaigns of your rivals, including the keywords they are bidding on, their ad copy, and their landing sites.</p>
+
+<p><strong>Track mentions and brand awareness:</strong> Ahrefs' Content Explorer tool will assist you in keeping tabs on online mentions of your competitors' brands. This can help you understand their brand awareness and web presence.</p>
+
+<p><strong>Compare domains:</strong> Use the "Domain Comparison" function to assess how well your website stacks up against those of your rivals. Your strengths and shortcomings will become clearer as a result, and you can then decide where to make improvements.</p>
+
+<p><strong>Keep current:</strong> Frequently check the website of a rival utilizing Ahrefs' notifications feature. Set up alerts to be informed anytime a rival publishes new material, ranks for new keywords, or earns or loses backlinks.</p>
+
+<p>**2. SEMrush- **SEMrush is a powerful digital marketing platform widely used to analyze your competitors' backlinks. With its vast array of backlink analysis features, this tool is an apt choice for optimizing your website's backlinks. These include:</p>
+
+<p>SEMrush helps you to keep an eye on your competitors' backlink profiles. You gain insights into the number and quality of backlinks and identify their sources. This enables you to stay ahead of your competition in the long run.</p>
+
+<p>SEMrush can give you the advantage of discovering new growth opportunities by showing which backlinks your competitors are using. It provides an insight into how to gain an edge over the competition.</p>
+
+<p>SEMrush's link quality score is incredibly helpful in understanding the value of the backlinks pointing to your website. Using this data, you can better prioritize your link-building strategies, concentrating on getting more links with a higher value.</p>
+
+<p>SEMrush offers loads of information about your rivals. It can show you their organic traffic, PPC campaigns, and detailed social media visibility. This data can be invaluable to your competitive strategy.</p>
+
+<p><strong>How to use SEMRush for competitor analysis?</strong>  </p>
+
+<p><a href="https://www.semrush.com/lp/keyword-gap/en/?kw=semrush%20keyword%20gap&amp;cmp=IN_SRCH_Brand_Semrush_EN&amp;label=brand_semrush&amp;Network=g&amp;Device=c&amp;utm_content=638535277111&amp;kwid=kwd-420249962862&amp;cmpid=13694421969&amp;agpid=119351853970&amp;BU=Brand_Semrush&amp;extid=&amp;adpos=&amp;gclid=CjwKCAjwge2iBhBBEiwAfXDBR23lLqTzWf0lnu0TXr3HKGHkdpVbF6f3g77fyG0WIDk9OF01zU5PXBoCGUsQAvD_BwE">Semrush's Backlink Analytics tool</a> enables you to monitor your opponents' backlink profiles in more detail. With this resource, you can better understand the situation and make informed decisions.</p>
+
+<p>You can get an in-depth report on any competitor's backlink profile with a click of a button. Just input the competitor's website URL and hit analyze to receive information such as Authority Score, number of referring domains, and existing backlinks.</p>
+
+<p>SEMrush helps you to understand your competitors' backlink analysis results with the help of informative reports and visualizations. It's a quick and easy way to get comprehensive insights and optimize your strategies.</p>
+
+<p><strong>3.  Moz's Link Explorer-</strong> Moz is an industry-leading software provider for digital marketing solutions. With their broad range of tools, you can optimize your website and track your competitors' backlinks. This can significantly help with improving your online presence.  Here are some key features of the Moz Link Explorer tool:</p>
+
+<p>Moz has created an index of links by crawling and indexing them. This helps to discover new resources and websites quickly.</p>
+
+<p>The well-known search engine optimization tool, Moz, utilizes its algorithm to evaluate the quality of backlinks. Every external link is then rated for its "Link Authority."</p>
+
+<p>Dotbot, an advanced crawler, is based on a machine-learning model. It begins with the most valuable links to comprehend how Google rankings work and compute metrics such as Page Authority and Domain Authority.</p>
+
+<p>Moz Link Explorer provides you with a detailed overview of your backlinks, most valuable pages, linking domains, and anchor text - all so you can create superior links and remain competitive online.</p>
+
+<p><strong>How to use Moz's Link Explorer for competitor analysis?</strong></p>
+
+<p>Signing up with Moz provides access to Link Explorer. To use Link Explorer, a tool from Moz, you must have an account with the service. Here are the steps to use <a href="https://moz.com/link-explorer">Moz Link Explorer</a>:<br>
+Begin by typing the domain or URL of one of your competitors into Moz's Link Explorer's search bar.</p>
+
+<p>When the results are shown, navigate to the "Inbound Links" section to check how many backlinks your rival has in total.</p>
+
+<p>Examine indicators like Domain Authority (DA), Page Authority (PA), and Spam Score to determine the authority and quality of their backlinks.</p>
+
+<p>Check the "Linking Domains" column to see how many different websites link to your rival. You may get a sense of their general appeal and popularity from this information.</p>
+
+<p>Look through the "Top Pages" section to find out which pages on the website of your rival have the most backlinks. Understanding their content approach can help you concentrate on producing similar, high-performing content.</p>
+
+<p>Check the "Just-Discovered" area, which displays links that your competition has lately obtained, for any prospective link chances. This may provide you an advantage when looking for fresh content from which to create your own backlinks.</p>
+
+<p>Check out the "Anchor Text" page to see what keywords or phrases they are focusing on in their link-building campaigns to obtain a better grasp of their link-building approach.</p>
+
+<p>Lastly, remember to use Moz's Link Explorer to compare your own backlink profile to that of your competitors.<br>
+Enter the web address of the website or page you wish to get link information for!</p>
+
+<p>Comparing tools and selecting the best one for your needs<br>
+Establishing a solid <a href="https://digitalseoland.com/blog/off-page-seo-techniques/">link-building technique</a> is an essential factor for website optimization. Backlinks can help elevate your search engine rankings, create a trustworthy reputation and drive more visitors to your site.</p>
+
+<p>Several backlink analysis tools in the market can give you the best results for your business. However, doing your own market research before getting a competitor backlink analysis tool is vital.</p>
+
+<p>It is best to consider a link-building strategy after creating unique content on your website. This will provide the necessary foundation for building successful links later on.</p>
+
+<p>How to Check Competitor Backlinks: A Step-by-Step Guide<br>
+Regular backlink audits can help you understand the amount and quality of backlinks currently on your website. </p>
+
+<p>This knowledge can improve your SEO and visibility in search engine rankings. Having solid and authoritative backlinks from top-level domains is crucial for the success of any SEO strategy. </p>
+
+<p>If you neglect this essential step, your rankings will suffer, and your website will not perform well in search results. To ensure the success of your analysis, here are some features you should look out for:</p>
+
+<p>Identify your top competitors- The Organic Research Competitors report provides a complete list of established companies and new entrants. To measure how competitive one domain is compared to another, there is a parameter called the Competition level. </p>
+
+<p>This enables you to get an idea of how much competition exists between the two domains. The competition level between you and your rivals is determined by two glaring factors - the number of ranked key phrases they possess and how many overlap yours.</p>
+
+<p>Choose a backlink analysis tool- various backlink analysis tools exist in the market. However, depending on the type of business, choosing the one that suits your requirements is necessary. </p>
+
+<p>Please do thorough market research on some of the best backlink analysis tools we have provided above and select the one you need.</p>
+
+<p>Analyze competitors' backlink profiles- Now that you better understand your backlink situation, it's time to start looking for areas to improve. A great place to start is by assessing the most successful pages and identifying how to replicate their success.</p>
+
+<p>Identify the types of content that generate the most links from high-value sources to create additional content of this kind. Keep your eyes peeled for chances to create content other websites might link to. You can contact them so they know your linkable assets and link back to you. </p>
+
+<p>Regarding do-follow and no-follow links, knowing the exact amount of each is essential. Do-follow links are beneficial for your backlink profile as they pass on link juice, while no-follow links don't do that.</p>
+
+<p>Find content gaps and link- Conducting a content gap analysis is an essential strategy if you want to improve the content of your website. You can make sure that your website performs better than the competition and precisely matches with your business objectives by carefully evaluating and optimizing the material that is already there. By using an analytical approach, you can spot holes in your present content strategy and deliberately plug them for the most impact. </p>
+
+<p>For instance, consider the case of an SEO agency that has a large number of blog posts on cutting-edge SEO strategies. However, you see that users are leaving your pages far too frequently and hastily. A short study of the content gaps may help to clarify the issue by analyzing how interesting your content is.</p>
+
+<p>Whatever the cause, you must locate and fill any content gaps immediately. The Backlink Gap tool and the Overview report in the Backlink Analytics tool are two practical options for analyzing your backlink profiles. They allow you to measure the performance of 5 different domains simultaneously. </p>
+
+<p>Broken links are hyperlinks that no longer connect to their intended destination. They can occur when a website or webpage is moved, deleted, or its URL is changed. Fixing broken links is crucial for maintaining a seamless user experience and ensuring that visitors can access the content they are seeking on a website. With the best backlink analysis tools, broken links, and content gaps can be located and fixed.</p>
+
+<p>Monitor competitors' backlink activities over time- Although not required, we strongly urge you to conduct a competition study because it might show potential gaps in the content market. This will provide you with details about the following:</p>
+
+<p>Any organization must understand where the majority of its backlinks come from.</p>
+
+<p>Their content might create the most significant number of backlinks.</p>
+
+<p>Quick Hacks for Finding Competitors' Backlinks<br>
+Examining your competition's backlinks is a highly effective method for creating a link-building strategy. Here are some quick hacks on how to find competitors' backlinks:<br>
+Use advanced search operators- It's critical to understand your competitors' strategies to stay ahead of the pack in your industry. A strong SEO strategy is necessary for high search engine ranks and comprises optimizing the target keywords. Compare your competitors' backlink profiles and theirs to understand who your top rivals are.<br>
+Leverage social listening and uncover untapped backlink opportunities- Social listening is an invaluable tool that can greatly benefit your business. It is a process of keeping an eye on blogs, forums, social media sites, and other online resources to learn more about your competitors, market, or industry. By effectively monitoring social media conversations and online discussions, you can easily identify websites and blogs that are relevant to your industry or niche. This not only helps you stay connected with the latest trends and insights, but also uncovers untapped backlink opportunities that may have otherwise gone unnoticed. Imagine you stumble upon a blog post or article that mentions your brand, but to your disappointment, there's no link leading back to your website. However, by proactively reaching out to the author or website owner, you have the opportunity to kindly request a backlink. This not only enhances your website's authority and credibility but also boosts its overall visibility and online presence.<br><br>
+Spy on competitors' guest posting activities- You should start by pulling out your competitors backlink profile via Semrush, and Ahrefs. Using Spyfy, you can type in your website and click on the 'Competitors' tab to get a list of related websites. It'll then analyze the similarities between these sites and yours and show you the overlapping keywords.<br>
+Network with industry influencers- Start exploring industries and industry influencers. This will help you understand the market and will help you build connections for your business growth.<br>
+How to Use Competitor Backlink Analysis to Improve Your Link Building <br>
+Are you looking for a better way to improve your link-building strategy? Increase your website's visibility and search engine ranking with the help of competitor backlink analysis! Learn how to use Competitor backlink analysis as an incredible tool to give you an edge over your competition.<br>
+Learn from competitors' strengths and weaknesses- With this template, you can carefully analyze the link profiles of one or numerous competitors and gain insight into their strategies. <br>
+This can help you stay ahead of the competition. To effectively evaluate your competition, ensure you include only those directly related to your target keyword.<br>
+Prioritize high-quality backlinks- Export Your Site's Backlink Profile Using Ahrefs or Moz. After exporting the backlink data, paste it into the client data tab. Then, carry out the same process for your website. <br>
+Its easy-to-use interface, detailed insights, and advanced analytics tools let you quickly identify potential link opportunities and create a more powerful link-building plan.<br>
+Diversify your link-building tactics- To boost your website's ranking and visibility, varying link-building strategies is essential. <br>
+This could include guest posts, content syndication, press releases, etc. Taking a multifaceted approach to link building can maximize the impact of your SEO efforts.<br>
+Create better content to attract more backlinks- Upon completing your competitor backlink analysis, it is essential to derive critical insights and develop a strategy from the findings. Doing so will ensure you understand how to maximize the potential of your website in terms of its visibility and ranking. <br>
+When you look at the Competitor Backlink Analysis tab, one of the first things that stand out is how the data is filtered. This first highlights your competitors' shared links, providing a more comprehensive overview.<br>
+Conclusion<br>
+As we approach 2024, it is essential to do a competitor backlink analysis to increase your website's SEO ranking and visibility. Therefore, it is crucial for businesses nowadays to stay ahead of the competition. <br>
+With the help of this article, you can easily and quickly figure out what your competitors are up to, evaluate your backlink profile, and capitalize on link-building opportunities to enhance it.<br>
+To optimize your link-building strategy and accomplish your online goals, it is essential to study and analyze the approaches used by your competitors. This information allows you to design a tailored plan to fit your specific needs and objectives.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to Create a Successful eCommerce App in 2023 ?](https://dev.to/richarddukusa/how-to-create-a-successful-ecommerce-app-in-2023--3e4p) 
+ <details><summary>Article</summary> <p>In today's digital era, eCommerce has become an integral part of our lives, and mobile apps have emerged as a key platform for online shopping. With the increasing demand for convenient and personalized shopping experiences, creating an eCommerce app is considered as a profitable strategy. However, creating such apps requires careful planning, execution, and hiring a reliable <a href="https://successive.tech/ecommerce-app-development-company/">eCommerce app development company.</a><br>
+In this blog post, we will guide you through the essential steps and strategies to develop an eCommerce app that stands out in this highly competitive market.</p>
+
+<p><strong>Steps to Create a Successful eCommerce Application</strong></p>
+
+<p><strong>Define Your Target Audience</strong></p>
+
+<p>Before diving into the app development process, it's crucial to identify your target audience and understand their needs, preferences, and behavior. Conduct market research, analyze user demographics, and gather insights to tailor your app accordingly. Consider factors such as age, location, interests, and shopping habits to create a personalized experience for your users.</p>
+
+<p><strong>Determine User Experience (UX) Design</strong><br>
+The user experience plays a vital role in the success of an eCommerce app. Aim for a clean, intuitive, and visually appealing design that focuses on ease of navigation, efficient product search, and seamless checkout process. Your hired eCommerce app development company will implement responsive design principles to ensure your app functions well across various devices and screen sizes, providing a consistent experience.</p>
+
+<p><strong>Prepare Product Catalog</strong><br>
+Organize your product catalog in a logical and user-friendly manner. Use categories, filters, and search functionalities to help users find products quickly and effortlessly. Display high-quality product images, detailed descriptions, customer reviews, and ratings to build trust and aid purchase decisions. Also checkout <a href="https://successive.tech/blog/ecommerce-app-development-guide/">eCommerce App Development Guide</a> to understanding product catalog.</p>
+
+<p><strong>Streamline Checkout Process</strong><br>
+Simplify the checkout process to minimize cart abandonment rates. Enable guest checkouts, offer multiple secure payment options, and integrate popular payment gateways to enhance convenience. eCommerce app development services include implementation of features like saved payment methods, address autofill, and order tracking to streamline the overall purchase experience.</p>
+
+<p><strong>Personalization and Recommendations</strong><br>
+Leverage user data and analytics to provide personalized recommendations and suggestions based on their browsing and purchase history. Implement algorithms that analyze user behavior to offer relevant products, discounts, or personalized offers. Personalization fosters engagement, loyalty, and increased sales.</p>
+
+<p><strong>Seamless Integration with Backend Systems</strong><br>
+Integrate your eCommerce app seamlessly with backend systems such as inventory management, order processing, and customer relationship management (CRM) tools. Real-time synchronization ensures accurate product availability, inventory updates, and order fulfillment, enhancing operational efficiency and customer satisfaction.</p>
+
+<p><strong>Integrate Robust Security Measures</strong><br>
+eCommerce apps deal with sensitive user data and financial transactions, making security a top priority. The eCommerce app development company will implement strong encryption protocols, secure payment gateways, and user authentication mechanisms. Regularly update and patch security vulnerabilities to safeguard user information and build trust in your app.</p>
+
+<p><strong>Performance Optimization</strong><br>
+Optimize your app's performance to provide a smooth and responsive experience. Minimize loading times, compress images, and utilize caching techniques to improve app speed. Conduct rigorous testing across different devices and network conditions to ensure your app performs well under varying circumstances.</p>
+
+<p><strong>Social Media Integration</strong><br>
+Leverage the power of social media by integrating sharing options and enabling user-generated content. Allow users to share their favorite products, reviews, or purchases on social platforms. Incorporate social login options to streamline the registration process and increase user convenience.</p>
+
+<p><strong>Continuous Improvement and Feedback</strong><br>
+Analyze user feedback, ratings, and reviews to identify areas for improvement. Regularly update your app with new features, bug fixes, and performance enhancements. Engage with your user community through surveys, ratings prompts, and customer support channels to build a loyal user base.</p>
+
+<p><strong>Conclusion</strong><br>
+Creating a successful eCommerce app in 2023 requires a combination of user-centric design, efficient functionality, assistance from a professional company that offers <a href="https://successive.tech/mobile-application-development/">mobile app development services</a>, and continuous improvement. By understanding your target audience, focusing on user experience, personalizing the shopping journey, ensuring security, and optimizing performance, you can develop an app that resonates with your users and drives business growth. Keep abreast of the latest trends, technologies, and customer demands to stay competitive in the dynamic eCommerce landscape.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How is it to build something in public?](https://dev.to/azasypkin/how-is-it-to-build-something-in-public-3m3j) 
+ <details><summary>Article</summary> <blockquote>
+<p>The original post was published on my blog on <strong>July 20, 2023</strong>, long before I realized it might be interesting to the dev.to community.</p>
+</blockquote>
+
+<p><strong>TL;DR:</strong> It’s a hard, but rewarding experience!</p>
+
+<p>Hello!</p>
+
+<p>It’s been two months since I opened up <a href="https://secutils.dev/"><strong>Secutils.dev</strong></a> for an open beta and started writing about my indie hacking journey in public for the first time while still being a full-time employee at Elastic. In this short post, I just want to reflect on how things are going, what was good, and what wasn’t as good as I wanted it to be. If you’re in a similar situation or just curious, read on!</p>
+
+<p>First of all, here are some stats from the last two months:</p>
+
+<ul>
+<li>
+<strong>102</strong> commits with fixes, enhancements, documentation, and features <a href="https://github.com/secutils-dev"><strong>across all Secutils.dev GitHub repositories</strong></a> </li>
+<li>
+<strong>18</strong> <a href="https://secutils.dev/docs/blog/"><strong>blog posts</strong></a> and the same amount of accompanying LinkedIn posts, <a href="https://twitter.com/aleh_zasypkin"><strong>tweets</strong></a>, and <a href="https://infosec.exchange/@azasypkin"><strong>Mastodon posts</strong></a>
+</li>
+<li>
+<strong>3</strong> one-on-one user interviews conducted (too few, I know I know, but hey, I’m still learning)</li>
+<li>
+<strong>1</strong> big feature delivered (<a href="https://github.com/secutils-dev/secutils/issues/14"><strong>Resource Tracker</strong></a>, going to cut a new release next week)</li>
+</ul>
+
+<p>I admit that the stats don’t look super impressive, but I really enjoyed the ride so far! It’s hard to describe the satisfaction I get from talking to the users of something I’ve built from scratch and control every bit and piece of it – one of the most rewarding experiences in my whole 15-year career, for sure.</p>
+
+<p>As you can see from the stats, old habits die hard – engineering still takes most of my time, and I didn’t spend enough time promoting Secutils.dev among the relevant communities and interacting with current and potential users. That’s something I’m going to fix.</p>
+
+<p>The most important lesson I’ve learned during these two months? It’s hard to find enough time and energy for a side-project like Secutils.dev while having a relatively intense full-time job, and <a href="https://secutils.dev/docs/blog/time-management"><strong>very aggressive prioritization and subtraction</strong></a> isn’t just an option, it’s a necessity. Nobody said it was going to be easy, though. On the bright side, life isn’t discrete – everything I learn while pushing Secutils.dev forward perfectly applies to my full-time job, benefiting Elastic and my career, and vice versa, of course. Having a serious side gig like that, in my opinion, is one of the most effective ways to grow not only professionally but also as a resilient person.</p>
+
+<p>That wraps up today's post, thanks for taking the time to read it!</p>
+
+<blockquote>
+<p><strong>ℹ️ ASK:</strong> If you found this post helpful or interesting, please consider showing your support by starring <a href="https://github.com/secutils-dev/secutils"><strong>secutils-dev/secutils</strong></a> GitHub repository.</p>
+
+<p>Also, feel free to follow me on <a href="https://twitter.com/aleh_zasypkin"><strong>Twitter</strong></a>, <a href="https://infosec.exchange/@azasypkin"><strong>Mastodon</strong></a>, or <a href="https://www.linkedin.com/in/azasypkin/"><strong>LinkedIn</strong></a>.</p>
+
+<p>Thank you for being a part of the community!</p>
+</blockquote>
+
+ </details> 
+ <hr /> 
+
  #### - [What's new in Novu 0.19?](https://dev.to/novu/whats-new-in-novu-019-1pcc) 
  <details><summary>Article</summary> <p><strong>TL;DR:</strong> All you need to know about the latest Novu 0.19.0 release. Multi-tenancy management, bulk subscriber creation, override layouts and more!</p>
 
@@ -334,1015 +807,6 @@
 <p>If you want to contribute to OSS and make an impact, I believe it is a <a href="https://github.com/novuhq/novu">great place to start</a> &amp; build out amazing things.</p>
 
 <p>Oh, remember to star the repo as well.🤩 See you in the next release! 🚀</p>
-
- </details> 
- <hr /> 
-
- #### - [Testμ 2023: Highlights From Day 2](https://dev.to/lambdatest/testm-2023-highlights-from-day-2-513p) 
- <details><summary>Article</summary> <p>At the end of Day 2 of the TestMu Conference 2023, we reflect on a day filled with learning and inspiration. From the first session to the final chat exchange, we experienced innovation and togetherness. Throughout the day, we explored various aspects of testing, including AI’s impact and automation’s development, led by industry experts. These discussions have left a lasting impact, inspiring us beyond our screens.</p>
-
-<p>We’re ready to carry its lessons and inspiration as we conclude this exceptional day. The connections we’ve made and the insights we’ve gained will shape the path ahead, allowing us to shape the future of testing.</p>
-
-<p>Let’s see some highlights from Day 2 of the TestMu Conference 2023.</p>
-
-<h2>
-  
-  
-  Welcome Note: Day 2 by Manoj Kumar
-</h2>
-
-<p><a href="https://in.linkedin.com/in/manoj9788">Manoj Kumar</a> greeted all the speakers and attendees with a warm welcome, infusing everyone with excitement as we were on the brink of commencing Day 2 of TestMu 2023.</p>
-
-<p>As we delve into Day 2, everyone is encouraged to prepare for an even more captivating array of talks, sessions, and discussions. The schedule features various intriguing topics and esteemed speakers, including Maaret Pyhäjärvi, Paul Grizzaffi, Andrew Knight, Mathias Bynens, Christian Bromann, and our keynote speaker, Mahesh Venkataraman. The anticipation is palpable for the exclusive preview of the “Future of Quality Assurance” survey, reflecting the collective insights of our community and underscoring the significance of collaboration and shared viewpoints.</p>
-
-<p>Regardless of whether attendees are seasoned testing professionals or embarking on their journey, the event promised something for everyone. The expectation was for further enlightening talks that delve deeper into the testing domain, panel discussions that explore diverse perspectives, and sessions meticulously designed to provide tangible takeaways, enhancing the attendees’ testing practices.</p>
-
-<p>The contests, certification marathons, and #LambdaTestYourApps challenges were compelling opportunities to showcase your abilities and gain prominence in this dynamic community.</p>
-
-<h2>
-  
-  
-  Expanding the Horizon of Innovation in Testing by Mahesh Venkataraman
-</h2>
-
-<p>Over the last twenty years, there has been a significant transformation in testing processes and technology. However, the concept of innovative testing has revolved chiefly around test automation. Recently, AI-driven testing has gained popularity. But should innovation in testing be limited to only automation or AI-driven methods? Sometimes, the most valuable ideas come from outside the industry. Can we find inspiration from how other fields have transformed their products and practices? Can we extract and apply their core principles to testing?</p>
-
-<p>This session by Mahesh encouraged contemplation by delving into how we can reshape, rethink, and reposition testing for the benefit of all stakeholders. By scrutinizing the challenges encountered in contemporary software delivery and capitalizing on innovation principles borrowed from various domains, we can visualize a testing future that adds extra value to everyone involved.</p>
-
-<p><strong>Key Takeaways:</strong> Understanding the implicit and explicit challenges facing modern software delivery and how generic innovation principles can be applied to bring about a win-win for all — opening new career pathways for practitioners, creating business value for customers, and generating new revenue streams for tools and service providers.</p>
-
-<p><strong>About the Speaker:</strong></p>
-
-<p>With more than 34 years of experience in the Information Technology sector, <a href="https://in.linkedin.com/in/maheshvenkataraman">Mahesh Venkataraman</a> has held diverse roles encompassing technology management, service management, and business management.</p>
-
-<h2>
-  
-  
-  Panel Discussion: Evolution of Testing in the Age of DevOps
-</h2>
-
-<p>Software engineering teams have warmly embraced DevOps to achieve intelligent, swift, and daily shipping. Yet, the question remains: Does this guarantee confident shipping? Amid the DevOps era, continuous testing offers solutions and hurdles as testing methodologies evolve.</p>
-
-<p>Our distinguished panel of industry luminaries engaged in a conversation about this evolution, shedding light on their contributions to aiding clients in overhauling their testing approaches through DevOps.</p>
-
-<p>With approximately twenty years of software testing experience, <a href="https://in.linkedin.com/in/asmita-parab">Asmita Parab</a> is a seasoned professional dedicated to ensuring the delivery of top-notch software products. As Head of Testing at UST Product Engineering, she leads a team of skilled professionals, driving excellence in testing practices and guaranteeing software application reliability. Committed to continuous improvement, she stays updated with emerging testing trends, shaping industry best practices within the organization. Asmita’s expertise ensures high-quality standards for customers and organizational growth.</p>
-
-<p><strong>About Panelists:</strong></p>
-
-<ul>
-<li><p>A Business and Technology leadership veteran with over two decades of experience, <a href="https://in.linkedin.com/in/bhushan-bagi-317103105">Bhushan Bagi</a> excels in scaling businesses and fostering high-performance teams. Currently overseeing Business for Quality Engineering at Wipro, he spearheads various aspects from Go-to-Market strategies to industry engagement. Bhushan’s transformational expertise spans multiple domains, making him a sought-after consultant for business and technology growth.</p></li>
-<li><p><a href="https://ca.linkedin.com/in/harleen-bedi">Harleen Bedi</a>, a senior IT consultant, specializes in developing and selling IT offerings related to quality engineering and emerging technologies. She crafts and deploys QE strategies and innovations for enterprises, driving business objectives for clients. With her focus on AI, Cloud, Big Data, and more, Harleen is pivotal in aligning technology advancements with quality engineering.</p></li>
-<li><p><a href="https://in.linkedin.com/in/mallika-fernandes">Mallika Fernandes</a> is an IT leader with an impressive 24-year innovation journey. As part of the Cloud First group at Accenture, she leads Quality Engineering innovation and automation, holding eleven patents for her pioneering work. Her passion for AI/ML and Cloud Quality transformation is reflected in her contributions.</p></li>
-<li><p><a href="https://www.linkedin.com/in/vikul">Vikul Gupta</a>, the Head of NextGen CoE at Qualitest, a modern quality engineering company, boasts over twenty years of experience with Tier 1 companies. His expertise spans quality engineering transformation, NextGen solutions, and co-innovation with partners worldwide. With a robust technological background encompassing AI/ML, DevOps, Cloud, and more, Vikul brings domain-specific insights to the forefront of his leadership roles.</p></li>
-</ul>
-
-<h2>
-  
-  
-  My Crafting Project Became a Critical Infrastructure by Elizabeth Zagroba
-</h2>
-
-<p>Frustrated with the usual testing process, Elizabeth developed an APIs Python script, built and deployed the app, and printed updates in the terminal. Initially addressing my immediate needs, it unexpectedly automated a manual step in our release process.</p>
-
-<p>Other teams adopted it, expanding its functionality. She managed code submissions, even those she disagreed with, to keep things unblocked. Eventually, maintaining the code became burdensome, and she stopped. However, renewed interest sparked when a merge request came in, leading to collaborative improvements and the addition of tests. This rejuvenated her enthusiasm for maintaining the script, which had grown into a vital piece of infrastructure.</p>
-
-<p><strong>Key Takeaways:</strong></p>
-
-<ul>
-<li><p>Good collaboration takes time and energy.</p></li>
-<li><p>Small things for one use can grow into bigger things with many benefits.</p></li>
-<li><p>Pick up the work for the skills you want to build.</p></li>
-</ul>
-
-<p><strong>About the Speaker:</strong><br>
-<a href="https://nl.linkedin.com/in/ezagroba">Elizabeth</a> serves as the Quality Lead at Mendix in The Netherlands. Her role involves enhancing exploratory testing by orchestrating collaborative “mob” testing sessions, effectively addressing gaps, and ensuring that the “it should just work” principle holds true. She fosters a shared comprehension of projects, offers critical insights, and supports team members beyond formal management channels. Additionally, she adeptly crafts API tests and communicates proficiently in English, making her a key asset in ensuring quality and cohesion within the team.</p>
-
-<h2>
-  
-  
-  Let’s Play Rhetoric for All Things Testing by Maaret Pyhäjärvi
-</h2>
-
-<p>Remote screen sharing offers the platform for engaging in the intriguing Public Speaking Game called Rhetoric. In that adapted version, willing volunteers had the chance to take part during the session’s time frame, delivering concise two-minute talks focused on diverse testing aspects. Guided by dice rolls, players encountered a variety of speaking challenges.</p>
-
-<ul>
-<li><p><strong>TOPIC:</strong> Presented a framing word and six constraints to tailor the talk’s style.</p></li>
-<li><p><strong>CHALLENGE:</strong> Introduced specific speaking constraints.</p></li>
-<li><p><strong>QUESTION:</strong> Supplied audience prompts paired with six constraints.</p></li>
-<li><p><strong>REFLECTION:</strong> Granted the opportunity to speak freely on any topic.</p></li>
-<li><p><strong>CHOICE:</strong> Allowed participants to select from any of the four options mentioned.</p></li>
-</ul>
-
-<p><strong>About the Speaker:</strong><br>
-In the past, <a href="https://fi.linkedin.com/in/maaret">Maaret Pyhäjärvi</a> showcased her expertise as an exceptional exploratory tester while holding the role of Development Manager at Vaisala. She displayed proficiency as a tester, (polyglot) programmer, speaker, author, and community facilitator.</p>
-
-<h2>
-  
-  
-  Staying Ahead In The Tech World by Rahul Parwal and Ajay Balamurugadas
-</h2>
-
-<p>During rapid technological changes, maintaining a competitive edge demands continuous updates. This talk delved into strategies that honed testing skills:</p>
-
-<ul>
-<li><p><strong>Building Your Toolkit:</strong> Understanding the value of a versatile toolkit and mastering tool selection amidst many options.</p></li>
-<li><p><strong>Leveraging Social Media:</strong> Discovering how staying informed through social platforms amplifies professional prowess.</p></li>
-<li><p><strong>Unlocking Automation:</strong> Exploring automation’s role, not solely in testing but also in daily tasks via micro tools.</p></li>
-<li><p><strong>Personal Insights:</strong> Gaining pragmatic insights from speakers’ experiences in tool selection and testing.</p></li>
-</ul>
-
-<p><strong>Key Takeaways:</strong></p>
-
-<ul>
-<li><p><strong>Toolkit Significance:</strong> Learn to create a comprehensive toolkit with fitting tools.</p></li>
-<li><p><strong>Social Media’s Edge:</strong> Uncover how staying connected online enhances your testing prowess.</p></li>
-<li><p><strong>Automation Unveiled:</strong> Embrace automation’s power using micro tools.</p></li>
-<li><p><strong>Practical Insights:</strong> Benefit from firsthand insights to thrive in the testing tech landscape.</p></li>
-</ul>
-
-<p><strong>About Speakers:</strong></p>
-
-<ul>
-<li><p><a href="https://in.linkedin.com/in/ajaybalamurugadas">Ajay Balamurugadas</a>, known as ‘ajay184f’ in the testing community, is a seasoned expert with extensive experience redefining testing methodologies. With a distinguished background, he has co-founded Weekend Testing, authored multiple insightful books, and holds the position of Senior Director, QE at GSPANN Technologies.</p></li>
-<li><p><a href="https://in.linkedin.com/in/rahul-parwal">Rahul Parwal</a> is a proficient Software Tester and generalist. As a Senior Software Engineer at IFM Engineering in India, he specializes in testing IoT systems encompassing Unit, API, Web, and Mobile Testing. Fluent in C# and Python, Rahul’s expertise is well-rounded. He actively contributes to the testing community through various channels, sharing his insights on LinkedIn, Twitter, his blog, YouTube, and meetups.</p></li>
-</ul>
-
-<h2>
-  
-  
-  Balancing the Test Pyramid, the AWS way!
-</h2>
-
-<p>The AWS team delved into their comprehensive testing approach, amalgamating hybrid UI and API testing with synthetic <a href="https://www.lambdatest.com/learning-hub/canary-testing?utm_source=devto&amp;utm_medium=organic&amp;utm_campaign=sept_14&amp;utm_term=bw&amp;utm_content=learning_hub">canary testing</a>.</p>
-
-<p>Their methodology responded to the challenge of balancing test coverage and efficiency while maintaining superior quality. Practical techniques and frameworks employed by AWS teams seamlessly integrated UI and API testing, boosting coverage across the software stack.</p>
-
-<p>Additionally, they showcased the application of synthetic canary testing, putting real-world scenarios to the test in production to ensure operational excellence (OE) metrics coverage. By simulating actual production traffic and comparing outcomes with established benchmarks, anomalies, and potential issues were proactively identified, reinforcing system reliability and scalability.</p>
-
-<p><strong>Key Takeaways:</strong></p>
-
-<ul>
-<li><p><strong>Hybrid Testing Approach:</strong> The AWS team’s hybrid testing approach, blending UI and API testing, struck a balance between test coverage and efficiency.</p></li>
-<li><p><strong>Expanded Test Coverage:</strong> Understanding how AWS leveraged hybrid testing to simultaneously validate user interface interactions and backend functionality, enhancing test coverage.</p></li>
-<li><p><strong>Operational Excellence:</strong> Gaining insights into leveraging synthetic canary testing to fortify your organization’s testing endeavors for system reliability and availability.</p></li>
-<li><p><strong>Practical Insights:</strong> Exploring the tools and frameworks that AWS teams employed in implementing the hybrid UI and API testing strategy, with actionable techniques for enhancing personal testing strategies.</p></li>
-</ul>
-
-<p><strong>About the Speaker:</strong></p>
-
-<p><a href="https://www.linkedin.com/in/min-xu-45b7315">Min Xu</a> possessed substantial expertise, showcasing a robust background in quality and engineering. In her recent role as the Manager of engineering teams at AWS, her influence was significant. With over 15 years of industry experience, she contributed to Amazon’s pursuit of product quality and customer satisfaction over her five-year tenure there. Min Xu held multiple positions in quality and engineering management throughout her career.</p>
-
-<h2>
-  
-  
-  Expect to Inspect — Performing Code Inspections on Your Automation by Paul Grizzaffi
-</h2>
-
-<p>Automation development is indeed a form of software development. Regardless of using drag-and-drop or record-and-playback tools, there’s code running behind the scenes.</p>
-
-<p>Treating automation as software development is essential to avoid pitfalls. Just as in software development, code inspection plays a crucial role. In this session, Paul Grizzaffi explained the importance of code inspections for automation, highlighting differences from product software reviews and sharing real-life issues discovered during these assessments.</p>
-
-<p><strong>Key Takeaways:</strong></p>
-
-<ul>
-<li><p>Value of Inspections</p></li>
-<li><p>Business-Driven Inspection Approach</p></li>
-<li><p>Utilization of Tools</p></li>
-<li><p>Illustrative Examples</p></li>
-</ul>
-
-<p><strong>About the Speaker:</strong></p>
-
-<p><a href="https://www.linkedin.com/in/paulgrizzaffi">Paul Grizzaffi</a>, a Senior Automation Architect at Vaco, is passionate about his expertise in technology solutions for testing, QE, and QA realms. His role spans automation assessments, implementations, and contributions to the broader testing community.</p>
-
-<p>An accomplished speaker and writer, Paul has presented at local and national conferences and is associated with Software Test Professionals and STPCon. He holds advisory roles and memberships in industry boards such as the Advanced Research Center for Software Testing and Quality Assurance (STQA) at UT Dallas.</p>
-
-<h2>
-  
-  
-  Test Observability — A Paradigm Shift from Automation to Autonomous to Deep Observability by Vijay Kumar Sharma
-</h2>
-
-<p>The software industry has witnessed several transformations over time, often encountering disruptions every five years. Software testing, too, remained connected to the latest trends and technologies. Testing strategies aligned with agile development, rapid deployments, and heightened customer expectations for reliability and user-friendly interfaces. Like business logic, they grew swiftly and dependably.</p>
-
-<p>Quality engineering (QE) processes evolved from test automation to autonomous testing, and the recent session delved into a new growth requirement: test observability. Test observability involved extracting continuous insights from automation infrastructure to guide decisions about product stability, reliability, and speed gaps in constant deployment. It also streamlined resource allocation for tests, providing a holistic system view through automated testing.</p>
-
-<p><strong>Key Takeaways:</strong> In the recently concluded session, the focus remained on value-driven testing achieved through optimal technology utilization for informed decision-making and intelligent execution.</p>
-
-<p><strong>About the Speaker:</strong></p>
-
-<p><a href="https://in.linkedin.com/in/ripple4it">Vijay</a> boasts over 18 years of experience in Quality Engineering, primarily affiliated with Adobe and Sumologic. He has showcased his expertise by speaking at numerous testing conferences across India. He intend to propose a session titled ‘Test Observability and Its Significance in the Current Landscape of Rapidly Evolving Tech Enterprises.’</p>
-
-<h2>
-  
-  
-  Advanced Strategies for Rest API Testing by Julio de Lima
-</h2>
-
-<p>Were you tired of the oversimplified view of Rest API testing? Let’s dive deeper and explore advanced strategies. He covered areas like contract testing, architecture style adherence, security, and more. Expect tools and tips to elevate your Rest API testing game, gaining insights into complex components. Gain skills to define tailored testing techniques, enhancing efficiency in planning and strategies.</p>
-
-<p><strong>Key Takeaways</strong></p>
-
-<ul>
-<li><p>Julio comprehensively covered crucial facets of Rest API testing, encompassing contract testing, backwards compatibility testing, adherence to Rest architecture style validation, token structure evaluation, Rest API heuristic testing, external service simulation, security testing, and performance testing.</p></li>
-<li><p>He elaborated on the significance of each topic, detailing the steps for each type of testing, highlighting applicable tools, and offering illustrative examples for better comprehension.</p></li>
-</ul>
-
-<p><strong>About the Speaker:</strong></p>
-
-<p><a href="https://www.linkedin.com/in/juliodelimas/en">Júlio de Lima</a> is a specialist in Software Testing with 13 years of experience. Júlio has a Bachelor’s Degree in Software Engineering, a specialization in Teaching in Higher Education, and a Master’s Degree in Electrical and Computational Engineering with a focus on Testing and Artificial Intelligence.</p>
-
-<h2>
-  
-  
-  A Live Intro to Python Testing by Andrew Knight
-</h2>
-
-<p>Python proved itself as an exceptional language for test automation, celebrated for its concise syntax and extensive package library. In the recently concluded session, he guided participants through the realm of Python-driven testing via live coding — an interactive experience without slides! The spotlight was on project setup with pytest and Playwright, crafting unit, API, and UI tests collaboratively. As the session concluded, attendees were well-prepared to embark on their own test automation journey with Python, armed with additional resources for further learning.</p>
-
-<p><strong>About the Speaker:</strong></p>
-
-<p><a href="https://www.linkedin.com/in/andrew-leland-knight">Andrew Knight</a>, also known as “Pandy,” is the Automation Panda. He’s a software quality champion who loves to help people build better-quality software. An avid supporter of open-source software, Pandy is a Playwright Ambassador and the lead developer for Boa Constrictor, the .NET Screenplay Pattern.</p>
-
-<h2>
-  
-  
-  Open Source for Fun and Profit: Opportunities for Personal and Professional Growth
-</h2>
-
-<p>Irrespective of your skill level, open-source projects presented distinctive avenues for knowledge-sharing and mutual learning. From crafting documentation to bug fixes and feature additions, dedicating time to open-source initiatives, you yielded short-term and lasting rewards. Did you desire to explore a new language or technology but need help determining where to begin? Or you aimed to refine your abilities and gain valuable insights from project maintainers.</p>
-
-<p>The prospect of putting yourself out there could be daunting, but the rewards of expanding your network and expertise were invaluable. In the recently concluded session, the example of a Bitcoin open-source ecosystem illustrated that opportunities abound for everyone.</p>
-
-<p><strong>Key Takeaways</strong></p>
-
-<ul>
-<li><p>**Emphasis on Collaboration and Innovation: **The session highlighted the significance of open source in fostering collaboration and driving innovation.</p></li>
-<li><p><strong>Identifying Contribution Opportunities:</strong> Attendees learned how to identify active and well-maintained open-source projects to contribute to, enhancing their engagement in the community.</p></li>
-<li><p>**Understanding Open Source Stacks: **The session provided insights into the composition and characteristics of open source stacks.</p></li>
-</ul>
-
-<p><strong>About the speaker</strong><br>
-<a href="https://www.linkedin.com/in/knorrium">Felipe</a> has been in the tech industry for almost twenty years and has been a Senior Software Engineer in Test at Netflix for the past six, where he helps build the UI delivered to millions of Smart TVs and other streaming devices around the world.</p>
-
-<h2>
-  
-  
-  Chrome ❤️ Testing
-</h2>
-
-<p>The presented talk provided an overview of the recent initiatives undertaken by the Chrome team to enhance support for testing and automation scenarios. The focus delved into “Chrome for Testing” and the newly introduced Headless mode of Chrome. This information was shared in a past session.</p>
-
-<p><strong>About the speaker</strong></p>
-
-<p><a href="https://de.linkedin.com/in/mathiasbynens">Mathias</a> is a web standards enthusiast from Belgium who currently works on Chrome DevTools. He likes HTML, CSS, JavaScript, Unicode, performance, and security.</p>
-
-<h2>
-  
-  
-  Quality in Digital Transformation
-</h2>
-
-<p>In the concluded panel discussion, titled ‘Quality in Digital Transformation,’ the panelist delved into the interconnectedness of quality and digital transformation. Esteemed leaders across various industries shared their perspectives on upholding standards, ensuring smooth user experiences, and mitigating risks in a dynamically shifting technological landscape. They provided insights into establishing and maintaining quality processes conducive to agile transformation and securing digital assets.</p>
-
-<p>Furthermore, the discussion explored harnessing data-driven decision-making to oversee quality and performance, and the strategies to ensure quality assurance and compliance in the digital realm. The panel shed light on how quality assurance is pivotal in driving successful digital transformation for businesses.</p>
-
-<p><strong>About Panelists:</strong></p>
-
-<ul>
-<li><p>With over 15 years of experience in the technology industry, <a href="https://www.linkedin.com/in/anish-ohri-32924024">Anish Ohri</a> has played a vital role in advancing various innovative products and solutions across diverse domains, including Publishing, Finance, Multimedia, e-commerce, Gaming, and Enterprise Software.</p></li>
-<li><p><a href="https://in.linkedin.com/in/manishmitra">Manish</a> is a Quality Engineering enthusiast known for his expertise in developing and deploying quality software. He has actively contributed to open-source projects like Puppeteer and Playwright and advocates for balanced testing strategies. His discussions revolve around testing event-driven systems, GRPC constructs, and Contract Testing.</p></li>
-<li><p><a href="https://www.linkedin.com/in/tlemmonds">Todd Lemmonds</a> has over 20 years of experience. He is a visionary in software quality assurance. He champions early and frequent testing, driving his shift-left testing strategies. Todd emphasizes tester involvement during story refinement, integration of appropriate tests into automated pipelines, and the right test types at suitable development stages. His mission is to create an environment where testers thrive and enhance skills for modern software development.</p></li>
-<li><p><a href="https://www.linkedin.com/in/robertanthonygonzalez">Robert Gonzalez</a> is Vice President of Engineering at SugarCRM, a prominent CRM software company. His role involves steering engineering initiatives and fostering innovation within the CRM realm. Robert leads a skilled team and contributes significantly to developing and enhancing SugarCRM’s top-tier products, ensuring superior quality, functionality, and customer contentment.</p></li>
-<li><p>As Director of Quality at Hudl, <a href="https://uk.linkedin.com/in/seemaprabhu">Seema Prabhu</a> drives a quality-centric culture and sets up high-performance teams. With a passion for quality and years of experience, she excels in leadership, process establishment, coaching, and mentoring. Seema advocates for efficient testing and shares her expertise through speaking engagements at meetups and conferences.</p></li>
-</ul>
-
-<h2>
-  
-  
-  Component Testing with WebdriverIO
-</h2>
-
-<p>An informative session emphasized the growing significance of web component testing in the rapidly evolving landscape of front-end frameworks. The session shed light on how testing individual UI components has become a pivotal aspect of testing stacks, offering the advantage of thoroughly examining various features within an element. Doing so effectively reduces the reliance on end-to-end tests, which are generally slower to run.</p>
-
-<p>The session, hosted by Christian Bromann, the Founding Engineer at Stateful, delved into these novel browser runner capabilities. Through engaging live demonstrations, attendees were treated to firsthand experiences of testing components in various popular frameworks, including Vue, Svelte, React, and Preact. The session showcased the remarkable ease and efficiency with which component testing can now be approached.</p>
-
-<p><strong>About the speaker</strong></p>
-
-<p><a href="https://www.linkedin.com/in/christian-bromann/en">Christian Bromann</a> is a Full-stack Engineer passionate about Open Source and Open Standards. Driven individual with the ability to adapt to any situation and proven potential to grow self and others. He is a quality-focused engineer with a background in automation technologies and test-driven development.</p>
-
-<h2>
-  
-  
-  Test Automation with SWAG
-</h2>
-
-<p>This enlightening session addressed the crucial matter of how to effectively supply automation frameworks with an unending stream of test data. The session explored a range of solutions, including both traditional and emerging tools, that cater to the test data-driven approach. Among these, a prevalent method involves storing all input values within storage files like CSV, YAML, JSON, and more. Another viable option includes harnessing the capabilities of databases, and offering resolutions to various challenges while meeting the dynamic variable requirements for automated scripting.</p>
-
-<p>A noteworthy highlight of the session was the introduction of an innovative API cloud solution. This solution simplifies the process of interfacing with multiple databases, eliminating the need for integrating drivers into various automation frameworks. Attendees were presented with a seamless way to establish communication with different databases, streamlining the process without the hassle of managing multiple drivers. The session successfully conveyed how this solution enhances the efficiency and flexibility of automation frameworks.</p>
-
-<p><strong>Key Takeaways</strong></p>
-
-<ul>
-<li>The session included insights into data-driven automation testing, the utilization of dynamic test data, the diversification of databases, and the importance of documenting test data.</li>
-</ul>
-
-<p><strong>About the speaker</strong></p>
-
-<p><a href="https://www.linkedin.com/in/garvit-chandna">Garvit Chandna</a> is Head of Test Engineering at Equinox with 14 years of experience in handling globally distributed automation and manual test engineering teams. Wide experience in management and architecting complex automation frameworks.</p>
-
-<h2>
-  
-  
-  Wrapping up Day 2!
-</h2>
-
-<p>A warm and sincere thank you to our esteemed speakers who have significantly contributed to shaping the success of Day 2 at TestMu 2023. The event was executed meticulously, showcasing insights from experienced speakers spanning the global testing community.</p>
-
-<p>As we bring Day 2 to a close, we invite all to join us for Day 3, where the momentum of productivity and innovation continues unabated. Together, let’s delve into novel testing paradigms, actively engage with our community, and collectively define the future of testing.</p>
-
-<p>For those who have been with us since the inception of Test Conference 2022, your unwavering support has been truly invaluable. Let’s continue the journey towards a world with minimal bugs, embracing the testing revolution by securing your spot at the LambdaTest TestMu Conference 2023.</p>
-
-<p>Become a trailblazer in shaping the testing landscape. Your participation remains pivotal as we stride into Day 3, navigating the currents of technology and propelling meaningful change. We extend our heartfelt gratitude for your involvement in this remarkable event. Anticipating another extraordinary day ahead!</p>
-
-<p>Stay inquisitive, stay engaged, and wholeheartedly embrace the future of testing!</p>
-
- </details> 
- <hr /> 
-
- #### - [Музыкальный discord бот Kai'Sa](https://dev.to/edexade/muzykalnyi-discord-bot-kaisa-1p24) 
- <details><summary>Article</summary> <h2>
-  
-  
-  🎵 Добро пожаловать в мир музыки с "Кайсой из К/DA"! 🎵
-</h2>
-
-<p>🎧 Познакомьтесь с вашим новым музыкальным спутником, который перенесет вас в мир магии и музыки, как это делают Кайсы из K/DA! Наш бот - это не просто музыкальный бот, это настоящий артист, создающий уникальную атмосферу на вашем сервере Discord.</p>
-
-<p>✨ Почему выбрать именно нас:</p>
-
-<ul>
-<li><strong>Поддержка всех ВК песен, альбомов и плейлистов</strong></li>
-<li>🎶 Бескрайний музыкальный опыт: Наш бот предоставляет доступ к миллионам треков самых разных жанров. От хип-хопа до классики, от K-Pop до рок-н-ролла - у нас есть всё!</li>
-<li>🤖 Интуитивный интерфейс управления: Наш бот прост в использовании, даже если вы новичок в Discord. Управление музыкой - это легко!</li>
-<li>🌟 Поддержка текстовых и голосовых команд: Вы можете управлять музыкой, даже не выходя из голосового чата!</li>
-</ul>
-
-<p>🎉 Присоединяйтесь к нам и окунитесь в мир музыки и развлечений, напоминающий невероятные выступления Кайсы из K/DA на большой сцене! Наслаждайтесь звуками и создавайте незабываемые моменты на своем сервере Discord с музыкальным ботом "Кайса из К/DA"! 🎶💃🎤</p>
-
-<h2>
-  
-  
-  Не терпится начать?)
-</h2>
-
-<h3>
-  
-  
-  Дискорд:
-</h3>
-
-<h3>
-  
-  
-  <a href="https://discord.com/oauth2/authorize?client_id=1147834135918956577&amp;permissions=0&amp;scope=bot%20applications.commands"><u>Нажмите, чтобы добавить бота к себе на сервер</u></a>
-</h3>
-
-<h3>
-  
-  
-  GitHub:
-</h3>
-
-<h3>
-  
-  
-  <a href="https://github.com/issamansur/KaiSa"><u>Нажмите, чтобы посмотреть начинку и сказать, что это <del>говнокод</del></u></a>
-</h3>
-
-<h2>
-  
-  
-  Команды
-</h2>
-
-<ul>
-<li>✅ - готово</li>
-<li>⌛ - в процессе</li>
-<li>❌ - в планах</li>
-</ul>
-
-<div class="table-wrapper-paragraph"><table>
-  <tr>
-    <td><b>Команды управления ботом</b></td>
-    <td><b>Команды управления аккаунтом пользователя</b></td>
-  </tr>
-  <tr>
-    <td>✅ /ping</td>
-    <td>✅ /register</td>
-  </tr>
-  <tr>
-    <td>⌛ /help</td>
-    <td>✅ /unregister</td>
-  </tr>
-  <tr>
-    <td>✅ /report</td>
-    <td>✅ /auth [id гильдии] [логин/телефон] [пароль]</td>
-  </tr>
-</table></div>
-
-<div class="table-wrapper-paragraph"><table>
-  <tr>
-    <td><b>Команды поиска и воспроизведения музыки</b></td>
-    <td><b>Команды управления воспроизведением музыки</b></td>
-  </tr>
-  <tr>
-    <td>✅ /search [название/автор песни]</td>
-    <td>✅ /list</td>
-  </tr>
-  <tr>
-    <td>✅ /search-album [название плейлиста (исполнителя)]</td>
-    <td>✅ /repeat [OFF | ONE | ALL]</td>
-  </tr>
-  <tr>
-    <td>✅ /search-playlist [название плейлиста (пользователя)]</td>
-    <td>✅ /skip</td>
-  </tr>
-  <tr>
-    <td>⌛ Soon...</td>
-    <td>✅ /quit</td>
-  </tr>
-</table></div>
-
-<h2>
-  
-  
-  Что мы кокодили, кокожим и будем кокодить:
-</h2>
-
-<h3>
-  
-  
-  Общее:
-</h3>
-
-<ul>
-<li>✅ Воспроизведение и интерактивность с голосовыми каналами</li>
-<li>✅ Интеграция <code>vkpymusic</code> для доступа к аудио и плейлистам</li>
-<li>✅ Работа с аудио</li>
-<li>✅ СКАЧИВАНИЕ!!!</li>
-<li>✅ Работа с плейлистами</li>
-</ul>
-
-<h3>
-  
-  
-  Очередь треков:
-</h3>
-
-<ul>
-<li>✅ Своя очередь для каждой группы</li>
-<li>✅ Очередь треков (синхронная)</li>
-<li>❌ Очередь асинхронная (с использованием <code>asyncio.Queue</code> или иначе)</li>
-</ul>
-
-<h3>
-  
-  
-  Токены VK API:
-</h3>
-
-<ul>
-<li>✅ Сохранение <code>API</code> токенов для каждой гильдии/сервера</li>
-<li>✅ Автоматическое переподключение сервиса вместо <code>/register</code>
-</li>
-<li>❌ Проверка валидности <code>API</code> токена</li>
-</ul>
-
-<h3>
-  
-  
-  Прочее:
-</h3>
-
-<ul>
-<li>⌛ Редизайн и правки</li>
-<li>⌛ Документация и комментарии к коду</li>
-<li>⌛ Тестирование и отладка</li>
-</ul>
-
-<h3>
-  
-  
-  Возможное и невозможное:
-</h3>
-
-<ul>
-<li>❌ Дополнительные функции для управления плейлистами</li>
-<li>❌ Интеграция с другими музыкальными сервисами</li>
-<li>❌ Работоспособность на 100%</li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [Create an entry approval workflow with Statamic Revisions](https://dev.to/visuellverstehen/create-an-entry-approval-workflow-with-statamic-revisions-4gnc) 
- <details><summary>Article</summary> <p>When managing entries in your Statamic application that gather external data, such as from APIs, you may find it necessary to implement a data control step before publication. Statamic offers a useful tool for this purpose known as the revisions feature, specifically focusing on <strong>working copies</strong>.</p>
-
-<p>In the following sections, I'll guide you through the process of creating an Approval Mechanism for Statamic.</p>
-
-<p>This article is structured as follows:</p>
-
-<ul>
-<li>Who is this article for?</li>
-<li>What we are about to do</li>
-<li>Let's bring in the data!</li>
-<li>Let authors know that there's something to review</li>
-<li>Create a feedback form</li>
-<li>Tracking feedback and dates</li>
-<li>Handling publication</li>
-<li>Conclusion</li>
-</ul>
-
-<h2>
-  
-  
-  Who is this article for?
-</h2>
-
-<p>This article is primarily aimed at Statamic developers who are already acquainted with Statamic's core concepts and have a basic understanding of PHP and Laravel. To fully comprehend and implement the Approval Mechanism discussed here, readers should be familiar with key Statamic elements like entries and blueprints.</p>
-
-<p>Additionally, a basic grasp of Vue.js for handling user interface components and API integration knowledge will prove beneficial in following concepts presented in this article.</p>
-
-<p>I would recommended that you also have a basic understanding of <a href="https://statamic.dev/extending">extending Statamic</a>, but if you're new to this, it's a good idea to explore those concepts beforehand for a smoother learning experience.</p>
-
-<p>You need <strong>Statamic Pro</strong> to enable the revisions feature.</p>
-
-<h2>
-  
-  
-  What we are about to do
-</h2>
-
-<p>In this article, our primary objective is to create an Approval Mechanism within Statamic, emphasizing the process of managing entries and enabling a structured review and feedback workflow. While we briefly touch on data import as context, our main focus lies in developing this mechanism. We'll explore how to efficiently flag entries as 'Needs Review,' facilitate feedback from CMS authors through a built-in feedback form, and dynamically update entry statuses for better organization.</p>
-
-<p>Additionally, we'll demonstrate how to log feedback and maintain feedback history as part of this comprehensive solution. For illustration, we'll use a 'persons' collection where each person is associated with a unique 'external_service_id,' linking them to external data sources.</p>
-
-<h2>
-  
-  
-  What's a working copy?
-</h2>
-
-<p>Working copies serve as a <strong>temporary version</strong> of an entry, generated when you edit and save an existing entry. You then have the option to create a revision or proceed with publication. Should you opt for a revision or publication, the working copy will be discarded. Conversely, choosing to save your changes ensures that the working copy is promptly updated.</p>
-
-<p>By default working copies are saved inside the revisions folder. The path can be set in the <code>config/statamic/revisions.php</code> file. By default it's set to <code>storage_path('statamic/revisions')</code>.</p>
-
-<h2>
-  
-  
-  Let's bring in the data!
-</h2>
-
-<p>We assume we already have some existing persons in our collection. Inside our import method we want to update or create a working copy of each entry.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">foreach</span> <span class="p">(</span><span class="nv">$personEntries</span> <span class="k">as</span> <span class="nv">$personEntry</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$personEntry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">())</span> <span class="p">{</span>
-        <span class="c1">// Update working copy</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// Create working copy</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now let's implement these methods. We are assuming that the <strong>new data</strong> comes in an array that represents the data structure of our person blueprint. For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="nv">$newData</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Smeagol'</span><span class="p">,</span>
-    <span class="s1">'diet'</span> <span class="o">=&gt;</span> <span class="s1">'juicy sweet fish'</span><span class="p">,</span>
-    <span class="s1">'job_title'</span> <span class="o">=&gt;</span> <span class="s1">'Tourist Guide'</span><span class="p">,</span>
-<span class="p">];</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Creating</strong> the working copy<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">function</span> <span class="n">createWorkingCopy</span><span class="p">(</span><span class="kt">Entry</span> <span class="nv">$entry</span><span class="p">,</span> <span class="kt">array</span> <span class="nv">$data</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Set the new data</span>
-    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Create a working copy from the entry</span>
-    <span class="nv">$workingCopy</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">makeWorkingCopy</span><span class="p">();</span>
-
-    <span class="c1">// Save the working copy</span>
-    <span class="nv">$workingCopy</span><span class="o">-&gt;</span><span class="nf">save</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Updating</strong> the working copy is a little more complicated since the data can't be set directly on the working copy. We have to get the data from the working copy, update it and then save it again.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">function</span> <span class="n">updateWorkingCopy</span><span class="p">(</span><span class="kt">Entry</span> <span class="nv">$entry</span><span class="p">,</span> <span class="kt">array</span> <span class="nv">$newData</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Get current data from the data attribute and merge it with the new data.</span>
-    <span class="nv">$currentData</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">);</span>
-    <span class="nv">$updatedData</span> <span class="o">=</span> <span class="p">[</span><span class="mf">...</span><span class="nv">$currentData</span><span class="p">,</span> <span class="mf">...</span><span class="nv">$newPureData</span><span class="p">];</span>
-
-    <span class="nv">$entry</span>
-        <span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="nv">$updatedData</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="nf">save</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>So, at the moment, we always create or update a working copy and overwrite a possible existing one. In this case, that's okay, but you may want to check if there is already a working copy, and if so, create a new revision instead of overwriting the working copy. But that results in potentially a lot of revisions. So you have to decide what's best for you. I will only cover the working copy case here.</p>
-
-<p>Additionally, you should have a field in your entries blueprint where you save the last imported date to check if the incoming data is newer than the last import. If not, you can skip the entry. That, of course, presupposes that your external data also provides some kind of 'updated_at' field.</p>
-
-<h2>
-  
-  
-  Let authors know that there's something to review
-</h2>
-
-<p>What we did before is basically everything you need to have a simple approval mechanism where new data gets saved inside a working copy to be reviewed. But we want to give the CMS authors a hint that there is something to review. We will do this by adding a status field.</p>
-
-<p>What we need is a custom field type that we can use in our blueprint. I won't go into detail here about how to create a custom field type. You can read about it in the <a href="https://statamic.dev/extending/fieldtypes">Statamic documentation</a>.</p>
-
-<p>We will create a custom field type called 'approval_status' that will have three possible values: 'needs_review,' 'approved,' and 'feedback_sent.'</p>
-
-<p>We will add some methods to our ApprovalStatus.php fieldtype class to check the status.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">function</span> <span class="n">preProcessIndex</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getStatus</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="k">public</span> <span class="k">function</span> <span class="n">preload</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getStatus</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="k">protected</span> <span class="k">function</span> <span class="n">getStatus</span><span class="p">():</span> <span class="kt">array</span>
-<span class="p">{</span>
-    <span class="nv">$entry</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">field</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">parent</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="nc">ApprovalStatus</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="nv">$entry</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>As you can see, it can be better to outsource the logic to a separate class. We will create an ApprovalStatus class that will have a static method to get the status. This method will use a variable <code>$feedbackDate</code>. This variable will be set when the CMS author gives feedback and deleted when the working copy is published. We will cover this later.</p>
-
-<p>Here's a little diagram that visually explains the logic behind the status check:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2QW8X5-1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8nxdpy58dxq30m44tqp1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2QW8X5-1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8nxdpy58dxq30m44tqp1.png" alt="The logic behind the approval status" width="800" height="453"></a></p>
-
-<p>… and the corresponding code:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">get</span><span class="p">(</span><span class="kt">Entry</span> <span class="nv">$entry</span><span class="p">):</span> <span class="kt">array</span>
-<span class="p">{</span>
-    <span class="nv">$workingCopyData</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span><span class="o">?-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">);</span>
-    <span class="nv">$feedbackDate</span> <span class="o">=</span> <span class="nv">$workingCopyData</span><span class="p">[</span><span class="s1">'feedback_date'</span><span class="p">];</span>
-
-    <span class="c1">// The person has no working copy and is published, so there's noting to be reviewed.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">published</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'approved'</span><span class="p">];</span>
-    <span class="p">}</span>
-
-    <span class="c1">// The person has a working copy and has no feedback date, so a review was sent.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nv">$feedbackDate</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'feedback_sent'</span><span class="p">];</span>
-    <span class="p">}</span>
-
-    <span class="c1">// The person has a working copy and has no feedback date, so it needs a review.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="nv">$feedbackDate</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'needs_review'</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The Vue components to our ApprovalStatus field type class are pretty simple. They get the status with the help of the <code>preload()</code> and the <code>preProcessIndex()</code> methods.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// ApprovalStatus.vue</span>
-
-<span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{{</span> <span class="k">this</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">status</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// ApprovalStatusIndex.vue</span>
-
-<span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{{</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">status</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-<p>You can also add your classes and pass a color to your status array to style the status in the control panel. You can find more information about index field types here: <a href="https://statamic.dev/extending/fieldtypes#index-fieldtypes">Statamic Index Fieldtypes</a></p>
-
-<h2>
-  
-  
-  Giving Feedback
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OtCQX82d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p5srd95lx1jyrqrp9731.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OtCQX82d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p5srd95lx1jyrqrp9731.png" alt="Feedback Workflow Step 1" width="673" height="430"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kTarJiru--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1svk7xgo2zc7hokwxkzd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kTarJiru--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1svk7xgo2zc7hokwxkzd.png" alt="Feedback Workflow Step 2 and 3" width="673" height="186"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6zONksek--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pkoe76v667jodlxrodzo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6zONksek--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pkoe76v667jodlxrodzo.png" alt="Feedback Wokflow Step 4" width="673" height="413"></a></p>
-
-<h3>
-  
-  
-  Create a feedback form
-</h3>
-
-<p>The form is also a custom fieldtype. It will have a textarea and a button to submit the feedback. We assume that the person entry has an email stored. We can write our feedback into the text field and with the click on the button, we will make a post request to a custom route that takes care of error handling and sending the mail. After sending the mail, we want to disable the form and the button to prevent multiple feedbacks.</p>
-
-<p>This is how the Vue component can look like:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">textarea</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/textarea</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Send</span> <span class="nx">a</span> <span class="nx">mail</span> <span class="nx">to</span> <span class="p">{{</span> <span class="k">this</span><span class="p">.</span><span class="nx">mail</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="nx">button</span> <span class="p">:</span><span class="nx">disabled</span><span class="o">=</span><span class="dl">"</span><span class="s2">mailSent</span><span class="dl">"</span> <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">sendEmail</span><span class="dl">"</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="dl">"</span><span class="s2">this.mailSent</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">E</span><span class="o">-</span><span class="nx">Mail</span> <span class="nx">is</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">way</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>                <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">v</span><span class="o">-</span><span class="k">else</span><span class="o">&gt;</span><span class="nx">Send</span> <span class="nx">E</span><span class="o">-</span><span class="nx">Mail</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-    <span class="na">mixins</span><span class="p">:</span> <span class="p">[</span><span class="nx">Fieldtype</span><span class="p">],</span>
-    <span class="na">inject</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">storeName</span><span class="dl">'</span><span class="p">],</span>
-
-    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="na">message</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-            <span class="na">mailSent</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="p">};</span>
-    <span class="p">},</span>
-
-    <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">mail</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">publish</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">storeName</span><span class="p">].</span><span class="nx">values</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
-        <span class="p">},</span>
-        <span class="na">pid</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">publish</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">storeName</span><span class="p">].</span><span class="nx">values</span><span class="p">.</span><span class="nx">pid</span><span class="p">;</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-
-    <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nx">sendEmail</span><span class="p">()</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">$progress</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="dl">'</span><span class="s1">review_mail</span><span class="dl">'</span><span class="p">);</span>
-
-            <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/admin/person/review/send</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-                <span class="na">message</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span>
-                <span class="na">email</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">mail</span><span class="p">,</span>
-            <span class="p">})</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">$progress</span><span class="p">.</span><span class="nx">complete</span><span class="p">(</span><span class="dl">'</span><span class="s1">review_mail</span><span class="dl">'</span><span class="p">);</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">$toast</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">`E-Mail sent to </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mail</span><span class="p">}</span><span class="s2">!`</span><span class="p">);</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">mailSent</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-                <span class="p">})</span>
-                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">$progress</span><span class="p">.</span><span class="nx">complete</span><span class="p">(</span><span class="dl">'</span><span class="s1">review_mail</span><span class="dl">'</span><span class="p">);</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">$toast</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">mailSent</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-                <span class="p">});</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Tracking feedback and dates
-</h3>
-
-<p>To allow a better overview of previous sent feedback, you can log your feedback in a replicator field below the feedback form. Simply add some code to the method that handles your post request from the form component above. Let's assume this method is inside the same class as the create and update working copy methods.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">function</span> <span class="n">saveFeedback</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$entryId</span><span class="p">,</span> <span class="kt">string</span> <span class="nv">$feedbackMessage</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nv">$entry</span> <span class="o">=</span> <span class="nc">Entry</span><span class="o">::</span><span class="nf">find</span><span class="p">(</span><span class="nv">$entryId</span><span class="p">);</span>
-
-    <span class="nv">$currentFeedbackLog</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">)[</span><span class="s1">'feedback_logs'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
-    <span class="nv">$newLog</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'log'</span><span class="p">,</span>
-        <span class="s1">'enabled'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="nc">RowId</span><span class="o">::</span><span class="nf">generate</span><span class="p">(),</span>
-        <span class="s1">'mail'</span> <span class="o">=&gt;</span> <span class="nv">$feedbackLog</span><span class="p">,</span>
-        <span class="s1">'time'</span> <span class="o">=&gt;</span> <span class="nf">now</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">format</span><span class="p">(</span><span class="s1">'d.m.Y H:i:s'</span><span class="p">),</span>
-    <span class="p">];</span>
-
-    <span class="nv">$updatedLog</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">([</span><span class="nv">$newLog</span><span class="p">],</span> <span class="nv">$currentFeedbackLog</span><span class="p">);</span>
-
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">updateWorkingCopy</span><span class="p">(</span><span class="nv">$entry</span><span class="p">,</span> <span class="p">[</span>
-        <span class="s1">'feedback_logs'</span> <span class="o">=&gt;</span> <span class="nv">$updatedLog</span><span class="p">,</span>
-        <span class="s1">'feedback_date'</span> <span class="o">=&gt;</span> <span class="nf">now</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">format</span><span class="p">(</span><span class="s1">'Y-m-d\TH:i:s.uP'</span><span class="p">),</span>
-
-    <span class="p">]);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Handling publication
-</h2>
-
-<p>To finish up the approval mechanism, we just have to delete the feedback date automatically when the entry gets published. We can achieve this by <a href="https://statamic.dev/extending/events#overview">listening to the <code>EntrySaved</code></a> vent. We will create a listener class that will check if the entry is from the persons collection and has set a feedback date and if so, delete the feedback date.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">function</span> <span class="n">handle</span><span class="p">(</span><span class="kt">object</span> <span class="nv">$event</span><span class="p">):</span> <span class="kt">void</span>
-<span class="p">{</span>
-    <span class="nv">$entry</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="n">entry</span><span class="p">;</span>
-    <span class="nv">$collectionHandle</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="n">collection</span><span class="o">-&gt;</span><span class="n">handle</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$collectionHandle</span> <span class="o">===</span> <span class="s1">'persons'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="n">feedback_date</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="s1">'feedback_date'</span><span class="p">,</span> <span class="kc">null</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">saveQuietly</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This is how the Feedback UI could look like:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--u4kMfxW8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4hrd3cvcm79d4nhluex7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--u4kMfxW8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4hrd3cvcm79d4nhluex7.png" alt="The entry feedback form, status and log" width="800" height="676"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2LKbwd9b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wftrfct9owxt7l4e9rrn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2LKbwd9b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wftrfct9owxt7l4e9rrn.png" alt="The index view with status" width="800" height="237"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Great! 🎉 We now have a simple approval mechanism for our Statamic application. Of course, you can extend this mechanism to your needs. For example, you can add a field to your entries blueprint where you can set the email address of the person that should review the entry or for the person that should review it. It's also very handy to add a filter to your index view to filter for entries that need a review.</p>
-
-<p>When handling multisites, you should think about if you want to have a separate approval mechanism for each site or if you want to have a global one. In my case, I disabled the review form for any other language than the default one, and the authors are always sending reviews for all localizations in one mail. When creating and updating the working copy, you have to update each localization separately. Take a look at the <code>$entry-&gt;descendants()</code> method to get all localizations of an entry.</p>
-
-<p>I hope this article was helpful for you. If you have any questions or suggestions, please let me know in the comments. 👋</p>
-
- </details> 
- <hr /> 
-
- #### - [Solving "Diameter of Binary Tree" Leet code Question](https://dev.to/leetcode/solving-diameter-of-binary-tree-leet-code-question-264l) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Intuition
-</h2>
-
-<p>We want to find the diameter of a <code>binary tree</code>, which is the length of the longest <code>path</code> between any two nodes. This path may or may not pass through the <code>root</code>.</p>
-
-<h2>
-  
-  
-  Approach
-</h2>
-
-<p>We perform a depth-first traversal of the tree and calculate the height of each subtree. While calculating the height of each node, we also update the diameter if a longer path is found. The final result will be stored in the <code>diameter</code> variable.</p>
-
-<p><strong>Time complexity</strong><br>
-O(n) - We visit each node once.</p>
-
-<p><strong>Space complexity</strong><br>
-O(h) - Recursive call stack space, where h is the height of the tree.</p>
-
-<h2>
-  
-  
-  Code
-</h2>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-
-    int diameter = 0;
-
-    public int diameterOfBinaryTree(TreeNode root) {
-        height(root);
-        return diameter;
-    }
-
-    public int height(TreeNode node){
-
-        if(node == null) {
-            return 0;
-        }
-
-        int lh = height(node.left);
-        int rh = height(node.right);
-        diameter = Math.max(diameter,lh+rh);
-
-        return 1 + Math.max(lh,rh);
-    }
-}
-</code></pre>
-
-</div>
-
-
-
-<p>Happy coding,<br>
-shiva</p>
 
  </details> 
  <hr /> 
