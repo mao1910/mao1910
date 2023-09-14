@@ -118,6 +118,616 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Unlocking the Power of Open Source Contribution for Beginner Developers](https://dev.to/ronakmunjapara/unlocking-the-power-of-open-source-contribution-for-beginner-developers-3je4) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2UQoAsoX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lzticgqfqn8kq1cr5kl6.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2UQoAsoX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lzticgqfqn8kq1cr5kl6.jpeg" alt="Image description" width="800" height="800"></a></p>
+
+<p>Are you a budding developer eager to make your mark in the world of coding? Do you aspire to contribute to the open-source community and enhance your programming skills while making a difference? Well, you're in the right place! Open source contribution is your gateway to a world of learning, collaboration, and innovation. In this article, we'll explore the exciting realm of open-source projects and how you can get started on this rewarding journey.</p>
+
+<h2>
+  
+  
+  What Is Open Source?
+</h2>
+
+<p>Before we dive into the intricacies of open source contribution, let's grasp the fundamentals. Open source refers to software or projects whose source code is made available to the public. This means that anyone can view, use, modify, and distribute the code. The beauty of open source lies in its collaborative nature, where developers from around the globe come together to improve and expand upon existing software.</p>
+
+<h2>
+  
+  
+  The Benefits of Open Source Contribution
+</h2>
+
+<h3>
+  
+  
+  1. Skill Enhancement
+</h3>
+
+<p>Open source projects provide a fertile ground for honing your coding skills. You'll have the opportunity to work on real-world projects, write code, and receive feedback from experienced developers. This hands-on experience is invaluable for beginners looking to gain practical knowledge.</p>
+
+<h3>
+  
+  
+  2. Building a Portfolio
+</h3>
+
+<p>As a beginner developer, building a strong portfolio is essential to showcase your skills to potential employers. Open source contributions serve as tangible proof of your abilities. Your GitHub profile, adorned with meaningful contributions, can make a lasting impression on recruiters.</p>
+
+<h3>
+  
+  
+  3. Collaboration and Networking
+</h3>
+
+<p>Open source is all about collaboration. You'll collaborate with developers from diverse backgrounds, gaining exposure to different coding styles and methodologies. This network can open doors to new opportunities and friendships in the tech industry.</p>
+
+<h2>
+  
+  
+  How to Get Started
+</h2>
+
+<p>Now that you understand the significance of open source contribution, let's discuss how you can embark on this exciting journey.</p>
+
+<ol>
+<li><p><strong>Choose Your Niche</strong>: Start by identifying your interests and strengths. There are open source projects for various programming languages, frameworks, and domains. Pick one that aligns with your passion.</p></li>
+<li><p><strong>Explore Platforms</strong>: Platforms like GitHub, GitLab, and Bitbucket host a multitude of open source projects. Create an account and familiarize yourself with these platforms.</p></li>
+<li><p><strong>Contribute to Beginner-Friendly Projects</strong>: Many projects label themselves as "beginner-friendly" or "good first issue." These are ideal for newcomers. Look for issues marked with these tags.</p></li>
+<li><p><strong>Read Documentation</strong>: Thoroughly read the project's documentation and contribution guidelines. This ensures that you understand the project's goals and coding standards.</p></li>
+<li><p><strong>Start Small</strong>: Begin with small tasks or bug fixes to get acclimated to the project's workflow. This will help you build confidence gradually.</p></li>
+<li><p><strong>Communicate Effectively</strong>: Join the project's communication channels, such as chat groups or forums. Effective communication with the community is crucial for a successful contribution.</p></li>
+</ol>
+
+<h2>
+  
+  
+  Transitioning to an Active Contributor
+</h2>
+
+<p>As you gain experience and confidence, you can transition from a beginner to an active contributor. Here are some tips to help you along the way:</p>
+
+<ul>
+<li><p><strong>Consistency</strong>: Regularly contribute to the project to demonstrate your commitment.</p></li>
+<li><p><strong>Learn from Feedback</strong>: Embrace feedback as a means to improve your coding skills.</p></li>
+<li><p><strong>Collaborate</strong>: Collaborate with other developers on complex issues or features to broaden your knowledge.</p></li>
+<li><p><strong>Document Your Work</strong>: Maintain clear documentation of your contributions for future reference.</p></li>
+<li><p><strong>Stay Updated</strong>: Keep up with project updates and changes to ensure your contributions remain relevant.</p></li>
+</ul>
+
+<h2>
+  
+  
+  In Conclusion
+</h2>
+
+<p>Open source contribution is a fantastic way for beginner developers to enhance their skills, build a portfolio, and connect with like-minded individuals. It's a journey that offers personal and professional growth, making you a more proficient developer with each contribution. So, why wait? Dive into the world of open source, and let your coding journey begin!</p>
+
+<p>disclaimer this articles made with help of GPT3.5</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Sloan's Inbox: Do I need to write blog posts to be a successful dev?](https://dev.to/devteam/sloans-inbox-do-i-need-to-posts-blogs-to-be-a-successful-dev-27j4) 
+ <details><summary>Article</summary> <p>Hello! Sloan, DEV Moderator and resident mascot, back with another question submitted by a DEV community member. 🦥</p>
+
+<p>For those unfamiliar with the series, this is another installment of Sloan's Inbox. You all send in your questions, I ask them on your behalf anonymously, and the community chimes in to offer advice. Whether it's career development, office politics, industry trends, or improving technical skills, we cover all sorts of topics here. If you want to send in a question or talking point to be shared anonymously via Sloan, that'd be great; just scroll down to the bottom of the post for details on how.</p>
+
+<p>So, let's get down to business...</p>
+
+<h3>
+  
+  
+  Today's question is:
+</h3>
+
+<blockquote>
+<p>I'm a beginner dev and when I see others writing about development, sharing tutorials, and posting about their follower count growing, it occasionally gives me anxiety. It makes me feel like being just a developer isn't enough, and that I need to participate in communities or build my online presence in order to become successful. Is it possible to be a successful dev and get a job without writing blog posts or being regularly active online?</p>
+</blockquote>
+
+<p>Share your thoughts and lets help a fellow DEV member out! Remember to keep kind and stay classy. 💚</p>
+
+
+
+
+<p><em>Want to submit a question for discussion or ask for advice? <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6wgzJ1hh2OR4WsWlJN9WHUJ8jV4dFkRDF2TUP32urHSAsQg/viewform">Visit Sloan's Inbox</a>! You can choose to remain anonymous.</em></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Deploying Your Outdoor Activities Map with Terraform](https://dev.to/lukaskrimphove/deploying-your-outdoor-activities-map-with-terraform-682) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
+
+<p>In my last article, I showed you how you can use Python and Folium to create an interactive app to showcase all your outdoor activities:<br>
+</p>
+<div class="ltag__link">
+  <a href="/lukaskrimphove" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--hfBaJX-z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--RAVsH6u6--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1148483/69ef2fc9-8476-4fec-b567-d5ff4138fe07.png" alt="lukaskrimphove">
+    </div>
+  </a>
+  <a href="/lukaskrimphove/visualizing-outdoor-activities-with-python-folium-3h9f" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Visualizing Outdoor Activities with Python Folium</h2>
+      <h3>Lukas Krimphove ・ Sep 4</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#python</span>
+        <span class="ltag__link__tag">#showdev</span>
+        <span class="ltag__link__tag">#tutorial</span>
+        <span class="ltag__link__tag">#datascience</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<p>Now you've created a captivating map that brings your outdoor activities to life. You can use those maps to visually retrace your journeys, celebrate your progress, and relive those adventures.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GVlXge8a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8z23bkkjvsjifz5v70by.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GVlXge8a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8z23bkkjvsjifz5v70by.png" alt="" width="800" height="555"></a></p>
+
+<p>But what good is it if only you can see it?</p>
+
+<p>Are you ready to showcase your adventures to the world? In this next story, I'll walk you through the process of deploying your interactive map to AWS using Terraform. This tool is great for managing infrastructure as code, and we'll go through the necessary steps to provision and configure the resources needed for your map to be accessible to anyone with an internet connection. By utilizing S3 buckets, Lambda functions, and CloudFront, we'll create a solution that is simple to deploy and maintain.</p>
+
+<p>So get ready to share your outdoor accomplishments with loved ones and fellow outdoor enthusiasts all across the globe!</p>
+
+<h2>
+  
+  
+  The Solution
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0Q-lnArN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6ykkdze89r4kymegjngm.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0Q-lnArN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6ykkdze89r4kymegjngm.png" alt="" width="800" height="362"></a></p>
+
+<p>As you can see our solution consists of multiple elements:</p>
+
+<ul>
+<li><p>At its core, we have two S3 buckets, one for input and another for output. The input bucket becomes the repository for your GPX files, where you'll store the raw material of your outdoor activities. Whenever a new GPX file is uploaded, an EventBridge event is triggered, signaling the arrival of fresh data.</p></li>
+<li><p>This is where the Lambda function steps onto the stage. It takes the newly arrived GPX file, parses it to extract the essential trail data, and plots the trails on the map. The Lambda function then creates the HTML of the map and places it into the output bucket, ready to be shared with the world.</p></li>
+<li><p>To guarantee swift and seamless access to the map, we use CloudFront. This service acts as a content distribution network that caches and delivers the output buckets content to users globally from edge locations. It reduces latency and improves performance.</p></li>
+</ul>
+
+<h2>
+  
+  
+  What is Terraform?
+</h2>
+
+<p><a href="http://terraform.io">Terraform</a> is an open-source infrastructure-as-code software tool created by HashiCorp. It allows you to define and manage your infrastructure as code, making it easy to provision and manage resources across multiple cloud providers. With Terraform, you can ensure consistent and repeatable deployments, making it an ideal choice for automating your cloud infrastructure.</p>
+
+<h2>
+  
+  
+  Setting Up the Environment
+</h2>
+
+<p>Before we begin, ensure you have Terraform installed on your local machine. You can download it from <a href="https://developer.hashicorp.com/terraform/downloads?product_intent=terraform">the official website</a> and follow the installation instructions.</p>
+
+<p>You will also have to install the <a href="https://aws.amazon.com/en/cli/">AWS CLI</a> and have to configure it so that you can deploy to your AWS account. I wrote a <a href="https://towardsdev.com/my-wsl-setup-as-a-cloud-dev-getting-the-best-of-both-worlds-a0b3a74c14ad">story on using the Windows Subsystem</a> on this.</p>
+
+<p>Once you have Terraform installed, create a new directory for your project and place the main.tf file provided above in this directory. This file contains the Terraform configuration that describes the resources we need to deploy the map.</p>
+
+<h2>
+  
+  
+  Provisioning AWS Resources
+</h2>
+
+<p>Our map requires several AWS resources to be provisioned, such as S3 buckets for storing the website files, an AWS Lambda function to generate the map, and a CloudFront distribution to serve the map securely and efficiently.</p>
+
+<h3>
+  
+  
+  Buckets
+</h3>
+
+<p>We'll use S3 buckets to store the website files and the map generated by the Lambda function. The provided Terraform code uses the terraform-aws-modules/s3-bucket module to create the buckets.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>data "http" "mime_types" {
+  url = "https://gist.githubusercontent.com/lkrimphove/46988dc2ac63ad5ad9c95e6109e3c37e/raw/2349abeb136f1f8dbe91c661c928a5ce859432f9/mime.json"
+  request_headers = {
+    Accept = "application/json"
+  }
+}
+
+locals {
+  mime_types = jsondecode(data.http.mime_types.response_body)
+}
+
+
+
+### BUCKETS
+
+module "input_bucket" {
+  source = "terraform-aws-modules/s3-bucket/aws"
+
+  bucket = var.input_bucket
+  acl    = "private"
+
+  control_object_ownership = true
+  object_ownership         = "ObjectWriter"
+
+}
+
+module "output_bucket" {
+  source = "terraform-aws-modules/s3-bucket/aws"
+
+  bucket = var.output_bucket
+  acl    = "private"
+
+  control_object_ownership = true
+  object_ownership         = "ObjectWriter"
+}
+
+resource "aws_s3_object" "object" {
+  for_each     = fileset("../src/website", "*")
+  bucket       = module.output_bucket.s3_bucket_id
+  key          = each.value
+  acl          = "private"
+  source       = "../src/website/${each.value}"
+  content_type = lookup(local.mime_types, split(".", each.value)[1], null)
+  etag         = filemd5("../src/website/${each.value}")
+}
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Lambda Function
+</h3>
+
+<p>The Lambda function is the heart of our map generation process. It takes the GPX data from the S3 bucket, processes it, and generates an interactive map. We'll use the terraform-aws-modules/lambda module to create and manage the Lambda function.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>### LAMBDA
+
+module "lambda_function" {
+  source = "terraform-aws-modules/lambda/aws"
+
+  function_name = "outdoor-activities-generator"
+  description   = "Generates a map containing your outdoor activities"
+  handler       = "main.lambda_handler"
+  runtime       = "python3.11"
+  timeout       = 60
+
+  source_path = "../src/lambda"
+
+  environment_variables = {
+    START_LATITUDE             = var.start_latitude
+    START_LONGITUDE            = var.start_longitude
+    ZOOM_START                 = var.zoom_start
+    INPUT_BUCKET               = module.input_bucket.s3_bucket_id
+    OUTPUT_BUCKET              = module.output_bucket.s3_bucket_id
+    S3_OBJECT_NAME             = "map.html"
+    CLOUDFRONT_DISTRIBUTION_ID = module.cloudfront.cloudfront_distribution_id
+  }
+
+  layers = [
+    module.lambda_layer.lambda_layer_arn,
+  ]
+
+  attach_policy = true
+  policy        = aws_iam_policy.lambda_policy.arn
+}
+
+module "lambda_layer" {
+  source = "terraform-aws-modules/lambda/aws"
+
+  create_function = false
+  create_layer    = true
+
+  layer_name          = "outdoor-activities-layer"
+  description         = "Lambda layer containing everything for Outdoor Activities"
+  compatible_runtimes = ["python3.11"]
+  runtime             = "python3.11" 
+
+  source_path = [
+    {
+      path             = "../src/lambda-layer"
+      pip_requirements = true
+      prefix_in_zip    = "python" # required to get the path correct
+    }
+  ]
+}
+
+resource "aws_iam_policy" "lambda_policy" {
+  name = "outdoor-activities-generator-policy"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action   = "s3:GetObject"
+        Effect   = "Allow"
+        Resource = "${module.input_bucket.s3_bucket_arn}/*"
+      },
+      {
+        Action   = "s3:ListBucket"
+        Effect   = "Allow"
+        Resource = module.input_bucket.s3_bucket_arn
+      },
+      {
+        Action   = "s3:PutObject"
+        Effect   = "Allow"
+        Resource = "${module.output_bucket.s3_bucket_arn}/*"
+      },
+      {
+        Action   = "cloudfront:GetDistribution"
+        Effect   = "Allow"
+        Resource = module.cloudfront.cloudfront_distribution_arn
+      },
+      {
+        Action   = "cloudfront:CreateInvalidation"
+        Effect   = "Allow"
+        Resource = module.cloudfront.cloudfront_distribution_arn
+      }
+    ]
+  })
+}
+
+resource "aws_lambda_permission" "allow_bucket" {
+  statement_id  = "AllowExecutionFromS3Bucket"
+  action        = "lambda:InvokeFunction"
+  function_name = module.lambda_function.lambda_function_arn
+  principal     = "s3.amazonaws.com"
+  source_arn    = module.input_bucket.s3_bucket_arn
+}
+
+resource "aws_s3_bucket_notification" "bucket_notification" {
+  bucket = module.input_bucket.s3_bucket_id
+
+  lambda_function {
+    lambda_function_arn = module.lambda_function.lambda_function_arn
+    events              = ["s3:ObjectCreated:*"]
+  }
+
+  depends_on = [aws_lambda_permission.allow_bucket]
+}
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  CloudFront Distribution
+</h3>
+
+<p>To serve the map with low latency and high performance, we'll use CloudFront, AWS's content delivery network (CDN). CloudFront caches the map in edge locations worldwide, reducing the load on the origin server (our S3 bucket). We'll use the terraform-aws-modules/cloudfront module to create the CloudFront distribution.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>### CLOUDFRONT
+
+module "cloudfront" {
+  source              = "terraform-aws-modules/cloudfront/aws"
+  comment             = "Outdoor Activities Cloudfront"
+  is_ipv6_enabled     = true
+  price_class         = "PriceClass_100"
+  wait_for_deployment = false
+
+  create_origin_access_identity = true
+  origin_access_identities = {
+    s3_bucket = "s3_bucket_access"
+  }
+
+  origin = {
+    s3_bucket = {
+      domain_name = module.output_bucket.s3_bucket_bucket_regional_domain_name
+      s3_origin_config = {
+        origin_access_identity = "s3_bucket"
+      }
+    }
+  }
+
+  default_cache_behavior = {
+    target_origin_id       = "s3_bucket"
+    viewer_protocol_policy = "redirect-to-https"
+
+    default_ttl = 5400
+    min_ttl     = 3600
+    max_ttl     = 7200
+
+    allowed_methods = ["GET", "HEAD"]
+    cached_methods  = ["GET", "HEAD"]
+    compress        = true
+    query_string    = false
+
+    function_association = {
+      viewer-request = {
+        function_arn = aws_cloudfront_function.viewer_request.arn
+      }
+    }
+  }
+
+  default_root_object = "index.html"
+
+  custom_error_response = [
+    {
+      error_code         = 403
+      response_code      = 404
+      response_page_path = "/404.html"
+    },
+    {
+      error_code         = 404
+      response_code      = 404
+      response_page_path = "/404.html"
+    }
+  ]
+}
+
+data "aws_iam_policy_document" "s3_policy" {
+  version = "2012-10-17"
+  statement {
+    actions   = ["s3:GetObject"]
+    resources = ["${module.output_bucket.s3_bucket_arn}/*"]
+    principals {
+      type        = "AWS"
+      identifiers = module.cloudfront.cloudfront_origin_access_identity_iam_arns
+    }
+  }
+}
+
+resource "aws_s3_bucket_policy" "docs" {
+  bucket = module.output_bucket.s3_bucket_id
+  policy = data.aws_iam_policy_document.s3_policy.json
+}
+
+resource "aws_cloudfront_function" "viewer_request" {
+  name    = "cloudfront-viewer-request"
+  runtime = "cloudfront-js-1.0"
+  publish = true
+  code    = file("../src/viewer-request.js")
+}
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Deploying Your Map
+</h2>
+
+<p>Create a deploy.tfvars.json file and change the values to fit your map (you have to change the bucket names, as those have to be globally unique):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>{
+    "input_bucket": "outdoor-activities-input",
+    "output_bucket": "outdoor-activities-output",
+    "start_latitude": "48.13743",
+    "start_longitude": "11.57549",
+    "zoom_start": "10"
+}
+</code></pre>
+
+</div>
+
+
+
+<p>Create a output.tf file (this will print out information to the console):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>output "cloudfront_distribution_domain_name" {
+    value = module.cloudfront.cloudfront_distribution_domain_name
+}
+</code></pre>
+
+</div>
+
+
+
+<p>Once you've set up the Terraform environment and configured the main.tf and deploy.tfvar.json files, run the following commands in your terminal:</p>
+
+<ol>
+<li><p>Initialize Terraform: <br>
+terraform init</p></li>
+<li><p>Plan the deployment to see what resources will be created:<br>
+terraform plan -var-file=„deploy.tfvars.json“</p></li>
+<li><p>Apply the changes to provision the resources:<br>
+terraform apply -var-file=„deploy.tfvars.json“</p></li>
+</ol>
+
+<p>Terraform will show you a summary of the changes that will be made. If everything looks good, type yes to apply the changes. Terraform will now create all the necessary AWS resources for your map. You will find your URL in the console.</p>
+
+<p>Now you are ready to upload your GPX files to the input bucket. Make sure to keep this file structure:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>    input-bucket
+    ├── Hiking
+    │   ├── Trail Group 1
+    │   │   ├── Activity_1.gpx
+    │   │   ├── Activity_2.gpx
+    │   │   └── ...
+    │   └── Trail Group 2
+    │       ├── Activity_1.gpx
+    │       ├── Activity_2.gpx
+    │       └── ...
+    ├── ...
+    └── Skiing
+        ├── Trail Group 1
+        │   ├── Activity_12.gpx
+        │   ├── Activity_13.gpx
+        │   └── ...
+        └── Trail Group 3
+            ├── Activity_14.gpx
+            ├── Activity_15.gpx
+            └── ...
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Congratulations! You've successfully deployed your interactive map of outdoor activities using Terraform and AWS. Your map is now accessible to the world, allowing others to explore your exciting adventures and celebrate your progress.</p>
+
+<p>With Terraform's infrastructure-as-code approach, you can easily manage and update your map in the future. You can add new activities by simple uploading new gpx files to the input bucket. If you want to modify the map's appearance, or enhance it with additional features, you can do all this with just a few changes to the Terraform configuration.</p>
+
+<p>So go ahead, share your map with friends, family, and fellow outdoor enthusiasts.</p>
+
+<p>Happy mapping!</p>
+
+<h2>
+  
+  
+  What's Next?
+</h2>
+
+<p>You've learned the basics of deploying your map with Terraform. But there's so much more you can do to enhance your map and create an even richer experience for your audience:</p>
+
+<ul>
+<li><p>Add your own domain to your CloudFront distribution for easier access.</p></li>
+<li><p>Don't want to share your map with everybody? Control access to your map by adding authentication and authorization features with AWS Cognito.</p></li>
+<li><p>Set up a continuous deployment pipeline to automatically update your map whenever you push code changes to your git-repo.</p></li>
+</ul>
+
+<p>The possibilities are endless. Have fun exploring and expanding your outdoor activities map!</p>
+
+<h2>
+  
+  
+  References
+</h2>
+
+<ul>
+<li><p>You can find all the code on <a href="https://github.com/lkrimphove/OutdoorActivities">my GitHub</a></p></li>
+<li><p><a href="https://medium.com/@lukaskrimphove/visualizing-outdoor-activities-with-python-folium-1063baec49a6">My previous story on Folium</a></p></li>
+<li><p><a href="https://www.terraform.io/">Terraform Official Website</a></p></li>
+<li><p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs">Terraform AWS Provider Documentation</a></p></li>
+<li><p><a href="https://registry.terraform.io/modules/terraform-aws-modules">Terraform AWS Modules</a></p></li>
+</ul>
+
+
+
+
+<p>This article was <a href="https://python.plainenglish.io/deploying-your-outdoor-activities-map-with-terraform-16ef83393d90?sk=df5a712040dcaad855d7d760ea17fa18">originally published in "Python in Plain English" on Medium</a>.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Beyond Review Comments: Building a Friendlier Code Review Process with Code Reactions](https://dev.to/adadot/beyond-review-comments-building-a-friendlier-code-review-process-with-code-reactions-4job) 
  <details><summary>Article</summary> <p><a href="">Code Reactions</a> 🚀💩<br>
 We welcome all ideas and contributions on <a href="">GitHub</a> 💚!</p>
@@ -304,436 +914,6 @@ and bring the team around to help you scoop all of these.
 
 <blockquote>
 <p>This is part of the newsletter article on my Engineering Leadership newsletter. If you liked this, you are going to love my newsletter. Join here: <a href="https://newsletter.eng-leadership.com/">Engineering Leadership newsletter</a>, 8100+ engineering leaders are already reading it!</p>
-</blockquote>
-
- </details> 
- <hr /> 
-
- #### - [Microservices: Unleashing the Power of Modular Software Architecture](https://dev.to/documatic/microservices-unleashing-the-power-of-modular-software-architecture-23h6) 
- <details><summary>Article</summary> <h1>
-  
-  
-  Introduction
-</h1>
-
-<p>We are in a generation where technology is evolving every day and it impacts the user expectation. It also leads to change in the way we design, build, and deploy any software application. We are currently moving towards the microservices architecture when comes to building applications. It is a driving force in modern software development.</p>
-
-<p>Today monolithic applications are fewer in number as they try to encompass every feature, module, and component under a single codebase. As it hider the modern software development requirements and agility to keep up the pace with the evolving technology. The challenges are also related to the scalability of the software as you can not make changes to specific components independently. That’s why the Microservice architecture is gaining more popularity.</p>
-
-<p>In this article, we are going to learn more about the landscape of microservice architecture. We are going to look into the following topics:</p>
-
-<ul>
-<li>What is Microservices architecture?</li>
-<li>Benefits of Using Microservices</li>
-</ul>
-
-<p>Now, let’s get started.</p>
-
-<h1>
-  
-  
-  What is Microservice Architecture?
-</h1>
-
-<p>It is an approach to designing and building software applications as a collection of small, independent, and loosely coupled services. In this, every service can perform different functionality. Each service can be designed, built, deployed, and scaled independently of each other. </p>
-
-<p>The below diagram shows you the working architecture of microservices.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--33cTLT4g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xt2wekbvm28gpwcdudrw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--33cTLT4g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xt2wekbvm28gpwcdudrw.png" alt="Architecture of Microservie" width="800" height="450"></a></p>
-
-<p>As you can see in the diagram, the communication between each component is done with API. </p>
-
-<p>There are many major tech giants that use microservices to build their applications. Here are some of them:</p>
-
-<ul>
-<li>
-<strong>Amazon</strong>: They use microservices to build their services including Amazon Marketplace, Prime, and Web Services. This helps them rapidly innovate and make changes as per requirements faster.</li>
-<li>
-<strong>Netflix</strong>: It uses microservices in aspects such as streaming services, such as user recommendations, video streaming, billing, and content management.</li>
-<li>
-<strong>Paypal</strong>: It adopts microservices to enhance its payment processing, fraud detection, and user management systems.</li>
-<li>
-<strong>LinkedIn</strong>: It uses microservers to handle user connections, profile management, content delivery, and more.</li>
-<li>
-<strong>Spotify</strong>: A major audio streaming site uses microservices to deliver personalized music recommendations, playlist management, and seamless playback across devices.</li>
-</ul>
-
-<h1>
-  
-  
-  Key principle of Microservices
-</h1>
-
-<p>Let’s learn about some of the key principles of microservices architecture. It is essential to understand those principles for perfect implementation. There are various principles among them some are:</p>
-
-<h3>
-  
-  
-  Single Responsibility Principle(SRP)
-</h3>
-
-<p>Since microservices emphasize modularity, the Single Responsibility Principle is used to define each service as having a single, well-defined functionality. It helps promote modular design and maintains clear boundaries between services.</p>
-
-<h3>
-  
-  
-  Decentralized Data Management
-</h3>
-
-<p>Each service manages its own data store. It prevents tight coupling between services. Services can have their own database or it can be shared across different databases. It is not strictly defined to use a separate database for each service. As each service manages each data store, it allows data autonomy and reduces the risk of data inconsistencies.</p>
-
-<h3>
-  
-  
-  API First Design
-</h3>
-
-<p>As the API is the core for the communication between each component in this architecture, it is believed to be designed first. Microservices emphasize the importance of developing the API first. It helps in clear communication between each component. It also helps in compatibility.</p>
-
-<h3>
-  
-  
-  Scalability
-</h3>
-
-<p>Scalability simply means the capacity of the system to handle increased workload, traffic, or data without a bottleneck in the performance. Microservices enable horizontal scaling. In horizontal Scaling, we add more machines and serve to distribute the load. Thus providing each service to be scaled independently based on demand. </p>
-
-<h3>
-  
-  
-  Design for Failure
-</h3>
-
-<p>This architecture preassumes that failure will occur in the system at some point. Thus it is designed to handle failure. Services can degrade without impacting the entire system.</p>
-
-<h1>
-  
-  
-  Benefits of Using Microservices
-</h1>
-
-<p>There are various benefits that you can get by using the microservice architecture. Here are some of them:</p>
-
-<h3>
-  
-  
-  Modularity and Scalability
-</h3>
-
-<p>By using microservice architecture, you will be breaking down complex codebases into smaller and manageable components. Thus each component can be handled separately with its Software development life cycle. It allows scalability as you don’t need to make changes to the entire codebase when making changes to one component. Each component can be built, designed, deployed, and scaled separately.</p>
-
-<h3>
-  
-  
-  Rapid Development
-</h3>
-
-<p>As each component can be built and deployed separately, we can run tests separately too. This will make the development cycles faster. It also becomes faster to provide updates to the application as you will need to make a few changes.</p>
-
-<h3>
-  
-  
-  Technology Heterogeneity
-</h3>
-
-<p>Mircorservice allows you to build each component separately which means you can use different programming languages, frameworks, and stacks for different services. You can use the most efficient language and tool for that particular service. Otherwise, you can have to stick to that framework and language for the whole codebase.</p>
-
-<h3>
-  
-  
-  Team Autonomy
-</h3>
-
-<p>Due to different features being shipped through different services, you can divide the team to work on that particular service. It will give autonomy to the team and you can develop applications in parallel. This will result in faster iteration and more efficient collaboration between teams. </p>
-
-<h3>
-  
-  
-  Agility and Adaptability
-</h3>
-
-<p>Using microservices architecture, we can develop our application to be more agile. Meaning that it becomes easy to make changes to the application as per the client/user requirement changes. </p>
-
-<h1>
-  
-  
-  Limitation of Microservices
-</h1>
-
-<p>Everything comes with pros and cons. Microservices are no exception. Let’s look into some of them:</p>
-
-<h3>
-  
-  
-  Complexity of Distributed Systems
-</h3>
-
-<p>Since there are separate services for each functionality, it can be very complex to manage each service. This can cause problems such as inter-service communication, data inconsistency, and fault tolerance.</p>
-
-<h3>
-  
-  
-  Increase Operational Overhead
-</h3>
-
-<p>Building, deploying, and managing different services required sophisticated management tools. As there will be a number of services, it will increase the management cost. It can eventually lead to an increase in the operational cost of the whole project. </p>
-
-<h3>
-  
-  
-  Data Management Challenges
-</h3>
-
-<p>As there will be a database connecting to each service, it can increase the complexity of managing the database. Maintaining data integrity in a distributed environment requires careful design and implementation.</p>
-
-<h3>
-  
-  
-  Communication Challenges
-</h3>
-
-<p>Communication between each service and database is a crucial part of the microservices. They are communicated over a network. It can cause overload in the network and eventually cause network latency. Also, as the API is the key for the communication, it should be secured. It can ensure data privacy across services.</p>
-
-<h1>
-  
-  
-  Conclusion
-</h1>
-
-<p>The ever-evolving technologies have led to monolithic architecture being inadequate with the invocations. It has limitations such as scalability, agility, and flexibility. Due to this, microservices architecture is gaining popularity. It can provide a better option when comes to scalability.</p>
-
-<p>As we have seen in the article, microservices architecture can improve the application by providing modularity, agility, and rapid development. It can help large applications to be better at handling each service. However, both microservices and monolithic will exist as there are also some limitations such as communication and complexity challenges in microservices.</p>
-
-<p>I hope this article has helped you in learning the microservices architecture. Thanks for reading the article.</p>
-
- </details> 
- <hr /> 
-
- #### - [How to Run a Competitor's Backlink Analysis: A Comprehensive Guide](https://dev.to/blog-post/how-to-run-a-competitors-backlink-analysis-a-comprehensive-guide-1a4i) 
- <details><summary>Article</summary> <p><strong>Do you want to outrank your competitors on Google?</strong> <br>
-Link gap analysis - commonly known as competitor backlink gap analysis - can recognize any websites and pages connected to your competitor's sites but not yours. Therefore, utilizing it can help your site gain an edge.</p>
-
-<p>Links are necessary if you want higher rankings since with links, you can make good progress. However, the challenge here is getting quality links, as they are challenging to earn. </p>
-
-<p>By utilizing intelligence and data, we can pinpoint sources that provide us with relevant and quality links to acquire. <a href="https://digitalseoland.com/link-building-services-india/">Link building</a> is regarded as the ideal SEO investment as it can give your website a great push in terms of DA and Ranking . </p>
-
-<p>Several competitor backlink analysis tools nowadays can help you conduct your audit and show you results quickly. In addition, accumulating backlinks can help increase organic keyword rankings. Nonetheless, the question remains: what exactly are those competitor backlinks?</p>
-
-<p>With this comprehensive guide, you can learn how to analyze your competitor's backlinks and obtain an edge in SERPs. Understand everything from link velocity &amp; metrics to anchor text &amp; link types, and gain insights into your competitors' strategies.<br>
-Discover Your Competitor's Backlinking Secrets &amp; Outrank Them!</p>
-
-<p><strong>The Importance of Competitor Backlink Analysis</strong></p>
-
-<p>Backlink analysis helps you understand the backlinking strategies of your competitors so that you can improve your own. In addition, it provides a good insight into acquiring more links and ensuring they are of the highest quality.</p>
-
-<p>This will ensure better visibility for your website and a better return on investment in SEO efforts. Here are some reasons why you should check competitor analysis:</p>
-
-<p><strong>Gaining insights into competitors' strategies-</strong> Through an analysis of backlinks from your competitors, you can locate potential sources for your backlinks and gain insights into the highest quality sources out there. This allows you to target these sources for better results effectively.</p>
-
-<p><strong>Identifying new backlink sources-</strong> It's essential to analyze the quality of your competitors' backlinks and assess which ones bring in more traffic and provide more value. Evaluating their links will help you understand what strategies work best in your industry. </p>
-
-<p>Knowing your rival's assets and flaws will help you decide which areas to focus on for link building. This will ensure that your efforts are practical and can get you the desired results.</p>
-
-<p><strong>Enhancing your backlink profile-</strong> Constructing a link-building strategy requires utilizing your strengths and improving weaknesses. With this in mind, you can create an effective plan to reach your desired goal. </p>
-
-<p><strong>Staying ahead in the competition-</strong> Keeping an eye on your competitors' backlink activity is one way of maintaining an edge over them. </p>
-
-<p><strong>Essential Competitor Backlink Analysis Tools</strong> </p>
-
-<p>Here are a list of best competitor backlink analysis tool that can help your business rank better:</p>
-
-<p><strong>Ahrefs-</strong> Ahrefs is an SEO powerhouse with a reputation as one of the most reliable tools for online marketers and website owners. The tool has several key features that make it ideal for competitor backlink analysis. Some of the critical features are stated below:</p>
-
-<p>The tool provides incredibly detailed and valuable data on the quality of backlinks, such as Domain and URL Ratings. This can help you better understand your competitors' backlinks and identify potential sources for your link-building strategy.</p>
-
-<p>Ahrefs is widely known for possessing the most extensive backlink database available online. </p>
-
-<p>Ahrefs presents a top-notch tool to evaluate the backlink profiles of different websites and identify the areas where your link-building efforts should be concentrated.</p>
-
-<p>With this functionality, you can pinpoint backlinks shared by your competitors, giving you valuable insight into the web pages linking to multiple industry rivals.</p>
-
-<p><strong>How to use Ahrefs for competitor analysis?</strong></p>
-
-<p>Ahrefs offers a fantastic competitor backlink analysis capability that makes it easier to take advantage of fresh possibilities.</p>
-
-<p>The tool offers an invaluable resource for marketers to gain insight into their competitors' link-building plans with its historical backlink storage. <br>
-Through this, it is possible to track the changes made over time and analyze their techniques. </p>
-
-<p>This might be a priceless tool for improving the search engine rankings of your website. Here are steps to use Ahrefs:</p>
-
-<p><strong>Identify your competitors:</strong> To begin, determine who your primary rivals are in the market or specialized area you're pursuing.</p>
-
-<p><strong>Enter your competitor's domain:</strong> After locating your rivals, use Ahrefs' Site Explorer tool to enter their domain name.</p>
-
-<p><strong>Examine organic search terms:</strong> Click the "Organic Keywords" tab to find out which terms are bringing organic visitors to the websites of your rivals. You may get a sense of the keywords they are targeting and ranking for from this.</p>
-
-<p><strong>Examine backlinks:</strong> Select the "Backlinks" option to examine the backlink profile of your rivals. Try to find any prospects for link-building for your own website by keeping an eye out for high-quality websites that are linking to them.</p>
-
-<p><strong>Examine high-performing content:</strong> Check out your competitor's website's top pages using the "Top Pages" tool to discover which ones are generating the most organic traffic. Consider these pages' content, organization, and format as a starting point for developing your own high-performing content.</p>
-
-<p><strong>Monitor rankings:</strong> Ahrefs enables you to monitor the evolution of keyword ranks. The Rank Tracker tool allows you to add competitor's target keywords and track their ranks over time. This will assist you in comprehending their SEO approach and locating opportunities for development.</p>
-
-<p><strong>Examine sponsored search campaigns:</strong> Utilize Ahrefs' "Paid Search" tool to learn more about the paid advertising campaigns of your rivals, including the keywords they are bidding on, their ad copy, and their landing sites.</p>
-
-<p><strong>Track mentions and brand awareness:</strong> Ahrefs' Content Explorer tool will assist you in keeping tabs on online mentions of your competitors' brands. This can help you understand their brand awareness and web presence.</p>
-
-<p><strong>Compare domains:</strong> Use the "Domain Comparison" function to assess how well your website stacks up against those of your rivals. Your strengths and shortcomings will become clearer as a result, and you can then decide where to make improvements.</p>
-
-<p><strong>Keep current:</strong> Frequently check the website of a rival utilizing Ahrefs' notifications feature. Set up alerts to be informed anytime a rival publishes new material, ranks for new keywords, or earns or loses backlinks.</p>
-
-<p>**2. SEMrush- **SEMrush is a powerful digital marketing platform widely used to analyze your competitors' backlinks. With its vast array of backlink analysis features, this tool is an apt choice for optimizing your website's backlinks. These include:</p>
-
-<p>SEMrush helps you to keep an eye on your competitors' backlink profiles. You gain insights into the number and quality of backlinks and identify their sources. This enables you to stay ahead of your competition in the long run.</p>
-
-<p>SEMrush can give you the advantage of discovering new growth opportunities by showing which backlinks your competitors are using. It provides an insight into how to gain an edge over the competition.</p>
-
-<p>SEMrush's link quality score is incredibly helpful in understanding the value of the backlinks pointing to your website. Using this data, you can better prioritize your link-building strategies, concentrating on getting more links with a higher value.</p>
-
-<p>SEMrush offers loads of information about your rivals. It can show you their organic traffic, PPC campaigns, and detailed social media visibility. This data can be invaluable to your competitive strategy.</p>
-
-<p><strong>How to use SEMRush for competitor analysis?</strong>  </p>
-
-<p><a href="https://www.semrush.com/lp/keyword-gap/en/?kw=semrush%20keyword%20gap&amp;cmp=IN_SRCH_Brand_Semrush_EN&amp;label=brand_semrush&amp;Network=g&amp;Device=c&amp;utm_content=638535277111&amp;kwid=kwd-420249962862&amp;cmpid=13694421969&amp;agpid=119351853970&amp;BU=Brand_Semrush&amp;extid=&amp;adpos=&amp;gclid=CjwKCAjwge2iBhBBEiwAfXDBR23lLqTzWf0lnu0TXr3HKGHkdpVbF6f3g77fyG0WIDk9OF01zU5PXBoCGUsQAvD_BwE">Semrush's Backlink Analytics tool</a> enables you to monitor your opponents' backlink profiles in more detail. With this resource, you can better understand the situation and make informed decisions.</p>
-
-<p>You can get an in-depth report on any competitor's backlink profile with a click of a button. Just input the competitor's website URL and hit analyze to receive information such as Authority Score, number of referring domains, and existing backlinks.</p>
-
-<p>SEMrush helps you to understand your competitors' backlink analysis results with the help of informative reports and visualizations. It's a quick and easy way to get comprehensive insights and optimize your strategies.</p>
-
-<p><strong>3.  Moz's Link Explorer-</strong> Moz is an industry-leading software provider for digital marketing solutions. With their broad range of tools, you can optimize your website and track your competitors' backlinks. This can significantly help with improving your online presence.  Here are some key features of the Moz Link Explorer tool:</p>
-
-<p>Moz has created an index of links by crawling and indexing them. This helps to discover new resources and websites quickly.</p>
-
-<p>The well-known search engine optimization tool, Moz, utilizes its algorithm to evaluate the quality of backlinks. Every external link is then rated for its "Link Authority."</p>
-
-<p>Dotbot, an advanced crawler, is based on a machine-learning model. It begins with the most valuable links to comprehend how Google rankings work and compute metrics such as Page Authority and Domain Authority.</p>
-
-<p>Moz Link Explorer provides you with a detailed overview of your backlinks, most valuable pages, linking domains, and anchor text - all so you can create superior links and remain competitive online.</p>
-
-<p><strong>How to use Moz's Link Explorer for competitor analysis?</strong></p>
-
-<p>Signing up with Moz provides access to Link Explorer. To use Link Explorer, a tool from Moz, you must have an account with the service. Here are the steps to use <a href="https://moz.com/link-explorer">Moz Link Explorer</a>:<br>
-Begin by typing the domain or URL of one of your competitors into Moz's Link Explorer's search bar.</p>
-
-<p>When the results are shown, navigate to the "Inbound Links" section to check how many backlinks your rival has in total.</p>
-
-<p>Examine indicators like Domain Authority (DA), Page Authority (PA), and Spam Score to determine the authority and quality of their backlinks.</p>
-
-<p>Check the "Linking Domains" column to see how many different websites link to your rival. You may get a sense of their general appeal and popularity from this information.</p>
-
-<p>Look through the "Top Pages" section to find out which pages on the website of your rival have the most backlinks. Understanding their content approach can help you concentrate on producing similar, high-performing content.</p>
-
-<p>Check the "Just-Discovered" area, which displays links that your competition has lately obtained, for any prospective link chances. This may provide you an advantage when looking for fresh content from which to create your own backlinks.</p>
-
-<p>Check out the "Anchor Text" page to see what keywords or phrases they are focusing on in their link-building campaigns to obtain a better grasp of their link-building approach.</p>
-
-<p>Lastly, remember to use Moz's Link Explorer to compare your own backlink profile to that of your competitors.<br>
-Enter the web address of the website or page you wish to get link information for!</p>
-
-<p>Comparing tools and selecting the best one for your needs<br>
-Establishing a solid <a href="https://digitalseoland.com/blog/off-page-seo-techniques/">link-building technique</a> is an essential factor for website optimization. Backlinks can help elevate your search engine rankings, create a trustworthy reputation and drive more visitors to your site.</p>
-
-<p>Several backlink analysis tools in the market can give you the best results for your business. However, doing your own market research before getting a competitor backlink analysis tool is vital.</p>
-
-<p>It is best to consider a link-building strategy after creating unique content on your website. This will provide the necessary foundation for building successful links later on.</p>
-
-<p>How to Check Competitor Backlinks: A Step-by-Step Guide<br>
-Regular backlink audits can help you understand the amount and quality of backlinks currently on your website. </p>
-
-<p>This knowledge can improve your SEO and visibility in search engine rankings. Having solid and authoritative backlinks from top-level domains is crucial for the success of any SEO strategy. </p>
-
-<p>If you neglect this essential step, your rankings will suffer, and your website will not perform well in search results. To ensure the success of your analysis, here are some features you should look out for:</p>
-
-<p>Identify your top competitors- The Organic Research Competitors report provides a complete list of established companies and new entrants. To measure how competitive one domain is compared to another, there is a parameter called the Competition level. </p>
-
-<p>This enables you to get an idea of how much competition exists between the two domains. The competition level between you and your rivals is determined by two glaring factors - the number of ranked key phrases they possess and how many overlap yours.</p>
-
-<p>Choose a backlink analysis tool- various backlink analysis tools exist in the market. However, depending on the type of business, choosing the one that suits your requirements is necessary. </p>
-
-<p>Please do thorough market research on some of the best backlink analysis tools we have provided above and select the one you need.</p>
-
-<p>Analyze competitors' backlink profiles- Now that you better understand your backlink situation, it's time to start looking for areas to improve. A great place to start is by assessing the most successful pages and identifying how to replicate their success.</p>
-
-<p>Identify the types of content that generate the most links from high-value sources to create additional content of this kind. Keep your eyes peeled for chances to create content other websites might link to. You can contact them so they know your linkable assets and link back to you. </p>
-
-<p>Regarding do-follow and no-follow links, knowing the exact amount of each is essential. Do-follow links are beneficial for your backlink profile as they pass on link juice, while no-follow links don't do that.</p>
-
-<p>Find content gaps and link- Conducting a content gap analysis is an essential strategy if you want to improve the content of your website. You can make sure that your website performs better than the competition and precisely matches with your business objectives by carefully evaluating and optimizing the material that is already there. By using an analytical approach, you can spot holes in your present content strategy and deliberately plug them for the most impact. </p>
-
-<p>For instance, consider the case of an SEO agency that has a large number of blog posts on cutting-edge SEO strategies. However, you see that users are leaving your pages far too frequently and hastily. A short study of the content gaps may help to clarify the issue by analyzing how interesting your content is.</p>
-
-<p>Whatever the cause, you must locate and fill any content gaps immediately. The Backlink Gap tool and the Overview report in the Backlink Analytics tool are two practical options for analyzing your backlink profiles. They allow you to measure the performance of 5 different domains simultaneously. </p>
-
-<p>Broken links are hyperlinks that no longer connect to their intended destination. They can occur when a website or webpage is moved, deleted, or its URL is changed. Fixing broken links is crucial for maintaining a seamless user experience and ensuring that visitors can access the content they are seeking on a website. With the best backlink analysis tools, broken links, and content gaps can be located and fixed.</p>
-
-<p>Monitor competitors' backlink activities over time- Although not required, we strongly urge you to conduct a competition study because it might show potential gaps in the content market. This will provide you with details about the following:</p>
-
-<p>Any organization must understand where the majority of its backlinks come from.</p>
-
-<p>Their content might create the most significant number of backlinks.</p>
-
-<p>Quick Hacks for Finding Competitors' Backlinks<br>
-Examining your competition's backlinks is a highly effective method for creating a link-building strategy. Here are some quick hacks on how to find competitors' backlinks:<br>
-Use advanced search operators- It's critical to understand your competitors' strategies to stay ahead of the pack in your industry. A strong SEO strategy is necessary for high search engine ranks and comprises optimizing the target keywords. Compare your competitors' backlink profiles and theirs to understand who your top rivals are.<br>
-Leverage social listening and uncover untapped backlink opportunities- Social listening is an invaluable tool that can greatly benefit your business. It is a process of keeping an eye on blogs, forums, social media sites, and other online resources to learn more about your competitors, market, or industry. By effectively monitoring social media conversations and online discussions, you can easily identify websites and blogs that are relevant to your industry or niche. This not only helps you stay connected with the latest trends and insights, but also uncovers untapped backlink opportunities that may have otherwise gone unnoticed. Imagine you stumble upon a blog post or article that mentions your brand, but to your disappointment, there's no link leading back to your website. However, by proactively reaching out to the author or website owner, you have the opportunity to kindly request a backlink. This not only enhances your website's authority and credibility but also boosts its overall visibility and online presence.<br><br>
-Spy on competitors' guest posting activities- You should start by pulling out your competitors backlink profile via Semrush, and Ahrefs. Using Spyfy, you can type in your website and click on the 'Competitors' tab to get a list of related websites. It'll then analyze the similarities between these sites and yours and show you the overlapping keywords.<br>
-Network with industry influencers- Start exploring industries and industry influencers. This will help you understand the market and will help you build connections for your business growth.<br>
-How to Use Competitor Backlink Analysis to Improve Your Link Building <br>
-Are you looking for a better way to improve your link-building strategy? Increase your website's visibility and search engine ranking with the help of competitor backlink analysis! Learn how to use Competitor backlink analysis as an incredible tool to give you an edge over your competition.<br>
-Learn from competitors' strengths and weaknesses- With this template, you can carefully analyze the link profiles of one or numerous competitors and gain insight into their strategies. <br>
-This can help you stay ahead of the competition. To effectively evaluate your competition, ensure you include only those directly related to your target keyword.<br>
-Prioritize high-quality backlinks- Export Your Site's Backlink Profile Using Ahrefs or Moz. After exporting the backlink data, paste it into the client data tab. Then, carry out the same process for your website. <br>
-Its easy-to-use interface, detailed insights, and advanced analytics tools let you quickly identify potential link opportunities and create a more powerful link-building plan.<br>
-Diversify your link-building tactics- To boost your website's ranking and visibility, varying link-building strategies is essential. <br>
-This could include guest posts, content syndication, press releases, etc. Taking a multifaceted approach to link building can maximize the impact of your SEO efforts.<br>
-Create better content to attract more backlinks- Upon completing your competitor backlink analysis, it is essential to derive critical insights and develop a strategy from the findings. Doing so will ensure you understand how to maximize the potential of your website in terms of its visibility and ranking. <br>
-When you look at the Competitor Backlink Analysis tab, one of the first things that stand out is how the data is filtered. This first highlights your competitors' shared links, providing a more comprehensive overview.<br>
-Conclusion<br>
-As we approach 2024, it is essential to do a competitor backlink analysis to increase your website's SEO ranking and visibility. Therefore, it is crucial for businesses nowadays to stay ahead of the competition. <br>
-With the help of this article, you can easily and quickly figure out what your competitors are up to, evaluate your backlink profile, and capitalize on link-building opportunities to enhance it.<br>
-To optimize your link-building strategy and accomplish your online goals, it is essential to study and analyze the approaches used by your competitors. This information allows you to design a tailored plan to fit your specific needs and objectives.</p>
-
- </details> 
- <hr /> 
-
- #### - [How is it to build something in public?](https://dev.to/azasypkin/how-is-it-to-build-something-in-public-3m3j) 
- <details><summary>Article</summary> <blockquote>
-<p>The original post was published on my blog on <strong>July 20, 2023</strong>, long before I realized it might be interesting to the dev.to community.</p>
-</blockquote>
-
-<p><strong>TL;DR:</strong> It’s a hard, but rewarding experience!</p>
-
-<p>Hello!</p>
-
-<p>It’s been two months since I opened up <a href="https://secutils.dev/"><strong>Secutils.dev</strong></a> for an open beta and started writing about my indie hacking journey in public for the first time while still being a full-time employee at Elastic. In this short post, I just want to reflect on how things are going, what was good, and what wasn’t as good as I wanted it to be. If you’re in a similar situation or just curious, read on!</p>
-
-<p>First of all, here are some stats from the last two months:</p>
-
-<ul>
-<li>
-<strong>102</strong> commits with fixes, enhancements, documentation, and features <a href="https://github.com/secutils-dev"><strong>across all Secutils.dev GitHub repositories</strong></a> </li>
-<li>
-<strong>18</strong> <a href="https://secutils.dev/docs/blog/"><strong>blog posts</strong></a> and the same amount of accompanying LinkedIn posts, <a href="https://twitter.com/aleh_zasypkin"><strong>tweets</strong></a>, and <a href="https://infosec.exchange/@azasypkin"><strong>Mastodon posts</strong></a>
-</li>
-<li>
-<strong>3</strong> one-on-one user interviews conducted (too few, I know I know, but hey, I’m still learning)</li>
-<li>
-<strong>1</strong> big feature delivered (<a href="https://github.com/secutils-dev/secutils/issues/14"><strong>Resource Tracker</strong></a>, going to cut a new release next week)</li>
-</ul>
-
-<p>I admit that the stats don’t look super impressive, but I really enjoyed the ride so far! It’s hard to describe the satisfaction I get from talking to the users of something I’ve built from scratch and control every bit and piece of it – one of the most rewarding experiences in my whole 15-year career, for sure.</p>
-
-<p>As you can see from the stats, old habits die hard – engineering still takes most of my time, and I didn’t spend enough time promoting Secutils.dev among the relevant communities and interacting with current and potential users. That’s something I’m going to fix.</p>
-
-<p>The most important lesson I’ve learned during these two months? It’s hard to find enough time and energy for a side-project like Secutils.dev while having a relatively intense full-time job, and <a href="https://secutils.dev/docs/blog/time-management"><strong>very aggressive prioritization and subtraction</strong></a> isn’t just an option, it’s a necessity. Nobody said it was going to be easy, though. On the bright side, life isn’t discrete – everything I learn while pushing Secutils.dev forward perfectly applies to my full-time job, benefiting Elastic and my career, and vice versa, of course. Having a serious side gig like that, in my opinion, is one of the most effective ways to grow not only professionally but also as a resilient person.</p>
-
-<p>That wraps up today's post, thanks for taking the time to read it!</p>
-
-<blockquote>
-<p><strong>ℹ️ ASK:</strong> If you found this post helpful or interesting, please consider showing your support by starring <a href="https://github.com/secutils-dev/secutils"><strong>secutils-dev/secutils</strong></a> GitHub repository.</p>
-
-<p>Also, feel free to follow me on <a href="https://twitter.com/aleh_zasypkin"><strong>Twitter</strong></a>, <a href="https://infosec.exchange/@azasypkin"><strong>Mastodon</strong></a>, or <a href="https://www.linkedin.com/in/azasypkin/"><strong>LinkedIn</strong></a>.</p>
-
-<p>Thank you for being a part of the community!</p>
 </blockquote>
 
  </details> 
