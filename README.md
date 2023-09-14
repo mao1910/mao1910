@@ -118,6 +118,197 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Beyond Review Comments: Building a Friendlier Code Review Process with Code Reactions](https://dev.to/adadot/beyond-review-comments-building-a-friendlier-code-review-process-with-code-reactions-4job) 
+ <details><summary>Article</summary> <p><a href="">Code Reactions</a> 🚀💩<br>
+We welcome all ideas and contributions on <a href="">GitHub</a> 💚!</p>
+
+<p><a href="https://marketplace.visualstudio.com/items?itemName=Adadot.code-reactions" class="ltag_cta ltag_cta--branded">Install extension →</a>
+</p>
+
+
+
+
+<p>
+  <strong>TL;DR</strong>
+  <br>
+
+<pre><code>We created a vscode extension to add emoji reactions, even 
+
+with comments, to any line of code of any Git repo! React and 
+
+see others reactions to any piece of code straight from your
+
+IDE, and have them follow (or not 😉) the code through 
+changes.
+</code></pre>
+
+
+
+
+</p>
+
+<h2>
+  
+  
+  The story behind
+</h2>
+
+<p>After almost a decade of writing code in all sorts of environments, in a small startup or in a big enterprise with thousands of developers, we always felt <code>that there were some things that should be alongside our code, but never could be</code>.</p>
+
+<ol>
+<li><p><strong>Giving and receiving feedback for your code</strong>. As developers we <em>learn from others</em>, and their reaction to our code either that being a 👍, 👎 or sometimes even a 💩 or a 🚀, is invaluable to our progress. Unfortunately, apart from reviews we don't really get the chance to tell someone what we think about their code.</p></li>
+<li>
+<p><strong>Putting a mark or a note in the code</strong>. You are going about your task and suddenly you notice a piece of code that has that <code>smell</code>, or just <code>doesn't look right</code>, or is <code>outdated</code>, or uses an <code>old syntax</code>, or looks like it could even be <code>an issue</code>. Now your choices are: </p>
+
+<ol>
+<li>Drop the task you are doing and fix it </li>
+<li>Create an issue somewhere to come back to it at another time (or forever forget)</li>
+<li>Do it with your task (<em>ouch!</em>)</li>
+<li>Leaving a comment in the code and puzzling yourself a few months down the line, when the code has moved/changed, with the quiz <em>"what was I referring to here"</em>.</li>
+</ol>
+
+
+</li>
+<li><p>Code quality metrics are very cool <em>as a concept</em>! However once used we all know that they feel a bit neither here nor there. Eg is a code bad if it has high complexity? Maybe, maybe not! I'd like to <strong>know what my collaborators thinks of the code</strong>, which parts are for a 😍 and which for a 🤔 and which repos and files are the ones that might need a look into cause 💩 has started pilling on.</p></li>
+</ol>
+
+<p>That's why we wanted to make something that's:</p>
+
+<ul>
+<li>Open Source 💚 (share the love!)</li>
+<li>It works in the <strong>IDE</strong>
+</li>
+<li>You can add <strong>emojis</strong> and <strong>comments</strong> 🚀</li>
+<li>You can see others <strong>emojis</strong> and <strong>comments</strong> 👀</li>
+<li>
+<strong>Follows (or leaves) the code</strong> as it changes </li>
+</ul>
+
+<h2>
+  
+  
+  What we built
+</h2>
+
+<p>We built an IDE extension (vscode only for the time being,<br>
+Intellij is in the works) that allows you to add emoji <br>
+reactions, even with comments, to any line of code of any Git<br>
+repo! </p>
+
+<p>You can react and see others reactions to any piece of code straight from your IDE! </p>
+
+<p>And <code>Reactions follow the code!</code>, meaning that it stays there for as long as the relevant line has not changed - <em>whitespace doesn't count as change</em> - and they get removed from the line when it's changed.</p>
+
+<p>This is the <strong>first version</strong>, so it supports limited amount of emojis for now, and it has only a few features. We are super excited to have the community shape the tool and decide on the new features by contributing on GitHub</p>
+<h2>
+  
+  
+  Features
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--o8v9y2KU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tm69osiqctdrh84mhh5m.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--o8v9y2KU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tm69osiqctdrh84mhh5m.gif" alt="Features" width="800" height="494"></a></p>
+
+<ul>
+<li>
+<strong>Different ways to see reactions</strong> and add yours (status bar, inline decoration, annotations, reactions feed panel)</li>
+<li>
+<strong>Notifications</strong> on new reactions (either on the repo or specifically on your lines)</li>
+<li>We didn't want to bloat the IDE, so we created a <strong>lightweight website</strong> for all the views we didn't feel belonged in the IDE (ie cross-repo data) so you are able to get information for all your projects.</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ptYVnIAN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ba1oas4d0xxwe5kqmh2m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ptYVnIAN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ba1oas4d0xxwe5kqmh2m.png" alt="Frontend" width="800" height="526"></a></p>
+<h2>
+  
+  
+  Future features
+</h2>
+
+<p>We are super excited to have your input on GitHub to help us shape the future of this extension with what the community wants and needs!</p>
+
+
+<div class="ltag-github-readme-tag">
+  <div class="readme-overview">
+    <h2>
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
+      <a href="https://github.com/AdadotTeam">
+        AdadotTeam
+      </a> / <a href="https://github.com/AdadotTeam/vscode-reactions">
+        vscode-reactions
+      </a>
+    </h2>
+    <h3>
+      Add and see other's reactions to your code!
+    </h3>
+  </div>
+  <div class="ltag-github-body">
+    
+<div id="readme" class="md">
+<h1>
+Code Reactions — Emoji reactions for any Git repo</h1>
+<blockquote>
+<p>Add emoji reactions, even with comments, to any Git repo! React and see others
+reactions to any piece of code straight from your IDE.</p>
+</blockquote>
+<p>Code Reactions is an open-source extension for Visual Studio Code, made
+by our team at <a href="https://adadot.com" rel="nofollow">Adadot</a> with a mind to give back to the community.</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>You saw some nice piece of code? Now you can add a 👍, or maybe even a 😍 and spread the love.
+
+It seems like there might be a bug there? Give it a 🐛 with a comment on your finding 
+and come back to fix it when you get the chance.
+
+This code feels like it has quite a smell... You think it might justify a 💩? Leave it there 
+and bring the team around to help you scoop all of these.
+</code></pre></div>
+<p>We give you the ability to react to any…</p>
+</div>
+  </div>
+  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/AdadotTeam/vscode-reactions">View on GitHub</a></div>
+</div>
+
+
+ </details> 
+ <hr /> 
+
+ #### - [Don’t compare and compete with others, instead collaborate](https://dev.to/gregorojstersek/dont-compare-and-compete-with-others-instead-collaborate-b8j) 
+ <details><summary>Article</summary> <p>If you are a person who likes to compare and compete with your colleagues. Let me tell you one important thing. Don't compare or compete, instead help and collaborate.</p>
+
+<p>Being a lone wolf and just focusing on yourself and your progress will certainly get you somewhere. But rather than trying to do everything yourself. You have a group of like-minded people who are all on the same path as you!</p>
+
+<p>Your progression is going to be much:</p>
+
+<ul>
+<li>faster,</li>
+<li>more exciting,</li>
+<li>more fulfilling.</li>
+</ul>
+
+<p>Compete only with yourself and try to get better every day!</p>
+
+<p>The software development world is smaller than you think. Collaborating and helping each other instead of competing puts you in a position where fellow like-minded people can help you find opportunities.</p>
+
+<p><strong>A practical example</strong></p>
+
+<p>If you are searching for a new role, the best way to find it is to get recommended for the position.</p>
+
+<p>If someone from my team recommends a candidate.</p>
+
+<p>I already know 2 things:</p>
+
+<p>He/she already is familiar to an extent with a person on my team, so the collaboration and onboarding would be easier.</p>
+
+<p>He/she has already shown to some extent capability to be able to do the job.</p>
+
+<p>This gives you much better chances right from the start. Make sure to help each other to grow and progress in careers!</p>
+
+<p>What are your thoughts?</p>
+
+<blockquote>
+<p>This is part of the newsletter article on my Engineering Leadership newsletter. If you liked this, you are going to love my newsletter. Join here: <a href="https://newsletter.eng-leadership.com/">Engineering Leadership newsletter</a>, 8100+ engineering leaders are already reading it!</p>
+</blockquote>
+
+ </details> 
+ <hr /> 
+
  #### - [Microservices: Unleashing the Power of Modular Software Architecture](https://dev.to/documatic/microservices-unleashing-the-power-of-modular-software-architecture-23h6) 
  <details><summary>Article</summary> <h1>
   
@@ -504,49 +695,6 @@ To optimize your link-building strategy and accomplish your online goals, it is 
  </details> 
  <hr /> 
 
- #### - [How to Create a Successful eCommerce App in 2023 ?](https://dev.to/richarddukusa/how-to-create-a-successful-ecommerce-app-in-2023--3e4p) 
- <details><summary>Article</summary> <p>In today's digital era, eCommerce has become an integral part of our lives, and mobile apps have emerged as a key platform for online shopping. With the increasing demand for convenient and personalized shopping experiences, creating an eCommerce app is considered as a profitable strategy. However, creating such apps requires careful planning, execution, and hiring a reliable <a href="https://successive.tech/ecommerce-app-development-company/">eCommerce app development company.</a><br>
-In this blog post, we will guide you through the essential steps and strategies to develop an eCommerce app that stands out in this highly competitive market.</p>
-
-<p><strong>Steps to Create a Successful eCommerce Application</strong></p>
-
-<p><strong>Define Your Target Audience</strong></p>
-
-<p>Before diving into the app development process, it's crucial to identify your target audience and understand their needs, preferences, and behavior. Conduct market research, analyze user demographics, and gather insights to tailor your app accordingly. Consider factors such as age, location, interests, and shopping habits to create a personalized experience for your users.</p>
-
-<p><strong>Determine User Experience (UX) Design</strong><br>
-The user experience plays a vital role in the success of an eCommerce app. Aim for a clean, intuitive, and visually appealing design that focuses on ease of navigation, efficient product search, and seamless checkout process. Your hired eCommerce app development company will implement responsive design principles to ensure your app functions well across various devices and screen sizes, providing a consistent experience.</p>
-
-<p><strong>Prepare Product Catalog</strong><br>
-Organize your product catalog in a logical and user-friendly manner. Use categories, filters, and search functionalities to help users find products quickly and effortlessly. Display high-quality product images, detailed descriptions, customer reviews, and ratings to build trust and aid purchase decisions. Also checkout <a href="https://successive.tech/blog/ecommerce-app-development-guide/">eCommerce App Development Guide</a> to understanding product catalog.</p>
-
-<p><strong>Streamline Checkout Process</strong><br>
-Simplify the checkout process to minimize cart abandonment rates. Enable guest checkouts, offer multiple secure payment options, and integrate popular payment gateways to enhance convenience. eCommerce app development services include implementation of features like saved payment methods, address autofill, and order tracking to streamline the overall purchase experience.</p>
-
-<p><strong>Personalization and Recommendations</strong><br>
-Leverage user data and analytics to provide personalized recommendations and suggestions based on their browsing and purchase history. Implement algorithms that analyze user behavior to offer relevant products, discounts, or personalized offers. Personalization fosters engagement, loyalty, and increased sales.</p>
-
-<p><strong>Seamless Integration with Backend Systems</strong><br>
-Integrate your eCommerce app seamlessly with backend systems such as inventory management, order processing, and customer relationship management (CRM) tools. Real-time synchronization ensures accurate product availability, inventory updates, and order fulfillment, enhancing operational efficiency and customer satisfaction.</p>
-
-<p><strong>Integrate Robust Security Measures</strong><br>
-eCommerce apps deal with sensitive user data and financial transactions, making security a top priority. The eCommerce app development company will implement strong encryption protocols, secure payment gateways, and user authentication mechanisms. Regularly update and patch security vulnerabilities to safeguard user information and build trust in your app.</p>
-
-<p><strong>Performance Optimization</strong><br>
-Optimize your app's performance to provide a smooth and responsive experience. Minimize loading times, compress images, and utilize caching techniques to improve app speed. Conduct rigorous testing across different devices and network conditions to ensure your app performs well under varying circumstances.</p>
-
-<p><strong>Social Media Integration</strong><br>
-Leverage the power of social media by integrating sharing options and enabling user-generated content. Allow users to share their favorite products, reviews, or purchases on social platforms. Incorporate social login options to streamline the registration process and increase user convenience.</p>
-
-<p><strong>Continuous Improvement and Feedback</strong><br>
-Analyze user feedback, ratings, and reviews to identify areas for improvement. Regularly update your app with new features, bug fixes, and performance enhancements. Engage with your user community through surveys, ratings prompts, and customer support channels to build a loyal user base.</p>
-
-<p><strong>Conclusion</strong><br>
-Creating a successful eCommerce app in 2023 requires a combination of user-centric design, efficient functionality, assistance from a professional company that offers <a href="https://successive.tech/mobile-application-development/">mobile app development services</a>, and continuous improvement. By understanding your target audience, focusing on user experience, personalizing the shopping journey, ensuring security, and optimizing performance, you can develop an app that resonates with your users and drives business growth. Keep abreast of the latest trends, technologies, and customer demands to stay competitive in the dynamic eCommerce landscape.</p>
-
- </details> 
- <hr /> 
-
  #### - [How is it to build something in public?](https://dev.to/azasypkin/how-is-it-to-build-something-in-public-3m3j) 
  <details><summary>Article</summary> <blockquote>
 <p>The original post was published on my blog on <strong>July 20, 2023</strong>, long before I realized it might be interesting to the dev.to community.</p>
@@ -587,226 +735,6 @@ Creating a successful eCommerce app in 2023 requires a combination of user-centr
 
 <p>Thank you for being a part of the community!</p>
 </blockquote>
-
- </details> 
- <hr /> 
-
- #### - [What's new in Novu 0.19?](https://dev.to/novu/whats-new-in-novu-019-1pcc) 
- <details><summary>Article</summary> <p><strong>TL;DR:</strong> All you need to know about the latest Novu 0.19.0 release. Multi-tenancy management, bulk subscriber creation, override layouts and more!</p>
-
-<h2>
-  
-  
-  0.19 Release Updates
-</h2>
-
-<p>We're eager to showcase the latest features in our most recent release. Let's dive in and discover what's in store for you!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4MlQCGXY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/38f8c51d-4cf0-4789-93eb-e29d87df3e06" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4MlQCGXY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/38f8c51d-4cf0-4789-93eb-e29d87df3e06" alt="giphy (2) (1)" width="500" height="280"></a></p>
-
-<h2>
-  
-  
-  Multi-tenancy Management
-</h2>
-
-<p>We are stoked to let you know that you can now manage tenants from the <a href="https://web.novu.co/tenants">UI</a> (Novu’s dashboard) and the <a href="[https://api.novu.co/api#/Tenants](https://api.novu.co/api#/Tenants)">API</a>.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--feVyJ6s2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/85bd75ef-0b24-492b-8186-2365197302ff" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--feVyJ6s2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/85bd75ef-0b24-492b-8186-2365197302ff" alt="tenants-management (1)" width="800" height="568"></a></p>
-
-<p>Self-hosted users need to add and turn on the <code>IS_MULTI_TENANCY_ENABLED</code> env flag to be able to manage tenants in their Novu installation.</p>
-
-<h2>
-  
-  
-  Tenants Usage in Workflows as Variables
-</h2>
-
-<p>With tenants feature now generally available, there are different ways you’ll be able to use it in your app depending on your use case.</p>
-
-<p>One of those ways is using it as variables in your workflows and triggers. When triggering a notification using the events trigger endpoint, you can pass in a tenant property as a parameter like so:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Novu</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@novu/node</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">novu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Novu</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NOVU_API_KEY</span><span class="p">);</span>
-
-<span class="k">await</span> <span class="nx">novu</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;WORKFLOW_TRIGGER_ID&gt;</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">{</span>
-    <span class="na">to</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;UNIQUE_SUBSCRIBER_IDENTIFIER&gt;</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">john@doemail.com</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Doe</span><span class="dl">'</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">payload</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">organization</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">logo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://happycorp.com/logo.png</span><span class="dl">'</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">},</span>
-     <span class="na">actor</span><span class="p">:</span> <span class="dl">"</span><span class="s2">actorId</span><span class="dl">"</span>
-   <span class="na">tenant</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tenantIdentifier</span><span class="dl">"</span>
-  <span class="p">}</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p><em>passing in tenant property when triggering a notification</em></p>
-
-<p>The tenant can also be accessed in a workflow template like so:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">{{</span> <span class="nx">tenant</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">logo</span> <span class="p">}}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><em>accessing tenant properties in a workflow</em></p>
-
-<h2>
-  
-  
-  Bulk Subscriber Creation
-</h2>
-
-<p>This release also ships the wildly requested “bulk subscriber creation.” You’ll be able to create subscribers in bulk (up to 500 at once) using an <a href="https://docs.novu.co/api-reference/subscribers/bulk-create-subscribers">API endpoint</a>.</p>
-
-<p><strong>Note:</strong> The bulk API is limited to 500 subscribers per request.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">await</span> <span class="nx">novu</span><span class="p">.</span><span class="nx">subscribers</span><span class="p">.</span><span class="nx">bulkCreate</span><span class="p">([</span>
-      <span class="p">{</span>
-        <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-subscriber-1</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-user@sd.com</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscriber-1</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-1</span><span class="dl">'</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-subscriber-2</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-user-2@sd.com</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscriber-2</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-2</span><span class="dl">'</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-subscriber-3</span><span class="dl">'</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">]);</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Addition of Tags in Workflow Settings
-</h2>
-
-<p>We have added the ability to use tags in the workflow settings screen. </p>
-
-<p>This change allows use cases where you need to group multiple workflows under the same tag, and then use it to filter subscriber preferences for example.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--yMEJQjg1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/da0d5cf7-a471-41f4-a41d-c0bbac68b88b" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--yMEJQjg1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/da0d5cf7-a471-41f4-a41d-c0bbac68b88b" alt="taggs-workflow-settings (1)" width="800" height="477"></a></p>
-
-<h2>
-  
-  
-  Allow Override layout On Trigger
-</h2>
-
-<p>To override your assigned layout during a trigger event use the <code>layoutIdentifier</code> property, the layout specified will be used for all emails in the context of that trigger event.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Novu</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@novu/node</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">novu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Novu</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;NOVU_API_KEY&gt;</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="nx">novu</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="dl">'</span><span class="s1">workflow-identifier</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">to</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">payload</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">attachments</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="na">file</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/data/test.jpeg</span><span class="dl">'</span><span class="p">),</span>
-        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test.jpeg</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">mime</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image/jpg</span><span class="dl">'</span><span class="p">,</span>
-      <span class="p">},</span>
-    <span class="p">],</span>
-  <span class="p">},</span>
-  <span class="na">overrides</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">layoutIdentifier</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your-layout-identifier</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Show Primary Providers on Workflow Nodes
-</h2>
-
-<p>Now you can see the primary provider of a channel in the nodes that show on the workflow editor. This gives you more context and better identification without extra clicks!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Img9lYhG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b6b56afd-76aa-40ee-976b-01ca12ddfb42" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Img9lYhG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b6b56afd-76aa-40ee-976b-01ca12ddfb42" alt="Screenshot 2023-09-11 at 16 11 03" width="800" height="450"></a></p>
-
-<h2>
-  
-  
-  Enhanced Workflow Nodes Misconfiguration Error
-</h2>
-
-<p>Nodes and workflows will now display mis-configured workflows on the dashboard like so:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wB6Wazj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b96744f5-2978-4716-8564-82284c89701f" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wB6Wazj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b96744f5-2978-4716-8564-82284c89701f" alt="Screenshot 2023-09-11 at 16 20 25" width="800" height="430"></a></p>
-
-<h2>
-  
-  
-  All Changes
-</h2>
-
-<p>You can find the full changelog on <a href="https://github.com/novuhq/novu/compare/v0.18.0...v0.19.0">GitHub</a>.</p>
-
-<h2>
-  
-  
-  Supercharged Docs
-</h2>
-
-<p>We revamped and rewrote our <a href="https://docs.novu.co">docs</a> to be better, faster and easily searchable. </p>
-
-<p>With the <a href="https://docs.novu.co">new docs</a>, you can hit the ground running with the API endpoints directly from the <a href="https://docs.novu.co/api-reference/events/trigger-event">API reference</a> pages. </p>
-
-<p>Please explore and give us your feedback. </p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p><a href="https://web.novu.co">Sign up on Novu</a>, try it out &amp; let me know what you think about the new changes in the comments section.</p>
-
-<p>If you want to contribute to OSS and make an impact, I believe it is a <a href="https://github.com/novuhq/novu">great place to start</a> &amp; build out amazing things.</p>
-
-<p>Oh, remember to star the repo as well.🤩 See you in the next release! 🚀</p>
 
  </details> 
  <hr /> 
