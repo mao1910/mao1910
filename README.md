@@ -118,712 +118,1016 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [The 10 tools I install on every new Mac I get](https://dev.to/codepo8/the-10-tools-i-install-on-every-new-mac-i-get-2l59) 
- <details><summary>Article</summary> <p>I am currently on a company trip with my brand new MacBook and here are the things I always install first to get started:</p>
+ #### - [Музыкальный discord бот Kai'Sa](https://dev.to/edexade/muzykalnyi-discord-bot-kaisa-1p24) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  🎵 Добро пожаловать в мир музыки с "Кайсой из К/DA"! 🎵
+</h2>
+
+<p>🎧 Познакомьтесь с вашим новым музыкальным спутником, который перенесет вас в мир магии и музыки, как это делают Кайсы из K/DA! Наш бот - это не просто музыкальный бот, это настоящий артист, создающий уникальную атмосферу на вашем сервере Discord.</p>
+
+<p>✨ Почему выбрать именно нас:</p>
 
 <ul>
-<li>
-<a href="https://brew.sh/">Homebrew</a> - makes installing of low level stuff a breeze (free)</li>
-<li>
-<a href="https://nodejs.org/en">Node/NPM</a> - many things rely on it (free)</li>
-<li>
-<a href="https://www.dropbox.com/">Dropbox</a> - still be best way to store and share content amongst machines, both Google Drive and Microsoft OneDrive drive me nuts with their file permission nonsense (paid)</li>
-<li>
-<a href="https://videolan.org/vlc">VLC</a> - plays everything, has excellent keyboard shortcuts and can in a pinch even record screens for you (free)</li>
-<li>
-<a href="https://code.visualstudio.com">VS Code</a> - coders gotta edit (free)</li>
-<li>
-<a href="https://desktop.github.com/">GitHub Desktop</a> - much, much easier than installing and setting up Git yourself (free)</li>
-<li>
-<a href="https://imageoptim.com/mac">ImageOptim</a> - file resizing and optimising images, even on the command line (free)</li>
-<li>
-<a href="https://ffmpeg.org/">FFMPEG</a> - converts anything to anything on the command line (free)</li>
-<li>
-<a href="https://handbrake.fr/">Handbrake</a> - batch conversion of videos made easy (free)</li>
-<li>
-<a href="https://www.telestream.net/screenflow/overview.htm">Screenflow</a> - my go-to screen recording and video editing tool (paid)</li>
+<li><strong>Поддержка всех ВК песен, альбомов и плейлистов</strong></li>
+<li>🎶 Бескрайний музыкальный опыт: Наш бот предоставляет доступ к миллионам треков самых разных жанров. От хип-хопа до классики, от K-Pop до рок-н-ролла - у нас есть всё!</li>
+<li>🤖 Интуитивный интерфейс управления: Наш бот прост в использовании, даже если вы новичок в Discord. Управление музыкой - это легко!</li>
+<li>🌟 Поддержка текстовых и голосовых команд: Вы можете управлять музыкой, даже не выходя из голосового чата!</li>
 </ul>
 
-<p>Other essentials are a VPN (I use <a href="https://mullvad.net/en">Mullvad</a> and <a href="https://protonvpn.com/">ProtonVPN</a>), but that's about it. </p>
+<p>🎉 Присоединяйтесь к нам и окунитесь в мир музыки и развлечений, напоминающий невероятные выступления Кайсы из K/DA на большой сцене! Наслаждайтесь звуками и создавайте незабываемые моменты на своем сервере Discord с музыкальным ботом "Кайса из К/DA"! 🎶💃🎤</p>
 
-<p>Photo by <a href="https://unsplash.com/@imattsmart?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">iMattSmart</a> on <a href="https://unsplash.com/photos/sm0Bkoj5bnA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<h2>
+  
+  
+  Не терпится начать?)
+</h2>
+
+<h3>
+  
+  
+  Дискорд:
+</h3>
+
+<h3>
+  
+  
+  <a href="https://discord.com/oauth2/authorize?client_id=1147834135918956577&amp;permissions=0&amp;scope=bot%20applications.commands"><u>Нажмите, чтобы добавить бота к себе на сервер</u></a>
+</h3>
+
+<h3>
+  
+  
+  GitHub:
+</h3>
+
+<h3>
+  
+  
+  <a href="https://github.com/issamansur/KaiSa"><u>Нажмите, чтобы посмотреть начинку и сказать, что это <del>говнокод</del></u></a>
+</h3>
+
+<h2>
+  
+  
+  Команды
+</h2>
+
+<ul>
+<li>✅ - готово</li>
+<li>⌛ - в процессе</li>
+<li>❌ - в планах</li>
+</ul>
+
+<div class="table-wrapper-paragraph"><table>
+  <tr>
+    <td><b>Команды управления ботом</b></td>
+    <td><b>Команды управления аккаунтом пользователя</b></td>
+  </tr>
+  <tr>
+    <td>✅ /ping</td>
+    <td>✅ /register</td>
+  </tr>
+  <tr>
+    <td>⌛ /help</td>
+    <td>✅ /unregister</td>
+  </tr>
+  <tr>
+    <td>✅ /report</td>
+    <td>✅ /auth [id гильдии] [логин/телефон] [пароль]</td>
+  </tr>
+</table></div>
+
+<div class="table-wrapper-paragraph"><table>
+  <tr>
+    <td><b>Команды поиска и воспроизведения музыки</b></td>
+    <td><b>Команды управления воспроизведением музыки</b></td>
+  </tr>
+  <tr>
+    <td>✅ /search [название/автор песни]</td>
+    <td>✅ /list</td>
+  </tr>
+  <tr>
+    <td>✅ /search-album [название плейлиста (исполнителя)]</td>
+    <td>✅ /repeat [OFF | ONE | ALL]</td>
+  </tr>
+  <tr>
+    <td>✅ /search-playlist [название плейлиста (пользователя)]</td>
+    <td>✅ /skip</td>
+  </tr>
+  <tr>
+    <td>⌛ Soon...</td>
+    <td>✅ /quit</td>
+  </tr>
+</table></div>
+
+<h2>
+  
+  
+  Что мы кокодили, кокожим и будем кокодить:
+</h2>
+
+<h3>
+  
+  
+  Общее:
+</h3>
+
+<ul>
+<li>✅ Воспроизведение и интерактивность с голосовыми каналами</li>
+<li>✅ Интеграция <code>vkpymusic</code> для доступа к аудио и плейлистам</li>
+<li>✅ Работа с аудио</li>
+<li>✅ СКАЧИВАНИЕ!!!</li>
+<li>✅ Работа с плейлистами</li>
+</ul>
+
+<h3>
+  
+  
+  Очередь треков:
+</h3>
+
+<ul>
+<li>✅ Своя очередь для каждой группы</li>
+<li>✅ Очередь треков (синхронная)</li>
+<li>❌ Очередь асинхронная (с использованием <code>asyncio.Queue</code> или иначе)</li>
+</ul>
+
+<h3>
+  
+  
+  Токены VK API:
+</h3>
+
+<ul>
+<li>✅ Сохранение <code>API</code> токенов для каждой гильдии/сервера</li>
+<li>✅ Автоматическое переподключение сервиса вместо <code>/register</code>
+</li>
+<li>❌ Проверка валидности <code>API</code> токена</li>
+</ul>
+
+<h3>
+  
+  
+  Прочее:
+</h3>
+
+<ul>
+<li>⌛ Редизайн и правки</li>
+<li>⌛ Документация и комментарии к коду</li>
+<li>⌛ Тестирование и отладка</li>
+</ul>
+
+<h3>
+  
+  
+  Возможное и невозможное:
+</h3>
+
+<ul>
+<li>❌ Дополнительные функции для управления плейлистами</li>
+<li>❌ Интеграция с другими музыкальными сервисами</li>
+<li>❌ Работоспособность на 100%</li>
+</ul>
 
  </details> 
  <hr /> 
 
- #### - [C# Arrays](https://dev.to/zafarurakov/c-arrays-4acj) 
- <details><summary>Article</summary> <h3>
+ #### - [Create an entry approval workflow with Statamic Revisions](https://dev.to/visuellverstehen/create-an-entry-approval-workflow-with-statamic-revisions-4gnc) 
+ <details><summary>Article</summary> <p>When managing entries in your Statamic application that gather external data, such as from APIs, you may find it necessary to implement a data control step before publication. Statamic offers a useful tool for this purpose known as the revisions feature, specifically focusing on <strong>working copies</strong>.</p>
+
+<p>In the following sections, I'll guide you through the process of creating an Approval Mechanism for Statamic.</p>
+
+<p>This article is structured as follows:</p>
+
+<ul>
+<li>Who is this article for?</li>
+<li>What we are about to do</li>
+<li>Let's bring in the data!</li>
+<li>Let authors know that there's something to review</li>
+<li>Create a feedback form</li>
+<li>Tracking feedback and dates</li>
+<li>Handling publication</li>
+<li>Conclusion</li>
+</ul>
+
+<h2>
+  
+  
+  Who is this article for?
+</h2>
+
+<p>This article is primarily aimed at Statamic developers who are already acquainted with Statamic's core concepts and have a basic understanding of PHP and Laravel. To fully comprehend and implement the Approval Mechanism discussed here, readers should be familiar with key Statamic elements like entries and blueprints.</p>
+
+<p>Additionally, a basic grasp of Vue.js for handling user interface components and API integration knowledge will prove beneficial in following concepts presented in this article.</p>
+
+<p>I would recommended that you also have a basic understanding of <a href="https://statamic.dev/extending">extending Statamic</a>, but if you're new to this, it's a good idea to explore those concepts beforehand for a smoother learning experience.</p>
+
+<p>You need <strong>Statamic Pro</strong> to enable the revisions feature.</p>
+
+<h2>
+  
+  
+  What we are about to do
+</h2>
+
+<p>In this article, our primary objective is to create an Approval Mechanism within Statamic, emphasizing the process of managing entries and enabling a structured review and feedback workflow. While we briefly touch on data import as context, our main focus lies in developing this mechanism. We'll explore how to efficiently flag entries as 'Needs Review,' facilitate feedback from CMS authors through a built-in feedback form, and dynamically update entry statuses for better organization.</p>
+
+<p>Additionally, we'll demonstrate how to log feedback and maintain feedback history as part of this comprehensive solution. For illustration, we'll use a 'persons' collection where each person is associated with a unique 'external_service_id,' linking them to external data sources.</p>
+
+<h2>
+  
+  
+  What's a working copy?
+</h2>
+
+<p>Working copies serve as a <strong>temporary version</strong> of an entry, generated when you edit and save an existing entry. You then have the option to create a revision or proceed with publication. Should you opt for a revision or publication, the working copy will be discarded. Conversely, choosing to save your changes ensures that the working copy is promptly updated.</p>
+
+<p>By default working copies are saved inside the revisions folder. The path can be set in the <code>config/statamic/revisions.php</code> file. By default it's set to <code>storage_path('statamic/revisions')</code>.</p>
+
+<h2>
+  
+  
+  Let's bring in the data!
+</h2>
+
+<p>We assume we already have some existing persons in our collection. Inside our import method we want to update or create a working copy of each entry.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="k">foreach</span> <span class="p">(</span><span class="nv">$personEntries</span> <span class="k">as</span> <span class="nv">$personEntry</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$personEntry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// Update working copy</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Create working copy</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now let's implement these methods. We are assuming that the <strong>new data</strong> comes in an array that represents the data structure of our person blueprint. For example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="nv">$newData</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Smeagol'</span><span class="p">,</span>
+    <span class="s1">'diet'</span> <span class="o">=&gt;</span> <span class="s1">'juicy sweet fish'</span><span class="p">,</span>
+    <span class="s1">'job_title'</span> <span class="o">=&gt;</span> <span class="s1">'Tourist Guide'</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Creating</strong> the working copy<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="k">function</span> <span class="n">createWorkingCopy</span><span class="p">(</span><span class="kt">Entry</span> <span class="nv">$entry</span><span class="p">,</span> <span class="kt">array</span> <span class="nv">$data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Set the new data</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Create a working copy from the entry</span>
+    <span class="nv">$workingCopy</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">makeWorkingCopy</span><span class="p">();</span>
+
+    <span class="c1">// Save the working copy</span>
+    <span class="nv">$workingCopy</span><span class="o">-&gt;</span><span class="nf">save</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Updating</strong> the working copy is a little more complicated since the data can't be set directly on the working copy. We have to get the data from the working copy, update it and then save it again.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="k">function</span> <span class="n">updateWorkingCopy</span><span class="p">(</span><span class="kt">Entry</span> <span class="nv">$entry</span><span class="p">,</span> <span class="kt">array</span> <span class="nv">$newData</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Get current data from the data attribute and merge it with the new data.</span>
+    <span class="nv">$currentData</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">);</span>
+    <span class="nv">$updatedData</span> <span class="o">=</span> <span class="p">[</span><span class="mf">...</span><span class="nv">$currentData</span><span class="p">,</span> <span class="mf">...</span><span class="nv">$newPureData</span><span class="p">];</span>
+
+    <span class="nv">$entry</span>
+        <span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="nv">$updatedData</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="nf">save</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So, at the moment, we always create or update a working copy and overwrite a possible existing one. In this case, that's okay, but you may want to check if there is already a working copy, and if so, create a new revision instead of overwriting the working copy. But that results in potentially a lot of revisions. So you have to decide what's best for you. I will only cover the working copy case here.</p>
+
+<p>Additionally, you should have a field in your entries blueprint where you save the last imported date to check if the incoming data is newer than the last import. If not, you can skip the entry. That, of course, presupposes that your external data also provides some kind of 'updated_at' field.</p>
+
+<h2>
+  
+  
+  Let authors know that there's something to review
+</h2>
+
+<p>What we did before is basically everything you need to have a simple approval mechanism where new data gets saved inside a working copy to be reviewed. But we want to give the CMS authors a hint that there is something to review. We will do this by adding a status field.</p>
+
+<p>What we need is a custom field type that we can use in our blueprint. I won't go into detail here about how to create a custom field type. You can read about it in the <a href="https://statamic.dev/extending/fieldtypes">Statamic documentation</a>.</p>
+
+<p>We will create a custom field type called 'approval_status' that will have three possible values: 'needs_review,' 'approved,' and 'feedback_sent.'</p>
+
+<p>We will add some methods to our ApprovalStatus.php fieldtype class to check the status.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="k">public</span> <span class="k">function</span> <span class="n">preProcessIndex</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getStatus</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="n">preload</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getStatus</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">protected</span> <span class="k">function</span> <span class="n">getStatus</span><span class="p">():</span> <span class="kt">array</span>
+<span class="p">{</span>
+    <span class="nv">$entry</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">field</span><span class="p">()</span><span class="o">-&gt;</span><span class="k">parent</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="nc">ApprovalStatus</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="nv">$entry</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>As you can see, it can be better to outsource the logic to a separate class. We will create an ApprovalStatus class that will have a static method to get the status. This method will use a variable <code>$feedbackDate</code>. This variable will be set when the CMS author gives feedback and deleted when the working copy is published. We will cover this later.</p>
+
+<p>Here's a little diagram that visually explains the logic behind the status check:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2QW8X5-1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8nxdpy58dxq30m44tqp1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2QW8X5-1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8nxdpy58dxq30m44tqp1.png" alt="The logic behind the approval status" width="800" height="453"></a></p>
+
+<p>… and the corresponding code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">get</span><span class="p">(</span><span class="kt">Entry</span> <span class="nv">$entry</span><span class="p">):</span> <span class="kt">array</span>
+<span class="p">{</span>
+    <span class="nv">$workingCopyData</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span><span class="o">?-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">);</span>
+    <span class="nv">$feedbackDate</span> <span class="o">=</span> <span class="nv">$workingCopyData</span><span class="p">[</span><span class="s1">'feedback_date'</span><span class="p">];</span>
+
+    <span class="c1">// The person has no working copy and is published, so there's noting to be reviewed.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">published</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'approved'</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// The person has a working copy and has no feedback date, so a review was sent.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nv">$feedbackDate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'feedback_sent'</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// The person has a working copy and has no feedback date, so it needs a review.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">hasWorkingCopy</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="nv">$feedbackDate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="s1">'needs_review'</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The Vue components to our ApprovalStatus field type class are pretty simple. They get the status with the help of the <code>preload()</code> and the <code>preProcessIndex()</code> methods.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// ApprovalStatus.vue</span>
+
+<span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{{</span> <span class="k">this</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">status</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span></code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="c1">// ApprovalStatusIndex.vue</span>
+
+<span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{{</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">status</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span></code></pre>
+
+</div>
+
+
+
+<p>You can also add your classes and pass a color to your status array to style the status in the control panel. You can find more information about index field types here: <a href="https://statamic.dev/extending/fieldtypes#index-fieldtypes">Statamic Index Fieldtypes</a></p>
+
+<h2>
+  
+  
+  Giving Feedback
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OtCQX82d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p5srd95lx1jyrqrp9731.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OtCQX82d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p5srd95lx1jyrqrp9731.png" alt="Feedback Workflow Step 1" width="673" height="430"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kTarJiru--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1svk7xgo2zc7hokwxkzd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kTarJiru--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1svk7xgo2zc7hokwxkzd.png" alt="Feedback Workflow Step 2 and 3" width="673" height="186"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6zONksek--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pkoe76v667jodlxrodzo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6zONksek--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pkoe76v667jodlxrodzo.png" alt="Feedback Wokflow Step 4" width="673" height="413"></a></p>
+
+<h3>
+  
+  
+  Create a feedback form
+</h3>
+
+<p>The form is also a custom fieldtype. It will have a textarea and a button to submit the feedback. We assume that the person entry has an email stored. We can write our feedback into the text field and with the click on the button, we will make a post request to a custom route that takes care of error handling and sending the mail. After sending the mail, we want to disable the form and the button to prevent multiple feedbacks.</p>
+
+<p>This is how the Vue component can look like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">textarea</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/textarea</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Send</span> <span class="nx">a</span> <span class="nx">mail</span> <span class="nx">to</span> <span class="p">{{</span> <span class="k">this</span><span class="p">.</span><span class="nx">mail</span> <span class="p">}}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">button</span> <span class="p">:</span><span class="nx">disabled</span><span class="o">=</span><span class="dl">"</span><span class="s2">mailSent</span><span class="dl">"</span> <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">sendEmail</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="dl">"</span><span class="s2">this.mailSent</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">E</span><span class="o">-</span><span class="nx">Mail</span> <span class="nx">is</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">way</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">v</span><span class="o">-</span><span class="k">else</span><span class="o">&gt;</span><span class="nx">Send</span> <span class="nx">E</span><span class="o">-</span><span class="nx">Mail</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="na">mixins</span><span class="p">:</span> <span class="p">[</span><span class="nx">Fieldtype</span><span class="p">],</span>
+    <span class="na">inject</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">storeName</span><span class="dl">'</span><span class="p">],</span>
+
+    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="na">message</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+            <span class="na">mailSent</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="p">};</span>
+    <span class="p">},</span>
+
+    <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">mail</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">publish</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">storeName</span><span class="p">].</span><span class="nx">values</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">pid</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">publish</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">storeName</span><span class="p">].</span><span class="nx">values</span><span class="p">.</span><span class="nx">pid</span><span class="p">;</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+
+    <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">sendEmail</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">$progress</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="dl">'</span><span class="s1">review_mail</span><span class="dl">'</span><span class="p">);</span>
+
+            <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/admin/person/review/send</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+                <span class="na">message</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span>
+                <span class="na">email</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">mail</span><span class="p">,</span>
+            <span class="p">})</span>
+                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">$progress</span><span class="p">.</span><span class="nx">complete</span><span class="p">(</span><span class="dl">'</span><span class="s1">review_mail</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">$toast</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="s2">`E-Mail sent to </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">mail</span><span class="p">}</span><span class="s2">!`</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">mailSent</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">$progress</span><span class="p">.</span><span class="nx">complete</span><span class="p">(</span><span class="dl">'</span><span class="s1">review_mail</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">$toast</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">mailSent</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Tracking feedback and dates
+</h3>
+
+<p>To allow a better overview of previous sent feedback, you can log your feedback in a replicator field below the feedback form. Simply add some code to the method that handles your post request from the form component above. Let's assume this method is inside the same class as the create and update working copy methods.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="k">function</span> <span class="n">saveFeedback</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$entryId</span><span class="p">,</span> <span class="kt">string</span> <span class="nv">$feedbackMessage</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$entry</span> <span class="o">=</span> <span class="nc">Entry</span><span class="o">::</span><span class="nf">find</span><span class="p">(</span><span class="nv">$entryId</span><span class="p">);</span>
+
+    <span class="nv">$currentFeedbackLog</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">workingCopy</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'data'</span><span class="p">)[</span><span class="s1">'feedback_logs'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
+    <span class="nv">$newLog</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'log'</span><span class="p">,</span>
+        <span class="s1">'enabled'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="nc">RowId</span><span class="o">::</span><span class="nf">generate</span><span class="p">(),</span>
+        <span class="s1">'mail'</span> <span class="o">=&gt;</span> <span class="nv">$feedbackLog</span><span class="p">,</span>
+        <span class="s1">'time'</span> <span class="o">=&gt;</span> <span class="nf">now</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">format</span><span class="p">(</span><span class="s1">'d.m.Y H:i:s'</span><span class="p">),</span>
+    <span class="p">];</span>
+
+    <span class="nv">$updatedLog</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">([</span><span class="nv">$newLog</span><span class="p">],</span> <span class="nv">$currentFeedbackLog</span><span class="p">);</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">updateWorkingCopy</span><span class="p">(</span><span class="nv">$entry</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">'feedback_logs'</span> <span class="o">=&gt;</span> <span class="nv">$updatedLog</span><span class="p">,</span>
+        <span class="s1">'feedback_date'</span> <span class="o">=&gt;</span> <span class="nf">now</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">format</span><span class="p">(</span><span class="s1">'Y-m-d\TH:i:s.uP'</span><span class="p">),</span>
+
+    <span class="p">]);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Handling publication
+</h2>
+
+<p>To finish up the approval mechanism, we just have to delete the feedback date automatically when the entry gets published. We can achieve this by <a href="https://statamic.dev/extending/events#overview">listening to the <code>EntrySaved</code></a> vent. We will create a listener class that will check if the entry is from the persons collection and has set a feedback date and if so, delete the feedback date.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight php"><code><span class="k">public</span> <span class="k">function</span> <span class="n">handle</span><span class="p">(</span><span class="kt">object</span> <span class="nv">$event</span><span class="p">):</span> <span class="kt">void</span>
+<span class="p">{</span>
+    <span class="nv">$entry</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="n">entry</span><span class="p">;</span>
+    <span class="nv">$collectionHandle</span> <span class="o">=</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="n">collection</span><span class="o">-&gt;</span><span class="n">handle</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$collectionHandle</span> <span class="o">===</span> <span class="s1">'persons'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$entry</span><span class="o">-&gt;</span><span class="n">feedback_date</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$entry</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="s1">'feedback_date'</span><span class="p">,</span> <span class="kc">null</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">saveQuietly</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>This is how the Feedback UI could look like:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--u4kMfxW8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4hrd3cvcm79d4nhluex7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--u4kMfxW8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4hrd3cvcm79d4nhluex7.png" alt="The entry feedback form, status and log" width="800" height="676"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2LKbwd9b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wftrfct9owxt7l4e9rrn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2LKbwd9b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wftrfct9owxt7l4e9rrn.png" alt="The index view with status" width="800" height="237"></a></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>Great! 🎉 We now have a simple approval mechanism for our Statamic application. Of course, you can extend this mechanism to your needs. For example, you can add a field to your entries blueprint where you can set the email address of the person that should review the entry or for the person that should review it. It's also very handy to add a filter to your index view to filter for entries that need a review.</p>
+
+<p>When handling multisites, you should think about if you want to have a separate approval mechanism for each site or if you want to have a global one. In my case, I disabled the review form for any other language than the default one, and the authors are always sending reviews for all localizations in one mail. When creating and updating the working copy, you have to update each localization separately. Take a look at the <code>$entry-&gt;descendants()</code> method to get all localizations of an entry.</p>
+
+<p>I hope this article was helpful for you. If you have any questions or suggestions, please let me know in the comments. 👋</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Solving "Diameter of Binary Tree" Leet code Question](https://dev.to/leetcode/solving-diameter-of-binary-tree-leet-code-question-264l) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Intuition
+</h2>
+
+<p>We want to find the diameter of a <code>binary tree</code>, which is the length of the longest <code>path</code> between any two nodes. This path may or may not pass through the <code>root</code>.</p>
+
+<h2>
+  
+  
+  Approach
+</h2>
+
+<p>We perform a depth-first traversal of the tree and calculate the height of each subtree. While calculating the height of each node, we also update the diameter if a longer path is found. The final result will be stored in the <code>diameter</code> variable.</p>
+
+<p><strong>Time complexity</strong><br>
+O(n) - We visit each node once.</p>
+
+<p><strong>Space complexity</strong><br>
+O(h) - Recursive call stack space, where h is the height of the tree.</p>
+
+<h2>
+  
+  
+  Code
+</h2>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+
+    int diameter = 0;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        height(root);
+        return diameter;
+    }
+
+    public int height(TreeNode node){
+
+        if(node == null) {
+            return 0;
+        }
+
+        int lh = height(node.left);
+        int rh = height(node.right);
+        diameter = Math.max(diameter,lh+rh);
+
+        return 1 + Math.max(lh,rh);
+    }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>Happy coding,<br>
+shiva</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Best Tips and Practices for .NET Performance Optimization and Scalability](https://dev.to/ifourtechnolab/best-tips-and-practices-for-net-performance-optimization-and-scalability-41gh) 
+ <details><summary>Article</summary> <p>Have you ever experienced a slow-loading webpage or an unresponsive application that seemed to take forever to complete a task? If so, you know the frustration that comes with poor performance. In today's fast-paced digital world, users demand high-performing and responsive applications that can handle large amounts of data without any lag or delays. This is where .NET performance optimization and scalability come into play.</p>
+
+<p>.NET is a popular custom software development framework used for developing a wide range of applications, from websites to desktop applications and mobile apps. While .NET is well-known for its simplicity of use and quick development capabilities, optimizing and scaling for high-performance and big workloads can be difficult. As more organizations and clients rely on digital apps, the demand for streamlined and scalable .NET applications grows. For this reason, clients aim to <a href="https://www.ifourtechnolab.com/hire-dot-net-developer">hire dedicated .NET developers</a> to build flawless websites and web applications.</p>
+
+<p>Let's take a deep dive and learn some of the best pieces of advice on .NET optimization strategies.</p>
+
+<h2>
+  
+  
+  Top 10 strategies for .NET performance optimization
+</h2>
+
+<p>Honestly, .NET is not the easiest platform to work with, it takes years of hands-on experience to acquire enough knowledge to optimize the performance and scalability, here are some of the tips and tricks for optimization based on my experience.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3I6GvXv1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/myeqjr7ecuh9yofmp2wm.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3I6GvXv1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/myeqjr7ecuh9yofmp2wm.png" alt="Image description" width="800" height="476"></a></p>
+
+<h4>
+  
+  
+  Planning to hire <a href="https://www.ifourtechnolab.com/csharp-development-company">C# development company</a> for your project?
+</h4>
+
+<p>Start with multi-threading, it can improve performance by allowing your application to perform multiple tasks simultaneously<br>
+Caching is your friend, caching can greatly improve performance by storing frequently accessed data in memory, reducing the need to retrieve it from a slower storage location<br>
+Load balancer to the rescue, it will improve the scalability of your application by distributing incoming traffic across multiple servers<br>
+Always download and use the latest version of .NET, the latest versions usually include performance and scalability improvements<br>
+Make use of asynchronous programming to enable multiple tasking which will lead to improved performance and scalability<br>
+Examine and remove unnecessary objects and dispose of objects that are no longer needed. Use the garbage collector's memory management features to the fullest to optimize memory usage.<br>
+Using a profiler can help identify performance bottlenecks in your application and provide recommendations for optimization<br>
+Make use of a Content Delivery Network, a CDN can improve the performance and scalability of your application by distributing static content across multiple servers in multiple locations<br>
+Always use a message queue, it will improve the scalability of your application by allowing it to handle a large number of requests simultaneously without overwhelming resources<br>
+Explore the feasibility of cloud-based infrastructure, it can provide the scalability, performance, and reliability required to support large and complex applications.</p>
+
+<ul>
+<li>Vivek Basavegowda Ramu, QA at UnitedHealth Group
+Performance optimization with Profiler and Caching techniques
+Due to the growing business demands, .NET performance optimization has become a critical need for today’s businesses. For this reason, clients tend to hire skilled .NET Core developers to build flawless and scalable platforms capable of handling the growing number of users, and their data without degrading performance. Here are some of the best practices you can follow:</li>
+</ul>
+
+<p>Use a Profiler to Monitor Performance: A profiler can improve .NET application performance and scalability by detecting faults and monitoring performance.<br>
+Caching: It improves .NET application performance and scalability. Redis or Memcached helps minimize database queries.<br>
+Use Asynchronous Programming: Asynchronous programming allows your application to do numerous processes simultaneously, which can significantly reduce request processing time.<br>
+Reduce Garbage Collection: .NET garbage collection can be a severe bottleneck. Use structs, arrays, and a few objects to minimize garbage collection.<br>
+Optimize Your Code: Optimizing code reduces execution time. Refactoring loops to LINQ queries can improve performance. Performance monitoring tools can assist you in finding .NET application bottlenecks. AppDynamics and New Relic are open-source monitoring tools.</p>
+
+<ul>
+<li>Berry Moise Founder at BerryMo.com
+Read More: 4 Proven tactics to hire .NET developers for your Business startup
+Optimizing the performance and scalability of .NET applications can be complex and time-consuming. Here are a few tips and tricks to get you started:</li>
+</ul>
+
+<p>Utilize asynchronous programming to keep CPU utilization low while still executing tasks efficiently.</p>
+
+<p>Minimize objects created or held in memory by using data structures that use less memory or dispose of them when they are no longer needed.</p>
+
+<p>Reduce disk operations where possible by caching data in memory.</p>
+
+<p>Profile your application regularly to ensure that resources like CPU, disk, and RAM are being used efficiently.</p>
+
+<p>Use effective logging techniques like structured logging to capture meaningful metrics about the performance of your application over time.</p>
+
+<ul>
+<li>Omer Usanmaz, CEO of Qooper</li>
+</ul>
+
+<h2>
+  
+  
+  Employ Garbage collection, and minimize concurrency issues
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0nWVK2by--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vsiebz5ewmorrjs9844l.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0nWVK2by--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vsiebz5ewmorrjs9844l.png" alt="Image description" width="800" height="578"></a></p>
+
+<p>Use caching mechanisms to improve performance. Caching can help reduce the number of times an object is retrieved from the database or from a remote service. You can also use caching within your application itself, on individual objects or collections of objects.<br>
+Tune your memory usage. By restricting the amount of memory that is used by your application, you can improve its performance. You can use garbage collection to free up unused memory, or you can configure your application to automatically compact its memory after a set period of time.<br>
+Minimize concurrency issues. When multiple threads compete for access to the same resources, it can lead to increased execution time and decreased scalability. strategies for minimizing concurrency issues include using thread-safety annotations and designing your applications with careful attention to locking and synchronization primitives.<br>
+Design for scale-out architectures. As your application grows in size and complexity, it may benefit from using scale-out architectures a design pattern in which multiple instances of an application are deployed on separate servers so that requests for services from users across the network are handled by separate servers rather than one central server. Scale-out architectures allow you to avoid the bottleneck that often results from having too much data processing activity concentrated on a single server instance.</p>
+
+<ul>
+<li>Ivan Marusic, CEO of RPG Overload</li>
+</ul>
+
+<h2>
+  
+  
+  Conclusion:
+</h2>
+
+<p>.NET performance optimization is essential to improve responsiveness and speed of business applications to lead a better user experience. Scaling .NET applications can ensure that the application can handle a growing number of users, data, and workload without any performance degradation. This blog has gone through expert tips and best practices for scaling and optimizing .NET apps and websites. We hope it was helpful and covered the facts you were searching for. To get more such insights, do not forget to <a href="https://www.ifourtechnolab.com/blog">check our blog</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [SDC in Drupal core](https://dev.to/sparkfabrik/sdc-in-drupal-core-npi) 
+ <details><summary>Article</summary> <h2>
   
   
   Introduction
-</h3>
+</h2>
 
-<p>Arrays are an essential data structure in C# that allow you to store and manipulate collections of elements of the same data type. Arrays provide a convenient way to work with multiple values under a single variable name.</p>
+<p>There are a lot of contributed modules to build and manage a Drupal theme using components, but none of them has ever been elected as the de facto standard.</p>
 
-<p>In C#, arrays can be of various types, including one-dimensional, multi-dimensional, and jagged arrays. This documentation will explore each type and provide clear examples to help you understand their usage.</p>
-
-<h3>
-  
-  
-  One-Dimensional Arrays
-</h3>
-
-<p><strong>Declaration and Initialization</strong><br>
-One-dimensional arrays in C# are declared and initialized using square brackets "[]". Here's an example of declaring and initializing an integer array:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">5</span><span class="p">];</span> <span class="c1">// Creates an integer array with 5 elements</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Accessing Elements</strong><br>
-You can access elements in a one-dimensional array using their index, starting from 0. For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span> <span class="n">thirdNumber</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">[</span><span class="m">2</span><span class="p">];</span> <span class="c1">// Accesses the third element (index 2)</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Example: Sum of Elements</strong><br>
-Let's calculate the sum of elements in an integer array:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
-<span class="kt">int</span> <span class="n">sum</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-
-<span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">sum</span> <span class="p">+=</span> <span class="n">num</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Sum of elements: "</span> <span class="p">+</span> <span class="n">sum</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="n">Sum</span> <span class="n">of</span> <span class="n">elements</span><span class="p">:</span> <span class="m">15</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Multi-Dimensional Arrays
-</h3>
-
-<p><strong>Declaration and Initialization</strong><br>
-Multi-dimensional arrays have multiple dimensions, typically represented as a matrix. You can declare and initialize them like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[,]</span> <span class="n">matrix</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span> <span class="c1">// Creates a 3x3 integer matrix</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Accessing Elements</strong><br>
-Accessing elements in a multi-dimensional array requires specifying indices for each dimension:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="n">matrix</span><span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="c1">// Accesses the element in the first row and first column</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Example: Matrix Multiplication</strong><br>
-Let's perform matrix multiplication using multi-dimensional arrays:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[,]</span> <span class="n">matrixA</span> <span class="p">=</span> <span class="p">{</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">},</span> <span class="p">{</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">}</span> <span class="p">};</span>
-<span class="kt">int</span><span class="p">[,]</span> <span class="n">matrixB</span> <span class="p">=</span> <span class="p">{</span> <span class="p">{</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span> <span class="p">},</span> <span class="p">{</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span> <span class="p">}</span> <span class="p">};</span>
-<span class="kt">int</span><span class="p">[,]</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">];</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
-    <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">k</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">k</span><span class="p">++)</span>
-        <span class="p">{</span>
-            <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="p">+=</span> <span class="n">matrixA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="p">*</span> <span class="n">matrixB</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">];</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Matrix Multiplication Result:"</span><span class="p">);</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="p">+</span> <span class="s">" "</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="n">Matrix</span> <span class="n">Multiplication</span> <span class="n">Result</span><span class="p">:</span>
-<span class="m">19</span> <span class="m">22</span>
-<span class="m">43</span> <span class="m">50</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Jagged Arrays
-</h3>
-
-<p>Jagged arrays are arrays of arrays, where each sub-array can have a different length. They are declared and initialized as follows:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[][]</span> <span class="n">jaggedArray</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">3</span><span class="p">][];</span>
-<span class="n">jaggedArray</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">};</span>
-<span class="n">jaggedArray</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
-<span class="n">jaggedArray</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span> <span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Accessing Elements</strong><br>
-To access elements in a jagged array, you need to specify both the outer and inner indices:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span> <span class="k">value</span> <span class="p">=</span> <span class="n">jaggedArray</span><span class="p">[</span><span class="m">1</span><span class="p">][</span><span class="m">2</span><span class="p">];</span> <span class="c1">// Accesses the third element of the second sub-array</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Example: Sum of Elements in Jagged Array</strong><br>
-Let's calculate the sum of elements in a jagged integer array:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[][]</span> <span class="n">jaggedArray</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[][]</span> <span class="p">{</span>
-    <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">},</span>
-    <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">},</span>
-    <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="n">sum</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-
-<span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">subArray</span> <span class="k">in</span> <span class="n">jaggedArray</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="k">in</span> <span class="n">subArray</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">sum</span> <span class="p">+=</span> <span class="n">num</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Sum of elements in jagged array: "</span> <span class="p">+</span> <span class="n">sum</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Sum of elements in jagged array: 45
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Conclusion
-</h3>
-
-<p>Arrays are versatile and fundamental data structures in C#. Understanding how to declare, initialize, and manipulate different types of arrays will greatly enhance your programming skills. Feel free to experiment with the provided examples and explore more complex scenarios to become proficient in working with arrays in C#.</p>
-
-<p>I have a lot of interesting code on <strong><a href="https://github.com/ZafarUrakov">GitHub</a></strong></p>
-
- </details> 
- <hr /> 
-
- #### - [I built WebComponents-based framework, I am HTML Developer](https://dev.to/oknoorap/i-built-webcomponents-based-framework-i-am-html-developer-2jjb) 
- <details><summary>Article</summary> <p>TL;DR: I created Realm (<a href="https://realm.codes">https://realm.codes</a>), a WebComponents-based framework that prioritizes simplicity and efficiency in frontend development. As a solo founder and product builder, I understand the importance of building Minimum Viable Products (MVPs) quickly. That's why Realm doesn't rely on heavy tooling, transpilers, or complex setups.</p>
-
-<p>Embraces the HTML Developer Manifesto, emphasizing clean and concise HTML code over excessive JavaScript. Realm offers a streamlined development experience and allows you to prototype and launch your ideas quickly. With features like reactive data binding and reusability, Realm empowers you to build dynamic web apps effortlessly.</p>
-
-
-
-
-<p>You know, in the world of JavaScript, there's this belief that a new framework pops up every second. Developers are never satisfied with what exists and always end up reinventing the wheel. But you know what? It's actually a good thing. Innovation in other fields works the same way.</p>
-
-<p>As a React / Next.js developer for the past four years (and still using it), I've often found myself struggling with the complexities of modern web development. Sure, there have been attempts in the past to reinvent things, like SSR (Server-Side Rendering) or RSC (React Server Components), can be done with old PHP way, but they're not quite the same. But it makes the web development more complex.</p>
-
-<p>The complexity of modern web development has always bothered me. As someone building products, working on Minimum Viable Products (MVPs), I find myself caught up in endless tasks like setting up boilerplate code, organizing folders, and implementing best practices.</p>
-
-<p>But then, I stumbled upon a post by <a href="https://x.com/levelsio">@levelsio</a> on X (<a href="https://x.com/levelsio/status/1675829733668319233">https://x.com/levelsio/status/1675829733668319233</a>). He was using jQuery and PHP, and his product shipped quickly without any issues. It made me realize that building a million-dollar MVP doesn't necessarily require a complex stack. It's all about having a clear vision for your product. The stack is just another piece of the puzzle.</p>
-
-<p>The mindset of a founder or indie maker is different from that of a developer working at a startup. Best practices and scalability, in my opinion, aren't all that important during the MVP phase.</p>
-
-<p>That's why I've always dreamt of creating a simple framework that ignores all the complexity and best practices. I miss the good old days of jQuery, where everything was just simple.</p>
-
-<p>So, let's take a trip down memory lane and explore the evolution of web development, particularly on the frontend development.</p>
-
-
-
+<p>However, things have changed with the release of Drupal 10.1 in June 2023. A specific implementation was chosen for inclusion in the Drupal core. Initially developed as a contributed module named <a href="https://www.drupal.org/project/cl_components"><em>Component Libraries: Components</em></a>, this functionality has been merged into Drupal core as the new <a href="https://www.drupal.org/node/3355112"><em>SDC experimental module</em></a>.</p>
 
 <h2>
   
   
-  Frontend Development Evolution
+  What is SDC?
 </h2>
 
-<p>I witnessed most of the frontend development journey from the beginning, and I am grateful that today we have some awesome frameworks and libraries that have revolutionized the way we build user interfaces. We will recall of our memory about the evolution of frontend development and delve into the journeys of some prominent frameworks and libraries that have shaped the frontend world.</p>
+<p>SDC stands for <em>Single Directory Components</em>. It is a way to organize components in a single directory instead of splitting them across different folders. This approach is similar to the one used by <a href="https://reactjs.org/">React</a> and <a href="https://vuejs.org/">Vue.js</a>.</p>
 
-<h3>
-  
-  
-  jQuery
-</h3>
+<p>The main advantage of this solution is that it <em>is easier to find the code that describes a component</em>. It also simplifies the process of creating a new component, as you just need to create a new folder and add a some files to it.</p>
 
-<p>The jQuery Era marked a significant shift in frontend development. jQuery, released in 2006, quickly gained popularity due to its simplicity and ability to manipulate the Document Object Model (DOM) efficiently. It provided a concise syntax for traversing and manipulating HTML elements, handling events, and making AJAX requests. jQuery's widespread adoption made it the go-to library for many developers, and its influence can still be seen in countless legacy codebases.</p>
-
-<h3>
-  
-  
-  AngularJS
-</h3>
-
-<p>AngularJS, introduced by Google in 2010, brought a new paradigm to frontend development with its Model-View-Controller (MVC) architecture. It offered a comprehensive framework for building dynamic web applications, providing features like two-way data binding, dependency injection, and reusable components. AngularJS gained popularity for its ability to handle complex applications and its strong community support.</p>
-
-<h3>
-  
-  
-  Polymer
-</h3>
-
-<p>Polymer, developed by Google in 2013, introduced the concept of web components to frontend development. Web components enable developers to encapsulate and reuse UI elements across different projects. Polymer provided a set of tools and conventions to create and use web components, making it easier to build modular and maintainable frontend code. Polymer may not have reached the same level of popularity as some other frameworks, but it played a crucial role in paving the way for the future of web components. This inspired me to create Realm, a framework that embraces the power and potential of web components.</p>
-
-<h3>
-  
-  
-  Vue, React, Svelte
-</h3>
-
-<p>The rise of Vue.js, React, and Svelte in recent years has transformed frontend development. Vue.js, released in 2014, offers a progressive framework that combines declarative rendering, component-based architecture, and a gentle learning curve. React, introduced by Facebook in 2013, revolutionized UI development with its virtual DOM and component-based approach. Svelte, released in 2016, takes a different approach by compiling components at build time, resulting in highly efficient and performant applications.</p>
-
-<p>These frameworks have gained massive popularity due to their robust ecosystems, extensive community support, and developer-friendly features. They have significantly simplified frontend development and empowered developers to build complex and interactive user interfaces with ease.</p>
-
-<h3>
-  
-  
-  HTML Lit
-</h3>
-
-<p>HTML Lit, introduced by the Polymer team in 2019, is a lightweight library that enables developers to write web components using template literals. It combines the power of modern JavaScript with the simplicity of HTML templates, making it easier to create reusable components. HTML Lit embraces the native web platform and focuses on small file sizes and performance optimizations, making it an excellent choice for building fast and efficient web applications. This is the grandchild of Polymer, and I must say, I am truly enamored by the simplicity of this framework. The elegance and straightforwardness of HTMLLit have been a tremendous inspiration for the development of Realm.</p>
-
-<h3>
-  
-  
-  HTMX
-</h3>
-
-<p>HTMX is not just a meme, it’s real JS library. Everyone loved it. A relatively new addition to the frontend development landscape, focuses on enhancing traditional HTML applications with minimal JavaScript. It allows developers to add dynamic functionality to their websites by annotating HTML elements with attributes. HTMX uses AJAX requests to update parts of the page, providing a seamless user experience without the need for complex JavaScript frameworks. It emphasizes simplicity and developer ergonomics, making it a valuable tool for building modern web applications.</p>
-
-
-
+<p>Finally, it is easier to <em>share components</em> between different projects, as you can just copy the component folder from one project to another (SDC then allows you to override assets like CSS and JavaScript to adapt the component to the design system of the new project).</p>
 
 <h2>
   
   
-  Introducing Realm: Reactive-Lightweight Markup Language
+  How to use SDC?
 </h2>
 
-<p>Let me get straight to the point. With Realm, all you need is a text editor and a browser. You don't even have to set up a localhost (although we might need that later, but it's not necessary if you don't import an element).</p>
+<p>The simplest example we can think of is a button component, but let's try to complicate things a bit by adding some JavaScript and an image.</p>
 
-<p>The heart and soul of Realm lies in defining custom elements that you can use anywhere, and it's only uses HTML element. That's where the magic happens.<br>
-</p>
+<p>The first step is to enable the SDC experimental module. Then you need to create a new folder named <code>components</code> in the theme folder or in one of your custom modules (yes, you can have more than one <code>components</code> folder). Those folders contain all the components that will be available in your theme.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code>
-<span class="nt">&lt;custom-element</span> <span class="na">name=</span><span class="s">"my-element"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;element-attr</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Default Name<span class="nt">&lt;/element-attr&gt;</span>
-  <span class="nt">&lt;element-attr</span> <span class="na">name=</span><span class="s">"dream"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Star<span class="nt">&lt;/element-attr&gt;</span>
-  <span class="nt">&lt;template&gt;</span>
-    Hello my name is <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"@name"</span><span class="nt">&gt;&lt;/slot&gt;</span>,
-    My dream: <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"@dream"</span><span class="nt">&gt;&lt;/slot&gt;</span>
-  <span class="nt">&lt;/template&gt;</span>
-<span class="nt">&lt;/custom-element&gt;</span>
+<p>The second step is to define a new component. Create a new folder named <code>button</code> in the <code>components</code> folder. This folder will contain all the files related to the button component.</p>
 
-<span class="c">&lt;!-- Render it anywhere --&gt;</span>
-<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Luffy"</span> <span class="na">dream=</span><span class="s">"King of Pirates"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
-<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Nami"</span> <span class="na">dream=</span><span class="s">"Draw the map of the world"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
-<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Zoro"</span> <span class="na">dream=</span><span class="s">"The Best Swordsman in the world"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
-<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Sanji"</span> <span class="na">dream=</span><span class="s">"Finding the All Blue"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
-<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Ussop"</span> <span class="na">dream=</span><span class="s">"The great warrior of the sea"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Realm draws inspiration from a mix of React, Polymer, jQuery, and all the other frameworks I mentioned in the Frontend Development Evolution section above.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;custom-element</span> <span class="na">name=</span><span class="s">"basic-counter"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;element-state</span> <span class="na">name=</span><span class="s">"counter"</span> <span class="na">type=</span><span class="s">"number"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/element-state&gt;</span>
-  <span class="nt">&lt;element-flow&gt;</span>
-    <span class="nt">&lt;trigger-event</span> <span class="na">click=</span><span class="s">"AddCountBtn"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;set-state</span> <span class="na">name=</span><span class="s">"counter"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">mutate=</span><span class="s">"+"</span><span class="nt">&gt;&lt;/set-state&gt;</span>
-    <span class="nt">&lt;/trigger-event&gt;</span>
-  <span class="nt">&lt;/element-flow&gt;</span>
-
-  <span class="nt">&lt;template&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">ref=</span><span class="s">"AddCountBtn"</span><span class="nt">&gt;</span>
-      Add count <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"#counter"</span><span class="nt">&gt;&lt;/slot&gt;</span>
-    <span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;/template&gt;</span>
-<span class="nt">&lt;/custom-element&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>If you're curious about how this all works, you can dive into the <a href="https://realm.codes/docs/learn">Tutorial</a> on Realm's website. It will provide you with detailed insights and instructions on the process.</p>
-
-<p>People love to joke about how there's no such thing as an "HTML developer" and that HTML is just a silly markup language. Well, I think it's time for them to stop laughing and start taking it seriously. It's time to take things to a whole new level.</p>
-
-<p>I take great pride in calling myself an HTML developer, with a little help from JavaScript of course. In fact, I proudly declare the HTML Developer Manifesto.</p>
-
-
-
-
-<h2>
-  
-  
-  HTML Developer Manifesto
-</h2>
-
-<p>We, the HTML developers, stand united in our belief that HTML is not just a markup language but a versatile tool capable of building powerful web applications. We embrace the potential of HTML and its ecosystem to create innovative, interactive, and scalable solutions. We proudly present the HTML Developer Manifesto, showcasing the capabilities of HTML as a programming language:</p>
-
-<ol>
-<li><p>HTML is not limited to markup: We reject the notion that HTML is solely for structuring web content. With the advent of WebComponents, we can now create custom elements with attributes, state, reactivity, and reusability, all using HTML syntax. HTML is evolving beyond its origins and becoming a programming language in its own right.</p></li>
-<li><p>Embracing the power of WebComponents: We harness the power of WebComponents to encapsulate functionality and create reusable building blocks. By defining custom elements, we can extend the vocabulary of HTML, enabling the creation of complex applications with less reliance on JavaScript.</p></li>
-<li><p>State management in HTML: We recognize that state management is a crucial aspect of application development. With the help of HTML attributes and the power of WebComponents, we can maintain and manage state directly within our HTML code. This allows for cleaner and more declarative code, reducing the need for excessive JavaScript.</p></li>
-<li><p>Reactivity through HTML attributes: We believe that interactivity is a fundamental requirement for modern applications. By leveraging HTML attributes, we can achieve reactivity within our components. Through event listeners and attribute-based triggers, we enable seamless updates and dynamic behavior without heavy JavaScript dependencies.</p></li>
-<li><p>Leveraging CSS for styling and animation: We acknowledge that CSS plays a pivotal role in the visual presentation and user experience. By combining HTML's structure with the expressive power of CSS, we can create stunning interfaces and engaging animations, breathing life into our applications.</p></li>
-<li><p>The spirit of reusability: We champion the concept of reusability in software development. By leveraging the modularity of WebComponents, we can create self-contained, encapsulated elements that can be easily reused across projects. This promotes efficiency, maintainability, and faster development cycles.</p></li>
-<li><p>HTML as a gateway to accessibility: We recognize that building accessible applications is a moral imperative. HTML, with its built-in semantics, provides a solid foundation for creating inclusive experiences. By adhering to best practices and leveraging HTML's accessibility features, we ensure that our applications are usable by a diverse range of users.</p></li>
-<li><p>Collaboration between HTML and JavaScript: We acknowledge that HTML and JavaScript are powerful allies in the pursuit of web development excellence. While HTML can handle many aspects of application logic, we recognize the need for JavaScript to handle complex computations, API interactions, and advanced functionalities. We encourage the harmonious collaboration of HTML and JavaScript to create robust and feature-rich applications.</p></li>
-</ol>
-
-<p>We the HTML developers, stand firm in our belief that HTML is not merely a markup language but a programming language capable of creating sophisticated web applications. Together, let us push the boundaries of what can be achieved with HTML and build a more innovative, accessible, and inclusive web for all.</p>
-
-
-
-
-<p>This is just the beginning. Once I complete the initial iteration to finish the first version, there's a lot of work ahead of me. I'll be focusing on improving the codebase and optimizing performance.</p>
-
-<p>I've just introduced you to a concept, and who knows? Maybe there's something new that will draw inspiration from what I've created. The possibilities are endless!</p>
-
-<p>I think this article is too long, if you want to supports me you can reach me out on X <a href="https://x.com/oknoorap">@oknoorap</a>.</p>
-
-<p>Feel free to show your support for Realm by giving it a star on GitHub 😉</p>
-
-<p>🔥 Website: <a href="https://realm.codes">https://realm.codes</a><br>
-👉 Github: <a href="https://github.com/realmorg/realm">https://github.com/realmorg/realm</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Happy Programmers' Day!](https://dev.to/devu/happy-programmers-day-53cc) 
- <details><summary>Article</summary> <p>El día de hoy (13 de septiembre del 2023) se celebra esta profesión, actividad, hobbie, o estilo de vida.</p>
-
-<p>Para celebrar nuestro gusto por la programación realizamos unos pósters conmemorativos. Imprímelos, guárdalos, y compartelos!</p>
-
-<p>Today (September 13, 2023), we celebrate this profession, activity, hobby, or lifestyle.</p>
-
-<p>To celebrate our love for programming, we have created some commemorative posters. Print them, keep them, and share them!</p>
-
-<p><a href="https://www.devu.space/assets/duck%20light.png">Full size</a><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--r95Bkc7z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxy60lurhmipkk1eh59h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--r95Bkc7z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxy60lurhmipkk1eh59h.png" alt="Rubber duck debugging poster" width="661" height="989"></a></p>
-
-<p><a href="https://www.devu.space/assets/programmers%20day%201.png">Full size</a><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EEQOXT97--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oqylqthz3xcl65lif1y3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EEQOXT97--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oqylqthz3xcl65lif1y3.png" alt="Heart poster" width="660" height="992"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Islands & Server Components & Resumability, Oh My!](https://dev.to/this-is-learning/islands-server-components-resumability-oh-my-319d) 
- <details><summary>Article</summary> <p>It is no secret that the past 2 years have seen the beginnings of a fairly dramatic change in frontend web technology. I write about these topics regularly. But as they enter the more mainstream vernacular I've found it has become more and more difficult to understand what these technologies are and differentiate when they are useful.</p>
-
-<p>At the heart of the discussion is the topic of Hydration. The process in which a server-rendered website becomes interactive to the user in the browser. But even that is something that holds a somewhat vague understanding. What is it for an application to become interactive?</p>
-
-<p>And Hydration is more significant than the amount of JavaScript we ship or execute. It impacts what data we need to serialize and send to the browser. This is an area that is not simple to build solutions for, and it is little surprise explaining them is equally challenging.</p>
-
-
-<div class="ltag__link">
-  <a href="/this-is-learning" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ba6C0swq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--TcsNlUvs--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/3314/dc73eb74-08f9-4592-b599-c08f2bb14b4d.png" alt="This is Learning" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--shNeL80b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--zjqjkX6K--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/186199/a3d1cfed-a1ca-41cd-a146-9db4e65711d4.jpeg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/this-is-learning/why-efficient-hydration-in-javascript-frameworks-is-so-challenging-1ca3" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Why Efficient Hydration in JavaScript Frameworks is so Challenging</h2>
-      <h3>Ryan Carniato for This is Learning ・ Feb 3 '22</h3>
-      <div class="ltag__link__taglist">
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p>Now that more solutions have shipped I think it is time to revisit the 3 most promising approaches to this space.</p>
-
-
-
-
-<h2>
-  
-  
-  When does a Site become Interactive?
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JTGk7P_Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oru6oigox10kssmlf4d4.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JTGk7P_Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oru6oigox10kssmlf4d4.jpeg" alt="INP Graphic" width="800" height="472"></a></p>
-
-<p>But first I think we need to start here. For such a seemingly simple question the answer isn't so straightforward. There is a reason performance experts in the browser, like the Chrome team, have gone through several iterations on how to best capture this. TTI (Time to Interactive), FID (First Input Delay), and now INP (Input to Next Paint) can also serve as a way to understand how responsive our websites are.</p>
-
-<p>Looking at framework space there has been a lot of talk about Progressive Enhancement. I.e... having elements work if the JavaScript is not available (or available yet). Is a site considered interactive if clicking a button works in the sense it does a slower full-page navigation(server round trip) where it otherwise would have done stuff in the browser only?</p>
-
-<p>How about if events are captured and then replayed during hydration or even used to prioritize what gets hydrated first as in the case of React 18's Selective Hydration? If the browser doesn't miss any end-user events but just doesn't respond right away because it is loading code, is that considered interactive?</p>
-
-<p>The fact that these sorts of techniques are everywhere at this point is why at least to me being interactive can't only include the ability to catch the cause, but also the time it takes to witness the expected effect. How to measure that reasonably I will leave it to the browser teams, but that should give us goalposts for our exploration.</p>
-
-
-
-
-<h2>
-  
-  
-  Islands
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--A-Y63sDH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4lteo95ma15ugimwn9pj.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A-Y63sDH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4lteo95ma15ugimwn9pj.jpg" alt="Islands" width="800" height="534"></a></p>
-
-<p>The thing to love about Islands is they start so simple. If you have too much JavaScript, divide and conquer. The earliest days of client-side rendering involved embedding interactive widgets in server-rendered applications. Even things like Web Components have made this pretty easy to do over the years. </p>
-
-<p>Well, except for one problem. These widgets were client-rendered so they came from the server blank. This could cause layout shifts and a delay in primary content showing. Islands in the basic form is just server rendering these pieces as well.</p>
-
-<p>Simple, but it meant JavaScript on the server to render which is why outside of Marko(2014), we did not see much exploration here until the more common SPA (Single Page App) server rendered had proven JavaScript full-stack was viable. Not until 2021 with frameworks like Astro, and Fresh did we see a return to this.</p>
-
-<p>There are some significant differences between Islands and its SPA counterparts (like Next, Nuxt, SvelteKit, and Remix). These Islands frameworks skip sending JavaScript for the root of the application. It isn't until you hit an interactive component that JavaScript is needed. This can drastically shrink bundle sizes.</p>
-
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th>Page</th>
-<th>Full Page</th>
-<th>Islands</th>
-<th>Reduction</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Home</td>
-<td>439kb</td>
-<td>72kb</td>
-<td>84%</td>
-</tr>
-<tr>
-<td>Search</td>
-<td>504kb</td>
-<td>110kb</td>
-<td>72%</td>
-</tr>
-<tr>
-<td>View Item</td>
-<td>532kb</td>
-<td>211kb</td>
-<td>60%</td>
-</tr>
-</tbody>
-</table></div>
-
-<blockquote>
-<p>Comparison done by Marko team on eBay.com</p>
-</blockquote>
-
-<p>Islands can also shrink HTML document size as they only need to serialize the data passed as Island props instead of all the data. That blob of JSON in a script tag we are accustomed to seeing at the bottom of the server-rendered HTML can disappear when we use Islands! On data-heavy pages, I've seen it cut the page size in half.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2m-db4fR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zyjkr8xcdh3fdelh9c1b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2m-db4fR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zyjkr8xcdh3fdelh9c1b.png" alt="Image description" width="800" height="431"></a></p>
-
-<blockquote>
-<p>Hackernews story page done in SolidStart with SPA SSR and Islands</p>
-</blockquote>
-
-<p>How is that possible? Server-rendered children can be passed through the Islands without being hydrated themselves.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rx4qA8nW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wa0407e1o39f85jbpabf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rx4qA8nW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wa0407e1o39f85jbpabf.png" alt="Image description" width="800" height="576"></a></p>
-
-<p>In the case above, where no state is passed to our ToggleVisibleIsland, those comments never need to be sent to the client.</p>
-
-<p>It does mean though that any content passed through will be rendered eagerly even if it isn't shown ultimately at the opportunity that Island logic could display it later. So we only solve the "double data" problem if this content is only rendered once whether it be in the DOM or as a serialized prop/slot. Not both.</p>
-
-<p>The most important difference is Island architected applications are MPAs(Multi-Page Apps). The optimization is based on knowing that the code for non-interactive parts is never needed in the browser. Never rendered in the client. This is something a SPA router could never guarantee.</p>
-
-
-
-
-<h2>
-  
-  
-  Server Components
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2-p10SHi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ydl3k8yveg99avf1n06j.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2-p10SHi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ydl3k8yveg99avf1n06j.png" alt="Image description" width="800" height="436"></a></p>
-
-<p>But what if we do want client routing? How much does that change the picture?</p>
-
-<p>Adding client routing with server-rendered HTML doesn't change much on the surface. Solutions like Turbo or Flamethrower have been adding that for a bit of smoothness to MPAs. We've recently seen combining these sorts of techniques with the View Transition API to great effect.</p>
-
-<p>But an MPA with client-side routing doesn't suddenly give you all the benefits of a SPA. Most notably in element and state persistence. On the surface, this might also seem straightforward but it is not.</p>
-
-<p>The first thing you might do is mark elements as being persistent. And then when you swap your new markup replace the existing elements back in where an ID matches. But since the elements are temporarily removed this can lose DOM state like input focus when persisting. You could diff it and in so only replace what has changed and that might be sufficient.</p>
-
-<p>Another consideration is global state in the client. Pretend you have a global counter that impacts how certain Islands render. If you load one page and increment it to 10. Then on navigation render the next page on the server, it will not know that the counter is 10 and render it as if it were 0. This could lead to hydration mismatches and break the application.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4diNX-X5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/io9fucz2at6eivue0149.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4diNX-X5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/io9fucz2at6eivue0149.png" alt="Image description" width="800" height="322"></a></p>
-
-<p>Unless you desire to send back all the global state back and forth between requests(and you really really don't), we can't ever render Islands on the server after the first-page load if we want to ensure things won't break when global state is involved.</p>
-
-<p>This detail isn't important just for navigation. But any lazily inserted content prop/slot can no longer ensure hydration will work if global state has changed since it was originally server-rendered. This adds complexity to the logic for absorbing rendered templates that ensure double data doesn't happen as the Islands and static templates need to be separated at runtime.</p>
-
-<p>Instead of wrestling with that, React Server Components invented their own serialization format and didn't bother solving the "double data" problem. Although it is the only non-experimental solution I know today that properly handles state persistence.</p>
-
-<p>So Server Component architecture can be seen as Islands + Client Routing, but it involves more than tagging a client router or even View Transitions on an MPA. And in so deserves its own category when looking at how we build partially hydrated solutions.</p>
-
-
-
-
-<h2>
-  
-  
-  Resumability
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FSwU6Z3M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n5e5rfc9dgrmti8h9yhg.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FSwU6Z3M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n5e5rfc9dgrmti8h9yhg.gif" alt="Image description" width="498" height="312"></a></p>
-
-<p>I love resumability because it does come out of left field compared to a lot of the other research that has been going on over the past decade. Instead of looking at how to reduce the amount of code/hydration, it looks at changing what code executes.</p>
-
-<p>Partially Hydrated solutions above in some cases can reduce code footprints up to 80-90% but it still treats that last bit very similar to everything we've seen before. What if we didn't execute any code on the client until we needed to? What if hydration returned to just attaching event handlers?</p>
-
-<p>To do that we'd need to serialize not just the application state, but the internal state of the framework so that when any part is executed it could continue where it left off. When an event handler updates some state we just propagate that change without ever running the components the first time in the browser to initialize it. Afterall we already initialized it when we rendered on the server.</p>
-
-<p>This is not easy to accomplish given the way we close over state when we write components, but it is solvable:<br>
-</p>
-<div class="ltag__link">
-  <a href="/this-is-learning" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ba6C0swq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--TcsNlUvs--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/3314/dc73eb74-08f9-4592-b599-c08f2bb14b4d.png" alt="This is Learning" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--shNeL80b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--zjqjkX6K--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/186199/a3d1cfed-a1ca-41cd-a146-9db4e65711d4.jpeg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/this-is-learning/resumability-wtf-2gcm" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Resumability, WTF?</h2>
-      <h3>Ryan Carniato for This is Learning ・ Aug 23 '22</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#javascript</span>
-        <span class="ltag__link__tag">#webdev</span>
-        <span class="ltag__link__tag">#marko</span>
-        <span class="ltag__link__tag">#qwik</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p>It also opens up more interesting patterns for lazy code loading since it doesn't need to be immediately present for hydration. However, if interactivity is as defined above, you don't want to be lazy loading anything critical because we still have to wait for it. Maybe just expensive things or things offscreen. In the basic case, a pretty similar heuristic to how you would choose to lazy load for any client-side architecture.</p>
-
-<p>Of course, serializing everything could be pretty costly, not unlike the "double data" problem. So we would need a way to determine what can never change in the client. To do that resumable solutions tend to use Signals-based reactivity, often augmented by compilation. By tying updates to the data rather than the view hierarchy components no longer become the unit of code that is needed to run. And more so dead code can be tree-shaken along the reactive graph of data-dependencies.</p>
-
-<p>Done well that seems pretty good. Once you enter this zone, it is easier to automate the split between client and server. But that alone doesn't solve problems like client-side routing.</p>
-
-<p>Resumability's knowledge is still based on knowing what will always be on the server from an MPA standpoint. Unlike Islands that are explicit, with an automatic system any descendant of stateful conditional in the rendering has the potential to end up in the browser.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jgdGZIy---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ocs5l99pizu0ontfct4v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jgdGZIy---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ocs5l99pizu0ontfct4v.png" alt="Image description" width="800" height="354"></a></p>
-
-<p>If one added client-side routing (a stateful decision high in the tree) a resumable solution on its own would load the same code on navigation as an SPA and require all the serialized data client side to render it.</p>
-
-
-
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rR5tDEd8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/papk4dk0h5cr0p3x51av.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rR5tDEd8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/papk4dk0h5cr0p3x51av.png" alt="All of the Above Minion" width="800" height="454"></a></p>
-
-<p>So I guess high level:</p>
+<p>Next, you'll find the code for those files:</p>
 
 <ul>
-<li>Islands are an architecture that aims to reduce JavaScript footprint by up to ~90% by explicitly denoting what goes to the client.</li>
-<li>Server Components architecture extends Islands with client-side routing and proper state preservation.</li>
-<li>Resumability instead of focusing on how to reduce the amount that is hydrated, looks to instead remove the execution cost of hydration itself.</li>
+<li>
+<code>button.component.yml</code>: metadata of the component (name, description, props, etc.)</li>
+<li>
+<code>button.html.twig</code>: Twig code of the component</li>
+<li>
+<code>button.css</code>: CSS code of the component</li>
+<li>
+<code>button.js</code>: JavaScript code of the component</li>
+<li>
+<code>icons/cog.svg</code>: cog icon</li>
+<li>
+<code>README.md</code>: component's documentation</li>
 </ul>
 
-<p>So while seen as competitive these are actually complementary. They don't all solve the same issue completely but focus on a certain part of the problem.</p>
+<p>Note how all the files related to the component are named after the component itself, this is mandatory to allow Drupal to automatically declare a library for the component.</p>
 
-<p>Islands have gotten incredibly optimal at solving for code and data serialization size. Server Component solutions today are the only Island-like solutions that properly account for state while client navigating. Resumability is the only approach that reduces the execution cost of the hydration that remains.</p>
+<p>Let's start with <code>button.component.yml</code>:<br>
+</p>
 
-<p>Whether these all converge is another question. Do Islands want the added complexity of Server Components? Will Server Components care about the last stage optimizations that come from Resumability? Will Resumable Solutions ever embrace explicitly calling out which parts of the view render in different locations?</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="s1">'</span><span class="s">$schema'</span><span class="err">:</span> <span class="s1">'</span><span class="s">https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">button</span>
+<span class="na">status</span><span class="pi">:</span> <span class="s">stable</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">A simple button</span>
+<span class="na">libraryOverrides</span><span class="pi">:</span>
+  <span class="na">dependencies</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">core/once</span>
+<span class="na">props</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
+  <span class="na">properties</span><span class="pi">:</span>
+    <span class="na">title</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+      <span class="na">title</span><span class="pi">:</span> <span class="s">title</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Button title</span>
+      <span class="na">examples</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">Click</span><span class="nv"> </span><span class="s">me'</span>
+    <span class="na">type</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+      <span class="na">title</span><span class="pi">:</span> <span class="s">Type</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Button type</span>
+      <span class="na">examples</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">primary'</span>
+    <span class="na">icon</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+      <span class="na">title</span><span class="pi">:</span> <span class="s">Icon</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Button icon</span>
+      <span class="na">examples</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">cog.svg'</span>
+    <span class="na">message</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+      <span class="na">title</span><span class="pi">:</span> <span class="s">Message</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Popup message</span>
+      <span class="na">examples</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">Lorem</span><span class="nv"> </span><span class="s">ipsum'</span>
+  <span class="na">required</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">title</span>
+    <span class="pi">-</span> <span class="s">type</span>
+    <span class="pi">-</span> <span class="s">icon</span>
+    <span class="pi">-</span> <span class="s">message</span>
+</code></pre>
 
-<p>I'm not sure. There is still a lot of room to explore. And honestly, it is still unclear to what extent these concerns impact final site performance or ideal developer experience. But it is an exciting time to be in web development as the future unfolds.</p>
+</div>
+
+
+
+<p>The Twig file may look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code> <span class="nt">&lt;div</span> <span class="err">{{</span> <span class="na">attributes.addClass</span><span class="err">('</span><span class="na">button</span><span class="err">')</span> <span class="err">}}</span> <span class="na">data-message=</span><span class="s">"{{ message|default('No message') }}"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"{{ type }} image-button"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/{{ componentMetadata.path }}/icons/{{ icon }}"</span> <span class="na">alt=</span><span class="s">"Image"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;span&gt;</span>{{ title }}<span class="nt">&lt;/span&gt;</span>
+   <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>All the properties defined in the <code>button.component.yml</code> file are available in the Twig file as variables. The <code>componentMetadata</code> variable contains some helpful information, like the path of the component on the filesystem.</p>
+
+<p>We then need some CSS to style the button:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="nc">.image-button</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-flex</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#124354</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.image-button</span> <span class="nt">img</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>To add interactivity to the button we need some JavaScript:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="p">((</span><span class="nx">Drupal</span><span class="p">,</span> <span class="nx">once</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">Drupal</span><span class="p">.</span><span class="nx">behaviors</span><span class="p">.</span><span class="nx">at_button</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">attach</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">once</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.button</span><span class="dl">'</span><span class="p">,</span> <span class="nx">context</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">item</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+        <span class="p">});</span>
+      <span class="p">});</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">})(</span><span class="nx">Drupal</span><span class="p">,</span> <span class="nx">once</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Finally, the component is ready to be included in one of the Twig templates of your theme (the ones in the <code>templates</code> folder):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight twig"><code><span class="cp">{{</span> <span class="nv">include</span> <span class="p">(</span><span class="s1">'example_theme:button'</span><span class="p">,</span> <span class="err">{</span>
+    <span class="s1">'title'</span><span class="err">:</span> <span class="s1">'Click me'</span><span class="p">,</span>
+    <span class="s1">'type'</span><span class="err">:</span> <span class="s1">'primary'</span><span class="p">,</span>
+    <span class="s1">'icon'</span><span class="err">:</span> <span class="s1">'cog.svg'</span><span class="p">,</span>
+    <span class="s1">'message'</span><span class="err">:</span> <span class="s1">'Lorem ipsum'</span><span class="p">,</span>
+  <span class="err">}</span><span class="p">,</span>
+  <span class="nv">with_context</span> <span class="o">=</span> <span class="nv">false</span><span class="p">)</span>
+<span class="cp">}}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The final result should look like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OVOK52AD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m3vmvi31enw9gy70gdiz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OVOK52AD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m3vmvi31enw9gy70gdiz.png" alt="The button component rendered in page" width="146" height="59"></a></p>
+
+<p>Try to click on the button and see what happens.</p>
+
+<p>Starting from <a href="https://github.com/Chi-teck/drupal-code-generator">drupal-code-generator</a> version 3.2.0, a new generator has been added to easily create new components (this replaces the <a href="https://www.drupal.org/project/cl_generator">Component Libraries: Generator</a> module that is not compatible with Drush 12). Just run this command and follow the instructions:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>drush generate sdc
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  WebProfiler integration
+</h2>
+
+<p>The latest version of the <a href="https://www.drupal.org/project/webprofiler">WebProfiler</a> module (10.1.1) offers full support for collecting and exploring the components used on a page.</p>
+
+<p>On the WebProfiler toolbar, a new counter has been added to the <code>theme</code> widget, showing the number of components used on the page:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_mQEZdZt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eesbp0cf1lnee7h6fuzg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_mQEZdZt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eesbp0cf1lnee7h6fuzg.png" alt="The SDC data collector in the WebProfiler toolbar" width="511" height="332"></a></p>
+
+<p>Clicking on the counter will open the WebProfiler dashboard, showing all the components used on the page:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cT1NTAiP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rixkiwmsljw32zpzjgml.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cT1NTAiP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rixkiwmsljw32zpzjgml.png" alt="The SDC data collector in the WebProfiler dashboard" width="800" height="593"></a></p>
+
+<p>At the time of writing, a <a href="https://www.drupal.org/project/drupal/issues/3375843">core patch</a> is required to enable this feature; be sure to apply it before enabling the SDC module.</p>
+
+<p>Another new feature is the ability to explore the <em>list of libraries</em> used on the page (under the <code>Asset</code> data collector). As SDC automatically declares a library for each component, you can use the new pane to find the one used by the button component:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--98k8NHfn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i448t4pmf4l83owxbf3i.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--98k8NHfn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i448t4pmf4l83owxbf3i.png" alt="The libraries data collector in the WebProfiler dashboard" width="800" height="273"></a></p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>SDC is becoming the de facto standard for building Drupal components, with emerging modules (like <a href="https://www.drupal.org/project/nomarkup">No Markup</a> and <a href="https://www.drupal.org/project/sdc_display">Single Directory Components: Display</a>) and best practices. More will come in the future.</p>
+
+<p>In this article we have just scratched the surface of this new feature, to learn more we recommend you to read the just published <a href="https://packt.link/CGNe7">Modernizing Drupal 10 Theme Development</a> book.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--n8Wi_d-K--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zlkyfrspd8pg968jaeou.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--n8Wi_d-K--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zlkyfrspd8pg968jaeou.png" alt="Modernizing Drupal 10 Theme Development" width="800" height="987"></a></p>
+
+<p>In the book you'll find a detailed explanation about how themes work in Drupal 10, how to use SDC, how to integrate with tools like <em>Browsersync</em> and <em>Backstop.js</em> and how to expose your work to frameworks like <em>Storybook</em>.</p>
 
  </details> 
  <hr /> 
