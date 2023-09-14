@@ -13,7 +13,7 @@
 
 <br/>
 
-<!-- CODE/TERMINAL ABOUT ME -->
+<!-- ABOUT ME TERMINAL -->
 <h1 align="center">
 <img src="./assets/terminal-5.gif" alt="Terminal" />
 </h1>
