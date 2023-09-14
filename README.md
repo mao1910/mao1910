@@ -118,6 +118,52 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [ROScribe](https://dev.to/robocoach/roscribe-1h2k) 
+ <details><summary>Article</summary> <p><strong>Create ROS packages using LLMs</strong></p>
+
+<p>Learning ROS (Robot Operating System) may prove to be challenging for robotic enthusiasts, college students, or professional engineers who are using it for the first time. Sometimes this skill barrier forces them to give up on ROS altogether and opt out for non-standard options. <a href="https://github.com/RoboCoachTechnologies/ROScribe">ROScribe</a> eliminates the skill barrier for beginners, and saves time and hassle for skilled engineers. </p>
+
+<p><a href="https://github.com/RoboCoachTechnologies/ROScribe">ROScribe</a> combines the power and flexibility of large language models (LLMs) with prompt tuning techniques to capture the details of your robotic design and to automatically create an entire ROS package for your project.</p>
+
+<p>Inspired by <a href="https://github.com/RoboCoachTechnologies/GPT-Synthesizer">GPT Synthesizer</a>, ROScribe builds an entire ROS package through a series of specification steps that identify the package elements in a top-down approach. In particular, ROScribe helps you with the following steps:</p>
+
+<ol>
+<li>Creating a list of ROS nodes and topics, based on your application and deployment (e.g. simulation vs. real-world)</li>
+<li>Visualizing your project in an RQT-style graph</li>
+<li>Generating code for each ROS node</li>
+<li>Writing launch file and installation scripts</li>
+</ol>
+
+<p>If you are new to ROS, ROScribe will be your robot(ics) mentor 🤖️</p>
+
+<p>If you are a seasoned ROS user, ROScribe can help with creating a blueprint for your ROS package 📦️</p>
+
+<p>For further detail of how to install and use ROScribe, please refer to our Github and watch our demo:</p>
+
+<p><a href="https://github.com/RoboCoachTechnologies/ROScribe">ROScribe open source repository</a><br>
+<a href="https://www.youtube.com/watch?v=H2QaeelkReU">TurtleSim demo</a></p>
+
+<p><strong>Roadmap</strong></p>
+
+<p>ROScribe v0.0.2 only supports ROS1 with Python code generation. We plan to add the following features in the upcoming releases:</p>
+
+<ol>
+<li>ROS2 &amp; ROS-Industrial support</li>
+<li>C++ &amp; Lisp code generation</li>
+<li>ROS1 to ROS2 automated codebase migration</li>
+<li>Verification of an already existing codebase</li>
+<li>Graphic User Interface
+</li>
+<li>Enabling and integrating other robotic tools</li>
+</ol>
+
+<p><strong>Call for contributor</strong></p>
+
+<p>ROScribe is a free and open source software. We encourage all of you to try it out and let us know what you think. We have a lot of plans for this project and we intend to support and maintain it regularly. we welcome all robotics enthusiasts to contribute to ROScribe. During each release, we will announce the list of new contributors.</p>
+
+ </details> 
+ <hr /> 
+
  #### - [🔥TOP🔥 WordPress Themes You Should KNOW...](https://dev.to/noobizdev/top-wordpress-themes-you-should-know-4bme) 
  <details><summary>Article</summary> <p>Selecting the right WordPress theme is crucial for a blog's success. Here are the top 10 WordPress themes for blogs in 2023, compiled from various reputable sources:<br>
 <br></p>
@@ -740,194 +786,6 @@ To solve it, we can transform a root hash into another hash before publishing it
 
 
 <p>Phew, that's everything. Hopefully you found this useful. Let me know in the comments if you've got any questions. 👋</p>
-
- </details> 
- <hr /> 
-
- #### - [XSS Attack - Why strip_tags is not enough](https://dev.to/rodrigojavornik/xss-attack-why-striptags-is-not-enough-5gmo) 
- <details><summary>Article</summary> <p>In PHP, it is common to use the <code>strip_tags()</code> function as a way to prevent XSS intrusion. However, this function does not even work to mitigate this type of attack, giving a false sense of security. But why?</p>
-
-<h2>
-  
-  
-  What is XSS?
-</h2>
-
-<p>XSS (Cross-Site Scripting) is a form of attack that occurs when an attacker exploits a vulnerability in a web application to insert malicious scripts into its pages. These scripts are executed in the browsers of the application's users and can compromise sensitive information, allow session theft, redirect to other sites, etc.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---Cb68CjW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/feo4fipn297d3w3yq0yj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---Cb68CjW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/feo4fipn297d3w3yq0yj.png" alt="how xss attack works" width="800" height="460"></a></p>
-
-<h2>
-  
-  
-  Why strip_tags don't work?
-</h2>
-
-<p>The <code>strip_tags()</code> function is commonly used to remove HTML and PHP tags from a string. However, it is not designed to handle all forms of malicious input that can lead to XSS (Cross-Site Scripting) attacks. </p>
-
-<p>Here are some reasons why <code>strip_tags()</code> falls short in mitigating XSS attacks:</p>
-
-<ol>
-<li>
-<strong>Attribute-based attacks:</strong> XSS attacks can occur through attributes such as onmouseover or onclick, which can execute JavaScript code when triggered. <code>strip_tags()</code> does not remove or sanitize these attributes, allowing potential XSS vulnerabilities to remain.</li>
-<li>
-<strong>Tag obfuscation:</strong> Attackers can obfuscate the HTML tags and their attributes to bypass <code>strip_tags()</code>. They can use techniques such as mixing case variations, HTML entity encoding, or JavaScript-based obfuscation. <code>strip_tags()</code> alone cannot effectively handle these obfuscated tags.</li>
-<li>
-<strong>Context-awareness:</strong> XSS vulnerabilities can vary depending on the context in which the user input is displayed. <code>strip_tags()</code> does not have knowledge of the specific context and may allow certain tags or attributes that can still lead to XSS attacks.</li>
-</ol>
-
-<p>An example of malicious string that can be used in an XSS attack is as follows:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>this is a XSS attack &lt;script&gt;alert(“hello world”)&lt;script&gt;
-</code></pre>
-
-</div>
-
-
-<p>If we apply the <code>strip_tags()</code> function, we obtain the following result:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>this is a XSS attack alert(“hello world”)
-</code></pre>
-
-</div>
-
-
-<p>Okay, in this case, it was indeed possible to clean the malicious code from the string. However, the attacker can use the following code:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>this is a XSS attack &amp;lt;script&amp;gt; alert('oi') &amp;lt;/script&amp;gt;
-</code></pre>
-
-</div>
-
-
-<p>The <code>strip_tags()</code> function will not sanitize the string in a way that prevents the injection of code into the page.</p>
-<h2>
-  
-  
-  How to prevent it?
-</h2>
-
-<p>The good way to deal with untrusted data is:</p>
-
-<blockquote>
-<p>Filter on input, escape on output</p>
-</blockquote>
-
-<p>This means that you handle the received data (filter), but only transform it (escape or encode) when you send it as output to another system that requires encoding.</p>
-
-<p>There is no way around it. In the data sanitization phase, the only way to effectively prevent XSS attacks is by using a specific library, such as:</p>
-
-<ul>
-<li><a href="https://github.com/voku/anti-xss">AntiXSS</a></li>
-<li><a href="http://htmlpurifier.org/">HTML Purifier</a></li>
-</ul>
-
-<p>These libraries provide robust mechanisms for preventing XSS attacks by sanitizing and properly handling user input and output.</p>
-
-<p>Here, we are going to use the AntiXSS library.<br>
-Now we can sanitize our strings in a much safer way:<br>
-</p>
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="cp">&lt;?php</span>
-
-<span class="kn">use</span> <span class="nc">voku\helper\AntiXSS</span><span class="p">;</span>
-
-<span class="k">require_once</span> <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/vendor/autoload.php'</span><span class="p">;</span>
-
-<span class="nv">$antiXss</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AntiXSS</span><span class="p">();</span>
-<span class="nv">$xssString</span> <span class="o">=</span> <span class="s2">"this is a XSS attack &amp;lt;script&amp;gt; alert('oi') &amp;lt;/script&amp;gt;"</span><span class="p">;</span>
-<span class="nv">$clearString</span> <span class="o">=</span> <span class="nv">$antiXss</span><span class="o">-&gt;</span><span class="nf">xss_clean</span><span class="p">(</span><span class="nv">$xssString</span><span class="p">);</span>
-
-<span class="c1">//this is a XSS attack</span>
-<span class="k">echo</span> <span class="nv">$clearString</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-<p>In the phase of outputting data, you can use template engines like <a href="https://twig.symfony.com">Twig</a> or <a href="https://laravel.com/docs/10.x/blade">Blade</a> or <a href="https://www.php.net/manual/en/function.htmlspecialchars.php">htmlspecialchars</a> function.</p>
-
-<p>Great! Now we have a good way to sanitize XSS.</p>
-
-<p>It's worth mentioning that sanitization is just one of the steps in preventing XSS. But that is a topic for another text...</p>
-
-
-<h3>
-  
-  
-  Do you like data sanitization? Then take a look at my PHP data sanitization library!
-</h3>
-
-
-<div class="ltag-github-readme-tag">
-  <div class="readme-overview">
-    <h2>
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
-      <a href="https://github.com/rodrigojavornik">
-        rodrigojavornik
-      </a> / <a href="https://github.com/rodrigojavornik/PHPCleanup">
-        PHPCleanup
-      </a>
-    </h2>
-    <h3>
-      A PHP Sanitation Library
-    </h3>
-  </div>
-  <div class="ltag-github-body">
-    
-<div id="readme" class="md">
-<h1>
-PHP Cleanup</h1>
-<h4>
-A powerful sanitization library for PHP and Laravel. No dependencies</h4>
-<h2>
-Installation</h2>
-<div class="highlight highlight-source-shell notranslate position-relative overflow-auto js-code-highlight">
-<pre>composer require rodrigojavornik/php-cleanup</pre>
-
-</div>
-<h2>
-Usage</h2>
-<div class="highlight highlight-text-html-php notranslate position-relative overflow-auto js-code-highlight">
-<pre><span class="pl-k">use</span> <span class="pl-v">PHPCleanup</span>\<span class="pl-v">Sanitize</span>
-<span class="pl-v">Sanitize</span>::<span class="pl-en">input</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' &lt;h1&gt;Hello World&lt;/h1&gt; '</span>);<span class="pl-c">//Hello World</span>
-<span class="pl-v">Sanitize</span>::<span class="pl-en">trim</span>()-&gt;<span class="pl-en">captalize</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' string    '</span>);<span class="pl-c">//String</span>
-<span class="pl-v">Sanitize</span>::<span class="pl-en">trim</span>()-&gt;<span class="pl-en">lowercase</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' MY name IS    '</span>);<span class="pl-c">//my name is</span>
-<span class="pl-v">Sanitize</span>::<span class="pl-en">onlyNumbers</span>()-&gt;<span class="pl-en">sanitize</span>(<span class="pl-s">' abc1234'</span>);<span class="pl-c">//1234</span></pre>
-
-</div>
-<h2>
-Available filters</h2>
-<ul>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#captalize">captalize</a>: Capitalize a string;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#captalizeall">captalizeAll</a>: Capitalize all string;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#datetime">dateTime</a>: Transform a string in DateTime object;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#email">email</a>: Removes all characters not allowed in an email address;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#escape">escape</a>: Applies htmlspecialchars to value;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#formatnumber">formatNumber</a>: Format a number with grouped thousands;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#input">input</a>: Strip one whitespace from the beginning and end of a string and remove any HTML and PHP tags;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#keys">keys</a>:  applies sanitaze to elements of an array;</li>
-<li>
-<a href="https://github.com/rodrigojavornik/PHPCleanup#lowercase">lowercase</a>…</li>
-</ul>
-</div>
-  </div>
-  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/rodrigojavornik/PHPCleanup">View on GitHub</a></div>
-</div>
-
-
 
  </details> 
  <hr /> 
