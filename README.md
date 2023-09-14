@@ -118,6 +118,558 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [What's new in Novu 0.19?](https://dev.to/novu/whats-new-in-novu-019-1pcc) 
+ <details><summary>Article</summary> <p><strong>TL;DR:</strong> All you need to know about the latest Novu 0.19.0 release. Multi-tenancy management, bulk subscriber creation, override layouts and more!</p>
+
+<h2>
+  
+  
+  0.19 Release Updates
+</h2>
+
+<p>We're eager to showcase the latest features in our most recent release. Let's dive in and discover what's in store for you!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4MlQCGXY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/38f8c51d-4cf0-4789-93eb-e29d87df3e06" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4MlQCGXY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/38f8c51d-4cf0-4789-93eb-e29d87df3e06" alt="giphy (2) (1)" width="500" height="280"></a></p>
+
+<h2>
+  
+  
+  Multi-tenancy Management
+</h2>
+
+<p>We are stoked to let you know that you can now manage tenants from the <a href="https://web.novu.co/tenants">UI</a> (Novu’s dashboard) and the <a href="[https://api.novu.co/api#/Tenants](https://api.novu.co/api#/Tenants)">API</a>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--feVyJ6s2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/85bd75ef-0b24-492b-8186-2365197302ff" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--feVyJ6s2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/85bd75ef-0b24-492b-8186-2365197302ff" alt="tenants-management (1)" width="800" height="568"></a></p>
+
+<p>Self-hosted users need to add and turn on the <code>IS_MULTI_TENANCY_ENABLED</code> env flag to be able to manage tenants in their Novu installation.</p>
+
+<h2>
+  
+  
+  Tenants Usage in Workflows as Variables
+</h2>
+
+<p>With tenants feature now generally available, there are different ways you’ll be able to use it in your app depending on your use case.</p>
+
+<p>One of those ways is using it as variables in your workflows and triggers. When triggering a notification using the events trigger endpoint, you can pass in a tenant property as a parameter like so:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Novu</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@novu/node</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">novu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Novu</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NOVU_API_KEY</span><span class="p">);</span>
+
+<span class="k">await</span> <span class="nx">novu</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;WORKFLOW_TRIGGER_ID&gt;</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">{</span>
+    <span class="na">to</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;UNIQUE_SUBSCRIBER_IDENTIFIER&gt;</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">john@doemail.com</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Doe</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">payload</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">organization</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">logo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://happycorp.com/logo.png</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+     <span class="na">actor</span><span class="p">:</span> <span class="dl">"</span><span class="s2">actorId</span><span class="dl">"</span>
+   <span class="na">tenant</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tenantIdentifier</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p><em>passing in tenant property when triggering a notification</em></p>
+
+<p>The tenant can also be accessed in a workflow template like so:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="p">{{</span> <span class="nx">tenant</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">logo</span> <span class="p">}}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><em>accessing tenant properties in a workflow</em></p>
+
+<h2>
+  
+  
+  Bulk Subscriber Creation
+</h2>
+
+<p>This release also ships the wildly requested “bulk subscriber creation.” You’ll be able to create subscribers in bulk (up to 500 at once) using an <a href="https://docs.novu.co/api-reference/subscribers/bulk-create-subscribers">API endpoint</a>.</p>
+
+<p><strong>Note:</strong> The bulk API is limited to 500 subscribers per request.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">await</span> <span class="nx">novu</span><span class="p">.</span><span class="nx">subscribers</span><span class="p">.</span><span class="nx">bulkCreate</span><span class="p">([</span>
+      <span class="p">{</span>
+        <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-subscriber-1</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-user@sd.com</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscriber-1</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-1</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-subscriber-2</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-user-2@sd.com</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscriber-2</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-2</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test-subscriber-3</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">]);</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Addition of Tags in Workflow Settings
+</h2>
+
+<p>We have added the ability to use tags in the workflow settings screen. </p>
+
+<p>This change allows use cases where you need to group multiple workflows under the same tag, and then use it to filter subscriber preferences for example.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--yMEJQjg1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/da0d5cf7-a471-41f4-a41d-c0bbac68b88b" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--yMEJQjg1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/da0d5cf7-a471-41f4-a41d-c0bbac68b88b" alt="taggs-workflow-settings (1)" width="800" height="477"></a></p>
+
+<h2>
+  
+  
+  Allow Override layout On Trigger
+</h2>
+
+<p>To override your assigned layout during a trigger event use the <code>layoutIdentifier</code> property, the layout specified will be used for all emails in the context of that trigger event.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Novu</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@novu/node</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">novu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Novu</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;NOVU_API_KEY&gt;</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">novu</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="dl">'</span><span class="s1">workflow-identifier</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">to</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">subscriberId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">payload</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">attachments</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">file</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/data/test.jpeg</span><span class="dl">'</span><span class="p">),</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test.jpeg</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">mime</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image/jpg</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="na">overrides</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">layoutIdentifier</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your-layout-identifier</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Show Primary Providers on Workflow Nodes
+</h2>
+
+<p>Now you can see the primary provider of a channel in the nodes that show on the workflow editor. This gives you more context and better identification without extra clicks!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Img9lYhG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b6b56afd-76aa-40ee-976b-01ca12ddfb42" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Img9lYhG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b6b56afd-76aa-40ee-976b-01ca12ddfb42" alt="Screenshot 2023-09-11 at 16 11 03" width="800" height="450"></a></p>
+
+<h2>
+  
+  
+  Enhanced Workflow Nodes Misconfiguration Error
+</h2>
+
+<p>Nodes and workflows will now display mis-configured workflows on the dashboard like so:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wB6Wazj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b96744f5-2978-4716-8564-82284c89701f" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wB6Wazj8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/novuhq/novu/assets/2946769/b96744f5-2978-4716-8564-82284c89701f" alt="Screenshot 2023-09-11 at 16 20 25" width="800" height="430"></a></p>
+
+<h2>
+  
+  
+  All Changes
+</h2>
+
+<p>You can find the full changelog on <a href="https://github.com/novuhq/novu/compare/v0.18.0...v0.19.0">GitHub</a>.</p>
+
+<h2>
+  
+  
+  Supercharged Docs
+</h2>
+
+<p>We revamped and rewrote our <a href="https://docs.novu.co">docs</a> to be better, faster and easily searchable. </p>
+
+<p>With the <a href="https://docs.novu.co">new docs</a>, you can hit the ground running with the API endpoints directly from the <a href="https://docs.novu.co/api-reference/events/trigger-event">API reference</a> pages. </p>
+
+<p>Please explore and give us your feedback. </p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p><a href="https://web.novu.co">Sign up on Novu</a>, try it out &amp; let me know what you think about the new changes in the comments section.</p>
+
+<p>If you want to contribute to OSS and make an impact, I believe it is a <a href="https://github.com/novuhq/novu">great place to start</a> &amp; build out amazing things.</p>
+
+<p>Oh, remember to star the repo as well.🤩 See you in the next release! 🚀</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Testμ 2023: Highlights From Day 2](https://dev.to/lambdatest/testm-2023-highlights-from-day-2-513p) 
+ <details><summary>Article</summary> <p>At the end of Day 2 of the TestMu Conference 2023, we reflect on a day filled with learning and inspiration. From the first session to the final chat exchange, we experienced innovation and togetherness. Throughout the day, we explored various aspects of testing, including AI’s impact and automation’s development, led by industry experts. These discussions have left a lasting impact, inspiring us beyond our screens.</p>
+
+<p>We’re ready to carry its lessons and inspiration as we conclude this exceptional day. The connections we’ve made and the insights we’ve gained will shape the path ahead, allowing us to shape the future of testing.</p>
+
+<p>Let’s see some highlights from Day 2 of the TestMu Conference 2023.</p>
+
+<h2>
+  
+  
+  Welcome Note: Day 2 by Manoj Kumar
+</h2>
+
+<p><a href="https://in.linkedin.com/in/manoj9788">Manoj Kumar</a> greeted all the speakers and attendees with a warm welcome, infusing everyone with excitement as we were on the brink of commencing Day 2 of TestMu 2023.</p>
+
+<p>As we delve into Day 2, everyone is encouraged to prepare for an even more captivating array of talks, sessions, and discussions. The schedule features various intriguing topics and esteemed speakers, including Maaret Pyhäjärvi, Paul Grizzaffi, Andrew Knight, Mathias Bynens, Christian Bromann, and our keynote speaker, Mahesh Venkataraman. The anticipation is palpable for the exclusive preview of the “Future of Quality Assurance” survey, reflecting the collective insights of our community and underscoring the significance of collaboration and shared viewpoints.</p>
+
+<p>Regardless of whether attendees are seasoned testing professionals or embarking on their journey, the event promised something for everyone. The expectation was for further enlightening talks that delve deeper into the testing domain, panel discussions that explore diverse perspectives, and sessions meticulously designed to provide tangible takeaways, enhancing the attendees’ testing practices.</p>
+
+<p>The contests, certification marathons, and #LambdaTestYourApps challenges were compelling opportunities to showcase your abilities and gain prominence in this dynamic community.</p>
+
+<h2>
+  
+  
+  Expanding the Horizon of Innovation in Testing by Mahesh Venkataraman
+</h2>
+
+<p>Over the last twenty years, there has been a significant transformation in testing processes and technology. However, the concept of innovative testing has revolved chiefly around test automation. Recently, AI-driven testing has gained popularity. But should innovation in testing be limited to only automation or AI-driven methods? Sometimes, the most valuable ideas come from outside the industry. Can we find inspiration from how other fields have transformed their products and practices? Can we extract and apply their core principles to testing?</p>
+
+<p>This session by Mahesh encouraged contemplation by delving into how we can reshape, rethink, and reposition testing for the benefit of all stakeholders. By scrutinizing the challenges encountered in contemporary software delivery and capitalizing on innovation principles borrowed from various domains, we can visualize a testing future that adds extra value to everyone involved.</p>
+
+<p><strong>Key Takeaways:</strong> Understanding the implicit and explicit challenges facing modern software delivery and how generic innovation principles can be applied to bring about a win-win for all — opening new career pathways for practitioners, creating business value for customers, and generating new revenue streams for tools and service providers.</p>
+
+<p><strong>About the Speaker:</strong></p>
+
+<p>With more than 34 years of experience in the Information Technology sector, <a href="https://in.linkedin.com/in/maheshvenkataraman">Mahesh Venkataraman</a> has held diverse roles encompassing technology management, service management, and business management.</p>
+
+<h2>
+  
+  
+  Panel Discussion: Evolution of Testing in the Age of DevOps
+</h2>
+
+<p>Software engineering teams have warmly embraced DevOps to achieve intelligent, swift, and daily shipping. Yet, the question remains: Does this guarantee confident shipping? Amid the DevOps era, continuous testing offers solutions and hurdles as testing methodologies evolve.</p>
+
+<p>Our distinguished panel of industry luminaries engaged in a conversation about this evolution, shedding light on their contributions to aiding clients in overhauling their testing approaches through DevOps.</p>
+
+<p>With approximately twenty years of software testing experience, <a href="https://in.linkedin.com/in/asmita-parab">Asmita Parab</a> is a seasoned professional dedicated to ensuring the delivery of top-notch software products. As Head of Testing at UST Product Engineering, she leads a team of skilled professionals, driving excellence in testing practices and guaranteeing software application reliability. Committed to continuous improvement, she stays updated with emerging testing trends, shaping industry best practices within the organization. Asmita’s expertise ensures high-quality standards for customers and organizational growth.</p>
+
+<p><strong>About Panelists:</strong></p>
+
+<ul>
+<li><p>A Business and Technology leadership veteran with over two decades of experience, <a href="https://in.linkedin.com/in/bhushan-bagi-317103105">Bhushan Bagi</a> excels in scaling businesses and fostering high-performance teams. Currently overseeing Business for Quality Engineering at Wipro, he spearheads various aspects from Go-to-Market strategies to industry engagement. Bhushan’s transformational expertise spans multiple domains, making him a sought-after consultant for business and technology growth.</p></li>
+<li><p><a href="https://ca.linkedin.com/in/harleen-bedi">Harleen Bedi</a>, a senior IT consultant, specializes in developing and selling IT offerings related to quality engineering and emerging technologies. She crafts and deploys QE strategies and innovations for enterprises, driving business objectives for clients. With her focus on AI, Cloud, Big Data, and more, Harleen is pivotal in aligning technology advancements with quality engineering.</p></li>
+<li><p><a href="https://in.linkedin.com/in/mallika-fernandes">Mallika Fernandes</a> is an IT leader with an impressive 24-year innovation journey. As part of the Cloud First group at Accenture, she leads Quality Engineering innovation and automation, holding eleven patents for her pioneering work. Her passion for AI/ML and Cloud Quality transformation is reflected in her contributions.</p></li>
+<li><p><a href="https://www.linkedin.com/in/vikul">Vikul Gupta</a>, the Head of NextGen CoE at Qualitest, a modern quality engineering company, boasts over twenty years of experience with Tier 1 companies. His expertise spans quality engineering transformation, NextGen solutions, and co-innovation with partners worldwide. With a robust technological background encompassing AI/ML, DevOps, Cloud, and more, Vikul brings domain-specific insights to the forefront of his leadership roles.</p></li>
+</ul>
+
+<h2>
+  
+  
+  My Crafting Project Became a Critical Infrastructure by Elizabeth Zagroba
+</h2>
+
+<p>Frustrated with the usual testing process, Elizabeth developed an APIs Python script, built and deployed the app, and printed updates in the terminal. Initially addressing my immediate needs, it unexpectedly automated a manual step in our release process.</p>
+
+<p>Other teams adopted it, expanding its functionality. She managed code submissions, even those she disagreed with, to keep things unblocked. Eventually, maintaining the code became burdensome, and she stopped. However, renewed interest sparked when a merge request came in, leading to collaborative improvements and the addition of tests. This rejuvenated her enthusiasm for maintaining the script, which had grown into a vital piece of infrastructure.</p>
+
+<p><strong>Key Takeaways:</strong></p>
+
+<ul>
+<li><p>Good collaboration takes time and energy.</p></li>
+<li><p>Small things for one use can grow into bigger things with many benefits.</p></li>
+<li><p>Pick up the work for the skills you want to build.</p></li>
+</ul>
+
+<p><strong>About the Speaker:</strong><br>
+<a href="https://nl.linkedin.com/in/ezagroba">Elizabeth</a> serves as the Quality Lead at Mendix in The Netherlands. Her role involves enhancing exploratory testing by orchestrating collaborative “mob” testing sessions, effectively addressing gaps, and ensuring that the “it should just work” principle holds true. She fosters a shared comprehension of projects, offers critical insights, and supports team members beyond formal management channels. Additionally, she adeptly crafts API tests and communicates proficiently in English, making her a key asset in ensuring quality and cohesion within the team.</p>
+
+<h2>
+  
+  
+  Let’s Play Rhetoric for All Things Testing by Maaret Pyhäjärvi
+</h2>
+
+<p>Remote screen sharing offers the platform for engaging in the intriguing Public Speaking Game called Rhetoric. In that adapted version, willing volunteers had the chance to take part during the session’s time frame, delivering concise two-minute talks focused on diverse testing aspects. Guided by dice rolls, players encountered a variety of speaking challenges.</p>
+
+<ul>
+<li><p><strong>TOPIC:</strong> Presented a framing word and six constraints to tailor the talk’s style.</p></li>
+<li><p><strong>CHALLENGE:</strong> Introduced specific speaking constraints.</p></li>
+<li><p><strong>QUESTION:</strong> Supplied audience prompts paired with six constraints.</p></li>
+<li><p><strong>REFLECTION:</strong> Granted the opportunity to speak freely on any topic.</p></li>
+<li><p><strong>CHOICE:</strong> Allowed participants to select from any of the four options mentioned.</p></li>
+</ul>
+
+<p><strong>About the Speaker:</strong><br>
+In the past, <a href="https://fi.linkedin.com/in/maaret">Maaret Pyhäjärvi</a> showcased her expertise as an exceptional exploratory tester while holding the role of Development Manager at Vaisala. She displayed proficiency as a tester, (polyglot) programmer, speaker, author, and community facilitator.</p>
+
+<h2>
+  
+  
+  Staying Ahead In The Tech World by Rahul Parwal and Ajay Balamurugadas
+</h2>
+
+<p>During rapid technological changes, maintaining a competitive edge demands continuous updates. This talk delved into strategies that honed testing skills:</p>
+
+<ul>
+<li><p><strong>Building Your Toolkit:</strong> Understanding the value of a versatile toolkit and mastering tool selection amidst many options.</p></li>
+<li><p><strong>Leveraging Social Media:</strong> Discovering how staying informed through social platforms amplifies professional prowess.</p></li>
+<li><p><strong>Unlocking Automation:</strong> Exploring automation’s role, not solely in testing but also in daily tasks via micro tools.</p></li>
+<li><p><strong>Personal Insights:</strong> Gaining pragmatic insights from speakers’ experiences in tool selection and testing.</p></li>
+</ul>
+
+<p><strong>Key Takeaways:</strong></p>
+
+<ul>
+<li><p><strong>Toolkit Significance:</strong> Learn to create a comprehensive toolkit with fitting tools.</p></li>
+<li><p><strong>Social Media’s Edge:</strong> Uncover how staying connected online enhances your testing prowess.</p></li>
+<li><p><strong>Automation Unveiled:</strong> Embrace automation’s power using micro tools.</p></li>
+<li><p><strong>Practical Insights:</strong> Benefit from firsthand insights to thrive in the testing tech landscape.</p></li>
+</ul>
+
+<p><strong>About Speakers:</strong></p>
+
+<ul>
+<li><p><a href="https://in.linkedin.com/in/ajaybalamurugadas">Ajay Balamurugadas</a>, known as ‘ajay184f’ in the testing community, is a seasoned expert with extensive experience redefining testing methodologies. With a distinguished background, he has co-founded Weekend Testing, authored multiple insightful books, and holds the position of Senior Director, QE at GSPANN Technologies.</p></li>
+<li><p><a href="https://in.linkedin.com/in/rahul-parwal">Rahul Parwal</a> is a proficient Software Tester and generalist. As a Senior Software Engineer at IFM Engineering in India, he specializes in testing IoT systems encompassing Unit, API, Web, and Mobile Testing. Fluent in C# and Python, Rahul’s expertise is well-rounded. He actively contributes to the testing community through various channels, sharing his insights on LinkedIn, Twitter, his blog, YouTube, and meetups.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Balancing the Test Pyramid, the AWS way!
+</h2>
+
+<p>The AWS team delved into their comprehensive testing approach, amalgamating hybrid UI and API testing with synthetic <a href="https://www.lambdatest.com/learning-hub/canary-testing?utm_source=devto&amp;utm_medium=organic&amp;utm_campaign=sept_14&amp;utm_term=bw&amp;utm_content=learning_hub">canary testing</a>.</p>
+
+<p>Their methodology responded to the challenge of balancing test coverage and efficiency while maintaining superior quality. Practical techniques and frameworks employed by AWS teams seamlessly integrated UI and API testing, boosting coverage across the software stack.</p>
+
+<p>Additionally, they showcased the application of synthetic canary testing, putting real-world scenarios to the test in production to ensure operational excellence (OE) metrics coverage. By simulating actual production traffic and comparing outcomes with established benchmarks, anomalies, and potential issues were proactively identified, reinforcing system reliability and scalability.</p>
+
+<p><strong>Key Takeaways:</strong></p>
+
+<ul>
+<li><p><strong>Hybrid Testing Approach:</strong> The AWS team’s hybrid testing approach, blending UI and API testing, struck a balance between test coverage and efficiency.</p></li>
+<li><p><strong>Expanded Test Coverage:</strong> Understanding how AWS leveraged hybrid testing to simultaneously validate user interface interactions and backend functionality, enhancing test coverage.</p></li>
+<li><p><strong>Operational Excellence:</strong> Gaining insights into leveraging synthetic canary testing to fortify your organization’s testing endeavors for system reliability and availability.</p></li>
+<li><p><strong>Practical Insights:</strong> Exploring the tools and frameworks that AWS teams employed in implementing the hybrid UI and API testing strategy, with actionable techniques for enhancing personal testing strategies.</p></li>
+</ul>
+
+<p><strong>About the Speaker:</strong></p>
+
+<p><a href="https://www.linkedin.com/in/min-xu-45b7315">Min Xu</a> possessed substantial expertise, showcasing a robust background in quality and engineering. In her recent role as the Manager of engineering teams at AWS, her influence was significant. With over 15 years of industry experience, she contributed to Amazon’s pursuit of product quality and customer satisfaction over her five-year tenure there. Min Xu held multiple positions in quality and engineering management throughout her career.</p>
+
+<h2>
+  
+  
+  Expect to Inspect — Performing Code Inspections on Your Automation by Paul Grizzaffi
+</h2>
+
+<p>Automation development is indeed a form of software development. Regardless of using drag-and-drop or record-and-playback tools, there’s code running behind the scenes.</p>
+
+<p>Treating automation as software development is essential to avoid pitfalls. Just as in software development, code inspection plays a crucial role. In this session, Paul Grizzaffi explained the importance of code inspections for automation, highlighting differences from product software reviews and sharing real-life issues discovered during these assessments.</p>
+
+<p><strong>Key Takeaways:</strong></p>
+
+<ul>
+<li><p>Value of Inspections</p></li>
+<li><p>Business-Driven Inspection Approach</p></li>
+<li><p>Utilization of Tools</p></li>
+<li><p>Illustrative Examples</p></li>
+</ul>
+
+<p><strong>About the Speaker:</strong></p>
+
+<p><a href="https://www.linkedin.com/in/paulgrizzaffi">Paul Grizzaffi</a>, a Senior Automation Architect at Vaco, is passionate about his expertise in technology solutions for testing, QE, and QA realms. His role spans automation assessments, implementations, and contributions to the broader testing community.</p>
+
+<p>An accomplished speaker and writer, Paul has presented at local and national conferences and is associated with Software Test Professionals and STPCon. He holds advisory roles and memberships in industry boards such as the Advanced Research Center for Software Testing and Quality Assurance (STQA) at UT Dallas.</p>
+
+<h2>
+  
+  
+  Test Observability — A Paradigm Shift from Automation to Autonomous to Deep Observability by Vijay Kumar Sharma
+</h2>
+
+<p>The software industry has witnessed several transformations over time, often encountering disruptions every five years. Software testing, too, remained connected to the latest trends and technologies. Testing strategies aligned with agile development, rapid deployments, and heightened customer expectations for reliability and user-friendly interfaces. Like business logic, they grew swiftly and dependably.</p>
+
+<p>Quality engineering (QE) processes evolved from test automation to autonomous testing, and the recent session delved into a new growth requirement: test observability. Test observability involved extracting continuous insights from automation infrastructure to guide decisions about product stability, reliability, and speed gaps in constant deployment. It also streamlined resource allocation for tests, providing a holistic system view through automated testing.</p>
+
+<p><strong>Key Takeaways:</strong> In the recently concluded session, the focus remained on value-driven testing achieved through optimal technology utilization for informed decision-making and intelligent execution.</p>
+
+<p><strong>About the Speaker:</strong></p>
+
+<p><a href="https://in.linkedin.com/in/ripple4it">Vijay</a> boasts over 18 years of experience in Quality Engineering, primarily affiliated with Adobe and Sumologic. He has showcased his expertise by speaking at numerous testing conferences across India. He intend to propose a session titled ‘Test Observability and Its Significance in the Current Landscape of Rapidly Evolving Tech Enterprises.’</p>
+
+<h2>
+  
+  
+  Advanced Strategies for Rest API Testing by Julio de Lima
+</h2>
+
+<p>Were you tired of the oversimplified view of Rest API testing? Let’s dive deeper and explore advanced strategies. He covered areas like contract testing, architecture style adherence, security, and more. Expect tools and tips to elevate your Rest API testing game, gaining insights into complex components. Gain skills to define tailored testing techniques, enhancing efficiency in planning and strategies.</p>
+
+<p><strong>Key Takeaways</strong></p>
+
+<ul>
+<li><p>Julio comprehensively covered crucial facets of Rest API testing, encompassing contract testing, backwards compatibility testing, adherence to Rest architecture style validation, token structure evaluation, Rest API heuristic testing, external service simulation, security testing, and performance testing.</p></li>
+<li><p>He elaborated on the significance of each topic, detailing the steps for each type of testing, highlighting applicable tools, and offering illustrative examples for better comprehension.</p></li>
+</ul>
+
+<p><strong>About the Speaker:</strong></p>
+
+<p><a href="https://www.linkedin.com/in/juliodelimas/en">Júlio de Lima</a> is a specialist in Software Testing with 13 years of experience. Júlio has a Bachelor’s Degree in Software Engineering, a specialization in Teaching in Higher Education, and a Master’s Degree in Electrical and Computational Engineering with a focus on Testing and Artificial Intelligence.</p>
+
+<h2>
+  
+  
+  A Live Intro to Python Testing by Andrew Knight
+</h2>
+
+<p>Python proved itself as an exceptional language for test automation, celebrated for its concise syntax and extensive package library. In the recently concluded session, he guided participants through the realm of Python-driven testing via live coding — an interactive experience without slides! The spotlight was on project setup with pytest and Playwright, crafting unit, API, and UI tests collaboratively. As the session concluded, attendees were well-prepared to embark on their own test automation journey with Python, armed with additional resources for further learning.</p>
+
+<p><strong>About the Speaker:</strong></p>
+
+<p><a href="https://www.linkedin.com/in/andrew-leland-knight">Andrew Knight</a>, also known as “Pandy,” is the Automation Panda. He’s a software quality champion who loves to help people build better-quality software. An avid supporter of open-source software, Pandy is a Playwright Ambassador and the lead developer for Boa Constrictor, the .NET Screenplay Pattern.</p>
+
+<h2>
+  
+  
+  Open Source for Fun and Profit: Opportunities for Personal and Professional Growth
+</h2>
+
+<p>Irrespective of your skill level, open-source projects presented distinctive avenues for knowledge-sharing and mutual learning. From crafting documentation to bug fixes and feature additions, dedicating time to open-source initiatives, you yielded short-term and lasting rewards. Did you desire to explore a new language or technology but need help determining where to begin? Or you aimed to refine your abilities and gain valuable insights from project maintainers.</p>
+
+<p>The prospect of putting yourself out there could be daunting, but the rewards of expanding your network and expertise were invaluable. In the recently concluded session, the example of a Bitcoin open-source ecosystem illustrated that opportunities abound for everyone.</p>
+
+<p><strong>Key Takeaways</strong></p>
+
+<ul>
+<li><p>**Emphasis on Collaboration and Innovation: **The session highlighted the significance of open source in fostering collaboration and driving innovation.</p></li>
+<li><p><strong>Identifying Contribution Opportunities:</strong> Attendees learned how to identify active and well-maintained open-source projects to contribute to, enhancing their engagement in the community.</p></li>
+<li><p>**Understanding Open Source Stacks: **The session provided insights into the composition and characteristics of open source stacks.</p></li>
+</ul>
+
+<p><strong>About the speaker</strong><br>
+<a href="https://www.linkedin.com/in/knorrium">Felipe</a> has been in the tech industry for almost twenty years and has been a Senior Software Engineer in Test at Netflix for the past six, where he helps build the UI delivered to millions of Smart TVs and other streaming devices around the world.</p>
+
+<h2>
+  
+  
+  Chrome ❤️ Testing
+</h2>
+
+<p>The presented talk provided an overview of the recent initiatives undertaken by the Chrome team to enhance support for testing and automation scenarios. The focus delved into “Chrome for Testing” and the newly introduced Headless mode of Chrome. This information was shared in a past session.</p>
+
+<p><strong>About the speaker</strong></p>
+
+<p><a href="https://de.linkedin.com/in/mathiasbynens">Mathias</a> is a web standards enthusiast from Belgium who currently works on Chrome DevTools. He likes HTML, CSS, JavaScript, Unicode, performance, and security.</p>
+
+<h2>
+  
+  
+  Quality in Digital Transformation
+</h2>
+
+<p>In the concluded panel discussion, titled ‘Quality in Digital Transformation,’ the panelist delved into the interconnectedness of quality and digital transformation. Esteemed leaders across various industries shared their perspectives on upholding standards, ensuring smooth user experiences, and mitigating risks in a dynamically shifting technological landscape. They provided insights into establishing and maintaining quality processes conducive to agile transformation and securing digital assets.</p>
+
+<p>Furthermore, the discussion explored harnessing data-driven decision-making to oversee quality and performance, and the strategies to ensure quality assurance and compliance in the digital realm. The panel shed light on how quality assurance is pivotal in driving successful digital transformation for businesses.</p>
+
+<p><strong>About Panelists:</strong></p>
+
+<ul>
+<li><p>With over 15 years of experience in the technology industry, <a href="https://www.linkedin.com/in/anish-ohri-32924024">Anish Ohri</a> has played a vital role in advancing various innovative products and solutions across diverse domains, including Publishing, Finance, Multimedia, e-commerce, Gaming, and Enterprise Software.</p></li>
+<li><p><a href="https://in.linkedin.com/in/manishmitra">Manish</a> is a Quality Engineering enthusiast known for his expertise in developing and deploying quality software. He has actively contributed to open-source projects like Puppeteer and Playwright and advocates for balanced testing strategies. His discussions revolve around testing event-driven systems, GRPC constructs, and Contract Testing.</p></li>
+<li><p><a href="https://www.linkedin.com/in/tlemmonds">Todd Lemmonds</a> has over 20 years of experience. He is a visionary in software quality assurance. He champions early and frequent testing, driving his shift-left testing strategies. Todd emphasizes tester involvement during story refinement, integration of appropriate tests into automated pipelines, and the right test types at suitable development stages. His mission is to create an environment where testers thrive and enhance skills for modern software development.</p></li>
+<li><p><a href="https://www.linkedin.com/in/robertanthonygonzalez">Robert Gonzalez</a> is Vice President of Engineering at SugarCRM, a prominent CRM software company. His role involves steering engineering initiatives and fostering innovation within the CRM realm. Robert leads a skilled team and contributes significantly to developing and enhancing SugarCRM’s top-tier products, ensuring superior quality, functionality, and customer contentment.</p></li>
+<li><p>As Director of Quality at Hudl, <a href="https://uk.linkedin.com/in/seemaprabhu">Seema Prabhu</a> drives a quality-centric culture and sets up high-performance teams. With a passion for quality and years of experience, she excels in leadership, process establishment, coaching, and mentoring. Seema advocates for efficient testing and shares her expertise through speaking engagements at meetups and conferences.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Component Testing with WebdriverIO
+</h2>
+
+<p>An informative session emphasized the growing significance of web component testing in the rapidly evolving landscape of front-end frameworks. The session shed light on how testing individual UI components has become a pivotal aspect of testing stacks, offering the advantage of thoroughly examining various features within an element. Doing so effectively reduces the reliance on end-to-end tests, which are generally slower to run.</p>
+
+<p>The session, hosted by Christian Bromann, the Founding Engineer at Stateful, delved into these novel browser runner capabilities. Through engaging live demonstrations, attendees were treated to firsthand experiences of testing components in various popular frameworks, including Vue, Svelte, React, and Preact. The session showcased the remarkable ease and efficiency with which component testing can now be approached.</p>
+
+<p><strong>About the speaker</strong></p>
+
+<p><a href="https://www.linkedin.com/in/christian-bromann/en">Christian Bromann</a> is a Full-stack Engineer passionate about Open Source and Open Standards. Driven individual with the ability to adapt to any situation and proven potential to grow self and others. He is a quality-focused engineer with a background in automation technologies and test-driven development.</p>
+
+<h2>
+  
+  
+  Test Automation with SWAG
+</h2>
+
+<p>This enlightening session addressed the crucial matter of how to effectively supply automation frameworks with an unending stream of test data. The session explored a range of solutions, including both traditional and emerging tools, that cater to the test data-driven approach. Among these, a prevalent method involves storing all input values within storage files like CSV, YAML, JSON, and more. Another viable option includes harnessing the capabilities of databases, and offering resolutions to various challenges while meeting the dynamic variable requirements for automated scripting.</p>
+
+<p>A noteworthy highlight of the session was the introduction of an innovative API cloud solution. This solution simplifies the process of interfacing with multiple databases, eliminating the need for integrating drivers into various automation frameworks. Attendees were presented with a seamless way to establish communication with different databases, streamlining the process without the hassle of managing multiple drivers. The session successfully conveyed how this solution enhances the efficiency and flexibility of automation frameworks.</p>
+
+<p><strong>Key Takeaways</strong></p>
+
+<ul>
+<li>The session included insights into data-driven automation testing, the utilization of dynamic test data, the diversification of databases, and the importance of documenting test data.</li>
+</ul>
+
+<p><strong>About the speaker</strong></p>
+
+<p><a href="https://www.linkedin.com/in/garvit-chandna">Garvit Chandna</a> is Head of Test Engineering at Equinox with 14 years of experience in handling globally distributed automation and manual test engineering teams. Wide experience in management and architecting complex automation frameworks.</p>
+
+<h2>
+  
+  
+  Wrapping up Day 2!
+</h2>
+
+<p>A warm and sincere thank you to our esteemed speakers who have significantly contributed to shaping the success of Day 2 at TestMu 2023. The event was executed meticulously, showcasing insights from experienced speakers spanning the global testing community.</p>
+
+<p>As we bring Day 2 to a close, we invite all to join us for Day 3, where the momentum of productivity and innovation continues unabated. Together, let’s delve into novel testing paradigms, actively engage with our community, and collectively define the future of testing.</p>
+
+<p>For those who have been with us since the inception of Test Conference 2022, your unwavering support has been truly invaluable. Let’s continue the journey towards a world with minimal bugs, embracing the testing revolution by securing your spot at the LambdaTest TestMu Conference 2023.</p>
+
+<p>Become a trailblazer in shaping the testing landscape. Your participation remains pivotal as we stride into Day 3, navigating the currents of technology and propelling meaningful change. We extend our heartfelt gratitude for your involvement in this remarkable event. Anticipating another extraordinary day ahead!</p>
+
+<p>Stay inquisitive, stay engaged, and wholeheartedly embrace the future of testing!</p>
+
+ </details> 
+ <hr /> 
+
  #### - [Музыкальный discord бот Kai'Sa](https://dev.to/edexade/muzykalnyi-discord-bot-kaisa-1p24) 
  <details><summary>Article</summary> <h2>
   
@@ -791,343 +1343,6 @@ class Solution {
 
 <p>Happy coding,<br>
 shiva</p>
-
- </details> 
- <hr /> 
-
- #### - [Best Tips and Practices for .NET Performance Optimization and Scalability](https://dev.to/ifourtechnolab/best-tips-and-practices-for-net-performance-optimization-and-scalability-41gh) 
- <details><summary>Article</summary> <p>Have you ever experienced a slow-loading webpage or an unresponsive application that seemed to take forever to complete a task? If so, you know the frustration that comes with poor performance. In today's fast-paced digital world, users demand high-performing and responsive applications that can handle large amounts of data without any lag or delays. This is where .NET performance optimization and scalability come into play.</p>
-
-<p>.NET is a popular custom software development framework used for developing a wide range of applications, from websites to desktop applications and mobile apps. While .NET is well-known for its simplicity of use and quick development capabilities, optimizing and scaling for high-performance and big workloads can be difficult. As more organizations and clients rely on digital apps, the demand for streamlined and scalable .NET applications grows. For this reason, clients aim to <a href="https://www.ifourtechnolab.com/hire-dot-net-developer">hire dedicated .NET developers</a> to build flawless websites and web applications.</p>
-
-<p>Let's take a deep dive and learn some of the best pieces of advice on .NET optimization strategies.</p>
-
-<h2>
-  
-  
-  Top 10 strategies for .NET performance optimization
-</h2>
-
-<p>Honestly, .NET is not the easiest platform to work with, it takes years of hands-on experience to acquire enough knowledge to optimize the performance and scalability, here are some of the tips and tricks for optimization based on my experience.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3I6GvXv1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/myeqjr7ecuh9yofmp2wm.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3I6GvXv1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/myeqjr7ecuh9yofmp2wm.png" alt="Image description" width="800" height="476"></a></p>
-
-<h4>
-  
-  
-  Planning to hire <a href="https://www.ifourtechnolab.com/csharp-development-company">C# development company</a> for your project?
-</h4>
-
-<p>Start with multi-threading, it can improve performance by allowing your application to perform multiple tasks simultaneously<br>
-Caching is your friend, caching can greatly improve performance by storing frequently accessed data in memory, reducing the need to retrieve it from a slower storage location<br>
-Load balancer to the rescue, it will improve the scalability of your application by distributing incoming traffic across multiple servers<br>
-Always download and use the latest version of .NET, the latest versions usually include performance and scalability improvements<br>
-Make use of asynchronous programming to enable multiple tasking which will lead to improved performance and scalability<br>
-Examine and remove unnecessary objects and dispose of objects that are no longer needed. Use the garbage collector's memory management features to the fullest to optimize memory usage.<br>
-Using a profiler can help identify performance bottlenecks in your application and provide recommendations for optimization<br>
-Make use of a Content Delivery Network, a CDN can improve the performance and scalability of your application by distributing static content across multiple servers in multiple locations<br>
-Always use a message queue, it will improve the scalability of your application by allowing it to handle a large number of requests simultaneously without overwhelming resources<br>
-Explore the feasibility of cloud-based infrastructure, it can provide the scalability, performance, and reliability required to support large and complex applications.</p>
-
-<ul>
-<li>Vivek Basavegowda Ramu, QA at UnitedHealth Group
-Performance optimization with Profiler and Caching techniques
-Due to the growing business demands, .NET performance optimization has become a critical need for today’s businesses. For this reason, clients tend to hire skilled .NET Core developers to build flawless and scalable platforms capable of handling the growing number of users, and their data without degrading performance. Here are some of the best practices you can follow:</li>
-</ul>
-
-<p>Use a Profiler to Monitor Performance: A profiler can improve .NET application performance and scalability by detecting faults and monitoring performance.<br>
-Caching: It improves .NET application performance and scalability. Redis or Memcached helps minimize database queries.<br>
-Use Asynchronous Programming: Asynchronous programming allows your application to do numerous processes simultaneously, which can significantly reduce request processing time.<br>
-Reduce Garbage Collection: .NET garbage collection can be a severe bottleneck. Use structs, arrays, and a few objects to minimize garbage collection.<br>
-Optimize Your Code: Optimizing code reduces execution time. Refactoring loops to LINQ queries can improve performance. Performance monitoring tools can assist you in finding .NET application bottlenecks. AppDynamics and New Relic are open-source monitoring tools.</p>
-
-<ul>
-<li>Berry Moise Founder at BerryMo.com
-Read More: 4 Proven tactics to hire .NET developers for your Business startup
-Optimizing the performance and scalability of .NET applications can be complex and time-consuming. Here are a few tips and tricks to get you started:</li>
-</ul>
-
-<p>Utilize asynchronous programming to keep CPU utilization low while still executing tasks efficiently.</p>
-
-<p>Minimize objects created or held in memory by using data structures that use less memory or dispose of them when they are no longer needed.</p>
-
-<p>Reduce disk operations where possible by caching data in memory.</p>
-
-<p>Profile your application regularly to ensure that resources like CPU, disk, and RAM are being used efficiently.</p>
-
-<p>Use effective logging techniques like structured logging to capture meaningful metrics about the performance of your application over time.</p>
-
-<ul>
-<li>Omer Usanmaz, CEO of Qooper</li>
-</ul>
-
-<h2>
-  
-  
-  Employ Garbage collection, and minimize concurrency issues
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0nWVK2by--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vsiebz5ewmorrjs9844l.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0nWVK2by--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vsiebz5ewmorrjs9844l.png" alt="Image description" width="800" height="578"></a></p>
-
-<p>Use caching mechanisms to improve performance. Caching can help reduce the number of times an object is retrieved from the database or from a remote service. You can also use caching within your application itself, on individual objects or collections of objects.<br>
-Tune your memory usage. By restricting the amount of memory that is used by your application, you can improve its performance. You can use garbage collection to free up unused memory, or you can configure your application to automatically compact its memory after a set period of time.<br>
-Minimize concurrency issues. When multiple threads compete for access to the same resources, it can lead to increased execution time and decreased scalability. strategies for minimizing concurrency issues include using thread-safety annotations and designing your applications with careful attention to locking and synchronization primitives.<br>
-Design for scale-out architectures. As your application grows in size and complexity, it may benefit from using scale-out architectures a design pattern in which multiple instances of an application are deployed on separate servers so that requests for services from users across the network are handled by separate servers rather than one central server. Scale-out architectures allow you to avoid the bottleneck that often results from having too much data processing activity concentrated on a single server instance.</p>
-
-<ul>
-<li>Ivan Marusic, CEO of RPG Overload</li>
-</ul>
-
-<h2>
-  
-  
-  Conclusion:
-</h2>
-
-<p>.NET performance optimization is essential to improve responsiveness and speed of business applications to lead a better user experience. Scaling .NET applications can ensure that the application can handle a growing number of users, data, and workload without any performance degradation. This blog has gone through expert tips and best practices for scaling and optimizing .NET apps and websites. We hope it was helpful and covered the facts you were searching for. To get more such insights, do not forget to <a href="https://www.ifourtechnolab.com/blog">check our blog</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [SDC in Drupal core](https://dev.to/sparkfabrik/sdc-in-drupal-core-npi) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
-
-<p>There are a lot of contributed modules to build and manage a Drupal theme using components, but none of them has ever been elected as the de facto standard.</p>
-
-<p>However, things have changed with the release of Drupal 10.1 in June 2023. A specific implementation was chosen for inclusion in the Drupal core. Initially developed as a contributed module named <a href="https://www.drupal.org/project/cl_components"><em>Component Libraries: Components</em></a>, this functionality has been merged into Drupal core as the new <a href="https://www.drupal.org/node/3355112"><em>SDC experimental module</em></a>.</p>
-
-<h2>
-  
-  
-  What is SDC?
-</h2>
-
-<p>SDC stands for <em>Single Directory Components</em>. It is a way to organize components in a single directory instead of splitting them across different folders. This approach is similar to the one used by <a href="https://reactjs.org/">React</a> and <a href="https://vuejs.org/">Vue.js</a>.</p>
-
-<p>The main advantage of this solution is that it <em>is easier to find the code that describes a component</em>. It also simplifies the process of creating a new component, as you just need to create a new folder and add a some files to it.</p>
-
-<p>Finally, it is easier to <em>share components</em> between different projects, as you can just copy the component folder from one project to another (SDC then allows you to override assets like CSS and JavaScript to adapt the component to the design system of the new project).</p>
-
-<h2>
-  
-  
-  How to use SDC?
-</h2>
-
-<p>The simplest example we can think of is a button component, but let's try to complicate things a bit by adding some JavaScript and an image.</p>
-
-<p>The first step is to enable the SDC experimental module. Then you need to create a new folder named <code>components</code> in the theme folder or in one of your custom modules (yes, you can have more than one <code>components</code> folder). Those folders contain all the components that will be available in your theme.</p>
-
-<p>The second step is to define a new component. Create a new folder named <code>button</code> in the <code>components</code> folder. This folder will contain all the files related to the button component.</p>
-
-<p>Next, you'll find the code for those files:</p>
-
-<ul>
-<li>
-<code>button.component.yml</code>: metadata of the component (name, description, props, etc.)</li>
-<li>
-<code>button.html.twig</code>: Twig code of the component</li>
-<li>
-<code>button.css</code>: CSS code of the component</li>
-<li>
-<code>button.js</code>: JavaScript code of the component</li>
-<li>
-<code>icons/cog.svg</code>: cog icon</li>
-<li>
-<code>README.md</code>: component's documentation</li>
-</ul>
-
-<p>Note how all the files related to the component are named after the component itself, this is mandatory to allow Drupal to automatically declare a library for the component.</p>
-
-<p>Let's start with <code>button.component.yml</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight yaml"><code><span class="s1">'</span><span class="s">$schema'</span><span class="err">:</span> <span class="s1">'</span><span class="s">https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'</span>
-<span class="na">name</span><span class="pi">:</span> <span class="s">button</span>
-<span class="na">status</span><span class="pi">:</span> <span class="s">stable</span>
-<span class="na">description</span><span class="pi">:</span> <span class="s">A simple button</span>
-<span class="na">libraryOverrides</span><span class="pi">:</span>
-  <span class="na">dependencies</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">core/once</span>
-<span class="na">props</span><span class="pi">:</span>
-  <span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
-  <span class="na">properties</span><span class="pi">:</span>
-    <span class="na">title</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
-      <span class="na">title</span><span class="pi">:</span> <span class="s">title</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">Button title</span>
-      <span class="na">examples</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s1">'</span><span class="s">Click</span><span class="nv"> </span><span class="s">me'</span>
-    <span class="na">type</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
-      <span class="na">title</span><span class="pi">:</span> <span class="s">Type</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">Button type</span>
-      <span class="na">examples</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s1">'</span><span class="s">primary'</span>
-    <span class="na">icon</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
-      <span class="na">title</span><span class="pi">:</span> <span class="s">Icon</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">Button icon</span>
-      <span class="na">examples</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s1">'</span><span class="s">cog.svg'</span>
-    <span class="na">message</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
-      <span class="na">title</span><span class="pi">:</span> <span class="s">Message</span>
-      <span class="na">description</span><span class="pi">:</span> <span class="s">Popup message</span>
-      <span class="na">examples</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s1">'</span><span class="s">Lorem</span><span class="nv"> </span><span class="s">ipsum'</span>
-  <span class="na">required</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">title</span>
-    <span class="pi">-</span> <span class="s">type</span>
-    <span class="pi">-</span> <span class="s">icon</span>
-    <span class="pi">-</span> <span class="s">message</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The Twig file may look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code> <span class="nt">&lt;div</span> <span class="err">{{</span> <span class="na">attributes.addClass</span><span class="err">('</span><span class="na">button</span><span class="err">')</span> <span class="err">}}</span> <span class="na">data-message=</span><span class="s">"{{ message|default('No message') }}"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"{{ type }} image-button"</span><span class="nt">&gt;</span>
-     <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/{{ componentMetadata.path }}/icons/{{ icon }}"</span> <span class="na">alt=</span><span class="s">"Image"</span><span class="nt">&gt;</span>
-     <span class="nt">&lt;span&gt;</span>{{ title }}<span class="nt">&lt;/span&gt;</span>
-   <span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>All the properties defined in the <code>button.component.yml</code> file are available in the Twig file as variables. The <code>componentMetadata</code> variable contains some helpful information, like the path of the component on the filesystem.</p>
-
-<p>We then need some CSS to style the button:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nc">.image-button</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-flex</span><span class="p">;</span>
-  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#124354</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.image-button</span> <span class="nt">img</span> <span class="p">{</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">margin-right</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>To add interactivity to the button we need some JavaScript:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="p">((</span><span class="nx">Drupal</span><span class="p">,</span> <span class="nx">once</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">Drupal</span><span class="p">.</span><span class="nx">behaviors</span><span class="p">.</span><span class="nx">at_button</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">attach</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">once</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.button</span><span class="dl">'</span><span class="p">,</span> <span class="nx">context</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">item</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-          <span class="nx">alert</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-        <span class="p">});</span>
-      <span class="p">});</span>
-    <span class="p">},</span>
-  <span class="p">};</span>
-<span class="p">})(</span><span class="nx">Drupal</span><span class="p">,</span> <span class="nx">once</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Finally, the component is ready to be included in one of the Twig templates of your theme (the ones in the <code>templates</code> folder):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight twig"><code><span class="cp">{{</span> <span class="nv">include</span> <span class="p">(</span><span class="s1">'example_theme:button'</span><span class="p">,</span> <span class="err">{</span>
-    <span class="s1">'title'</span><span class="err">:</span> <span class="s1">'Click me'</span><span class="p">,</span>
-    <span class="s1">'type'</span><span class="err">:</span> <span class="s1">'primary'</span><span class="p">,</span>
-    <span class="s1">'icon'</span><span class="err">:</span> <span class="s1">'cog.svg'</span><span class="p">,</span>
-    <span class="s1">'message'</span><span class="err">:</span> <span class="s1">'Lorem ipsum'</span><span class="p">,</span>
-  <span class="err">}</span><span class="p">,</span>
-  <span class="nv">with_context</span> <span class="o">=</span> <span class="nv">false</span><span class="p">)</span>
-<span class="cp">}}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The final result should look like this:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OVOK52AD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m3vmvi31enw9gy70gdiz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OVOK52AD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m3vmvi31enw9gy70gdiz.png" alt="The button component rendered in page" width="146" height="59"></a></p>
-
-<p>Try to click on the button and see what happens.</p>
-
-<p>Starting from <a href="https://github.com/Chi-teck/drupal-code-generator">drupal-code-generator</a> version 3.2.0, a new generator has been added to easily create new components (this replaces the <a href="https://www.drupal.org/project/cl_generator">Component Libraries: Generator</a> module that is not compatible with Drush 12). Just run this command and follow the instructions:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>drush generate sdc
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  WebProfiler integration
-</h2>
-
-<p>The latest version of the <a href="https://www.drupal.org/project/webprofiler">WebProfiler</a> module (10.1.1) offers full support for collecting and exploring the components used on a page.</p>
-
-<p>On the WebProfiler toolbar, a new counter has been added to the <code>theme</code> widget, showing the number of components used on the page:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_mQEZdZt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eesbp0cf1lnee7h6fuzg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_mQEZdZt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eesbp0cf1lnee7h6fuzg.png" alt="The SDC data collector in the WebProfiler toolbar" width="511" height="332"></a></p>
-
-<p>Clicking on the counter will open the WebProfiler dashboard, showing all the components used on the page:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cT1NTAiP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rixkiwmsljw32zpzjgml.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cT1NTAiP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rixkiwmsljw32zpzjgml.png" alt="The SDC data collector in the WebProfiler dashboard" width="800" height="593"></a></p>
-
-<p>At the time of writing, a <a href="https://www.drupal.org/project/drupal/issues/3375843">core patch</a> is required to enable this feature; be sure to apply it before enabling the SDC module.</p>
-
-<p>Another new feature is the ability to explore the <em>list of libraries</em> used on the page (under the <code>Asset</code> data collector). As SDC automatically declares a library for each component, you can use the new pane to find the one used by the button component:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--98k8NHfn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i448t4pmf4l83owxbf3i.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--98k8NHfn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i448t4pmf4l83owxbf3i.png" alt="The libraries data collector in the WebProfiler dashboard" width="800" height="273"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>SDC is becoming the de facto standard for building Drupal components, with emerging modules (like <a href="https://www.drupal.org/project/nomarkup">No Markup</a> and <a href="https://www.drupal.org/project/sdc_display">Single Directory Components: Display</a>) and best practices. More will come in the future.</p>
-
-<p>In this article we have just scratched the surface of this new feature, to learn more we recommend you to read the just published <a href="https://packt.link/CGNe7">Modernizing Drupal 10 Theme Development</a> book.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--n8Wi_d-K--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zlkyfrspd8pg968jaeou.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--n8Wi_d-K--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zlkyfrspd8pg968jaeou.png" alt="Modernizing Drupal 10 Theme Development" width="800" height="987"></a></p>
-
-<p>In the book you'll find a detailed explanation about how themes work in Drupal 10, how to use SDC, how to integrate with tools like <em>Browsersync</em> and <em>Backstop.js</em> and how to expose your work to frameworks like <em>Storybook</em>.</p>
 
  </details> 
  <hr /> 
