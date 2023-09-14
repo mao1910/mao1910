@@ -118,48 +118,688 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Brilliant Ways for a Crypto Business to Ace Fundraising](https://dev.to/jessietomaz/brilliant-ways-for-a-crypto-business-to-ace-fundraising-22ad) 
- <details><summary>Article</summary> <p>Ahoy, fellow crypto enthusiasts! In the vast, unpredictable realm of crypto fundraising, fortune favors the bold. As we dive into this captivating topic today, we'll explore the ingenious and unconventional ways your crypto business can boost its coffers while creating ripples in the industry. So, fasten your seatbelts as we embark on an adventure through the world of crypto fundraising!</p>
+ #### - [The 10 tools I install on every new Mac I get](https://dev.to/codepo8/the-10-tools-i-install-on-every-new-mac-i-get-2l59) 
+ <details><summary>Article</summary> <p>I am currently on a company trip with my brand new MacBook and here are the things I always install first to get started:</p>
+
+<ul>
+<li>
+<a href="https://brew.sh/">Homebrew</a> - makes installing of low level stuff a breeze (free)</li>
+<li>
+<a href="https://nodejs.org/en">Node/NPM</a> - many things rely on it (free)</li>
+<li>
+<a href="https://www.dropbox.com/">Dropbox</a> - still be best way to store and share content amongst machines, both Google Drive and Microsoft OneDrive drive me nuts with their file permission nonsense (paid)</li>
+<li>
+<a href="https://videolan.org/vlc">VLC</a> - plays everything, has excellent keyboard shortcuts and can in a pinch even record screens for you (free)</li>
+<li>
+<a href="https://code.visualstudio.com">VS Code</a> - coders gotta edit (free)</li>
+<li>
+<a href="https://desktop.github.com/">GitHub Desktop</a> - much, much easier than installing and setting up Git yourself (free)</li>
+<li>
+<a href="https://imageoptim.com/mac">ImageOptim</a> - file resizing and optimising images, even on the command line (free)</li>
+<li>
+<a href="https://ffmpeg.org/">FFMPEG</a> - converts anything to anything on the command line (free)</li>
+<li>
+<a href="https://handbrake.fr/">Handbrake</a> - batch conversion of videos made easy (free)</li>
+<li>
+<a href="https://www.telestream.net/screenflow/overview.htm">Screenflow</a> - my go-to screen recording and video editing tool (paid)</li>
+</ul>
+
+<p>Other essentials are a VPN (I use <a href="https://mullvad.net/en">Mullvad</a> and <a href="https://protonvpn.com/">ProtonVPN</a>), but that's about it. </p>
+
+<p>Photo by <a href="https://unsplash.com/@imattsmart?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">iMattSmart</a> on <a href="https://unsplash.com/photos/sm0Bkoj5bnA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [C# Arrays](https://dev.to/zafarurakov/c-arrays-4acj) 
+ <details><summary>Article</summary> <h3>
+  
+  
+  Introduction
+</h3>
+
+<p>Arrays are an essential data structure in C# that allow you to store and manipulate collections of elements of the same data type. Arrays provide a convenient way to work with multiple values under a single variable name.</p>
+
+<p>In C#, arrays can be of various types, including one-dimensional, multi-dimensional, and jagged arrays. This documentation will explore each type and provide clear examples to help you understand their usage.</p>
+
+<h3>
+  
+  
+  One-Dimensional Arrays
+</h3>
+
+<p><strong>Declaration and Initialization</strong><br>
+One-dimensional arrays in C# are declared and initialized using square brackets "[]". Here's an example of declaring and initializing an integer array:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">5</span><span class="p">];</span> <span class="c1">// Creates an integer array with 5 elements</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Accessing Elements</strong><br>
+You can access elements in a one-dimensional array using their index, starting from 0. For example:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span> <span class="n">thirdNumber</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">[</span><span class="m">2</span><span class="p">];</span> <span class="c1">// Accesses the third element (index 2)</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Example: Sum of Elements</strong><br>
+Let's calculate the sum of elements in an integer array:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">sum</span> <span class="p">+=</span> <span class="n">num</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Sum of elements: "</span> <span class="p">+</span> <span class="n">sum</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="n">Sum</span> <span class="n">of</span> <span class="n">elements</span><span class="p">:</span> <span class="m">15</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Multi-Dimensional Arrays
+</h3>
+
+<p><strong>Declaration and Initialization</strong><br>
+Multi-dimensional arrays have multiple dimensions, typically represented as a matrix. You can declare and initialize them like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[,]</span> <span class="n">matrix</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span> <span class="c1">// Creates a 3x3 integer matrix</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Accessing Elements</strong><br>
+Accessing elements in a multi-dimensional array requires specifying indices for each dimension:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="n">matrix</span><span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="c1">// Accesses the element in the first row and first column</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Example: Matrix Multiplication</strong><br>
+Let's perform matrix multiplication using multi-dimensional arrays:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[,]</span> <span class="n">matrixA</span> <span class="p">=</span> <span class="p">{</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">},</span> <span class="p">{</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">}</span> <span class="p">};</span>
+<span class="kt">int</span><span class="p">[,]</span> <span class="n">matrixB</span> <span class="p">=</span> <span class="p">{</span> <span class="p">{</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span> <span class="p">},</span> <span class="p">{</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span> <span class="p">}</span> <span class="p">};</span>
+<span class="kt">int</span><span class="p">[,]</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">k</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">k</span><span class="p">++)</span>
+        <span class="p">{</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="p">+=</span> <span class="n">matrixA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="p">*</span> <span class="n">matrixB</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Matrix Multiplication Result:"</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="p">+</span> <span class="s">" "</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="n">Matrix</span> <span class="n">Multiplication</span> <span class="n">Result</span><span class="p">:</span>
+<span class="m">19</span> <span class="m">22</span>
+<span class="m">43</span> <span class="m">50</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Jagged Arrays
+</h3>
+
+<p>Jagged arrays are arrays of arrays, where each sub-array can have a different length. They are declared and initialized as follows:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[][]</span> <span class="n">jaggedArray</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">3</span><span class="p">][];</span>
+<span class="n">jaggedArray</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">};</span>
+<span class="n">jaggedArray</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+<span class="n">jaggedArray</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span> <span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Accessing Elements</strong><br>
+To access elements in a jagged array, you need to specify both the outer and inner indices:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span> <span class="k">value</span> <span class="p">=</span> <span class="n">jaggedArray</span><span class="p">[</span><span class="m">1</span><span class="p">][</span><span class="m">2</span><span class="p">];</span> <span class="c1">// Accesses the third element of the second sub-array</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Example: Sum of Elements in Jagged Array</strong><br>
+Let's calculate the sum of elements in a jagged integer array:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight csharp"><code><span class="kt">int</span><span class="p">[][]</span> <span class="n">jaggedArray</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[][]</span> <span class="p">{</span>
+    <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">},</span>
+    <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">},</span>
+    <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">sum</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">subArray</span> <span class="k">in</span> <span class="n">jaggedArray</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="k">in</span> <span class="n">subArray</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">sum</span> <span class="p">+=</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Sum of elements in jagged array: "</span> <span class="p">+</span> <span class="n">sum</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Sum of elements in jagged array: 45
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Conclusion
+</h3>
+
+<p>Arrays are versatile and fundamental data structures in C#. Understanding how to declare, initialize, and manipulate different types of arrays will greatly enhance your programming skills. Feel free to experiment with the provided examples and explore more complex scenarios to become proficient in working with arrays in C#.</p>
+
+<p>I have a lot of interesting code on <strong><a href="https://github.com/ZafarUrakov">GitHub</a></strong></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [I built WebComponents-based framework, I am HTML Developer](https://dev.to/oknoorap/i-built-webcomponents-based-framework-i-am-html-developer-2jjb) 
+ <details><summary>Article</summary> <p>TL;DR: I created Realm (<a href="https://realm.codes">https://realm.codes</a>), a WebComponents-based framework that prioritizes simplicity and efficiency in frontend development. As a solo founder and product builder, I understand the importance of building Minimum Viable Products (MVPs) quickly. That's why Realm doesn't rely on heavy tooling, transpilers, or complex setups.</p>
+
+<p>Embraces the HTML Developer Manifesto, emphasizing clean and concise HTML code over excessive JavaScript. Realm offers a streamlined development experience and allows you to prototype and launch your ideas quickly. With features like reactive data binding and reusability, Realm empowers you to build dynamic web apps effortlessly.</p>
+
+
+
+
+<p>You know, in the world of JavaScript, there's this belief that a new framework pops up every second. Developers are never satisfied with what exists and always end up reinventing the wheel. But you know what? It's actually a good thing. Innovation in other fields works the same way.</p>
+
+<p>As a React / Next.js developer for the past four years (and still using it), I've often found myself struggling with the complexities of modern web development. Sure, there have been attempts in the past to reinvent things, like SSR (Server-Side Rendering) or RSC (React Server Components), can be done with old PHP way, but they're not quite the same. But it makes the web development more complex.</p>
+
+<p>The complexity of modern web development has always bothered me. As someone building products, working on Minimum Viable Products (MVPs), I find myself caught up in endless tasks like setting up boilerplate code, organizing folders, and implementing best practices.</p>
+
+<p>But then, I stumbled upon a post by <a href="https://x.com/levelsio">@levelsio</a> on X (<a href="https://x.com/levelsio/status/1675829733668319233">https://x.com/levelsio/status/1675829733668319233</a>). He was using jQuery and PHP, and his product shipped quickly without any issues. It made me realize that building a million-dollar MVP doesn't necessarily require a complex stack. It's all about having a clear vision for your product. The stack is just another piece of the puzzle.</p>
+
+<p>The mindset of a founder or indie maker is different from that of a developer working at a startup. Best practices and scalability, in my opinion, aren't all that important during the MVP phase.</p>
+
+<p>That's why I've always dreamt of creating a simple framework that ignores all the complexity and best practices. I miss the good old days of jQuery, where everything was just simple.</p>
+
+<p>So, let's take a trip down memory lane and explore the evolution of web development, particularly on the frontend development.</p>
+
+
+
 
 <h2>
   
   
-  1. Token Sales: The Captain of the Crypto Ship
+  Frontend Development Evolution
 </h2>
 
-<p>When it comes to gathering funds in the crypto world, token sales are the pinnacle of success. Launching an <strong><a href="https://www.coinsclone.com/ico-software-development/?utm_source=dev&amp;utm_medium=cfund&amp;utm_campaign=LA">Initial Coin Offering</a></strong> (ICO) or a Security Token Offering (STO) can prove to be the perfect seaworthy vessel for raising funds. These sales allow eager investors to purchase tokens and provide crucial capital to your crypto venture. So, hoist the anchor and set sail!</p>
+<p>I witnessed most of the frontend development journey from the beginning, and I am grateful that today we have some awesome frameworks and libraries that have revolutionized the way we build user interfaces. We will recall of our memory about the evolution of frontend development and delve into the journeys of some prominent frameworks and libraries that have shaped the frontend world.</p>
+
+<h3>
+  
+  
+  jQuery
+</h3>
+
+<p>The jQuery Era marked a significant shift in frontend development. jQuery, released in 2006, quickly gained popularity due to its simplicity and ability to manipulate the Document Object Model (DOM) efficiently. It provided a concise syntax for traversing and manipulating HTML elements, handling events, and making AJAX requests. jQuery's widespread adoption made it the go-to library for many developers, and its influence can still be seen in countless legacy codebases.</p>
+
+<h3>
+  
+  
+  AngularJS
+</h3>
+
+<p>AngularJS, introduced by Google in 2010, brought a new paradigm to frontend development with its Model-View-Controller (MVC) architecture. It offered a comprehensive framework for building dynamic web applications, providing features like two-way data binding, dependency injection, and reusable components. AngularJS gained popularity for its ability to handle complex applications and its strong community support.</p>
+
+<h3>
+  
+  
+  Polymer
+</h3>
+
+<p>Polymer, developed by Google in 2013, introduced the concept of web components to frontend development. Web components enable developers to encapsulate and reuse UI elements across different projects. Polymer provided a set of tools and conventions to create and use web components, making it easier to build modular and maintainable frontend code. Polymer may not have reached the same level of popularity as some other frameworks, but it played a crucial role in paving the way for the future of web components. This inspired me to create Realm, a framework that embraces the power and potential of web components.</p>
+
+<h3>
+  
+  
+  Vue, React, Svelte
+</h3>
+
+<p>The rise of Vue.js, React, and Svelte in recent years has transformed frontend development. Vue.js, released in 2014, offers a progressive framework that combines declarative rendering, component-based architecture, and a gentle learning curve. React, introduced by Facebook in 2013, revolutionized UI development with its virtual DOM and component-based approach. Svelte, released in 2016, takes a different approach by compiling components at build time, resulting in highly efficient and performant applications.</p>
+
+<p>These frameworks have gained massive popularity due to their robust ecosystems, extensive community support, and developer-friendly features. They have significantly simplified frontend development and empowered developers to build complex and interactive user interfaces with ease.</p>
+
+<h3>
+  
+  
+  HTML Lit
+</h3>
+
+<p>HTML Lit, introduced by the Polymer team in 2019, is a lightweight library that enables developers to write web components using template literals. It combines the power of modern JavaScript with the simplicity of HTML templates, making it easier to create reusable components. HTML Lit embraces the native web platform and focuses on small file sizes and performance optimizations, making it an excellent choice for building fast and efficient web applications. This is the grandchild of Polymer, and I must say, I am truly enamored by the simplicity of this framework. The elegance and straightforwardness of HTMLLit have been a tremendous inspiration for the development of Realm.</p>
+
+<h3>
+  
+  
+  HTMX
+</h3>
+
+<p>HTMX is not just a meme, it’s real JS library. Everyone loved it. A relatively new addition to the frontend development landscape, focuses on enhancing traditional HTML applications with minimal JavaScript. It allows developers to add dynamic functionality to their websites by annotating HTML elements with attributes. HTMX uses AJAX requests to update parts of the page, providing a seamless user experience without the need for complex JavaScript frameworks. It emphasizes simplicity and developer ergonomics, making it a valuable tool for building modern web applications.</p>
+
+
+
 
 <h2>
   
   
-  2. DeFi the Odds: Decentralize Fundraising
+  Introducing Realm: Reactive-Lightweight Markup Language
 </h2>
 
-<p>Ah, decentralized finance (DeFi), the fearless maverick of the crypto world. Harness the power of DeFi platforms like Uniswap, PancakeSwap, or SushiSwap to create decentralized fundraising pools. Imagine the joy of your project supporters being able to contribute directly using their favorite cryptocurrencies. With DeFi, you can empower individuals and build a loyal community along the way.</p>
+<p>Let me get straight to the point. With Realm, all you need is a text editor and a browser. You don't even have to set up a localhost (although we might need that later, but it's not necessary if you don't import an element).</p>
+
+<p>The heart and soul of Realm lies in defining custom elements that you can use anywhere, and it's only uses HTML element. That's where the magic happens.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code>
+<span class="nt">&lt;custom-element</span> <span class="na">name=</span><span class="s">"my-element"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;element-attr</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Default Name<span class="nt">&lt;/element-attr&gt;</span>
+  <span class="nt">&lt;element-attr</span> <span class="na">name=</span><span class="s">"dream"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Star<span class="nt">&lt;/element-attr&gt;</span>
+  <span class="nt">&lt;template&gt;</span>
+    Hello my name is <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"@name"</span><span class="nt">&gt;&lt;/slot&gt;</span>,
+    My dream: <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"@dream"</span><span class="nt">&gt;&lt;/slot&gt;</span>
+  <span class="nt">&lt;/template&gt;</span>
+<span class="nt">&lt;/custom-element&gt;</span>
+
+<span class="c">&lt;!-- Render it anywhere --&gt;</span>
+<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Luffy"</span> <span class="na">dream=</span><span class="s">"King of Pirates"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
+<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Nami"</span> <span class="na">dream=</span><span class="s">"Draw the map of the world"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
+<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Zoro"</span> <span class="na">dream=</span><span class="s">"The Best Swordsman in the world"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
+<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Sanji"</span> <span class="na">dream=</span><span class="s">"Finding the All Blue"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
+<span class="nt">&lt;my-element</span> <span class="na">name=</span><span class="s">"Ussop"</span> <span class="na">dream=</span><span class="s">"The great warrior of the sea"</span><span class="nt">&gt;&lt;/my-element&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Realm draws inspiration from a mix of React, Polymer, jQuery, and all the other frameworks I mentioned in the Frontend Development Evolution section above.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;custom-element</span> <span class="na">name=</span><span class="s">"basic-counter"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;element-state</span> <span class="na">name=</span><span class="s">"counter"</span> <span class="na">type=</span><span class="s">"number"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/element-state&gt;</span>
+  <span class="nt">&lt;element-flow&gt;</span>
+    <span class="nt">&lt;trigger-event</span> <span class="na">click=</span><span class="s">"AddCountBtn"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;set-state</span> <span class="na">name=</span><span class="s">"counter"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">mutate=</span><span class="s">"+"</span><span class="nt">&gt;&lt;/set-state&gt;</span>
+    <span class="nt">&lt;/trigger-event&gt;</span>
+  <span class="nt">&lt;/element-flow&gt;</span>
+
+  <span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">ref=</span><span class="s">"AddCountBtn"</span><span class="nt">&gt;</span>
+      Add count <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"#counter"</span><span class="nt">&gt;&lt;/slot&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/template&gt;</span>
+<span class="nt">&lt;/custom-element&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>If you're curious about how this all works, you can dive into the <a href="https://realm.codes/docs/learn">Tutorial</a> on Realm's website. It will provide you with detailed insights and instructions on the process.</p>
+
+<p>People love to joke about how there's no such thing as an "HTML developer" and that HTML is just a silly markup language. Well, I think it's time for them to stop laughing and start taking it seriously. It's time to take things to a whole new level.</p>
+
+<p>I take great pride in calling myself an HTML developer, with a little help from JavaScript of course. In fact, I proudly declare the HTML Developer Manifesto.</p>
+
+
+
 
 <h2>
   
   
-  3. Airdrops: A Cryptocurrency Rainfall
+  HTML Developer Manifesto
 </h2>
 
-<p>Ahoy, there! Picture yourself standing under a plethora of falling cryptocurrencies. That's precisely what airdrops feel like! Airdrops are a savvy way to raise awareness about your project while simultaneously distributing tokens to a wider audience. By generously rewarding individuals who engage with your project, you'll garner attention and loyalty as you dance amidst an abundant crypto rain.</p>
+<p>We, the HTML developers, stand united in our belief that HTML is not just a markup language but a versatile tool capable of building powerful web applications. We embrace the potential of HTML and its ecosystem to create innovative, interactive, and scalable solutions. We proudly present the HTML Developer Manifesto, showcasing the capabilities of HTML as a programming language:</p>
+
+<ol>
+<li><p>HTML is not limited to markup: We reject the notion that HTML is solely for structuring web content. With the advent of WebComponents, we can now create custom elements with attributes, state, reactivity, and reusability, all using HTML syntax. HTML is evolving beyond its origins and becoming a programming language in its own right.</p></li>
+<li><p>Embracing the power of WebComponents: We harness the power of WebComponents to encapsulate functionality and create reusable building blocks. By defining custom elements, we can extend the vocabulary of HTML, enabling the creation of complex applications with less reliance on JavaScript.</p></li>
+<li><p>State management in HTML: We recognize that state management is a crucial aspect of application development. With the help of HTML attributes and the power of WebComponents, we can maintain and manage state directly within our HTML code. This allows for cleaner and more declarative code, reducing the need for excessive JavaScript.</p></li>
+<li><p>Reactivity through HTML attributes: We believe that interactivity is a fundamental requirement for modern applications. By leveraging HTML attributes, we can achieve reactivity within our components. Through event listeners and attribute-based triggers, we enable seamless updates and dynamic behavior without heavy JavaScript dependencies.</p></li>
+<li><p>Leveraging CSS for styling and animation: We acknowledge that CSS plays a pivotal role in the visual presentation and user experience. By combining HTML's structure with the expressive power of CSS, we can create stunning interfaces and engaging animations, breathing life into our applications.</p></li>
+<li><p>The spirit of reusability: We champion the concept of reusability in software development. By leveraging the modularity of WebComponents, we can create self-contained, encapsulated elements that can be easily reused across projects. This promotes efficiency, maintainability, and faster development cycles.</p></li>
+<li><p>HTML as a gateway to accessibility: We recognize that building accessible applications is a moral imperative. HTML, with its built-in semantics, provides a solid foundation for creating inclusive experiences. By adhering to best practices and leveraging HTML's accessibility features, we ensure that our applications are usable by a diverse range of users.</p></li>
+<li><p>Collaboration between HTML and JavaScript: We acknowledge that HTML and JavaScript are powerful allies in the pursuit of web development excellence. While HTML can handle many aspects of application logic, we recognize the need for JavaScript to handle complex computations, API interactions, and advanced functionalities. We encourage the harmonious collaboration of HTML and JavaScript to create robust and feature-rich applications.</p></li>
+</ol>
+
+<p>We the HTML developers, stand firm in our belief that HTML is not merely a markup language but a programming language capable of creating sophisticated web applications. Together, let us push the boundaries of what can be achieved with HTML and build a more innovative, accessible, and inclusive web for all.</p>
+
+
+
+
+<p>This is just the beginning. Once I complete the initial iteration to finish the first version, there's a lot of work ahead of me. I'll be focusing on improving the codebase and optimizing performance.</p>
+
+<p>I've just introduced you to a concept, and who knows? Maybe there's something new that will draw inspiration from what I've created. The possibilities are endless!</p>
+
+<p>I think this article is too long, if you want to supports me you can reach me out on X <a href="https://x.com/oknoorap">@oknoorap</a>.</p>
+
+<p>Feel free to show your support for Realm by giving it a star on GitHub 😉</p>
+
+<p>🔥 Website: <a href="https://realm.codes">https://realm.codes</a><br>
+👉 Github: <a href="https://github.com/realmorg/realm">https://github.com/realmorg/realm</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Happy Programmers' Day!](https://dev.to/devu/happy-programmers-day-53cc) 
+ <details><summary>Article</summary> <p>El día de hoy (13 de septiembre del 2023) se celebra esta profesión, actividad, hobbie, o estilo de vida.</p>
+
+<p>Para celebrar nuestro gusto por la programación realizamos unos pósters conmemorativos. Imprímelos, guárdalos, y compartelos!</p>
+
+<p>Today (September 13, 2023), we celebrate this profession, activity, hobby, or lifestyle.</p>
+
+<p>To celebrate our love for programming, we have created some commemorative posters. Print them, keep them, and share them!</p>
+
+<p><a href="https://www.devu.space/assets/duck%20light.png">Full size</a><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--r95Bkc7z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxy60lurhmipkk1eh59h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--r95Bkc7z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxy60lurhmipkk1eh59h.png" alt="Rubber duck debugging poster" width="661" height="989"></a></p>
+
+<p><a href="https://www.devu.space/assets/programmers%20day%201.png">Full size</a><br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EEQOXT97--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oqylqthz3xcl65lif1y3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EEQOXT97--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oqylqthz3xcl65lif1y3.png" alt="Heart poster" width="660" height="992"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Islands & Server Components & Resumability, Oh My!](https://dev.to/this-is-learning/islands-server-components-resumability-oh-my-319d) 
+ <details><summary>Article</summary> <p>It is no secret that the past 2 years have seen the beginnings of a fairly dramatic change in frontend web technology. I write about these topics regularly. But as they enter the more mainstream vernacular I've found it has become more and more difficult to understand what these technologies are and differentiate when they are useful.</p>
+
+<p>At the heart of the discussion is the topic of Hydration. The process in which a server-rendered website becomes interactive to the user in the browser. But even that is something that holds a somewhat vague understanding. What is it for an application to become interactive?</p>
+
+<p>And Hydration is more significant than the amount of JavaScript we ship or execute. It impacts what data we need to serialize and send to the browser. This is an area that is not simple to build solutions for, and it is little surprise explaining them is equally challenging.</p>
+
+
+<div class="ltag__link">
+  <a href="/this-is-learning" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ba6C0swq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--TcsNlUvs--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/3314/dc73eb74-08f9-4592-b599-c08f2bb14b4d.png" alt="This is Learning" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--shNeL80b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--zjqjkX6K--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/186199/a3d1cfed-a1ca-41cd-a146-9db4e65711d4.jpeg" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/this-is-learning/why-efficient-hydration-in-javascript-frameworks-is-so-challenging-1ca3" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Why Efficient Hydration in JavaScript Frameworks is so Challenging</h2>
+      <h3>Ryan Carniato for This is Learning ・ Feb 3 '22</h3>
+      <div class="ltag__link__taglist">
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<p>Now that more solutions have shipped I think it is time to revisit the 3 most promising approaches to this space.</p>
+
+
+
 
 <h2>
   
   
-  4. Crypto Crowdfunding: Collaboration for Treasure
+  When does a Site become Interactive?
 </h2>
 
-<p>Venture beyond the traditional crowdfunding platforms and tap into the crypto crowdfunding ecosystem. By strategically enlisting the support of various blockchain-based <strong><a href="https://www.coinsclone.com/sto-script/?utm_source=dev&amp;utm_medium=cfund&amp;utm_campaign=LA">Crowdfunding Platforms</a></strong>, you can appeal to a global audience with an appetite for innovative projects. This approach can foster an ecosystem where supporters can contribute funds and receive tokens in return. Together, we can conquer the fundraising seas!</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JTGk7P_Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oru6oigox10kssmlf4d4.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JTGk7P_Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oru6oigox10kssmlf4d4.jpeg" alt="INP Graphic" width="800" height="472"></a></p>
+
+<p>But first I think we need to start here. For such a seemingly simple question the answer isn't so straightforward. There is a reason performance experts in the browser, like the Chrome team, have gone through several iterations on how to best capture this. TTI (Time to Interactive), FID (First Input Delay), and now INP (Input to Next Paint) can also serve as a way to understand how responsive our websites are.</p>
+
+<p>Looking at framework space there has been a lot of talk about Progressive Enhancement. I.e... having elements work if the JavaScript is not available (or available yet). Is a site considered interactive if clicking a button works in the sense it does a slower full-page navigation(server round trip) where it otherwise would have done stuff in the browser only?</p>
+
+<p>How about if events are captured and then replayed during hydration or even used to prioritize what gets hydrated first as in the case of React 18's Selective Hydration? If the browser doesn't miss any end-user events but just doesn't respond right away because it is loading code, is that considered interactive?</p>
+
+<p>The fact that these sorts of techniques are everywhere at this point is why at least to me being interactive can't only include the ability to catch the cause, but also the time it takes to witness the expected effect. How to measure that reasonably I will leave it to the browser teams, but that should give us goalposts for our exploration.</p>
+
+
+
 
 <h2>
   
   
-  5. NFTs: Transforming Art into Crypto Gold
+  Islands
 </h2>
 
-<p>Avast, ye art enthusiasts! With Non-Fungible Tokens (NFTs), you can bridge the gap between art and crypto fundraising. Create unique and extraordinary digital artworks that captivate the hearts and crypto wallets of collectors. By auctioning these NFTs, you'll not only nourish your project financially but also become a beacon of innovation in the crypto art world.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--A-Y63sDH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4lteo95ma15ugimwn9pj.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A-Y63sDH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4lteo95ma15ugimwn9pj.jpg" alt="Islands" width="800" height="534"></a></p>
+
+<p>The thing to love about Islands is they start so simple. If you have too much JavaScript, divide and conquer. The earliest days of client-side rendering involved embedding interactive widgets in server-rendered applications. Even things like Web Components have made this pretty easy to do over the years. </p>
+
+<p>Well, except for one problem. These widgets were client-rendered so they came from the server blank. This could cause layout shifts and a delay in primary content showing. Islands in the basic form is just server rendering these pieces as well.</p>
+
+<p>Simple, but it meant JavaScript on the server to render which is why outside of Marko(2014), we did not see much exploration here until the more common SPA (Single Page App) server rendered had proven JavaScript full-stack was viable. Not until 2021 with frameworks like Astro, and Fresh did we see a return to this.</p>
+
+<p>There are some significant differences between Islands and its SPA counterparts (like Next, Nuxt, SvelteKit, and Remix). These Islands frameworks skip sending JavaScript for the root of the application. It isn't until you hit an interactive component that JavaScript is needed. This can drastically shrink bundle sizes.</p>
+
+<div class="table-wrapper-paragraph"><table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Full Page</th>
+<th>Islands</th>
+<th>Reduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td>439kb</td>
+<td>72kb</td>
+<td>84%</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>504kb</td>
+<td>110kb</td>
+<td>72%</td>
+</tr>
+<tr>
+<td>View Item</td>
+<td>532kb</td>
+<td>211kb</td>
+<td>60%</td>
+</tr>
+</tbody>
+</table></div>
+
+<blockquote>
+<p>Comparison done by Marko team on eBay.com</p>
+</blockquote>
+
+<p>Islands can also shrink HTML document size as they only need to serialize the data passed as Island props instead of all the data. That blob of JSON in a script tag we are accustomed to seeing at the bottom of the server-rendered HTML can disappear when we use Islands! On data-heavy pages, I've seen it cut the page size in half.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2m-db4fR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zyjkr8xcdh3fdelh9c1b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2m-db4fR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zyjkr8xcdh3fdelh9c1b.png" alt="Image description" width="800" height="431"></a></p>
+
+<blockquote>
+<p>Hackernews story page done in SolidStart with SPA SSR and Islands</p>
+</blockquote>
+
+<p>How is that possible? Server-rendered children can be passed through the Islands without being hydrated themselves.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rx4qA8nW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wa0407e1o39f85jbpabf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rx4qA8nW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wa0407e1o39f85jbpabf.png" alt="Image description" width="800" height="576"></a></p>
+
+<p>In the case above, where no state is passed to our ToggleVisibleIsland, those comments never need to be sent to the client.</p>
+
+<p>It does mean though that any content passed through will be rendered eagerly even if it isn't shown ultimately at the opportunity that Island logic could display it later. So we only solve the "double data" problem if this content is only rendered once whether it be in the DOM or as a serialized prop/slot. Not both.</p>
+
+<p>The most important difference is Island architected applications are MPAs(Multi-Page Apps). The optimization is based on knowing that the code for non-interactive parts is never needed in the browser. Never rendered in the client. This is something a SPA router could never guarantee.</p>
+
+
+
+
+<h2>
+  
+  
+  Server Components
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2-p10SHi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ydl3k8yveg99avf1n06j.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2-p10SHi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ydl3k8yveg99avf1n06j.png" alt="Image description" width="800" height="436"></a></p>
+
+<p>But what if we do want client routing? How much does that change the picture?</p>
+
+<p>Adding client routing with server-rendered HTML doesn't change much on the surface. Solutions like Turbo or Flamethrower have been adding that for a bit of smoothness to MPAs. We've recently seen combining these sorts of techniques with the View Transition API to great effect.</p>
+
+<p>But an MPA with client-side routing doesn't suddenly give you all the benefits of a SPA. Most notably in element and state persistence. On the surface, this might also seem straightforward but it is not.</p>
+
+<p>The first thing you might do is mark elements as being persistent. And then when you swap your new markup replace the existing elements back in where an ID matches. But since the elements are temporarily removed this can lose DOM state like input focus when persisting. You could diff it and in so only replace what has changed and that might be sufficient.</p>
+
+<p>Another consideration is global state in the client. Pretend you have a global counter that impacts how certain Islands render. If you load one page and increment it to 10. Then on navigation render the next page on the server, it will not know that the counter is 10 and render it as if it were 0. This could lead to hydration mismatches and break the application.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4diNX-X5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/io9fucz2at6eivue0149.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4diNX-X5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/io9fucz2at6eivue0149.png" alt="Image description" width="800" height="322"></a></p>
+
+<p>Unless you desire to send back all the global state back and forth between requests(and you really really don't), we can't ever render Islands on the server after the first-page load if we want to ensure things won't break when global state is involved.</p>
+
+<p>This detail isn't important just for navigation. But any lazily inserted content prop/slot can no longer ensure hydration will work if global state has changed since it was originally server-rendered. This adds complexity to the logic for absorbing rendered templates that ensure double data doesn't happen as the Islands and static templates need to be separated at runtime.</p>
+
+<p>Instead of wrestling with that, React Server Components invented their own serialization format and didn't bother solving the "double data" problem. Although it is the only non-experimental solution I know today that properly handles state persistence.</p>
+
+<p>So Server Component architecture can be seen as Islands + Client Routing, but it involves more than tagging a client router or even View Transitions on an MPA. And in so deserves its own category when looking at how we build partially hydrated solutions.</p>
+
+
+
+
+<h2>
+  
+  
+  Resumability
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FSwU6Z3M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n5e5rfc9dgrmti8h9yhg.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FSwU6Z3M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n5e5rfc9dgrmti8h9yhg.gif" alt="Image description" width="498" height="312"></a></p>
+
+<p>I love resumability because it does come out of left field compared to a lot of the other research that has been going on over the past decade. Instead of looking at how to reduce the amount of code/hydration, it looks at changing what code executes.</p>
+
+<p>Partially Hydrated solutions above in some cases can reduce code footprints up to 80-90% but it still treats that last bit very similar to everything we've seen before. What if we didn't execute any code on the client until we needed to? What if hydration returned to just attaching event handlers?</p>
+
+<p>To do that we'd need to serialize not just the application state, but the internal state of the framework so that when any part is executed it could continue where it left off. When an event handler updates some state we just propagate that change without ever running the components the first time in the browser to initialize it. Afterall we already initialized it when we rendered on the server.</p>
+
+<p>This is not easy to accomplish given the way we close over state when we write components, but it is solvable:<br>
+</p>
+<div class="ltag__link">
+  <a href="/this-is-learning" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ba6C0swq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--TcsNlUvs--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/3314/dc73eb74-08f9-4592-b599-c08f2bb14b4d.png" alt="This is Learning" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--shNeL80b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--zjqjkX6K--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/186199/a3d1cfed-a1ca-41cd-a146-9db4e65711d4.jpeg" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/this-is-learning/resumability-wtf-2gcm" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Resumability, WTF?</h2>
+      <h3>Ryan Carniato for This is Learning ・ Aug 23 '22</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#javascript</span>
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#marko</span>
+        <span class="ltag__link__tag">#qwik</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<p>It also opens up more interesting patterns for lazy code loading since it doesn't need to be immediately present for hydration. However, if interactivity is as defined above, you don't want to be lazy loading anything critical because we still have to wait for it. Maybe just expensive things or things offscreen. In the basic case, a pretty similar heuristic to how you would choose to lazy load for any client-side architecture.</p>
+
+<p>Of course, serializing everything could be pretty costly, not unlike the "double data" problem. So we would need a way to determine what can never change in the client. To do that resumable solutions tend to use Signals-based reactivity, often augmented by compilation. By tying updates to the data rather than the view hierarchy components no longer become the unit of code that is needed to run. And more so dead code can be tree-shaken along the reactive graph of data-dependencies.</p>
+
+<p>Done well that seems pretty good. Once you enter this zone, it is easier to automate the split between client and server. But that alone doesn't solve problems like client-side routing.</p>
+
+<p>Resumability's knowledge is still based on knowing what will always be on the server from an MPA standpoint. Unlike Islands that are explicit, with an automatic system any descendant of stateful conditional in the rendering has the potential to end up in the browser.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jgdGZIy---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ocs5l99pizu0ontfct4v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jgdGZIy---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ocs5l99pizu0ontfct4v.png" alt="Image description" width="800" height="354"></a></p>
+
+<p>If one added client-side routing (a stateful decision high in the tree) a resumable solution on its own would load the same code on navigation as an SPA and require all the serialized data client side to render it.</p>
+
+
+
 
 <h2>
   
@@ -167,568 +807,23 @@
   Conclusion
 </h2>
 
-<p>As we dock our crypto fundraising ship here today, we hope to have ignited your imagination with these ingenious methods to set sail on the vast ocean of possibilities. Remember, in the world of Crypto Fundraising, only the brave and innovative will conquer the seas. If you're excited about raising capital and venturing into the cryptocurrency industry but don't know where to start, one question may be dominating your thoughts: “Where can I start my cryptocurrency business? "No need to worry; I'm here for you.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rR5tDEd8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/papk4dk0h5cr0p3x51av.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rR5tDEd8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/papk4dk0h5cr0p3x51av.png" alt="All of the Above Minion" width="800" height="454"></a></p>
 
-<p>You can partner with the leading <strong><a href="https://www.coinsclone.com/contact-us/?utm_source=dev&amp;utm_medium=cfund&amp;utm_campaign=LA">Blockchain Development Company</a></strong> in the cryptocurrency industry. They have extensive experience in blockchain technology and have a team of experienced experts in the field. With their advice, you can position yourself ahead of your competitors in the cryptocurrency industry. They will provide you with information about trending cryptocurrency trading opportunities, tailored to your specific needs and investment capabilities. Start the conversation with a reputable development company, embrace the winds of change, and take your crypto business to the next level with these ingenious strategies. </p>
-
- </details> 
- <hr /> 
-
- #### - [Oracle-Linux 8'de Chronyd ile NTP İstemcisi Yapılandırma](https://dev.to/aciklab/oracle-linux-8de-chronyd-ile-ntp-istemcisi-yapilandirma-1p6f) 
- <details><summary>Article</summary> <ul>
-<li>Chronyd Servisinin Yüklenmesi ve Etkinleştirilmesi:</li>
-</ul>
-
-<p>Öncelikle, chronyd servisinin yüklü olup olmadığını kontrol edin. Eğer yüklü değilse, yükleyin:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>sudo dnf install chrony
-</code></pre>
-
-</div>
-
-
-
-<p>Servisi etkinleştirin ve başlatın:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>sudo systemctl enable --now chronyd
-</code></pre>
-
-</div>
-
-
+<p>So I guess high level:</p>
 
 <ul>
-<li>Chrony Konfigürasyon Dosyasının Düzenlenmesi:</li>
+<li>Islands are an architecture that aims to reduce JavaScript footprint by up to ~90% by explicitly denoting what goes to the client.</li>
+<li>Server Components architecture extends Islands with client-side routing and proper state preservation.</li>
+<li>Resumability instead of focusing on how to reduce the amount that is hydrated, looks to instead remove the execution cost of hydration itself.</li>
 </ul>
 
-<p>Özel bir NTP sunucusu kullanmak için, chrony konfigürasyon dosyasını düzenleyin:<br>
-</p>
+<p>So while seen as competitive these are actually complementary. They don't all solve the same issue completely but focus on a certain part of the problem.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>sudo nano /etc/chrony/chrony.conf
-</code></pre>
+<p>Islands have gotten incredibly optimal at solving for code and data serialization size. Server Component solutions today are the only Island-like solutions that properly account for state while client navigating. Resumability is the only approach that reduces the execution cost of the hydration that remains.</p>
 
-</div>
+<p>Whether these all converge is another question. Do Islands want the added complexity of Server Components? Will Server Components care about the last stage optimizations that come from Resumability? Will Resumable Solutions ever embrace explicitly calling out which parts of the view render in different locations?</p>
 
-
-
-<p>Dosyada, aşağıdaki gibi bir veya birden fazla server veya pool satırı ekleyin (örneğin "ntp.ulakbim.gov.tr"):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>server ntp.ulakbim.gov.tr iburst
-</code></pre>
-
-</div>
-
-
-
-<p>İsterseniz IP adresi de kullanabilirsiniz. iburst opsiyonu, zaman senkronizasyonunu hızlandırmak için kullanılır.</p>
-
-<ul>
-<li>Chronyd Servisini Yeniden Başlatma:</li>
-</ul>
-
-<p>Konfigürasyon dosyasını düzenledikten sonra, servisi yeniden başlatın:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>sudo systemctl restart chronyd
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Senkronizasyon Durumunu Kontrol Etme:</li>
-</ul>
-
-<p>chronyc komutunu kullanarak senkronizasyon durumunu kontrol edebilirsiniz:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>chronyc tracking
-</code></pre>
-
-</div>
-
-
-
-<p>Bu komut, senkronizasyon durumu hakkında detaylı bilgi verecektir.</p>
-
-<ul>
-<li>Güvenlik Duvarı Ayarları:</li>
-</ul>
-
-<p>Eğer güvenlik duvarı etkinse, NTP trafiğine izin vermeniz gerekebilir:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>sudo firewall-cmd --add-service=ntp --permanent
-sudo firewall-cmd --reload
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Senronizasyon Durumunu Doğrulama:</li>
-</ul>
-
-<p>timedatctl komutunu kullanarak NTP servisinin aktif olup olmadığı kontrol edebilirsiniz:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>timedatectl
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QDkIHpue--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvolwg7s0ck66vsec5ow.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QDkIHpue--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvolwg7s0ck66vsec5ow.png" alt="Image description" width="372" height="37"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Astro Framework - Resources & Free Starters](https://dev.to/sm0ke/astro-framework-resources-free-starters-3jae) 
- <details><summary>Article</summary> <p>Hello Coders! </p>
-
-<p>This article aims to provide a few useful resources for <a href="https://astro.build/">Astro</a>, a web framework that can be used to code static websites, eCommerce Platforms, Documentation portals, and much more using some innovative concepts like <a href="https://docs.astro.build/en/concepts/islands/">islands</a> on top of any UI Framework like React, Vue, Svelte. </p>
-
-<blockquote>
-<p>Thanks for reading!</p>
-</blockquote>
-
-
-
-
-<h2>
-  
-  
-  Why Astro?
-</h2>
-
-<p>Astro, initially started as an SSG (Static Site Generator) rapidly evolved into a modern and innovative web framework that tries to find a balance between loading and execution speed for a website and the amount of the JS loaded and used on the client side.</p>
-
-<p>Unlike some other frameworks, Astro is HTML-first, which means it outputs zero JavaScript by default and supports both static site generation (SSG) and server-side rendering(SSR).</p>
-
-
-
-
-<blockquote>
-<p>Here are the <strong>Key Points of Astro</strong>:</p>
-</blockquote>
-
-<h3>
-  
-  
-  ✅ Astro Islands
-</h3>
-
-<p>This is probably the most important innovation of Astro that allows the creation of interactive UI components within an otherwise static HTML page. Each island, as the name suggests, runs isolated and interactive while the rest of the page remains static.</p>
-
-<blockquote>
-<p>Image Credits: <a href="https://semaphoreci.com/blog/astro-framework">Semaphore - AstroJS Intro</a></p>
-</blockquote>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eRjr2FIT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/phuhwius6rurjpmu6v1k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eRjr2FIT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/phuhwius6rurjpmu6v1k.png" alt="Astro - Islands Pattern" width="800" height="338"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ Performance
-</h3>
-
-<p>Astro is statically by default, server-side rendered, and with ZERO-javascript when possible, making it a competitive tool for content-first, SEO-friendly products like landing pages, blogs, or eCommerce sites.</p>
-
-<h3>
-  
-  
-  ✅ Flexibility
-</h3>
-
-<p>Astro allows the use of components from different frameworks like Svelte, SolidJS, React, and Vue, within the same project. This aspect is a big differentiator compared to NextJs, Nuxt that force the developer to use React, and Vue across the entire project.</p>
-
-<h3>
-  
-  
-  ✅ Simple Templating
-</h3>
-
-<p>Its templating engine works with Markdown, MDX and is closer to an intuitive format easy to digest by any developer (even by beginners).</p>
-
-<h3>
-  
-  
-  ✅ Data &amp; API Integration
-</h3>
-
-<p>Astro.js supports fetching data from APIs and also using static data sources from a local directory.</p>
-
-<h3>
-  
-  
-  ✅ Ecosystem
-</h3>
-
-<p>Astro.js has an active developer community, with more related content and use -cases published on different platforms like Dev.to, Medium, and Hashnode.  </p>
-
-<p>If the above arguments are not enough to take a look at this new framework, here are some links that explain more technical how AstroJS is built:</p>
-
-<ul>
-<li>👉 <a href="https://medium.com/@jerrychangdev/introduction-79da4972f412">Introduction to Astro</a> by Jerry Chang with some nice metrics</li>
-<li>👉 <a href="https://bejamas.io/blog/practical-guide-to-astro-js-framework/">Astro JS Framework: A Practical Guide</a>
-</li>
-<li>👉 <a href="https://itnext.io/ok-astro-is-the-best-web-framework-in-2023-heres-why-734ca15c706">Astro is the best web framework in 2023, here’s why</a>
-</li>
-</ul>
-
-
-
-
-<h2>
-  
-  
-  Astro Starters (all free)
-</h2>
-
-<p>Once the basics are assimilated, we can move forward and play around with a few starters (all free).</p>
-
-<h3>
-  
-  
-  ✅ <a href="https://www.creative-tim.com/product/astro-launch-ui?AFFILIATE=128200">AstroLaunch UI</a>
-</h3>
-
-<p>With AstroLaunch UI, you gain access to a free collection of fully coded elements, example pages, and blocks. Whether you're a startup, working on a landing page, or managing a blog, our Astro template has got you covered - Developed by Creative-Tim.</p>
-
-<ul>
-<li>👉 <a href="https://www.creative-tim.com/product/astro-launch-ui?AFFILIATE=128200">AstroLaunch UI</a> - product page</li>
-<li>👉 <a href="https://www.creative-tim.com/astro/launch-ui/?AFFILIATE=128200">AstroLaunch UI</a> - LIVE Demo </li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IMWsWFll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4azd94ijjfrqysbkhn28.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IMWsWFll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4azd94ijjfrqysbkhn28.png" alt="AstroLaunch UI - by Creative-Tim" width="800" height="600"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ <a href="https://themesberg.github.io/flowbite-astro-admin-dashboard/?ref=ui-themes.com">Flowbite Astro Dashboard</a>
-</h3>
-
-<p>A free and open-source admin dashboard template built by the core Flowbite team that gives you access to UI components like charts, widgets, tables, and CRUD layouts based on the Flowbite design system.</p>
-
-<ul>
-<li>👉 <a href="https://themesberg.github.io/flowbite-astro-admin-dashboard/?ref=ui-themes.com">Flowbite Astro Dashboard</a> - LIVE Demo</li>
-<li>👉 <a href="https://github.com/themesberg/flowbite-astro-admin-dashboard?ref=ui-themes.com">Flowbite Astro Dashboard</a> - Source code </li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SCbq_2g7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tfnpo5ir1158q7obck2q.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SCbq_2g7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tfnpo5ir1158q7obck2q.png" alt="Flowbite Dashboard - Open-source Astro Starter" width="800" height="544"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ <a href="https://www.creative-tim.com/product/astro-ecommerce?AFFILIATE=128200">Astro eCommerce</a>
-</h3>
-
-<p>Astro Ecommerce is a stunning starter template for E-commerce projects based on Astro's next-gen island architecture. Whether you're launching a new online store or looking to upgrade your existing one, Astro Ecommerce theme provides everything you need to create a stunning, user-friendly shopping experience for your customers.</p>
-
-<blockquote>
-<p>👉 <a href="https://www.creative-tim.com/product/astro-ecommerce?AFFILIATE=128200">Astro eCommerce</a> - product page </p>
-</blockquote>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1OQ2RSca--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bl3mr2mgu7b5jzhftmp9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1OQ2RSca--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bl3mr2mgu7b5jzhftmp9.png" alt="Astro eCommerce - by Creative Tim" width="800" height="600"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ <a href="https://astro.build/themes/details/astroplate/">Astroplate</a>
-</h3>
-
-<p>Astroplate is a comprehensive starter template built using modern web technologies such as Astro, TailwindCSS, and TypeScript. It provides developers with a solid foundation for building fast and content-focused websites quickly and efficiently with the Astro framework. Use Astroplate for your next Astro project and save valuable time.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OE6mQuY3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/82lvihymgkj8ned9v1dk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OE6mQuY3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/82lvihymgkj8ned9v1dk.png" alt="Astroplate - Open-source Astro Starter" width="800" height="600"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ <a href="https://astro.build/themes/details/astrowind/">AstroWind</a>
-</h3>
-
-<p>AstroWind is a free, customizable, and production-ready template for Astro 3.0 + Tailwind CSS. Suitable for Startups, Small Businesses, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages, and blogs.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3GmnlJoa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sl5p5fvux8g4slnir6gg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3GmnlJoa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sl5p5fvux8g4slnir6gg.png" alt="AstroWind - Open-source Astro Starter" width="800" height="520"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ <a href="https://astro.build/themes/details/sendit/">Sendit</a>
-</h3>
-
-<p>Sendit is a polished and versatile marketing website template for Astro, optimized for visual editing on CloudCannon.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--h5YMtaE1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ertl842il9kvj6qvxpyw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--h5YMtaE1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ertl842il9kvj6qvxpyw.png" alt="Sendit - Open-source Astro Starter" width="800" height="387"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ <a href="https://astro.build/themes/details/agencex/">AgenceX</a>
-</h3>
-
-<p>A simple agency landing page made with AstroJS and TailwindCSS.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--39732wuN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qqocc3mhdwxzhksay4pn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--39732wuN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qqocc3mhdwxzhksay4pn.png" alt="AgenceX - Open-source Astro Starter" width="800" height="537"></a></p>
-
-
-
-
-<h3>
-  
-  
-  ✅ <a href="https://astro.build/themes/details/astrolus/">Astrolus</a>
-</h3>
-
-<p>Modern Sass home page template that supports light and a dark theme built with TailwindCSS using Tailus blocks.  </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--54C1fAbh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u19q6bbd9u5zg1psagqs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--54C1fAbh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u19q6bbd9u5zg1psagqs.png" alt="Astrolus - Open-source Astro Starter" width="800" height="416"></a></p>
-
-
-
-
-<blockquote>
-<p>Thanks for reading! For more information, feel free to access:</p>
-</blockquote>
-
-<ul>
-<li>👉 <a href="https://docs.astro.build/en/getting-started/">Astro</a>, official DOCS</li>
-<li>👉 <a href="https://www.contentful.com/blog/what-is-astro/">What is Astro</a>, a comprehensive introduction provided by Contentful</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--HiC2g8f2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0esrgbwm10836waxgf1h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--HiC2g8f2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0esrgbwm10836waxgf1h.png" alt="Astro - The Official Cover" width="800" height="179"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [How to get started with MongoDB as a Student](https://dev.to/1grace/how-to-get-started-with-mongodb-as-a-student-55j8) 
- <details><summary>Article</summary> <p>As student with a passion for the developer community, I have participated in varous hackathons, and gotten involved in my student community. </p>
-
-<p>Throughout these experiences, I have had the opportunity to learn and develop projects using the MERN stack (MERN stands for MongoDB, Express, React, Node, after the four key technologies that make up the stack. MongoDB — document database. Express(.js) — Node.js web framework. React(.js) — a client-side JavaScript framework.) More information can be seen on their blog <a href="https://www.mongodb.com/mern-stack#:~:text=MERN%20stands%20for%20MongoDB%2C%20Express,a%20client%2Dside%20JavaScript%20framework">here.</a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_fP0Hjsr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzz4ooe0i3scj8s4xa63.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_fP0Hjsr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzz4ooe0i3scj8s4xa63.png" alt="Image description" width="800" height="401"></a></p>
-
-<p>As a software engineering intern, I have had the opportunity to also see how often MongoDB is used within projects, and how its capabilities have contributed to more efficient and reliable projects. </p>
-
-<p>Finally, In my previous semester, I had the opportunity to take a course on unstructured data, (for any students at western, CS4417 is the course!) where I was able to learn more about unstructured data, noSQL, and work on an assignment involving MongoDB, Aggregation, and MapReduce. Im happy to make seperate blog posts about these projects as well for any students interested in exploring applications and ways to use MongoDB in their own projects. </p>
-
-<p>Overall, MongoDB is a great tool to be able to leverage in your projects! Now you might be wondering, how do I get started? </p>
-
-<p>MLH (Major League Hacking) is a large hackathon organizer and a community that I have been involved in since the summer of 2020. </p>
-
-<p>As mentioned in their <a href="https://news.mlh.io/major-league-hacking-mongodb-partner-to-inspire-the-next-generation-of-builders-03-27-2023">website post</a>, </p>
-
-<blockquote>
-<p>MongoDB Atlas – Best Database Platform for Your Next Hackathon<br>
-MongoDB Atlas is a multi-cloud database with an integrated set of related services that allow development teams to address the growing requirements for today’s wide variety of modern applications, all in a unified and consistent user experience.</p>
-</blockquote>
-
-<p>MongoDB Atlas is more than a general-purpose database, it’s a full developer data platform – easily deploy and manage databases on-demand when and where you need them. </p>
-
-<p>Below are some ways you could use MongoDB Atlas in your next hackathon project.</p>
-
-<p>1) Simplify the way you integrate database functionality into your hackathon project by starting a free cluster or using your introductory $50 Atlas credits for students. </p>
-
-<p>2) Take your hackathon project to the next level, and deploy a database to the cloud in minutes. Signing up is easy and hassle-free with no credit card required! </p>
-
-<p>Key Benefits for Students<br>
-MongoDB is one of the most prevalent database providers in the world, and we’ve got a range of opportunities to help you get started building on their platform. </p>
-
-<p>1) Receive $50 of free MongoDB Atlas credits through the GitHub Student Developer Pack, along with a MongoDB certification ($150 in value). The Forever Free Tier is available if you are no longer a student. </p>
-
-<p>2) Enter the “Best Use of MongoDB Atlas” challenge at an upcoming MLH event for a chance to win a M5GO iOT Starter Kit. To participate in the challenge, check out our website and register for an upcoming event! </p>
-
-<p>Interested in taking advantage of your MongoDB Atlas perks? Check out their website here. </p>
-
-<p>MongoDB also has developed "MongoDB University" a series of courses and ressources to support the learning and application of those learnings! I have taken some of the modules and can confirm the videos and tutorials go in depth and with the interactive nature of their tutorials, you will be engaged with the content. </p>
-
-<p>Finally, MongoDB has <a href="https://www.mongodb.com/community/forums/c/user-groups/11">User Groups </a><br>
-which bring people together to learn from and connect over their shared interest in MongoDB technologies. These are communities of developers with various skill levels and an interest in learning new technologies and applications including MongoDB and beyond, and are a great opportunity to get involved! Whether you are a beginner or a skilled individiaul, this is a safe space for users and novices to come together, learn from each other, and share what theyre doing with mongodb and other tech. </p>
-
-<p>I recently became involved as a co-organizer for the <a href="https://www.meetup.com/toronto-mongodb-usergroup/">Toronto User Group</a> and confirm the community is welcoming for people with diverse experiences and has enabled me to meet and learn from people around the company and community. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--s5L7O_YG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fxh7b8ye337xc6exh4at.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--s5L7O_YG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fxh7b8ye337xc6exh4at.png" alt="Image description" width="800" height="450"></a></p>
-
-<p>These are just starting points - there are many options for ways to get involved with MongoDB beyond this!  </p>
-
-<p>You could build an application or library you've built using MongoDB, contribute to open source related to MongoDB, <br>
-talk at a local MongoDB event, create a video or tutorial sharing what you've learned or created about MongoDB, <br>
-get involved and provide support through Stack Overflow, the MongoDB Community Forum or elsewhere, and more! </p>
-
-<p>If you had any questions feel free to leave them in the comments! </p>
-
- </details> 
- <hr /> 
-
- #### - [Fiz um push sem checar as alterações do repositório, e agora?](https://dev.to/nikolai1312/fiz-um-push-sem-checar-as-alteracoes-do-repositorio-e-agora-f7k) 
- <details><summary>Article</summary> <h4>
-  
-  
-  *<em>Este artigo foi escrito em conjunto com <a class="mentioned-user" href="https://dev.to/donadonf">@donadonf</a> *</em>
-</h4>
-
-<p>Dentro de uma equipe de desenvolvimento nos deparamos com algumas demandas que são desenvolvidas por pares, alguns casos utilizam até a mesma branch para desenvolver a tarefa e fazem com que os desenvolvedores trabalhem 2 habilidades muito importantes: A comunicação e o versionamento de código. Neste artigo iremos tratar de uma situação que pode ser comum, podemos chamá-la de “Fiz um push e não sabia que a branch havia mudado, e agora?”. </p>
-
-<p>Ao tentar fazer um push, provavelmente recebeu de volta uma mensagem indicando um conflito de branches, sendo a branch local em que está trabalhando e a branch remota, para onde irá o commit feito.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>[rejected] master -&gt; master (fetch first)
-error: failed to push
-</code></pre>
-
-</div>
-
-
-
-<p>Bom, teremos um longo caminho pela frente, mas fique tranquilo porque há uma solução! </p>
-
-<p>Primeiramente, devemos verificar os commits que já estão na branch remota e qual o nosso status em relação a ela, para isso podemos executar o comando:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git status
-</code></pre>
-
-</div>
-
-
-
-<p>Receberá uma informação sobre o status das branch em que está trabalhando, dessa forma:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>On branch nome-da-branch
-Your branch and 'origin/nome-da-branch' have diverged,
-and have 1 and 1 different commits each, respectively.
-</code></pre>
-
-</div>
-
-
-
-<p>Isso indica que sua branch local está com um commit a ser enviado, mas está com um commit atrasado em relação a branch remota, nesse cenário é necessário puxar os dados da branch remota antes de realizar o push para que não tenha um conflito de versões de código. </p>
-
-<p>Começaremos a solução do conflito entre as branches checando os logs dos commits feitos com o comando:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git log
-</code></pre>
-
-</div>
-
-
-
-<p>Vamos pegar o ID do último commit feito, porque aqui estaremos visualizando um histórico dos commits feitos. Com esse ID iremos executar um hard reset na branch atual e retirar o commit do HEAD com outro comando, então a sequência de comandos será a seguinte:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git reset --hard ID-do-commit
-
-git reset HEAD~1
-</code></pre>
-
-</div>
-
-
-
-<p>Novamente, vamos checar o status das versões que estamos trabalhando com comando <code>git status</code>, veremos que alguns arquivos estão marcados como <code>Changes not staged for commit</code>, isso significa que o commit foi resetado corretamente e as alterações feitas não foram perdidas. Devemos então armazenar essas mudanças dentro do stash para que possamos fazer o commit mais tarde com o comando:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git stash
-</code></pre>
-
-</div>
-
-
-
-<p>Caso a operação ocorra bem, a mensagem será a seguinte:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Saved working directory and index state WIP on nome-da-branch: ID-do-commit-atual-da-branch 
-</code></pre>
-
-</div>
-
-
-
-<p>Devemos então executar o comando que irá mostrar a quantidade de arquivos que estão salvos no último stash feito.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git stash show
-</code></pre>
-
-</div>
-
-
-
-<p>Como os arquivos estarão salvos no stash e branch terá voltado ao mesmo estágio da branch remota, podemos dar sequência ao procedimento padrão de um commit. Iremos checar o status da branch remota com o <code>git status</code> e depois executar um <code>git pull</code> para receber as alterações feitas na branch remota.</p>
-
-<p>Por fim, podemos retirar os arquivos do stash porque iremos utilizá-los agora:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git stash pop
-</code></pre>
-
-</div>
-
-
-
-<p>Isso irá trazer de volta as alterações feitas no commit que não conseguimos realizar o push. Caso esteja apavorado com a situação, poderá repetir o fluxo de visualizar o status da branch remota com <code>git status</code> e ver se há mais atualizações, poupando uma possível dor de cabeça. Caso não tenha nenhuma alteração, podemos seguir com o commit normalmente:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git commit -m "feat: texto-do-commit"
-
-git push
-</code></pre>
-
-</div>
-
-
-
-<p>Dessa forma, podemos solucionar os conflitos de versões de uma forma simples e objetiva utilizando apenas o terminal do git. <br>
-É chegado o grande momento, podemos dormir tranquilos com as versões atualizadas e organizadas em nossas respectivas branches.</p>
+<p>I'm not sure. There is still a lot of room to explore. And honestly, it is still unclear to what extent these concerns impact final site performance or ideal developer experience. But it is an exciting time to be in web development as the future unfolds.</p>
 
  </details> 
  <hr /> 
