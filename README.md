@@ -125,7 +125,7 @@
 
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_fP0Hjsr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzz4ooe0i3scj8s4xa63.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_fP0Hjsr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nzz4ooe0i3scj8s4xa63.png" alt="Image description" width="800" height="401"></a></p>
 
-<p>As a software engineering intern, I have had the opportunity to also see how often MongoDB is used within projects, and how its noSQL format and other capabilities hhave contributed to more efficient and reliable projects. </p>
+<p>As a software engineering intern, I have had the opportunity to also see how often MongoDB is used within projects, and how its capabilities have contributed to more efficient and reliable projects. </p>
 
 <p>Finally, In my previous semester, I had the opportunity to take a course on unstructured data, (for any students at western, CS4417 is the course!) where I was able to learn more about unstructured data, noSQL, and work on an assignment involving MongoDB, Aggregation, and MapReduce. Im happy to make seperate blog posts about these projects as well for any students interested in exploring applications and ways to use MongoDB in their own projects. </p>
 
@@ -163,6 +163,8 @@ MongoDB is one of the most prevalent database providers in the world, and we’v
 which bring people together to learn from and connect over their shared interest in MongoDB technologies. These are communities of developers with various skill levels and an interest in learning new technologies and applications including MongoDB and beyond, and are a great opportunity to get involved! Whether you are a beginner or a skilled individiaul, this is a safe space for users and novices to come together, learn from each other, and share what theyre doing with mongodb and other tech. </p>
 
 <p>I recently became involved as a co-organizer for the <a href="https://www.meetup.com/toronto-mongodb-usergroup/">Toronto User Group</a> and confirm the community is welcoming for people with diverse experiences and has enabled me to meet and learn from people around the company and community. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--s5L7O_YG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fxh7b8ye337xc6exh4at.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--s5L7O_YG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fxh7b8ye337xc6exh4at.png" alt="Image description" width="800" height="450"></a></p>
 
 <p>These are just starting points - there are many options for ways to get involved with MongoDB beyond this!  </p>
 
