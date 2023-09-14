@@ -118,6 +118,62 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Brilliant Ways for a Crypto Business to Ace Fundraising](https://dev.to/jessietomaz/brilliant-ways-for-a-crypto-business-to-ace-fundraising-22ad) 
+ <details><summary>Article</summary> <p>Ahoy, fellow crypto enthusiasts! In the vast, unpredictable realm of crypto fundraising, fortune favors the bold. As we dive into this captivating topic today, we'll explore the ingenious and unconventional ways your crypto business can boost its coffers while creating ripples in the industry. So, fasten your seatbelts as we embark on an adventure through the world of crypto fundraising!</p>
+
+<h2>
+  
+  
+  1. Token Sales: The Captain of the Crypto Ship
+</h2>
+
+<p>When it comes to gathering funds in the crypto world, token sales are the pinnacle of success. Launching an <strong><a href="https://www.coinsclone.com/ico-software-development/?utm_source=dev&amp;utm_medium=cfund&amp;utm_campaign=LA">Initial Coin Offering</a></strong> (ICO) or a Security Token Offering (STO) can prove to be the perfect seaworthy vessel for raising funds. These sales allow eager investors to purchase tokens and provide crucial capital to your crypto venture. So, hoist the anchor and set sail!</p>
+
+<h2>
+  
+  
+  2. DeFi the Odds: Decentralize Fundraising
+</h2>
+
+<p>Ah, decentralized finance (DeFi), the fearless maverick of the crypto world. Harness the power of DeFi platforms like Uniswap, PancakeSwap, or SushiSwap to create decentralized fundraising pools. Imagine the joy of your project supporters being able to contribute directly using their favorite cryptocurrencies. With DeFi, you can empower individuals and build a loyal community along the way.</p>
+
+<h2>
+  
+  
+  3. Airdrops: A Cryptocurrency Rainfall
+</h2>
+
+<p>Ahoy, there! Picture yourself standing under a plethora of falling cryptocurrencies. That's precisely what airdrops feel like! Airdrops are a savvy way to raise awareness about your project while simultaneously distributing tokens to a wider audience. By generously rewarding individuals who engage with your project, you'll garner attention and loyalty as you dance amidst an abundant crypto rain.</p>
+
+<h2>
+  
+  
+  4. Crypto Crowdfunding: Collaboration for Treasure
+</h2>
+
+<p>Venture beyond the traditional crowdfunding platforms and tap into the crypto crowdfunding ecosystem. By strategically enlisting the support of various blockchain-based <strong><a href="https://www.coinsclone.com/sto-script/?utm_source=dev&amp;utm_medium=cfund&amp;utm_campaign=LA">Crowdfunding Platforms</a></strong>, you can appeal to a global audience with an appetite for innovative projects. This approach can foster an ecosystem where supporters can contribute funds and receive tokens in return. Together, we can conquer the fundraising seas!</p>
+
+<h2>
+  
+  
+  5. NFTs: Transforming Art into Crypto Gold
+</h2>
+
+<p>Avast, ye art enthusiasts! With Non-Fungible Tokens (NFTs), you can bridge the gap between art and crypto fundraising. Create unique and extraordinary digital artworks that captivate the hearts and crypto wallets of collectors. By auctioning these NFTs, you'll not only nourish your project financially but also become a beacon of innovation in the crypto art world.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>As we dock our crypto fundraising ship here today, we hope to have ignited your imagination with these ingenious methods to set sail on the vast ocean of possibilities. Remember, in the world of Crypto Fundraising, only the brave and innovative will conquer the seas. If you're excited about raising capital and venturing into the cryptocurrency industry but don't know where to start, one question may be dominating your thoughts: “Where can I start my cryptocurrency business? "No need to worry; I'm here for you.</p>
+
+<p>You can partner with the leading <strong><a href="https://www.coinsclone.com/contact-us/?utm_source=dev&amp;utm_medium=cfund&amp;utm_campaign=LA">Blockchain Development Company</a></strong> in the cryptocurrency industry. They have extensive experience in blockchain technology and have a team of experienced experts in the field. With their advice, you can position yourself ahead of your competitors in the cryptocurrency industry. They will provide you with information about trending cryptocurrency trading opportunities, tailored to your specific needs and investment capabilities. Start the conversation with a reputable development company, embrace the winds of change, and take your crypto business to the next level with these ingenious strategies. </p>
+
+ </details> 
+ <hr /> 
+
  #### - [Oracle-Linux 8'de Chronyd ile NTP İstemcisi Yapılandırma](https://dev.to/aciklab/oracle-linux-8de-chronyd-ile-ntp-istemcisi-yapilandirma-1p6f) 
  <details><summary>Article</summary> <ul>
 <li>Chronyd Servisinin Yüklenmesi ve Etkinleştirilmesi:</li>
@@ -237,6 +293,245 @@ sudo firewall-cmd --reload
 
 
 <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QDkIHpue--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvolwg7s0ck66vsec5ow.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QDkIHpue--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvolwg7s0ck66vsec5ow.png" alt="Image description" width="372" height="37"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Astro Framework - Resources & Free Starters](https://dev.to/sm0ke/astro-framework-resources-free-starters-3jae) 
+ <details><summary>Article</summary> <p>Hello Coders! </p>
+
+<p>This article aims to provide a few useful resources for <a href="https://astro.build/">Astro</a>, a web framework that can be used to code static websites, eCommerce Platforms, Documentation portals, and much more using some innovative concepts like <a href="https://docs.astro.build/en/concepts/islands/">islands</a> on top of any UI Framework like React, Vue, Svelte. </p>
+
+<blockquote>
+<p>Thanks for reading!</p>
+</blockquote>
+
+
+
+
+<h2>
+  
+  
+  Why Astro?
+</h2>
+
+<p>Astro, initially started as an SSG (Static Site Generator) rapidly evolved into a modern and innovative web framework that tries to find a balance between loading and execution speed for a website and the amount of the JS loaded and used on the client side.</p>
+
+<p>Unlike some other frameworks, Astro is HTML-first, which means it outputs zero JavaScript by default and supports both static site generation (SSG) and server-side rendering(SSR).</p>
+
+
+
+
+<blockquote>
+<p>Here are the <strong>Key Points of Astro</strong>:</p>
+</blockquote>
+
+<h3>
+  
+  
+  ✅ Astro Islands
+</h3>
+
+<p>This is probably the most important innovation of Astro that allows the creation of interactive UI components within an otherwise static HTML page. Each island, as the name suggests, runs isolated and interactive while the rest of the page remains static.</p>
+
+<blockquote>
+<p>Image Credits: <a href="https://semaphoreci.com/blog/astro-framework">Semaphore - AstroJS Intro</a></p>
+</blockquote>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eRjr2FIT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/phuhwius6rurjpmu6v1k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eRjr2FIT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/phuhwius6rurjpmu6v1k.png" alt="Astro - Islands Pattern" width="800" height="338"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ Performance
+</h3>
+
+<p>Astro is statically by default, server-side rendered, and with ZERO-javascript when possible, making it a competitive tool for content-first, SEO-friendly products like landing pages, blogs, or eCommerce sites.</p>
+
+<h3>
+  
+  
+  ✅ Flexibility
+</h3>
+
+<p>Astro allows the use of components from different frameworks like Svelte, SolidJS, React, and Vue, within the same project. This aspect is a big differentiator compared to NextJs, Nuxt that force the developer to use React, and Vue across the entire project.</p>
+
+<h3>
+  
+  
+  ✅ Simple Templating
+</h3>
+
+<p>Its templating engine works with Markdown, MDX and is closer to an intuitive format easy to digest by any developer (even by beginners).</p>
+
+<h3>
+  
+  
+  ✅ Data &amp; API Integration
+</h3>
+
+<p>Astro.js supports fetching data from APIs and also using static data sources from a local directory.</p>
+
+<h3>
+  
+  
+  ✅ Ecosystem
+</h3>
+
+<p>Astro.js has an active developer community, with more related content and use -cases published on different platforms like Dev.to, Medium, and Hashnode.  </p>
+
+<p>If the above arguments are not enough to take a look at this new framework, here are some links that explain more technical how AstroJS is built:</p>
+
+<ul>
+<li>👉 <a href="https://medium.com/@jerrychangdev/introduction-79da4972f412">Introduction to Astro</a> by Jerry Chang with some nice metrics</li>
+<li>👉 <a href="https://bejamas.io/blog/practical-guide-to-astro-js-framework/">Astro JS Framework: A Practical Guide</a>
+</li>
+<li>👉 <a href="https://itnext.io/ok-astro-is-the-best-web-framework-in-2023-heres-why-734ca15c706">Astro is the best web framework in 2023, here’s why</a>
+</li>
+</ul>
+
+
+
+
+<h2>
+  
+  
+  Astro Starters (all free)
+</h2>
+
+<p>Once the basics are assimilated, we can move forward and play around with a few starters (all free).</p>
+
+<h3>
+  
+  
+  ✅ <a href="https://www.creative-tim.com/product/astro-launch-ui?AFFILIATE=128200">AstroLaunch UI</a>
+</h3>
+
+<p>With AstroLaunch UI, you gain access to a free collection of fully coded elements, example pages, and blocks. Whether you're a startup, working on a landing page, or managing a blog, our Astro template has got you covered - Developed by Creative-Tim.</p>
+
+<ul>
+<li>👉 <a href="https://www.creative-tim.com/product/astro-launch-ui?AFFILIATE=128200">AstroLaunch UI</a> - product page</li>
+<li>👉 <a href="https://www.creative-tim.com/astro/launch-ui/?AFFILIATE=128200">AstroLaunch UI</a> - LIVE Demo </li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IMWsWFll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4azd94ijjfrqysbkhn28.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IMWsWFll--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4azd94ijjfrqysbkhn28.png" alt="AstroLaunch UI - by Creative-Tim" width="800" height="600"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ <a href="https://themesberg.github.io/flowbite-astro-admin-dashboard/?ref=ui-themes.com">Flowbite Astro Dashboard</a>
+</h3>
+
+<p>A free and open-source admin dashboard template built by the core Flowbite team that gives you access to UI components like charts, widgets, tables, and CRUD layouts based on the Flowbite design system.</p>
+
+<ul>
+<li>👉 <a href="https://themesberg.github.io/flowbite-astro-admin-dashboard/?ref=ui-themes.com">Flowbite Astro Dashboard</a> - LIVE Demo</li>
+<li>👉 <a href="https://github.com/themesberg/flowbite-astro-admin-dashboard?ref=ui-themes.com">Flowbite Astro Dashboard</a> - Source code </li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SCbq_2g7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tfnpo5ir1158q7obck2q.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SCbq_2g7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tfnpo5ir1158q7obck2q.png" alt="Flowbite Dashboard - Open-source Astro Starter" width="800" height="544"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ <a href="https://www.creative-tim.com/product/astro-ecommerce?AFFILIATE=128200">Astro eCommerce</a>
+</h3>
+
+<p>Astro Ecommerce is a stunning starter template for E-commerce projects based on Astro's next-gen island architecture. Whether you're launching a new online store or looking to upgrade your existing one, Astro Ecommerce theme provides everything you need to create a stunning, user-friendly shopping experience for your customers.</p>
+
+<blockquote>
+<p>👉 <a href="https://www.creative-tim.com/product/astro-ecommerce?AFFILIATE=128200">Astro eCommerce</a> - product page </p>
+</blockquote>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1OQ2RSca--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bl3mr2mgu7b5jzhftmp9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1OQ2RSca--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bl3mr2mgu7b5jzhftmp9.png" alt="Astro eCommerce - by Creative Tim" width="800" height="600"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ <a href="https://astro.build/themes/details/astroplate/">Astroplate</a>
+</h3>
+
+<p>Astroplate is a comprehensive starter template built using modern web technologies such as Astro, TailwindCSS, and TypeScript. It provides developers with a solid foundation for building fast and content-focused websites quickly and efficiently with the Astro framework. Use Astroplate for your next Astro project and save valuable time.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OE6mQuY3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/82lvihymgkj8ned9v1dk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OE6mQuY3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/82lvihymgkj8ned9v1dk.png" alt="Astroplate - Open-source Astro Starter" width="800" height="600"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ <a href="https://astro.build/themes/details/astrowind/">AstroWind</a>
+</h3>
+
+<p>AstroWind is a free, customizable, and production-ready template for Astro 3.0 + Tailwind CSS. Suitable for Startups, Small Businesses, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages, and blogs.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3GmnlJoa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sl5p5fvux8g4slnir6gg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3GmnlJoa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sl5p5fvux8g4slnir6gg.png" alt="AstroWind - Open-source Astro Starter" width="800" height="520"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ <a href="https://astro.build/themes/details/sendit/">Sendit</a>
+</h3>
+
+<p>Sendit is a polished and versatile marketing website template for Astro, optimized for visual editing on CloudCannon.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--h5YMtaE1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ertl842il9kvj6qvxpyw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--h5YMtaE1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ertl842il9kvj6qvxpyw.png" alt="Sendit - Open-source Astro Starter" width="800" height="387"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ <a href="https://astro.build/themes/details/agencex/">AgenceX</a>
+</h3>
+
+<p>A simple agency landing page made with AstroJS and TailwindCSS.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--39732wuN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qqocc3mhdwxzhksay4pn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--39732wuN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qqocc3mhdwxzhksay4pn.png" alt="AgenceX - Open-source Astro Starter" width="800" height="537"></a></p>
+
+
+
+
+<h3>
+  
+  
+  ✅ <a href="https://astro.build/themes/details/astrolus/">Astrolus</a>
+</h3>
+
+<p>Modern Sass home page template that supports light and a dark theme built with TailwindCSS using Tailus blocks.  </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--54C1fAbh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u19q6bbd9u5zg1psagqs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--54C1fAbh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u19q6bbd9u5zg1psagqs.png" alt="Astrolus - Open-source Astro Starter" width="800" height="416"></a></p>
+
+
+
+
+<blockquote>
+<p>Thanks for reading! For more information, feel free to access:</p>
+</blockquote>
+
+<ul>
+<li>👉 <a href="https://docs.astro.build/en/getting-started/">Astro</a>, official DOCS</li>
+<li>👉 <a href="https://www.contentful.com/blog/what-is-astro/">What is Astro</a>, a comprehensive introduction provided by Contentful</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--HiC2g8f2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0esrgbwm10836waxgf1h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--HiC2g8f2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0esrgbwm10836waxgf1h.png" alt="Astro - The Official Cover" width="800" height="179"></a></p>
 
  </details> 
  <hr /> 
@@ -434,757 +729,6 @@ git push
 
 <p>Dessa forma, podemos solucionar os conflitos de versões de uma forma simples e objetiva utilizando apenas o terminal do git. <br>
 É chegado o grande momento, podemos dormir tranquilos com as versões atualizadas e organizadas em nossas respectivas branches.</p>
-
- </details> 
- <hr /> 
-
- #### - [Let's #LearnLive: Deconstruct an Enterprise-Grade Serverless Architecture running on Azure](https://dev.to/azure/lets-learnlive-deconstruct-an-enterprise-grade-serverless-architecture-running-on-azure-52n8) 
- <details><summary>Article</summary> <p><strong>Register now and join us</strong>:<br>
-1️⃣ | Sep 14, Ep1 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep1?WT.mc_id=javascript-99907-ninarasi">Get Started With Contoso Real Estate</a><br>
-2️⃣ | Sep 21, Ep2 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep2?WT.mc_id=javascript-99907-ninarasi">Developing the Portal Application</a><br>
-3️⃣ | Sep 28, Ep3 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep3?WT.mc_id=javascript-99907-ninarasi">Integrating Authentication, Payments &amp; Search</a><br>
-4️⃣ | Oct 05, Ep4 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep4?WT.mc_id=javascript-99907-ninarasi">Automate Testing &amp; Deploy to Azure</a></p>
-
-
-
-
-<h2>
-  
-  
-  It's time to Fall For Intelligent Apps 🍂
-</h2>
-
-<p>Join us this fall on a learning journey to explore building intelligent apps. Combine the power of <strong>AI, cloud-scale data, and cloud-native app development</strong> to create highly differentiated digital experiences. Develop adaptive, responsive, and personalized experiences by building and modernizing intelligent applications with Azure for your users. </p>
-
-<p>This year, we have a new set of initiatives to support you on the journey - from blog posts that demystify Intelligent Apps, to a community gallery that features content and code samples created to help <em>you</em> be more effective building your own solutions.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6PYD6MET--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q4hyyagf0kmdhj3bz0en.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6PYD6MET--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q4hyyagf0kmdhj3bz0en.png" alt="Learn Live" width="800" height="501"></a></p>
-
-<h2>
-  
-  
-  Learn Live: Serverless Edition
-</h2>
-
-<p>But I am most excited for this one - our new 4-part Learn Live Series where we deconstruct <em>Contoso Real Estate</em> - an enterprise-grade reference sample using a composable architecture to build a multi-scenario application, on Azure.</p>
-
-<p><strong>Why should you learn this skill?</strong> </p>
-
-<p>There are a lot of beginner-friendly tutorials that teach you to build real-world applications with current technologies. But building <em>enterprise-grade</em> solutions is hard. How do you bridge the gap between knowing application development, and learning best practices for deploying solutions in CI/CD pipelines, for real-world usage at scale.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xXbus0-s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ltd5ro0xc0ws7tt5zy8w.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xXbus0-s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ltd5ro0xc0ws7tt5zy8w.jpeg" alt="Sketchnote of value of samples" width="800" height="450"></a></p>
-
-<p>With new tools and technologies like GitHub Codespaces, and GitHub Copilot - you can also build, deploy - and understand - unfamiliar codebases and applications on you own. Join us for the next four Thursdays as we explore an open-source codebase for an enterprise-grade reference sample on Azure. Then <strong>transfer that knowledge to building your own serverless, intelligent apps on Azure</strong>.</p>
-
-<h2>
-  
-  
-  Ep 1: Get Started with Contoso Real Estate
-</h2>
-
-<ul>
-<li>
-<strong>Sep 14</strong> 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep1?WT.mc_id=javascript-99907-ninarasi">Building Composable Cloud-native Solutions on Azure</a>
-</li>
-</ul>
-
-<p>Learn about the Contoso Real Estate sample, fork the repo, launch GitHub Codespaces - and build/preview the application to validate environment.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XQp_Fdpt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-contoso.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XQp_Fdpt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-contoso.jpg" alt="Contoso Real Estate" width="800" height="450"></a></p>
-
-<h2>
-  
-  
-  Ep 2: Developing the Portal Application
-</h2>
-
-<ul>
-<li>
-<strong>Sep 21</strong> 👉🏽 [<a href="https://aka.ms/contoso-real-estate/learn-live/Ep2?WT.mc_id=javascript-99907-ninarasi">Developing the Portal Application</a>
-</li>
-</ul>
-
-<p>Learn about micro-frontends and API-first design. Deconstruct the portal app, blog app, and serverless API.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vzWrf_HS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-portal-app.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vzWrf_HS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-portal-app.jpg" alt="Developing the Portal Application" width="800" height="450"></a></p>
-
-<h2>
-  
-  
-  Ep 3: Integrating Authentication, Payments &amp; Search
-</h2>
-
-<ul>
-<li>
-<strong>Sep 28</strong> 👉🏽 [<a href="https://aka.ms/contoso-real-estate/learn-live/Ep3?WT.mc_id=javascript-99907-ninarasi">Integrating Authentication, Payments &amp; Search</a>
-</li>
-</ul>
-
-<p>Integrate authentication to support user profiles. Integrate payments and search features using 3rd party API.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8eG5dsZF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-third-party-payments.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8eG5dsZF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-third-party-payments.jpg" alt="Integrating Authentication, Payments &amp; Search" width="800" height="450"></a></p>
-
-<h2>
-  
-  
-  Ep 4: Automate Testing &amp; Deploy to Azure
-</h2>
-
-<ul>
-<li>
-<strong>Oct 05</strong> 👉🏽 [<a href="https://aka.ms/contoso-real-estate/learn-live/Ep4?WT.mc_id=javascript-99907-ninarasi">Automate Testing &amp; Deploy to Azure</a>
-</li>
-</ul>
-
-<p>Learn to design and run end-to-end tests with Playwright. Provision and deploy solution to Azure with AZD.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--i1Zcm4bx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-azure-developer.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i1Zcm4bx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://azure.github.io/Cloud-Native/img/fallforia/learn-live-azure-developer.png" alt="Automate Testing &amp; Deploy to Azure" width="800" height="450"></a></p>
-
-
-
-
-<h2>
-  
-  
-  🧰 | Resources
-</h2>
-
-<ul>
-<li>1️⃣ | Join our <a href="https://azure.github.io/Cloud-Native/Fall-For-IA/LearnLive">Learn Live: Serverless</a> Series</li>
-<li>2️⃣ | Fork the <a href="https://aka.ms/contoso-real-estate/github/fork">Contoso Real Estate</a> Application</li>
-<li>3️⃣ | Explore the <a href="https://aka.ms/contoso-real-estate/collection">LearnLive Resources</a> Collection</li>
-</ul>
-
-<h2>
-  
-  
-  Register now and join us
-</h2>
-
-<p>1️⃣ | Sep 14, Ep1 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep1?WT.mc_id=javascript-99907-ninarasi">Get Started With Contoso Real Estate</a><br>
-2️⃣ | Sep 21, Ep2 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep2?WT.mc_id=javascript-99907-ninarasi">Developing the Portal Application</a><br>
-3️⃣ | Sep 28, Ep3 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep3?WT.mc_id=javascript-99907-ninarasi">Integrating Authentication, Payments &amp; Search</a><br>
-4️⃣ | Oct 05, Ep4 👉🏽 <a href="https://aka.ms/contoso-real-estate/learn-live/Ep4?WT.mc_id=javascript-99907-ninarasi">Automate Testing &amp; Deploy to Azure</a></p>
-
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rkdcNII0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vo1632ytoet7sqe5i7mv.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rkdcNII0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vo1632ytoet7sqe5i7mv.jpg" alt="Fall For Intelligent Apps" width="800" height="450"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Installing and Configuring Kubeflow with MinIO Operator](https://dev.to/sashawodtke/installing-and-configuring-kubeflow-with-minio-operator-42ha) 
- <details><summary>Article</summary> <p>By Daniel Valdivia, Engineer, MinIO  </p>
-
-<p>Kubeflow is a modern solution to design, build and orchestrate Machine Learning pipelines using the latest and most popular frameworks. Out of the box, Kubeflow ships with MinIO inside to store all of its pipelines, artifacts and logs, however that MinIO is limited to a single PVC and thus cannot benefit from all the features a distributed MinIO brings to the table such as <a href="https://min.io/product/active-data-replication-for-object-storage?ref=blog.min.io">Active-Active Replication</a>, unlimited storage via <a href="https://min.io/product/automated-data-tiering-lifecycle-management?ref=blog.min.io">Tiering</a> - and so much more.</p>
-
-<p>In this blog post we are going to configure Kubeflow to use a large MinIO Tenant on the same Kubernetes cluster, but of course, this configuration applies to Kubeflow and MinIO being on different clusters as well. For your reference, please see our earlier blog post, <a href="https://blog.min.io/kubeflow-minio-azure/">Machine Learning Pipelines with Kubeflow and MinIO on Azure</a>, and the <a href="https://www.kubeflow.org/?ref=blog.min.io">Kubeflow</a> site.  </p>
-
-<p>While we go from soup to nuts in this blog post, if you already have a Kubeflow setup and a MiniO setup, you can skip straight to the Configure Kubeflow section of this blog post to see what needs to be configured.</p>
-
-<h2>
-  
-  
-  Setting up the MinIO Operator
-</h2>
-
-<p>Let's start by installing the MinIO Operator and creating a tenant that Kubeflow will use. My favorite way to install MinIO Operator is via kubectl apply -k but we also have Helm Charts available, and we are also available on the <a href="https://min.io/product/multicloud-elastic-kubernetes-service?ref=blog.min.io">AWS Marketplace</a>, <a href="https://min.io/product/multicloud-google-kubernetes-service?ref=blog.min.io">Google Cloud Marketplace</a> and <a href="https://min.io/product/multicloud-azure-kubernetes-service?ref=blog.min.io">Azure Marketplace</a>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl apply -k github.com/minio/operator/
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8Y-faH11--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/smjdq5jij9z4zxjf2isb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8Y-faH11--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/smjdq5jij9z4zxjf2isb.png" alt="Image description" width="800" height="469"></a></p>
-
-<p>This will install the latest and greatest MinIO Operator, now we just need to log into the Operator UI and create a tenant. For this step we'll get a service account JWT token to login, but   this UI can also be secured with AD/LDAP or OIDC.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n minio-operator  get secret $(kubectl -n minio-operator get serviceaccount console-sa -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode &amp;&amp; echo ""
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--L6pRb1G6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4e319fw58gjwh6gsi0km.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--L6pRb1G6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4e319fw58gjwh6gsi0km.png" alt="Image description" width="800" height="444"></a></p>
-
-<p>Now let's port forward the UI and login.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n minio-operator port-forward svc/console 9090
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1LCq-4lp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rkyinyr92i5mleu96nrr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1LCq-4lp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rkyinyr92i5mleu96nrr.png" alt="Image description" width="800" height="246"></a></p>
-
-<p>Now open a browser, go to <a href="http://localhost:9090">http://localhost:9090</a> and login with the JWT token we got on the previous step.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--d_aMScyR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ghdq996h8wxxpy61leu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d_aMScyR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ghdq996h8wxxpy61leu.png" alt="Image description" width="800" height="577"></a></p>
-
-<p>After logging in, click on <strong>Create Tenant</strong> and set up a 1TiB tenant.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xx5UldPG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qczatotvolcujuds6bol.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xx5UldPG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qczatotvolcujuds6bol.png" alt="Image description" width="800" height="532"></a></p>
-
-<p>Enter the name of the new tenant and the namespace for it.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4hdVyeXO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpt89bgg4nw3mqrhe2hd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4hdVyeXO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpt89bgg4nw3mqrhe2hd.png" alt="Image description" width="800" height="532"></a></p>
-
-<p>If the namespace doesn't exist you have the option to create the namespace.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NCBIKhtm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gar71ajku2jp8blc6w02.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NCBIKhtm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gar71ajku2jp8blc6w02.png" alt="Image description" width="800" height="532"></a></p>
-
-<p>Now let's size the tenant. I'll be setting up a <strong>4 node cluster</strong> that has 4 drives on each node, in this case, because we’re on Kubernetes, node or server translates to pods and drives per server translates to PVCs per pod.</p>
-
-<p>I'm also starting with 1TiB of capacity but you can always <a href="https://docs.min.io/minio/baremetal/installation/expand-minio-distributed.html?ref=blog.min.io">expand the capacity of the tenant</a>.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--szZ6Tvmu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5xr06ljvy810s6n0tb1f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--szZ6Tvmu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5xr06ljvy810s6n0tb1f.png" alt="Image description" width="800" height="603"></a></p>
-
-<p>Let's go to <strong>Identity Provider</strong> and create a basic user that will be used by Kubeflow. If you choose to configure an <a href="https://min.io/product/identity-and-access-management?ref=blog.min.io">external identity provider</a> that uses OpenID or Active Directory/LDAP, you can just go ahead and create a service account after you log in to the tenant.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--miJx6wQH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9a53bd4qq4c4qly30229.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--miJx6wQH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9a53bd4qq4c4qly30229.png" alt="Image description" width="800" height="603"></a></p>
-
-<p>Lastly, we'll disable <strong>TLS</strong> just to keep this blog post from getting too long, but if you want to have TLS enabled on your tenant, you'll need a certificate configured on the tenant that Kubeflow trusts.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--d-hAMluh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/euk2x1zyh9lx0wk94gc1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d-hAMluh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/euk2x1zyh9lx0wk94gc1.png" alt="Image description" width="800" height="603"></a></p>
-
-<p>And that's it, just hit <strong>Create</strong> and the tenant will be created in a few minutes.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fRUv4MLY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dhazluak0mgv9q4bijkv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fRUv4MLY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dhazluak0mgv9q4bijkv.png" alt="Image description" width="800" height="515"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wvHqaqGF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cqeynobkmybjbtshqwrp.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wvHqaqGF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cqeynobkmybjbtshqwrp.png" alt="Image description" width="800" height="603"></a></p>
-
-<p>That's it, now you have a distributed, high performance, hyper scale object storage that can be expanded endlessly. From here, let's configure Kubeflow to use this MinIO deployment.</p>
-
-<h2>
-  
-  
-  Setting up Kubeflow
-</h2>
-
-<p>In this section, we'll set up Kubeflow from scratch on Kubernetes. This works for on-premise deployments, development environments or any public cloud, although cloud providers frequently  offer a pre-configured version of Kubeflow.</p>
-
-<p>We'll be using the <a href="https://github.com/kubeflow/manifests?ref=blog.min.io">kubeflow/manifest</a> repository. Bear in mind there are some strict requirements for this to work, for example, <strong>the highest version of Kubernetes supported by Kubeflow 1.5.0 (at the time of writing) is 1.21</strong> so make sure you’re using a Kubernetes cluster that meets this requirement.</p>
-
-<p>One additional requirement is to have Kustomize version <a href="https://blog.min.io/how-to-kubeflow-minio/?ref=hackernoon.com#:~:text=have%20Kustomize%20version-,3.2.0,-%2C%20and%20that%27s%20it">3.2.0</a>, and that's it.</p>
-
-<p>Let's start by cloning the kubeflow/manifest repository<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git clone https://github.com/kubeflow/manifests
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wyTQC4fP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g9hdk266ewjqmax5e540.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wyTQC4fP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g9hdk266ewjqmax5e540.png" alt="Image description" width="800" height="480"></a></p>
-
-<p>Then change directories the manifest folder and run the following command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>cd manifests
-while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
-</code></pre>
-
-</div>
-
-
-
-<p>This command will take a few minutes to install all the resources needed by Kubeflow. If anything fails to apply, the command will continue attempting to apply it until it succeeds entirely.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ThQFIbmn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ixuoof8c1t9mq13k69m4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ThQFIbmn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ixuoof8c1t9mq13k69m4.png" alt="Image description" width="800" height="374"></a></p>
-
-<p>After a few minutes, you can confirm all the pods in the <strong>kubeflow</strong> namespace are up and running:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow get pods
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vnQKK_nL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ejell2lla04xihxyap5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vnQKK_nL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ejell2lla04xihxyap5.png" alt="Image description" width="800" height="579"></a></p>
-
-<p>Now we will configure Kubeflow to use our new MinIO.</p>
-
-<h2>
-  
-  
-  Configure Kubeflow
-</h2>
-
-<p>The following section is the core of connecting Kubeflow and MinIO. Please note that the resources that need to be modified in this section are also what you'd tweak if you were starting with an existing Kubeflow deployment.</p>
-
-<p>We are going to edit a variety of Config Maps, Secrets and Deployments on the <strong>kubeflow</strong> namespace first, and then on any existing user namespaces.</p>
-
-<p>All of these steps assume MinIO is running in the <strong>ns-1 **namespace and running on port **80</strong>. If you were running the tenant with TLS you'd use port 443.</p>
-
-<p>Tenant URL: minio.ns-1.svc.cluster.local</p>
-
-<p>Tenant Port: 80</p>
-
-<h2>
-  
-  
-  Edit Configmaps
-</h2>
-
-<p><strong>pipeline-install-config</strong></p>
-
-<p>Edit the <strong>pipeline-install-config</strong> config map and add the following fields to <strong>.data</strong>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>minioServiceHost: minio.ns-1.svc.cluster.local
-minioServicePort: "80"
-</code></pre>
-
-</div>
-
-
-
-<p>Edit command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow edit cm pipeline-install-config
-</code></pre>
-
-</div>
-
-
-
-<p><strong>workflow-controller-configmap</strong></p>
-
-<p>Edit the configmap <strong>workflow-controller-configmap</strong> and configure the <strong>endpoint</strong> field inside the *<em>s3 *</em> section to point to your tenant<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>s3:
-      endpoint: "minio.ns-1.svc.cluster.local:80"
-</code></pre>
-
-</div>
-
-
-
-<p>Use this command to edit the configmap:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow edit cm workflow-controller-configmap
-</code></pre>
-
-</div>
-
-
-
-<p><strong>ml-pipeline-ui-configmap</strong></p>
-
-<p>Edit the <strong>ml-pipeline-ui-configmap</strong> configmap and replace the json content of viewer-pod-template.json with the following json:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>{
-  "spec": {
-    "containers": [
-      {
-        "env": [
-          {
-            "name": "AWS_ACCESS_KEY_ID",
-            "valueFrom": {
-              "secretKeyRef": {
-                "name": "mlpipeline-minio-artifact",
-                "key": "accesskey"
-              }
-            }
-          },
-          {
-            "name": "AWS_SECRET_ACCESS_KEY",
-            "valueFrom": {
-              "secretKeyRef": {
-                "name": "mlpipeline-minio-artifact",
-                "key": "secretkey"
-              }
-            }
-          },
-          {
-            "name": "AWS_REGION",
-            "valueFrom": {
-              "configMapKeyRef": {
-                "name": "pipeline-install-config",
-                "key": "minioServiceRegion"
-              }
-            }
-          }
-        ]
-      }
-    ]
-  }
-}
-</code></pre>
-
-</div>
-
-
-
-<p>Use this command to edit the configmap:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow edit cm ml-pipeline-ui-configmap
-</code></pre>
-
-</div>
-
-
-
-<p>Make sure the indentation structure of the json matches the existing format.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EiYepszN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fzce3ssoz2y2xusz0ifl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EiYepszN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fzce3ssoz2y2xusz0ifl.png" alt="Image description" width="800" height="312"></a></p>
-
-<h2>
-  
-  
-  Edit Secrets
-</h2>
-
-<p>We will update the secret that holds the credentials to MinIO, however these are meant to be <strong>base64</strong> encoded, so you can encode them with shell:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>echo -n "kubeflow" | base64 
-echo -n "kubeflow123" | base64 
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YldZOkkK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ai4x2vraweeqftmbrsje.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YldZOkkK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ai4x2vraweeqftmbrsje.png" alt="Image description" width="800" height="448"></a></p>
-
-<p><strong>mlpipeline-minio-artifact</strong></p>
-
-<p>Edit the secret <strong>mlpipeline-minio-artifact</strong> and set these values in the <strong>.data</strong> field<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>data:
-  accesskey: a3ViZWZsb3c=
-  secretkey: a3ViZWZsb3cxMjM=
-</code></pre>
-
-</div>
-
-
-
-<p>Use this command to edit the configmap:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow edit secret mlpipeline-minio-artifact
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Edit Deployments
-</h2>
-
-<p>We will now edit the deployments last to cause a pod restart and to get everything ready.</p>
-
-<p><strong>ml-pipeline-ui</strong></p>
-
-<p>Edit the <strong>ml-pipeline-ui</strong> deployment and add the following environment variables:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>- name: AWS_ACCESS_KEY_ID
-  valueFrom:
-    secretKeyRef:
-      name: mlpipeline-minio-artifact
-      key: accesskey
-- name: AWS_SECRET_ACCESS_KEY
-  valueFrom:
-    secretKeyRef:
-      name: mlpipeline-minio-artifact
-      key: secretkey
-- name: MINIO_NAMESPACE
-
-- name: MINIO_HOST
-  value: minio.ns-1.svc.cluster.local
-- name: MINIO_PORT
-  value: "80"
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Note: make sure to edit the MINIO_NAMESPACE environment variable to be empty, this is critical as that environment variable is already present in the deployment.</strong></p>
-
-<p>Use the following command to edit the configmap:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow edit deployment ml-pipeline-ui
-</code></pre>
-
-</div>
-
-
-
-<p><strong>ml-pipeline</strong></p>
-
-<p>Edit the <strong>ml-pipeline</strong> deployment and add the following environment variables:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>- name: OBJECTSTORECONFIG_HOST
-  valueFrom:
-    configMapKeyRef:
-      name: pipeline-install-config
-      key: minioServiceHost
-- name: OBJECTSTORECONFIG_PORT
-  value: "80"
-</code></pre>
-
-</div>
-
-
-
-<p>Use the following command to edit the deployment:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow edit deployment ml-pipeline
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Configure Every User Namespace
-</h2>
-
-<p>This is also very important, for every user namespace, patch the <strong>ml-pipeline-ui-artifact</strong> deployment in that namespace and the artifact secret. For example, in my case my namespace is <strong>kubeflow-user-example-com</strong> since we used the example manifest.</p>
-
-<p>Edit the secret <strong>mlpipeline-minio-artifact</strong> and set these values in the <strong>.data</strong> field:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>data:
-  accesskey: a3ViZWZsb3c=
-  secretkey: a3ViZWZsb3cxMjM=
-</code></pre>
-
-</div>
-
-
-
-<p>Edit the <strong>ml-pipeline-ui-artifact</strong> and add the following environment variables<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>- name: MINIO_NAMESPACE
-- name: MINIO_HOST
-  value: minio.ns-1.svc.cluster.local
-- name: MINIO_PORT
-  value: "80"
-</code></pre>
-
-</div>
-
-
-
-<p>Use the following command to edit the artifact:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow-user-example-com edit secret mlpipeline-minio-artifact
-
-kubectl -n kubeflow-user-example-com edit deployment ml-pipeline-ui-artifact
-</code></pre>
-
-</div>
-
-
-
-<p>At this point Kubeflow is properly configured to use your tenant. There’s one last step and then we are good to test our deployment.</p>
-
-<h2>
-  
-  
-  Migrate All Data from Kubeflow's Internal MinIO to the New Tenant
-</h2>
-
-<p>Now that we have configured everything, we just need to make sure the data Kubeflow is expecting to be in its buckets is actually there. Let’s copy that data over and then shutdown the internal MinIO that we’re replacing.</p>
-
-<p>To achieve this we will use MinIO Client (mc), a CLI tool for managing MinIO. We'll do all these operations from a pod running inside Kubernetes, but you can do this via port-forwarding and using mc from your own machine if you choose to do so.</p>
-
-<p>Let's run a pod with an Ubuntu shell:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow run my-shell  -i --tty --image ubuntu -- bash
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bhJNG3r7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7rr6e1lfvdv44dfs36ov.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bhJNG3r7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7rr6e1lfvdv44dfs36ov.png" alt="Image description" width="800" height="453"></a></p>
-
-<p>This shell runs on a pod running inside our Kubernetes cluster in the Kubeflow namespace.</p>
-
-<p>Now we will:</p>
-
-<ol>
-<li>Install <strong>wget</strong>
-</li>
-<li>Download <strong>mc</strong>
-</li>
-<li>Make <strong>mc</strong> executable</li>
-<li>Add an alias to the current MinIO</li>
-<li>Add an alias to the new MinIO</li>
-<li>Copy all the data</li>
-</ol>
-
-<p>To accomplish this we run the following commands:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>apt update &amp;&amp; apt install -y wget
-wget https://dl.min.io/client/mc/release/linux-amd64/mc
-chmod +x mc
-mv mc /usr/local/bin/
-mc config host add kubeflow http://minio-service.kubeflow.svc.cluster.local:9000 minio minio123
-mc config host add tenant http://minio.ns-1.svc.cluster.local kubeflow kubeflow123
-mc mirror kubeflow tenant
-
-</code></pre>
-
-</div>
-
-
-
-<p>Finally, turn off the internal MinIO as it is no longer required.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl -n kubeflow scale deploy minio --replicas=0
-</code></pre>
-
-</div>
-
-
-
-<p>All right! We are done moving to the full MinIO deployment.  </p>
-
-<h2>
-  
-  
-  Validate that Kubeflow is Using the new MinIO
-</h2>
-
-<p>Next we’ll validate  the setup and run some pipelines.</p>
-
-<p>If you go to MinIO Operator, you can see the tenant now has data:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qH-Hzf_J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/79cdcgr8rxxkbrem3sbs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qH-Hzf_J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/79cdcgr8rxxkbrem3sbs.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>Click the tenant, and then click <strong>Console</strong> in the top right of the browser window to open MinIO Console in order to browse that tenant.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7rRsrB09--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m7s570f53gqybag4ycp4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7rRsrB09--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m7s570f53gqybag4ycp4.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>From this view, you can see the <strong>mlpipeline</strong> bucket. Click browse to see its contents.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--q24iTBMp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uxb4l73lzid24whkn0pk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--q24iTBMp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uxb4l73lzid24whkn0pk.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>You'll see the existing demo pipelines have been copied over.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Tap4QHcQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cwkhn11fvwxdkbgi2knh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Tap4QHcQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cwkhn11fvwxdkbgi2knh.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>Now let's go into Kubeflow and run some pipelines, you can use port forwarding  to expose the Kubeflow central dashboard:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
-</code></pre>
-
-</div>
-
-
-
-<p>Then in your browser go to <a href="http://localhost:8080">http://localhost:8080</a>.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9B3xxCyf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/41ynoar9ycwafgbo56he.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9B3xxCyf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/41ynoar9ycwafgbo56he.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>Login with the default credentials for this example setup:</p>
-
-<p><strong>Email Address:</strong> <a href="mailto:user@example.com">user@example.com</a></p>
-
-<p><strong>Password:</strong> 12341234</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AwLoN5AK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh61ay5kn6zpshu6z957.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AwLoN5AK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh61ay5kn6zpshu6z957.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>Then go to the Pipelines menu in the left menu bar. We’re going to run the most basic pipeline, "[Tutorial] DSL - Control structures":</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Jxu_WRbI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ym5s5871rfzquwb0mjjr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Jxu_WRbI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ym5s5871rfzquwb0mjjr.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>Click on the pipeline’s name.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gARHEPh5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/50e1oew6pobvrg2cnali.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gARHEPh5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/50e1oew6pobvrg2cnali.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>From here, click Create Experiment on the top right. This will create a new experiment since it's the first time it is running, but in subsequently you can re-use this experiment.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--f3hDdlh7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ud0h7tdt8iiefyjwhnj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--f3hDdlh7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ud0h7tdt8iiefyjwhnj.png" alt="Image description" width="800" height="487"></a></p>
-
-<p>And click on Start:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RBIeVs4N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hqh5022avu1a1g6242k6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RBIeVs4N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hqh5022avu1a1g6242k6.png" alt="Image description" width="800" height="640"></a></p>
-
-<p>After the run is complete, explore the pipeline to verify that it ran successfully.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UK9NfXlq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3ii6pwlx70no68vnceqz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UK9NfXlq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3ii6pwlx70no68vnceqz.png" alt="Image description" width="800" height="640"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fM36CDkE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d8vl0teo6el4wiridv4b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fM36CDkE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d8vl0teo6el4wiridv4b.png" alt="Image description" width="800" height="640"></a></p>
-
-<h2>
-  
-  
-  Kubeflow and MinIO for Multi-Cloud Machine Learning
-</h2>
-
-<p>This blog post taught you how to replace the MinIO that ships with Kubeflow  with the MinIO Operator. You’re now prepared to take your Kubeflow use to the next level and back it with Kubernetes-native high performance and highly scalable  MinIO object storage.</p>
-
-<p>When it comes to Machine Learning pipelines and infrastructure, use MinIO's <a href="https://min.io/product/automated-data-tiering-lifecycle-management?ref=blog.min.io">Lifecycle Management</a> to deploy tenants backed by super fast NVMe drives as your hot tier for fast training and model serving, and  also set up a warm tier backed up by SSDs or HDDs for your aging datasets. MinIO does this transparently  without disrupting your applications.Tiering  is configured on a per-bucket basis or even for a single prefix within a bucket, providing  granular control over  which data gets moved to a slower tier.</p>
-
-<p>With MinIO's <a href="https://blog.min.io/minio-multi-site-active-active-replication/">Active-Active Replication</a>, you can configure  buckets serving production machine learning models to be replicated instantly across multiple sites for disaster recovery and fast failover.</p>
-
-<p>I truly hope this blog post helped you discover how easy it is to set up MinIO object storage on Kubernetes and to consume it with Kubeflow. If you have any questions, please join our <a href="https://minio.slack.com/?ref=blog.min.io">Slack community</a> and ask!</p>
 
  </details> 
  <hr /> 
