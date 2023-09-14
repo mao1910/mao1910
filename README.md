@@ -52,10 +52,8 @@
 
 
 <!-- GITHUB STATS -->
-<!-- https://github.com/DenverCoder1/github-readme-streak-stats -->
-<!-- https://github-readme-streak-stats-2235.vercel.app?user=mao1910 My own Vercel deployment -->
-<!-- https://github.com/anuraghazra/github-readme-stats -->
-<!-- https://github-readme-stats-mao1910.vercel.app/ My own Vercel deployment -->
+<!-- https://github.com/DenverCoder1/github-readme-streak-stats --> <!--  My own Vercel deployment -->
+<!-- https://github.com/anuraghazra/github-readme-stats --> <!--  My own Vercel -->
 
 <h2 align="center"> Stats📝 </h2>
   <br>
@@ -88,15 +86,13 @@
 
 
 <!-- SPOTIFY PLAYING-->
-<!-- https://github.com/novatorem/novatorem -->
-<!-- https://spotify-now-playing-novatorem-git-main-mao1910.vercel.app/ My own Vercel deployment-->
+<!-- https://github.com/novatorem/novatorem --> <!-- My own Vercel deployment-->
 
 [<img width=438px src="https://spotify-now-playing-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
 
 
 <!-- JOKE OF THE DAY -->
-<!-- https://github.com/ABSphreak/readme-jokes -->
-<!-- https://readme-jokes-git-master-mao1910.vercel.app/ My own Vercel deployment-->
+<!-- https://github.com/ABSphreak/readme-jokes --> <!-- My own Vercel deployment-->
 
 <details>
 <summary>I've got a Joke for you. Wanna hear it? 🙈</summary>
