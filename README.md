@@ -118,6 +118,129 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
+ #### - [Oracle-Linux 8'de Chronyd ile NTP İstemcisi Yapılandırma](https://dev.to/aciklab/oracle-linux-8de-chronyd-ile-ntp-istemcisi-yapilandirma-1p6f) 
+ <details><summary>Article</summary> <ul>
+<li>Chronyd Servisinin Yüklenmesi ve Etkinleştirilmesi:</li>
+</ul>
+
+<p>Öncelikle, chronyd servisinin yüklü olup olmadığını kontrol edin. Eğer yüklü değilse, yükleyin:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sudo dnf install chrony
+</code></pre>
+
+</div>
+
+
+
+<p>Servisi etkinleştirin ve başlatın:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sudo systemctl enable --now chronyd
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Chrony Konfigürasyon Dosyasının Düzenlenmesi:</li>
+</ul>
+
+<p>Özel bir NTP sunucusu kullanmak için, chrony konfigürasyon dosyasını düzenleyin:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sudo nano /etc/chrony/chrony.conf
+</code></pre>
+
+</div>
+
+
+
+<p>Dosyada, aşağıdaki gibi bir veya birden fazla server veya pool satırı ekleyin (örneğin "ntp.ulakbim.gov.tr"):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>server ntp.ulakbim.gov.tr iburst
+</code></pre>
+
+</div>
+
+
+
+<p>İsterseniz IP adresi de kullanabilirsiniz. iburst opsiyonu, zaman senkronizasyonunu hızlandırmak için kullanılır.</p>
+
+<ul>
+<li>Chronyd Servisini Yeniden Başlatma:</li>
+</ul>
+
+<p>Konfigürasyon dosyasını düzenledikten sonra, servisi yeniden başlatın:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sudo systemctl restart chronyd
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Senkronizasyon Durumunu Kontrol Etme:</li>
+</ul>
+
+<p>chronyc komutunu kullanarak senkronizasyon durumunu kontrol edebilirsiniz:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>chronyc tracking
+</code></pre>
+
+</div>
+
+
+
+<p>Bu komut, senkronizasyon durumu hakkında detaylı bilgi verecektir.</p>
+
+<ul>
+<li>Güvenlik Duvarı Ayarları:</li>
+</ul>
+
+<p>Eğer güvenlik duvarı etkinse, NTP trafiğine izin vermeniz gerekebilir:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>sudo firewall-cmd --add-service=ntp --permanent
+sudo firewall-cmd --reload
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Senronizasyon Durumunu Doğrulama:</li>
+</ul>
+
+<p>timedatctl komutunu kullanarak NTP servisinin aktif olup olmadığı kontrol edebilirsiniz:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>timedatectl
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QDkIHpue--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvolwg7s0ck66vsec5ow.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QDkIHpue--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uvolwg7s0ck66vsec5ow.png" alt="Image description" width="372" height="37"></a></p>
+
+ </details> 
+ <hr /> 
+
  #### - [How to get started with MongoDB as a Student](https://dev.to/1grace/how-to-get-started-with-mongodb-as-a-student-55j8) 
  <details><summary>Article</summary> <p>As student with a passion for the developer community, I have participated in varous hackathons, and gotten involved in my student community. </p>
 
@@ -451,323 +574,515 @@ git push
  </details> 
  <hr /> 
 
- #### - [ROScribe](https://dev.to/robocoach/roscribe-1h2k) 
- <details><summary>Article</summary> <p><strong>Create ROS packages using LLMs</strong></p>
+ #### - [Installing and Configuring Kubeflow with MinIO Operator](https://dev.to/sashawodtke/installing-and-configuring-kubeflow-with-minio-operator-42ha) 
+ <details><summary>Article</summary> <p>By Daniel Valdivia, Engineer, MinIO  </p>
 
-<p>Learning ROS (Robot Operating System) may prove to be challenging for robotic enthusiasts, college students, or professional engineers who are using it for the first time. Sometimes this skill barrier forces them to give up on ROS altogether and opt out for non-standard options. <a href="https://github.com/RoboCoachTechnologies/ROScribe">ROScribe</a> eliminates the skill barrier for beginners, and saves time and hassle for skilled engineers. </p>
+<p>Kubeflow is a modern solution to design, build and orchestrate Machine Learning pipelines using the latest and most popular frameworks. Out of the box, Kubeflow ships with MinIO inside to store all of its pipelines, artifacts and logs, however that MinIO is limited to a single PVC and thus cannot benefit from all the features a distributed MinIO brings to the table such as <a href="https://min.io/product/active-data-replication-for-object-storage?ref=blog.min.io">Active-Active Replication</a>, unlimited storage via <a href="https://min.io/product/automated-data-tiering-lifecycle-management?ref=blog.min.io">Tiering</a> - and so much more.</p>
 
-<p><a href="https://github.com/RoboCoachTechnologies/ROScribe">ROScribe</a> combines the power and flexibility of large language models (LLMs) with prompt tuning techniques to capture the details of your robotic design and to automatically create an entire ROS package for your project.</p>
+<p>In this blog post we are going to configure Kubeflow to use a large MinIO Tenant on the same Kubernetes cluster, but of course, this configuration applies to Kubeflow and MinIO being on different clusters as well. For your reference, please see our earlier blog post, <a href="https://blog.min.io/kubeflow-minio-azure/">Machine Learning Pipelines with Kubeflow and MinIO on Azure</a>, and the <a href="https://www.kubeflow.org/?ref=blog.min.io">Kubeflow</a> site.  </p>
 
-<p>Inspired by <a href="https://github.com/RoboCoachTechnologies/GPT-Synthesizer">GPT Synthesizer</a>, ROScribe builds an entire ROS package through a series of specification steps that identify the package elements in a top-down approach. In particular, ROScribe helps you with the following steps:</p>
+<p>While we go from soup to nuts in this blog post, if you already have a Kubeflow setup and a MiniO setup, you can skip straight to the Configure Kubeflow section of this blog post to see what needs to be configured.</p>
 
-<ol>
-<li>Creating a list of ROS nodes and topics, based on your application and deployment (e.g. simulation vs. real-world)</li>
-<li>Visualizing your project in an RQT-style graph</li>
-<li>Generating code for each ROS node</li>
-<li>Writing launch file and installation scripts</li>
-</ol>
-
-<p>If you are new to ROS, ROScribe will be your robot(ics) mentor 🤖️</p>
-
-<p>If you are a seasoned ROS user, ROScribe can help with creating a blueprint for your ROS package 📦️</p>
-
-<p>For further detail of how to install and use ROScribe, please refer to our Github and watch our demo:</p>
-
-<p><a href="https://github.com/RoboCoachTechnologies/ROScribe">ROScribe open source repository</a><br>
-<a href="https://www.youtube.com/watch?v=H2QaeelkReU">TurtleSim demo</a></p>
-
-<p><strong>Roadmap</strong></p>
-
-<p>ROScribe v0.0.2 only supports ROS1 with Python code generation. We plan to add the following features in the upcoming releases:</p>
-
-<ol>
-<li>ROS2 &amp; ROS-Industrial support</li>
-<li>C++ &amp; Lisp code generation</li>
-<li>ROS1 to ROS2 automated codebase migration</li>
-<li>Verification of an already existing codebase</li>
-<li>Graphic User Interface
-</li>
-<li>Enabling and integrating other robotic tools</li>
-</ol>
-
-<p><strong>Call for contributor</strong></p>
-
-<p>ROScribe is a free and open source software. We encourage all of you to try it out and let us know what you think. We have a lot of plans for this project and we intend to support and maintain it regularly. we welcome all robotics enthusiasts to contribute to ROScribe. During each release, we will announce the list of new contributors.</p>
-
- </details> 
- <hr /> 
-
- #### - [Scheduling EC2 start and stop using Eventbridge and Lambda (part 1 of 2)](https://dev.to/aws-builders/scheduling-ec2-start-and-stop-using-eventbridge-and-lambda-part-1-of-2-30he) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction:
-</h2>
-
-<p>By now we understand very well that:<br>
-<strong>Cloud == Pay for what you use</strong><br>
-One of the biggest factor that attracts users to the cloud, is the ability to provision resources within minutes. You are able to setup a virtual server in the Cloud, with just a few clicks, in a matter of minutes.</p>
 <h2>
   
   
-  Use Case:
+  Setting up the MinIO Operator
 </h2>
 
-<p>Your organization's development team works from 08:00AM to 05:00PM Monday to Friday. The development team's Cloud Virtual Machines (Amazon EC2 instances) are running idle in their out of office hours. It is your responsibility to ensure that the dev environment stops at 05:30PM everyday, and resumes the next morning. The environment should remain down on the weekends. Automate this task.</p>
-<h2>
-  
-  
-  Services :
-</h2>
-<h4>
-  
-  
-  Amazon <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html">Eventbridge</a> (formerly called Amazon CloudWatch Events):
-</h4>
-
-<p>EventBridge is a serverless service that uses events to connect application components together, making it easier for you to build scalable event-driven applications. Event-driven architecture is a style of building loosely-coupled software systems that work together by emitting and responding to events. Event-driven architecture can help you boost agility and build reliable, scalable applications.</p>
-<h4>
-  
-  
-  AWS <a href="https://aws.amazon.com/lambda/">Lambda</a>:
-</h4>
-
-<p>AWS Lambda is a serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers. You can trigger Lambda from over 200 AWS services and software as a service (SaaS) applications, and only pay for what you use.</p>
-<h4>
-  
-  
-  AWS <a href="https://aws.amazon.com/iam/">IAM</a>:
-</h4>
-
-<p>AWS Identity and Access Management (IAM), allows us to specify who or what can access services and resources in AWS, centrally manage fine-grained permissions, and analyze access to refine permissions across AWS.</p>
-<h4>
-  
-  
-  Amazon <a href="https://aws.amazon.com/pm/ec2/?trk=32f4fbd0-ffda-4695-a60c-8857fab7d0dd&amp;sc_channel=ps&amp;ef_id=CjwKCAjwu4WoBhBkEiwAojNdXp4MetAwaCyPq-D5I0LQt7u2WyBh9WPlC4jKRDKTLbvdUnpUvdinSRoCm50QAvD_BwE:G:s&amp;s_kwcid=AL!4422!3!476942909971!e!!g!!amazon%20ec2!11539707735!118057053088">EC2</a>:
-</h4>
-
-<p>Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud.</p>
-<h2>
-  
-  
-  Goal:
-</h2>
-
-<ol>
-<li><p>Setup a scheduler using the Amazon Eventbridge service which will trigger a Lambda function.</p></li>
-<li><p>Lambda function will temporarily <em>assume</em> the defined IAM role. This IAM role will have an IAM policy associated with it. The IAM Policy is what grants the Role permissions to access our EC2 instances. </p></li>
-<li><p>The Lambda function will stop/start our Amazon EC2 instances as per the schedule we define in Eventbridge.</p></li>
-</ol>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1lsBgIjo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rhfp1aixqlna5u0dx1dr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1lsBgIjo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rhfp1aixqlna5u0dx1dr.png" alt="arch_diagram" width="794" height="679"></a></p>
-
-<p>This is part-1 of the blog, where we will :<br>
-i.   Create the IAM Policy and associate it with an IAM Role.<br>
-ii.  Create our Lambda functions: one to stop the EC2 instances and another to start the EC2 instance.<br>
-iii. Test the Lambda functions by triggering them manually, to check if they have the desired effect on our EC2 instances  </p>
-
-<p>Part-2 of the blog will tie everything together, where we will be configuring the Amazon Eventbridge rules and defining the Cron entry that will trigger our Lambda functions to stop/start our EC2 instances.</p>
-<h2>
-  
-  
-  Pre-requisites :
-</h2>
-
-<ol>
-<li>AWS IAM account (do not use root account) having:</li>
-<li>admin privileges</li>
-<li>access to AWS Management Console</li>
-<li>Understanding of AWS Identity based policies
-In case you are not familiar with IAM Policies or need a quick refresher, please refer my <a href="https://medium.com/@aggarwal.tanushree/breaking-down-your-cloud-identity-and-access-249b506116d5">blog</a>
-</li>
-<li>Atleast one EC2 instance created in the account (this is required for testing purpose)</li>
-</ol>
-<h2>
-  
-  
-  Cost :
-</h2>
-
-<ul>
-<li>None (if you have an AWS free-tier eligible account)</li>
-</ul>
-<h2>
-  
-  
-  Implementation:
-</h2>
-
-<p>Let's begin! Login to the AWS Management Console as IAM admin user</p>
-<h2>
-  
-  
-  1. Create IAM policy and IAM role
-</h2>
-
-<p>1.1 From the AWS Management Console navigate to <strong>IAM</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--maWOlYro--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rtinf6nft82x36xbfxj3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--maWOlYro--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rtinf6nft82x36xbfxj3.png" alt="iam_dashboard" width="800" height="576"></a></p>
-
-<p>1.2 From the left navigation panel, select  <code>Policies</code> and then click the <code>Create Policy</code> button</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--be1xvUdr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/68ubhnabnauyz3nk9rop.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--be1xvUdr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/68ubhnabnauyz3nk9rop.png" alt="create_policy" width="800" height="171"></a></p>
-
-<p>1.3 Select <code>JSON</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XI1K0fpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xy43j55yf91opmai40sh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XI1K0fpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xy43j55yf91opmai40sh.png" alt="json" width="800" height="280"></a></p>
-
-<p>1.4 Paste the below policy into the policy editor (delete all the pre-filled content) and click <code>Next</code><br>
+<p>Let's start by installing the MinIO Operator and creating a tenant that Kubeflow will use. My favorite way to install MinIO Operator is via kubectl apply -k but we also have Helm Charts available, and we are also available on the <a href="https://min.io/product/multicloud-elastic-kubernetes-service?ref=blog.min.io">AWS Marketplace</a>, <a href="https://min.io/product/multicloud-google-kubernetes-service?ref=blog.min.io">Google Cloud Marketplace</a> and <a href="https://min.io/product/multicloud-azure-kubernetes-service?ref=blog.min.io">Azure Marketplace</a>.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"Statement"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"logs:CreateLogGroup"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"logs:CreateLogStream"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"logs:PutLogEvents"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arn:aws:logs:*:*:*"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"StringEquals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"aws:RequestedRegion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu-central-1"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"ec2:DescribeInstances"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ec2:DescribeRegions"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ec2:StartInstances"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ec2:StopInstances"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"StringEquals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"aws:RequestedRegion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu-central-1"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<pre class="highlight plaintext"><code>kubectl apply -k github.com/minio/operator/
+</code></pre>
 
 </div>
 
 
 
-<p>1.5 Give the policy a meaningful name and description. Review the permissions and then click <code>Click Policy</code></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8Y-faH11--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/smjdq5jij9z4zxjf2isb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8Y-faH11--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/smjdq5jij9z4zxjf2isb.png" alt="Image description" width="800" height="469"></a></p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9jyua85D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m9kb0w5p07nr0tfax4ld.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9jyua85D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m9kb0w5p07nr0tfax4ld.png" alt="policy_name" width="800" height="409"></a><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--mdPvLmEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s7ka63b0dif19qoqnwj6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mdPvLmEN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s7ka63b0dif19qoqnwj6.png" alt="policy_save_1" width="800" height="185"></a><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uL0gMX8I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l6vvuxtx4ah3a7mxjvej.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uL0gMX8I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l6vvuxtx4ah3a7mxjvej.png" alt="policy_save_2" width="800" height="46"></a> </p>
-
-<p>1.6 From the left navigation panel, select <code>Roles</code> and then click the <code>Create Role</code> button</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--k1HnqI5J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zwj9028qojyr4mut711b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--k1HnqI5J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zwj9028qojyr4mut711b.png" alt="iam_role" width="800" height="255"></a></p>
-
-<p>1.7 Select <code>AWS Service</code> as the <code>Trusted entity type</code></p>
-
-<p>1.8 From the <code>Service or use case</code> dropdown list, select <code>Lambda</code></p>
-
-<p>1.9 Click <code>Next</code> to move to the next screen</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--a7gvZs8g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ze21fz72yxtjfzw8i4n.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--a7gvZs8g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ze21fz72yxtjfzw8i4n.png" alt="trusted_entity" width="800" height="344"></a></p>
-
-<p>1.10    From the policy dropdown list, select the policy we created in the previous step and click <code>Next</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--u1gvDH7X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ki62lxw2oww7vhfiktzc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--u1gvDH7X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ki62lxw2oww7vhfiktzc.png" alt="add_permission" width="800" height="223"></a></p>
-
-<p>1.11    Give the role a name and description</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GXuJy7sc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f0ens541xxrfjbpmwgqb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GXuJy7sc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f0ens541xxrfjbpmwgqb.png" alt="role_name" width="800" height="311"></a></p>
-
-<p>1.12    Verify the trusted entity (should be Lambda) and the associated customer managed IAM Policy. Click <code>Create Role</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--E9CSluDd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8362y2eotw68rf6fhi2g.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--E9CSluDd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8362y2eotw68rf6fhi2g.png" alt="create_role" width="800" height="431"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--w_IlINZI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p9pz6q75eu8fx366a5oe.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--w_IlINZI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p9pz6q75eu8fx366a5oe.png" alt="role" width="800" height="50"></a></p>
-
-<blockquote>
-<p>Note the maximum duration this role can be assumed. Since we did not specify a duration, the default duration of <strong>1 hour</strong> was assigned</p>
-</blockquote>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--I7w9atWP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ntk9v42hn15od5snzrzq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--I7w9atWP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ntk9v42hn15od5snzrzq.png" alt="duration" width="800" height="398"></a></p>
-<h2>
-  
-  
-  2. Create Lambda Function to stop EC2 instances
-</h2>
-
-<p>2.1 From the AWS Management Console navigate to <strong>Lambda</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--BCTAtn_I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rede6al50rqa88xh446t.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--BCTAtn_I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rede6al50rqa88xh446t.png" alt="lambda" width="800" height="444"></a></p>
-
-<p><em>Make sure you are in the desired AWS region. Change the region in case not.</em></p>
-
-<p>2.2 Click <code>Create Function</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ZIIXzv1X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xub9828onyufc7jgyrhf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ZIIXzv1X--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xub9828onyufc7jgyrhf.png" alt="create_function" width="800" height="86"></a></p>
-
-<p>2.3 Select <code>Author from scratch</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zRbmRKja--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0xvcrurvnn0yj0isf99j.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zRbmRKja--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0xvcrurvnn0yj0isf99j.png" alt="author" width="800" height="150"></a></p>
-
-<p>2.4 Give the function a <code>name</code> and select the desired <code>runtime</code>.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--n-nqVINy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ltgcusguzbfvsyq6dfc3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--n-nqVINy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ltgcusguzbfvsyq6dfc3.png" alt="function_name" width="800" height="220"></a></p>
-
-<blockquote>
-<p>In this demo we will be using <code>Python 3.11</code> as the runtime.</p>
-</blockquote>
-
-<p>2.5 In the <code>Permissions</code> tab, change the <em>default execution role</em> to <code>Use an existing role</code>.<br>
-From the dropdown list, select the lambda assume role we created in the previous step.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uCsSkQFF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ddc579c30978j9nwg5zh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uCsSkQFF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ddc579c30978j9nwg5zh.png" alt="lambda_role" width="800" height="234"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kaPn1PRN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9iw1hlkzsua5utr2ch0o.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kaPn1PRN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9iw1hlkzsua5utr2ch0o.png" alt="role_save" width="800" height="140"></a></p>
-
-<p>2.6 Click <code>Create Function</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SVFPu-sT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pz2aewelqv616r23euzi.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SVFPu-sT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pz2aewelqv616r23euzi.png" alt="created_lambda" width="800" height="342"></a></p>
-
-<p>Good job keeping up so far! You are making good progress!</p>
-
-<p>2.7 Scroll down a bit to reach the <code>Code</code> section. You will notice a pre-filled <code>Code source</code> section.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rhvyaoVu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hgd4d8ycfsnc5l3cqnl3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rhvyaoVu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hgd4d8ycfsnc5l3cqnl3.png" alt="lambda_code" width="800" height="246"></a></p>
-
-<p>2.8 Delete the pre-filled contents and paste the below code in its place:<br>
+<p>This will install the latest and greatest MinIO Operator, now we just need to log into the Operator UI and create a tenant. For this step we'll get a service account JWT token to login, but   this UI can also be secured with AD/LDAP or OIDC.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">boto3</span>
+<pre class="highlight plaintext"><code>kubectl -n minio-operator  get secret $(kubectl -n minio-operator get serviceaccount console-sa -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode &amp;&amp; echo ""
+</code></pre>
 
-<span class="n">region</span> <span class="o">=</span> <span class="s">'eu-central-1'</span>
+</div>
 
 
-<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="n">ec2_resource</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="n">resource</span><span class="p">(</span><span class="s">"ec2"</span><span class="p">,</span> <span class="n">region_name</span><span class="o">=</span><span class="n">region</span><span class="p">)</span>
 
-    <span class="c1"># Apply filter to check for EC2 instances in 'running' state
-</span>    <span class="n">instances</span> <span class="o">=</span> <span class="n">ec2_resource</span><span class="p">.</span><span class="n">instances</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">Filters</span><span class="o">=</span><span class="p">[{</span><span class="s">'Name'</span><span class="p">:</span> <span class="s">'instance-state-name'</span><span class="p">,</span> <span class="s">'Values'</span><span class="p">:</span> <span class="p">[</span><span class="s">'running'</span><span class="p">]}])</span>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--L6pRb1G6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4e319fw58gjwh6gsi0km.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--L6pRb1G6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4e319fw58gjwh6gsi0km.png" alt="Image description" width="800" height="444"></a></p>
 
-    <span class="k">print</span><span class="p">(</span><span class="s">"EC2 region is: "</span><span class="p">,</span> <span class="n">region</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"instances= "</span><span class="p">,</span> <span class="n">instances</span><span class="p">)</span>
+<p>Now let's port forward the UI and login.<br>
+</p>
 
-    <span class="c1"># Count running instances
-</span>    <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">instances</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s"> instances running"</span><span class="p">)</span>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n minio-operator port-forward svc/console 9090
+</code></pre>
 
-    <span class="c1"># Stopping EC2 instances        
-</span>    <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
-        <span class="n">instance</span><span class="p">.</span><span class="n">stop</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s">": Stopping!!! ."</span><span class="p">)</span>
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1LCq-4lp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rkyinyr92i5mleu96nrr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1LCq-4lp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rkyinyr92i5mleu96nrr.png" alt="Image description" width="800" height="246"></a></p>
+
+<p>Now open a browser, go to <a href="http://localhost:9090">http://localhost:9090</a> and login with the JWT token we got on the previous step.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--d_aMScyR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ghdq996h8wxxpy61leu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d_aMScyR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ghdq996h8wxxpy61leu.png" alt="Image description" width="800" height="577"></a></p>
+
+<p>After logging in, click on <strong>Create Tenant</strong> and set up a 1TiB tenant.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--xx5UldPG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qczatotvolcujuds6bol.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xx5UldPG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qczatotvolcujuds6bol.png" alt="Image description" width="800" height="532"></a></p>
+
+<p>Enter the name of the new tenant and the namespace for it.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4hdVyeXO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpt89bgg4nw3mqrhe2hd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4hdVyeXO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpt89bgg4nw3mqrhe2hd.png" alt="Image description" width="800" height="532"></a></p>
+
+<p>If the namespace doesn't exist you have the option to create the namespace.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NCBIKhtm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gar71ajku2jp8blc6w02.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NCBIKhtm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gar71ajku2jp8blc6w02.png" alt="Image description" width="800" height="532"></a></p>
+
+<p>Now let's size the tenant. I'll be setting up a <strong>4 node cluster</strong> that has 4 drives on each node, in this case, because we’re on Kubernetes, node or server translates to pods and drives per server translates to PVCs per pod.</p>
+
+<p>I'm also starting with 1TiB of capacity but you can always <a href="https://docs.min.io/minio/baremetal/installation/expand-minio-distributed.html?ref=blog.min.io">expand the capacity of the tenant</a>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--szZ6Tvmu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5xr06ljvy810s6n0tb1f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--szZ6Tvmu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5xr06ljvy810s6n0tb1f.png" alt="Image description" width="800" height="603"></a></p>
+
+<p>Let's go to <strong>Identity Provider</strong> and create a basic user that will be used by Kubeflow. If you choose to configure an <a href="https://min.io/product/identity-and-access-management?ref=blog.min.io">external identity provider</a> that uses OpenID or Active Directory/LDAP, you can just go ahead and create a service account after you log in to the tenant.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--miJx6wQH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9a53bd4qq4c4qly30229.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--miJx6wQH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9a53bd4qq4c4qly30229.png" alt="Image description" width="800" height="603"></a></p>
+
+<p>Lastly, we'll disable <strong>TLS</strong> just to keep this blog post from getting too long, but if you want to have TLS enabled on your tenant, you'll need a certificate configured on the tenant that Kubeflow trusts.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--d-hAMluh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/euk2x1zyh9lx0wk94gc1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d-hAMluh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/euk2x1zyh9lx0wk94gc1.png" alt="Image description" width="800" height="603"></a></p>
+
+<p>And that's it, just hit <strong>Create</strong> and the tenant will be created in a few minutes.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fRUv4MLY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dhazluak0mgv9q4bijkv.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fRUv4MLY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dhazluak0mgv9q4bijkv.png" alt="Image description" width="800" height="515"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wvHqaqGF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cqeynobkmybjbtshqwrp.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wvHqaqGF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cqeynobkmybjbtshqwrp.png" alt="Image description" width="800" height="603"></a></p>
+
+<p>That's it, now you have a distributed, high performance, hyper scale object storage that can be expanded endlessly. From here, let's configure Kubeflow to use this MinIO deployment.</p>
+
+<h2>
+  
+  
+  Setting up Kubeflow
+</h2>
+
+<p>In this section, we'll set up Kubeflow from scratch on Kubernetes. This works for on-premise deployments, development environments or any public cloud, although cloud providers frequently  offer a pre-configured version of Kubeflow.</p>
+
+<p>We'll be using the <a href="https://github.com/kubeflow/manifests?ref=blog.min.io">kubeflow/manifest</a> repository. Bear in mind there are some strict requirements for this to work, for example, <strong>the highest version of Kubernetes supported by Kubeflow 1.5.0 (at the time of writing) is 1.21</strong> so make sure you’re using a Kubernetes cluster that meets this requirement.</p>
+
+<p>One additional requirement is to have Kustomize version <a href="https://blog.min.io/how-to-kubeflow-minio/?ref=hackernoon.com#:~:text=have%20Kustomize%20version-,3.2.0,-%2C%20and%20that%27s%20it">3.2.0</a>, and that's it.</p>
+
+<p>Let's start by cloning the kubeflow/manifest repository<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>git clone https://github.com/kubeflow/manifests
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wyTQC4fP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g9hdk266ewjqmax5e540.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wyTQC4fP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g9hdk266ewjqmax5e540.png" alt="Image description" width="800" height="480"></a></p>
+
+<p>Then change directories the manifest folder and run the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>cd manifests
+while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 10; done
+</code></pre>
+
+</div>
+
+
+
+<p>This command will take a few minutes to install all the resources needed by Kubeflow. If anything fails to apply, the command will continue attempting to apply it until it succeeds entirely.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ThQFIbmn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ixuoof8c1t9mq13k69m4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ThQFIbmn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ixuoof8c1t9mq13k69m4.png" alt="Image description" width="800" height="374"></a></p>
+
+<p>After a few minutes, you can confirm all the pods in the <strong>kubeflow</strong> namespace are up and running:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow get pods
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vnQKK_nL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ejell2lla04xihxyap5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vnQKK_nL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ejell2lla04xihxyap5.png" alt="Image description" width="800" height="579"></a></p>
+
+<p>Now we will configure Kubeflow to use our new MinIO.</p>
+
+<h2>
+  
+  
+  Configure Kubeflow
+</h2>
+
+<p>The following section is the core of connecting Kubeflow and MinIO. Please note that the resources that need to be modified in this section are also what you'd tweak if you were starting with an existing Kubeflow deployment.</p>
+
+<p>We are going to edit a variety of Config Maps, Secrets and Deployments on the <strong>kubeflow</strong> namespace first, and then on any existing user namespaces.</p>
+
+<p>All of these steps assume MinIO is running in the <strong>ns-1 **namespace and running on port **80</strong>. If you were running the tenant with TLS you'd use port 443.</p>
+
+<p>Tenant URL: minio.ns-1.svc.cluster.local</p>
+
+<p>Tenant Port: 80</p>
+
+<h2>
+  
+  
+  Edit Configmaps
+</h2>
+
+<p><strong>pipeline-install-config</strong></p>
+
+<p>Edit the <strong>pipeline-install-config</strong> config map and add the following fields to <strong>.data</strong>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>minioServiceHost: minio.ns-1.svc.cluster.local
+minioServicePort: "80"
+</code></pre>
+
+</div>
+
+
+
+<p>Edit command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow edit cm pipeline-install-config
+</code></pre>
+
+</div>
+
+
+
+<p><strong>workflow-controller-configmap</strong></p>
+
+<p>Edit the configmap <strong>workflow-controller-configmap</strong> and configure the <strong>endpoint</strong> field inside the *<em>s3 *</em> section to point to your tenant<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>s3:
+      endpoint: "minio.ns-1.svc.cluster.local:80"
+</code></pre>
+
+</div>
+
+
+
+<p>Use this command to edit the configmap:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow edit cm workflow-controller-configmap
+</code></pre>
+
+</div>
+
+
+
+<p><strong>ml-pipeline-ui-configmap</strong></p>
+
+<p>Edit the <strong>ml-pipeline-ui-configmap</strong> configmap and replace the json content of viewer-pod-template.json with the following json:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>{
+  "spec": {
+    "containers": [
+      {
+        "env": [
+          {
+            "name": "AWS_ACCESS_KEY_ID",
+            "valueFrom": {
+              "secretKeyRef": {
+                "name": "mlpipeline-minio-artifact",
+                "key": "accesskey"
+              }
+            }
+          },
+          {
+            "name": "AWS_SECRET_ACCESS_KEY",
+            "valueFrom": {
+              "secretKeyRef": {
+                "name": "mlpipeline-minio-artifact",
+                "key": "secretkey"
+              }
+            }
+          },
+          {
+            "name": "AWS_REGION",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "pipeline-install-config",
+                "key": "minioServiceRegion"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>Use this command to edit the configmap:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow edit cm ml-pipeline-ui-configmap
+</code></pre>
+
+</div>
+
+
+
+<p>Make sure the indentation structure of the json matches the existing format.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EiYepszN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fzce3ssoz2y2xusz0ifl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EiYepszN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fzce3ssoz2y2xusz0ifl.png" alt="Image description" width="800" height="312"></a></p>
+
+<h2>
+  
+  
+  Edit Secrets
+</h2>
+
+<p>We will update the secret that holds the credentials to MinIO, however these are meant to be <strong>base64</strong> encoded, so you can encode them with shell:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>echo -n "kubeflow" | base64 
+echo -n "kubeflow123" | base64 
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YldZOkkK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ai4x2vraweeqftmbrsje.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YldZOkkK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ai4x2vraweeqftmbrsje.png" alt="Image description" width="800" height="448"></a></p>
+
+<p><strong>mlpipeline-minio-artifact</strong></p>
+
+<p>Edit the secret <strong>mlpipeline-minio-artifact</strong> and set these values in the <strong>.data</strong> field<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>data:
+  accesskey: a3ViZWZsb3c=
+  secretkey: a3ViZWZsb3cxMjM=
+</code></pre>
+
+</div>
+
+
+
+<p>Use this command to edit the configmap:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow edit secret mlpipeline-minio-artifact
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Edit Deployments
+</h2>
+
+<p>We will now edit the deployments last to cause a pod restart and to get everything ready.</p>
+
+<p><strong>ml-pipeline-ui</strong></p>
+
+<p>Edit the <strong>ml-pipeline-ui</strong> deployment and add the following environment variables:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>- name: AWS_ACCESS_KEY_ID
+  valueFrom:
+    secretKeyRef:
+      name: mlpipeline-minio-artifact
+      key: accesskey
+- name: AWS_SECRET_ACCESS_KEY
+  valueFrom:
+    secretKeyRef:
+      name: mlpipeline-minio-artifact
+      key: secretkey
+- name: MINIO_NAMESPACE
+
+- name: MINIO_HOST
+  value: minio.ns-1.svc.cluster.local
+- name: MINIO_PORT
+  value: "80"
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Note: make sure to edit the MINIO_NAMESPACE environment variable to be empty, this is critical as that environment variable is already present in the deployment.</strong></p>
+
+<p>Use the following command to edit the configmap:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow edit deployment ml-pipeline-ui
+</code></pre>
+
+</div>
+
+
+
+<p><strong>ml-pipeline</strong></p>
+
+<p>Edit the <strong>ml-pipeline</strong> deployment and add the following environment variables:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>- name: OBJECTSTORECONFIG_HOST
+  valueFrom:
+    configMapKeyRef:
+      name: pipeline-install-config
+      key: minioServiceHost
+- name: OBJECTSTORECONFIG_PORT
+  value: "80"
+</code></pre>
+
+</div>
+
+
+
+<p>Use the following command to edit the deployment:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow edit deployment ml-pipeline
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Configure Every User Namespace
+</h2>
+
+<p>This is also very important, for every user namespace, patch the <strong>ml-pipeline-ui-artifact</strong> deployment in that namespace and the artifact secret. For example, in my case my namespace is <strong>kubeflow-user-example-com</strong> since we used the example manifest.</p>
+
+<p>Edit the secret <strong>mlpipeline-minio-artifact</strong> and set these values in the <strong>.data</strong> field:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>data:
+  accesskey: a3ViZWZsb3c=
+  secretkey: a3ViZWZsb3cxMjM=
+</code></pre>
+
+</div>
+
+
+
+<p>Edit the <strong>ml-pipeline-ui-artifact</strong> and add the following environment variables<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>- name: MINIO_NAMESPACE
+- name: MINIO_HOST
+  value: minio.ns-1.svc.cluster.local
+- name: MINIO_PORT
+  value: "80"
+</code></pre>
+
+</div>
+
+
+
+<p>Use the following command to edit the artifact:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow-user-example-com edit secret mlpipeline-minio-artifact
+
+kubectl -n kubeflow-user-example-com edit deployment ml-pipeline-ui-artifact
+</code></pre>
+
+</div>
+
+
+
+<p>At this point Kubeflow is properly configured to use your tenant. There’s one last step and then we are good to test our deployment.</p>
+
+<h2>
+  
+  
+  Migrate All Data from Kubeflow's Internal MinIO to the New Tenant
+</h2>
+
+<p>Now that we have configured everything, we just need to make sure the data Kubeflow is expecting to be in its buckets is actually there. Let’s copy that data over and then shutdown the internal MinIO that we’re replacing.</p>
+
+<p>To achieve this we will use MinIO Client (mc), a CLI tool for managing MinIO. We'll do all these operations from a pod running inside Kubernetes, but you can do this via port-forwarding and using mc from your own machine if you choose to do so.</p>
+
+<p>Let's run a pod with an Ubuntu shell:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl -n kubeflow run my-shell  -i --tty --image ubuntu -- bash
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bhJNG3r7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7rr6e1lfvdv44dfs36ov.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bhJNG3r7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7rr6e1lfvdv44dfs36ov.png" alt="Image description" width="800" height="453"></a></p>
+
+<p>This shell runs on a pod running inside our Kubernetes cluster in the Kubeflow namespace.</p>
+
+<p>Now we will:</p>
+
+<ol>
+<li>Install <strong>wget</strong>
+</li>
+<li>Download <strong>mc</strong>
+</li>
+<li>Make <strong>mc</strong> executable</li>
+<li>Add an alias to the current MinIO</li>
+<li>Add an alias to the new MinIO</li>
+<li>Copy all the data</li>
+</ol>
+
+<p>To accomplish this we run the following commands:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>apt update &amp;&amp; apt install -y wget
+wget https://dl.min.io/client/mc/release/linux-amd64/mc
+chmod +x mc
+mv mc /usr/local/bin/
+mc config host add kubeflow http://minio-service.kubeflow.svc.cluster.local:9000 minio minio123
+mc config host add tenant http://minio.ns-1.svc.cluster.local kubeflow kubeflow123
+mc mirror kubeflow tenant
 
 </code></pre>
 
@@ -775,180 +1090,101 @@ From the dropdown list, select the lambda assume role we created in the previous
 
 
 
-<p>2.9 Click <code>Deploy</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TqsJ2Vck--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dextctkeziri478qcjon.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TqsJ2Vck--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dextctkeziri478qcjon.png" alt="deploy_lambda" width="800" height="215"></a></p>
-
-<p>2.10    In the <code>Configuration</code> tab, select <code>General configuration</code> and click <code>Edit</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Bz2YdKEv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8bb2yzks3hsrjd09kg1f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Bz2YdKEv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8bb2yzks3hsrjd09kg1f.png" alt="configure_timeout" width="800" height="193"></a></p>
-
-<p>2.11    Change the <code>Timeout</code> value to <code>10 seconds</code> and click <code>Save</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UQJjRklt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9qfnjo4lfjm90z1g8td6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UQJjRklt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9qfnjo4lfjm90z1g8td6.png" alt="timeout_valur" width="800" height="713"></a></p>
-
-<p><em>Note: The timeout value may differ for each use case, so choose one according to your requirement</em></p>
-
-<p>2.12    Click <code>Test</code> to test if our lambda function is working as expected<br>
-Configure the test event. </p>
-
-<p><em>Just an <code>event name</code> will suffice. Our Lambda does not require any user input.</em></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GbORI_BL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4oha4840eu5aver5yk4e.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GbORI_BL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4oha4840eu5aver5yk4e.png" alt="configure_test" width="800" height="592"></a></p>
-
-<p>Click <code>Save</code></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FVnvk_35--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hudzfxrmo0uwdqu0gozx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FVnvk_35--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hudzfxrmo0uwdqu0gozx.png" alt="save_test" width="800" height="201"></a></p>
-
-<p>Click <code>Test</code> to execute the newly created Lambda function.<br>
-Review the output logged by the stop EC2 Lambda.</p>
-
-<p><strong>Important: For this to work you need to have atleast one EC2 instance running in eu-central-1 region</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--16T8YZDs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ueyewt6yvepmu51racz6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--16T8YZDs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ueyewt6yvepmu51racz6.png" alt="output" width="800" height="261"></a></p>
-
-<ul>
-<li>Two EC2 instances were found to be in <code>running</code> state in the region defined within our Lambda function <code>eu-central-1</code>
-</li>
-<li>Our Lambda attempts stopping each of these one-by-one (as coded in our <code>for</code> loop)</li>
-</ul>
-
-<blockquote>
-<p>Notice the time duration of our Lambda execution - it is roughly <em>4 seconds</em>. If we left the timeout value as default <em>3 seconds</em>, our Lambda function would most likely have timed-out before completing the execution.</p>
-</blockquote>
-
-<p>2.13    Go to the EC2 dashboard in the AWS Management Console (in the same region defined in your Lambda code) and check if the instances really stopped.</p>
-
-<p>It worked!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QXChRD9l--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ia0qu9xggun6ayfhmn06.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QXChRD9l--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ia0qu9xggun6ayfhmn06.png" alt="ec2_dashboard" width="800" height="138"></a></p>
-<h2>
-  
-  
-  3. Create the Start EC2 instance Lambda Function
-</h2>
-
-<p>3.1 Repeat steps to create another Lambda function and this time use the below Python code, which will start our EC2 instances. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--CFysuE_I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tzsouv9nxsfwsbookgcy.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--CFysuE_I--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tzsouv9nxsfwsbookgcy.png" alt="start_lambda" width="800" height="428"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OpOfh324--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w05dtv7t2mno0bchxdwd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OpOfh324--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w05dtv7t2mno0bchxdwd.png" alt="lambda_exec" width="800" height="265"></a></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cF28jULk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lpxqwpyvoudfg36jfhcg.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cF28jULk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lpxqwpyvoudfg36jfhcg.png" alt="lambda_saved_1" width="800" height="71"></a><br>
+<p>Finally, turn off the internal MinIO as it is no longer required.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">boto3</span>
-
-<span class="n">region</span> <span class="o">=</span> <span class="s">'eu-central-1'</span>
-
-
-<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="n">ec2_resource</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="n">resource</span><span class="p">(</span><span class="s">"ec2"</span><span class="p">,</span> <span class="n">region_name</span><span class="o">=</span><span class="n">region</span><span class="p">)</span>
-
-    <span class="c1"># Apply filter to check for EC2 instances in 'stopped' state
-</span>    <span class="n">instances</span> <span class="o">=</span> <span class="n">ec2_resource</span><span class="p">.</span><span class="n">instances</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">Filters</span><span class="o">=</span><span class="p">[{</span><span class="s">'Name'</span><span class="p">:</span> <span class="s">'instance-state-name'</span><span class="p">,</span> <span class="s">'Values'</span><span class="p">:</span> <span class="p">[</span><span class="s">'stopped'</span><span class="p">]}])</span>
-
-    <span class="k">print</span><span class="p">(</span><span class="s">"EC2 region is: "</span><span class="p">,</span> <span class="n">region</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"instances= "</span><span class="p">,</span> <span class="n">instances</span><span class="p">)</span>
-
-    <span class="c1"># Count running instances
-</span>    <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">instances</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s"> instances in stopped state"</span><span class="p">)</span>
-
-    <span class="c1"># Starting EC2 instances        
-</span>    <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
-        <span class="n">instance</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s">": Starting!!! ."</span><span class="p">)</span>
-
-
+<pre class="highlight plaintext"><code>kubectl -n kubeflow scale deploy minio --replicas=0
 </code></pre>
 
 </div>
 
 
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1lSjejkQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rdqx7ret580yi28bvbu6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1lSjejkQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rdqx7ret580yi28bvbu6.png" alt="lambda_2_deployed" width="800" height="295"></a></p>
+<p>All right! We are done moving to the full MinIO deployment.  </p>
 
-<p>3.2 Test the Lambda</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XWOHbgOU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oc5q83s6rmacmccqqysq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XWOHbgOU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oc5q83s6rmacmccqqysq.png" alt="lambda_2_op" width="800" height="226"></a></p>
-
-<p>Review the execution result of the Lambda function.</p>
-
-<ul>
-<li>2 EC2 instances were found in <code>running</code> state in the defined region <code>eu-central-1</code>
-</li>
-<li>Both are stopped one after the other, with their respective EC2 instance IDs logged.</li>
-<li>The execution took ~4 seconds.</li>
-</ul>
-
-<p>3.3 Verify if the EC2 instances started in the EC2 dashboard</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6siTKGky--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/osw8m3hhtze4j4yeu9bm.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6siTKGky--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/osw8m3hhtze4j4yeu9bm.png" alt="ec2_2_verify" width="800" height="146"></a></p>
-
-<p>Pheewww!! <br>
-That was a lot of hand's on work! <br>
-I hope this gave you good exposure on how to navigate the AWS Management Console and helped grow your understanding on how multiple services can be used together to build a simple solution ! </p>
 <h2>
   
   
-  Conclusion:
+  Validate that Kubeflow is Using the new MinIO
 </h2>
 
-<p>In this blog we discussed our use case and associated architecture. We created an IAM execution role which allows our Lambda functions to access our EC2 instances. We even created the EC2 stop and EC2 start Lambda functions and tested them in isolation.</p>
+<p>Next we’ll validate  the setup and run some pipelines.</p>
 
-<blockquote>
-<p>Stay tuned for the part-2 of this blog, where we complete our architecture by configuring Eventbridge to trigger our Lambdas.</p>
-</blockquote>
-<h2>
-  
-  
-  Bonus:
-</h2>
+<p>If you go to MinIO Operator, you can see the tenant now has data:</p>
 
-<p>Now that you have understood how to create the Lambda functions, feel free to play around with these and modify as per your desired use case. In our demo we restricted the EC2 task to a single region, this can easily be extended to include multiple AWS regions.<br>
-You can even enhance the instance filters on the available EC2 instance states!<br>
-Additionally, you make the code more dynamic, by filtering the EC2 instances based on  defined <code>Tags</code>! </p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qH-Hzf_J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/79cdcgr8rxxkbrem3sbs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qH-Hzf_J--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/79cdcgr8rxxkbrem3sbs.png" alt="Image description" width="800" height="487"></a></p>
 
-<p><strong>Filter based on instance state and defined tags:</strong><br>
+<p>Click the tenant, and then click <strong>Console</strong> in the top right of the browser window to open MinIO Console in order to browse that tenant.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7rRsrB09--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m7s570f53gqybag4ycp4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7rRsrB09--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m7s570f53gqybag4ycp4.png" alt="Image description" width="800" height="487"></a></p>
+
+<p>From this view, you can see the <strong>mlpipeline</strong> bucket. Click browse to see its contents.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--q24iTBMp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uxb4l73lzid24whkn0pk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--q24iTBMp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uxb4l73lzid24whkn0pk.png" alt="Image description" width="800" height="487"></a></p>
+
+<p>You'll see the existing demo pipelines have been copied over.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Tap4QHcQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cwkhn11fvwxdkbgi2knh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Tap4QHcQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cwkhn11fvwxdkbgi2knh.png" alt="Image description" width="800" height="487"></a></p>
+
+<p>Now let's go into Kubeflow and run some pipelines, you can use port forwarding  to expose the Kubeflow central dashboard:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight python"><code> <span class="n">instances</span> <span class="o">=</span> <span class="n">ec2_resource</span><span class="p">.</span><span class="n">instances</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">Filters</span><span class="o">=</span><span class="p">[{</span><span class="s">'Name'</span><span class="p">:</span> <span class="s">'instance-state-name'</span><span class="p">,</span> <span class="s">'Values'</span><span class="p">:</span> <span class="p">[</span><span class="s">'running'</span><span class="p">]},{</span><span class="s">'Name'</span><span class="p">:</span> <span class="s">'tag:environment'</span><span class="p">,</span><span class="s">'Values'</span><span class="p">:[</span><span class="s">'qa'</span><span class="p">]}])</span>
+<pre class="highlight plaintext"><code>kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
 </code></pre>
 
 </div>
 
 
 
-<p><strong>The valid values EC2 instance states are:</strong></p>
+<p>Then in your browser go to <a href="http://localhost:8080">http://localhost:8080</a>.</p>
 
-<ul>
-<li>pending</li>
-<li>running</li>
-<li>shutting-down</li>
-<li>terminated</li>
-<li>stopping</li>
-<li>stopped</li>
-</ul>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9B3xxCyf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/41ynoar9ycwafgbo56he.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9B3xxCyf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/41ynoar9ycwafgbo56he.png" alt="Image description" width="800" height="487"></a></p>
 
-<p><strong>EC2 instance life cycle:</strong></p>
+<p>Login with the default credentials for this example setup:</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Bl4-o0-w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rffcsw3zom6r7122mpjs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Bl4-o0-w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rffcsw3zom6r7122mpjs.png" alt="EC2-lifecycle" width="778" height="564"></a></p>
+<p><strong>Email Address:</strong> <a href="mailto:user@example.com">user@example.com</a></p>
+
+<p><strong>Password:</strong> 12341234</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AwLoN5AK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh61ay5kn6zpshu6z957.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AwLoN5AK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh61ay5kn6zpshu6z957.png" alt="Image description" width="800" height="487"></a></p>
+
+<p>Then go to the Pipelines menu in the left menu bar. We’re going to run the most basic pipeline, "[Tutorial] DSL - Control structures":</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Jxu_WRbI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ym5s5871rfzquwb0mjjr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Jxu_WRbI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ym5s5871rfzquwb0mjjr.png" alt="Image description" width="800" height="487"></a></p>
+
+<p>Click on the pipeline’s name.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gARHEPh5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/50e1oew6pobvrg2cnali.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gARHEPh5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/50e1oew6pobvrg2cnali.png" alt="Image description" width="800" height="487"></a></p>
+
+<p>From here, click Create Experiment on the top right. This will create a new experiment since it's the first time it is running, but in subsequently you can re-use this experiment.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--f3hDdlh7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ud0h7tdt8iiefyjwhnj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--f3hDdlh7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ud0h7tdt8iiefyjwhnj.png" alt="Image description" width="800" height="487"></a></p>
+
+<p>And click on Start:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RBIeVs4N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hqh5022avu1a1g6242k6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RBIeVs4N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hqh5022avu1a1g6242k6.png" alt="Image description" width="800" height="640"></a></p>
+
+<p>After the run is complete, explore the pipeline to verify that it ran successfully.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UK9NfXlq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3ii6pwlx70no68vnceqz.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UK9NfXlq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3ii6pwlx70no68vnceqz.png" alt="Image description" width="800" height="640"></a></p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fM36CDkE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d8vl0teo6el4wiridv4b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fM36CDkE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d8vl0teo6el4wiridv4b.png" alt="Image description" width="800" height="640"></a></p>
 
 <h2>
   
   
-  References:
+  Kubeflow and MinIO for Multi-Cloud Machine Learning
 </h2>
 
-<ol>
-<li><p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html</a></p></li>
-<li><p><a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_instance_status.html">https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_instance_status.html</a></p></li>
-<li><p><a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-run-lambda-schedule.html">https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-run-lambda-schedule.html</a></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=UibU8g503G0&amp;t=1229s">https://www.youtube.com/watch?v=UibU8g503G0&amp;t=1229s</a></p></li>
-</ol>
+<p>This blog post taught you how to replace the MinIO that ships with Kubeflow  with the MinIO Operator. You’re now prepared to take your Kubeflow use to the next level and back it with Kubernetes-native high performance and highly scalable  MinIO object storage.</p>
+
+<p>When it comes to Machine Learning pipelines and infrastructure, use MinIO's <a href="https://min.io/product/automated-data-tiering-lifecycle-management?ref=blog.min.io">Lifecycle Management</a> to deploy tenants backed by super fast NVMe drives as your hot tier for fast training and model serving, and  also set up a warm tier backed up by SSDs or HDDs for your aging datasets. MinIO does this transparently  without disrupting your applications.Tiering  is configured on a per-bucket basis or even for a single prefix within a bucket, providing  granular control over  which data gets moved to a slower tier.</p>
+
+<p>With MinIO's <a href="https://blog.min.io/minio-multi-site-active-active-replication/">Active-Active Replication</a>, you can configure  buckets serving production machine learning models to be replicated instantly across multiple sites for disaster recovery and fast failover.</p>
+
+<p>I truly hope this blog post helped you discover how easy it is to set up MinIO object storage on Kubernetes and to consume it with Kubeflow. If you have any questions, please join our <a href="https://minio.slack.com/?ref=blog.min.io">Slack community</a> and ask!</p>
 
  </details> 
  <hr /> 
