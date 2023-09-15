@@ -115,803 +115,593 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Unlocking the Power of Open Source Contribution for Beginner Developers](https://dev.to/ronakmunjapara/unlocking-the-power-of-open-source-contribution-for-beginner-developers-3je4) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2UQoAsoX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lzticgqfqn8kq1cr5kl6.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2UQoAsoX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lzticgqfqn8kq1cr5kl6.jpeg" alt="Image description" width="800" height="800"></a></p>
+ #### - [Breaking Terraform files into composable layers](https://dev.to/he4rt/breaking-terraform-files-into-composable-layers-1mj8) 
+ <details><summary>Article</summary> <p>Terraform allows you to spin up cloud infrastructure using a single command. Let's say you're trying to run Elasticsearch and Kibana within a Kubernetes cluster, for example.</p>
 
-<p>Are you a budding developer eager to make your mark in the world of coding? Do you aspire to contribute to the open-source community and enhance your programming skills while making a difference? Well, you're in the right place! Open source contribution is your gateway to a world of learning, collaboration, and innovation. In this article, we'll explore the exciting realm of open-source projects and how you can get started on this rewarding journey.</p>
+<p>For that, you could write a few <code>.tf</code> files and run <code>terraform apply</code> to provision a Kubernetes cluster and deploy a few pods to it.</p>
 
-<h2>
-  
-  
-  What Is Open Source?
-</h2>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--M2tay2Bu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gcuyfxzx1putejr1rl8t.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--M2tay2Bu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gcuyfxzx1putejr1rl8t.png" alt="Image description" width="800" height="716"></a></p>
 
-<p>Before we dive into the intricacies of open source contribution, let's grasp the fundamentals. Open source refers to software or projects whose source code is made available to the public. This means that anyone can view, use, modify, and distribute the code. The beauty of open source lies in its collaborative nature, where developers from around the globe come together to improve and expand upon existing software.</p>
+<p>Now, assume you want other instances of the Elastic stack that you can use for demos. In that case, you'll have to set up brand new <a href="https://developer.hashicorp.com/terraform/language/state/workspaces">Terraform workspaces</a> and run <code>terraform apply</code> multiple times.</p>
 
-<h2>
-  
-  
-  The Benefits of Open Source Contribution
-</h2>
+<p>The problem with this approach is that it will cause you to replicate your <em>entire</em> infrastructure every time. Consequently, you'll have multiple Kubernetes clusters. Each cluster takes at least 15 minutes to spin up and costs $72 a month on AWS.</p>
 
-<h3>
-  
-  
-  1. Skill Enhancement
-</h3>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FtQxQhRb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hxcjdv5zbm87e5hqrdpf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FtQxQhRb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hxcjdv5zbm87e5hqrdpf.png" alt="Image description" width="800" height="294"></a></p>
 
-<p>Open source projects provide a fertile ground for honing your coding skills. You'll have the opportunity to work on real-world projects, write code, and receive feedback from experienced developers. This hands-on experience is invaluable for beginners looking to gain practical knowledge.</p>
+<p>A much better alternative would be to reuse a single Kubernetes cluster and spin up multiple environments on top of it. Thus, you'd pay for a single cluster, and you don't have to wait for a brand new cluster every time you spawn a new environment.</p>
 
-<h3>
-  
-  
-  2. Building a Portfolio
-</h3>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OYZBQaOm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dm7mo4o6ub7y1w0mw6xj.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OYZBQaOm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dm7mo4o6ub7y1w0mw6xj.png" alt="Image description" width="800" height="280"></a></p>
 
-<p>As a beginner developer, building a strong portfolio is essential to showcase your skills to potential employers. Open source contributions serve as tangible proof of your abilities. Your GitHub profile, adorned with meaningful contributions, can make a lasting impression on recruiters.</p>
+<p>That's why <a href="https://github.com/ergomake/layerform">Layerform</a> exists. Layerform allows engineers to break their Terraform files into composable <em>layers</em>. That way, teams can have a shared base layer for their Kubernetes cluster and multiple top layers with Elasticsearch, Kibana, and even other serverless components they need, like Lambdas, SQS queues, or load balancers.</p>
 
-<h3>
-  
-  
-  3. Collaboration and Networking
-</h3>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5PlYKotr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ap5kps52rrkjqw09hlj5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5PlYKotr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ap5kps52rrkjqw09hlj5.png" alt="Image description" width="800" height="482"></a></p>
 
-<p>Open source is all about collaboration. You'll collaborate with developers from diverse backgrounds, gaining exposure to different coding styles and methodologies. This network can open doors to new opportunities and friendships in the tech industry.</p>
-
-<h2>
-  
-  
-  How to Get Started
-</h2>
-
-<p>Now that you understand the significance of open source contribution, let's discuss how you can embark on this exciting journey.</p>
-
-<ol>
-<li><p><strong>Choose Your Niche</strong>: Start by identifying your interests and strengths. There are open source projects for various programming languages, frameworks, and domains. Pick one that aligns with your passion.</p></li>
-<li><p><strong>Explore Platforms</strong>: Platforms like GitHub, GitLab, and Bitbucket host a multitude of open source projects. Create an account and familiarize yourself with these platforms.</p></li>
-<li><p><strong>Contribute to Beginner-Friendly Projects</strong>: Many projects label themselves as "beginner-friendly" or "good first issue." These are ideal for newcomers. Look for issues marked with these tags.</p></li>
-<li><p><strong>Read Documentation</strong>: Thoroughly read the project's documentation and contribution guidelines. This ensures that you understand the project's goals and coding standards.</p></li>
-<li><p><strong>Start Small</strong>: Begin with small tasks or bug fixes to get acclimated to the project's workflow. This will help you build confidence gradually.</p></li>
-<li><p><strong>Communicate Effectively</strong>: Join the project's communication channels, such as chat groups or forums. Effective communication with the community is crucial for a successful contribution.</p></li>
-</ol>
-
-<h2>
-  
-  
-  Transitioning to an Active Contributor
-</h2>
-
-<p>As you gain experience and confidence, you can transition from a beginner to an active contributor. Here are some tips to help you along the way:</p>
-
-<ul>
-<li><p><strong>Consistency</strong>: Regularly contribute to the project to demonstrate your commitment.</p></li>
-<li><p><strong>Learn from Feedback</strong>: Embrace feedback as a means to improve your coding skills.</p></li>
-<li><p><strong>Collaborate</strong>: Collaborate with other developers on complex issues or features to broaden your knowledge.</p></li>
-<li><p><strong>Document Your Work</strong>: Maintain clear documentation of your contributions for future reference.</p></li>
-<li><p><strong>Stay Updated</strong>: Keep up with project updates and changes to ensure your contributions remain relevant.</p></li>
-</ul>
-
-<h2>
-  
-  
-  In Conclusion
-</h2>
-
-<p>Open source contribution is a fantastic way for beginner developers to enhance their skills, build a portfolio, and connect with like-minded individuals. It's a journey that offers personal and professional growth, making you a more proficient developer with each contribution. So, why wait? Dive into the world of open source, and let your coding journey begin!</p>
-
-<p>disclaimer this articles made with help of GPT3.5</p>
-
- </details> 
- <hr /> 
-
- #### - [Sloan's Inbox: Do I need to write blog posts to be a successful dev?](https://dev.to/devteam/sloans-inbox-do-i-need-to-posts-blogs-to-be-a-successful-dev-27j4) 
- <details><summary>Article</summary> <p>Hello! Sloan, DEV Moderator and resident mascot, back with another question submitted by a DEV community member. 🦥</p>
-
-<p>For those unfamiliar with the series, this is another installment of Sloan's Inbox. You all send in your questions, I ask them on your behalf anonymously, and the community chimes in to offer advice. Whether it's career development, office politics, industry trends, or improving technical skills, we cover all sorts of topics here. If you want to send in a question or talking point to be shared anonymously via Sloan, that'd be great; just scroll down to the bottom of the post for details on how.</p>
-
-<p>So, let's get down to business...</p>
-
-<h3>
-  
-  
-  Today's question is:
-</h3>
+<p>In this post, I'll explain how layers work, how to break your Terraform files into composable layers and demonstrate a few use cases that layers enable. Those use cases include creating production-like development environments and setting up pull request preview links for <em>any</em> type of application.</p>
 
 <blockquote>
-<p>I'm a beginner dev and when I see others writing about development, sharing tutorials, and posting about their follower count growing, it occasionally gives me anxiety. It makes me feel like being just a developer isn't enough, and that I need to participate in communities or build my online presence in order to become successful. Is it possible to be a successful dev and get a job without writing blog posts or being regularly active online?</p>
+<p>As a note, Terraform workspaces are quite laborious to use. The official documentation even contains a warning about using them.<br>
+<em><strong>Important</strong>: Workspaces are not appropriate for system decomposition or deployments requiring separate credentials and access controls.</em></p>
 </blockquote>
 
-<p>Share your thoughts and lets help a fellow DEV member out! Remember to keep kind and stay classy. 💚</p>
+
+
+<h2>
+  
+  
+  How layers work
+</h2>
+
+<p>In Layerform, Terraform files are divided into layers. Each layer definition specifies the files that belong to it and a list of dependencies.</p>
+
+<p>Let's say you're trying to run Elasticsearch and Kibana within an EKS instance (AWS-managed k8s).</p>
+
+<p>For that, you'd have two layers, one for <code>eks</code>, and another for the <code>elastic_stack</code>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"layers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eks"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"layers/eks.tf"</span><span class="p">,</span><span class="w"> </span><span class="s2">"layers/eks/**"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elastic_stack"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"layers/elastic_stack.tf"</span><span class="p">,</span><span class="w"> </span><span class="s2">"layers/elastic_stack/**"</span><span class="p">],</span><span class="w">
+            </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eks"</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
 
 
 
+<p>In the <code>eks</code> layer definition, you specify which files belong to that layer. Given that <code>eks</code> does <em>not</em> depend on any other infrastructure, it won't list any other layers as dependencies. On the other hand, the <code>elastic_stack</code> layer's files depend on <code>eks</code>. Consequently, it will include <code>eks</code> as a dependency.</p>
 
-<p><em>Want to submit a question for discussion or ask for advice? <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6wgzJ1hh2OR4WsWlJN9WHUJ8jV4dFkRDF2TUP32urHSAsQg/viewform">Visit Sloan's Inbox</a>! You can choose to remain anonymous.</em></p>
+<p>After defining layers this way, you can spin up an EKS cluster independently by running <code>layerform spawn eks default</code>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FkvApNvc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ypdqh69w89w46ykwhwqq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FkvApNvc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ypdqh69w89w46ykwhwqq.png" alt="Image description" width="800" height="118"></a></p>
+
+<p>Then, each engineer can create their own instances of the <code>elastic_stack</code> and reuse the same cluster. For that, they'd all run <code>layerform spawn elastic_stack &lt;name&gt;</code>, and each of these layers would look for an underlying <code>eks</code> layer with ID <code>default</code>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8P7X6B_B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9s8v5628ww5himz8irzy.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8P7X6B_B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9s8v5628ww5himz8irzy.png" alt="Image description" width="800" height="486"></a><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>➜ layerform list instances
+INSTANCE NAME                LAYER NAME    DEPENDENCIES
+default                      eks
+first                        elastic_stack  eks=default
+second                       elastic_stack  eks=default
+</code></pre>
+
+</div>
+
+
+
+<p>If someone needs a new cluster, they can recreate the whole stack by passing the <code>--base</code> flag, as in <code>layerform spawn elastic_stack third --base eks=another_eks</code>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nVvBa9_U--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7gvyssbz2m54d2xl01d7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nVvBa9_U--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7gvyssbz2m54d2xl01d7.png" alt="Image description" width="800" height="323"></a><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>➜ layerform list instances
+INSTANCE NAME                LAYER NAME    DEPENDENCIES
+default                      eks
+another_eks                  eks
+first                        elastic_stack  eks=default
+second                       elastic_stack  eks=default
+third                        elastic_stack  eks=another_eks
+</code></pre>
+
+</div>
+
+
+
+<p>When done with their layers, engineers can kill their layer instances without damaging someone else's work.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9RcCxzV0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pwd33a7q2x1hk0uaaiwl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9RcCxzV0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pwd33a7q2x1hk0uaaiwl.png" alt="Image description" width="800" height="419"></a></p>
+
+<p>In a way, Layerform's layers are similar to container layers. Some people refer to them as "Kustomize for Terraform."</p>
+
+
+
+<h2>
+  
+  
+  Using layers to create development environments
+</h2>
+
+<p>For most teams, "staging" is a bottleneck. Usually, companies have many engineers, but there's only a single "staging" environment for everyone to use. Consequently, developers wanting to test changes in a production-like environment must queue.</p>
+
+<p>Additionally, when systems are large or depend on serverless components, engineers cannot reliably run all their software on their machines. Therefore, they all point to the same staging environment and step on each others' toes.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--h2ZZ-wVs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dn62yxb4ac16mziqizlk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--h2ZZ-wVs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dn62yxb4ac16mziqizlk.png" alt="Image description" width="800" height="377"></a></p>
+
+<p>Layers help teams solve this problem by enabling each engineer to spin up their own environment and share core pieces of infrastructure, as shown earlier.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1t0giuY3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vr8ktr4zhtfrxblrl2ty.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1t0giuY3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vr8ktr4zhtfrxblrl2ty.png" alt="Image description" width="800" height="421"></a></p>
+
+<p>Layerform also provides developers valuable features to develop applications locally while pointing them to their own "staging" environment's back-end.</p>
+
+<p>Assume you cannot run Elasticsearch locally because the JVM needs too much memory, for example. In that case, you could use <code>layerform output</code> to get the address of your remote Elasticsearch instance.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>➜ layerform output elastic_stack first
+
+{
+  "cluster_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "demo-eks-post-example"
+  },
+  "elasticsearch_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://elasticsearch-post-example.environment.ergomake.link"
+  }
+}
+</code></pre>
+
+</div>
+
+
+
+<p>You could use that URL in your Kibana configuration file (<code>config.yml</code>). That way, you could point your local Kibana to the remote Elasticsearch as you develop.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="na">elasticsearch.hosts</span><span class="pi">:</span>
+    <span class="pi">[</span><span class="s2">"</span><span class="s">https://elasticsearch-post-example.environment.ergomake.link"</span><span class="pi">]</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In case you had multiple outputs you need to interpolate in your configuration file, as many applications have, you could even write a template file and tell Layerform to interpolate it for you.</p>
+
+<p>Take the following template file for Kibana's <code>config.yml</code>, for example.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="na">elasticsearch.hosts</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">{{elasticsearch_url.value}}"</span><span class="pi">]</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To render that file and replace <code>{{ elasticsearch_url.value }}</code> with the actual values for your particular layer, you could use the <code>--template</code> flag to output the rendered file to <code>stdout</code>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="s">➜ layerform output elastic_stack first --template config/kibana-template.yml</span>
+
+<span class="na">elasticsearch.hosts</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">http://elastic-stack-xehl-es.environment.ergomake.link'</span><span class="pi">]</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Engineers could then pipe the rendered file to an actual <code>config.yml</code> and use it without knowing anything about layers or manually entering values.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="s">➜ layerform output elastic_stack first --template config/kibana-template.yml &gt; config.yml</span>
+</code></pre>
+
+</div>
+
+
+
+<p>After that, <code>yarn start</code> would cause Kibana to read <code>config.yml</code> and point to the remote Elasticsearch.</p>
+
+
+
+<h3>
+  
+  
+  A note on collaborating with layers
+</h3>
+
+<p>Similarly to Terraform, Layerform may use a remote back-end to store states and layer definitions.</p>
+
+<p>Once an engineer creates a layer instance, Layerform syncs it with a remote state file in S3. Then, when someone else uses <code>layerform list instances</code>, Layerform will fetch states from the remote back-end and list an up-to-date list of instances.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8adkbuS2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/38dvovqdoplf7l9z1j4z.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8adkbuS2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/38dvovqdoplf7l9z1j4z.png" alt="Image description" width="800" height="284"></a></p>
+
+<p>Assume engineer A spun up layer <code>first</code>. If engineer B wants to collaborate with engineer A, they will be able to see <code>first</code> in the list of layers because the list is stored remotely.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># Ran by engineer B
+➜ layerform list instances
+
+INSTANCE NAME                LAYER NAME     DEPENDENCIES
+default                      eks
+first                        elastic_stack  eks=default
+</code></pre>
+
+</div>
+
+
+
+<p>Then, engineer B can also get the URL of the Elasticsearch instance in layer <code>first</code> by running <code>layerform output</code>.</p>
+
+<blockquote>
+<p>We're still working on proper locking and collaboration mechanisms to keep states free of race conditions. We welcome pull requests for that in case you're interested in contributing.</p>
+</blockquote>
+
+
+
+<h2>
+  
+  
+  Using layers to create pull request previews
+</h2>
+
+<p>Whenever engineers make changes and open a pull request, Vercel spins up their Next.js application and adds a preview link to the PR.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pnjyN5Og--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ssnxqyr3p3pxlah6inw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pnjyN5Og--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ssnxqyr3p3pxlah6inw.png" alt="Image description" width="800" height="237"></a></p>
+
+<p>Most developers, designers, and product managers love Vercel's previews. <strong>The problem is that these previews do not work for teams with more complex set-ups</strong>. For example, you can't get full-stack previews if you have a serverless application or need a Kubernetes cluster.</p>
+
+<p>Today, most teams end up building these preview environments in-house, using a bunch of ad-hoc scripts.</p>
+
+<p><a href="https://github.com/ergomake/layerform">Layerform</a> helps teams solve this problem by allowing them to create a separate preview layer. Then, engineers can call the Layerform CLI from their CI and spin up only the infrastructure they need.</p>
+
+<p>Since Layerform uses Terraform files, it can spin up all types of infrastructure for these previews, including Kubernetes resources, Lambdas, SQS instances, and S3 buckets.</p>
+
+<p>In the case of the Elastic stack, for example, engineers could create a GitHub action to <code>layerform spawn</code> only the Elastic stack layer on top of a shared <code>preview</code> cluster, making previews much less expensive.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Preview</span>
+
+<span class="na">on</span><span class="pi">:</span>
+    <span class="na">pull_request</span><span class="pi">:</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+    <span class="na">preview</span><span class="pi">:</span>
+        <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+        <span class="na">steps</span><span class="pi">:</span>
+            <span class="c1"># + Checkout code, install deps, etc...</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Layerform</span>
+              <span class="na">run</span><span class="pi">:</span> <span class="s">go install github.com/ergomake/layerform@main</span>
+
+            <span class="c1"># Configure remote state — we'll improve this</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Create Layerform config file</span>
+              <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+                  <span class="s">mkdir -p ~/.layerform</span>
+                  <span class="s">echo "currentContext: demo" &gt; ~/.layerform/config</span>
+                  <span class="s">echo "contexts:" &gt;&gt; ~/.layerform/config</span>
+                  <span class="s">echo "  demo:" &gt;&gt; ~/.layerform/config</span>
+                  <span class="s">echo "    type: s3" &gt;&gt; ~/.layerform/config</span>
+                  <span class="s">echo "    bucket: layerform-post-demo" &gt;&gt; ~/.layerform/config</span>
+                  <span class="s">echo "    region: us-west-1" &gt;&gt; ~/.layerform/config</span>
+
+            <span class="c1"># Actually spawn the preview layer</span>
+            <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">layerform</span>
+              <span class="na">name</span><span class="pi">:</span> <span class="s">Spawn Elasticstack using Layerform</span>
+              <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+                  <span class="s">layerform spawn elastic_stack ${{ github.event.pull_request.head.ref }}</span>
+              <span class="na">env</span><span class="pi">:</span>
+                  <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">${{ secrets.AWS_ACCESS_KEY_ID }}</span>
+                  <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.AWS_SECRET_ACCESS_KEY }}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The workflow above will use the pull request's branch name as the layer instance's name.</p>
+
+<blockquote>
+<p>Just like any other layer instance, it will appear when running <code>layerform list</code>, so you can connect to it from your terminal too, if you want.</p>
+</blockquote>
+
+<p>Finally, once the <code>spawn</code> is done, you can write some code to call <code>layerform output</code> and add a comment with a preview link to the pull request.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="c1"># ...</span>
+
+<span class="c1"># Get Kibana's URL from layerform output using jq</span>
+<span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">layerform</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">Spawn Elasticstack using Layerform</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+      <span class="s">layerform spawn elastic_stack ${{ github.event.pull_request.head.ref }}</span>
+      <span class="s">kibana=$(layerform output elastic_stack ${{ github.event.pull_request.head.ref }} | jq -r .kibana_url.value)</span>
+      <span class="s">echo "kibana=$kibana" &gt;&gt; "$GITHUB_OUTPUT"</span>
+  <span class="na">env</span><span class="pi">:</span>
+      <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">${{ secrets.AWS_ACCESS_KEY_ID }}</span>
+      <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">${{ secrets.AWS_SECRET_ACCESS_KEY }}</span>
+
+<span class="c1"># Add a comment to the pull request</span>
+<span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/github-script@v6</span>
+  <span class="na">with</span><span class="pi">:</span>
+      <span class="na">script</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">github.rest.issues.createComment({</span>
+            <span class="s">issue_number: context.issue.number,</span>
+            <span class="s">owner: context.repo.owner,</span>
+            <span class="s">repo: context.repo.repo,</span>
+            <span class="s">body: '${{ steps.layerform.outputs.kibana }}'</span>
+          <span class="s">})</span>
+</code></pre>
+
+</div>
+
+
+
+<p>After that change, you'll see a preview link pointing to actual production-like infrastructure in every PR you open.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RLVL_0X0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tfarsc0kamv6bumhubfx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RLVL_0X0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tfarsc0kamv6bumhubfx.png" alt="Image description" width="800" height="139"></a></p>
+
+<p>To destroy these layer instances, you should create a second workflow that's triggered when someone closes or merges a PR. That workflow should call <code>layerform kill</code> and pass it the layer's name, which, in this case, is the same as the branch's.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Destroy previews when PRs are closed</span>
+
+<span class="na">on</span><span class="pi">:</span>
+    <span class="na">pull_request</span><span class="pi">:</span>
+        <span class="na">types</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">closed</span><span class="pi">]</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+    <span class="na">kill_preview</span><span class="pi">:</span>
+        <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+        <span class="na">steps</span><span class="pi">:</span>
+            <span class="c1"># + Checkout code, install deps, etc...</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install Layerform</span>
+              <span class="na">run</span><span class="pi">:</span> <span class="s">go install github.com/ergomake/layerform@main</span>
+
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Kill preview</span>
+              <span class="na">run</span><span class="pi">:</span> <span class="s">layerform kill elastic_stack ${{ github.event.pull_request.head.ref }}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Extra implementation notes
+</h2>
+
+<p>In these examples, I assume that users have deployed an <a href="https://docs.nginx.com/nginx-ingress-controller/"><code>nginx-ingress-controller</code></a> to their cluster through the <code>eks</code> layer. This controller is responsible for creating an <code>nlb</code> and exposing Elasticsearch and Kibana to the internet through their ingresses.</p>
+
+<p>In any case, many developers would probably want to keep their development environments within a VPN, which is also possible because Layerform provisions all the infrastructure in <em>your</em> cloud using plain Terraform files.</p>
+
+<p>When it comes to deploying the actual pods to your cluster, you can use whatever you want. When I tested the examples myself, I specified raw Kubernetes resources through the <code>kubernetes</code> provider. Still, you could use Helm charts with the Helm provider. The only requirement for using layers is that your infra is in a Terraform file, not ad-hoc scripts.</p>
+
+<p>Finally, another interesting detail is that engineers must provide layer definitions to the remote back-end with <code>layerform configure</code> before anyone can spawn instances.</p>
+
+<p><strong>If you've found this idea intriguing, please consider <a href="https://github.com/ergomake/layerform">giving us a star on GitHub</a>.</strong></p>
 
  </details> 
  <hr /> 
 
- #### - [Deploying Your Outdoor Activities Map with Terraform](https://dev.to/lukaskrimphove/deploying-your-outdoor-activities-map-with-terraform-682) 
- <details><summary>Article</summary> <h2>
+ #### - [AWS Lambda and Slack integration](https://dev.to/aws-builders/aws-lambda-and-slack-integration-2d3g) 
+ <details><summary>Article</summary> <p>Slack has emerged as a go-to platform for businesses to promote effective interactions because it is essential for seamless team collaboration. You can streamline the process of sending Slack messages and seamlessly integrate it into your current workflows by utilising the strength of AWS Lambda functions. In this article, we’ll look at how to send Slack messages and easily add them to your team’s Slack channels using a Python Lambda function.</p>
+
+<h2>
   
   
-  Introduction
+  Step 1: Create a Slack App and obtain credentials
 </h2>
 
-<p>In my last article, I showed you how you can use Python and Folium to create an interactive app to showcase all your outdoor activities:<br>
+<p>You must create a Slack app and obtain the required authentication credentials before you can begin. Create a new app for your workspace using the Slack API, then enable the necessary permissions, such as “chat:write.” We will need your app’s API token later, so please retrieve it.</p>
+
+<p>I personally prefer using the <a href="https://api.slack.com/messaging/webhooks">incoming webhooks</a> feature that Slack provides. It will give you a simple REST api to send messages. See the example below.<br>
 </p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>POST https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+Content-type: application/json
+<span class="o">{</span>
+    <span class="s2">"text"</span>: <span class="s2">"Hello, world."</span>
+<span class="o">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Step 2: Set Up an AWS Lambda Function
+</h2>
+
+<p>Go to the Lambda service in the AWS Management Console and select “Create Function.” Select the proper runtime environment for your Lambda function that is based on Python.</p>
+
+<p>Write the Python code necessary to send Slack messages in the Lambda function’s code editor. Import the requests library to get started with sending HTTP requests to the Slack API. Create a function that builds the message payload and sends it to the correct Slack API endpoint after that.</p>
+
+<p>Here is an example of what Python code could look like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">send_slack_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">slack_token</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'SLACK_TOKEN'</span><span class="p">]</span>
+    <span class="n">channel_id</span> <span class="o">=</span> <span class="s">'your_channel_id'</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s">'https://slack.com/api/chat.postMessage'</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="sa">f</span><span class="s">'Bearer </span><span class="si">{</span><span class="n">slack_token</span><span class="si">}</span><span class="s">'</span><span class="p">}</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'channel'</span><span class="p">:</span> <span class="n">channel_id</span><span class="p">,</span>
+        <span class="s">'text'</span><span class="p">:</span> <span class="n">message</span>
+    <span class="p">}</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Message sent successfully!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Failed to send message."</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">"Hello from AWS Lambda!"</span>
+    <span class="n">send_slack_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>As soon as you configure your Lambda function, make sure to replace <code>your_channel_id</code> with the appropriate Slack channel ID and set the <code>SLACK_TOKEN</code> environment variable.</p>
+
+<h2>
+  
+  
+  Step 4: Configure the Lambda Function
+</h2>
+
+<p>Configure the triggers and permissions of the Lambda function to integrate it with Slack. There are many triggers you can set up, including a scheduled event, an API Gateway endpoint, and other AWS services. We’ll concentrate on a simple setup without any particular triggers for this example.</p>
+
+<p>Here is an example of <a href="https://medium.com/@kasun.dsilva/trigger-lambda-functions-via-eventbrigde-172026492121">scheduling Lambda with EventBridge</a>.</p>
+
+<p>Make sure the Lambda function has the appropriate rights to call the Slack API. To enable the Lambda function to send HTTP requests to the Slack API and, if necessary, access other necessary resources, create an IAM role with the proper policies.</p>
+
+<h2>
+  
+  
+  Step 5: Test and Deploy
+</h2>
+
+<p>It’s time to test the integration after configuring the Lambda function. To execute the function and make sure it successfully sends a message to your Slack channel, use the Lambda console’s <code>Test</code> feature.</p>
+
+<p>Deploy the Lambda function once you are happy with the implementation.</p>
+
+<p>Slack integration with Python Lambda functions offers a seamless way to communicate with your team or organisation. You can quickly set up a Lambda function to send Slack messages by following the instructions in this blog post, and you can easily integrate it into your current workflows. Utilise Slack and AWS Lambda to your advantage to increase output while fostering effective team communication.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [We Updated Our "Year Club" Badges!](https://dev.to/devteam/we-updated-our-year-club-badges-1lhi) 
+ <details><summary>Article</summary> <p>We have been very pleased to add a few new badges to our repertoire as of late, including the <a href="https://dev.to/devteam/announcing-the-icebreaker-badge-20k3">Icebreaker</a> and <a href="https://dev.to/devteam/introducing-the-warm-welcome-badge-4hnh">Warm Welcome</a> Badges. During our excitement around creating new badges, we thought it was high time to present a little makeover to some older badges!</p>
+
+<h2>
+  
+  
+  Introducing... our new "Year Club" Badges!
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--I4bYKP6H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z8ip33gohl49ox5qh2je.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--I4bYKP6H--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z8ip33gohl49ox5qh2je.jpg" alt="Year Club Badges" width="800" height="457"></a></p>
+
+<p><strong>These badges are awarded upon your yearly anniversary of becoming a DEV member and were built to celebrate your longevity on our platform.</strong> </p>
+
+<p>If you already earned any Year Club badges, they are now updated to this new look, to help match the rest of our brand identity here on our platform.</p>
+
+<p>Also, as we continue to update our badges, you may notice that the more you engage, the more you unlock new badges! When you stay active on DEV, we hope you are: (1) fulfilled by our community (2) being recognized for how much your participation and knowledge helps make DEV a better place.</p>
+
+
+
+
+<p>We hope you all enjoy our badge refreshes and will see you again soon for more badge updates! </p>
+
+<p>PS: Don't forget to check out our new <a href="https://dev.to/community-badges">Community Badge Page</a> to view all of the other badges we have available on our site.</p>
+
+<p><strong>Cheers,</strong><br>
+<strong>The DEV Team</strong></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Hello, world!](https://dev.to/ilya0x/hello-world-jl7) 
+ <details><summary>Article</summary> <p>My first post on <a href="https://dev.to">dev.to</a> 🤓</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Discussion of the Week - v2](https://dev.to/devteam/discussion-of-the-week-v2-517c) 
+ <details><summary>Article</summary> <p>In this weekly roundup, we highlight what we believe to be the most thoughtful, helpful, and/or interesting discussion over the past week! Though we are strong believers in healthy and respectful debate, we typically try to choose discussions that are positive in nature and avoid those that are overly contentious.</p>
+
+<p>Any folks whose articles we feature here will be rewarded with our Discussion of the Week badge. ✨</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6M-JeZHe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvizv31dpchucxic2lxc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6M-JeZHe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvizv31dpchucxic2lxc.png" alt="The Discussion of the Week badge. It includes a roll of thread inside a speech bubble. The thread is a reference to comment threads." width="800" height="800"></a></p>
+
+<p>Now that y'all understand the flow, let's go! 🏃💨</p>
+
+<h2>
+  
+  
+  The Discussion of the Week
+</h2>
+
+<p>This week's pick goes to Keit (<a class="mentioned-user" href="https://dev.to/k8adev">@k8adev</a>) for sharing the enlightening discussion <a href="https://dev.to/k8adev/tech-events-are-not-as-cool-as-you-think-from-an-organizer-perspective-2b70">"Tech Events are NOT as cool as you think (from an organizer perspective)"</a>:</p>
+
+
 <div class="ltag__link">
-  <a href="/lukaskrimphove" class="ltag__link__link">
+  <a href="/k8adev" class="ltag__link__link">
     <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--hfBaJX-z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--RAVsH6u6--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1148483/69ef2fc9-8476-4fec-b567-d5ff4138fe07.png" alt="lukaskrimphove">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Y28dLDsJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--NJCLzM31--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/783676/433bcb84-1773-4d9f-93f4-801568e07efb.jpeg" alt="k8adev">
     </div>
   </a>
-  <a href="/lukaskrimphove/visualizing-outdoor-activities-with-python-folium-3h9f" class="ltag__link__link">
+  <a href="/k8adev/tech-events-are-not-as-cool-as-you-think-from-an-organizer-perspective-2b70" class="ltag__link__link">
     <div class="ltag__link__content">
-      <h2>Visualizing Outdoor Activities with Python Folium</h2>
-      <h3>Lukas Krimphove ・ Sep 4</h3>
+      <h2>Tech Events are NOT as cool as you think (from an organizer perspective)</h2>
+      <h3>Keit Oliveira ・ Sep 13</h3>
       <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#python</span>
-        <span class="ltag__link__tag">#showdev</span>
-        <span class="ltag__link__tag">#tutorial</span>
-        <span class="ltag__link__tag">#datascience</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#techtalks</span>
+        <span class="ltag__link__tag">#braziliandevs</span>
+        <span class="ltag__link__tag">#frontend</span>
       </div>
     </div>
   </a>
 </div>
 
 
-<p>Now you've created a captivating map that brings your outdoor activities to life. You can use those maps to visually retrace your journeys, celebrate your progress, and relive those adventures.</p>
+<p>Many of us in this community are familiar with tech events — developer conferences and meetups... we go, we mingle, we see the talks, eat the snacks, browse the booths and collect way more swag than we ever needed. And, speaking for myself, I generally have a really good time at these events! It gives me a chance to step away from the screen and connect with other tech folks in the real-world. But rarely do I think about the people behind the scenes making these events work.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--GVlXge8a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8z23bkkjvsjifz5v70by.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GVlXge8a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8z23bkkjvsjifz5v70by.png" alt="" width="800" height="555"></a></p>
+<p>Keit's post reveals what it's like to put together these events from the organizer's perspective — just how much planning, prep time, and financial costs go into executing a successful event. It's easy to take for granted all the hard work that these organizers do to put on a good show... and they do <strong>a lot!</strong></p>
 
-<p>But what good is it if only you can see it?</p>
+<p>It was really heartening to see all the kind comments dropped in response to this post. Clearly, Keit's perspective opened many of our eyes to the difficulties organizers face, and lots of y'all hopped in to share your appreciation for these challenges and for the excellent conferences that organizers have put together. Notably, quite a few fellow organizers hopped in to concur and share their own accounts of organizing events. Appreciate all the positive vibes in this comment thread. 😀</p>
 
-<p>Are you ready to showcase your adventures to the world? In this next story, I'll walk you through the process of deploying your interactive map to AWS using Terraform. This tool is great for managing infrastructure as code, and we'll go through the necessary steps to provision and configure the resources needed for your map to be accessible to anyone with an internet connection. By utilizing S3 buckets, Lambda functions, and CloudFront, we'll create a solution that is simple to deploy and maintain.</p>
-
-<p>So get ready to share your outdoor accomplishments with loved ones and fellow outdoor enthusiasts all across the globe!</p>
+<p>Thanks for pulling back the curtain and showing us what it's like to run a tech event like this, Keit! Organizing events is no easy task, but it's important to and much appreciated by us folks that attend.</p>
 
 <h2>
   
   
-  The Solution
+  What are your picks?
 </h2>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0Q-lnArN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6ykkdze89r4kymegjngm.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0Q-lnArN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6ykkdze89r4kymegjngm.png" alt="" width="800" height="362"></a></p>
+<p>The DEV Community is particularly special because of the kind, thoughtful, helpful, and entertaining discussions happening between community members. As such, we want to encourage folks to participate in discussions and reward those who are initiating or taking part in conversations across the community. After all, a community is made possible by the people interacting inside it.</p>
 
-<p>As you can see our solution consists of multiple elements:</p>
+<p>There are loads of great discussions floating about in this community. This just the one we chose to highlight. 🙂</p>
 
-<ul>
-<li><p>At its core, we have two S3 buckets, one for input and another for output. The input bucket becomes the repository for your GPX files, where you'll store the raw material of your outdoor activities. Whenever a new GPX file is uploaded, an EventBridge event is triggered, signaling the arrival of fresh data.</p></li>
-<li><p>This is where the Lambda function steps onto the stage. It takes the newly arrived GPX file, parses it to extract the essential trail data, and plots the trails on the map. The Lambda function then creates the HTML of the map and places it into the output bucket, ready to be shared with the world.</p></li>
-<li><p>To guarantee swift and seamless access to the map, we use CloudFront. This service acts as a content distribution network that caches and delivers the output buckets content to users globally from edge locations. It reduces latency and improves performance.</p></li>
-</ul>
-
-<h2>
-  
-  
-  What is Terraform?
-</h2>
-
-<p><a href="http://terraform.io">Terraform</a> is an open-source infrastructure-as-code software tool created by HashiCorp. It allows you to define and manage your infrastructure as code, making it easy to provision and manage resources across multiple cloud providers. With Terraform, you can ensure consistent and repeatable deployments, making it an ideal choice for automating your cloud infrastructure.</p>
-
-<h2>
-  
-  
-  Setting Up the Environment
-</h2>
-
-<p>Before we begin, ensure you have Terraform installed on your local machine. You can download it from <a href="https://developer.hashicorp.com/terraform/downloads?product_intent=terraform">the official website</a> and follow the installation instructions.</p>
-
-<p>You will also have to install the <a href="https://aws.amazon.com/en/cli/">AWS CLI</a> and have to configure it so that you can deploy to your AWS account. I wrote a <a href="https://towardsdev.com/my-wsl-setup-as-a-cloud-dev-getting-the-best-of-both-worlds-a0b3a74c14ad">story on using the Windows Subsystem</a> on this.</p>
-
-<p>Once you have Terraform installed, create a new directory for your project and place the main.tf file provided above in this directory. This file contains the Terraform configuration that describes the resources we need to deploy the map.</p>
-
-<h2>
-  
-  
-  Provisioning AWS Resources
-</h2>
-
-<p>Our map requires several AWS resources to be provisioned, such as S3 buckets for storing the website files, an AWS Lambda function to generate the map, and a CloudFront distribution to serve the map securely and efficiently.</p>
-
-<h3>
-  
-  
-  Buckets
-</h3>
-
-<p>We'll use S3 buckets to store the website files and the map generated by the Lambda function. The provided Terraform code uses the terraform-aws-modules/s3-bucket module to create the buckets.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>data "http" "mime_types" {
-  url = "https://gist.githubusercontent.com/lkrimphove/46988dc2ac63ad5ad9c95e6109e3c37e/raw/2349abeb136f1f8dbe91c661c928a5ce859432f9/mime.json"
-  request_headers = {
-    Accept = "application/json"
-  }
-}
-
-locals {
-  mime_types = jsondecode(data.http.mime_types.response_body)
-}
-
-
-
-### BUCKETS
-
-module "input_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-
-  bucket = var.input_bucket
-  acl    = "private"
-
-  control_object_ownership = true
-  object_ownership         = "ObjectWriter"
-
-}
-
-module "output_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-
-  bucket = var.output_bucket
-  acl    = "private"
-
-  control_object_ownership = true
-  object_ownership         = "ObjectWriter"
-}
-
-resource "aws_s3_object" "object" {
-  for_each     = fileset("../src/website", "*")
-  bucket       = module.output_bucket.s3_bucket_id
-  key          = each.value
-  acl          = "private"
-  source       = "../src/website/${each.value}"
-  content_type = lookup(local.mime_types, split(".", each.value)[1], null)
-  etag         = filemd5("../src/website/${each.value}")
-}
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Lambda Function
-</h3>
-
-<p>The Lambda function is the heart of our map generation process. It takes the GPX data from the S3 bucket, processes it, and generates an interactive map. We'll use the terraform-aws-modules/lambda module to create and manage the Lambda function.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>### LAMBDA
-
-module "lambda_function" {
-  source = "terraform-aws-modules/lambda/aws"
-
-  function_name = "outdoor-activities-generator"
-  description   = "Generates a map containing your outdoor activities"
-  handler       = "main.lambda_handler"
-  runtime       = "python3.11"
-  timeout       = 60
-
-  source_path = "../src/lambda"
-
-  environment_variables = {
-    START_LATITUDE             = var.start_latitude
-    START_LONGITUDE            = var.start_longitude
-    ZOOM_START                 = var.zoom_start
-    INPUT_BUCKET               = module.input_bucket.s3_bucket_id
-    OUTPUT_BUCKET              = module.output_bucket.s3_bucket_id
-    S3_OBJECT_NAME             = "map.html"
-    CLOUDFRONT_DISTRIBUTION_ID = module.cloudfront.cloudfront_distribution_id
-  }
-
-  layers = [
-    module.lambda_layer.lambda_layer_arn,
-  ]
-
-  attach_policy = true
-  policy        = aws_iam_policy.lambda_policy.arn
-}
-
-module "lambda_layer" {
-  source = "terraform-aws-modules/lambda/aws"
-
-  create_function = false
-  create_layer    = true
-
-  layer_name          = "outdoor-activities-layer"
-  description         = "Lambda layer containing everything for Outdoor Activities"
-  compatible_runtimes = ["python3.11"]
-  runtime             = "python3.11" 
-
-  source_path = [
-    {
-      path             = "../src/lambda-layer"
-      pip_requirements = true
-      prefix_in_zip    = "python" # required to get the path correct
-    }
-  ]
-}
-
-resource "aws_iam_policy" "lambda_policy" {
-  name = "outdoor-activities-generator-policy"
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action   = "s3:GetObject"
-        Effect   = "Allow"
-        Resource = "${module.input_bucket.s3_bucket_arn}/*"
-      },
-      {
-        Action   = "s3:ListBucket"
-        Effect   = "Allow"
-        Resource = module.input_bucket.s3_bucket_arn
-      },
-      {
-        Action   = "s3:PutObject"
-        Effect   = "Allow"
-        Resource = "${module.output_bucket.s3_bucket_arn}/*"
-      },
-      {
-        Action   = "cloudfront:GetDistribution"
-        Effect   = "Allow"
-        Resource = module.cloudfront.cloudfront_distribution_arn
-      },
-      {
-        Action   = "cloudfront:CreateInvalidation"
-        Effect   = "Allow"
-        Resource = module.cloudfront.cloudfront_distribution_arn
-      }
-    ]
-  })
-}
-
-resource "aws_lambda_permission" "allow_bucket" {
-  statement_id  = "AllowExecutionFromS3Bucket"
-  action        = "lambda:InvokeFunction"
-  function_name = module.lambda_function.lambda_function_arn
-  principal     = "s3.amazonaws.com"
-  source_arn    = module.input_bucket.s3_bucket_arn
-}
-
-resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = module.input_bucket.s3_bucket_id
-
-  lambda_function {
-    lambda_function_arn = module.lambda_function.lambda_function_arn
-    events              = ["s3:ObjectCreated:*"]
-  }
-
-  depends_on = [aws_lambda_permission.allow_bucket]
-}
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  CloudFront Distribution
-</h3>
-
-<p>To serve the map with low latency and high performance, we'll use CloudFront, AWS's content delivery network (CDN). CloudFront caches the map in edge locations worldwide, reducing the load on the origin server (our S3 bucket). We'll use the terraform-aws-modules/cloudfront module to create the CloudFront distribution.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>### CLOUDFRONT
-
-module "cloudfront" {
-  source              = "terraform-aws-modules/cloudfront/aws"
-  comment             = "Outdoor Activities Cloudfront"
-  is_ipv6_enabled     = true
-  price_class         = "PriceClass_100"
-  wait_for_deployment = false
-
-  create_origin_access_identity = true
-  origin_access_identities = {
-    s3_bucket = "s3_bucket_access"
-  }
-
-  origin = {
-    s3_bucket = {
-      domain_name = module.output_bucket.s3_bucket_bucket_regional_domain_name
-      s3_origin_config = {
-        origin_access_identity = "s3_bucket"
-      }
-    }
-  }
-
-  default_cache_behavior = {
-    target_origin_id       = "s3_bucket"
-    viewer_protocol_policy = "redirect-to-https"
-
-    default_ttl = 5400
-    min_ttl     = 3600
-    max_ttl     = 7200
-
-    allowed_methods = ["GET", "HEAD"]
-    cached_methods  = ["GET", "HEAD"]
-    compress        = true
-    query_string    = false
-
-    function_association = {
-      viewer-request = {
-        function_arn = aws_cloudfront_function.viewer_request.arn
-      }
-    }
-  }
-
-  default_root_object = "index.html"
-
-  custom_error_response = [
-    {
-      error_code         = 403
-      response_code      = 404
-      response_page_path = "/404.html"
-    },
-    {
-      error_code         = 404
-      response_code      = 404
-      response_page_path = "/404.html"
-    }
-  ]
-}
-
-data "aws_iam_policy_document" "s3_policy" {
-  version = "2012-10-17"
-  statement {
-    actions   = ["s3:GetObject"]
-    resources = ["${module.output_bucket.s3_bucket_arn}/*"]
-    principals {
-      type        = "AWS"
-      identifiers = module.cloudfront.cloudfront_origin_access_identity_iam_arns
-    }
-  }
-}
-
-resource "aws_s3_bucket_policy" "docs" {
-  bucket = module.output_bucket.s3_bucket_id
-  policy = data.aws_iam_policy_document.s3_policy.json
-}
-
-resource "aws_cloudfront_function" "viewer_request" {
-  name    = "cloudfront-viewer-request"
-  runtime = "cloudfront-js-1.0"
-  publish = true
-  code    = file("../src/viewer-request.js")
-}
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Deploying Your Map
-</h2>
-
-<p>Create a deploy.tfvars.json file and change the values to fit your map (you have to change the bucket names, as those have to be globally unique):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>{
-    "input_bucket": "outdoor-activities-input",
-    "output_bucket": "outdoor-activities-output",
-    "start_latitude": "48.13743",
-    "start_longitude": "11.57549",
-    "zoom_start": "10"
-}
-</code></pre>
-
-</div>
-
-
-
-<p>Create a output.tf file (this will print out information to the console):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>output "cloudfront_distribution_domain_name" {
-    value = module.cloudfront.cloudfront_distribution_domain_name
-}
-</code></pre>
-
-</div>
-
-
-
-<p>Once you've set up the Terraform environment and configured the main.tf and deploy.tfvar.json files, run the following commands in your terminal:</p>
-
-<ol>
-<li><p>Initialize Terraform: <br>
-terraform init</p></li>
-<li><p>Plan the deployment to see what resources will be created:<br>
-terraform plan -var-file=„deploy.tfvars.json“</p></li>
-<li><p>Apply the changes to provision the resources:<br>
-terraform apply -var-file=„deploy.tfvars.json“</p></li>
-</ol>
-
-<p>Terraform will show you a summary of the changes that will be made. If everything looks good, type yes to apply the changes. Terraform will now create all the necessary AWS resources for your map. You will find your URL in the console.</p>
-
-<p>Now you are ready to upload your GPX files to the input bucket. Make sure to keep this file structure:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>    input-bucket
-    ├── Hiking
-    │   ├── Trail Group 1
-    │   │   ├── Activity_1.gpx
-    │   │   ├── Activity_2.gpx
-    │   │   └── ...
-    │   └── Trail Group 2
-    │       ├── Activity_1.gpx
-    │       ├── Activity_2.gpx
-    │       └── ...
-    ├── ...
-    └── Skiing
-        ├── Trail Group 1
-        │   ├── Activity_12.gpx
-        │   ├── Activity_13.gpx
-        │   └── ...
-        └── Trail Group 3
-            ├── Activity_14.gpx
-            ├── Activity_15.gpx
-            └── ...
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Congratulations! You've successfully deployed your interactive map of outdoor activities using Terraform and AWS. Your map is now accessible to the world, allowing others to explore your exciting adventures and celebrate your progress.</p>
-
-<p>With Terraform's infrastructure-as-code approach, you can easily manage and update your map in the future. You can add new activities by simple uploading new gpx files to the input bucket. If you want to modify the map's appearance, or enhance it with additional features, you can do all this with just a few changes to the Terraform configuration.</p>
-
-<p>So go ahead, share your map with friends, family, and fellow outdoor enthusiasts.</p>
-
-<p>Happy mapping!</p>
-
-<h2>
-  
-  
-  What's Next?
-</h2>
-
-<p>You've learned the basics of deploying your map with Terraform. But there's so much more you can do to enhance your map and create an even richer experience for your audience:</p>
-
-<ul>
-<li><p>Add your own domain to your CloudFront distribution for easier access.</p></li>
-<li><p>Don't want to share your map with everybody? Control access to your map by adding authentication and authorization features with AWS Cognito.</p></li>
-<li><p>Set up a continuous deployment pipeline to automatically update your map whenever you push code changes to your git-repo.</p></li>
-</ul>
-
-<p>The possibilities are endless. Have fun exploring and expanding your outdoor activities map!</p>
-
-<h2>
-  
-  
-  References
-</h2>
-
-<ul>
-<li><p>You can find all the code on <a href="https://github.com/lkrimphove/OutdoorActivities">my GitHub</a></p></li>
-<li><p><a href="https://medium.com/@lukaskrimphove/visualizing-outdoor-activities-with-python-folium-1063baec49a6">My previous story on Folium</a></p></li>
-<li><p><a href="https://www.terraform.io/">Terraform Official Website</a></p></li>
-<li><p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs">Terraform AWS Provider Documentation</a></p></li>
-<li><p><a href="https://registry.terraform.io/modules/terraform-aws-modules">Terraform AWS Modules</a></p></li>
-</ul>
-
-
-
-
-<p>This article was <a href="https://python.plainenglish.io/deploying-your-outdoor-activities-map-with-terraform-16ef83393d90?sk=df5a712040dcaad855d7d760ea17fa18">originally published in "Python in Plain English" on Medium</a>.</p>
-
- </details> 
- <hr /> 
-
- #### - [Beyond Review Comments: Building a Friendlier Code Review Process with Code Reactions](https://dev.to/adadot/beyond-review-comments-building-a-friendlier-code-review-process-with-code-reactions-4job) 
- <details><summary>Article</summary> <p><a href="">Code Reactions</a> 🚀💩<br>
-We welcome all ideas and contributions on <a href="">GitHub</a> 💚!</p>
-
-<p><a href="https://marketplace.visualstudio.com/items?itemName=Adadot.code-reactions" class="ltag_cta ltag_cta--branded">Install extension →</a>
-</p>
-
-
-
-
-<p>
-  <strong>TL;DR</strong>
-  <br>
-
-<pre><code>We created a vscode extension to add emoji reactions, even 
-
-with comments, to any line of code of any Git repo! React and 
-
-see others reactions to any piece of code straight from your
-
-IDE, and have them follow (or not 😉) the code through 
-changes.
-</code></pre>
-
-
-
-
-</p>
-
-<h2>
-  
-  
-  The story behind
-</h2>
-
-<p>After almost a decade of writing code in all sorts of environments, in a small startup or in a big enterprise with thousands of developers, we always felt <code>that there were some things that should be alongside our code, but never could be</code>.</p>
-
-<ol>
-<li><p><strong>Giving and receiving feedback for your code</strong>. As developers we <em>learn from others</em>, and their reaction to our code either that being a 👍, 👎 or sometimes even a 💩 or a 🚀, is invaluable to our progress. Unfortunately, apart from reviews we don't really get the chance to tell someone what we think about their code.</p></li>
-<li>
-<p><strong>Putting a mark or a note in the code</strong>. You are going about your task and suddenly you notice a piece of code that has that <code>smell</code>, or just <code>doesn't look right</code>, or is <code>outdated</code>, or uses an <code>old syntax</code>, or looks like it could even be <code>an issue</code>. Now your choices are: </p>
-
-<ol>
-<li>Drop the task you are doing and fix it </li>
-<li>Create an issue somewhere to come back to it at another time (or forever forget)</li>
-<li>Do it with your task (<em>ouch!</em>)</li>
-<li>Leaving a comment in the code and puzzling yourself a few months down the line, when the code has moved/changed, with the quiz <em>"what was I referring to here"</em>.</li>
-</ol>
-
-
-</li>
-<li><p>Code quality metrics are very cool <em>as a concept</em>! However once used we all know that they feel a bit neither here nor there. Eg is a code bad if it has high complexity? Maybe, maybe not! I'd like to <strong>know what my collaborators thinks of the code</strong>, which parts are for a 😍 and which for a 🤔 and which repos and files are the ones that might need a look into cause 💩 has started pilling on.</p></li>
-</ol>
-
-<p>That's why we wanted to make something that's:</p>
-
-<ul>
-<li>Open Source 💚 (share the love!)</li>
-<li>It works in the <strong>IDE</strong>
-</li>
-<li>You can add <strong>emojis</strong> and <strong>comments</strong> 🚀</li>
-<li>You can see others <strong>emojis</strong> and <strong>comments</strong> 👀</li>
-<li>
-<strong>Follows (or leaves) the code</strong> as it changes </li>
-</ul>
-
-<h2>
-  
-  
-  What we built
-</h2>
-
-<p>We built an IDE extension (vscode only for the time being,<br>
-Intellij is in the works) that allows you to add emoji <br>
-reactions, even with comments, to any line of code of any Git<br>
-repo! </p>
-
-<p>You can react and see others reactions to any piece of code straight from your IDE! </p>
-
-<p>And <code>Reactions follow the code!</code>, meaning that it stays there for as long as the relevant line has not changed - <em>whitespace doesn't count as change</em> - and they get removed from the line when it's changed.</p>
-
-<p>This is the <strong>first version</strong>, so it supports limited amount of emojis for now, and it has only a few features. We are super excited to have the community shape the tool and decide on the new features by contributing on GitHub</p>
-<h2>
-  
-  
-  Features
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--o8v9y2KU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tm69osiqctdrh84mhh5m.gif" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--o8v9y2KU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tm69osiqctdrh84mhh5m.gif" alt="Features" width="800" height="494"></a></p>
-
-<ul>
-<li>
-<strong>Different ways to see reactions</strong> and add yours (status bar, inline decoration, annotations, reactions feed panel)</li>
-<li>
-<strong>Notifications</strong> on new reactions (either on the repo or specifically on your lines)</li>
-<li>We didn't want to bloat the IDE, so we created a <strong>lightweight website</strong> for all the views we didn't feel belonged in the IDE (ie cross-repo data) so you are able to get information for all your projects.</li>
-</ul>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ptYVnIAN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ba1oas4d0xxwe5kqmh2m.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ptYVnIAN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ba1oas4d0xxwe5kqmh2m.png" alt="Frontend" width="800" height="526"></a></p>
-<h2>
-  
-  
-  Future features
-</h2>
-
-<p>We are super excited to have your input on GitHub to help us shape the future of this extension with what the community wants and needs!</p>
-
-
-<div class="ltag-github-readme-tag">
-  <div class="readme-overview">
-    <h2>
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A9-wwsHG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev.to/assets/github-logo-5a155e1f9a670af7944dd5e12375bc76ed542ea80224905ecaf878b9157cdefc.svg" alt="GitHub logo">
-      <a href="https://github.com/AdadotTeam">
-        AdadotTeam
-      </a> / <a href="https://github.com/AdadotTeam/vscode-reactions">
-        vscode-reactions
-      </a>
-    </h2>
-    <h3>
-      Add and see other's reactions to your code!
-    </h3>
-  </div>
-  <div class="ltag-github-body">
-    
-<div id="readme" class="md">
-<h1>
-Code Reactions — Emoji reactions for any Git repo</h1>
-<blockquote>
-<p>Add emoji reactions, even with comments, to any Git repo! React and see others
-reactions to any piece of code straight from your IDE.</p>
-</blockquote>
-<p>Code Reactions is an open-source extension for Visual Studio Code, made
-by our team at <a href="https://adadot.com" rel="nofollow">Adadot</a> with a mind to give back to the community.</p>
-<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>You saw some nice piece of code? Now you can add a 👍, or maybe even a 😍 and spread the love.
-
-It seems like there might be a bug there? Give it a 🐛 with a comment on your finding 
-and come back to fix it when you get the chance.
-
-This code feels like it has quite a smell... You think it might justify a 💩? Leave it there 
-and bring the team around to help you scoop all of these.
-</code></pre></div>
-<p>We give you the ability to react to any…</p>
-</div>
-  </div>
-  <div class="gh-btn-container"><a class="gh-btn" href="https://github.com/AdadotTeam/vscode-reactions">View on GitHub</a></div>
-</div>
-
-
- </details> 
- <hr /> 
-
- #### - [Don’t compare and compete with others, instead collaborate](https://dev.to/gregorojstersek/dont-compare-and-compete-with-others-instead-collaborate-b8j) 
- <details><summary>Article</summary> <p>If you are a person who likes to compare and compete with your colleagues. Let me tell you one important thing. Don't compare or compete, instead help and collaborate.</p>
-
-<p>Being a lone wolf and just focusing on yourself and your progress will certainly get you somewhere. But rather than trying to do everything yourself. You have a group of like-minded people who are all on the same path as you!</p>
-
-<p>Your progression is going to be much:</p>
-
-<ul>
-<li>faster,</li>
-<li>more exciting,</li>
-<li>more fulfilling.</li>
-</ul>
-
-<p>Compete only with yourself and try to get better every day!</p>
-
-<p>The software development world is smaller than you think. Collaborating and helping each other instead of competing puts you in a position where fellow like-minded people can help you find opportunities.</p>
-
-<p><strong>A practical example</strong></p>
-
-<p>If you are searching for a new role, the best way to find it is to get recommended for the position.</p>
-
-<p>If someone from my team recommends a candidate.</p>
-
-<p>I already know 2 things:</p>
-
-<p>He/she already is familiar to an extent with a person on my team, so the collaboration and onboarding would be easier.</p>
-
-<p>He/she has already shown to some extent capability to be able to do the job.</p>
-
-<p>This gives you much better chances right from the start. Make sure to help each other to grow and progress in careers!</p>
-
-<p>What are your thoughts?</p>
-
-<blockquote>
-<p>This is part of the newsletter article on my Engineering Leadership newsletter. If you liked this, you are going to love my newsletter. Join here: <a href="https://newsletter.eng-leadership.com/">Engineering Leadership newsletter</a>, 8100+ engineering leaders are already reading it!</p>
-</blockquote>
+<p>I urge you all to share your favorite discussion of the past week below in the comments. And if you're up for it, give the author an @mention — it'll probably make 'em feel good. 💚</p>
 
  </details> 
  <hr /> 
