@@ -116,1332 +116,708 @@
 <br/>
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Code review - a unique way of debugging](https://dev.to/namatuzio/code-review-a-unique-way-of-debugging-13kp) 
- <details><summary>Article</summary> <p><strong>How did you go about finding someone to work with?</strong> </p>
+ #### - [Optimizing Database Performance with Indexing in Apache AGE and PostgreSQL](https://dev.to/danielwambo/optimizing-database-performance-with-indexing-in-apache-age-and-postgresql-327p) 
+ <details><summary>Article</summary> <p>In the world of databases, performance is paramount. Apache AGE, an extension of PostgreSQL designed for managing graph data, provides powerful tools to optimize database performance. One of the key techniques for achieving this is through indexing. In this comprehensive guide, we'll explore how to leverage indexing in Apache AGE and PostgreSQL to enhance database performance. We'll also provide step-by-step instructions and code snippets, so you can follow along and implement these strategies in your own projects.</p>
 
-<p>A lot of students had posted around our Slack channel looking for help, which made it very easy to find someone looking for a code reviewer. I told one of my classmates I would look through his repo and ended up sending him mine through a DM.</p>
+<p><strong>Understanding Indexing</strong><br>
+<strong>Indexing Basics</strong><br>
+Indexing is a database optimization technique that significantly speeds up data retrieval. It works by creating data structures that provide quick access to rows in a table based on the values of one or more columns. Think of it like an index in a book; it allows you to quickly find the information you need.</p>
 
-<p><strong>What was it like testing and reviewing someone else's code? Did you run into any problems? Did anything surprise you?</strong></p>
+<p><strong>Types of Indexes</strong><br>
+Before we dive into the practical aspects, let's briefly explore the types of indexes available in PostgreSQL and Apache AGE:</p>
 
-<p>It was very fun! It provided me with a lot of insight into the many ways a solution could've been built. It also made me realize I have some missing features in my release. I did run into a couple of problems, mainly in the functionality which I will get into later. The most surprising thing about the repo I reviewed was the complexity of the solution. It was very nicely crafted with a lot of techniques used and a variety of files that held either classes or helper functions.</p>
+<p><strong>Single-Column Index:</strong> Indexes created on a single column to speed up searches based on that column's values.</p>
 
-<p><strong>What was it like having someone test and review your code? Were you surprised by anything?</strong></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qpp4bF9M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a22mf1xqhuz4or87puv0.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qpp4bF9M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a22mf1xqhuz4or87puv0.png" alt="Image description" width="641" height="77"></a><br>
+<strong>Multi-Column Index:</strong> Indexes created on multiple columns to optimize queries involving those columns.</p>
 
-<p>I was surprised by how much I ended up overlooking. Obvious functionalities such as only utilizing text files went completely over my head but were found by my code reviewer, thankfully.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vNXwUt9G--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o4j83kpefaj0n36c75nt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vNXwUt9G--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o4j83kpefaj0n36c75nt.png" alt="Image description" width="638" height="71"></a><br>
+<strong>Creating Indexes in Apache AGE</strong><br>
+Indexing in Apache AGE involves optimizing graph data structures. Let's look at how you can create indexes for nodes and relationships:</p>
 
-<p><strong>What kind of issues came up in your the testing and review? Discuss a few of them in detail.</strong></p>
+<p><strong>Creating an Index for Graph Nodes in Apache AGE:</strong></p>
 
-<p>There was a relatively large issue where single-file-translation was not working for me. I tried a lot of different things to get it to work on my machine but it didn't seem to work, what made it strange was that folder translations worked flawlessly. One smaller thing I found was that the student forgot to normalize text in the files so adding multiple new lines would add a blank </p>
-<p> tag in the HTML conversion.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AEEsfg73--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qf9u0m38f54ewserps26.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AEEsfg73--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qf9u0m38f54ewserps26.png" alt="Image description" width="637" height="69"></a><br>
+<strong>Creating an Index for Graph Relationships in Apache AGE:</strong><br>
+--This creates an index on the "timestamp" property of relationships labeled as "MESSAGED"</p>
 
-<p><strong>Provide links to issues you filed, and discuss what you found</strong></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PTb2v1CA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xkmgdzzomoquyxkmfffs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PTb2v1CA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xkmgdzzomoquyxkmfffs.png" alt="Image description" width="641" height="38"></a><br>
+<strong>Using EXPLAIN ANALYZE to Optimize Queries:</strong></p>
 
-<p>As discussed previously, one of the main functionalities didn't seem to work and a smaller bug was present, another issue was that the README didn't feature any installation or usage processes at the time I reviewed the repo. </p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--mlme5mxO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ibuab952rujeamgldbq3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mlme5mxO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ibuab952rujeamgldbq3.png" alt="Image description" width="647" height="92"></a><br>
+<strong>Reindexing an Index in PostgreSQL:</strong></p>
 
-<p>Link to reviewed repos' issues:<br>
-<a href="https://github.com/Amnish04/til-page-builder/issues">https://github.com/Amnish04/til-page-builder/issues</a></p>
-
-<p><strong>Provide links to issues that were filed on your repo, and what they were about</strong></p>
-
-<p>As I said earlier, I mistakenly forgot to include a couple of key things. Firstly I forgot to include some setup instructions within my README, but featured usage instructions. I also forgot to check for .txt files in the single conversion!</p>
-
-<p>Link to my repos' issues:<br>
-<a href="https://github.com/Namatuzio/tiller/issues">https://github.com/Namatuzio/tiller/issues</a></p>
-
-<p><strong>Were you able to fix all your issues? What was that like?</strong></p>
-
-<p>I was able to fix most and know how to fix the rest, though I wasn't able to implement it in time due to time restraints with family events.</p>
-
-<p><strong>What did you learn through the process of doing the testing and reviewing?</strong></p>
-
-<p>I honestly learned a lot. I never knew having another set of eyes on a project would make it so much easier to debug code and create a stronger solution for a problem. It makes sense, but I'm amazed at how effective it is both for learning and building stronger code consistency. </p>
-
- </details> 
- <hr /> 
-
- #### - [Navigating Success: The Art of Following Instructions in the Tech Industry](https://dev.to/coderosion/navigating-success-the-art-of-following-instructions-in-the-tech-industry-5ef7) 
- <details><summary>Article</summary> <p>In the fast-paced world of technology, following instructions might not seem like a skill that’s particularly glamorous or exciting. However, it’s a skill that can make or break your career in the tech industry. Whether you’re a software developer, data analyst, project manager, or any other tech professional, your ability to follow instructions effectively can have a profound impact on your success.</p>
-
-<p>In this article, we’ll explore why following instructions is crucial in the tech industry, and we’ll provide you with practical tips on how to excel at it. So, let’s dive in!</p>
-
-<p><strong>Understanding the Importance of Instructions</strong><br>
-In tech, precision matters. A single line of code or a small oversight in following instructions can lead to software bugs, security vulnerabilities, or project delays. Understanding the significance of instructions is the first step toward excelling in this area.</p>
-
-<p><strong>Read Carefully and Thoroughly</strong><br>
-When you receive instructions, be it a project brief, a coding guideline, or an email from your manager, read it carefully and thoroughly. Take your time to understand the context, objectives, and any specific requirements.</p>
-
-<p><strong>Ask Clarifying Questions</strong><br>
-If you encounter ambiguities or uncertainties in the instructions, don’t hesitate to ask for clarification. It’s better to seek clarity upfront than to make assumptions that could lead to errors later on.</p>
-
-<p><strong>Create a Checklist</strong><br>
-For complex tasks or projects with multiple steps, create a checklist based on the instructions. This can help ensure that you don’t miss any crucial details along the way.</p>
-
-<p><strong>Prioritize Tasks</strong><br>
-Often, instructions come with a timeline or a sense of priority. Be sure to understand which tasks are most critical and need to be addressed first. Proper task prioritization can significantly impact project success.</p>
-
-<p><strong>Communicate Progress</strong><br>
-Regularly update your team or supervisor on your progress. in order to ensure that everyone is on the same page and which will go a long way to help prevent any misunderstandings.</p>
-
-<p><strong>Attention to Detail</strong><br>
-Pay meticulous attention to detail. In coding, a missing semicolon or a small syntax error can lead to a program’s failure. In data analysis, overlooking a crucial variable can skew results.</p>
-
-<p><strong>Quality Assurance</strong><br>
-Always double-check your work against the instructions. Verify that you’ve met all the requirements and that your output aligns with the intended outcome.</p>
-
-<p><strong>Version Control</strong><br>
-When working on collaborative projects, use version control systems like Git to track changes and maintain different versions of code or documents. This helps ensure that you can backtrack if needed.</p>
-
-<p><strong>Embrace Feedback</strong><br>
-Be open to feedback from peers, supervisors, or clients. Feedback can be a valuable source of guidance on whether you’ve followed instructions correctly and can help you improve.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0Y7okg-W--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k0u0m6y7mp90pvfitlqi.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0Y7okg-W--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k0u0m6y7mp90pvfitlqi.png" alt="Image description" width="647" height="64"></a></p>
 
 <p><strong>Conclusion</strong><br>
-In the tech industry, following instructions isn’t a mundane task; it’s a cornerstone of success. By approaching instructions with diligence, attention to detail, and effective communication, you can set yourself apart as a reliable and valuable professional. In a field where innovation and precision are paramount, mastering this skill will not only benefit your career but also contribute to the success of your projects and your team. So, the next time you receive a set of instructions, remember that your ability to follow them could be the key to unlocking your full potential in the tech world.</p>
+In conclusion, indexing stands as the unsung hero in the realm of database performance optimization, and in the context of Apache AGE and PostgreSQL, its power shines brightly. Throughout this guide, we've explored the foundations of indexing, the diverse types available, and the intricate processes of creating and managing indexes. Whether we ventured into single-column and multi-column indexes in PostgreSQL, or navigated the complex world of graph data indexing in Apache AGE, one thing remained clear: indexing is the key to unlocking lightning-fast query responses and efficient data retrieval. Armed with advanced techniques, query optimization strategies, and vigilant monitoring, you now possess the tools to elevate your database performance to new heights. As you embark on your indexing journey, remember that it's a dynamic force, adaptable to your unique database needs, and the impact it can have on your applications is nothing short of transformative.</p>
 
  </details> 
  <hr /> 
 
- #### - [What is the difference between Delphi Community Edition and Delphi Professional Edition?](https://dev.to/s15458304scott/what-is-the-difference-between-delphi-community-edition-and-delphi-professional-edition-130m) 
- <details><summary>Article</summary> <p>Delphi is a programming language and integrated development environment (IDE) primarily used for creating software applications that run on Microsoft Windows. It's based on the Pascal programming language and offers a user-friendly IDE with features like a code editor, visual form designer, and debugger. Delphi promotes component-based development, supports object-oriented programming, and excels in database connectivity. While it originated as a Windows-centric platform, it has expanded to support cross-platform development using the FireMonkey framework. Delphi has an active developer community and is known for its rapid application development capabilities. If you want to <a href="https://elvanco.com/blog/how-to-install-delphi-on-windows-10">install Delphi on Windows 10</a>, follow the steps outlined in the installation guide.</p>
+ #### - [The first step of Bun](https://dev.to/obrkn/the-first-step-of-bun-56ib) 
+ <details><summary>Article</summary> <p>As you know, <a href="https://bun.sh/">Bun</a> is the fastest JavaScript runtime and the substitute for Node.js.</p>
 
-<h2>
-  
-  
-  Delphi Community Edition VS Delphi Professional Edition?
-</h2>
+<p>Today, I want to introduce the first step of Bun.</p>
 
 <h3>
   
   
-  What are the key features of Delphi Community Edition?
+  Install Bun globally
 </h3>
 
-<p>1.<strong>Free:</strong> The Community Edition is typically available for free, making it accessible to individual developers, hobbyists, and small teams who have budget constraints.</p>
 
-<p>2.<strong>Limited Features:</strong> It may come with some limitations compared to the professional or enterprise editions, such as restricted platform support, reduced database connectivity options, or missing advanced features.</p>
 
-<p>3.<strong>Non-Commercial Use:</strong> The Community Edition may be restricted to non-commercial or personal use. This means you can use it for learning, experimentation, and small personal projects but not for commercial software development.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Open your terminal</span>
+<span class="nv">$ </span>curl <span class="nt">-fsSL</span> https://bun.sh/install | bash
+</code></pre>
 
-<p>4.<strong>Community Support:</strong> Support for the Community Edition may primarily come from the Delphi community, <a href="https://devhubby.com/tag/delphi">Delphi forums</a>, and online resources, rather than dedicated customer support.</p>
+</div>
+
+
 
 <h3>
   
   
-  What are the key features of Delphi Professional Edition?
+  Create a TypeScript file
 </h3>
 
-<p>1.<strong>Paid:</strong> The Professional Edition typically requires a paid license, which can vary in price depending on the version and features included.</p>
 
-<p>2.<strong>Full Feature Set:</strong> The Professional Edition generally includes the full set of features and capabilities offered by Delphi, including support for various platforms, advanced database connectivity, and enterprise-level tools.</p>
 
-<p>3.<strong>Commercial Use:</strong> It is licensed for commercial use, allowing developers to create and sell software applications for profit.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># In your terminal</span>
+<span class="nv">$ </span><span class="nb">touch </span>index.tsx
+</code></pre>
 
-<p>4.<strong>Official Support:</strong> Purchasing a Professional Edition often includes access to official customer support from the software vendor. This can be crucial for businesses developing mission-critical applications.</p>
+</div>
 
-<p>5.<strong>Updates and Upgrades:</strong> Professional Edition users typically receive regular updates, bug fixes, and the option to upgrade to new versions when they become available.</p>
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// index.tsx</span>
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">Bun</span><span class="p">.</span><span class="nx">serve</span><span class="p">({</span>
+  <span class="na">port</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="dl">"</span><span class="s2">Welcome to Bun!</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Listening on localhost:</span><span class="p">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Lounch a server with Bun
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># In your terminal</span>
+<span class="nv">$ </span>bun run index.tsx
+</code></pre>
+
+</div>
+
+
+
+<p><a href="http://localhost:3000/">http://localhost:3000/</a></p>
+
+<p>Welcome to Bun!!!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WrgcNjGP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/of0spitb24i04zjgyjeu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WrgcNjGP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/of0spitb24i04zjgyjeu.png" alt="Image description" width="538" height="198"></a></p>
 
  </details> 
  <hr /> 
 
- #### - [Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm](https://dev.to/firstfingerin/top-container-orchestration-platforms-kubernetes-vs-docker-swarm-56pd) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zmCWaH9Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/Top-Container-Orchestration-Platforms-Compared-Kubernetes-vs.-Docker-Swarm.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zmCWaH9Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/Top-Container-Orchestration-Platforms-Compared-Kubernetes-vs.-Docker-Swarm.jpg" alt="Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm" width="800" height="450"></a></p>
+ #### - [Top 5 Parallax Effects Source Code](https://dev.to/noobizdev/top-5-parallax-effects-source-code-5j5) 
+ <details><summary>Article</summary> <p>Before diving into the examples, let's briefly understand what parallax scrolling is. Parallax scrolling is a web design technique where the background images move at a different speed than the foreground content, creating a captivating 3D effect. This technique can be achieved using HTML, CSS, and JavaScript.</p>
 
-<p>Kubernetes and Docker Swarm are both open-source container orchestration platforms that automate container deployment, scaling, and management. However, some critical differences between the two are important to understand when deciding which solution to use.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--USVBilV6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-RhF4D_sw6gk-unsplash--1--1.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--USVBilV6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-RhF4D_sw6gk-unsplash--1--1.jpg" alt="Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm" width="800" height="533"></a></p>
+
+
+<blockquote>
+<p>Help us grow our community by sharing this post with your friends! ❤️</p>
+
+
+</blockquote>
+
+
 
 <h2>
   
   
-  What is Kubernetes?
+  1. Multi-layered Parallax Illustration
 </h2>
 
-<p><a href="https://kubernetes.io/">Kubernetes (also known as K8s) was originally designed by Google</a> and is now maintained by the <a href="https://dev.to/anurag_vishwakarma/what-is-cloud-native-4npc">Cloud Native</a> Computing Foundation. It provides a <a href="https://dev.to/anurag_vishwakarma/what-is-langchain-framework-example-32i1-temp-slug-2703434">framework</a> to run distributed systems resiliently across clusters of nodes. Kubernetes coordinates containerized applications across multiple hosts, ensuring there is no downtime during maintenance or when scaling.</p>
-
-<h3>
-  
-  
-  Kubernetes Architecture
-</h3>
-
-<p>The Kubernetes architecture consists of master and worker nodes. The components include:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9vNonLF3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/Kubernetes_architecture.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9vNonLF3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/Kubernetes_architecture.png" alt="Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm" width="800" height="314"></a><br>
-<em>Kubernetes architecture consists of master and worker nodes.</em></p>
-
-<ul>
-<li>
-<strong>Masters:</strong> These oversee orchestration and cluster health. Master components provide a unified view of the cluster and include:
-
-<ul>
-<li>
-<strong>kube-apiserver:</strong>  The <a href="https://dev.to/anurag_vishwakarma/the-most-popular-apis-rest-soap-graphql-and-grpc-explained-40e6-temp-slug-1920113">API server</a> validates and configures data for pods and services.</li>
-<li>
-<strong>kube-scheduler:</strong>  This schedules pods across nodes.</li>
-<li>
-<strong>kube-controller-manager:</strong>  The controller manager runs controllers for replication, accounts, endpoints, etc.</li>
-</ul>
+<p>Another great parallax effect is developed by Patrick Westwood using HTML(Haml), CSS(SCSS), and JS(CoffeeScript).<br>
+<a href="https://codepen.io/patrickwestwood/pen/MyoBaY">Source Code</a></p>
 
 
-</li>
-<li>
-<strong>Nodes:</strong> These are the workers that run containerized applications. A node contains services like kubelet and kube-proxy to communicate with the master and run pods.
-
-<ul>
-<li>
-<strong>kubelet:</strong>  This connects nodes to the cluster and handles pod lifecycles.</li>
-<li>
-<strong>kube-proxy:</strong>  This maintains networking rules and performs connection forwarding.</li>
-<li>
-<a href="https://dev.to/anurag_vishwakarma/what-is-the-difference-between-pod-and-container-562k-temp-slug-691730"><strong>Pods</strong></a> <strong>:</strong>  These are a group of one or more containers with shared resources. Pods are the basic units deployed and managed in Kubernetes.</li>
-</ul>
-
-
-</li>
-</ul>
-
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5aPQgTR5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-RhF4D_sw6gk-unsplash--1--2.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5aPQgTR5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-RhF4D_sw6gk-unsplash--1--2.jpg" alt="Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm" width="800" height="533"></a></p>
 
 <h2>
   
   
-  What is Docker Swarm?
+  2. Parallax Background
 </h2>
 
-<p><a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a> is Docker's native <a href="https://dev.to/anurag_vishwakarma/bare-metal-vs-virtual-machines-vs-containers-the-differences-jkh">container orchestration tool</a>. It turns a pool of Docker hosts into a single virtual host for easier container deployment and scaling. Swarm serves the standard Docker <a href="https://firstfinger.in/tag/apis/">API</a> so any tool that communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.</p>
-
-<h3>
-  
-  
-  Docker Swarm Architecture
-</h3>
-
-<p>The Docker Swarm architecture comprises managers and workers. The components include:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Z4zm5SvD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/Docker_swarm_architecture.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Z4zm5SvD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/Docker_swarm_architecture.png" alt="Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm" width="800" height="533"></a><br>
-<em>The Docker Swarm architecture comprises managers and workers.</em></p>
-
-<ul>
-<li>
-<strong>Managers:</strong>  These nodes perform orchestration and cluster management. Managers dispatch units of work called tasks.</li>
-<li>
-<strong>Workers:</strong>  These are the nodes that run tasks dispatched from managers.</li>
-<li>
-<strong>Services:</strong>  This is the definition of the tasks to execute on the worker nodes including container images, ports, replicas, etc.</li>
-</ul>
+<p>A No JavaScript Parallax background by Ravi Dhiman, developed using HTML(Pug) and CSS(SCSS).<br>
+<a href="https://codepen.io/ravid7000/pen/LREEzv">Source Code</a></p>
 
 
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0CB80GoN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-5bWWxcpAjZ4-unsplash--1--1.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0CB80GoN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-5bWWxcpAjZ4-unsplash--1--1.jpg" alt="Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm" width="800" height="1200"></a></p>
 
 <h2>
   
   
-  Kubernetes vs. Docker Swarm
+  3. Coderado.co Denver Parallax Scrolling
 </h2>
 
-<h3>
+<p>A parallax effect page with a city skyline as the backdrop. Developed by Jeremy Hull using HTML and CSS(SCSS).<br>
+<a href="https://codepen.io/coderado/pen/BzGdxW">Source Code</a></p>
+
+
+
+<h2>
   
   
-  Feature Comparison
-</h3>
+  4. 3D CSS Parallax Depth Effect
+</h2>
 
-<p>While Kubernetes and Docker Swarm solve similar challenges in container orchestration, there are some major differences in features:</p>
+<p>CSS translate and rotate transforms based on mouse move to simulate some z-axis depth on the card and individual movie characters. Developed by Adrian Payne using HTML, CSS(SCSS), and JavaScript(Babel).<br>
+<a href="https://codepen.io/dazulu/pen/VVZrQv">Source Code</a></p>
 
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th></th>
-<th>Kubernetes</th>
-<th>Docker Swarm</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>✅ Pros</strong></td>
-<td>- More powerful and full-featured<br>- Larger ecosystem and community support<br>- Supports larger and more complex deployments<br>- Better for microservices and scaling<br>- More native features like load balancing, rolling updates</td>
-<td>
-<br>- Easier to setup initially<br>- Simpler architecture and concepts<br>- Integrated with Docker engine<br>- Less resources required for small deployments</td>
-</tr>
-<tr>
-<td><strong>❌ Cons</strong></td>
-<td>- Steep learning curve<br>- More complex to manage and configure<br>- Overkill for simpler deployments<br>- Resource intensive</td>
-<td>
-<br>- Limited native features<br>- Less options for storage, networking<br>- Scaling limitations<br>- Immature ecosystem</td>
-</tr>
-<tr>
-<td><strong>⚙️ Features</strong></td>
-<td>- Automatic binpacking<br>- Horizontal pod autoscaler<br>- Multiple scheduler options<br>- Richer network model<br>- Ingress controller<br>- StatefulSets and DaemonSets</td>
-<td>
-<br>- Overlay networks<br>- Auto-generated service proxies<br>- Node health checking<br>- Basic schedulers</td>
-</tr>
-<tr>
-<td><strong>🚀 Use Cases</strong></td>
-<td>- Production grade deployments<br>- Microservices and cloud native apps<br>- Rapidly scaling applications<br>- ML/AI workloads<br>- Multi-cluster and multi-cloud</td>
-<td>
-<br>- Testing and dev environments<br>- Single node clusters<br>- Smaller applications and workloads<br>- Learning orchestration concepts</td>
-</tr>
-</tbody>
-</table></div>
 
-<h3>
+
+<h2>
   
   
-  #1. Cluster Management
-</h3>
+  5. CSS Parallax Orbs
+</h2>
 
-<ul>
-<li>
-<a href="https://dev.to/anurag_vishwakarma/how-to-create-kubernetes-clusters-on-aws-4jba-temp-slug-7135100">Kubernetes has more powerful features for large deployments</a> like RBAC and storage management.</li>
-<li>Docker Swarm is simpler to initially configure but less robust at scale.</li>
-</ul>
+<p>A parallax effect inspired by Sims 4 made by Jamie Coulter using HTML(Haml) and CSS(SCSS).<br>
+<a href="https://codepen.io/jcoulterdesign/pen/OMOqjy">Source Code</a></p>
 
-<h3>
+
+
+
+<blockquote>
+<p>If you found this helpful, give us a thumbs up and don't forget to follow us for more!<br>
+Thanks for reading, See you next time... ❤️👋</p>
+
+
+</blockquote>
+
+
+
+<h2>
   
   
-  #2. Load Balancing and Service Discovery
-</h3>
+  Final Thoughts on The CSS Parallax Effect
+</h2>
 
-<ul>
-<li>Kubernetes natively handles this through its services and robust service discovery.</li>
-<li>Docker Swarm uses VIPs and its DNS for <a href="https://dev.to/anurag_vishwakarma/what-makes-load-balancer-vs-api-gateway-different-and-use-cases--27bi-temp-slug-1230060">load balancing</a> and discovery.</li>
-</ul>
+<p>The parallax effect has grown more popular as a way to improve user experiences. This design strategy boosts engagement and increases interactions.</p>
 
-<h3>
-  
-  
-  #3. Storage and Volumes
-</h3>
+<p>Throughout this article, you have gotten to know CSS parallax in depth. You learned about code snippets that enable you to include <strong><a href="https://noobizdev.tech/how-to-create-parallax-effects-with-css-to-your-website-with-example/">parallax effect website</a></strong>. Plus, you got to explore examples of web pages that employ parallax with skill, distinction, and creativity.</p>
 
-<ul>
-<li>Kubernetes supports a wide range of volume types including <a href="https://firstfinger.in/tag/cloud/">cloud</a>, <a href="https://firstfinger.in/tag/network/">network</a>, and plugin storage.</li>
-<li>Docker Swarm has limited volume plugin support.</li>
-</ul>
+<p>Remember to keep a balanced approach to parallax usage.</p>
 
-<h3>
-  
-  
-  #4. Networking
-</h3>
+ </details> 
+ <hr /> 
 
-<ul>
-<li>Kubernetes model includes multiple networking per pod, network policies, and IPVS load balancing.</li>
-<li>Docker Swarm uses host-based routing mesh and overlay networks.</li>
-</ul>
+ #### - [Troubleshooting parallel routing in Next.js](https://dev.to/zmzlois/troubleshooting-parallel-routing-in-nextjs-pdo) 
+ <details><summary>Article</summary> <p>Parallel routing is great --- it allows you to render a slot based on certain conditions conditionally, either auth or data fetching status. </p>
 
-<h3>
-  
-  
-  #5. Security
-</h3>
+<p>If you haven't heard of or used parallel routing before, please check <a href="https://nextjs.org/docs/app/building-your-application/routing/parallel-routes">this</a></p>
 
-<ul>
-<li>Kubernetes provides native RBAC, secrets management, security policies, and network policies.</li>
-<li>Docker Swarm relies more on third-party tools for security.</li>
-</ul>
+<p>But it can go wrong very quick, luckily fixes are quick too!</p>
 
-<h3>
-  
-  
-  #6. Scaling
-</h3>
+<p>In a scenario you have a blank page comes with a layout, and you are trying to hydrate the page with three parallel route: <code>overview</code>, <code>projects</code>, and <code>dashboard</code> to show different things to your users. But it can break when you have a file structure like<br>
+</p>
 
-<ul>
-<li>Kubernetes deployments and replicas make scaling out simpler.</li>
-<li>Docker Swarm relies more on an external service registry for scaling.</li>
-</ul>
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="o">|-</span><span class="p">[</span><span class="nx">workspaceId</span><span class="p">]</span>
+<span class="o">|--</span><span class="nx">create</span><span class="o">-</span><span class="nx">project</span>
+<span class="o">|--</span><span class="nx">settings</span>
+<span class="o">|--</span><span class="p">@</span><span class="nd">overview</span>
+<span class="o">|--</span><span class="p">@</span><span class="nd">projects</span>
+<span class="o">|--</span><span class="p">@</span><span class="nd">dashboard</span>
+<span class="o">|--</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
+</code></pre>
 
-<h3>
-  
-  
-  #7. Rolling Updates
-</h3>
-
-<ul>
-<li>Kubernetes natively supports rolling updates to deployments.</li>
-<li>Docker Swarm requires reliance on an external service registry.</li>
-</ul>
-
+</div>
 
 
 
 <h4>
   
   
-  Should you have a Cluster with fewer larger nodes or many smaller nodes?
+  Problem 1: it shows you a blank page
+</h4>
+
+<p>What you can do? <br>
+In your <code>layout.tsx</code> file, you have already specified<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">WorkspaceLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+
+  <span class="nl">create</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+  <span class="nl">projects</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+  <span class="nl">overview</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+     <span class="o">&lt;</span><span class="nx">SomeLayout</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">projects</span><span class="p">}</span>
+        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">create</span><span class="p">}</span>
+      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">overview</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/SomeLayout</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Solution 1: In this case, You will need an empty <code>page.tsx</code> like:
 </h4>
 
 
 
-<p><strong>When creating a cluster, one of the first questions that comes up is what type of worker nodes to use and how many of them.</strong>  The total compute capacity of a cluster is the sum of all the constituent node's capacities. There are multiple ways to achieve the desired target capacity of a cluster. For example, if you need a cluster with a total capacity of 8 CPU cores and 32 GB of RAM, you could design your cluster using 4 smaller nodes or 2 larger nodes.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">DashboardPage</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">params</span><span class="p">:</span> <span class="p">{</span> <span class="na">workspaceId</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;&gt;&lt;</span><span class="sr">/&gt;</span><span class="err">;
+</span><span class="p">}</span>
+</code></pre>
 
-<p><u><b><strong>There are pros and cons to both approaches.</strong></b></u> Few large nodes can result in less management overhead, as it is easier to manage a small number of machines than a large number.  <strong>However, this applies primarily to bare metal servers and not to cloud instances.</strong>  If you use cloud instances, you outsource the management of the underlying machines to the cloud provider.</p>
-
-<p>On the other hand, many small nodes can provide higher availability.  <strong>If you have a cluster with two large worker nodes and you lose one, you lose half the cluster capacity.</strong>  Having multiple worker nodes reduces this risk. For example, if you have a ten-node cluster and you lose one, you lose just 10% of your cluster capacity.</p>
-
-<p>There are other factors to consider as well, such as ease of scheduling containers and node auto-scaling. With a large number of resources allocated to a node, it becomes easier for Kubernetes to schedule containers on a cluster with fewer large worker nodes in comparison to smaller nodes. However, with more nodes in the picture, there is more management overhead in terms of taking care of servers, patching and updating them, and maintaining them.</p>
-
-<p>Ultimately, the choice between few large nodes or many small nodes depends on your specific needs and requirements. It's important to carefully consider all the factors when designing your Kubernetes cluster.</p>
-
-
+</div>
 
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--zcCRrIpt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-IVikpA1-iFg-unsplash--1--1.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zcCRrIpt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/08/martin-martz-IVikpA1-iFg-unsplash--1--1.jpg" alt="Top Container Orchestration Platforms: Kubernetes vs. Docker Swarm" width="800" height="533"></a></p>
+
+<p>with an empty fragment and add the implicit children your <code>layout.tsx</code> like so:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code> <span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">WorkspaceLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+  <span class="nl">create</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+  <span class="nl">projects</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+  <span class="nl">overview</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+    <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span> <span class="c1">// it really doesn't matter where this is placed because it's nothing in there, </span>
+     <span class="o">&lt;</span><span class="nx">SomeLayout</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">projects</span><span class="p">}</span>
+        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">create</span><span class="p">}</span>
+      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">overview</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/SomeLayout</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h5>
+  
+  
+  If the <code>page.tsx</code>, or <code>children</code> prop doesn't exist, nextjs can't initialise this segment.
+</h5>
+
+<p>At this point your files will look like<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="o">|-</span><span class="p">[</span><span class="nx">workspaceId</span><span class="p">]</span>
+<span class="o">|--</span><span class="nx">create</span><span class="o">-</span><span class="nx">project</span>
+<span class="o">|--</span><span class="nx">settings</span>
+<span class="o">|--</span><span class="p">@</span><span class="nd">overview</span>
+<span class="o">|--</span><span class="p">@</span><span class="nd">projects</span>
+<span class="o">|--</span><span class="p">@</span><span class="nd">dashboard</span>
+<span class="o">|--</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
+<span class="o">|--</span><span class="nx">page</span><span class="p">.</span><span class="nx">tx</span>
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Problem 2: when you navigate to /[someworkspaceId]/create-project, it shows you a 404 error, tell you page not found or internal server error.
+</h4>
+
+<p>What the heck happened? I have a route there! </p>
+
+<h4>
+  
+  
+  Solution 2: Create a separate layout group
+</h4>
+
+<p>Instead of having a file structure like above, you could have one like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="o">|-</span><span class="p">[</span><span class="nx">workspaceId</span><span class="p">]</span>
+<span class="o">|--</span><span class="nx">create</span><span class="o">-</span><span class="nx">project</span>
+<span class="o">|--</span><span class="nx">settings</span>
+<span class="o">|--</span><span class="nx">page</span><span class="p">.</span><span class="nx">tsx</span>
+<span class="o">|--</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
+<span class="o">|--</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">)</span>
+<span class="o">|---</span><span class="p">@</span><span class="nd">overview</span>
+<span class="o">|---</span><span class="p">@</span><span class="nd">projects</span>
+<span class="o">|---</span><span class="p">@</span><span class="nd">dashboard</span>
+<span class="o">|---</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
+<span class="o">|---</span><span class="nx">page</span><span class="p">.</span><span class="nx">tx</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Move the old <code>layout.tsx</code> into <code>(dashboard)</code> folder but keep the <code>&lt;SomeLayout/&gt;</code> component in <code>[workspaceId]</code> folder, and there you have layouts inherited from a level above, and routes like <code>/[workspaceId]/create-project</code> will work again!</p>
+
+<p>Do you have problems with parallel routing and intercepting routes? Found a solution or not? </p>
+
+<p>Would love to hear from comment section 👇🏻</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Writing Clean Code: Best Practices and Principles](https://dev.to/favourmark05/writing-clean-code-best-practices-and-principles-3amh) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introduction
+</h2>
+
+<p>Writing clean code is a fundamental skill for every software developer. Clean code not only makes your codebase more maintainable and easier to understand but also fosters collaboration among team members. In this comprehensive article, we will explore what clean code is, why it's important, and provide you with a set of best practices and principles to help you write clean and maintainable code.</p>
 
 <h2>
   
   
-  When to Choose Kubernetes vs. Docker Swarm
+  What is Clean Code?
 </h2>
 
-<h3>
-  
-  
-  When to choose one over the other ?
-</h3>
+<p>Clean code is code that is easy to read, easy to understand, and easy to modify. It is code that is devoid of unnecessary complexity, redundancy, and confusion. Clean code follows a set of conventions and best practices that make it more consistent, making it easier for multiple developers to work on the same project seamlessly.</p>
 
-<div class="table-wrapper-paragraph"><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Kubernetes</th>
-<th>Docker Swarm</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Maturity</strong></td>
-<td>More mature</td>
-<td>Less mature</td>
-</tr>
-<tr>
-<td><strong>Features</strong></td>
-<td>A wider range of features</td>
-<td>Fewer features</td>
-</tr>
-<tr>
-<td><strong>Flexibility</strong></td>
-<td>More flexible</td>
-<td>Less flexible</td>
-</tr>
-<tr>
-<td><strong>Ease of use</strong></td>
-<td>More complex</td>
-<td>Easier to use</td>
-</tr>
-<tr>
-<td><strong>Integration with Docker</strong></td>
-<td>Less integrated</td>
-<td>More integrated</td>
-</tr>
-</tbody>
-</table></div>
+<h2>
+  
+  
+  Why is Clean Code Important?
+</h2>
 
 <ol>
-<li>
-<strong>Cluster size</strong> - Kubernetes excels at managing large clusters with thousands of nodes while Docker Swarm is better for smaller clusters.</li>
-<li>
-<strong>Application architecture</strong> - Kubernetes is ideal for microservices-based and cloud-native applications. Docker Swarm can work for monolithic apps.</li>
-<li>
-<strong>Scaling requirements</strong> - Kubernetes makes it easier to scale horizontally with autoscaling features. Scaling Swarm relies more on the external registry.</li>
-<li>
-<strong>Environments</strong> - Kubernetes suits production environments while Swarm is good for dev, and test environments.</li>
-<li>
-<strong>In-house expertise</strong> - Kubernetes' learning curve is steeper than Swarm. Evaluate team skills.</li>
-<li>
-<strong>Maturity and support</strong> - Kubernetes has been production-ready longer and has more extensive community support.</li>
-<li>
-<strong>Feature needs</strong> - Kubernetes has more built-in features while Swarm needs more external tools.</li>
-<li>
-<strong>Cloud integration</strong> - Kubernetes works well for hybrid/multi-cloud. Swarm is tightly integrated with Docker.</li>
-<li>
-<strong>Hardware requirements</strong> - Kubernetes requires more resources while Swarm can work well with fewer nodes.</li>
-<li>
-<strong>Migration complexity</strong> - Moving from Swarm to Kubernetes is easier than vice versa. Consider future needs.</li>
+<li><p><strong>Readability</strong>: Clean code is easy to read, which means that anyone - including your future self - can understand it quickly. This reduces the time required to grasp the code's functionality, leading to faster development and debugging.</p></li>
+<li><p><strong>Maintainability</strong>: Code is read more often than it is written. When you write clean code, it becomes easier to maintain and extend the application over time. This is crucial in the software development lifecycle, where projects often evolve and grow.</p></li>
+<li><p><strong>Collaboration</strong>: Clean code encourages collaboration. When your code is clean and well-organized, other team members can work on it effectively. This makes it easier to divide tasks and work on different parts of the codebase simultaneously.</p></li>
+<li><p><strong>Bug Reduction</strong>: Clean code reduces the likelihood of introducing bugs. Code that is difficult to understand is more prone to errors during modifications or enhancements.</p></li>
+<li><p><strong>Efficiency</strong>: Clean code is efficient code. It typically runs faster and uses fewer resources because it avoids unnecessary operations and complexity.</p></li>
 </ol>
 
-<h3>
+<p>Now that we understand why clean code is important, let's delve into some best practices and principles to help you write clean code.</p>
+
+<h2>
+  
+  
+  Best Practices and Principles for Writing Clean Code
+</h2>
+
+<p>1 . <strong>Meaningful Variable and Function Names</strong></p>
+
+<p>Use descriptive names for variables, functions, classes, and other identifiers. A well-chosen name can convey the purpose of the entity, making the code more understandable. Avoid single-letter variable names or cryptic abbreviations.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># Bad variable name
+x = 5
+
+# Good variable name
+total_score = 5
+</code></pre>
+
+</div>
+
+
+
+<p>2 . <strong>Keep Functions and Methods Short</strong></p>
+
+<p>Functions and methods should be concise and focused on a single task. The Single Responsibility Principle (SRP) states that a function should do one thing and do it well. Shorter functions are easier to understand, test, and maintain. If a function becomes too long or complex, consider breaking it down into smaller, more manageable functions.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Long and complex function
+function processUserData(user) {
+    // Many lines of code...
+}
+
+// Refactored into smaller functions
+function validateUserInput(userInput) {
+    // Validation logic...
+}
+
+function saveUserToDatabase(user) {
+    // Database operation...
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>3 . <strong>Comments and Documentation</strong></p>
+
+<p>Use comments sparingly, and when you do, make them meaningful. Code should be self-explanatory whenever possible. Documentation, such as inline comments and README files, helps other developers understand your code's purpose and usage. Document complex algorithms, non-trivial decisions, and public APIs.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># Bad comment
+x = x + 1  # Increment x
+
+# Good comment
+# Calculate the total score by incrementing x
+total_score = x + 1
+
+</code></pre>
+
+</div>
+
+
+
+<p>4 . <strong>Consistent Formatting and Indentation</strong></p>
+
+<p>Adhere to a consistent coding style and indentation. This makes the codebase look clean and organized. Most programming languages have community-accepted coding standards (e.g., PEP 8 for Python, eslint for JavaScript) that you should follow. Consistency also applies to naming conventions, spacing, and code structure.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Inconsistent formatting
+if(condition){
+    doSomething();
+  } else {
+      doSomethingElse();
+}
+
+// Consistent formatting
+if (condition) {
+    doSomething();
+} else {
+    doSomethingElse();
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>5 . <strong>DRY (Don't Repeat Yourself) Principle</strong></p>
+
+<p>Avoid duplicating code. Repeated code is harder to maintain and increases the risk of inconsistencies. Extract common functionality into functions, methods, or classes to promote code reusability. When you need to make a change, you'll only need to do it in one place.</p>
+
+<p>Suppose you're working on a JavaScript application that calculates the total price of items in a shopping cart. Initially, you have two separate functions for calculating the price of each item type: one for calculating the price of a book and another for calculating the price of a laptop. Here's the initial code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>function calculateBookPrice(quantity, price) {
+    return quantity * price;
+}
+
+function calculateLaptopPrice(quantity, price) {
+    return quantity * price;
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>While these functions work, they violate the DRY principle because the logic for calculating the total price is repeated for different item types. If you have more item types to calculate, you'll end up duplicating this logic. To follow the DRY principle and improve code maintainability, you can refactor the code as follows:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>function calculateItemPrice(quantity, price) {
+    return quantity * price;
+}
+
+const bookQuantity = 3;
+const bookPrice = 25;
+
+const laptopQuantity = 2;
+const laptopPrice = 800;
+
+const bookTotalPrice = calculateItemPrice(bookQuantity, bookPrice);
+const laptopTotalPrice = calculateItemPrice(laptopQuantity, laptopPrice);
+
+</code></pre>
+
+</div>
+
+
+
+<p>In this refactored code, we have a single calculateItemPrice function that calculates the total price for any item type based on the quantity and price provided as arguments. This adheres to the DRY principle because the calculation logic is no longer duplicated.</p>
+
+<p>Now, you can easily calculate the total price for books, laptops, or any other item type by calling calculateItemPrice with the appropriate quantity and price values. This approach promotes code reusability, readability, and maintainability while reducing the risk of errors caused by duplicated code.</p>
+
+<p>6 . <strong>Use Meaningful Whitespace</strong></p>
+
+<p>Properly format your code with spaces and line breaks. This enhances readability. Use whitespace to separate logical sections of your code. Well-formatted code is easier to scan, reducing the cognitive load on readers.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Poor use of whitespace
+const sum=function(a,b){return a+b;}
+
+// Improved use of whitespace
+const sum = function (a, b) {
+    return a + b;
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>7 . <strong>Error Handling</strong></p>
+
+<p>Handle errors gracefully. Use appropriate try-catch blocks or error-handling mechanisms in your code. This prevents unexpected crashes and provides valuable information for debugging. Don't suppress errors or simply log them without a proper response.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Inadequate error handling
+try {
+    result = divide(x, y);
+} catch (error) {
+    console.error("An error occurred");
+}
+
+// Proper error handling
+try {
+    result = divide(x, y);
+} catch (error) {
+    if (error instanceof ZeroDivisionError) {
+        console.error("Division by zero error:", error.message);
+    } else if (error instanceof ValueError) {
+        console.error("Invalid input:", error.message);
+    } else {
+        console.error("An unexpected error occurred:", error.message);
+    }
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>8 . <strong>Testing</strong></p>
+
+<p>Write unit tests to verify your code's correctness. Test-driven development (TDD) can help you write cleaner code by forcing you to consider edge cases and expected behavior upfront. Well-tested code is more reliable and easier to refactor.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>// Example using JavaScript and the Jest testing framework
+test('addition works correctly', () =&gt; {
+    expect(add(2, 3)).toBe(5);
+    expect(add(-1, 1)).toBe(0);
+    expect(add(0, 0)).toBe(0);
+});
+
+</code></pre>
+
+</div>
+
+
+
+<p>9 . <strong>Refactoring</strong></p>
+
+<p>Refactor your code regularly. As requirements change and your understanding of the problem domain deepens, adjust your code accordingly. Refactoring helps maintain clean code as the project evolves. Don't be afraid to revisit and improve existing code when necessary.</p>
+
+<p>Suppose you have a function that calculates the total price of items in a shopping cart with a fixed discount percentage:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>function calculateTotalPrice(cartItems) {
+    let totalPrice = 0;
+    for (const item of cartItems) {
+        totalPrice += item.price;
+    }
+    return totalPrice - (totalPrice * 0.1); // Apply a 10% discount
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>Initially, this function calculates the total price and applies a fixed discount of 10%. However, as the project evolves, you realize that you need to support variable discounts. To refactor the code to make it more flexible, you can introduce a discount parameter:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>function calculateTotalPrice(cartItems, discountPercentage) {
+    if (discountPercentage &lt; 0 || discountPercentage &gt; 100) {
+        throw new Error("Discount percentage must be between 0 and 100.");
+    }
+
+    let totalPrice = 0;
+    for (const item of cartItems) {
+        totalPrice += item.price;
+    }
+
+    const discountAmount = (totalPrice * discountPercentage) / 100;
+    return totalPrice - discountAmount;
+}
+
+</code></pre>
+
+</div>
+
+
+
+<p>In this refactored code:</p>
+
+<ul>
+<li><p>We have added a discountPercentage parameter to the calculateTotalPrice function, allowing you to specify the discount percentage when calling the function.</p></li>
+<li><p>We perform validation on the discountPercentage parameter to ensure it falls within a valid range (0 to 100%). If it's not within the range, we throw an error.</p></li>
+<li><p>The discount calculation is now based on the provided discountPercentage, making the function more flexible and adaptable to changing requirements.</p></li>
+</ul>
+
+<p>By refactoring the code in this way, you have improved its flexibility and maintainability. You can easily adapt the function to handle different discount scenarios without having to rewrite the entire logic. This demonstrates the importance of regular code refactoring as your project evolves and requirements change.</p>
+
+<p>10 . <strong>Version Control</strong></p>
+
+<p>Use version control systems like Git to track changes to your code. This allows you to collaborate effectively with team members, revert to previous versions if necessary, and maintain a clean history of your project's development. Git provides tools for code review, branching, and merging, facilitating collaboration and code cleanliness.</p>
+
+<h2>
   
   
   Conclusion
-</h3>
-
-<p>Kubernetes and Docker Swarm both enable container orchestration through differing architectures and features. Kubernetes is more advanced and configurable, while Docker Swarm is simpler to adopt initially. Consider application needs and environment when selecting an orchestration platform. The right solution can provide automation, resilience, and scalability.</p>
-
-<h3>
-  
-  
-  FAQs
-</h3>
-
-<h4>
-  
-  
-  <strong>What are the main components of Kubernetes architecture?</strong>
-</h4>
-
-
-
-<p>The main components of Kubernetes architecture are the master nodes which manage and control worker nodes. Worker nodes run pod containers and communicate with the master, while pods are a group of containers with shared resources.</p>
-
-<h4>
-  
-  
-  <strong>How does networking differ between Kubernetes and Docker Swarm?</strong>
-</h4>
-
-
-
-<p>Kubernetes has a more advanced networking model that supports multiple networks per pod, network policies, and IPVS load balancing. Docker Swarm uses host-based routing mesh and overlay networks for container networking across hosts.</p>
-
-<h4>
-  
-  
-  <strong>What types of storage can you use with Kubernetes?</strong>
-</h4>
-
-
-
-<p>Kubernetes supports a wider range of storage solutions including local storage, public cloud storage like GCP and AWS, network storage like NFS, and iSCSI, and plugins like GlusterFS and Ceph. Docker Swarm is more limited in storage support.</p>
-
-<h4>
-  
-  
-  <strong>When is Docker Swarm a better choice over Kubernetes?</strong>
-</h4>
-
-
-
-<p>Docker Swarm can be a better choice when you want simpler installation and configuration, requiring less resources and expertise. It works well for smaller clusters running less critical workloads.</p>
-
-<h4>
-  
-  
-  <strong>What security capabilities does Kubernetes provide?</strong>
-</h4>
-
-
-
-<p>Kubernetes provides role-based access control (RBAC), secrets management, pod security policies to control pod access, and network policies for managing inter-pod and pod-to-service communications. Docker Swarm relies more on third-party or manual configuration for security.</p>
-
- </details> 
- <hr /> 
-
- #### - [Building a Game with Phaser](https://dev.to/ceceliacreates/building-a-mobile-game-with-phaser-and-ionic-vue-building-a-phaser-game-2f74) 
- <details><summary>Article</summary> <p>Welcome to Part Two of this four-part series on building a mobile game using open source technologies. We'll be using Phaser, along with <a href="https://ionicframework.com/">Ionic</a>, <a href="https://capacitorjs.com/">Capacitor</a>, and <a href="https://v3.vuejs.org/">Vue</a>.</p>
-
-<blockquote>
-<p>❓<strong>Are you interested in a video walkthrough version of this blog post?</strong> Let me know in the comments! If there's enough interest I can put one together.</p>
-</blockquote>
-
-<p>The <a href="https://github.com/ceceliacreates/phaser-tutorial">source code for this tutorial is here</a>, and I'll reference specific commits throughout so you can see the specific changes for each section.</p>
-
-<p>This post is heavily influenced by the <a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/part1">tutorial from the official Phaser docs</a> (we'll even use the assets they provide as well). I recommend going through the tutorial if you want to learn more about Phaser concepts. We'll keep it pretty high level here for brevity.</p>
-
-<p>In this post, we'll actually walk through making the Phaser game! It's a big section and there are a lot of new concepts to learn, so let's jump right in!</p>
-
-<h2>
-  
-  
-  Table of Contents
 </h2>
 
-<ul>
-<li>Creating Scenes</li>
-<li>
-Adding Game Objects
-
-<ul>
-<li>Detour: Adjusting Game Window</li>
-<li>Preloading Assets</li>
-<li>Displaying Images</li>
-<li>Animating Game Objects</li>
-</ul>
-
-
-</li>
-<li>
-Responding to Player Input
-
-<ul>
-<li>Setting Player Physics</li>
-<li>Adding Event Handlers</li>
-<li>Handling movement in update method</li>
-</ul>
-
-
-</li>
-<li>Dynamically Generating Game Objects</li>
-<li>
-Adding Collision &amp; Overlap Handlers
-
-<ul>
-<li>Adding Colliders</li>
-<li>Adding Overlaps</li>
-</ul>
-
-
-</li>
-<li>What's Next</li>
-</ul>
-
-<h2>
-  
-  
-  Creating Scenes
-</h2>
-
-<p>We talked about scenes briefly last week. Scenes are a core concept in Phaser and other game dev frameworks. You can think of Scenes like Views in a web app, but with some additional flexibility. Your player will navigate between Scenes, and sometimes multiple Scenes can run simultaneously.</p>
-
-<p>Right now we have a single MainScene in our app.</p>
-
-<p>In your <code>game</code> directory, create a <code>PlayScene.js</code> and <code>ScoreScene.js</code> file. We'll work with the <code>PlayScene.js</code> file first, as this will contain the majority of our game.</p>
-
-<p>Add the following code to your Play scene:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Scene</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">phaser</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">PlayScene</span> <span class="kd">extends</span> <span class="nx">Scene</span> <span class="p">{</span>
-    <span class="kd">constructor</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">super</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PlayScene</span><span class="dl">'</span> <span class="p">})</span>
-    <span class="p">}</span>
-    <span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="dl">"</span><span class="s2">PlayScene</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
-            <span class="na">font</span><span class="p">:</span> <span class="dl">"</span><span class="s2">24px Courier</span><span class="dl">"</span><span class="p">,</span>
-            <span class="na">fill</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#ffffff</span><span class="dl">"</span><span class="p">,</span>
-        <span class="p">});</span>    
-    <span class="p">}</span>
-  <span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Then, in your <code>game.js</code> file, remove the <code>MainScene</code> class we defined in the last blog post. We'll need to update our import statement and config to include the new <code>PlayScene</code> instead.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/game.js</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Game</span><span class="p">,</span> <span class="nx">AUTO</span><span class="p">,</span> <span class="nx">Scale</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">phaser</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">PlayScene</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./PlayScene.js</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">launch</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">Game</span><span class="p">({</span>
-      <span class="na">type</span><span class="p">:</span> <span class="nx">AUTO</span><span class="p">,</span>
-      <span class="na">scale</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">mode</span><span class="p">:</span> <span class="nx">Scale</span><span class="p">.</span><span class="nx">RESIZE</span><span class="p">,</span>
-        <span class="na">width</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">*</span> <span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="p">,</span>
-        <span class="na">autoCenter</span><span class="p">:</span> <span class="nx">Scale</span><span class="p">.</span><span class="nx">CENTER_BOTH</span><span class="p">,</span>
-        <span class="na">height</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">*</span> <span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="na">parent</span><span class="p">:</span> <span class="dl">"</span><span class="s2">game</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">backgroundColor</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#201726</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">physics</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">default</span><span class="p">:</span> <span class="dl">"</span><span class="s2">arcade</span><span class="dl">"</span><span class="p">,</span>
-      <span class="p">},</span>
-      <span class="na">scene</span><span class="p">:</span> <span class="nx">PlayScene</span><span class="p">,</span>
-    <span class="p">});</span>
-  <span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>It's not much, but now we have separate files for our scenes, which will make it easier to work with them.</p>
-
-<blockquote>
-<p><a href="https://github.com/ceceliacreates/phaser-tutorial/commit/571e34a43f8895b251f53ceaa433745264585027">Here is the git commit</a> with the changes for this section.</p>
-</blockquote>
-
-<h2>
-  
-  
-  Adding Game Objects
-</h2>
-
-<p>When working with Phaser, almost everything we interact with is a Game Object. Game Objects can:</p>
-
-<ul>
-<li>Have Physics applied</li>
-<li>Be images, text, sprites, etc.</li>
-<li>Be Static or Dynamic</li>
-<li>Be categorized into Groups</li>
-<li>And much, much more.</li>
-</ul>
-
-<p>For our game, we'll be working with the following objects:</p>
-
-<ul>
-<li>A <a href="https://github.com/ceceliacreates/phaser-tutorial/blob/main/public/assets/player.png">player</a> sprite that moves left and right with animation</li>
-<li>A <a href="https://github.com/ceceliacreates/phaser-tutorial/blob/main/public/assets/platform.png">platform</a> static object that our player walks on</li>
-<li>
-<a href="https://github.com/ceceliacreates/phaser-tutorial/blob/main/public/assets/leftarrow.png">Left</a> and <a href="https://github.com/ceceliacreates/phaser-tutorial/blob/main/public/assets/rightarrow.png">right</a> arrows for input to move our player</li>
-<li>A <a href="https://github.com/ceceliacreates/phaser-tutorial/blob/main/public/assets/star.png">star</a> object that falls from the top of the screen and increases the score on collision with the player</li>
-<li>A <a href="https://github.com/ceceliacreates/phaser-tutorial/blob/main/public/assets/bomb.png">bomb</a> object that falls from the top of the screen and ends the game on collision with the player</li>
-</ul>
-
-<p>Within the <code>public</code> directory in the root of your project, create a new <code>assets</code> folder. Save the above linked images in this folder with the following file names:</p>
-
-<ul>
-<li><code>player.png</code></li>
-<li><code>platform.png</code></li>
-<li><code>leftarrow.png</code></li>
-<li><code>rightarrow.png</code></li>
-<li><code>star.png</code></li>
-<li><code>bomb.png</code></li>
-</ul>
-
-<h3>
-  
-  
-  Detour: Adjusting Game Window
-</h3>
-
-<p>Before we move onto adding Game Objects, we need to make a small fix to our app that I discovered while writing. Right now, we have a collapsible header on iPhone. This could affect our game window size. Update the Play, About, and Scores pages in your <code>/src/views</code> directory to <strong>remove</strong> <code>:fullscreen=true</code> from the <code>&lt;ion-content&gt;</code> component, and remove the entire <code>&lt;ion-header&gt;</code> component and children that is inside <code>&lt;ion-content&gt;</code>. Your updated Page template should look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/views/PlayPage.vue</span>
-
-<span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">ion</span><span class="o">-</span><span class="nx">page</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">ion</span><span class="o">-</span><span class="nx">header</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">ion</span><span class="o">-</span><span class="nx">toolbar</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ion</span><span class="o">-</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Play</span><span class="o">&lt;</span><span class="sr">/ion-title</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/ion-toolbar</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/ion-header</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="nx">ion</span><span class="o">-</span><span class="nx">content</span> <span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">PhaserContainer</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/ion-content</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/ion-page</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
-</span></code></pre>
-
-</div>
-
-
-
-<p>Now we can move on! </p>
-
-<blockquote>
-<p><a href="https://github.com/ceceliacreates/phaser-tutorial/commit/312b2d0d74d7e22d1dd48d61e40c9159854286a9">Here is the git commit</a> with the changes for this section.</p>
-</blockquote>
-
-<h3>
-  
-  
-  Preloading Assets
-</h3>
-
-<p>Right now, inside our <code>PlayScene</code> class, we have a <code>constructor</code> and a <code>create ()</code> method. There are two other lifecycle methods provided by Phaser: <code>preload ()</code> and <code>update ()</code>.</p>
-
-<p>The <code>preload ()</code> method is used to preload assets that will be used in our game.</p>
-
-<p>Update your <code>PlayScene.js</code> file to preload the assets we just saved. Go ahead and also remove the text in the <code>create ()</code> method.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Scene</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">phaser</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">PlayScene</span> <span class="kd">extends</span> <span class="nx">Scene</span> <span class="p">{</span>
-    <span class="kd">constructor</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">super</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PlayScene</span><span class="dl">'</span> <span class="p">})</span>
-    <span class="p">}</span>
-
-    <span class="nx">preload</span> <span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="dl">'</span><span class="s1">star</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">assets/star.png</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="dl">'</span><span class="s1">bomb</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">assets/bomb.png</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="dl">'</span><span class="s1">platform</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">assets/platform.png</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="dl">'</span><span class="s1">leftArrow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">assets/leftarrow.png</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="dl">'</span><span class="s1">rightArrow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">assets/rightarrow.png</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">,</span> 
-        <span class="dl">'</span><span class="s1">assets/player.png</span><span class="dl">'</span><span class="p">,</span>
-        <span class="p">{</span> <span class="na">frameWidth</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="na">frameHeight</span><span class="p">:</span> <span class="mi">48</span> <span class="p">}</span>
-    <span class="p">);</span>
-<span class="p">}</span>
-
-    <span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>   
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>The star, bomb, platform, and arrow images are added with <code>this.load.image()</code>, where we pass a unique key and the path for the image file. </p>
-
-<p>The player is loaded using what's called a sprite sheet. A sprite sheet contains multiple poses of our player in the same image. This is helpful for animating our player. We use <code>this.load.spritesheet()</code>, again passing a key and path, but also setting the <code>frameWidth</code> and <code>frameHeight</code> of each individual pose (or "frame") in our image.</p>
-
-<h3>
-  
-  
-  Displaying Images
-</h3>
-
-<p>Our asset are preloaded, but nothing is showing on the screen! We need to create game objects using our image assets.</p>
-
-<p>Phaser uses pixels for all positioning and scaling. Many examples simply provide hard-coded values, which can work fine on browsers in a desktop device, but not for mobile.</p>
-
-<p>Because of this, we need to do some math to make our displayed images responsive to the user's device screen.</p>
-
-<blockquote>
-<p><strong>NOTE</strong> I'd recommend playing around with these values based on the device screen. In <a href="https://github.com/ceceliacreates/ionitron-game/blob/main/src/game/scenes/PlayScene.js#L79">a more complex example here</a>, I am scaling everything and adding logic checks rather than hard-coding values. However, for simplicity, I'm hard-coding for an iPhone 12 Pro in this tutorial.</p>
-</blockquote>
-
-<p>Phaser provides <code>this.scale.width</code> and <code>this.scale.height</code> that returns the current screen width and height values. We can use these to calculate the center of our screen and where we should place objects.</p>
-
-<p>If we think about our game layout, we'll need to calculate the height of a game play area, as well as the height of a controls area. This will help us determine where on the Y axis we need to place our platform, player, and arrow controls.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nlzIFKFO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j61azzxnnjnk7gghd6av.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nlzIFKFO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j61azzxnnjnk7gghd6av.png" alt="Mockup of game with designated areas" width="615" height="540"></a></p>
-
-<blockquote>
-<p><strong>NOTE:</strong> We need to calculate the game size <strong>within</strong> our <code>create ()</code> method and not in our <code>gameState</code> because the game needs to be initiated first to access the screen size values.</p>
-</blockquote>
-
-<p>Add the following code to your <code>create ()</code> method.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">//game/PlayScene.js</span>
-<span class="p">...</span>
-<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// sets game values based on screen size</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">screenHeight</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">screenCenterX</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">controlsAreaHeight</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">screenHeight</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">screenHeight</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">controlsAreaHeight</span><span class="p">;</span>
-
-    <span class="c1">// adds the player, platform, and controls</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">platform</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">staticImage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span><span class="p">,</span> <span class="dl">'</span><span class="s1">platform</span><span class="dl">'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">refreshBody</span><span class="p">();</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">player</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenCenterX</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">-</span> <span class="mi">24</span><span class="p">,</span> <span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">leftArrow</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">+</span> <span class="mi">40</span><span class="p">,</span> <span class="dl">'</span><span class="s1">leftArrow</span><span class="dl">'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">()</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">rightArrow</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">+</span> <span class="mi">40</span><span class="p">,</span> <span class="dl">'</span><span class="s1">rightArrow</span><span class="dl">'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the first section, we've calculated the center of the screen. We've also set a <code>controlsAreaHeight</code> to take up about 20% of the bottom of the screen, and the <code>gameAreaHeight</code> to be the difference.</p>
-
-<p>To create a game object, we'll use the relevant <code>add</code> method, passing an X coordinate, Y coordinate, and image key.</p>
-
-<p>Let's break these down individually.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>  <span class="k">this</span><span class="p">.</span><span class="nx">platform</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">staticImage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span><span class="p">,</span> <span class="dl">'</span><span class="s1">platform</span><span class="dl">'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">refreshBody</span><span class="p">();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We've added the platform as a static image, which gives it physics properties so other game objects can interact with the platform. One thing to note here is <code>setOrigin()</code>. By default Phaser positions images based on the <strong>center</strong> of the image. By changing the origin to <code>(0, 0)</code>, I am telling Phaser to position starting from the bottom left corner instead. Whenever we change the position or scale of a static body, we need to tell Phaser to adjust for this change. That is what <code>refreshBody()</code> is doing here.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code> <span class="k">this</span><span class="p">.</span><span class="nx">player</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenCenterX</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">-</span> <span class="mi">24</span><span class="p">,</span> <span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>For the player, I'm adding a sprite. For the Y coordinate, I'm doing some math and placing the player at the <code>gameAreaHeight</code>, but <strong>subtracting half the player height</strong>. This is because, again, Phaser positions from the <strong>center</strong> of the image. This results in the player standing nicely on top of the platform. </p>
-
-<p>If I wanted to, I could use <code>setOrigin()</code> to position from the bottom instead, but I wanted to demonstrate how you would position an item by default in Phaser as well.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">this</span><span class="p">.</span><span class="nx">leftArrow</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">+</span> <span class="mi">40</span><span class="p">,</span> <span class="dl">'</span><span class="s1">leftArrow</span><span class="dl">'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">()</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">rightArrow</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">+</span> <span class="mi">40</span><span class="p">,</span> <span class="dl">'</span><span class="s1">rightArrow</span><span class="dl">'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">()</span>
-</code></pre>
-
-</div>
-
-
-
-<p>For the arrows, I'm sticking with <code>setOrigin(0, 0)</code> because it's easier for me to position based on the lower left corner with the math I'm doing. I'm positioning the arrows 40 pixels (half the size of the arrows) below the <code>gameAreaHeight</code>, the left arrow 10% of the way from the left and the right arrow 70% of the way from the left of the screen edge.</p>
-
-<p>I'm using <code>setInteractive()</code> so that we can assign touch/click handlers to the arrows.</p>
-
-<h3>
-  
-  
-  Animating Game Objects
-</h3>
-
-<p>If you save what we have so far, you see our player standing on the platform and facing the left. This is because Phaser is using the first frame of our spritesheet by default.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2I1n_WSm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nu6ditc6jr1dxs3bchdr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2I1n_WSm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nu6ditc6jr1dxs3bchdr.png" alt="Screenshot of app so far" width="494" height="922"></a></p>
-
-<p>Let's set up some animations so when our character moves, we can leverage all the poses in the spritesheet. This code comes mostly from <a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/part5">the official Phaser tutorial</a>, so I won't dig into too much. I did add a logic check so it doesn't create a new animation if one already exists when the game restarts.</p>
-
-<p>But you can see we are defining an animation key, providing an image key, stating what frames to loop through, and establishing a loop for each animation. The "turn" animation is the player simply facing forward.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">//game/PlayScene.js</span>
-
-<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-<span class="p">...</span>
-     <span class="c1">// adds animations for player</span>
-     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="dl">'</span><span class="s1">left</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-          <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">,</span>
-          <span class="na">frames</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">generateFrameNumbers</span><span class="p">(</span><span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">start</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">end</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}),</span>
-          <span class="na">frameRate</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-          <span class="na">repeat</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-        <span class="p">});</span>
-      <span class="p">}</span>
-
-      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="dl">'</span><span class="s1">turn</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-          <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">turn</span><span class="dl">"</span><span class="p">,</span>
-          <span class="na">frames</span><span class="p">:</span> <span class="p">[{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">,</span> <span class="na">frame</span><span class="p">:</span> <span class="mi">4</span> <span class="p">}],</span>
-        <span class="p">});</span>
-      <span class="p">}</span>
-
-      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="dl">'</span><span class="s1">right</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-          <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">,</span>
-          <span class="na">frames</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">generateFrameNumbers</span><span class="p">(</span><span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">start</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">end</span><span class="p">:</span> <span class="mi">8</span> <span class="p">}),</span>
-          <span class="na">frameRate</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-          <span class="na">repeat</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-        <span class="p">});</span>
-      <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Our player is still facing left because we'll leverage these animations once our player starts moving in the next section.</p>
-
-<blockquote>
-<p><a href="https://github.com/ceceliacreates/phaser-tutorial/commit/cbcf862523ef5f261dd42e4dadc37851dcc481cf">Here is the git commit</a> with the changes for this section.</p>
-</blockquote>
-
-<h2>
-  
-  
-  Responding to Player Input
-</h2>
-
-<p>In order for our player to animate, he needs to move! Let's add some event handlers for our arrow buttons next.</p>
-
-<p>First, we need to make sure our player is ready for the physics of moving and interacting with our game world.</p>
-
-<h3>
-  
-  
-  Setting Player Physics
-</h3>
-
-<p>Add the following code inside your <code>create ()</code> method, underneath the animations we just added.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-
-<span class="c1">// sets player physics</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">setGravityY</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">setCollideWorldBounds</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-
-<span class="c1">// adds collider between player and platforms</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">platform</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>For gravity, we could set a default game-level gravity. However, we want our player to move differently than our stars and bombs, so we're setting it on the object directly instead. <code>setColliderWorldBounds()</code> to <code>true</code> means our player cannot go off screen, and adding a collider between the player and platform means the player will stay on top of the platform as he moves.</p>
-
-<h3>
-  
-  
-  Adding Event Handlers
-</h3>
-
-<p>Now we'll add event handlers for <code>pointerdown</code> and <code>pointerup</code> events. These will translate to touch events once we're on a mobile device.</p>
-
-<p>Still in our <code>create ()</code> method, add the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-
-<span class="c1">// event handlers for arrow input</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">moveLeft</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">moveRight</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">leftArrow</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">pointerdown</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">moveLeft</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">});</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">leftArrow</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">pointerup</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">moveLeft</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">});</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">rightArrow</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">pointerdown</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> 
-<span class="k">this</span><span class="p">.</span><span class="nx">moveRight</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">});</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">rightArrow</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">pointerup</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">moveRight</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We are using two variables, <code>moveLeft</code> and <code>moveRight</code>, to track whether our player is in motion based on what arrows are being pressed.</p>
-
-<p>However, we are not actually telling the player to move yet. Where do we do that? In our <code>update ()</code> method.</p>
-
-<h3>
-  
-  
-  Handling movement in update method
-</h3>
-
-<p>So far we have primarily been working in our <code>create ()</code> method, which is executed when the game is initialized. </p>
-
-<p>In comparison, the <code>update ()</code> method runs every frame of the game. This is where we can control actions that need to <em>update</em> once the game has already started.</p>
-
-<p>Inside our <code>update ()</code> method, add the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-
-<span class="nx">update</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">moveLeft</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">moveRight</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">setVelocityX</span><span class="p">(</span><span class="mi">0</span> <span class="o">-</span> <span class="mi">200</span><span class="p">);</span>   
-    <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="dl">'</span><span class="s1">left</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">moveRight</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">moveLeft</span><span class="p">)</span> <span class="p">{</span>
-     <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">setVelocityX</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>    
-     <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="dl">'</span><span class="s1">right</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">else</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">setVelocityX</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="dl">'</span><span class="s1">turn</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Here, when <code>moveLeft</code> is set to true by the <code>pointerdown</code> event handler, we set the player velocity to move left, and play the <code>left</code> animation. We handle the <code>moveRight</code> boolean change the same way.</p>
-
-<p>By default, our player is not moving in either direction, with the <code>turn</code> animation playing, which results in the player facing forward.</p>
-
-<p>If you save now, you can try it out for yourself!</p>
-
-<blockquote>
-<p><a href="https://github.com/ceceliacreates/phaser-tutorial/commit/06fca36d02182f918cd6e92e2ccccf1680bfc947">Here is the git commit</a> with the changes for this section.</p>
-</blockquote>
-
-<h2>
-  
-  
-  Dynamically Generating Game Objects
-</h2>
-
-<p>Our player can now move in the game world, but it's pretty boring. Let's give him something to do by generating stars for him to collect and bombs for him to avoid.</p>
-
-<p>Add the following code to the end of your <code>create ()</code> method:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-<span class="p">...</span>
-<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-<span class="p">...</span>
-<span class="c1">// Adds generated stars</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">stars</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
-  <span class="na">gravityY</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">createStar</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">star</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">stars</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">star</span><span class="dl">'</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">createStarLoop</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">time</span><span class="p">.</span><span class="nx">addEvent</span><span class="p">({</span>
-  <span class="c1">// random number between 1 and 1.2 seconds</span>
-  <span class="na">delay</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1200</span> <span class="o">-</span> <span class="mi">1000</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">,</span>
-  <span class="na">callback</span><span class="p">:</span> <span class="nx">createStar</span><span class="p">,</span>
-  <span class="na">callbackScope</span><span class="p">:</span> <span class="k">this</span><span class="p">,</span>
-  <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-<span class="p">});</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Let's break down what's happening in each block.</p>
-
-<p>First, we are creating a physics group called <code>stars</code>. This is helpful when we have a category of game objects and want the same physics applied to each individual game object in that group. In this case, we are applying a <code>gravityY</code> of 300.</p>
-
-<p>Next, we are writing a function called <code>createStar</code> that creates a new <code>star</code> object within our <code>stars</code> group, placing it at a random X coordinate and the 0 Y coordinate (top of the screen) using the key for our star image.</p>
-
-<p>Finally, we are using <code>this.time.addEvent</code> provided by Phaser to create a loop. This Phaser method works like <code>setTimeout</code>, in that you provide a delay in MS and a callback function. We are also referencing our <code>this</code> object for the <code>callbackScope</code> and setting <code>loop</code> to true so it repeats.</p>
-
-<p>Once you save and refresh, you'll see stars falling from the sky at random X positions and at random intervals between 1 and 1.2 seconds.</p>
-
-<p>We'll repeat the process for our bombs. However, we want our bombs to drop much faster but also appear less frequently.</p>
-
-<p>Add the following code to <code>create ()</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code> <span class="c1">// src/game/PlayScene.js</span>
-<span class="p">...</span>
-<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-<span class="p">...</span>
-<span class="c1">// Adds generated bombs</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">bombs</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
-  <span class="na">gravityY</span><span class="p">:</span> <span class="mi">900</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">createBomb</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">screenWidth</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">bomb</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">bombs</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">bomb</span><span class="dl">'</span><span class="p">);</span>
-  <span class="nx">bomb</span><span class="p">.</span><span class="nx">setScale</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">refreshBody</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">createBombLoop</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">time</span><span class="p">.</span><span class="nx">addEvent</span><span class="p">({</span>
-  <span class="c1">// random number between 4.5 and 5 seconds</span>
-  <span class="na">delay</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5000</span> <span class="o">-</span> <span class="mi">4500</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="mi">4500</span><span class="p">,</span>
-  <span class="na">callback</span><span class="p">:</span> <span class="nx">createBomb</span><span class="p">,</span>
-  <span class="na">callbackScope</span><span class="p">:</span> <span class="k">this</span><span class="p">,</span>
-  <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Now we have bombs that drop every 4.5-5 seconds at a high speed. I also scaled up the bombs with <code>setScale(2).refreshBody()</code> to double the original image size so they are easier to see as they fall.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--A-Ra1iOC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qjkp46m521pcvtcz7xtn.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A-Ra1iOC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qjkp46m521pcvtcz7xtn.png" alt="Screenshot of stars and bombs falling" width="489" height="911"></a></p>
-
-<p>You should now see stars and bombs falling down on your player!</p>
-
-<blockquote>
-<p><a href="https://github.com/ceceliacreates/phaser-tutorial/commit/7c7f8fd3c16c4af335849b18f65df54204d5e58e">Here is the git commit</a> with the changes for this section.</p>
-</blockquote>
-
-<h2>
-  
-  
-  Adding Collision &amp; Overlap Handlers
-</h2>
-
-<p>We are almost done! All we have to do now is handle what happens when our player interacts with the stars and bombs.</p>
-
-<h2>
-  
-  
-  Adding Colliders
-</h2>
-
-<p>You may remember that we added a collider earlier between the player and platform.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">platform</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>When we add a collider in Phaser without a callback, the default behavior is for the two objects to simply block or push against each other upon collision, without passing through each other.</p>
-
-<p>We can set a collider with a callback function to complete additional steps when two items collide.</p>
-
-<p>For example, our stars and bombs should not go past the platform. Let's add a collider for these and destroy the star or bomb when it collides with the platform.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code> <span class="c1">// src/game/PlayScene.js</span>
-<span class="p">...</span>
-<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-<span class="p">...</span>
-<span class="c1">// Adds colliders between stars and bombs with platform</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">stars</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">platform</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">object1</span><span class="p">,</span> <span class="nx">object2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">star</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object1</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">star</span><span class="dl">'</span><span class="p">)</span> <span class="p">?</span> <span class="nx">object1</span> <span class="p">:</span> <span class="nx">object2</span><span class="p">;</span>
-  <span class="nx">star</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-<span class="p">});</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">bombs</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">platform</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">object1</span><span class="p">,</span> <span class="nx">object2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">bomb</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object1</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">bomb</span><span class="dl">'</span><span class="p">)</span> <span class="p">?</span> <span class="nx">object1</span> <span class="p">:</span> <span class="nx">object2</span><span class="p">;</span>
-  <span class="nx">bomb</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This code will trigger the callback function whenever the two objects collide, determine which object is the object we went to destroy, then call the Phaser-provided <code>destroy()</code> method on that object. Our stars and bombs should now disappear when they collide with the platform.</p>
-
-<h3>
-  
-  
-  Adding Overlaps
-</h3>
-
-<p>Finally, we need to add overlap handlers that:</p>
-
-<ul>
-<li>increase the game score when our player overlaps with a star</li>
-<li>ends the game when the player overlaps with a bomb</li>
-</ul>
-
-<p>An overlap is different than a collider in that it only <em>checks</em> if two objects overlap, rather than <em>preventing</em> them from colliding. We'll use overlap for the interactions between our player with stars and bombs.</p>
-
-<p>Add the following, again to your <code>create ()</code> method:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-<span class="p">...</span>
-<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-<span class="p">...</span>
-
-<span class="c1">// Adds overlap between player and stars</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">scoreText</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenCenterX</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">gameAreaHeight</span> <span class="o">+</span> <span class="mi">16</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Score: 0</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">fontSize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">16px</span><span class="dl">'</span><span class="p">,</span> <span class="na">fill</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#000</span><span class="dl">'</span> <span class="p">}).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">overlap</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">stars</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">object1</span><span class="p">,</span> <span class="nx">object2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">star</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object1</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">)</span> <span class="p">?</span> <span class="nx">object1</span> <span class="p">:</span> <span class="nx">object2</span><span class="p">;</span>
-  <span class="nx">star</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">score</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">scoreText</span><span class="p">.</span><span class="nx">setText</span><span class="p">(</span><span class="dl">'</span><span class="s1">Score: </span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">score</span><span class="p">);</span>
-<span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In the first block, we are creating a starting score of 0 and displaying that text on the screen over the platform. This should look familiar to how we created other game objects, passing an X and Y value and then the text to <code>this.add.text()</code>. We can also set CSS values in an object passed to the fourth parameter.</p>
-
-<p>Then, we are creating an overlap between the player and the stars group with a callback function that does four things:</p>
-
-<ul>
-<li>Checks which overlap object is the star</li>
-<li>Destroys the star</li>
-<li>Increases the score by 10 points</li>
-<li>Resets the score text with <code>this.scoreText.setText()</code>
-</li>
-</ul>
-
-<p>We need to pass the additional <code>null</code> and <code>this</code> parameters to <code>this.physics.add.overlap()</code> so that we have access to our <code>this</code> object inside the callback function.</p>
-
-<p>We can repeat this for our bombs.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// src/game/PlayScene.js</span>
-<span class="p">...</span>
-<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-<span class="p">...</span>
-<span class="c1">// Adds overlap between player and bombs</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">overlap</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">bombs</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">object1</span><span class="p">,</span> <span class="nx">object2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">bomb</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object1</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">)</span> <span class="p">?</span> <span class="nx">object1</span> <span class="p">:</span> <span class="nx">object2</span><span class="p">;</span>
-  <span class="nx">bomb</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-
-  <span class="nx">createStarLoop</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-  <span class="nx">createBombLoop</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
-
-  <span class="k">this</span><span class="p">.</span><span class="nx">gameOverText</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">screenCenterX</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">screenHeight</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Game Over</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">fontSize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">32px</span><span class="dl">'</span><span class="p">,</span> <span class="na">fill</span><span class="p">:</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span> <span class="p">}).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
-
-  <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">pointerup</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">restart</span><span class="p">();</span>
-  <span class="p">})</span>
-<span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This is similar to our star overlap in that we are checking which object is the bomb, then destroying it. However, after that, we have functionality that handles the end of the game.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">createStarLoop</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-<span class="nx">createBombLoop</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>These lines essentially stop our game world by destroy the loops that create new stars and bombs, as well as pausing all the physics taking place in the game. </p>
-
-<p>Then, we add "Game Over" text to the middle of the screen.</p>
-
-<p>Finally, we are adding a <code>pointerup</code> event handler that lets the user restart the game. This resets the score to 0 and restarts the game on click/tap. It's important that this event handler is <strong>inside</strong> your overlap callback so it only fires after the player interacts with a bomb.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5oC68CqQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0n86thjq3x3ugbxv5i3v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5oC68CqQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0n86thjq3x3ugbxv5i3v.png" alt="Screenshot of Game Over screen" width="489" height="911"></a></p>
-
-<p>Congratulations, you now have a game!</p>
-
-<blockquote>
-<p><a href="https://github.com/ceceliacreates/phaser-tutorial/commit/635f073b073838f2761bc05de94021bbd49ba06d">Here is the git commit</a> with the changes for this section.</p>
-</blockquote>
-
-<h2>
-  
-  
-  What's Next
-</h2>
-
-<p>Next week, we'll create our Score scene, talk about transitioning scenes, as well as how to interact between our Phaser game and the Ionic Vue app by exporting scores.</p>
-
-<p>Stay tuned!</p>
+<p>Writing clean code is not just a set of rules but a mindset and a discipline. It's about creating software that is easy to read, maintain, and extend. By following these best practices and principles, you can become a more proficient developer who produces high-quality code.Investing time in meticulously examining fellow engineers' codebases, particularly in open-source projects, can be an enlightening experience. Through this exploration, you gain invaluable insights into diverse coding styles and strategies. This exposure enables you to distill the essence of writing pristine, sustainable codebases.. Remember that clean code is a continuous journey, and with practice, it becomes second nature, leading to more efficient and enjoyable software development.</p>
 
  </details> 
  <hr /> 
