@@ -117,708 +117,694 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Optimizing Database Performance with Indexing in Apache AGE and PostgreSQL](https://dev.to/danielwambo/optimizing-database-performance-with-indexing-in-apache-age-and-postgresql-327p) 
- <details><summary>Article</summary> <p>In the world of databases, performance is paramount. Apache AGE, an extension of PostgreSQL designed for managing graph data, provides powerful tools to optimize database performance. One of the key techniques for achieving this is through indexing. In this comprehensive guide, we'll explore how to leverage indexing in Apache AGE and PostgreSQL to enhance database performance. We'll also provide step-by-step instructions and code snippets, so you can follow along and implement these strategies in your own projects.</p>
+ #### - [Top 6 Most Popular API Architecture Styles You Need to Know (with Pros, Cons, and Use Cases)](https://dev.to/kanani_nirav/top-6-most-popular-api-architecture-styles-you-need-to-know-with-pros-cons-and-use-cases-564j) 
+ <details><summary>Article</summary> <p>In this article, we will discuss about 6 Most Popular API Architecture Styles: <strong>REST, SOAP, GraphQL, gRPC, WebSocket, and Webhooks.</strong></p>
 
-<p><strong>Understanding Indexing</strong><br>
-<strong>Indexing Basics</strong><br>
-Indexing is a database optimization technique that significantly speeds up data retrieval. It works by creating data structures that provide quick access to rows in a table based on the values of one or more columns. Think of it like an index in a book; it allows you to quickly find the information you need.</p>
+<p>APIs are ways for software to talk to each other and share data. There are different ways to design and build APIs. Let’s see the top 6 API Architecture Styles and their pros, cons, and Use Cases.</p>
 
-<p><strong>Types of Indexes</strong><br>
-Before we dive into the practical aspects, let's briefly explore the types of indexes available in PostgreSQL and Apache AGE:</p>
+<h2>
+  
+  
+  REST
+</h2>
 
-<p><strong>Single-Column Index:</strong> Indexes created on a single column to speed up searches based on that column's values.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qpp4bF9M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a22mf1xqhuz4or87puv0.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qpp4bF9M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a22mf1xqhuz4or87puv0.png" alt="Image description" width="641" height="77"></a><br>
-<strong>Multi-Column Index:</strong> Indexes created on multiple columns to optimize queries involving those columns.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vNXwUt9G--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o4j83kpefaj0n36c75nt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vNXwUt9G--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o4j83kpefaj0n36c75nt.png" alt="Image description" width="638" height="71"></a><br>
-<strong>Creating Indexes in Apache AGE</strong><br>
-Indexing in Apache AGE involves optimizing graph data structures. Let's look at how you can create indexes for nodes and relationships:</p>
-
-<p><strong>Creating an Index for Graph Nodes in Apache AGE:</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AEEsfg73--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qf9u0m38f54ewserps26.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AEEsfg73--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qf9u0m38f54ewserps26.png" alt="Image description" width="637" height="69"></a><br>
-<strong>Creating an Index for Graph Relationships in Apache AGE:</strong><br>
---This creates an index on the "timestamp" property of relationships labeled as "MESSAGED"</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PTb2v1CA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xkmgdzzomoquyxkmfffs.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PTb2v1CA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xkmgdzzomoquyxkmfffs.png" alt="Image description" width="641" height="38"></a><br>
-<strong>Using EXPLAIN ANALYZE to Optimize Queries:</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--mlme5mxO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ibuab952rujeamgldbq3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mlme5mxO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ibuab952rujeamgldbq3.png" alt="Image description" width="647" height="92"></a><br>
-<strong>Reindexing an Index in PostgreSQL:</strong></p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0Y7okg-W--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k0u0m6y7mp90pvfitlqi.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0Y7okg-W--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k0u0m6y7mp90pvfitlqi.png" alt="Image description" width="647" height="64"></a></p>
-
-<p><strong>Conclusion</strong><br>
-In conclusion, indexing stands as the unsung hero in the realm of database performance optimization, and in the context of Apache AGE and PostgreSQL, its power shines brightly. Throughout this guide, we've explored the foundations of indexing, the diverse types available, and the intricate processes of creating and managing indexes. Whether we ventured into single-column and multi-column indexes in PostgreSQL, or navigated the complex world of graph data indexing in Apache AGE, one thing remained clear: indexing is the key to unlocking lightning-fast query responses and efficient data retrieval. Armed with advanced techniques, query optimization strategies, and vigilant monitoring, you now possess the tools to elevate your database performance to new heights. As you embark on your indexing journey, remember that it's a dynamic force, adaptable to your unique database needs, and the impact it can have on your applications is nothing short of transformative.</p>
-
- </details> 
- <hr /> 
-
- #### - [The first step of Bun](https://dev.to/obrkn/the-first-step-of-bun-56ib) 
- <details><summary>Article</summary> <p>As you know, <a href="https://bun.sh/">Bun</a> is the fastest JavaScript runtime and the substitute for Node.js.</p>
-
-<p>Today, I want to introduce the first step of Bun.</p>
+<p>REST is a way to use web standards and addresses to work with data on a server. They’re popular, easy to implement, and use HTTP methods. Most of the web services you interact with daily, like Twitter or YouTube, are powered by Restful APIs. For example, a client can use GET to get data, POST to make new data, PUT to change data, or DELETE to remove data. The data are usually in formats like JSON or XML.</p>
 
 <h3>
   
   
-  Install Bun globally
+  Pros
 </h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># Open your terminal</span>
-<span class="nv">$ </span>curl <span class="nt">-fsSL</span> https://bun.sh/install | bash
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Create a TypeScript file
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># In your terminal</span>
-<span class="nv">$ </span><span class="nb">touch </span>index.tsx
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="c1">// index.tsx</span>
-<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">Bun</span><span class="p">.</span><span class="nx">serve</span><span class="p">({</span>
-  <span class="na">port</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
-  <span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="dl">"</span><span class="s2">Welcome to Bun!</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Listening on localhost:</span><span class="p">${</span><span class="nx">server</span><span class="p">.</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  Lounch a server with Bun
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># In your terminal</span>
-<span class="nv">$ </span>bun run index.tsx
-</code></pre>
-
-</div>
-
-
-
-<p><a href="http://localhost:3000/">http://localhost:3000/</a></p>
-
-<p>Welcome to Bun!!!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WrgcNjGP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/of0spitb24i04zjgyjeu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WrgcNjGP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/of0spitb24i04zjgyjeu.png" alt="Image description" width="538" height="198"></a></p>
-
- </details> 
- <hr /> 
-
- #### - [Top 5 Parallax Effects Source Code](https://dev.to/noobizdev/top-5-parallax-effects-source-code-5j5) 
- <details><summary>Article</summary> <p>Before diving into the examples, let's briefly understand what parallax scrolling is. Parallax scrolling is a web design technique where the background images move at a different speed than the foreground content, creating a captivating 3D effect. This technique can be achieved using HTML, CSS, and JavaScript.</p>
-
-
-
-
-<blockquote>
-<p>Help us grow our community by sharing this post with your friends! ❤️</p>
-
-
-</blockquote>
-
-
-
-<h2>
-  
-  
-  1. Multi-layered Parallax Illustration
-</h2>
-
-<p>Another great parallax effect is developed by Patrick Westwood using HTML(Haml), CSS(SCSS), and JS(CoffeeScript).<br>
-<a href="https://codepen.io/patrickwestwood/pen/MyoBaY">Source Code</a></p>
-
-
-
-<h2>
-  
-  
-  2. Parallax Background
-</h2>
-
-<p>A No JavaScript Parallax background by Ravi Dhiman, developed using HTML(Pug) and CSS(SCSS).<br>
-<a href="https://codepen.io/ravid7000/pen/LREEzv">Source Code</a></p>
-
-
-
-<h2>
-  
-  
-  3. Coderado.co Denver Parallax Scrolling
-</h2>
-
-<p>A parallax effect page with a city skyline as the backdrop. Developed by Jeremy Hull using HTML and CSS(SCSS).<br>
-<a href="https://codepen.io/coderado/pen/BzGdxW">Source Code</a></p>
-
-
-
-<h2>
-  
-  
-  4. 3D CSS Parallax Depth Effect
-</h2>
-
-<p>CSS translate and rotate transforms based on mouse move to simulate some z-axis depth on the card and individual movie characters. Developed by Adrian Payne using HTML, CSS(SCSS), and JavaScript(Babel).<br>
-<a href="https://codepen.io/dazulu/pen/VVZrQv">Source Code</a></p>
-
-
-
-<h2>
-  
-  
-  5. CSS Parallax Orbs
-</h2>
-
-<p>A parallax effect inspired by Sims 4 made by Jamie Coulter using HTML(Haml) and CSS(SCSS).<br>
-<a href="https://codepen.io/jcoulterdesign/pen/OMOqjy">Source Code</a></p>
-
-
-
-
-<blockquote>
-<p>If you found this helpful, give us a thumbs up and don't forget to follow us for more!<br>
-Thanks for reading, See you next time... ❤️👋</p>
-
-
-</blockquote>
-
-
-
-<h2>
-  
-  
-  Final Thoughts on The CSS Parallax Effect
-</h2>
-
-<p>The parallax effect has grown more popular as a way to improve user experiences. This design strategy boosts engagement and increases interactions.</p>
-
-<p>Throughout this article, you have gotten to know CSS parallax in depth. You learned about code snippets that enable you to include <strong><a href="https://noobizdev.tech/how-to-create-parallax-effects-with-css-to-your-website-with-example/">parallax effect website</a></strong>. Plus, you got to explore examples of web pages that employ parallax with skill, distinction, and creativity.</p>
-
-<p>Remember to keep a balanced approach to parallax usage.</p>
-
- </details> 
- <hr /> 
-
- #### - [Troubleshooting parallel routing in Next.js](https://dev.to/zmzlois/troubleshooting-parallel-routing-in-nextjs-pdo) 
- <details><summary>Article</summary> <p>Parallel routing is great --- it allows you to render a slot based on certain conditions conditionally, either auth or data fetching status. </p>
-
-<p>If you haven't heard of or used parallel routing before, please check <a href="https://nextjs.org/docs/app/building-your-application/routing/parallel-routes">this</a></p>
-
-<p>But it can go wrong very quick, luckily fixes are quick too!</p>
-
-<p>In a scenario you have a blank page comes with a layout, and you are trying to hydrate the page with three parallel route: <code>overview</code>, <code>projects</code>, and <code>dashboard</code> to show different things to your users. But it can break when you have a file structure like<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="o">|-</span><span class="p">[</span><span class="nx">workspaceId</span><span class="p">]</span>
-<span class="o">|--</span><span class="nx">create</span><span class="o">-</span><span class="nx">project</span>
-<span class="o">|--</span><span class="nx">settings</span>
-<span class="o">|--</span><span class="p">@</span><span class="nd">overview</span>
-<span class="o">|--</span><span class="p">@</span><span class="nd">projects</span>
-<span class="o">|--</span><span class="p">@</span><span class="nd">dashboard</span>
-<span class="o">|--</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Problem 1: it shows you a blank page
-</h4>
-
-<p>What you can do? <br>
-In your <code>layout.tsx</code> file, you have already specified<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">WorkspaceLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
-
-  <span class="nl">create</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="nl">projects</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="nl">overview</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-<span class="p">})</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-     <span class="o">&lt;</span><span class="nx">SomeLayout</span><span class="o">&gt;</span>
-      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">projects</span><span class="p">}</span>
-        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">create</span><span class="p">}</span>
-      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">overview</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="sr">/SomeLayout</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Solution 1: In this case, You will need an empty <code>page.tsx</code> like:
-</h4>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">DashboardPage</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
-  <span class="nl">params</span><span class="p">:</span> <span class="p">{</span> <span class="na">workspaceId</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
-<span class="p">})</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="o">&lt;&gt;&lt;</span><span class="sr">/&gt;</span><span class="err">;
-</span><span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>with an empty fragment and add the implicit children your <code>layout.tsx</code> like so:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code> <span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">WorkspaceLayout</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
-  <span class="nl">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="nl">create</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="nl">projects</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-  <span class="nl">overview</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
-<span class="p">})</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-    <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span> <span class="c1">// it really doesn't matter where this is placed because it's nothing in there, </span>
-     <span class="o">&lt;</span><span class="nx">SomeLayout</span><span class="o">&gt;</span>
-      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">projects</span><span class="p">}</span>
-        <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">create</span><span class="p">}</span>
-      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">overview</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="sr">/SomeLayout</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h5>
-  
-  
-  If the <code>page.tsx</code>, or <code>children</code> prop doesn't exist, nextjs can't initialise this segment.
-</h5>
-
-<p>At this point your files will look like<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="o">|-</span><span class="p">[</span><span class="nx">workspaceId</span><span class="p">]</span>
-<span class="o">|--</span><span class="nx">create</span><span class="o">-</span><span class="nx">project</span>
-<span class="o">|--</span><span class="nx">settings</span>
-<span class="o">|--</span><span class="p">@</span><span class="nd">overview</span>
-<span class="o">|--</span><span class="p">@</span><span class="nd">projects</span>
-<span class="o">|--</span><span class="p">@</span><span class="nd">dashboard</span>
-<span class="o">|--</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
-<span class="o">|--</span><span class="nx">page</span><span class="p">.</span><span class="nx">tx</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
-  
-  
-  Problem 2: when you navigate to /[someworkspaceId]/create-project, it shows you a 404 error, tell you page not found or internal server error.
-</h4>
-
-<p>What the heck happened? I have a route there! </p>
-
-<h4>
-  
-  
-  Solution 2: Create a separate layout group
-</h4>
-
-<p>Instead of having a file structure like above, you could have one like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="o">|-</span><span class="p">[</span><span class="nx">workspaceId</span><span class="p">]</span>
-<span class="o">|--</span><span class="nx">create</span><span class="o">-</span><span class="nx">project</span>
-<span class="o">|--</span><span class="nx">settings</span>
-<span class="o">|--</span><span class="nx">page</span><span class="p">.</span><span class="nx">tsx</span>
-<span class="o">|--</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
-<span class="o">|--</span><span class="p">(</span><span class="nx">dashboard</span><span class="p">)</span>
-<span class="o">|---</span><span class="p">@</span><span class="nd">overview</span>
-<span class="o">|---</span><span class="p">@</span><span class="nd">projects</span>
-<span class="o">|---</span><span class="p">@</span><span class="nd">dashboard</span>
-<span class="o">|---</span><span class="nx">layout</span><span class="p">.</span><span class="nx">tsx</span>
-<span class="o">|---</span><span class="nx">page</span><span class="p">.</span><span class="nx">tx</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Move the old <code>layout.tsx</code> into <code>(dashboard)</code> folder but keep the <code>&lt;SomeLayout/&gt;</code> component in <code>[workspaceId]</code> folder, and there you have layouts inherited from a level above, and routes like <code>/[workspaceId]/create-project</code> will work again!</p>
-
-<p>Do you have problems with parallel routing and intercepting routes? Found a solution or not? </p>
-
-<p>Would love to hear from comment section 👇🏻</p>
-
- </details> 
- <hr /> 
-
- #### - [Writing Clean Code: Best Practices and Principles](https://dev.to/favourmark05/writing-clean-code-best-practices-and-principles-3amh) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Introduction
-</h2>
-
-<p>Writing clean code is a fundamental skill for every software developer. Clean code not only makes your codebase more maintainable and easier to understand but also fosters collaboration among team members. In this comprehensive article, we will explore what clean code is, why it's important, and provide you with a set of best practices and principles to help you write clean and maintainable code.</p>
-
-<h2>
-  
-  
-  What is Clean Code?
-</h2>
-
-<p>Clean code is code that is easy to read, easy to understand, and easy to modify. It is code that is devoid of unnecessary complexity, redundancy, and confusion. Clean code follows a set of conventions and best practices that make it more consistent, making it easier for multiple developers to work on the same project seamlessly.</p>
-
-<h2>
-  
-  
-  Why is Clean Code Important?
-</h2>
-
-<ol>
-<li><p><strong>Readability</strong>: Clean code is easy to read, which means that anyone - including your future self - can understand it quickly. This reduces the time required to grasp the code's functionality, leading to faster development and debugging.</p></li>
-<li><p><strong>Maintainability</strong>: Code is read more often than it is written. When you write clean code, it becomes easier to maintain and extend the application over time. This is crucial in the software development lifecycle, where projects often evolve and grow.</p></li>
-<li><p><strong>Collaboration</strong>: Clean code encourages collaboration. When your code is clean and well-organized, other team members can work on it effectively. This makes it easier to divide tasks and work on different parts of the codebase simultaneously.</p></li>
-<li><p><strong>Bug Reduction</strong>: Clean code reduces the likelihood of introducing bugs. Code that is difficult to understand is more prone to errors during modifications or enhancements.</p></li>
-<li><p><strong>Efficiency</strong>: Clean code is efficient code. It typically runs faster and uses fewer resources because it avoids unnecessary operations and complexity.</p></li>
-</ol>
-
-<p>Now that we understand why clean code is important, let's delve into some best practices and principles to help you write clean code.</p>
-
-<h2>
-  
-  
-  Best Practices and Principles for Writing Clean Code
-</h2>
-
-<p>1 . <strong>Meaningful Variable and Function Names</strong></p>
-
-<p>Use descriptive names for variables, functions, classes, and other identifiers. A well-chosen name can convey the purpose of the entity, making the code more understandable. Avoid single-letter variable names or cryptic abbreviations.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code># Bad variable name
-x = 5
-
-# Good variable name
-total_score = 5
-</code></pre>
-
-</div>
-
-
-
-<p>2 . <strong>Keep Functions and Methods Short</strong></p>
-
-<p>Functions and methods should be concise and focused on a single task. The Single Responsibility Principle (SRP) states that a function should do one thing and do it well. Shorter functions are easier to understand, test, and maintain. If a function becomes too long or complex, consider breaking it down into smaller, more manageable functions.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Long and complex function
-function processUserData(user) {
-    // Many lines of code...
-}
-
-// Refactored into smaller functions
-function validateUserInput(userInput) {
-    // Validation logic...
-}
-
-function saveUserToDatabase(user) {
-    // Database operation...
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>3 . <strong>Comments and Documentation</strong></p>
-
-<p>Use comments sparingly, and when you do, make them meaningful. Code should be self-explanatory whenever possible. Documentation, such as inline comments and README files, helps other developers understand your code's purpose and usage. Document complex algorithms, non-trivial decisions, and public APIs.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code># Bad comment
-x = x + 1  # Increment x
-
-# Good comment
-# Calculate the total score by incrementing x
-total_score = x + 1
-
-</code></pre>
-
-</div>
-
-
-
-<p>4 . <strong>Consistent Formatting and Indentation</strong></p>
-
-<p>Adhere to a consistent coding style and indentation. This makes the codebase look clean and organized. Most programming languages have community-accepted coding standards (e.g., PEP 8 for Python, eslint for JavaScript) that you should follow. Consistency also applies to naming conventions, spacing, and code structure.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Inconsistent formatting
-if(condition){
-    doSomething();
-  } else {
-      doSomethingElse();
-}
-
-// Consistent formatting
-if (condition) {
-    doSomething();
-} else {
-    doSomethingElse();
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>5 . <strong>DRY (Don't Repeat Yourself) Principle</strong></p>
-
-<p>Avoid duplicating code. Repeated code is harder to maintain and increases the risk of inconsistencies. Extract common functionality into functions, methods, or classes to promote code reusability. When you need to make a change, you'll only need to do it in one place.</p>
-
-<p>Suppose you're working on a JavaScript application that calculates the total price of items in a shopping cart. Initially, you have two separate functions for calculating the price of each item type: one for calculating the price of a book and another for calculating the price of a laptop. Here's the initial code:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>function calculateBookPrice(quantity, price) {
-    return quantity * price;
-}
-
-function calculateLaptopPrice(quantity, price) {
-    return quantity * price;
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>While these functions work, they violate the DRY principle because the logic for calculating the total price is repeated for different item types. If you have more item types to calculate, you'll end up duplicating this logic. To follow the DRY principle and improve code maintainability, you can refactor the code as follows:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>function calculateItemPrice(quantity, price) {
-    return quantity * price;
-}
-
-const bookQuantity = 3;
-const bookPrice = 25;
-
-const laptopQuantity = 2;
-const laptopPrice = 800;
-
-const bookTotalPrice = calculateItemPrice(bookQuantity, bookPrice);
-const laptopTotalPrice = calculateItemPrice(laptopQuantity, laptopPrice);
-
-</code></pre>
-
-</div>
-
-
-
-<p>In this refactored code, we have a single calculateItemPrice function that calculates the total price for any item type based on the quantity and price provided as arguments. This adheres to the DRY principle because the calculation logic is no longer duplicated.</p>
-
-<p>Now, you can easily calculate the total price for books, laptops, or any other item type by calling calculateItemPrice with the appropriate quantity and price values. This approach promotes code reusability, readability, and maintainability while reducing the risk of errors caused by duplicated code.</p>
-
-<p>6 . <strong>Use Meaningful Whitespace</strong></p>
-
-<p>Properly format your code with spaces and line breaks. This enhances readability. Use whitespace to separate logical sections of your code. Well-formatted code is easier to scan, reducing the cognitive load on readers.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Poor use of whitespace
-const sum=function(a,b){return a+b;}
-
-// Improved use of whitespace
-const sum = function (a, b) {
-    return a + b;
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>7 . <strong>Error Handling</strong></p>
-
-<p>Handle errors gracefully. Use appropriate try-catch blocks or error-handling mechanisms in your code. This prevents unexpected crashes and provides valuable information for debugging. Don't suppress errors or simply log them without a proper response.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Inadequate error handling
-try {
-    result = divide(x, y);
-} catch (error) {
-    console.error("An error occurred");
-}
-
-// Proper error handling
-try {
-    result = divide(x, y);
-} catch (error) {
-    if (error instanceof ZeroDivisionError) {
-        console.error("Division by zero error:", error.message);
-    } else if (error instanceof ValueError) {
-        console.error("Invalid input:", error.message);
-    } else {
-        console.error("An unexpected error occurred:", error.message);
-    }
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>8 . <strong>Testing</strong></p>
-
-<p>Write unit tests to verify your code's correctness. Test-driven development (TDD) can help you write cleaner code by forcing you to consider edge cases and expected behavior upfront. Well-tested code is more reliable and easier to refactor.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>// Example using JavaScript and the Jest testing framework
-test('addition works correctly', () =&gt; {
-    expect(add(2, 3)).toBe(5);
-    expect(add(-1, 1)).toBe(0);
-    expect(add(0, 0)).toBe(0);
-});
-
-</code></pre>
-
-</div>
-
-
-
-<p>9 . <strong>Refactoring</strong></p>
-
-<p>Refactor your code regularly. As requirements change and your understanding of the problem domain deepens, adjust your code accordingly. Refactoring helps maintain clean code as the project evolves. Don't be afraid to revisit and improve existing code when necessary.</p>
-
-<p>Suppose you have a function that calculates the total price of items in a shopping cart with a fixed discount percentage:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>function calculateTotalPrice(cartItems) {
-    let totalPrice = 0;
-    for (const item of cartItems) {
-        totalPrice += item.price;
-    }
-    return totalPrice - (totalPrice * 0.1); // Apply a 10% discount
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>Initially, this function calculates the total price and applies a fixed discount of 10%. However, as the project evolves, you realize that you need to support variable discounts. To refactor the code to make it more flexible, you can introduce a discount parameter:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>function calculateTotalPrice(cartItems, discountPercentage) {
-    if (discountPercentage &lt; 0 || discountPercentage &gt; 100) {
-        throw new Error("Discount percentage must be between 0 and 100.");
-    }
-
-    let totalPrice = 0;
-    for (const item of cartItems) {
-        totalPrice += item.price;
-    }
-
-    const discountAmount = (totalPrice * discountPercentage) / 100;
-    return totalPrice - discountAmount;
-}
-
-</code></pre>
-
-</div>
-
-
-
-<p>In this refactored code:</p>
 
 <ul>
-<li><p>We have added a discountPercentage parameter to the calculateTotalPrice function, allowing you to specify the discount percentage when calling the function.</p></li>
-<li><p>We perform validation on the discountPercentage parameter to ensure it falls within a valid range (0 to 100%). If it's not within the range, we throw an error.</p></li>
-<li><p>The discount calculation is now based on the provided discountPercentage, making the function more flexible and adaptable to changing requirements.</p></li>
+<li><p>It is simple and easy to use and understand.</p></li>
+<li><p>It follows the rules of the web and uses existing standards and protocols.</p></li>
+<li><p>It is fast and can handle many requests, as it supports caching and statelessness.</p></li>
+<li><p>It is flexible and can use different formats and media types.</p></li>
 </ul>
 
-<p>By refactoring the code in this way, you have improved its flexibility and maintainability. You can easily adapt the function to handle different discount scenarios without having to rewrite the entire logic. This demonstrates the importance of regular code refactoring as your project evolves and requirements change.</p>
+<h3>
+  
+  
+  Cons
+</h3>
 
-<p>10 . <strong>Version Control</strong></p>
+<ul>
+<li><p>It does not have a clear contract or schema, which can make it unclear and inconsistent.</p></li>
+<li><p>It does not support complex queries or operations, which can make it need many requests and get too much or too little data.</p></li>
+<li><p>It does not handle errors or exceptions well, as it uses HTTP status codes that are not always clear or correct.</p></li>
+</ul>
 
-<p>Use version control systems like Git to track changes to your code. This allows you to collaborate effectively with team members, revert to previous versions if necessary, and maintain a clean history of your project's development. Git provides tools for code review, branching, and merging, facilitating collaboration and code cleanliness.</p>
+<h3>
+  
+  
+  Usage
+</h3>
+
+<p>REST is good for situations where:</p>
+
+<ul>
+<li><p>The data model is simple and stable.</p></li>
+<li><p>The clients and servers are not dependent on each other.</p></li>
+<li><p>The speed and scalability are important.</p></li>
+</ul>
 
 <h2>
   
   
-  Conclusion
+  SOAP
 </h2>
 
-<p>Writing clean code is not just a set of rules but a mindset and a discipline. It's about creating software that is easy to read, maintain, and extend. By following these best practices and principles, you can become a more proficient developer who produces high-quality code.Investing time in meticulously examining fellow engineers' codebases, particularly in open-source projects, can be an enlightening experience. Through this exploration, you gain invaluable insights into diverse coding styles and strategies. This exposure enables you to distill the essence of writing pristine, sustainable codebases.. Remember that clean code is a continuous journey, and with practice, it becomes second nature, leading to more efficient and enjoyable software development.</p>
+<p>SOAP is s style that uses XML messages and a predefined contract to exchange information between applications. It has a clear and strict contract, and it supports complex queries and operations, but it is complex, verbose, and not scalable or performant.</p>
+
+<h3>
+  
+  
+  Pros
+</h3>
+
+<ul>
+<li><p>It has a clear and strict contract that ensures interoperability and compatibility.</p></li>
+<li><p>It supports complex queries and operations, such as transactions, security, or authentication.</p></li>
+<li><p>It handles errors and exceptions well, as it uses SOAP faults that provide detailed information.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Cons
+</h3>
+
+<ul>
+<li><p>It is complex and verbose to use and understand.</p></li>
+<li><p>It does not follow the principles of the web and adds overhead to the existing protocols.</p></li>
+<li><p>It is not scalable or performant, as it does not support caching or statelessness.</p></li>
+<li><p>It is not flexible or extensible, as it requires changes to the contract for any modifications.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Usage
+</h3>
+
+<p>SOAP is suitable for scenarios where:</p>
+
+<ul>
+<li><p>The data model is complex and dynamic.</p></li>
+<li><p>The clients and servers are tightly coupled and dependent.</p></li>
+<li><p>It’s heavily used in financial services and payment gateways where security and reliability are key</p></li>
+</ul>
+
+<h2>
+  
+  
+  GraphQL
+</h2>
+
+<p>GraphQL is not just an architectural style but also a query language, allowing clients to ask for specific data as they need. This means no more over-fetching or under-fetching of data. You ask for exactly what you need. This leads to more efficient network communication and faster responses. Facebook developed GraphQL to deliver efficient and precise data to its billions of users. Now it’s used by companies like GitHub and Shopify. Its flexibility and efficiency make it a strong choice for applications with complex data requirements. It also supports mutations to change the data, and subscriptions to get live updates when the data changes.</p>
+
+<h3>
+  
+  
+  Pros
+</h3>
+
+<ul>
+<li><p>It works with any server language or framework, as it uses its own schema definition language.</p></li>
+<li><p>It has a single endpoint, which makes it more efficient than REST, where multiple requests might be needed to get enough data.</p></li>
+<li><p>It is strongly typed, which makes sure the data is consistent and compatible between the client and the server.</p></li>
+<li><p>It lets clients fetch only the data they need, which avoids over-fetching or under-fetching of data.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Cons
+</h3>
+
+<ul>
+<li><p>It is complex and hard to use and understand, as it requires learning a new syntax and logic.</p></li>
+<li><p>It does not support caching by default, which can affect performance and scalability.</p></li>
+<li><p>It does not handle errors well, as it always returns HTTP 200 status code, even if there are errors in the GraphQL layer.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Usage
+</h3>
+
+<p>GraphQL is good for situations where:</p>
+
+<ul>
+<li><p>The data model is complex and dynamic, as it can handle nested and relational data.</p></li>
+<li><p>The clients and servers are not dependent on each other, as it lets clients define their own data requirements.</p></li>
+<li><p>The bandwidth and performance are important, as it reduces the amount of data transferred.</p></li>
+</ul>
+
+<h2>
+  
+  
+  gRPC
+</h2>
+
+<p>gRPC is modern, high-performance, and uses protocol buffers. It’s a favorite for microservices architectures, and companies like Netflix use gRPC to handle their immense interservice communication. However, if you’re dealing with browser clients, gRPC might pose some challenges due to limited browser support.</p>
+
+<h3>
+  
+  
+  Pros
+</h3>
+
+<ul>
+<li><p>It has a clear and strict contract, which ensures interoperability and compatibility between services.</p></li>
+<li><p>It supports complex queries and operations, such as streaming, bidirectional communication, authentication, or encryption.</p></li>
+<li><p>It is fast and efficient, as it uses binary format and HTTP/2 features to reduce latency and bandwidth.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Cons
+</h3>
+
+<ul>
+<li><p>It is complex and hard to use and understand, as it requires generating and compiling protocol buffer files.</p></li>
+<li><p>It does not follow the principles of the web, as it uses custom headers and methods that are not compatible with standard web tools or browsers.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Usage
+</h3>
+
+<p>gRPC is good for situations where:</p>
+
+<ul>
+<li><p>The data model is complex and dynamic, as it can handle structured and unstructured data.</p></li>
+<li><p>The services are dependent on each other, as it allows services to invoke each other’s methods directly.</p></li>
+<li><p>The speed and efficiency are important, as it minimizes the overhead and maximizes the throughput.</p></li>
+</ul>
+
+<h2>
+  
+  
+  WebSocket
+</h2>
+
+<p>WebSocket is all about real-time, bidirectional, and persistent connections. It’s perfect for live chat applications and real-time gaming, where low-latency data exchange is crucial.</p>
+
+<h3>
+  
+  
+  Pros
+</h3>
+
+<ul>
+<li><p>It is faster and more efficient than HTTP, as it uses a single connection and does not need headers or cookies for each message.</p></li>
+<li><p>It can send and receive different types of messages over the same connection, such as text, binary, or streaming data.</p></li>
+<li><p>It can push data from the server to the client without waiting for a request, which enables real-time and event-driven communication.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Cons
+</h3>
+
+<ul>
+<li><p>It’s not supported by some older browsers or proxies that do not understand the WebSocket protocol or the upgrade header.</p></li>
+<li><p>It’s not secure by default, as they do not use encryption or authentication unless they use the <code>wss://</code> scheme, which is similar to <code>https://</code> for HTTP.</p></li>
+<li><p>It does not store any information about the connection or the messages on either side, which means they are not stateful.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Usage
+</h3>
+
+<p>WebSocket is good for situations where:</p>
+
+<ul>
+<li><p>The web application needs fast and interactive data exchange, such as chat, gaming, or streaming.</p></li>
+<li><p>The web application needs bidirectional and multiplexed communication, where both sides can send and receive multiple messages of different types at the same time.</p></li>
+<li><p>The web application needs real-time and event-driven communication, where the server can send data to the client without waiting for a request.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Webhooks
+</h2>
+
+<p>Webhooks are a way for servers to send messages to clients when something happens. They use HTTP callbacks or POST requests to deliver payloads that contain information about the events. The clients register their webhooks with the servers by providing URLs that can receive the payloads. Webhook is all about event-driven, HTTP callbacks, and asynchronous operation.</p>
+
+<h3>
+  
+  
+  Pros
+</h3>
+
+<ul>
+<li><p>It is simple and easy to use and understand, as it uses standard HTTP methods and formats.</p></li>
+<li><p>It follows the principles of the web, as it leverages existing standards and protocols.</p></li>
+<li><p>It is scalable and performant, as it supports asynchronous communication without polling or waiting.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Cons
+</h3>
+
+<ul>
+<li><p>It does not have a clear or strict contract, which can lead to inconsistency and ambiguity between servers and clients.</p></li>
+<li><p>It does not support complex queries or operations, it only sends one-way notifications without confirmation or feedback.</p></li>
+<li><p>It does not handle errors well, It does not provide retries or acknowledgments in case of failures.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Usage
+</h3>
+
+<p>Webhooks are good for situations where:</p>
+
+<ul>
+<li><p>Event-driven notifications ( GitHub uses webhooks to notify your other systems whenever a new commit is pushed.)</p></li>
+<li><p>The data model is simple and stable, as it can handle basic types and fields.</p></li>
+<li><p>The servers and clients are not dependent on each other, as they do not require direct communication or coordination.</p></li>
+<li><p>The performance and scalability are important, as they reduce the load and latency of the communication.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Here is the final summarized table
+</h2>
+
+
+<div class="ltag_gist-liquid-tag">
+  
+</div>
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OFer-8Eq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/um3l02jna0u8xhii9cde.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OFer-8Eq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/um3l02jna0u8xhii9cde.png" alt="[source](https://www.youtube.com/watch?v=4vLxWqE94l4)" width="800" height="654"></a></p>
+
+<h2>
+  
+  
+  Sample API architectural Styles
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Nm5U_uLL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/43awo5veqldyk3i6jsp9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Nm5U_uLL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/43awo5veqldyk3i6jsp9.png" alt="[source](https://blog.bytebytego.com/p/ep49-api-architectural-styles)" width="766" height="1024"></a></p>
+
+<h2>
+  
+  
+  Reference
+</h2>
+
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=4vLxWqE94l4">Top 6 Most Popular API Architecture Styles - ByteByteGo</a></p></li>
+<li><p><a href="https://blog.bytebytego.com/p/ep49-api-architectural-styles">https://blog.bytebytego.com/p/ep49-api-architectural-styles</a></p></li>
+<li><p><a href="https://www.postman.com/state-of-api/api-technologies/#api-technologies">https://www.postman.com/state-of-api/api-technologies/#api-technologies</a></p></li>
+</ul>
+
+<p>If You are using <a href="https://medium.com/">Medium</a> Please support and follow me for interesting articles. <strong><a href="https://medium.com/@kanani-nirav">Medium Profile</a></strong></p>
+
+<p><strong>Stay updated with my latest and most interesting articles by following me.</strong></p>
+
+<p><strong>If this guide has been helpful to you and your team please share it with others!</strong></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [CodeIgniter vs Laravel : Introduction To PHP Frameworks](https://dev.to/domfive/codeigniter-vs-laravel-introduction-to-php-frameworks-3f2o) 
+ <details><summary>Article</summary> <p>In the world of web development, PHP has always been a popular choice due to its flexibility and extensive libraries. However, coding a project from scratch can be time-consuming and error-prone. That's where PHP frameworks come into play. They provide a structured and efficient way to build web applications, speeding up the development process and ensuring best practices. Among the myriad of PHP frameworks available, two have emerged as leaders: CodeIgniter vs Laravel.  </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---lGV27Iy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/Five.Co-CodeIgniter-vs-Laravel-Introduction-To-PHP-Frameworks-1024x576.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---lGV27Iy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/Five.Co-CodeIgniter-vs-Laravel-Introduction-To-PHP-Frameworks-1024x576.png" alt="CodeIgniter vs Laravel" width="800" height="450"></a></p>
+
+<ul>
+<li>
+ CodeIgniter: A Lightweight Powerhouse<ul>
+<li>Key Features and Benefits</li>
+<li>Use Cases and Real-World Examples</li>
+</ul>
+
+
+</li>
+<li>
+ Laravel: The Elegance of Modern PHP<ul>
+<li>Key Features and Benefits</li>
+<li>Use Cases and Real-World Examples</li>
+</ul>
+</li>
+<li>
+ CodeIgniter vs Laravel: Which One to Choose?<ul></ul>
+</li>
+<li>Introducing Five</li>
+<li> Conclusion</li>
+</ul>
+
+<h2 id="code-igniter-a-lightweight-powerhouse">
+<br><strong>CodeIgniter: A Lightweight Powerhouse</strong>
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jlXQgMWk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-CodeIgniter-1024x451.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jlXQgMWk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-CodeIgniter-1024x451.png" alt="CodeIgniter" width="800" height="352"></a></p>
+
+<h3 id="key-features-and-benefits"><strong>Key Features and Benefits</strong></h3>
+
+<p><strong><a href="https://codeigniter.com/">CodeIgniter </a></strong>is known for its lightweight nature and simplicity. It focuses on providing a minimalistic approach to web development without sacrificing power and flexibility. Here are some of the key features and benefits of using CodeIgniter:</p>
+
+<ul>
+<li>
+<strong>Easy Installation and Configuration</strong>: With CodeIgniter, you can get up and running quickly. Its installation process is straightforward, and the configuration is incredibly easy thanks to the clear and well-documented guide.</li>
+
+
+
+<li>
+<strong>Fast Performance</strong>: CodeIgniter's lightweight architecture allows it to perform exceptionally well, even under heavy loads. It's an ideal choice for projects that require high performance and scalability.</li>
+
+
+
+<li>
+<strong>MVC Architecture</strong>: CodeIgniter follows the Model-View-Controller (MVC) architectural pattern, separating business logic, data, and presentation. This promotes code organization and makes maintenance a breeze.</li>
+
+
+
+<li>
+<strong>Excellent Documentation</strong>: CodeIgniter sets the bar high in terms of documentation. The official user guide is comprehensive and easy to navigate, covering every aspect of the framework. Plus, the vibrant community is always ready to help out.</li>
+
+
+
+<li>
+<strong>Large User Base</strong>: CodeIgniter has been around for quite some time, which means it has built a substantial user base. This translates to a wealth of resources, tutorials, and support available online.</li>
+</ul>
+
+<h3 id="use-cases-and-real-world-examples"><strong>Use Cases and Real-World Examples</strong></h3>
+
+<p>CodeIgniter is suitable for a wide range of projects, including but not limited to:</p>
+
+<ul>
+<li>
+<strong>Small to Medium-Sized Applications</strong>: If you're building a small to medium-sized application, CodeIgniter is an excellent choice. It provides just the right amount of functionality without overwhelming you with unnecessary features.</li>
+
+
+
+<li>
+<strong>Rapid Prototyping</strong>: CodeIgniter shines when it comes to rapid prototyping. Its simplicity and ease of use allow you to get a functional prototype up and running in no time.</li>
+
+
+
+<li>
+<strong>API Development</strong>: Due to its lightweight nature, CodeIgniter is well-suited for building APIs. It allows you to create RESTful APIs quickly and efficiently.</li>
+</ul>
+
+<p>A real-world example of a project built with CodeIgniter is EllisLab's<strong> ExpressionEngine</strong>. ExpressionEngine is a powerful content management system (CMS) that utilizes CodeIgniter as its core framework. </p>
+
+<h2 id="laravel-the-elegance-of-modern-php">
+<br><strong>Laravel: The Elegance of Modern PHP</strong>
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--aQJNxGJK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-Laravel-1024x451.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aQJNxGJK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-Laravel-1024x451.png" alt="Laravel" width="800" height="352"></a></p>
+
+<h3 id="key-features-and-benefits-1"><strong>Key Features and Benefits</strong></h3>
+
+<p><strong><a href="https://laravel.com/">Laravel</a></strong>, on the other hand, is more feature-rich and provides a modern approach to PHP development. It gained popularity due to its powerful features, extensive ecosystem, and developer-friendly syntax. Let's explore some of the key features and benefits of using Laravel:</p>
+
+<ul>
+<li>
+<strong>Elegant Syntax</strong>: Laravel boasts an elegant and expressive syntax that makes PHP development a joy. It utilizes modern PHP features and concepts, making your code more readable and maintainable.</li>
+
+
+
+<li>
+<strong>Artisan CLI</strong>: Laravel comes bundled with "Artisan," a powerful command-line interface (CLI) tool. With Artisan, you can automate common tasks, generate boilerplate code, and even run tests effortlessly.</li>
+
+
+
+<li>
+<strong>ORM</strong>: Eloquent: Laravel's Eloquent ORM simplifies database interactions and makes working with databases a breeze. It provides a simple and intuitive syntax, allowing you to perform complex database queries with minimal effort.</li>
+
+
+
+<li>
+<strong>Blade Templating Engine</strong>: Laravel's Blade templating engine offers a clean and efficient way to manage your views. It provides features like layout inheritance, control structures, and reusable components, enhancing your development experience.</li>
+
+
+
+<li>
+<strong>Vibrant Ecosystem</strong>: Laravel has a thriving ecosystem with a wide range of packages and extensions available. Whether you need payment integrations, caching solutions, or anything in between, chances are there's a Laravel package for it.</li>
+</ul>
+
+<h3 id="use-cases-and-real-world-examples-2"><strong>Use Cases and Real-World Examples</strong></h3>
+
+<p>Laravel is suitable for a variety of projects, especially those that require rich features and scalability. Here are some common use cases for Laravel:</p>
+
+<ul>
+<li>
+<strong>Enterprise Applications</strong>: If you're building large-scale enterprise applications, Laravel's rich feature set and powerful ecosystem make it an excellent choice. Its robustness and scalability can handle complex requirements with ease.</li>
+
+
+
+<li>
+<strong>Content Management Systems</strong>: Laravel's elegance and extensibility make it perfect for building content management systems. Its modular structure allows for easy customization and integration of additional functionality.</li>
+
+
+
+<li>
+<strong>E-commerce Platforms</strong>: Laravel's extensive ecosystem provides numerous packages for building e-commerce platforms. It offers features like payment gateway integrations, inventory management, and order processing.</li>
+</ul>
+
+<p>A popular real-world example of a project built with Laravel is <strong>October CMS</strong>. October CMS is a flexible and user-friendly CMS that utilizes Laravel as its underlying framework.</p>
+
+<h2 id="code-igniter-vs-laravel-which-one-to-choose">
+<br><strong>CodeIgniter vs Laravel: Which One to Choose?</strong>
+</h2>
+
+<p>Now that we have explored the key features, benefits, and use cases of both CodeIgniter and Laravel, Let's take a close look at their <strong>technical features</strong> side-by-side. </p>
+
+<h4 id="code-igniter-vs-laravel-feature-comparison">CodeIgniter Vs Laravel : Feature Comparison</h4>
+
+<div class="table-wrapper-paragraph"><table><tbody>
+<tr>
+<td><strong>Feature/Aspect</strong></td>
+<td><strong>CodeIgniter</strong></td>
+<td><strong>Laravel</strong></td>
+</tr>
+<tr>
+<td>Database Model</td>
+<td>Object Oriented</td>
+<td>Relational Object-Oriented</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Requires custom extensions for authentication and authorization.</td>
+<td>Comes with built-in Authentication Class features.</td>
+</tr>
+<tr>
+<td>Unit Testing</td>
+<td>No inbuilt unit testing tools. Requires third-party tools.</td>
+<td>Inbuilt PHPUnit for thorough and continuous application code testing.</td>
+</tr>
+<tr>
+<td>Learning Curve</td>
+<td>Easier for Beginners.</td>
+<td>Offers many additional features which might be challenging for beginners.</td>
+</tr>
+<tr>
+<td>Support for REST</td>
+<td>Does not facilitate streamlined development of REST APIs.</td>
+<td>RESTful Controllers for easy development of REST APIs.</td>
+</tr>
+<tr>
+<td>Modules</td>
+<td>No built-in modularity features. </td>
+<td>Designed with built-in modularity. Allows project division into small modules through bundles.</td>
+</tr>
+<tr>
+<td>Template Engine &amp; API</td>
+<td>No built-in template engine.</td>
+<td>Comes with Blade template engine. Allows performance enhancement and view manipulation.</td>
+</tr>
+</tbody></table></div>
+
+<p>Apart from their technical specifics, here are some other essential factors to weigh in before choosing between CodeIgniter and Laravel:</p>
+
+<ul>
+<li>
+<strong>Project Size</strong>: CodeIgniter's lightweight nature makes it a perfect fit for <strong>small to medium-sized</strong> projects. If you're working on a <strong>larger project</strong> that requires extensive features and scalability, Laravel might be a better choice.</li>
+
+
+
+<li>
+<strong>Ease of Use</strong>: CodeIgniter's simplicity<strong> makes it extremely easy to learn and use</strong>. If you're new to PHP frameworks or want a minimalistic approach, CodeIgniter is the way to go. On the other hand, <strong>if you're comfortable with modern PHP and appreciate an expressive syntax</strong>, Laravel is worth considering.</li>
+
+
+
+<li>
+<strong>Ecosystem and Community Support</strong>: Laravel's vibrant ecosystem and large community ensure that you have access to a wide range of packages, extensions, and resources. If you prioritize the availability of robust third-party libraries and active community support, Laravel might be the better choice.</li>
+
+
+
+<li>
+<strong>Longevity and Stability</strong>: CodeIgniter has been around for a longer time and has a proven track record. If stability and backwards compatibility are crucial to you, CodeIgniter might be a safer bet. Laravel, on the other hand, is continuously evolving and adopting the latest PHP features and best practices.</li>
+</ul>
+
+<p>Ultimately, both CodeIgniter and Laravel are solid choices for PHP web development. It all boils down to your project's requirements, your personal preferences, and your development team's expertise.</p>
+
+<h2 id="introducing-five">Introducing Five</h2>
+
+<p>Traditional PHP frameworks like CodeIgniter and Laravel have long been the go-to solutions for some time. They offer structured approaches, MVC architectures, and a plethora of libraries. </p>
+
+<p>Unlike the conventional PHP frameworks, <a href="https://www.five.com/"><strong>Five</strong></a> is a little different, it is a low-code development environment designed to accelerate the process of building and deploying online database applications. Here's how Five stands out:</p>
+
+<ul>
+<li>
+<strong>Simplicity Meets Power</strong>: Just as CodeIgniter is known for its lightweight nature and Laravel for its elegant syntax, Five combines the best of both worlds. It offers a drag-and-drop database designer, a visual query builder, and form/chart wizards.</li>
+
+
+
+<li>
+<strong>Extensibility</strong>: While frameworks like Laravel provide an expressive ORM in Eloquent, Five, not only allows standard SQL but also offers extensibility through JavaScript or TypeScript.</li>
+
+
+
+<li>
+<strong>Full-Stack Web Apps with a Twist</strong>: While CodeIgniter and Laravel are excellent for building PHP-based web applications, Five lets you create standalone web applications with unique URLs, logins, and a dedicated MySQL database, all with fewer lines of code.</li>
+</ul>
+
+<p>Whether you're leaning towards traditional frameworks or exploring new avenues like Five, the key is to choose the platform that aligns with your project's goals. For a <a href="https://five.co/blog/filemaker-alternative/">deeper dive into what Five offers</a>, check out the <a href="https://help.five.org/2.1/">documentation for Five here</a>.</p>
+
+<h2 id="conclusion">
+<br><strong>Conclusion</strong>
+</h2>
+
+<p>PHP frameworks have revolutionized web development by providing structured and efficient ways to build applications. CodeIgniter and Laravel are two popular PHP frameworks that cater to different needs and preferences.</p>
+
+<p>CodeIgniter's lightweight nature, ease of use, and excellent documentation make it a great choice for small to medium-sized projects and rapid prototyping. On the other hand, Laravel's elegance, extensive ecosystem, and powerful features make it ideal for larger projects and enterprise applications.</p>
+
+<p>When choosing between CodeIgniter and Laravel,  consider the project size, ease of use, ecosystem support, and longevity of the framework. Both frameworks have proven their worth and have thriving communities, so you can't go wrong with either choice.</p>
+
+<p>So, whether you go the lightweight route with CodeIgniter or embrace the elegance of modern PHP with Laravel, both frameworks are sure to enhance your web development experience and make your projects shine.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [The Entire Process Of Handling URL Requests.](https://dev.to/code_lover/the-entire-process-of-handling-url-requests-1nbd) 
+ <details><summary>Article</summary> <p><strong>Case-Study</strong>: Looking at the "<a href="https://www.google.com">https://www.google.com</a>" URL.</p>
+
+<p><strong>Introduction</strong></p>
+
+<p>In the modern digital age, the World Wide Web has become an integral part of our lives. Every time you open your browser, type in a URL, and press Enter, a complex process unfolds behind the scenes. This article will guide you through the journey of a web request, explaining each step in detail, from the moment you type "<a href="https://www.google.com">https://www.google.com</a>" into your browser to the moment you see the Google homepage.</p>
+
+<ol>
+<li>
+<em>DNS Request</em> (Domain Name System)</li>
+</ol>
+
+<p>The journey begins with the Domain Name System (DNS). When you enter a URL like "<a href="http://www.google.com,">www.google.com,</a>" your computer doesn't know where to find Google's servers. It sends a DNS request to a DNS server, which acts like an internet phonebook. The DNS server translates the human-readable domain name ("<a href="http://www.google.com">www.google.com"</a>) into an IP address, such as "216.58.214.36." This IP address is essential for your computer to locate the target server on the internet.</p>
+
+<ol>
+<li>
+<em>TCP/IP</em> (Transmission Control Protocol/Internet Protocol)</li>
+</ol>
+
+<p>With the IP address in hand, your computer initiates a connection using the Transmission Control Protocol (TCP) and Internet Protocol (IP). TCP ensures that data is transmitted reliably, breaking it into small packets and verifying their successful delivery. IP, on the other hand, routes these packets across the internet to the destination server, Google's in this case.</p>
+
+<ol>
+<li><em>Firewall</em></li>
+</ol>
+
+<p>Firewalls act as gatekeepers for your computer. They filter incoming and outgoing traffic, blocking any potentially harmful or unauthorized data packets. Firewalls help ensure your computer's security by allowing only trusted connections to pass through.</p>
+
+<ol>
+<li>
+<em>HTTPS/SSL</em> (Hypertext Transfer Protocol Secure/Secure Sockets Layer)</li>
+</ol>
+
+<p>Security is paramount when transmitting sensitive information over the internet. To establish a secure connection, your browser and the web server engage in a process called the SSL handshake. During this handshake, they exchange cryptographic keys to encrypt and decrypt data. The resulting secure connection is identified by "https://" in the URL and the padlock icon in your browser's address bar.</p>
+
+<ol>
+<li><em>Load-Balancer</em></li>
+</ol>
+
+<p>Large websites like Google handle enormous traffic daily. To distribute this load efficiently, they use load balancers. A load balancer acts as an intermediary between your request and the web servers. It evaluates the servers' current load and directs your request to the server that can best handle it. This ensures a smooth and responsive user experience, even during peak traffic times.</p>
+
+<ol>
+<li><em>Web Server</em></li>
+</ol>
+
+<p>Once your request reaches the web server, it begins processing. Web servers like Apache, Nginx, or Microsoft IIS are responsible for handling incoming requests, processing dynamic content, and generating the HTML that your browser will render. In Google's case, their web servers process billions of search queries every day.</p>
+
+<ol>
+<li><em>Application Server</em></li>
+</ol>
+
+<p>For dynamic web applications, there's often a middle layer known as the application server. It handles tasks like database queries, business logic, and user authentication. In Google's context, this layer plays a crucial role in delivering personalized search results, managing user accounts, and handling various backend processes.</p>
+
+<ol>
+<li><em>Database</em></li>
+</ol>
+
+<p>Behind every web application is a database that stores, retrieves, and manages data. In Google's case, this includes storing indexed web pages, user preferences, and search history. Databases like MySQL, PostgreSQL, or NoSQL databases are used to efficiently handle vast amounts of data.</p>
+
+<p><strong>Conclusion</strong></p>
+
+<p>The seemingly simple act of typing "<a href="https://www.google.com">https://www.google.com</a>" into your browser and pressing Enter sets off a chain of complex processes that involve DNS requests, TCP/IP, firewalls, HTTPS/SSL, load-balancers, web servers, application servers, and databases. This intricate web of technologies and protocols ensures that you can access information swiftly and securely on the internet.</p>
+
+<p>Understanding this journey is not only crucial for software engineers but for anyone who wants to appreciate the complexity and reliability of the web. It highlights the importance of each component in delivering a seamless browsing experience, and it showcases the innovations that make the internet an indispensable part of our daily lives.</p>
+
+<p>In today's tech-centric world, grasping the inner workings of web requests can open doors to exciting career opportunities. By mastering these concepts, you're not only ahead of the curve but also better equipped to navigate the intricacies of the digital landscape. So, the next time you enter a URL and press Enter, remember the fascinating journey your request embarks on, making the web a global phenomenon that connects us all.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [What's in my bag for Experts Live Europe](https://dev.to/this-is-learning/whats-in-my-bag-for-experts-live-europe-9dn) 
+ <details><summary>Article</summary> <p>I am very excited to attend Experts Live Europe, a community-driven IT conference focused on Microsoft cloud, datacenter, security and modern workplace technologies. This event will take place in Prague, Czech Republic from September 18 to 20, 2023. I will be joining hundreds of other IT professionals who are eager to learn from the best experts worldwide, network with peers, and have fun in the beautiful city of Prague.</p>
+
+<p>As a speaker and remote worker, I always want to be prepared for any situation that might arise during the conference. That's why I have packed my bag with some essential items that I think will help me make the most out of this event. Here is a list of what's in my bag for Experts Live Europe:</p>
+
+<ul>
+<li>
+<strong>Laptops</strong>: This is a no-brainer. I need my laptop to take notes, write blog posts, check emails, and do some coding if needed. I have a Microsoft Surface Book 3 with Windows 11, which is lightweight, powerful, and has a great battery life. It also comes with a touch screen and a stylus pen, which are very handy for sketching diagrams or annotating slides.
+But I need to work even for SoftwareONE in these days and this is the reason why I have a second laptop with me: my Laptop 4 with Windows 11. On this laptop I have only things related to SoftwareONE and its project (Red Origin product, for example).</li>
+<li>
+<strong>Smartphone</strong>: Another obvious item. I use my smartphone to stay connected with the world, take photos and videos, scan QR codes, and use various apps that are useful for the conference. I have my iPhone 13, which has an amazing camera, a large screen, and a fast processor. It also supports wireless charging and reverse wireless charging, which are very convenient features. It's not in the photo because I use it for taking this picture. 🙂</li>
+<li>
+<strong>Power bank</strong>: Even though my laptop and smartphone have good battery life, I don't want to risk running out of juice in the middle of the day. That's why I always carry a power bank with me. I have an XTorm 20000mAh, which can charge my devices multiple times and has two USB ports for simultaneous charging. It also has a LED indicator that shows how much power is left. Very often I use the power bank to charge even my sports watch.</li>
+<li>
+<strong>Headphones</strong>: Sometimes I need to tune out the noise and focus on my work or relax with some music. That's why I always have headphones with me. I have a pair of AirPods Max wireless noise-canceling headphones, which are very comfortable, have excellent sound quality, and block out most of the ambient noise. They also have touch controls. I also have with me the AirPods Pro because sometimes they are more handy during the day.</li>
+<li>
+<strong>HDMI adapter</strong>: I need to connect my laptop to an external monitor or projector. That's why I always have an HDMI adapter with me. I have a Mokin HDMI adapter, which is very simple, reliable, and compatible with my laptop. It also supports 4K resolution and it has two HDMI output. In the same adapter I have three USB 3.0, a Lan and an USB-C.</li>
+<li>*<em>Cables</em>: I have a box with 1 Billion cables, USB, USB-C, for charging iPhones and headphones and I have also a multiple USB charger for charging up to 4 devices at the same time.</li>
+<li>
+<strong>DIJ</strong>: I have also my DJI for the iPhone. Very often I make some videos or timelapse during the event or for my social accounts. It's very useful and it works very well since years.</li>
+<li>
+<strong>Logitech MX Master</strong>: my favorite mouse ever. I use the MX Master since the first release. This is not the last model but still working very good and even the next one will be an MX Master. I can connect up to 3 devices with a simple switch. For me it's perfect because I have my main device (my gaming pc at home that I use as the main machine), my Book 3 and my Laptop 4. I don't use the mouse on my MacBook Air.</li>
+</ul>
+
+<p>These are the items that are in my bag for Experts Live Europe. Of course, everyone has their own preferences and needs when it comes to packing their bags for an event like this. But I hope that this list can give you some ideas or inspiration for your own packing. I look forward to seeing you at Experts Live Europe and sharing our experiences and learnings. Until then, stay safe!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cr5_kYzV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zv6u3lvj1kkwa41l6zrb.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cr5_kYzV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zv6u3lvj1kkwa41l6zrb.jpg" alt="my bag content" width="800" height="598"></a></p>
+
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ogR5mImm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9x5aklqdjlp32k4xhu06.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ogR5mImm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9x5aklqdjlp32k4xhu06.png" alt="Dev Dispatch" width="500" height="158"></a></p>
+
+<p>If you enjoyed this blog post and want to learn more about C# development, you might be interested in subscribing to my bi-weekly newsletter called Dev Dispatch. By subscribing, you will get access to exclusive content, tips, and tricks, as well as updates on the latest news and trends in the development world. You will also be able to interact with me, and share your feedback and suggestions. To subscribe, simply navigate to <a href="https://buttondown.email/kasuken?tag=devto">https://buttondown.email/kasuken?tag=devto</a>, enter your email address and click on the Subscribe button. You can unsubscribe at any time. Thank you for your support!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [WordPress for React?](https://dev.to/opensourcee/wordpress-for-react-82f) 
+ <details><summary>Article</summary> <p>Hello, my friends! Just starred this repo and it sounds promising. It’s Wordpress for React. Good timing to join. Cheers! <a href="https://github.com/webcrumbs-community/webcrumbs">https://github.com/webcrumbs-community/webcrumbs</a></p>
 
  </details> 
  <hr /> 
