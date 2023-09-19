@@ -117,694 +117,1503 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Top 6 Most Popular API Architecture Styles You Need to Know (with Pros, Cons, and Use Cases)](https://dev.to/kanani_nirav/top-6-most-popular-api-architecture-styles-you-need-to-know-with-pros-cons-and-use-cases-564j) 
- <details><summary>Article</summary> <p>In this article, we will discuss about 6 Most Popular API Architecture Styles: <strong>REST, SOAP, GraphQL, gRPC, WebSocket, and Webhooks.</strong></p>
+ #### - [Is Debugging Really More Fun Than Coding?](https://dev.to/codenewbieteam/is-debugging-really-more-fun-than-coding-2ha1) 
+ <details><summary>Article</summary> <p>🎤🔊 <em>Hey all tech enthusiasts, it's time to rumble in the digital jungle! In one corner, we've got bold and controversial tech statements, ready to assert their dominance. And in the other corner, we've got you, the fearless challengers, set to prove 'em wrong! Get ready to rumble as we dive into debates, challenge the status quo, and wrestle with some of the biggest questions in tech!</em></p>
 
-<p>APIs are ways for software to talk to each other and share data. There are different ways to design and build APIs. Let’s see the top 6 API Architecture Styles and their pros, cons, and Use Cases.</p>
+<blockquote>
+<p>Prove me wrong: Debugging is more enjoyable than writing code.</p>
+</blockquote>
 
-<h2>
-  
-  
-  REST
-</h2>
+<p>Follow the <a href="https://dev.to/codenewbieteam">CodeNewbie Org</a> and <a href="https://dev.to/t/codenewbie">#codenewbie</a> for more discussions and online camaraderie!</p>
 
-<p>REST is a way to use web standards and addresses to work with data on a server. They’re popular, easy to implement, and use HTTP methods. Most of the web services you interact with daily, like Twitter or YouTube, are powered by Restful APIs. For example, a client can use GET to get data, POST to make new data, PUT to change data, or DELETE to remove data. The data are usually in formats like JSON or XML.</p>
+<p><em><div class="ltag__user ltag__user__id__2167">
+  <a href="/codenewbieteam" class="ltag__user__link profile-image-link">
+    <div class="ltag__user__pic">
+      <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" alt="codenewbieteam image"></a>
+    </div>
+  </a>
+  <div class="ltag__user__content">
+    <h2>
+      <a href="/codenewbieteam" class="ltag__user__link">CodeNewbie</a>
+      Follow
+    </h2>
+    <div class="ltag__user__summary">
+      <a href="/codenewbieteam" class="ltag__user__link">
+        The most supportive community of programmers and people learning to code.  Part of the DEV family.
 
-<h3>
-  
-  
-  Pros
-</h3>
 
-<ul>
-<li><p>It is simple and easy to use and understand.</p></li>
-<li><p>It follows the rules of the web and uses existing standards and protocols.</p></li>
-<li><p>It is fast and can handle many requests, as it supports caching and statelessness.</p></li>
-<li><p>It is flexible and can use different formats and media types.</p></li>
-</ul>
+      </a>
+    </div>
+  </div>
+</div>
+</em> </p>
 
-<h3>
-  
-  
-  Cons
-</h3>
+ </details> 
+ <hr /> 
 
-<ul>
-<li><p>It does not have a clear contract or schema, which can make it unclear and inconsistent.</p></li>
-<li><p>It does not support complex queries or operations, which can make it need many requests and get too much or too little data.</p></li>
-<li><p>It does not handle errors or exceptions well, as it uses HTTP status codes that are not always clear or correct.</p></li>
-</ul>
+ #### - [Vuex or Pinia](https://dev.to/aditianand8/vuex-or-pinia-39m) 
+ <details><summary>Article</summary> <p>Pinia and Vuex are state management libraries for Vue.js, a popular JavaScript framework for building user interfaces. They serve the same fundamental purpose: to manage your application's state and provide a centralized way to handle data and its mutations. However, they have some differences in design philosophy and usage.</p>
 
-<h3>
-  
-  
-  Usage
-</h3>
-
-<p>REST is good for situations where:</p>
+<p><strong>-- Architecture--</strong></p>
 
 <ul>
-<li><p>The data model is simple and stable.</p></li>
-<li><p>The clients and servers are not dependent on each other.</p></li>
-<li><p>The speed and scalability are important.</p></li>
+<li><p><strong>Vuex:</strong> Vuex follows a traditional centralized store pattern. It provides a single store that holds the entire application's state, and components can access and mutate this state through predefined actions and mutations.</p></li>
+<li><p><strong>Pinia:</strong> Pinia, on the other hand, promotes a more modular and decentralized approach. It allows you to create multiple stores, each responsible for managing its own state. This can lead to a more organized and maintainable codebase, especially in larger applications.</p></li>
 </ul>
 
-<h2>
-  
-  
-  SOAP
-</h2>
-
-<p>SOAP is s style that uses XML messages and a predefined contract to exchange information between applications. It has a clear and strict contract, and it supports complex queries and operations, but it is complex, verbose, and not scalable or performant.</p>
-
-<h3>
-  
-  
-  Pros
-</h3>
+<p><strong>--TypeScript Support--</strong></p>
 
 <ul>
-<li><p>It has a clear and strict contract that ensures interoperability and compatibility.</p></li>
-<li><p>It supports complex queries and operations, such as transactions, security, or authentication.</p></li>
-<li><p>It handles errors and exceptions well, as it uses SOAP faults that provide detailed information.</p></li>
+<li><p><strong>Vuex:</strong> While Vuex can be used with TypeScript, it doesn't offer built-in TypeScript support out of the box. You need to write additional type definitions for your store, actions, mutations, and getters.</p></li>
+<li><p><strong>Pinia:</strong> Pinia was designed with TypeScript in mind, so it provides better out-of-the-box TypeScript support. This can make your code more type-safe and easier to refactor.</p></li>
 </ul>
 
-<h3>
-  
-  
-  Cons
-</h3>
+<p><strong>--Composition API--</strong></p>
 
 <ul>
-<li><p>It is complex and verbose to use and understand.</p></li>
-<li><p>It does not follow the principles of the web and adds overhead to the existing protocols.</p></li>
-<li><p>It is not scalable or performant, as it does not support caching or statelessness.</p></li>
-<li><p>It is not flexible or extensible, as it requires changes to the contract for any modifications.</p></li>
+<li><p><strong>Vuex:</strong> Vuex can be used with both the Options API and Composition API in Vue.js 3. However, using Vuex with the Composition API can be somewhat verbose and may require additional setup.</p></li>
+<li><p><strong>Pinia:</strong> Pinia integrates seamlessly with the Composition API, making it a natural choice if you're building Vue 3 applications using the Composition API. Its API design aligns well with the Composition API's reactivity system.</p></li>
 </ul>
 
-<h3>
-  
-  
-  Usage
-</h3>
-
-<p>SOAP is suitable for scenarios where:</p>
+<p><strong>--Ease of Use--</strong></p>
 
 <ul>
-<li><p>The data model is complex and dynamic.</p></li>
-<li><p>The clients and servers are tightly coupled and dependent.</p></li>
-<li><p>It’s heavily used in financial services and payment gateways where security and reliability are key</p></li>
+<li><p><strong>Vuex:</strong> Vuex has been around longer and has a larger community and ecosystem. It's well-documented and has a wide range of plugins and extensions available.</p></li>
+<li><p><strong>Pinia:</strong> Pinia is relatively newer compared to Vuex, so it may have a smaller community and fewer third-party plugins and extensions. However, some developers find its API and concepts easier to understand and work with, especially when using TypeScript.</p></li>
 </ul>
 
-<h2>
-  
-  
-  GraphQL
-</h2>
-
-<p>GraphQL is not just an architectural style but also a query language, allowing clients to ask for specific data as they need. This means no more over-fetching or under-fetching of data. You ask for exactly what you need. This leads to more efficient network communication and faster responses. Facebook developed GraphQL to deliver efficient and precise data to its billions of users. Now it’s used by companies like GitHub and Shopify. Its flexibility and efficiency make it a strong choice for applications with complex data requirements. It also supports mutations to change the data, and subscriptions to get live updates when the data changes.</p>
-
-<h3>
-  
-  
-  Pros
-</h3>
+<p><strong>--Bundle Size--</strong></p>
 
 <ul>
-<li><p>It works with any server language or framework, as it uses its own schema definition language.</p></li>
-<li><p>It has a single endpoint, which makes it more efficient than REST, where multiple requests might be needed to get enough data.</p></li>
-<li><p>It is strongly typed, which makes sure the data is consistent and compatible between the client and the server.</p></li>
-<li><p>It lets clients fetch only the data they need, which avoids over-fetching or under-fetching of data.</p></li>
+<li><p><strong>Vuex:</strong> Vuex is included in the official Vue.js package, which means it comes bundled with Vue.js by default. This can result in a larger bundle size, even if you're not using Vuex in your project.</p></li>
+<li><p><strong>Pinia:</strong> Pinia is a standalone library, so it doesn't add to the bundle size of your application unless you explicitly include it. This can be an advantage in terms of keeping your bundle size small.</p></li>
 </ul>
 
-<h3>
-  
-  
-  Cons
-</h3>
+<p>The coding style for Pinia and Vuex can vary, as they have different approaches to state management in Vue.js applications. Below, I'll outline some of the key differences in coding style when using Pinia compared to Vuex:</p>
+
+<p><strong>--Coding Style Examples--</strong></p>
 
 <ul>
-<li><p>It is complex and hard to use and understand, as it requires learning a new syntax and logic.</p></li>
-<li><p>It does not support caching by default, which can affect performance and scalability.</p></li>
-<li><p>It does not handle errors well, as it always returns HTTP 200 status code, even if there are errors in the GraphQL layer.</p></li>
+<li><strong>Pinia:</strong></li>
 </ul>
 
-<h3>
-  
-  
-  Usage
-</h3>
+<p><strong>Modularization</strong> Pinia encourages a more modular approach to state management. You typically create multiple stores, each responsible for managing a specific piece of state or domain. This leads to a more organized codebase with smaller, focused stores.<br>
+</p>
 
-<p>GraphQL is good for situations where:</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code>   <span class="c1">// Defining a Pinia store</span>
+   <span class="k">import</span> <span class="p">{</span> <span class="nx">defineStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">pinia</span><span class="dl">'</span><span class="p">;</span>
 
-<ul>
-<li><p>The data model is complex and dynamic, as it can handle nested and relational data.</p></li>
-<li><p>The clients and servers are not dependent on each other, as it lets clients define their own data requirements.</p></li>
-<li><p>The bandwidth and performance are important, as it reduces the amount of data transferred.</p></li>
-</ul>
+   <span class="k">export</span> <span class="kd">const</span> <span class="nx">useMyStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="dl">'</span><span class="s1">myStore</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+     <span class="na">state</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+       <span class="na">count</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="p">}),</span>
+     <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nx">increment</span><span class="p">()</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+       <span class="p">},</span>
+     <span class="p">},</span>
+   <span class="p">});</span>
+</code></pre>
 
-<h2>
-  
-  
-  gRPC
-</h2>
-
-<p>gRPC is modern, high-performance, and uses protocol buffers. It’s a favorite for microservices architectures, and companies like Netflix use gRPC to handle their immense interservice communication. However, if you’re dealing with browser clients, gRPC might pose some challenges due to limited browser support.</p>
-
-<h3>
-  
-  
-  Pros
-</h3>
-
-<ul>
-<li><p>It has a clear and strict contract, which ensures interoperability and compatibility between services.</p></li>
-<li><p>It supports complex queries and operations, such as streaming, bidirectional communication, authentication, or encryption.</p></li>
-<li><p>It is fast and efficient, as it uses binary format and HTTP/2 features to reduce latency and bandwidth.</p></li>
-</ul>
-
-<h3>
-  
-  
-  Cons
-</h3>
-
-<ul>
-<li><p>It is complex and hard to use and understand, as it requires generating and compiling protocol buffer files.</p></li>
-<li><p>It does not follow the principles of the web, as it uses custom headers and methods that are not compatible with standard web tools or browsers.</p></li>
-</ul>
-
-<h3>
-  
-  
-  Usage
-</h3>
-
-<p>gRPC is good for situations where:</p>
-
-<ul>
-<li><p>The data model is complex and dynamic, as it can handle structured and unstructured data.</p></li>
-<li><p>The services are dependent on each other, as it allows services to invoke each other’s methods directly.</p></li>
-<li><p>The speed and efficiency are important, as it minimizes the overhead and maximizes the throughput.</p></li>
-</ul>
-
-<h2>
-  
-  
-  WebSocket
-</h2>
-
-<p>WebSocket is all about real-time, bidirectional, and persistent connections. It’s perfect for live chat applications and real-time gaming, where low-latency data exchange is crucial.</p>
-
-<h3>
-  
-  
-  Pros
-</h3>
-
-<ul>
-<li><p>It is faster and more efficient than HTTP, as it uses a single connection and does not need headers or cookies for each message.</p></li>
-<li><p>It can send and receive different types of messages over the same connection, such as text, binary, or streaming data.</p></li>
-<li><p>It can push data from the server to the client without waiting for a request, which enables real-time and event-driven communication.</p></li>
-</ul>
-
-<h3>
-  
-  
-  Cons
-</h3>
-
-<ul>
-<li><p>It’s not supported by some older browsers or proxies that do not understand the WebSocket protocol or the upgrade header.</p></li>
-<li><p>It’s not secure by default, as they do not use encryption or authentication unless they use the <code>wss://</code> scheme, which is similar to <code>https://</code> for HTTP.</p></li>
-<li><p>It does not store any information about the connection or the messages on either side, which means they are not stateful.</p></li>
-</ul>
-
-<h3>
-  
-  
-  Usage
-</h3>
-
-<p>WebSocket is good for situations where:</p>
-
-<ul>
-<li><p>The web application needs fast and interactive data exchange, such as chat, gaming, or streaming.</p></li>
-<li><p>The web application needs bidirectional and multiplexed communication, where both sides can send and receive multiple messages of different types at the same time.</p></li>
-<li><p>The web application needs real-time and event-driven communication, where the server can send data to the client without waiting for a request.</p></li>
-</ul>
-
-<h2>
-  
-  
-  Webhooks
-</h2>
-
-<p>Webhooks are a way for servers to send messages to clients when something happens. They use HTTP callbacks or POST requests to deliver payloads that contain information about the events. The clients register their webhooks with the servers by providing URLs that can receive the payloads. Webhook is all about event-driven, HTTP callbacks, and asynchronous operation.</p>
-
-<h3>
-  
-  
-  Pros
-</h3>
-
-<ul>
-<li><p>It is simple and easy to use and understand, as it uses standard HTTP methods and formats.</p></li>
-<li><p>It follows the principles of the web, as it leverages existing standards and protocols.</p></li>
-<li><p>It is scalable and performant, as it supports asynchronous communication without polling or waiting.</p></li>
-</ul>
-
-<h3>
-  
-  
-  Cons
-</h3>
-
-<ul>
-<li><p>It does not have a clear or strict contract, which can lead to inconsistency and ambiguity between servers and clients.</p></li>
-<li><p>It does not support complex queries or operations, it only sends one-way notifications without confirmation or feedback.</p></li>
-<li><p>It does not handle errors well, It does not provide retries or acknowledgments in case of failures.</p></li>
-</ul>
-
-<h3>
-  
-  
-  Usage
-</h3>
-
-<p>Webhooks are good for situations where:</p>
-
-<ul>
-<li><p>Event-driven notifications ( GitHub uses webhooks to notify your other systems whenever a new commit is pushed.)</p></li>
-<li><p>The data model is simple and stable, as it can handle basic types and fields.</p></li>
-<li><p>The servers and clients are not dependent on each other, as they do not require direct communication or coordination.</p></li>
-<li><p>The performance and scalability are important, as they reduce the load and latency of the communication.</p></li>
-</ul>
-
-<h2>
-  
-  
-  Here is the final summarized table
-</h2>
-
-
-<div class="ltag_gist-liquid-tag">
-  
 </div>
 
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OFer-8Eq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/um3l02jna0u8xhii9cde.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OFer-8Eq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/um3l02jna0u8xhii9cde.png" alt="[source](https://www.youtube.com/watch?v=4vLxWqE94l4)" width="800" height="654"></a></p>
+
+<p><strong>Composition API</strong> Pinia integrates seamlessly with Vue 3's Composition API, which encourages using <code>ref</code>, <code>computed</code>, and <code>reactive</code> for defining and working with state. This aligns well with the Composition API's reactivity system.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code>   <span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
+
+   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+     <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">useMyStore</span><span class="p">().</span><span class="nx">count</span><span class="p">;</span> <span class="c1">// Accessing store state</span>
+       <span class="kd">const</span> <span class="nx">doubleCount</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// Computed property</span>
+
+       <span class="k">return</span> <span class="p">{</span>
+         <span class="nx">count</span><span class="p">,</span>
+         <span class="nx">doubleCount</span><span class="p">,</span>
+       <span class="p">};</span>
+     <span class="p">},</span>
+   <span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>TypeScript Support</strong> Pinia is designed with TypeScript in mind and provides excellent TypeScript support out of the box. You can strongly type your state, actions, mutations, and getters, which leads to more type-safe code.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code>   <span class="c1">// Strongly typing store state</span>
+   <span class="kr">interface</span> <span class="nx">MyStoreState</span> <span class="p">{</span>
+     <span class="nl">count</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">export</span> <span class="kd">const</span> <span class="nx">useMyStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="dl">'</span><span class="s1">myStore</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+     <span class="na">state</span><span class="p">:</span> <span class="p">():</span> <span class="nx">MyStoreState</span> <span class="o">=&gt;</span> <span class="p">({</span>
+       <span class="na">count</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="p">}),</span>
+     <span class="c1">// ...</span>
+   <span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li><strong>Vuex:</strong></li>
+</ul>
+
+<p><strong>Centralized Store</strong> Vuex follows a centralized store pattern, where all application state is stored in a single global store. Actions and mutations are defined to interact with this central store.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code>   <span class="c1">// Defining a Vuex store</span>
+   <span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span><span class="p">;</span>
+
+   <span class="k">export</span> <span class="k">default</span> <span class="nx">createStore</span><span class="p">({</span>
+     <span class="na">state</span><span class="p">:</span> <span class="p">{</span>
+       <span class="na">count</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="p">},</span>
+     <span class="na">mutations</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nx">increment</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+       <span class="p">},</span>
+     <span class="p">},</span>
+     <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nx">incrementAsync</span><span class="p">({</span> <span class="nx">commit</span> <span class="p">})</span> <span class="p">{</span>
+         <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+           <span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span>
+         <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+       <span class="p">},</span>
+     <span class="p">},</span>
+   <span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Options API and Composition API</strong> Vuex can be used with both the Options API and Composition API in Vue.js 3. When using the Options API, you define computed properties and methods within components to access and update state.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code>   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+     <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nx">count</span><span class="p">()</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span> <span class="c1">// Accessing store state</span>
+       <span class="p">},</span>
+     <span class="p">},</span>
+     <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nx">increment</span><span class="p">()</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Committing a mutation</span>
+       <span class="p">},</span>
+     <span class="p">},</span>
+   <span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>When using the Composition API with Vuex, you'll often use <code>useStore</code> to access the store instance within your components.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code>   <span class="k">import</span> <span class="p">{</span> <span class="nx">useStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span><span class="p">;</span>
+
+   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+     <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">useStore</span><span class="p">();</span>
+       <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">);</span> <span class="c1">// Accessing store state</span>
+
+       <span class="kd">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+         <span class="nx">store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Committing a mutation</span>
+       <span class="p">};</span>
+
+       <span class="k">return</span> <span class="p">{</span>
+         <span class="nx">count</span><span class="p">,</span>
+         <span class="nx">increment</span><span class="p">,</span>
+       <span class="p">};</span>
+     <span class="p">},</span>
+   <span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To sum up, Pinia and Vuex have different coding styles based on their fundamental design philosophies. Pinia prioritizes a modular, Composition API-centered, and strongly typed method, while Vuex follows a more centralized, Options API-friendly pattern. When choosing between them, it's important to consider your project's requirements and your team's coding preferences.</p>
+
+<p>Ultimately, the decision between Pinia and Vuex comes down to your project needs and personal preferences. If you prefer a more modular and TypeScript-friendly approach, Pinia may be the right choice for you. However, if you're already experienced with Vuex and prefer the centralized store pattern or your project already uses Vuex, it's best to stick with it. Both libraries are effective in managing the state within Vue.js applications.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Data migrations in regular migrations and why you (probably) should not do that](https://dev.to/katafrakt/data-migrations-in-regular-migrations-and-why-you-probably-should-not-do-that-2eem) 
+ <details><summary>Article</summary> <p>Every once in a while I read Lucian Ghinda's <a href="https://newsletter.shortruby.com/">Short Ruby</a> newsletter and I see a "take" there which begs for some elaboration and at least slight disagreement. So I decided to try to write these short (but too long for a tweet) replies here.</p>
+
+
+
+
+<p>Today's topic comes from <a href="https://newsletter.shortruby.com/p/edition-59">issue #59</a>, where Matt Swanson touches the topic of data migrations.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EqlDq49s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/niyt8f4q4lckdm6q1ec4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EqlDq49s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/niyt8f4q4lckdm6q1ec4.png" alt="Image description" width="800" height="378"></a></p>
+
+<p>(here is <a href="https://nitter.net/_swanson/status/1701704048947396844">a link</a> to the tweet)</p>
+
+<p>So what's wrong here? I think the first of all we need to divide what Matt conveniently put together, because "don't reference Rails models in migrations" and "don't run data migrations in schema migrations" are two separate rules coming from different backgrounds.</p>
 
 <h2>
   
   
-  Sample API architectural Styles
+  Don't reference models
 </h2>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Nm5U_uLL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/43awo5veqldyk3i6jsp9.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Nm5U_uLL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/43awo5veqldyk3i6jsp9.png" alt="[source](https://blog.bytebytego.com/p/ep49-api-architectural-styles)" width="766" height="1024"></a></p>
+<p>The rule of not referencing models relies on the fact that the code of the models change and it might change a lot. In fact, the assumption here is that the migration referencing a model will successfully run on Monday, but won't run on Thursday, because the model file changed and the assumptions made in migration code are no longer correct.</p>
+
+<p>I generally agree that the points in the tweet can greatly reduce the risk of that happening. Although at the same time these points are not realistic. Just how would you "run migrations in dev often" during your two-weeks vacations? Fortnight is definitely enough time in larger projects for model and migration to go out of sync, resulting in a migration not being able to run.</p>
+
+<p>However, I don't want to sweat on it, because that's up to your team if you want to take this risk. The second part is much more interesting.</p>
 
 <h2>
   
   
-  Reference
+  Don't run data migrations along schema migrations
 </h2>
 
+<p>Let's say it out loud: the migrations were thought as a tool to consistently modify database <strong>schema</strong> across the environments. If you don't believe me, just check how the table keeping track of the migrations already run is called.</p>
+
+<p>However, in time, people started to use it to run data migrations too. It have few obvious upsides:</p>
+
 <ul>
-<li><p><a href="https://www.youtube.com/watch?v=4vLxWqE94l4">Top 6 Most Popular API Architecture Styles - ByteByteGo</a></p></li>
-<li><p><a href="https://blog.bytebytego.com/p/ep49-api-architectural-styles">https://blog.bytebytego.com/p/ep49-api-architectural-styles</a></p></li>
-<li><p><a href="https://www.postman.com/state-of-api/api-technologies/#api-technologies">https://www.postman.com/state-of-api/api-technologies/#api-technologies</a></p></li>
+<li>You already have a tool for that</li>
+<li>Everyone in your organization is expected to run migrations in dev environment regularly, so they will have their data in sync automatically. You don't need to announce on Slack that "everyone please run <code>rake data:backfill_order_numbers</code>".</li>
+<li>You already have a step of running it in your deployment pipeline and you don't have to add anything new</li>
 </ul>
 
-<p>If You are using <a href="https://medium.com/">Medium</a> Please support and follow me for interesting articles. <strong><a href="https://medium.com/@kanani-nirav">Medium Profile</a></strong></p>
+<p>In my experience, these advantages start to fade when the project (and especially the database) grows. Here are some problem I encountered with this approach:</p>
 
-<p><strong>Stay updated with my latest and most interesting articles by following me.</strong></p>
+<ul>
+<li>Data migrations can take a lot of time. If you put schema change with data migration in the same file, you might and up with a table locked exclusively for a prolonged amount of time, effectively bringing your app down.</li>
+<li>Data in production database is often far more exotic than in staging/test environments. The migration might pass on staging, but will fail on production, because some weird data in the database. Now your pipeline is blocked and you either have to revert or submit a hotfix.</li>
+<li>It's not uncommon to have parameterized data migrations, where you first run it for only some tenants or just in some countries. When you check that everything works fine, you proceed with another batch.</li>
+<li>You have little control over when the data migration is run. In my current company, for example, you just put your PR in a merge queue and you don't really know when it will be merged (and deployed). Sometimes it's hours later. With data migrations, that might put significant stress on the database, it's better to have very strict control when it's run.</li>
+<li>Similarly, you might want to merge and deploy the code during working hours, but run the data migration in off-hours (or even during the weekend). But you have coupled one to the other, so you cannot really do that.</li>
+<li>Last but definitely not least: if you write your data migration as a rake task, you can actually write tests for it. Do you write tests for your migrations?</li>
+</ul>
 
-<p><strong>If this guide has been helpful to you and your team please share it with others!</strong></p>
+<p>To me personally, these points highly outweigh the comfort of using schema migrations for data migrations. Sure, you lost the comfort of using the tool that's already there, but at the same time you put the stability of the app, the well-being of the whole team and your peace of mind at risk.</p>
+
+<p>So I guess my "counter-take" is:</p>
+
+<p>At least think of having the process of running data migrations in separation from your schema migrations, knowing what's at stake.</p>
 
  </details> 
  <hr /> 
 
- #### - [CodeIgniter vs Laravel : Introduction To PHP Frameworks](https://dev.to/domfive/codeigniter-vs-laravel-introduction-to-php-frameworks-3f2o) 
- <details><summary>Article</summary> <p>In the world of web development, PHP has always been a popular choice due to its flexibility and extensive libraries. However, coding a project from scratch can be time-consuming and error-prone. That's where PHP frameworks come into play. They provide a structured and efficient way to build web applications, speeding up the development process and ensuring best practices. Among the myriad of PHP frameworks available, two have emerged as leaders: CodeIgniter vs Laravel.  </p>
+ #### - [How Progressive Web Apps (PWS) are Changing the Game](https://dev.to/codewithshahan/how-progressive-web-apps-pws-are-changing-the-game-29g9) 
+ <details><summary>Article</summary> <p><strong>🥢Introduction:</strong></p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---lGV27Iy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/Five.Co-CodeIgniter-vs-Laravel-Introduction-To-PHP-Frameworks-1024x576.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---lGV27Iy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/Five.Co-CodeIgniter-vs-Laravel-Introduction-To-PHP-Frameworks-1024x576.png" alt="CodeIgniter vs Laravel" width="800" height="450"></a></p>
+<p>Hey there, folks! Welcome back. Today, we're diving into a hot topic in the tech world - Progressive Web Apps, or PWAs. But don't worry, we'll break it down into plain English, so you'll understand what all the buzz is about.</p>
+
+<p><strong>🔑What Are PWAs?</strong></p>
+
+<p>Let's start with the basics. Progressive Web Apps are a type of web application that can run on any device with a modern web browser. They offer a native app-like experience right in your browser, and here's the best part - you don't need to download them from an app store.</p>
+
+<p>Before we proceed, if you're feeling a bit bored right now, you can switch to the <a href="https://youtu.be/ha8SjUM0CBU">100-second video</a> version where I've condensed all the information from this article for you:<br>
+<iframe width="710" height="399" src="https://www.youtube.com/embed/ha8SjUM0CBU">
+</iframe>
+</p>
+
+<p><strong>🔑Advantages of PWAs:</strong></p>
+
+<ol>
+<li><p><strong>Offline Access</strong>: PWAs can work even when you're not connected to the internet. This is because they can cache data, so you can still use them in airplane mode or in areas with poor connectivity.</p></li>
+<li><p><strong>Cross-Platform Compatibility</strong>: Whether you're using a smartphone, tablet, or desktop, PWAs adapt to your device. No need for separate apps for each platform.</p></li>
+<li><p><strong>No Downloads or Updates</strong>: Forget about app stores and constant updates. PWAs are always up to date because they're served directly from the web.</p></li>
+<li><p><strong>Fast Loading</strong>: PWAs are designed for speed. They load quickly, making for a smooth user experience.</p></li>
+<li><p><strong>Low Data Usage</strong>: They're data-efficient, so you won't blow through your mobile data plan.</p></li>
+</ol>
+
+<p><strong>⛳How Do PWAs Work?</strong></p>
+
+<p>Now, let's peek under the hood to see how PWAs work:</p>
+
+<ol>
+<li><p><strong>Service Workers</strong>: These are the magic behind offline access. Service workers are scripts that run in the background and can intercept network requests, allowing the PWA to serve cached content when you're offline.</p></li>
+<li><p><strong>Manifest File</strong>: PWAs have a manifest file that tells the browser how the app should behave when it's added to the home screen. You can think of it as the app's blueprint.</p></li>
+<li><p><strong>Responsive Design</strong>: PWAs are designed to be responsive, meaning they adapt to different screen sizes and orientations.</p></li>
+</ol>
+
+<p><strong>📲How to Install PWAs:</strong></p>
+
+<p>So, how do you get a PWA on your device? It's super easy!</p>
+
+<ol>
+<li><p><strong>Chrome (Android)</strong>: When you visit a PWA-enabled website, you'll often see a prompt to add it to your home screen. Just tap 'Add'!</p></li>
+<li><p><strong>Safari (iOS)</strong>: Open Safari, navigate to the PWA, tap the Share button, and choose 'Add to Home Screen.'</p></li>
+</ol>
+
+<p><strong>🎈Examples of PWAs:</strong></p>
+
+<p>Alright, let's look at some examples of PWAs you might already be using:</p>
+
+<ol>
+<li><p><strong>Twitter Lite</strong>: This PWA offers a streamlined version of Twitter that loads quickly and works offline.</p></li>
+<li><p><strong>Flipkart</strong>: The popular Indian e-commerce site has a PWA that lets you shop seamlessly on any device.</p></li>
+<li><p><strong>Uber</strong>: Uber's PWA lets you book rides and track drivers without downloading their app.</p></li>
+</ol>
+
+<p><strong>🚧Conclusion:</strong></p>
+
+<p>And there you have it - Progressive Web Apps in plain English. They're fast, reliable, and save you from the hassle of app stores. So, next time you're browsing the web on your phone or computer, keep an eye out for those PWAs, and give them a try!</p>
+
+<p>You can follow me on <a href="https://www.twitter.com/shahancd">Twitter</a>/<a href="https://www.instagram.com/shahancd">Instagram</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to write a CRUD CLI using Elixir and ScyllaDB](https://dev.to/guto/how-to-write-a-crud-cli-using-elixir-and-scylladb-4bek) 
+ <details><summary>Article</summary> <p>If you know high traffic applications for communication, applications that need low latency and good fault tolerance, you have most likely already come across the names Elixir (as a programming language) and ScyllaDB (being a database NoSQL aimed at low latency). The objective of both is very similar: to work with applications that generally require greater care for stability.</p>
+
+<p>ScyllaDB is recognized worldwide as an extremely fast database, being based on Apache Cassandra, bringing several improvements for low latency. Furthermore, ScyllaDB is completely free, open source, and is distributed under the GNU AGPL license.</p>
+
+<p>Elixir, on the other hand, is a programming language known for dealing very well with the applicability of concepts such as concurrency and fault tolerance and this is thanks to the Erlang ecosystem, which in this case, Elixir makes use of the virtual machine called BEAM, designed specifically to work with high-volume messaging applications.</p>
+
+<p>The purpose of this article is to offer an introduction to how you can create your first application using both, opening doors and possibilities for your future with development with these two incredible technologies.</p>
+
+<h2>
+  
+  
+  Table of Contents
+</h2>
 
 <ul>
 <li>
- CodeIgniter: A Lightweight Powerhouse<ul>
-<li>Key Features and Benefits</li>
-<li>Use Cases and Real-World Examples</li>
+Starting the project
+
+<ul>
+<li>Installing Elixir</li>
+<li>Installing ScyllaDB</li>
+<li>Starting our project</li>
 </ul>
 
 
 </li>
 <li>
- Laravel: The Elegance of Modern PHP<ul>
-<li>Key Features and Benefits</li>
-<li>Use Cases and Real-World Examples</li>
+Configuring the project
+
+<ul>
+<li>Defining dependencies</li>
+<li>Configuring .env</li>
+<li>Defining our connection module</li>
 </ul>
+
+
+</li>
+<li>Implementing actions with the database</li>
+<li>
+Commands
+
+<ul>
+<li>Add</li>
+<li>List</li>
+<li>Delete</li>
+<li>Stress</li>
+</ul>
+
+
+</li>
+<li>Implementing user interaction</li>
+<li>Running our application</li>
+<li>Conclusion</li>
+</ul>
+
+<h2>
+  
+  
+  Starting the project
+</h2>
+
+<p>Beforehand we need to install both Elixir and ScyllaDB. I won't go into too much detail about the installation because this makes the article simpler. So let's start with installing Elixir.</p>
+
+<h3>
+  
+  
+  Installing Elixir
+</h3>
+
+<p>To install Elixir in general, there are two main methods: installing directly from your package manager or using a version manager for programming languages. In my case I will be using <code>asdf</code> as responsible for managing my Elixir versions. If you want to install Elixir using your package manager, click <a href="https://elixir-lang.org/install.html">here</a> to receive more information.</p>
+
+<p>To install <code>asdf</code> you can check by clicking <a href="https://asdf-vm.com/guide/getting-started.html">here</a>. As a preference, I always choose to install with "Bash &amp; Git" or "Zsh &amp; Git". Once installed, we will prepare the installation to receive the latest version of Erlang and Elixir in our project. To install Erlang:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+
+<span class="nv">$ </span>asdf <span class="nb">install </span>erlang latest
+
+<span class="nv">$ </span>asdf global erlang latest
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>Did you have any problems with the installation? Access the <a href="https://github.com/asdf-vm/asdf-erlang">official guide</a>.</p>
+</blockquote>
+
+<p>To install Elixir:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
+<span class="nv">$ </span>asdf <span class="nb">install </span>elixir latest
+
+<span class="nv">$ </span>asdf global elixir latest
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>Did you have any problems with the installation? Access the <a href="https://github.com/asdf-vm/asdf-elixir">official guide</a>.</p>
+</blockquote>
+
+<p>Well, now that we have both installed we can test to see if everything is ok by typing <code>elixir -v</code> in our terminal emulator and we will get a response similar to:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Erlang/OTP 25 [erts-13.2.2.2] [source] [64-bit]
+
+Elixir 1.13.4 (compiled with Erlang/OTP 23)
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>These are my installed versions for Erlang and Elixir. If you want to install the same versions as me on your machine, just modify the <code>asdf install</code> command, replacing <code>latest</code> with the version number and then set it to <code>asdf global elixir 1.13.4</code> in this case.</p>
+</blockquote>
+
+<h3>
+  
+  
+  Installing ScyllaDB
+</h3>
+
+<p>There are several ways to use ScyllaDB, which you can use with <a href="https://www.scylladb.com/product/scylla-cloud/">ScyllaDB Cloud</a>, with ScyllaDB <a href="//https%20://opensource.docs.scylladb.com/stable/getting-started/install-scylla/">installed on your machine</a> or the way I will use it: with Docker containers.</p>
+
+<p>If you don't already have Docker installed, I recommend accessing the [installation] guide (<a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>). If you want to use ScyllaDB Cloud or ScyllaDB installed on your machine, there's no problem, just be careful when placing the node links when initializing and configuring the project, but when we get to this part I'll explain it better.</p>
+
+<p>Well, continuing... To run our container with ScyllaDB in Docker we will use the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>docker run <span class="nt">--name</span> some-scylla <span class="nt">-p</span> 9042:9042 <span class="nt">-d</span> scylladb/scylla
+</code></pre>
+
+</div>
+
+
+
+<p>The <code>-p</code> option indicates that we want to bind port 9042 of the container with port 9042 of our machine, allowing our container to now be accessed directly on our <code>localhost:9042</code>.</p>
+
+<p>For test the connection, after executing the command, wait a few seconds for everything to start correctly in the container and then type:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> some-scylla cqlsh
+</code></pre>
+
+</div>
+
+
+
+<p>So you will see a response similar to:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Connected to at 172.17.0.2:9042.
+[cqlsh 5.0.1 | Cassandra 3.0.8 | CQL spec 3.3.1 | Native protocol v4]
+Use HELP for help.
+cqlsh&gt; 
+</code></pre>
+
+</div>
+
+
+
+<p>This is our console where we can execute commands to interact with ScyllaDB. By default, the language used is <a href="https://cassandra.apache.org/doc/latest/cassandra/cql/">CQL (Cassandra Query Language)</a>, very similar to the standard database SQL that you probably have already had contact.</p>
+
+<p>Well, let's run a simple command to describe all the <code>keyspaces</code> we have in our container. <code>keyspaces</code> could be defined with a simple analogy: keyspace is basically the same as database when you use a relational database like MySQL or PostgreSQL for example (the definition goes <em>a little beyond that</em>, but I won't go into it very).</p>
+
+<p>To describe your <code>keyspaces</code> run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="n">cqlsh</span><span class="o">&gt;</span> <span class="k">DESCRIBE</span> <span class="n">KEYSPACES</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>And you should see a response similar to:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>system_schema system_traces system_distributed
+</code></pre>
+
+</div>
+
+
+
+<p>We haven't created any <code>keyspace</code> yet, right? Well, let's create our keyspace, which in this case is for a <code>media_player</code>, with the command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="n">cqlsh</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="n">KEYSPACE</span> <span class="n">media_player</span>
+     <span class="k">WITH</span> <span class="n">replication</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'class'</span><span class="p">:</span> <span class="s1">'NetworkTopologyStrategy'</span><span class="p">,</span> <span class="s1">'replication_factor'</span><span class="p">:</span> <span class="s1">'3'</span><span class="p">}</span>
+     <span class="k">AND</span> <span class="n">durable_writes</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>And let's create the table:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight sql"><code><span class="n">cqlsh</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">media_player</span><span class="p">.</span><span class="n">songs</span> <span class="p">(</span>
+     <span class="n">id</span> <span class="n">uuid</span><span class="p">,</span>
+     <span class="n">titletext</span><span class="p">,</span>
+     <span class="n">album</span> <span class="nb">text</span><span class="p">,</span>
+     <span class="n">artist</span> <span class="nb">text</span><span class="p">,</span>
+     <span class="n">created_at</span> <span class="nb">timestamp</span><span class="p">,</span>
+     <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">created_at</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Starting our project
+</h3>
+
+<p>For start a new project, run the command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>mix new media_player
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p><a href="https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html">Mix</a> is much more than a dependency manager for Elixir, after all, with it we can run and manage our entire project. By default, Mix is already installed together with Elixir.</p>
+</blockquote>
+
+<p>And a project will be created with the structure:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>.
+├── README.md
+├── lib
+│   └── media_player.ex
+├── mix.exs
+</code></pre>
+
+</div>
+
+
+
+<p>Well, now that we have our project initialized, we can start playing, so open your favorite code editor and let's go.</p>
+
+<h2>
+  
+  
+  Configuring the project
+</h2>
+
+<p>At this point we will configure our project in Elixir to install and use all the tools necessary to build our CLI, in addition to defining the first settings.</p>
+
+<h3>
+  
+  
+  Defining dependencies
+</h3>
+
+<p>After opening your code editor, notice that there is a file named <code>mix.exs</code>. This file is responsible for defining several attributes about our project, including the dependencies that will be used during its development.</p>
+
+<p>Going down the page a little you will see an area that starts with <code>defp deps do</code>... Exactly in this part we will modify and insert the following dependencies:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="c1"># Run "mix help deps" to learn about dependencies.</span>
+<span class="k">defp</span> <span class="n">deps</span>
+  <span class="p">[</span>
+    <span class="p">{</span><span class="ss">:dotenv</span><span class="p">,</span> <span class="s2">"~&gt; 3.0"</span><span class="p">},</span>
+    <span class="p">{</span><span class="ss">:decimal</span><span class="p">,</span> <span class="s2">"~&gt; 1.0"</span><span class="p">},</span>
+    <span class="p">{</span><span class="ss">:xandra</span><span class="p">,</span> <span class="s2">"~&gt; 0.14"</span><span class="p">},</span>
+    <span class="p">{</span><span class="ss">:elixir_uuid</span><span class="p">,</span> <span class="s2">"~&gt; 1.2"</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<a href="https://github.com/avdi/dotenv_elixir">Dotenv</a>: A port of dotenv to Elixir.</li>
+<li>
+<a href="https://github.com/ericmj/decimal">Decimal</a>: Arbitrary precision decimal arithmetic.</li>
+<li>
+<a href="https://github.com/lexhide/xandra">Xandra</a>: Fast, simple, and robust Cassandra/ScyllaDB driver for Elixir.</li>
+<li>
+<a href="https://github.com/zyro/elixir-uuid">Elixir UUID</a>: UUID generator and utilities for Elixir. See RFC 4122.</li>
+</ul>
+
+<p>Well, now that we have our dependencies defined we can run it in our terminal emulator:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">$ </span>mix deps.get
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>The command above will install all dependencies that were defined in our <code>mix.exs</code>.</p>
+</blockquote>
+
+<p>Great! Now we can configure our environment variables for the project within <code>.env</code>.</p>
+
+<h3>
+  
+  
+  Configuring .env
+</h3>
+
+<p>Well, let's now create a file called <code>.env</code> at the root of our project (that's right, at the same level as our <code>mix.exs</code>). It will be responsible for defining the first configurations of our project, including the environment variables that will be used to connect our cluster.</p>
+
+<p>When creating the file and opening it in the code editor, we will define:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>SCYLLADB_USERNAME=
+SCYLLADB_PASSWORD=
+SCYLLADB_NODE=
+SCYLLADB_KEYSPACE=
+SCYLLADB_TABLE=
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+<code>SCYLLADB_USERNAME</code>: username configured to connect to ScyllaDB.</li>
+<li>
+<code>SCYLLADB_PASSWORD</code>: password configured for the user.</li>
+<li>
+<code>SCYLLADB_NODE</code>: complete url to connect to our node, you can enter just one url (such as <code>localhost:9042</code> for example) or define the complete nodes generated separated by a comma (such as <code>scylla-node1.com,scylla- node-2.com,scylla-node-3.com</code>).</li>
+<li>
+<code>SCYLLADB_KEYSPACE</code>: the keyspace generated for our application.</li>
+<li>
+<code>SCYLLADB_TABLE</code>: table that will be used for the respective keyspace.</li>
+</ul>
+
+<p>This way our .env should look like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>SCYLLADB_USERNAME=scylla
+SCYLLADB_PASSWORD=scylla
+SCYLLADB_NODE=localhost:9042
+SCYLLADB_KEYSPACE=media_player
+SCYLLADB_TABLE=songs
+</code></pre>
+
+</div>
+
+
+
+<p>Perfect! Now that our connection files are ready, we can start structuring the project, shall we?</p>
+
+<h3>
+  
+  
+  Defining our connection module
+</h3>
+
+<p>It is elegant and interesting to separate the connection module in a separate area of our project, allowing for more practical maintenance and attractive organization, so let's create two directories with the path <code>lib/media_player/config</code>. This directory will be responsible for storing two main configuration files: the file for connecting to the Cluster and the file for defining the keyspace and table.</p>
+
+<p>Well, let's create two files inside the <code>lib/media_player/config</code> directory, called <code>connection.ex</code> and <code>database.ex</code>. This way our directory structure will now be:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>.
+├── README.md
+├── lib
+│   ├── media_player
+│   │   └── config
+│   │   ├── connection.ex
+│   │   └── database.ex
+│   └── media_player.ex
+├── mix.exs
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>Yes, I omitted the <code>deps</code> directory because it contains the dependencies, that is, nothing that we are going to modify manually, don't worry, in addition to omitting the <code>test</code> directory because it will contain the tests that can be implemented, but, no let's implement it for now.</p>
+</blockquote>
+
+<p>Well, now we can define the connection to our cluster, starting with the <code>database.ex</code> file.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Database</span> <span class="k">do</span>
+  <span class="kn">import</span> <span class="no">Dotenv</span>
+
+  <span class="n">load</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="n">start_link</span> <span class="k">do</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="ss">username:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_USERNAME"</span><span class="p">),</span>
+      <span class="ss">password:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_PASSWORD"</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">cluster</span><span class="p">}</span> <span class="o">=</span>
+      <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">start_link</span><span class="p">(</span>
+        <span class="ss">sync_connect:</span> <span class="ss">:infinity</span><span class="p">,</span>
+        <span class="ss">authentication:</span> <span class="p">{</span><span class="no">Xandra</span><span class="o">.</span><span class="no">Authenticator</span><span class="o">.</span><span class="no">Password</span><span class="p">,</span> <span class="n">options</span><span class="p">},</span>
+        <span class="ss">nodes:</span>
+          <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_NODE"</span><span class="p">)</span>
+          <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
+      <span class="p">)</span>
+
+    <span class="n">cluster</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In this file we:</p>
+
+<ul>
+<li>We import the <code>Dotenv</code> library to manage the variables defined in our <code>.env</code> file;</li>
+<li>We load the variables with the <code>load()</code> function that comes from the <code>Dotenv</code> library;</li>
+<li>We created a function named <code>start_link</code> that will be responsible for starting the connection link with our cluster;</li>
+<li>In the function we define the <code>username</code> and <code>password</code> receiving these values from the <code>.env</code> file;</li>
+<li>We initialize the cluster with the function coming from <code>Xandra</code> with the name <code>Xandra.Cluster.start_link</code>, responsible for starting a connection link with the cluster
+
+<ul>
+<li>In this function we define that <code>sync_connect</code> is with value <code>:infinity</code>! This means that it will try to make the connection with an infinite expected response time (that is, the module will wait as long as necessary to make the complete connection of all nodes). To read more about click <a href="https://hexdocs.pm/xandra/Xandra.Cluster.html#start_link/1">here</a>;</li>
+<li>We define that we are going to perform authentication and pass <code>options</code> (which was defined previously) as a parameter;</li>
+<li>We define our nodes by loading from our <code>.env</code> file and performing a division with the commas found, distributing them in a list (<code>nodes</code> expects a list of urls to make the connection, which is why the split is necessary to create this list) . If you use ScyllaDB Cloud, this is what will make everything work perfectly;</li>
+</ul>
+
+
+</li>
+<li>We return the cluster with the connection ready.</li>
+</ul>
+
+<p>Perfect! Our connection file is ready. Now let's configure a simple area that will only be responsible for returning the keyspace and the table, called <code>connection.ex</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Connection</span> <span class="k">do</span>
+  <span class="kn">import</span> <span class="no">Dotenv</span>
+
+  <span class="n">load</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="n">keyspace</span><span class="p">()</span> <span class="k">do</span>
+    <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_KEYSPACE"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="n">table</span><span class="p">()</span> <span class="k">do</span>
+    <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_TABLE"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Basically the only functionality of this module is to have two functions to return the keyspace and the table that we will be using, without the need to always use the <code>.env</code> library!</p>
+
+<h2>
+  
+  
+  Implementing actions with the database
+</h2>
+
+<p>Well, now is another important point: as our project will have commands, therefore, it would be interesting to create a specific module to handle these commands, right? Perfect! However, before that, what do you think about creating a module to execute queries in the database, so we can centralize where the queries will be executed.</p>
+
+<p>Well, this is the time to create a file in <code>lib/media_player</code> with the name <code>actions.ex</code>. So our directory structure will look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>.
+├── README.md
+├── lib
+│   ├── media_player
+│   │   ├── actions.ex
+│   │   └── config
+│   │   ├── connection.ex
+│   │   └── database.ex
+│   └── media_player.ex
+├── mix.exs
+</code></pre>
+
+</div>
+
+
+
+<p>Wonder! With the file created we can now create two specific functions, but why two? Simple: the <code>Xandra.Cluster.execute</code> function has two variations, the first with two parameters (the cluster and the query to be executed) and the second with three parameters (the cluster, the query to be executed and the parameters, being a list that is mainly used to prepare our query).</p>
+
+<p>Let's go then, our module should look like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Actions</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">cluster</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Database</span><span class="o">.</span><span class="n">start_link</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">case</span> <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">cluster</span><span class="p">(),</span> <span class="n">query</span><span class="p">)</span> <span class="k">do</span>
+      <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">result</span><span class="p">}</span> <span class="o">-&gt;</span>
+        <span class="n">result</span>
+
+      <span class="p">{</span><span class="ss">:error</span><span class="p">,</span> <span class="n">error</span><span class="p">}</span> <span class="o">-&gt;</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">prepared</span> <span class="o">=</span> <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">prepare!</span><span class="p">(</span><span class="n">cluster</span><span class="p">(),</span> <span class="n">query</span><span class="p">)</span>
+
+    <span class="k">case</span> <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">cluster</span><span class="p">(),</span> <span class="n">prepared</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="k">do</span>
+      <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">result</span><span class="p">}</span> <span class="o">-&gt;</span>
+        <span class="n">result</span>
+
+      <span class="p">{</span><span class="ss">:error</span><span class="p">,</span> <span class="n">error</span><span class="p">}</span> <span class="o">-&gt;</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>In this file we:</p>
+
+<ul>
+<li>We define a local <code>cluster</code> function that does nothing more than initialize and return the connection link to the cluster;</li>
+<li>We define a function <code>run_query/1</code> that takes just one parameter (being just the query, after all, the cluster is already a local function and we know that we will always execute actions on it);
+
+<ul>
+<li>We tried to perform the query with the function <code>Xandra.Cluster.execute</code>;</li>
+<li>If the return is <code>:ok</code>, it means that everything went well, then we return the complete result (a complete map of the query);</li>
+<li>If the return is <code>:error</code> it means that an error occurred when performing the query, then we inspect the specific error;</li>
+</ul>
+
+
+</li>
+</ul>
+
+<blockquote>
+<p>An important detail is about the assignment made with <code>{:ok, result}</code> and <code>{:error, error}</code>, since in Elixir everything has a return, always being a map starting with an atom validating the return type that was given (I recommend seeing more about <a href="https://elixir-lang.org/getting-started/basic-types.html#atoms">atoms</a>), so we bind values with a map!</p>
+</blockquote>
+
+<ul>
+<li>We define a function <code>run_query/2</code> that takes two parameters (only the query and the parameters to be executed):
+
+<ul>
+<li>We tried to perform the query with the <code>Xandra.Cluster.execute</code> function:</li>
+<li>If the return is <code>:ok</code>, it means that everything went well, then we return the complete result (a complete map of the query);</li>
+<li>If the return is <code>:error</code> it means that an error occurred when performing the query, then we inspect the specific error;</li>
+</ul>
+
+
+</li>
+</ul>
+
+<p>If you want to see more about how the <code>Xandra.Cluster.execute</code> function works, click <a href="https://hexdocs.pm/xandra/Xandra.Cluster.html#execute/3">here</a>.</p>
+
+<p>A detail that you may not have noticed: both functions have the same name, however, they differ in terms of the number of parameters! This makes the magic happen with Elixir. Functions are defined along with the number of parameters they expect to receive, so I put the name of the function followed by a slash "/" with the number of parameters. If you want to know more about it, click <a href="https://elixirschool.com/en/lessons/basics/functions/#functions-and-pattern-matching-4">here</a> to better understand how Elixir works with Pattern Matching.</p>
+
+<h2>
+  
+  
+  Commands
+</h2>
+
+<p>Well, now is the long-awaited moment: adding the functions responsible for executing commands in our application! To do this, we will create a file in <code>lib/media_player</code> with the name <code>commands.ex</code>. This way our directory structure will be equal to:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>.
+├── README.md
+├── lib
+│   ├── media_player
+│   │   ├── actions.ex
+│   │   ├── commands.ex
+│   │   └── config
+│   │   ├── connection.ex
+│   │   └── database.ex
+│   └── media_player.ex
+├── mix.exs
+</code></pre>
+
+</div>
+
+
+
+<p>Let's start by creating the basis of our entire module:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span> <span class="k">do</span>
+  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Actions</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Actions</span>
+  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Connection</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Connection</span>
+
+  <span class="k">defp</span> <span class="n">keyspace</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">keyspace</span><span class="p">()</span>
+  <span class="k">defp</span> <span class="n">table</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">table</span><span class="p">()</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Basically above we defined that we will have:</p>
+
+<ul>
+<li>The alias <code>Actions</code> to refer to the <code>MediaPlayer.Actions</code> module;</li>
+<li>The alias <code>Connection</code> to refer to the <code>MediaPlayer.Config.Connection</code> module;</li>
+<li>The private function <code>keyspace</code> that returns the keyspace value that we will use;</li>
+<li>The private function <code>table</code> that returns the table value that we will use;</li>
+</ul>
+
+<p>Well, now we can start implementing the commands, shall we?</p>
+
+<h3>
+  
+  
+  Add
+</h3>
+
+<p>Well, this command will be used to add songs to our database. Therefore, we will separate it into two main functions, namely <code>add</code> and <code>add_from</code>, which receive four parameters to be executed. The <code>add</code> function will only collect the data to be inserted:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span> <span class="k">do</span>
+  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Actions</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Actions</span>
+  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Connection</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Connection</span>
+
+  <span class="k">defp</span> <span class="n">keyspace</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">keyspace</span><span class="p">()</span>
+  <span class="k">defp</span> <span class="n">table</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">table</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="n">add_from</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">album</span><span class="p">,</span> <span class="n">artist</span><span class="p">,</span> <span class="n">created</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">query</span> <span class="o">=</span>
+      <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2"> (id, title, album, artist, created_at) VALUES (?, ?, ?, ?, ?);"</span>
+
+    <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">created</span><span class="p">,</span> <span class="n">_</span><span class="p">}</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">from_iso8601</span><span class="p">(</span><span class="n">created</span> <span class="o">&lt;&gt;</span> <span class="s2">"T00:00:00Z"</span><span class="p">)</span>
+
+    <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">[</span><span class="no">UUID</span><span class="o">.</span><span class="n">uuid4</span><span class="p">(),</span> <span class="n">title</span><span class="p">,</span> <span class="n">album</span><span class="p">,</span> <span class="n">artist</span><span class="p">,</span> <span class="n">created</span><span class="p">])</span>
+
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Song added!"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="n">add</span><span class="p">()</span> <span class="k">do</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the title of the song: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
+    <span class="n">album</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the album of the song: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the artist of the song: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
+
+    <span class="n">created</span> <span class="o">=</span>
+      <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the date the song was created (YYYY-MM-DD): "</span><span class="p">)</span>
+      <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
+
+    <span class="n">add_from</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">album</span><span class="p">,</span> <span class="n">artist</span><span class="p">,</span> <span class="n">created</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Well, both functions are very specific, so let’s give an example of each one:</p>
+
+<ul>
+<li>The <code>add</code> function will:
+
+<ul>
+<li>Collect the song title;</li>
+<li>Collect the music album;</li>
+<li>Collect the song artist;</li>
+<li>Collect the creation date of the song;</li>
+<li>Invoke the <code>add_from</code> function passing the collected values as parameters;</li>
+</ul>
+
+
+</li>
+<li>The <code>add_from/4</code> function will:
+
+<ul>
+<li>Receive four parameters;</li>
+<li>Create the <code>query</code> that will be executed;</li>
+<li>Convert the date format to ensure bind compatibility with Xandra;</li>
+<li>Call the function to perform the query passing two parameters: the query and additional options in a list format (as explained previously)</li>
+<li>Then just show the message on the screen when the song is inserted!</li>
+</ul>
+
+
+</li>
+</ul>
+
+<p>Another point: the "|&gt;" pipe in Elixir works like the "|" pipe of Unix shells, being used to pass the return of a function as the first parameter of the next. Read more about pipes <a href="https://elixirschool.com/en/lessons/basics/pipe_operator">here</a>.</p>
+
+<p>Well, now we have the function responsible for adding a created song! Let's go next time?</p>
+
+<h3>
+  
+  
+  List
+</h3>
+
+<p>Now let's create a function responsible for listing all the songs we have added. Therefore, we will have as a result:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="n">list</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s2">"SELECT id, title, album, artist, created_at FROM </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2">;"</span>
+
+    <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="k">fn</span> <span class="p">%{</span>
+                      <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="n">id</span><span class="p">,</span>
+                      <span class="s2">"title"</span> <span class="o">=&gt;</span> <span class="n">title</span><span class="p">,</span>
+                      <span class="s2">"album"</span> <span class="o">=&gt;</span> <span class="n">album</span><span class="p">,</span>
+                      <span class="s2">"artist"</span> <span class="o">=&gt;</span> <span class="n">artist</span><span class="p">,</span>
+                      <span class="s2">"created_at"</span> <span class="o">=&gt;</span> <span class="n">created_at</span>
+                    <span class="p">}</span> <span class="o">-&gt;</span>
+      <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span>
+        <span class="s2">"ID: </span><span class="si">#{</span><span class="n">id</span><span class="si">}</span><span class="s2"> | Title: </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | Album: </span><span class="si">#{</span><span class="n">album</span><span class="si">}</span><span class="s2"> | Artist: </span><span class="si">#{</span><span class="n">artist</span><span class="si">}</span><span class="s2"> | Created At: </span><span class="si">#{</span><span class="n">created_at</span><span class="si">}</span><span class="s2">"</span>
+      <span class="p">)</span>
+    <span class="k">end</span><span class="p">)</span>
+  <span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>The <code>list</code> function does not receive any parameters, after all, it will print the songs that were added to the screen, like this:</p>
+
+<ul>
+<li>We define a query by selecting <code>id, title, album, artist, created_at</code> and to define the <code>keyspace</code> and <code>table</code> remember that we already have two functions that return these values!</li>
+<li>We tried to perform a simple query (which has no additional options besides <code>query</code>) and its return we passed to an <code>Enum.each</code> (similar to a <code>foreach</code> in other programming languages);
+
+<ul>
+<li>Within each we pass an anonymous function responsible for handling the return, which in this case expects to receive a map with the respective fields that were selected;</li>
+<li>We print specific values;</li>
+</ul>
+
+
+</li>
+<li>In the end this will be our return;</li>
+</ul>
+
+<p>An important detail: in this case, <code>run_query</code> would return more than one value if we had multiple rows inserted, right? Well, <code>run_query</code> returns a complete list of maps with their respective values, so we use <code>Enum.each</code> to treat each index in the list we have.</p>
+
+<h3>
+  
+  
+  Delete
+</h3>
+
+<p>Well, the <code>delete</code> command is a little more complex because we need the user to type the index he wants to delete, validating it against the list of indexes that were returned! Therefore, the implemented function would result in something like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="n">delete</span><span class="p">()</span> <span class="k">do</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s2">"SELECT id, title, album, artist, created_at FROM </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2">;"</span>
+
+    <span class="n">songs</span> <span class="o">=</span>
+      <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+      <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">with_index</span><span class="p">(</span><span class="k">fn</span> <span class="p">%{</span>
+                              <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="n">id</span><span class="p">,</span>
+                              <span class="s2">"title"</span> <span class="o">=&gt;</span> <span class="n">title</span><span class="p">,</span>
+                              <span class="s2">"album"</span> <span class="o">=&gt;</span> <span class="n">album</span><span class="p">,</span>
+                              <span class="s2">"artist"</span> <span class="o">=&gt;</span> <span class="n">artist</span><span class="p">,</span>
+                              <span class="s2">"created_at"</span> <span class="o">=&gt;</span> <span class="n">created_at</span>
+                            <span class="p">},</span>
+                            <span class="n">index</span> <span class="o">-&gt;</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span>
+          <span class="s2">"Index: </span><span class="si">#{</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2"> | Title: </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | Album: </span><span class="si">#{</span><span class="n">album</span><span class="si">}</span><span class="s2"> | Artist: </span><span class="si">#{</span><span class="n">artist</span><span class="si">}</span><span class="s2"> | Created At: </span><span class="si">#{</span><span class="n">created_at</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+
+        <span class="p">%{</span><span class="ss">id:</span> <span class="n">id</span><span class="p">,</span> <span class="ss">title:</span> <span class="n">title</span><span class="p">,</span> <span class="ss">album:</span> <span class="n">album</span><span class="p">,</span> <span class="ss">artist:</span> <span class="n">artist</span><span class="p">,</span> <span class="ss">created_at:</span> <span class="n">created_at</span><span class="p">}</span>
+      <span class="k">end</span><span class="p">)</span>
+
+    <span class="p">{</span><span class="n">input</span><span class="p">,</span> <span class="n">_</span><span class="p">}</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the index of the song you want to delete: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">Integer</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+
+    <span class="k">case</span> <span class="no">Enum</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">songs</span><span class="p">,</span> <span class="n">input</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">do</span>
+      <span class="p">%{}</span> <span class="o">=</span> <span class="n">song</span> <span class="o">-&gt;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="s2">"DELETE FROM </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2"> WHERE id = ? AND created_at = ?;"</span>
+
+        <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">[</span><span class="n">song</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">song</span><span class="o">.</span><span class="n">created_at</span><span class="p">])</span>
+
+        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Song deleted!"</span><span class="p">)</span>
+
+      <span class="no">nil</span> <span class="o">-&gt;</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Invalid index."</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Well, basically we have in this function:</p>
+
+<ul>
+<li>Definition of the <code>query</code> returning all added songs;</li>
+<li>Listing similar to the previously implemented <code>list</code> function;
+
+<ul>
+<li>We try to perform the query in <code>Actions.run_query</code> and pass it to <code>Enum.with_index</code> to have the indexes;</li>
+<li>This time instead of presenting the <code>id</code> of the song we present a manual index (instead of starting with 0 it starts with 1, hence <code>index + 1</code>), in which the user will type (more practical to type a number integer than a UUID isn't it?);</li>
+<li>We print the values;</li>
+<li>We added the complete list in <code>songs</code>;</li>
+</ul>
+
+
+</li>
+<li>We wait for the user to make an entry stating which index he wants to delete and we parse the entry that will be saved in <code>input</code>;</li>
+<li>We check whether the index entered is present in <code>songs</code>;
+
+<ul>
+<li>If you are:</li>
+<li>We create the query;</li>
+<li>We tried to perform the query in <code>Actions.run_query</code> and added the list of options to bind to the query as a parameter;</li>
+<li>We print the message informing that the song has been deleted;</li>
+<li>If not:</li>
+<li>We print that the index is invalid</li>
+</ul>
+
+
+</li>
+</ul>
+
+<p>This way we finish our function to delete a song!</p>
+
+<h3>
+  
+  
+  Stress
+</h3>
+
+<p>Great! The commands that necessarily manipulate user input are finished! Now let's create an additional command that will be responsible for performing a stress test on our database. We will define two functions, namely the <code>stress</code> function that will initialize the command, in addition to a private function with the name <code>generate_stress_query</code> that receives a parameter with the name <code>some_id</code>, with the index being inserted.</p>
+
+<p>First of all, we must add the following section at the beginning of our module:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span> <span class="k">do</span>
+  <span class="kn">use</span> <span class="no">Task</span>
+  <span class="o">...</span>
+</code></pre>
+
+</div>
+
+
+
+<p>With <code>Task</code> we can perform asynchronous calls with better practicality and performance. To read more click <a href="https://hexdocs.pm/elixir/1.12/Task.html">here</a>.</p>
+
+<p>Thus, implementing our functions:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code>  <span class="k">defp</span> <span class="n">generate_stress_query</span><span class="p">(</span><span class="n">some_id</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">current_date</span> <span class="o">=</span> <span class="no">Date</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="no">Date</span><span class="o">.</span><span class="n">utc_today</span><span class="p">())</span>
+
+    <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2"> (
+      id, title, album, artist, created_at
+    ) VALUES (
+      </span><span class="si">#{</span><span class="no">UUID</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="si">}</span><span class="s2">,
+      'Test Song </span><span class="si">#{</span><span class="n">some_id</span><span class="si">}</span><span class="s2">',
+      'Test Artist </span><span class="si">#{</span><span class="n">some_id</span><span class="si">}</span><span class="s2">',
+      'Test Album </span><span class="si">#{</span><span class="n">some_id</span><span class="si">}</span><span class="s2">',
+      '</span><span class="si">#{</span><span class="n">current_date</span><span class="si">}</span><span class="s2">'
+    );"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="n">stress</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">utc_now</span><span class="p">()</span>
+    <span class="n">cluster</span> <span class="o">=</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Database</span><span class="o">.</span><span class="n">start_link</span><span class="p">()</span>
+
+    <span class="c1"># Simple stress test</span>
+    <span class="mi">1</span><span class="o">..</span><span class="mi">100_000</span>
+    <span class="o">|&gt;</span> <span class="no">Task</span><span class="o">.</span><span class="n">async_stream</span><span class="p">(</span>
+      <span class="k">fn</span> <span class="n">id</span> <span class="o">-&gt;</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"[</span><span class="si">#{</span><span class="n">id</span><span class="si">}</span><span class="s2">] Adding seed"</span><span class="p">)</span>
+        <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">generate_stress_query</span><span class="p">(</span><span class="n">id</span><span class="p">))</span>
+      <span class="k">end</span><span class="p">,</span>
+      <span class="ss">max_concurrency:</span> <span class="mi">500</span>
+    <span class="p">)</span>
+    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Time taken: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">utc_now</span><span class="p">(),</span> <span class="n">start</span><span class="p">,</span> <span class="ss">:second</span><span class="p">)</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
+  <span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Basically we have:</p>
+
+<ul>
+<li>
+<code>stress</code> function:
+
+<ul>
+<li>Mark the start time of the function with <code>Time.utc_now()</code>;</li>
+<li>Initializes the cluster manually for better performance and handling.</li>
+<li>We initiate a call from 1 to 100000 that goes asynchronously:</li>
+<li>Define an anonymous function that receives an <code>id</code>;</li>
+<li>We print that we are adding a certain index;</li>
+<li>We tried to perform the query with <code>Xandra.Cluster.execute</code> by calling the <code>generate_stress_query</code> function, responsible for generating a complete query with the <code>id</code> provided;</li>
+<li>We set a <code>max_concurrency</code> of 500 to limit the number of asynchronous calls;</li>
+<li>We format it into a list;</li>
+<li>We print the time spent to carry out the entire test, calculating the difference between the current time and the start time in seconds;</li>
+</ul>
+
+
 </li>
 <li>
- CodeIgniter vs Laravel: Which One to Choose?<ul></ul>
+<code>generate_stress_query</code> function:
+
+<ul>
+<li>Receives an <code>id</code> as a parameter to generate the query;</li>
+<li>Sets the current date to insert;</li>
+<li>Returns the complete query already formatted;</li>
+</ul>
+
+
 </li>
-<li>Introducing Five</li>
-<li> Conclusion</li>
 </ul>
 
-<h2 id="code-igniter-a-lightweight-powerhouse">
-<br><strong>CodeIgniter: A Lightweight Powerhouse</strong>
+<p>Well, that way our functions for the stress test are ready! Now we must implement the command inputs that a user can enter!</p>
+
+<h2>
+  
+  
+  Implementing user interaction
 </h2>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jlXQgMWk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-CodeIgniter-1024x451.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jlXQgMWk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-CodeIgniter-1024x451.png" alt="CodeIgniter" width="800" height="352"></a></p>
+<p>Let's modify our main module, <code>MediaPlayer</code> in the <code>media_player.ex</code> file! Well, first let's define an alias for the commands:<br>
+</p>
 
-<h3 id="key-features-and-benefits"><strong>Key Features and Benefits</strong></h3>
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span>
+  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Commands</span>
+<span class="k">end</span>
+</code></pre>
 
-<p><strong><a href="https://codeigniter.com/">CodeIgniter </a></strong>is known for its lightweight nature and simplicity. It focuses on providing a minimalistic approach to web development without sacrificing power and flexibility. Here are some of the key features and benefits of using CodeIgniter:</p>
+</div>
+
+
+
+<p>The alias will be used to refer to the <code>MediaPlayer.Commands</code> module!</p>
+
+<p>The first function we will implement is <code>loop</code>, which will be responsible for directing the commands, receiving user input and remaining in an infinite loop always waiting for input, see:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="k">loop</span> <span class="k">do</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Type any command: "</span><span class="p">)</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
+
+    <span class="k">case</span> <span class="n">command</span> <span class="k">do</span>
+      <span class="s2">"!add"</span> <span class="o">-&gt;</span>
+        <span class="no">Commands</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+        <span class="k">loop</span><span class="p">()</span>
+
+      <span class="s2">"!list"</span> <span class="o">-&gt;</span>
+        <span class="no">Commands</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+        <span class="k">loop</span><span class="p">()</span>
+
+      <span class="s2">"!delete"</span> <span class="o">-&gt;</span>
+        <span class="no">Commands</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+        <span class="k">loop</span><span class="p">()</span>
+
+      <span class="s2">"!stress"</span> <span class="o">-&gt;</span>
+        <span class="no">Commands</span><span class="o">.</span><span class="n">stress</span><span class="p">()</span>
+        <span class="k">loop</span><span class="p">()</span>
+
+      <span class="s2">"exit"</span> <span class="o">-&gt;</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Bye bye!"</span><span class="p">)</span>
+        <span class="ss">:OK</span>
+
+      <span class="n">_</span> <span class="o">-&gt;</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Command not found!"</span><span class="p">)</span>
+        <span class="k">loop</span><span class="p">()</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Basically we wait for user input with a command and enter a <code>case</code>:</p>
 
 <ul>
 <li>
-<strong>Easy Installation and Configuration</strong>: With CodeIgniter, you can get up and running quickly. Its installation process is straightforward, and the configuration is incredibly easy thanks to the clear and well-documented guide.</li>
-
-
-
+<code>!add</code> invokes the <code>Commands.add()</code> function;</li>
 <li>
-<strong>Fast Performance</strong>: CodeIgniter's lightweight architecture allows it to perform exceptionally well, even under heavy loads. It's an ideal choice for projects that require high performance and scalability.</li>
-
-
-
+<code>!list</code> invokes the <code>Commands.list()</code> function;</li>
 <li>
-<strong>MVC Architecture</strong>: CodeIgniter follows the Model-View-Controller (MVC) architectural pattern, separating business logic, data, and presentation. This promotes code organization and makes maintenance a breeze.</li>
-
-
-
+<code>!delete</code> invokes the <code>Commands.delete()</code> function;</li>
 <li>
-<strong>Excellent Documentation</strong>: CodeIgniter sets the bar high in terms of documentation. The official user guide is comprehensive and easy to navigate, covering every aspect of the framework. Plus, the vibrant community is always ready to help out.</li>
-
-
-
+<code>!stress</code> invokes the <code>Commands.stress()</code> function;</li>
 <li>
-<strong>Large User Base</strong>: CodeIgniter has been around for quite some time, which means it has built a substantial user base. This translates to a wealth of resources, tutorials, and support available online.</li>
+<code>exit</code> prints a goodbye message and returns <code>:ok</code>, defining that the function no longer enters a recursive loop, ending our application;</li>
+<li>
+<code>_</code> prints a command not found message and enters a recursive loop, waiting for new input;</li>
 </ul>
 
-<h3 id="use-cases-and-real-world-examples"><strong>Use Cases and Real-World Examples</strong></h3>
+<p>Well, now we have our main function ready! But how are we going to execute it? Simple, let's create a <code>start</code> function that will be responsible for starting our application, in addition to a <code>run</code> function, which will be the function invoked by the initial <code>start</code> function, see:<br>
+</p>
 
-<p>CodeIgniter is suitable for a wide range of projects, including but not limited to:</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="n">start</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">run</span><span class="p">()</span>
+    <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">self</span><span class="p">()}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="n">run</span> <span class="k">do</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"- ScyllaDB Cloud Elixir Media Player -"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"- Leave a star on the repo -"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Here some possibilities"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !add - add new song"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !list - list all songs"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !delete - delete a specific song"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !stress - stress testing with mocked data"</span><span class="p">)</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
+
+    <span class="k">loop</span><span class="p">()</span>
+  <span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Basically we have:</p>
 
 <ul>
 <li>
-<strong>Small to Medium-Sized Applications</strong>: If you're building a small to medium-sized application, CodeIgniter is an excellent choice. It provides just the right amount of functionality without overwhelming you with unnecessary features.</li>
+<code>start</code> function:
 
-
-
-<li>
-<strong>Rapid Prototyping</strong>: CodeIgniter shines when it comes to rapid prototyping. Its simplicity and ease of use allow you to get a functional prototype up and running in no time.</li>
-
-
-
-<li>
-<strong>API Development</strong>: Due to its lightweight nature, CodeIgniter is well-suited for building APIs. It allows you to create RESTful APIs quickly and efficiently.</li>
+<ul>
+<li>It receives two parameters, but we will not use them, so we define them as <code>_</code>;</li>
+<li>Invokes the <code>run</code> function;</li>
+<li>Returns <code>{:ok, self()}</code> to define that the function was executed successfully, closing our application;</li>
 </ul>
 
-<p>A real-world example of a project built with CodeIgniter is EllisLab's<strong> ExpressionEngine</strong>. ExpressionEngine is a powerful content management system (CMS) that utilizes CodeIgniter as its core framework. </p>
 
-<h2 id="laravel-the-elegance-of-modern-php">
-<br><strong>Laravel: The Elegance of Modern PHP</strong>
+</li>
+<li>
+<code>run</code> function:
+
+<ul>
+<li>Print a welcome message;</li>
+<li>Prints a message with command possibilities;</li>
+<li>Invokes the <code>loop</code> function to start the infinite loop;</li>
+</ul>
+
+
+</li>
+</ul>
+
+<p>This concludes our complete application! Now are we going to execute it?</p>
+
+<h2>
+  
+  
+  Running our application
 </h2>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--aQJNxGJK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-Laravel-1024x451.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aQJNxGJK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://five.co/wp-content/uploads/2023/08/blog-Laravel-1024x451.png" alt="Laravel" width="800" height="352"></a></p>
+<p>Well, now that we have our application ready, let's execute the command:<br>
+</p>
 
-<h3 id="key-features-and-benefits-1"><strong>Key Features and Benefits</strong></h3>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>$ mix run
+</code></pre>
 
-<p><strong><a href="https://laravel.com/">Laravel</a></strong>, on the other hand, is more feature-rich and provides a modern approach to PHP development. It gained popularity due to its powerful features, extensive ecosystem, and developer-friendly syntax. Let's explore some of the key features and benefits of using Laravel:</p>
-
-<ul>
-<li>
-<strong>Elegant Syntax</strong>: Laravel boasts an elegant and expressive syntax that makes PHP development a joy. It utilizes modern PHP features and concepts, making your code more readable and maintainable.</li>
-
-
-
-<li>
-<strong>Artisan CLI</strong>: Laravel comes bundled with "Artisan," a powerful command-line interface (CLI) tool. With Artisan, you can automate common tasks, generate boilerplate code, and even run tests effortlessly.</li>
+</div>
 
 
 
-<li>
-<strong>ORM</strong>: Eloquent: Laravel's Eloquent ORM simplifies database interactions and makes working with databases a breeze. It provides a simple and intuitive syntax, allowing you to perform complex database queries with minimal effort.</li>
+<p>This way we can start interacting with the application!</p>
 
+<p>See a demo of the project:</p>
 
+<p><a href="https://asciinema.org/a/608562"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_80iLfUQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://asciinema.org/a/608562.svg" alt="asciicast" width="800" height="545"></a></p>
 
-<li>
-<strong>Blade Templating Engine</strong>: Laravel's Blade templating engine offers a clean and efficient way to manage your views. It provides features like layout inheritance, control structures, and reusable components, enhancing your development experience.</li>
-
-
-
-<li>
-<strong>Vibrant Ecosystem</strong>: Laravel has a thriving ecosystem with a wide range of packages and extensions available. Whether you need payment integrations, caching solutions, or anything in between, chances are there's a Laravel package for it.</li>
-</ul>
-
-<h3 id="use-cases-and-real-world-examples-2"><strong>Use Cases and Real-World Examples</strong></h3>
-
-<p>Laravel is suitable for a variety of projects, especially those that require rich features and scalability. Here are some common use cases for Laravel:</p>
-
-<ul>
-<li>
-<strong>Enterprise Applications</strong>: If you're building large-scale enterprise applications, Laravel's rich feature set and powerful ecosystem make it an excellent choice. Its robustness and scalability can handle complex requirements with ease.</li>
-
-
-
-<li>
-<strong>Content Management Systems</strong>: Laravel's elegance and extensibility make it perfect for building content management systems. Its modular structure allows for easy customization and integration of additional functionality.</li>
-
-
-
-<li>
-<strong>E-commerce Platforms</strong>: Laravel's extensive ecosystem provides numerous packages for building e-commerce platforms. It offers features like payment gateway integrations, inventory management, and order processing.</li>
-</ul>
-
-<p>A popular real-world example of a project built with Laravel is <strong>October CMS</strong>. October CMS is a flexible and user-friendly CMS that utilizes Laravel as its underlying framework.</p>
-
-<h2 id="code-igniter-vs-laravel-which-one-to-choose">
-<br><strong>CodeIgniter vs Laravel: Which One to Choose?</strong>
+<h2>
+  
+  
+  Conclusion
 </h2>
 
-<p>Now that we have explored the key features, benefits, and use cases of both CodeIgniter and Laravel, Let's take a close look at their <strong>technical features</strong> side-by-side. </p>
+<p>Thank you very much if you read this far! The purpose of this article was to demonstrate how we can use ScyllaDB with Elixir, making a simple demonstration using Xandra as responsible for the connection between the two. I highly recommend following content from <a href="https://university.scylladb.com/">ScyllaDB University</a> for more quality educational content, as well as seeing articles about using ScyllaDB in general with <a href="https://dev.to/danielhe4rt">DanielHe4rt</a> and <a href="https://dev.to/cherryramatis">Cherry Ramatis</a>! Both are always contributing and publishing magnificent content.</p>
 
-<h4 id="code-igniter-vs-laravel-feature-comparison">CodeIgniter Vs Laravel : Feature Comparison</h4>
+<p>I also recommend getting to know the project <a href="https://github.com/scylladb/scylla-cloud-getting-started">Getting Started with ScyllaDB Cloud</a> which demonstrates the use of ScyllaDB in general, but, delving a little deeper into the use of ScyllaDB's own platform for managing your Cloud clusters, cool isn't it?</p>
 
-<div class="table-wrapper-paragraph"><table><tbody>
-<tr>
-<td><strong>Feature/Aspect</strong></td>
-<td><strong>CodeIgniter</strong></td>
-<td><strong>Laravel</strong></td>
-</tr>
-<tr>
-<td>Database Model</td>
-<td>Object Oriented</td>
-<td>Relational Object-Oriented</td>
-</tr>
-<tr>
-<td>Authentication</td>
-<td>Requires custom extensions for authentication and authorization.</td>
-<td>Comes with built-in Authentication Class features.</td>
-</tr>
-<tr>
-<td>Unit Testing</td>
-<td>No inbuilt unit testing tools. Requires third-party tools.</td>
-<td>Inbuilt PHPUnit for thorough and continuous application code testing.</td>
-</tr>
-<tr>
-<td>Learning Curve</td>
-<td>Easier for Beginners.</td>
-<td>Offers many additional features which might be challenging for beginners.</td>
-</tr>
-<tr>
-<td>Support for REST</td>
-<td>Does not facilitate streamlined development of REST APIs.</td>
-<td>RESTful Controllers for easy development of REST APIs.</td>
-</tr>
-<tr>
-<td>Modules</td>
-<td>No built-in modularity features. </td>
-<td>Designed with built-in modularity. Allows project division into small modules through bundles.</td>
-</tr>
-<tr>
-<td>Template Engine &amp; API</td>
-<td>No built-in template engine.</td>
-<td>Comes with Blade template engine. Allows performance enhancement and view manipulation.</td>
-</tr>
-</tbody></table></div>
+<p>In the same repository you can access the project using Elixir too, so if you want to see the complete source code, know that it is at the same link mentioned above!</p>
 
-<p>Apart from their technical specifics, here are some other essential factors to weigh in before choosing between CodeIgniter and Laravel:</p>
-
-<ul>
-<li>
-<strong>Project Size</strong>: CodeIgniter's lightweight nature makes it a perfect fit for <strong>small to medium-sized</strong> projects. If you're working on a <strong>larger project</strong> that requires extensive features and scalability, Laravel might be a better choice.</li>
-
-
-
-<li>
-<strong>Ease of Use</strong>: CodeIgniter's simplicity<strong> makes it extremely easy to learn and use</strong>. If you're new to PHP frameworks or want a minimalistic approach, CodeIgniter is the way to go. On the other hand, <strong>if you're comfortable with modern PHP and appreciate an expressive syntax</strong>, Laravel is worth considering.</li>
-
-
-
-<li>
-<strong>Ecosystem and Community Support</strong>: Laravel's vibrant ecosystem and large community ensure that you have access to a wide range of packages, extensions, and resources. If you prioritize the availability of robust third-party libraries and active community support, Laravel might be the better choice.</li>
-
-
-
-<li>
-<strong>Longevity and Stability</strong>: CodeIgniter has been around for a longer time and has a proven track record. If stability and backwards compatibility are crucial to you, CodeIgniter might be a safer bet. Laravel, on the other hand, is continuously evolving and adopting the latest PHP features and best practices.</li>
-</ul>
-
-<p>Ultimately, both CodeIgniter and Laravel are solid choices for PHP web development. It all boils down to your project's requirements, your personal preferences, and your development team's expertise.</p>
-
-<h2 id="introducing-five">Introducing Five</h2>
-
-<p>Traditional PHP frameworks like CodeIgniter and Laravel have long been the go-to solutions for some time. They offer structured approaches, MVC architectures, and a plethora of libraries. </p>
-
-<p>Unlike the conventional PHP frameworks, <a href="https://www.five.com/"><strong>Five</strong></a> is a little different, it is a low-code development environment designed to accelerate the process of building and deploying online database applications. Here's how Five stands out:</p>
-
-<ul>
-<li>
-<strong>Simplicity Meets Power</strong>: Just as CodeIgniter is known for its lightweight nature and Laravel for its elegant syntax, Five combines the best of both worlds. It offers a drag-and-drop database designer, a visual query builder, and form/chart wizards.</li>
-
-
-
-<li>
-<strong>Extensibility</strong>: While frameworks like Laravel provide an expressive ORM in Eloquent, Five, not only allows standard SQL but also offers extensibility through JavaScript or TypeScript.</li>
-
-
-
-<li>
-<strong>Full-Stack Web Apps with a Twist</strong>: While CodeIgniter and Laravel are excellent for building PHP-based web applications, Five lets you create standalone web applications with unique URLs, logins, and a dedicated MySQL database, all with fewer lines of code.</li>
-</ul>
-
-<p>Whether you're leaning towards traditional frameworks or exploring new avenues like Five, the key is to choose the platform that aligns with your project's goals. For a <a href="https://five.co/blog/filemaker-alternative/">deeper dive into what Five offers</a>, check out the <a href="https://help.five.org/2.1/">documentation for Five here</a>.</p>
-
-<h2 id="conclusion">
-<br><strong>Conclusion</strong>
-</h2>
-
-<p>PHP frameworks have revolutionized web development by providing structured and efficient ways to build applications. CodeIgniter and Laravel are two popular PHP frameworks that cater to different needs and preferences.</p>
-
-<p>CodeIgniter's lightweight nature, ease of use, and excellent documentation make it a great choice for small to medium-sized projects and rapid prototyping. On the other hand, Laravel's elegance, extensive ecosystem, and powerful features make it ideal for larger projects and enterprise applications.</p>
-
-<p>When choosing between CodeIgniter and Laravel,  consider the project size, ease of use, ecosystem support, and longevity of the framework. Both frameworks have proven their worth and have thriving communities, so you can't go wrong with either choice.</p>
-
-<p>So, whether you go the lightweight route with CodeIgniter or embrace the elegance of modern PHP with Laravel, both frameworks are sure to enhance your web development experience and make your projects shine.</p>
-
- </details> 
- <hr /> 
-
- #### - [The Entire Process Of Handling URL Requests.](https://dev.to/code_lover/the-entire-process-of-handling-url-requests-1nbd) 
- <details><summary>Article</summary> <p><strong>Case-Study</strong>: Looking at the "<a href="https://www.google.com">https://www.google.com</a>" URL.</p>
-
-<p><strong>Introduction</strong></p>
-
-<p>In the modern digital age, the World Wide Web has become an integral part of our lives. Every time you open your browser, type in a URL, and press Enter, a complex process unfolds behind the scenes. This article will guide you through the journey of a web request, explaining each step in detail, from the moment you type "<a href="https://www.google.com">https://www.google.com</a>" into your browser to the moment you see the Google homepage.</p>
-
-<ol>
-<li>
-<em>DNS Request</em> (Domain Name System)</li>
-</ol>
-
-<p>The journey begins with the Domain Name System (DNS). When you enter a URL like "<a href="http://www.google.com,">www.google.com,</a>" your computer doesn't know where to find Google's servers. It sends a DNS request to a DNS server, which acts like an internet phonebook. The DNS server translates the human-readable domain name ("<a href="http://www.google.com">www.google.com"</a>) into an IP address, such as "216.58.214.36." This IP address is essential for your computer to locate the target server on the internet.</p>
-
-<ol>
-<li>
-<em>TCP/IP</em> (Transmission Control Protocol/Internet Protocol)</li>
-</ol>
-
-<p>With the IP address in hand, your computer initiates a connection using the Transmission Control Protocol (TCP) and Internet Protocol (IP). TCP ensures that data is transmitted reliably, breaking it into small packets and verifying their successful delivery. IP, on the other hand, routes these packets across the internet to the destination server, Google's in this case.</p>
-
-<ol>
-<li><em>Firewall</em></li>
-</ol>
-
-<p>Firewalls act as gatekeepers for your computer. They filter incoming and outgoing traffic, blocking any potentially harmful or unauthorized data packets. Firewalls help ensure your computer's security by allowing only trusted connections to pass through.</p>
-
-<ol>
-<li>
-<em>HTTPS/SSL</em> (Hypertext Transfer Protocol Secure/Secure Sockets Layer)</li>
-</ol>
-
-<p>Security is paramount when transmitting sensitive information over the internet. To establish a secure connection, your browser and the web server engage in a process called the SSL handshake. During this handshake, they exchange cryptographic keys to encrypt and decrypt data. The resulting secure connection is identified by "https://" in the URL and the padlock icon in your browser's address bar.</p>
-
-<ol>
-<li><em>Load-Balancer</em></li>
-</ol>
-
-<p>Large websites like Google handle enormous traffic daily. To distribute this load efficiently, they use load balancers. A load balancer acts as an intermediary between your request and the web servers. It evaluates the servers' current load and directs your request to the server that can best handle it. This ensures a smooth and responsive user experience, even during peak traffic times.</p>
-
-<ol>
-<li><em>Web Server</em></li>
-</ol>
-
-<p>Once your request reaches the web server, it begins processing. Web servers like Apache, Nginx, or Microsoft IIS are responsible for handling incoming requests, processing dynamic content, and generating the HTML that your browser will render. In Google's case, their web servers process billions of search queries every day.</p>
-
-<ol>
-<li><em>Application Server</em></li>
-</ol>
-
-<p>For dynamic web applications, there's often a middle layer known as the application server. It handles tasks like database queries, business logic, and user authentication. In Google's context, this layer plays a crucial role in delivering personalized search results, managing user accounts, and handling various backend processes.</p>
-
-<ol>
-<li><em>Database</em></li>
-</ol>
-
-<p>Behind every web application is a database that stores, retrieves, and manages data. In Google's case, this includes storing indexed web pages, user preferences, and search history. Databases like MySQL, PostgreSQL, or NoSQL databases are used to efficiently handle vast amounts of data.</p>
-
-<p><strong>Conclusion</strong></p>
-
-<p>The seemingly simple act of typing "<a href="https://www.google.com">https://www.google.com</a>" into your browser and pressing Enter sets off a chain of complex processes that involve DNS requests, TCP/IP, firewalls, HTTPS/SSL, load-balancers, web servers, application servers, and databases. This intricate web of technologies and protocols ensures that you can access information swiftly and securely on the internet.</p>
-
-<p>Understanding this journey is not only crucial for software engineers but for anyone who wants to appreciate the complexity and reliability of the web. It highlights the importance of each component in delivering a seamless browsing experience, and it showcases the innovations that make the internet an indispensable part of our daily lives.</p>
-
-<p>In today's tech-centric world, grasping the inner workings of web requests can open doors to exciting career opportunities. By mastering these concepts, you're not only ahead of the curve but also better equipped to navigate the intricacies of the digital landscape. So, the next time you enter a URL and press Enter, remember the fascinating journey your request embarks on, making the web a global phenomenon that connects us all.</p>
-
- </details> 
- <hr /> 
-
- #### - [What's in my bag for Experts Live Europe](https://dev.to/this-is-learning/whats-in-my-bag-for-experts-live-europe-9dn) 
- <details><summary>Article</summary> <p>I am very excited to attend Experts Live Europe, a community-driven IT conference focused on Microsoft cloud, datacenter, security and modern workplace technologies. This event will take place in Prague, Czech Republic from September 18 to 20, 2023. I will be joining hundreds of other IT professionals who are eager to learn from the best experts worldwide, network with peers, and have fun in the beautiful city of Prague.</p>
-
-<p>As a speaker and remote worker, I always want to be prepared for any situation that might arise during the conference. That's why I have packed my bag with some essential items that I think will help me make the most out of this event. Here is a list of what's in my bag for Experts Live Europe:</p>
-
-<ul>
-<li>
-<strong>Laptops</strong>: This is a no-brainer. I need my laptop to take notes, write blog posts, check emails, and do some coding if needed. I have a Microsoft Surface Book 3 with Windows 11, which is lightweight, powerful, and has a great battery life. It also comes with a touch screen and a stylus pen, which are very handy for sketching diagrams or annotating slides.
-But I need to work even for SoftwareONE in these days and this is the reason why I have a second laptop with me: my Laptop 4 with Windows 11. On this laptop I have only things related to SoftwareONE and its project (Red Origin product, for example).</li>
-<li>
-<strong>Smartphone</strong>: Another obvious item. I use my smartphone to stay connected with the world, take photos and videos, scan QR codes, and use various apps that are useful for the conference. I have my iPhone 13, which has an amazing camera, a large screen, and a fast processor. It also supports wireless charging and reverse wireless charging, which are very convenient features. It's not in the photo because I use it for taking this picture. 🙂</li>
-<li>
-<strong>Power bank</strong>: Even though my laptop and smartphone have good battery life, I don't want to risk running out of juice in the middle of the day. That's why I always carry a power bank with me. I have an XTorm 20000mAh, which can charge my devices multiple times and has two USB ports for simultaneous charging. It also has a LED indicator that shows how much power is left. Very often I use the power bank to charge even my sports watch.</li>
-<li>
-<strong>Headphones</strong>: Sometimes I need to tune out the noise and focus on my work or relax with some music. That's why I always have headphones with me. I have a pair of AirPods Max wireless noise-canceling headphones, which are very comfortable, have excellent sound quality, and block out most of the ambient noise. They also have touch controls. I also have with me the AirPods Pro because sometimes they are more handy during the day.</li>
-<li>
-<strong>HDMI adapter</strong>: I need to connect my laptop to an external monitor or projector. That's why I always have an HDMI adapter with me. I have a Mokin HDMI adapter, which is very simple, reliable, and compatible with my laptop. It also supports 4K resolution and it has two HDMI output. In the same adapter I have three USB 3.0, a Lan and an USB-C.</li>
-<li>*<em>Cables</em>: I have a box with 1 Billion cables, USB, USB-C, for charging iPhones and headphones and I have also a multiple USB charger for charging up to 4 devices at the same time.</li>
-<li>
-<strong>DIJ</strong>: I have also my DJI for the iPhone. Very often I make some videos or timelapse during the event or for my social accounts. It's very useful and it works very well since years.</li>
-<li>
-<strong>Logitech MX Master</strong>: my favorite mouse ever. I use the MX Master since the first release. This is not the last model but still working very good and even the next one will be an MX Master. I can connect up to 3 devices with a simple switch. For me it's perfect because I have my main device (my gaming pc at home that I use as the main machine), my Book 3 and my Laptop 4. I don't use the mouse on my MacBook Air.</li>
-</ul>
-
-<p>These are the items that are in my bag for Experts Live Europe. Of course, everyone has their own preferences and needs when it comes to packing their bags for an event like this. But I hope that this list can give you some ideas or inspiration for your own packing. I look forward to seeing you at Experts Live Europe and sharing our experiences and learnings. Until then, stay safe!</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cr5_kYzV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zv6u3lvj1kkwa41l6zrb.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cr5_kYzV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zv6u3lvj1kkwa41l6zrb.jpg" alt="my bag content" width="800" height="598"></a></p>
-
-
-
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ogR5mImm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9x5aklqdjlp32k4xhu06.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ogR5mImm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9x5aklqdjlp32k4xhu06.png" alt="Dev Dispatch" width="500" height="158"></a></p>
-
-<p>If you enjoyed this blog post and want to learn more about C# development, you might be interested in subscribing to my bi-weekly newsletter called Dev Dispatch. By subscribing, you will get access to exclusive content, tips, and tricks, as well as updates on the latest news and trends in the development world. You will also be able to interact with me, and share your feedback and suggestions. To subscribe, simply navigate to <a href="https://buttondown.email/kasuken?tag=devto">https://buttondown.email/kasuken?tag=devto</a>, enter your email address and click on the Subscribe button. You can unsubscribe at any time. Thank you for your support!</p>
-
- </details> 
- <hr /> 
-
- #### - [WordPress for React?](https://dev.to/opensourcee/wordpress-for-react-82f) 
- <details><summary>Article</summary> <p>Hello, my friends! Just starred this repo and it sounds promising. It’s Wordpress for React. Good timing to join. Cheers! <a href="https://github.com/webcrumbs-community/webcrumbs">https://github.com/webcrumbs-community/webcrumbs</a></p>
+<p>I hope you enjoyed the content and I hope it clarified the use of ScyllaDB with Elixir. I also hope that you are even more interested in receiving more content like this or learning even more about Elixir. Thank you very much, and see you next time!</p>
 
  </details> 
  <hr /> 
