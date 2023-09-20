@@ -117,1503 +117,382 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Is Debugging Really More Fun Than Coding?](https://dev.to/codenewbieteam/is-debugging-really-more-fun-than-coding-2ha1) 
- <details><summary>Article</summary> <p>🎤🔊 <em>Hey all tech enthusiasts, it's time to rumble in the digital jungle! In one corner, we've got bold and controversial tech statements, ready to assert their dominance. And in the other corner, we've got you, the fearless challengers, set to prove 'em wrong! Get ready to rumble as we dive into debates, challenge the status quo, and wrestle with some of the biggest questions in tech!</em></p>
+ #### - [Writing My First Pull Request](https://dev.to/pbelokon/writing-my-first-pull-request-2j50) 
+ <details><summary>Article</summary> <p>This week in my OSD600 course, I was tasked with contributing to another student's project by implementing a Markdown parsing feature to their static site generator.</p>
 
-<blockquote>
-<p>Prove me wrong: Debugging is more enjoyable than writing code.</p>
-</blockquote>
+<p>One of the cool things I discovered was the ability to <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">link an issue</a> to the pull request simply by using its number. This was a GitHub feature I never knew about.</p>
 
-<p>Follow the <a href="https://dev.to/codenewbieteam">CodeNewbie Org</a> and <a href="https://dev.to/t/codenewbie">#codenewbie</a> for more discussions and online camaraderie!</p>
+<p>I have picked <a href="https://github.com/bryce-seefieldt/ez-txt2html">ez-txt2html</a> by <a href="https://github.com/bryce-seefieldt">Bryce Seefieldt</a> since I have never tried writing Python 3 code. My only significant experience with Python was during my high school years when I was developing a Pygame-based evasion game (sadly, I don't have the files to link and show it).</p>
 
-<p><em><div class="ltag__user ltag__user__id__2167">
-  <a href="/codenewbieteam" class="ltag__user__link profile-image-link">
-    <div class="ltag__user__pic">
-      <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" alt="codenewbieteam image"></a>
-    </div>
-  </a>
-  <div class="ltag__user__content">
-    <h2>
-      <a href="/codenewbieteam" class="ltag__user__link">CodeNewbie</a>
-      Follow
-    </h2>
-    <div class="ltag__user__summary">
-      <a href="/codenewbieteam" class="ltag__user__link">
-        The most supportive community of programmers and people learning to code.  Part of the DEV family.
+<p>Let's talk about the <a href="https://github.com/bryce-seefieldt/ez-txt2html/pull/5">pull request</a> and the <a href="https://github.com/bryce-seefieldt/ez-txt2html/issues/4">issue</a> I was working on this week. </p>
 
+<p>The process was straightforward. I created an issue on the project, and then the owner assigned it to me. Once I had completed my changes, I posted my pull request and linked it to the issue.</p>
 
-      </a>
-    </div>
-  </div>
-</div>
-</em> </p>
+<p>What I did was use the <a href="https://docs.python.org/3/library/re.html">re</a> library of Python, which allowed me to employ regular expressions. Whenever the program read the .md file, it would parse it with the help of these regular expressions. Since we were constrained from using any markdown parsing libraries, I found this approach to be both easy to understand and modify, as parsing solely depended on the way the regular expressions were written.</p>
+
+<p>The owner of the repo merged it quite quickly since I tried to match the style and structure of the code as closely as possible to the original and touched the main logic as little as possible.</p>
+
+<p>The only problem I encountered was installing the project and getting it to work locally because we had not created proper contribution instructions or a wiki for our projects yet. I had a conflict between the Python version on my computer and the one that the project required.</p>
+
+<p>I learned a lot about contributing to open source, and when my pull request got merged, I felt incredibly proud and happy to see my code in the main branch. This experience fired me up to look for repositories to contribute to during <a href="https://hacktoberfest.com/">Hacktoberfest</a>. Slowly, I started to understand how to participate in open source, although I haven't tried contributing to any big projects yet.</p>
 
  </details> 
  <hr /> 
 
- #### - [Vuex or Pinia](https://dev.to/aditianand8/vuex-or-pinia-39m) 
- <details><summary>Article</summary> <p>Pinia and Vuex are state management libraries for Vue.js, a popular JavaScript framework for building user interfaces. They serve the same fundamental purpose: to manage your application's state and provide a centralized way to handle data and its mutations. However, they have some differences in design philosophy and usage.</p>
+ #### - [Offer Digital Assets Using Mintbase JS](https://dev.to/starpause/offer-digital-assets-using-mintbase-js-c85) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--XFBk39CB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7g359k9jx8owln5qzeki.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XFBk39CB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7g359k9jx8owln5qzeki.png" alt="Image description" width="800" height="800"></a></p>
 
-<p><strong>-- Architecture--</strong></p>
+<p>The Mintbase API empowers web developers to integrate digital collectibles into their toolkit. This is your gateway to the web3 industry that witnessed a staggering 552% growth in developer demand in 2022! </p>
 
-<ul>
-<li><p><strong>Vuex:</strong> Vuex follows a traditional centralized store pattern. It provides a single store that holds the entire application's state, and components can access and mutate this state through predefined actions and mutations.</p></li>
-<li><p><strong>Pinia:</strong> Pinia, on the other hand, promotes a more modular and decentralized approach. It allows you to create multiple stores, each responsible for managing its own state. This can lead to a more organized and maintainable codebase, especially in larger applications.</p></li>
-</ul>
-
-<p><strong>--TypeScript Support--</strong></p>
-
-<ul>
-<li><p><strong>Vuex:</strong> While Vuex can be used with TypeScript, it doesn't offer built-in TypeScript support out of the box. You need to write additional type definitions for your store, actions, mutations, and getters.</p></li>
-<li><p><strong>Pinia:</strong> Pinia was designed with TypeScript in mind, so it provides better out-of-the-box TypeScript support. This can make your code more type-safe and easier to refactor.</p></li>
-</ul>
-
-<p><strong>--Composition API--</strong></p>
-
-<ul>
-<li><p><strong>Vuex:</strong> Vuex can be used with both the Options API and Composition API in Vue.js 3. However, using Vuex with the Composition API can be somewhat verbose and may require additional setup.</p></li>
-<li><p><strong>Pinia:</strong> Pinia integrates seamlessly with the Composition API, making it a natural choice if you're building Vue 3 applications using the Composition API. Its API design aligns well with the Composition API's reactivity system.</p></li>
-</ul>
-
-<p><strong>--Ease of Use--</strong></p>
-
-<ul>
-<li><p><strong>Vuex:</strong> Vuex has been around longer and has a larger community and ecosystem. It's well-documented and has a wide range of plugins and extensions available.</p></li>
-<li><p><strong>Pinia:</strong> Pinia is relatively newer compared to Vuex, so it may have a smaller community and fewer third-party plugins and extensions. However, some developers find its API and concepts easier to understand and work with, especially when using TypeScript.</p></li>
-</ul>
-
-<p><strong>--Bundle Size--</strong></p>
-
-<ul>
-<li><p><strong>Vuex:</strong> Vuex is included in the official Vue.js package, which means it comes bundled with Vue.js by default. This can result in a larger bundle size, even if you're not using Vuex in your project.</p></li>
-<li><p><strong>Pinia:</strong> Pinia is a standalone library, so it doesn't add to the bundle size of your application unless you explicitly include it. This can be an advantage in terms of keeping your bundle size small.</p></li>
-</ul>
-
-<p>The coding style for Pinia and Vuex can vary, as they have different approaches to state management in Vue.js applications. Below, I'll outline some of the key differences in coding style when using Pinia compared to Vuex:</p>
-
-<p><strong>--Coding Style Examples--</strong></p>
-
-<ul>
-<li><strong>Pinia:</strong></li>
-</ul>
-
-<p><strong>Modularization</strong> Pinia encourages a more modular approach to state management. You typically create multiple stores, each responsible for managing a specific piece of state or domain. This leads to a more organized codebase with smaller, focused stores.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="c1">// Defining a Pinia store</span>
-   <span class="k">import</span> <span class="p">{</span> <span class="nx">defineStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">pinia</span><span class="dl">'</span><span class="p">;</span>
-
-   <span class="k">export</span> <span class="kd">const</span> <span class="nx">useMyStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="dl">'</span><span class="s1">myStore</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-     <span class="na">state</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
-       <span class="na">count</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="p">}),</span>
-     <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nx">increment</span><span class="p">()</span> <span class="p">{</span>
-         <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
-       <span class="p">},</span>
-     <span class="p">},</span>
-   <span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Composition API</strong> Pinia integrates seamlessly with Vue 3's Composition API, which encourages using <code>ref</code>, <code>computed</code>, and <code>reactive</code> for defining and working with state. This aligns well with the Composition API's reactivity system.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="k">import</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
-
-   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-     <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
-       <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">useMyStore</span><span class="p">().</span><span class="nx">count</span><span class="p">;</span> <span class="c1">// Accessing store state</span>
-       <span class="kd">const</span> <span class="nx">doubleCount</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// Computed property</span>
-
-       <span class="k">return</span> <span class="p">{</span>
-         <span class="nx">count</span><span class="p">,</span>
-         <span class="nx">doubleCount</span><span class="p">,</span>
-       <span class="p">};</span>
-     <span class="p">},</span>
-   <span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>TypeScript Support</strong> Pinia is designed with TypeScript in mind and provides excellent TypeScript support out of the box. You can strongly type your state, actions, mutations, and getters, which leads to more type-safe code.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code>   <span class="c1">// Strongly typing store state</span>
-   <span class="kr">interface</span> <span class="nx">MyStoreState</span> <span class="p">{</span>
-     <span class="nl">count</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-   <span class="p">}</span>
-
-   <span class="k">export</span> <span class="kd">const</span> <span class="nx">useMyStore</span> <span class="o">=</span> <span class="nx">defineStore</span><span class="p">(</span><span class="dl">'</span><span class="s1">myStore</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-     <span class="na">state</span><span class="p">:</span> <span class="p">():</span> <span class="nx">MyStoreState</span> <span class="o">=&gt;</span> <span class="p">({</span>
-       <span class="na">count</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="p">}),</span>
-     <span class="c1">// ...</span>
-   <span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li><strong>Vuex:</strong></li>
-</ul>
-
-<p><strong>Centralized Store</strong> Vuex follows a centralized store pattern, where all application state is stored in a single global store. Actions and mutations are defined to interact with this central store.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="c1">// Defining a Vuex store</span>
-   <span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span><span class="p">;</span>
-
-   <span class="k">export</span> <span class="k">default</span> <span class="nx">createStore</span><span class="p">({</span>
-     <span class="na">state</span><span class="p">:</span> <span class="p">{</span>
-       <span class="na">count</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="p">},</span>
-     <span class="na">mutations</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nx">increment</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
-         <span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
-       <span class="p">},</span>
-     <span class="p">},</span>
-     <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nx">incrementAsync</span><span class="p">({</span> <span class="nx">commit</span> <span class="p">})</span> <span class="p">{</span>
-         <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-           <span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span>
-         <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-       <span class="p">},</span>
-     <span class="p">},</span>
-   <span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Options API and Composition API</strong> Vuex can be used with both the Options API and Composition API in Vue.js 3. When using the Options API, you define computed properties and methods within components to access and update state.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-     <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nx">count</span><span class="p">()</span> <span class="p">{</span>
-         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span> <span class="c1">// Accessing store state</span>
-       <span class="p">},</span>
-     <span class="p">},</span>
-     <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nx">increment</span><span class="p">()</span> <span class="p">{</span>
-         <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Committing a mutation</span>
-       <span class="p">},</span>
-     <span class="p">},</span>
-   <span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>When using the Composition API with Vuex, you'll often use <code>useStore</code> to access the store instance within your components.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="k">import</span> <span class="p">{</span> <span class="nx">useStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span><span class="p">;</span>
-
-   <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-     <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
-       <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">useStore</span><span class="p">();</span>
-       <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">computed</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">);</span> <span class="c1">// Accessing store state</span>
-
-       <span class="kd">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Committing a mutation</span>
-       <span class="p">};</span>
-
-       <span class="k">return</span> <span class="p">{</span>
-         <span class="nx">count</span><span class="p">,</span>
-         <span class="nx">increment</span><span class="p">,</span>
-       <span class="p">};</span>
-     <span class="p">},</span>
-   <span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>To sum up, Pinia and Vuex have different coding styles based on their fundamental design philosophies. Pinia prioritizes a modular, Composition API-centered, and strongly typed method, while Vuex follows a more centralized, Options API-friendly pattern. When choosing between them, it's important to consider your project's requirements and your team's coding preferences.</p>
-
-<p>Ultimately, the decision between Pinia and Vuex comes down to your project needs and personal preferences. If you prefer a more modular and TypeScript-friendly approach, Pinia may be the right choice for you. However, if you're already experienced with Vuex and prefer the centralized store pattern or your project already uses Vuex, it's best to stick with it. Both libraries are effective in managing the state within Vue.js applications.</p>
-
- </details> 
- <hr /> 
-
- #### - [Data migrations in regular migrations and why you (probably) should not do that](https://dev.to/katafrakt/data-migrations-in-regular-migrations-and-why-you-probably-should-not-do-that-2eem) 
- <details><summary>Article</summary> <p>Every once in a while I read Lucian Ghinda's <a href="https://newsletter.shortruby.com/">Short Ruby</a> newsletter and I see a "take" there which begs for some elaboration and at least slight disagreement. So I decided to try to write these short (but too long for a tweet) replies here.</p>
-
-
-
-
-<p>Today's topic comes from <a href="https://newsletter.shortruby.com/p/edition-59">issue #59</a>, where Matt Swanson touches the topic of data migrations.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EqlDq49s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/niyt8f4q4lckdm6q1ec4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EqlDq49s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/niyt8f4q4lckdm6q1ec4.png" alt="Image description" width="800" height="378"></a></p>
-
-<p>(here is <a href="https://nitter.net/_swanson/status/1701704048947396844">a link</a> to the tweet)</p>
-
-<p>So what's wrong here? I think the first of all we need to divide what Matt conveniently put together, because "don't reference Rails models in migrations" and "don't run data migrations in schema migrations" are two separate rules coming from different backgrounds.</p>
+<p>By the end of this tutorial, you'll have a fully configured environment ready for diving deeper into web3 with a powerful JavaScript API. Even if you're just starting out with JavaScript, you'll find this guide easy to follow. Plus, if you complete the tutorial by October 11th, 2023, you'll have a chance to <a href="https://starpause.com/mintbase">win a share of the $1,000 prize pool</a>!</p>
 
 <h2>
   
   
-  Don't reference models
+  Near Protocol
 </h2>
 
-<p>The rule of not referencing models relies on the fact that the code of the models change and it might change a lot. In fact, the assumption here is that the migration referencing a model will successfully run on Monday, but won't run on Thursday, because the model file changed and the assumptions made in migration code are no longer correct.</p>
+<p>Mintbase makes it easy to interact with the NEAR blockchain using Javascript. Why NEAR? Because It's carbon-neutral and has bullet proof scalability that's trusted by giants like <a href="https://twitter.com/ilblackdragon/status/1702155228932718756">KAI-CHING (the #1 dApp in the world)</a>. NEAR also has web2 ready UX and flexible account models that make it a perfect partner for enterprise and commerce companies. </p>
 
-<p>I generally agree that the points in the tweet can greatly reduce the risk of that happening. Although at the same time these points are not realistic. Just how would you "run migrations in dev often" during your two-weeks vacations? Fortnight is definitely enough time in larger projects for model and migration to go out of sync, resulting in a migration not being able to run.</p>
+<p>Grabbing a NEAR account via <a href="https://shard.dog/near_intern">shard.dog link</a> is a perfect demonstration of the seamless onboarding process. Especially worth checking if you're participating in <a href="https://starpause.com/mintbase">the contest</a> as you'll need a NEAR name to claim prizes. </p>
 
-<p>However, I don't want to sweat on it, because that's up to your team if you want to take this risk. The second part is much more interesting.</p>
+<p>You'll also need to <a href="https://testnet.mynearwallet.com/">create a testnet account</a> to follow along with the tutorial. Each testnet account comes with a bunch of tokens for experimenting and development. If you run out of testnet tokens you can always make another account!</p>
 
 <h2>
   
   
-  Don't run data migrations along schema migrations
+  Mintbase on Testnet
 </h2>
 
-<p>Let's say it out loud: the migrations were thought as a tool to consistently modify database <strong>schema</strong> across the environments. If you don't believe me, just check how the table keeping track of the migrations already run is called.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8D2TfL1q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xmac6y75xa3npsuofbuh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8D2TfL1q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xmac6y75xa3npsuofbuh.png" alt="Image description" width="800" height="390"></a></p>
 
-<p>However, in time, people started to use it to run data migrations too. It have few obvious upsides:</p>
+<p>Now that you have a Testnet account you can easily create your own Mintbase contract. On the top right of the site be sure you're logged in and that you've selected NEAR TESTNET.</p>
 
-<ul>
-<li>You already have a tool for that</li>
-<li>Everyone in your organization is expected to run migrations in dev environment regularly, so they will have their data in sync automatically. You don't need to announce on Slack that "everyone please run <code>rake data:backfill_order_numbers</code>".</li>
-<li>You already have a step of running it in your deployment pipeline and you don't have to add anything new</li>
-</ul>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--FeFiN8h6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y8i3tro5g2y6jrc4jcra.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--FeFiN8h6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y8i3tro5g2y6jrc4jcra.png" alt="Image description" width="800" height="629"></a></p>
 
-<p>In my experience, these advantages start to fade when the project (and especially the database) grows. Here are some problem I encountered with this approach:</p>
+<p>After confirming you're on Testnet head to <code>Manage -&gt; My Contracts</code> and then use the <code>New Contract</code> button. You can fill in the Store Name/Symbol with anything and proceed to paying the contract storage fee. </p>
 
-<ul>
-<li>Data migrations can take a lot of time. If you put schema change with data migration in the same file, you might and up with a table locked exclusively for a prolonged amount of time, effectively bringing your app down.</li>
-<li>Data in production database is often far more exotic than in staging/test environments. The migration might pass on staging, but will fail on production, because some weird data in the database. Now your pipeline is blocked and you either have to revert or submit a hotfix.</li>
-<li>It's not uncommon to have parameterized data migrations, where you first run it for only some tenants or just in some countries. When you check that everything works fine, you proceed with another batch.</li>
-<li>You have little control over when the data migration is run. In my current company, for example, you just put your PR in a merge queue and you don't really know when it will be merged (and deployed). Sometimes it's hours later. With data migrations, that might put significant stress on the database, it's better to have very strict control when it's run.</li>
-<li>Similarly, you might want to merge and deploy the code during working hours, but run the data migration in off-hours (or even during the weekend). But you have coupled one to the other, so you cannot really do that.</li>
-<li>Last but definitely not least: if you write your data migration as a rake task, you can actually write tests for it. Do you write tests for your migrations?</li>
-</ul>
+<p>What's a storage fee? Instead of monthly payments to a hosting provider you make a one time payment to the Near network to keep your contract forever. 100kb costs ~1 NEAR token, which we're not too worried about with our play tokens on testnet. </p>
 
-<p>To me personally, these points highly outweigh the comfort of using schema migrations for data migrations. Sure, you lost the comfort of using the tool that's already there, but at the same time you put the stability of the app, the well-being of the whole team and your peace of mind at risk.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TJC3_cwa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rvnenlbifqqvnu0o6b9i.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TJC3_cwa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rvnenlbifqqvnu0o6b9i.png" alt="Image description" width="800" height="352"></a></p>
 
-<p>So I guess my "counter-take" is:</p>
+<p>Next head over to <code>Build -&gt; Developer API</code> to get your your Mintbase Testnet Developer Key. Use the <code>Generate New Key</code> button and Copy it for safe keeping. Normally you wouldn't share that key with anyone, but if you're participating in the contest you can <a href="https://starpause.com/mintbase">paste it on gleam for an entry</a>.</p>
 
-<p>At least think of having the process of running data migrations in separation from your schema migrations, knowing what's at stake.</p>
+<h2>
+  
+  
+  Forking a Marketplace
+</h2>
+
+<p>Now that your store contract exists on the blockchain it's possible to use any interface to interact with it, thanks to the power of decentralization. However, most business clients will want a dedicated store with customized branding. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--K2niuCJT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2u6t901suulv8x2e5pez.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--K2niuCJT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2u6t901suulv8x2e5pez.png" alt="Image description" width="800" height="472"></a></p>
+
+<p>An <a href="https://github.com/Mintbase/examples/tree/main/simple-marketplace">example marketplace repository</a> demonstrates how you can use Mintbase JS to integrate web3 collectables into any front end you're familiar with. To clone and deploy the repository with Vercel go under <code>Build -&gt; Deploy a Marketplace</code>.</p>
+
+<p>The last step is configuring the cloned marketplace to connect with the contract you created earlier. Follow the <a href="https://github.com/Mintbase/examples/tree/main/simple-marketplace">Simple Marketplace README.md</a> to rename the <code>.env.example</code> file and update the variables.</p>
+
+<p>Submit your marketplace URL and the updated <code>.env</code> variables to the <a href="https://starpause.com/mintbase">gleam contest</a> for another two entries!</p>
+
+<h2>
+  
+  
+  Next Steps
+</h2>
+
+<p>Follow <a href="https://twitter.com/mintbase">Mintbase on Twitter</a> to find out about upcoming opportunities to earn like the grants program and hackathons! How cool would it be to see a <a href="https://admin.forem.com/docs/advanced-customization/extensions/listings">FOREM listing extension</a> leveraging Mintbase JS?</p>
+
+<p>If you have any questions as you continue to explore, pop into the <a href="https://t.me/mintdev">Telegram chat</a> for timely responses.</p>
+
+<p>For my next article I'm planning to cover the <a href="https://www.youtube.com/watch?v=pGNErpFe8Kk">Meritocracy Wordpress Plugin</a>, subscribe so you don't miss it!</p>
 
  </details> 
  <hr /> 
 
- #### - [How Progressive Web Apps (PWS) are Changing the Game](https://dev.to/codewithshahan/how-progressive-web-apps-pws-are-changing-the-game-29g9) 
- <details><summary>Article</summary> <p><strong>🥢Introduction:</strong></p>
+ #### - [Integrating Flutter {all 6 platforms} and Python: Part 2, Live Talk](https://dev.to/maximsaplin/integrating-flutter-all-6-platforms-and-python-part-2-live-talk-542e) 
+ <details><summary>Article</summary> <p>Last week, I published <a href="https://dev.to/maximsaplin/integrating-flutter-all-6-platforms-and-python-a-comprehensive-guide-4ipo">this article</a> with a step-by-step guide to integrating Flutter and Python. It gained a lot of attention.</p>
 
-<p>Hey there, folks! Welcome back. Today, we're diving into a hot topic in the tech world - Progressive Web Apps, or PWAs. But don't worry, we'll break it down into plain English, so you'll understand what all the buzz is about.</p>
+<p>This week on <em>Thursday, September 21, 14:00 UTC+0 (19:30 UTC+5:30, 10:00 EDT)</em>, I will expand the topic with a more complex example, involving:</p>
 
-<p><strong>🔑What Are PWAs?</strong></p>
+<ul>
+<li>gRPC streaming, </li>
+<li>setting up VSCode, </li>
+<li>debugging and troubleshooting, </li>
+<li>and performance tuning. </li>
+</ul>
 
-<p>Let's start with the basics. Progressive Web Apps are a type of web application that can run on any device with a modern web browser. They offer a native app-like experience right in your browser, and here's the best part - you don't need to download them from an app store.</p>
+<p>I will also share more context to the problem, alternative solutions, a few insights from the production team. </p>
 
-<p>Before we proceed, if you're feeling a bit bored right now, you can switch to the <a href="https://youtu.be/ha8SjUM0CBU">100-second video</a> version where I've condensed all the information from this article for you:<br>
-<iframe width="710" height="399" src="https://www.youtube.com/embed/ha8SjUM0CBU">
+<p>You are welcome to join the live event! With a bit of talk, coding, and screen sharing!</p>
+
+<p><iframe width="710" height="399" src="https://www.youtube.com/embed/lBnQzLPrqCA">
 </iframe>
 </p>
 
-<p><strong>🔑Advantages of PWAs:</strong></p>
+<p><strong>P.S.:</strong><br>
+Will also touch on the question of "slow Python". Can it match the release, Ahead-of-Time, build in Dart?</p>
 
-<ol>
-<li><p><strong>Offline Access</strong>: PWAs can work even when you're not connected to the internet. This is because they can cache data, so you can still use them in airplane mode or in areas with poor connectivity.</p></li>
-<li><p><strong>Cross-Platform Compatibility</strong>: Whether you're using a smartphone, tablet, or desktop, PWAs adapt to your device. No need for separate apps for each platform.</p></li>
-<li><p><strong>No Downloads or Updates</strong>: Forget about app stores and constant updates. PWAs are always up to date because they're served directly from the web.</p></li>
-<li><p><strong>Fast Loading</strong>: PWAs are designed for speed. They load quickly, making for a smooth user experience.</p></li>
-<li><p><strong>Low Data Usage</strong>: They're data-efficient, so you won't blow through your mobile data plan.</p></li>
-</ol>
-
-<p><strong>⛳How Do PWAs Work?</strong></p>
-
-<p>Now, let's peek under the hood to see how PWAs work:</p>
-
-<ol>
-<li><p><strong>Service Workers</strong>: These are the magic behind offline access. Service workers are scripts that run in the background and can intercept network requests, allowing the PWA to serve cached content when you're offline.</p></li>
-<li><p><strong>Manifest File</strong>: PWAs have a manifest file that tells the browser how the app should behave when it's added to the home screen. You can think of it as the app's blueprint.</p></li>
-<li><p><strong>Responsive Design</strong>: PWAs are designed to be responsive, meaning they adapt to different screen sizes and orientations.</p></li>
-</ol>
-
-<p><strong>📲How to Install PWAs:</strong></p>
-
-<p>So, how do you get a PWA on your device? It's super easy!</p>
-
-<ol>
-<li><p><strong>Chrome (Android)</strong>: When you visit a PWA-enabled website, you'll often see a prompt to add it to your home screen. Just tap 'Add'!</p></li>
-<li><p><strong>Safari (iOS)</strong>: Open Safari, navigate to the PWA, tap the Share button, and choose 'Add to Home Screen.'</p></li>
-</ol>
-
-<p><strong>🎈Examples of PWAs:</strong></p>
-
-<p>Alright, let's look at some examples of PWAs you might already be using:</p>
-
-<ol>
-<li><p><strong>Twitter Lite</strong>: This PWA offers a streamlined version of Twitter that loads quickly and works offline.</p></li>
-<li><p><strong>Flipkart</strong>: The popular Indian e-commerce site has a PWA that lets you shop seamlessly on any device.</p></li>
-<li><p><strong>Uber</strong>: Uber's PWA lets you book rides and track drivers without downloading their app.</p></li>
-</ol>
-
-<p><strong>🚧Conclusion:</strong></p>
-
-<p>And there you have it - Progressive Web Apps in plain English. They're fast, reliable, and save you from the hassle of app stores. So, next time you're browsing the web on your phone or computer, keep an eye out for those PWAs, and give them a try!</p>
-
-<p>You can follow me on <a href="https://www.twitter.com/shahancd">Twitter</a>/<a href="https://www.instagram.com/shahancd">Instagram</a>.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oA67Q77T--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v29hdk1ynj5hiq3ho02a.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oA67Q77T--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v29hdk1ynj5hiq3ho02a.png" alt="Image description" width="800" height="724"></a></p>
 
  </details> 
  <hr /> 
 
- #### - [How to write a CRUD CLI using Elixir and ScyllaDB](https://dev.to/guto/how-to-write-a-crud-cli-using-elixir-and-scylladb-4bek) 
- <details><summary>Article</summary> <p>If you know high traffic applications for communication, applications that need low latency and good fault tolerance, you have most likely already come across the names Elixir (as a programming language) and ScyllaDB (being a database NoSQL aimed at low latency). The objective of both is very similar: to work with applications that generally require greater care for stability.</p>
+ #### - [Has AI Taken My Job Yet?](https://dev.to/kallmanation/has-ai-taken-my-job-yet-9o4) 
+ <details><summary>Article</summary> <p>AI will not change the world (the way you think it will). Exactly as the Internet did not change the world (the way early adopters thought it would).</p>
 
-<p>ScyllaDB is recognized worldwide as an extremely fast database, being based on Apache Cassandra, bringing several improvements for low latency. Furthermore, ScyllaDB is completely free, open source, and is distributed under the GNU AGPL license.</p>
+<p>Of course, our daily lives have drastically shifted in the 30 years since home internet connected us. And of course, our lives 30 years from now will look even more different after consumer AI weasels its way into everything we touch.</p>
 
-<p>Elixir, on the other hand, is a programming language known for dealing very well with the applicability of concepts such as concurrency and fault tolerance and this is thanks to the Erlang ecosystem, which in this case, Elixir makes use of the virtual machine called BEAM, designed specifically to work with high-volume messaging applications.</p>
+<p>But if you don't remember the late 1900s, the internet advent came with a different optimism. The quintessential phrase of the day, "The Information Super Highway!!", encapsulates all the hopes and expectations of the technology. We still echo those hopes when we wax on about the sheer knowledge available a tap away. With all those learnings we'll all make better decisions, self-educate throughout our lives, and society will grow greener each day. Now I hear the emptiness in our echoes. This is not The Internet I was promised. And AI will not become what the sirens sing of today.</p>
 
-<p>The purpose of this article is to offer an introduction to how you can create your first application using both, opening doors and possibilities for your future with development with these two incredible technologies.</p>
-
-<h2>
+<h1>
   
   
-  Table of Contents
-</h2>
+  It all started at Babel
+</h1>
 
-<ul>
-<li>
-Starting the project
+<p>You may already know, or you may be <a href="https://xkcd.com/1053/">today's lucky 10,000</a>, about the <a href="https://libraryofbabel.info/">Library of Babel</a>. Each time it makes a new round on social media there are a dozen reposts about how mind-blowing it is that everything ever written or that ever will be written already exists in the library.</p>
 
-<ul>
-<li>Installing Elixir</li>
-<li>Installing ScyllaDB</li>
-<li>Starting our project</li>
-</ul>
+<p>Nearly every introduction to the Library of Babel leaves off at this unspoken existentialism. Implying that it could somehow change our lives if only we looked in the library for all the knowledge we are missing. They have not spent enough time in the library if they believe this, and it shows.</p>
 
-
-</li>
-<li>
-Configuring the project
-
-<ul>
-<li>Defining dependencies</li>
-<li>Configuring .env</li>
-<li>Defining our connection module</li>
-</ul>
-
-
-</li>
-<li>Implementing actions with the database</li>
-<li>
-Commands
-
-<ul>
-<li>Add</li>
-<li>List</li>
-<li>Delete</li>
-<li>Stress</li>
-</ul>
-
-
-</li>
-<li>Implementing user interaction</li>
-<li>Running our application</li>
-<li>Conclusion</li>
-</ul>
-
-<h2>
-  
-  
-  Starting the project
-</h2>
-
-<p>Beforehand we need to install both Elixir and ScyllaDB. I won't go into too much detail about the installation because this makes the article simpler. So let's start with installing Elixir.</p>
-
-<h3>
-  
-  
-  Installing Elixir
-</h3>
-
-<p>To install Elixir in general, there are two main methods: installing directly from your package manager or using a version manager for programming languages. In my case I will be using <code>asdf</code> as responsible for managing my Elixir versions. If you want to install Elixir using your package manager, click <a href="https://elixir-lang.org/install.html">here</a> to receive more information.</p>
-
-<p>To install <code>asdf</code> you can check by clicking <a href="https://asdf-vm.com/guide/getting-started.html">here</a>. As a preference, I always choose to install with "Bash &amp; Git" or "Zsh &amp; Git". Once installed, we will prepare the installation to receive the latest version of Erlang and Elixir in our project. To install Erlang:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-
-<span class="nv">$ </span>asdf <span class="nb">install </span>erlang latest
-
-<span class="nv">$ </span>asdf global erlang latest
-</code></pre>
-
-</div>
-
-
+<p>The creator of the library said <a href="https://libraryofbabel.info/theory4.html">this</a> after building a search function able to take us directly to the book and page for a given passage of text:</p>
 
 <blockquote>
-<p>Did you have any problems with the installation? Access the <a href="https://github.com/asdf-vm/asdf-erlang">official guide</a>.</p>
+<p>Interestingly, this leaves the frustration of using the library unaltered. One can find only text one has already written, and any attempt to find it in among other meaningful prose is certain to fail. The tantalizing promise of the universal library is the potential to discover what hasnt been written, or what once was written and now is lost. But there is still no way for us to find what we dont know how to look for. Unless, of course, <a href="https://libraryofbabel.info/bookmark.cgi?thefrustrationofthelibrary">youre brave enough to browse</a>...</p>
 </blockquote>
 
-<p>To install Elixir:<br>
-</p>
+<p>The reason the Library of Babel has not changed your life is because any useful knowledge is buried in a hopeless mire of gibberish.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+<p>Take this thought experiment: we are literally trapped in the Library of Babel, our world only consisting of bookshelf beside bookshelf with no escape, having never seen the sky outside. One day we miraculously find a page with the words "<a href="https://libraryofbabel.info/bookmark.cgi?theskyisorange">The sky outside is orange</a>". Astounding scientific discovery?! No, the statement "<a href="https://libraryofbabel.info/bookmark.cgi?theskyisblue100">The sky outside is blue</a>" must also exist within a different book, elsewhere in the library. The library contains all statements, both true and false. This is the nature of Universal Libraries. With no way to verify this statement, we can do nothing with the knowledge the library tried to bestow on us.</p>
 
-<span class="nv">$ </span>asdf <span class="nb">install </span>elixir latest
+<h1>
+  
+  
+  Universal Libraries
+</h1>
 
-<span class="nv">$ </span>asdf global elixir latest
-</code></pre>
+<p>Such is the fate of all Universal Libraries. By containing information both useful and useless, only the librarians already knowing which books are useful can find a good book. By containing statements both true and false only the researchers already knowing what's true can find veracity. By containing stories both beautiful and ugly, only already discerning eyes can find the aesthetic.</p>
 
-</div>
+<p>Authorship bestows value to the works. Books, images, and songs are not worthwhile because they exist, but are valuable because they were authored. Out of all the sounds, of all the colors, of all the letters, this particular group was chosen and placed together; or more importantly, all the other combinations were removed, bringing focus to the worthwhile.</p>
 
+<h1>
+  
+  
+  The Internet
+</h1>
 
+<p>It strikes me that the Internet is a Universal Library. Perhaps the most universal we've built to date. (of course, containing the entire Library of Babel makes it more universal than that library on its own). Like Bo Burnham sang in <em>Welcome to the Internet</em> from his 2021 special, <em>Bo Burnham: Inside</em>:</p>
 
 <blockquote>
-<p>Did you have any problems with the installation? Access the <a href="https://github.com/asdf-vm/asdf-elixir">official guide</a>.</p>
+<p>Obama sent the immigrants to vaccinate your kids!</p>
 </blockquote>
 
-<p>Well, now that we have both installed we can test to see if everything is ok by typing <code>elixir -v</code> in our terminal emulator and we will get a response similar to:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Erlang/OTP 25 [erts-13.2.2.2] [source] [64-bit]
-
-Elixir 1.13.4 (compiled with Erlang/OTP 23)
-</code></pre>
-
-</div>
-
-
+<p>Wait. No, that isn't the quote I was looking for. This library is too big. Here:</p>
 
 <blockquote>
-<p>These are my installed versions for Erlang and Elixir. If you want to install the same versions as me on your machine, just modify the <code>asdf install</code> command, replacing <code>latest</code> with the version number and then set it to <code>asdf global elixir 1.13.4</code> in this case.</p>
+<p>Could I interest you in everything, all of the time? A little bit of everything, all of the time? [...] Anything and everything, all of the time</p>
 </blockquote>
 
-<h3>
+<p>It certainly feels as though everything is here. This article is here. The Library of Babel is here. Infinite scrolling on every page.</p>
+
+<p>Let me propose a test for you though; for each thing you see, ask yourself three questions, and be honest with how much of the content you consume satisfies all three:</p>
+
+<ol>
+<li><p>Is this mostly new to me?</p></li>
+<li><p>Is this useful to me?</p></li>
+<li><p>Is this true? Or is it misleading?</p></li>
+</ol>
+
+<p>Be honest. Does 80% of the Internet satisfy just three questions? Even 20%? I was promised an "Information Super Highway" and instead I wade through an information swamp. The reins to unimaginable knowledge now bind me to a worthless merry-go-round of diversion.</p>
+
+<p>Google boasts millions of results for every search, and yet I find the same shallow parroted lines behind every link. Worse than the Library of Babel, which mindlessly serves me gibberish, the Algorithms of the Internet have been crafted to serve me intentionally manipulative information: attempts to sway my votes and attempts to spend my dollars, mostly attempts at my dollars; never useful for <em>me</em> unless it's more useful to <em>them</em>.</p>
+
+<p>And when you last searched, was there a <em>primary</em> source listed on the first page? I do not mean Wikipedia. I do not mean an article about news coverage of a new study. I mean the <em>actual source of information</em>. I find ten of the same rehashed summaries, probably written by a computer, and if I'm lucky one of them has linked to their source (which is paywalled and out of date).</p>
+
+<p>We fell for the siren song of a Universal Library. Now I hear a remix crescendoing.</p>
+
+<h1>
   
   
-  Installing ScyllaDB
-</h3>
+  Generative AI
+</h1>
 
-<p>There are several ways to use ScyllaDB, which you can use with <a href="https://www.scylladb.com/product/scylla-cloud/">ScyllaDB Cloud</a>, with ScyllaDB <a href="//https%20://opensource.docs.scylladb.com/stable/getting-started/install-scylla/">installed on your machine</a> or the way I will use it: with Docker containers.</p>
+<p>So far, Artificial Intelligence (AI) manufactures uncanny mimicries of human intelligence. AI, like humans, <em>mostly</em> recombines information into non-novel restatements of the same. <em>Occasionally</em> an AI, like a human, forms a novel combination: emergent work from previous learnings. Of those emergent works, some portion are truthful (that is, the predictions drawn from them will match reality) and some portion are false.</p>
 
-<p>If you don't already have Docker installed, I recommend accessing the [installation] guide (<a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>). If you want to use ScyllaDB Cloud or ScyllaDB installed on your machine, there's no problem, just be careful when placing the node links when initializing and configuring the project, but when we get to this part I'll explain it better.</p>
+<p>Unlike a human, an AI has no means to assess its novel works. Like the librarians of Babel, the AI is trapped within its Universal Library: the Internet. It cannot know if the sky is blue or orange outside of words and images transmitted to it via the Internet.</p>
 
-<p>Well, continuing... To run our container with ScyllaDB in Docker we will use the following command:<br>
-</p>
+<p>When training human minds, our teachers take great care to bring new, useful, truthful information into the developing intelligence. Have we taken the same care when training artificial minds? Or do we blindly feast them on a Universal Library?</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>docker run <span class="nt">--name</span> some-scylla <span class="nt">-p</span> 9042:9042 <span class="nt">-d</span> scylladb/scylla
-</code></pre>
+<p>When done blindly, the AI becomes a larger Universal Library than the content it consumed. As it becomes more universal, <a href="https://futurism.com/ai-trained-ai-generated-data-interview">it paradoxically becomes less useful</a>. Interactions devolve into hallucinations and false citations; how could the AI know any better? That is all it experienced on the Internet. Employing the AI only gives legs to the Universal Library of the Internet. It is no more true than before. It is no more useful than before. The difference is that now it enacts its disheveled will without the filter of external curation.</p>
 
-</div>
-
-
-
-<p>The <code>-p</code> option indicates that we want to bind port 9042 of the container with port 9042 of our machine, allowing our container to now be accessed directly on our <code>localhost:9042</code>.</p>
-
-<p>For test the connection, after executing the command, wait a few seconds for everything to start correctly in the container and then type:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> some-scylla cqlsh
-</code></pre>
-
-</div>
-
-
-
-<p>So you will see a response similar to:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>Connected to at 172.17.0.2:9042.
-[cqlsh 5.0.1 | Cassandra 3.0.8 | CQL spec 3.3.1 | Native protocol v4]
-Use HELP for help.
-cqlsh&gt; 
-</code></pre>
-
-</div>
-
-
-
-<p>This is our console where we can execute commands to interact with ScyllaDB. By default, the language used is <a href="https://cassandra.apache.org/doc/latest/cassandra/cql/">CQL (Cassandra Query Language)</a>, very similar to the standard database SQL that you probably have already had contact.</p>
-
-<p>Well, let's run a simple command to describe all the <code>keyspaces</code> we have in our container. <code>keyspaces</code> could be defined with a simple analogy: keyspace is basically the same as database when you use a relational database like MySQL or PostgreSQL for example (the definition goes <em>a little beyond that</em>, but I won't go into it very).</p>
-
-<p>To describe your <code>keyspaces</code> run:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="n">cqlsh</span><span class="o">&gt;</span> <span class="k">DESCRIBE</span> <span class="n">KEYSPACES</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>And you should see a response similar to:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>system_schema system_traces system_distributed
-</code></pre>
-
-</div>
-
-
-
-<p>We haven't created any <code>keyspace</code> yet, right? Well, let's create our keyspace, which in this case is for a <code>media_player</code>, with the command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="n">cqlsh</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="n">KEYSPACE</span> <span class="n">media_player</span>
-     <span class="k">WITH</span> <span class="n">replication</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'class'</span><span class="p">:</span> <span class="s1">'NetworkTopologyStrategy'</span><span class="p">,</span> <span class="s1">'replication_factor'</span><span class="p">:</span> <span class="s1">'3'</span><span class="p">}</span>
-     <span class="k">AND</span> <span class="n">durable_writes</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>And let's create the table:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="n">cqlsh</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">media_player</span><span class="p">.</span><span class="n">songs</span> <span class="p">(</span>
-     <span class="n">id</span> <span class="n">uuid</span><span class="p">,</span>
-     <span class="n">titletext</span><span class="p">,</span>
-     <span class="n">album</span> <span class="nb">text</span><span class="p">,</span>
-     <span class="n">artist</span> <span class="nb">text</span><span class="p">,</span>
-     <span class="n">created_at</span> <span class="nb">timestamp</span><span class="p">,</span>
-     <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">created_at</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
+<h1>
   
   
-  Starting our project
-</h3>
+  What will change?
+</h1>
 
-<p>For start a new project, run the command:<br>
-</p>
+<p>We finally come to the biggest headline (that I see) from Generative AI advancements: "Programmers around the world, out of a job". Except, that headline <a href="https://dev.to/kallmanation/nolow-code-why-hasnt-it-won-56an-temp-slug-5179755">has been running for 30 years</a>. And it does not sound any different than the existential dread in the shallow sharing of those discovering the <a href="https://libraryofbabel.info/">Library of Babel</a>. They both have it wrong.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>mix new media_player
-</code></pre>
+<p>As I said, programmers have been "replaced by technology" since before I was born. How did I make a career doing something that shouldn't exist? How do I know I'll still exist despite AI "taking my job"?</p>
 
+<p>The answer is simple. Each time a new technology enters meant to replace the skills of a professional, a new set of skilled professionals arises to interact with that technology. We saw it again this time around, before the ink on the "out of a job" headline dried, a new job title arose: <a href="https://en.wikipedia.org/wiki/Prompt_engineering">Prompt Enginee</a>r.</p>
+
+<p>The skills we can see change; less documentation on syntax, perhaps a touch more psychology. But the jobs continue. And <em>why</em> these classes of "technical" people always arise is because the skills we <em>can't see</em> stay the same. A craving for learning things, tenacity when facing challenging puzzles, creatively bringing different solutions to the same situation.</p>
+
+<p>So, until AI does <em>everyone's</em> jobs, there will be jobs titled <em>something</em> engineer to take care of the rest. I'll see you all there.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Trending Discussions of the Week - 9/19/23](https://dev.to/devteam/trending-discussions-of-the-week-91923-5di7) 
+ <details><summary>Article</summary> <p>Each week, we curate the most engaging <a href="https://dev.to/t/discuss">#discuss posts</a> on DEV to bring them to you in one comprehensive list. From coding tips to career advice, you'll find a range of topics that are buzzing in the DEV community.</p>
+
+
+
+
+
+<div class="ltag__link">
+  <a href="/jaitramadandij" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m8i1J0EW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--1TqTIR0u--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/462188/df14b2fe-ab6d-4ed5-8dd5-05fad7745131.jpg" alt="jaitramadandij">
+    </div>
+  </a>
+  <a href="/jaitramadandij/why-do-we-get-frustrated-when-learning-something-2h43" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Why do we get frustrated when learning something?</h2>
+      <h3>Jait Ramadandi Jeke ・ Sep 16</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#beginners</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#productivity</span>
+        <span class="ltag__link__tag">#learning</span>
+      </div>
+    </div>
+  </a>
 </div>
+ @jaitramadandij knows how much it sucks to struggle in learning something new, but some pain is required to get those gains. How do you get past these obstacles in learning?
 
 
 
-<blockquote>
-<p><a href="https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html">Mix</a> is much more than a dependency manager for Elixir, after all, with it we can run and manage our entire project. By default, Mix is already installed together with Elixir.</p>
-</blockquote>
 
-<p>And a project will be created with the structure:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>.
-├── README.md
-├── lib
-│   └── media_player.ex
-├── mix.exs
-</code></pre>
-
+<div class="ltag__link">
+  <a href="/ranggakd" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pCXewhnC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--4gCLVDl3--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/375441/85be4e5c-f92f-480e-83b6-0595ad496147.png" alt="ranggakd">
+    </div>
+  </a>
+  <a href="/ranggakd/i-hold-back-on-job-applications-compensating-with-tech-dev-blogging-and-ongoing-side-projects-this-aint-effective-innit-4f1j" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>I hold back on job applications, compensating with tech dev blogging and ongoing side projects – this ain't effective innit?</h2>
+      <h3>Retiago Drago ・ Sep 15</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#career</span>
+      </div>
+    </div>
+  </a>
 </div>
+ @ranggakd tells an honest and common story about having a wide skillset. What would you do in his position?
 
 
 
-<p>Well, now that we have our project initialized, we can start playing, so open your favorite code editor and let's go.</p>
 
-<h2>
-  
-  
-  Configuring the project
-</h2>
-
-<p>At this point we will configure our project in Elixir to install and use all the tools necessary to build our CLI, in addition to defining the first settings.</p>
-
-<h3>
-  
-  
-  Defining dependencies
-</h3>
-
-<p>After opening your code editor, notice that there is a file named <code>mix.exs</code>. This file is responsible for defining several attributes about our project, including the dependencies that will be used during its development.</p>
-
-<p>Going down the page a little you will see an area that starts with <code>defp deps do</code>... Exactly in this part we will modify and insert the following dependencies:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="c1"># Run "mix help deps" to learn about dependencies.</span>
-<span class="k">defp</span> <span class="n">deps</span>
-  <span class="p">[</span>
-    <span class="p">{</span><span class="ss">:dotenv</span><span class="p">,</span> <span class="s2">"~&gt; 3.0"</span><span class="p">},</span>
-    <span class="p">{</span><span class="ss">:decimal</span><span class="p">,</span> <span class="s2">"~&gt; 1.0"</span><span class="p">},</span>
-    <span class="p">{</span><span class="ss">:xandra</span><span class="p">,</span> <span class="s2">"~&gt; 0.14"</span><span class="p">},</span>
-    <span class="p">{</span><span class="ss">:elixir_uuid</span><span class="p">,</span> <span class="s2">"~&gt; 1.2"</span><span class="p">}</span>
-  <span class="p">]</span>
-<span class="k">end</span>
-</code></pre>
-
+<div class="ltag__link">
+  <a href="/tigt" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vZmGELs8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--14gqF-K2--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/127429/370e6334-33ec-4c82-8937-f1a7116ddd89.jpg" alt="tigt">
+    </div>
+  </a>
+  <a href="/tigt/follow-ups-to-the-streets-series-3h4b" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Follow-ups to the “Streets” series</h2>
+      <h3>Taylor Hunt ・ Sep 17</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#performance</span>
+      </div>
+    </div>
+  </a>
 </div>
+ Here, Taylor does a follow-up post on his goal to make a meaningfully fast website. If you haven't read @tigt's <a href="https://dev.to/tigt/series/16560">Streets Series</a>, you might wanna check it out.
 
 
 
-<ul>
-<li>
-<a href="https://github.com/avdi/dotenv_elixir">Dotenv</a>: A port of dotenv to Elixir.</li>
-<li>
-<a href="https://github.com/ericmj/decimal">Decimal</a>: Arbitrary precision decimal arithmetic.</li>
-<li>
-<a href="https://github.com/lexhide/xandra">Xandra</a>: Fast, simple, and robust Cassandra/ScyllaDB driver for Elixir.</li>
-<li>
-<a href="https://github.com/zyro/elixir-uuid">Elixir UUID</a>: UUID generator and utilities for Elixir. See RFC 4122.</li>
-</ul>
 
-<p>Well, now that we have our dependencies defined we can run it in our terminal emulator:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nv">$ </span>mix deps.get
-</code></pre>
-
+<div class="ltag__link">
+  <a href="/szabgab" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5qI3U6VH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--PyIS8Na_--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/36720/9b6106f4-f64e-47c6-8963-82a80ca0eda4.jpg" alt="szabgab">
+    </div>
+  </a>
+  <a href="/szabgab/what-are-the-super-powers-of-programmers-3ao0" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>What are the super powers of programmers?</h2>
+      <h3>Gabor Szabo ・ Sep 13</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#programming</span>
+        <span class="ltag__link__tag">#beginners</span>
+      </div>
+    </div>
+  </a>
 </div>
+ Superpowers allow you to do something unique or something beyond what people without those powers could do. @szabgab asks, what superpower would programmers have if they were given them?
 
 
 
-<blockquote>
-<p>The command above will install all dependencies that were defined in our <code>mix.exs</code>.</p>
-</blockquote>
 
-<p>Great! Now we can configure our environment variables for the project within <code>.env</code>.</p>
+<div class="ltag__link">
+  <a href="/nathan_tarbert" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KaO2Xo8M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--f_XWJQBb--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1031984/28803da9-a177-4e40-921b-14b48e505a2e.png" alt="nathan_tarbert">
+    </div>
+  </a>
+  <a href="/nathan_tarbert/navigating-the-open-source-landscape-finding-your-first-contribution-3fap" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>🧭 Navigating the Open Source Landscape: ⭐Finding Your First Contribution</h2>
+      <h3>Nathan Tarbert ・ Sep 13</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#opensource</span>
+        <span class="ltag__link__tag">#webdev</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#github</span>
+      </div>
+    </div>
+  </a>
+</div>
+ The challenge often lies in finding the right project to kickstart your open-source journey, so here's @nathan_tarbert to get you started!
+
 
 <h3>
   
   
-  Configuring .env
+  📚 Explore More in Our Code Chatter Series
 </h3>
 
-<p>Well, let's now create a file called <code>.env</code> at the root of our project (that's right, at the same level as our <code>mix.exs</code>). It will be responsible for defining the first configurations of our project, including the environment variables that will be used to connect our cluster.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eYMzeofR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4zglc488wgld8ut1321u.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eYMzeofR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4zglc488wgld8ut1321u.jpg" alt="Code Chatter image" width="800" height="336"></a> Want to dive deeper into the world of developer discussions and insights? Check out our <a href="https://dev.to/thepracticaldev/series/24494">Code Chatter Series</a> and join us as we explore the coding world, one witty question at a time.</p>
 
-<p>When creating the file and opening it in the code editor, we will define:<br>
-</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>SCYLLADB_USERNAME=
-SCYLLADB_PASSWORD=
-SCYLLADB_NODE=
-SCYLLADB_KEYSPACE=
-SCYLLADB_TABLE=
-</code></pre>
-
+<div class="ltag__link">
+  <a href="/devteam" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vzeA_jD8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--CMkjYEfB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg" alt="The DEV Team" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Q9agcq3k--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vHKcEiTe--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/3/13d3b32a-d381-4549-b95e-ec665768ce8f.png" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/devteam/whats-your-ideal-coding-environment-414i" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>What's Your Ideal Coding Environment?</h2>
+      <h3>dev.to staff for The DEV Team ・ Sep 18</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#discuss</span>
+      </div>
+    </div>
+  </a>
 </div>
 
-
-
-<ul>
-<li>
-<code>SCYLLADB_USERNAME</code>: username configured to connect to ScyllaDB.</li>
-<li>
-<code>SCYLLADB_PASSWORD</code>: password configured for the user.</li>
-<li>
-<code>SCYLLADB_NODE</code>: complete url to connect to our node, you can enter just one url (such as <code>localhost:9042</code> for example) or define the complete nodes generated separated by a comma (such as <code>scylla-node1.com,scylla- node-2.com,scylla-node-3.com</code>).</li>
-<li>
-<code>SCYLLADB_KEYSPACE</code>: the keyspace generated for our application.</li>
-<li>
-<code>SCYLLADB_TABLE</code>: table that will be used for the respective keyspace.</li>
-</ul>
-
-<p>This way our .env should look like:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>SCYLLADB_USERNAME=scylla
-SCYLLADB_PASSWORD=scylla
-SCYLLADB_NODE=localhost:9042
-SCYLLADB_KEYSPACE=media_player
-SCYLLADB_TABLE=songs
-</code></pre>
-
-</div>
-
-
-
-<p>Perfect! Now that our connection files are ready, we can start structuring the project, shall we?</p>
-
-<h3>
-  
-  
-  Defining our connection module
-</h3>
-
-<p>It is elegant and interesting to separate the connection module in a separate area of our project, allowing for more practical maintenance and attractive organization, so let's create two directories with the path <code>lib/media_player/config</code>. This directory will be responsible for storing two main configuration files: the file for connecting to the Cluster and the file for defining the keyspace and table.</p>
-
-<p>Well, let's create two files inside the <code>lib/media_player/config</code> directory, called <code>connection.ex</code> and <code>database.ex</code>. This way our directory structure will now be:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>.
-├── README.md
-├── lib
-│   ├── media_player
-│   │   └── config
-│   │   ├── connection.ex
-│   │   └── database.ex
-│   └── media_player.ex
-├── mix.exs
-</code></pre>
-
-</div>
-
-
-
-<blockquote>
-<p>Yes, I omitted the <code>deps</code> directory because it contains the dependencies, that is, nothing that we are going to modify manually, don't worry, in addition to omitting the <code>test</code> directory because it will contain the tests that can be implemented, but, no let's implement it for now.</p>
-</blockquote>
-
-<p>Well, now we can define the connection to our cluster, starting with the <code>database.ex</code> file.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Database</span> <span class="k">do</span>
-  <span class="kn">import</span> <span class="no">Dotenv</span>
-
-  <span class="n">load</span><span class="p">()</span>
-
-  <span class="k">def</span> <span class="n">start_link</span> <span class="k">do</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="ss">username:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_USERNAME"</span><span class="p">),</span>
-      <span class="ss">password:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_PASSWORD"</span><span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">cluster</span><span class="p">}</span> <span class="o">=</span>
-      <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">start_link</span><span class="p">(</span>
-        <span class="ss">sync_connect:</span> <span class="ss">:infinity</span><span class="p">,</span>
-        <span class="ss">authentication:</span> <span class="p">{</span><span class="no">Xandra</span><span class="o">.</span><span class="no">Authenticator</span><span class="o">.</span><span class="no">Password</span><span class="p">,</span> <span class="n">options</span><span class="p">},</span>
-        <span class="ss">nodes:</span>
-          <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_NODE"</span><span class="p">)</span>
-          <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
-      <span class="p">)</span>
-
-    <span class="n">cluster</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this file we:</p>
-
-<ul>
-<li>We import the <code>Dotenv</code> library to manage the variables defined in our <code>.env</code> file;</li>
-<li>We load the variables with the <code>load()</code> function that comes from the <code>Dotenv</code> library;</li>
-<li>We created a function named <code>start_link</code> that will be responsible for starting the connection link with our cluster;</li>
-<li>In the function we define the <code>username</code> and <code>password</code> receiving these values from the <code>.env</code> file;</li>
-<li>We initialize the cluster with the function coming from <code>Xandra</code> with the name <code>Xandra.Cluster.start_link</code>, responsible for starting a connection link with the cluster
-
-<ul>
-<li>In this function we define that <code>sync_connect</code> is with value <code>:infinity</code>! This means that it will try to make the connection with an infinite expected response time (that is, the module will wait as long as necessary to make the complete connection of all nodes). To read more about click <a href="https://hexdocs.pm/xandra/Xandra.Cluster.html#start_link/1">here</a>;</li>
-<li>We define that we are going to perform authentication and pass <code>options</code> (which was defined previously) as a parameter;</li>
-<li>We define our nodes by loading from our <code>.env</code> file and performing a division with the commas found, distributing them in a list (<code>nodes</code> expects a list of urls to make the connection, which is why the split is necessary to create this list) . If you use ScyllaDB Cloud, this is what will make everything work perfectly;</li>
-</ul>
-
-
-</li>
-<li>We return the cluster with the connection ready.</li>
-</ul>
-
-<p>Perfect! Our connection file is ready. Now let's configure a simple area that will only be responsible for returning the keyspace and the table, called <code>connection.ex</code>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Connection</span> <span class="k">do</span>
-  <span class="kn">import</span> <span class="no">Dotenv</span>
-
-  <span class="n">load</span><span class="p">()</span>
-
-  <span class="k">def</span> <span class="n">keyspace</span><span class="p">()</span> <span class="k">do</span>
-    <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_KEYSPACE"</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="n">table</span><span class="p">()</span> <span class="k">do</span>
-    <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">"SCYLLADB_TABLE"</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Basically the only functionality of this module is to have two functions to return the keyspace and the table that we will be using, without the need to always use the <code>.env</code> library!</p>
-
-<h2>
-  
-  
-  Implementing actions with the database
-</h2>
-
-<p>Well, now is another important point: as our project will have commands, therefore, it would be interesting to create a specific module to handle these commands, right? Perfect! However, before that, what do you think about creating a module to execute queries in the database, so we can centralize where the queries will be executed.</p>
-
-<p>Well, this is the time to create a file in <code>lib/media_player</code> with the name <code>actions.ex</code>. So our directory structure will look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>.
-├── README.md
-├── lib
-│   ├── media_player
-│   │   ├── actions.ex
-│   │   └── config
-│   │   ├── connection.ex
-│   │   └── database.ex
-│   └── media_player.ex
-├── mix.exs
-</code></pre>
-
-</div>
-
-
-
-<p>Wonder! With the file created we can now create two specific functions, but why two? Simple: the <code>Xandra.Cluster.execute</code> function has two variations, the first with two parameters (the cluster and the query to be executed) and the second with three parameters (the cluster, the query to be executed and the parameters, being a list that is mainly used to prepare our query).</p>
-
-<p>Let's go then, our module should look like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Actions</span> <span class="k">do</span>
-  <span class="k">def</span> <span class="n">cluster</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Database</span><span class="o">.</span><span class="n">start_link</span><span class="p">()</span>
-
-  <span class="k">def</span> <span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="k">do</span>
-    <span class="k">case</span> <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">cluster</span><span class="p">(),</span> <span class="n">query</span><span class="p">)</span> <span class="k">do</span>
-      <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">result</span><span class="p">}</span> <span class="o">-&gt;</span>
-        <span class="n">result</span>
-
-      <span class="p">{</span><span class="ss">:error</span><span class="p">,</span> <span class="n">error</span><span class="p">}</span> <span class="o">-&gt;</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">prepared</span> <span class="o">=</span> <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">prepare!</span><span class="p">(</span><span class="n">cluster</span><span class="p">(),</span> <span class="n">query</span><span class="p">)</span>
-
-    <span class="k">case</span> <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">cluster</span><span class="p">(),</span> <span class="n">prepared</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="k">do</span>
-      <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">result</span><span class="p">}</span> <span class="o">-&gt;</span>
-        <span class="n">result</span>
-
-      <span class="p">{</span><span class="ss">:error</span><span class="p">,</span> <span class="n">error</span><span class="p">}</span> <span class="o">-&gt;</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this file we:</p>
-
-<ul>
-<li>We define a local <code>cluster</code> function that does nothing more than initialize and return the connection link to the cluster;</li>
-<li>We define a function <code>run_query/1</code> that takes just one parameter (being just the query, after all, the cluster is already a local function and we know that we will always execute actions on it);
-
-<ul>
-<li>We tried to perform the query with the function <code>Xandra.Cluster.execute</code>;</li>
-<li>If the return is <code>:ok</code>, it means that everything went well, then we return the complete result (a complete map of the query);</li>
-<li>If the return is <code>:error</code> it means that an error occurred when performing the query, then we inspect the specific error;</li>
-</ul>
-
-
-</li>
-</ul>
-
-<blockquote>
-<p>An important detail is about the assignment made with <code>{:ok, result}</code> and <code>{:error, error}</code>, since in Elixir everything has a return, always being a map starting with an atom validating the return type that was given (I recommend seeing more about <a href="https://elixir-lang.org/getting-started/basic-types.html#atoms">atoms</a>), so we bind values with a map!</p>
-</blockquote>
-
-<ul>
-<li>We define a function <code>run_query/2</code> that takes two parameters (only the query and the parameters to be executed):
-
-<ul>
-<li>We tried to perform the query with the <code>Xandra.Cluster.execute</code> function:</li>
-<li>If the return is <code>:ok</code>, it means that everything went well, then we return the complete result (a complete map of the query);</li>
-<li>If the return is <code>:error</code> it means that an error occurred when performing the query, then we inspect the specific error;</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p>If you want to see more about how the <code>Xandra.Cluster.execute</code> function works, click <a href="https://hexdocs.pm/xandra/Xandra.Cluster.html#execute/3">here</a>.</p>
-
-<p>A detail that you may not have noticed: both functions have the same name, however, they differ in terms of the number of parameters! This makes the magic happen with Elixir. Functions are defined along with the number of parameters they expect to receive, so I put the name of the function followed by a slash "/" with the number of parameters. If you want to know more about it, click <a href="https://elixirschool.com/en/lessons/basics/functions/#functions-and-pattern-matching-4">here</a> to better understand how Elixir works with Pattern Matching.</p>
-
-<h2>
-  
-  
-  Commands
-</h2>
-
-<p>Well, now is the long-awaited moment: adding the functions responsible for executing commands in our application! To do this, we will create a file in <code>lib/media_player</code> with the name <code>commands.ex</code>. This way our directory structure will be equal to:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>.
-├── README.md
-├── lib
-│   ├── media_player
-│   │   ├── actions.ex
-│   │   ├── commands.ex
-│   │   └── config
-│   │   ├── connection.ex
-│   │   └── database.ex
-│   └── media_player.ex
-├── mix.exs
-</code></pre>
-
-</div>
-
-
-
-<p>Let's start by creating the basis of our entire module:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span> <span class="k">do</span>
-  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Actions</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Actions</span>
-  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Connection</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Connection</span>
-
-  <span class="k">defp</span> <span class="n">keyspace</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">keyspace</span><span class="p">()</span>
-  <span class="k">defp</span> <span class="n">table</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">table</span><span class="p">()</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Basically above we defined that we will have:</p>
-
-<ul>
-<li>The alias <code>Actions</code> to refer to the <code>MediaPlayer.Actions</code> module;</li>
-<li>The alias <code>Connection</code> to refer to the <code>MediaPlayer.Config.Connection</code> module;</li>
-<li>The private function <code>keyspace</code> that returns the keyspace value that we will use;</li>
-<li>The private function <code>table</code> that returns the table value that we will use;</li>
-</ul>
-
-<p>Well, now we can start implementing the commands, shall we?</p>
-
-<h3>
-  
-  
-  Add
-</h3>
-
-<p>Well, this command will be used to add songs to our database. Therefore, we will separate it into two main functions, namely <code>add</code> and <code>add_from</code>, which receive four parameters to be executed. The <code>add</code> function will only collect the data to be inserted:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span> <span class="k">do</span>
-  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Actions</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Actions</span>
-  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Connection</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Connection</span>
-
-  <span class="k">defp</span> <span class="n">keyspace</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">keyspace</span><span class="p">()</span>
-  <span class="k">defp</span> <span class="n">table</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">Connection</span><span class="o">.</span><span class="n">table</span><span class="p">()</span>
-
-  <span class="k">def</span> <span class="n">add_from</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">album</span><span class="p">,</span> <span class="n">artist</span><span class="p">,</span> <span class="n">created</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">query</span> <span class="o">=</span>
-      <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2"> (id, title, album, artist, created_at) VALUES (?, ?, ?, ?, ?);"</span>
-
-    <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">created</span><span class="p">,</span> <span class="n">_</span><span class="p">}</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">from_iso8601</span><span class="p">(</span><span class="n">created</span> <span class="o">&lt;&gt;</span> <span class="s2">"T00:00:00Z"</span><span class="p">)</span>
-
-    <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">[</span><span class="no">UUID</span><span class="o">.</span><span class="n">uuid4</span><span class="p">(),</span> <span class="n">title</span><span class="p">,</span> <span class="n">album</span><span class="p">,</span> <span class="n">artist</span><span class="p">,</span> <span class="n">created</span><span class="p">])</span>
-
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Song added!"</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="n">add</span><span class="p">()</span> <span class="k">do</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the title of the song: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
-    <span class="n">album</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the album of the song: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
-    <span class="n">artist</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the artist of the song: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
-
-    <span class="n">created</span> <span class="o">=</span>
-      <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the date the song was created (YYYY-MM-DD): "</span><span class="p">)</span>
-      <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
-
-    <span class="n">add_from</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">album</span><span class="p">,</span> <span class="n">artist</span><span class="p">,</span> <span class="n">created</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Well, both functions are very specific, so let’s give an example of each one:</p>
-
-<ul>
-<li>The <code>add</code> function will:
-
-<ul>
-<li>Collect the song title;</li>
-<li>Collect the music album;</li>
-<li>Collect the song artist;</li>
-<li>Collect the creation date of the song;</li>
-<li>Invoke the <code>add_from</code> function passing the collected values as parameters;</li>
-</ul>
-
-
-</li>
-<li>The <code>add_from/4</code> function will:
-
-<ul>
-<li>Receive four parameters;</li>
-<li>Create the <code>query</code> that will be executed;</li>
-<li>Convert the date format to ensure bind compatibility with Xandra;</li>
-<li>Call the function to perform the query passing two parameters: the query and additional options in a list format (as explained previously)</li>
-<li>Then just show the message on the screen when the song is inserted!</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p>Another point: the "|&gt;" pipe in Elixir works like the "|" pipe of Unix shells, being used to pass the return of a function as the first parameter of the next. Read more about pipes <a href="https://elixirschool.com/en/lessons/basics/pipe_operator">here</a>.</p>
-
-<p>Well, now we have the function responsible for adding a created song! Let's go next time?</p>
-
-<h3>
-  
-  
-  List
-</h3>
-
-<p>Now let's create a function responsible for listing all the songs we have added. Therefore, we will have as a result:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="n">list</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="s2">"SELECT id, title, album, artist, created_at FROM </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2">;"</span>
-
-    <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="k">fn</span> <span class="p">%{</span>
-                      <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="n">id</span><span class="p">,</span>
-                      <span class="s2">"title"</span> <span class="o">=&gt;</span> <span class="n">title</span><span class="p">,</span>
-                      <span class="s2">"album"</span> <span class="o">=&gt;</span> <span class="n">album</span><span class="p">,</span>
-                      <span class="s2">"artist"</span> <span class="o">=&gt;</span> <span class="n">artist</span><span class="p">,</span>
-                      <span class="s2">"created_at"</span> <span class="o">=&gt;</span> <span class="n">created_at</span>
-                    <span class="p">}</span> <span class="o">-&gt;</span>
-      <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span>
-        <span class="s2">"ID: </span><span class="si">#{</span><span class="n">id</span><span class="si">}</span><span class="s2"> | Title: </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | Album: </span><span class="si">#{</span><span class="n">album</span><span class="si">}</span><span class="s2"> | Artist: </span><span class="si">#{</span><span class="n">artist</span><span class="si">}</span><span class="s2"> | Created At: </span><span class="si">#{</span><span class="n">created_at</span><span class="si">}</span><span class="s2">"</span>
-      <span class="p">)</span>
-    <span class="k">end</span><span class="p">)</span>
-  <span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The <code>list</code> function does not receive any parameters, after all, it will print the songs that were added to the screen, like this:</p>
-
-<ul>
-<li>We define a query by selecting <code>id, title, album, artist, created_at</code> and to define the <code>keyspace</code> and <code>table</code> remember that we already have two functions that return these values!</li>
-<li>We tried to perform a simple query (which has no additional options besides <code>query</code>) and its return we passed to an <code>Enum.each</code> (similar to a <code>foreach</code> in other programming languages);
-
-<ul>
-<li>Within each we pass an anonymous function responsible for handling the return, which in this case expects to receive a map with the respective fields that were selected;</li>
-<li>We print specific values;</li>
-</ul>
-
-
-</li>
-<li>In the end this will be our return;</li>
-</ul>
-
-<p>An important detail: in this case, <code>run_query</code> would return more than one value if we had multiple rows inserted, right? Well, <code>run_query</code> returns a complete list of maps with their respective values, so we use <code>Enum.each</code> to treat each index in the list we have.</p>
-
-<h3>
-  
-  
-  Delete
-</h3>
-
-<p>Well, the <code>delete</code> command is a little more complex because we need the user to type the index he wants to delete, validating it against the list of indexes that were returned! Therefore, the implemented function would result in something like:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="n">delete</span><span class="p">()</span> <span class="k">do</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="s2">"SELECT id, title, album, artist, created_at FROM </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2">;"</span>
-
-    <span class="n">songs</span> <span class="o">=</span>
-      <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-      <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">with_index</span><span class="p">(</span><span class="k">fn</span> <span class="p">%{</span>
-                              <span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="n">id</span><span class="p">,</span>
-                              <span class="s2">"title"</span> <span class="o">=&gt;</span> <span class="n">title</span><span class="p">,</span>
-                              <span class="s2">"album"</span> <span class="o">=&gt;</span> <span class="n">album</span><span class="p">,</span>
-                              <span class="s2">"artist"</span> <span class="o">=&gt;</span> <span class="n">artist</span><span class="p">,</span>
-                              <span class="s2">"created_at"</span> <span class="o">=&gt;</span> <span class="n">created_at</span>
-                            <span class="p">},</span>
-                            <span class="n">index</span> <span class="o">-&gt;</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span>
-          <span class="s2">"Index: </span><span class="si">#{</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2"> | Title: </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | Album: </span><span class="si">#{</span><span class="n">album</span><span class="si">}</span><span class="s2"> | Artist: </span><span class="si">#{</span><span class="n">artist</span><span class="si">}</span><span class="s2"> | Created At: </span><span class="si">#{</span><span class="n">created_at</span><span class="si">}</span><span class="s2">"</span>
-        <span class="p">)</span>
-
-        <span class="p">%{</span><span class="ss">id:</span> <span class="n">id</span><span class="p">,</span> <span class="ss">title:</span> <span class="n">title</span><span class="p">,</span> <span class="ss">album:</span> <span class="n">album</span><span class="p">,</span> <span class="ss">artist:</span> <span class="n">artist</span><span class="p">,</span> <span class="ss">created_at:</span> <span class="n">created_at</span><span class="p">}</span>
-      <span class="k">end</span><span class="p">)</span>
-
-    <span class="p">{</span><span class="n">input</span><span class="p">,</span> <span class="n">_</span><span class="p">}</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">"Enter the index of the song you want to delete: "</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">Integer</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
-
-    <span class="k">case</span> <span class="no">Enum</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">songs</span><span class="p">,</span> <span class="n">input</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">do</span>
-      <span class="p">%{}</span> <span class="o">=</span> <span class="n">song</span> <span class="o">-&gt;</span>
-        <span class="n">query</span> <span class="o">=</span> <span class="s2">"DELETE FROM </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2"> WHERE id = ? AND created_at = ?;"</span>
-
-        <span class="no">Actions</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">[</span><span class="n">song</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">song</span><span class="o">.</span><span class="n">created_at</span><span class="p">])</span>
-
-        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Song deleted!"</span><span class="p">)</span>
-
-      <span class="no">nil</span> <span class="o">-&gt;</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Invalid index."</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Well, basically we have in this function:</p>
-
-<ul>
-<li>Definition of the <code>query</code> returning all added songs;</li>
-<li>Listing similar to the previously implemented <code>list</code> function;
-
-<ul>
-<li>We try to perform the query in <code>Actions.run_query</code> and pass it to <code>Enum.with_index</code> to have the indexes;</li>
-<li>This time instead of presenting the <code>id</code> of the song we present a manual index (instead of starting with 0 it starts with 1, hence <code>index + 1</code>), in which the user will type (more practical to type a number integer than a UUID isn't it?);</li>
-<li>We print the values;</li>
-<li>We added the complete list in <code>songs</code>;</li>
-</ul>
-
-
-</li>
-<li>We wait for the user to make an entry stating which index he wants to delete and we parse the entry that will be saved in <code>input</code>;</li>
-<li>We check whether the index entered is present in <code>songs</code>;
-
-<ul>
-<li>If you are:</li>
-<li>We create the query;</li>
-<li>We tried to perform the query in <code>Actions.run_query</code> and added the list of options to bind to the query as a parameter;</li>
-<li>We print the message informing that the song has been deleted;</li>
-<li>If not:</li>
-<li>We print that the index is invalid</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p>This way we finish our function to delete a song!</p>
-
-<h3>
-  
-  
-  Stress
-</h3>
-
-<p>Great! The commands that necessarily manipulate user input are finished! Now let's create an additional command that will be responsible for performing a stress test on our database. We will define two functions, namely the <code>stress</code> function that will initialize the command, in addition to a private function with the name <code>generate_stress_query</code> that receives a parameter with the name <code>some_id</code>, with the index being inserted.</p>
-
-<p>First of all, we must add the following section at the beginning of our module:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span> <span class="k">do</span>
-  <span class="kn">use</span> <span class="no">Task</span>
-  <span class="o">...</span>
-</code></pre>
-
-</div>
-
-
-
-<p>With <code>Task</code> we can perform asynchronous calls with better practicality and performance. To read more click <a href="https://hexdocs.pm/elixir/1.12/Task.html">here</a>.</p>
-
-<p>Thus, implementing our functions:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code>  <span class="k">defp</span> <span class="n">generate_stress_query</span><span class="p">(</span><span class="n">some_id</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">current_date</span> <span class="o">=</span> <span class="no">Date</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="no">Date</span><span class="o">.</span><span class="n">utc_today</span><span class="p">())</span>
-
-    <span class="s2">"INSERT INTO </span><span class="si">#{</span><span class="n">keyspace</span><span class="p">()</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">table</span><span class="p">()</span><span class="si">}</span><span class="s2"> (
-      id, title, album, artist, created_at
-    ) VALUES (
-      </span><span class="si">#{</span><span class="no">UUID</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="si">}</span><span class="s2">,
-      'Test Song </span><span class="si">#{</span><span class="n">some_id</span><span class="si">}</span><span class="s2">',
-      'Test Artist </span><span class="si">#{</span><span class="n">some_id</span><span class="si">}</span><span class="s2">',
-      'Test Album </span><span class="si">#{</span><span class="n">some_id</span><span class="si">}</span><span class="s2">',
-      '</span><span class="si">#{</span><span class="n">current_date</span><span class="si">}</span><span class="s2">'
-    );"</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="n">stress</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">utc_now</span><span class="p">()</span>
-    <span class="n">cluster</span> <span class="o">=</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Config</span><span class="o">.</span><span class="no">Database</span><span class="o">.</span><span class="n">start_link</span><span class="p">()</span>
-
-    <span class="c1"># Simple stress test</span>
-    <span class="mi">1</span><span class="o">..</span><span class="mi">100_000</span>
-    <span class="o">|&gt;</span> <span class="no">Task</span><span class="o">.</span><span class="n">async_stream</span><span class="p">(</span>
-      <span class="k">fn</span> <span class="n">id</span> <span class="o">-&gt;</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"[</span><span class="si">#{</span><span class="n">id</span><span class="si">}</span><span class="s2">] Adding seed"</span><span class="p">)</span>
-        <span class="no">Xandra</span><span class="o">.</span><span class="no">Cluster</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">generate_stress_query</span><span class="p">(</span><span class="n">id</span><span class="p">))</span>
-      <span class="k">end</span><span class="p">,</span>
-      <span class="ss">max_concurrency:</span> <span class="mi">500</span>
-    <span class="p">)</span>
-    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Time taken: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">utc_now</span><span class="p">(),</span> <span class="n">start</span><span class="p">,</span> <span class="ss">:second</span><span class="p">)</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>
-  <span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Basically we have:</p>
-
-<ul>
-<li>
-<code>stress</code> function:
-
-<ul>
-<li>Mark the start time of the function with <code>Time.utc_now()</code>;</li>
-<li>Initializes the cluster manually for better performance and handling.</li>
-<li>We initiate a call from 1 to 100000 that goes asynchronously:</li>
-<li>Define an anonymous function that receives an <code>id</code>;</li>
-<li>We print that we are adding a certain index;</li>
-<li>We tried to perform the query with <code>Xandra.Cluster.execute</code> by calling the <code>generate_stress_query</code> function, responsible for generating a complete query with the <code>id</code> provided;</li>
-<li>We set a <code>max_concurrency</code> of 500 to limit the number of asynchronous calls;</li>
-<li>We format it into a list;</li>
-<li>We print the time spent to carry out the entire test, calculating the difference between the current time and the start time in seconds;</li>
-</ul>
-
-
-</li>
-<li>
-<code>generate_stress_query</code> function:
-
-<ul>
-<li>Receives an <code>id</code> as a parameter to generate the query;</li>
-<li>Sets the current date to insert;</li>
-<li>Returns the complete query already formatted;</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p>Well, that way our functions for the stress test are ready! Now we must implement the command inputs that a user can enter!</p>
-
-<h2>
-  
-  
-  Implementing user interaction
-</h2>
-
-<p>Let's modify our main module, <code>MediaPlayer</code> in the <code>media_player.ex</code> file! Well, first let's define an alias for the commands:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="k">defmodule</span> <span class="no">MediaPlayer</span>
-  <span class="n">alias</span> <span class="no">MediaPlayer</span><span class="o">.</span><span class="no">Commands</span><span class="p">,</span> <span class="ss">as:</span> <span class="no">Commands</span>
-<span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The alias will be used to refer to the <code>MediaPlayer.Commands</code> module!</p>
-
-<p>The first function we will implement is <code>loop</code>, which will be responsible for directing the commands, receiving user input and remaining in an infinite loop always waiting for input, see:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="k">loop</span> <span class="k">do</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Type any command: "</span><span class="p">)</span>
-    <span class="n">command</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">gets</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
-
-    <span class="k">case</span> <span class="n">command</span> <span class="k">do</span>
-      <span class="s2">"!add"</span> <span class="o">-&gt;</span>
-        <span class="no">Commands</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
-        <span class="k">loop</span><span class="p">()</span>
-
-      <span class="s2">"!list"</span> <span class="o">-&gt;</span>
-        <span class="no">Commands</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
-        <span class="k">loop</span><span class="p">()</span>
-
-      <span class="s2">"!delete"</span> <span class="o">-&gt;</span>
-        <span class="no">Commands</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-        <span class="k">loop</span><span class="p">()</span>
-
-      <span class="s2">"!stress"</span> <span class="o">-&gt;</span>
-        <span class="no">Commands</span><span class="o">.</span><span class="n">stress</span><span class="p">()</span>
-        <span class="k">loop</span><span class="p">()</span>
-
-      <span class="s2">"exit"</span> <span class="o">-&gt;</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Bye bye!"</span><span class="p">)</span>
-        <span class="ss">:OK</span>
-
-      <span class="n">_</span> <span class="o">-&gt;</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Command not found!"</span><span class="p">)</span>
-        <span class="k">loop</span><span class="p">()</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Basically we wait for user input with a command and enter a <code>case</code>:</p>
-
-<ul>
-<li>
-<code>!add</code> invokes the <code>Commands.add()</code> function;</li>
-<li>
-<code>!list</code> invokes the <code>Commands.list()</code> function;</li>
-<li>
-<code>!delete</code> invokes the <code>Commands.delete()</code> function;</li>
-<li>
-<code>!stress</code> invokes the <code>Commands.stress()</code> function;</li>
-<li>
-<code>exit</code> prints a goodbye message and returns <code>:ok</code>, defining that the function no longer enters a recursive loop, ending our application;</li>
-<li>
-<code>_</code> prints a command not found message and enters a recursive loop, waiting for new input;</li>
-</ul>
-
-<p>Well, now we have our main function ready! But how are we going to execute it? Simple, let's create a <code>start</code> function that will be responsible for starting our application, in addition to a <code>run</code> function, which will be the function invoked by the initial <code>start</code> function, see:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code>  <span class="k">def</span> <span class="n">start</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">run</span><span class="p">()</span>
-    <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">self</span><span class="p">()}</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="n">run</span> <span class="k">do</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"- ScyllaDB Cloud Elixir Media Player -"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"- Leave a star on the repo -"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Here some possibilities"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !add - add new song"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !list - list all songs"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !delete - delete a specific song"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">" !stress - stress testing with mocked data"</span><span class="p">)</span>
-    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
-
-    <span class="k">loop</span><span class="p">()</span>
-  <span class="k">end</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Basically we have:</p>
-
-<ul>
-<li>
-<code>start</code> function:
-
-<ul>
-<li>It receives two parameters, but we will not use them, so we define them as <code>_</code>;</li>
-<li>Invokes the <code>run</code> function;</li>
-<li>Returns <code>{:ok, self()}</code> to define that the function was executed successfully, closing our application;</li>
-</ul>
-
-
-</li>
-<li>
-<code>run</code> function:
-
-<ul>
-<li>Print a welcome message;</li>
-<li>Prints a message with command possibilities;</li>
-<li>Invokes the <code>loop</code> function to start the infinite loop;</li>
-</ul>
-
-
-</li>
-</ul>
-
-<p>This concludes our complete application! Now are we going to execute it?</p>
-
-<h2>
-  
-  
-  Running our application
-</h2>
-
-<p>Well, now that we have our application ready, let's execute the command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>$ mix run
-</code></pre>
-
-</div>
-
-
-
-<p>This way we can start interacting with the application!</p>
-
-<p>See a demo of the project:</p>
-
-<p><a href="https://asciinema.org/a/608562"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_80iLfUQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://asciinema.org/a/608562.svg" alt="asciicast" width="800" height="545"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Thank you very much if you read this far! The purpose of this article was to demonstrate how we can use ScyllaDB with Elixir, making a simple demonstration using Xandra as responsible for the connection between the two. I highly recommend following content from <a href="https://university.scylladb.com/">ScyllaDB University</a> for more quality educational content, as well as seeing articles about using ScyllaDB in general with <a href="https://dev.to/danielhe4rt">DanielHe4rt</a> and <a href="https://dev.to/cherryramatis">Cherry Ramatis</a>! Both are always contributing and publishing magnificent content.</p>
-
-<p>I also recommend getting to know the project <a href="https://github.com/scylladb/scylla-cloud-getting-started">Getting Started with ScyllaDB Cloud</a> which demonstrates the use of ScyllaDB in general, but, delving a little deeper into the use of ScyllaDB's own platform for managing your Cloud clusters, cool isn't it?</p>
-
-<p>In the same repository you can access the project using Elixir too, so if you want to see the complete source code, know that it is at the same link mentioned above!</p>
-
-<p>I hope you enjoyed the content and I hope it clarified the use of ScyllaDB with Elixir. I also hope that you are even more interested in receiving more content like this or learning even more about Elixir. Thank you very much, and see you next time!</p>
 
  </details> 
  <hr /> 
