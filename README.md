@@ -117,266 +117,269 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [docs(Conventional Commits): Feat, Fix, Refactor… which is which?](https://dev.to/noriller/docsconventional-commits-feat-fix-refactor-which-is-which-1n57) 
- <details><summary>Article</summary> <p>If you use or are in a team that uses Conventional Commits, maybe you’re confused about which one to use in your commit. So, let’s try to make it clear which one it is!</p>
+ #### - [What is the __ programming language?](https://dev.to/pxlmastrxd/what-is-the-programming-language-4dc7) 
+ <details><summary>Article</summary> <p>Hey! Just wanted to see what y'all think is the __ programming language is for a school project.</p>
 
-<p>For this to work, let’s assume you write perfect code with 1000% test coverage (think unit, integration, e2e, mutation, performance…) unless stated otherwise.</p>
+<ol>
+<li>Fastest</li>
+<li>Easiest to learn</li>
+<li>Most important</li>
+<li>Favorite</li>
+<li>All-in-all the best</li>
+</ol>
 
-
-
-
-<h2>
-  
-  
-  Feat
-</h2>
-
-<p>A commit of <code>feat</code> means you’ve added or removed <code>src</code> code, but since you started with 1000% coverage, something is either not covered by tests or tests broke.</p>
-
-<h2>
-  
-  
-  Fix
-</h2>
-
-<p>A commit of <code>fix</code> means that if you were to add a new test reproducing a bug, it would not pass. In this case, the commit will make that test pass.</p>
-
-<h2>
-  
-  
-  Refactor
-</h2>
-
-<p>A commit of <code>refactor</code> means that you changed <code>src</code> code but unlike <code>feat</code> no tests broke and no lines lost coverage.</p>
-
-<h2>
-  
-  
-  Perf
-</h2>
-
-<p>A commit of <code>perf</code>, like <code>refactor</code> means changed <code>src</code> code, but in this case performance metrics go up.</p>
-
-<h2>
-  
-  
-  Style
-</h2>
-
-<p>A commit of <code>style</code>, like <code>refactor</code> means changed <code>src</code> code, but instead of <em>actual</em> code changes, only formatting and whitespace are changed. In other words, anything a code formatter or linter changes.</p>
-
-<h2>
-  
-  
-  Docs
-</h2>
-
-<p>A commit of <code>docs</code> usually means a change in <code>markdown</code> files.<br>
-I also add as <code>docs</code> changes, comments in <code>src</code> code when only comments are changed.</p>
-
-<h2>
-  
-  
-  Test
-</h2>
-
-<p>A commit of <code>test</code> means changes in <code>test</code> files. If you weren’t at 100% code coverage, now you would be. If you had failing tests, they would be passing.</p>
-
-<h2>
-  
-  
-  CI
-</h2>
-
-<p>A commit of <code>ci</code> means changes related to Continuous Integration (usually <code>yml</code> and other configuration files).</p>
-
-<h2>
-  
-  
-  Build
-</h2>
-
-<p>A commit of <code>build</code> means changes related to the build of the project and dependencies. (Basically, anything that can change the build step of the application.)</p>
-
-<h2>
-  
-  
-  Chore
-</h2>
-
-<p>A commit of <code>chore</code> is most likely something that doesn’t fit the other possible types. It shouldn’t change any <code>src</code>, <code>test</code>, <code>build</code>, or <code>docs</code> related files.</p>
-
-<h2>
-  
-  
-  Revert
-</h2>
-
-<p>A commit of <code>revert</code> simply reverts changes made in another commit.<br>
-(Personally, I think it’s better to revert a commit using <code>git</code>, which is also why atomics commits make this easier since other unrelated files aren’t changed.) </p>
-
-
-
-
-<h2>
-  
-  
-  Remarks
-</h2>
-
-<p>There are a lot of types and a lot of shadowing between some.</p>
-
-<p>Both <code>perf</code> and <code>style</code> are (or can be) just refactors, so you can use those if possible and <code>refactor</code> for other cases. But, <code>perf</code> can also be a <code>feat</code> depending on the changes. <code>perf</code> in this case is better, but as you go you’ll find others.</p>
-
-<p><code>build</code> and <code>ci</code> might overlap, so you have to choose one (usually pick the one you’re solving), but if all fails, sometimes a <code>chore</code> is a “catch-all” for when you don’t know what to use.</p>
-
-<p>Not only that, do you commit changes for tests when adding new <code>feat</code> or <code>fix</code>? What about <code>refactor</code> of <code>test</code> files?</p>
-
-<p>This is to say there is some flexibility, but as with everything else… it ****<strong><em>depends</em></strong>****. </p>
-
-<p>While I usually try to go as atomic as possible (to the point of splitting commits of lines in the same file when it makes sense to) I will still commit changes in tests (or new ones) together with adding some new functionality or when fixing something (in those cases as a <code>feat</code> or <code>fix</code>).</p>
+<p>Thanks! Have a great day!</p>
 
  </details> 
  <hr /> 
 
- #### - [How has the COVID-19 Pandemic Effected Leadership?: CodeNewbie Podcast](https://dev.to/codenewbieteam/how-has-the-covid-19-pandemic-effected-leadership-in-the-developer-community-codenewbie-podcast-13p2) 
- <details><summary>Article</summary> <p>Yesterday on our podcast, <a href="https://twitter.com/rachelnabors">Rachel Nabors</a>, a developer education leader on sabbatical from Big Tech met with <a class="mentioned-user" href="https://dev.to/saronyitbarek">@saronyitbarek</a> talk about what they have been up to since they were last on the show in 2017. We discussed the inside scoop on Big Tech, all informed by Rachel’s experience working for companies such as Meta, Amazon, and Microsoft.</p>
+ #### - [I Built A SaaS Directory That Uses AI To Recommend Tools](https://dev.to/johnwritescode_/i-built-a-saas-directory-that-uses-ai-to-recommend-tools-14c7) 
+ <details><summary>Article</summary> <p>So I've always wanted to randomly build a tool directory for some reason.</p>
 
-<p>Rachel shared with us their experience navigating a changing, and arguably regressing, world in leadership during the COVID-19 pandemic.</p>
+<p>They're usually pretty light in terms of tech requirements, and it's something completely different compared to what I've done with past projects.</p>
 
-<p>They shared:</p>
+<p>I was sick a few weeks ago and decided to use my downtime to work on one. </p>
+
+<p>There are a lot of these types of directories out there, so I wanted to try and figure out how to make mine stand out a little more.</p>
+
+<p><strong>What better way to do it than with AI? LOL</strong></p>
+
+<p>A problem I've heard and noticed when it comes to these directories is that there's simply too much to sift through. I've come across the same problem myself.</p>
+
+<p>So I decided to sprinkle in a little AI. Basically, you describe a problem you're having and we'll recommend some tools that we think could help in some way or another.</p>
+
+<p><a href="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGp5cHZrbHdkcGc5OW1za3pkMDh4c2JnN3lpZDJjbm9lMG12bHR6aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aJZiluAHlVmz6hvZhQ/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGp5cHZrbHdkcGc5OW1za3pkMDh4c2JnN3lpZDJjbm9lMG12bHR6aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aJZiluAHlVmz6hvZhQ/giphy.gif" alt="findcool.tools ToolFinder Ai" width="480" height="336"></a></p>
+
+<p>The majority of tools are submitted by the community. They usually come from places like Twitter or Reddit. Then I manually review them to ensure everything looks good before pushing to the site, which is <a href="https://findcool.tools">findcool.tools</a></p>
+
+<p>Even though this was just a fun random project I wanted to start, I decided to launch it on Product Hunt. Much to my surprise, we received #3 Product of the Day.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EOUcCne5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kzjwitb7a4ro6dt2rzli.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EOUcCne5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kzjwitb7a4ro6dt2rzli.png" alt="findcool.tools product hunt award badge" width="428" height="111"></a></p>
+
+<p>Since then, I've been putting a little more time into it. We're almost at 150 tools submitted and over 150 <a href="https://findcooltools.beehiiv.com/">newsletter</a> subscribers.</p>
+
+<p><strong>Here's the tech stack I'm using for anyone interested:</strong></p>
+
+<ul>
+<li>Astro for the frontend</li>
+<li>Google Sheets for my database</li>
+<li>Google Forms for new tool submissions</li>
+</ul>
+
+<p>Told you I was keeping the tech stack light... haha</p>
+
+<p>All in all, this is turning into a fun project and I just wanted to spread the word that if you have a random idea, pursue it. You never know what will come out of it.</p>
+
+<p>Thanks for taking the time to read this. You can find me over on <a href="https://twitter.com/johnwritescode_">Twitter/X</a></p>
+
+<p>Have a tool you think would be a good fit for <a href="https://findcool.tools">findcool.tools?</a> You can <a href="https://findcool.tools/tools">submit it here</a>.</p>
+
+<p>❤️</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [What is JavaScript(and what can you do with it)](https://dev.to/annoh_karlgusta/what-is-javascriptand-what-can-you-do-with-it-5fec) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  What is JavaScript
+</h2>
+
+<p>JavaScript is one of the most popular and widely used programming languages in the world right now. It is growing faster than any other programming language and big companies like Netflix, Walmart, and PayPal build entire applications around JavaScript. </p>
+
+<p>And here is the average salary of a JavaScript developer in the United States. That is $72,000 per year according to glassdoor.com. </p>
+
+<p>So, it is a great opportunity to get a good job out of learning JavaScript. You can work as a front-end developer, a back-end developer or a full stack developer who knows both the front end and the back end.</p>
+
+<p>Now the second question.</p>
+
+<h2>
+  
+  
+  What can you do with JavaScript
+</h2>
+
+<p>For a long time, JavaScript was only used in browsers to build interactive web pages. Some developers refer to JavaScript as a toy language. But those days are gone because of huge community support and investments by large companies like Facebook and Google.</p>
+
+<p>This days, you can build full-blown web or mobile apps, as well as real time networking applications like chat and video streaming services, command-line tools, or even games. Here is an example:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jFQ6w57v--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://user-images.githubusercontent.com/33565767/228169522-7f5a15ac-3606-474f-8a57-43b1c6c84988.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jFQ6w57v--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://user-images.githubusercontent.com/33565767/228169522-7f5a15ac-3606-474f-8a57-43b1c6c84988.png" alt="A JavaScript game" title="A JavaScript game" width="800" height="426"></a></p>
+
+<p>That's it.</p>
+
+<p>You can get my members-only eBook! It's been called "the most practical and informative" Complete HTML, CSS and JavaScript eBook. But it's a well-kept secret. Because it's not sold in every bookstore. <strong>The Complete HTML, CSS, and JavaScript eBook(Zero to Mastery)</strong> is packed with hands-on advice for understanding HTML, CSS, and JavaScript. From tips, to tricks, and hints, <strong>The Complete HTML, CSS, and JavaScript eBook(Zero to Mastery)</strong> guides you from beginner to advanced. It's a how-to eBook for people who want to roll up their sleeves and get to work! <a href="https://karlgusta.gumroad.com/l/edtbb">You can get the Complete HTML, CSS, and JavaScript(Zero to Mastery) eBook here.</a>.</p>
+
+<p>I hope you received excellent value in today's article. If you would like to go deeper, head over to <a href="//karlgusta.substack.com">My Newsletter</a>, where you can find more great contents that will help you in your productivity, your impact and the quality of your life. I wish you an amazing day.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [What and Why to use HOCs in React](https://dev.to/xmohamedawad/what-and-why-to-use-hocs-in-react-1m8m) 
+ <details><summary>Article</summary> <h3>
+  
+  
+  Higher-Order Components in React (HOC)
+</h3>
+
+<p>Imagine you're a magician and you have a magic box. You can put anything into this box, say a rabbit, and the box will add a hat to it. Now, every time you pull out a rabbit, it's wearing a hat! This is what Higher-Order Components (HOCs) do in React. They're like the magic box that adds extra features or behaviors to a component.</p>
+
+
+
+
+<h3>
+  
+  
+  What is a Higher-Order Component (HOC)?
+</h3>
+
+<p>In React, a Higher-Order Component (HOC) is a function that takes a component as an argument and returns a new component with added features or behaviors. It's a way of reusing component logic across multiple components without modifying their code. This makes them a flexible and reusable way to add functionality to your components.</p>
+
+
+
+
+<h3>
+  
+  
+  When and How to Use HOCs?
+</h3>
+
+<p>In the real world, as a developer, you often find yourself writing code that is repetitive or similar in nature. This is where Higher-Order Components (HOCs) come to the rescue in React. I recently used a HOC in my project, an "Arab van"(rental system), and it greatly simplified my code by abstracting out common logic.</p>
 
 <blockquote>
-<h4>
+<p>I had to fetch data in multiple components. Instead of repeating the fetching logic in each component, I created a Higher-Order Component (HOC) named withFetchData.</p>
+
+<p>Every HOC name starts by <code>with</code> like <code>withFetchData</code></p>
+</blockquote>
+
+<p>This HOC takes a component (WrappedComponent) and a fetchData function as its arguments.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">withFetchData</span><span class="p">(</span><span class="nx">WrappedComponent</span><span class="p">,</span> <span class="nx">fetchData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">memoizedFetchData</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">id</span><span class="p">),</span> <span class="p">[</span><span class="nx">id</span><span class="p">]);</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">loading</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">execute</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useAsync</span><span class="p">(</span>
+      <span class="nx">memoizedFetchData</span><span class="p">,</span>
+      <span class="kc">false</span>
+    <span class="p">);</span>
+
+    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">loading</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">execute</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="p">[</span><span class="nx">location</span><span class="p">]);</span>
+
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">WrappedComponent</span> <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">}</span> <span class="nx">vanId</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span> 
+           <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
+</span>  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>And here's how you can use it:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">EnhancedComponent</span> <span class="o">=</span> <span class="nx">withFetchData</span><span class="p">(</span><span class="nx">MyComponent</span><span class="p">,</span> <span class="nx">fetchData</span><span class="p">);</span>
+</code></pre>
+
+</div>
+
+
+
+<p><em>The result is a new component (EnhancedComponent) that behaves exactly like MyComponent, but with added data fetching capabilities.</em></p>
+
+
+
+
+<h3>
   
   
-  I think that happened over the pandemic we don’t talk about is that women’s leadership just disappeared off the board.
-</h4>
-<h4>
+  Why I Chose HOC
+</h3>
+
+<p>The reason I chose to use an HOC for this purpose was twofold:</p>
+
+<p>Code Reusability: By encapsulating the data fetching logic inside a HOC, I was able to reuse this logic across multiple components, thereby reducing code duplication and making the codebase cleaner and more maintainable.<br>
+Separation of Concerns: The HOC allowed me to separate the data fetching logic from the presentation logic of my components. This made the components easier to understand, test, and maintain.</p>
+
+
+
+
+<h3>
   
   
-  I feel like there are even fewer women in React now than at the start of the pandemic that I can point to and say, “This is a thought leader.”
-</h4>
-<h4>
-  
-  
-  And maybe that’s because the social networks might’ve changed.
-</h4>
-<h4>
-  
-  
-  Maybe they’re all on YouTube or Twitch right now.
-</h4>
-<h4>
-  
-  
-  But I do think that we saw a pattern during the pandemic of, at least when I was organizing that conference, I noticed originally the set of people who’d confirmed they would speak.
-</h4>
-<h4>
-  
-  
-  Half of them bowed out because they had to pick up the slack at home and it was too much.
-</h4>
+  In conclusion,
+</h3>
+
+<p>Higher-order components are a powerful tool in React that allows you to write cleaner, more reusable code. I found them to be incredibly useful in my "rental van app" project, and I believe they can be beneficial in many other scenarios as well.</p>
+
+<blockquote>
+<p>Remember, every line of code you write is a step towards becoming a better developer. Keep learning, keep growing, and most importantly, have fun along the way!</p>
 </blockquote>
 
 
 
 
-<p>The effects of the COVID-19 pandemic are still being felt deeply in many job fields. As we continue to process the ramifications of the pandemic, what have you gleaned from your time in the pandemic alongside your interest in tech? </p>
+<p>As a React developer, I'm currently on the lookout for new opportunities. If you know of any roles where my experience could be a good fit, I would love to hear from you.</p>
 
-<p>Or, more specifically:</p>
+<p>You can reach out to me anytime at my email <a href="mailto:muhmmad.awd@gamil.com">muhmmad.awd@gamil.com</a>, or connect with me on <a href="https://www.linkedin.com/in/xmohamedawad/">LinkedIn</a>. Check out my projects on <a href="https://github.com/xMohamedAwad">GitHub </a>to see more examples of my work.</p>
 
-<h3>
-  
-  
-  How do you think the COVID-19 pandemic has effected leadership in the developer community?
-</h3>
-
-
-
-
-<p>Also, if you didn't get a chance to listen already, find that episode below or wherever you get your podcasts:</p>
-
-
-<div class="ltag__link">
-  <a href="/codenewbieteam" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" alt="CodeNewbie" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GEMeozcA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s---vu5qviy--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/31047/af153cd6-9994-4a68-83f4-8ddf3e13f0bf.jpg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/codenewbieteam/big-tech-what-they-say-vs-what-they-mean-codenewbie-podcast-s25e6-37n7" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>"Big Tech: What They Say vs. What They Mean": CodeNewbie Podcast S25E6</h2>
-      <h3>Sloan the DEV Moderator for CodeNewbie ・ Sep 20</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#podcast</span>
-        <span class="ltag__link__tag">#career</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p><em>Send us your thoughts below and don't forget to give it a listen here or wherever you listen to your podcasts. Be well y'all.</em> 💜</p>
+<p>Muhmmad Awd</p>
 
  </details> 
  <hr /> 
 
- #### - [Very Simple way to handle requests](https://dev.to/mmvergara/supabase-way-of-handling-request-18mn) 
- <details><summary>Article</summary> <h3>
+ #### - [Zustand State Management](https://dev.to/cmphill/zustand-state-management-5gkd) 
+ <details><summary>Article</summary> <h4>
   
   
-  How do you handle fetching in frontend?.... it's a pain right?
-</h3>
+  Introduction
+</h4>
 
-<p>When i tried supabase i liked how they handle their request<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">supabaseRequest</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-<span class="c1">// handle error</span>
- <span class="k">return</span>
-<span class="p">}</span>
-<span class="c1">// since there is not an error</span>
-<span class="c1">// intellisense will show that data cannot be null </span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>IT'S SO SIMPLE!!!</strong><br>
-<strong>IT'S SO SIMPLE!!!</strong></p>
-
-<p>So I tried replicating the structure but with my own backend and using axios in the frontend</p>
-
+<p>Have you ever been frustrated by endless prop drilling, but were intimidated by state management solutions like Redux? Not to worry--there is a lightweight, low syntax, unopinionated solution called Zustand. Zustand allows you to create a file, called a store, that saves as many states as you like all in one file and import them in the components that you need them in. One of the great advantages of this approach is that Zustand supports variables of both primitive data types and of functions and arrays. The variables need not be related to one another in any form; you can place them all in the same store without any particular order.  Furthermore, you can selectively import the variables that you need for a component instead of a wholesale import. </p>
 
 <h3>
   
   
-  1st Step
+  Getting started
 </h3>
 
-<p>Make sure you are returning <code>{ data, error}</code> in the backend<br>
+<p>The first thing you need to do to is install Zustand for your repository by running<br>
+<code>npm install zustand</code><br>
+phew. Now that we have that out of the way, we'll begin the similarly strenuous process of creating the store. In a new file, (you can name this whatever you like, but store.js(x) is convention),</p>
+
+<p>write <code>import {create} from 'zustand'</code>.<br>
+Your store is created, and now you can define variables. </p>
+<h3>
+  
+  
+  Creating variables
+</h3>
+
+<p>There are several approaches to managing your store, including setting up a store and then adding on states and variables later. However, I found that having one large set with all the variables I needed worked just fine for a small project.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">createProduct</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">req</span><span class="p">:</span> <span class="nx">Req</span><span class="p">,</span> <span class="nx">res</span><span class="p">:</span> <span class="nx">Res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">newProd</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">saveProductDb</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<pre class="highlight plaintext"><code>const useStore = create( set =&gt; ({
+    users: [],
+    addUser: (user) =&gt; set(state =&gt; ({users: 
+    [...state.users, user]
+    current_user: {},
+    setCurrentUser: (state) =&gt; set({current_user: state}),
+    logoutCurrentUser: () =&gt; set({current_user: 
+    null}),
+    items: [],
+    addItems: (item) =&gt; set(state =&gt; ({items: [...state.items, item})),
+    clearItems: () =&gt; set({items: []})
+}))
+ }))
 
-    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">201</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">data</span><span class="p">:</span> <span class="nx">newProd</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="kc">null</span> <span class="p">});</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="na">data</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span> <span class="p">});</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
+export default useStore
 </code></pre>
 
 </div>
@@ -386,333 +389,78 @@ I also add as <code>docs</code> changes, comments in <code>src</code> code when 
 <h3>
   
   
-  2nd step ( optional, probably )
+  Importing and Using Variables
 </h3>
 
-<p>Initialize Axios Instance / Interceptors<br>
+<p>Once you have your variables created, you can import them into the component(s) they are needed for. If you are only including one or two variables, you can import them using the following syntax:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// Initialize Axios Instance</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">AxiosInstance</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">baseURL</span><span class="p">:</span> <span class="nx">BASE_URL</span><span class="p">,</span>
-  <span class="na">withCredentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-<span class="p">});</span>
+<pre class="highlight plaintext"><code>in your component:
+//Example.jsx component
+import useStore from "../store" //=&gt; This will be whatever the relative path to your store component is
 
-<span class="nx">AxiosInstance</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
-  <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">,</span>
-  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// You can handle errors here</span>
-    <span class="nx">toast</span><span class="p">({</span>
-      <span class="na">title</span><span class="p">:</span> <span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span><span class="p">,</span>
-      <span class="na">status</span><span class="p">:</span> <span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">,</span>
-      <span class="na">position</span><span class="p">:</span> <span class="dl">"</span><span class="s2">top-right</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">});</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">);</span>
+function Example() {
+   const current_user = useStore((state) =&gt; state.current_user)
+const setCurrentUser = useStore((state) =&gt; state.setCurrentUser)
+
+   function setUser() {
+    fetch("/api/login")
+    .then((res) =&gt; res.json())
+    .then((user) =&gt; {
+    setCurrentUser({
+     id: user.id,
+     username: user.username,
+    })
+  }
+}
+
+
 </code></pre>
 
 </div>
 
 
+
+<p>This simple implementation of store worked just fine for my small project. I used useEffect and the promise-based nature of fetches to manage asynchronous operations. However, Zustand is capable of handling async and it allows you to bundle variables together to re-render when the value of one changes. </p>
+
+<p>One of the things you will want to do frequently once you have updated the state is to read it, of course. When you simply need the value of the state to render text in a DOM element, for example, you can assign it to a variable using the built in method on the store:<br>
+<code>const user = useStore.getState.user</code>. In this way you can access the value without updating it whenever you need to.</p>
+
+<p>For example, you could write a store in this fashion:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>const marbleStore = create((set) =&gt; ({
+    marbles: {},
+    fetch: async(marbleBag) =&gt; {
+    const response = await fetch(marbleBag)
+    set({marbles: await response.json()})
+}
+}))
+</code></pre>
+
+</div>
+
+
+
+<p>There are many such applications, including updating the re-rendering the component whenever one of the specified states from within the component changes. </p>
 
 <h3>
   
   
-  3rd step
+  Summary of Zustand Benefits
 </h3>
 
-<p>Initiliaze Types, this is for the intellisense in the responses<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// Initialize Types</span>
-<span class="kd">type</span> <span class="nx">ApiRes</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">data</span><span class="p">:</span> <span class="nx">T</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="nl">error</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kd">type</span> <span class="nx">AxiosParsedResponse</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span>
-  <span class="o">|</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span> <span class="nl">error</span><span class="p">:</span> <span class="nx">AxiosError</span><span class="o">&lt;</span><span class="nx">ApiRes</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span> <span class="p">}</span>
-  <span class="o">|</span> <span class="p">{</span>
-      <span class="na">data</span><span class="p">:</span> <span class="nx">T</span><span class="p">;</span>
-      <span class="nl">error</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="p">};</span>
-</code></pre>
-
-</div>
-
-
+<p>There are many advantages that make Zustand a great choice for a variety of projects. One is that it uses the logic of React hooks and (depending on how you use it, context). Doing so means that you don't have to write a lot of extra code to get started, and the library is quite small (less than 2kB, so it won't weigh down your repository). Because it is simple, it allows you to enter the world of state management without too much hassle. Another nice feature is the documentation. It provides many practical examples of the code in use as well as links to a sandbox where you can test out variations. Zustand automatically determines which which state a component needs and subscribes it, so no developer input is necessary in simple cases. Zustand also lets you persist data, meaning that when a user refreshes the page, the data the was previously rendered will still be saved in state. This is a great addition to forms and other pages geared toward user interaction so that progress is not lost. </p>
 
 <h3>
-  
-  
-  4th step
-</h3>
-
-<p>Create your Get,Post,Etc axios instances<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">AxiosGet</span> <span class="o">=</span> <span class="k">async</span> <span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span>
-  <span class="nx">url</span><span class="p">:</span> <span class="kr">string</span>
-<span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">AxiosParsedResponse</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">AxiosInstance</span><span class="p">.</span><span class="kd">get</span><span class="o">&lt;</span><span class="nx">ApiRes</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-    <span class="k">return</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="o">!</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="kc">null</span> <span class="p">};</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">error</span> <span class="o">=</span> <span class="nx">err</span> <span class="k">as</span> <span class="nx">AxiosError</span><span class="o">&lt;</span><span class="nx">ApiRes</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="nx">error</span> <span class="p">};</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>in this example we're using get.</p>
-
-<h3>
-  
-  
-  DONE!
-</h3>
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">Register</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">userData</span><span class="p">:</span> <span class="nx">RegisterFields</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">error</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">AxiosPost</span><span class="o">&lt;</span><span class="nx">UserData</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">"</span><span class="s2">/auth/register</span><span class="dl">"</span><span class="p">,</span> <span class="nx">userData</span><span class="p">);</span>
-  <span class="c1">// data can be null</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-
-  <span class="c1">// intellisense shows data is not null</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>There is probably a better way out there to do this please do comment, i want to learn and there are probably more ways to handle request better than this, but i just want to share this because it works for me.</p>
-
-<p>Thanks for reading!</p>
-
-<p><a href="https://github.com/mmvergara/agri-connect/blob/master/Frontend/services/AxiosInstance.ts"><strong>SAMPLE IMPLEMENTATION</strong></a> </p>
-
- </details> 
- <hr /> 
-
- #### - [Difference between microtask and macrotask queue in the event loop](https://dev.to/jeetvora331/difference-between-microtask-and-macrotask-queue-in-the-event-loop-4i4i) 
- <details><summary>Article</summary> <h2>
-  
-  
-  What is the event loop?
-</h2>
-
-<p>The event loop is a mechanism that allows JavaScript to execute asynchronous code in a single-threaded environment. It works by constantly checking two queues: the microtask queue and the macrotask queue. These queues store the callbacks of the asynchronous operations that are waiting to be executed.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello after 3 seconds</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>The callback function in this example will be executed after 3 seconds, but not immediately. It will be placed in the <strong>macrotask</strong> queue, and will wait for its turn to run.</p>
-
-<h2>
-  
-  
-  What is the difference between microtask and macrotask queue?
-</h2>
-
-<p>The main difference between microtask and macrotask queue is their priority. The event loop always gives <strong>higher priority to the microtask queue</strong>, and will process all the callbacks in the microtask queue before moving on to the macrotask queue.</p>
-
-<p>The microtask queue contains the callbacks of operations that are considered more urgent or important, such as promises and mutation observers APIs. </p>
-
-<p>The macrotask queue contains the callbacks of operations that are <strong>less urgent</strong> such as timers, I/O events, and user interface events.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Start</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Timeout</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
-
-<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Promise</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// microTask!</span>
-<span class="p">});</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">End</span><span class="dl">"</span><span class="p">);</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>What do you think will be the output of this code? You might expect it to be:</p>
-
-<p><code>Start -&gt; Timeout -&gt; Promise -&gt; End</code></p>
-
-<p>But actually, it will be:</p>
-
-<p><code>Start -&gt; End -&gt; Promise -&gt; Timeout</code></p>
-
-<p><strong>Let's decode step by step:</strong></p>
-
-<p>Because the callback of <code>setTimeout</code> is placed in the macrotask queue, while the callback of <code>Promise.resolve</code> is placed in the microtask queue.</p>
-
-<ul>
-<li>The event loop will first execute the synchronous code (console.log("Start") and console.log("End"))</li>
-<li>Then it will check the microtask queue and execute all the callbacks there (console.log("Promise"))</li>
-<li>Then it will check the macrotask queue and execute one callback there (console.log("Timeout")). </li>
-</ul>
-
-<h2>
-  
-  
-  Why to know the difference is important?
-</h2>
-
-<p>Understanding the difference between microtask and macrotask queue can help you write better asynchronous code in JavaScript. It can help you avoid some common mistakes such as:</p>
-
-<ul>
-<li>Blocking the event loop by creating too many microtasks or long-running microtasks. This can cause performance issues and delay other important tasks.</li>
-<li>Creating race conditions or unexpected results by relying on the order of execution of different types of tasks. For example, if you use setTimeout to schedule some code after a promise, you cannot guarantee that the promise will resolve before the timeout.</li>
-<li>For example, if you use setTimeout with a delay of 0 milliseconds to defer some code execution, you might miss some events that happen in between.</li>
-</ul>
-
-<p><strong>To avoid these mistakes follow some best practices, such as:</strong></p>
-
-<ul>
-<li>Use promises or async/await instead of callbacks whenever possible. Promises are easier to read, write, and debug than nested callbacks. They also allow you to handle errors more easily.</li>
-<li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/queueMicrotask">queueMicrotask</a> instead of setTimeout with a very small delay. These methods are more reliable and efficient than setTimeout, as they schedule a <strong>microtask</strong> without any delay.</li>
-</ul>
-
-<h2>
   
   
   Conclusion
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--W00Fex7D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spkr1vcojuaf9ho0yy06.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--W00Fex7D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spkr1vcojuaf9ho0yy06.png" alt="Image description" width="541" height="641"></a></p>
-
-<p>I hope this article helped you understand the difference between microtask and macrotask queue in the event loop. Checkout my easy to understand article on <a href="https://dev.to/jeetvora331/javascript-debounce-easiest-explanation--29hc">Debounce</a> and <a href="https://dev.to/jeetvora331/throttling-in-javascript-easiest-explanation-1081">Throttling</a> in JS 🚀</p>
-
- </details> 
- <hr /> 
-
- #### - [Elevate Your Typography: Adding Custom Fonts in Next.js 13 with Tailwind CSS](https://dev.to/mnamesujit/elevate-your-typography-adding-custom-fonts-in-nextjs-13-with-tailwind-css-4nj4) 
- <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bW5md32_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nmrjomblzywb5ymxx0x1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bW5md32_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nmrjomblzywb5ymxx0x1.png" alt="Nextjs" width="800" height="425"></a></p>
-
-<h3>
-  
-  
-  Adding Custom Fonts in Next.js 13 with Tailwind CSS
 </h3>
 
-<p>Before we dive into the process of adding custom fonts, make sure you have the following prerequisites in place:</p>
-
-<ul>
-<li><p>Next.js 13 Project: Ensure you have a Next.js 13 project set up and ready for customization.</p></li>
-<li><p>Custom Font Files: Obtain the .woff, .woff2, or .ttf font files that you want to use. Make sure you have the appropriate licensing for the fonts.<br>
-Okk so let's go!!</p></li>
-<li><p>Step 1: Organize Your Fonts<br>
-Create a folder within your <code>public</code> directory. Naming it 'fonts' is a common convention<br>
-</p></li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>|-- app/
-|-- styles/
-|-- public/fonts/  &lt;<span class="nt">--</span> Place your custom font files here
-|-- ...
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Step 2: Import Fonts in your CSS file (Note: we will setup in our global.css file but you can setup with other css file with same process)
-In your project's 'app' directory, open <code>global.css</code> file and define the @font-face rule to import your custom fonts:
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="o">//</span><span class="nt">app</span><span class="o">/</span><span class="nt">globals</span><span class="nc">.css</span>
-
-<span class="k">@font-face</span> <span class="p">{</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'limelight'</span><span class="p">;</span>
-  <span class="nl">font-style</span><span class="p">:</span> <span class="n">regular</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">400</span><span class="p">;</span>
-  <span class="nl">src</span><span class="p">:</span> <span class="sx">url('/fonts/Limelight-Regular.ttf')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'truetype'</span><span class="p">);</span> <span class="err">//</span> <span class="err">mention</span> <span class="err">format</span> <span class="err">of</span> <span class="err">your</span> <span class="err">font</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>Step 3: Open <code>tailwind.config.ts/js</code> file and configure you custom font-family.
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// tailwind.config.ts</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="c1">// ...other configuration...</span>
-
-  <span class="na">extend</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">fontFamily</span><span class="p">:</span> <span class="p">{</span>
-     <span class="na">limelight</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">limelight</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sans-serif</span><span class="dl">'</span><span class="p">],</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-<span class="p">}</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>And that's it can you your <code>limelight</code> font-family in anywhere in your project.<br>
-i.e<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">index</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">font-limelight text-2xl</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Thanks</span> <span class="k">for</span> <span class="nx">Reading</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">index</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>That's it all configurations are done for setting up the custom fonts in Next.js projects in optimize way.<br>
-Thanks for reading buddy see you soon!!<br>
-Happy coding! 🚀✨</p>
+<p>Zustand is a powerful library that is easy to get started with and offers a simple way to manage state across many components. You can manage async, set re-renders, persist the data, and subscribe to changes in other variables to fully customize your store's function. However, if you are simply looking for an easy, but more functional alternative to useState, you can use Zustand without a lot of extra bells and whistles.</p>
 
  </details> 
  <hr /> 
