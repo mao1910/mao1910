@@ -117,14 +117,14 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [What's the Main Issue in Software Today?](https://dev.to/devteam/whats-the-main-issue-in-software-today-4nk1) 
- <details><summary>Article</summary> <p><em>Hey, hey, it's the Daily Byte! Over the next several days, we'll be talking about developer roles, success taits, and the future ahead. Today we want to know:"</em>  </p>
+ #### - [Is There a Developer Shortage?](https://dev.to/devteam/is-there-a-developer-shortage-2l56) 
+ <details><summary>Article</summary> <p><em>Hey, hey, it's the Daily Byte! Over the next several days, we'll be talking about developer roles, success taits, and the future ahead. Today we tackle the burning question:</em>  </p>
 
 <blockquote>
-<p>What is the single most pressing issue currently confronting the software industry? </p>
+<p>Why is the software industry facing a developer shortage, and how can we address this issue?</p>
 </blockquote>
 
-<p>Follow the DEVteam for more discussions and online camaraderie!</p>
+<p>Share your insights into the ongoing debate about the scarcity of developers and follow the DEVteam for more discussions and online camaraderie!</p>
 
 
 <div class="ltag__user ltag__user__id__1">
@@ -150,891 +150,567 @@
  </details> 
  <hr /> 
 
- #### - [Mastering Asynchronous Programming in JavaScript: Unraveling the Magic of async/await, Promises, and More](https://dev.to/oluwatobi_/mastering-asynchronous-programming-in-javascript-unraveling-the-magic-of-asyncawait-promises-and-more-3lc5) 
- <details><summary>Article</summary> <p>Picture this: You're at a bustling coffee shop, eagerly awaiting your favorite brew. As you stand in line, you notice a peculiar sight. Instead of waiting their turn, people are multitasking effortlessly. Some chat with friends, others read newspapers, and a few even engage in a friendly game of chess—all while their coffee orders are processed behind the scenes. In this coffee shop, everyone is in perfect sync with their caffeine fix, but what if I told you that JavaScript, your trusty programming language, could function in much the same way? Welcome to the world of asynchronous programming in JavaScript, where code can juggle multiple tasks without missing a beat. It's a bit like a coffee shop where your code can chat with databases, read files, and fetch data from the web—all while serving up a delightful user experience.</p>
+ #### - [Hacktoberfest is coming](https://dev.to/jarvisscript/hacktoberfest-is-coming-58a4) 
+ <details><summary>Article</summary> <p>Hacktoberfest is coming and this year DEV is teaming up with Hackotoberfest founder Digital Ocean to bring new badges to DEV.</p>
 
-<h2>
-  
-  
-  Introduction:
-</h2>
+<p>Read <a href="https://dev.to/page/hacktoberfest-2023">DEV's HacktoberFest 2023 page.</a> to learn what is going on here.</p>
 
-<p>In the realm of modern web development, where user expectations are higher than ever, the ability to handle multiple tasks simultaneously is crucial. Enter asynchronous programming in JavaScript, a paradigm that has revolutionized how we write code for the web. At its core, asynchronous programming allows your JavaScript code to efficiently manage tasks that might take time to complete, such as fetching data from an API, reading files, or performing database operations, all without blocking the main execution thread.</p>
+<p>Visit the <a href="https://hacktoberfest.com/">Official HacktoberFest</a> page this is where you go to sign up on September 26. Sign up here then prepare for the month.</p>
 
-<p>In this article, we embark on a journey to demystify the intricacies of asynchronous programming in JavaScript. We'll explore the power duo of async/await functions and the ever-reliable Promises, diving deep into their workings and real-world applications. Whether you're a seasoned JavaScript developer looking to sharpen your skills or a newcomer eager to grasp the fundamentals, you'll find valuable insights here to help you master the art of asynchronous programming.</p>
+<p>Dev's Hacktoberfest preview blog.</p>
 
-<p>So, grab your favorite beverage, settle in, and get ready to unlock the true potential of JavaScript's asynchronous capabilities. By the end of this article, you'll be equipped with the knowledge and confidence to harness the magic of async/await, conquer Promises, and navigate the nitty-gritty of asynchronous programming in JavaScript with ease.</p>
 
-<h2>
-  
-  
-  What is Asynchronous Programming ?
-</h2>
+<div class="ltag__link">
+  <a href="/devteam" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DGMHY8k9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--DG4H-3cI--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/d908a186-5651-4a5a-9f76-15200bc6801f.jpg" alt="The DEV Team" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Q9agcq3k--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vHKcEiTe--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/3/13d3b32a-d381-4549-b95e-ec665768ce8f.png" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/devteam/hacktoberfest-2023-sneak-peek-at-badges-whats-to-come-4h22" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Hacktoberfest 2023: Sneak Peek at Badges &amp; What's to Come</h2>
+      <h3>dev.to staff for The DEV Team ・ Sep 18</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#hacktoberfest23</span>
+      </div>
+    </div>
+  </a>
+</div>
 
-<p>Asynchronous programming is a programming paradigm and technique that allows tasks or operations to be executed independently and concurrently, without waiting for the previous task to complete before starting the next one. In asynchronous programming, a program can initiate a task and then continue executing other tasks without blocking, or waiting for, the completion of the initial task. This approach is particularly valuable in scenarios where certain tasks may take a variable amount of time to finish, such as network requests, file I/O operations, or user interactions. By performing these tasks asynchronously, a program can remain responsive and efficient, ensuring that it doesn't freeze or become unresponsive while waiting for time-consuming operations to finish.</p>
 
-<h2>
-  
-  
-  Implementing Asynchronous Programming in Javascript
-</h2>
+<p>I've participated in Hacktoberfest for three years, last year I even maintained a project. I've had four or more pull request accepted each of the the last three years.</p>
 
-<p>Javascript in particular uses asynchronous programming extensively, making use of mechanisms like Promises, async/await, and callback functions to manage asynchronous tasks and maintain a responsive user experience. I will start by using promises, then to async/await then back to promises for some use cases.</p>
+<p>I've got to collaborate on some cool projects. I've earned t-shirts, stickers, holopins, and DEV badges. Although I'm missing the 2021 one. </p>
 
-<h3>
-  
-  
-  Promises
-</h3>
+<p>This year Digital Ocean is not giving out shirts or stickers. It's an expense thing, but you can earn digital pins and have a tree planted. Some companies offer incentives to earn their swag so look for them as you search for projects.  </p>
 
-<p>A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.<br>
-A Promise is in one of these states:<br>
-⦁ Pending: initial state, neither fulfilled nor rejected.<br>
-⦁ Fulfilled: meaning that the operation was completed successfully.<br>
-⦁ Rejected: meaning that the operation failed.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KUQGnU-c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/i/ekhzparqr6g09yi9pctq.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KUQGnU-c--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/i/ekhzparqr6g09yi9pctq.jpg" alt="completed progress bar. Show 4 filled in boxes " width="353" height="207"></a></p>
 
-<p>The eventual state of a pending promise can either be fulfilled with a value or rejected with a reason (error). When either of these options occurs, the associated handlers queued up by a promise's .then method are called. If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached. A promise is said to be settled if it is either fulfilled or rejected, but not pending.</p>
+<p>Those PRs include code, documentation, transcribing podcasts,  and even writing some templates for a repo. It's been an enjoyable time and I'm ready to do it again.</p>
 
-<p>First, let's create a promise object using the new keyword..<br>
+<p>2022<br>
+</p>
+<div class="ltag__link">
+  <a href="/jarvisscript" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m6nqeORg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--MuaiLKep--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/8745/bd569b6a-807e-4368-9b91-c35dd617c562.jpeg" alt="jarvisscript">
+    </div>
+  </a>
+  <a href="/jarvisscript/hacktoberfest-review-38e3" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>HacktoberFest Review</h2>
+      <h3>Chris Jarvis ・ Nov 3 '22</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#documentation</span>
+        <span class="ltag__link__tag">#hacktoberfest</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<p>2021</p>
+
+
+<div class="ltag__link">
+  <a href="/jarvisscript" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m6nqeORg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--MuaiLKep--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/8745/bd569b6a-807e-4368-9b91-c35dd617c562.jpeg" alt="jarvisscript">
+    </div>
+  </a>
+  <a href="/jarvisscript/hacktoberfest-review-18jh" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>HacktoberFest Review</h2>
+      <h3>Chris Jarvis ・ Nov 1 '21</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#hacktoberfest</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<p>2020</p>
+
+
+<div class="ltag__link">
+  <a href="/jarvisscript" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m6nqeORg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--MuaiLKep--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/8745/bd569b6a-807e-4368-9b91-c35dd617c562.jpeg" alt="jarvisscript">
+    </div>
+  </a>
+  <a href="/jarvisscript/hacktoberfest-4-of-4-1aoo" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Hacktoberfest 4 of 4</h2>
+      <h3>Chris Jarvis ・ Oct 8 '20</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#hacktoberfest</span>
+        <span class="ltag__link__tag">#11ty</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WtGRHyFq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/94wnb20mnv8a4ur85brq.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WtGRHyFq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/94wnb20mnv8a4ur85brq.jpg" alt="DEV hacktoberFest22 Badge. Wireframe sphere with a capital H" width="690" height="343"></a></p>
+
+<p>This is my pledge to participate in HacktoberFest 2023. Are you joining the fun this year?<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">resolved</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">},</span> <span class="mi">300</span><span class="p">);</span>
-<span class="p">});</span>
+<pre class="highlight html"><code>-$JarvisScript git push
 </code></pre>
 
 </div>
 
 
-
-<p>The promise constructor takes in a callback function with two arguments, the first is called when the promise is fulfilled while the second is for when the promise is rejected(note that the naming of the arguments is for readability, you can use any naming of your choice).. In both arguments, the message you want to pass in is what is received on fulfillment or rejection.</p>
-
-<p>Now let's move to chained promises..<br>
-The methods Promise.prototype.then(), Promise.prototype.catch(), and Promise.prototype.finally() are used to associate further action with a promise that becomes settled. As these methods return promises, they can be chained. Meaning .then() returns a newly generated promise object, which can optionally be used for chaining; for example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">myPromise</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">handleFulfilledA</span><span class="p">,</span> <span class="nx">handleRejectedA</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">handleFulfilledB</span><span class="p">,</span> <span class="nx">handleRejectedB</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">handleFulfilledC</span><span class="p">,</span> <span class="nx">handleRejectedC</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Processing continues to the next link of the chain even when a .then() lacks a callback function that returns a Promise object. Therefore, a chain can safely omit every rejection callback function until the final .catch() and we have .finally(). So we can have something like<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="nx">myPromise</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span><span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2"> is in then`</span><span class="p">))</span>
-<span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Error message: </span><span class="p">${</span><span class="nx">error</span><span class="p">}</span><span class="s2">`</span><span class="p">))</span>
-<span class="p">.</span><span class="k">finally</span><span class="p">(()</span><span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">I am here no matter what happened</span><span class="dl">'</span><span class="p">))</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This picture explains promises graphically</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3Pug6MAk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rj3ravyo97u09vxmctze.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3Pug6MAk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rj3ravyo97u09vxmctze.png" alt="Image description" width="800" height="297"></a><br>
-Also, we have Promise concurrency which gives more power to promises, and that will be discussed in the later part of this article.</p>
-<h3>
-  
-  
-  Async/Await
-</h3>
-
-<p>The async function declaration creates a binding of a new async function to a given name. The await keyword is permitted within the function body, enabling asynchronous, promise-based behavior to be written in a cleaner style and avoiding the need to explicitly configure promise chains. In clearer terms, async/await helps us to achieve cleaner code over the chains of promises. Consider the following compared to the chains of promises:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">callMyPromise</span> <span class="o">=</span> <span class="k">async</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
-<span class="k">try</span><span class="p">{</span>
-<span class="k">return</span> <span class="k">await</span> <span class="nx">myPromise</span>
-<span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
-<span class="k">return</span> <span class="nx">err</span>
-<span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We will consider more complex and real use cases of async/await in the application section of this article.<br>
-Take note :<br>
-⦁ await is only valid on promise, if a function does not return a promise, it's invalid to use await even though it does not break your app, but for the readability of your codebase stay away. <br>
-⦁ await keyword can be used within the async function and also at the top level of modules too.<br>
-Here is an example of a top-level await<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code> <span class="c1">// create a file named promise.js </span>
-<span class="c1">// in your promise.js you can have this:</span>
-<span class="kd">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">resolved</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">},</span> <span class="mi">300</span><span class="p">);</span>
-  <span class="p">});</span>
-  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">myPromise</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// Create another file named top_level.mjs; .mjs simply means modularized javascript file</span>
-<span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Top level await!!</span><span class="dl">"</span><span class="p">))</span>
-</code></pre>
-
-</div>
-
-
-
-<p>A practical use case of this is when you want to load a file that returns a promise in your .mjs file:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>
-<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span>  <span class="k">await</span> <span class="k">import</span> <span class="p">(</span><span class="dl">"</span><span class="s2">./promise.js</span><span class="dl">"</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Use cases of Asynchronous Programming
-</h2>
-
-<ol>
-<li>
-<strong>Making Network Requests</strong>: When you want to make a network request to a server or any other service, definitely the request will take some microseconds if not seconds to respond and your application depends on the data you are receiving from the network request. We can simulate this by making a simple GET request using Javascript fetch API.
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">//Make a request with Promise chain</span>
-<span class="kd">const</span> <span class="nx">fetchWithPromiseChain</span> <span class="o">=</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span>  <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.boredapi.com/api/activity</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">response</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> 
-
-<span class="p">}</span>
-
-<span class="nx">fetchWithPromiseChain</span><span class="p">()</span>
-
-<span class="c1">// Make request with async await</span>
-<span class="kd">const</span> <span class="nx">fetchWithAsyncAwait</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span><span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.boredapi.com/api/activity</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">activity</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">activity</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ERROR</span><span class="dl">"</span><span class="p">,</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">fetchWithAsyncAwait</span><span class="p">();</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>From the above code snippet, we have two different approaches, and async/await seems to be cleaner, you won't realize this until you have many stuff to handle in your application.</p>
-
-<p>Let's step up the game for instance when you want to make multiple network requests that your app essentially needs... Let's illustrate our approach to this.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">landingPageDataWithAsyncAwait</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">time</span><span class="p">(</span><span class="dl">"</span><span class="s2">async fetching data</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">firstCall</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span>
-      <span class="dl">"</span><span class="s2">https://official-joke-api.appspot.com/random_joke</span><span class="dl">"</span>
-    <span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">randomJoke</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">firstCall</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-    <span class="kd">const</span> <span class="nx">secondCall</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.boredapi.com/api/activity</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">boredomData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">secondCall</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-    <span class="kd">const</span> <span class="nx">thirdCall</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://randomuser.me/api/</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">randomUser</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">thirdCall</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-    <span class="kd">const</span> <span class="nx">fourthCall</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.ipify.org?format=json</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">ipData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fourthCall</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">timeEnd</span><span class="p">(</span><span class="dl">"</span><span class="s2">async fetching data</span><span class="dl">"</span><span class="p">);</span>
-    <span class="k">return</span> <span class="p">{</span> <span class="nx">randomJoke</span><span class="p">,</span> <span class="nx">boredomData</span><span class="p">,</span> <span class="nx">randomUser</span><span class="p">,</span> <span class="nx">ipData</span> <span class="p">};</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ERROR</span><span class="dl">"</span><span class="p">,</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>The time taken to execute this function<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>async fetching data: 3.058s
-</code></pre>
-
-</div>
-
-
-
-<p>In this case, each request is independent of another, and what we are doing is that after a network request is done, that's when the next request can be made, which is unnecessarily going to make your app slow down, this method is best when each network request is dependent of data coming from another... There is a better approach to this by making parallel requests, here we can now talk about Promise concurrency; we have Promise.all, Promise.allSettled, Promise.any, Promise.reject each as their use cases.</p>
-
-<ol>
-<li><p>Promise.all: Fulfills when all promises are fulfilled; rejects when any of the promises are rejected.</p></li>
-<li><p>Promise.allSettled: Fulfills when all promises settle.</p></li>
-<li><p>Promise.any: Fulfills when any of the promises fulfills; rejects when all of the promises are rejected.</p></li>
-<li><p>Promise.race: Settles when any of the promises settles. In other words, fulfills when any of the promises fulfills; rejects when any of the promises are rejected.</p></li>
-</ol>
-
-<p>In this case, we will be using .allSettled over the .all<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">landingPageDataWithPromiseChain</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">time</span><span class="p">(</span><span class="dl">"</span><span class="s2">fetching data</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">firstCall</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span>
-      <span class="dl">"</span><span class="s2">https://official-joke-api.appspot.com/random_joke</span><span class="dl">"</span>
-    <span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">secondCall</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.boredapi.com/api/activity</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">thirdCall</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://randomuser.me/api/</span><span class="dl">"</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">fourthCall</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.ipify.org?format=json</span><span class="dl">"</span><span class="p">);</span>
-
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">randomJoke</span><span class="p">,</span> <span class="nx">boredomData</span><span class="p">,</span> <span class="nx">randomUser</span><span class="p">,</span> <span class="nx">userIp</span><span class="p">]</span> <span class="o">=</span>
-      <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">allSettled</span><span class="p">([</span><span class="nx">firstCall</span><span class="p">,</span> <span class="nx">secondCall</span><span class="p">,</span> <span class="nx">thirdCall</span><span class="p">,</span> <span class="nx">fourthCall</span><span class="p">])</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">r</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">r</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">json</span><span class="p">()))</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">timeEnd</span><span class="p">(</span><span class="dl">"</span><span class="s2">fetching data</span><span class="dl">"</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="na">randomJoke</span><span class="p">:</span> <span class="k">await</span> <span class="nx">randomJoke</span><span class="p">,</span>
-      <span class="na">boredomData</span><span class="p">:</span> <span class="k">await</span> <span class="nx">boredomData</span><span class="p">,</span>
-      <span class="na">randomUser</span><span class="p">:</span> <span class="k">await</span> <span class="nx">randomUser</span><span class="p">,</span>
-      <span class="na">userIp</span><span class="p">:</span> <span class="k">await</span> <span class="nx">userIp</span><span class="p">,</span>
-    <span class="p">};</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">landingPageDataWithPromiseChain</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-<span class="p">})();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Time taken for the function to execute<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>fetching data: 1.912s
-</code></pre>
-
-</div>
-
-
-
-<p>Running each of these cases differently, you'll see from the time logged in the console the latter is faster than the former and as an engineer, every microseconds counts.</p>
-
-<p>We need to touch another use case which is having tasks that require us to perform asynchronous actions in an array, this can be quite brain-tasking but here is an example and the fastest approach we can take..</p>
-
-<p>Let's say we have an array of delivery boxes sent to the backend, and each box contains an array of items and each item has a value of productId, we need to get some specific detail of the product from our database, and in the end we want to return the product details of each product in items for every box</p>
-
-<p>Let's have our code...<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span>
-        <span class="nx">payload</span><span class="p">.</span><span class="nx">boxes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">box</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-          <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span>  <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span> <span class="nx">box</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-          <span class="kd">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">products</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span><span class="na">where</span><span class="p">:{</span><span class="na">id</span><span class="p">:</span><span class="nx">item</span><span class="p">.</span><span class="nx">productId</span><span class="p">}});</span>
-            <span class="k">return</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="nx">product</span><span class="p">?.</span><span class="nx">name</span><span class="p">,</span><span class="na">id</span><span class="p">:</span><span class="nx">product</span><span class="p">?.</span><span class="nx">id</span><span class="p">,</span><span class="na">categoryId</span><span class="p">:</span><span class="nx">product</span><span class="p">?.</span><span class="nx">categoryId</span><span class="p">,</span><span class="na">subCategoryId</span><span class="p">:</span><span class="nx">product</span><span class="p">?.</span><span class="nx">subCategoryId</span><span class="p">};</span>
-          <span class="p">})</span>
-          <span class="p">)</span>
-          <span class="k">return</span>  <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span><span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">items</span><span class="p">));</span> 
-        <span class="p">})</span>
-      <span class="p">)</span> 
-</code></pre>
-
-</div>
-
-
-
-<p>We needed to have multiple Promise.all because we are dealing with a task that has to do with a multidimensional array kind of thing, and this proves to be arguably the fastest approach to this kind of problem.</p>
-
-<p>There are so many other use cases of asynchronous programming, in fact, a lot of Web APIs are built on promises e.g. WebRTC, WebAudio, etc... As a software engineer asynchronous programming is very important and I hope with this article you have been able to learn more about asynchronous programming with Javascript. Thank you for reading this article, you can share what topic you want me to write on in my next article. </p>
 
  </details> 
  <hr /> 
 
- #### - [😍BEST😍 CSS Animation Generator Online Website](https://dev.to/noobizdev/best-css-animation-generator-online-website-40dh) 
- <details><summary>Article</summary> <p>In the fast-paced world of web development, staying ahead of the curve is crucial. <br>
-Incorporating captivating animations into your websites With <strong><a href="https://noobizdev.tech/category/programming/css/">CSS</a></strong> not only enhances user engagement but also adds that extra flair that sets your web projects apart. <br>
-But how can you easily create CSS animations without delving deep into coding complexities? <br>
-The answer lies in CSS Animation Generator Online websites.</p>
+ #### - [OpenMP Notes](https://dev.to/winstonpuckett/openmp-notes-1cfa) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  What is this document?
+</h2>
 
-
-
-
-<blockquote>
-<p>Help us grow our community by sharing this post with your friends And give us a like and a follow!❤️❤️❤️</p>
-
-
-</blockquote>
-
-
+<p>I recently went through Tim Mattson's <a href="https://youtube.com/playlist?list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&amp;si=VlCiP_gIHKOfBHQC">Introduction to OpenMP</a>, a  27-video course which outlines all of the major constructs and underlying principles in OpenMP. It's a wonderful course with lots of helpful information and I recommend you take it yourself. Here are my condensed notes on the course.</p>
 
 <h2>
   
   
-  Why Should You Use CSS Animation Generator Online Tools?
+  Why OpenMP?
 </h2>
 
-<p>Using CSS Animation Generator Online tools offers several benefits:</p>
+<p>Parallelism is important because of power usage - Moore's law continues to hold, but the power to runs chip with twice as many capacitors grows almost quadratically with the number of capacitors used.</p>
 
-<ol>
-<li>Simplicity: No need to write complex code; these tools provide user-friendly interfaces.</li>
-<li>Time Efficiency: Save time compared to manual coding.</li>
-<li>Wide Range of Effects: Access a library of animation presets and effects.</li>
-<li>Cross-Browser Compatibility: Ensure animations work seamlessly across different web browsers.</li>
-<li>No Dependencies: Create animations without relying on external libraries or plugins.</li>
-</ol>
+<p>Instead, by running just two cores in parallel, we find a 40% reduction in the power used for a given input of work.</p>
 
+<p><a href="https://youtu.be/cMWGeJyrc9w?si=XYPQzEBkBwGHgg7_">https://youtu.be/cMWGeJyrc9w?si=XYPQzEBkBwGHgg7_</a></p>
 
+<p>Concurrency is async (could be happening at the same time). Parallel is when you map so that it <strong>is</strong> done at the same time.</p>
 
-<h2>
-  
-  
-  Features to Look for in a CSS Animation Generator Online Website
-</h2>
+<p>OpenMP assumes shared address space hardware.</p>
 
-<p>When choosing a CSS Animation Generator Online tool, consider the following features:</p>
-
-<ol>
-<li>- Pre-built Templates: Templates for common animations.</li>
-<li>- Keyframe Editing: The ability to fine-tune animations.</li>
-<li>- Real-time Preview: See how your animations will look in real-time.</li>
-<li>- Export Options: Various formats for integrating animations into your website.</li>
-<li>- Customization: The ability to tweak animation duration, easing, and more.</li>
-</ol>
-
-
-
-<h2>
-  
-  
-  Top CSS Animation Generator Online Websites
-</h2>
-
-<p>While several CSS Animation Generator Online tools are available, some stand out for their exceptional features and user-friendliness. Here are a few noteworthy options:</p>
-
-<ol>
-<li>
-<strong><a href="https://www.animationcss.com/">AnimationCSS.com</a></strong>: Known for its extensive library of animation templates.</li>
-<li>
-<strong><a href="https://www.animateyourweb.com/">AnimateYourWeb.com</a></strong>: Offers advanced keyframe editing and real-time previews.</li>
-<li>
-<strong><a href="https://www.easyanimationtools.com/">EasyAnimationTools.com</a></strong>: Perfect for beginners with its intuitive interface.</li>
-</ol>
-
-
-
-<h2>
-  
-  
-  Comparing the Best CSS Animation Generators
-</h2>
-
-<p>Let's compare the top CSS Animation Generator Online tools in terms of ease of use, customization options, and export capabilities.</p>
-
-<div class="table-wrapper-paragraph"><table>
-<thead><tr>
-<th>Tool</th>
-<th>Ease of Use</th>
-<th>Customization</th>
-<th>Export Formats</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>AnimationCSS.com</td>
-<td>★★★★☆</td>
-<td>★★★☆☆</td>
-<td>CSS, JS, GIF</td>
-</tr>
-<tr>
-<td>AnimateYourWeb.com</td>
-<td>★★★☆☆</td>
-<td>★★★★☆</td>
-<td>CSS, JS, GIF</td>
-</tr>
-<tr>
-<td>EasyAnimationTools.com</td>
-<td>★★★★☆</td>
-<td>★★★★☆</td>
-<td>CSS, JS, GIF</td>
-</tr>
-</tbody>
-</table></div>
-
-
-
-
-<blockquote>
-<p>If you enjoyed this post, make sure to save it for later!</p>
-
-<p>Don't forget to leave a comment if you need any help...</p>
-
-<p>Thanks for reading, See you next time... ❤️👋</p>
-
-
-</blockquote>
-
-
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>Incorporating animations into your web projects has never been easier. <strong><a href="https://noobizdev.tech/elevate-your-web-design-with-modern-css-animations-examples/">CSS Animation Generator Online tool</a></strong> empower designers and developers to add life and interactivity to their websites without the need for extensive coding. Explore the options, unleash your creativity, and take your web designs to the next level.</p>
-
- </details> 
- <hr /> 
-
- #### - [How to Setup Tailwind CSS in React JS with VS Code](https://dev.to/david_bilsonn/how-to-setup-tailwind-css-in-react-js-with-vs-code-59p4) 
- <details><summary>Article</summary> <p>Tailwind CSS has gained popularity among front-end developers due to its utility-first approach and flexibility. It allows developers to build modern and responsive user interfaces with ease and speed.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6xSInFAy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v26d01snv69f1hi62ikv.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6xSInFAy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v26d01snv69f1hi62ikv.jpeg" alt="Why Tailwind CSS is better!" width="537" height="134"></a></p>
-
-<p>When combined with React JS, Tailwind CSS becomes an even more potent tool for creating visually appealing and efficient web applications.<br>
-This tutorial will guide you through the step-by-step process of setting up Tailwind CSS in a React project using Visual Studio Code (VS Code). By the end of this guide, you will have a fully functional React application with Tailwind CSS integrated and ready for deployment.</p>
-<h3>
-  
-  
-  Prerequisites
-</h3>
-
-<p>Before we begin, ensure that you have the following installed on your system:</p>
-<h4>
-  
-  
-  Node.js and npm:
-</h4>
-
-<p>To set up a React application, you need Node.js and npm installed on your computer. Download and install the latest LTS version of NodeJS from the <a href="https://nodejs.org/en">official Node.js website</a>.<br>
-To download the latest version of npm, on the command line, run the following command:<br>
+<p>Example of pragmas OpenMP uses:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm install -g npm
+<pre class="highlight c"><code><span class="cp">#pragma omp construct clauses
+</span>
+<span class="c1">// simplest</span>
+<span class="cp">#pragma omp parallel
+</span>
+<span class="c1">// You can combine statements like</span>
+<span class="cp">#pragma omp parallel for
+</span><span class="k">for</span> <span class="p">...</span>
+
+<span class="c1">// Instead of</span>
+<span class="cp">#pragma omp parallel
+</span><span class="p">{</span>
+    <span class="cp">#pragma omp for
+</span>    <span class="k">for</span> <span class="p">...</span>
+<span class="p">}</span>
 </code></pre>
 
 </div>
 
 
 
-<h4>
-  
-  
-  Visual Studio Code (VS Code):
-</h4>
-
-<p>VS Code is a popular code editor that provides a seamless development experience for developers. You can download it for free from the <a href="https://code.visualstudio.com/">official VS Code website</a> and install it on your computer.</p>
+<p>Blocks must not exit in the middle.</p>
 
 <h2>
   
   
-  Step 1:
+  Shared memory machines
 </h2>
-
-<h4>
-  
-  
-  Create a New React Application Using Vite
-</h4>
-
-<p>Vite is a better alternative to CRA (create-react-app). It provides a faster and leaner development experience for modern web projects built with React, Angular, or Vue. Vite is popularly known for speed, efficiency, lightweight, and simplicity. <a href="https://vitejs.dev/guide/">Learn more about Vite here</a>.</p>
-
-<p>To install a React application using Vite, open your terminal or command prompt and navigate to the root directory where you want to install the React project. <br>
-Then, run the following command to create a new application<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm create vite@latest
-</code></pre>
-
-</div>
-
-
-
-<p>You will be asked in the terminal to write the name of the project. For the sake of this tutorial, I will be going with "tailwind-setup" as the project name.<br>
-Thereafter, you will be asked to select a framework to work with. Select React.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Qg4hn1sS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9x0y9dim2hwuybb9m4b4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Qg4hn1sS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9x0y9dim2hwuybb9m4b4.png" alt="How to install React with Vite" width="602" height="255"></a></p>
-
-<p>You will be asked to select a variant. Select JavaScript.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oUwIAZn7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1td85wpci9h587dj6uqd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oUwIAZn7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1td85wpci9h587dj6uqd.png" alt="How to install React with Vite" width="519" height="165"></a></p>
-
-<p>Afterward, navigate to the project directory using the command <code>cd project-name</code>. Since the name of this project is tailwind-setup, we will enter the project directory and execute the following commands.</p>
-
-<p>Enter the project directory<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> cd tailwind-setup
-</code></pre>
-
-</div>
-
-
-
-<p>Run npm install to install the necessary packages and dependencies for the React project.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> npm install
-</code></pre>
-
-</div>
-
-
-
-<p>After installing the packages and dependencies, you need to open VS Code editor with the current directory. To do that, run the command below<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code> code .
-</code></pre>
-
-</div>
-
-
-
-<p>A new window will be opened up and you will be able to access the project files from the side bar (also known as the Explorer). </p>
-
-<h2>
-  
-  
-  Step 2:
-</h2>
-
-<h4>
-  
-  
-  Install Tailwind CSS
-</h4>
-
-<p>When you want to install Tailwind in React, you have to remember that you installed this React project with Vite. To avoid dependency issues, you must install Tailwind for Vite React. You will find the installation guide on <a href="https://tailwindcss.com/docs/installation">Tailwind Docs</a>. The first installation guide <strong>(Tailwind CLI)</strong> on the docs points to general installation. Click on <strong>(Framework Guides)</strong> </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--S_jQ0ZST--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eoeie8plbcqt6e5d77vo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--S_jQ0ZST--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eoeie8plbcqt6e5d77vo.png" alt="Framework Guide for Tailwind Installation" width="800" height="559"></a></p>
-
-<p>This will show you a list of frameworks to pick from. Select Vite.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--15zUD6eJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/crscyzrvhiqt3thgwyin.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--15zUD6eJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/crscyzrvhiqt3thgwyin.png" alt="Vite installation for Tailwind" width="800" height="313"></a></p>
-
-<p>You will be brought to this page</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--96bLvc3_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7lzpzx16u49ysvqsj39t.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--96bLvc3_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7lzpzx16u49ysvqsj39t.png" alt="Tailwind CSS Installation" width="800" height="558"></a></p>
-
-<p>You already have React installed using Vite, so we just have to install Tailwindcss and its peer dependencies with the command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm install -D tailwindcss postcss autoprefixer
-</code></pre>
-
-</div>
-
-
-
-<p>Then generate your tailwind.config.js and postcss.config.js files with the command below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npx tailwindcss init -p
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Step 3:
-</h2>
-
-<h4>
-  
-  
-  Configure Tailwind CSS
-</h4>
-
-<p>Add the paths to all of your template files in your tailwind.config.js file. You can do that by copying the template available in the config file on the docs. It's also provided below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Step 4
-</h2>
-
-<h4>
-  
-  
-  Add the Tailwind directives to your index.css file
-</h4>
-
-<p>To import Tailwind CSS into your project. Open the "src/index.css" file, which is the main CSS file for your React application. Remove all the existing code in the file and add the following import statement to include Tailwind CSS:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>@tailwind base;
-@tailwind components;
-@tailwind utilities;
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Step 5
-</h2>
-
-<h4>
-  
-  
-  Run the Development Server
-</h4>
-
-<p>Now that Tailwind CSS is integrated into your React project, it's time to start the development server and see the changes in action.<br>
-Run your build process with <code>npm run dev</code> in the terminal.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm run dev
-</code></pre>
-
-</div>
-
-
-
-<p>This will start the development server, and you can access your React application in the local host server address provided in the terminal: </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VR5o5Oyi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnnfa5oxoekcnem0z4nb.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VR5o5Oyi--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnnfa5oxoekcnem0z4nb.png" alt="Tailwind CSS" width="570" height="176"></a></p>
 
 <h3>
   
   
-  Styling components/elements with Tailwind CSS
+  SMP Symmetric MultiProcessor
 </h3>
 
-<p>If you are not a Tailwind expert yet, you can easily look up the class names for any CSS property you need on an element by searching for it on the docs.</p>
+<p>Operating system treats each thread the same with same amount of time devoted to each thread.</p>
 
-<h4>
+<p>No special blocks of memory - all memory <em>should</em> be equally performant and accessible </p>
+
+<h3>
   
   
-  Example
-</h4>
+  NUMA Non-Uniform Memory Architecture
+</h3>
 
-<p>Let us style a h1 element and a paragraph element in the App.jsx file of our React application.</p>
+<p>Understands and takes advantage of the fact that access time to certain memory is faster if it's physically closer to the processor .</p>
+
+<p>Nothing is truly an SMP these days, but we pretend it is... at least for CPUs. I'm curious about SMPs vs NUMAs in the world of GPUs.</p>
+
+<h2>
+  
+  
+  Random good info
+</h2>
 
 <ul>
-<li>Create the h1 and p element
+<li>Race conditions and synchronization are the most common errors in parallel programming.</li>
+<li>Fundamental model behind OpenMP is the Fork-Join model</li>
+<li>A collection of threads is called a Team.</li>
+<li>
+<code>#pragma omp parallel</code> is what forks</li>
+<li>
+<code>omp_set_num_threads(4)</code> tells OMP how many threads to use if it's unspecified in the pragma.</li>
+<li>Data allocated outside the parallel block will go on the heap and be visible to all threads. Data allocated inside the block will be allocated to the stack and be visible only to the thread. They use "private" canonically. </li>
+<li>A generated function is called a thunk.</li>
+<li>
+<p>Question, OpenMP uses <code>pthreads</code> under the hood when it compiles down.  Would an NVIDIA GPU also do that or does it compile to a CUDA-specific implementation?</p>
+<h2>
+  
+  
+  SPMD - Single Program, Multiple Data
+</h2>
+</li>
+<li><p>Each thread runs identical code against different data</p></li>
+<li><p>Cyclic distribution of loop iterations: increment the loop number by the number of threads .</p></li>
+<li><p>To eliminate race conditions, we can promote a scalar like <code>sum</code> to an array.</p></li>
+<li>
+<p>Because we may get a different number of threads than we request, you may need to have any thread (id 0 most likely) check the thread count we got.</p>
+<h2>
+  
+  
+  False sharing:
+</h2>
+</li>
+<li><p>If independent data happens to sit on the same cache line, each update will cause cache lines to "slosh back and forth" between threads.</p></li>
+<li><p>Promoting a scalar to an array and using a round-robin strategy is one example where we create false sharing and poor scalability.</p></li>
+<li><p>One way to avoid false sharing is by padding the array so that separate threads will be guaranteed to show up in separate cache lines. To do this, make the sum array multidimensional and use the first value <code>[i][0]</code> for the actual value</p></li>
+<li>
+<p>Synchronization solves false sharing without us having to know the underlying cache sizes.</p>
+<h2>
+  
+  
+  Synchronization
+</h2>
+</li>
+<li><p>Barrier Synchronization is "each thread should wait until all threads arrive"</p></li>
+<li><p>Mutual exclusion: "only one thread can access x resource"</p></li>
+</ul>
+
+<p>Constructs:<br>
+Note that pragmas are always applicable to the thing directly below. So use blocks if you want to effect multiple things.</p>
+<h3>
+  
+  
+  Critical
+</h3>
+
+<p>Only one resource may access at a time:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight c"><code><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#pragma omp parallel
+</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">omp_get_thread_num</span><span class="p">();</span>
+<span class="cp">#pragma omp critical
+</span>    <span class="n">sum</span> <span class="o">+=</span> <span class="n">id</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Atomic
+</h3>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>#pragma omp atomic
+
+#pragma omp atomic read|write|update|capture
+</code></pre>
+
+</div>
+
+
+
+<p>"If the low-level, high performance constructs for mutual exclusion exist on this hardware, use them. Otherwise act like this is a critical section."</p>
+
+<p>Is there any benefit to critical sections in this case? Perhaps critical sections allow for function calls, where atomic only refers to a scalar set operation? Yes - video just said this is just available for simple binary operations to update values. </p>
+
+<h3>
+  
+  
+  Barrier
+</h3>
+
+<p>Wait until all threads process to this point before moving on:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight c"><code><span class="cp">#pragma omp parallel
+</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">omp_get_thread_num</span><span class="p">();</span>
+<span class="cp">#pragma omp barrier
+</span>    <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Flush
+</h3>
+
+<p>Compilers are really good at optimizing where reads and writes occur. The order that you place operations in may not be the same order things happen if they are deemed to have equivalent results. This holds true for OpenMP. If you need to make reads and writes consistent, you need to use a Flush.</p>
+
+<p>Creates a synchronization point that says, "you are guaranteed to have a consistent view of memory with the flush set." The flush set is the list of variables inside parenthesis passed to the flush pragma. When you leave off the flush set, everything must be consistent.</p>
+
+<blockquote>
+<p>All reads and writes before the flush must resolve to memory before and reads or writes to memory after the flush set.</p>
+</blockquote>
+
+<p>Flushes with overlapping flush sets may not be reordered with respect to each other.</p>
+
+<p>For all intents and purposes, flush is equivalent to a fence in compiler terminology.</p>
+
+<p>Flushes are hard to get right, so OpenMP provides implicit flushes at:</p>
+
+<ul>
+<li>entering/exiting parallel regions</li>
+<li>implicit/explicit barriers</li>
+<li>entry/exit to critical sections</li>
+<li>set/unset of a lock</li>
+</ul>
+
+<p>Flush makes variables available to other threads. </p>
+
+<p>If you spin lock on a variable, you also need to put a flush in the body of the loop. That forces the compiler to read the value every time not from a cache.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight c"><code><span class="cp">#pragma omp flush
+</span>
+<span class="cp">#pragma omp flush(variableOne, variableTwo)
+</span></code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Master
+</h3>
+
+<p><code>#pragma omp master</code> schedules the next block on the main thread. For most use cases of master, you usually want a barrier on the next statement.</p>
+
+<h2>
+  
+  
+  Work sharing
+</h2>
+
+<p>Note: there is an implicit barrier at the end of any work sharing construct. <code>nowait</code> skips the barrier. There's no way to turn off the barrier at the end of a parallel region.</p>
+
+<p>Constructs</p>
+
+<ul>
+<li>Loop
+
+<ul>
+<li>
+<code>#pragma omp for</code> </li>
+<li>
+<code>#pragma omp for schedule</code>
+
+<ul>
+<li>tells compiler how to split up loops between threads</li>
+<li>
+<code>... schedule(static, optional chunk size)</code>: figure out how to break these loops into blocks at compile time </li>
+<li>
+<code>... schedule(dynamic, optional chunk size)</code>: create a task queue and pull from it until there's no more work. This is better when you have radically different work from one thread to the next. If you leave off chunk size, it will do one at a time.</li>
+<li>
+<code>... schedule(guided, optional chunk size)</code>: start with a large chunk size and get smaller as you go along. This was popular after a paper said this was optimal, but these days we know that the other two are usually better.</li>
+<li>
+<code>... schedule(runtime)</code>: take the schedule and chunk size from the OMP_SCHEDULE environment variable or runtime library. This is useful when you aren't sure what schedule you want to use, so you compile the program once and try a bunch of them out. <code>omp_set_schedule()</code> is how you set the schedule.</li>
+<li>
+<code>... schedule(auto)</code>: a new schedule which leaves the decision up to the compiler. How is this different from leaving off the schedule parameter? I'm guessing leaving it off means that you accept a default vs do compiler magic.</li>
+</ul>
+
+
+</li>
+</ul>
+</li>
+<li>Reduction
+
+<ul>
+<li>
+<code>#pragma omp parallel reduction (operator: variables)</code> | <code>#pragma omp parallel for reduction(operator: variables)</code>
+</li>
+<li>common task: Find the compute intensive loops, make it so that you can run them independently, insert omp for</li>
+<li>"Loop carry dependencies" Are variables which are dependent on the loops</li>
+<li>accumulating across a data structure is called a reduction.</li>
+<li>when we use the reduction operator, omp creates a local copy of the list of variables and initializes them to the identity of the operator (+=0, *=1)</li>
+<li>when the parallelizations are done, reduction construct combines everything into a single variable for you. Then combines that with the global copy to give you a final answer.</li>
+<li>One interesting thing is that you can do reductions over binary operations like &amp;. Question, does that short circuit?</li>
+</ul>
+
+
+</li>
+<li>Section/Sections
+
+<ul>
+<li>schedule different portions of a sequence on different threads</li>
+<li>
+<code>sections</code> for the outer block, <code>section</code> for each inner statement</li>
+</ul>
+
+
+</li>
+<li>Single
+
+<ul>
+<li>"only the first three to hit this will execute it."</li>
+<li>note that there's still an implicit barrier because this is a work sharing construct.</li>
+<li><code>... omp single</code></li>
+</ul>
+
+
+</li>
+<li>Task
+
+<ul>
+<li>Consists of data environment, code to execute, "Internal Control Variables" or ICV.
+
+<ul>
+<li>In OpenMP there are certain features of the environment that constructs control (like number of threads). These are ICVs.</li>
+</ul>
+
+
+</li>
+<li>
+<code>#pragma omp task</code> , <code>#pragma omp taskwait</code>
+</li>
+<li>It looks like taskwait is what creates the implicit barrier in this case. The current thread will keep executing after it has spawned a task with the task construct.</li>
+<li>when you use recursion, look at whether you need to set anything as shared, firstprivate etc. It's so common in tasks that we default private to firstprivate.</li>
+</ul>
+</li>
+<li>Lock
+
+<ul>
+<li>
+<code>omp_init_lock()</code> , <code>omp_set_lock()</code> for acquire, <code>omp_unset_lock()</code> for release. <code>omp_destroy_lock()</code> to release the lock's memory. <code>omp_test_lock()</code> to find out if the lock is available, but not wait for it to be available.</li>
+<li>Useful when you have lots of bins where you have a low chance of trying to update two things at the same time.</li>
+</ul>
+
+
 </li>
 </ul>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import React from 'react'
+<h2>
+  
+  
+  Runtime Library Routines
+</h2>
 
-const App = () =&gt; {
-  return (
-    &lt;div&gt;
-      &lt;h1&gt; Tailwind Setup &lt;/h1&gt;
-      &lt;p&gt;Styling jsx elements&lt;/p&gt;
-    &lt;/div&gt;
-  )
-}
+<ul>
+<li>
+<code>omp_get_num_threads()</code> get the current number of threads omp works with.
 
-export default App
-</code></pre>
-
-</div>
+<ul>
+<li>outside a parallel region, this returns 1.</li>
+</ul>
 
 
+</li>
+<li>
+<code>omp_set_num_threads()</code> set the current number of threads omp works with.</li>
+<li>
+<code>omp_get_thread_num()</code> get the current thread id.</li>
+<li>
+<code>omp_get_max_threads()</code> get the max number of threads we could use for this system.</li>
+<li>
+<code>omp_in_parallel()</code> is this running in parallel?</li>
+<li>
+<code>omp_set_dynamic()</code>  set dynamic mode (whether omp gets smart about how many threads you get for a given parallel region)</li>
+<li>
+<code>omp_get_dynamic()</code> is this running in dynamic mode?</li>
+<li>
 
-<p>To give the h1 text a yellow color, you go on to Tailwind Docs</p>
+<p><code>omp_num_procs()</code> how many processors are there on this system?</p>
 
-<p>Go to the tailwind docs, you will see a search bar on the left side bar on the docs page, search for text color, on the results, click on text color and then go through the lists of colors made available to you to choose, I will go with <code>text-red-600</code>.</p>
+<h2>
+  
+  
+  Environment Variables
+</h2>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DPP1K1KW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mb8qyppz87dyejwsffwp.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DPP1K1KW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mb8qyppz87dyejwsffwp.png" alt="Red color tailwind css" width="800" height="395"></a></p>
 
-<p>Copy the class name and apply it to the h1 element<br>
+</li>
+<li><p><code>OMP_NUM_THREADS</code> the number of threads we request, given this is an integer literal. In a production system, we almost always want to do this rather than have the code be responsible.</p></li>
+<li><p><code>OMP_STACKSIZE</code> ask for extra stack size in cases where you allocate large variables to the stack. This prevents stack overflow.</p></li>
+<li><p><code>OMP_WAIT_POLICY ACTIVE | PASSIVE</code> if ACTIVE, spin the thread until you get the lock (spin lock). If PASSIVE, suspend the thread until there's available resources. Waking suspended threads costs a lot, so use PASSIVE when you expect to have long wait times and don't want the thread eating resources.</p></li>
+<li>
+
+<p><code>OMP_PROC_BIND TRUE | FALSE</code> if enabled, once you bind a thread to a processor, leave it there. This helps as no processor actually has uniform memory access, so we can optimize for the regions of memory closer to the processor. The disadvantage is that if something else eats up that processor (antivirus scan for example), you don't remap onto a processor which is available.</p>
+
+<h2>
+  
+  
+  Data Environment
+</h2>
+
+
+</li>
+</ul>
+
+<p>Heap is shared, stack is local to a thread.</p>
+
+<p>Variables can be shared, private, or firstprivate/lastprivate. First and last means "the xth time you set this, it will remain that."</p>
+
+<p><code>... for private(tmp)</code> is an example of a declaration.</p>
+
+<ul>
+<li><code>firstprivate(variable)</code></li>
+<li><code>lastprivate(variable)</code></li>
+</ul>
+
+<p>You can declare something as both first and last private. I have questions about what that would do.</p>
+
+<h3>
+  
+  
+  Thread private
+</h3>
+
+<p>What if we want a global variable that's private to each thread?<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;h1 className="text-red-600"&gt;Tailwind Setup&lt;/h1&gt;
-</code></pre>
-
-</div>
-
-
-
-<p>To make the paragraph underlined, search for underline on the docs,</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gFgBEmm9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xzaea6ynm3ampchbxro7.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gFgBEmm9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xzaea6ynm3ampchbxro7.png" alt="Underline Tailwind css property" width="800" height="282"></a></p>
-
-<p>Apply it to the paragraph element:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;p className='underline'&gt;Styling jsx elements&lt;/p&gt;
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Note:</strong> Elements should be styled according to the design requirements of your project.</p>
-
-<p>You now have a powerful combination of React's component-based architecture and Tailwind CSS's utility-first approach at your disposal. This combination allows you to create visually appealing and responsive web applications with speed and efficiency.</p>
-
-<p>Happy coding!!!</p>
-
- </details> 
- <hr /> 
-
- #### - [Código Limpo - Capítulo 4](https://dev.to/loremimpsu/codigo-limpo-capitulo-4-24ne) 
- <details><summary>Article</summary> <blockquote>
-<p>O Júlio na gaita<br>
-e a bicharada no vocal:<br>
-fazendo rock rural<br>
-Cocórico...</p>
-</blockquote>
-
-<p>Como o comentário do início deste texto introduz, um comentário pode ser bobo, incrível, engraçado, ou descartável. Depende muito de onde ele vem, de como ele é feito, do tema que ele abrange e se ele está dentro de um código. Para o nosso quarto capítulo do Código limpo do Robert C. Martin (A.K.A Tio Beto) vamos tratar do elemento computacional mais importante de toda a história. Os comentários. </p>
-
-<p>No primeiro parágrafo do capítulo do livro o tio manda a letra: Comentários são fracassos. Tá, mas assim? de graça? sim. Na verdade há mais de uma justificativa para essa opinião. Se você precisa de um comentário para o seu código é porque você tem que explicar algo que seu código não deixa claro, ou que você fez de uma maneira tão tosca que é necessária uma legenda explicando aquela obra de arte ao qual chamamos de gambiarra. Não é um pecado fazer uma gambiarra, mas o mesmo tempo que você leva explicando em um comentário o que aquela massa grotesca de código faz pode ser utilizado para refinar o código e deixá-lo entendível. </p>
-
-<p>Além dessa justificativa, de que o comentário de um código cagado é cagado, o tio Beto nos dá mais algumas dicas de como o comentário pode mais atrapalhar do que ajudar. </p>
-
-<p>O primeiro é o famoso caso do comentário redundante. Se você leu o <a href="https://dev.to/loremimpsu/codigo-limpo-capitulo-2-39lc">Capitulo 2 do código limpo</a> você aprendeu que dar nomes para as coisas te resolve 90% dos problemas no mundo de TI (tô exagerando, só resolvem 89% por aí) um comentário pode se tornar redundante se o seu atributo tem o nome coerente.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight dart"><code><span class="c1">///Esta funcao imprime a lista&lt;people&gt; de &lt;Person&gt; que recebe</span>
-<span class="c1">/// por parametro</span>
-<span class="kt">void</span> <span class="nf">printListOfNames</span><span class="p">(</span><span class="kt">List</span><span class="p">&lt;</span><span class="n">Person</span><span class="p">&gt;</span> <span class="n">people</span><span class="p">){</span>
-
-   <span class="c1">//percorre a lista &lt;people&gt; </span>
-   <span class="k">for</span><span class="p">(</span><span class="n">Person</span> <span class="n">person</span> <span class="k">in</span> <span class="n">people</span><span class="p">){</span>
-   <span class="c1">//imprime &lt;name&gt;</span>
-      <span class="n">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="na">name</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Agora vamos remover os comentários.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight dart"><code><span class="kt">void</span> <span class="nf">printListOfNames</span><span class="p">(</span><span class="kt">List</span><span class="p">&lt;</span><span class="n">Person</span><span class="p">&gt;</span> <span class="n">people</span><span class="p">){</span>
-   <span class="k">for</span><span class="p">(</span><span class="n">Person</span> <span class="n">person</span> <span class="k">in</span> <span class="n">people</span><span class="p">){</span>
-      <span class="n">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="na">name</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Não houve mudança alguma no código, o que acontece praticamente é o desenvolvedor poupar tempo com esse tipo de comentário redundante nas suas funções. <br>
-O que pode ocorrer também é este código se transformar, vejamos, ao invés de somente imprimir o nome de pessoas, ele somar o sobrenome da pessoa ao seu primeiro nome.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight dart"><code><span class="c1">///Esta funcao imprime a lista&lt;people&gt; de &lt;Person&gt; que recebe </span>
-<span class="c1">/// por parametro</span>
-<span class="kt">void</span> <span class="nf">addLastNamesAtPeople</span><span class="p">(</span><span class="kt">List</span><span class="p">&lt;</span><span class="n">Person</span><span class="p">&gt;</span> <span class="n">people</span><span class="p">){</span>
-   <span class="c1">//percorre a lista &lt;people&gt; </span>
-   <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">people</span><span class="o">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-   <span class="c1">//imprime &lt;name&gt;</span>
-     <span class="kd">final</span> <span class="n">auxPerson</span> <span class="o">=</span> <span class="n">people</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-     <span class="kd">final</span> <span class="n">newPerson</span> <span class="o">=</span> <span class="n">getPersonWithLastName</span><span class="p">(</span><span class="n">auxPerson</span><span class="p">);</span>
-     <span class="n">people</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">newPerson</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Person</span> <span class="nf">getPersonWithLastName</span><span class="p">(...)</span>
-<span class="c1">// to com preguiça, me dá um desconto, imagine essa função aí</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Repare que os comentários continuaram, mas o código mudou, mas programador é um bicho preguiçoso e o botão de delete é um dos botões mais afastados no teclado. Lembrem-se sempre dessa informação quando pensarem em inserir algo. É mais fácil não inserir do que volta a apagar.</p>
-
-<p>O comentário de alerta também deve ser evitado. Ele só existe por que algo de muito errado não está certo, vamos ver um exemplo.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight dart"><code><span class="n">Future</span><span class="p">&lt;</span><span class="kt">void</span><span class="p">&gt;</span> <span class="n">login</span><span class="p">({</span><span class="kd">required</span> <span class="n">username</span><span class="p">,</span> <span class="kd">required</span> <span class="n">password</span><span class="p">}){</span>
-    <span class="k">try</span><span class="p">{</span>
-      <span class="k">await</span> <span class="n">repo</span><span class="o">.</span><span class="na">login</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">);</span>
-    <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">error</span><span class="p">){</span>
-    <span class="c1">//erro ao fazer o login</span>
+<pre class="highlight c"><code><span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#pragma omp threadprivate(counter)
+</span>
+<span class="kt">void</span> <span class="nf">incrementCounter</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="cp">#pragma omp parallel for copyin(counter)
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="n">_000</span><span class="p">,</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -1043,19 +719,494 @@ O que pode ocorrer também é este código se transformar, vejamos, ao invés de
 
 
 
-<p>Deu merda, mas e ai? o que você vai fazer com isso? Esse tipo de alerta sempre vem com um problema inerente, mas isso é história de outro papo nosso. </p>
+<p>This isn't a real use case btw, I just wanted an example. For this, we should be using atomic.</p>
 
-<p>Outro tipo de erro bastante comum nos comentário é o famoso comentário de 50 linhas. Gente? vocês tão lendo esse resumo sem ter lido o livro, quem vai ler um comentário que tem mais linhas do que a função ou o arquivo? programador sofre para ler a task, imagina ler um arquivo? </p>
+<h2>
+  
+  
+  Debugging
+</h2>
 
-<p>Não utilizem comentários como ferramentas de desenvolvimento a longo prazo. Se você precisa comentar um código, caso ele já esteja presente no repositório, a ferramenta de versionamento serve para isso. O Github, GitLab, BitBucket ou qualquer ferramenta que você utiliza para versionar tem um controle de commit que te permite ver a versão anterior daquele arquivo, se você vir a precisar, é só retornar a uma versão anterior ou utilizar uma ferramenta do tempo dos astecas o CTRL + C CTRL + V.</p>
+<p>You need to use a parallel debugger. Visual Studio has one.</p>
 
-<p>O TODO existe para uma marcação temporária, não para ficar fixo no código para a geração de desenvolvedores novatos encontrar e pensar no que aquele TODO vazio significa. Se há uma necessidade de desenvolvimento que não está no escopo da tarefa, adicione ao board, converse com o seu P.O e escreva como backlog técnico. Código não é lugar de lembrete do que se deve fazer.</p>
+<p>Default <code>none</code> for your data environment can help you debug, because it forces you to declare the type of everything. </p>
 
-<p>Esse capítulo fecha a lista de capítulos que eu acredito ser essenciais para pessoas desenvolvedoras. Claro que até agora tivemos nossos altos e baixos com o nosso querido tio Beto. Como eu já frisei várias vezes, o que o homem diz não está gravado na pedra, ele não é uma figura messiânica, é só um cara que tem uma certa relevância no mercado e muita experiência. O que nada quer dizer sobre a qualidade do que ele prega ser bom ou não. </p>
+<p>Remember, the compiler skips pragmas it doesn't recognize are skipped.</p>
 
-<p>Sobre o projeto. Esse é o último capítulo que irei disponibilizar como resumo integral de um tema só. Irei fazer mais dois textos com as duas ultimas partes, mas como é mais avançado, não irei me aprofundar tanto (talvez eu não tenha a capacidade técnica de me aprofundar em alguns tópicos, como concorrência por exemplo). </p>
+<h2>
+  
+  
+  Memory Model of OpenMP
+</h2>
 
-<p>Se puder, me deixa um comentário, uma opinião, um coraçãozinho no post. Compartilha com o coleguinha que deixa seu código todo cagado com quem n quer nada se pah... </p>
+<p>There is shared memory and each thread gets a cache. How do you guarantee whether you're getting the most up to date value?</p>
+
+<p>The order you put loads and stores may be quite different than what gets executed.</p>
+
+<p>The memory model gives you precise controls over reads (r), writes (w), and synchronization (s) operations.</p>
+
+<p>Sequential consistency is when r's, w's, s's are in the order you put them in. All threads will see them in this order, and execute as such. This creates a lot of constraints on optimizations.</p>
+
+<p>Relaxed consistency means that you can move, as long as you don't change the output. For instance, you can't change ordering around synchronization operations. You as the programmer have to use these synchronization operations to order what needs to be consistent.</p>
+
+<p>For more on this, see the Flush construct above.</p>
+
+<h2>
+  
+  
+  Other Resources
+</h2>
+
+<ul>
+<li><a href="https://youtu.be/4Hlc2KoRcFI?si=I9GJ-giVbfZLvJxq">Practical Approach to OpenMP for NVIDIA GPUs by Guray Ozen</a></li>
+<li>Good quote from this course: "Computing is free, all you do is pay for data movement and the computing costs you nothing."</li>
+<li>The recapitulation video in this series focussed on the design patterns from the course. It was really good: <a href="https://youtu.be/sNmGXNBzofM?si=qzR1cNPh1C02qLM1">https://youtu.be/sNmGXNBzofM?si=qzR1cNPh1C02qLM1</a>
+</li>
+</ul>
+
+ </details> 
+ <hr /> 
+
+ #### - [Enhancing Redwood: A Guide to Implementing Zod for Data Validation and Schema Sharing Between the API and Web Layers](https://dev.to/growms/enhancing-redwood-a-guide-to-implementing-zod-for-data-validation-and-schema-sharing-between-the-api-and-web-layers-4do0) 
+ <details><summary>Article</summary> <p>First things first: This walkthrough has been conducted on macOS. It uses symlinks, so I can't provide information about the setup on Windows.</p>
+
+<h2>
+  
+  
+  The Story
+</h2>
+
+<p>I'm currently experimenting with the fantastic <a href="https://redwoodjs.com/">Redwood</a> framework. However, while going through the excellent <a href="https://redwoodjs.com/docs/tutorial/foreword">tutorial</a>, I didn't find any guidance on using data validation libraries like <a href="https://github.com/jquense/yup/tree/pre-v1">Yup</a>, <a href="https://zod.dev/">Zod</a>, <a href="https://vestjs.dev/">Vest</a>, etc. So, I had to do some investigation and came up with a solution. This article describes the implementation of validation with Zod in a fresh Redwood app. You can find the sources at this <a href="https://github.com/growms/redwood-zod">github repository</a>.</p>
+
+<p><strong>Note</strong>: I'm not a React, Yarn or even WebPack expert. I used to be an Angular developer, and I work with <a href="https://nx.dev/">Nx</a> for workspace management.</p>
+
+<h2>
+  
+  
+  Setup
+</h2>
+
+<p>Let's begin with a brand new Redwood app:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Create the app</span>
+yarn create redwood-app my-redwood-zod
+<span class="nb">cd </span>my-redwood-zod
+<span class="c"># Migrate the default schema "UserExample"</span>
+yarn rw prisma migrate dev
+<span class="c"># Generate the CRUD for "UserExample"</span>
+yarn rw g scaffold UserExample
+<span class="c"># Launch the development server</span>
+yarn redwood dev
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Sharing Code
+</h2>
+
+<p>Start by creating the basic structure and sharing a variable called "userExampleSchema," which contains a string (although its content may change in the near future):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Create the folder to be shared</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> ./api/src/lib/common
+<span class="c"># Create a zod.ts file with a basic variable</span>
+<span class="nb">echo</span> <span class="s2">"export const userExampleSchema: string = </span><span class="se">\"</span><span class="s2">I'm a shared value written in TypeScript!</span><span class="se">\"</span><span class="s2">"</span> <span class="o">&gt;</span> ./api/src/lib/common/zod.ts
+<span class="c"># Add the symlink to be able to use the common libs on the "web" side</span>
+<span class="nb">ln</span> <span class="nt">-s</span> ../../../api/src/lib/common ./web/src/lib/common
+</code></pre>
+
+</div>
+
+
+
+<p>Why symlink ? I have experimented with babel.config.js, tsconfig, webpack.config.js and just could make it work properly, there was always drawbacks deploying or testing whatsoever. Once again i'm not a pro with yarn and webpack so if you have a better way feel free to share in comment !</p>
+
+<p>We should ignore the symlink in <code>.gitignore</code> to avoid any code duplication:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// .gitignore</span>
+<span class="p">...</span>
+<span class="nx">web</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">common</span>
+</code></pre>
+
+</div>
+
+
+
+<p>That's it! Now let's see if it works. Edit <code>UserExampleForm.tsx</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// web/src/components/UserExample/UserExampleForm/UserExampleForm.tsx</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">userExampleSchema</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">src/lib/common/zod</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">UserExampleForm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">UserExampleFormProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">rw-form-wrapper</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Shared</span> <span class="na">Variable</span><span class="p">:</span> <span class="p">{</span><span class="nx">userExampleSchema</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="p">...</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">UserExampleForm</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Check at <a href="http://localhost:8910/user-examples/new">http://localhost:8910/user-examples/new</a>!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rv7HTTu5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vb17ylo2nrycsp2jvqnl.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rv7HTTu5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vb17ylo2nrycsp2jvqnl.png" alt="Image description" width="800" height="188"></a></p>
+
+<p>One side done ! what about the server ? let’s edit <code>api/src/ervices/userExamples.ts</code> :<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">userExampleSchema</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">src/lib/common/zod</span><span class="dl">'</span>
+<span class="p">...</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">userExamples</span><span class="p">:</span> <span class="nx">QueryResolvers</span><span class="p">[</span><span class="dl">'</span><span class="s1">userExamples</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">aSharedVar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">userExampleSchema</span><span class="p">)</span> <span class="c1">// +</span>
+  <span class="k">return</span> <span class="nx">db</span><span class="p">.</span><span class="nx">userExample</span><span class="p">.</span><span class="nx">findMany</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then go at <a href="http://localhost:8910/user-examples">http://localhost:8910/user-examples</a> and look at logs you should see our string ! :</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p9zk5OLj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6y57a73y0h5xxgxx69yr.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p9zk5OLj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6y57a73y0h5xxgxx69yr.png" alt="Image description" width="800" height="104"></a></p>
+
+<p>It seems to work ! but as we are “clean coders” we need to check that test is working too so let’s make a small one. Add a <code>zod.test.ts</code> file in the <code>common</code> directory to test our variable :<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">userExampleSchema</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./zod</span><span class="dl">'</span>
+
+<span class="nx">describe</span><span class="p">.</span><span class="nx">only</span><span class="p">(</span><span class="dl">'</span><span class="s1">zod</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">has userExampleSchema const</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">userExampleSchema</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeUndefined</span><span class="p">()</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You can run test on Redwoodwith the command  <code>yarn rw test</code> then type <code>t</code> and <code>zod</code></p>
+
+<p>Sharing is done, let’s adding Zod validation.</p>
+
+<h2>
+  
+  
+  Zod validation
+</h2>
+
+<h3>
+  
+  
+  Server Side
+</h3>
+
+<p>Now let's work on the server side. First, install <code>zod</code> in the <code>api</code> workspace:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd </span>api <span class="o">&amp;&amp;</span> yarn add zod <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ..
+</code></pre>
+
+</div>
+
+
+
+<p>Remove the reference to <code>userExampleSchema</code> in <code>UserExampleForm.tsx</code> to avoid unnecessary errors. Replace the old string with an actual Zod schema to validate our email and name:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// api/src/lib/common/zod.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">z</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">zod</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">userExampleSchema</span> <span class="o">=</span> <span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="kr">string</span><span class="p">().</span><span class="nx">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Email is required</span><span class="dl">'</span> <span class="p">}).</span><span class="nx">email</span><span class="p">({</span>
+    <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Must be a valid email</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">}),</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="kr">string</span><span class="p">(),</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To validate the data in a "Redwood way," we need to return a <code>RedwoodError</code>. If we want to have a nice field mapping, it should comply with the <a href="https://github.com/redwoodjs/redwood/blob/main/packages/api/src/validations/errors.ts#L6">ServiceValidationError</a>. Let's add our custom error and a <code>validateWithZod()</code> utility to use it in our services:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// api/src/lib/zodValidation.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ZodError</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">zod</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RedwoodError</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@redwoodjs/api</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">ZodValidationError</span> <span class="kd">extends</span> <span class="nx">RedwoodError</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">error</span><span class="p">:</span> <span class="nx">ZodError</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">issues</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">error</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Validation failed</span><span class="dl">'</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">messages</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="kd">const</span> <span class="nx">extensions</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">code</span><span class="p">:</span> <span class="dl">'</span><span class="s1">BAD_USER_INPUT</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">properties</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">messages</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+
+    <span class="c1">// Process each error and add it to messages object</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">{</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">path</span> <span class="p">}</span> <span class="k">of</span> <span class="nx">issues</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">path</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">pathItem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">messages</span><span class="p">[</span><span class="nx">pathItem</span><span class="p">]</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">pathItem</span><span class="p">]</span> <span class="o">||</span> <span class="p">[];</span>
+        <span class="nx">messages</span><span class="p">[</span><span class="nx">pathItem</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">super</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">,</span> <span class="nx">extensions</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">ZodValidationError</span><span class="dl">'</span><span class="p">;</span>
+
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">ZodValidationError</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">validateWithZod</span> <span class="o">=</span> <span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="nx">schema</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">safeParse</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">result</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">ZodValidationError</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>All the hard work is done. Enjoy:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// api/src/services/userExamples.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">userExampleSchema</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">src/lib/common/zod</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">validateWithZod</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">src/lib
+
+/zodValidation</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">createUserExample</span><span class="p">:</span> <span class="nx">MutationResolvers</span><span class="p">[</span><span class="dl">'</span><span class="s1">createUserExample</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="p">({</span>
+  <span class="nx">input</span><span class="p">,</span>
+<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">validateWithZod</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="nx">userExampleSchema</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">db</span><span class="p">.</span><span class="nx">userExample</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="na">data</span><span class="p">:</span> <span class="nx">input</span><span class="p">,</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Yep, it's just one method call!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---3dPid9t--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ygtbz7iykb3cfupdwg0z.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---3dPid9t--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ygtbz7iykb3cfupdwg0z.png" alt="Image description" width="800" height="557"></a></p>
+
+<p><strong>Note</strong>: Don't forget to update the related tests in <code>userExamples.test.ts</code> to ensure they pass.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// api/src/services/userExamples.test.ts</span>
+<span class="p">...</span>
+<span class="nx">scenario</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">creates a userExample with valid email and non-empty name</span><span class="dl">'</span><span class="p">,</span>
+    <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// Test that email must be valid</span>
+      <span class="k">await</span> <span class="nx">expect</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="nx">createUserExample</span><span class="p">({</span>
+          <span class="na">input</span><span class="p">:</span> <span class="p">{</span> <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">String1484848</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span> <span class="p">},</span>
+        <span class="p">});</span>
+      <span class="p">}).</span><span class="nx">rejects</span><span class="p">.</span><span class="nx">toThrow</span><span class="p">(</span><span class="nx">ZodValidationError</span><span class="p">);</span>
+
+      <span class="c1">// Test that email must not be empty</span>
+      <span class="k">await</span> <span class="nx">expect</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="nx">createUserExample</span><span class="p">({</span>
+          <span class="na">input</span><span class="p">:</span> <span class="p">{</span> <span class="na">email</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span> <span class="p">},</span>
+        <span class="p">});</span>
+      <span class="p">}).</span><span class="nx">rejects</span><span class="p">.</span><span class="nx">toThrow</span><span class="p">(</span><span class="nx">ZodValidationError</span><span class="p">);</span>
+
+      <span class="c1">// Test that name must not be empty</span>
+      <span class="k">await</span> <span class="nx">expect</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="nx">createUserExample</span><span class="p">({</span>
+          <span class="na">input</span><span class="p">:</span> <span class="p">{</span> <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">johndoe@example.com</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">''</span> <span class="p">},</span>
+        <span class="p">});</span>
+      <span class="p">}).</span><span class="nx">rejects</span><span class="p">.</span><span class="nx">toThrow</span><span class="p">(</span><span class="nx">ZodValidationError</span><span class="p">);</span>
+
+      <span class="c1">// Test with valid email and non-empty name</span>
+      <span class="kd">const</span> <span class="nx">validResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">createUserExample</span><span class="p">({</span>
+        <span class="na">input</span><span class="p">:</span> <span class="p">{</span> <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">johndoe@example.com</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="p">});</span>
+
+      <span class="c1">// Assert that the result has the expected email and name</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">validResult</span><span class="p">.</span><span class="nx">email</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">johndoe@example.com</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">validResult</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+<span class="p">...</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Great! Our server is now robust. But we also need to take care of our users with l33t front-end validation.</p>
+
+<h3>
+  
+  
+  Client Side
+</h3>
+
+<p>To begin, we need to install dependencies in the <code>web</code> workspace:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd </span>web <span class="o">&amp;&amp;</span> yarn add zod @hookform/resolvers <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ..
+</code></pre>
+
+</div>
+
+
+
+<p>Now we want to use Zod in the generated <code>UserExampleForm</code>.</p>
+
+<p><strong>Note</strong>: Oh no! Redwood validation is so easy why should i change it !? Don't panic! Redwood validation is built on <a href="https://www.react-hook-form.com/">React Hook Form</a>, and we just installed a Zod resolver for it.</p>
+
+<p>Adding Zod validation<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// UserExampleForm.tsx</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">zodResolver</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@hookform/resolvers/zod</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nx">useForm</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@redwoodjs/forms</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">UserExampleForm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">UserExampleFormProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">formMethods</span> <span class="o">=</span> <span class="nx">useForm</span><span class="o">&lt;</span><span class="nx">FormUserExample</span><span class="o">&gt;</span><span class="p">({</span>
+    <span class="na">resolver</span><span class="p">:</span> <span class="nx">zodResolver</span><span class="p">(</span><span class="nx">userExampleSchema</span><span class="p">),</span>
+  <span class="p">});</span>
+
+  <span class="p">...</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">rw-form-wrapper</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Form</span><span class="o">&lt;</span><span class="nx">FormUserExample</span><span class="o">&gt;</span>
+        <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">onSubmit</span><span class="p">}</span>
+        <span class="nx">error</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span>
+        <span class="nx">formMethods</span><span class="o">=</span><span class="p">{</span><span class="nx">formMethods</span><span class="p">}</span>
+      <span class="o">&gt;</span>
+        <span class="p">...</span>
+      <span class="o">&lt;</span><span class="sr">/Form</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">UserExampleForm</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You should recognize the <code>useForm()</code> method if you've gone through the tutorial. It's used to reset the Article Form. The Zod resolver is a small addition to it, and that's all the hard work to make it work.</p>
+
+<p>If you test the form, it should send the same errors but from the client !<br>
+But wait how i can be sure it’s not the server which throws the error ? <br>
+Well you can comment the line of <code>validateWithZod</code> in the service if you dare ! But you could also just check network in chrome dev tools or the server's logs  ;)</p>
+
+<p><strong>ET VOILA</strong> <br>
+Now you have a Zod setup for both the client and server! </p>
+
+<p>Hope you learned something ! cheers</p>
+
+<p><em>NB</em>: if you want to deploy this app you will have to copy the common dir in the "web" folder <em>before</em> the build !</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Mastering useEffect: Rules, Best Practices, and Pitfalls](https://dev.to/cybermaxi7/mastering-useeffect-rules-best-practices-and-pitfalls-353e) 
+ <details><summary>Article</summary> <p>In the world of React, the <code>useEffect</code> hook is a powerful tool for handling side effects and managing component lifecycle. However, wielding this power comes with great responsibility. In this comprehensive guide, we'll delve into the rules, best practices, and common pitfalls when working with <code>useEffect</code>.</p>
+
+<p><strong>Dependency Array Rules</strong></p>
+
+<ol>
+<li><p><strong>Inclusive Dependencies:</strong> The dependency array is your compass. Every state variable, prop, or context used inside the effect must find its place in this array. It ensures that your effect runs whenever any of these values change.</p></li>
+<li><p><strong>Reactivity Matters:</strong> Reactive values are the lifeblood of <code>useEffect</code>. Any function or variable that references another reactive value should be included. Don't forget, everything related to state, props, or context is a reactive value.</p></li>
+<li><p><strong>Dependency Is Not Optional:</strong> Dependencies choose themselves. Avoid ignoring the dependency ESLint rule; it helps you avoid unexpected behavior and bugs.</p></li>
+<li><p><strong>No Objects or Arrays:</strong> Objects and arrays should stay out of the dependency array. They're recreated on every render, and React considers a new object as different from the old one. (<code>{} !== {}</code>)</p></li>
+</ol>
+
+<p><strong>Removing Unnecessary Dependencies</strong></p>
+
+<ol>
+<li>
+<p><strong>Function Dependencies:</strong> When it comes to functions, there are options:</p>
+
+<ul>
+<li>Move the function into the <code>useEffect</code> if it's used exclusively there.</li>
+<li>If the function is reused elsewhere, consider memoizing it using <code>useCallback()</code>.</li>
+<li>If the function doesn't reference any reactive value, move it outside the effect for optimal performance.</li>
+</ul>
+</li>
+<li><p><strong>Object Dependencies:</strong> Instead of including the entire object, focus on the specific property you need, especially if it's a primitive value. If that doesn't work, consider memoization techniques.</p></li>
+</ol>
+
+<p><strong>Other Strategies</strong></p>
+
+<ol>
+<li><p><strong>Multiple Dependencies:</strong> When dealing with numerous reactive values, consider using <code>useReducer</code> to simplify your logic.</p></li>
+<li><p><strong>Stable Dependencies:</strong> No need to include <code>setState</code> (from <code>useState</code>) or <code>dispatch</code> (from <code>useReducer</code>) in the dependencies. React ensures their stability across renders.</p></li>
+</ol>
+
+<p><strong>When Not to Use useEffect</strong></p>
+
+<ol>
+<li>
+<strong>Last Resort:</strong> <code>useEffect</code> should be a last resort when no other solution makes sense. Consider alternatives first.</li>
+</ol>
+
+<p><strong>Cases of Overuse</strong></p>
+
+<ol>
+<li><p><strong>Event Handling:</strong> Instead of using <code>useEffect</code> for responding to an event, create an event function. It keeps your code organized and readable.</p></li>
+<li><p><strong>Data Fetching:</strong> While fetching data when a component mounts might work in small apps, for real-world applications, consider using a library like <code>react-query</code> for better data management.</p></li>
+<li><p><strong>Synchronizing State Changes:</strong> Avoid using <code>useEffect</code> for synchronizing state changes with one another. Opt for derived state and event handlers for a cleaner and more maintainable codebase.</p></li>
+</ol>
+
+<p>In conclusion, mastering <code>useEffect</code> involves understanding its rules, leveraging best practices, and recognizing when it's not the right tool for the job. By following these guidelines, you'll harness the true potential of <code>useEffect</code> in your React applications.</p>
 
  </details> 
  <hr /> 
