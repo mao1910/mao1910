@@ -117,239 +117,11 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Handling state between multiple processes with elixir](https://dev.to/cherryramatis/handling-state-between-multiple-instances-with-elixir-4jm1) 
- <details><summary>Article</summary> <p>Elixir works <strong>really</strong> well for concurrent code because of it's functional nature and ability to run in multiple processes, but how we handle state when our code is running all over the place? Well, there is some techniques and in this article we'll learn more about it together shall we?</p>
-
-<h2>
-  
-  
-  Table of contents
-</h2>
-
-<ul>
-<li>What is a process? How to use it with send and receive</li>
-<li>Incrementing our experience with tasks</li>
-<li>Designing state with the agent wrapper</li>
-<li>Conclusion</li>
-</ul>
-
-<h2>
-  
-  
-  What is a process? How to use it with send and receive
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--mogwGzfN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/cherryramatisdev/public_zet/assets/86631177/725725cb-003e-4659-943a-c7978e74281c" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--mogwGzfN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/cherryramatisdev/public_zet/assets/86631177/725725cb-003e-4659-943a-c7978e74281c" alt="image" width="496" height="364"></a></p>
-
-<p>Processes are the answer from Elixir to concurrent programming; they're basically a continuous-running node that can send and receive messages. In fact, every function in Elixir runs inside a process. Although this sounds really expensive, it's <strong>super</strong> lightweight compared to threads in other languages, which empowers us developers to build incredibly scalable software with hundreds of processes running at the same time. Another great advantage of using this specifically with the Elixir language is that this language is built on top of immutability and other functional programming concepts, so we can trust that these functions are running completely isolated and without changing or maintaining global state.</p>
-
-<p>The basic way of seeing a process in action is by using the <code>spawn</code> function, with that we can execute a function in a process and get the <em>pid</em> of it.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">spawn</span><span class="p">(</span><span class="k">fn</span> <span class="o">-&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"teste"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
-<span class="n">teste</span>
-<span class="c1">#PID&lt;0.111.0&gt;</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pid</span>
-<span class="c1">#PID&lt;0.111.0&gt;</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&gt;</span> <span class="no">Process</span><span class="o">.</span><span class="n">alive?</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
-<span class="no">false</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>As you can see from the return of <code>Process.alive?(pid)</code> this process is already dead once it runs correctly, but we can easily add a sleep function to check this mechanism:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">spawn</span><span class="p">(</span><span class="k">fn</span> <span class="o">-&gt;</span> <span class="ss">:timer</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"teste"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
-<span class="c1">#PID&lt;0.111.0&gt;</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="no">Process</span><span class="o">.</span><span class="n">alive?</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
-<span class="no">true</span>
-<span class="n">teste</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&gt;</span> <span class="no">Process</span><span class="o">.</span><span class="n">alive?</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
-<span class="no">false</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Since we're sleeping for 10 seconds, the process is alive until it runs out after the sleep function and dies. Cool right? It's important to know that <em>our main program did not hang</em>, it simply put the function in a process and forgot about it. This allows us to create really modular and performant code that runs on multiple nodes.</p>
-
-<p>Besides spawning functions in a process, we can transition information between processes using the functions <code>send</code> and the <code>receive</code> block, as shown below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">defmodule</span> <span class="no">Listener</span> <span class="k">do</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">def</span> <span class="n">call</span> <span class="k">do</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">receive</span> <span class="k">do</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">{</span><span class="ss">:hello</span><span class="p">,</span> <span class="n">msg</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Received: </span><span class="si">#{</span><span class="n">msg</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">end</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">end</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">end</span>
-<span class="p">{</span><span class="ss">:module</span><span class="p">,</span> <span class="no">Listener</span><span class="p">,</span>
- <span class="o">&lt;&lt;</span><span class="mi">70</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span>
-   <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span>
-   <span class="mi">110</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="o">...&gt;&gt;</span><span class="p">,</span> <span class="p">{</span><span class="ss">:call</span><span class="p">,</span> <span class="mi">0</span><span class="p">}}</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">spawn</span><span class="p">(</span><span class="o">&amp;</span><span class="no">Listener</span><span class="o">.</span><span class="n">call</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1">#PID&lt;0.115.0&gt;</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">send</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="p">{</span><span class="ss">:hello</span><span class="p">,</span> <span class="s2">"Hello World"</span><span class="p">})</span>
-<span class="ss">Received:</span> <span class="no">Hello</span> <span class="no">World</span>
-<span class="p">{</span><span class="ss">:hello</span><span class="p">,</span> <span class="s2">"Hello World"</span><span class="p">}</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Observe that we define a function that acts as a general listener using the <code>receive</code> block. This works as a switch case where we can pattern match and do a quick action, in this case, we're simply printing to <a href="https://dev.to/cherryramatis/linux-filters-how-to-streamline-text-like-a-boss-2dp4#what-is-stdin-and-stdout">STDOUT</a>. Once we spawn this listener, it's possible to use the returned <code>pid</code> to send information using the <code>send/2</code> function that expects a <code>PID</code> and a value as arguments.</p>
-
-<p>That way, it's possible to keep state in an immutable and separate environment such as elixir.</p>
-
-<h2>
-  
-  
-  Incrementing our experience with tasks
-</h2>
-
-<p>The Task module offers an abstraction on top of the <code>spawn</code> function while adding support for asynchronous behavior, i.e., creating a function in a separate process and observing its behavior with wait functions. As you delve into Elixir, you'll discover that the <code>Task</code> module allows you to start a new process that executes a function and returns a task structure. With this structure in hand, you can easily get the value from this function using the <code>Task.await(task)</code> clause, as shown below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">task</span> <span class="o">=</span> <span class="no">Task</span><span class="o">.</span><span class="n">async</span><span class="p">(</span><span class="k">fn</span> <span class="o">-&gt;</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span>   <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Task is running"</span><span class="p">)</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span>   <span class="mi">42</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">end</span><span class="p">)</span>
-<span class="no">Task</span> <span class="n">is</span> <span class="n">running</span>
-<span class="p">%</span><span class="no">Task</span><span class="p">{</span>
-  <span class="ss">mfa:</span> <span class="p">{</span><span class="ss">:erlang</span><span class="p">,</span> <span class="ss">:apply</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span>
-  <span class="ss">owner:</span> <span class="c1">#PID&lt;0.109.0&gt;,</span>
-  <span class="ss">pid:</span> <span class="c1">#PID&lt;0.110.0&gt;,</span>
-  <span class="ss">ref:</span> <span class="c1">#Reference&lt;0.0.13955.659691257.723058689.43945&gt;</span>
-<span class="p">}</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"a code"</span>
-<span class="n">a</span> <span class="n">code</span>
-<span class="ss">:ok</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">answer_to_everything</span> <span class="o">=</span> <span class="no">Task</span><span class="o">.</span><span class="n">await</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
-<span class="mi">42</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">answer_to_everything</span>
-<span class="mi">42</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>First we saw the <code>Task is running</code> message printed out, and then we got the task struct. Further, we could execute any code in between, and when we're ready, it's just a matter of using the <code>Task.await</code> function to retrieve the function return.</p>
-
-<p>The Task module also provides a common interface for the regular <code>spawn</code> function called <code>start</code>, we can even reuse the code shown at the beginning with the new module abstraction:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">defmodule</span> <span class="no">Listener</span> <span class="k">do</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">def</span> <span class="n">call</span> <span class="k">do</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">receive</span> <span class="k">do</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">{</span><span class="ss">:print</span><span class="p">,</span> <span class="n">msg</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Received message: </span><span class="si">#{</span><span class="n">msg</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">end</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">end</span>
-<span class="o">...</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">end</span>
-<span class="p">{</span><span class="ss">:module</span><span class="p">,</span> <span class="no">Listener</span><span class="p">,</span>
- <span class="o">&lt;&lt;</span><span class="mi">70</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">244</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span>
-   <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span>
-   <span class="mi">110</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="o">...&gt;&gt;</span><span class="p">,</span> <span class="p">{</span><span class="ss">:call</span><span class="p">,</span> <span class="mi">0</span><span class="p">}}</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">pid</span><span class="p">}</span> <span class="o">=</span> <span class="no">Task</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="o">&amp;</span><span class="no">Listener</span><span class="o">.</span><span class="n">call</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
-<span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="c1">#PID&lt;0.115.0&gt;}</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">send</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="p">{</span><span class="ss">:print</span><span class="p">,</span> <span class="s2">"Eat more fruits"</span><span class="p">})</span>
-<span class="no">Received</span> <span class="ss">message:</span> <span class="no">Eat</span> <span class="n">more</span> <span class="n">fruits</span>
-<span class="p">{</span><span class="ss">:print</span><span class="p">,</span> <span class="s2">"Eat more fruits"</span><span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>It's useful to use the <code>Task</code> module because we can get a higher level of abstraction. You must have noticed that the interface for <code>Task.start</code> and <code>Task.async</code> is the same, right? Yeah, we can swap those and get the power of using <code>Task.await</code> and <code>Task.yield</code> on top of it, <em>that's the power of abstracting lower-level concepts!</em></p>
-
-<h2>
-  
-  
-  Designing state with the agent wrapper
-</h2>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wGwyBGxy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/cherryramatisdev/public_zet/assets/86631177/306a155b-2cc1-4af7-8a52-7aa053bf5680" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wGwyBGxy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/cherryramatisdev/public_zet/assets/86631177/306a155b-2cc1-4af7-8a52-7aa053bf5680" alt="image" width="800" height="450"></a></p>
-
-<p>The <code>Agent</code> module provides another layer of abstraction focused on controlling state between multiple instances of a process, it acts like a data structure for long-running interactions.</p>
-
-<p>We can first start an agent instance with an initial value passed from a function return, as shown below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">agent</span><span class="p">}</span> <span class="o">=</span> <span class="no">Agent</span><span class="o">.</span><span class="n">start_link</span><span class="p">(</span><span class="k">fn</span> <span class="o">-&gt;</span> <span class="p">[]</span> <span class="k">end</span><span class="p">)</span>
-<span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="c1">#PID&lt;0.110.0&gt;}</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">agent</span>
-<span class="c1">#PID&lt;0.110.0&gt;</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>As you can see, we get a <code>PID</code> just like the other abstractions, the difference here can be observed in the usage of other methods.</p>
-
-<p>For example, we can update the original array by appending a value to it:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span> <span class="no">Agent</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="k">fn</span> <span class="n">list</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s2">"elixir"</span> <span class="o">|</span> <span class="n">list</span><span class="p">]</span> <span class="k">end</span><span class="p">)</span>
-<span class="ss">:ok</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>That's the whole difference</strong> in this abstraction provided by the Agent module, we can continuously update a state by appending immutable functions as callbacks and reusing the same <code>PID</code>.</p>
-
-<p>We can also return a particular value from the data structure by using the following function:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight elixir"><code><span class="n">iex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&gt;</span> <span class="no">Agent</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="k">fn</span> <span class="n">list</span> <span class="o">-&gt;</span> <span class="n">list</span> <span class="k">end</span><span class="p">)</span>
-<span class="p">[</span><span class="s2">"elixir"</span><span class="p">]</span>
-<span class="n">iex</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>See? It's as simple as returning the whole list from the callback function, you can imagine that it's possible to use any method from Elixir to filter down this list if wanted and keep iterating over the data structure.</p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>This is a simple introduction to this concept that is new for me, and I hope it's useful for anyone reading it! And in the next articles, we'll dive deeper into other topics in elixir, such as Gen Servers, Supervisors, etc. May the force be with you! 🍒</p>
-
- </details> 
- <hr /> 
-
- #### - [Which Developers Are in High Demand Now?](https://dev.to/devteam/which-developers-are-in-high-demand-now-5hga) 
- <details><summary>Article</summary> <p><em>Hey, hey, it's the Daily Byte! Over the next several days, we'll be talking about developer roles, success taits, and the future ahead.</em></p>
+ #### - [What Are the Top 3 Qualities of Successful Devs?](https://dev.to/devteam/what-are-the-top-3-qualities-of-successful-devs-5bm4) 
+ <details><summary>Article</summary> <p><em>Hey, hey, it's the Daily Byte! Over the next several days, we'll be talking about developer roles, success taits, and the future ahead.</em>  </p>
 
 <blockquote>
-<p>Share your observations on trending developer roles and the skills in high demand</p>
+<p>What are the top three qualities or skills that define a successful developer in today's fast-paced industry?</p>
 </blockquote>
 
 <p>Follow the DEVteam for more discussions and online camaraderie!</p>
@@ -378,592 +150,600 @@
  </details> 
  <hr /> 
 
- #### - [Introducing NextJS Google Drive Directory: Simplifying Google Drive Navigation](https://dev.to/gbti/introducing-nextjs-google-drive-directory-simplifying-google-drive-navigation-4gc3) 
- <details><summary>Article</summary> <p>Hello Dev.to community,</p>
+ #### - [Introdução ao expo-dev-client](https://dev.to/lucasm4sco/introducao-ao-expo-dev-client-1ann) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Introdução
+</h2>
 
-<p>If your company is like ours, you are using Google Drive to maintain a wide variety of documents including employee handbooks. Wouldn't it be nice to have focused access points for that body of knowledge? </p>
+<p>Se você iniciou no desenvolvimento de apps com Expo, deve ter notado que ele facilita muito alguns dos processos do React Native, sendo uma ferramenta conhecida por simplificar o desenvolvimento de aplicativos móveis, atuando desde em configurações do seu ambiente até em deploy dos seus aplicativos.</p>
 
-<p>We created a tool that will allow you to do just that. With a little setup, you can create a special portal into one of your personal or team drive directories, allowing for a directory-style navigation through the sub-folders and content as well as a contained search result engine for that directory. </p>
-
-<p>If this sounds appealing to you, we got you covered and have built the foundational application to get started. </p>
-
-<p>At the moment, it is even free to deploy to Vercel. No costs included. All you have to do is fork the repo, modify it to suit your API access credentials, and then deploy it. More on that below. </p>
+<p>No entanto, em alguns momentos você provavelmente vai sentir falta de ter um controle maior do seu desenvolvimento ou querer utilizar de algumas bibliotecas que precisam de dependências nativas e não são suportadas diretamente pelo Expo, esse é um problema comum e para resolver ele podemos utilizar da ferramenta <a href="https://www.npmjs.com/package/expo-dev-client?activeTab=readme">expo-dev-client</a></p>
 
 <h2>
   
   
-  Functionality
+  O que é o expo-dev-client
 </h2>
 
-<p>The NextJS Google Drive Directory simplifies Google Drive navigation by restricting the view to a single directory. This straightforward approach helps users locate and work on specific files more efficiently. Additionally, it offers a subdirectory navigation feature to facilitate easy movement between related files or folders.</p>
+<p>O expo-dev-client é um package da própria Expo que permite você a utilizar dependências nativas em sua aplicação, não ficando mais limitado apenas as libs do Expo e tendo uma experiência de desenvolvimento "quase nativa".</p>
 
-<p>For a hands-on demonstration, this <a href="https://www.youtube.com/watch?v=Fsatd2HkBxk">tutorial video</a> provides a comprehensive guide.</p>
+<p>Alguns exemplos de bibliotecas que requerem de código-fonte nativo personalizado são a <a href="https://docs.expo.dev/develop/development-builds/introduction/">React Native Firebase</a> e o <a href="https://www.mongodb.com/docs/realm/sdk/react-native/quick-start/">Realm</a>, ou seja, caso você queira utilizar algumas delas e ainda continuar utilizando do Expo, o expo-dev-client vai se tornar uma ferramenta útil para você.</p>
 
-<h2>
-  
-  
-  Educational Value: Learn Google Drive API
-</h2>
+<p>Para iniciar o seu uso os passos são bem simples:</p>
 
-<p>Beyond its utility, the application also serves as a tutorial for those interested in learning how to interact with the Google Drive API. By studying the source code and following the project's documentation, you can gain practical insights into API integration and usage.</p>
+<ol>
+<li>
+<p>Instale o package com o seguinte comando:<br>
+</p>
+<pre class="highlight plaintext"><code>npm i expo-dev-client
+</code></pre>
 
-<h2>
-  
-  
-  Videos
-</h2>
-
-<h3>
-  
-  
-  Localhost installation
-</h3>
-
-<p><a href="https://www.youtube.com/watch?v=Fsatd2HkBxk">https://www.youtube.com/watch?v=Fsatd2HkBxk</a></p>
-
-<h3>
-  
-  
-  Deployment to Vercel
-</h3>
-
-<p><a href="https://www.youtube.com/watch?v=fy0WG4J9jPA">https://www.youtube.com/watch?v=fy0WG4J9jPA</a></p>
-
-<h2>
-  
-  
-  Support and Community
-</h2>
-
-<p>If you find the application beneficial, there's an option to support its development through joining the <a href="https://gbti.io">GBTI private community</a>. </p>
-
-<h2>
-  
-  
-  Github
-</h2>
-
-<p>The <a href="https://github.com/gbti-labs/nextjs-google-drive-directory/">NextJS Google Drive Directory</a> is open source and available on GitHub.</p>
-
-<p>Feel free to explore the application and share any feedback.</p>
+</li>
+<li>
+<p>Gere então o código-fonte nativo com o comando <code>prebuild</code>:<br>
+</p>
+<pre class="highlight plaintext"><code>npx expo prebuild
+</code></pre>
 
 
+<blockquote>
+<p>Esse comando gera automaticamente o código seguindo alguns fatores, recomendo dar uma olhada no comando <a href="https://docs.expo.dev/workflow/prebuild/">prebuild</a> pra ver melhor possíveis especificações, após finalizar serão geradas as pastas <code>android/</code> e <code>ios/</code> no seu ambiente de desenvolvimento.</p>
+</blockquote>
+</li>
+<li>
+<p>E agora o último comando pra iniciar o Expo em modo compilação de desenvolvimento:<br>
+</p>
+<pre class="highlight plaintext"><code>npx expo start --dev-client
+</code></pre>
 
+</li>
+</ol>
 
-<p>For more information, visit us on <a href="https://twitter.com/gbtilabs">Twitter</a>,  <a href="https://github.com/gbti-labs">GitHub</a></p>
+<p>Obs: Você pode utilizar também os comandos <code>npx expo run:android</code> ou <code>npx expo run:ios</code> para realizar o build diretamente nos dispositivos conectados e iniciar o aplicativo, e vale informar também que esse é um processo fora do aplicativo Expo Go, então você não conseguirá utilizar dele nesse caso.</p>
 
-<p><a href="https://gbti.io">Copyright © 2023 · All Rights Reserved · GBTI</a></p>
+<p>Essa foi apenas uma pequena introdução sobre a ferramenta até porque eu tinha esquecido dela e pesquisei para relembrar, você pode procurar ver mais sobre na documentação também: <a href="https://docs.expo.dev/develop/development-builds/introduction/">Development builds</a></p>
 
  </details> 
  <hr /> 
 
- #### - [Understanding Object-Oriented Programming (OOP) in TypeScript: Key Concepts and Practical Example](https://dev.to/frantchessico/understanding-object-oriented-programming-oop-in-typescript-key-concepts-and-practical-example-4e1a) 
- <details><summary>Article</summary> <p><strong>Introduction:</strong></p>
+ #### - [Using Jest to bulletproof a TypeScript Class - Part 2](https://dev.to/joaotextor/using-jest-to-bulletproof-a-typescript-class-part-2-1njf) 
+ <details><summary>Article</summary> <p>The second and final part of our testing suite is here!<br>
+Check out the first part <a href="https://dev.to/joaotextor/using-jest-to-bulletproof-a-typescript-class-part-1-hjo">HERE</a>.</p>
 
-<p>Object-Oriented Programming (OOP) stands as one of the most widely embraced paradigms in TypeScript, as well as numerous other programming languages. TypeScript, recognized for its strong typing system, eagerly embraces the entire spectrum of essential OOP concepts, including classes, objects, inheritance, encapsulation, and polymorphism. In this article, we embark on a journey to delve deep into the realm of OOP within TypeScript, coupled with practical examples to reinforce our understanding.</p>
+<p>We will continue testing our <code>generate</code> method.</p>
 
-<p><strong>1. Classes:</strong></p>
-
-<p>Classes serve as the bedrock upon which the edifice of Object-Oriented Programming is constructed. Within TypeScript, classes are crafted using the <code>class</code> keyword. Let's commence with a straightforward TypeScript class example:<br>
+<p>Here we'll test generating a code with 2 groups and the default separator.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<pre class="highlight javascript"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">Should generate a code with 2 groups and the default group separator</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">groups</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">});</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nx">greet</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, my name is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">, and I'm </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span><span class="s2"> years old.`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
-<span class="nx">person1</span><span class="p">.</span><span class="nx">greet</span><span class="p">();</span> <span class="c1">// Output: Hello, my name is Alice, and I'm 30 years old.</span>
+    <span class="kd">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="nx">sut</span><span class="p">.</span><span class="nx">generate</span><span class="p">();</span>    
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!</span><span class="p">[</span><span class="mi">5</span><span class="p">]).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">-</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre>
 
 </div>
 
 
 
-<p><strong>2. Objects:</strong></p>
+<p>Our <code>code</code> will still have the length of 1, and the first index will have a length of 11, since the key has 2 groups of 5 characters, additionally to the separator <code>"-"</code>.</p>
 
-<p>Objects manifest as instances of classes. The instantiation of a class begets an object. For instance, in the example provided, <code>person1</code> embodies an object of the <code>Person</code> class.</p>
-
-<p><strong>3. Inheritance:</strong></p>
-
-<p>Inheritance is a potent OOP concept, facilitated in TypeScript by the <code>extends</code> keyword. This allows for the creation of new classes that inherit attributes and behaviors from existing ones. Witness this in practice:<br>
+<p>Now we will modify our configuration, this time using the <code>"_"</code> character as the group separator. We're testing if the <code>CodeGenerator</code> respects our choice of separator.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">class</span> <span class="nx">Student</span> <span class="kd">extends</span> <span class="nx">Person</span> <span class="p">{</span>
-  <span class="nl">course</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<pre class="highlight javascript"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">Should generate a code with 2 groups and the '_' 'groupSeparator'</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">groups</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="na">groupSeparator</span><span class="p">:</span> <span class="dl">"</span><span class="s2">_</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="nx">sut</span><span class="p">.</span><span class="nx">generate</span><span class="p">();</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">course</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">course</span> <span class="o">=</span> <span class="nx">course</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nx">greet</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, I'm a student named </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">, and I'm studying </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">student1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">(</span><span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Computer Science</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">student1</span><span class="p">.</span><span class="nx">greet</span><span class="p">();</span> <span class="c1">// Output: Hello, I'm a student named Bob, and I'm studying Computer Science.</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!</span><span class="p">[</span><span class="mi">5</span><span class="p">]).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">_</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre>
 
 </div>
 
 
 
-<p><strong>4. Encapsulation:</strong></p>
-
-<p>In TypeScript, control over the accessibility of class members is wielded through access modifiers like <code>public</code>, <code>private</code>, and <code>protected</code>. By default, members are public. Observe this principle in action:<br>
+<p>The next test will analyze the generation of 2 keys at the same time.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
-  <span class="k">private</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<pre class="highlight javascript"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">Should generate 2 random keys</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">numberOfKeys</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="nx">sut</span><span class="p">.</span><span class="nx">generate</span><span class="p">();</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nx">getName</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">animal1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Animal</span><span class="p">(</span><span class="dl">'</span><span class="s1">Lion</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">animal1</span><span class="p">.</span><span class="nx">getName</span><span class="p">());</span> <span class="c1">// Output: Lion</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">animal1</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// Error: Property 'name' is private and only accessible within class 'Animal'.</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">1</span><span class="p">]).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre>
 
 </div>
 
 
 
-<p><strong>5. Polymorphism:</strong></p>
+<p>As expected, the <code>code</code> Array will have 2 items, and each of them a length of 5.</p>
 
-<p>Polymorphism, a cornerstone of OOP, enables the uniform treatment of objects from diverse classes. This feat is accomplished through inheritance and method overriding. The following example exemplifies polymorphism:<br>
+<p>We also need to test generating keys with a different <code>characterType</code>, which is done in the following test:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="c1">// Base Animal class</span>
-<span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{}</span>
+<pre class="highlight javascript"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">Should generate 1 key with only numbers</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">characterType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Numbers</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="nx">sut</span><span class="p">.</span><span class="nx">generate</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">numberCode</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 
-  <span class="nx">makeSound</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The animal </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> makes a sound.`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Class to represent a Dog</span>
-<span class="kd">class</span> <span class="nx">Dog</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
-  <span class="nx">makeSound</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> barks: Woof! Woof!`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Class to represent a Cat</span>
-<span class="kd">class</span> <span class="nx">Cat</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
-  <span class="nx">makeSound</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> meows: Meow! Meow!`</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Function that takes an animal and makes it make a sound</span>
-<span class="kd">function</span> <span class="nx">makeAnimalMakeSound</span><span class="p">(</span><span class="nx">animal</span><span class="p">:</span> <span class="nx">Animal</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">animal</span><span class="p">.</span><span class="nx">makeSound</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// Creating instances of Dog and Cat</span>
-<span class="kd">const</span> <span class="nx">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dog</span><span class="p">(</span><span class="dl">'</span><span class="s1">Rex</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">cat</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="dl">'</span><span class="s1">Whiskers</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="c1">// Calling the function to make the animals make a sound</span>
-<span class="nx">makeAnimalMakeSound</span><span class="p">(</span><span class="nx">dog</span><span class="p">);</span> <span class="c1">// Output: Rex barks: Woof! Woof!</span>
-<span class="nx">makeAnimalMakeSound</span><span class="p">(</span><span class="nx">cat</span><span class="p">);</span> <span class="c1">// Output: Whiskers meows: Meow! Meow!</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">numberCode</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeNaN</span><span class="p">();</span>
+<span class="p">});</span>
 </code></pre>
 
 </div>
+
+
+
+<p>Here we converted our generated code (which is a string inside an Array) into a number, and test if the result is an actual number or it returned <code>NaN</code> in the type conversion.</p>
+
+<p>Our next test will analyze if our code will give priority to the length of <code>groupFormat</code> over the length informed in the first property when instantiating a class.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">Should generate a key with 'groupFormat' length instead of the length informed.</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">characterType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LettersAndNumbers</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">groupFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">NNLNLLN</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="nx">sut</span><span class="p">.</span><span class="nx">generate</span><span class="p">();</span>
+
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">code</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Our <code>groupFormat</code> have a length of 7, but we passed the number 5 for the property of <code>numbersOfCharacters</code>. Our logic demands that when the <code>groupFormat</code> is informed, the output group should have the length of the group format informed.</p>
+
+<p>Finally, to our last test, we will verify if the <code>groupFormat</code> informed by the developer is actually being respected in the output.</p>
+
+<p>In short, if the <code>grouptFormat</code> is <code>"LLNLN"</code>, the output should be something like this: "ZH8D2".</p>
+
+<p>This is going to be a more complex test than the others, since we will have to convert our string key to an Array and iterate this Array to see if it is a number or not.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">Should generate a key with the format informed in 'groupFormat' property. </span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">groupFormat</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">LLNLN</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">groupFormatArray</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">groupFormat</span><span class="p">);</span>
+    <span class="nx">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">groupFormat</span><span class="p">:</span> <span class="nx">groupFormat</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">codes</span> <span class="o">=</span> <span class="nx">sut</span><span class="p">.</span><span class="nx">generate</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">codeArray</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">codes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">char</span> <span class="k">in</span> <span class="nx">codeArray</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">codeChar</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">codeArray</span><span class="p">[</span><span class="nx">char</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">groupFormatArray</span><span class="p">[</span><span class="nx">char</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">L</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">expect</span><span class="p">(</span><span class="nx">codeChar</span><span class="p">).</span><span class="nx">toBeNaN</span><span class="p">;</span>
+          <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">codeChar</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toBeNaN</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<p>With this final test, we finished our suite of unit tests for the <code>CodeGenerator</code> class.</p>
+
+<p>This is going to be the last post in this series. However, next week I will open a new series with an article on how I published the Easy Key Generator to npmjs.com as a library that can be used by anyone. Hit the follow button to stay tuned in future posts. </p>
+
+<p>Talk to you all next week, and do not forget to react to this post and comment if you have any suggestions or to make any constructive criticisms :-)</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [👑Mastering👑 Vue.js Events](https://dev.to/noobizdev/top-guide-to-vuejs-events-5efb) 
+ <details><summary>Article</summary> <p>Vue.js, a popular JavaScript framework, offers a wide range of events that can significantly enhance the interactivity and functionality of your web applications. In this article, we will explore a comprehensive list of Vue.js events and how you can use them to your advantage. So, let's dive right in!</p>
+
 
 
 
 <blockquote>
-<p><strong>Conclusion (Polymorphism Section):</strong></p>
+<p>Help us grow our community by sharing this post with your friends And give us a like and a follow!❤️❤️❤️</p>
+
+
 </blockquote>
 
-<p>Polymorphism, a central tenet of OOP, emerges as a potent tool for enhancing code flexibility and reusability. By forging class hierarchies and method overrides, a consistent approach is achieved when handling objects of diverse types. The example provided here elucidates how polymorphism simplifies code while fostering extensibility, a cornerstone of Object-Oriented Programming.</p>
 
-<p><strong>Conclusion:</strong></p>
 
-<p>Our exploration of Object-Oriented Programming in TypeScript unveils a world of code organization, reusability, and flexibility. These fundamental concepts lay the groundwork for crafting well-structured and adaptable codebases, essential for tackling intricate problem domains.</p>
+<h2>
+  
+  
+  Understanding Vue.js Events
+</h2>
+
+<p>Before we delve into the extensive list of Vue.js events, let's have a quick overview of what events are in the context of Vue.js. Events in Vue.js are essentially custom triggers that allow you to communicate between different components of your application. They are a fundamental part of Vue.js, enabling you to create dynamic and responsive web applications.</p>
+
+
+
+<h2>
+  
+  
+  Commonly Used Vue.js Events
+</h2>
+<h3>
+  
+  
+  1. @click
+</h3>
+
+<p>The @click event is one of the most frequently used events in Vue.js. It triggers when an element is clicked and is perfect for handling user interactions such as button clicks and navigation.</p>
+
+
+
+<h3>
+  
+  
+  2. @input
+</h3>
+
+<p>The @input event is essential for handling input elements like text boxes and checkboxes. It captures changes in the input's value in real-time.</p>
+
+
+
+<h3>
+  
+  
+  3. @submit
+</h3>
+
+<p>When working with forms, the @submit event comes in handy. It allows you to intercept and handle form submissions, perform validations, and prevent default behavior if necessary.</p>
+
+
+
+<h3>
+  
+  
+  4. @keydown
+</h3>
+
+<p>The @keydown event is useful for capturing keypresses. You can use it to trigger actions when a specific key or combination of keys is pressed.</p>
+
+
+
+<h3>
+  
+  
+  5. @mouseover and @mouseout
+</h3>
+
+<p>These events are valuable for creating hover effects. Use @mouseover to trigger actions when the mouse cursor enters an element, and @mouseout for when it exits.</p>
+
+
+
+<h3>
+  
+  
+  6. @scroll
+</h3>
+
+<p>When you need to respond to scroll events, the @scroll event is your go-to option. It allows you to create dynamic scrolling effects and load content as the user scrolls down the page.</p>
+
+
+
+<h3>
+  
+  
+  7. @custom-event
+</h3>
+
+<p>Vue.js also allows you to create custom events specific to your application's needs. These custom events are incredibly versatile and can be used to pass data between components seamlessly.</p>
+
+
+
+<h2>
+  
+  
+  Advanced Vue.js Events
+</h2>
+<h3>
+  
+  
+  8. @before-route-enter and @before-route-leave
+</h3>
+
+<p>If you are building a Vue Router-based application, these events are crucial. They trigger before a route is entered or left, enabling you to perform tasks like data fetching or route guards.</p>
+
+
+
+<h3>
+  
+  
+  9. @watcher
+</h3>
+
+<p>The @watcher event is essential for reacting to changes in a data property. It watches for specific changes and executes code accordingly.</p>
+
+
+
+<h3>
+  
+  
+  10. @transition
+</h3>
+
+<p>When working with Vue.js transitions, the @transition event allows you to hook into CSS transitions and animations, adding a layer of interactivity to your UI.</p>
+
+
+
+
+<blockquote>
+<p>If you enjoyed this post, make sure to save it for later!<br>
+Don't forget to leave a comment if you need any help...<br>
+Thanks for reading, See you next time... ❤️👋</p>
+
+
+</blockquote>
+
+
+
+<h2>
+  
+  
+  difference between Vue.js directives and Vue.js events
+</h2>
+
+<p><strong><a href="https://noobizdev.tech/vue-js-directives-a-comprehensive-guide-with-examples/">Vue.js directives</a></strong> are similar to Vue.js events in that they provide a way to add functionality to elements in the DOM. However, while events are triggered by user actions, directives are attached directly to elements and can modify their behavior without any user interaction.</p>
+
+
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>In this article, we've explored a wide array of Vue.js events, ranging from the fundamental to the advanced. Incorporating these events into your Vue.js applications will undoubtedly elevate their interactivity and user experience. Remember to utilize them wisely and tailor them to your specific project requirements.</p>
 
  </details> 
  <hr /> 
 
- #### - [PHP Design Patterns: Active Record](https://dev.to/xxzeroxx/php-design-patterns-active-record-1i5) 
- <details><summary>Article</summary> <h2>
+ #### - [Frontend podcast list 🎙️](https://dev.to/tech_foutraque/frontend-podcast-list-fh7) 
+ <details><summary>Article</summary> <p>I love listening to podcasts. It allows me either to discover new things, or to hear the views of major players in tech or the web. Sometimes I even feel like I'm in a conversation with colleagues or friends discussing the latest hot topic. I've put together a list of podcasts that I listen to regularly and that I think are really cool to listen to.</p>
+
+<h3>
   
   
-  What is Active Record?
-</h2>
+  Front End Happy Hour
+</h3>
 
-<p>Active Record is a design pattern that features a class that has both persistence methods and business methods.From the point of view of Object Orientation, this class ends up mixing many responsibilities, thus breaking the principle of single responsibility.</p>
+<p>🍸 Much more than a Frontend podcast, the topics covered are always very varied. Sometimes Frontend, sometimes more general, but always of the highest quality. Lots of different speakers each time, and what I particularly appreciate is the transcription!<br><br>
+🔗 <a href="https://www.frontendhappyhour.com/">Front End Happy Hour</a></p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IkiBO0aB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxqwpenqjv9sborg8gsc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IkiBO0aB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxqwpenqjv9sborg8gsc.png" alt="Class Active Record" width="351" height="233"></a></p>
 
-<p>So one way to solve this “problem” is to create a parent class that implements the persistence methods in a generic way, finally having a separation between the business methods and the persistence methods, this design pattern is known as <strong>Layer Supertype</strong>.</p>
+
+
+<h3>
+  
+  
+  DevTools FM
+</h3>
+
+<p>⚙️ "A podcast about developer tools and the people who make them." Real frontend podcast with a wide range of interesting topics every week. It's complete with an audio version and a video version, a transcript and info for each episode.<br><br>
+🔗 <a href="https://www.devtools.fm/episodes">Devtools FM</a></p>
+
+
+
+
+<h3>
+  
+  
+  Syntax FM
+</h3>
+
+<p>A podcast for web developers hosted by Wes Bos and Scott Tolinski. I don't know how they manage to bring you such a packed episode every 2/3 days! 😆 But they do it well, with humor and quality! I love Wes Bos, his good mood is always infectious! 😻🔗 <a href="https://syntax.fm/">Syntax FM</a></p>
+
+
+
+
+<h3>
+  
+  
+  Webrush
+</h3>
+
+<p>Hosted by John Papa, Dan Wahlin and Craig Shoemaker, no less! Find an episode (sometimes with guests) every week on the web in general. The episodes aren't too long, and always include resources for further reading.<br><br>
+🔗 <a href="https://www.webrush.io/">Webrush</a></p>
+
+
+
+
+<h3>
+  
+  
+  ShopTalk Show
+</h3>
+
+<p>The podcast of Chris Coyier (css-tricks, codepen...) and Dave Rupert. Every week, find topics on how to build sites, programming and much more! Only the transcript is missing to make it perfect, but go for it, you won't regret it!<br><br>
+🔗 <a href="https://shoptalkshow.com/">ShopTalk Show</a></p>
+
+
+
+
+<h3>
+  
+  
+  Jamstack Radio
+</h3>
+
+<p>🎙️Even if the name seems to say otherwise, this podcast isn't all about JAMStack or even the frontend. Instead, you'll find episodes on the web in general, with guests sharing their experiences. The episodes are not very long, generally 30m, for those who don't have much time, and come with full notes and a transcript.<br><br>
+🔗 <a href="https://www.heavybit.com/library/podcasts/jamstack-radio/">JAMStack Radio</a></p>
+
+
+
+
+<h3>
+  
+  
+  JS Party
+</h3>
+
+<p>"A weekly celebration of JavaScript and the web." I think it's fair to say that this is one of the best frontend podcasts out there, and certainly the most comprehensive. It's simple, nothing is missing! Discover it first.<br><br>
+🔗 <a href="https://changelog.com/jsparty">JS Party</a></p>
+
+
+
+
+<h3>
+  
+  
+  JavaScript Jabber
+</h3>
+
+<p>Like many others, every week you'll find a (fairly long) episode on the JS ecosystem or frontend development in general. The episodes are good, but we'd like to see a few more resources associated with the episode and the transcript. It's still a very good podcast though.<br><br>
+🔗 <a href="https://redcircle.com/shows/javascript-jabber">JavaScript Jabber</a></p>
+
+
+
+
+<h3>
+  
+  
+  Whiskey Web and Whatnot
+</h3>
+
+<p>🥃 My latest discovery! I love the format, the content and the speakers. Each episode has a transcript, shortcuts to points of interest and links to the various topics covered.<br><br>
+🔗 <a href="https://www.frontendhappyhour.com/">Whiskey Web and Whatnot</a></p>
+
+
+
 
 <h2>
   
   
-  Example
+  🇫🇷 The french corner
 </h2>
 
-<p>Next we will have an example of how Active Record works.</p>
-
-<p><strong>Step 1 - Directory System:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>📦Active_Record
- ┣ 📂class
- ┃ ┗ 📜Product.php
- ┣ 📂config
- ┃ ┗ 📜config.ini
- ┣ 📂database
- ┃ ┗ 📜product.db
- ┗ 📜index.php
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Step 2 - Database Config File:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>host <span class="o">=</span> 
-name <span class="o">=</span> database/product.db
-user <span class="o">=</span> 
-pass <span class="o">=</span> 
-<span class="nb">type</span> <span class="o">=</span> sqlite
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Step 3 - Database:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight sql"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">product</span><span class="p">(</span>
-  <span class="n">id</span> <span class="nb">INTEGER</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="n">description</span> <span class="nb">TEXT</span><span class="p">,</span>
-  <span class="n">stock</span> <span class="nb">FLOAT</span><span class="p">,</span>
-  <span class="n">cost_price</span> <span class="nb">FLOAT</span><span class="p">,</span>
-  <span class="n">sale_price</span> <span class="nb">FLOAT</span><span class="p">,</span>
-  <span class="n">bar_code</span> <span class="nb">TEXT</span><span class="p">,</span>
-  <span class="n">date_register</span> <span class="nb">DATE</span><span class="p">,</span>
-  <span class="n">origin</span> <span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Step 5 - Product Class:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="kd">class</span> <span class="nc">Product</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="k">static</span> <span class="nv">$conn</span><span class="p">;</span>
-    <span class="k">private</span> <span class="kt">mixed</span> <span class="nv">$data</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The <strong>conn</strong> property is static to maintain the value, so we don't need to open the same connection more than once.<br>
-The <strong>data</strong> variable is defined as mixed, as it can take on several types.</p>
-
-<ul>
-<li>
-<strong>setConnection</strong> method
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">setConnection</span><span class="p">(</span><span class="kt">PDO</span> <span class="nv">$conn</span><span class="p">)</span>
-<span class="p">{</span>  
-    <span class="k">self</span><span class="o">::</span><span class="nv">$conn</span> <span class="o">=</span> <span class="nv">$conn</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>setConnection receives a PDO connection as a parameter and stores it in the static attribute conn.</p>
-
-<ul>
-<li>
-<strong>__get</strong> and <strong>__set</strong> methods
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">function</span> <span class="n">__get</span><span class="p">(</span><span class="kt">String</span> <span class="nv">$prop</span><span class="p">):</span> <span class="kt">mixed</span>
-<span class="p">{</span>  
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$prop</span><span class="p">];</span>
-<span class="p">}</span>
-
-<span class="k">public</span> <span class="k">function</span> <span class="n">__set</span><span class="p">(</span><span class="kt">String</span> <span class="nv">$prop</span><span class="p">,</span> <span class="kt">mixed</span> <span class="nv">$value</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><strong>__get</strong> is a magic method which is invoked when reading the value of a non-existent or inaccessible property, we receive the name of the property and pass it to the <strong>data</strong> attribute as the key.<br>
-<strong>__set</strong> is a magic method which is invoked when writing a value to a non-existing or inaccessible property, we receive the name and value of the property respectively</p>
-
-<ul>
-<li>
-<strong>find</strong> method
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">find</span><span class="p">(</span><span class="kt">int</span> <span class="nv">$id</span><span class="p">):</span> <span class="kt">Product</span>
-<span class="p">{</span>
-    <span class="c1">// Store the SQL in a variable</span>
-    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"SELECT * FROM product WHERE id = :id"</span><span class="p">;</span>
-    <span class="c1">// Print the SQL</span>
-    <span class="k">print</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$sql</span><span class="si">}</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
-    <span class="c1">// perform the prepare method</span>
-    <span class="nv">$result</span> <span class="o">=</span> <span class="k">self</span><span class="o">::</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-    <span class="c1">// Binds a parameter to the specified variable name</span>
-    <span class="c1">// PDO::PARAM_INT Represents the SQL INTEGER data type</span>
-    <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="s1">':id'</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="no">PDO</span><span class="o">::</span><span class="no">PARAM_INT</span><span class="p">);</span>
-    <span class="c1">// execute sql statement</span>
-    <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
-    <span class="c1">// Fetches the next row and returns it as an object</span>
-    <span class="c1">// __CLASS__ receives the name of the created class</span>
-    <span class="k">return</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">fetchObject</span><span class="p">(</span><span class="k">__CLASS__</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The find method receives an id as a parameter and returns an object of the Product class as a value</p>
-
-<ul>
-<li>
-<strong>all</strong> method
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">all</span><span class="p">(</span><span class="kt">String</span> <span class="nv">$filter</span> <span class="o">=</span> <span class="kc">null</span><span class="p">):</span> <span class="kt">array</span>
-<span class="p">{</span>
-    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"SELECT * FROM product"</span><span class="p">;</span>
-
-    <span class="c1">// checks if there is a filter</span>
-    <span class="k">if</span><span class="p">(</span><span class="nv">$filter</span><span class="p">)</span>
-    <span class="p">{</span>
-      <span class="c1">// concatenate the filter to sql statement</span>
-      <span class="nv">$sql</span> <span class="mf">.</span><span class="o">=</span> <span class="s2">" WHERE </span><span class="nv">$filter</span><span class="s2">"</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">print</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$sql</span><span class="si">}</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
-    <span class="nv">$result</span> <span class="o">=</span> <span class="k">self</span><span class="o">::</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-    <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">();</span>
-    <span class="c1">// Sets the remaining rows of a result set</span>
-    <span class="c1">// PDO::FETCH_CLASS Returns a new instance of the requested class</span>
-    <span class="k">return</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">fetchALL</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">FETCH_CLASS</span><span class="p">,</span> <span class="k">__CLASS__</span><span class="p">);</span>
-
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>the all method can receive a filter and return a array of objects as a value</p>
-
-<ul>
-<li>
-<strong>delete</strong> method
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">function</span> <span class="n">delete</span><span class="p">(</span><span class="kt">int</span> <span class="nv">$id</span><span class="p">,</span> <span class="kt">String</span> <span class="nv">$operator</span> <span class="o">=</span> <span class="s1">'='</span><span class="p">)</span>
-<span class="p">{</span>  
-    <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"DELETE FROM product WHERE id </span><span class="nv">$operator</span><span class="s2"> :id"</span><span class="p">;</span>
-    <span class="k">print</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$sql</span><span class="si">}</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
-    <span class="nv">$result</span> <span class="o">=</span> <span class="k">self</span><span class="o">::</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>             
-    <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">bindParam</span><span class="p">(</span><span class="s1">':id'</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="no">PDO</span><span class="o">::</span><span class="no">PARAM_INT</span><span class="p">);</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">())</span>
-    <span class="p">{</span>
-      <span class="c1">// returns an array indexed by column name as returned in your result set</span>
-      <span class="k">return</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">fetch</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">FETCH_ASSOC</span><span class="p">);</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<ul>
-<li>
-<strong>save</strong> method
-</li>
-</ul>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="k">public</span> <span class="k">function</span> <span class="n">save</span><span class="p">()</span>
-<span class="p">{</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]))</span>
-    <span class="p">{</span>
-      <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"INSERT INTO product (description, stock, cost_price, sale_price, bar_code, date_register, origin)
-              VALUES (:description, :stock, :cost_price, :sale_price, :bar_code, :date_register, :origin)"</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-      <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE product SET description = :description, stock = : stock, cost_price = :cost_price, sale_price = :sale_price,
-              bar_code = :bar_code, date_register = :date_register, origin = :origin WHERE id = :id"</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">print</span> <span class="nv">$sql</span><span class="p">;</span>
-    <span class="nv">$result</span> <span class="o">=</span> <span class="k">self</span><span class="o">::</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">prepare</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
-
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The save method performs both the save and update.</p>
-
-<h2>
+<h3>
   
   
-  Testing
-</h2>
+  If This Then Dev
+</h3>
+
+<p>Probably THE best-known French podcast. It's been around for many, many years and it's still going consistent. To quote the pitch: "Every week Bruno Soulez interviews an expert to decode a subject or trend in the world of innovation and technology in general". I really like the alternation of long episodes and their shorter debrief version with another speaker who offers a new perspective. Highly recommended<br><br>
+🔗 <a href="https://ifttd.io/listes-des-episodes/">If This Then Dev</a></p>
 
 
 
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code><span class="cp">&lt;?php</span>
 
-  <span class="k">require_once</span> <span class="s1">'class/Produto.php'</span><span class="p">;</span>
+<h3>
+  
+  
+  Double Slash
+</h3>
 
-  <span class="k">try</span>
-  <span class="p">{</span>
-    <span class="nv">$ini</span> <span class="o">=</span> <span class="nb">parse_ini_file</span><span class="p">(</span><span class="s1">'config/config.ini'</span><span class="p">);</span>
-    <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$ini</span><span class="p">[</span><span class="s1">'name'</span><span class="p">];</span>
-
-    <span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PDO</span><span class="p">(</span><span class="s1">'sqlite:'</span> <span class="mf">.</span> <span class="nv">$name</span><span class="p">);</span>
-    <span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">setAttribute</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">ATTR_ERRMODE</span><span class="p">,</span><span class="no">PDO</span><span class="o">::</span><span class="no">ERRMODE_EXCEPTION</span><span class="p">);</span>
-
-    <span class="nc">Product</span><span class="o">::</span><span class="nf">setConnection</span><span class="p">(</span><span class="nv">$conn</span><span class="p">);</span>
-
-    <span class="nv">$product</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Product</span><span class="p">;</span>
-
-  <span class="p">}</span>
-  <span class="k">catch</span><span class="p">(</span><span class="nc">Exception</span> <span class="nv">$e</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">print</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
-  <span class="p">}</span>
-</code></pre>
-
-</div>
+<p>"Double Slash is the podcast for modern web developers. Patrick and Alex share their views on technology, libs and web development trends." It's often a 2-person conversation about front and back-end web news, tools and more. They are sometimes joined by guests to talk about more specific subjects. You'll also find all the news and links discussed during the episode. There's also a video if you prefer that format. I really like the design of their site, by the way.<br><br>
+🔗 <a href="https://double-slash.dev/podcasts/">Double Slash</a></p>
 
 
 
-<ul>
-<li>
-<strong>INSERT</strong>
-</li>
-</ul>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code>  <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">description</span> <span class="o">=</span> <span class="s1">'Juice'</span><span class="p">;</span>
-  <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">stock</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-  <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">cost_price</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
-  <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">sale_price</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
-  <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">bar_code</span> <span class="o">=</span> <span class="s1">'123123123'</span><span class="p">;</span>
-  <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">origin</span> <span class="o">=</span> <span class="s1">'S'</span><span class="p">;</span>
-  <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">date_register</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'Y-m-d'</span><span class="p">);</span>
-  <span class="nv">$product</span><span class="o">-&gt;</span><span class="nf">save</span><span class="p">();</span>
-</code></pre>
+<h3>
+  
+  
+  Message à caractère informatique
+</h3>
 
-</div>
+<p>In this podcast, you'll find some Clever Cloud members (sometimes with guests) doing a round-table discussion of the latest news. What I like about them is that they talk about issues that you don't necessarily find elsewhere (digital sovereignty, hardware, cloud...) with great expertise but always in good humour. There's also a timecode and links to the discussion to make it easier to find the information later. If you want to broaden your general tech culture, this podcast is for you! Bonus: a video version is published at the same time.<br><br>
+🔗 <a href="https://www.clever-cloud.com/fr/podcast/">Message à caractère informatique</a></p>
 
 
 
-<ul>
-<li>
-<strong>UPDATE</strong>
-</li>
-</ul>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code>  <span class="nv">$update</span> <span class="o">=</span> <span class="nc">Product</span><span class="o">::</span><span class="nf">find</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-  <span class="nv">$update</span><span class="o">-&gt;</span><span class="n">description</span> <span class="o">=</span> <span class="s2">"Grape Juice"</span><span class="p">;</span>
-  <span class="nv">$update</span><span class="o">-&gt;</span><span class="nf">save</span><span class="p">();</span>
-</code></pre>
+<h3>
+  
+  
+  Code Garage
+</h3>
 
-</div>
+<p>On code garage you'll find some very interesting episodes with a real variety of programming topics. There's always something to learn in each episode, and there are also a few off-series episodes: Interviews and hardware-oriented episodes.<br><br>
+🔗 <a href="https://code-garage.fr/podcast-code-garage/">Code Garage</a></p>
 
 
 
-<ul>
-<li>
-<strong>ALL</strong>
-</li>
-</ul>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight php"><code>  <span class="k">foreach</span><span class="p">(</span><span class="nc">Product</span><span class="o">::</span><span class="nf">all</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$product</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">print</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">description</span> <span class="mf">.</span> <span class="s1">' '</span><span class="p">;</span>
-    <span class="k">print</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">cost_price</span> <span class="mf">.</span> <span class="s1">' '</span><span class="p">;</span>
-    <span class="k">print</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">sale_price</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-  <span class="p">}</span>
-</code></pre>
+<h3>
+  
+  
+  Artisan développeur
+</h3>
 
-</div>
+<p>Benoit Gantaume and his velvety voice take you on a TDD- and freelancing-oriented podcast with lots of contributors. The format is fairly short but always very relevant. Not particularly frontend-oriented, but very interesting nonetheless. He also creates content on youtube<br><br>
+🔗 <a href="https://artisandeveloppeur.fr/podcast/">Artisan Développeur</a></p>
 
 
 
-<p>If you have any questions, just leave a comment below.</p>
+
+<h3>
+  
+  
+  135 grammes
+</h3>
+
+<p>📱 Another podcast that isn't strictly speaking "Frontend". But it covers a subject that can't be ignored: applications and the mobile industry! You'll find stories about mobile and conversations with people who make mobile tech and much more...<br><br>
+🔗 <a href="https://shows.acast.com/135-grammes">135 Grammes - Les histoires de la tech mobile</a></p>
+
+
+
+
+<h3>
+  
+  
+  Tech.rocks
+</h3>
+
+<p>For 5 seasons now, this podcast, which focuses more on tech than the web, has been giving its guests the chance to talk about various subjects such as cybersecurity, management... The format is fairly short, and I also like the "Tech immersion" features, which allow us to discover companies from the inside.<br><br>
+🔗 <a href="https://www.tech.rocks/podcasts">tech.rocks</a></p>
+
+
+
+
+<h3>
+  
+  
+  Tech Café
+</h3>
+
+<p>☕ This is the latest podcast that I listen to more rarely but which covers a wide range of subjects closely or remotely related to tech such as the internet, social networks, smartphones and AI... It's a great way to keep abreast of the latest news.<br><br>
+🔗 <a href="https://techcafe.fr/">Tech Café</a></p>
+
+
+
+
+<p>✌️ <strong>I hope this helps you find interesting podcasts to listen to! Feel free to share your favorite podcasts, and we'll add them to our list.</strong></p>
+
+<p>Don't forget to sign up for our newsletter so you don't miss out on the latest news from the front! 👉 <a href="https://tinyurl.com/mpfsubep">https://tinyurl.com/mpfsubep</a></p>
 
  </details> 
  <hr /> 
