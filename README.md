@@ -117,11 +117,9 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [The Dev's Future Landscape: What Lies Ahead?](https://dev.to/devteam/the-devs-future-landscape-what-lies-ahead-34b6) 
- <details><summary>Article</summary> <p><em>Hey, hey, it's the Daily Byte! Over the next several days, we'll be talking about developer roles, success taits, and the future ahead.</em>  </p>
-
-<blockquote>
-<p>What do you envision as the future landscape for developers? Discuss emerging trends, technologies, and potential career paths.</p>
+ #### - [Is GitHub Copilot a Game-Changer?](https://dev.to/devteam/is-github-copilot-a-game-changer-42gh) 
+ <details><summary>Article</summary> <blockquote>
+<p>How has AI-assisted programming tools like GitHub Copilot impacted the software development process thus far in 2023?</p>
 </blockquote>
 
 <p>Follow the DEVteam for more discussions and online camaraderie!</p>
@@ -150,131 +148,540 @@
  </details> 
  <hr /> 
 
- #### - ["Overcoming Fears and Pursuing Passions": CodeNewbie Podcast S25E7](https://dev.to/codenewbieteam/overcoming-fears-and-pursuing-passions-codenewbie-podcast-s25e7-10g9) 
- <details><summary>Article</summary> <p>In today's episode of the CodeNewbie Podcast, <a class="mentioned-user" href="https://dev.to/saronyitbarek">@saronyitbarek</a> talks about finding community motivation and moving to tech from marketing with <a href="https://twitter.com/stefania_rosca">Alex Lee</a>, Frontend Engineer at Typeform.</p>
+ #### - [Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?](https://dev.to/anurag_vishwakarma/raspberry-pi-4-vs-raspberry-pi-5-which-offers-better-value-and-performance-b50) 
+ <details><summary>Article</summary> <p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0RMIxM-E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-4-vs.-Raspberry-Pi-5.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0RMIxM-E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-4-vs.-Raspberry-Pi-5.jpg" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
+
+<p>The <strong>Raspberry Pi</strong> is one of the most popular single-board computers used by hobbyists, students, and professionals alike for projects ranging from retro gaming to automation. Since the first Raspberry Pi model was released in 2012, there have been several new versions with upgraded specs.</p>
+
+<p>The <a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/"><strong>Raspberry Pi 4</strong></a> came out in 2019 with significant improvements in processing power, memory, connectivity, and thermals. Now in 2023, the new <strong>Raspberry Pi 5</strong> has been announced with even more enhancements.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Za9a6DzW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/120-1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Za9a6DzW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/120-1.png" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
+
+<h2>
+  
+  
+  About Raspberry Pi
+</h2>
+
+<p>The Raspberry Pi has provided low-cost, portable computing to millions globally. Their series of boards has enabled makers to build and program everything from robots to home servers.</p>
+
+<p>The Pi 4 delivered welcome upgrades like <a href="https://firstfinger.in/transfer-files-mac-android-wireless/"><strong>USB 3.0</strong></a>, <strong>gigabit Ethernet</strong> , <strong>dual monitor support</strong> , and better cooling while maintaining the familiar form factor. It became the standard choice for most projects.</p>
+
+<p>📣</p>
+
+<p><strong>Raspberry Pi 5 will be released in October 2023.</strong> Now it's official - the Raspberry Pi 5 model B has been announced and will be available soon.</p>
+
+<blockquote>
+<p>Let's see how much of an upgrade the Raspberry Pi 5 actually represents and which model is the better option in terms of specs and performance for DIY projects and applications.</p>
+</blockquote>
 
 
-<div class="crayons-card c-embed text-styles text-styles--secondary">
-    <a href="https://www.codenewbie.org/podcast/overcoming-fears-and-pursuing-passions" rel="noopener noreferrer">
-      codenewbie.org
-    </a>
-</div>
 
 
-<p>Stefi Rosca is a Frontend Engineer from Romania, Brasov, and lives in Spain, Barcelona. In their spare time, they enjoy watching educational and entertainment content on YouTube, reading, spending time with friends, and independent and adventurous travel.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--anrJ5so3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/3-Large.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--anrJ5so3--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/3-Large.jpeg" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
 
-<ul>
-<li><p><a href="https://podcasts.apple.com/us/podcast/codenewbie/id919219256?i=1000629359600">Listen on Apple Podcasts</a></p></li>
-<li><p><a href="https://open.spotify.com/episode/51SRRHiA5uBQKq3AS7Fjqz?si=3a477007c7e54a68">Listen on Spotify</a></p></li>
-</ul>
+<h2>
+  
+  
+  Raspberry Pi 4
+</h2>
 
-<p>Or, listen wherever you normally get your podcasts!</p>
+<p>Released in 2019</p>
 
-
-
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1X1H2qc4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-4-Model-BCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1X1H2qc4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-4-Model-BCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="734" height="515"></a><br>
+<em>Raspberry Pi 4 Model B</em></p>
 
 <h3>
   
   
-  We will see you next week, happy coding
+  Raspberry Pi 4 Model B Specs:
 </h3>
 
-<p>PS: Make sure to subscribe to the CodeNewbie podcast if you haven't yet + review us on your chosen platform!</p>
+<div class="table-wrapper-paragraph"><table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Specifications</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Processor</strong></td>
+<td>Broadcom BCM2711, quad-core Cortex-A72 (ARM v8)</td>
+</tr>
+<tr>
+<td></td>
+<td>64-bit SoC @ 1.5GHz</td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>1GB, 2GB, 4GB, or 8GB LPDDR4 (depending on model)</td>
+</tr>
+<tr>
+<td></td>
+<td>with on-die ECC</td>
+</tr>
+<tr>
+<td><strong>Connectivity</strong></td>
+<td>- 2.4 GHz and 5.0 GHz IEEE 802.11b/g/n/ac wireless LAN</td>
+</tr>
+<tr>
+<td></td>
+<td>- Bluetooth 5.0, BLE</td>
+</tr>
+<tr>
+<td></td>
+<td>- Gigabit Ethernet</td>
+</tr>
+<tr>
+<td><strong>GPIO</strong></td>
+<td>Standard 40-pin GPIO header (fully backwards-compatible</td>
+</tr>
+<tr>
+<td></td>
+<td>with previous boards)</td>
+</tr>
+<tr>
+<td><strong>Video &amp; Sound</strong></td>
+<td>- 2 x micro HDMI ports (up to 4Kp60 supported)</td>
+</tr>
+<tr>
+<td></td>
+<td>- 2-lane MIPI DSI display port</td>
+</tr>
+<tr>
+<td></td>
+<td>- 2-lane MIPI CSI camera port</td>
+</tr>
+<tr>
+<td></td>
+<td>- 4-pole stereo audio and composite video port</td>
+</tr>
+<tr>
+<td><strong>Multimedia</strong></td>
+<td>- H.265 (4Kp60 decode)</td>
+</tr>
+<tr>
+<td></td>
+<td>- H.264 (1080p60 decode, 1080p30 encode)</td>
+</tr>
+<tr>
+<td></td>
+<td>- OpenGL ES 3.0 graphics</td>
+</tr>
+<tr>
+<td><strong>SD Card Support</strong></td>
+<td>Micro SD card slot for loading the operating system</td>
+</tr>
+<tr>
+<td></td>
+<td>and data storage</td>
+</tr>
+<tr>
+<td><strong>Input Power</strong></td>
+<td>- 5V DC via USB-C connector (minimum 3A)</td>
+</tr>
+<tr>
+<td></td>
+<td>- 5V DC via GPIO header (minimum 3A)</td>
+</tr>
+<tr>
+<td></td>
+<td>- Power over Ethernet (PoE)-enabled</td>
+</tr>
+<tr>
+<td></td>
+<td>(requires a separate PoE HAT)</td>
+</tr>
+</tbody>
+</table></div>
 
- </details> 
- <hr /> 
 
- #### - [How to test and analyze website performance with lighthouse](https://dev.to/luwadev/how-to-test-and-analyze-website-performance-with-lighthouse-6oe) 
- <details><summary>Article</summary> <p>Lighthouse is an open-source automated tool developed by Google, used for testing and improving the quality of web pages in terms of performance, accessibility, search engine optimization(SEO), and more.</p>
 
-<p>In this post, we'll cover how you can use lighthouse to test and analyze any website for performance.</p>
 
-<p>Before we start, let's understand the types of workflows lighthouse offers.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--BjRlMIXK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/10-Large.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--BjRlMIXK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/10-Large.jpeg" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
 
 <h2>
   
   
-  Lighthouse Workflows
+  Raspberry Pi 5
 </h2>
 
-<p>lighthouse offers four workflows you can use to run series of test/audits on a web page:</p>
+<p>Releasing in October 2023</p>
 
-<ul>
-<li>In Chrome DevTools: You can directly test any web page from your Chrome browser and read your reports in a user-friendly format.</li>
-<li>From the command line: This let's you automate lighthouse runs using shell scripts</li>
-<li>As a Node module: Integrate Lighthouse into your continuous integration systems.</li>
-<li>From a web UI: You can also run Lighthouse directly from a web UI and also link to reports without installing a thing.</li>
-</ul>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--2V02MzxM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-TopCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2V02MzxM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-TopCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="600" height="400"></a><br>
+<em>Raspberry Pi 5 Model B</em></p>
 
-<p>We'll be using Chrome DevTools to learn how to test a web page for performance with lighthouse. You can check out any of the workflows above <a href="https://developer.chrome.com/docs/lighthouse/overview/#devtools">here</a>: </p>
+<h3>
+  
+  
+  The Raspberry Pi 5 model B specs:
+</h3>
 
-<p>With that out of the way, let's run lighthouse.</p>
+<div class="table-wrapper-paragraph"><table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Specifications</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Processor</strong></td>
+<td>Broadcom BCM2712 2.4GHz quad-core 64-bit Arm Cortex-A76 CPU with cryptography extensions</td>
+</tr>
+<tr>
+<td></td>
+<td>512KB per-core L2 caches and a 2MB shared L3 cache</td>
+</tr>
+<tr>
+<td><strong>Video &amp; Graphics</strong></td>
+<td>VideoCore VII GPU, supporting OpenGL ES 3.1, Vulkan 1.2</td>
+</tr>
+<tr>
+<td><strong>Display Output</strong></td>
+<td>Dual 4Kp60 HDMI display output with HDR support</td>
+</tr>
+<tr>
+<td><strong>Video Decoding</strong></td>
+<td>4Kp60 HEVC decoder</td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>LPDDR4X-4267 SDRAM (4GB and 8GB SKUs available at launch)</td>
+</tr>
+<tr>
+<td><strong>Wireless Connectivity</strong></td>
+<td>Dual-band 802.11ac Wi-Fi</td>
+</tr>
+<tr>
+<td></td>
+<td>Bluetooth 5.0 / Bluetooth Low Energy (BLE)</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>microSD card slot, with support for high-speed SDR104 mode</td>
+</tr>
+<tr>
+<td><strong>USB Ports</strong></td>
+<td>2 × USB 3.0 ports, supporting simultaneous 5Gbps operation</td>
+</tr>
+<tr>
+<td></td>
+<td>2 × USB 2.0 ports</td>
+</tr>
+<tr>
+<td><strong>Ethernet</strong></td>
+<td>Gigabit Ethernet, with PoE+ support (requires separate PoE+ HAT)</td>
+</tr>
+<tr>
+<td><strong>Camera &amp; Display</strong></td>
+<td>2 × 4-lane MIPI camera/display transceivers</td>
+</tr>
+<tr>
+<td><strong>Peripheral Interface</strong></td>
+<td>PCIe 2.0 x1 interface for fast peripherals</td>
+</tr>
+<tr>
+<td></td>
+<td>(requires separate M.2 HAT or other adapter)</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>5V/5A DC power via USB-C, with Power Delivery support</td>
+</tr>
+<tr>
+<td><strong>GPIO Header</strong></td>
+<td>Raspberry Pi standard 40-pin header</td>
+</tr>
+<tr>
+<td><strong>Real-time Clock (RTC)</strong></td>
+<td>Powered from an external battery</td>
+</tr>
+<tr>
+<td><strong>Power Button</strong></td>
+<td>Included on the board for power control</td>
+</tr>
+</tbody>
+</table></div>
+
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--_OhQZ1JK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/6-Large.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--_OhQZ1JK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/6-Large.jpeg" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
 
 <h2>
   
   
-  Run Lighthouse in Chrome DevTools
+  What's New in Raspberry Pi 5?
 </h2>
 
-<p>Use the following steps to run lighthouse test in your devtools:<br>
-<strong>Step 1:</strong> Download chrome for Desktop<br>
-<strong>Step 2:</strong> Go to the URL of the website you want to test<br>
-<strong>Step 3:</strong> Open chrome Devtools and click the <code>Lighthouse</code> tab </p>
+<h3>
+  
+  
+  1. The New BCM2712 Processor
+</h3>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tflssxS4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nbjtgdstuf9bprnz46z1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tflssxS4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nbjtgdstuf9bprnz46z1.png" alt="chrome devtools" width="800" height="388"></a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--d37aUiRY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/76f84f73-4b69-4eea-8bd3-6ab0dc0cd835-2048x1374Compress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d37aUiRY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/76f84f73-4b69-4eea-8bd3-6ab0dc0cd835-2048x1374Compress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="536"></a><br>
+<em>BCM2712 Processor | Image Credit: Raspberry Pi Foundation</em></p>
 
-<p>Lighthouse offers three modes you can use to run tests:</p>
+<p>The new <strong>BCM2712 <a href="https://firstfinger.in/improve-boost-processor-performance/">processor</a> uses a 64-bit, quad-core Arm Cortex-A76 design</strong> which can hit <strong>clock speeds up to 2.4GHz</strong> on a power-efficient <strong>16nm process.</strong> It offers a significant boost in processing power with higher instructions per clock and lower energy than the prior Cortex-A72 core.</p>
 
-<ul>
-<li>Navigation mode: The navigation mode is useful if you want to analyze a single page load.</li>
-<li>Timespan mode: Timespan is used to analyze user interactions on a web page</li>
-<li>Snapshot mode: It typically analyzes the page in a particular state</li>
-</ul>
+<h3>
+  
+  
+  2. RP1 Chip
+</h3>
 
-<p><a href="https://github.com/GoogleChrome/lighthouse/blob/HEAD/docs/user-flows.md">learn more about each mode</a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OueUa0cA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/45e129f7-036b-42e3-bb8c-7c7d87195956Compress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OueUa0cA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/45e129f7-036b-42e3-bb8c-7c7d87195956Compress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="791" height="527"></a><br>
+<em>RP1 Chip | Image Credit: Raspberry Pi Foundation</em></p>
 
-<p><strong>Step 4:</strong> Select Navigation mode, and since we are testing only for performance, uncheck the other categories except for <code>performance</code>.<br>
-<strong>Step 5:</strong> Click <code>Analyze page load</code> to run lighthouse.</p>
+<p>The Raspberry Pi 5 introduces RP1, <strong>the first custom I/O controller chip</strong> designed in-house by Raspberry Pi. RP1 adopts a modular <a href="https://firstfinger.in/system-design-vs-software-architecture/">architecture</a> that <strong>offloads I/O functions from the main processor</strong> , allowing Raspberry Pi to transition to a more flexible, upgradable chipset-based design.</p>
 
-<p>After 30 to 60 seconds, Lighthouse gives you a report on the page.</p>
+<p>RP1 maintains high compatibility with existing Pi accessories while <strong>providing expanded capabilities like PCIe, dual MIPI ports, faster USB, and ample GPIO.</strong> RP1 enables <a href="https://firstfinger.in/power-efficiency-vs-performance-comparing-apple-silicon-vs-intel-processors/"><strong>improved performance</strong></a> and <strong>future enhancement</strong> of the Pi's connectivity. It is fully integrated into the new Pi 5 Model B, delivering an upgraded I/O subsystem.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--IY1cadpq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xwlzp0ru8phhl8w27bvq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IY1cadpq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xwlzp0ru8phhl8w27bvq.png" alt="running lighthouse audits" width="800" height="456"></a></p>
+<h3>
+  
+  
+  3. Power Button &amp; RTC (Real Time Clock)
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--z2NBsAhx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-4-with-Power-Button---Real-Time-Clock.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--z2NBsAhx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-4-with-Power-Button---Real-Time-Clock.jpg" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="533"></a><br>
+<em>Power Button &amp; RTC (Real Time Clock) | Image Credit: Raspberry Pi Foundation</em></p>
+
+<p>The Raspberry Pi 5 includes a <strong>hardware power button for the first time</strong> , allowing users to <strong>power off</strong> or <strong>soft reboot</strong> the device with a press of the button. It also now has a <strong>real-time clock (RTC)</strong> which can <strong>keep time even when the main power is disconnected</strong> , powered by an external battery.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SEYpsrFR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-RTC-BatteryCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SEYpsrFR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-RTC-BatteryCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="534"></a><br>
+<em>RTC External Battery | Image Credit: Raspberry Pi Foundation</em></p>
+
+<p>The RTC allows functions like scheduling to still work even without the main power on.</p>
+
+<h3>
+  
+  
+  4. PCIe Connector &amp; M.2 HATs
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EK8L4W_9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5_-EVERYTHING-you-need-to-know-2-3-screenshotCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EK8L4W_9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5_-EVERYTHING-you-need-to-know-2-3-screenshotCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a><br>
+<em>PCIe Express 3.0 Connector | Image Credit: Jeff Geerling</em></p>
+
+<p>The Raspberry Pi 5 includes a single lane of <strong>PCI Express 2.0</strong> which will provide <strong>faster performance for connected peripherals</strong> compared to previous Raspberry Pi models. This PCIe interface is exposed on a small connector on the board.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qVMvhV0M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-HATs-PrototypeCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qVMvhV0M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-HATs-PrototypeCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="533"></a><br>
+<em>M.2 HATs Prototype | Image Credit: Raspberry Pi Foundation</em></p>
+
+<p>As per Raspberry Foundation, they announced that at the start of 2024, <strong><em>accessory boards called - <code>M.2 HATs</code> will be available to convert this connector to the M.2 form factor, allowing users to connect <a href="https://firstfinger.in/best-1tb-nvme-ssd-top-picks-for-2023/">NVMe solid-state drives</a> and other <a href="https://firstfinger.in/what-is-the-max-speed-ssd-nvme-sata-hard-disk/">M.2 devices for even greater storage performance</a>.</em></strong> The PCIe lane has the potential to really expand the capabilities of the Raspberry Pi 5.</p>
+
+<h3>
+  
+  
+  5. Dual Camera/Display Ports
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--gwbR1rKa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/58f150c0-bd72-4e42-a77f-6be0890c8a80Compress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--gwbR1rKa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/58f150c0-bd72-4e42-a77f-6be0890c8a80Compress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="535"></a><br>
+<em>Dual Camera/Display Ports | Image Credit: Raspberry Pi Foundation</em></p>
+
+<p>The Raspberry Pi 5 includes <strong>two MIPI camera/display transceivers</strong> which allow it to connect to <strong>either two cameras or one camera and one display simultaneously.</strong> This dual port capability provides more flexibility over prior Pi models and enables use cases like connecting two high-resolution displays or cameras. The higher density pinout of the new MIPI connectors does require adapter cables for existing Pi cameras and displays, however.</p>
+
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Pv1tbZYo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/220-2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Pv1tbZYo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/220-2.png" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
 
 <h2>
   
   
-  Performance Analysis
+  Raspberry Pi 4 vs. Raspberry Pi 5 Performance Comparison
 </h2>
 
-<p>Lighthouse reports your website performance based on five speed metrics, each measuring some aspect of page speed (also called "load speed") </p>
+<h3>
+  
+  
+  1. CPU Benchmarks
+</h3>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VE2s3BkE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kudzn516tsh66cmcxkid.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VE2s3BkE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kudzn516tsh66cmcxkid.png" alt="lighthouse metrics" width="769" height="308"></a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vkOTJEPx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/pi4-pi5-general-overviewCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vkOTJEPx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/pi4-pi5-general-overviewCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="430"></a><br>
+<em>CPU Benchmarks | Image Credit: Jeff Geerling</em></p>
 
-<ul>
-<li>First Contentful Paint (FCP): Measures the time at which the first image or text becomes visible to users.</li>
-<li>Largest Contentful Paint (LCP): It calculates the amount of time a page takes to load it's largest element to users.</li>
-<li>Total Blocking Time (TBT): Measures the amount of time a page is blocked from reacting to user input, for example, a mouse click</li>
-<li>Cumulative Layout Shift (CLS): Measures the number of layout shifts that occurs as user assess the page.</li>
-<li>Speed Index (SI): Shows how quickly the content of a page is loaded.</li>
-</ul>
+<p>Early benchmarks of engineering samples of the new BCM2712 processor in the Pi 5 show a <strong>1.8x to 2.4x <a href="https://firstfinger.in/optimise-laptop-for-maximum-performance/">increase in performance</a></strong> on multi-core CPU tests compared to the Pi 4.</p>
 
-<p>After Lighthouse is done testing your website, it assigns an overall performance score to a page based on how it performed for all these metrics. The score can be anything from 0 to 100.</p>
+<p>Single-core ARM processing core speeds are improved. This means significantly better responsiveness for desktop applications, compiling code, and multitasking.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5m7EQTZq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zkno64954w060llpoeml.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5m7EQTZq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zkno64954w060llpoeml.png" alt="overall performance" width="448" height="268"></a></p>
+<h3>
+  
+  
+  2. Memory Benchmarks
+</h3>
 
-<ul>
-<li>A score between 90 and 100 indicates the page is well optimized for user experience.</li>
-<li>Anything less that 90 means there are some/significant number of resources on your page that are slowing things down, therefore affecting the overall page experience.</li>
-</ul>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--BXgpCg0n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/pi4-pi5-memory-latencyCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--BXgpCg0n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/pi4-pi5-memory-latencyCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="445"></a><br>
+<em>Memory Benchmarks | Image Credit: Jeff Geerling</em></p>
 
-<p>Lighthouse also gives you suggestions. Which you can implement the performance of your web page.</p>
+<p>The Raspberry Pi 5 32bit-LPDDR4X RAM runs at 4267 MT/s, more than double the bandwidth of the Raspberry Pi 4 LPDDR4 RAM and reduces latency by half because of new LPDDR4X modules.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--1661tE6w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tcg324y4et7s50j10583.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--1661tE6w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tcg324y4et7s50j10583.png" alt="Idiagnostics" width="771" height="503"></a></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OhptUR9Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-vs-Pi-4-Memory-PerformanceCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OhptUR9Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-vs-Pi-4-Memory-PerformanceCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a><br>
+<em>Memory Benchmarks | Image Credit: Jeff Geerling</em></p>
 
-<p>To make you feel a little bit better :-) <br>
-Lighthouse also gives you a report of tests your website passed.</p>
+<p>This results in 2-4x faster memory access speeds in benchmarks. Boot times, <a href="https://firstfinger.in/bare-metal-vs-virtual-machines-vs-containers/">application load times</a>, <a href="https://firstfinger.in/transfer-files-mac-android-wireless/">file transfers</a>, and performance of <a href="https://firstfinger.in/is-it-worth-getting-16gb-ram-macbook-air-m1/">RAM-heavy programs</a>will improve noticeably.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--3hTYBWjq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/utvqsiuekmikwnc2h1bu.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--3hTYBWjq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/utvqsiuekmikwnc2h1bu.png" alt="passed audits" width="746" height="517"></a></p>
+<h3>
+  
+  
+  3. Network Transfer Speed
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bnDr6S7_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/pi4-pi5-io-wifiCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bnDr6S7_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/pi4-pi5-io-wifiCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="423"></a><br>
+<em>Network Transfer Speed | Image Credit: Jeff Geerling</em></p>
+
+<p>With the same <a href="https://firstfinger.in/vpn-vs-zero-trust-network-remote-access/">networking hardware</a> as the Pi 4, Wi-Fi 5 and gigabit wired speeds will likely be similar between the Pi 5 and Pi 4.</p>
+
+<p>The Raspberry Pi 5 <strong>UHS-II microSD slot supports up to 312MB/s</strong> , around twice as fast as the Raspberry Pi 4 microSD slot. Transferring files between storage drives or over the <a href="https://firstfinger.in/tag/network/">network</a> will be quicker because better hardware utilization and better processing power may help edge out slightly faster network transfers <strong>when tuned properly.</strong></p>
+
+<h3>
+  
+  
+  4. Graphics Benchmarks
+</h3>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TpWyYL7g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5_-EVERYTHING-you-need-to-know-10-0-screenshotCompress.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TpWyYL7g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5_-EVERYTHING-you-need-to-know-10-0-screenshotCompress.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a><br>
+<em>Graphics Benchmarks | Image Credit: Jeff Geerling</em></p>
+
+<p>The new VideoCore VII GPU in the Pi 5 shows nearly a <strong>3x increase in graphics performance</strong> based on early benchmarks.</p>
+
+<p>With higher CPU clock speeds, faster RAM, and a more powerful GPU, the Raspberry Pi 5 will deliver improved performance in 4K video encoding/decoding, 3D graphics, and gaming frame rates.</p>
+
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WHGN-D2a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/8-Large.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WHGN-D2a--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/8-Large.jpeg" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
+
+<h2>
+  
+  
+  Pricing Comparison Pi 4 vs Pi 5
+</h2>
+
+<p>The pricing for the Pi 5 with 4GB and 8GB of RAM compares to the current Pi 4 lineup:</p>
+
+<div class="table-wrapper-paragraph"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>RAM</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raspberry Pi 4 B</td>
+<td>4GB</td>
+<td>$55</td>
+</tr>
+<tr>
+<td>Raspberry Pi 5 B</td>
+<td>4GB</td>
+<td>$60</td>
+</tr>
+<tr>
+<td>Raspberry Pi 4 B</td>
+<td>8GB</td>
+<td>$75</td>
+</tr>
+<tr>
+<td>Raspberry Pi 5 B</td>
+<td>8GB</td>
+<td>$80</td>
+</tr>
+</tbody>
+</table></div>
+
+<p>The Pi 5 does command a small premium over the Pi 4. However, the performance gains far outweigh the slightly higher cost for most use cases.</p>
+
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kHzH23Fn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/7-Large.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kHzH23Fn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/7-Large.jpeg" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a></p>
+
+<h2>
+  
+  
+  Use Case Comparison
+</h2>
+
+<p>Here are some examples of how the performance and features of the Raspberry Pi 5 measure up for different applications:</p>
+
+<h3>
+  
+  
+  1. Media Center &amp; NAS
+</h3>
+
+<p>The Pi 5 can <strong>handle 4K video playback smoothly</strong> along with image slideshows, and music streaming. The improved processing power of the Raspberry Pi 5's Arm Cortex-A76 CPU cores would allow it to <a href="https://firstfinger.in/ssh-vs-sftp-openssh-vpn-smtp/"><strong>handle multiple simultaneous access requests on the network</strong></a> better than the Pi 4 could.</p>
+
+<h3>
+  
+  
+  2. Desktop &amp; Web Browsing
+</h3>
+
+<p>Web pages and web apps will load much quicker on the Pi 5 with the faster CPU, memory, and storage speeds. The experience will be smooth and snappy.</p>
+
+<h3>
+  
+  
+  3. Cloud &amp; Programming
+</h3>
+
+<p>Compiling projects will be significantly quicker on the Pi 5. The extra RAM allows for running more containers and services compared to the Pi 4.</p>
+
+<h3>
+  
+  
+  4. Retro Gaming
+</h3>
+
+<p>Higher frame rates across game emulators and native titles make the Pi 5 better suited for retro gaming. <a href="https://firstfinger.in/is-windows-11-good-for-gaming-in-2023/">Games will be more smooth and responsive</a> overall.</p>
+
+<h3>
+  
+  
+  5. DIY Projects
+</h3>
+
+<p>For robotics and other projects using the GPIO pins, the Pi 5's extra performance headroom is useful. Computer vision applications also benefit from the improved camera/GPU support.</p>
+
+<h2>
+  
+  
+  Raspberry Pi 5 vs Orange Pi 5 vs Rock 5 B
+</h2>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--KkDS2hIx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry_Pi-5_Orange-Pi-5_Rock-5-B.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KkDS2hIx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry_Pi-5_Orange-Pi-5_Rock-5-B.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="800" height="450"></a><br>
+<em>Raspberry Pi 5 vs. Orange Pi 5 vs. Rock 5 B | Image Credit: Jeff Geerling</em></p>
+
+<p>While the <strong>Raspberry Pi 5 maintains its price advantage</strong> , the increased performance of models like the Orange Pi 5 and Rock 5 Model B shows that for users willing to spend above $100, the <strong>RK3588 can provide even better value</strong>. Featuring the <strong>same LPDDR4X RAM and four A76 cores as the Pi 5,</strong> the Rockchip RK3588's smaller process node and additional four cores allow it to push the limits of performance compared to the Pi 5.</p>
+
+<p>Rockchip seems to have truly optimized their RK3588 chip, with tests showing the Pi 5 can still hold its own for some tasks like media encoding and PHP, but it may lag slightly behind the raw processing power available from models using the <strong>RK3588, especially for users who prioritize maximum performance over absolute lowest cost.</strong> So the best choice depends on individual use cases, but the <strong>RK3588 models show the most potential for those willing to spend more.</strong></p>
+
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--rns5VaJL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-TopCompress-1.webp" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--rns5VaJL--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://firstfinger.in/content/images/2023/09/Raspberry-Pi-5-TopCompress-1.webp" alt="Raspberry Pi 4 vs. Raspberry Pi 5: Which Offers Better Value and Performance?" width="600" height="400"></a></p>
+
+<h2>
+  
+  
+  Which Raspberry Pi Is Better in Terms of Price &amp; Performance?
+</h2>
+
+<p>Based on the specs and benchmarks, the <strong>Raspberry Pi 5 model B clearly outperforms the Raspberry Pi 4</strong> across the board while maintaining the same size, footprint, and price point.</p>
+
+<blockquote>
+<p>For those needing a balance of strong CPU performance, graphics capabilities, memory bandwidth, and the latest interfaces like PCIe, the Pi 5 is the obvious choice.</p>
+</blockquote>
+
+<p>However, the Pi 4 model B will still be relevant for many applications not requiring the extra power. If you already own a Pi 4 and are happy with the performance, then upgrading may not be necessary.</p>
+
+<p>But for new projects and users, the <strong>Pi 5 provides excellent future-proofing</strong>. As software demands increase over time, the extra headroom will come in handy.</p>
 
 <h2>
   
@@ -282,297 +689,1057 @@ Lighthouse also gives you a report of tests your website passed.</p>
   Conclusion
 </h2>
 
-<p>In this article, you have learned how to test your website's performance with lighthouse. You can also test your website for things like accessibility, SEO, and more. </p>
+<p>The Raspberry Pi 5 model B represents the popular line of single-board computers. With upgrades across the board from CPU and GPU to RAM and storage, it outperforms the Pi 4 in nearly every metric.</p>
 
-<p>If this article was helpful to you, please react to it. Doing so will help me in writing better articles.</p>
+<blockquote>
+<p><strong>Some key takeaways in comparing the Pi 4 and Pi 5:</strong></p>
+</blockquote>
 
- </details> 
- <hr /> 
+<ul>
+<li>New BCM2712 processor with 1.8-2.4x faster CPU performance</li>
+<li>Upgraded LPDDR4X RAM with double the bandwidth</li>
+<li>VideoCore VII GPU capable of 4K video and 3D graphics</li>
+<li>Faster storage, boot times, and file transfers</li>
+<li>Useful new features like PCIe, dual display outputs, and a power button</li>
+</ul>
 
- #### - [Cloning JavaScript Objects: A Comprehensive Guide](https://dev.to/iamcymentho/cloning-javascript-objects-a-comprehensive-guide-2pgo) 
- <details><summary>Article</summary> <p>JavaScript is known for its reference-based object handling, making object cloning a crucial topic for developers. In this comprehensive guide, we'll explore various techniques to correctly clone JavaScript objects, including both shallow and deep cloning. By the end, you'll have a deep understanding of object cloning in JavaScript.</p>
-
-<p><code>Introduction to Object Cloning</code><br>
-Before diving into cloning techniques, we'll understand why object cloning is necessary and explore the complexities of object references in JavaScript.</p>
-
-<p><code>Shallow vs. Deep Cloning</code><br>
-Learn the distinctions between shallow and deep cloning, and find out when each type is appropriate.</p>
-
-<p><code>Using the Spread Operator (Shallow Cloning)</code><br>
-Explore shallow cloning with examples using the spread operator.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">original</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span> <span class="p">};</span>
-<span class="kd">const</span> <span class="nx">clone</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">original</span> <span class="p">};</span>
-
-</code></pre>
-
-</div>
+<p>Both models will likely coexist for some time. But for new purchasers seeking the fastest and most capable Raspberry Pi yet, the Pi 5 is a clear choice that will enable builds not possible before.</p>
 
 
 
-<p><code>Using Object.assign() (Shallow Cloning)</code><br>
-Discover how to shallow clone objects with the Object.assign() method.<br>
-</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">original</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span> <span class="p">};</span>
-<span class="kd">const</span> <span class="nx">clone</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">original</span><span class="p">);</span>
+<h2>
+  
+  
+  FAQs (Frequently Asked Questions)
+</h2>
 
-</code></pre>
-
-</div>
-
-
-
-<p><code>JSON Methods (Deep Cloning)</code><br>
-Delve into deep cloning using JSON.parse() and JSON.stringify().<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">original</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span> <span class="na">details</span><span class="p">:</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span> <span class="p">}</span> <span class="p">};</span>
-<span class="kd">const</span> <span class="nx">clone</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">original</span><span class="p">));</span>
-
-</code></pre>
-
-</div>
+<h4>
+  
+  
+  When will the Raspberry Pi 5 be released?
+</h4>
 
 
 
-<p><code>Lodash Library for Cloning</code><br>
-Learn about the popular lodash library and its clone and cloneDeep functions for cloning objects.<br>
-</p>
+<p>The Raspberry Pi 5 model B is scheduled to launch in October 2023, with broad availability expected by the end of October 2023.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">lodash</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">original</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span> <span class="p">};</span>
-<span class="kd">const</span> <span class="nx">clone</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">cloneDeep</span><span class="p">(</span><span class="nx">original</span><span class="p">);</span>
-
-</code></pre>
-
-</div>
+<h4>
+  
+  
+  How much will the Raspberry Pi 5 cost?
+</h4>
 
 
 
-<p><code>Cloning Arrays of Objects</code><br>
-Handle arrays of objects and ensure they are cloned correctly.<br>
-</p>
+<p>MSRP pricing starts at $60 for a 4GB model. The high-end 8GB version costs $80. A small premium over Pi 4 models.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">originalArray</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Jane</span><span class="dl">'</span> <span class="p">}];</span>
-<span class="kd">const</span> <span class="nx">cloneArray</span> <span class="o">=</span> <span class="nx">originalArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">obj</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="p">...</span><span class="nx">obj</span> <span class="p">}));</span>
-
-</code></pre>
-
-</div>
+<h4>
+  
+  
+  Will Pi 4 accessories and HATs work on the Pi 5?
+</h4>
 
 
 
-<p><code>Cloning Built-in Objects</code><br>
-Learn how to clone built-in objects like Date and RegExp.<br>
-</p>
+<p>Most should function on the Pi 5 since it maintains the same size, GPIO header, ports, and connectors (aside from DSI/CSI). But check for compatibility to be safe.</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">originalDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">cloneDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">originalDate</span><span class="p">);</span>
-
-</code></pre>
-
-</div>
+<h4>
+  
+  
+  Is the Raspberry Pi 5 backwards compatible with Pi 4 images?
+</h4>
 
 
 
-<p><code>LinkedIn Account</code> : <a href="https://www.linkedin.com/in/matthew-odumosu/">LinkedIn</a><br>
-<code>Twitter Account</code>: <a href="https://twitter.com/iamcymentho">Twitter</a><br>
-<strong>Credit</strong>: Graphics sourced from <a href="https://gregoryboxij.blogspot.com/2021/07/how-do-you-clone-an-object-in-javascript.html">modern javascript blog</a></p>
+<p>Yes, existing Pi 4 OS images will work on the Pi 5 out of the box. Some configuration tweaking may be needed to unlock full performance though.</p>
+
+<h4>
+  
+  
+  Should I upgrade from a Raspberry Pi 4 to a Pi 5?
+</h4>
+
+
+
+<p>If you need more processing power, graphics performance, or RAM bandwidth for your projects, the upgrade to the Pi 5 makes sense. Otherwise, the Pi 4 will still perform well for general use cases.</p>
 
  </details> 
  <hr /> 
 
- #### - [CodeCraft: Full-Stack Chapter 3](https://dev.to/codegino/codecraft-full-stack-chapter-3-4h06) 
- <details><summary>Article</summary> <p>The hammering sounds of construction woke Jason as sunlight filtered through the window of the small wooden hut. He slowly sat up on the uncomfortable straw bed, grimacing at pains in unfamiliar areas.</p>
-
-<p>"Was it all a dream?" he whispered, rubbing stiff shoulders. But no - this wasn't his apartment. The unfamiliar symbols on the walls told of another place, another reality.</p>
-
-<p>His eyes were drawn to a table in the corner, equipped with throwing stars, knives, and a short sword. "Okay, that's either really cool or really concerning," he said out loud, contemplating the hint of adventure and danger that seemed to linger in the air.</p>
-
-<p>Just then, he noticed a unique three-tailed, orange-and-black-striped cat lounging near his bed. The cat looked up, its eyes almost sage-like. "Wow, the house pet here is really something," Jason said, chuckling.</p>
-
-<p>Jason's eyes darted back to the table of weapons, reminding him of the "Eye of Debugger," an ability he'd unlocked the other day. This skill had offered him a surreal, code-like overlay of the real world. Despite the awe it inspired, reactivating it proved elusive.</p>
-
-<p>Eager to try it again, Jason closed his eyes and focused. He tried to recapture the state of mind he was in when he first activated the "Eye of Debugger." Deep breaths, focus, and then... "Eye of Debugger," he thought. Nothing happened. He opened one eye and then the other. The room remained steadfastly normal, and the three-tailed cat looked almost amused.</p>
-
-<p>Feeling a sense of frustration, Jason had a moment of clarity. Could the "Eye of Debugger" operate like a mental command line? He relaxed his posture, cleared his mind, and spoke the words out loud: "Show me the digital world." Almost instantaneously, he heard the familiar voice in his head say, "Eye of Debugger, activated."</p>
-
-<p>Both of his eyes began to perceive the environment in a completely new light. Objects in the room were surrounded by glowing grids and cryptic symbols. As his eyes locked onto a knife on the table, an interactive menu flickered into existence, inviting him to check deeper.</p>
-
-<p>Thrilled by his newfound control, Jason realized the importance of the ability to switch between the two visions was vital. Guided by his common sense, he focused his thoughts on the counter-command: "Show me the magical world." As if on cue, the cryptic symbols and digital grids began to fade, allowing his eyes to adjust back to the room's natural hues and enchanting atmosphere.</p>
-
-<p>Curiosity bubbling, Jason's eyes flicked back to the orange and black striped cat lounging on a corner cushion. Intrigued, he couldn't help but think how much more interesting the feline would be with nine tails instead of just three. He imagined the digital interface springing to life around the cat. He was hoping for options like 'add tail' or something cooler.</p>
-
-<p>"If only I could give you six more tails and make you a real mythic creature," he thought, amused by the idea.</p>
-
-<p>However, as he focused on the cat through his "Eye of Debugger," he realized that the digital outline didn't offer any options for interaction. It was like a locked interface—impossible to edit or alter.</p>
-
-<p>His eyes wandered back to the inanimate objects. When he focused on them, menus would materialize in his vision, ready for his mental commands to manipulate them. But the cat? Nothing.</p>
-
-<p>"Guess living things aren't open-source," he thought, disappointed at his own limitations.</p>
-
-<p>As he heard louder voices outside the hut, he opened the wooden door and walked outside. What he saw was an old-fashioned village, about the size to house maybe 50 people. Roofs made of straw and cobblestone pathways gave it an old-world charm. People were going about their day, trading, talking, and some children even playing in the distance. The air was filled with a mix of interesting smells: fresh earth, flowers, and something delicious cooking not too far away.</p>
-
-<p>While Jason was soaking in the scenery, an elderly man walked up to him. This man had a kindly face and eyes that seemed to twinkle, despite the wrinkles around them. "How are you feeling, young man?" he asked. He introduced himself as Dalos, the village chief.</p>
-
-<p>The strangest part was that Jason understood him. He didn't recognize the words, but he understood their meaning instantly. It was like his mind was translating the language in real-time.</p>
-
-<p>Confused but wanting to communicate, Jason used a mix of sign language and words, saying, "I can't speak your language. My name is Jason, thank you for saving my life." The words that came out of his mouth were not in any language he knew, but everyone around seemed to understand him perfectly. His eyes widened, suddenly realizing that something was translating for him automatically. "Is this another feature of this weird place?" he wondered, slightly unnerved but also fascinated.</p>
-
-<p>Upon hearing Jason's words, the villagers burst into laughter. It was a warm, hearty sound that filled the air. They all seemed to think that Jason, whom they believed to be a legendary hero, was making a joke. Jason looked around, puzzled but relieved that they were at least in good spirits about his presence.</p>
-
-<p>Just then, a man with a stern expression stepped forward. "Ah, the 'legendary hero,'" he said slowly, with clear contempt in every word. "It's truly awe-inspiring how you bravely turned tail at the first sight of a mere bull." This man was Gurlan, and he was clearly unimpressed with the village's newfound savior.</p>
-
-<p>Jason remembered the incident Gurlan mentioned. He had indeed run away from a bull, adrenaline fueling his legs, terror gripping his heart. But he had no idea why these people were calling him a 'legendary hero.' What did they mean by that? And more importantly, why did they need a hero? Doubts and questions swirled in his mind, making him realize he had much more to learn about this strange new world.</p>
-
-<p>Dalos, the village chief, cleared his throat loudly, signaling for the chatter to cease. "Enough, Gurlan," he said with authority but not without a twinkle in his eyes. "You'll have ample time to exchange jokes with our guest later. Let me formally welcome you." He turned to Jason. "I am Dalos, the village chief. Welcome to Capsteen, our humble village. May I introduce my grandsons? This is Gurlan," he gestured toward the stern young man, "and this is his younger brother, Gular."</p>
-
-<p>Gurlan grunted, keeping his stern look. In stark contrast, Gular waved with a big smile, clearly much friendlier than his brother.</p>
-
-<p>Yet the interaction with Gurlan left him puzzled. "Why does he dislike me so much? We've never met." Jason thought. He couldn't help but wonder what he'd walked into and why Gurlan had taken such an immediate dislike to him. Was it something he'd done, or was Gurlan naturally this skeptical of strangers? Either way, Jason knew he had to tread carefully, at least until he had a better understanding of the village and its inhabitants.</p>
-
-<p>Gular, who was noticeably more cheerful than his older brother, stepped forward with a wide grin on his face. "Hey, you changed the color of that monolith, didn't you? Could you do the same for my toy horse?" He held out a small wooden horse, its paint chipped and faded.</p>
-
-<p>Jason took a look at the wooden horse and then back at Gular. Nodding, he activated his 'Eye of Debugger.'' then focused on the wooden horse to select the decompile option. "Ah, the color property," he thought to himself. Inspired to do more this time, he mentally navigated to the color setting and chose a variety of shades: a red mane, a blue body, and yellow hooves. The wooden horse was transformed in an instant, now radiant in its new, multicolored form.</p>
-
-<p>A ripple of astonishment swept through the village, accompanied by gasps and whispers from the villagers.</p>
-
-<p>"Why does everyone look so surprised? Is this the first time you've seen a colored horse, or is my choice of color not to this village's liking?" Jason asked, puzzled by their reaction.</p>
-
-<p>A villager stepped forward, awe still etched on his face. "It's not the color that surprises us; it's how you did it. You didn't utter a single word while casting your magic."</p>
-
-<p>Dalos, the village chief, nodded his head in agreement with his fellow villager. "Indeed, spoken words channel the essence of our magic. It would be groundbreaking if someone could perform voiceless magic, let alone do something as permanent as you did." He gestured towards the red monolith that Jason had altered the day before, "That stone, for instance, has never been permanently altered. Your actions open up new possibilities we hadn't considered."</p>
-
-<p>Gurlan mocked, layering his voice with heavy sarcasm. "So you can change the color of a toy horse without uttering a word, yet you don't know the first thing about how our magic works? That's... impressive in its own way, I guess. You're talented and dumb at the same time. What's next, saving the world with your unmatched ability to redecorate?"</p>
-
-<p>Gurlan whirled around to face the villagers, his voice tinged with urgency. "Think about it! This is the 'legendary hero' we're pinning our hopes on? A man who flees from a mere bull and is clueless about our world!"</p>
-
-<p>His eyes narrowed, and he pressed on. "Sure, he's got some peculiar talents. But do we really want to risk our community's fate on a total stranger? Someone who's so foreign to us, he might just turn those powers against us?"</p>
-
-<p>A ripple of unease swept through the crowd. Their faces clouded with uncertainty as if Gurlan's words had unsettled a previously unspoken fear. The mood shifted; villagers exchanged wary glances, now reevaluating the wisdom of trusting Jason.</p>
-
-<p>Feeling the crowd's skepticism weigh on him, Jason's mind raced. This village was his safest bet for learning more about this strange world. He couldn't afford to be cast out now. Losing their trust was not an option. "Look, I come in peace," he started cautiously, grasping for the right words. A flicker of inspiration hit him, offering a chance to hide his ignorance while still sounding like a legendary hero. He said "The last thing I remember is being in battle with a fearsome, three-headed dragon. After that, everything's a blur. I can't remember much, so bear with me as I try to figure things out."</p>
-
-<p>The atmosphere shifted dramatically, from skepticism to awe. "Only a legendary hero would face a three-headed dragon," Gular mused, his eyes widening. "That's incredible! Who won? What spells did you use?" The crowd buzzed with excitement, their previous doubts momentarily forgotten as they regarded Jason as the heroic figure he portrayed himself to be.</p>
-
-<p>Jason couldn't help but smirk. "Ha! Nailed it. Man, if only job interviews were this easy to bluff through."</p>
-
-<p>Gurlan folded his arms, clearly unmoved by the crowd's shifting sentiments. "Someone ignorant who can perform voiceless magic had fought a three-headed dragon but is afraid of a mere bull? This doesn't add up. He could be a fraud, or even worse, a spy."</p>
-
-<p>With a steely gaze, Gurlan turned to Jason. "How about a challenge? Prove your courage and skills. If you're as 'heroic' as you claim, then you should have no problem defending yourself."</p>
-
-<p>Dalos stepped in to mediate, "Alright, a challenge it is then. But let's set some ground rules: the match ends when one of you either surrenders or becomes unconscious. No lethal force. And if you lose, young man," Dalos directed his gaze at Jason, "you leave this village."</p>
-
-<p>"Fair enough," said Gurlan, smirking at Jason. "If you've battled a three-headed dragon, I should be a breeze, right? Unless, of course, you've been deceiving us."</p>
-
-<p>Jason felt a surge of nervousness shoot through him, as though his stomach had dropped to his feet. The realization that he was about to duel, coupled with the looming threat of exile, set his heart pounding uncontrollably. "Hold on a second, when did I ever agree to a duel? What kind of mess have I walked into?" he thought. Swallowing hard, he struggled to put on a brave face while every fiber of his being screamed with anxiety and apprehension.</p>
-
-<p>The villagers gathered around Gurlan, patting him on the back and nodding in agreement. "You always have the village's best interests at heart, Gurlan. That's why you'll make a great chief one day," one elder said. The atmosphere made it clear: their trust in him ran deep, based on his obvious concern for the community.</p>
-
-<p>Dalos's face turned somber as he addressed Jason. "We give you one week to prepare for this duel. Given your lost memory, it would be a dishonor to fight an unprepared opponent."</p>
-
-<p>Jason's internal monologue churned with thoughts. "One week? Does that mean five or seven days in this world? No, don't ask, you'll sound like an idiot." Then another thought popped up. "One week? Who are they kidding? I'd need at least five years to prepare for this! I only have experience in video game fights."</p>
-
-<p>Jason's face remained composed, not betraying the inner turmoil. "Thank you for the honor of preparation time. I'll make the best of it," he managed to say, swallowing hard.</p>
-
-<p>The mood in the village was tense as people went off to do their own things, knowing something important was coming up. Breaking the silence, Dalos spoke up. "Let me guide you back to the guest room. You'll need a place to rest and prepare."</p>
-
-<p>Seizing the opportunity, Jason exclaimed his request before they could leave the public area. "Um, may I request an introduction to how magic works in this land? It might help jog my memory," he lied, trying to sound as earnest as possible.</p>
-
-<p>The room filled with exchanged glances, a mix of curiosity and doubt hanging in the air. Dalos took a moment before nodding. "Very well, if you think it'll help you remember, it might be worth a shot."</p>
-
-<p>Jason's shoulders relaxed, a subtle shift as if a weight had been lifted. Understanding the magic system would give him a fighting chance.</p>
-
-<p>Dalos led Jason into a room adorned with mystical symbols and ancient scrolls. "Sit, sit," he said, gesturing to a cushioned seat. "Now, let me explain the core of magic. You see, we chant the words of the gods to channel our spiritual energy into magic. It's simple, really."</p>
-
-<p>Jason couldn't help but think, "Simple? Oh, you mean just like explaining quantum physics to a 5-year-old.</p>
-
-<p>Dalos gestured, and three individuals entered the room, their behavior solemn as though they were about to perform a sacred rite.</p>
-
-<p>"Allow me to introduce the core magics of the Fendtorn race," Dalos announced. "We specialize in three main types: creating materials, manipulating these created materials, and enhancing them."</p>
-
-<p>As Dalos's guests prepared themselves, Jason discreetly activated his 'Eye of Debugger,' hoping to uncover the deeper mechanisms behind this so-called magic.</p>
-
-<p>The practitioners lined up, each focused, waiting for their moment. The first one stepped forward, extending their hands and closing their eyes. "Watch closely," Dalos whispered, the room silent but for his voice.</p>
-
-<p>The first practitioner began:</p>
-
-<p>"From the cosmic forge, to steel I declare,<br>
-Iron and carbon, in elements paired.<br>
-Tags and attributes, in harmony soar,<br>
-Compile into being, as steel I restore."</p>
-
-<p>A piece of steel materialized out of thin air, floating before them. Jason's eyes widened, captivated by what seemed like a miracle. The first practitioner stepped back, their task complete.</p>
-
-<p>Dalos gestured subtly, and the second practitioner advanced. Hands hovering over the floating steel, they took a deep breath and continued:</p>
-
-<p>"By selector’s grace, to sword you shall bend,<br>
-Curves and lines, in styles that I send.<br>
-Radius smooth, yet structure defined,<br>
-Transitions complete, in sword you're designed."</p>
-
-<p>The steel morphed into the shape of a sword. Jason felt a surge of disbelief and wonder.</p>
-
-<p>With a slight bow, the third practitioner advanced. Meeting Jason's eye briefly, they began the final chant:</p>
-
-<p>"Function sharpen invoked, edge fine-tuned to the core,<br>
-Increment sword strength, like a variable I store.<br>
-Callbacks to the hilt, and to the blade's keen sight,<br>
-Await your power, to unleash warrior's might."</p>
-
-<p>The sword emitted a radiant glow. Its form became robust, its blade razor-sharp. Jason could hardly contain his awe.</p>
-
-<p>Throughout the demonstration, Jason noticed something peculiar. The incantations they chanted sounded eerily like a script in a programming language. Each syllable, each phrase seemed to represent a command that transformed characters—code—into something palpable and real. His background as a web developer made it all the more fascinating and uncanny.</p>
-
-<p>'Are they... Are they literally coding reality?' Jason pondered, his mind racing. 'This is like HTML and CSS but on steroids.'</p>
-
-<p>His "Eye of Debugger" revealed something even more intriguing. This wasn't magic in the conventional sense—it was science, just a form of science this world hadn't realized yet. Everything seemed to revolve around bytes or some other unit of data. The incantations were like algorithms, manipulating these units into forming matter and effects, and spiritual energy was a form of computational resource.</p>
-
-<p>Jason grinned to himself, 'If magic here is just another form of coding, then I have a shot at this. After all, I'm a wizard in my own right—a code wizard.'</p>
-
-<p>"As with all things, there are limitations," Dalos said, eyes twinkling with wisdom. "Our magic has a lifespan; the effects last only for around ten minutes. Hence, we also train rigorously in physical combat to supplement our abilities."</p>
-
-<p>Jason nodded with clearer understanding. "So they're like programmer-samurais...or nija, blending magic and weaponry. Ten minutes could be a limitation, but it all depends on how they use it."</p>
-
-<p>"Thank you for this invaluable information, Dalos," Jason said earnestly. "Do you happen to know where I could train? I really need to get the hang of this before... you know, the whole duel thing."</p>
-
-<p>Dalos nodded, a look of understanding in his eyes. "I'd recommend heading straight to the training ground located just behind the village hall," he said, pointing him in the direction of the exit.</p>
-
-<p>Jason made his way through the village, his eyes scanning for the hall Dalos mentioned. Upon finding it, he spotted an open area filled with training dummies and wooden weapons. His footsteps quickened as he approached, and soon he was in the heart of the training ground.</p>
-
-<p>Not being able to remember any of the incantations, Jason decided to focus on how the 'Eye of Debugger' could be used for battle. Jason settled into a chair, staring intently at a spear lying a few feet away from him. "Alright, Spear, tell me your secrets. What properties do you possess that could help me survive a duel? Maybe you have some kind of hidden power or... Oh man, I can't believe I'm talking to a spear."</p>
-
-<p>Jason moved closer and studied the spear's properties, his attention landing on its 'position' attribute. "Can I manipulate this thing remotely?" he pondered. Focusing intently, he tried to update the spear's coordinates using just his imagination. The minutes felt like hours, each failed attempt melting away at his confidence.</p>
-
-<p>Just when he was about to give up, he noticed something—the spear quivered an inch off the ground each time his gaze wandered. Energized by the clue, he fixed his gaze at a point a few feet away and visualized the spear levitating. After a struggle that seemed like an eternity, the spear lifted—just a few inches off the ground.</p>
-
-<p>From a distance, Jason looked like he was daydreaming or slacking off, but in his mind, a battle raged on.</p>
-
-<p>Gurlan glanced over and scoffed. "He's doing nothing, just slacking," he thought. Annoyed, he yelled, "Hey! What are you doing?!"</p>
-
-<p>Jason's eyes, startled, snapped toward the source of the voice—Gurlan.</p>
-
-<p>The moment Jason's eyes met Gurlan's, the spear—which had lifted just a few inches off the ground—shot through the air towards Gurlan at a startling speed. With amazing reflexes, Gurlan caught the spear just before it could make contact with his face.</p>
-
-<p>Jason learned how to move an object, but he also moved himself in a difficult situation.</p>
-
-<p>The spear, although intercepted by Gurlan's swift hands, resisted with an uncanny force. The levitating power infused by Jason made the spear jitter and wriggle in Gurlan's grasp, like a serpent trying to break free. Veins popped in Gurlan's arms, his muscles strained as he wrestled with the seemingly possessed weapon.</p>
-
-<p>The square was silent, all eyes were locked on the tussle between the man and the levitating spear. The seconds stretched, the world seemed to slow down, and then, with a final determined heave, Gurlan slammed the spear into the ground, pinning it in place.</p>
-
-<p>Gurlan's eyes locked onto Jason's, creating a strong tension in the air. "Well, that was unexpected. Perhaps you're not as pathetic as you look," he said, his words filled with a complexity that Jason couldn't quite figure out. Gurlan then turned away, and as he did, the corners of his mouth seemed to twitch upwards.</p>
-
-<p>Jason squinted, his thoughts racing. 'Was that a smile? What's going on in his head?'</p>
-
-<p>The unclear moment left him uneasy, casting a long shadow of doubt and making him even more nervous about the upcoming duel.</p>
+ #### - [250-Web-Development-Tools Of course, here's a list of 250 web development and SEO tools for 2023 Design](https://dev.to/ltcbuzy/250-web-development-tools-of-course-heres-a-list-of-250-web-development-and-seo-tools-for-2023-design-5c1l) 
+ <details><summary>Article</summary> <p>~~ ~~ 250-Web-Development-Tools<br>
+Of course, here's a list of 250 web development and SEO tools for 2023<br>
+Design</p>
+
+<blockquote>
+<p>take your web development skills to the next level? Look no further because I have the perfect solution for you - 250 Web Development Tools! With this extensive collection of tools, you'll have everything you need to create stunning websites that will leave your clients and visitors in awe. Whether you're a beginner or an experienced developer, these tools will make your life so much easier. From code editors to design templates, this package has it all. And the best part? You can use these tools over and over again, saving you time and effort. Get ready to revolutionize your web development game with 250 Web Development Tools!</p>
+</blockquote>
+
+<ul>
+<li>  Visual Studio Code</li>
+<li>  Sublime Text</li>
+<li>  Atom</li>
+<li>  <a href="https://t.me/s/TargetedVisitors/17">Telegram</a>
+</li>
+<li>  Brackets</li>
+<li>  IntelliJ IDEA</li>
+<li>  WebStorm</li>
+<li>  <a href="https://digital-dynamo-solutions.netlify.app/">Netlify.app</a>
+</li>
+<li>  GitHub</li>
+<li>  <a href="https://targeted-visitors.com">Targeted Visitors</a>
+</li>
+<li>  Bitbucket</li>
+<li>  Bootstrap</li>
+<li>  jQuery</li>
+<li>  Angular</li>
+<li>  React</li>
+<li>  Vue.js</li>
+<li>  Node.js</li>
+<li>  Ruby on Rails</li>
+<li>  Flask</li>
+<li>  Django</li>
+<li>  Laravel</li>
+<li>  Express.js</li>
+<li>  Postman</li>
+<li>  Swagger</li>
+<li>  <a href="https://dzen.ru/a/ZQiKQEGa6wQm_4YO">Dzen</a>
+</li>
+<li>  Chrome DevTools</li>
+<li>  Firefox Developer Edition</li>
+<li>  Edge DevTools</li>
+<li>  Responsive Design Mode</li>
+<li>  Webflow</li>
+<li>  Figma</li>
+<li>  Sketch</li>
+<li>  Zeplin</li>
+<li>  InVision</li>
+<li>  Trello</li>
+<li>  Asana</li>
+<li>  Jira</li>
+<li>  <a href="https://target4.odoo.com/blog/our-blog-1/buy-website-traffic-cheaply-20">Odoo</a>
+</li>
+<li>  Basecamp</li>
+<li>  WordPress</li>
+<li>  Joomla</li>
+<li>  Drupal</li>
+<li>  Magento</li>
+<li>  <a href="https://uberant.com/article/1948789-skyrocket-your-websites-visibility-with-low-cost-high-quality-traffic-techniques/">uberant</a>
+</li>
+<li>  WooCommerce</li>
+<li>  Shopify</li>
+<li>  BigCommerce</li>
+<li>  <a href="https://ko.surveymonkey.com/r/HVR26SJ">Surveymonkey</a>
+</li>
+<li>  <a href="https://w3schools3.wixsite.com/growth-grid-pro/post/unveiling-organic-traffic-a-guide-to-its-nature-and-amplification">Wix</a>
+</li>
+<li>  Squarespace</li>
+<li>  Ghost</li>
+<li>  <a href="https://m3w.netlify.app">Netlify</a>
+</li>
+<li>  Vercel</li>
+<li>  GitHub Pages</li>
+<li>  Heroku</li>
+<li>  DigitalOcean</li>
+<li>  AWS</li>
+<li>  Google Cloud Platform</li>
+<li>  Firebase</li>
+<li>  Azure</li>
+<li>  Docker</li>
+<li>  Kubernetes</li>
+<li>  Nginx</li>
+<li>  Apache</li>
+<li>  Redis</li>
+<li>  MongoDB</li>
+<li>  MySQL</li>
+<li>  PostgreSQL</li>
+<li>  SQLite</li>
+<li>  GraphQL</li>
+<li>  REST APIs</li>
+<li>  SOAP</li>
+<li>  JSON</li>
+<li>  XML</li>
+<li>  AMP</li>
+<li>  PWA</li>
+<li>  WebAssembly</li>
+<li>  Progressive Enhancement</li>
+<li>  WebSockets</li>
+<li>  WebRTC</li>
+<li>  HTTP/2</li>
+<li>  GraphQL</li>
+<li>  Swagger/OpenAPI</li>
+<li>  PostCSS</li>
+<li>  SASS/SCSS</li>
+<li>  LESS</li>
+<li>  Babel</li>
+<li>  ESLint</li>
+<li>  TypeScript</li>
+<li>  Gulp</li>
+<li>  Grunt</li>
+<li>  Webpack</li>
+<li>  Rollup</li>
+<li>  Jekyll</li>
+<li>  Hugo</li>
+<li>  Next.js</li>
+<li>  Nuxt.js</li>
+<li>  Gridsome</li>
+<li>  11ty</li>
+<li>  Jamstack</li>
+<li>  AMP</li>
+<li>  Storybook</li>
+<li>  Cypress</li>
+<li>  Jest</li>
+<li>  Mocha</li>
+<li>  Selenium</li>
+<li>  Lighthouse</li>
+<li>  Google PageSpeed Insights</li>
+<li>  GTmetrix</li>
+<li>  Pingdom</li>
+<li>  Ahrefs</li>
+<li>  SEMrush</li>
+<li>  Moz</li>
+<li>  Screaming Frog</li>
+<li>  Google Search Console</li>
+<li>  Bing Webmaster Tools</li>
+<li>  <a href="https://yoast.com/wordpress/plugins/seo/">Yoast SEO</a>
+</li>
+<li>  All in One SEO Pack</li>
+<li>  Rank Math</li>
+<li>  Ubersuggest</li>
+<li>  Majestic SEO</li>
+<li>  <a href="https://v2o.297.myftpupload.com/">Ftp Upload</a>
+</li>
+<li>  Keyword Planner</li>
+<li>  AnswerThePublic</li>
+<li>  Screpy</li>
+<li>  SurferSEO</li>
+<li>  SE Ranking</li>
+<li>  Serpstat</li>
+<li>  LongTailPro</li>
+<li>  BuzzSumo</li>
+<li>  Google Analytics</li>
+<li>  Adobe Analytics</li>
+<li>  Matomo</li>
+<li>  Hotjar</li>
+<li>  Crazy Egg</li>
+<li>  Mixpanel</li>
+<li>  Heap</li>
+<li>  Optimizely</li>
+<li>  VWO</li>
+<li>  Convert</li>
+<li>  Unbounce</li>
+<li>  Instapage</li>
+<li>  Leadpages</li>
+<li>  Google Optimize</li>
+<li>  Sketch</li>
+<li>  Framer</li>
+<li>  Marvel</li>
+<li>  Proto.io</li>
+<li>  Adobe XD</li>
+<li>  Axure RP</li>
+<li>  Justinmind</li>
+<li>  Flinto</li>
+<li>  Zeplin</li>
+<li>  Abstract</li>
+<li>  Craft</li>
+<li>  Marvel</li>
+<li>  Overflow</li>
+<li>  Lucidchart</li>
+<li>  Balsamiq</li>
+<li>  MockFlow</li>
+<li>  InVision</li>
+<li>  Avocode</li>
+<li>  Pastel</li>
+<li>  Tilda</li>
+<li>  Readymag</li>
+<li>  Carrd</li>
+<li>  Webflow</li>
+<li>  Dribbble</li>
+<li>  Behance</li>
+<li>  CodePen</li>
+<li>  <a href="https://codepen.io/morensoi">Codepen.io</a>
+</li>
+<li>  SiteInspire</li>
+<li>  CSS Design Awards</li>
+<li>  Awwwards</li>
+<li>  Smashing Magazine</li>
+<li>  Codrops</li>
+<li>  CSS-Tricks</li>
+<li>  Stack Overflow</li>
+<li>  GitHub</li>
+<li>  <a href="https://www.behance.net/gallery/180474681/Harnessing-the-power-of-SEO-can-significantly">behance</a>
+</li>
+<li>  Bitbucket</li>
+<li>  Codecademy</li>
+<li>  freeCodeCamp</li>
+<li>  MDN Web Docs</li>
+<li>  SitePoint</li>
+<li>  Tuts+</li>
+<li>  CSS Weekly</li>
+<li>  JavaScript Weekly</li>
+<li>  Frontend Focus</li>
+<li>  Smashing Magazine</li>
+<li>  Codrops</li>
+<li>  A List Apart</li>
+<li>  CSS-Tricks</li>
+<li>  Speckyboy</li>
+<li>  Scotch.io</li>
+<li>  David Walsh Blog</li>
+<li>  CodyHouse</li>
+<li>  Free Frontend</li>
+<li>  Frontend Masters</li>
+<li>  Egghead</li>
+<li>  Pluralsight</li>
+<li>  Coursera</li>
+<li>  edX</li>
+<li>  Udacity</li>
+<li>  Treehouse</li>
+<li>  LinkedIn Learning</li>
+<li>  MDN Web Docs</li>
+<li>  Mozilla Developer Network</li>
+<li>  Stack Overflow</li>
+<li>  <a href="https://pretty-thrills-rapid.w3spaces.com/Website-Traffic-Sources-will-Drive-Organ.html">W3Schools</a>
+</li>
+<li>  <a href="https://dev.to/">Dev.to</a>
+</li>
+<li>  Hashnode</li>
+<li>  HackerRank</li>
+<li>  LeetCode</li>
+<li>  <a href="https://maps.google.no/url?sa=t&amp;url=https://maps.google.mk/url?sa=t&amp;url=https://targeted-visitors.com/product/buy-organic-traffic/">Google.no</a>
+</li>
+<li>  [GitHub[(<a href="https://github.com/">https://github.com/</a>)</li>
+<li>  GitLab</li>
+<li>  <a href="https://bitbucket.org/product">Bitbucket</a>
+</li>
+<li>  Codepen</li>
+<li>  <a href="https://issuu.com/ltcbuzy/docs/buy_web_traffic_-_targeted_visitors_1_1_">Issuu</a>
+</li>
+<li>  Dribbble</li>
+<li>  <a href="https://www.behance.net/jackrahmanid">Behance</a>
+</li>
+<li>  <a href="https://targetedwebtraffic.medium.com/discover-100-website-traffic-sources-for-new-websites-without-relying-on-seo-ccb5456e3c41">Meedium</a>
+</li>
+<li>  SiteInspire</li>
+<li>  <a href="https://www.awwwards.com/">Awwwards</a>
+</li>
+<li>  CSS Design Awards</li>
+<li>  Bootstrap</li>
+<li>  <a href="https://community.wongcw.com/blogs/579772/Unlocking-Sales-from-Website-Visits-20-Traffic-Sources-for-New">wongcw</a>
+</li>
+<li>  Bulma</li>
+<li>  <a href="https://targetedwebtraffic.blog.ir/1402/07/04/1000-Traffic-Sources-for-New-Websites">Blog.ir</a>
+</li>
+<li>  Foundation</li>
+<li>  Semantic UI</li>
+<li>  Materialize</li>
+<li>  Tailwind CSS</li>
+<li>  Bulma</li>
+<li>  Materialize</li>
+<li>  Tailwind CSS</li>
+<li>  Material-UI</li>
+<li>  Ant Design</li>
+<li>  Ionic</li>
+<li>  Electron</li>
+<li>  <a href="https://cutt.ly/organic_search_visitors">Organic clicks</a>
+</li>
+<li>  NW.js</li>
+<li>  <a href="https://github.com/ltcbuzy/here-s-a-list-of-180-awesome-web-development-tools-to-consider-using-in-2023/blob/main/README.md">TlutterS</a>
+</li>
+<li>  Xamarin</li>
+<li>  Apache Cordova</li>
+<li>  PhoneGap</li>
+<li>  React Native</li>
+<li>  NativeScript</li>
+<li>  Appgyver</li>
+<li>  App Inventor</li>
+<li>  Bubble</li>
+<li>  OutSystems</li>
+<li>  Mendix</li>
+<li>  Betty Blocks</li>
+<li>  AppSheet</li>
+<li>  Bravo Studio</li>
+<li>  Adalo</li>
+<li>  Thunkable</li>
+<li>  Glide</li>
+<li>  Xano</li>
+<li>  Stacker</li>
+<li>  Retool</li>
+<li>  AdonisJS</li>
+</ul>
+
+<p>These are just a few of the many tools available for web development and SEO in 2023. Depending on your specific needs and projects, you can explore and utilize these tools to enhance your work.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [A base de Redux Toolkit e React Redux](https://dev.to/nickgabe/redux-toolkit-e-react-redux-2o9k) 
+ <details><summary>Article</summary> <p>Está querendo aprender Redux num ambiente js ou react e ainda não sabe por onde começar? <br>
+Neste artigo eu vou explicar os conceitos junto do código de forma direta para fazer você entender melhor na prática como ele funciona!</p>
+<h2>
+  
+  
+  Tabela de conteúdos:
+</h2>
+
+<ul>
+<li>O que é Redux?</li>
+<li>Store, a raiz da nossa árvore de estados</li>
+<li>Criar coleções usando Slices</li>
+<li>Ler valores com Selector</li>
+<li>Criando a lógica para alterar valores com Reducers</li>
+<li>Alterando valores usando Actions</li>
+<li>O fluxo final</li>
+<li>Finalização</li>
+</ul>
+<h3>
+  
+  
+  O que é Redux?
+</h3>
+
+<p>Primeiro vamos entender que Redux é uma biblioteca de gerenciamento de estados de forma mais "global" do que os estados que temos convencionalmente no React por exemplo. Ele facilita com que diversas áreas da aplicação possam interagir entre si e centralizar sua informação.</p>
+<h3>
+  
+  
+  Store, a raiz da nossa árvore de estados
+</h3>
+
+<p>No Redux, o que engloba todos esses estados globais nós chamamos de "store". Pra caso tu já tenha usado, é como um provider da <a href="https://www.devmedia.com.br/react-js-passando-dados-com-context-api/42904">Context API</a> do React.</p>
+
+<p>Aqui vou criar um objeto chamado store, para você tentar pegar uma ideia de como isso é representado.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="c1">// apenas uma representação visual pra assimilar melhor:</span>
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// por enquanto</span>
+  <span class="c1">// ela está vazia</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="c1">// exemplo real</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">configureStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">({</span>
+  <span class="c1">// em breve vamos adicionar as propriedades aqui</span>
+<span class="p">})</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Criar coleções usando Slices
+</h3>
+
+<p>Indo de fora pra dentro, na nossa store nós podemos criar "slices", que são coleções nas quais contém dados. Cada slice é nomeado, e esse nome é utilizado para acessar os seus dados mais pra frente. A mesma lógica serve para um objeto:</p>
+
+<p>Vamos adicionar por exemplo um slice de configurações pra armazenar as coisas do nosso usuário:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="c1">// apenas uma representação visual pra assimilar melhor:</span>
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">configuracoes</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">tema</span><span class="p">:</span> <span class="dl">"</span><span class="s2">escuro</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">notificacoes</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="c1">// exemplo real</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createSlice</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">configuracoesSlice</span> <span class="o">=</span> <span class="nx">createSlice</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">configuracoes</span><span class="dl">'</span><span class="p">,</span>
+  <span class="c1">// este é o estado inicial, aqui você insere propriedades</span>
+  <span class="c1">// que devem ser inicializadas com este slice logo de cara</span>
+  <span class="na">initialState</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">tema</span><span class="p">:</span> <span class="dl">"</span><span class="s2">claro</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">notificacoes</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Ler valores com Selector
+</h3>
+
+<p>Ok Ok, até aí tudo bem, mas como nós podemos ler o valor guardado no slice? É igual um objeto <code>store.configuracoes.tema</code>?<br>
+Não é tão simples assim, mas no contexto de React nós chamamos isso de Selector, que é quando você vai extrair um dado de dentro da store. No contexto JS isso é apenas uma leitura normal <em>(selector pode acabar confundindo com querySelector)</em>.</p>
+
+<p>Existe a forma "nativa" de se pegar o valor, e existe a forma usada na biblioteca "react-redux", vou deixar ambos os exemplos aqui:</p>
+
+<p>Usando apenas o <code>redux toolkit</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">tema</span> <span class="o">=</span> <span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">().</span><span class="nx">configuracoes</span><span class="p">.</span><span class="nx">tema</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Usando <code>react-redux</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span>
+  <span class="nx">useSelector</span><span class="p">,</span>
+  <span class="nx">Provider</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span>
+
+<span class="cm">/*
+  OBS: Pra usar o React-Redux, você precisa primeiro
+  adicionar o Provider dele à sua aplicação:
+*/</span>
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Provider</span> <span class="na">store</span><span class="p">=</span><span class="si">{</span><span class="nx">store</span><span class="si">}</span><span class="p">&gt;</span>
+      // ...seus componentes  
+    <span class="p">&lt;/</span><span class="nc">Provider</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Agora sim você pode ler o valor</span>
+<span class="kd">const</span> <span class="nx">componente</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">tema</span> <span class="o">=</span> <span class="nx">useSelector</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">configuracoes</span><span class="p">.</span><span class="nx">tema</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Criando a lógica para alterar valores com Reducers
+</h3>
+
+<p>Perfeito, já temos configurado a nossa store, nosso slice e conseguimos ler nossos dados... porém atualmente eles estão fixos, como podemos fazer para modificar os valores?</p>
+
+<p>O que usamos para isso é o que chamamos de "Reducers", eles interagem com nossos slices para mudar os seus valores usando uma lógica definida por você. Inclusive tu pode até assimilar isso com o próprio <a href="https://react.dev/reference/react/useReducer">useReducer</a> do React, que também  usa uma lógica customizada para definir um valor.</p>
+
+<p>Vamos criar alguns reducers e atualizar a store para listar eles!<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">configuracoesSlice</span> <span class="o">=</span> <span class="nx">createSlice</span><span class="p">({</span>
+  <span class="c1">// propriedades mencionadas acima...</span>
+  <span class="na">reducers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// state é o slice atual</span>
+    <span class="c1">// action.payload é o valor recebido</span>
+    <span class="na">setarTema</span><span class="p">:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">state</span><span class="p">.</span><span class="nx">tema</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span>
+    <span class="p">},</span>
+    <span class="na">setarNotificacoes</span><span class="p">:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">state</span><span class="p">.</span><span class="nx">notificacoes</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Agora que temos os reducers criados, precisamos</span>
+<span class="c1">// atualizar a store pra incluir eles!</span>
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">({</span>
+  <span class="na">reducer</span><span class="p">:</span> <span class="nx">configuracoesSlice</span><span class="p">.</span><span class="nx">reducer</span>
+<span class="p">})</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  Alterando valores usando Actions
+</h3>
+
+<p>Com os reducers criados, podemos usá-los pra alterar os valores do nosso slice! Isso é o que vamos chamar de "Action".</p>
+
+<p>A action executa um reducer e lhe fornece um resultado, daí você precisa executar um dispatch para que o resultado seja persistido <em>(salvo)</em> na nossa store.</p>
+
+<p>Novamente, mostrarei a forma nativa / react-redux</p>
+
+<p>Usando apenas <code>redux toolkit</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="c1">// Use o dispatch para salvar a modificação</span>
+<span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span>
+  <span class="c1">// Use a action passando o novo valor</span>
+  <span class="nx">configuracoesSlice</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">setarTema</span><span class="p">(</span><span class="dl">"</span><span class="s2">escuro</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Usando <code>react-redux</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useDispatch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span>
+
+<span class="kd">const</span> <span class="nx">Componente</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">useDispatch</span><span class="p">();</span> 
+  <span class="c1">// O ato de salvar com dispatch continua igual, mas</span>
+  <span class="c1">// ao invés de vir da store, ele vem do react-redux</span>
+  <span class="nx">dispatch</span><span class="p">(</span>
+    <span class="nx">configuracoesSlice</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">setarTema</span><span class="p">(</span><span class="dl">"</span><span class="s2">escuro</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  O fluxo final
+</h3>
+
+<p>Já cobrimos muitos tópicos da base de como se utilizar Redux Toolkit e também React Redux, mas queria te fazer uma pergunta: Acabou de notar que fizemos um CRUD?</p>
+
+<p>Pois nós conseguimos:</p>
+
+<ul>
+<li>Criar dados usando Slices</li>
+<li>Ler os dados usando Selectors</li>
+<li>Atualizar por meio de Reducers/Actions</li>
+<li><em>E também dá pra deletar com reducers</em></li>
+</ul>
+
+<p>Com essas informações agora conseguimos entender este diagrama que exemplifica o fluxo de dados do Redux:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Gj5G6u1D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dpo6ok8l0hr8u41cx4rd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Gj5G6u1D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dpo6ok8l0hr8u41cx4rd.png" alt="Imagem que diz o ciclo do Redux&lt;br&gt;
+View/UI -&gt; dispatch -&gt; action -&gt; reducers -&gt; store -&gt; subscribe -&gt; View/UI" width="800" height="420"></a></p>
+
+<p>Com os métodos ensinados neste artigo você deve conseguir se dar bem com o Redux, mas caso queira checar melhor a implementação feita neste artigo, vou disponibilizar ambos os arquivos finais para uma consulta mais fácil:</p>
+
+<p>Arquivo final usando apenas <code>redux toolkit</code>: <a href="https://gist.github.com/Nick-Gabe/755b76d8e87f0731e4cd62f8b47c9aa7">Gist</a><br>
+Arquivo final usando <code>react-redux</code>: <a href="https://gist.github.com/Nick-Gabe/b7294b9d27bb2dd01622af766aa41879">Gist</a></p>
+
+<p>Ambos estão fazendo a mesma coisa, porém em ambientes diferentes! O primeiro sendo um javascript comum, enquanto o segundo é num ambiente React.</p>
+
+<h3>
+  
+  
+  Finalização
+</h3>
+
+<p>E é isso pessoal! Agora vocês já sabem o kit de sobrevivência pra Redux Toolkit e também React Redux!<br>
+Espero ter te ajudado de alguma forma, e sinta-se livre para deixar comentários de dúvidas ou feedback :)</p>
+
+<p>Eu sempre falo de programação no <a href="https://twitter.com/ImNickGabe">Twitter</a>, se quiser acompanhar meu conteúdo, welcome!</p>
+
+<p>👋 Até uma próxima.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Svelte + Firebase SSR](https://dev.to/mpiorowski/svelte-firebase-ssr-3p3j) 
+ <details><summary>Article</summary> <p>We are continuing our authorization journey, now diving into <strong>Firebase</strong>, the biggest BaaS out there. As with all the previous steps:</p>
+
+<ol>
+<li>We'll use <a href="https://kit.svelte.dev/">SvelteKit</a> as the main framework, because we all know it's the best.</li>
+<li>We'll aim to achieve minimal lines of code.</li>
+<li>We'll implement main authorization check on the server-side to enhance security.</li>
+<li>Our starting point from which we'll begin counting lines of code, is this <a href="https://tailwindcss.com/docs/guides/sveltekit">Tailwind Setup</a>
+</li>
+<li>To make it harder, we'll set the max printWidth to 80 characters, because true coders thrive on it.</li>
+</ol>
+
+<p><a href="https://github.com/mpiorowski/svelte-auth">https://github.com/mpiorowski/svelte-auth</a></p>
+
+<p>Why server-side, you might ask? Check out this Google Doc with a very nice explanation:</p>
+
+<p><a href="https://firebase.google.com/docs/auth/admin/manage-cookies">https://firebase.google.com/docs/auth/admin/manage-cookies</a> </p>
+
+<p>We are also trimming down some descriptions to make it more accessible. For an in-depth explanation, please refer to the first article in this series.</p>
+
+<p>So let's start with the hardest part ... which isn't code but setting up Firebase and obtaining all the necessary keys. First, we need to log in to Google Cloud and create a new project:</p>
+
+<p><a href="https://console.cloud.google.com/">https://console.cloud.google.com/</a></p>
+
+<p>After that, we'll search for the <code>Identity Providers</code> service and enable it. This is the new version of <strong>Firebase Authentication</strong>.</p>
+
+<p>On the right side, you'll find the <code>Application setup details</code>:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--cvTwI6KX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e0sd6l3c0u2vbxwdodqh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cvTwI6KX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e0sd6l3c0u2vbxwdodqh.png" alt="Application setup details" width="800" height="222"></a></p>
+
+<p>From there, we need to retrieve and store the <code>apiKey</code> and <code>authDomain</code>.</p>
+
+<p>In this section, we will also add all the necessary providers, configure the Consent screen, and fill in the <code>Client Id</code> and <code>Client Secret</code>. Let's use Google as an example because we already have this data generated.</p>
+
+<p>To obtain this data, we should navigate to the <code>Apis &amp; Services</code> -&gt; <code>Credentials</code> -&gt; <code>Create credentials</code> -&gt; <code>OAuth client</code>.</p>
+
+<p>We fill in all the necessary information, including the <code>Authorized redirect URIs</code>, which in our case will be <code>http://127.0.0.1:3000</code>. Later, when we move to production, we will need to add our domain here.</p>
+
+<p>After saving, you'll find our required secrets on the right side: <code>Client Id</code> and <code>Client Secret</code>.</p>
+
+<p>As mentioned, it's quite a few steps. The last thing remaining is to generate access for our server-side.</p>
+
+<p>We search for <code>IAM &amp; Admin</code> -&gt; <code>Service accounts</code>. Here is also already generated for us <code>Firebase Admin SDK</code> account:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ZTJm6GTl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hqjzldajjdbw26ef1jr2.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ZTJm6GTl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hqjzldajjdbw26ef1jr2.png" alt="Firebase Admin SDK" width="800" height="271"></a></p>
+
+<p>We enter it, navigate to <code>Keys</code> -&gt; <code>Add key</code> -&gt; <code>Create new key</code> -&gt; <code>JSON</code>. This will generate and download a JSON key.</p>
+
+<p>That's it! The most challenging part is finished. Now, let's dive into the coding. First let's save our secrets:</p>
+
+<p><strong>.env</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">PUBLIC_API_KEY</span><span class="o">=</span><span class="s1">'mock-api-key'</span>
+<span class="nv">PUBLIC_AUTH_DOMAIN</span><span class="o">=</span><span class="s1">'mock-auth-domain.firebaseapp.com'</span>
+<span class="nv">SERVICE_ACCOUNT</span><span class="o">=</span><span class="s1">'{
+  "type": "service_account",
+  "project_id": "mock-project-id",
+  "private_key_id": "mock-private-key-id",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMockPrivateKey\n-----END PRIVATE KEY-----\n",
+  "client_email": "mock-client-email@mock-project-id.iam.gserviceaccount.com",
+  "client_id": "mock-client-id",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mock-client-email@mock-project-id.iam.gserviceaccount.com",
+  "universe_domain": "mock-universe-domain"
+}'</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now let's set up connections to Firebase, and we'll need two separate connections for <strong>client</strong> and <strong>server</strong>. </p>
+
+<p><strong>lib/firebase_client.ts</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">PUBLIC_API_KEY</span><span class="p">,</span> <span class="nx">PUBLIC_AUTH_DOMAIN</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">$env/static/public</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">initializeApp</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/app</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">getAuth</span><span class="p">,</span> <span class="nx">setPersistence</span><span class="p">,</span> <span class="kd">type</span> <span class="nx">Persistence</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/auth</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">getFirebaseClient</span><span class="p">():</span>
+    <span class="o">|</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">;</span> <span class="nl">data</span><span class="p">:</span> <span class="nx">ReturnType</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">getAuth</span><span class="o">&gt;</span> <span class="p">}</span>
+    <span class="o">|</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">;</span> <span class="nl">msg</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">firebaseConfig</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">apiKey</span><span class="p">:</span> <span class="nx">PUBLIC_API_KEY</span><span class="p">,</span>
+            <span class="na">authDomain</span><span class="p">:</span> <span class="nx">PUBLIC_AUTH_DOMAIN</span><span class="p">,</span>
+        <span class="p">};</span>
+        <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">initializeApp</span><span class="p">(</span><span class="nx">firebaseConfig</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">getAuth</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="na">persistance</span><span class="p">:</span> <span class="nx">Persistence</span> <span class="o">=</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">NONE</span><span class="dl">"</span> <span class="p">};</span>
+        <span class="k">void</span> <span class="nx">setPersistence</span><span class="p">(</span><span class="nx">auth</span><span class="p">,</span> <span class="nx">persistance</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="nx">auth</span> <span class="p">};</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">msg</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Error initializing firebase client</span><span class="dl">"</span> <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We are setting persistence to NONE because we don't want it to keep any data. This will be used ONLY once, to authorize and send the token to the server.</p>
+
+<p><strong>lib/server/firebase_server.ts</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">SERVICE_ACCOUNT</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">$env/static/private</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">admin</span><span class="p">,</span> <span class="p">{</span> <span class="kd">type</span> <span class="nx">ServiceAccount</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase-admin</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">getFirebaseServer</span><span class="p">():</span>
+    <span class="o">|</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">;</span> <span class="nl">data</span><span class="p">:</span> <span class="k">typeof</span> <span class="nx">admin</span> <span class="p">}</span>
+    <span class="o">|</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">;</span> <span class="nl">msg</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">admin</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">serviceAccount</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">SERVICE_ACCOUNT</span><span class="p">)</span> <span class="k">as</span> <span class="nx">ServiceAccount</span><span class="p">;</span>
+            <span class="kd">const</span> <span class="nx">cert</span> <span class="o">=</span> <span class="nx">admin</span><span class="p">.</span><span class="nx">credential</span><span class="p">.</span><span class="nx">cert</span><span class="p">(</span><span class="nx">serviceAccount</span><span class="p">);</span>
+            <span class="nx">admin</span><span class="p">.</span><span class="nx">initializeApp</span><span class="p">({</span> <span class="na">credential</span><span class="p">:</span> <span class="nx">cert</span> <span class="p">});</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="nx">admin</span> <span class="p">};</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">msg</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Error initializing firebase server</span><span class="dl">"</span> <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>As an additional level of security, we are storing this function in the <code>/server</code> folder, which by default will not allow its use on the client side.</p>
+
+<p><strong>routes/auth/+page.svelte</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">ts</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="k">import</span> <span class="p">{</span> <span class="nx">getFirebaseClient</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">$lib/firebase_client</span><span class="dl">"</span><span class="p">;</span>
+    <span class="k">import</span> <span class="p">{</span> <span class="nx">signInWithPopup</span><span class="p">,</span> <span class="nx">GoogleAuthProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/auth</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="kd">let</span> <span class="nx">form</span><span class="p">:</span> <span class="nx">HTMLFormElement</span><span class="p">;</span>
+    <span class="k">async</span> <span class="kd">function</span> <span class="nx">login</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">getFirebaseClient</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">auth</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">msg</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="kd">const</span> <span class="nx">cred</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">signInWithPopup</span><span class="p">(</span><span class="nx">auth</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span> <span class="k">new</span> <span class="nx">GoogleAuthProvider</span><span class="p">());</span>
+            <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">cred</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">getIdToken</span><span class="p">();</span>
+            <span class="k">await</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">signOut</span><span class="p">();</span>
+            <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">);</span>
+            <span class="nx">input</span><span class="p">.</span><span class="kd">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hidden</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">input</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">token</span><span class="p">;</span>
+            <span class="nx">form</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+            <span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">form</span> <span class="nx">method</span><span class="o">=</span><span class="dl">"</span><span class="s2">post</span><span class="dl">"</span> <span class="nx">bind</span><span class="p">:</span><span class="k">this</span><span class="o">=</span><span class="p">{</span><span class="nx">form</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">on</span><span class="p">:</span><span class="nx">click</span><span class="o">=</span><span class="p">{</span><span class="nx">login</span><span class="p">}</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">border rounded p-2 mt-10 bg-gray-800 text-white hover:bg-gray-700</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="nx">Login</span> <span class="nx">using</span> <span class="nx">Google</span>
+<span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span></code></pre>
+
+</div>
+
+
+
+<p>We create a Firebase client, authorize it, and retrieve the <code>idToken</code>. Then, we send it to our server using SvelteKit Form Action. You might notice that immediately after authentication, we sign out the client. We don't want it to store any data.</p>
+
+<p>Quick information: Google has a second function, <code>signInWithRedirect</code>, if you prefer it. However, it requires a bit more setup.</p>
+
+<p><strong>routes/auth/+page.server.ts</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">redirect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@sveltejs/kit</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Actions</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./$types</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">getFirebaseServer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">$lib/server/firebase_server</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">default</span><span class="p">:</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">request</span><span class="p">,</span> <span class="nx">cookies</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">request</span><span class="p">.</span><span class="nx">formData</span><span class="p">();</span>
+        <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">token</span><span class="dl">"</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">token</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">token</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="nx">redirect</span><span class="p">(</span><span class="mi">303</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/auth</span><span class="dl">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="kd">const</span> <span class="nx">admin</span> <span class="o">=</span> <span class="nx">getFirebaseServer</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">admin</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="nx">redirect</span><span class="p">(</span><span class="mi">303</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/auth</span><span class="dl">"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Expires in 5 days</span>
+        <span class="kd">const</span> <span class="nx">expiresIn</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="na">sessionCookie</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nx">sessionCookie</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">admin</span><span class="p">.</span><span class="nx">data</span>
+                <span class="p">.</span><span class="nx">auth</span><span class="p">()</span>
+                <span class="p">.</span><span class="nx">createSessionCookie</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span> <span class="p">{</span> <span class="na">expiresIn</span><span class="p">:</span> <span class="nx">expiresIn</span> <span class="o">*</span> <span class="mi">1000</span> <span class="p">});</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="nx">redirect</span><span class="p">(</span><span class="mi">303</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/auth</span><span class="dl">"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nx">cookies</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">session</span><span class="dl">"</span><span class="p">,</span> <span class="nx">sessionCookie</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">maxAge</span><span class="p">:</span> <span class="nx">expiresIn</span><span class="p">,</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">httpOnly</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="na">secure</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="na">sameSite</span><span class="p">:</span> <span class="dl">"</span><span class="s2">lax</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">});</span>
+
+        <span class="k">throw</span> <span class="nx">redirect</span><span class="p">(</span><span class="mi">303</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">},</span>
+<span class="p">}</span> <span class="nx">satisfies</span> <span class="nx">Actions</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So after we log in using the client, we retrieve the token and send it to our server. The server uses it to authorize against Firebase Servers, retrieves the session cookie, and sends it back to the client. This will be our primary token used for all future authentication.</p>
+
+<p>Now, let's move to the main gateway of the application, <code>hooks.server.ts</code>. As a quick reminder, this file captures all traffic that passes through the app.</p>
+
+<p><strong>hooks.server.ts</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">redirect</span><span class="p">,</span> <span class="kd">type</span> <span class="nx">Handle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@sveltejs/kit</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">building</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">$app/environment</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">getFirebaseServer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">$lib/server/firebase_server</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">DecodedIdToken</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase-admin/lib/auth/token-verifier</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">handle</span><span class="p">:</span> <span class="nx">Handle</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">resolve</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="na">isAuth</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">/auth</span><span class="dl">"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isAuth</span> <span class="o">||</span> <span class="nx">building</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">event</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">session</span><span class="dl">"</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">session</span><span class="dl">"</span><span class="p">)</span> <span class="o">??</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">admin</span> <span class="o">=</span> <span class="nx">getFirebaseServer</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">admin</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="nx">redirect</span><span class="p">(</span><span class="mi">303</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/auth</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="na">decodedClaims</span><span class="p">:</span> <span class="nx">DecodedIdToken</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">decodedClaims</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">admin</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">auth</span><span class="p">().</span><span class="nx">verifySessionCookie</span><span class="p">(</span><span class="nx">session</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="nx">redirect</span><span class="p">(</span><span class="mi">303</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/auth</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">uid</span><span class="p">,</span> <span class="nx">email</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">decodedClaims</span><span class="p">;</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">uid</span><span class="p">;</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="nx">email</span> <span class="o">??</span> <span class="dl">""</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">event</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="nx">redirect</span><span class="p">(</span><span class="mi">303</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/auth</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">await</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>So, with every request or page navigation, we retrieve the <code>session</code> cookie and validate it against Firebase, all performed on the server.</p>
+
+<p>Let's make typescript happy:</p>
+
+<p><strong>app.d.ts</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="c1">// See https://kit.svelte.dev/docs/types#app</span>
+<span class="c1">// for information about these interfaces</span>
+<span class="kr">declare</span> <span class="nb">global</span> <span class="p">{</span>
+    <span class="k">namespace</span> <span class="nx">App</span> <span class="p">{</span>
+        <span class="c1">// interface Error {}</span>
+        <span class="kr">interface</span> <span class="nx">Locals</span> <span class="p">{</span>
+            <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+            <span class="nl">email</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// interface PageData {}</span>
+        <span class="c1">// interface Platform {}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="p">{};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>All that is left is to show the user data and allow the user to logout. Let's create a <code>home</code> page:</p>
+
+<p><strong>src/routes/+page.server.ts</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">PageServerLoad</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./$types</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">load</span> <span class="o">=</span> <span class="p">(</span><span class="k">async</span> <span class="p">({</span> <span class="nx">locals</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">id</span><span class="p">:</span> <span class="nx">locals</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+        <span class="na">email</span><span class="p">:</span> <span class="nx">locals</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+    <span class="p">};</span>
+<span class="p">})</span> <span class="nx">satisfies</span> <span class="nx">PageServerLoad</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p><strong>src/routes/+page.svelte</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight typescript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">ts</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">PageData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./$types</span><span class="dl">'</span><span class="p">;</span>
+
+    <span class="k">export</span> <span class="kd">let</span> <span class="nx">data</span><span class="p">:</span> <span class="nx">PageData</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Welcome</span> <span class="nx">to</span> <span class="nx">SvelteAuth</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">button</span>
+    <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">border rounded p-2 mt-10 mb-10 bg-gray-800 text-white hover:bg-gray-700</span><span class="dl">"</span>
+    <span class="nx">on</span><span class="p">:</span><span class="nx">click</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">/auth</span><span class="dl">'</span><span class="p">)}</span>
+<span class="o">&gt;</span>
+    <span class="nx">Logout</span>
+<span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)}</span>
+<span class="o">&lt;</span><span class="sr">/pre</span><span class="err">&gt;
+</span></code></pre>
+
+</div>
+
+
+
+<p>Yes, to log out the user, all we need to do is navigate to the <code>/auth</code> URL. It works because on each request, the first thing hooks.server.ts does is clear everything. If it's the <code>/auth</code> page, it also clears out the cookies and redirects the user there. It's a very simple but also easily understandable flow.</p>
+
+<p>And that's it! The OAuth flow with Firebase and Svelte is complete, done almost entirely on the server-side using session cookies.</p>
+
+<p>As a bonus, when you log in using Firebase, you can check the <strong>Identity Providers</strong> tab in GCP. There, you can see all the users who tried to authorize.</p>
+
+<p>Lastly, remember that the technology landscape is dynamic, so periodically revisit your implementation to adapt to changes in Firebase, SvelteKit, or relevant libraries to ensure your project remains secure and up-to-date.</p>
+
+<p>Like always, a little bit of self-promotion :) <a href="https://twitter.com/mapiorowski">Follow me on Twitter</a> to receive new notifications. I'm working on promoting lesser-known technologies, with Svelte, Go and Rust being the main focuses.</p>
 
  </details> 
  <hr /> 
