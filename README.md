@@ -117,112 +117,9 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Top 5 form validation libraries in React JS and Next JS](https://dev.to/zeeshanmustfai/top-5-form-validation-libraries-in-react-js-and-next-js-2i50) 
- <details><summary>Article</summary> <ol>
-<li>
-<strong>Formik</strong>
-is a widely used library for building forms in React, next, and Vuejs as well. It includes a built-in form validation system that is easy to use and integrates well with React components. Formik provides a high level of flexibility and customization.</li>
-</ol>
-
-<p>GitHub Repository: <a href="https://github.com/formium/formik">https://github.com/formium/formik</a>)<br>
-Installation:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm i formik
-yarn add formik
-</code></pre>
-
-</div>
-
-
-
-<ol>
-<li>
-<strong>React Hook Form</strong>
-is another popular library for building forms in React. It focuses on providing a simple and efficient way to manage form state and validation using React hooks.</li>
-</ol>
-
-<p>GitHub Repository: <a href="https://github.com/react-hook-form/react-hook-form">https://github.com/react-hook-form/react-hook-form</a></p>
-
-<p>Installation:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm i react-hook-form
-yarn add react-hook-form
-</code></pre>
-
-</div>
-
-
-
-<ol>
-<li>
-<strong>Final Form</strong>
-is a form state management and validation library for React. It emphasizes performance and flexibility and provides a wide range of plugins for additional functionality.</li>
-</ol>
-
-<p>GitHub Repository: <a href="https://github.com/final-form/final-form"></a></p>
-
-<p>Installation:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm i final-form
-yarn add final-form
-</code></pre>
-
-</div>
-
-
-
-<ol>
-<li>
-<strong>Redux Form</strong>
-If you're already using Redux in your React application, Redux Form can be a good choice. It integrates well with Redux to manage form state and validation.</li>
-</ol>
-
-<p>GitHub Repository: <a href="https://github.com/erikras/redux-form"></a></p>
-
-<p>Installation:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm i redux-form
-yarn add redux-form
-</code></pre>
-
-</div>
-
-
-
-<ol>
-<li>
-<strong>Yup</strong>
-While not a form library itself, Yup is a schema validation library that works seamlessly with Formik and other form libraries. You can define your validation schema with Yup and use it to validate form inputs.</li>
-</ol>
-
-<p>GitHub Repository: <a href="https://github.com/jquense/yup"></a></p>
-
-<p>Installation:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm i npm i yup
-yarn add npm i yup
-</code></pre>
-
-</div>
-
-
-
- </details> 
- <hr /> 
-
- #### - [Blockchain Dev Decline: Advice for Specialists?](https://dev.to/devteam/blockchain-dev-decline-advice-for-specialists-2fpe) 
+ #### - [Low-Code Challenges: What's Next](https://dev.to/devteam/low-code-challenges-whats-next-5a9d) 
  <details><summary>Article</summary> <blockquote>
-<p>As blockchain development sees a shift, what advice would you offer to developers who previously specialized in this field? </p>
+<p>What hurdles have you faced with low-code programming? What do you see in the future for this approach to software development?</p>
 </blockquote>
 
 <p>Follow the DEVteam for more discussions and online camaraderie!</p>
@@ -251,427 +148,305 @@ yarn add npm i yup
  </details> 
  <hr /> 
 
- #### - [Migrating Your WordPress Website to Another Host](https://dev.to/noobizdev/migrating-your-wordpress-website-to-another-host-1ohc) 
- <details><summary>Article</summary> <p>Are you considering migrating your WordPress website to a new host? This step-by-step guide will walk you through the process, ensuring a smooth transition without the technical jargon.</p>
+ #### - [The Roadmap to Web Dev Mastery (Best Resources)](https://dev.to/codewithshahan/the-roadmap-to-web-dev-mastery-best-resources-2o1m) 
+ <details><summary>Article</summary> <p>The reality of today's web development landscape is far more complex. Vanilla CSS and JavaScript are no longer the norm for building web apps; instead, there's a myriad of frameworks and libraries. This choice can be bewildering for beginners. Moreover, once you've picked a technology to learn, the question looms: How can you efficiently acquire these skills for free?</p>
 
+<p>By the end of this journey, you'll not only find answers to these questions but also discover a treasure trove of free resources to transform from a complete beginner into a <a href="https://youtu.be/vRsJH-GjHsQ">capable web developer</a>. Additionally, I'll unveil three critical mistakes you should avoid. </p>
 
+<p>But before we delve into the intricacies of various technologies, let's grasp the fundamental workings of a website.</p>
 
-
-<blockquote>
-<p>Help us grow our community by sharing this post with your friends And give us a like and a follow!❤️❤️❤️</p>
-
-
-</blockquote>
-
-
+<p><em>You can watch my YT video regarding to this article:</em><br>
+<iframe width="710" height="399" src="https://www.youtube.com/embed/_s71XCQ7BbQ">
+</iframe>
+</p>
 
 <h2>
   
   
-  Preparing for the Migration
+  🏗 How Website Works
 </h2>
 
-<p>Before you dive into the migration process, it's essential to make adequate preparations. Follow these steps:</p>
+<p>At its core, a website is simply a collection of files stored on a server. These files can be accessed through a web browser like Chrome or Firefox, which sends requests to the server via the internet. The server, in turn, may execute operations such as storing relevant data using a database. </p>
 
-<h3>
-  
-  
-  Backup Your Website
-</h3>
-
-<p>The first and most crucial step in any migration is backing up your website. You can use plugins like UpdraftPlus or BackWPup to simplify this process. Ensure you have a copy of your website files and the database.<br>
-You Can Also Read: <strong><a href="https://noobizdev.tech/the-importance-of-backup-and-recovery-for-wordpress-websites/">wordpress website backup and restore</a></strong></p>
-
-<h3>
-  
-  
-  Choose a New Hosting Provider
-</h3>
-
-<p>Research and select a new hosting provider that suits your needs. Consider factors like server speed, uptime, customer support, and scalability. Popular choices include Bluehost, SiteGround, and HostGator.</p>
-
-<h3>
-  
-  
-  Update WordPress and Plugins
-</h3>
-
-<p>Ensure that your WordPress core and all plugins are up to date. Outdated software can lead to compatibility issues during migration.</p>
-
-
+<p>When you're coding for what users see in their browsers, you're venturing into front-end development. Conversely, if you're coding for the server's actions upon receiving requests, you're diving into back-end development. You can choose to master both aspects, so you'll become a full-stack developer, but keep in mind that excelling in just one of these domains is a valuable achievement in itself.</p>
 
 <h2>
   
   
-  The Migration Process
+  🥢Fronted Mastery
 </h2>
 
-<p>Now that you're prepared, let's dive into the actual migration process:</p>
+<h3>
+  
+  
+  HTML &amp; CSS
+</h3>
+
+<p>Let's commence with front-end development. HTML, CSS, and JavaScript serve as the foundational building blocks in this realm. To comprehend their roles, consider a "Sign In" button on Netflix. HTML declares the button's existence to the browser, CSS specifies that it should be red with white text, and JavaScript dictates the actions to be taken upon clicking the button. However, there's a common pitfall here—spending excessive time on tutorials for these languages. </p>
+
+<p>Learning by doing is the key, and interactive platforms like W3Schools are your allies. For HTML, work through exercises until you reach HTML graphics. Cover everything up to the CSS grid for CSS and explore the JS HTML DOM for JavaScript. Test your knowledge with quizzes and exercises.</p>
+
+<p>CSS has a reputation for being time-consuming and challenging to debug, as it doesn't provide explicit error messages. To tackle this, consider employing a CSS framework, such as Bootstrap or Tailwind CSS. Bootstrap offers pre-built components, but customization can be limited, and your site may look generic. In contrast, Tailwind CSS grants you greater control over aesthetics and boasts excellent documentation. To master it, learn how to create custom components with Tailwind CSS.</p>
 
 <h3>
   
   
-  1. Export Your Website's Content
+  JavaScript
 </h3>
 
-<ol>
-<li>Log in to your WordPress dashboard.</li>
-<li>Navigate to 'Tools' and select 'Export.'</li>
-<li>Choose 'All content' and click 'Download Export File.'</li>
-</ol>
-
-<h3>
-  
-  
-  2. Create a New Database on the New Host
-</h3>
-
-<ol>
-<li>Log in to your new hosting cPanel.</li>
-<li>Find the 'Databases' section and select 'MySQL Databases.'</li>
-<li>Create a new database and a new user with full privileges.</li>
-</ol>
-
-<h3>
-  
-  
-  3. Import Your Content
-</h3>
-
-<ol>
-<li>In your new hosting cPanel, go to 'phpMyAdmin.'</li>
-<li>Select your new database and click 'Import.'</li>
-<li>Upload the database file you exported earlier.</li>
-</ol>
-
-<h3>
-  
-  
-  4. Update Your DNS Records
-</h3>
-
-<p>Contact your domain registrar and update your DNS records to point to the new hosting provider's nameservers. This step may take some time to propagate.</p>
-
-<h3>
-  
-  
-  5. Upload Your Website Files
-</h3>
-
-<p>Use an FTP client like FileZilla to upload your website files to the new hosting server. Make sure to place them in the correct directory (usually public_html).</p>
-
-<h3>
-  
-  
-  6. Modify Your wp-config.php File
-</h3>
-
-<p>Edit your wp-config.php file on the new host to reflect the new database information.</p>
-
-<h3>
-  
-  
-  7. Test Your Website
-</h3>
-
-<p>Before finalizing the migration, thoroughly test your website on the new host. Ensure that all pages, links, and functionality are working correctly.</p>
-
-
+<p>Switching gears to JavaScript, we aim to optimize our workflow. When using JavaScript to build a project, you'll notice that HTML and JavaScript reside in separate files, requiring multiple updates when modifying a component. This disjointed workflow can hinder productivity. To address this issue, we turn to JavaScript frameworks, with two popular choices being Angular and React. Angular, a full-fledged framework, has a steep learning curve, while React, a flexible JavaScript library, is more beginner-friendly, especially if you've already grasped JavaScript. Dive into React using the official "Intro to React" tutorial to build a tic-tac-toe game, and then explore its main concepts.</p>
 
 <h2>
   
   
-  Post-Migration Optimization
+  Building Portfolio
 </h2>
-<h3>
-  
-  
-  8. Update Permalinks and Plugins
-</h3>
 
-<p>Log in to your WordPress dashboard on the new host and update your permalinks. Also, re-install and activate your plugins.</p>
-
-<h3>
-  
-  
-  9. Monitor and Troubleshoot
-</h3>
-
-<p>Keep a close eye on your website's performance post-migration. Resolve any issues promptly to ensure a seamless user experience.</p>
-
-<h3>
-  
-  
-  10. Consider a Content Delivery Network (CDN)
-</h3>
-
-<p>To further enhance your website's speed and security, consider implementing a CDN like Cloudflare.</p>
-
-
-
-
-<blockquote>
-<p>If you enjoyed this post, make sure to save it for later!<br>
-Don't forget to leave a comment if you need any help...<br>
-Thanks for reading, See you next time... ❤️👋</p>
-
-
-</blockquote>
-
-
+<p>With a solid grasp of front-end development, it's time to assemble your portfolio. This brings us to another significant mistake—creating a portfolio prematurely. Build more projects first. Select projects that resonate with your daily life, such as a note-taking web app or a workout tracker. The aim is to demonstrate your ability to create functional web apps, which will undoubtedly make you more appealing to potential employers.</p>
 
 <h2>
   
   
-  Conclusion
+  💻Backend Mastery
 </h2>
 
-<p>Congratulations! You've successfully migrated your WordPress website to a new host. This step-by-step guide has walked you through the process, ensuring a smooth transition without any technical hurdles. Now, your website is ready to shine on its new hosting platform.</p>
+<p>If you've absorbed all this knowledge and become a proficient front-end developer, you could consider your journey complete. However, if you hunger for more, it's time to delve into back-end development. In the realm of back-end development, you write code for servers to perform operations like data storage, retrieval, or interfacing with other servers. Java with Spring and Python with Django are viable options, but for a swifter route, Node.js with JavaScript is recommended. Leveraging your existing JavaScript knowledge, Node.js offers a seamless transition to server-side programming.</p>
+
+<p>Node.js enables you to run JavaScript on servers, facilitating the backend logic while using JavaScript code. Express, a popular library, simplifies backend development. Begin by building an app from scratch with Express and MongoDB, a NoSQL database, using tutorials like the one by Traversy Media. Embrace the learning process by tackling challenges, referring to documentation, and seeking help online—the skills you acquire now will serve you well as a software engineer.</p>
+
+<p>To complete the journey, build a WhatsApp clone by following a beginner-friendly tutorial. Return to the front-end projects you created and integrate a backend. You now possess the skills and a portfolio of projects and are ready to seek job opportunities. Beware, though—many aspiring developers stumble at the final hurdle by neglecting interview preparation. While smaller companies may hire based on skills alone, larger organizations conduct interviews with specific questions. Don't let your hard-earned skills go to waste; equip yourself with the knowledge and techniques required for successful interviews.</p>
+
+<p><em><strong>Bright Data Can Help You Access the World of Web Data</strong></em><br>
+Instead of wasting countless hours watching tutorials, why not take into account the priceless tool that <a href="https://get.brightdata.com/codewithshahan">Bright Data</a> provides? This amazing #1 web platform gives you the tools to convert webpages into structured data by giving you access to powerful web scrapers, award-winning proxy networks, and ready-to-use datasets for download. It is the top web data platform in the globe, and it will give your coding projects a boost.</p>
+
+<h2>
+  
+  
+  😎Conclusion
+</h2>
+
+<p>This concludes our journey. Remember, the path to becoming a proficient web developer is marked by hands-on learning, continuous improvement, and a commitment to honing your skills. Good luck on your coding adventure!</p>
+
+<h2>
+  
+  
+  <em>Best free resources to learn web development:</em>
+</h2>
+
+<p>🏗 Frontend web development<br>
+👉 HTML: <a href="https://www.w3schools.com/">https://www.w3schools.com/</a><br>
+👉 CSS: <a href="https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a><br>
+👉 Javascript: <a href="https://www.w3schools.com/js/default.asp">https://www.w3schools.com/js/default.asp</a><br>
+👉 Tailwind Documentation: <a href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a><br>
+👉 Intro to React: <a href="https://react.dev/learn/tutorial-tic-tac-toe">https://react.dev/learn/tutorial-tic-tac-toe</a><br>
+👉 React Basics: <a href="https://legacy.reactjs.org/docs/hello-world.html">https://legacy.reactjs.org/docs/hello-world.html</a><br>
+👉 React Tailwind Project by Traversy Media: <a href="https://youtu.be/FiGmAI5e91M?si=Sj8GP7x9M9XAa29U">https://youtu.be/FiGmAI5e91M?si=Sj8GP7x9M9XAa29U</a></p>
+
+<p>💻 Back end development<br>
+👉 NodeJS with Express and MongoDB by Traversy media: <br>
+<a href="https://www.youtube.com/watch?v=SBvmnHTQIPY&amp;t=0s">https://www.youtube.com/watch?v=SBvmnHTQIPY&amp;t=0s</a>  </p>
+
+<p>👉 Express documentation: <a href="https://expressjs.com/en/api.html">https://expressjs.com/en/api.html</a></p>
+
+<p>👨‍💻 Full stack development<br>
+ 👉 🔴 Build a Whatsapp Clone with MERN: <a href="https://www.youtube.com/watch?v=gzdQDxzW2Tw&amp;t=0s">https://www.youtube.com/watch?v=gzdQDxzW2Tw&amp;t=0s</a></p>
+
+<p>Stay connected with me:<br>
+🔗 LinkedIn: linkedin.com/in/codewithshahan/<br>
+📹 YouTube : <a href="https://www.youtube.com/programmingwithshahan">https://www.youtube.com/programmingwithshahan</a><br>
+🐦 Twitter : twitter.com/shahancd</p>
 
  </details> 
  <hr /> 
 
- #### - [How I deployed my website as a container](https://dev.to/paschalogu/how-i-deployed-my-website-as-a-container-3fje) 
- <details><summary>Article</summary> <p>One of the greatest nightmares of developers is the “It's not working on my machine” problem. I struggled to run my website locally on different machines too. Shout out to <strong><a href="https://github.com/britdm">Brittany Mitchell</a></strong> for giving me the idea to containerize my website. Containerization allowed me to build my website and run it consistently across different environments and machines. Docker is the tool for achieving this containerization.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--M2LpCZ5j--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fmsimcyg8pul9mg5gsny.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--M2LpCZ5j--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fmsimcyg8pul9mg5gsny.jpeg" alt="Image Source: r/ProgrammerHumour" width="422" height="585"></a></p>
-
-<h2>
-  
-  
-  What is Docker?
-</h2>
-
-<p>Docker is an open-source platform for developing, shipping, and running applications. It is a technology that allows you to incorporate and store your code and its dependencies into a neat little package called an image.</p>
-
-<h2>
-  
-  
-  Dockerfile, Docker Image, and Docker Container
-</h2>
-
-<p><strong>Dockerfile:</strong></p>
-
-<p>A Dockerfile is a text file containing a collection of commands or procedures. Consider this file as a script that defines how our container image will be built.</p>
-
-<p><strong>Docker Image:</strong> </p>
-
-<p>A docker image is a packaged, runnable instance of an application or environment. It contains everything needed to run a piece of software (or website in our case), including the code, a runtime, libraries, environment variables, and configuration files. A docker image is read-only template for creating containers.</p>
-
-<p><strong>Docker Container:</strong> </p>
-
-<p>A docker container is a lightweight, stand-alone, executable package of software that includes everything needed to run the software. Containers isolate applications from each other and the underlying infrastructure while providing an added layer of protection for the application. Containerization solves the problem related to application deployment, and scalability. It helps promote consistency and efficiency in software development and operations. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qxo4RgAy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w5vjiak4eaeaw5gjtqg5.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qxo4RgAy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w5vjiak4eaeaw5gjtqg5.jpeg" alt="Image Source: JFROG" width="800" height="250"></a></p>
-
-
-
-
-<h2>
-  
-  
-  Here is how I containerized my website
-</h2>
-
-<p>As a prerequisite, ensure that you have docker installed locally on your machine. <a href="https://docs.docker.com/engine/install/">Install Docker Engine</a></p>
-
-<p>The code for my website is hosted on <a href="https://github.com/paschalogu/personal-website">GitHub</a>.  To follow along, fork and clone this repository and change directory into it by running the commands below:<br>
+ #### - [Stop throwing errors like this, do that instead!](https://dev.to/ksawery297/stop-throwing-errors-like-this-do-that-instead-354) 
+ <details><summary>Article</summary> <p>Hello everyone. I'm sure at least one of you handles errors by printing something or leaving it by default. It's time to change that! Say hello to awesome-errors! Awesome errors is a library to handle errors with readability and simplicity in mind. Here's an example of how the output looks:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git clone https://github.com/paschalogu/personal-website.git
-<span class="nb">cd </span>personal-website
+<pre class="highlight plaintext"><code>[error]: something went wrong
+--------------------------------------------------
+=&gt; file:///path/dist/main.js:28
+27: try {
+28:     throw new Error("something went wrong");
+29: }
 </code></pre>
 
 </div>
 
 
 
-<h2>
-  
-  
-  Step 1: Build the Docker image
-</h2>
+<p>The error is easily shown with the call stack. Here's how to install it:</p>
 
-<ul>
-<li>Add a Dockerfile</li>
-</ul>
-
-<p>I created a new file named <strong>Dockerfile</strong> by running the command <code>touch Dockerfile</code> in the root of my website directory and added these lines of code below inside the Dockerfile:<br>
-</p>
+<ol>
+<li>Run: <code>npm install awesome-errors</code>
+</li>
+<li>Import it using <code>import AError from "awesome-errors"</code>
+</li>
+<li>Try to throw an error like this:
+</li>
+</ol>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>FROM nginx:alpine
-
-COPY <span class="nb">.</span> /usr/share/nginx/html
-
-EXPOSE 80
+<pre class="highlight plaintext"><code>try {
+    throw new Error("something went wrong");
+} catch (error) {
+    new AError(error);
+}
 </code></pre>
 
 </div>
 
 
 
-<p>The <code>FROM nginx:alpine</code>  line tells Docker to create a Docker image based on the Nginx web server with Alpine Linux. The <code>COPY . /usr/share/nginx/html</code> line will copy the website content from the directory we are in into the image being built. This means that our website code will replace the default Nginx web server content. <code>EXPOSE 80</code> specifies that the container should be capable of serving HTTP traffic on port 80.</p>
+<p>That's it! It was that simple to convert your errors to be more beautiful ✨. </p>
 
-<ul>
-<li>Build Image</li>
-</ul>
-
-<p>Then I built the image by running the line of code below:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>docker build <span class="nt">-t</span> personal-website:v1 <span class="nb">.</span>
-</code></pre>
-
-</div>
-
-
-
-<p><code>docker build</code> command tells docker to build our website as an image based on the instructions provided in a Dockerfile above. The <code>-t personal-website:v1</code> tells docker to tag the image personal-website:v1. v1 signifies that this is version 1. The period (.) tells Docker to look for the Dockerfile in the current directory and use the files and directories in this location during the build process. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Ovt85zgE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfex7zs3l5jw7api0gss.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Ovt85zgE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfex7zs3l5jw7api0gss.png" alt="Docker build" width="800" height="300"></a></p>
-
-<p>Running the command <code>docker images</code>  shows this image I just built:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7S3K-uEd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xzyu65hrtc7tl488uou3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7S3K-uEd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xzyu65hrtc7tl488uou3.png" alt="Image description" width="800" height="58"></a></p>
-
-
-
-
-<h2>
-  
-  
-  Step 2: Push to Docker Registry
-</h2>
-
-<p>I logged in to <a href="https://hub.docker.com/">Docker Hub Container Image Library</a> and created a new repository.  I named it <code>personal-website</code> and gave it a short description (description is optional).</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OnlnRuKl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qjgw56xjhctsg836dxn4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OnlnRuKl--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qjgw56xjhctsg836dxn4.png" alt="Docker Registry" width="800" height="561"></a></p>
-
-<p>Then I ran the <code>docker push</code> command below to push the image I built in the previous step, but it failed with the error below 😞.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>docker push paschalogu/personal-website:v1
-
-The push refers to repository <span class="o">[[</span>docker.io/paschalogu/personal-website]<span class="o">(</span>http://docker.io/paschalogu/personal-website<span class="o">)]</span>
-An image does not exist locally with the tag: paschalogu/personal-website
-</code></pre>
-
-</div>
-
-
-
-<p>Why did it fail? The push command was looking for an image named paschalogu/personal-website:v1, but didn't find one.</p>
-
-<p>To fix this, I ran the <code>docker tag</code> command to tag my image and then re-ran the <code>docker push command</code> to push to my docker repository.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>docker tag personal-website:v1 paschalogu/personal-website:v1
-
-docker push paschalogu/personal-website:v1
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<h2>
-  
-  
-  Step 3: Test Configuration
-</h2>
-
-<p>Opened my browser and navigated to the website <a href="https://labs.play-with-docker.com/">https://labs.play-with-docker.com/</a> </p>
-
-<p>Selected Login and then chose docker from the drop-down list. Then, I sign in with my Docker Hub account and clicked the Start button.</p>
-
-<p>I clicked on ADD NEW INSTANCE option on the left sidebar. After a few seconds, a terminal window opened up in my browser.</p>
-
-<p>In the terminal, I started my freshly pushed wevsite.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>docker pull paschalogu/personal-website:v1
-
-docker run <span class="nt">-dp</span> 80:80 paschalogu/personal-website:v1
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<p>Will you be running your applications and websites as a docker container? Let me know in the comments. Feel free to connect with me on LinkedIn at <a href="https://www.linkedin.com/in/paschal-ogu/">https://www.linkedin.com/in/paschal-ogu/</a> and on Twitter <a href="https://twitter.com/Paschal_ik">@Paschal_Ik</a></p>
-
-<p>References:</p>
-
-<p><a href="https://www.aquasec.com/cloud-native-academy/docker-container/">https://www.aquasec.com/cloud-native-academy/docker-container/</a></p>
-
-<p><a href="https://docs.docker.com/get-started/04_sharing_app/">https://docs.docker.com/get-started/04_sharing_app/</a>.</p>
+<p>Please leave a star below: <br>
+<a href="https://github.com/ksawery29/awesome-errors">https://github.com/ksawery29/awesome-errors</a></p>
 
  </details> 
  <hr /> 
 
- #### - [Data Science for Beginners: 2023 - 2024 Complete Roadmap](https://dev.to/kevoluke/data-science-for-beginners-2023-2024-complete-roadmap-2b7b) 
- <details><summary>Article</summary> <p><u><strong>What is data Science ?</strong><br>
-</u><br>
-Data science is the study of data to extract meaningful insights for business. It is a multidisciplinary approach that combines principles and practices from the fields of mathematics, statistics, artificial intelligence, and computer engineering to analyze large amounts of data. This analysis helps data scientists to ask and answer questions like what happened, why it happened, what will happen, and what can be done with the results.</p>
+ #### - [Cheerio & ChatGPT: A Primer on Web Scraping with Node.js](https://dev.to/bytebricks/cheerio-chatgpt-a-primer-on-web-scraping-with-nodejs-4klf) 
+ <details><summary>Article</summary> <p>Hey there fellow data digger (we dig at <a href="https://bytebricks.ai/">bytebricks.ai</a>)! The web is a treasure trove of information waiting to be unearthed. And guess what? With a sprinkle of <a href="https://cheerio.js.org/">Cheerio</a> and a dash of <a href="https://nodejs.org/en">Node.js</a>, you can turn your code into a data-gathering wizard.</p>
 
-<p>Roadmaps are strategic plans that determine a goal or the desired outcome and feature the significant steps or milestones required to reach it.<br>
-Therefore this is a roadmap to becoming a great data scientist.</p>
+<p>But, hey, let's add a fun twist to it! Ever heard of <a href="https://chat.openai.com/">ChatGPT</a>? 😂 This buddy can take a peek at HTML and whip up the Cheerio code you need to grab that data. Let’s dive into this delicious bowl of Cheerio (pun totally intended) and see how we can make web scraping a breeze.</p>
 
-<p><u><strong>The Data Science Lifecycle</strong><br>
-</u><br>
-Data science’s lifecycle consists of five distinct stages, each with its own tasks:</p>
+<h2>
+  
+  
+  Prepping Up
+</h2>
 
-<p>1.Capture: Data Acquisition, Data Entry, Signal Reception, Data Extraction. This stage involves gathering raw structured and unstructured data.</p>
+<p>Before we start, make sure Node.js is comfortably nestled in your machine. Create a cozy little space for your project, hop into that directory via the terminal, and kickstart a new Node.js project with a simple:<br>
+</p>
 
-<p>2.Maintain: Data Warehousing, Data Cleansing, Data Staging, Data Processing, Data Architecture. This stage covers taking the raw data and putting it in a form that can be used.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>npm init -y
+</code></pre>
 
-<p>3.Process: Data Mining, Clustering/Classification, Data Modeling, Data Summarization. Data scientists take the prepared data and examine its patterns, ranges, and biases to determine how useful it will be in predictive analysis.</p>
+</div>
 
-<p>4.Analyze: Exploratory/Confirmatory, Predictive Analysis, Regression, Text Mining, Qualitative Analysis. Here is the real meat of the lifecycle. This stage involves performing the various analyses on the data.</p>
 
-<p>5.Data Reporting, Data Visualization, Business Intelligence, Decision Making. In this final step, analysts prepare the analyses in easily readable forms such as charts, graphs, and reports.</p>
 
-<p>Step 1: Query Language Like SQL<br><br>
-SQL (Structured Query Language) is a programming language used for managing and manipulating data stored in databases. It is a critical skill for any data scientist, as it allows you to retrieve, filter, and aggregate data from various sources. </p>
+<p>Next up, let’s invite Cheerio and <a href="https://github.com/axios/axios">Axios</a> (our trusty HTTP client) to the party with:<br>
+</p>
 
-<p>Step 2: Programming Language Like R/ Python<br>
-After learning SQL, the next step in data science for beginners is learning a programming language like R or Python. R and Python are widely used in data science for data manipulation, visualization, and machine learning tasks. </p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>npm install cheerio axios
+</code></pre>
 
-<p>To get started, you can choose one of the languages and begin learning the basics. This may include concepts such as variables, data types, loops, and functions.</p>
+</div>
 
-<p>Step 3: Visualization Tool Like PowerBI/Qliksense/QlikView/Tableau </p>
 
-<p>Once you have a solid foundation in programming and data manipulation, the next step as an enroller of data science for beginners is to learn a visualization tool like PowerBI, QlikSense, QlikView, or Tableau. These tools allow you to create interactive and visually appealing charts, graphs, and dashboards to communicate your data insights.</p>
 
-<p>To get started, you can choose one of these tools and begin learning the basics. This may include topics such as creating charts and graphs, building dashboards, and connecting to data sources.</p>
+<h2>
+  
+  
+  Snagging that HTML
+</h2>
 
-<p>Step 4: Basic Statistics for Machine Learning<br>
-After you have learned a programming language and visualization tool, the next step is to learn basic statistics for machine learning. Machine learning is a subfield of data science that involves using algorithms to learn from and make predictions on data. To get started, you should learn basic concepts such as probability, statistics, and linear regression. </p>
+<p>Alright, with the gang all set, let’s nab the HTML of the website we’re eyeing. For this little adventure, we’re gonna pretend we’re extracting goodies from a make-believe e-commerce site.<br>
+</p>
 
-<p>Step 5: Machine Learning Algorithms<br>
-Once you have a solid foundation in basic statistics, the next step is to learn about machine learning algorithms. There are many different algorithms used in machine learning, each with their strengths and weaknesses. To get started, you should learn about common algorithms such as decision trees, linear regression, and k-means clustering. </p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>const axios = require('axios');
 
-<p>Step 6: Practice and Implementation<br>
-The final step in learning data science as a beginner is to practice and implement what you have learned. It can involve working on projects and exercises to apply your skills, as well as participating in online communities and forums to learn from others and get feedback on your work. You can also consider joining a data science group or club, which can provide you with additional opportunities to learn and collaborate with others. </p>
+async function fetchHTML(url) {
+  const { data } = await axios.get(url);
+  return data;
+}
 
-<p>To practice and implement your skills, you can work on real-world data sets and use the tools and techniques you have learned to explore, visualize, and analyze the data. You can also try building your machine-learning models and testing them on different data sets. This can help you gain practical experience and build your portfolio, which can be useful for job applications or freelance work. </p>
+const url = 'https://fictional-ecommerce-site.com';
+fetchHTML(url).then(console.log);
+</code></pre>
 
-<p>Conclusion<br>
-Hopefully, this article could provide insight into the world of data science. To become a data scientist, it is important to be familiar with the programming languages used most frequently in the industry and some major data-related concepts. You can start with a data science course for beginners to become data scientists. </p>
+</div>
 
-<p>Data science is a fast-growing industry, and we are interested in seeing where it goes in the coming years. Data scientists need a broad skill set covering all these phases and domain expertise in the industry they serve.</p>
+
+
+<h2>
+  
+  
+  Let Cheerio Lead the Way
+</h2>
+
+<p>Got the HTML? Sweet! Now, let’s hand it over to Cheerio for some parsing action.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>const cheerio = require('cheerio');
+
+async function parseHTML(html) {
+  const $ = cheerio.load(html);
+
+  // Let’s pretend each product is nestled
+  $('.product').each((i, element) =&gt; {
+    const title = $(element).find('.product-title').text();
+    const price = $(element).find('.product-price').text();
+
+    console.log(`${title}: ${price}`);
+  });
+}
+
+fetchHTML(url).then(html =&gt; parseHTML(html));
+</code></pre>
+
+</div>
+
+
+
+<p>See what we did there? It’s like we’re using <strong>jQuery!</strong>, but with the turbo engines of Node.js.</p>
+
+<h2>
+  
+  
+  ChatGPT comes handy
+</h2>
+
+<p>Now for the cherry on top! ChatGPT can take a look at HTML and conjure up the Cheerio code you need to snatch that data. Just feed it the HTML, and voila, you’ve got your data extraction code ready to roll. It's like having a buddy who writes code while you munch on snacks!</p>
+
+<h2>
+  
+  
+  Polishing Your Data Scooper
+</h2>
+
+<p>Crafting a web scraper is kinda like brewing the perfect cup of coffee. It needs a little tinkering to hit that sweet spot between speed and accuracy. With Cheerio, Node.js, and a little help from ChatGPT, you’ve got a solid start. Don’t forget to handle those pesky paginations, asynchronous loads, and rate limits to scrape like a pro!😎</p>
+
+<h2>
+  
+  
+  Further
+</h2>
+
+<p>You need to make data useful! at bytebricks we build using a Laravel backend and a Vue front, we find that fast to market and Laravel using SQL have a low ongoing overhead cost! not to mention the magic of <a href="https://laravel.com/docs/10.x/eloquent">Eloquent</a> as in this example of <a href="https://dev.to/bytebricks/unleashing-the-power-of-wherehas-in-laravel-jip">whereHas</a> or the very easy integration of <a href="https://dev.to/bytebricks/integrating-aws-simple-email-service-ses-with-laravel-a-comprehensive-guide-1lj3">AWS SES</a>!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Rants of a Beginner Techie3](https://dev.to/golden_builds/rants-of-a-beginner-techie3-326f) 
+ <details><summary>Article</summary> <p>Hello and welcome to another episode of "Rants of a Beginner Techie!" It might seem a bit odd that I change my greeting each time, but I enjoy keeping things spontaneous.</p>
+
+<p>Today, as usual, I've got a lot to talk about, and I hope you find something valuable or relatable in what I'm sharing.</p>
+
+<p>Lately, I've been working on a project (it's a secret for now, but I'll reveal it once it's ready). This marks my first real portfolio project. Even though I know HTML, CSS, C, and I'm currently learning Python, this project feels distinct from the ones I did during courses or experiments while learning. It's challenging, and honestly, it feels a bit strange. At times, I even wonder if I'm a bit crazy because a voice in my head keeps saying, "Are you nuts? You'll never finish this!" But I'm not disheartened because I've learned a lot from my past failures. I've gained more programming knowledge and a deeper understanding of tech in general. I'm approaching this project with a startup mindset because I believe that portfolio projects should have a purpose. If I'm going to present them to potential employers, shouldn't they aim to solve real problems? With each passing day, I'm starting to see programming languages as tools for solving problems and building software. I'm building and learning because I want to solve problems I'm passionate about. What interests you? Find a problem and create a solution! Trust me; it's a fantastic way to create a perfect portfolio project. I'm putting my heart into this project.</p>
+
+<p>To be honest, others may have already devised solutions to similar problems, but that shouldn't discourage you. Why? Because we're all unique, and my approach to solving a problem might differ from yours. In fact, I've learned a thing or two by observing someone else's approach, and I'm open to learning more!</p>
+
+<p>I also noticed something else that I'd like to share in today's rant. Some months ago, I frequently experienced burnout, even though I read blogs and watched tech videos. I couldn't pinpoint the cause of my burnout until recently.</p>
+
+<p>I had turned tech into an idol, making it a "do or die" for me. I stopped doing the things I loved and dedicated more time to learning. It's not that I wasn't happy learning new things, but I felt like I was losing myself. I no longer had time for other things I enjoyed. Burnout slowly crept in, and I felt drained every day. So, my advice to anyone reading this, especially beginner techies, is simple: "Just because you're pursuing a tech career or dream doesn't mean you should forget who you are or neglect your family and friends. Be yourself but with a touch of tech." This approach helped me prevent burnout because my mind no longer viewed it as a burdensome task.</p>
+
+<p>Remember to have fun and enjoy the journey! I'm starting to realize that it's a journey, not just a destination.</p>
+
+<p>I'll conclude today's episode with a quote:</p>
+
+<blockquote>
+<p>"Embrace the tech journey, but don't forget to dance to the rhythm of your own passions along the way."</p>
+</blockquote>
+
+<p>Thanks for reading! I hope you enjoyed the article. You can reach me on <a href="https://twitter.com/Golden_builds">Twitter</a> or send me an email at <a href="mailto:goldisaac33@gmail.com">goldisaac33@gmail.com</a>. I appreciate you all. See you next time!</p>
 
  </details> 
  <hr /> 
