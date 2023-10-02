@@ -117,9 +117,9 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Low-Code Challenges: What's Next](https://dev.to/devteam/low-code-challenges-whats-next-5a9d) 
+ #### - [Monolithic Apps in Containers: Viable or Not?](https://dev.to/devteam/monolithic-apps-in-containers-viable-or-not-11pm) 
  <details><summary>Article</summary> <blockquote>
-<p>What hurdles have you faced with low-code programming? What do you see in the future for this approach to software development?</p>
+<p>Do you think running monolithic applications in containers is a good idea? Share your insights on the benefits and drawbacks of this approach.</p>
 </blockquote>
 
 <p>Follow the DEVteam for more discussions and online camaraderie!</p>
@@ -148,305 +148,443 @@
  </details> 
  <hr /> 
 
- #### - [The Roadmap to Web Dev Mastery (Best Resources)](https://dev.to/codewithshahan/the-roadmap-to-web-dev-mastery-best-resources-2o1m) 
- <details><summary>Article</summary> <p>The reality of today's web development landscape is far more complex. Vanilla CSS and JavaScript are no longer the norm for building web apps; instead, there's a myriad of frameworks and libraries. This choice can be bewildering for beginners. Moreover, once you've picked a technology to learn, the question looms: How can you efficiently acquire these skills for free?</p>
+ #### - [I stopped using Google and here's why.](https://dev.to/alessandrofoglia07/i-stopped-using-google-and-heres-why-421l) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Table of contents
+</h2>
 
-<p>By the end of this journey, you'll not only find answers to these questions but also discover a treasure trove of free resources to transform from a complete beginner into a <a href="https://youtu.be/vRsJH-GjHsQ">capable web developer</a>. Additionally, I'll unveil three critical mistakes you should avoid. </p>
+<ul>
+<li>
+Introduction
 
-<p>But before we delve into the intricacies of various technologies, let's grasp the fundamental workings of a website.</p>
+<ul>
+<li>Is there something I can do to be anonymous on the internet?</li>
+</ul>
 
-<p><em>You can watch my YT video regarding to this article:</em><br>
-<iframe width="710" height="399" src="https://www.youtube.com/embed/_s71XCQ7BbQ">
+
+</li>
+<li>
+1 - Use a privacy-first browser
+
+<ul>
+<li>Why I use Brave Browser</li>
+</ul>
+
+
+</li>
+<li>2 - Use a privacy-first search engine</li>
+<li>3 - Use a VPN</li>
+<li>4 - (Advanced) Don't use emails</li>
+<li>Conclusion</li>
+</ul>
+
+<h2>
+  
+  
+  Introduction
+</h2>
+
+<p>I recently got interested in privacy and anonymity on the internet and I found out something mind-blowing.<br>
+The sad truth of the internet is the fact that, by default, <strong>you get constantly tracked</strong>. That's because in most cases, mostly if you are not taking the correct precautions, even big companies like <strong>Google</strong> or <strong>Microsoft</strong> store and sell all of your information and movements around the internet to advertising companies, that use that data to sell products to you, and to governments, that always try to track you.</p>
+
+<p>Most of the people justify themselves by saying <em>"But I have nothing to hide!"</em> and I answer them with a famous quotation of <strong>Edward Snowden</strong>:<br>
+<em>"Arguing that you don't care about privacy because you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say."</em></p>
+
+<p>It's like someone that watches you using your PC 24 hours a day and records all of your activity, the things you like, your interests and more.<br>
+<strong>Isn't that just <em>creepy</em>?</strong></p>
+
+<h3>
+  
+  
+  Is there something I can do to be <em>anonymous</em> on the internet?
+</h3>
+
+<p>Obviously, there are some ways to enhance your privacy on the internet without compromising your comfort and here are some.</p>
+
+<h2>
+  
+  
+  1 - Use a privacy-first browser
+</h2>
+
+<p>Even though most people use <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong> as default browser, it is really recommended to use any privacy-first browser, like <strong>Mozilla Firefox</strong>, <strong>Brave Browser</strong> or <strong>DuckDuckGo Browser</strong>.<br>
+Between these three, I chose and started using Brave Browser for many reasons:</p>
+
+<h3>
+  
+  
+  Why I use Brave Browser
+</h3>
+
+<ul>
+<li><p>Brave Browser (like Firefox and DuckDuckGo) doesn't track your activity <strong>at all</strong>.</p></li>
+<li><p>It is <strong>Chromium Based</strong>, which means that it's based on the open-source Chromium project, the same of Chrome and Edge, so it's easier to get used to it.</p></li>
+<li><p>It has an <strong>integrated ad-blocker and tracks-blocker</strong>: many think of this feature as <em>unethical</em>, but I personally like automatic ad-blocking, since I would use an ad-blocker anyway. Also it automatically blocks all kinds of tracks from websites.</p></li>
+<li><p>It's the <strong>easiest to set up</strong> for an average user, as most of the privacy features it provides are already packed in and ready to use.</p></li>
+<li><p>You can earn <strong>BATs</strong> using Brave: Brave gives you a cryptocurrency named BAT (Basic Attention Token) for using their browser and I think it's actually a nice way to convince people to switch.</p></li>
+</ul>
+
+<h2>
+  
+  
+  2 - Use a privacy-first search engine
+</h2>
+
+<p>A search engine is a software system that finds web pages that match a web search. The most popular ones are <strong>Google Search</strong> and <strong>Bing Search</strong> (Now with Bing AI) for sure.<br>
+The sad thing is that these two are probably the most dangerous ones too: as proof, you can look at how much data Google sends and receives about you in one single search. To do that, you can try to open up DevTools in Google Chrome with <code>F12</code>, go to Network tab, enable the "Preserve log" option and try to search something.</p>
+
+<p>Some nice privacy-first search engines are <strong>DuckDuckGo</strong> (my favorite one, since it's the most customizable and promises to never create a personal history of your searches and to never collect information about your computer that might be used to identify you), <strong>Brave Search</strong> (also keeps no record of your search history), <strong>Searx</strong> and <strong>Startpage</strong>.</p>
+
+<h2>
+  
+  
+  3 - Use a VPN
+</h2>
+
+<p>A <strong>VPN</strong>, or <strong>Virtual Private Network</strong>, is a technology that allows you to create a secure and encrypted connection over the internet. A VPN works by creating a secure and encrypted tunnel between your device (such as your computer or smartphone) and a remote server operated by the VPN provider. When you connect to the VPN, your internet traffic is routed through this encrypted tunnel, making it unreadable to anyone trying to intercept it, including hackers and your internet service provider. The VPN server can be located in a different region or country, allowing you to mask your IP address and appear as though you're browsing from that location, which can help you bypass geo-restrictions and enhance your online privacy and security.</p>
+
+<p>There are a lot of trusted VPNs online, like <strong>NorthVPN</strong>, <strong>ExpressVPN</strong> or <strong>Surfshark VPN</strong>. The one I use is <strong>Proton VPN</strong>, made by the <strong>Proton</strong> company (specialized privacy-first services), since it considered the best of the best out there, having however a nice <strong>free plan</strong> that lets you start playing with it.</p>
+
+<h2>
+  
+  
+  4 - (Advanced) Don't use emails
+</h2>
+
+<p>When emails were born, privacy and security wasn't such a problem in the internet, so no privacy-safe method was implemented in them, resulting them to be <strong>highly unsecure</strong> nowadays.</p>
+
+<p>Emails work by sending electronic messages through various servers and networks. They lack inherent privacy because the content is often stored on servers, making it susceptible to surveillance or data breaches. To enhance email privacy, try to use end-to-end encrypted email services like ProtonMail or Tutanota, employ strong, unique passwords, enable two-factor authentication, avoid sharing sensitive information via email, and regularly update your email client and plugins to patch security vulnerabilities. Additionally, be cautious about clicking on links or downloading attachments from unknown senders to prevent phishing attacks and malware.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>The world of the internet is a vast and interconnected space, but it comes with its own set of challenges, particularly concerning privacy and anonymity. It's crucial to recognize that online tracking and data collection are pervasive, often conducted by large companies and even governments. The notion that "having nothing to hide" justifies relinquishing your privacy is a notion that needs to be challenged.</p>
+
+<p>Fortunately, there are proactive steps you can take to safeguard your online privacy without sacrificing your comfort. The recommendations provided, such as using privacy-first browsers like Brave, adopting search engines like DuckDuckGo, employing VPNs for encrypted connections, and considering secure email services like ProtonMail, offer effective ways to enhance your online anonymity.</p>
+
+<p>Remember, being proactive about your online privacy is not just about protecting your secrets; it's about safeguarding your fundamental right to privacy in an increasingly digital world.</p>
+
+<h3>
+  
+  
+  Who am I?
+</h3>
+
+<p>I am an Italian high-school student who is interested in web-dev 🧙‍♂️. If you'd like to support me, you can follow me here and on my <a href="https://github.com/alessandrofoglia07">GitHub</a>, I would really appreciate it 💜</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [I made Simba using pure CSS](https://dev.to/melnik909/i-made-simba-using-pure-css-2p4f) 
+ <details><summary>Article</summary> <p>Hey folks 👋</p>
+
+<p>I made Simba using only CSS. Check out this Pen! Like or dislike? Please, share your thoughts 🙏</p>
+
+<p><iframe height="600" src="https://codepen.io/melnik909/embed/qaOwqV?height=600&amp;default-tab=result&amp;embed-version=2">
 </iframe>
 </p>
 
-<h2>
+<p>Full code: <a href="https://codepen.io/melnik909/pen/qaOwqV">https://codepen.io/melnik909/pen/qaOwqV</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Introdução ao Python: parte 2](https://dev.to/eduardoromeiro_/introducao-ao-python-parte-2-e8g) 
+ <details><summary>Article</summary> <h2>
   
   
-  🏗 How Website Works
+  Tipos de dados
 </h2>
 
-<p>At its core, a website is simply a collection of files stored on a server. These files can be accessed through a web browser like Chrome or Firefox, which sends requests to the server via the internet. The server, in turn, may execute operations such as storing relevant data using a database. </p>
+<p>Continuando com a séria de introdução a Python, vamos falar sobre os tipos de dados básico em Python, é um assunto bem importante porém é bem simples, nos próximos artigos falarei sobre as outras estruturas de dados.</p>
 
-<p>When you're coding for what users see in their browsers, you're venturing into front-end development. Conversely, if you're coding for the server's actions upon receiving requests, you're diving into back-end development. You can choose to master both aspects, so you'll become a full-stack developer, but keep in mind that excelling in just one of these domains is a valuable achievement in itself.</p>
+<h3>
+  
+  
+  String
+</h3>
+
+<p>O tipo de dado <strong>string</strong> representa um conjunto de caracteres, pensa no seu nome, ele é formado por letras, nas strings cada caracter é indexado, assim podemos acessar um caracter por sua posição, começa sempre na posição 0 e vai até seu tamanho final.</p>
+
+<p>Podemos utilizar tanto aspas simples, aspas duplas, aspas triplas<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="s">'Eduardo'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Eduardo"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'''Eduardo'''</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Vejamos o seu tipo de dados:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s">'Eduardo'</span><span class="p">))</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Exibindo o tipo:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>class &lt;'str'&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>Nas strings podemos fazer coisas legais, por exemplo acessar um valor por seu indice, veja a seguir<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&gt;&gt;&gt; "Eduardo"[0]
+'E'
+</code></pre>
+
+</div>
+
+
+
+<p>Acessando o primeiro <strong>elemento</strong> da palavra "Eduardo" e também podemos percorrer pela string<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&gt;&gt;&gt; "Eduardo"[0:2]
+'Ed'
+</code></pre>
+
+</div>
+
+
+
+<p>Aqui a gente começa pelo índice 0 até o índice 2, porém sem incluir o índice 2, no caso pegaremos o índice 0 até o índice 1 e sem incluir o 2.</p>
+
+<p>Para vê mais sobre as strings eu recomendo que leia sobre ela na <a href="https://docs.python.org/pt-br/3/library/stdtypes.html#textseq">documentação oficial</a> do Python que está bem mais detalhada. </p>
+
+<h3>
+  
+  
+  Integer
+</h3>
+
+<p>O tipo de dado <strong>inteiro</strong> é basicamente um número sem casas decimais, imagine um número que indica a sua idade, é basicamente isso, porque não existe idade com casas decimais, seria esquisito né? veja exemplo abaixo<br>
+Ele pode ser tanto positivo quanto negativo.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Como tudo em Python é um objeto, o númeiro inteiro é da classe <strong>int</strong></p>
+
+<p>Com a função <strong>type()</strong> podemos imprimir a informação referente aquele tipo de dado.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Exibindo o tipo de dado abaixo:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;class 'int'&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>Ele pertence a class <strong>int</strong>, dentro de classes podemos acessar funcionalidades, porém é um tópicos mais avançado que veremos mais tarde</p>
+
+<h3>
+  
+  
+  Float
+</h3>
+
+<p>Agora falaremos sobre o tipo de dado float ou conhecido como ponto flutuante, diferente sobre o tipo inteiro, o ponto flutuante é representado com deciamis, sendo positivo ou negativo, veja abaixo o exemplo:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Agora vamos vê o tipo de dado que ele representa com a função <strong>type()</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">1.1</span><span class="p">))</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Veja o resultado abaixo:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;class 'float'&gt;
+</code></pre>
+
+</div>
+
+
+
+<p>Podemos vê que ele é da class <strong>float</strong> que posui as suas próprias funcionalidades.</p>
+
+<h3>
+  
+  
+  Boolean
+</h3>
+
+<p>Esse tipo de dado é bem simples. ele possui apenas dois valores que são <strong>True</strong> ou <strong>False</strong>, eles são muitos utilizados para fazer comparações relacionais e lógicas dentro de uma <strong>estruturas de controle</strong> que veremos mais tarde. </p>
+
+<p>Por agora vamos só mostra os seus valores literais e o seus tipos.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">True</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">False</span><span class="p">))</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Agora mostrando os seus tipos:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;class 'bool'&gt; # True
+&lt;class 'bool'&gt; # False
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  None
+</h3>
+
+<p>O tipo <strong>None</strong> é um tipo de dado "vazio" ele não representa valor nenhum, podemos usar ele quando queremos inicializar um <strong>variável</strong> com nenhum valor, não tem muito falar sobre ele, mas deixei aqui registrado<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Exibindo o tipo de dado <strong>None</strong>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>&lt;class 'NoneType'&gt;
+</code></pre>
+
+</div>
+
+
+
+ </details> 
+ <hr /> 
+
+ #### - [Ayu's Hacktoberfest 2023 Pledge](https://dev.to/adiatiayu/ayus-hacktoberfest-2023-pledge-4d48) 
+ <details><summary>Article</summary> <p><a href="https://i.giphy.com/media/3oz8xLSmmt0WaMTbX2/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/3oz8xLSmmt0WaMTbX2/giphy.gif" alt="cute pumpkin GIF" width="540" height="540"></a></p>
 
 <h2>
   
   
-  🥢Fronted Mastery
+  Intro
+</h2>
+
+<p>Hi friends!</p>
+
+<p>I'm Ayu, a tech blogger, front-end developer, open-source contributor, and tech community enthusiast based in the Netherlands. 👋</p>
+
+<p>I've been a member of the DEV community for 4+ years, and I'm part of the moderator team here on DEV and CodeNewbie!😄</p>
+
+<h2>
+  
+  
+  Background
+</h2>
+
+<p>This year marks the 5th Hacktoberfest that I'm participating in! 🤩</p>
+
+<p>This time, I want to go beyond by supporting beginners in open source! So, here comes my pledge.</p>
+
+<h2>
+  
+  
+  Pledge
 </h2>
 
 <h3>
   
   
-  HTML &amp; CSS
+  One Accepted PR
 </h3>
 
-<p>Let's commence with front-end development. HTML, CSS, and JavaScript serve as the foundational building blocks in this realm. To comprehend their roles, consider a "Sign In" button on Netflix. HTML declares the button's existence to the browser, CSS specifies that it should be red with white text, and JavaScript dictates the actions to be taken upon clicking the button. However, there's a common pitfall here—spending excessive time on tutorials for these languages. </p>
+<p>As in previous years, I aim to have at least 1 PR accepted for Hacktoberfest.</p>
 
-<p>Learning by doing is the key, and interactive platforms like W3Schools are your allies. For HTML, work through exercises until you reach HTML graphics. Cover everything up to the CSS grid for CSS and explore the JS HTML DOM for JavaScript. Test your knowledge with quizzes and exercises.</p>
+<p>I know, I know. You might be saying, "Are you serious? We need <strong>four</strong> PRs to complete Hacktoberfest."</p>
 
-<p>CSS has a reputation for being time-consuming and challenging to debug, as it doesn't provide explicit error messages. To tackle this, consider employing a CSS framework, such as Bootstrap or Tailwind CSS. Bootstrap offers pre-built components, but customization can be limited, and your site may look generic. In contrast, Tailwind CSS grants you greater control over aesthetics and boasts excellent documentation. To master it, learn how to create custom components with Tailwind CSS.</p>
+<p>This is what works for me. Setting achievable and realistic goals gives less pressure and makes me enjoy the process. And when I've achieved it, I constantly challenge myself to do more.</p>
+
+<p>So, if you are wondering, I completed each of my previous Hacktoberfest, and in the last three years, with more than four PRs accepted and merged during the events. 😊</p>
 
 <h3>
   
   
-  JavaScript
+  Supporting Open Source Community
 </h3>
 
-<p>Switching gears to JavaScript, we aim to optimize our workflow. When using JavaScript to build a project, you'll notice that HTML and JavaScript reside in separate files, requiring multiple updates when modifying a component. This disjointed workflow can hinder productivity. To address this issue, we turn to JavaScript frameworks, with two popular choices being Angular and React. Angular, a full-fledged framework, has a steep learning curve, while React, a flexible JavaScript library, is more beginner-friendly, especially if you've already grasped JavaScript. Dive into React using the official "Intro to React" tutorial to build a tic-tac-toe game, and then explore its main concepts.</p>
+<p>This year, I want to focus more on supporting the open-source community, especially beginners in open-source.</p>
 
-<h2>
-  
-  
-  Building Portfolio
-</h2>
+<p>I will guide and answer open-source questions for anyone who needs one. And I'm volunteering in some tech communities — <a href="https://virtualcoffee.io/">Virtual Coffee</a>, <a href="https://opensauced.pizza/">OpenSauced</a> and <a href="https://www.shesharp.co/">SheSharp</a> — to be a mentor, a Hacktoberfest support, and a maintainer during the event.</p>
 
-<p>With a solid grasp of front-end development, it's time to assemble your portfolio. This brings us to another significant mistake—creating a portfolio prematurely. Build more projects first. Select projects that resonate with your daily life, such as a note-taking web app or a workout tracker. The aim is to demonstrate your ability to create functional web apps, which will undoubtedly make you more appealing to potential employers.</p>
-
-<h2>
-  
-  
-  💻Backend Mastery
-</h2>
-
-<p>If you've absorbed all this knowledge and become a proficient front-end developer, you could consider your journey complete. However, if you hunger for more, it's time to delve into back-end development. In the realm of back-end development, you write code for servers to perform operations like data storage, retrieval, or interfacing with other servers. Java with Spring and Python with Django are viable options, but for a swifter route, Node.js with JavaScript is recommended. Leveraging your existing JavaScript knowledge, Node.js offers a seamless transition to server-side programming.</p>
-
-<p>Node.js enables you to run JavaScript on servers, facilitating the backend logic while using JavaScript code. Express, a popular library, simplifies backend development. Begin by building an app from scratch with Express and MongoDB, a NoSQL database, using tutorials like the one by Traversy Media. Embrace the learning process by tackling challenges, referring to documentation, and seeking help online—the skills you acquire now will serve you well as a software engineer.</p>
-
-<p>To complete the journey, build a WhatsApp clone by following a beginner-friendly tutorial. Return to the front-end projects you created and integrate a backend. You now possess the skills and a portfolio of projects and are ready to seek job opportunities. Beware, though—many aspiring developers stumble at the final hurdle by neglecting interview preparation. While smaller companies may hire based on skills alone, larger organizations conduct interviews with specific questions. Don't let your hard-earned skills go to waste; equip yourself with the knowledge and techniques required for successful interviews.</p>
-
-<p><em><strong>Bright Data Can Help You Access the World of Web Data</strong></em><br>
-Instead of wasting countless hours watching tutorials, why not take into account the priceless tool that <a href="https://get.brightdata.com/codewithshahan">Bright Data</a> provides? This amazing #1 web platform gives you the tools to convert webpages into structured data by giving you access to powerful web scrapers, award-winning proxy networks, and ready-to-use datasets for download. It is the top web data platform in the globe, and it will give your coding projects a boost.</p>
-
-<h2>
-  
-  
-  😎Conclusion
-</h2>
-
-<p>This concludes our journey. Remember, the path to becoming a proficient web developer is marked by hands-on learning, continuous improvement, and a commitment to honing your skills. Good luck on your coding adventure!</p>
-
-<h2>
-  
-  
-  <em>Best free resources to learn web development:</em>
-</h2>
-
-<p>🏗 Frontend web development<br>
-👉 HTML: <a href="https://www.w3schools.com/">https://www.w3schools.com/</a><br>
-👉 CSS: <a href="https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a><br>
-👉 Javascript: <a href="https://www.w3schools.com/js/default.asp">https://www.w3schools.com/js/default.asp</a><br>
-👉 Tailwind Documentation: <a href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a><br>
-👉 Intro to React: <a href="https://react.dev/learn/tutorial-tic-tac-toe">https://react.dev/learn/tutorial-tic-tac-toe</a><br>
-👉 React Basics: <a href="https://legacy.reactjs.org/docs/hello-world.html">https://legacy.reactjs.org/docs/hello-world.html</a><br>
-👉 React Tailwind Project by Traversy Media: <a href="https://youtu.be/FiGmAI5e91M?si=Sj8GP7x9M9XAa29U">https://youtu.be/FiGmAI5e91M?si=Sj8GP7x9M9XAa29U</a></p>
-
-<p>💻 Back end development<br>
-👉 NodeJS with Express and MongoDB by Traversy media: <br>
-<a href="https://www.youtube.com/watch?v=SBvmnHTQIPY&amp;t=0s">https://www.youtube.com/watch?v=SBvmnHTQIPY&amp;t=0s</a>  </p>
-
-<p>👉 Express documentation: <a href="https://expressjs.com/en/api.html">https://expressjs.com/en/api.html</a></p>
-
-<p>👨‍💻 Full stack development<br>
- 👉 🔴 Build a Whatsapp Clone with MERN: <a href="https://www.youtube.com/watch?v=gzdQDxzW2Tw&amp;t=0s">https://www.youtube.com/watch?v=gzdQDxzW2Tw&amp;t=0s</a></p>
-
-<p>Stay connected with me:<br>
-🔗 LinkedIn: linkedin.com/in/codewithshahan/<br>
-📹 YouTube : <a href="https://www.youtube.com/programmingwithshahan">https://www.youtube.com/programmingwithshahan</a><br>
-🐦 Twitter : twitter.com/shahancd</p>
-
- </details> 
- <hr /> 
-
- #### - [Stop throwing errors like this, do that instead!](https://dev.to/ksawery297/stop-throwing-errors-like-this-do-that-instead-354) 
- <details><summary>Article</summary> <p>Hello everyone. I'm sure at least one of you handles errors by printing something or leaving it by default. It's time to change that! Say hello to awesome-errors! Awesome errors is a library to handle errors with readability and simplicity in mind. Here's an example of how the output looks:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>[error]: something went wrong
---------------------------------------------------
-=&gt; file:///path/dist/main.js:28
-27: try {
-28:     throw new Error("something went wrong");
-29: }
-</code></pre>
-
-</div>
-
-
-
-<p>The error is easily shown with the call stack. Here's how to install it:</p>
-
-<ol>
-<li>Run: <code>npm install awesome-errors</code>
-</li>
-<li>Import it using <code>import AError from "awesome-errors"</code>
-</li>
-<li>Try to throw an error like this:
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>try {
-    throw new Error("something went wrong");
-} catch (error) {
-    new AError(error);
-}
-</code></pre>
-
-</div>
-
-
-
-<p>That's it! It was that simple to convert your errors to be more beautiful ✨. </p>
-
-<p>Please leave a star below: <br>
-<a href="https://github.com/ksawery29/awesome-errors">https://github.com/ksawery29/awesome-errors</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Cheerio & ChatGPT: A Primer on Web Scraping with Node.js](https://dev.to/bytebricks/cheerio-chatgpt-a-primer-on-web-scraping-with-nodejs-4klf) 
- <details><summary>Article</summary> <p>Hey there fellow data digger (we dig at <a href="https://bytebricks.ai/">bytebricks.ai</a>)! The web is a treasure trove of information waiting to be unearthed. And guess what? With a sprinkle of <a href="https://cheerio.js.org/">Cheerio</a> and a dash of <a href="https://nodejs.org/en">Node.js</a>, you can turn your code into a data-gathering wizard.</p>
-
-<p>But, hey, let's add a fun twist to it! Ever heard of <a href="https://chat.openai.com/">ChatGPT</a>? 😂 This buddy can take a peek at HTML and whip up the Cheerio code you need to grab that data. Let’s dive into this delicious bowl of Cheerio (pun totally intended) and see how we can make web scraping a breeze.</p>
-
-<h2>
-  
-  
-  Prepping Up
-</h2>
-
-<p>Before we start, make sure Node.js is comfortably nestled in your machine. Create a cozy little space for your project, hop into that directory via the terminal, and kickstart a new Node.js project with a simple:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm init -y
-</code></pre>
-
-</div>
-
-
-
-<p>Next up, let’s invite Cheerio and <a href="https://github.com/axios/axios">Axios</a> (our trusty HTTP client) to the party with:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>npm install cheerio axios
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Snagging that HTML
-</h2>
-
-<p>Alright, with the gang all set, let’s nab the HTML of the website we’re eyeing. For this little adventure, we’re gonna pretend we’re extracting goodies from a make-believe e-commerce site.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const axios = require('axios');
-
-async function fetchHTML(url) {
-  const { data } = await axios.get(url);
-  return data;
-}
-
-const url = 'https://fictional-ecommerce-site.com';
-fetchHTML(url).then(console.log);
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Let Cheerio Lead the Way
-</h2>
-
-<p>Got the HTML? Sweet! Now, let’s hand it over to Cheerio for some parsing action.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>const cheerio = require('cheerio');
-
-async function parseHTML(html) {
-  const $ = cheerio.load(html);
-
-  // Let’s pretend each product is nestled
-  $('.product').each((i, element) =&gt; {
-    const title = $(element).find('.product-title').text();
-    const price = $(element).find('.product-price').text();
-
-    console.log(`${title}: ${price}`);
-  });
-}
-
-fetchHTML(url).then(html =&gt; parseHTML(html));
-</code></pre>
-
-</div>
-
-
-
-<p>See what we did there? It’s like we’re using <strong>jQuery!</strong>, but with the turbo engines of Node.js.</p>
-
-<h2>
-  
-  
-  ChatGPT comes handy
-</h2>
-
-<p>Now for the cherry on top! ChatGPT can take a look at HTML and conjure up the Cheerio code you need to snatch that data. Just feed it the HTML, and voila, you’ve got your data extraction code ready to roll. It's like having a buddy who writes code while you munch on snacks!</p>
-
-<h2>
-  
-  
-  Polishing Your Data Scooper
-</h2>
-
-<p>Crafting a web scraper is kinda like brewing the perfect cup of coffee. It needs a little tinkering to hit that sweet spot between speed and accuracy. With Cheerio, Node.js, and a little help from ChatGPT, you’ve got a solid start. Don’t forget to handle those pesky paginations, asynchronous loads, and rate limits to scrape like a pro!😎</p>
-
-<h2>
-  
-  
-  Further
-</h2>
-
-<p>You need to make data useful! at bytebricks we build using a Laravel backend and a Vue front, we find that fast to market and Laravel using SQL have a low ongoing overhead cost! not to mention the magic of <a href="https://laravel.com/docs/10.x/eloquent">Eloquent</a> as in this example of <a href="https://dev.to/bytebricks/unleashing-the-power-of-wherehas-in-laravel-jip">whereHas</a> or the very easy integration of <a href="https://dev.to/bytebricks/integrating-aws-simple-email-service-ses-with-laravel-a-comprehensive-guide-1lj3">AWS SES</a>!</p>
-
- </details> 
- <hr /> 
-
- #### - [Rants of a Beginner Techie3](https://dev.to/golden_builds/rants-of-a-beginner-techie3-326f) 
- <details><summary>Article</summary> <p>Hello and welcome to another episode of "Rants of a Beginner Techie!" It might seem a bit odd that I change my greeting each time, but I enjoy keeping things spontaneous.</p>
-
-<p>Today, as usual, I've got a lot to talk about, and I hope you find something valuable or relatable in what I'm sharing.</p>
-
-<p>Lately, I've been working on a project (it's a secret for now, but I'll reveal it once it's ready). This marks my first real portfolio project. Even though I know HTML, CSS, C, and I'm currently learning Python, this project feels distinct from the ones I did during courses or experiments while learning. It's challenging, and honestly, it feels a bit strange. At times, I even wonder if I'm a bit crazy because a voice in my head keeps saying, "Are you nuts? You'll never finish this!" But I'm not disheartened because I've learned a lot from my past failures. I've gained more programming knowledge and a deeper understanding of tech in general. I'm approaching this project with a startup mindset because I believe that portfolio projects should have a purpose. If I'm going to present them to potential employers, shouldn't they aim to solve real problems? With each passing day, I'm starting to see programming languages as tools for solving problems and building software. I'm building and learning because I want to solve problems I'm passionate about. What interests you? Find a problem and create a solution! Trust me; it's a fantastic way to create a perfect portfolio project. I'm putting my heart into this project.</p>
-
-<p>To be honest, others may have already devised solutions to similar problems, but that shouldn't discourage you. Why? Because we're all unique, and my approach to solving a problem might differ from yours. In fact, I've learned a thing or two by observing someone else's approach, and I'm open to learning more!</p>
-
-<p>I also noticed something else that I'd like to share in today's rant. Some months ago, I frequently experienced burnout, even though I read blogs and watched tech videos. I couldn't pinpoint the cause of my burnout until recently.</p>
-
-<p>I had turned tech into an idol, making it a "do or die" for me. I stopped doing the things I loved and dedicated more time to learning. It's not that I wasn't happy learning new things, but I felt like I was losing myself. I no longer had time for other things I enjoyed. Burnout slowly crept in, and I felt drained every day. So, my advice to anyone reading this, especially beginner techies, is simple: "Just because you're pursuing a tech career or dream doesn't mean you should forget who you are or neglect your family and friends. Be yourself but with a touch of tech." This approach helped me prevent burnout because my mind no longer viewed it as a burdensome task.</p>
-
-<p>Remember to have fun and enjoy the journey! I'm starting to realize that it's a journey, not just a destination.</p>
-
-<p>I'll conclude today's episode with a quote:</p>
-
-<blockquote>
-<p>"Embrace the tech journey, but don't forget to dance to the rhythm of your own passions along the way."</p>
-</blockquote>
-
-<p>Thanks for reading! I hope you enjoyed the article. You can reach me on <a href="https://twitter.com/Golden_builds">Twitter</a> or send me an email at <a href="mailto:goldisaac33@gmail.com">goldisaac33@gmail.com</a>. I appreciate you all. See you next time!</p>
+<p><a href="https://i.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy-downsized.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy-downsized.gif" alt="Cat put on sunglasses with text I'm ready GIF" width="348" height="328"></a></p>
 
  </details> 
  <hr /> 
