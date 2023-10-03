@@ -54,7 +54,7 @@
 
 <!-- GITHUB STATS -->
 <!-- https://github.com/DenverCoder1/github-readme-streak-stats --> <!--  My Vercel -->
-<!-- https://github.com/anuraghazra/github-readme-stats --> <!--  My own Vercel -->
+<!-- https://github.com/anuraghazra/github-readme-stats --> <!--  My  Vercel -->
 
 <h2 align="center"> Stats📝 </h2>
   <br>
