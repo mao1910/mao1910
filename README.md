@@ -117,9 +117,9 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Monolithic Apps in Containers: Viable or Not?](https://dev.to/devteam/monolithic-apps-in-containers-viable-or-not-11pm) 
+ #### - [Outsourcing Software Dev: What Factors Matter?](https://dev.to/devteam/outsourcing-software-dev-what-factors-matter-42a5) 
  <details><summary>Article</summary> <blockquote>
-<p>Do you think running monolithic applications in containers is a good idea? Share your insights on the benefits and drawbacks of this approach.</p>
+<p>When in-house resources are scarce, what should you consider before outsourcing software development? </p>
 </blockquote>
 
 <p>Follow the DEVteam for more discussions and online camaraderie!</p>
@@ -148,443 +148,498 @@
  </details> 
  <hr /> 
 
- #### - [I stopped using Google and here's why.](https://dev.to/alessandrofoglia07/i-stopped-using-google-and-heres-why-421l) 
+ #### - [My #100DaysOfCode Challenge](https://dev.to/devencourt/my-100daysofcode-challenge-1d66) 
+ <details><summary>Article</summary> <h3>
+  
+  
+  Past
+</h3>
+
+<p>I have had a really long, bumpy relationship with coding. I'm a naturally fast learner, so when I run into something with as many hurdles as coding, I've never had enough grit to make it through. Or at least, that's what I tell myself.</p>
+
+<p>At the earliest stages of my journey, I had online profiles on chat sites that I customized with HTML and CSS before I even really understood what those were.</p>
+
+<p>When I was in high school, I traded my Physics courses for Computer Science courses. I got to learn web design and make my own games instead of doing math on paper, what a dream! At the peak of my high school tech career, I used a Logitech webcam and my own API to design something similar to a Ring doorbell before those really got popular. </p>
+
+<p>Nowadays, I know enough about these technical topics to hold a conversation, but if you actually pressed me about some of them and held my feet to the fire, I probably wouldn't be able to give you solid answers. For my fellow Americans, if you had Spanish classes in high school and haven't spoken the language since, you'll know how I feel: a stuttering, bumbling mess.</p>
+
+<h3>
+  
+  
+  Future
+</h3>
+
+<p>So, I want to make an effort to fix that. How are things going to change? </p>
+
+<p>I've always struggled with motivation, but I've never struggled with passion. That, I've got buckets full of. So, let's take all that passion and turn it into something fruitful.</p>
+
+<p>You all may have heard of the <a href="https://dev.to/devteam/dev-team-update-22c9">recent round of layoffs</a> at Forem last week. While I was unfortunately one of the unlucky few impacted, I'm not going to let that stop me from connecting with over one million of you amazing people each and every week. </p>
+
+<p>I'm feeling motivated enough to do 100 Days of Code this October, so let's see how it'll turn out. With this post, I'm committing myself publicly to the challenge. Maybe a true developer will be born out of this venture.<br>
+</p>
+<div class="crayons-card c-embed text-styles text-styles--secondary">
+    <div class="c-embed__body">
+      <h2 class="fs-xl lh-tight">
+        <a href="https://www.100daysofcode.com/" rel="noopener noreferrer" class="c-link">
+          #100DaysOfCode Official Website  | #100DaysOfCode
+        </a>
+      </h2>
+      <div class="color-secondary fs-s flex items-center">
+        100daysofcode.com
+      </div>
+    </div>
+</div>
+
+
+<p>I think this time, I have a few major motivations that will make the difference: </p>
+
+<ol>
+<li>I'm already at the best place to be a CodeNewbie: dev.to</li>
+<li>I have dream projects I want to be able to turn into reality. </li>
+<li>I'm willing to take it slow and understand that there are going to be a lot of things that I don't get the first go around. </li>
+</ol>
+
+<p>You can follow along with my daily progress on Twitter: </p>
+<div class="crayons-card c-embed text-styles text-styles--secondary">
+    <a href="https://twitter.com/bethenb1" rel="noopener noreferrer">
+      twitter.com
+    </a>
+</div>
+
+
+<p>I'll post weekly here so I don't spam you too much - and just to make it easier on the ol' wrists. 15 posts is a lot less than 100 posts. </p>
+
+<p>If anyone has been waiting to make the effort to learn how to code, this is your sign! I'm following <a href="https://www.theodinproject.com">The Odin Project</a>, so you can feel free to learn along with me at your own pace. I'm inspired by all of you and hope that I can inspire some newbies myself along the way. </p>
+
+<p>If I get anything wrong, feel free to leave a helpful comment! See you soon! 💕</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Integrating Prometheus with SAP's Enterprise Software for Kubernetes Monitoring: A Step-by-Step Guide](https://dev.to/johnpottergr/integrating-prometheus-with-saps-enterprise-software-for-kubernetes-monitoring-a-step-by-step-guide-4i68) 
  <details><summary>Article</summary> <h2>
   
   
-  Table of contents
+  Pre-requisites
 </h2>
+
+<h4>
+  
+  
+  Kubernetes Cluster:
+</h4>
 
 <ul>
 <li>
-Introduction
-
-<ul>
-<li>Is there something I can do to be anonymous on the internet?</li>
-</ul>
-
-
-</li>
+Have a running Kubernetes cluster.
+#### kubectl: </li>
 <li>
-1 - Use a privacy-first browser
-
-<ul>
-<li>Why I use Brave Browser</li>
+Installed and configured to interact with your cluster.
+#### Helm: </li>
+<li>
+Installed, for easier package deployment.</li>
 </ul>
 
+<h2>
+  
+  
+  Deployment
+</h2>
 
+<h4>
+  
+  
+  Step 1: Install Prometheus Operator
+</h4>
+
+<ul>
+<li>Open your terminal and run:
 </li>
-<li>2 - Use a privacy-first search engine</li>
-<li>3 - Use a VPN</li>
-<li>4 - (Advanced) Don't use emails</li>
-<li>Conclusion</li>
 </ul>
 
-<h2>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm install prometheus prometheus-community/kube-prometheus-stack
+</code></pre>
+
+</div>
+
+
+
+<h4>
   
   
-  Introduction
-</h2>
-
-<p>I recently got interested in privacy and anonymity on the internet and I found out something mind-blowing.<br>
-The sad truth of the internet is the fact that, by default, <strong>you get constantly tracked</strong>. That's because in most cases, mostly if you are not taking the correct precautions, even big companies like <strong>Google</strong> or <strong>Microsoft</strong> store and sell all of your information and movements around the internet to advertising companies, that use that data to sell products to you, and to governments, that always try to track you.</p>
-
-<p>Most of the people justify themselves by saying <em>"But I have nothing to hide!"</em> and I answer them with a famous quotation of <strong>Edward Snowden</strong>:<br>
-<em>"Arguing that you don't care about privacy because you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say."</em></p>
-
-<p>It's like someone that watches you using your PC 24 hours a day and records all of your activity, the things you like, your interests and more.<br>
-<strong>Isn't that just <em>creepy</em>?</strong></p>
-
-<h3>
-  
-  
-  Is there something I can do to be <em>anonymous</em> on the internet?
-</h3>
-
-<p>Obviously, there are some ways to enhance your privacy on the internet without compromising your comfort and here are some.</p>
-
-<h2>
-  
-  
-  1 - Use a privacy-first browser
-</h2>
-
-<p>Even though most people use <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong> as default browser, it is really recommended to use any privacy-first browser, like <strong>Mozilla Firefox</strong>, <strong>Brave Browser</strong> or <strong>DuckDuckGo Browser</strong>.<br>
-Between these three, I chose and started using Brave Browser for many reasons:</p>
-
-<h3>
-  
-  
-  Why I use Brave Browser
-</h3>
+  Step 2: Check Installation
+</h4>
 
 <ul>
-<li><p>Brave Browser (like Firefox and DuckDuckGo) doesn't track your activity <strong>at all</strong>.</p></li>
-<li><p>It is <strong>Chromium Based</strong>, which means that it's based on the open-source Chromium project, the same of Chrome and Edge, so it's easier to get used to it.</p></li>
-<li><p>It has an <strong>integrated ad-blocker and tracks-blocker</strong>: many think of this feature as <em>unethical</em>, but I personally like automatic ad-blocking, since I would use an ad-blocker anyway. Also it automatically blocks all kinds of tracks from websites.</p></li>
-<li><p>It's the <strong>easiest to set up</strong> for an average user, as most of the privacy features it provides are already packed in and ready to use.</p></li>
-<li><p>You can earn <strong>BATs</strong> using Brave: Brave gives you a cryptocurrency named BAT (Basic Attention Token) for using their browser and I think it's actually a nice way to convince people to switch.</p></li>
+<li>Confirm that Prometheus is running.
+</li>
 </ul>
 
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl get pods -n default
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Step 3: Configure Service Monitors
+</h4>
+
+<ul>
+<li>
+Create a <code>service-monitor.yaml</code> file and specify what you need.
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: sap-service-monitor
+spec:
+  endpoints:
+  - port: http-metrics
+  selector:
+    matchLabels:
+      app: sap-service
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>Apply the Service Monitor.
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl apply -f service-monitor.yaml
+</code></pre>
+
+</div>
+
+
+
+<h4>
+  
+  
+  Step 4: Open Prometheus Dashboard
+</h4>
+
+<ul>
+<li>Use port-forwarding to access the dashboard.
+</li>
+</ul>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl port-forward svc/prometheus-kube-prometheus-prometheus 9090:9090
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+Open <code>http://localhost:9090/targets</code>. You should see your SAP service.</li>
+</ul>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--F0aajdmt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y041re08r182csquffqi.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--F0aajdmt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y041re08r182csquffqi.jpg" alt="Image description" width="800" height="352"></a></p>
+
 <h2>
   
   
-  2 - Use a privacy-first search engine
+  Usage
 </h2>
 
-<p>A search engine is a software system that finds web pages that match a web search. The most popular ones are <strong>Google Search</strong> and <strong>Bing Search</strong> (Now with Bing AI) for sure.<br>
-The sad thing is that these two are probably the most dangerous ones too: as proof, you can look at how much data Google sends and receives about you in one single search. To do that, you can try to open up DevTools in Google Chrome with <code>F12</code>, go to Network tab, enable the "Preserve log" option and try to search something.</p>
-
-<p>Some nice privacy-first search engines are <strong>DuckDuckGo</strong> (my favorite one, since it's the most customizable and promises to never create a personal history of your searches and to never collect information about your computer that might be used to identify you), <strong>Brave Search</strong> (also keeps no record of your search history), <strong>Searx</strong> and <strong>Startpage</strong>.</p>
-
-<h2>
+<h4>
   
   
-  3 - Use a VPN
-</h2>
+  Step 1: Access Grafana
+</h4>
 
-<p>A <strong>VPN</strong>, or <strong>Virtual Private Network</strong>, is a technology that allows you to create a secure and encrypted connection over the internet. A VPN works by creating a secure and encrypted tunnel between your device (such as your computer or smartphone) and a remote server operated by the VPN provider. When you connect to the VPN, your internet traffic is routed through this encrypted tunnel, making it unreadable to anyone trying to intercept it, including hackers and your internet service provider. The VPN server can be located in a different region or country, allowing you to mask your IP address and appear as though you're browsing from that location, which can help you bypass geo-restrictions and enhance your online privacy and security.</p>
+<ul>
+<li>Port-forward to Grafana.
+</li>
+</ul>
 
-<p>There are a lot of trusted VPNs online, like <strong>NorthVPN</strong>, <strong>ExpressVPN</strong> or <strong>Surfshark VPN</strong>. The one I use is <strong>Proton VPN</strong>, made by the <strong>Proton</strong> company (specialized privacy-first services), since it considered the best of the best out there, having however a nice <strong>free plan</strong> that lets you start playing with it.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>kubectl port-forward svc/prometheus-grafana 3000:80
 
-<h2>
+</code></pre>
+
+</div>
+
+
+
+<ul>
+<li>
+Open <code>http://localhost:3000</code>. Default login is <code>admin/admin</code>.</li>
+</ul>
+
+<h4>
   
   
-  4 - (Advanced) Don't use emails
-</h2>
+  Step 2: Import Dashboard
+</h4>
 
-<p>When emails were born, privacy and security wasn't such a problem in the internet, so no privacy-safe method was implemented in them, resulting them to be <strong>highly unsecure</strong> nowadays.</p>
+<ul>
+<li>Go to Dashboards &gt; Import and pick a Kubernetes-focused dashboard.</li>
+</ul>
 
-<p>Emails work by sending electronic messages through various servers and networks. They lack inherent privacy because the content is often stored on servers, making it susceptible to surveillance or data breaches. To enhance email privacy, try to use end-to-end encrypted email services like ProtonMail or Tutanota, employ strong, unique passwords, enable two-factor authentication, avoid sharing sensitive information via email, and regularly update your email client and plugins to patch security vulnerabilities. Additionally, be cautious about clicking on links or downloading attachments from unknown senders to prevent phishing attacks and malware.</p>
-
-<h2>
+<h4>
   
   
-  Conclusion
-</h2>
+  Step 3: Set Alerts
+</h4>
 
-<p>The world of the internet is a vast and interconnected space, but it comes with its own set of challenges, particularly concerning privacy and anonymity. It's crucial to recognize that online tracking and data collection are pervasive, often conducted by large companies and even governments. The notion that "having nothing to hide" justifies relinquishing your privacy is a notion that needs to be challenged.</p>
+<ul>
+<li>
+In Prometheus, go to <code>Alerts</code> and set your rules.</li>
+</ul>
 
-<p>Fortunately, there are proactive steps you can take to safeguard your online privacy without sacrificing your comfort. The recommendations provided, such as using privacy-first browsers like Brave, adopting search engines like DuckDuckGo, employing VPNs for encrypted connections, and considering secure email services like ProtonMail, offer effective ways to enhance your online anonymity.</p>
-
-<p>Remember, being proactive about your online privacy is not just about protecting your secrets; it's about safeguarding your fundamental right to privacy in an increasingly digital world.</p>
-
-<h3>
+<h4>
   
   
-  Who am I?
-</h3>
+  Step 4: Test
+</h4>
 
-<p>I am an Italian high-school student who is interested in web-dev 🧙‍♂️. If you'd like to support me, you can follow me here and on my <a href="https://github.com/alessandrofoglia07">GitHub</a>, I would really appreciate it 💜</p>
+<ul>
+<li>Deploy a busy pod or two and watch the metrics to validate the setup.</li>
+</ul>
+
+<p>And there you go! This guide should help you monitor Kubernetes clusters in an SAP environment with Prometheus. </p>
 
  </details> 
  <hr /> 
 
- #### - [I made Simba using pure CSS](https://dev.to/melnik909/i-made-simba-using-pure-css-2p4f) 
- <details><summary>Article</summary> <p>Hey folks 👋</p>
+ #### - [9 Common Security Vulnerabilities in Web Applications](https://dev.to/joymukherjee_18/9-common-security-vulnerabilities-in-web-applications-207) 
+ <details><summary>Article</summary> <p>Web applications have become integral to our daily lives, facilitating everything from online shopping to social interactions. However, the increasing complexity of web apps also brings a higher risk of security vulnerabilities. Cyberattacks can result in data breaches, service disruptions, and financial losses. To safeguard your web applications, it's crucial to understand and mitigate common security vulnerabilities. In this article, we'll explore nine of these vulnerabilities and discuss how to protect your web apps from them.</p>
 
-<p>I made Simba using only CSS. Check out this Pen! Like or dislike? Please, share your thoughts 🙏</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--QLf2xa_h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ysud3hw6tge9v2fcjk1h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--QLf2xa_h--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ysud3hw6tge9v2fcjk1h.png" alt="Image description" width="600" height="400"></a></p>
 
-<p><iframe height="600" src="https://codepen.io/melnik909/embed/qaOwqV?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
-</p>
+<p><strong>1. Injection Attacks</strong></p>
 
-<p>Full code: <a href="https://codepen.io/melnik909/pen/qaOwqV">https://codepen.io/melnik909/pen/qaOwqV</a></p>
+<p><strong>What is it:</strong> Injection attacks occur when malicious code is injected into an application's input fields, typically through user inputs or HTTP requests. The most common type is SQL Injection, where attackers manipulate database queries to access, modify, or delete data.</p>
+
+<p><strong>Prevention:</strong> Use parameterized queries or prepared statements to sanitize user inputs, avoiding direct concatenation of data in queries. Employ web application firewalls (WAFs) to detect and block malicious requests.</p>
+
+<p><strong>2. Cross-Site Scripting (XSS)</strong></p>
+
+<p><strong>What is it:</strong> XSS attacks involve injecting malicious scripts into web pages viewed by other users. These scripts can steal user data, session cookies, or manipulate website content.</p>
+
+<p><strong>Prevention:</strong> Implement output encoding to sanitize user-generated content. Utilize Content Security Policy (CSP) headers to restrict script execution from untrusted sources. Regularly scan for vulnerabilities using tools like OWASP ZAP.</p>
+
+<p><strong>3. Cross-Site Request Forgery (CSRF)</strong></p>
+
+<p><strong>What is it:</strong> CSRF attacks trick users into performing actions without their consent when they are logged into a different website. Attackers can execute actions on behalf of users, potentially leading to unauthorized changes or data loss.</p>
+
+<p><strong>Prevention:</strong> Implement anti-CSRF tokens in web forms to verify that actions originated from the legitimate site. Validate and sanitize inputs on the server side.</p>
+
+<p><strong>4. Broken Authentication</strong></p>
+
+<p><strong>What is it:</strong> Weak authentication mechanisms, like poorly protected credentials or session management, can lead to unauthorized access. Attackers may use stolen or brute-forced credentials to impersonate users.</p>
+
+<p><strong>Prevention:</strong> Use strong password policies and implement multi-factor authentication (MFA) where possible. Secure session management with secure cookies, token-based authentication, and session timeouts.</p>
+
+<p><strong>5. Insecure Deserialization</strong></p>
+
+<p><strong>What is it:</strong> Insecure deserialization occurs when applications fail to properly validate and sanitize serialized data, allowing attackers to execute arbitrary code.</p>
+
+<p><strong>Prevention:</strong> Avoid deserializing untrusted data. Implement whitelists for allowed classes and objects during deserialization. Keep your deserialization libraries up to date.</p>
+
+<p><strong>6. Security Misconfiguration</strong></p>
+
+<p><strong>What is it:</strong> Misconfigurations can expose sensitive data, APIs, or admin interfaces to unauthorized access. Attackers exploit these mistakes to gain unauthorized access.</p>
+
+<p><strong>Prevention:</strong> Regularly review and update your server, application, and database configurations. Employ security headers and frameworks like OWASP ModSecurity to catch common misconfigurations.</p>
+
+<p><strong>7. Broken Access Control</strong></p>
+
+<p><strong>What is it:</strong> Insufficient access controls allow users to perform actions they shouldn't. Attackers may escalate their privileges to access restricted resources.</p>
+
+<p><strong>Prevention:</strong> Implement proper role-based access control (RBAC) and ensure that users can only access what they are authorized to. Regularly audit access control policies.</p>
+
+<p><strong>8. Sensitive Data Exposure</strong></p>
+
+<p><strong>What is it:</strong> Inadequately protected sensitive data, such as passwords or credit card numbers, can be accessed by attackers. This may occur due to weak encryption or storage practices.</p>
+
+<p><strong>Prevention:</strong> Encrypt sensitive data both in transit (using HTTPS) and at rest (using strong encryption algorithms). Store credentials securely, and never expose them in logs or error messages.</p>
+
+<p><strong>9. Unvalidated Redirects and Forwards</strong></p>
+
+<p><strong>What is it:</strong> Unvalidated redirects and forwards occur when applications forward users to untrusted URLs or pages. Attackers can use this to trick users into visiting malicious websites.</p>
+
+<p><strong>Prevention:</strong> Avoid using redirects and forwards based on user inputs. If necessary, validate and sanitize the destination URLs. Implement a safe redirection mechanism.</p>
+
+<p><strong>Conclusion</strong></p>
+
+<p>Web application security is an ongoing process that requires vigilance and proactive measures. Understanding these common security vulnerabilities and following best practices, such as those outlined by the OWASP (Open Web Application Security Project), is crucial for protecting your web applications. Regular security testing, code reviews, and staying informed about emerging threats are essential steps in maintaining robust web application security. Remember, it's not a matter of if an attack will happen but when, so being prepared is key to safeguarding your web apps and user data.</p>
 
  </details> 
  <hr /> 
 
- #### - [Introdução ao Python: parte 2](https://dev.to/eduardoromeiro_/introducao-ao-python-parte-2-e8g) 
- <details><summary>Article</summary> <h2>
+ #### - [Data Science for Beginners📊: 2023-2024 Complete Roadmap✅](https://dev.to/musyoki97/data-science-for-beginners-2023-2024-complete-roadmap-1bgc) 
+ <details><summary>Article</summary> <p>Are you new to <strong>Data Science?</strong> Do you want to build a career along the field of data? This article is certainly for you.  </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--VYW_TEwm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://uwo.ca/sci/datascience/img/Placeholders/Data%2520Science%2520Slide.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VYW_TEwm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://uwo.ca/sci/datascience/img/Placeholders/Data%2520Science%2520Slide.jpg" alt="Data Science" width="800" height="250"></a>  </p>
+
+<blockquote>
+<p>" <strong>Data Science</strong> can be described as a field of study that involves manipulating and analyzing raw data or complex data sets using statistical computing methods and machine learning techniques to draw insights in order to make data-driven decisions."<br><br>
+</p>
   
-  
-  Tipos de dados
-</h2>
+</blockquote>
 
-<p>Continuando com a séria de introdução a Python, vamos falar sobre os tipos de dados básico em Python, é um assunto bem importante porém é bem simples, nos próximos artigos falarei sobre as outras estruturas de dados.</p>
+<p>Data Science is one of the fast growing fields of the 21st Century. Data science has rapidly evolved in the recent era due to increased amounts of data in big companies and the corporate world which must be analyzed in order to provide data-driven business decisions.<br><br>
+The field is immensely lucrative with a good pay even for the entry level personnel. Individuals who work in this field must be able to work with Big Data in order to provide solutions to the ever changing technology and the business sector.<br>
+<br><br>
+The increasing value for data scientists lies within the endless need of businesses to harness large amounts of data in order to come up with a viable present and future solutions. Therefore, data science provides the conduit between raw data and business insights. It allows for the manipulation of large raw meaningless data stored in databases to extract meaningful value.<br>
+<br></p>
 
-<h3>
-  
-  
-  String
-</h3>
+<p>Data science is therefore one of the key drivers of today's economies as most of the steps being taken by government's and organizations to combat modern problems rely on keen analysis of data. Data Science can therefore be used to predict the future occurrences and trends. </p>
 
-<p>O tipo de dado <strong>string</strong> representa um conjunto de caracteres, pensa no seu nome, ele é formado por letras, nas strings cada caracter é indexado, assim podemos acessar um caracter por sua posição, começa sempre na posição 0 e vai até seu tamanho final.</p>
-
-<p>Podemos utilizar tanto aspas simples, aspas duplas, aspas triplas<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="s">'Eduardo'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Eduardo"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">'''Eduardo'''</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Vejamos o seu tipo de dados:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code>
-<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s">'Eduardo'</span><span class="p">))</span>
-
-</code></pre>
-
-</div>
-
-
-
-<p>Exibindo o tipo:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>class &lt;'str'&gt;
-</code></pre>
-
-</div>
-
-
-
-<p>Nas strings podemos fazer coisas legais, por exemplo acessar um valor por seu indice, veja a seguir<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt;&gt;&gt; "Eduardo"[0]
-'E'
-</code></pre>
-
-</div>
-
-
-
-<p>Acessando o primeiro <strong>elemento</strong> da palavra "Eduardo" e também podemos percorrer pela string<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&gt;&gt;&gt; "Eduardo"[0:2]
-'Ed'
-</code></pre>
-
-</div>
-
-
-
-<p>Aqui a gente começa pelo índice 0 até o índice 2, porém sem incluir o índice 2, no caso pegaremos o índice 0 até o índice 1 e sem incluir o 2.</p>
-
-<p>Para vê mais sobre as strings eu recomendo que leia sobre ela na <a href="https://docs.python.org/pt-br/3/library/stdtypes.html#textseq">documentação oficial</a> do Python que está bem mais detalhada. </p>
-
-<h3>
-  
-  
-  Integer
-</h3>
-
-<p>O tipo de dado <strong>inteiro</strong> é basicamente um número sem casas decimais, imagine um número que indica a sua idade, é basicamente isso, porque não existe idade com casas decimais, seria esquisito né? veja exemplo abaixo<br>
-Ele pode ser tanto positivo quanto negativo.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Como tudo em Python é um objeto, o númeiro inteiro é da classe <strong>int</strong></p>
-
-<p>Com a função <strong>type()</strong> podemos imprimir a informação referente aquele tipo de dado.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Exibindo o tipo de dado abaixo:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;class 'int'&gt;
-</code></pre>
-
-</div>
-
-
-
-<p>Ele pertence a class <strong>int</strong>, dentro de classes podemos acessar funcionalidades, porém é um tópicos mais avançado que veremos mais tarde</p>
-
-<h3>
-  
-  
-  Float
-</h3>
-
-<p>Agora falaremos sobre o tipo de dado float ou conhecido como ponto flutuante, diferente sobre o tipo inteiro, o ponto flutuante é representado com deciamis, sendo positivo ou negativo, veja abaixo o exemplo:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="mf">1.1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Agora vamos vê o tipo de dado que ele representa com a função <strong>type()</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">1.1</span><span class="p">))</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Veja o resultado abaixo:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;class 'float'&gt;
-</code></pre>
-
-</div>
-
-
-
-<p>Podemos vê que ele é da class <strong>float</strong> que posui as suas próprias funcionalidades.</p>
-
-<h3>
-  
-  
-  Boolean
-</h3>
-
-<p>Esse tipo de dado é bem simples. ele possui apenas dois valores que são <strong>True</strong> ou <strong>False</strong>, eles são muitos utilizados para fazer comparações relacionais e lógicas dentro de uma <strong>estruturas de controle</strong> que veremos mais tarde. </p>
-
-<p>Por agora vamos só mostra os seus valores literais e o seus tipos.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">True</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">False</span><span class="p">))</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Agora mostrando os seus tipos:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;class 'bool'&gt; # True
-&lt;class 'bool'&gt; # False
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  None
-</h3>
-
-<p>O tipo <strong>None</strong> é um tipo de dado "vazio" ele não representa valor nenhum, podemos usar ele quando queremos inicializar um <strong>variável</strong> com nenhum valor, não tem muito falar sobre ele, mas deixei aqui registrado<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight python"><code><span class="k">print</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Exibindo o tipo de dado <strong>None</strong>:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>&lt;class 'NoneType'&gt;
-</code></pre>
-
-</div>
-
-
-
- </details> 
- <hr /> 
-
- #### - [Ayu's Hacktoberfest 2023 Pledge](https://dev.to/adiatiayu/ayus-hacktoberfest-2023-pledge-4d48) 
- <details><summary>Article</summary> <p><a href="https://i.giphy.com/media/3oz8xLSmmt0WaMTbX2/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/3oz8xLSmmt0WaMTbX2/giphy.gif" alt="cute pumpkin GIF" width="540" height="540"></a></p>
+<p>However, for one to really have a thriving career in this field, it must be instigated by passion for problem-solving rather than the money motive. One must be able to commit themselves into learning. There are numerous online courses, tutorials and YouTube videos where one can be able gain enough knowledge on data science.<br><br>
+There are also various bootcamps where one can kickstart their their science career. For in instance, bootcamps organized by <strong><a href="https://www.youtube.com/results?search_query=lux+academy">Lux_Academy</a></strong> would be a good starting point   </p>
 
 <h2>
   
   
-  Intro
+  <strong>Data Science Essentials📚</strong>
 </h2>
 
-<p>Hi friends!</p>
+<p>Any beginner wishing to venture into the field of data science must first equip themselves with the elementary building concepts that are inexpendable as far as data is concerned.  </p>
 
-<p>I'm Ayu, a tech blogger, front-end developer, open-source contributor, and tech community enthusiast based in the Netherlands. 👋</p>
+<p>Data Science is an increasingly dynamic field, therefore ensuring a progressive learning approach for a beginner is highly recommended. Data Science is a multidisciplinary sector made up of a triplet domain:  </p>
 
-<p>I've been a member of the DEV community for 4+ years, and I'm part of the moderator team here on DEV and CodeNewbie!😄</p>
+<blockquote>
+<ol>
+<li>Mathematics</li>
+<li>Statistics</li>
+<li>Programming
+</li>
+</ol>
+</blockquote>
+
+<p>It is important to note that these three domains are correlated and intertwined. Therefore understanding the three and having a concrete knowledge is very vital. <br>
+<br></p>
 
 <h2>
   
   
-  Background
+  <strong>Mathematics</strong>
 </h2>
 
-<p>This year marks the 5th Hacktoberfest that I'm participating in! 🤩</p>
+<p>Mathematics in data science helps one to choose appropriate procedures and diagnose problems<br>
+appropriately. It is one of the core building blocks of data science due to the fact that data comes in unusual formats. Some key components of maths one should pay close attention to include:  </p>
 
-<p>This time, I want to go beyond by supporting beginners in open source! So, here comes my pledge.</p>
+<blockquote>
+<p>a) <a href="https://www.w3schools.com/ai/ai_probability.asp">Probability</a><br><br>
+b) <a href="https://www.w3schools.com/ai/ai_statistics.asp">Calculus</a><br><br>
+c) <a href="https://www.w3schools.com/ai/ai_algebra.asp">Linear Algebra</a> </p>
+</blockquote>
+
+<h3>
+  
+  
+  a) Probability
+</h3>
+
+<p><strong><a href="https://www.javatpoint.com/probability">Probability</a></strong> is the likelihood of an occurrence of an event. Data science uses the various types of distributions such as <strong>normal distribution, Bernoulli distribution* and *uniform distribution</strong> to predict the likelihood of an occurrence.</p>
+
+<h3>
+  
+  
+  b) Calculus
+</h3>
+
+<p><strong><a href="https://www.khanacademy.org/math/calculus-1">Calculus</a></strong> in mathematics can be simply defined as the study of instantaneous or continuous the rate of change. <strong>Optimization</strong> and <strong>integration</strong> are important areas in Calculus that are very key in data science.</p>
+
+<h3>
+  
+  
+  c) Linear Algebra
+</h3>
+
+<p><strong><a href="https://www.khanacademy.org/math/linear-algebra">Linear Algebra</a></strong> is a mathematical field concerned with linear equations. <strong>Vectors</strong> represent data points while <strong>scalars</strong> represent numerical values in data science. However, there are a whole lot of Linear Algebra such as matrices, mappings and many more which are covered in Data Science.</p>
 
 <h2>
   
   
-  Pledge
+  <strong>Statistics</strong>
 </h2>
 
+<p>Statistical concepts such as hypothesis testing, p-values, mean and average are key to data science. <strong>Descriptive statistics</strong> helps one to describe the characteristics of a dataset, making it easier for one to understand and interpret data while <strong>inferential Statistics</strong> is used for making estimates about a population and hypothesis testing.</p>
+
+<h2>
+  
+  
+  <strong>Programming</strong>
+</h2>
+
+<p>I would be obliged to say that programming is the most important cornerstone concept of data science.<br><br>
+Whichever the programming language of choice, you must be able to have a solid knowledge of the language's variables, loops, functions and datatypes.<br><br>
+The ability to work with databases relies on a strong background of programming. There has always been a debate about which language should one learn or which language should precede the other. Is it <strong>Python, R or SQL?</strong><br>
+There are various languages to work with various types of datasets and databases but i will only outline the major languages that cut across the field. Different companies also prefer different languages which lays responsibility for one to be conversant with the key languages.</p>
+
 <h3>
   
   
-  One Accepted PR
+  - <a href="https://www.python.org/about/gettingstarted/">Python</a>
 </h3>
 
-<p>As in previous years, I aim to have at least 1 PR accepted for Hacktoberfest.</p>
+<p>Python is essential in data science due to it's flexibility and the availability of its huge libraries which enables data scientists to easily work with data. Python's syntax is also easy to grasp. The key Python libraries for Data Science include <strong><a href="https://pandas.pydata.org/">Pandas</a>, <a href="https://matplotlib.org/">Matplotlib</a> and <a href="https://numpy.org/">NumPy</a></strong>. Python consists of many libraries in addition to the three.<br><br>
+You should be able to understand basic python like its syntax and various data structures such as lists, tuples and lists.  </p>
 
-<p>I know, I know. You might be saying, "Are you serious? We need <strong>four</strong> PRs to complete Hacktoberfest."</p>
+<h2>
+  
+  
+  <strong><a href="https://www.geeksforgeeks.org/r-programming-for-data-science/">R</a></strong>
+</h2>
 
-<p>This is what works for me. Setting achievable and realistic goals gives less pressure and makes me enjoy the process. And when I've achieved it, I constantly challenge myself to do more.</p>
-
-<p>So, if you are wondering, I completed each of my previous Hacktoberfest, and in the last three years, with more than four PRs accepted and merged during the events. 😊</p>
+<p>R is an open-source language which provides a wide range of statistical and graphical techniques for exploring, analyzing, and visualizing data. R offers powerful data manipulation and transformation capabilities, allowing users to clean, reshape, and prepare data for analysis.<br><br>
+The <strong>"dplyr" and "tidyr"</strong> packages, for example, are popular tools for data wrangling.  R provides a variety of machine learning libraries and packages e.g. <strong>caret, randomForest, xgboost</strong> that allow data scientists to build and evaluate predictive models.</p>
 
 <h3>
   
   
-  Supporting Open Source Community
+  - <a href="https://www.w3schools.com/sql/">SQL</a>
 </h3>
 
-<p>This year, I want to focus more on supporting the open-source community, especially beginners in open-source.</p>
+<p><strong>SQL</strong> or <strong><a href="https://www.w3schools.com/sql/#gsc.tab=0">Structured Query Language</a></strong> is a query language that is used for interacting with relational databases.<br><br>
+You may be asking yourself now <strong>what is a database or what is to query?</strong><br>
+A <strong>database</strong> is just a collection or related data which are organized in tables and columns. A phonebook for instance is a database because it has a collection of all your contacts which have similar characteristics like the phone number and a name, very simple.<br><br>
+To <strong>query</strong> is to simply issue a request or a command to the database for a specific information. Therefore, <strong>SQL</strong> is used to interact with databases through a <strong><a href="https://www.tutorialspoint.com/dbms/index.htm">Database Management System (RDMS)</a></strong><br><br>
+The main purpose of a RDMS is to perform the <strong>CRUD</strong> operations <strong>(Create, Read/Retrieve, Update and Delete)</strong> data on a database.<br>
+<br></p>
 
-<p>I will guide and answer open-source questions for anyone who needs one. And I'm volunteering in some tech communities — <a href="https://virtualcoffee.io/">Virtual Coffee</a>, <a href="https://opensauced.pizza/">OpenSauced</a> and <a href="https://www.shesharp.co/">SheSharp</a> — to be a mentor, a Hacktoberfest support, and a maintainer during the event.</p>
+<h2>
+  
+  
+  Machine Learning
+</h2>
 
-<p><a href="https://i.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy-downsized.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy-downsized.gif" alt="Cat put on sunglasses with text I'm ready GIF" width="348" height="328"></a></p>
+<p><strong><a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial">Machine learning</a></strong> is one of the fields of Artificial Intelligence which primarily involves development of models and algorithms that enable machines to learn, adapt and communicate with each other.<br><br>
+In the field of data science, machine learning is a valuable tool that enables extraction of patterns and insights from datasets. There are various types of machine learning such as <strong>supervised, unsupervised and deep learning.</strong></p>
+
+<h3>
+  
+  
+  Data Visualization
+</h3>
+
+<p>After performing the various operations on data, effective visualization is essential in communicating the insights.  Various data visualization tools such as <strong><a href="https://www.tutorialspoint.com/tableau/index.htm">Tableau</a></strong> enable one to provide data visualizations that are easily understood by everyone.<br>
+ One must also be able to present the insights in a fluent and appealing way to the respective audience. Therefore, data science does not entirely rely on the technical skills of working with data.<br><br>
+Communication skills is key for a data scientist as insights must be relayed with utmost fluency.<br><br>
+<br> <br>
+Finally, it is very crucial for one to build up their <strong>portifolio</strong> while learning. One should commit themselves to building projects and writing articles about data science. These articles and projects go a long way on increasing your probability of securing a career in a data related field.<br><br>
+<strong><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Github</a></strong> is a good starting point where you can create an account and include all your articles and projects in repositories. One can also use <strong><a href="https://www.kaggle.com/">Kaggle</a></strong> where you can interact with fellow data scientists and get access to large amounts of data sets.</p>
 
  </details> 
  <hr /> 
