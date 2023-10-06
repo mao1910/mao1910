@@ -117,544 +117,916 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Looking inside GPT-Synthesizer and the idea of LLM-based code generation](https://dev.to/robocoach/looking-inside-gpt-synthesizer-and-the-idea-of-llm-based-code-generation-41d9) 
- <details><summary>Article</summary> <p><strong>GPT-Synthesizer</strong></p>
+ #### - [Best React.js Frontend Bootcamp](https://dev.to/idurar/best-reactjs-frontend-bootcamp-2oa7) 
+ <details><summary>Article</summary> <p>Mastering React.js is becoming increasingly valuable. This powerful JavaScript library has gained popularity for building interactive and scalable user interfaces. If you're looking to master React.js and take your frontend skills to the next level, enrolling in a specialized frontend bootcamp can provide you with the comprehensive training you need.</p>
 
-<p><a href="https://github.com/RoboCoachTechnologies/GPT-Synthesizer">GPT-Synthesizer</a> is an open source tool that uses GPT for software generation. In this post, instead of talking about releases and features, I want to dive deep into how GPT-synthesizer works under the hood and explain some high level ideas behind this project. Further, I want to discuss the strengths and weaknesses of LLM-based code generation tools, and speculate on how they will evolve in future. </p>
+<p>In this article, we'll explore the best frontend bootcamp for mastering React.js : </p>
 
-<p><strong>Are LLMs good for code generation?</strong></p>
+<h1>
+  
+  
+  <a href="https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687">IDURAR React.js &amp; Redux Online Bootcamp</a>
+</h1>
 
-<p>Nowadays everybody is using LLMs (Large Language Models) for everything and that’s for a good reason; they are the shiny new technology and they are extremely powerful tools. We are all excited to explore where and how we can use them, but that doesn’t mean that they are the best tools to get the job done in each and every case. LLMs are made for interaction through human language, and that’s where they really shine. Take chat-gpt as an example, where both the inputs and outputs are in human language. In code generation, on the other hand, the generated code isn’t in natural language. It’s in Python, C, or programming languages, with well-defined syntax and rigid semantics. All programming languages were made for the human programmers to describe their intent to the machine in a clear and deterministically-interpretable format. </p>
+<p><a href="https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OqlvLdXB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yfuedb4h9g2q8tsanhaq.jpg" alt="React.js Frontend Online Bootcamp" width="800" height="400"></a></p>
 
-<p>Since software isn’t written in human language, why should we use LLMs for software generation? To answer this, we should recognize that there are two sides to software generation: (1) the input: capturing the spec, (2) the output: generating the code.</p>
+<p>Join us for an exciting online React.js &amp; Redux Bootcamp in 4 weekend (12 hours x 4)<br>
+in 4 weekends L﻿earn on Real Open Source React.js based project (IDURAR ERP CRM): <a href="https://github.com/idurar/idurar-erp-crm">https://github.com/idurar/idurar-erp-crm</a><br>
+🚀 Level up your Frontend development skills with our React.js Online Bootcamp! 🚀<br>
+🔥 Learn by Creating Pull Request on Real Open Source Project<br>
+🐛 Learn by Solve Bugs on Real Open Source Project<br>
+✨ Learn by Adding new Features on Real Open Source Project<br>
+🧑‍💻 Learn by Collaborate with other Engineers on Real Open Source Project<br>
+📅 Event Date: 4 Weekends (starting from 4th November)</p>
 
-<p>The generated code isn’t in human language, but the input spec is. LLMs aren’t the best tools for code generation, but they are amazing at understanding the intent. That’s where they shine, and that’s where the focus of their application should be. In GPT-synthesizer the main focus is on understanding what exactly the user wants to do. The code generation itself is the smaller piece of the puzzle, and isn’t the main focus. <br>
-This doesn’t mean that LLMs are necessarily bad at code generation. LLMs such at GPT4 are so powerful that they can do a decent job of it. With throwing so much raw power at it, LLMs can basically solve the problem by brute force. However, the code generation is not the strength of the LLMs or LLM-based software generation tools. The strength comes in communicating through the medium of natural language to capture the spec. This is where the focus of any LLM-based software generator should be, and this is where we put our thoughts and efforts when we made GPT-synthesizer. So let’s take a deeper look into how GPT-Synthesizer actually works.</p>
+<p>💰 Price : $149</p>
 
-<p><strong>How GPT-Synthesizer works</strong></p>
+<p>Register : <a href="https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687">https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687</a></p>
 
-<p>The process of software generation in <a href="https://github.com/RoboCoachTechnologies/GPT-Synthesizer">GPT-synthesizer</a> can be explained in three steps: </p>
+<h1>
+  
+  
+  le wagon
+</h1>
+
+<p><a href="https://www.lewagon.com/"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JLgyOvOy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/giwiqdbn9vpdokv8xkst.png" alt="Best React.js Frontend Bootcamp" width="800" height="431"></a></p>
+
+<p>Flex part-time</p>
+
+<p>Have commitments? Learn in your free time when it’s most convenient for you.</p>
+
+<p>Graduate in 6 months<br>
+Live sessions on days &amp; times that suit you<br>
+All day &amp; evening teaching support<br>
+Learn collaboratively with peers online<br>
+16 hours of study in total, per week</p>
+
+<p>💰 Price : 8500 €</p>
+
+<h1>
+  
+  
+  nucamp
+</h1>
+
+<p><a href="https://www.nucamp.co/bootcamp-overview/front-end-web-development"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i3cw8_bt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/coreqj7pl6wvgc4uh5ob.png" alt="best-frontend-bootcamp-to-master-reactjs" width="800" height="431"></a></p>
+
+<p>In this bootcamp, you will learn the following technologies and their applications:</p>
+
+<ul>
+<li>JavaScript Fundamentals</li>
+<li>Web Development with React</li>
+<li>Mobile Development with React Native</li>
+<li>Google Cloud &amp; Firebase</li>
+<li>Visual Studio Code</li>
+<li>Git &amp; GitHub</li>
+</ul>
+
+<p>💰 Price : $4800</p>
+
+<h1>
+  
+  
+  Springboard
+</h1>
+
+<p><a href="https://www.springboard.com/courses/software-engineering-career-track/"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5g9MnSAJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wokvquvqdsl8riz532n0.png" alt="Reactjs bootcamp" width="800" height="431"><br>
+</a><br>
+By the end of Foundations you will:</p>
+
+<ul>
+<li>Develop introductory software engineering basics in CSS, HTML, and Javascript</li>
+<li>Develop a software engineering mindset and foundation</li>
+<li>Work through small, hands-on exercises</li>
+<li>Confidently tackle Springboard’s Software Engineering Career Track Technical Skills Survey — what you’ll need to pass to start the Core curriculum</li>
+</ul>
+
+<p>💰 Price : $9900</p>
+
+<h1>
+  
+  
+  app academy
+</h1>
+
+<p><a href="https://www.appacademy.io/course/software-engineer-online-16-week"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6LyC9p00--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z0f597sor5qalex5pfxm.png" alt="Reactjs bootcamp" width="800" height="431"></a></p>
+
+<p>16 Week Online Coding Bootcamp<br>
+Official Program Name: Full-Time Software Engineering Program<br>
+Complete your coding education at the fastest pace possible and land your dream job as a software engineer that much sooner! As a student in our 16 Week Online Full-Time Program, you'll learn today's top coding languages like JavaScript and Ruby on Rails, while building a project portfolio that will not only impress you, but employers as well.</p>
+
+<p>💰 Price : $17000</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [First, but with feeling.](https://dev.to/jarvisscript/first-but-with-feeling-70d) 
+ <details><summary>Article</summary> <p>I got the ice breaker Badge, Which mean first, but with feeling. :)</p>
+
+<p>The badge is for consistently making the first supportive or helpful comment on a blog post. Better than old net days of yelling First, which was annoying, this badge is for helping to open a discussion.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---rembHOF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tvxoiulsice6zndnrpif.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---rembHOF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tvxoiulsice6zndnrpif.jpg" alt="melting icecube as the icebreaker badge" width="656" height="442"></a></p>
+
+<p>Feels cool to help the DEV community like this. </p>
+
+<p>So to start another discussion, what do you think of new badges?</p>
+
+<p>What are you trying to earn?</p>
+
+<p>Next for me is some HacktoberFest Badges.</p>
+
+
+<div class="ltag__link">
+  <a href="/devteam" class="ltag__link__link">
+    <div class="ltag__link__org__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DGMHY8k9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--DG4H-3cI--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/d908a186-5651-4a5a-9f76-15200bc6801f.jpg" alt="The DEV Team" width="150" height="150">
+      <div class="ltag__link__user__pic">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Q9agcq3k--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vHKcEiTe--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/3/13d3b32a-d381-4549-b95e-ec665768ce8f.png" alt="" width="150" height="150">
+      </div>
+    </div>
+  </a>
+  <a href="/devteam/explore-our-world-of-badges-influence-the-next-addition-1fnf" class="ltag__link__link">
+    <div class="ltag__link__content">
+      <h2>Explore Our World of Badges &amp; Influence the Next Addition! 🏅🌟</h2>
+      <h3>dev.to staff for The DEV Team ・ Jul 24</h3>
+      <div class="ltag__link__taglist">
+        <span class="ltag__link__tag">#meta</span>
+        <span class="ltag__link__tag">#community</span>
+        <span class="ltag__link__tag">#badges</span>
+        <span class="ltag__link__tag">#design</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<p>Have a great night. </p>
+
+ </details> 
+ <hr /> 
+
+ #### - [You must know the difference between Unknown and Any in Typescript](https://dev.to/rajaerobinson/you-must-know-the-difference-between-unknown-and-any-in-typescript-3j2o) 
+ <details><summary>Article</summary> <p>Hey everyone,</p>
+
+<p>I wrote an insightful <a href="https://bluesockets.com/typescript/unknown-vs-any/">article</a> comparing TypeScript's <code>unknown</code> and <code>any</code> types. These types come in handy when we're dealing with variables of uncertain or dynamic types.</p>
+
+<p><strong>Unknown Type</strong><br>
+Introduced in TypeScript 3.0, <code>unknown</code> is a safer alternative to <code>any</code>. It represents a value that can have any type, but with stricter type checking. This means you can't directly assign or access properties/methods on <code>unknown</code> variables without proper type assertions or checks.</p>
+
+<p><strong>Any Type</strong><br>
+On the other hand, <code>any</code> is the most flexible type in TypeScript. It essentially bypasses type checking, allowing variables of this type to be assigned to any value or type without causing compilation errors.</p>
+
+<p><strong>Use Cases and Advantages:</strong></p>
+
+<p><strong>Unknown:</strong></p>
+
+<ul>
+<li>Improved type safety</li>
+<li>Refinement through narrowing</li>
+<li>Interoperability with JavaScript</li>
+</ul>
+
+<p><strong>Any:</strong></p>
+
+<ul>
+<li>Rapid prototyping</li>
+<li>Migration from JavaScript to TypeScript</li>
+<li>Working with complex third-party libraries</li>
+</ul>
+
+<p><strong>Pitfalls and Best Practices:</strong></p>
+
+<p><strong>Pitfalls of Unknown:</strong></p>
+
+<ul>
+<li>Code can become verbose due to additional type checks and assertions.</li>
+<li>Deeply nested type checks can lead to complexity.</li>
+<li>Failing to perform proper type checks can still result in runtime errors.</li>
+</ul>
+
+<p><strong>Pitfalls of Any:</strong></p>
+
+<ul>
+<li>Lack of type safety, which can lead to subtle bugs.</li>
+<li>Loss of type information, affecting development efficiency.</li>
+<li>Reduced maintainability as codebase grows.</li>
+</ul>
+
+<p><strong>Best Practices:</strong></p>
+
+<ul>
+<li>Prefer <code>unknown</code> over <code>any</code> for flexibility with type safety.</li>
+<li>Utilize type guards and assertions with <code>unknown</code>.</li>
+<li>Gradually replace <code>any</code> with more specific types during migration.</li>
+<li>Provide clear documentation when using <code>any</code>.</li>
+<li>Enforce code reviews to catch improper usage.</li>
+</ul>
+
+<p>In conclusion, both <code>unknown</code> and <code>any</code> have their specific purposes. Don't forget to visit the <a href="https://bluesockets.com/typescript/unknown-vs-any/">article</a> for in-depth explanations.</p>
+
+<p>What are your thoughts on this? Do you find yourself using one type more than the other in your projects? Let's discuss!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Tudo que você precisa saber sobre Git](https://dev.to/1cadumagalhaes/tudo-que-voce-precisa-saber-sobre-git-3gbi) 
+ <details><summary>Article</summary> <p>Se você estuda ou trabalha com desenvolvimento, provavelmente já ouviu falar de <strong>git</strong>, que é uma ferramenta gratuita e open source de versionamento de código (não é só isso, mas vamos simplificar). Quando eu comecei a estudar programação, toda a minha organização e versionamento de códigos era baseada em criar várias pastas no meu computador e ficar replicando várias e várias vezes. Quando queria compartilhar com alguém nós criávamos um .zip da pasta toda e depois gastávamos algumas horas tentando bater alterações pra fazer a entrega no final (meu TCC do técnico está guardado até hoje como <code>tcc_final.zip</code> no OneDrive).</p>
+
+<p>Git veio justamente pra resolver esses problemas: é mais fácil de gerenciar a evolução do seu código ou da sua aplicação; e principalmente, é muito mais fácil colaborar no desenvolvimento.</p>
+
+<h2>
+  
+  
+  Tudo que eu preciso saber sobre?
+</h2>
+
+<p>Meu objetivo aqui é simples: prover toda informação disponível para você (desenvolvedor) começar e conseguir usar a ferramenta da vez. Não pretendo responder tudo que você <strong>pode</strong> ou <strong>deveria</strong> saber, apenas o necessário.</p>
+
+<h2>
+  
+  
+  Table of Contents
+</h2>
 
 <ol>
-<li>Component synthesis</li>
-<li>Component specification &amp; generation</li>
-<li>Top-level generation</li>
+<li>
+O que é git
+
+<ol>
+<li>Origens e Conceitos</li>
 </ol>
 
-<p><strong>Component synthesis:</strong> </p>
 
-<p>First, GPT-synthesizer reads the given programming task provided by the user in the initial prompt, and breaks it into software components that need to be implemented. We call this step component synthesis. Then, GPT-Synthesizer shows the user the compiled list of components along with their descriptions, and asks the user to finalize the list by adding/removing any component to/from the list. The idea here is to keep the user in the driver’s seat by asking for his confirmation. </p>
+</li>
+<li>Quando eu deveria usar git</li>
+<li>
+Por onde começar
 
-<p>Ultimately, it is not the tool that invents the software; it is the user utilizing the tool who is in charge of the project. Figure 1 shows how GPT-synthesizer identifies a list of components in component synthesis. </p>
+<ol>
+<li>Instalação no Ubuntu</li>
+<li>Configuração do git</li>
+</ol>
 
-<p><strong>Figure 1. Component synthesis</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pYreJy0y--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eh7ko0h97wrwm1e5936h.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pYreJy0y--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eh7ko0h97wrwm1e5936h.png" alt="Figure 1. Component synthesis" width="800" height="360"></a></p>
 
-<p><strong>Component specification &amp; generation:</strong> </p>
+</li>
+<li>
+Como funciona
 
-<p>For every component identified and finalized in the previous step, GPT-synthesizer captures the intent from the user; only when the intent is completely clear, it implements that component. The task of capturing the intent involves an elaborate process of prompt engineering that we call prompt synthesis. This is the heart of GPT-synthesizer where the LLM’s strong suit is used in processing conversations and generating questions all in natural language.</p>
+<ol>
+<li>Snapshots</li>
+<li>Checksums</li>
+</ol>
 
-<p>Figure 2 shows the process of prompt synthesis in which GPT-synthesizer uses a summary of the chat history plus the top-level information about the task, the output language, and the software component to generate a prompt that will be fed to the LLM to create a follow-up question. This process will continue in a loop until the spec is clear and the user has provided the necessary details about the design.</p>
 
-<p>The idea here is not just to keep human in the loop, but to keep him in the driver’s seat. We want the user to make decisions on the details of the design. We made GPT-synthesizer as a programming assistant tool that can be used in the early stages of the software design to create a draft (a blueprint) of the software project. GPT-synthesizer explores the design space and identifies the unknowns; it holds the user’s hand as it walks though the design space, sheds light on the design unknowns, brings them to the user’s attention, provides suggestions on those details, and asks the user for clarification and confirmation on design details.</p>
+</li>
+<li>
+Conceitos fundamentais
 
-<p>For a less-experienced user, who wants to write a software but doesn’t know where to start, or what goes into writing such software, GPT-synthesizer could be like a coach; someone that turns the unknown unknowns into known unknown. </p>
+<ol>
+<li>Commit</li>
+<li>Branch</li>
+</ol>
 
-<p>Finally, when the component spec is clear, and all the design details are resolved, GPT-synthesizer generates the code for that component. Figure 3 illustrates the component generation step.</p>
 
-<p><strong>Figure 2. Component specification using prompt synthesis</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--TNE0QJ2x--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vbecmzvj7grsuff8apyw.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--TNE0QJ2x--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vbecmzvj7grsuff8apyw.png" alt="Figure 2. Component specification" width="800" height="355"></a></p>
+</li>
+<li>
+Comandos básicos
 
-<p><strong>Figure 3. Component generation</strong><br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s----fq1ImF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u1loawc6k3lqmyb0hywk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s----fq1ImF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u1loawc6k3lqmyb0hywk.png" alt="Figure 3. Component generation" width="800" height="402"></a></p>
+<ol>
+<li>init</li>
+<li>clone</li>
+<li>pull</li>
+<li>branch</li>
+<li>checkout</li>
+<li>add</li>
+<li>commit</li>
+<li>push</li>
+<li>status</li>
+<li>fetch</li>
+<li>stash</li>
+<li>merge</li>
+</ol>
 
-<p><strong>Top-level generation:</strong></p>
 
-<p>At the end, GPT-synthesizer creates the top/main function which will act as the entry point for the software. As of now, this step is only supported for python.</p>
+</li>
+<li>
+Comandos adicionais
 
-<p>By now, you can see that the heart of GPT-synthesizer is not the code generation, but rather the component synthesis and prompt synthesis; GPT-synthesizer’s strength is in capturing the specification through a conversation in natural language where the LLMs are at their best.</p>
+<ol>
+<li>rebase</li>
+<li>log</li>
+<li>revert</li>
+<li>remote</li>
+<li>cherry-pick</li>
+<li>blame</li>
+</ol>
 
-<p><strong>Lessons we learned from GPT-synthesizer</strong></p>
 
-<p>The following remarks summarize the lessons we learned from development of GPT-synthesizer:</p>
+</li>
+<li>Na prática</li>
+<li>Onde encontrar mais informações</li>
+<li>Conclusão</li>
+</ol>
 
-<ul>
-<li>The strength of LLM-based software generation tools are in capturing the spec, and the spec cannot be captured efficiently in a single prompt. </li>
-<li>Human should remain in the driver’s seat and control the design process. </li>
-<li>A good prompt engineering is key to capture design details from user, and the LLM’s output is only as good as its prompts.</li>
-</ul>
-
-<p>Now, I would like to step aside from GPT-synthesizer for a bit, and speculate on what I think is the future for programming languages in the presence of LLMs.</p>
-
-<p><strong>The future of programming languages</strong></p>
-
-<p>Programming languages are the relics of a past in which machines couldn’t understand the human language with its complex, irregular, and ambiguous structures. That has changed now. For the first time ever, in computer history, computers can understand us just the way we speak, and there is no need for us to speak to them in their language. </p>
-
-<p>So what will happens to programming languages then? Are they gonna vanish completely? I believe it would takes years, maybe even decades, for programming languages to gradually phase out and be replaced by human language. It’s a matter of the quality of the generated code, the power efficiency of the LLM tools, and the legacy of existing softwares written in programing languages. Eventually these matters sort themselves out, and natural languages will become the only interface between humans and machines, and the programming languages will only remain as intermediate formats inside the tools.</p>
-
-<p>When computers first came out, we had to talk to them in 0s and 1s which then was replaced by the assembly language. Later, we took one step farther from the machine language and described our intent in higher-level languages like C, Pascal, etc., and relied on compilers to translate our intent into the machine language.</p>
-
-<p>For some time, if you wanted your software to run efficiently, you had to manually modify the compiler-generated assembly code, or to skip the compiler altogether and write your assembly manually. Overtime as compilers got better, smarter, and more optimized, the generated assembly got better and better. At the same time, with transistor scaling as well as innovations in computer architecture, the processors became more powerful; therefore the lack of efficiency of the auto-generated assembly became less of an issue. Meanwhile, the advancements in chip design and manufacturing technologies improved the capacity and speed of both on-chip and off-chip memories, allowing programmers to be more lenient with the size of the generate assembly. Eventually, the combination of these advancements shifted the balance from having the most optimized hand-written assembly code to saving development time and effort by trusting compilers.</p>
-
-<p>With the success of the programming languages and compilers, we took more steps away from machine language, and used even higher-abstraction-level languages like Python or Matlab to communicate to machines. Now, with the invention of LLMs, we are taking one last step and completely switch to our own language to interface with the machines.</p>
-
-<p>I expect the same scenario to play out regarding trusting LLMs with our code generation. Overtime, LLMs will become more powerful, more efficient, and better integrated with current ecosystems to generate better softwares. At the same time, the processing power as well as the data capacity of the cloud services will grow, and the communication speed will improve, driving down the cost per unit, allowing more forgiveness on the efficiency of the LLM process and the quality of the generated code. It could take several years, but I believe we gradually take our hands off of the programming languages and trust language models to handle them. </p>
-
-<p>I don’t expect programming languages to vanish completely. I think they will exist as an intermediate  format the same way that the assembly language exists today. I would also predict that there will be a lot of consolidations in that space and only few languages will survive this transition. The traditional compilers and many other legacy softwares can coexist behind the scene and work under LLMs command.</p>
-
-<p>It is somewhat easier to think of LLMs not as AI programs, but rather as human experts who can understand our requirements in human language, and utilize other tools such as legacy softwares (e.g, compilers, synthesizers, convertors, traditional AI tools) to get the job done.</p>
-
-<p>These are my opinions and speculations regarding the future of LLMs. I am curious to learn about your thoughts on this matter. Please feel free to comment on that.</p>
-
-<p><strong>About GPT-Synthesizer</strong></p>
-
-<p>We made <a href="https://github.com/RoboCoachTechnologies/GPT-Synthesizer">GPT-Synthesizer</a> open source hoping that it would benefit others who are interested in this domain. We encourage all of you to check out this tool, and give us your feedback here, or by filing issues on our GitHub. If you like GPT-Synthesizer or the ideas behind it, please star our repository to give it more recognition. We plan to keep maintaining and updating this tool, and we welcome all of you to participate in this open source project.</p>
-
-<p><strong>About RoboCoach</strong></p>
-
-<p>We are a small early-stage startup company based in San Diego, California. We are exploring the applications of LLMs in software generation as well as some other domains. <a href="https://github.com/RoboCoachTechnologies/GPT-Synthesizer">GPT-synthesizer</a> is our general-purpose code generator. We have another open source product for special-purpose code generation in robotics domain, which is called <a href="https://github.com/RoboCoachTechnologies/ROScribe">ROScribe</a>. You can learn more about these tools in our Github.</p>
-
- </details> 
- <hr /> 
-
- #### - [Must have software for programmers](https://dev.to/codewithshahan/must-have-software-for-programmers-48b7) 
- <details><summary>Article</summary> <p>If you're a programmer or thinking about becoming one, having the right software tools can make your job a whole lot easier. These tools help you write, test, and manage your code efficiently. In this article, we'll break down the essential software and tools every programmer should have.</p>
-
-<p><iframe width="710" height="399" src="https://www.youtube.com/embed/6W_MSeIf4xw">
-</iframe>
-</p>
+<p>You can use this table of contents to help readers navigate your blog post more easily.</p>
 
 <h2>
   
   
-  Code Editor:
+  O que é git
 </h2>
 
-<p>A code editor is like a digital notepad where you write your code. Two popular options are Visual Studio Code and Sublime Text. They make writing code easier with features like auto-completion and error highlighting.</p>
+<p>Numa tradução livre da documentação oficial, git</p>
+
+<blockquote>
+<p>é um <em>sistema de controle de versão distribuído</em> gratuito e de código aberto, projetado para lidar com projetos de pequenos a muito grandes, com velocidade e eficiência.</p>
+</blockquote>
+
+<p>Ele foi criado pelo Linus Torvalds (criador do Linux) em 2005, para ajudar a gerenciar o desenvolvimento do kernel Linux.</p>
+
+<p>A ideia de ser um sistema <strong>distribuído</strong> é que isso possibilita que várias pessoas ou times possam colaborar num projeto de software enquanto cada um mantém suas próprias cópias locais do projeto todo, incluindo seu histórico. Isso é o oposto do que seria se fosse um sistema centralizado, o que significaria que todos usuários precisariam se conectar a um único e mesmo repositório central.</p>
+
+<p>E um sistema de controle de versão é feito para gravar mudanças em arquivos (ou grupos de arquivos) ao longo do tempo, de forma que você possa recorrer a versões específicas mais tarde. A verdade é que vamos falar aqui de usar no contexto de software, mas isso pode ser usado para basicamente qualquer tipo de arquivo num computador. Então seria muito interessante usar isso mesmo para trabalhos como edição de video, por exemplo.</p>
+
+<p>Ou seja, git existe para te ajudar a acompanhar as mudanças na sua base de código, a colaborar com múltiplas pessoas desenvolvedoras e a garantir que você tem uma forma de backup e recuperação de como era o seu código a qualquer momento; tudo isso além de ter um sistema de <strong>branch</strong> que permite que possamos trabalhar no código sem afetar o código “principal”.</p>
+
+<p>Um ponto importante, é que <strong>git</strong> é o sistema, e não está diretamente relacionado com as empresas e softwares <strong>Github</strong> e <strong>Gitlab</strong>.</p>
 
 <h2>
   
   
-  Integrated Development Environment (IDE):
+  Quando eu deveria usar git
 </h2>
 
-<p>An IDE is a fancy code editor with extra tools. If you're into web development, consider using Visual Studio for web development. For Python, PyCharm is an excellent choice. IDEs help you manage your code projects, debug issues, and test your programs more efficiently.</p>
+<p>Sempre. Sério, o único motivo que pode justificar a não utilização de git em um projeto, é falta de conhecimento. E pra isso que estou escrevendo isso aqui, então no geral, use sempre.</p>
+
+<p>Mas falando de forma geral, os principais casos de uso são justamente o de trabalhos colaborativos, além do poder de controlar o versionamento em si. Sabe quando você faz um projeto, que está funcionando, ai começa a mexer pra “melhorar” e ele para de funcionar? Com git você consegue voltar no histórico sem depender do seu ctrl+Z.</p>
+
+<p>E apesar de poder usar localmente, é difícil encontrar motivos pra não usar algum <strong>host</strong> de git (mesmo para os seus projetos pessoais) como o <strong>Github</strong>, <strong>Gitlab</strong> ou <strong>Bitbucket</strong>, já que todos têm planos gratuitos.</p>
 
 <h2>
   
   
-  Version Control System:
+  Por onde começar
 </h2>
 
-<p>Git is the go-to tool for keeping track of changes in your code. It helps you collaborate with others, roll back to previous versions if something goes wrong, and manage your code history. GitHub is a popular platform to host your Git repositories.</p>
+<p>Já que eu espero que você tenha lido sobre <a href="https://blog.cadumagalhaes.dev/configuracao-do-windows-para-desenvolvimento">como configurar o windows para desenvolvimento</a>, vou dizer como se instala no Ubuntu. Caso precise instalar em outro sistema, a <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">documentação oficial</a> tem exemplos para várias opções.</p>
 
-<h2>
-  
-  
-  Terminal (Command Line Interface):
-</h2>
-
-<p>If you're working on a Mac or Linux, you'll need to use the terminal. It's a text-based interface for running commands and managing your computer. Learning some basic terminal commands is essential for a programmer.</p>
-
-<h2>
-  
-  
-  Database Management Tool:
-</h2>
-
-<p>If you work with databases, you'll need a tool like MySQL Workbench, SQL Server Management Studio, or DBeaver. These tools help you create, modify, and query databases.</p>
-
-<h2>
-  
-  
-  Text Editor:
-</h2>
-
-<p>Sometimes you need to work with text files that aren't code. Notepad (for Windows), TextEdit (for Mac), or Notepad++ (for Windows) can be handy for editing configuration files and taking notes.</p>
-
-<h2>
-  
-  
-  Virtualization Software:
-</h2>
-
-<p>Software like VirtualBox or VMware allows you to create virtual machines. This is useful for testing software on different operating systems without needing multiple physical computers.</p>
-
-<h2>
-  
-  
-  Package Manager:
-</h2>
-
-<p>Depending on your programming language, you might need a package manager like npm (for Node.js), pip (for Python), or gem (for Ruby). These tools help you install and manage libraries and frameworks for your projects.</p>
-
-<h2>
-  
-  
-  Communication Tools:
-</h2>
-
-<p>You'll likely need to communicate with your team or clients. Tools like Slack, Microsoft Teams, or even simple email can be essential for sharing progress, discussing ideas, and getting feedback.</p>
-
-<h2>
-  
-  
-  Code Hosting and Collaboration:
-</h2>
-
-<p>Platforms like GitLab, Bitbucket, and GitHub are great for hosting your code online and collaborating with others. They also offer features for issue tracking and project management.</p>
-
-<h2>
-  
-  
-  Bright Data for Web Scraping:
-</h2>
-
-<p>If you are a business owner or part of a company looking for a competitive edge, web scraping is your secret weapon! You can effortlessly collect data on product prices, features, reviews, and even contact information like names, job titles, email addresses, and cellphone numbers. </p>
-
-<p>To demonstrate it, web scraping, also known as web harvesting or web data extraction, is the process of extracting data from websites. And here's the exciting news: <a href="https://get.brightdata.com/codewithshahan-scraping-browser">Bright Data's</a> Web Scraping service is the #1 web data platform worldwide, designed to help you easily focus on your multi-step data collection from browsers while taking care of the full proxy and unblocking infrastructure for you, including CAPTCHA solving. This means you can focus on what matters most: collecting the data you need to succeed. Don't miss out on the opportunity to transform your business with web scraping.</p>
-
-<h2>
-  
-  
-  Conclusion:
-</h2>
-
-<p>Overall, the best software for you might depend on the type of programming you do. But having these tools in your arsenal will set you up for success and make your programming journey smoother. </p>
-
-<p>If you like this article, make sure to give it a thumbs up and let me know in the comment section what other important tools or software we might consider. Thank you for your time, and happy coding!</p>
-
-<p>You can follow me on: <a href="https://twitter.com/shahancd">Twitter</a> | <a href="https://www.instagram.com/shahancd">Instagram</a> </p>
-
- </details> 
- <hr /> 
-
- #### - [How to run mongodb using docker-compose in ubuntu](https://dev.to/shaikhalamin/how-to-run-mongodb-using-docker-compose-in-ubuntu-14l3) 
- <details><summary>Article</summary> <p>Create docker-compose file like the following:<br>
+<p>No nosso caso, basta executar<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>version: '3.7'
-services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb_contaner
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 12345678
-      MONGO_INITDB_DATABASE: chat_app
-    command:
-      - '--logpath'
-      - '/var/log/mongodb/mongod.log'
-    ports:
-      - 27017:27017
-    volumes:
-      - ./docker/mongodb_data:/data/db
-      - ./docker/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+<pre class="highlight shell"><code><span class="nb">sudo </span>apt <span class="nb">install </span>git
 </code></pre>
 
 </div>
 
 
-
-<p><strong>Create a directory called docker like the following:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>mkdir -p docker/mongodb_data
-</code></pre>
-
-</div>
-
-
-
-<p>*<em>Create an init-mongo.js inside docker directory and with the following content : *</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>db = db.getSiblingDB('admin');
-db.auth('root', '12345678');
-
-db = db.getSiblingDB('chat_app');
-db.createUser({
-  user: 'app_user',
-  pwd: 'password',
-  roles: [
-    {
-      role: 'readWrite',
-      db: 'chat_app',
-    },
-  ],
-});
-
-db.createCollection('test_docker');
-</code></pre>
-
-</div>
-
-
-
-<p><strong>Run docker-compose to start running the container:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>docker-compose down &amp;&amp; docker-compose build --no-cache &amp;&amp; docker-compose up -d
-</code></pre>
-
-</div>
-
-
-
-<p><strong>To check everything is working, SSH into the MongoDB container like the following:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>//to SSH into the container
-docker exec -it mongodb_contaner bash
-
-mongod --version
-
-//Check admin db connection is working or not
-mongosh admin -u root -p
-
-// check default database with newly created by init-mongo.js
-show dbs
-</code></pre>
-
-</div>
-
-
-
- </details> 
- <hr /> 
-
- #### - [Javascript: Nullish Coalescing vs OR operator](https://dev.to/djzenma/javascript-nullish-coalescing-vs-or-operator-2297) 
- <details><summary>Article</summary> <p>First of all, what is a Nullish Coalescing operator? It is the following operator: <code>??</code></p>
-
-<p>Now let’s explore what it does and what is the difference between it and the OR operator.</p>
-
-<h2>
-  
-  
-  OR operator
-</h2>
-
-<p>The OR operator <code>||</code> uses the right value if the left value is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a>. A falsey value is one of the following values: </p>
-
-<ul>
-<li>0, -0, 0n</li>
-<li>false</li>
-<li>"" (empty string)</li>
-<li>null</li>
-<li>undefined</li>
-<li>NaN</li>
-</ul>
-
-<p>Let’s look at examples:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="c1">// when left is falsy, the right value is used</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span>  <span class="o">||</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "right value"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "right value"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">""</span>     <span class="o">||</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "right value"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "right value"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span>      <span class="o">||</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "right value"</span>
-
-<span class="c1">// but when the left value is truthy, the left value is used</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">12</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: 12</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Nullish coalescing
-</h2>
-
-<p>In contrast, the Nullish coalescing operator <code>??</code> uses the right value if the left value is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Nullish">nullish</a> (ie, <code>null</code> or <code>undefined</code>).</p>
-
-<p>For example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="c1">// only when the left is undefined or null that the right value is used:</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "right value"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span>      <span class="o">??</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "right value"</span>
-
-<span class="c1">// when the left value is not nullish, then the left value is used </span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span>  <span class="o">??</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output:  0</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">jane</span><span class="dl">"</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: "jane"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">""</span>     <span class="o">??</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output: ""</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span>  <span class="o">??</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output:  true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">right value</span><span class="dl">"</span><span class="p">)</span> 
-<span class="c1">// Output:  false</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Most frequently, you only want the right value if the left value is <code>null</code> or <code>undefined</code>. That's what the nullish coalescing operator <code>??</code> is for. </p>
-
-<p>Happy coding!<br>
-Mazen<br>
-My Youtube channel: <a href="https://youtube.com/@webdevkit?si=Swp7azQI8ifOaDSC">@WebDevKit</a><br>
-My Github: <a href="https://github.com/djzenma">@djzenma</a><br>
-My twitter: <a class="mentioned-user" href="https://dev.to/djzenma">@djzenma</a></p>
-
- </details> 
- <hr /> 
-
- #### - [Building a DataGrid with the right tools](https://dev.to/radubrehar/building-a-datagrid-with-the-right-tools-dil) 
- <details><summary>Article</summary> <p>Building for the browser has historically been very tedious. In the old days you had to resort to all sorts of hacks for getting the right layout - anyone remembers conditional comments targeting IE6-9? 😅</p>
-
-<p>Yeah, we don't miss those days either.</p>
-
-<p>Things have evolved in the last few years, and the amount of goodies JS/CSS/HTML/layout goodies we now take for granted is staggering. New CSS features like flex/grid/custom properties really make a difference. Also browser performance has improved a LOT, and today we can do things in the browser that were unthinkable just a few years ago.</p>
-
-<p>However, not everything is easier now than it was back in the browser-war days. Handling all kinds of devices, managing changing dependencies, configuring build tools, choosing the right styling approach, proper E2E testing, keeping a small bundle size, CI pipelines, etc. are all things that can (and will) go wrong if you don't have the right tools.</p>
-
-<p>In this article, we're sharing the tools we used to build <a href="https://infinite-table.com">the InfiniteTable React DataGrid</a></p>
-
-<h2>
-  
-  
-  TypeScript
-</h2>
-
-<p>It's obvious today to just go with <code>TypeScript</code>, but a few years ago, it was not as obvious. We've been using TypeScript for quite a few years now, and we're very happy with it. We can never imagine going back to plain JS.</p>
-
-<h2>
-  
-  
-  React
-</h2>
-
-<p>Building on top of <code>React</code> has given us an amazing component model that's very composable and easy to reason about - and the ecosystem is huge.</p>
-
-<p>Read about our journey in the <a href="https://infinite-table.com/blog/2022/11/08/why-another-datagrid">Why another DataGrid?</a> blog post. Back when React was launching, many of our team members were writing DataGrids - either in vanilla JS or using some libraries (<code>jQuery</code> anyone? - we don't miss browser incompatibilities).</p>
-
-<h2>
-  
-  
-  CSS Variables and Vanilla Extract
-</h2>
-
-<p>As a <code>DataGrid</code> Infinite Table is built on top of CSS variables - we're going all in with CSS variables. They have a few gotchas in very advanced cases, but all-in-all they're amazing - and especially for performance.</p>
-
-<p>Infinite Table is not short of <a href="https://infinite-table.com/docs/learn/theming/css-variables">CSS variables it exposes - see the full list</a>.</p>
-
-<p>Using CSS variables/custom properties has been pivotal not only to the ease of theming, but also to the performance of the DataGrid.<br>
-Being able to change a CSS custom property on a single DOM element and then reuse it across many elements that are children of the first one is a huge performance win. Our DataGrid performance would not be the same without CSS variables.</p>
 
 <h3>
   
   
-  <a href="https://vanilla-extract.style/">Vanilla Extract</a>
+  git config
 </h3>
 
-<p>The single tool that has made our life a lot easier working with CSS is <a href="https://vanilla-extract.style/">Vanilla Extract</a>. If you're developing a component library, you should definitely use it! Not so much for simple &amp; static apps - there are other styling solutions that are easier to use, like <a href="https://tailwindcss.com/">tailwindCSS</a>. But for component libraries, <strong>Vanilla Extract is amazing</strong>!</p>
+<p>Depois de instalar, idealmente você precisa fazer algumas configurações padrões para garantir o melhor funcionamento. Parte das informações armazenadas pelo git envolvem seu nome e email, por exemplo, para que sejam anexadas ao histórico de alterações. Para configurar essas informações de forma global, você pode usar os seguintes comandos:<br>
+</p>
 
-<p>Did we mention it's amazing? 😅<br>
-The fact that you can use TypeScript with it, can use "Find All References", see where everything is used is a huge win. You're not writing readonly CSS anymore - because that tends to be the case with most CSS. People are afraid to change it or remove old CSS code, just in case those rules are still being used or referenced somehow. This way, CSS only grows with time, and this is a code smell.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git config <span class="nt">--global</span> user.name <span class="s2">"[seu nome ou nome de usuário]"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"[seu email]"</span>
+</code></pre>
 
-<p>With Vanilla Extract, you get to forget about that. You know what's being used and what's not.</p>
+</div>
 
-<p>Also, hashing class names to avoid collisions is nice - and something now very common in the modern JS ecosystem. It all started with CSS modules, and now it's everywhere, Vanilla Extract included.</p>
 
-<p>Other great features we use extensively are:</p>
+
+<p>Também podemos configurar essas informações em nível de repositório, mas para começar a configuração global é mais do que suficiente.</p>
+
+<h2>
+  
+  
+  Como funciona
+</h2>
+
+<h3>
+  
+  
+  (não que você precise saber)
+</h3>
+
+<p>Ao invés de tentar armazenar quais alterações são feitas em quais arquivos, Git pensa nos seus dados como uma série de <strong><em>snapshots</em></strong> de um sistema de arquivos. Ou seja, toda vez que você faz um <strong>commit</strong> (que é a ação de salvar o estado do seu projeto), Git vai basicamente tirar uma foto de como todos os seus arquivos estão naquele momento, e armazenar uma referência a isso. E pra ser eficiente, se não houve nenhuma alteração em algum arquivo, ele não vai ser armazenado novamente. Ao invés disso, o Git vai simplesmente fazer uma referência ao arquivo que já foi armazenado.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7nDkadSX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266793473/083d646e-e7e6-474a-9c03-394d14796b3c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7nDkadSX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266793473/083d646e-e7e6-474a-9c03-394d14796b3c.png" alt="Ilustração do sistema de arquivos do git" width="800" height="305"></a></p>
+
+<p>Além disso, quase toda operação feita com Git depende somente dos seus recursos e arquivos locais, sem depender muito de informações vindas de outro computador ou de um servidor. Isso faz com que ele seja extremamente rápido e eficiente, além de garantir que mesmo que você esteja offline, vai conseguir trabalhar.</p>
+
+<p>E a forma como Git “mede” as alterações em arquivos, é que eles fazem o processo chamado de <em>checksum</em>. A ideia é que você gera um valor com base no <strong>conteúdo</strong> do arquivo, e caso o conteúdo se altere, esse valor também é alterado. Isso é uma forma de garantir que Git tenha integridade, já que é impossível que o conteúdo de qualquer arquivo ou diretório seja mudado sem que Git note. (Esses <em>checksums</em> são gerados a partir de um hash SHA-1 , que é uma string de 40 caracteres hexadecimais, tipo assim: <code>24b9da6552252987aa493b52f8696cd6d3b00373</code>. Quando usar git, vai ver que esses códigos estão presentes em todo lugar, porque é assim que as informações são armazenadas).</p>
+
+<h2>
+  
+  
+  Conceitos fundamentais
+</h2>
+
+<h3>
+  
+  
+  Commit
+</h3>
+
+<p>Como mencionado brevemente acima, o commit é a ação de salvar o estado atual do seu projeto.</p>
+
+<h3>
+  
+  
+  Branch
+</h3>
+
+<p>Apesar do poder do versionamento, as vezes precisamos trabalhar em múltiplas coisas de uma vez. É nesse contexto que as <strong>branches</strong> (ou ramificações) aparecem. Git consegue armazenar múltiplos estados diferentes do seu projeto através dessas ramificações, que posteriormente podem ser juntadas de acordo com a necessidade.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--M2DuXDGX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266836390/71829e43-7609-43de-a3dd-da695b35edbf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--M2DuXDGX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266836390/71829e43-7609-43de-a3dd-da695b35edbf.png" alt="Ilustração de uma representação de ramificação (branch) em git" width="300" height="87"></a></p>
+
+<h2>
+  
+  
+  Comandos básicos
+</h2>
+
+<h3>
+  
+  
+  init
+</h3>
+
+<p>Esse é o comando que você executa num diretório para iniciar um novo projeto de git. Ele vai fazer a inicialização básica do sistema.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git init
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  clone
+</h3>
+
+<p>Caso queira fazer uma cópia de um projeto já existente, você usa esse comando.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git clone <span class="o">[</span>URL <span class="k">do </span>projeto remoto]
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  pull
+</h3>
+
+<p>É o jeito mais comum de baixar o conteúdo mais recente do repositório remoto, mas é preciso ter cuidado com ele. Quando você executa um <code>pull</code>, além de baixar tudo ele também atualiza o seu conteúdo local para o mais recente, o que pode gerar conflitos.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git pull
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  branch
+</h3>
+
+<p>É o comando usado para listar, criar ou apagar uma branch.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Listar todas as ramificações</span>
+git branch
+
+<span class="c"># Criar uma nova branch</span>
+git branch <span class="o">[</span>nome da branch nova]
+
+<span class="c"># Apagar uma branch</span>
+git branch <span class="nt">-d</span> <span class="o">[</span>nome da branch]
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  checkout
+</h3>
+
+<p>Continuando na ideia de branches, esse comando é usado para definir qual é a branch ativa do seu repositório local.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git checkout <span class="o">[</span>nome da branch]
+
+<span class="c"># bonus: criar e trocar para uma branch</span>
+git checkout <span class="nt">-b</span> <span class="o">[</span>nome da branch nova]
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  add
+</h3>
+
+<p>Conforme você vai fazendo alterações, você precisa adicionar elas para que sejam armazenadas posteriormente. Você vai usar esse comando quando cria novos arquivos, quando muda o nome deles ou quando altera o conteúdo. É importante entender que isso não vai armazenar o estado, vai apenas colocar os arquivos na “fila”.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c">## para adicionar um arquivo ou diretório específicos</span>
+git add <span class="o">[</span>arquivo ou diretório]
+<span class="c">## para adicionar N arquivos ou diretórios especificos</span>
+git add <span class="o">[</span>arquivo1] <span class="o">[</span>arquivo2] <span class="o">[</span>diretorio]
+<span class="c">## ou para adicionar todos os arquivos alterados</span>
+git add <span class="nt">--all</span>
+<span class="c">## ou</span>
+git add <span class="k">*</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  commit
+</h3>
+
+<p>Para salvar o estado atual do projeto, após ter adicionado os arquivos, fazemos um <strong>commit</strong>. Ele vai criar uma nova revisão do seu repositório, gerar um novo código e guardar todas as alterações que foram feitas, junto com a informação de quando e por quem foram feitas.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c">## Para uso interativo, dessa forma você vai ser </span>
+<span class="c">## direcionado para um editor de texto antes de finalizar o commit</span>
+<span class="c">## Aqui você deve escrever sua mensagem de commit, com os detalhes que achar necessários.</span>
+git commit 
+
+<span class="c">## Caso a mensagem seja curta, ou simplesmente não queira passar pelo editor</span>
+git commit <span class="nt">-m</span> <span class="s2">"[sua mensagem de commit]"</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Aqui também fica a recomendação da utilização dos <a href="https://www.conventionalcommits.org/en/v1.0.0/">Commits Convencionais</a>, que são uma sugestão de padrão do início da mensagem de commit.</p>
+
+<h3>
+  
+  
+  push
+</h3>
+
+<p>É basicamente o contrário do <code>pull</code>, serve para enviar suas alterações locais para o repositório remoto.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Enviar alterações para uma branch que já existe no remoto</span>
+git push
+
+<span class="c"># Enviar alterações para uma branch que foi criada local</span>
+git push <span class="nt">--set-upstream</span> <span class="o">[</span>nome <span class="k">do </span>remoto] <span class="o">[</span>nome da branch]
+<span class="c"># geralmente é usado como git push --set-upstream origin [branch]</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  status
+</h3>
+
+<p>É usado para comparar o estado atual do seu repositório local com o último estado armazenado, e com o repositório remoto (caso haja).<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git status
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  fetch
+</h3>
+
+<p>De forma semelhante ao pull, serve para baixar mudanças feitas no projeto remoto. A diferença é que dessa forma elas não serão aplicadas automaticamente para o seu repositório local, você vai precisar definir o que fazer com as alterações na sequência.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git fetch
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  stash
+</h3>
+
+<p>As vezes precisamos mudar de branch depois de já ter trabalhado em uma, mas antes que as coisas estejam prontas o suficiente para virar um commit. Nesse contexto podemos usar o stash, que vai armazenar temporariamente as modificações na área de <strong><em>stash</em></strong>, que é essencialmente é uma pilha (uma lista onde os elementos são empilhados).<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Para "guardar" os arquivos no stash</span>
+git stash
+
+<span class="c"># Para listar todos os existentes</span>
+git stash list
+
+<span class="c"># Para apagar um stash da pilha</span>
+git stash drop
+
+<span class="c"># Para recuperar um stash</span>
+git stash apply
+
+<span class="c"># Para aplicar/recuperar e remover da pilha (eu costumo usar esse)</span>
+git stash pop
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  merge
+</h3>
+
+<p>Depois de trabalhar em múltiplas branches, provavelmente você vai precisar unificar as coisas em algum momento. É ai que entra o merge, que vai ser responsável por juntar 2 branches em uma única.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git merge <span class="o">[</span>branch de destino] <span class="o">[</span>branch de origem]
+</code></pre>
+
+</div>
+
+
+
+<p>Isso vai criar um commit de merge na branch de destino, e vai atualizar comparar apenas as últimas versões de cada um. Esse é um método interessante porque ele não vai mexer no histórico de nada, vai apenas criar um novo commit para garantir que as coisas estejam atualizadas.</p>
+
+<h2>
+  
+  
+  Comandos adicionais
+</h2>
+
+<h3>
+  
+  
+  rebase
+</h3>
+
+<p>O objetivo é parecido com o do merge, mas o rebase reescreve o histórico de commits do projeto, de forma que ele move a sua branch para o final do histórico, <strong>criando novos commits para cada commit da branch de origem</strong>, de forma que o histórico do seu projeto vai ficar muito mais “limpo”. Isso porque ele não tem os commits de merge (que são feitos quando você usa <code>git merge</code> , e no final o histórico do seu projeto fica perfeitamente linear (enquanto com merge as coisas podem ficar difíceis de acompanhar, dependendo da complexidade do projeto). É importante deixar claro que com isso você perde um pouco da rastreabilidade (pois está sempre reescrevendo o histórico) e você perde o contexto de quando as alterações foram “aceitas” na sua branch principal.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git checkout <span class="o">[</span>branch de destino]
+git rebase <span class="o">[</span>branch de origem]
+</code></pre>
+
+</div>
+
+
+
+<p>Esse é um comando que pode impactar bastante o trabalho colaborativo, então antes de pensar em usar é importante saber se tem mais alguém trabalhando na branch em que você vai mexer. Isso porque vão acontecer vários conflitos entre a sua versão (a com rebase) e a versão que a pessoa pode estar trabalhando. Algumas pessoas chamam isso de “<strong>Golden Rule do rebase”.</strong></p>
+
+<h3>
+  
+  
+  log
+</h3>
+
+<p>Esse é o comando que você pode usar para ver o histórico de commits do repositório.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git log
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  revert
+</h3>
+
+<p>Esse é um comando para desfazer mudanças, mas que ao invés de modificar os commits já feitos no histórico, ele vai criar um novo commit desfazendo as mudanças. Podemos considerar que é uma alternativa segura ao <code>git reset</code>, que tem uma chance de te fazer perder o histórico.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git revert <span class="o">[</span>commit <span class="nb">hash</span><span class="o">]</span>
+
+<span class="c"># Também podemos dizer quantos commits a partir do último serão revertidos</span>
+git revert HEAD~[numero de commits]
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  remote
+</h3>
+
+<p>Esse é o comando que você usa pra criar a conexão entre o seu repositório local e um repositório remoto.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git remote add <span class="o">[</span>apelido <span class="k">do </span>repo remoto] <span class="o">[</span>url <span class="k">do </span>repositório]
+
+<span class="c"># Geralmente vai ser algo como</span>
+git remote add origin &lt;https://github.com/&gt;[nome de usuario]/[nome <span class="k">do </span>repo] 
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  cherry-pick
+</h3>
+
+<p>Imagina que você e uma outra pessoa estão trabalhando em duas branches diferentes, mas que a outra fez um commit com uma alteração que você também pode usar, e você não quer reescrever algo que já foi feito. O cherry-pick permite que você selecione qualquer commit de uma branch, e aplicá-lo a uma outra branch, sem ter que se preocupar com o histórico todo.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git cherry-pick <span class="o">[</span>commit <span class="nb">hash</span><span class="o">]</span>
+</code></pre>
+
+</div>
+
+
+
+<h3>
+  
+  
+  blame
+</h3>
+
+<p>É o comando utilizado para dizer qual usuário fez quais alterações num determinado arquivo.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git blame <span class="o">[</span>nome <span class="k">do </span>arquivo]
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Na prática
+</h2>
+
+<p>Apesar de achar importante você conhecer, entender e saber usar a linha de comando, a verdade é que você provavelmente não precisa. A maioria das IDE’s ou editores de código tem extensões para lidar com git e te prover uma interface que facilita bastante a utilização. Também existe o <a href="https://desktop.github.com/">Github Desktop</a> mas eu pessoalmente não gosto muito dele.</p>
+
+<p>Uso a maior parte das coisas direto na extensão de git padrão do VS Code, que te da um resumo das alterações atuais do repositório, uma lista de commits, de branches e de stashes e honestamente tudo que você pode precisar. Isso facilita muito, principalmente na hora de resolver conflitos.</p>
+
+<p>Ele também acrescenta o <code>git blame</code> no próprio editor, fazendo ficar bem fácil entender o histórico do projeto.</p>
+
+<p>Eu só uso a extensão padrão, mas se você tiver recomendações de extensões, fique a vontade pra acrescentar nos comentários.</p>
+
+<h2>
+  
+  
+  Onde encontrar mais informações
+</h2>
+
+<p>A melhor fonte é provavelmente a oficial, que é onde eu costumo buscar referências (e o que serviu de inspiração pra boa parte do que está aqui):</p>
 
 <ul>
-<li>public facing CSS variables - their names are stable</li>
-<li>private CSS variables - their names are hashed</li>
-<li>sharing CSS values with the TS codebase is a dream come true.</li>
-<li>Vanilla Extract recipes - generating and applying CSS classes based on a combination of properties. It's enough that you have 2-3 properties, each with a few values, and managing their combinations can be a pain. Vanilla Extract recipes manage this in a very elegant way.</li>
+<li><p>Git Book (em PT-BR): <a href="https://git-scm.com/book/pt-br/v2">https://git-scm.com/book/pt-br/v2</a></p></li>
+<li><p>Git Book: <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></p></li>
+</ul>
+
+<p>Também gostei bastante do conteúdo da Atlassian, que é a empresa criadora do BitBucket</p>
+
+<ul>
+<li><a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a></li>
+</ul>
+
+<p>E como não pode faltar, também tem conteúdo da LINUX Tips sobre git:</p>
+
+<ul>
+<li><p>Descomplicando o Git: <a href="https://www.youtube.com/watch?v=_aj3hsEh9iw">https://www.youtube.com/watch?v=_aj3hsEh9iw</a></p></li>
+<li><p>Aulão de certificação do gitlab: <a href="https://www.youtube.com/watch?v=SMzaAP09BD4">https://www.youtube.com/watch?v=SMzaAP09BD4</a></p></li>
 </ul>
 
 <h2>
   
   
-  End-to-end testing with <a href="https://playwright.dev/">Playwright</a> and <a href="https://nextjs.org/">NextJS</a>
+  Conclusão
 </h2>
 
-<p>Remember the days of Selenium? All those flaky tests, the slow execution, the hard to debug issues? They're gone!</p>
+<p>A verdade é que eu fiquei anos usando git e só sabendo <code>git add</code>, <code>git commit</code>, <code>git pull</code> e <code>git push</code>. Isso é tudo que você precisa pra um projeto simples, e usando alguma extensão com interface gráfica você só precisa entender as ações e como executá-las na interface que estiver usando.</p>
 
-<p><a href="https://playwright.dev/">Playwright</a> all the way! 300+ tests and going strong! Yes, you read that right! We have more than 300 tests making sure the all the DataGrid features are working as expected. Sorting, filtering, row grouping, column groups, pivoting, aggregations, lazy loading, live pagination, keyboard navigation, cell and row selection, theming - they're all tested! And we're not talking about unit tests, but end-to-end tests. We're testing the DataGrid in the browser, with real data just like real users would.</p>
+<p>Mas conforme vamos trabalhando, passando por projetos de maior complexidade ou simplesmente precisando fazer coisas em grupo, os conflitos e erros começam a acontecer e aí precisamos entender melhor o poder dessa ferramenta.</p>
 
-<p>Playwright is an amazing tool, but we're not using it standalone. Paired with a <a href="https://nextjs.org/">NextJS</a> app, with file-system based routing, we've created files/routes for each functionality. Each NextJS file in turn has a Playwright test file with the same name, but a different extension.</p>
+<p>Não espero que ninguém saia desse post sabendo usar tudo isso, mas aqui tem uma introdução de tudo que eu gostaria de saber quando comecei. Saber quando usar qual comando vem da utilização na prática, então minha recomendação é sempre que você comece. E novamente, não consigo pensar em um motivo pra não usar git em qualquer projeto de desenvolvimento, seja pessoal, de estudos, de faculdade ou de trabalho.</p>
 
-<p>This has the benefit that it's always very obvious which test is running against which page. The test and the route always have the same file name, just the extension is different. The test source-code doesn't explicitly contain code that navigates to a specific page, all this is done under the hood, using this simple convention.</p>
+<p>Me diz o que você achou desse tipo de post, e se você gostaria que isso virasse um vídeo no Youtube! Independente do resultado, semana que vem vou falar sobre RegEx.</p>
 
-<p>This way, we have a very clear separation of concerns, and it's very easy to add new tests. We just create a new file in the <code>pages</code> folder, and a new test file sibling to it. Another amazing benefit is that we can start the NextJS app and point our browser to whatever page we want to see or debug and it's there. We can very easily do the actions the test is doing and see if we get the expected results. This is a huge win for debugging.</p>
+<p>Espero que isso tenha sido útil para alguém, até a próxima!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Should You Lower Your Possibilities When Looking For a Job?](https://dev.to/juandadev/should-you-lower-your-possibilities-when-looking-for-a-job-2p0j) 
+ <details><summary>Article</summary> <blockquote>
+<p><em>Photo by <a href="https://unsplash.com/@andrewjoegeorge?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Andrew George</a> on <a href="https://unsplash.com/photos/g-fm27_BRyQ?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></em></p>
+</blockquote>
+
+<p>These past days I decided to focus my energies on doing some research and studying for a position I really wanted to be part of as a Node.js developer (Back-end). As some of you would already know, my expertise lies in Frontend development, especially with React, Redux, and Graphql, or at least that's what I thought at the beginning...</p>
+
+<p>I was afraid to apply for full-stack or back-end positions, I thought that I couldn't perform well in these areas because of my professional experience, but after some time of self-retrospective, I just realized that I always have been a full-stack developer without knowing it. The thing is that although in my last job I was given the title of <strong>Web UI developer</strong>, to be honest, I feel the industry always leans towards full-stack somehow, and in my last project we managed a Node.js server with Apollo server to extend the usability of GraphQL in our front-end with React, and it was something of our daily tasks to code in both repos after all. So that's it!! I already know Node.js so I can say that I have experience in the field, right?</p>
 
 <h2>
   
   
-  A tailored state management
+  Discover your hidden abilities!
 </h2>
 
-<p>We've built a very simple yet highly effective state management solution for our DataGrid. It's built to make updating the internal state of the DataGrid as easy as possible - we want a simple API, with clear actions. Our actions map almost 1-to-1 to the DataGrid properties, which makes it very obvious to know who changed what.</p>
+<p>After realizing this, it was an eureka moment for me! How can you be biased about your capabilities just because of the title some company gives to you? This also includes the seniority of course.</p>
 
-<p>We can't overstate how important it is to have a clear data flow through the DataGrid. This is because the DataGrid is by far the most complex UI component you'll ever use (and we'll ever build). You can't possibly go beyond that - at least not in common business apps, where you have the normal UI controls you can expect, like inputs, buttons, dropdowns, etc. Just the ComboBox can come near the complexity of the DataGrid, but it's still far behind.</p>
+<p>I started to detect those back-end skills and gain more confidence about it. Tried to analyze what and how do we managed in that Node.js repo. We were in charge of the API layer by collecting all the external APIs the Java team brought to us, like an API for users, another one for bag items, and so on, then we made the proper functions and logic to use that data and transform it to be consumable by our front-end project.</p>
 
-<p>It's important to be able to tame all this complexity - otherwise it can slow down the development process and bring it to a halt, making it difficult to add new features or fix bugs. With our current model, even though the DataGrid grew in complexity and features, we never felt our velocity dropping! We enjoy that!</p>
+<p>Does that sound familiar to you? Of course it is, because without knowing we were interacting every day in a <strong>MICROSERVICES ARCHITECTURE</strong>, I know it doesn't sound like a big deal, but for me it was like founding the one piece 💰</p>
+
+<p>Why I'm so sure about this? well, after some research about microservices, a lot of things started to make sense to me, we had a Java team that created separate projects for each service, and those services were split by the business needs, being the case of an e-commerce. Then the DevOps team is in charge of all the infrastructure layer, to finally us getting all of those APIs to be consumed on a single Node.js server with Apollo.</p>
+
+<p>Then I asked ChatGPT to give me some topics to study for a back-end position with Node.js, microservices being one of them, followed by understanding HTTP protocol and other stuff, stuff that I already knew and it was just a matter of time to research, and remember all of those things!</p>
 
 <h2>
   
   
-  No dependencies
+  DON'T close yourself to the possibilities!
 </h2>
 
-<p>We're very proud of the fact that we have no dependencies in our DataGrid. When you install our package, you only install our package - and nothing else. Nothing that can go wrong due to version conflicts, missing dependencies, npm issues (<a href="https://www.davidhaney.io/npm-left-pad-have-we-forgotten-how-to-program/">remember left-pad</a>?).</p>
-
-<p>Yes, we still depend on packages in our dev process, but we're striving to keep that small as well. It's already complex enough to keep TS, React, NextJS, npm (with workspaces), aliases, esbuild, tsup, playwright all working together in harmony. But we've got through it, and we're very happy with the result. It was worth it!</p>
-
-<h2>
-  
-  
-  Separating concerns
-</h2>
-
-<p>We've separated our DataGrid into 2 main parts:</p>
+<p>The point of all of this is to make you rethink your skill set and be able to know what you are capable of! don't close yourself just because someone told you that you're just a frontend or backend dev, junior or senior!</p>
 
 <ul>
-<li>the <code>&lt;DataSource /&gt;</code> component - handles data loading and processing</li>
-<li>the <code>&lt;InfiniteTable /&gt;</code> component - handles the rendering</li>
+<li><p>You always work with <strong>data structures</strong>, so do your research about it! get to know how you interact with those and search for examples, I'm sure you've been working with a lot of these, and even you can start thinking about your further solutions by applying data structures specifically.</p></li>
+<li><p>Learn about algorithms! it is a topic you probably applied in some of the techniques in your daily problem-solving process. You will start to know about the complexity of a piece of code or function and you will start to think differently, seek how to improve performance, and solve memory leaks in your apps!</p></li>
 </ul>
 
-<p>This was a brilliant idea! It's new? No! It's not our invention, but we're happy we decided to apply it.</p>
+<p>So, the sooner you start to discover your hidden skills, the sooner you can start to open your range of possibilities when looking for a job!</p>
 
-<p>It adds a better separation between the two big parts of the DataGrid. This also helps tame some of the complexity, while adding clarity to the codebase. It's easier to reason about the code when you know that the <code>&lt;DataSource /&gt;</code> component is responsible for data loading and processing, while the <code>&lt;InfiniteTable /&gt;</code> component is ONLY responsible for rendering.</p>
+<p>I stopped saying that I'm just a front-end developer, I know that I can perform well in a back-end position with Node.js, and I know that I can also apply for full-stack and backend positions without hesitation. So what are you waiting for? Go for it 💪🏻</p>
 
-<h2>
-  
-  
-  Conclusion
-</h2>
+<p>Recently, I applied for a Node.js position, it went very well and I was even surprised of myself in both HR and Technical interviews that they loved my profile and knowledge, but unfortunately, they rejected me because the client didn't like my solution for a code challenge, it was easy but I made the mistake to work on that challenge when I was too tired after three interviews and a lot of study before it! I was in zombie mode 🧟 I could get to the solution but made a mess with the code because I wasn't thinking with a fresh mind</p>
 
-<p>We're not sorry for choosing any of the above tools or approaches when building the InfiniteTable DataGrid component.</p>
+<blockquote>
+<p><em>Yes, this is a reminder to all of you that rest is important, other than rushing your work and making a mess</em>.</p>
+</blockquote>
 
-<p>Our developer velocity is high, and we're able to add new features and fix bugs at a fast pace. We're happy with the result and we're confident that we'll be able to keep this pace in the future.</p>
-
-<p>The right tools get the right job done! They make a lot easier. Looking back, we only regret we didn't have those tools 5 years ago - but hey, things are moving in the right direction, and we're happy to be part of this journey.</p>
-
-<p>What are your tools for developer productivity?</p>
+<p>So that's it! this was the proof that I was able to apply to other positions. I would love to read your thoughts on this, I know it may vary depending on the role and technology, but sometimes there are core concepts and some experiences you had in the past that can make you able to get into other fields and succeed ✅</p>
 
  </details> 
  <hr /> 
