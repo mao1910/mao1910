@@ -117,916 +117,2136 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Best React.js Frontend Bootcamp](https://dev.to/idurar/best-reactjs-frontend-bootcamp-2oa7) 
- <details><summary>Article</summary> <p>Mastering React.js is becoming increasingly valuable. This powerful JavaScript library has gained popularity for building interactive and scalable user interfaces. If you're looking to master React.js and take your frontend skills to the next level, enrolling in a specialized frontend bootcamp can provide you with the comprehensive training you need.</p>
+ #### - [Exploratory Data Analysis using Data Visualization Techniques.](https://dev.to/edina/exploratory-data-analysis-using-data-visualization-techniques-3mnn) 
+ <details><summary>Article</summary> <p>The better you know your data the better is your analysis. Data needs to be analyzed so as to produce good results. Exploratory data analysis (EDA) is an approach to analyze and summarize data in order to gain insights and identify patterns or trends. It is often the first step in data analysis and is used to understand the structure of the data, detect outliers and anomalies, and inform the selection of appropriate statistical models.</p>
 
-<p>In this article, we'll explore the best frontend bootcamp for mastering React.js : </p>
-
-<h1>
+<h2>
   
   
-  <a href="https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687">IDURAR React.js &amp; Redux Online Bootcamp</a>
-</h1>
+  Objectives of EDA.
+</h2>
 
-<p><a href="https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OqlvLdXB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yfuedb4h9g2q8tsanhaq.jpg" alt="React.js Frontend Online Bootcamp" width="800" height="400"></a></p>
+<ol>
+<li>Confirm if the data is making sense in context of the business problem.</li>
+<li>It uncovers and resolves data quality issues like missing data, duplicate and incorrect values.</li>
+<li>Data scientists can use exploratory analysis to ensure the results they produce are valid and applicable to any desired business outcomes and goals.</li>
+<li> EDA helps stakeholders by confirming they are asking the right questions. </li>
+<li>EDA can help answer questions about standard deviations, categorical variables, and confidence intervals.</li>
+</ol>
 
-<p>Join us for an exciting online React.js &amp; Redux Bootcamp in 4 weekend (12 hours x 4)<br>
-in 4 weekends L﻿earn on Real Open Source React.js based project (IDURAR ERP CRM): <a href="https://github.com/idurar/idurar-erp-crm">https://github.com/idurar/idurar-erp-crm</a><br>
-🚀 Level up your Frontend development skills with our React.js Online Bootcamp! 🚀<br>
-🔥 Learn by Creating Pull Request on Real Open Source Project<br>
-🐛 Learn by Solve Bugs on Real Open Source Project<br>
-✨ Learn by Adding new Features on Real Open Source Project<br>
-🧑‍💻 Learn by Collaborate with other Engineers on Real Open Source Project<br>
-📅 Event Date: 4 Weekends (starting from 4th November)</p>
-
-<p>💰 Price : $149</p>
-
-<p>Register : <a href="https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687">https://www.eventbrite.fr/e/reactjs-online-bootcamp-tickets-731415913687</a></p>
-
-<h1>
+<h2>
   
   
-  le wagon
-</h1>
+  Types of exploratory data analysis.
+</h2>
 
-<p><a href="https://www.lewagon.com/"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JLgyOvOy--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/giwiqdbn9vpdokv8xkst.png" alt="Best React.js Frontend Bootcamp" width="800" height="431"></a></p>
-
-<p>Flex part-time</p>
-
-<p>Have commitments? Learn in your free time when it’s most convenient for you.</p>
-
-<p>Graduate in 6 months<br>
-Live sessions on days &amp; times that suit you<br>
-All day &amp; evening teaching support<br>
-Learn collaboratively with peers online<br>
-16 hours of study in total, per week</p>
-
-<p>💰 Price : 8500 €</p>
-
-<h1>
+<p>EDA can be classified into two category this is <em>graphical</em> and <em>non-graphical</em> each  having Univariable and multivariable type. <br>
+<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LMKPtGQu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxo0eje6rdqz122xqohd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LMKPtGQu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxo0eje6rdqz122xqohd.png" alt="four types of EDA" width="275" height="183"></a><br>
+<strong>Univariate non-graphical.</strong><br>
+Data being analyzed consists of just one variable and it doesn’t deal with causes or relationships. The main purpose of univariate analysis is to describe the data and find patterns that exist within it.<br>
+<strong>Univariate graphical.</strong><br>
+They provide a full picture of the data. Common types of univariate graphics include: Stem-and-leaf plots, Histograms and box plots.<br>
+<strong>Multivariate non graphical.</strong><br>
+Multivariate data arises from more than one variable. Multivariate non-graphical EDA techniques generally show the relationship between two or more variables of the data through cross-tabulation or statistics<br>
+<strong>Multivariate graphical.</strong><br>
+Multivariate data uses graphics to display relationships between two or more sets of data.  Example is a grouped bar plot or bar chart.</p>
+<h2>
   
   
-  nucamp
-</h1>
+  Exploratory Data Analysis Tools.
+</h2>
 
-<p><a href="https://www.nucamp.co/bootcamp-overview/front-end-web-development"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i3cw8_bt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/coreqj7pl6wvgc4uh5ob.png" alt="best-frontend-bootcamp-to-master-reactjs" width="800" height="431"></a></p>
+<p>In this article I will only focus on <strong>Python</strong>: We used python programming language for exploratory data analysis. Python offers a variety of libraries and  some of them uses great visualization tool. Visualization process can make it easier to  create the clear report.<br>
+To use python for EDA here are some of the steps you will use;<br>
+<strong>Step 1: Imports and Reading Data.</strong><br>
+</p>
 
-<p>In this bootcamp, you will learn the following technologies and their applications:</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">use</span><span class="p">(</span><span class="s">'ggplot'</span><span class="p">)</span>
+<span class="n">pd</span><span class="p">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">'max_columns'</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'filename.data.csv'</span><span class="p">)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>With these code and libraries imported, you're ready to start working with data and creating visualizations in your Python environment. Make sure you have the necessary data loaded and continue with your data analysis and visualization tasks.<br>
+<strong>Step 2: Data Understanding.</strong><br>
+This involves getting a grasp of the data you're working with, its characteristics, structure, and content. Here are some of the ways to archive data understanding using python code.</p>
 
 <ul>
-<li>JavaScript Fundamentals</li>
-<li>Web Development with React</li>
-<li>Mobile Development with React Native</li>
-<li>Google Cloud &amp; Firebase</li>
-<li>Visual Studio Code</li>
-<li>Git &amp; GitHub</li>
+<li>Dataframe shape
+<code>df.shape</code>
+</li>
+<li>head and tail
+<code>df.head(5)</code> </li>
+<li>dtypes
+<code>df.dtypes</code>
+</li>
+<li>describe
+<code>df.describe()</code>
+</li>
 </ul>
 
-<p>💰 Price : $4800</p>
+<p><strong>Step 3: Data Preparation.</strong><br>
+In this step you will be focusing on dropping irrelevant columns and rows, identifying duplicated columns etc. In this phase, you transform and clean the raw data to make it suitable for analysis.</p>
 
-<h1>
-  
-  
-  Springboard
-</h1>
+<p><strong>Step 4: Feature Understanding.</strong><br>
+This step falls into Univariate analysis which involves creating, selecting, and transforming features (variables or attributes) in your dataset to improve the performance and interpretability of machine learning models or enhance the effectiveness of data analysis. Thus, plotting Feature Distributions, Histograms, KDE and Boxplot.</p>
 
-<p><a href="https://www.springboard.com/courses/software-engineering-career-track/"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5g9MnSAJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wokvquvqdsl8riz532n0.png" alt="Reactjs bootcamp" width="800" height="431"><br>
-</a><br>
-By the end of Foundations you will:</p>
-
-<ul>
-<li>Develop introductory software engineering basics in CSS, HTML, and Javascript</li>
-<li>Develop a software engineering mindset and foundation</li>
-<li>Work through small, hands-on exercises</li>
-<li>Confidently tackle Springboard’s Software Engineering Career Track Technical Skills Survey — what you’ll need to pass to start the Core curriculum</li>
-</ul>
-
-<p>💰 Price : $9900</p>
-
-<h1>
-  
-  
-  app academy
-</h1>
-
-<p><a href="https://www.appacademy.io/course/software-engineer-online-16-week"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6LyC9p00--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z0f597sor5qalex5pfxm.png" alt="Reactjs bootcamp" width="800" height="431"></a></p>
-
-<p>16 Week Online Coding Bootcamp<br>
-Official Program Name: Full-Time Software Engineering Program<br>
-Complete your coding education at the fastest pace possible and land your dream job as a software engineer that much sooner! As a student in our 16 Week Online Full-Time Program, you'll learn today's top coding languages like JavaScript and Ruby on Rails, while building a project portfolio that will not only impress you, but employers as well.</p>
-
-<p>💰 Price : $17000</p>
+<p><strong>Step 5: Feature Relationships.</strong><br>
+Here, you will be focusing on understanding how different features (variables) in your dataset relate to each other. This step helps you uncover patterns, dependencies, and interactions between features, which can be valuable for model building, feature selection, and gaining insights from your data. In this step you will be able to come up with Scatterplot, Heatmap Correlation, Pair plot and Group by comparisons.</p>
 
  </details> 
  <hr /> 
 
- #### - [First, but with feeling.](https://dev.to/jarvisscript/first-but-with-feeling-70d) 
- <details><summary>Article</summary> <p>I got the ice breaker Badge, Which mean first, but with feeling. :)</p>
+ #### - [Deploy a Full Stack Next.js App to a DigitalOcean VPS With Docker!](https://dev.to/andrews1022/deploy-a-full-stack-nextjs-app-to-a-digitalocean-vps-with-docker-5f0m) 
+ <details><summary>Article</summary> <h2>
+  
+  
+  Project Info
+</h2>
 
-<p>The badge is for consistently making the first supportive or helpful comment on a blog post. Better than old net days of yelling First, which was annoying, this badge is for helping to open a discussion.</p>
+<p>In this tutorial, we will be creating a simple full stack note taking app using:</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---rembHOF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tvxoiulsice6zndnrpif.jpg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---rembHOF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tvxoiulsice6zndnrpif.jpg" alt="melting icecube as the icebreaker badge" width="656" height="442"></a></p>
+<ul>
+<li>Next.js + Tailwind</li>
+<li>Drizzle ORM</li>
+<li>PostgreSQL</li>
+<li>DBeaver</li>
+<li>DigitalOcean</li>
+<li>Docker</li>
+</ul>
 
-<p>Feels cool to help the DEV community like this. </p>
+<p>While the app itself is very simple, the main focus here is to learn how to:</p>
 
-<p>So to start another discussion, what do you think of new badges?</p>
+<ul>
+<li>Setup a PostgreSQL database locally</li>
+<li>Deploy the app to a DigitalOcean VPS using Docker containers</li>
+</ul>
 
-<p>What are you trying to earn?</p>
+<p>The functionality of the app is:</p>
 
-<p>Next for me is some HacktoberFest Badges.</p>
+<ul>
+<li>Have a page to view all notes</li>
+<li>On the same page, have form to create a note using server actions</li>
+</ul>
+
+<p>So, not full CRUD, and no auth.</p>
+
+<p>It’s a great pipeline to know how to navigate, but there will be some cost involved. I’ll try to keep costs as low as I can.</p>
+
+<p>Let’s get started!</p>
+
+<h2>
+  
+  
+  Setting Up PostgreSQL &amp; DBeaver
+</h2>
+
+<p>Download page PostgreSQL <a href="https://www.postgresql.org/download/"><strong>here</strong></a></p>
+
+<p>Download page for DBeaver <a href="https://dbeaver.io/download/"><strong>here</strong></a></p>
+
+<p>I am going to provide the steps I took to get PostgreSQL with DBeaver up and running locally, you might need to Google for your specific OS (I am on Ubuntu).</p>
+
+<p>First, we need to install PostgreSQL:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>postgresql postgresql-contrib
+</code></pre>
+
+</div>
+
+
+
+<p>You can check the installation was successful by running:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>psql <span class="nt">--version</span>
+<span class="c"># psql (PostgreSQL) 16.0 (Ubuntu 16.0-1.pgdg22.04+1)</span>
+</code></pre>
+
+</div>
+
+
+
+<p>During the installation, PostgreSQL will create a default user called <code>postgres</code>. You can set a password for this user by running this command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">sudo</span> <span class="nt">-u</span> postgres psql postgres
+</code></pre>
+
+</div>
+
+
+
+<p>You’ll enter the postgres console. Once there, enter:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="se">\p</span>assword postgres
+</code></pre>
+
+</div>
+
+
+
+<p>Since this is just a local database to play around with, I'm not too concerned about security at this point. So for the local db, the username, password, and database name will all be <code>postgres</code>.</p>
+
+<p>Enter a password, then enter this to quit the psql console:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="se">\q</span>
+<span class="c"># or </span>
+<span class="nb">exit</span>
+</code></pre>
+
+</div>
+
+
+
+<p>I will be using DBeaver as my database admin GUI of choice. It’s free, and available on all 3 major OS’s(Windows, Mac, &amp; Linux). If you already have a tool you prefer to use, then of course stick with that.</p>
+
+<p>Open DBeaver, and in the top menu bar, select <strong>Database</strong>, then <strong>New Database Connection</strong></p>
+
+<p>Settings:</p>
+
+<ul>
+<li>Connect by <strong>Host</strong>
+</li>
+<li>URL, Host, and Port can all be left alone</li>
+<li>Database, username, and password should all be <strong>postgres</strong>
+</li>
+</ul>
+
+<p>Click <strong>Test Connection</strong></p>
+
+<p>If you see a response like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--RbaJUpZ9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g8zrxl9su0i7afpbp8kx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RbaJUpZ9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g8zrxl9su0i7afpbp8kx.png" alt="DBeaver Local Postgres Connection Test" width="417" height="285"></a></p>
+
+<p>You’re good to go!</p>
+
+<p><strong>FYI</strong>: If you did not set a password for the default <code>postgres</code> user, the connection test would always fail.</p>
+
+<p>Click <strong>Ok</strong>, then click <strong>Finish</strong></p>
+
+<h2>
+  
+  
+  Setup Next.js App
+</h2>
+
+<p>Then in a folder of your choice, download and setup the latest Next.js TypeScript starter:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npx create-next-app@latest <span class="nt">--ts</span> <span class="nb">.</span>
+</code></pre>
+
+</div>
+
+
+
+<p>If you are getting warnings in your CSS file complaining about unknown CSS rules, follow <strong><a href="https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394">these steps here</a></strong>.</p>
+
+<p>Still in <code>globals.css</code>, update the code with this reset from <strong><a href="https://www.joshwcomeau.com/css/custom-css-reset/">Josh Comeau</a></strong>.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="c">/* src/app/globals.css */</span>
+
+<span class="k">@tailwind</span> <span class="n">base</span><span class="p">;</span>
+<span class="k">@tailwind</span> <span class="n">components</span><span class="p">;</span>
+<span class="k">@tailwind</span> <span class="n">utilities</span><span class="p">;</span>
+
+<span class="o">*,</span> <span class="o">*</span><span class="nd">::before</span><span class="o">,</span> <span class="o">*</span><span class="nd">::after</span> <span class="p">{</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">*</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">img</span><span class="o">,</span> <span class="nt">picture</span><span class="o">,</span> <span class="nt">video</span><span class="o">,</span> <span class="nt">canvas</span><span class="o">,</span> <span class="nt">svg</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="o">,</span> <span class="nt">button</span><span class="o">,</span> <span class="nt">textarea</span><span class="o">,</span> <span class="nt">select</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="o">,</span> <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
+  <span class="nl">overflow-wrap</span><span class="p">:</span> <span class="n">break-word</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#root</span><span class="o">,</span> <span class="nf">#__next</span> <span class="p">{</span>
+  <span class="py">isolation</span><span class="p">:</span> <span class="n">isolate</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Update <code>tsconfig.json</code> to this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esnext"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lib"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"dom"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dom.iterable"</span><span class="p">,</span><span class="w"> </span><span class="s2">"esnext"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"allowJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"skipLibCheck"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strict"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"noEmit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"esModuleInterop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esnext"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moduleResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bundler"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resolveJsonModule"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isolatedModules"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preserve"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"incremental"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"./src/*"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"next-env.d.ts"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.ts"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.tsx"</span><span class="p">,</span><span class="w"> </span><span class="s2">".next/types/**/*.ts"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_modules"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>Update <code>src/app/page.tsx</code> to this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/app/page.tsx</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>HomePage<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">HomePage</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Update <code>src/app/layout.tsx</code> to this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Inter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/font/google</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Metadata</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">ReactNode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./globals.css</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">inter</span> <span class="o">=</span> <span class="nx">Inter</span><span class="p">({</span> <span class="na">subsets</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">latin</span><span class="dl">"</span><span class="p">]</span> <span class="p">});</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">metadata</span><span class="p">:</span> <span class="nx">Metadata</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Generated by create next app</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">VPS Demo</span><span class="dl">"</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">RootLayoutProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">children</span><span class="p">:</span> <span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">RootLayout</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="nx">RootLayoutProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="p">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">body</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">inter</span><span class="p">.</span><span class="nx">className</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">children</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">RootLayout</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Setup GitHub Repo
+</h2>
+
+<p>I’m a fan of setting up a GitHub repo early and committing + pushing often in smaller chunks.</p>
+
+<p>I’m going to assume that you know how to do that, so please do so before continuing.</p>
+
+<h2>
+  
+  
+  Setup Drizzle
+</h2>
+
+<p>Link to Drizzle ORM docs <a href="https://orm.drizzle.team/docs/overview"><strong>here</strong></a></p>
+
+<p>Install the necessary packages:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm i drizzle-orm postgres dotenv
+npm i <span class="nt">-D</span> drizzle-kit
+</code></pre>
+
+</div>
+
+
+
+<p>At the root level of the project, create a file called <code>drizzle.config.ts</code></p>
+
+<p>Add this code to it:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// drizzle.config.ts</span>
+
+<span class="k">import</span> <span class="nx">dotenv</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dotenv</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="kd">type</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">drizzle-kit</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// this is needed for pushing</span>
+<span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">.env.local</span><span class="dl">"</span> <span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">config</span><span class="p">:</span> <span class="nx">Config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">schema</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/drizzle/schema.ts</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">out</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/drizzle</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">driver</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pg</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">dbCredentials</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">connectionString</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_URL</span><span class="o">!</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">config</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>We don’t have this <code>drizzle</code> folder and <code>schema.ts</code> yet, so create them at the specified location. </p>
+
+<p>The <code>schema.ts</code> file can be blank for now.</p>
+
+<p>We also don’t have an environment variable called <code>DATABASE_URL</code> yet either, so also at the root level, create a <code>.env.local</code> file.</p>
+
+<p>Then in this file, add this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>DATABASE_URL="postgresql://postgres:postgres@localhost:5432/postgres"
+</code></pre>
+
+</div>
+
+
+
+<p>Next, in the <code>drizzle</code> folder, create a file called <code>config.ts</code></p>
+
+<p>Add this code to it:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/drizzle/config.ts</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">drizzle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">drizzle-orm/postgres-js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">postgres</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">postgres</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">schema</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/drizzle/schema</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">connectionString</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_URL</span> <span class="o">||</span> <span class="dl">""</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">postgres</span><span class="p">(</span><span class="nx">connectionString</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">drizzle</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="p">{</span> <span class="nx">schema</span> <span class="p">});</span>
+
+<span class="k">export</span> <span class="p">{</span> <span class="nx">client</span><span class="p">,</span> <span class="nx">db</span> <span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>At this point, you should get a red underline for <code>import * as schema</code>, which makes sense since the file is currently blank. Let’s create a <code>note</code> table in the schema.</p>
+
+<p>A <code>note</code> will have:</p>
+
+<ul>
+<li>
+<code>id</code> (uuid)</li>
+<li>
+<code>name</code> (text)</li>
+<li>
+<code>content</code> (text)</li>
+<li>
+<code>color</code> (text - will select from yellow, green, blue, purple in the ui)</li>
+<li>
+<code>created_at</code> (timestamp)</li>
+</ul>
+
+<p>Back in <code>schema.ts</code>, add the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/drizzle/schema.ts</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">timestamp</span><span class="p">,</span> <span class="nx">pgTable</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">uuid</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">drizzle-orm/pg-core</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">pgTable</span><span class="p">(</span><span class="dl">"</span><span class="s2">notes</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">id</span><span class="p">:</span> <span class="nx">uuid</span><span class="p">(</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">).</span><span class="nx">defaultRandom</span><span class="p">().</span><span class="nx">notNull</span><span class="p">().</span><span class="nx">primaryKey</span><span class="p">(),</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+  <span class="na">content</span><span class="p">:</span> <span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+  <span class="na">color</span><span class="p">:</span> <span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="nx">timestamp</span><span class="p">(</span><span class="dl">"</span><span class="s2">created_at</span><span class="dl">"</span><span class="p">).</span><span class="nx">notNull</span><span class="p">().</span><span class="nx">defaultNow</span><span class="p">()</span>
+<span class="p">});</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Migrate &amp; Push
+</h2>
+
+<p>Link to Migrations in the Drizzle docs <a href="https://orm.drizzle.team/docs/migrations"><strong>here</strong></a></p>
+
+<p>Now that we have a model in our schema, we can migrate our database to your schema.</p>
+
+<p>Add a <code>generate</code> script to <code>package.json</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"generate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drizzle-kit generate:pg"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>Then in the terminal, run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="err">npm</span><span class="w"> </span><span class="err">run</span><span class="w"> </span><span class="err">generate</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>We can also push our schema changes directly to the database.</p>
+
+<p>Add a <code>push</code> script to <code>package.json</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"push"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drizzle-kit push:pg"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+</div>
+
+
+
+<p>Then run the command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm run push
+</code></pre>
+
+</div>
+
+
+
+<p>If the push was successful, you should now see a notes table in DBeaver!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--aMzPe67z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7j614rwo72y6uzkygtlo.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aMzPe67z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7j614rwo72y6uzkygtlo.png" alt="Notes table appearing in local postgres db" width="578" height="400"></a></p>
+
+<p>And if you double click on it, and switch to the Data tab, you can see the table!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Cu0vne3S--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ozibcta90ytsg160ts7b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Cu0vne3S--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ozibcta90ytsg160ts7b.png" alt="Viewing the notes table in local postgres database" width="800" height="369"></a></p>
+
+<p>It’s empty for now, but that’s ok! This is a great start!</p>
+
+<p>Pro-tip: create a single <code>db</code> command to run the <code>generate</code> and <code>push</code> commands one after the other:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+  <span class="dl">"</span><span class="s2">generate</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">drizzle-kit generate:pg</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">push</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">drizzle-kit push:pg</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">db</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">npm run generate &amp;&amp; npm run push</span><span class="dl">"</span>
+<span class="p">},</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Setting Up Site Structure
+</h2>
+
+<p>For this simple app, we will have the following pages:</p>
+
+<ul>
+<li><code>home</code></li>
+<li><code>notes</code></li>
+</ul>
+
+<p>You can copy and paste these commands to create all the files and folders at once:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd </span>src/app/
+<span class="nb">mkdir </span>notes
+<span class="nb">cd </span>notes/
+<span class="nb">touch </span>page.tsx
+<span class="nb">cd</span> ../../../
+</code></pre>
+
+</div>
+
+
+
+<p>Here’s the boilerplate code for the <code>page.tsx</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/app/notes/page.tsx</span>
+
+<span class="kd">const</span> <span class="nx">NotesPage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>NotesPage<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">NotesPage</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Next, create a folder called <code>components</code> in the <code>src</code> folder.</p>
+
+<p>In the <code>components</code> folder, create a file called <code>navbar.tsx</code> and add the following code to it:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/components/navbar.tsx</span>
+
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/link</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Navbar</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">className</span><span class="p">=</span><span class="s">"border-b-black border-b-2 p-2"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">className</span><span class="p">=</span><span class="s">"flex items-center gap-x-4"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">className</span><span class="p">=</span><span class="s">"hover:text-sky-500 hover:underline"</span> <span class="na">href</span><span class="p">=</span><span class="s">"/"</span><span class="p">&gt;</span>
+            Home
+          <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">className</span><span class="p">=</span><span class="s">"hover:text-sky-500 hover:underline"</span> <span class="na">href</span><span class="p">=</span><span class="s">"/notes"</span><span class="p">&gt;</span>
+            Notes
+          <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="p">{</span> <span class="nx">Navbar</span> <span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then update the root <code>layout.tsx</code> file to use it (as well as wrap <code>children</code> within the <code>main</code> element and add some <code>padding</code>):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/app/layout.tsx</span>
+
+<span class="kd">const</span> <span class="nx">RootLayout</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="nx">RootLayoutProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="p">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">body</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">inter</span><span class="p">.</span><span class="nx">className</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Navbar</span> <span class="p">/&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">main</span> <span class="na">className</span><span class="p">=</span><span class="s">"p-2"</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">children</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Create a Form to Create a Note
+</h2>
+
+<p>Link to Server Actions in Next.js docs <a href="https://nextjs.org/docs/app/api-reference/functions/server-actions"><strong>here</strong></a></p>
+
+<p>Let’s add a <code>form</code> to the notes <code>page.tsx</code> that will add a Note into the database:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/app/notes/page.tsx</span>
+
+<span class="kd">const</span> <span class="nx">NotesPage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>NotesPage<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">form</span>
+        <span class="na">className</span><span class="p">=</span><span class="s">"inline-flex items-start flex-col space-y-4 border-solid border-black border-2 p-4 mt-2 w-80"</span>
+        <span class="na">action</span><span class="p">=</span><span class="si">{</span><span class="nx">createNote</span><span class="si">}</span>
+      <span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"w-full"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">label</span> <span class="na">htmlFor</span><span class="p">=</span><span class="s">"name"</span> <span class="na">className</span><span class="p">=</span><span class="s">"block"</span><span class="p">&gt;</span>
+            Name:
+          <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nt">input</span>
+            <span class="na">id</span><span class="p">=</span><span class="s">"name"</span>
+            <span class="na">name</span><span class="p">=</span><span class="s">"name"</span> <span class="c1">// IMPORTANT: MAKE SURE TO INCLUDE A NAME FOR INPUTS</span>
+            <span class="na">type</span><span class="p">=</span><span class="s">"text"</span>
+            <span class="na">className</span><span class="p">=</span><span class="s">"border-solid border-black border-2 block w-full"</span>
+            <span class="na">required</span>
+          <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"w-full"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">label</span> <span class="na">htmlFor</span><span class="p">=</span><span class="s">"content"</span> <span class="na">className</span><span class="p">=</span><span class="s">"block"</span><span class="p">&gt;</span>
+            Content:
+          <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nt">textarea</span>
+            <span class="na">id</span><span class="p">=</span><span class="s">"content"</span>
+            <span class="na">name</span><span class="p">=</span><span class="s">"content"</span>
+            <span class="na">className</span><span class="p">=</span><span class="s">"border-solid border-black border-2 block w-full"</span>
+            <span class="na">required</span>
+          <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"w-full"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">label</span> <span class="na">htmlFor</span><span class="p">=</span><span class="s">"color"</span> <span class="na">className</span><span class="p">=</span><span class="s">"block"</span><span class="p">&gt;</span>
+            Color:
+          <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nt">select</span>
+            <span class="na">id</span><span class="p">=</span><span class="s">"color"</span>
+            <span class="na">name</span><span class="p">=</span><span class="s">"color"</span>
+            <span class="na">className</span><span class="p">=</span><span class="s">"border-solid border-black border-2 block w-full"</span>
+            <span class="na">required</span>
+          <span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">""</span><span class="p">&gt;</span>Select Color<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"yellow"</span><span class="p">&gt;</span>Yellow<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"green"</span><span class="p">&gt;</span>Green<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"blue"</span><span class="p">&gt;</span>Blue<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="p">=</span><span class="s">"purple"</span><span class="p">&gt;</span>Purple<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">button</span>
+          <span class="na">className</span><span class="p">=</span><span class="s">"border-solid border-black border-2 py-1 px-4 hover:bg-black hover:text-white w-full"</span>
+          <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span>
+        <span class="p">&gt;</span>
+          Create Note
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Previously, we would have to abstract this form out into its own component and add <code>"use client"</code> at the top.</p>
+
+<p>Now, thanks to <a href="https://nextjs.org/docs/app/api-reference/functions/server-actions"><strong>server actions</strong></a>, we can keep everything in this file and write an <code>async</code> function that will be used as the form’s <code>action</code>.</p>
+
+<p>To get started, we need to enable Server Actions in our Next.js project by adding the experimental <code>serverActions</code> flag to the <code>next.config.js</code> file:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// next.config.js</span>
+
+<span class="cm">/** @type {import('next').NextConfig} */</span>
+<span class="kd">const</span> <span class="nx">nextConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">experimental</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">serverActions</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kr">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">nextConfig</span><span class="p">;</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Server Actions can be defined in two places:</p>
+
+<ul>
+<li>Inside the component that uses it (Server Components only).</li>
+<li>In a separate file (Client and Server Components), for reusability. You can define multiple Server Actions in a single file.</li>
+</ul>
+
+<p>Before we setup our server action, let’s install <code>zod</code> as we can use it to validate the data from the form:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">zod</span>
+</code></pre>
+
+</div>
+
+
+
+<p>To keep things simple, we’ll define our action function here in the <code>NotesPage</code> component:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/app/notes/page.tsx</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">revalidatePath</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">next/cache</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">z</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">zod</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">db</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/drizzle/config</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">notes</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/drizzle/schema</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">schema</span> <span class="o">=</span> <span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="kr">string</span><span class="p">().</span><span class="nx">min</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+  <span class="na">content</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="kr">string</span><span class="p">().</span><span class="nx">min</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+  <span class="na">color</span><span class="p">:</span> <span class="nx">z</span><span class="p">.</span><span class="kr">string</span><span class="p">().</span><span class="nx">min</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">NotesPage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">createNote</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="na">formData</span><span class="p">:</span> <span class="nx">FormData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">use server</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="c1">// validate data</span>
+    <span class="kd">const</span> <span class="nx">validated</span> <span class="o">=</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">parse</span><span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="nx">formData</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">),</span>
+      <span class="na">content</span><span class="p">:</span> <span class="nx">formData</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">),</span>
+      <span class="na">color</span><span class="p">:</span> <span class="nx">formData</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">});</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="nx">notes</span><span class="p">).</span><span class="nx">values</span><span class="p">({</span>
+        <span class="na">name</span><span class="p">:</span> <span class="nx">validated</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+        <span class="na">content</span><span class="p">:</span> <span class="nx">validated</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+        <span class="na">color</span><span class="p">:</span> <span class="nx">validated</span><span class="p">.</span><span class="nx">color</span>
+      <span class="p">});</span>
+
+      <span class="nx">revalidatePath</span><span class="p">(</span><span class="dl">"</span><span class="s2">/notes</span><span class="dl">"</span><span class="p">);</span>
+
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Note created successfully!</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">revalidated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">now</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+      <span class="p">};</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Something went wrong when creating the note!</span><span class="dl">"</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>NotesPage<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">form</span>
+        <span class="na">className</span><span class="p">=</span><span class="s">"inline-flex items-start flex-col space-y-4 border-solid border-black border-2 p-4 mt-2 w-80"</span>
+        <span class="na">action</span><span class="p">=</span><span class="si">{</span><span class="nx">createNote</span><span class="si">}</span>
+      <span class="p">&gt;</span>
+        <span class="si">{</span><span class="cm">/* ... */</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now, open up the DevTools and go to the Network tab and clear everything out.</p>
+
+<p>Next, try to submit the form with something like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ciQMl6qA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d1y8e57hgkwpsv1f84io.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ciQMl6qA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d1y8e57hgkwpsv1f84io.png" alt="Sample note being entered into form" width="339" height="384"></a></p>
+
+<p>When you click <strong>Create Note</strong>, open up the DevTools and check the Network tab:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--PY5cexcr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qu3vpf0h44po2akr86bd.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PY5cexcr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qu3vpf0h44po2akr86bd.png" alt="POST request being sent to notes route" width="800" height="168"></a></p>
+
+<p>You’ll see it sends a <code>POST</code> request to the URL that we are currently on.</p>
+
+<p>Not only that, but if you head over to DBeaver, you should see the note has been added to the database as well (you might need to click <strong>Refresh</strong> along the bottom of the window):</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--LFjVUFXs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9vgjjmu7yodunefeg1h5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LFjVUFXs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9vgjjmu7yodunefeg1h5.png" alt="Sample note appearing in local postgres db" width="800" height="109"></a></p>
+
+<h2>
+  
+  
+  Fetch and Display Notes
+</h2>
+
+<p>Now let’s add another async function, this time outside the component body, to query the database and get all the notes:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/app/notes/page.tsx</span>
+
+<span class="kd">const</span> <span class="nx">schema</span> <span class="o">=</span> <span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+  <span class="c1">// ...</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">getNotes</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">select</span><span class="p">().</span><span class="k">from</span><span class="p">(</span><span class="nx">notes</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">nts</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Something went wrong when fetching notes!</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Then let’s update the page component to use it, as well as set up <code>colorVariants</code> for dynamic background color. I personally don't like this approach. I would much rather just use string interpolation within the <code>className</code> prop, but this is just how it's done with Tailwind:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight tsx"><code><span class="c1">// src/app/notes/page.tsx</span>
+
+<span class="c1">// ...</span>
+
+<span class="kd">const</span> <span class="nx">colorVariants</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">blue</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bg-blue-200</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">green</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bg-green-200</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">purple</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bg-purple-200</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">yellow</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bg-yellow-200</span><span class="dl">"</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">NotesPage</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">createNote</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="na">formData</span><span class="p">:</span> <span class="nx">FormData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">use server</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="c1">// ...</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">nts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getNotes</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-4xl"</span><span class="p">&gt;</span>NotesPage<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">form</span>
+        <span class="na">className</span><span class="p">=</span><span class="s">"inline-flex items-start flex-col space-y-4 border-solid border-black border-2 p-4 mt-2 w-80"</span>
+        <span class="na">action</span><span class="p">=</span><span class="si">{</span><span class="nx">createNote</span><span class="si">}</span>
+      <span class="p">&gt;</span>
+          <span class="si">{</span><span class="cm">/*  */</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"mt-4"</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-2xl"</span><span class="p">&gt;</span>Notes<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+                <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">className</span><span class="p">=</span><span class="s">"grid gap-4 grid-cols-12"</span><span class="p">&gt;</span>
+                  <span class="si">{</span><span class="nx">nts</span><span class="p">.</span><span class="nx">length</span>
+                    <span class="p">?</span> <span class="nx">nts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">nt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                        <span class="c1">// @ts-ignore</span>
+                        <span class="kd">const</span> <span class="nx">colorClasses</span> <span class="o">=</span> <span class="nx">colorVariants</span><span class="p">[</span><span class="nx">nt</span><span class="p">.</span><span class="nx">color</span><span class="p">];</span>
+
+                        <span class="k">return</span> <span class="p">(</span>
+                          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">nt</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">colorClasses</span><span class="p">}</span><span class="s2"> col-span-2 p-4 rounded-lg`</span><span class="si">}</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-xl font-semibold mb-1"</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">nt</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">nt</span><span class="p">.</span><span class="nx">content</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                        <span class="p">);</span>
+                      <span class="p">})</span>
+                    <span class="p">:</span> <span class="kc">null</span><span class="si">}</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Now our notes will appear in a nice little grid!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Od8EgKxP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ns8dovoc45lxypfsie0b.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Od8EgKxP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ns8dovoc45lxypfsie0b.png" alt="Sample notes appearing in a grid" width="714" height="619"></a></p>
+
+<h2>
+  
+  
+  Deploy - Prerequisites
+</h2>
+
+<p>Now time for the main attraction: deployment!</p>
+
+<p>If you’ve never deployed a full-stack app like this before, it’s a great learning experience. It certainly was for me!</p>
+
+<p>First, there are a few prerequisites:</p>
+
+<ol>
+<li>
+<strong>Docker:</strong> Make sure you have Docker installed on your local machine.</li>
+<li>
+<strong>Docker Compose:</strong> Install Docker Compose, which is a tool for defining and running multi-container Docker applications.</li>
+<li>
+<strong>DigitalOcean Account:</strong> Set up a DigitalOcean account and create a VPS (Virtual Private Server) instance.</li>
+</ol>
+
+<p>I’ll walk you through each of these steps now.</p>
+
+<h2>
+  
+  
+  Docker and Docker Compose
+</h2>
+
+<p>You can check if <code>docker</code> is already installed on your machine by going to the root directory of your machine, and running this command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>docker <span class="nt">--version</span>
+<span class="c"># Docker version 24.0.6, build ed223bc</span>
+</code></pre>
+
+</div>
+
+
+
+<p>If not, then you will need to check the <a href="https://docs.docker.com/engine/install/"><strong>installation instructions online</strong></a> to install Docker for your machine.</p>
+
+<p>Similarly, you can run this command to check if <code>docker compose</code> is installed on your machine or not:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>docker compose version
+<span class="c"># Docker Compose version v2.20.3</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You can find installation instructions for Docker Compose <a href="https://docs.docker.com/compose/install/"><strong>here</strong></a>.</p>
+
+<h2>
+  
+  
+  DigitalOcean
+</h2>
+
+<p>Next, head over to <a href="https://www.digitalocean.com/"><strong>DigitalOcean’s website</strong></a> and click <strong>Sign Up</strong> if don’t have an account, or <strong>Login</strong> if you already have one. I choose to <strong>Sign up with GitHub</strong></p>
+
+<p>If you chose to Sign up as well, here’s what I selected in the welcome screen:</p>
+
+<ul>
+<li>
+<strong>What do you plan to build on DigitalOcean?</strong> A web or mobile application</li>
+<li>
+<strong>What is your role or business type?</strong> Hobbyist or Student</li>
+<li>
+<strong>What is your monthly spend on cloud infrastructure across cloud platforms? (Provide an estimate):</strong> $0 - $50</li>
+<li>
+<strong>How many employees work at your company?</strong> I work alone</li>
+</ul>
+
+<p>Click <strong>Submit</strong></p>
+
+<p>Add a payment method of your choice.</p>
+
+<p>Once logged in, you should land on a page that looks like this:</p>
+
+<p><a href="https://cloud.digitalocean.com/welcome?i=90aab7">https://cloud.digitalocean.com/welcome</a></p>
+
+<p>I would suggest removing the <code>/welcome</code> part, and go straight to <a href="https://cloud.digitalocean.com/">https://cloud.digitalocean.com/</a></p>
+
+<p>This should redirect you to a <code>/projects</code> page, with a default project already created called <code>first-project</code></p>
+
+<p>First, we need to <strong>Create a Droplet</strong></p>
+
+<p>To do so, click the green <strong>Create</strong> button in the top right corner, and click <strong>Droplets</strong> from the dropdown menu</p>
+
+<p>Choose a <strong>Region</strong> that is closest to your location</p>
+
+<p>Leave <strong>Datacenter</strong> selection alone</p>
+
+<p>For <strong>Choose an image</strong>, I stuck with the default <strong>Ubuntu</strong> on <strong>Version 23.04 x64</strong></p>
+
+<p>For <strong>Droplet Type</strong>, Basic (Plan selected) is the cheapest choice</p>
+
+<p>For <strong>CPU options</strong>, I selected:</p>
+
+<ul>
+<li>Premium Intel (Disk: NVMe SSD)</li>
+<li>$8/mo - 1GB / 1 Intel CPU, 35GB NVMe SSDs, 1000GB transfer</li>
+</ul>
+
+<p>For <strong>Choose Authentication Method</strong>, we will be using an <strong>SSH Key</strong>.</p>
+
+<p>Thankfully DigitalOcean has a nice prompt saying “We can walk you through setting up your first SSH key”, which I will walk you through now. Click on <strong>Add SSH Key</strong>.</p>
+
+<h2>
+  
+  
+  Creating an SSH Key
+</h2>
+
+<p>Open a terminal and run the following command (at the root level):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">sudo </span>ssh-keygen
+</code></pre>
+
+</div>
+
+
+
+<p>You will be prompted to save and name the key.</p>
+
+<p>I will save mine in the <code>/usr/local/bin</code> directory. Again, I am on Ubuntu, so you will need to pick a location that works for your machine.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>/usr/local/bin/digital_ocean_ssh
+</code></pre>
+
+</div>
+
+
+
+<p>Next you will be asked to create and confirm a passphrase for the key. This is highly recommended, and you can use a site <a href="https://www.strongpasswordgenerator.org/"><strong>like this one</strong></a> to generate a strong passphrase.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:
+Enter same passphrase again:
+</code></pre>
+
+</div>
+
+
+
+<p>Store what you’ve entered into a text file, or the <code>.env.local</code> file as a comment, for now</p>
+
+<p>You should see the following output:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>Your identification has been saved <span class="k">in </span>digital_ocean_ssh
+Your public key has been saved <span class="k">in </span>digital_ocean_ssh.pub
+The key fingerprint is:
+.....
+The key<span class="s1">'s randomart image is:
+.....
+</span></code></pre>
+
+</div>
+
+
+
+<p>Copy and paste this output into the same location that you pasted the filename and password from the previous step.</p>
+
+<p>We need to copy the contents of the <code>.pub</code> file into the SSH ley field in the modal</p>
+
+<p>We can do that by running:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cat </span>PATH_TO_YOUR_PUB_FILE
+<span class="c"># ex: cat /usr/local/bin/digital_ocean_ssh.pub</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Either way, once you run the command, you should see an output that starts like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>ssh-rsa REALLY_LONG_ASS_STRING_HERE
+</code></pre>
+
+</div>
+
+
+
+<p>Copy this, and paste it into the <strong>SSH key content</strong> input field back on DigitalOcean</p>
+
+<p>Give it a name. I named mine <strong>DigitalOcean Next.js SSH</strong></p>
+
+<p>Click <strong>Add SSH Key</strong></p>
+
+<h2>
+  
+  
+  Finish Droplet Setup
+</h2>
+
+<p>Under options, you can click to <strong>Add improved metrics monitoring and alerting (free)</strong>, since it is, well, free. The others are up to you.</p>
+
+<p>Scroll down to <strong>Finalize Details</strong></p>
+
+<p>Add some tags if you want, I added a few:</p>
+
+<ul>
+<li><code>next_js</code></li>
+<li><code>digital_ocean</code></li>
+<li><code>postgres</code></li>
+</ul>
+
+<p>Click <strong>Create Droplet</strong></p>
+
+<p>Wait for the blue progress bar to finish, and eventually you should see a notification that the Droplet was added to the project.</p>
+
+<h2>
+  
+  
+  Test Droplet Connection
+</h2>
+
+<p>Once your Droplet is created, you can access it via SSH.</p>
+
+<p>Click on it, and copy the <code>ipv4</code> address to the same text file / <code>.env.local</code> file as a comment.</p>
+
+<p>Run this command at root level (double check the path):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>ssh <span class="nt">-i</span> /PATH_TO_YOUR_SSH_FILE root@YOUR_DROPLET_IP
+<span class="c"># ex: ssh -i /usr/local/bin/digital_ocean_ssh root@##.###.###.##</span>
+</code></pre>
+
+</div>
+
+
+
+<p>If you should see this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>Are you sure you want to <span class="k">continue </span>connecting <span class="o">(</span><span class="nb">yes</span>/no/[fingerprint]<span class="o">)</span>?
+Please <span class="nb">type</span> <span class="s1">'yes'</span>, <span class="s1">'no'</span> or the fingerprint:
+</code></pre>
+
+</div>
+
+
+
+<p>Enter in <code>fingerprint</code>, then <code>yes</code></p>
+
+<p>You will then see this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>Enter passphrase <span class="k">for </span>key <span class="s1">'/home/andrew/digital_ocean_ssh'</span>:
+</code></pre>
+
+</div>
+
+
+
+<p>Copy and paste the passphrase you created earlier and hit <strong>Enter</strong></p>
+
+<p>You should now see your terminal change to the root of your droplet:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>root@ubuntu-s-1vcpu-1gb-35gb-intel-sfo3-01:~#
+</code></pre>
+
+</div>
+
+
+
+<p>You can exit anytime by running the <code>exit</code> command.</p>
+
+<h2>
+  
+  
+  Create a <strong>PostgreSQL Database Cluster</strong>
+</h2>
+
+<p>Back at the main dashboard, click the green <strong>Create</strong> button in the top right corner, and click <strong>Databases</strong> from the dropdown menu.</p>
+
+<p>Choose the <strong>datacenter region</strong> closest to you.</p>
+
+<p>For the <strong>database engine</strong>, select <strong>PostgreSQL (v15)</strong>.</p>
+
+<p>Choose whichever <strong>database configuration</strong> that best suits your budget. The same goes for <strong>storage size</strong>. I went with 20GB.</p>
+
+<p>Make sure the project selected is <strong>first-project</strong>.</p>
+
+<p>When you’re ready, click the <strong>Create a Database Cluster</strong>.</p>
+
+<p>It’ll take approximately 5 minutes for the database to finish provisioning.</p>
+
+<h2>
+  
+  
+  Setup <code>Dockerfile</code> and <code>docker-compose.yml</code>
+</h2>
+
+<p>While the database is provisioning, let’s Dockerize our Next.js app</p>
+
+<p>Head back to the code and add these 2 files at the root level of the project:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">touch </span>Dockerfile docker-compose.yml
+</code></pre>
+
+</div>
+
+
+
+<p>In the <code>Dockerfile</code>, add the following code:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight docker"><code><span class="c"># Dockerfile</span>
+
+<span class="c"># Use an official Node.js runtime as the base image</span>
+<span class="k">FROM</span><span class="s"> node:18-alpine</span>
+
+<span class="c"># Set the working directory in the container</span>
+<span class="k">WORKDIR</span><span class="s"> /usr/src/app</span>
+
+<span class="c"># Copy package.json and package-lock.json to the container</span>
+<span class="k">COPY</span><span class="s"> package.json package-lock.json ./</span>
+
+<span class="c"># Install dependencies</span>
+<span class="k">RUN </span>npm <span class="nb">install</span>
+
+<span class="c"># Copy the rest of the application files to the container</span>
+<span class="k">COPY</span><span class="s"> . .</span>
+
+<span class="c"># Build the Next.js application for production</span>
+<span class="k">RUN </span>npm run build
+
+<span class="c"># Expose the application port (assuming your app runs on port 3000)</span>
+<span class="k">EXPOSE</span><span class="s"> 3000</span>
+
+<span class="c"># Start the application</span>
+<span class="k">CMD</span><span class="s"> ["npm", "start"]</span>
+</code></pre>
+
+</div>
+
+
+
+<p>And in the <code>docker-compose.yml</code> file, add the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight yaml"><code><span class="c1"># docker-compose.yml</span>
+
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3"</span>
+
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span>
+      <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
+      <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">Dockerfile</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">3000:3000"</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">NODE_ENV=production</span>
+
+  <span class="na">db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">postgres:latest</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="na">POSTGRES_USER</span><span class="pi">:</span> <span class="s2">"</span><span class="s">${POSTGRES_USERNAME}"</span>
+      <span class="na">POSTGRES_PASSWORD</span><span class="pi">:</span> <span class="s2">"</span><span class="s">${POSTGRES_PASSWORD}"</span>
+      <span class="na">POSTGRES_DB</span><span class="pi">:</span> <span class="s2">"</span><span class="s">${POSTGRES_DATABASE}"</span>
+</code></pre>
+
+</div>
+
+
+
+<p>As you can see, we are using environment variables for some of our values related to Postgres.</p>
+
+<p>We want to keep this information secure, and not have it in plain sight.</p>
+
+<p>While we already have a <code>.env.local</code>, the <code>docker-compose.yml</code> reads from <code>.env</code> only.</p>
+
+<p>So, duplicate the <code>.env.local</code> file, and rename it to <code>.env</code>.</p>
+
+<p>You will also want to make sure to update the <code>.gitignore</code>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># local env files
+.env
+.env*.local
+</code></pre>
+
+</div>
+
+
+
+<p>In the <code>.env</code> file, have the following:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># .env
+
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/postgres"
+
+POSTGRES_USERNAME="postgres"
+POSTGRES_PASSWORD="postgres"
+POSTGRES_DATABASE="postgres"
+</code></pre>
+
+</div>
+
+
+
+<p>Next, make sure to push these changes up to GitHub!</p>
+
+<h2>
+  
+  
+  Finish DigitalOcean Postgres Setup
+</h2>
+
+<p>Head back over to DigitalOcean, and under the Getting Started section, skip ahead a bit and click on <strong>4 Next Steps</strong>.</p>
+
+<p>This will contain the migrate command that we will need shortly. Click the blue <code>show-password</code> link, and then copy / paste the command somewhere. You can click <strong>Hide</strong>.</p>
+
+<h2>
+  
+  
+  Import Local DB To DigitalOcean
+</h2>
+
+<p>Since we already have a local PostgreSQL database, lets export it and then import that into DigitalOcean.</p>
+
+<p>To export an existing database, we can use the <code>pg_dump</code> command (run this at the root level of your machine):<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd</span> ~
+pg_dump <span class="nt">-h</span> localhost <span class="nt">-p</span> 5432 <span class="nt">-U</span> postgres <span class="nt">-d</span> postgres <span class="nt">-F</span> c <span class="nt">-b</span> <span class="nt">-v</span> <span class="nt">-f</span> ~/Documents/db_backup.pgsql
+</code></pre>
+
+</div>
+
+
+
+<p>When you run this command, it will prompt you for the password, which is also just <code>postgres</code>. I am on Ubuntu, so I chose the Documents folder for convenience sake. Feel free to update the path as needed.</p>
+
+<p>Here’s a quick explanation of the command options:</p>
+
+<ul>
+<li>
+<strong><code>h localhost</code></strong>: Specifies the host where your PostgreSQL server is running.</li>
+<li>
+<strong><code>p 5432</code></strong>: Specifies the port number on which PostgreSQL is listening.</li>
+<li>
+<strong><code>U postgres</code></strong>: Specifies the username to connect to the database.</li>
+<li>
+<strong><code>d postgres</code></strong>: Specifies the name of the database you want to export.</li>
+<li>
+<strong><code>F c</code></strong>: Specifies the custom format for the dump file.</li>
+<li>
+<strong><code>b</code></strong>: Includes large objects in the dump.</li>
+<li>
+<strong><code>v</code></strong>: Enables verbose mode to see the progress.</li>
+<li>
+<strong><code>f ~/Documents/db_backup.dump</code></strong>: Specifies the output file path and name. In this case, the dump file will be saved in the Documents folder with the name <strong><code>db_backup.dump</code></strong>.</li>
+</ul>
+
+<p>And there it is!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DxDE693i--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8xkswgqj2br8t9748c94.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DxDE693i--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8xkswgqj2br8t9748c94.png" alt="db_backup.pgsql dump file in documents folder" width="469" height="366"></a></p>
+
+<p>Now we need to import this into DigitalOcean.</p>
+
+<p>But before we do, we can add a connection to our DigitalOcean PostgreSQL database in DBeaver. I think this is just nice to have, so we can make sure things are working properly.</p>
+
+<p>In DBeaver, click <strong>Database</strong> and then <strong>New Database Connection</strong></p>
+
+<p>Select <strong>PostgreSQL</strong></p>
+
+<p>Have <strong>Connect by</strong> set to <strong>Host</strong></p>
+
+<p>The <strong>URL</strong> field will not be adjustable, but that’s ok as it will auto update with the information we provide.</p>
+
+<p>Simply copy and paste the information from DigitalOcean into their respective field. When you copy + paste the <code>host</code>, you should see the URL update.</p>
+
+<p>You will need to update the:</p>
+
+<ul>
+<li>Host</li>
+<li>Database</li>
+<li>Port</li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+
+<p>Once you do, click <strong>Test Connection</strong>. If you see something like this:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lhSHhMVS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/enhnuwjgh06j2crrn5ud.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lhSHhMVS--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/enhnuwjgh06j2crrn5ud.png" alt="DigitalOcean PostgreSQL db connection success" width="415" height="84"></a></p>
+
+<p>You’re good to proceed! I'm simply cutting off most of the information within the popup.</p>
+
+<p>Click <strong>Ok</strong> to close this little popup, and then click <strong>Finish</strong></p>
+
+<p>Once the connection has been added to your sidebar, you can rename it if you like to make it clearer what the connection is for:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--y6ymGJQu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vhn99zuer0qbirpcqc6y.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--y6ymGJQu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vhn99zuer0qbirpcqc6y.png" alt="Renaming DigitalOcean Postgres db to note_taker" width="189" height="144"></a></p>
+
+<p>You can also see here there are no tables, but like before with the local setup, that’s ok! </p>
+
+<p>You can view the DigitalOcean docs on Importing a database <a href="https://docs.digitalocean.com/products/databases/postgresql/how-to/import-databases/"><strong>here</strong></a> if you like.</p>
+
+<p>To import the database, we’ll take the migrate command copied from earlier, and just add on the path to our <code>db_backup.pgsql</code> file:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nv">PGPASSWORD</span><span class="o">=[</span>YOUR_DB_PASSWORD] pg_restore <span class="nt">-U</span> <span class="o">[</span>YOUR_DB_USERNAME] <span class="nt">-h</span> <span class="o">[</span>YOUR_DB_HOST] <span class="nt">-p</span> <span class="o">[</span>YOUR_DB_PORT] <span class="nt">-d</span> <span class="o">[</span>YOUR_DB_NAME] ~/Documents/db_backup.pgsql
+</code></pre>
+
+</div>
+
+
+
+<p>Once you run this, you should see an output like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>pg_restore: error: could not execute query: ERROR:  must be member of role <span class="s2">"postgres"</span>
+Command was: ALTER TABLE public.notes OWNER TO postgres<span class="p">;</span>
+
+pg_restore: warning: errors ignored on restore: 1
+</code></pre>
+
+</div>
+
+
+
+<p>Which seems like something went wrong, but don’t worry! If you head over to DBeaver, you should see that the <code>notes</code> table has been added!</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--ltMqDMNT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pfopxcx9kb4aar2g9sx5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ltMqDMNT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pfopxcx9kb4aar2g9sx5.png" alt="notes table added to digitalocean postgres db" width="201" height="169"></a></p>
+
+<h2>
+  
+  
+  <strong>Deploy to Droplet Using Docker Compose</strong>
+</h2>
+
+<p>To get started, in a terminal window, SSH into your DigitalOcean VPS like before. Within our VPS, we’ll need to install the following:</p>
+
+<ul>
+<li>Docker</li>
+<li>Docker Compose</li>
+<li>PostgreSQL</li>
+</ul>
+
+<p>Thankfully, it’s very easy to do so.</p>
+
+<p>Install Docker:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Update the system packages</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Install necessary packages to allow apt to use a repository over HTTPS</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>apt-transport-https ca-certificates curl software-properties-common
+
+<span class="c"># Add Docker's official GPG key</span>
+curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>gpg <span class="nt">--dearmor</span> <span class="nt">-o</span> /usr/share/keyrings/docker-archive-keyring.gpg
+
+<span class="c"># Add Docker repository</span>
+<span class="nb">echo</span> <span class="s2">"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> stable"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/docker.list <span class="o">&gt;</span> /dev/null
+
+<span class="c"># Update the system packages again</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Install Docker</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>docker-ce docker-ce-cli containerd.io
+</code></pre>
+
+</div>
+
+
+
+<p>Verify Docker installation:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>docker <span class="nt">--version</span>
+<span class="c"># Docker version 24.0.6, build ed223bc</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Install Docker Compose:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="c"># Download the latest version of Docker Compose</span>
+<span class="nb">sudo </span>curl <span class="nt">-L</span> <span class="s2">"https://github.com/docker/compose/releases/latest/download/docker-compose-</span><span class="si">$(</span><span class="nb">uname</span> <span class="nt">-s</span><span class="si">)</span><span class="s2">-</span><span class="si">$(</span><span class="nb">uname</span> <span class="nt">-m</span><span class="si">)</span><span class="s2">"</span> <span class="nt">-o</span> /usr/local/bin/docker-compose
+
+<span class="c"># Make Docker Compose executable</span>
+<span class="nb">sudo chmod</span> +x /usr/local/bin/docker-compose
+</code></pre>
+
+</div>
+
+
+
+<p>Verify Docker Compose installation:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>docker compose version
+<span class="c"># Docker Compose version v2.21.0</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Install PostgreSQL:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>postgresql postgresql-contrib
+</code></pre>
+
+</div>
+
+
+
+<p>Verify PostgreSQL installation:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>psql <span class="nt">--version</span>
+<span class="c"># psql (PostgreSQL) 15.4 (Ubuntu 15.4-0ubuntu0.23.04.1)</span>
+</code></pre>
+
+</div>
+
+
+
+<p><code>cd</code> back to the root level, and if you run the command <code>ls</code>, all you should see listed is <code>snap</code></p>
+
+<p>Create a new directory called <code>repos</code> and <code>cd</code> into it<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">mkdir </span>repos
+<span class="nb">cd </span>repos/
+</code></pre>
+
+</div>
+
+
+
+<p>In this <code>repos</code> folder, <code>clone</code> the GitHub repo you setup at the start by running:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>git clone https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPO_LINK].git
+</code></pre>
+
+</div>
+
+
+
+<p>Once the clone is complete, <code>cd</code> into the directory, and run <code>ls</code> to verify the contents:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cd</span> <span class="o">[</span>YOUR_REPO_NAME]
+<span class="nb">ls</span>
+
+<span class="c"># output:</span>
+
+<span class="c"># ls</span>
+Dockerfile  docker-compose.yml  next.config.js     package.json       public  tailwind.config.ts
+README.md   drizzle.config.ts   package-lock.json  postcss.config.js  src     tsconfig.json
+</code></pre>
+
+</div>
+
+
+
+<p>Great!</p>
+
+<p>One issue here though is we don’t have an <code>.env</code> file, which makes sense since we added it to the <code>.gitignore</code>. Thankfully, it’s very easy to not only create this file, but write to it as well.</p>
+
+<p>You can create it by running:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">touch</span> .env
+</code></pre>
+
+</div>
+
+
+
+<p>And if you run <code>ls</code> again, it’s not there? What gives??</p>
+
+<p>The <code>.env</code> file is considered a hidden file. To view hidden files only within the current directory, you can run this command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">ls</span> <span class="nt">-ld</span> .?<span class="k">*</span>
+</code></pre>
+
+</div>
+
+
+
+<p>You should now see <code>.env</code> listed, along with <code>.git</code> and <code>.gitignore</code>.</p>
+
+<p>What do we need to write the <code>.env</code> file? </p>
+
+<p>We will need <code>DATABASE_URL</code> for our Drizzle config + schema, and as well as <code>POSTGRES_USERNAME</code>, <code>POSTGRES_PASSWORD</code>, and <code>POSTGRES_DATABASE</code> for our <code>docker-compose.yml</code>.</p>
+
+<p>To write to the <code>.env</code> file, you can run the following command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">echo</span> <span class="s2">"DATABASE_URL=[YOUR_CONNECTION_STRING_URI]"</span> <span class="o">&gt;</span> .env
+<span class="nb">echo</span> <span class="s2">"POSTGRES_DATABASE=[YOUR_DATABASE_NAME]"</span> <span class="o">&gt;&gt;</span> .env
+<span class="nb">echo</span> <span class="s2">"POSTGRES_USERNAME=[YOUR_DATABASE_USERNAME]"</span> <span class="o">&gt;&gt;</span> .env
+<span class="nb">echo</span> <span class="s2">"POSTGRES_PASSWORD=[YOUR_DATABASE_PASSWORD]"</span> <span class="o">&gt;&gt;</span> .env
+</code></pre>
+
+</div>
+
+
+
+<p>You can get all the necessary info from your DigitalOcean dashboard. I’d recommend copying and pasting the above command into a text file so you can easily swap out the placeholders for your values, and then copy and paste all 4 lines at once with the correct values into your terminal to run them one after another.</p>
+
+<p>You can then verify the write was successful by running the <code>cat</code> command:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="nb">cat</span> .env
+
+<span class="c"># output:</span>
+<span class="c"># DATABASE_URL=...</span>
+<span class="c"># POSTGRES_DATABASE=...</span>
+<span class="c"># POSTGRES_USERNAME=...</span>
+<span class="c"># POSTGRES_PASSWORD=...</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Finally, we can start our services using Docker Compose in detached mode:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>docker compose up <span class="nt">-d</span>
+</code></pre>
+
+</div>
+
+
+
+<p>It may take a bit of time to start up the services. but after a while you should see something like this:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code><span class="o">[</span>+] Running 3/3
+ ✔ Network <span class="o">[</span>YOUR_REPO_NAME]_default  Created
+ ✔ Container <span class="o">[</span>YOUR_REPO_NAME]-db-1   Started
+ ✔ Container <span class="o">[</span>YOUR_REPO_NAME]-web-1  Started
+</code></pre>
+
+</div>
+
+
+
+<p>Now, if you open a new browser tab and go to the following address:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>http://[YOUR_DROPLET_IPV4_ADDRESS]:3000
+</code></pre>
+
+</div>
+
+
+
+<p>Voila! Your app is now running in a VPS! 🎉</p>
+
+<h2>
+  
+  
+  Outro
+</h2>
+
+<p>I really hope you enjoyed this post and found it helpful! Some next steps to consider would be to deploy the containers as a Kubernetes cluster on DigitalOcean. However, I am a Docker noobie, and setting up a cluster with HTTPS seems like it’s a bit out of reach for me at this time. I am very happy I went through this process, and I hope you enjoyed it as well. And going through this process has definitely motivated me to learn more about Docker and Kubernetes.</p>
+
+<p>As always, here is a link to my <a href="https://github.com/andrews1022/demo-nextjs-13-digitalocean-and-docker"><strong>repo</strong></a> with the full source code you can use as a reference in case you get stuck.</p>
+
+<p>Cheers, and happy coding!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Test your React Libraries Locally with Yalc](https://dev.to/propelauth/test-your-react-libraries-locally-with-yalc-4nfh) 
+ <details><summary>Article</summary> <p>Building and maintaining a React library can be a large task, even for small libraries.</p>
+
+<p>You start off thinking that you just have to figure out how to properly build and package your code. And then quickly you realize there’s a ton of configuration options and combinations of tools you can use. You have to make sure you have your package.json, tsconfig, linting story, docs, and more in line. If you are supporting Next.js, you may have to add "use client" banners everywhere, and make sure your build system isn't stripping them away... because they definitely will be removed by default.</p>
+
+<p>Once you have all that figured out, you are left with one final question… does this actually work?</p>
+
+<p>And I don't just mean adding unit tests. I mean, if a user installs it in their application, does it do what you expect?</p>
+
+<p>For that, I wanted to highlight a tool that brings so much sanity and joy to an otherwise frustrating process: <a href="https://github.com/wclr/yalc?ref=propelauth.com"><strong>yalc</strong></a></p>
+
+<h3>
+  
+  
+  <strong>Before yalc: npm link</strong>
+</h3>
+
+<p>Let’s say we just finished up a React library. We're ready to set up a GitHub action that runs <code>npm publish</code> and let the world use what we’ve built. Before we do that, we want to try it out for ourselves in a real application.</p>
+
+<p>One option is we could just publish and test it. We could mark it as an alpha release so potential users are warned to not use it.. but this feels a little strange. Our library and application are both local, after all.</p>
+
+<p>We google around and find <a href="https://docs.npmjs.com/cli/v10/commands/npm-link?v=true&amp;ref=propelauth.com"><strong>npm link</strong></a>, which seems like the answer we are looking for. The description is so promising:</p>
+
+<blockquote>
+<p><em>This is handy for installing your own stuff, so that you can work on it and test iteratively without having to continually rebuild.</em></p>
+</blockquote>
+
+<p>However, after linking our React library to our application, we get an error:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app See for tips about how to debug and fix this problem.
+</code></pre>
+
+</div>
+
+
+
+<p>It links us to the <a href="https://legacy.reactjs.org/warnings/invalid-hook-call-warning.html?ref=propelauth.com"><strong>legacy React docs</strong></a> which gives us a lot of advice that doesn’t seem to apply to us. We aren’t using hooks in functions or have mismatched versions of react and react-dom?</p>
+
+<p>Making a long story short, what is actually happening is that there are two different copies of the <code>react</code> package being used. When we run npm link, we don’t just need to link our project, we also need to link react and react-dom to make sure there’s only one copy.</p>
+
+<p>This works, for now, but our workflow got more complicated from when we thought we could just run <code>npm link</code> and be done with it. It gets worse if you manage more than one React library as you might need to constantly need to unlink and relink different Reacts.</p>
+
+<h3>
+  
+  
+  <strong>Yalc to the rescue</strong>
+</h3>
+
+<p>This is exactly the problem that <a href="https://github.com/wclr/yalc?ref=propelauth.com"><strong>yalc</strong></a> solves. In their own words, yalc is a “Better workflow than <strong>npm | yarn link</strong> for package authors.<strong>”</strong></p>
+
+<p>With yalc, you can run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>yalc publish
+</code></pre>
+
+</div>
+
+
+
+<p>in your React library, and then run<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>yalc add my-package-name
+</code></pre>
+
+</div>
+
+
+
+<p>in our application, and that’s it. <code>yalc publish</code> publishes the package locally, so you aren’t exposing it to everyone.</p>
+
+<p>There’s no duplicate versions of React or cryptic invalid hook errors. It functions the same way that it would if we were publishing to npm. And that’s really it, it operates exactly as you would expect it to.</p>
+
+<p>There are a few more advanced options, like you can run:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>yalc publish <span class="nt">--push</span>
+</code></pre>
+
+</div>
+
+
+
+<p>which will both publish locally and run <code>yalc update</code> in all the locations where your package was added.</p>
+
+<h3>
+  
+  
+  <strong>Summary</strong>
+</h3>
+
+<p>Building a React library is hard enough, especially as the ecosystem changes with React Server Components and other changes library maintainers have to worry about. yalc takes an otherwise frustrating part of this process and makes it actually just work.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Discussion of the Week - v5](https://dev.to/devteam/discussion-of-the-week-v5-19bo) 
+ <details><summary>Article</summary> <p>In this weekly roundup, we highlight what we believe to be the most thoughtful, helpful, and/or interesting discussion over the past week! Though we are strong believers in healthy and respectful debate, we typically try to choose discussions that are positive in nature and avoid those that are overly contentious.</p>
+
+<p>Any folks whose articles we feature here will be rewarded with our Discussion of the Week badge. ✨</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6M-JeZHe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvizv31dpchucxic2lxc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6M-JeZHe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvizv31dpchucxic2lxc.png" alt="The Discussion of the Week badge. It includes a roll of thread inside a speech bubble. The thread is a reference to comment threads." width="800" height="800"></a></p>
+
+<p>Now that y'all understand the flow, let's go! 🏃💨</p>
+
+<h2>
+  
+  
+  The Discussion of the Week
+</h2>
+
+<p>For this week, I'd like to highlight Juanda's (<a class="mentioned-user" href="https://dev.to/juandadev">@juandadev</a>) post <a href="https://dev.to/juandadev/how-i-got-fired-from-my-dream-job-56hf">"How I Got Fired From my Dream Job"</a>:</p>
 
 
 <div class="ltag__link">
-  <a href="/devteam" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DGMHY8k9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--DG4H-3cI--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/d908a186-5651-4a5a-9f76-15200bc6801f.jpg" alt="The DEV Team" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Q9agcq3k--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--vHKcEiTe--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/3/13d3b32a-d381-4549-b95e-ec665768ce8f.png" alt="" width="150" height="150">
-      </div>
+  <a href="/juandadev" class="ltag__link__link">
+    <div class="ltag__link__pic">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pg67oEr8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--SCPO0Q3x--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/385128/0724fe65-e55e-4a3e-9730-3ce636578d7e.png" alt="juandadev">
     </div>
   </a>
-  <a href="/devteam/explore-our-world-of-badges-influence-the-next-addition-1fnf" class="ltag__link__link">
+  <a href="/juandadev/how-i-got-fired-from-my-dream-job-56hf" class="ltag__link__link">
     <div class="ltag__link__content">
-      <h2>Explore Our World of Badges &amp; Influence the Next Addition! 🏅🌟</h2>
-      <h3>dev.to staff for The DEV Team ・ Jul 24</h3>
+      <h2>How I Got Fired From my Dream Job</h2>
+      <h3>Juanda Martínez ・ Sep 27</h3>
       <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#meta</span>
-        <span class="ltag__link__tag">#community</span>
-        <span class="ltag__link__tag">#badges</span>
-        <span class="ltag__link__tag">#design</span>
+        <span class="ltag__link__tag">#motivation</span>
+        <span class="ltag__link__tag">#discuss</span>
+        <span class="ltag__link__tag">#career</span>
       </div>
     </div>
   </a>
 </div>
 
 
-<p>Have a great night. </p>
+<p>In this candid and relatable post, Juanda recounts his recent experience of being laid off, walking us through the surrounding events and his reaction to it all. Despite the shock and disappointment that comes with losing his "dream job", Juanda's resilience and positivity really shine through in this post. He talks about the importance of continuously learning &amp; honing skills, mentioning his own plans to start up <strong>#30DaysOfCode</strong> with Node.js.</p>
+
+<p>But, one of the coolest things about this post is how awesome folks have been in the comments section! So many of you hopped in with words of wisdom, encouragement, and sympathy.</p>
+
+<p>One of my favorite bits of advice comes from <a class="mentioned-user" href="https://dev.to/donetmathew">@donetmathew</a> here:</p>
+
+
+<div class="liquid-comment">
+    <div class="details">
+      <a href="/donetmathew">
+        <img class="profile-pic" src="https://res.cloudinary.com/practicaldev/image/fetch/s--l3NwNN9e--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--qzBlcstR--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_50%2Cq_auto%2Cw_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1172080/ef8fe977-af0b-43f5-a183-525bd6af06e1.png" alt="donetmathew profile image">
+      </a>
+      <a href="/donetmathew">
+        <span class="comment-username">donetmathew</span>
+      </a>
+      <span class="color-base-30 px-2 m:pl-0">•</span>
+
+<a href="https://dev.to/donetmathew/comment/29k28" class="comment-date crayons-link crayons-link--secondary fs-s">
+  <time class="date-no-year">
+    Sep 28
+  </time>
+
+</a>
+
+    </div>
+    <div class="body">
+      <p>Fall in love with your work but never with your organization. You are just a resource for them and can be replaced anytime. Wishing you the best</p>
+
+
+    </div>
+</div>
+
+
+<p>Also, gotta shout out <a class="mentioned-user" href="https://dev.to/syxaxis">@syxaxis</a> for this kind and insightful response:</p>
+
+
+<div class="liquid-comment">
+    <div class="details">
+      <a href="/syxaxis">
+        <img class="profile-pic" src="https://res.cloudinary.com/practicaldev/image/fetch/s--PpIyLTlZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--LUnLeUgw--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_50%2Cq_auto%2Cw_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/789404/24bc25f1-a451-4b8b-948c-40f6c251e131.png" alt="syxaxis profile image">
+      </a>
+      <a href="/syxaxis">
+        <span class="comment-username">George Johnson</span>
+      </a>
+      <span class="color-base-30 px-2 m:pl-0">•</span>
+
+<a href="https://dev.to/syxaxis/comment/29kld" class="comment-date crayons-link crayons-link--secondary fs-s">
+  <time class="date-no-year">
+    Sep 29
+  </time>
+
+</a>
+
+    </div>
+    <div class="body">
+      <p>NO! You were not fired, your skillset was simply no longer needed by that company. You didn't make any mistakes, you didn't damage or steal, your skillset is just not needed anymore, not you personally.</p>
+
+<p>Never, ever take it personal, that's the worst thing to do. A redundancy is simply that your skillset is no longer required and unfortunately there is no longer a position that requires your skills. It's not about you, it's about their business.</p>
+
+<p>Just remember that somewhere out there right now there are dozens if not hundreds of jobs being set up right now, one of which you will ace the interview and get, when you accept that fact it's just nowhere near as bad as it seems.</p>
+
+<p>Stay lucky!</p>
+
+
+    </div>
+</div>
+
+
+<p>Head on over to the comments and just take a look through them for a bit. There is so much supportiveness and kindness here. Thank y'all for bringing the love! 💚</p>
+
+<h2>
+  
+  
+  What are your picks?
+</h2>
+
+<p>The DEV Community is particularly special because of the kind, thoughtful, helpful, and entertaining discussions happening between community members. As such, we want to encourage folks to participate in discussions and reward those who are initiating or taking part in conversations across the community. After all, a community is made possible by the people interacting inside it.</p>
+
+<p>There are loads of great discussions floating about in this community. This is just the one we chose to highlight. 🙂</p>
+
+<p>I urge you all to share your favorite discussion of the past week below in the comments. And if you're up for it, give the author an @mention — it'll probably make 'em feel good. 💚</p>
 
  </details> 
  <hr /> 
 
- #### - [You must know the difference between Unknown and Any in Typescript](https://dev.to/rajaerobinson/you-must-know-the-difference-between-unknown-and-any-in-typescript-3j2o) 
- <details><summary>Article</summary> <p>Hey everyone,</p>
+ #### - [AI-Powered Carousel Maker - Create Carousels 10x Faster](https://dev.to/seeratawan01/ai-powered-carousel-maker-create-carousels-10x-faster-4n1b) 
+ <details><summary>Article</summary> <p>I'm so pumped to tell you about <a href="https://postnitro.ai/">Postnitro.ai</a> - the AI carousel maker we built that creates stunning carousels in minutes.</p>
 
-<p>I wrote an insightful <a href="https://bluesockets.com/typescript/unknown-vs-any/">article</a> comparing TypeScript's <code>unknown</code> and <code>any</code> types. These types come in handy when we're dealing with variables of uncertain or dynamic types.</p>
+<p>All you do is enter a topic and Postnitro generates eye-catching carousels with optimized copy and branding tailored to you.</p>
 
-<p><strong>Unknown Type</strong><br>
-Introduced in TypeScript 3.0, <code>unknown</code> is a safer alternative to <code>any</code>. It represents a value that can have any type, but with stricter type checking. This means you can't directly assign or access properties/methods on <code>unknown</code> variables without proper type assertions or checks.</p>
+<p>I'm not <u>exaggerating</u> when I say this AI is insanely fast and accurate. With Postnitro, anyone can create beautiful, high-converting carousels in under 5 minutes with zero design skills.</p>
 
-<p><strong>Any Type</strong><br>
-On the other hand, <code>any</code> is the most flexible type in TypeScript. It essentially bypasses type checking, allowing variables of this type to be assigned to any value or type without causing compilation errors.</p>
+<p>And since we built Postnitro to leverage the latest AI models, you can produce unlimited top-notch carousels at scale for <strong>free</strong>, customized to your brand and audience.</p>
 
-<p><strong>Use Cases and Advantages:</strong></p>
+<p>If you want a smarter, faster way to make carousel content that works on social media, you need to try Postnitro today. I'm really proud of the AI carousel maker I created and know it can take your marketing to the next level.</p>
 
-<p><strong>Unknown:</strong></p>
-
-<ul>
-<li>Improved type safety</li>
-<li>Refinement through narrowing</li>
-<li>Interoperability with JavaScript</li>
-</ul>
-
-<p><strong>Any:</strong></p>
-
-<ul>
-<li>Rapid prototyping</li>
-<li>Migration from JavaScript to TypeScript</li>
-<li>Working with complex third-party libraries</li>
-</ul>
-
-<p><strong>Pitfalls and Best Practices:</strong></p>
-
-<p><strong>Pitfalls of Unknown:</strong></p>
-
-<ul>
-<li>Code can become verbose due to additional type checks and assertions.</li>
-<li>Deeply nested type checks can lead to complexity.</li>
-<li>Failing to perform proper type checks can still result in runtime errors.</li>
-</ul>
-
-<p><strong>Pitfalls of Any:</strong></p>
-
-<ul>
-<li>Lack of type safety, which can lead to subtle bugs.</li>
-<li>Loss of type information, affecting development efficiency.</li>
-<li>Reduced maintainability as codebase grows.</li>
-</ul>
-
-<p><strong>Best Practices:</strong></p>
-
-<ul>
-<li>Prefer <code>unknown</code> over <code>any</code> for flexibility with type safety.</li>
-<li>Utilize type guards and assertions with <code>unknown</code>.</li>
-<li>Gradually replace <code>any</code> with more specific types during migration.</li>
-<li>Provide clear documentation when using <code>any</code>.</li>
-<li>Enforce code reviews to catch improper usage.</li>
-</ul>
-
-<p>In conclusion, both <code>unknown</code> and <code>any</code> have their specific purposes. Don't forget to visit the <a href="https://bluesockets.com/typescript/unknown-vs-any/">article</a> for in-depth explanations.</p>
-
-<p>What are your thoughts on this? Do you find yourself using one type more than the other in your projects? Let's discuss!</p>
-
- </details> 
- <hr /> 
-
- #### - [Tudo que você precisa saber sobre Git](https://dev.to/1cadumagalhaes/tudo-que-voce-precisa-saber-sobre-git-3gbi) 
- <details><summary>Article</summary> <p>Se você estuda ou trabalha com desenvolvimento, provavelmente já ouviu falar de <strong>git</strong>, que é uma ferramenta gratuita e open source de versionamento de código (não é só isso, mas vamos simplificar). Quando eu comecei a estudar programação, toda a minha organização e versionamento de códigos era baseada em criar várias pastas no meu computador e ficar replicando várias e várias vezes. Quando queria compartilhar com alguém nós criávamos um .zip da pasta toda e depois gastávamos algumas horas tentando bater alterações pra fazer a entrega no final (meu TCC do técnico está guardado até hoje como <code>tcc_final.zip</code> no OneDrive).</p>
-
-<p>Git veio justamente pra resolver esses problemas: é mais fácil de gerenciar a evolução do seu código ou da sua aplicação; e principalmente, é muito mais fácil colaborar no desenvolvimento.</p>
-
-<h2>
-  
-  
-  Tudo que eu preciso saber sobre?
-</h2>
-
-<p>Meu objetivo aqui é simples: prover toda informação disponível para você (desenvolvedor) começar e conseguir usar a ferramenta da vez. Não pretendo responder tudo que você <strong>pode</strong> ou <strong>deveria</strong> saber, apenas o necessário.</p>
-
-<h2>
-  
-  
-  Table of Contents
-</h2>
-
-<ol>
-<li>
-O que é git
-
-<ol>
-<li>Origens e Conceitos</li>
-</ol>
+<p>Let me know what you think once you see my AI in action! I'm confident Postnitro will blow you away just as much as it continues to amaze me each day. The future is here!</p>
 
 
-</li>
-<li>Quando eu deveria usar git</li>
-<li>
-Por onde começar
-
-<ol>
-<li>Instalação no Ubuntu</li>
-<li>Configuração do git</li>
-</ol>
-
-
-</li>
-<li>
-Como funciona
-
-<ol>
-<li>Snapshots</li>
-<li>Checksums</li>
-</ol>
-
-
-</li>
-<li>
-Conceitos fundamentais
-
-<ol>
-<li>Commit</li>
-<li>Branch</li>
-</ol>
-
-
-</li>
-<li>
-Comandos básicos
-
-<ol>
-<li>init</li>
-<li>clone</li>
-<li>pull</li>
-<li>branch</li>
-<li>checkout</li>
-<li>add</li>
-<li>commit</li>
-<li>push</li>
-<li>status</li>
-<li>fetch</li>
-<li>stash</li>
-<li>merge</li>
-</ol>
-
-
-</li>
-<li>
-Comandos adicionais
-
-<ol>
-<li>rebase</li>
-<li>log</li>
-<li>revert</li>
-<li>remote</li>
-<li>cherry-pick</li>
-<li>blame</li>
-</ol>
-
-
-</li>
-<li>Na prática</li>
-<li>Onde encontrar mais informações</li>
-<li>Conclusão</li>
-</ol>
-
-<p>You can use this table of contents to help readers navigate your blog post more easily.</p>
-
-<h2>
-  
-  
-  O que é git
-</h2>
-
-<p>Numa tradução livre da documentação oficial, git</p>
-
-<blockquote>
-<p>é um <em>sistema de controle de versão distribuído</em> gratuito e de código aberto, projetado para lidar com projetos de pequenos a muito grandes, com velocidade e eficiência.</p>
-</blockquote>
-
-<p>Ele foi criado pelo Linus Torvalds (criador do Linux) em 2005, para ajudar a gerenciar o desenvolvimento do kernel Linux.</p>
-
-<p>A ideia de ser um sistema <strong>distribuído</strong> é que isso possibilita que várias pessoas ou times possam colaborar num projeto de software enquanto cada um mantém suas próprias cópias locais do projeto todo, incluindo seu histórico. Isso é o oposto do que seria se fosse um sistema centralizado, o que significaria que todos usuários precisariam se conectar a um único e mesmo repositório central.</p>
-
-<p>E um sistema de controle de versão é feito para gravar mudanças em arquivos (ou grupos de arquivos) ao longo do tempo, de forma que você possa recorrer a versões específicas mais tarde. A verdade é que vamos falar aqui de usar no contexto de software, mas isso pode ser usado para basicamente qualquer tipo de arquivo num computador. Então seria muito interessante usar isso mesmo para trabalhos como edição de video, por exemplo.</p>
-
-<p>Ou seja, git existe para te ajudar a acompanhar as mudanças na sua base de código, a colaborar com múltiplas pessoas desenvolvedoras e a garantir que você tem uma forma de backup e recuperação de como era o seu código a qualquer momento; tudo isso além de ter um sistema de <strong>branch</strong> que permite que possamos trabalhar no código sem afetar o código “principal”.</p>
-
-<p>Um ponto importante, é que <strong>git</strong> é o sistema, e não está diretamente relacionado com as empresas e softwares <strong>Github</strong> e <strong>Gitlab</strong>.</p>
-
-<h2>
-  
-  
-  Quando eu deveria usar git
-</h2>
-
-<p>Sempre. Sério, o único motivo que pode justificar a não utilização de git em um projeto, é falta de conhecimento. E pra isso que estou escrevendo isso aqui, então no geral, use sempre.</p>
-
-<p>Mas falando de forma geral, os principais casos de uso são justamente o de trabalhos colaborativos, além do poder de controlar o versionamento em si. Sabe quando você faz um projeto, que está funcionando, ai começa a mexer pra “melhorar” e ele para de funcionar? Com git você consegue voltar no histórico sem depender do seu ctrl+Z.</p>
-
-<p>E apesar de poder usar localmente, é difícil encontrar motivos pra não usar algum <strong>host</strong> de git (mesmo para os seus projetos pessoais) como o <strong>Github</strong>, <strong>Gitlab</strong> ou <strong>Bitbucket</strong>, já que todos têm planos gratuitos.</p>
-
-<h2>
-  
-  
-  Por onde começar
-</h2>
-
-<p>Já que eu espero que você tenha lido sobre <a href="https://blog.cadumagalhaes.dev/configuracao-do-windows-para-desenvolvimento">como configurar o windows para desenvolvimento</a>, vou dizer como se instala no Ubuntu. Caso precise instalar em outro sistema, a <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">documentação oficial</a> tem exemplos para várias opções.</p>
-
-<p>No nosso caso, basta executar<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="nb">sudo </span>apt <span class="nb">install </span>git
-</code></pre>
-
+<div class="crayons-card c-embed text-styles text-styles--secondary">
+      <div class="c-embed__cover">
+        <a href="https://postnitro.ai/" class="c-link s:max-w-50 align-middle" rel="noopener noreferrer">
+          <img alt="" src="https://res.cloudinary.com/practicaldev/image/fetch/s--fnd-RIBN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://postnitro.ai/images/og/postnitro-homepage-facebook.png" height="420" class="m-0" width="800">
+        </a>
+      </div>
+    <div class="c-embed__body">
+      <h2 class="fs-xl lh-tight">
+        <a href="https://postnitro.ai/" rel="noopener noreferrer" class="c-link">
+          Free Carousel Maker And Generator - Postnitro
+        </a>
+      </h2>
+        <p class="truncate-at-3">
+          Best and fastest way to create a carousel for your LinkedIn, Instagram and TikTok
+        </p>
+      <div class="color-secondary fs-s flex items-center">
+        postnitro.ai
+      </div>
+    </div>
 </div>
 
-
-
-<h3>
-  
-  
-  git config
-</h3>
-
-<p>Depois de instalar, idealmente você precisa fazer algumas configurações padrões para garantir o melhor funcionamento. Parte das informações armazenadas pelo git envolvem seu nome e email, por exemplo, para que sejam anexadas ao histórico de alterações. Para configurar essas informações de forma global, você pode usar os seguintes comandos:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git config <span class="nt">--global</span> user.name <span class="s2">"[seu nome ou nome de usuário]"</span>
-git config <span class="nt">--global</span> user.email <span class="s2">"[seu email]"</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Também podemos configurar essas informações em nível de repositório, mas para começar a configuração global é mais do que suficiente.</p>
-
-<h2>
-  
-  
-  Como funciona
-</h2>
-
-<h3>
-  
-  
-  (não que você precise saber)
-</h3>
-
-<p>Ao invés de tentar armazenar quais alterações são feitas em quais arquivos, Git pensa nos seus dados como uma série de <strong><em>snapshots</em></strong> de um sistema de arquivos. Ou seja, toda vez que você faz um <strong>commit</strong> (que é a ação de salvar o estado do seu projeto), Git vai basicamente tirar uma foto de como todos os seus arquivos estão naquele momento, e armazenar uma referência a isso. E pra ser eficiente, se não houve nenhuma alteração em algum arquivo, ele não vai ser armazenado novamente. Ao invés disso, o Git vai simplesmente fazer uma referência ao arquivo que já foi armazenado.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--7nDkadSX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266793473/083d646e-e7e6-474a-9c03-394d14796b3c.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7nDkadSX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266793473/083d646e-e7e6-474a-9c03-394d14796b3c.png" alt="Ilustração do sistema de arquivos do git" width="800" height="305"></a></p>
-
-<p>Além disso, quase toda operação feita com Git depende somente dos seus recursos e arquivos locais, sem depender muito de informações vindas de outro computador ou de um servidor. Isso faz com que ele seja extremamente rápido e eficiente, além de garantir que mesmo que você esteja offline, vai conseguir trabalhar.</p>
-
-<p>E a forma como Git “mede” as alterações em arquivos, é que eles fazem o processo chamado de <em>checksum</em>. A ideia é que você gera um valor com base no <strong>conteúdo</strong> do arquivo, e caso o conteúdo se altere, esse valor também é alterado. Isso é uma forma de garantir que Git tenha integridade, já que é impossível que o conteúdo de qualquer arquivo ou diretório seja mudado sem que Git note. (Esses <em>checksums</em> são gerados a partir de um hash SHA-1 , que é uma string de 40 caracteres hexadecimais, tipo assim: <code>24b9da6552252987aa493b52f8696cd6d3b00373</code>. Quando usar git, vai ver que esses códigos estão presentes em todo lugar, porque é assim que as informações são armazenadas).</p>
-
-<h2>
-  
-  
-  Conceitos fundamentais
-</h2>
-
-<h3>
-  
-  
-  Commit
-</h3>
-
-<p>Como mencionado brevemente acima, o commit é a ação de salvar o estado atual do seu projeto.</p>
-
-<h3>
-  
-  
-  Branch
-</h3>
-
-<p>Apesar do poder do versionamento, as vezes precisamos trabalhar em múltiplas coisas de uma vez. É nesse contexto que as <strong>branches</strong> (ou ramificações) aparecem. Git consegue armazenar múltiplos estados diferentes do seu projeto através dessas ramificações, que posteriormente podem ser juntadas de acordo com a necessidade.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--M2DuXDGX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266836390/71829e43-7609-43de-a3dd-da695b35edbf.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--M2DuXDGX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://cdn.hashnode.com/res/hashnode/image/upload/v1696266836390/71829e43-7609-43de-a3dd-da695b35edbf.png" alt="Ilustração de uma representação de ramificação (branch) em git" width="300" height="87"></a></p>
-
-<h2>
-  
-  
-  Comandos básicos
-</h2>
-
-<h3>
-  
-  
-  init
-</h3>
-
-<p>Esse é o comando que você executa num diretório para iniciar um novo projeto de git. Ele vai fazer a inicialização básica do sistema.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git init
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  clone
-</h3>
-
-<p>Caso queira fazer uma cópia de um projeto já existente, você usa esse comando.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git clone <span class="o">[</span>URL <span class="k">do </span>projeto remoto]
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  pull
-</h3>
-
-<p>É o jeito mais comum de baixar o conteúdo mais recente do repositório remoto, mas é preciso ter cuidado com ele. Quando você executa um <code>pull</code>, além de baixar tudo ele também atualiza o seu conteúdo local para o mais recente, o que pode gerar conflitos.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git pull
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  branch
-</h3>
-
-<p>É o comando usado para listar, criar ou apagar uma branch.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># Listar todas as ramificações</span>
-git branch
-
-<span class="c"># Criar uma nova branch</span>
-git branch <span class="o">[</span>nome da branch nova]
-
-<span class="c"># Apagar uma branch</span>
-git branch <span class="nt">-d</span> <span class="o">[</span>nome da branch]
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  checkout
-</h3>
-
-<p>Continuando na ideia de branches, esse comando é usado para definir qual é a branch ativa do seu repositório local.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git checkout <span class="o">[</span>nome da branch]
-
-<span class="c"># bonus: criar e trocar para uma branch</span>
-git checkout <span class="nt">-b</span> <span class="o">[</span>nome da branch nova]
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  add
-</h3>
-
-<p>Conforme você vai fazendo alterações, você precisa adicionar elas para que sejam armazenadas posteriormente. Você vai usar esse comando quando cria novos arquivos, quando muda o nome deles ou quando altera o conteúdo. É importante entender que isso não vai armazenar o estado, vai apenas colocar os arquivos na “fila”.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c">## para adicionar um arquivo ou diretório específicos</span>
-git add <span class="o">[</span>arquivo ou diretório]
-<span class="c">## para adicionar N arquivos ou diretórios especificos</span>
-git add <span class="o">[</span>arquivo1] <span class="o">[</span>arquivo2] <span class="o">[</span>diretorio]
-<span class="c">## ou para adicionar todos os arquivos alterados</span>
-git add <span class="nt">--all</span>
-<span class="c">## ou</span>
-git add <span class="k">*</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  commit
-</h3>
-
-<p>Para salvar o estado atual do projeto, após ter adicionado os arquivos, fazemos um <strong>commit</strong>. Ele vai criar uma nova revisão do seu repositório, gerar um novo código e guardar todas as alterações que foram feitas, junto com a informação de quando e por quem foram feitas.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c">## Para uso interativo, dessa forma você vai ser </span>
-<span class="c">## direcionado para um editor de texto antes de finalizar o commit</span>
-<span class="c">## Aqui você deve escrever sua mensagem de commit, com os detalhes que achar necessários.</span>
-git commit 
-
-<span class="c">## Caso a mensagem seja curta, ou simplesmente não queira passar pelo editor</span>
-git commit <span class="nt">-m</span> <span class="s2">"[sua mensagem de commit]"</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Aqui também fica a recomendação da utilização dos <a href="https://www.conventionalcommits.org/en/v1.0.0/">Commits Convencionais</a>, que são uma sugestão de padrão do início da mensagem de commit.</p>
-
-<h3>
-  
-  
-  push
-</h3>
-
-<p>É basicamente o contrário do <code>pull</code>, serve para enviar suas alterações locais para o repositório remoto.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># Enviar alterações para uma branch que já existe no remoto</span>
-git push
-
-<span class="c"># Enviar alterações para uma branch que foi criada local</span>
-git push <span class="nt">--set-upstream</span> <span class="o">[</span>nome <span class="k">do </span>remoto] <span class="o">[</span>nome da branch]
-<span class="c"># geralmente é usado como git push --set-upstream origin [branch]</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  status
-</h3>
-
-<p>É usado para comparar o estado atual do seu repositório local com o último estado armazenado, e com o repositório remoto (caso haja).<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git status
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  fetch
-</h3>
-
-<p>De forma semelhante ao pull, serve para baixar mudanças feitas no projeto remoto. A diferença é que dessa forma elas não serão aplicadas automaticamente para o seu repositório local, você vai precisar definir o que fazer com as alterações na sequência.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git fetch
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  stash
-</h3>
-
-<p>As vezes precisamos mudar de branch depois de já ter trabalhado em uma, mas antes que as coisas estejam prontas o suficiente para virar um commit. Nesse contexto podemos usar o stash, que vai armazenar temporariamente as modificações na área de <strong><em>stash</em></strong>, que é essencialmente é uma pilha (uma lista onde os elementos são empilhados).<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code><span class="c"># Para "guardar" os arquivos no stash</span>
-git stash
-
-<span class="c"># Para listar todos os existentes</span>
-git stash list
-
-<span class="c"># Para apagar um stash da pilha</span>
-git stash drop
-
-<span class="c"># Para recuperar um stash</span>
-git stash apply
-
-<span class="c"># Para aplicar/recuperar e remover da pilha (eu costumo usar esse)</span>
-git stash pop
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  merge
-</h3>
-
-<p>Depois de trabalhar em múltiplas branches, provavelmente você vai precisar unificar as coisas em algum momento. É ai que entra o merge, que vai ser responsável por juntar 2 branches em uma única.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git merge <span class="o">[</span>branch de destino] <span class="o">[</span>branch de origem]
-</code></pre>
-
-</div>
-
-
-
-<p>Isso vai criar um commit de merge na branch de destino, e vai atualizar comparar apenas as últimas versões de cada um. Esse é um método interessante porque ele não vai mexer no histórico de nada, vai apenas criar um novo commit para garantir que as coisas estejam atualizadas.</p>
-
-<h2>
-  
-  
-  Comandos adicionais
-</h2>
-
-<h3>
-  
-  
-  rebase
-</h3>
-
-<p>O objetivo é parecido com o do merge, mas o rebase reescreve o histórico de commits do projeto, de forma que ele move a sua branch para o final do histórico, <strong>criando novos commits para cada commit da branch de origem</strong>, de forma que o histórico do seu projeto vai ficar muito mais “limpo”. Isso porque ele não tem os commits de merge (que são feitos quando você usa <code>git merge</code> , e no final o histórico do seu projeto fica perfeitamente linear (enquanto com merge as coisas podem ficar difíceis de acompanhar, dependendo da complexidade do projeto). É importante deixar claro que com isso você perde um pouco da rastreabilidade (pois está sempre reescrevendo o histórico) e você perde o contexto de quando as alterações foram “aceitas” na sua branch principal.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git checkout <span class="o">[</span>branch de destino]
-git rebase <span class="o">[</span>branch de origem]
-</code></pre>
-
-</div>
-
-
-
-<p>Esse é um comando que pode impactar bastante o trabalho colaborativo, então antes de pensar em usar é importante saber se tem mais alguém trabalhando na branch em que você vai mexer. Isso porque vão acontecer vários conflitos entre a sua versão (a com rebase) e a versão que a pessoa pode estar trabalhando. Algumas pessoas chamam isso de “<strong>Golden Rule do rebase”.</strong></p>
-
-<h3>
-  
-  
-  log
-</h3>
-
-<p>Esse é o comando que você pode usar para ver o histórico de commits do repositório.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git log
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  revert
-</h3>
-
-<p>Esse é um comando para desfazer mudanças, mas que ao invés de modificar os commits já feitos no histórico, ele vai criar um novo commit desfazendo as mudanças. Podemos considerar que é uma alternativa segura ao <code>git reset</code>, que tem uma chance de te fazer perder o histórico.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git revert <span class="o">[</span>commit <span class="nb">hash</span><span class="o">]</span>
-
-<span class="c"># Também podemos dizer quantos commits a partir do último serão revertidos</span>
-git revert HEAD~[numero de commits]
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  remote
-</h3>
-
-<p>Esse é o comando que você usa pra criar a conexão entre o seu repositório local e um repositório remoto.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git remote add <span class="o">[</span>apelido <span class="k">do </span>repo remoto] <span class="o">[</span>url <span class="k">do </span>repositório]
-
-<span class="c"># Geralmente vai ser algo como</span>
-git remote add origin &lt;https://github.com/&gt;[nome de usuario]/[nome <span class="k">do </span>repo] 
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  cherry-pick
-</h3>
-
-<p>Imagina que você e uma outra pessoa estão trabalhando em duas branches diferentes, mas que a outra fez um commit com uma alteração que você também pode usar, e você não quer reescrever algo que já foi feito. O cherry-pick permite que você selecione qualquer commit de uma branch, e aplicá-lo a uma outra branch, sem ter que se preocupar com o histórico todo.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git cherry-pick <span class="o">[</span>commit <span class="nb">hash</span><span class="o">]</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  blame
-</h3>
-
-<p>É o comando utilizado para dizer qual usuário fez quais alterações num determinado arquivo.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>git blame <span class="o">[</span>nome <span class="k">do </span>arquivo]
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Na prática
-</h2>
-
-<p>Apesar de achar importante você conhecer, entender e saber usar a linha de comando, a verdade é que você provavelmente não precisa. A maioria das IDE’s ou editores de código tem extensões para lidar com git e te prover uma interface que facilita bastante a utilização. Também existe o <a href="https://desktop.github.com/">Github Desktop</a> mas eu pessoalmente não gosto muito dele.</p>
-
-<p>Uso a maior parte das coisas direto na extensão de git padrão do VS Code, que te da um resumo das alterações atuais do repositório, uma lista de commits, de branches e de stashes e honestamente tudo que você pode precisar. Isso facilita muito, principalmente na hora de resolver conflitos.</p>
-
-<p>Ele também acrescenta o <code>git blame</code> no próprio editor, fazendo ficar bem fácil entender o histórico do projeto.</p>
-
-<p>Eu só uso a extensão padrão, mas se você tiver recomendações de extensões, fique a vontade pra acrescentar nos comentários.</p>
-
-<h2>
-  
-  
-  Onde encontrar mais informações
-</h2>
-
-<p>A melhor fonte é provavelmente a oficial, que é onde eu costumo buscar referências (e o que serviu de inspiração pra boa parte do que está aqui):</p>
-
-<ul>
-<li><p>Git Book (em PT-BR): <a href="https://git-scm.com/book/pt-br/v2">https://git-scm.com/book/pt-br/v2</a></p></li>
-<li><p>Git Book: <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></p></li>
-</ul>
-
-<p>Também gostei bastante do conteúdo da Atlassian, que é a empresa criadora do BitBucket</p>
-
-<ul>
-<li><a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a></li>
-</ul>
-
-<p>E como não pode faltar, também tem conteúdo da LINUX Tips sobre git:</p>
-
-<ul>
-<li><p>Descomplicando o Git: <a href="https://www.youtube.com/watch?v=_aj3hsEh9iw">https://www.youtube.com/watch?v=_aj3hsEh9iw</a></p></li>
-<li><p>Aulão de certificação do gitlab: <a href="https://www.youtube.com/watch?v=SMzaAP09BD4">https://www.youtube.com/watch?v=SMzaAP09BD4</a></p></li>
-</ul>
-
-<h2>
-  
-  
-  Conclusão
-</h2>
-
-<p>A verdade é que eu fiquei anos usando git e só sabendo <code>git add</code>, <code>git commit</code>, <code>git pull</code> e <code>git push</code>. Isso é tudo que você precisa pra um projeto simples, e usando alguma extensão com interface gráfica você só precisa entender as ações e como executá-las na interface que estiver usando.</p>
-
-<p>Mas conforme vamos trabalhando, passando por projetos de maior complexidade ou simplesmente precisando fazer coisas em grupo, os conflitos e erros começam a acontecer e aí precisamos entender melhor o poder dessa ferramenta.</p>
-
-<p>Não espero que ninguém saia desse post sabendo usar tudo isso, mas aqui tem uma introdução de tudo que eu gostaria de saber quando comecei. Saber quando usar qual comando vem da utilização na prática, então minha recomendação é sempre que você comece. E novamente, não consigo pensar em um motivo pra não usar git em qualquer projeto de desenvolvimento, seja pessoal, de estudos, de faculdade ou de trabalho.</p>
-
-<p>Me diz o que você achou desse tipo de post, e se você gostaria que isso virasse um vídeo no Youtube! Independente do resultado, semana que vem vou falar sobre RegEx.</p>
-
-<p>Espero que isso tenha sido útil para alguém, até a próxima!</p>
-
- </details> 
- <hr /> 
-
- #### - [Should You Lower Your Possibilities When Looking For a Job?](https://dev.to/juandadev/should-you-lower-your-possibilities-when-looking-for-a-job-2p0j) 
- <details><summary>Article</summary> <blockquote>
-<p><em>Photo by <a href="https://unsplash.com/@andrewjoegeorge?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Andrew George</a> on <a href="https://unsplash.com/photos/g-fm27_BRyQ?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></em></p>
-</blockquote>
-
-<p>These past days I decided to focus my energies on doing some research and studying for a position I really wanted to be part of as a Node.js developer (Back-end). As some of you would already know, my expertise lies in Frontend development, especially with React, Redux, and Graphql, or at least that's what I thought at the beginning...</p>
-
-<p>I was afraid to apply for full-stack or back-end positions, I thought that I couldn't perform well in these areas because of my professional experience, but after some time of self-retrospective, I just realized that I always have been a full-stack developer without knowing it. The thing is that although in my last job I was given the title of <strong>Web UI developer</strong>, to be honest, I feel the industry always leans towards full-stack somehow, and in my last project we managed a Node.js server with Apollo server to extend the usability of GraphQL in our front-end with React, and it was something of our daily tasks to code in both repos after all. So that's it!! I already know Node.js so I can say that I have experience in the field, right?</p>
-
-<h2>
-  
-  
-  Discover your hidden abilities!
-</h2>
-
-<p>After realizing this, it was an eureka moment for me! How can you be biased about your capabilities just because of the title some company gives to you? This also includes the seniority of course.</p>
-
-<p>I started to detect those back-end skills and gain more confidence about it. Tried to analyze what and how do we managed in that Node.js repo. We were in charge of the API layer by collecting all the external APIs the Java team brought to us, like an API for users, another one for bag items, and so on, then we made the proper functions and logic to use that data and transform it to be consumable by our front-end project.</p>
-
-<p>Does that sound familiar to you? Of course it is, because without knowing we were interacting every day in a <strong>MICROSERVICES ARCHITECTURE</strong>, I know it doesn't sound like a big deal, but for me it was like founding the one piece 💰</p>
-
-<p>Why I'm so sure about this? well, after some research about microservices, a lot of things started to make sense to me, we had a Java team that created separate projects for each service, and those services were split by the business needs, being the case of an e-commerce. Then the DevOps team is in charge of all the infrastructure layer, to finally us getting all of those APIs to be consumed on a single Node.js server with Apollo.</p>
-
-<p>Then I asked ChatGPT to give me some topics to study for a back-end position with Node.js, microservices being one of them, followed by understanding HTTP protocol and other stuff, stuff that I already knew and it was just a matter of time to research, and remember all of those things!</p>
-
-<h2>
-  
-  
-  DON'T close yourself to the possibilities!
-</h2>
-
-<p>The point of all of this is to make you rethink your skill set and be able to know what you are capable of! don't close yourself just because someone told you that you're just a frontend or backend dev, junior or senior!</p>
-
-<ul>
-<li><p>You always work with <strong>data structures</strong>, so do your research about it! get to know how you interact with those and search for examples, I'm sure you've been working with a lot of these, and even you can start thinking about your further solutions by applying data structures specifically.</p></li>
-<li><p>Learn about algorithms! it is a topic you probably applied in some of the techniques in your daily problem-solving process. You will start to know about the complexity of a piece of code or function and you will start to think differently, seek how to improve performance, and solve memory leaks in your apps!</p></li>
-</ul>
-
-<p>So, the sooner you start to discover your hidden skills, the sooner you can start to open your range of possibilities when looking for a job!</p>
-
-<p>I stopped saying that I'm just a front-end developer, I know that I can perform well in a back-end position with Node.js, and I know that I can also apply for full-stack and backend positions without hesitation. So what are you waiting for? Go for it 💪🏻</p>
-
-<p>Recently, I applied for a Node.js position, it went very well and I was even surprised of myself in both HR and Technical interviews that they loved my profile and knowledge, but unfortunately, they rejected me because the client didn't like my solution for a code challenge, it was easy but I made the mistake to work on that challenge when I was too tired after three interviews and a lot of study before it! I was in zombie mode 🧟 I could get to the solution but made a mess with the code because I wasn't thinking with a fresh mind</p>
-
-<blockquote>
-<p><em>Yes, this is a reminder to all of you that rest is important, other than rushing your work and making a mess</em>.</p>
-</blockquote>
-
-<p>So that's it! this was the proof that I was able to apply to other positions. I would love to read your thoughts on this, I know it may vary depending on the role and technology, but sometimes there are core concepts and some experiences you had in the past that can make you able to get into other fields and succeed ✅</p>
 
  </details> 
  <hr /> 
