@@ -117,195 +117,552 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Easy Context in React Server Components (RSC)](https://dev.to/jdgamble555/easy-context-in-react-server-components-rsc-1mdf) 
- <details><summary>Article</summary> <p>Continuing the need to have easy context from my other posts, I wanted to find a way to share context on the server as well.</p>
+ #### - [Which is Better: In-Person or Remote Coding Interviews?](https://dev.to/codenewbieteam/which-is-better-in-person-or-remote-coding-interviews-4npp) 
+ <details><summary>Article</summary> <p>In today's tech-driven world, the format of coding interviews has become a hot topic. Should companies stick with traditional in-person interviews for assessing technical talent, or is the future remote? Join the discussion to share your thoughts and experiences on what truly works best in identifying top coding talent.</p>
 
-<p>You may have noticed that <code>useContext</code> and <code>createContext</code> do not compile on the server (another millionth reason I love SvelteKit!).</p>
+<p>Follow the <a href="https://dev.to/codenewbieteam">CodeNewbie Org</a> and <a href="https://dev.to/t/codenewbie">#codenewbie</a> for more discussions and online camaraderie!</p>
 
-<p>So, there needs to be a way to do this easily in RSC, even though the React Team, who seems to be extremely far away from the actual userbase, decided to depreciate this feature before it was actually implemented. </p>
+<p><em><div class="ltag__user ltag__user__id__2167">
+  <a href="/codenewbieteam" class="ltag__user__link profile-image-link">
+    <div class="ltag__user__pic">
+      <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DL6l24W8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--gvVCmWqP--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2167/a575e4d1-42a8-471a-ab8a-a9240b002aa8.png" alt="codenewbieteam image"></a>
+    </div>
+  </a>
+  <div class="ltag__user__content">
+    <h2>
+      <a href="/codenewbieteam" class="ltag__user__link">CodeNewbie</a>
+      Follow
+    </h2>
+    <div class="ltag__user__summary">
+      <a href="/codenewbieteam" class="ltag__user__link">
+        The most supportive community of programmers and people learning to code.  Part of the DEV family.
 
-<p>You can find <code>createServerContext</code> in the latest React as an import, but there is no actual <code>Consumer</code> like there is in a regular context, so I couldn't get it to work. Supposedly it could be shared on the client and server, but only for small strings. The only actual mention of this is in a <a href="https://twitter.com/sebmarkbage/status/1587615489605369861?s=20">tweet</a>:<br>
-</p>
+
+      </a>
+    </div>
+  </div>
+</div>
+</em> </p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Certificações do GitHub: Descubra essa novidade e já prepare seus estudos!](https://dev.to/larideoliiveira/certificacoes-do-github-descubra-essa-novidade-e-ja-prepare-seus-estudos-1bae) 
+ <details><summary>Article</summary> <p>O <strong>GitHub</strong> é a maior plataforma de <em>open-source</em> do mundo, utilizado pelas Big-techs e os demais níveis de desenvolvedores em Tecnologia, ele é uma <em>ferramenta fundamental</em>, no dia-a-dia do time de tecnologia. </p>
+
+<p>Com isso, a partir de 2024 teremos <strong>4 tipos de Certificações</strong>, que validarão seus conhecimentos técnicos e aplicáveis no GitHub.</p>
+
+<h1>
+  
+  
+  Índice
+</h1>
+
+<ol>
+<li><strong><em>GitHub Fundations</em></strong></li>
+<li><strong><em>GitHub Actions</em></strong></li>
+<li>
+<strong><em>GitHub Advanced Security</em></strong> </li>
+<li>
+<strong><em>GitHub Admin</em></strong> </li>
+</ol>
+
+<p>Vamos saber mais sobre essas Certificações aqui:</p>
+
+<blockquote>
+<p>Antes de tudo, já se inscreva na <a href="https://resources.github.com/learn/certifications/">Lista de Espera</a> para ter acesso em primeira mão quando as certificações ficarão disponíveis.</p>
+</blockquote>
+
+<p>As certificações estarão disponíveis para o público geral no <strong>início de 2024</strong>, mas quem estiver presente no evento <a href="https://githubuniverse.com/">GitHub Universe</a> em São Francisco, California US, nos dias <strong>8 e 9 de Novembro de 2023</strong>, poderão fazê-los e já receberem os certificados. </p>
+
+<p>Mas agora, vamos ao que interessa que são as <strong>4 certificações que o GitHub está lançando</strong>:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--SiIYLbeQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3m8tklxea56u884mp2r1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SiIYLbeQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3m8tklxea56u884mp2r1.png" alt="Image description" width="616" height="424"></a></p>
+
+<h2>
+  
+  
+  <strong><em>GitHub Fundations</em></strong> <a></a>:
+</h2>
+
+<p>Será a certificação que destaca sua compreensão dos tópicos e conceitos sobre os fundamentos de open-source, contribuição e tarefas do GitHub.<br>
+Este Exame irá abranger em conhecimento a colaboração, os produtos do GitHub, básico de Git e como trabalhar com os repositórios do GitHub.<br>
+<a href="https://learn.microsoft.com/en-us/collections/o1njfe825p602p">Link do material de estudo</a> para a certificação em inglês.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vGC_KjcQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v5dtie6s4fptkm7uuf6e.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vGC_KjcQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v5dtie6s4fptkm7uuf6e.png" alt="Image description" width="616" height="424"></a></p>
+
+<h2>
+  
+  
+  <strong><em>GitHub Actions</em></strong> <a></a> :
+</h2>
+
+<p>Será a certificação que destaca a sua proficiência em automatizar fluxos de trabalho e acelerar o desenvolvimento com o GitHub Actions. Teste suas habilidades para simplificar o fluxo de trabalho, automatizar tarefas e otimizar pipelines de software, incluindo CI/CD, tudo em fluxo de trabalho personalizáveis.<br>
+<a href="https://learn.microsoft.com/en-us/collections/n5p4a5z7keznp5">Link do material de estudo</a> para a certificação em inglês. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--tc3X2ScY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zuu1vv512y2hx1k07t9k.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--tc3X2ScY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zuu1vv512y2hx1k07t9k.png" alt="Image description" width="616" height="424"></a></p>
+
+<h2>
+  
+  
+  <strong><em>GitHub Advanced Security</em></strong> <a></a>:
+</h2>
+
+<p>Será a certificação que destaca o seu conhecimento em segurança do código. Valide sua experiência em identificação de vulnerabilidades, segurança de fluxo de trabalho e implementação robusta de segurança, elevando os padrões de integridade do software.<br>
+<a href="https://learn.microsoft.com/en-us/collections/rqymc6yw8q5rey">Link do material de estudo</a> para a certificação em inglês. </p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--0iUN8PXG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rs475zlysskjt3vqb5c3.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0iUN8PXG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rs475zlysskjt3vqb5c3.png" alt="Image description" width="616" height="424"></a></p>
+
+<h2>
+  
+  
+  <strong><em>GitHub Admin</em></strong> <a></a>:
+</h2>
+
+<p>Será a certificação que destaca a sua capacidade de otimizar e gerenciar em um ambiente saudável do GH. Demonstre sua experiência em gerenciamento de repositórios, otimização de fluxo de trabalho e colaboração eficiente para apoiar projetos bem sucedidos no GitHub.<br>
+<a href="https://learn.microsoft.com/en-us/collections/mom7u1gzjdxw03">Link do material de estudo</a> para a certificação em inglês.</p>
+
+<p>Não perca a chance de estudar e principalmente se preparar para algo que poderá te oferecer destaque profissional e de educação técnica.</p>
+
+<p>-</p>
+
+<p>Espero muito que tenha ajudado você, que está buscando Certificações na área de Tecnologia, e se ficou alguma dúvida ou deixei de falar sobre algo, deixe nos comentários abaixo, que estarei respondendo sempre!</p>
+
+<p>Nos vemos em breve!</p>
+
+<p>Me sigam nas minhas redes:<br>
+~ <a href="https://twitter.com/larideoliiveira">X</a><br>
+~ <a href="https://www.instagram.com/larideoliiveira/">Instagram</a><br>
+~ <a href="https://youtube.com/@larideoliiveira">Canal do Youtube</a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [GitHub Profile Native Web Components](https://dev.to/scottnath/github-profile-native-web-components-4ed7) 
+ <details><summary>Article</summary> <p>Learn about native web components that showcase GitHub profiles and repositories.</p>
+
+<p>GitHub profile native web components, which show a user and repositories, are included in the <a href="https://dev.to/scottnath/profile-components-display-social-profiles-in-native-web-components-49b2">profile-components library</a>. These are native web components, and can be used in any HTML page, framework-based site, or wherever you can use HTML.  You can access them via unpkg.com or include the NPM module in your project.</p>
+
+<p>Table of contents</p>
+
+<ul>
+<li>What are the GitHub profile components?</li>
+<li>How to use the GitHub profile components</li>
+<li>Server Side Rendering (Astro example)</li>
+<li>Where do the styles come from?</li>
+</ul>
+
+<h2>
+  
+  
+  tl;dr
+</h2>
+
+<h3>
+  
+  
+  install via NPM:
+</h3>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">let</span> <span class="nx">Lang</span> <span class="o">=</span> <span class="nx">createServerContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">lang</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">...</span>
-<span class="o">&lt;</span><span class="nx">Lang</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="err">…</span><span class="p">}</span><span class="o">&gt;</span>
-<span class="p">...</span>
-<span class="nx">use</span><span class="p">(</span><span class="nx">Lang</span><span class="p">)</span>
+<pre class="highlight plaintext"><code>npm i profile-components
+</code></pre>
+
+</div>
+<h3>
+  
+  
+  use via unpkg.com:
+</h3>
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="c">&lt;!-- add to HEAD --&gt;</span>
+<span class="nt">&lt;script 
+  </span><span class="na">type=</span><span class="s">"module"</span> 
+  <span class="na">src=</span><span class="s">"https://unpkg.com/profile-components-blahg/dist/github-user.js"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- shows a GitHub profile with fetched content for user `scottnath` --&gt;</span>
+<span class="nt">&lt;github-user</span> <span class="na">username=</span><span class="s">"scottnath"</span> <span class="na">fetch=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/github-user&gt;</span>
 </code></pre>
 
 </div>
 
 
 
-<p>Either way, I would have re-written this to work like my other context, so it is a moot point.</p>
 
-<p>I should also add, the second best solution is to use the <a href="https://github.com/manvalls/server-only-context#readme">server-only-context</a> library (by manvalls) which uses <code>cache</code> under the hood.</p>
 
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="c">&lt;!-- and a way to present repositories --&gt;</span>
+<span class="nt">&lt;script 
+  </span><span class="na">type=</span><span class="s">"module"</span> 
+  <span class="na">src=</span><span class="s">"https://unpkg.com/profile-components-blahg/dist/github-repository.js"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- shows a GitHub repository with fetched content for repo `scottnath/profile-components` --&gt;</span>
+<span class="nt">&lt;github-repository</span> 
+  <span class="na">full_name=</span><span class="s">"scottnath/profile-components"</span>
+  <span class="na">fetch=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/github-repository&gt;</span>
+</code></pre>
+
+</div>
 
 
 
 <h3>
   
   
-  Dear React Team (and NextJS Team)
+  Quick links
 </h3>
 
-<p>There is a reason there are so many external state libraries for React. The way React works out-of-the-box is terrible and uses too much boilerplate. We love RSC (the people on the React train who won't move to Svelte have no choice) and we love that Vercel wants to add Server Actions, but either of you can fix this problem. No more Context Hell please! </p>
+<ul>
+<li>Check out the <a href="https://scottnath.com/profile-components/?path=/docs/github-github-user--docs">GitHub web components in Storybook</a> to see the full breadth of visual and content differences</li>
+<li><a href="https://www.npmjs.com/package/profile-components">profile-components on NPM</a></li>
+<li><a href="https://github.com/scottnath/profile-components">profile-components on GitHub</a></li>
+<li><a href="https://stackblitz.com/edit/profile-components">See demos on stackblitz</a></li>
+</ul>
 
-<p>React Team... Let's add signals (or something better) as well please and not worry about memoizing state! Why are you making things hard that don't have to be!!!!? Serious question.</p>
+<h2>
+  
+  
+  What are the GitHub profile components? <a></a>
+</h2>
 
-<p>Ok, I digress.</p>
-
-
-
+<ul>
+<li>100% native web components</li>
+<li>Zero dependencies</li>
+<li>Fetch profile and repository data from the GitHub API</li>
+<li>No api key required</li>
+<li>Present GitHub content as a profile widget</li>
+<li>Styled using GitHub's CSS style variables from Primer</li>
+<li>Released in the <a href="https://dev.to/scottnath/profile-components-display-social-profiles-in-native-web-components-49b2">profile-components library</a> </li>
+</ul>
 
 <h3>
   
   
-  The Solution
+  Includes two components: user and repository
 </h3>
 
-<p>So I basically copied the <code>cache</code> idea from above, but simplified it for my use case with the Map from my other solutions. The <code>cache</code> is actually a Map itself, so I believe this is a Map of a Map under the hood.</p>
+<p>There are two components for GitHub (so far.) </p>
 
 <h4>
   
   
-  use-server-provider.tsx
+  GitHub repository
 </h4>
 
+<p>The repository web component displays details about a GitHub repository.</p>
 
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">server-only</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">cache</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">serverContext</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">());</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">useServerProvider</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
-    <span class="nx">defaultValue</span><span class="p">?:</span> <span class="nx">T</span>
-<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nb">global</span> <span class="o">=</span> <span class="nx">serverContext</span><span class="p">();</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">defaultValue</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nb">global</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="p">[</span>
-        <span class="nb">global</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">key</span><span class="p">),</span>
-        <span class="p">(</span><span class="na">value</span><span class="p">:</span> <span class="nx">T</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">global</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
-    <span class="p">];</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
+<div class="table-wrapper-paragraph"><table>
+<tr>
+<td>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--yeWg2-g0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lva2vjc1vw3g0xxdal9g.png" alt="GitHub popular repo web component" width="400" height="146">GitHub popular repo web component
+</td>
+<td>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--amRk2jAB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxiaj4lyn1lv01lcqk0a.png" alt="GitHub new repository web component" width="300" height="198">GitHub new repository web component
+</td>
+</tr>
+</table></div>
 
 <h4>
   
   
-  Parent
+  GitHub user
 </h4>
 
+<p>The user web component displays details about a GitHub user, it may include a list of repositories. If repositories are included, the UI for a repository comes from the repository web component.</p>
 
+<div class="table-wrapper-paragraph"><table>
+<tr>
+<td>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WezG29hb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4vslt2m2b3knytqj3831.png" alt="GitHub user web component" width="300" height="516">GitHub user web component
+</td>
+<td>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J8xv8UOR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/97uzpsdcvhkgxjllusu6.png" alt="GitHub user with repositories" width="400" height="577">GitHub user with repositories
+</td>
+</tr>
+</table></div>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useServerProvider</span><span class="p">(</span><span class="dl">'</span><span class="s1">count</span><span class="dl">'</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<h4>
+<h2>
   
   
-  Child
-</h4>
+  How to use the GitHub profile components <a></a>
+</h2>
 
+<p>These components can be used on any HTML page - whether built via framework or just plain HTML. They are available via unpkg.com or you can add the NPM module to your project.</p>
 
+<h3>
+  
+  
+  Using the unpkg distribution for a User
+</h3>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useServerProvider</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">count</span><span class="dl">'</span><span class="p">);</span>
+<ol>
+<li>
+<p>Add the script tag to your HTML page's HEAD:<br>
+</p>
+<pre class="highlight html"><code><span class="c">&lt;!-- add to HEAD --&gt;</span>
+<span class="nt">&lt;script
+  </span><span class="na">type=</span><span class="s">"module"</span> 
+  <span class="na">src=</span><span class="s">"https://unpkg.com/profile-components/dist/github-user.js"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-</div>
+</li>
+<li>
+<p>Add the component to your HTML page's BODY:<br>
+</p>
+<pre class="highlight html"><code><span class="c">&lt;!-- shows a user's profile --&gt;</span>
+<span class="nt">&lt;github-user</span> <span class="na">username=</span><span class="s">"scottnath"</span> <span class="na">fetch=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/github-user&gt;</span>
+</code></pre>
 
 
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--pyTl0-fb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rjxwknzeoq2a1v63acd4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pyTl0-fb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rjxwknzeoq2a1v63acd4.png" alt="GitHub user with fetched content" width="400" height="279"></a></p>
+</li>
+<li>
+<p>Include a list of repositories with the profile<br>
+</p>
+<pre class="highlight html"><code><span class="nt">&lt;github-user</span>
+  <span class="na">username=</span><span class="s">"scottnath"</span>
+  <span class="na">fetch=</span><span class="s">"true"</span>
+  <span class="na">repos=</span><span class="s">'["scottnath/profile-components", "storydocker/storydocker"]'</span>
+<span class="nt">&gt;&lt;/github-user&gt;</span>
+</code></pre>
 
-<p>However, it is worth noting, unlike a reactive component, if you set the component after you define the <code>count</code> variable, it won't update unless you grab the <code>count</code> variable again. One way to fix this is to use a <code>value</code> object key like in a signal:<br>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--JyqiJXWI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ly80k44g94b7coz80tq6.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--JyqiJXWI--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ly80k44g94b7coz80tq6.png" alt="GitHub user with fetched content" width="400" height="595"></a></p>
+</li>
+<li>
+<p>Write your own content instead of fetching from GitHub:<br>
+</p>
+<pre class="highlight html"><code><span class="nt">&lt;github-user</span>
+  <span class="na">username=</span><span class="s">"scottnath"</span>
+  <span class="na">name=</span><span class="s">"Meowy McMeowerstein"</span>
+  <span class="na">bio=</span><span class="s">"Spending time purring and sleepin"</span>
+  <span class="na">followers=</span><span class="s">"500000"</span>
+  <span class="na">following=</span><span class="s">"2980"</span>
+  <span class="na">avatar_url=</span><span class="s">"/MY_LOCAL_AVATAR_IMAGE.png"</span>
+  <span class="na">repos=</span><span class="s">'[{
+    "full_name":"scottnath/profile-components",
+    "description":"Cool thing, does stuff",
+    "language":"HTML"
+  }]'</span>
+<span class="nt">&gt;&lt;/github-user&gt;</span>
+</code></pre>
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--s2-VRKI---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jv73zmw2xyea03xgpu7q.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--s2-VRKI---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jv73zmw2xyea03xgpu7q.png" alt="GitHub user with user-derived content" width="400" height="417"></a></p>
+</li>
+</ol>
+
+<h3>
+  
+  
+  Using the unpkg distribution for a Repository
+</h3>
+
+<ol>
+<li>
+<p>Add the <em>repository</em> script tag to your HTML page's HEAD:<br>
+</p>
+<pre class="highlight html"><code><span class="c">&lt;!-- add to HEAD --&gt;</span>
+<span class="nt">&lt;script
+  </span><span class="na">type=</span><span class="s">"module"</span> 
+  <span class="na">src=</span><span class="s">"https://unpkg.com/profile-components/dist/github-repository.js"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+</li>
+<li>
+<p>Add the component to your HTML page's BODY:<br>
+</p>
+<pre class="highlight html"><code><span class="c">&lt;!-- shows a repository's information --&gt;</span>
+<span class="nt">&lt;github-repository</span> 
+  <span class="na">full_name=</span><span class="s">"freeCodeCamp/freeCodeCamp"</span> 
+  <span class="na">fetch=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/github-repository&gt;</span>
+</code></pre>
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--k_AVyLg2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ipgry8a8h9xmpbbnh12.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--k_AVyLg2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8ipgry8a8h9xmpbbnh12.png" alt="GitHub repository with fetched content" width="400" height="146"></a></p>
+</li>
+<li>
+<p>Add a theme to the repository component:<br>
+</p>
+<pre class="highlight html"><code><span class="c">&lt;!-- shows a repository's information --&gt;</span>
+<span class="nt">&lt;github-repository</span> 
+  <span class="na">full_name=</span><span class="s">"freeCodeCamp/freeCodeCamp"</span> 
+  <span class="na">fetch=</span><span class="s">"true"</span>
+  <span class="na">theme=</span><span class="s">"dark"</span><span class="nt">&gt;&lt;/github-repository&gt;</span>
+</code></pre>
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---KDBzGr1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i6h7e6xa7j7th0p8vo5n.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---KDBzGr1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i6h7e6xa7j7th0p8vo5n.png" alt="GitHub repository with a theme" width="400" height="146"></a></p>
+</li>
+<li>
+<p>Write your own content instead of fetching from GitHub:<br>
+</p>
+<pre class="highlight html"><code><span class="nt">&lt;github-repository</span> 
+  <span class="na">full_name=</span><span class="s">"just-another/c-plus-plus-repo"</span>
+  <span class="na">language=</span><span class="s">"C++"</span>
+  <span class="na">stargazers_count=</span><span class="s">"123"</span>
+  <span class="na">forks_count=</span><span class="s">"456"</span>
+  <span class="na">subscribers_count=</span><span class="s">"789"</span>
+  <span class="na">description=</span><span class="s">"This is meow meow."</span><span class="nt">&gt;&lt;/github-repository&gt;</span>
+</code></pre>
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--EZFkojmv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/szfao95iwjp4nwfi9gj1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EZFkojmv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/szfao95iwjp4nwfi9gj1.png" alt="GitHub repository with local content" width="400" height="122"></a></p>
+</li>
+</ol>
+
+<h2>
+  
+  
+  Server Side Rendering (Astro example) <a></a>
+</h2>
+
+<p>Because these components were built with separate HTML, CSS, and JS files, you can use those pieces to generate HTML on the server. This example is what I did to make an <a href="https://github.com/scottnath/scottnath.com/blob/main/workspaces/website/src/components/GitHubUser.astro">Astro component for scottnath.com</a>.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">server-only</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">cache</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<pre class="highlight javascript"><code><span class="c1">// GitHubUser.astro</span>
+<span class="o">---</span>
+<span class="k">import</span> <span class="nx">github</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">profile-components/github-utils</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">github</span><span class="p">.</span><span class="nx">user</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">serverContext</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">());</span>
+<span class="kd">const</span> <span class="nx">repos</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span><span class="dl">'</span><span class="s1">scottnath/profile-components</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">storydocker/storydocker</span><span class="dl">'</span><span class="p">]);</span>
+<span class="kd">const</span> <span class="nx">userContent</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">user</span><span class="p">.</span><span class="nx">generateContent</span><span class="p">({</span>
+  <span class="na">login</span><span class="p">:</span> <span class="dl">'</span><span class="s1">scottnath</span><span class="dl">'</span><span class="p">,</span>
+  <span class="c1">// a local profile image helps performance</span>
+  <span class="na">avatar_url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/scott-nath-profile-pic.jpeg</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">repos</span>
+<span class="p">},</span><span class="kc">true</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">userHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;style&gt;</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">styles</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;/style&gt;</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">userHTML</span> <span class="o">+=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">userContent</span><span class="p">);</span>
+<span class="o">---</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">useServerProvider</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="nx">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
-    <span class="nx">defaultValue</span><span class="p">?:</span> <span class="nx">T</span>
-<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nb">global</span> <span class="o">=</span> <span class="nx">serverContext</span><span class="p">();</span>
+<span class="o">&lt;</span><span class="nx">github</span><span class="o">-</span><span class="nx">user</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">template</span> <span class="nx">shadowrootmode</span><span class="o">=</span><span class="dl">"</span><span class="s2">open</span><span class="dl">"</span> <span class="kd">set</span><span class="p">:</span><span class="nx">html</span><span class="o">=</span><span class="p">{</span><span class="nx">userHTML</span><span class="p">}</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/github-user</span><span class="err">&gt;
+</span></code></pre>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">defaultValue</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nb">global</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="p">);</span>
-    <span class="p">}</span>
+</div>
 
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="kd">get</span> <span class="nx">value</span><span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nb">global</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
-        <span class="p">},</span>
-        <span class="kd">set</span> <span class="nx">value</span><span class="p">(</span><span class="na">v</span><span class="p">:</span> <span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nb">global</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">v</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+
+
+<h2>
+  
+  
+  Where do the styles come from? <a></a>
+</h2>
+
+<p>The best way to have the look n feel of an external site is to integrate their design language as much as possible. The GitHub components use the same source for styles as GitHub itself, the <a href="https://primer.style/design/">Primer Design System</a>.</p>
+
+<h3>
+  
+  
+  Primer Design System
+</h3>
+
+<p><a href="https://primer.style/design/">https://primer.style/design/</a></p>
+
+<p>"<em>Primer is a set of guidelines, principles, and patterns for designing and building UI at GitHub.</em>"</p>
+
+<p>Primer is the source for all of GitHub's root UI foundations (color text, and border-styles), iconography and basic UI patterns. The primer.style site is a massive resource for details about Primer and it's use by GitHub, so check that out if you have more Primer-specific questions.</p>
+
+<h4>
+  
+  
+  Color themes
+</h4>
+
+<p>GitHub (via Primer) has two sets of themes, light and dark, and each set contains a few variations. Check out <a href="https://primer.style/design/foundations/css-utilities/colors">Primer's Storybook docs for colors</a> to play around with the colors and see the different themes.</p>
+
+<ul>
+<li>light: 'Light'</li>
+<li>light_colorblind: 'Light Protanopia &amp; Deuteranopia'</li>
+<li>light_tritanopia: 'Light Tritanopia'</li>
+<li>light_high_contrast: 'Light High Contrast'</li>
+<li>dark: 'Dark'</li>
+<li>dark_dimmed: 'Dark Dimmed'</li>
+<li>dark_colorblind: 'Dark Protanopia &amp; Deuteranopia'</li>
+<li>dark_tritanopia: 'Dark Tritanopia'</li>
+<li>dark_high_contrast: 'Dark High Contrast'</li>
+</ul>
+
+<h4>
+  
+  
+  Primatives and iconography
+</h4>
+
+<p>These components are styled with variables generated from Primer's npm packages.</p>
+
+<ul>
+<li>
+<a href="https://github.com/primer/primitives">primer/primatives</a> for colors, borders, and typography</li>
+<li>
+<a href="https://github.com/primer/octicons">primer/octicons</a> is the source for all icons used on GitHub. </li>
+<li><a href="https://primer.style/design/foundations/icons">storybook docs for Octicons</a></li>
+</ul>
+
+<h4>
+  
+  
+  Auto-captured styles
+</h4>
+
+<p>CSS variables and svg icons are pulled from Primer's npm packages. The generated variables are used to style the components. To make the styles easy to update when Primer makes changes, there is a suite of functions which pull the CSS variables and icons from Primer's NPM packages. The functions are detailed in <a href="https://github.com/scottnath/profile-components/blob/main/src/github/utils/README.md#module_Primer-Utilities">this README about the Primer-utilities on profile-components</a>.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How to set up Commitzen with Husky](https://dev.to/ricardo_borges/how-to-set-up-commitzen-with-husky-4a57) 
+ <details><summary>Article</summary> <p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a> specification contains a set of rules for creating an explicit commit history, which makes it easier to write automated tools on top of, for example, <a href="https://github.com/semantic-release/semantic-release">semantic release</a>. You can manually follow this convention in your project or use a tool to assist you, such as <a href="https://github.com/commitizen/cz-cli">Commitizen</a>. </p>
+
+<p>There are some ways to use Commitizen in your project, in this post, I will show you how to set it up with <a href="https://typicode.github.io/husky/">Husky</a>, so whenever you run <code>git commit</code>, you'll be prompted to fill out any required commit fields at commit time.</p>
+
+<p>To start, install Commitzen and Husky packages:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>npm i commitizen husky <span class="nt">--save-dev</span>
 </code></pre>
 
 </div>
 
 
 
-<p>Then you could do this:</p>
-
-<h4>
-  
-  
-  Parent
-</h4>
-
-
+<p>Next, initialize your project to use the cz-conventional-changelog adapter<br>
+</p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">useServerProvider</span><span class="p">(</span><span class="dl">'</span><span class="s1">count</span><span class="dl">'</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
-
-<span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">27</span><span class="p">;</span>
+<pre class="highlight shell"><code>commitizen init cz-conventional-changelog <span class="nt">--save-dev</span> <span class="nt">--save-exact</span>
 </code></pre>
 
 </div>
 
 
 
-<h4>
-  
-  
-  Child
-</h4>
+<p>That command will do the following:</p>
 
+<ol>
+<li><p>Install the cz-conventional-changelog adapter npm module;</p></li>
+<li><p>Save it to <code>package.json</code>'s <code>dependencies</code> or <code>devDependencies</code>;</p></li>
+<li><p>Add the <code>config.commitizen</code> key to the root of your <code>package.json</code>.</p></li>
+</ol>
 
+<p>Finally, in the <code>package.json</code> file, set a Husky´s hook to trigger Commitzen on commit command<br>
+</p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">TestChild</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">useServerProvider</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">count</span><span class="dl">'</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Child</span><span class="p">:</span> <span class="p">{</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>    <span class="p">)</span>
+<pre class="highlight jsx"><code><span class="dl">"</span><span class="s2">husky</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">hooks</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">prepare-commit-msg</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">exec &lt; /dev/tty &amp;&amp; npx cz --hook || true</span><span class="dl">"</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -313,472 +670,45 @@
 
 
 
-<p>Nevertheless, on a server you shouldn't care about any of this... so the original react-like way still stands.</p>
-
-<ul>
-<li><a href="https://github.com/jdgamble555/server-context">GitHub Repo</a></li>
-<li><a href="https://codesandbox.io/p/github/jdgamble555/server-context/master?file=%2Fapp%2Fuse-server-provider.tsx%3A1%2C1">CodeSandBox</a></li>
-</ul>
-
-<p>Probably the last article in this series... probably...</p>
-
-<p>J</p>
-
-<p>Getting back to rebuilding <a href="https://code.build">code.build</a></p>
+<p>And that´s it, you are all set. Make some changes to your code, run <code>git commit</code>, and follow the Commitzen instructions.</p>
 
  </details> 
  <hr /> 
 
- #### - [Top Reasons for Updating to the New OBS 30.0 Release](https://dev.to/dolbyio/top-reasons-for-updating-to-the-new-obs-300-release-g6m) 
- <details><summary>Article</summary> <p>Open Broadcast Software (OBS) Studio has released 30.0.0 as a public release candidate with some new updates to the long popular streaming and recording tool. You may be wondering if it is worth downloading the latest version right away so I've highlighted a few of the more note-worthy updates that impact my broadcast workflows. Specifically, including support for WHIP opens up a whole range of new opportunities.</p>
+ #### - [Uma Jornada na Engenharia de Software: Minha História e Experiência](https://dev.to/rntvicente/uma-jornada-na-engenharia-de-software-minha-historia-e-experiencia-jbn) 
+ <details><summary>Article</summary> <p>Olá, pessoal! Sejam bem-vindos ao meu espaço dedicado à engenharia de software, onde estaremos explorando juntos os princípios fundamentais, as tendências atuais e os desafios emocionantes deste campo. Meu nome é Renato, e gostaria de compartilhar um pouco da minha história e experiência na engenharia de software com vocês.</p>
 
 <h2>
   
   
-  1 - Support for WHIP Outputs from OBS
+  <strong>Quem Sou Eu?</strong>
 </h2>
 
-<p>WebRTC-HTTP Ingestion Protocol (WHIP) is an IETF standard protocol for streaming media ingress that was championed by the Millicast team (now part of Dolby.io). WebRTC has been used for many applications including real-time communications, server-rendered gaming, etc. where a protocol supporting use cases where ultra-low latency is prioritized over packet loss. You can <a href="https://dolby.io/blog/what-is-whip-intro-to-webrtc-streaming-part-1/">learn more about WHIP</a> elsewhere, but where this has an impact right away:</p>
-
-<ul>
-<li><p><a href="https://docs.dolby.io/streaming-apis/docs/webrtc-whip">Secure streaming services such as Dolby.io</a> support WHIP for setting up protected private broadcasts for real-time applications like sports, betting, gaming, competitions, remote production, etc.</p></li>
-<li><p><a href="https://dev.to/dolbyio/how-to-broadcast-a-webrtc-stream-to-twitch-7fa">Public commercial streaming services such as Twitch</a> now supports WHIP. That means you can stream to very large audiences without sacrificing delivery of audio/video lagging behind text chat and other messaging services.</p></li>
-</ul>
-
-<p>For the access that WHIP provides alone is enough to justify an upgrade.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---oggJhEa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kytuy8phgerz34wdba63.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---oggJhEa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kytuy8phgerz34wdba63.png" alt="Use WHIP Setting" width="800" height="234"></a></p>
-
-<p>Here's an example using WHIP with the <a href="https://docs.dolby.io/streaming-apis/docs/hosted-viewer">hosted player</a>.<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--WnOR5xkz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mvufdshfodrax3o4dhxt.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--WnOR5xkz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mvufdshfodrax3o4dhxt.png" alt="OBS 30 with WHIP Streaming" width="800" height="450"></a></p>
+<p>Eu sou o Renato um apaixonado por tecnologia. Minha paixão pela programação me levou a escolher a engenharia de software como minha carreira. Ao longo dos anos, tive o privilégio de trabalhar em uma variedade de projetos desafiadores, aprender com grandes mentores e ajudar a criar soluções de software que impactaram positivamente empresas e usuários finais.</p>
 
 <h2>
   
   
-  2 - Status Bar Changes in OBS 30.0
+  <strong>Minha Carreira até Agora</strong>
 </h2>
 
-<p>The status bar has had a design refresh. The information is the same but structured a bit differently with some visual icons to help with identification of the stream health.</p>
+<p>Comecei minha jornada um pouco mais tarde do que alguns, aos 25 anos. Isso se deveu ao fato de que, aos 18 anos, fui convocado para o serviço militar. Após completar esse compromisso, não iniciei minha carreira diretamente na área. Na verdade, comecei trabalhando com atendimento ao público, o que me permitiu pagar minha faculdade de <strong>Ciências da Computação</strong>, na qual me formei em 2008.</p>
 
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--v8_VtARn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wiv8tmym3kzqan70m1fe.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--v8_VtARn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wiv8tmym3kzqan70m1fe.png" alt="OBS 30 status bar with new design and icons" width="800" height="22"></a></p>
+<p>Ao longo dos anos, avancei por diversas posições, desde desenvolvedor júnior até líder de equipe. Durante essa trajetória, aprimorei minhas habilidades técnicas, aprendi a liderar equipes de desenvolvimento e a enfrentar os desafios complexos dos projetos de software.</p>
 
-<p>By comparison, the status bar from OBS 29:</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--82QkdU1B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kscso8vamjt6el0f1vmq.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--82QkdU1B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kscso8vamjt6el0f1vmq.png" alt="OBS 29 status bar" width="800" height="21"></a></p>
-
-<p>You may also notice that encoders and capture screens are now sorted by name to make it easier to find devices in a predictable order. If you often share a screen or an application in your workflows this can prevent some fumbling around while live.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--66kAM_sC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m7hifweoqj7xh7m4c868.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--66kAM_sC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m7hifweoqj7xh7m4c868.png" alt="Sorting in OBS 30 Selection Lists" width="800" height="375"></a></p>
-
-<p>These changes offer some nice usability improvements.</p>
+<p>Além do meu trabalho profissional, sempre mantive um interesse constante em aprendizado e crescimento. Participei de cursos, conferências e workshops para me manter atualizado com as últimas tendências da área. Também comecei a compartilhar meu conhecimento com a comunidade por meio de artigos e tutoriais online.</p>
 
 <h2>
   
   
-  3 - MacOS Compatibility Improvements
+  <strong>O Que Esperar Neste Espaço?</strong>
 </h2>
 
-<p>If your primary workstation for running OBS is a Mac, there are some substantial improvements.</p>
+<p>Neste espaço, pretendo compartilhar minha experiência e conhecimento. Vamos explorar tópicos que vão desde o desenvolvimento de software em si até os princípios de design, práticas ágeis e muito mais. Meu objetivo é tornar a arte de engenharia de software mais acessível para iniciantes e fornecer insights valiosos para profissionais experientes.</p>
 
-<p>The virtual camera is more widely compatible with other applications. If your primary use case with OBS is to add special effects and filters to regular conference tools, this can give your system some much needed reliability when switching from one application to another.</p>
+<p>Estou empolgado para embarcar nessa jornada com vocês e estou aberto a sugestões de tópicos e perguntas que possam ter. Juntos, vamos desvendar os segredos e aprofundar nosso entendimento deste mundo incrível.</p>
 
-<p>There is also audio capture fix and option to hide OBS windows from screen captures.</p>
-
-<h2>
-  
-  
-  4 - Safe Mode for Complex Integrations
-</h2>
-
-<p>If you use third-party plugins, custom scripts, etc. then you've probably had to scrap a broadcast or two while debugging a problem. The ability to launch in a "Safe Mode" is added so that you can disable loading and investigate the root cause of the issue.</p>
-
-<h2>
-  
-  
-  Download and Install OBS 30.0
-</h2>
-
-<p>There are lots of other fixes and details called out in the <a href="https://github.com/obsproject/obs-studio/releases">release notes</a> that may be valuable for some, but those are a few of the top updates for my workflows.</p>
-
-<p>You can find the latest release available for download from <a href="https://obsproject.com/download">obsproject.com</a>. You can also find preview version from the <a href="https://github.com/obsproject/obs-studio/releases">obsproject/obs-studio</a> github release history.</p>
-
-<p>A huge thanks and shoutout to all the <a href="https://github.com/obsproject/obs-studio/graphs/contributors">contributors</a> who made this release possible. If you have time and/or money consider contributing to their <a href="https://patreon.com/obsproject">Patreon</a> or <a href="https://github.com/obsproject/obs-studio/labels/Good%20first%20issue">Open Issues</a> this Hacktober.</p>
-
- </details> 
- <hr /> 
-
- #### - [Network Programming: The computer network.](https://dev.to/jothamntekim1/network-programming-the-computer-network-312m) 
- <details><summary>Article</summary> <h2>
-  
-  
-  Table of Contents
-</h2>
-
-<p> 1. Introduction<br>
- 2. What is a Computer Network?<br>
- 3. Types of Computer Networks<br>
- 4. Conclusion</p>
-
-<h2>
-  
-  
-  Introduction
-</h2>
-
-<p>You have probably worked into several internet cafes in an attempt to photocopy or print a document. </p>
-
-<p><strong>-</strong> You walk straight to the person in charge and tell him you need a printed copy of the document you have on your device. </p>
-
-<p><strong>-</strong> You send him the document. After a few minutes, he walks to the printer and gets you a copy of the document you sent him.</p>
-
-<p>But how exactly did the document you sent to his computer get to the printer?</p>
-
-<p>Well, the computer connects to the printer's IP address and sends the data in a language the printer knows. This is possible with the help of <strong>Computer Network.</strong></p>
-
-<h2>
-  
-  
-  What is a Computer Network?
-</h2>
-
-<p>A computer network is a bunch of devices connected to exchange information — emails, documents, audio/video data — or to share a resource — printers, storage and other physical devices. Typically, computers in a network are called <strong>hosts</strong>, while <strong>links</strong> are the elements that connect them.</p>
-
-<ul>
-<li><p>The scenario painted above about the connection between a printer and a computer is one example of a computer network.</p></li>
-<li><p>Receiving files from a friend's device through Bluetooth or Xender connection is another example of a computer network.</p></li>
-<li><p>The connection between your favourite browser(chrome for example) and the servers where the data you request are stored is yet another example. The list is endless.</p></li>
-</ul>
-
-<h2>
-  
-  
-  Types of Computer Networks
-</h2>
-
-<p>Computer networks range from very small to very large. Based on size, they're referred to as:</p>
-
-<ul>
-<li><p><strong>Local Area Network (LAN)</strong> - Few hosts(computers) connected over a limited area. Like the ones we find inside houses, schools or offices.</p></li>
-<li><p><strong>Metropolitan Area Network (MAN)</strong> - A larger network that extends across a city and can be conceptually seen as many smaller LANs connected together.</p></li>
-<li><p><strong>Wide Area Network (WAN)</strong> - an even bigger network, which connects multiple <strong>MANs or LANs</strong> and can span the whole world.</p></li>
-</ul>
-
-<p>Engineers are also working on a type of <strong>interplanetary computer network</strong> that connects satellites, planetary rovers and the Earth which at this time is not of our interest.</p>
-
-<p>Computer networks can be analysed both at a hardware and software level. Physically, a network is made of computers, cables and other machinery that makes it work correctly. Understanding computer networks on the hardware level involves a lot of physics, mathematics and electronics to describe how the signal travels around, along with the technology behind components and computers. The software level on the other hand involves programs, instructions and algorithms(a set of step-by-step instructions for solving a problem) that give life to the physical counterpart - computers, cables, routers, etc.</p>
-
-<p>The hardware part of a computer network is beyond the scope of this article series. Our focus will be on the software level which involves <strong>Network Programming:</strong> writing programs that communicate with other programs across a computer network.</p>
-
-<p>All networks are based on one or more <strong>network protocols</strong> - a set of rules that determine how information should be transmitted between different computers in the same network.</p>
-
-<p>For example, the <strong>HyperText Transfer Protocol (HTTP)</strong> describes how to fetch and share resources, such as text documents, over a network. It also describes all the hardware components required for the resource exchange to work correctly. Thanks to the HTTP you can browse this page on your device, add comments in the box below or share it on social media.</p>
-
-<p>The list of existing network protocols is quite huge and spans across multiple domains. While the list may be a long one, they all follow the <strong>Open System Interconnection(OSI) model</strong>. </p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wCHme9xw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x85ipfutd64xmslo2prx.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wCHme9xw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x85ipfutd64xmslo2prx.png" alt="Image description" width="600" height="764"></a></p>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>We have established that computer networks are crucial in modern systems and applications. While a few standalone systems like Microsoft Word, Calculator app, Adobe Photoshop etc., can operate without the need to connect to other hosts/applications, most systems require some sort of connection to other hosts to function hence the need for a Computer Network.</p>
-
-<p>In future articles, we will explore some of the different layers of computer protocols - <strong>network layer(IP),</strong> <strong>transport layer(TCP/UDP)</strong> and <strong>application layer(HTTP/FTP),</strong> and how they follow the <strong>OSI</strong> model.</p>
-
- </details> 
- <hr /> 
-
- #### - [Leveraging JavaScript for Common Search Operations](https://dev.to/frantchessico/leveraging-javascript-for-common-search-operations-4gc6) 
- <details><summary>Article</summary> <p><strong>Introduction:</strong></p>
-
-<p>JavaScript is a versatile and powerful programming language commonly used in web development. One of its fundamental capabilities is performing various search operations on arrays and strings. In this guide, we will explore eight common scenarios where search operations come in handy. We will use practical examples in the context of inventory management and user administration to illustrate the power of these operations. Let's dive into the world of JavaScript and searching!</p>
-
-<p><strong>1. Searching for an Element in an Array by Value:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">inventory</span> <span class="o">=</span> <span class="p">[</span>
-     <span class="p">{</span> <span class="na">code</span><span class="p">:</span> <span class="dl">'</span><span class="s1">001</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Item A</span><span class="dl">'</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">10</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">code</span><span class="p">:</span> <span class="dl">'</span><span class="s1">002</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Item B</span><span class="dl">'</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">code</span><span class="p">:</span> <span class="dl">'</span><span class="s1">003</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Item C</span><span class="dl">'</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">20</span> <span class="p">},</span>
-   <span class="p">];</span>
-
-   <span class="kd">const</span> <span class="nx">desiredCode</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">002</span><span class="dl">'</span><span class="p">;</span>
-   <span class="kd">const</span> <span class="nx">foundProduct</span> <span class="o">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="nx">desiredCode</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, we utilize <code>array.find</code> to search for a specific product in the inventory based on its unique code. The variable <code>foundProduct</code> will store the object of the corresponding product.</p>
-
-<p><strong>2. Filtering Elements of an Array:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">inventory</span> <span class="o">=</span> <span class="p">[</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Item A</span><span class="dl">'</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">10</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Item B</span><span class="dl">'</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Item C</span><span class="dl">'</span><span class="p">,</span> <span class="na">quantity</span><span class="p">:</span> <span class="mi">20</span> <span class="p">},</span>
-   <span class="p">];</span>
-
-   <span class="kd">const</span> <span class="nx">lowInventory</span> <span class="o">=</span> <span class="nx">inventory</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">product</span> <span class="o">=&gt;</span> <span class="nx">product</span><span class="p">.</span><span class="nx">quantity</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Here, we employ <code>filter</code> to create a list of products with low inventory, specifically those with a quantity less than 10.</p>
-
-<p><strong>3. Sorting an Array:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Charlie</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">35</span> <span class="p">},</span>
-   <span class="p">];</span>
-
-   <span class="kd">const</span> <span class="nx">sortedUsers</span> <span class="o">=</span> <span class="nx">users</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">age</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The code above uses <code>sort</code> to arrange users based on their age, resulting in <code>sortedUsers</code> with users in ascending order of age.</p>
-
-<p><strong>4. Finding the Index of an Element in an Array:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">catalog</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Product A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Product B</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Product C</span><span class="dl">'</span><span class="p">];</span>
-   <span class="kd">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">catalog</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Product B</span><span class="dl">'</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this case, <code>indexOf</code> is utilized to find the index of the product "Product B" in the <code>catalog</code> list.</p>
-
-<p><strong>5. Checking If an Element Exists in an Array:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">apple</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">banana</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">];</span>
-   <span class="kd">const</span> <span class="nx">hasBanana</span> <span class="o">=</span> <span class="nx">fruits</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">banana</span><span class="dl">'</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We utilize <code>includes</code> to verify if "banana" is present in the <code>fruits</code> array.</p>
-
-<p><strong>6. Finding Unique Elements in an Array:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">repeatedNumbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-   <span class="kd">const</span> <span class="nx">uniqueNumbers</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">repeatedNumbers</span><span class="p">));</span>
-</code></pre>
-
-</div>
-
-
-
-<p><code>Set</code> is employed to create a set of unique numbers from <code>repeatedNumbers</code>.</p>
-
-<p><strong>7. Searching for Matches in Strings:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">JavaScript is amazing!</span><span class="dl">'</span><span class="p">;</span>
-   <span class="kd">const</span> <span class="nx">containsJavaScript</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">JavaScript</span><span class="dl">'</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Here, <code>includes</code> checks if the string contains the word "JavaScript."</p>
-
-<p><strong>8. Filtering Objects in an Array by Property:</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code>   <span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alice</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bob</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span> <span class="p">},</span>
-     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Charlie</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">35</span> <span class="p">},</span>
-   <span class="p">];</span>
-
-   <span class="kd">const</span> <span class="nx">over30</span> <span class="o">=</span> <span class="nx">users</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">person</span> <span class="o">=&gt;</span> <span class="nx">person</span><span class="p">.</span><span class="nx">age</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>We employ <code>filter</code> to create a list of users older than 30 years in this user management system.</p>
-
-<p><strong>Conclusion:</strong></p>
-
-<p>JavaScript's search operations are indispensable tools for web developers, facilitating efficient data retrieval and manipulation. By understanding and applying these methods, you can enhance the functionality of your web applications, whether in the context of inventory management or user administration. JavaScript's search capabilities are a valuable addition to your developer toolkit, offering versatility and power in equal measure.</p>
-
- </details> 
- <hr /> 
-
- #### - [How do you define the main sections of a web page using HTML?](https://dev.to/matheushchaves/how-do-you-define-the-main-sections-of-a-web-page-using-html-253j) 
- <details><summary>Article</summary> <h1>
-  
-  
-  Understanding the Main Sections of a Web Page with HTML
-</h1>
-
-<p>In modern web development, structuring your web page correctly is crucial. Not only does it impact SEO, but it also ensures that your site is accessible. In this article, we'll delve into the main sections of a web page and how to define them using HTML5.</p>
-
-<h2>
-  
-  
-  Header
-</h2>
-
-<p>The header typically sits at the top of your web page. It contains branding, navigation, and other vital information.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;header&gt;</span>
-  <span class="nt">&lt;h1&gt;</span>Website Title<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;nav&gt;</span>
-    <span class="c">&lt;!-- Navigation links go here --&gt;</span>
-  <span class="nt">&lt;/nav&gt;</span>
-<span class="nt">&lt;/header&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Navigation
-</h2>
-
-<p>This section is integral for site navigation. It can be a part of the header or stand alone.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;nav&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#home"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#about"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
-  <span class="c">&lt;!-- Other links --&gt;</span>
-<span class="nt">&lt;/nav&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Main Content
-</h2>
-
-<p>This is where you put the primary content of your web page.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;main&gt;</span>
-  <span class="nt">&lt;article&gt;</span>
-    <span class="c">&lt;!-- Article content --&gt;</span>
-  <span class="nt">&lt;/article&gt;</span>
-  <span class="nt">&lt;aside&gt;</span>
-    <span class="c">&lt;!-- Sidebar or related information --&gt;</span>
-  <span class="nt">&lt;/aside&gt;</span>
-<span class="nt">&lt;/main&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Articles
-</h2>
-
-<p>Use the article element to mark individual content pieces as stand-alone articles.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;article&gt;</span>
-  <span class="nt">&lt;h2&gt;</span>Article Title<span class="nt">&lt;/h2&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Article content...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/article&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Sidebar
-</h2>
-
-<p>A section that often contains related info or links.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;aside&gt;</span>
-  <span class="nt">&lt;h3&gt;</span>Related Links<span class="nt">&lt;/h3&gt;</span>
-  <span class="c">&lt;!-- Links or other content --&gt;</span>
-<span class="nt">&lt;/aside&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Footer
-</h2>
-
-<p>Located at the bottom, this section can contain copyright notices, links to privacy policies, or contact info.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;footer&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Copyright <span class="ni">&amp;copy;</span> 2023. All rights reserved.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/footer&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>By using these semantic elements, you can create a structured and meaningful layout for your web page. This practice not only enhances the user experience but also aids search engines in understanding your page structure.</p>
-
-<p>Happy coding!</p>
+<p>Fiquem à vontade para deixar comentários, perguntas ou sugestões. </p>
 
  </details> 
  <hr /> 
