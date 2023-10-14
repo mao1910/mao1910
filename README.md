@@ -117,178 +117,160 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [44 React Frontend Interview Questions](https://dev.to/m_midas/44-react-frontend-interview-questions-2o63) 
+ #### - [CS61A: Projeto HOG (Parte 1)](https://dev.to/matt1cs/cs61a-projeto-hog-parte-1-54bl) 
  <details><summary>Article</summary> <h2>
   
   
-  Introduction
+  Introdução
 </h2>
 
-<p>When it comes to interviewing for a React frontend developer position, being well-prepared for the technical questions is crucial. React has become one of the most popular JavaScript libraries for building user interfaces, and employers often focus on assessing a candidate's understanding of React's core concepts, best practices, and related technologies. In this article, we will explore a comprehensive list of questions commonly asked during React frontend developer interviews. By familiarizing yourself with these questions and their answers, you can enhance your chances of success and demonstrate your proficiency in React development. So, let's dive in and explore the key topics that you should be ready to tackle in a React Frontend Developer interview.</p>
+<blockquote>
+<p>O curso CS 61A da Universidade da Califórnia, Berkeley, é um curso de introdução à ciência da computação. Ele busca fornecer uma base sólida em programação, abordando conceitos fundamentais de estruturas de dados, algoritmos e paradigmas de programação. O curso é conhecido por sua ênfase em Python como a linguagem principal de programação e pela abordagem prática e desafiadora.</p>
+</blockquote>
 
-<p><a href="https://i.giphy.com/media/AYECTMLNS4o67dCoeY/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/AYECTMLNS4o67dCoeY/giphy.gif" width="480" height="400"></a></p>
+<p>Esta publicação vai focar no primeiro projeto desta disciplina que é chamado 'O jogo de Hog'. Eu confesso que não conhecia este jogo até começar a fazer este desafio, continuo não tendo o jogado mas compreendi as regras que são explicadas na <a href="https://cs61a.org/proj/hog/">página do projeto</a>.</p>
+
+<p>Ainda não terminei de fazer este desafio, então vou publicar meus sucessos, dúvidas e dificuldades como forma de estudo e buscar trabalhar em cima da minha comunicação também. O projeto está divido em fases e cada fase possui uma série de problemas a serem solucionados.</p>
+
+
+
+
+<h2>
+  
+  
+  Fase 1: Problema 1
+</h2>
+
+<blockquote>
+<p>Implemente a função <code>roll_dice</code> em <code>hog.py</code>. Esta função recebe dois argumentos: um número inteiro positivo chamado <code>num_rolls</code> recebendo o número de vezes que o dado será rolado e uma função <code>dice</code>. Esta função retornará o número de pontos ao rolar o dado aquele número de vezes em uma rodada: será tanto a soma de suas saídas ou 1 (<em>Sow Sad</em>).</p>
+</blockquote>
+
+<ul>
+<li>
+<strong>Sow Sad</strong>. Se qualquer resultado do dado lançado for 1, a pontuação do jogador na rodada será <code>1</code>.</li>
+</ul>
 
 <h3>
   
   
-  1. What React hooks do you know?
+  Exemplos
 </h3>
 
 <ul>
 <li>
-<code>useState</code>: Used for managing state in functional components.</li>
+<em>Exemplo 1</em>: O jogador da rodada joga o dado 7 vezes, 5 destas são 1. A pontuação do turno será <code>1</code>.</li>
 <li>
-<code>useEffect</code>: Used for performing side effects in functional components, such as fetching data or subscribing to events.</li>
-<li>
-<code>useContext</code>: Used for accessing the value of a React context within a functional component.</li>
-<li>
-<code>useRef</code>: Used for creating mutable references to elements or values that persist across renders.</li>
-<li>
-<code>useCallback</code>: Used for memoizing functions to prevent unnecessary re-renders.</li>
-<li>
-<code>useMemo</code>: Used for memoizing values to improve performance by caching expensive computations.</li>
-<li>
-<code>useReducer</code>: Used for managing state with a reducer function, similar to how Redux works.</li>
-<li>
-<code>useLayoutEffect</code>: Similar to useEffect, but the effect runs synchronously after all DOM mutations.</li>
+<em>Exemplo 2</em>: O jogador da rodada joga o dado 4 vezes, em todas são 3. Como Sow Sad não ocorreu, a pontuação do turno ao jogador será de <code>12</code>.</li>
 </ul>
 
-<p>These hooks provide powerful tools for managing state, handling side effects, and reusing logic in React functional components.<br>
-<a href="https://react.dev/reference/react">Learn more</a></p>
 <h3>
   
   
-  2. What is Virtual DOM?
+  Solução
 </h3>
 
-<p>Virtual DOM is a concept in React where a lightweight, virtual representation of the actual DOM (Document Object Model) is created and stored in memory. It is a programming technique used to optimize the performance of web applications.</p>
+<ol>
+<li>Uma dica muito importante é dada na descrição do problema. Segue a dica: </li>
+</ol>
 
-<p>When changes are made to the data or state of a React component, the virtual DOM is updated instead of directly manipulating the real DOM. The virtual DOM then calculates the difference between the previous and updated state of the component, known as the "diffing" process.</p>
+<blockquote>
+<p>You should call <code>dice()</code> <strong>exactly <code>num_rolls</code> times</strong> in the body of <code>roll_dice</code>.`</p>
+</blockquote>
 
-<p>Once the differences are identified, React efficiently updates only the necessary parts of the real DOM to reflect the changes. This approach minimizes the number of actual DOM manipulations and improves the overall performance of the application.</p>
+<p>Acredito que seja natural ao observar os exemplos, já pensar numa situação do uso de condicionais para verificar se o valor de algum dos dados é 1. </p>
 
-<p>By using the virtual DOM, React provides a way to create dynamic and interactive user interfaces while ensuring optimal efficiency and rendering speed.</p>
-<h3>
+<ul>
+<li><strong>Se for 1, retornar 1.</strong></li>
+</ul>
+
+<p>O problema desta forma de pensar é que não será atendido a condição de ter que chamar a função <code>dice()</code> o mesmo número de vezes que <code>num_rolls</code>. Já que o retornar dentro de um loop é uma condição de parada, logo a função não mais será chamada.</p>
+
+<p>Minha alternativa para este problema foi colocar uma <code>flag</code> para ser atendida. A partir do momento que encontra o valor <code>1</code>, o loop continua rodando a quantidade <code>num_rolls</code> de vezes e a partir da flag posso, com outra condicional, retornar o valor da resposta.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--vDPyUgtc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lokuc51ikf1fum641gka.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--vDPyUgtc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lokuc51ikf1fum641gka.png" alt="Solução" width="401" height="263"></a></p>
+
+<h2>
   
   
-  3. How to render an array of elements?
-</h3>
+  Conclusão
+</h2>
 
-<p>To render an array of elements, you can use the <code>map()</code> method to iterate over the array and return a new array of React elements.<br>
+<p>Tive um momento <em>a-há</em> ao trocar o <code>for _ in range()</code> por um <code>while</code>. A partir daí, todos os meus testes foram aprovados e usar flags para indicar que uma ação aconteceu, acredito que tenha tornado o meu código com maior clareza.</p>
+
+<p>Quero buscar falar de cada problema que for fazendo e aprimorar minha capacidade de solucionar problemas, espero que isto ajude a quem buscar fazer este curso.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [How Svelte made me understand Web development better in general](https://dev.to/nicholascostadev/how-svelte-made-me-understand-web-development-better-in-general-ag5) 
+ <details><summary>Article</summary> <blockquote>
+<p>In this article I'm going to be talking a lot about Sveltekit when saying "svelte", since it's the way Svelte team advises building web apps with Svelte and it's the way that I now build my apps with it.<br>
+   I also wanted to say that this post is about my experience, and I'm not going to talk only about Svelte specific things that I think made me a better developer, but things I learned during the process of learning svelte.</p>
+</blockquote>
+
+<p>I wanted to share this with everyone that might be wondering if Svelte is the right choice for learning web, and I couldn't say anything less than yes by my experience. Of course I was and still am at the start of my career and I'm constantly learning new things but I guess it accelerated some knowledge that I didn't think I would catch that quick, only because on other frameworks, it wasn't needed.</p>
+
+<h2>
+  
+  
+  Progressive Enhancement
+</h2>
+
+<p>For those who don't know, this is the wikipedia definition:</p>
+
+<blockquote>
+<p>Progressive enhancement is a strategy in web design that puts emphasis on web content first, allowing everyone to access the basic content and functionality of a web page, whilst users with additional browser features or faster Internet access receive the enhanced version instead.</p>
+</blockquote>
+
+<p>This is one thing that I didn't even think before learning Svelte, and I heard about that while learning through the <a href="https://learn.svelte.dev">learn.svelte.dev</a> and other tutorials of Svelte, props to <a href="https://www.youtube.com/@JoyofCodeDev">Joy of Code</a> , <a href="https://www.youtube.com/@Huntabyte">Huntabyte</a> and <a href="https://www.youtube.com/@SvelteSociety">Svelte Society</a> for always sharing valuable content that made me think about things I never thought before.</p>
+
+<p>Before Svelte, I only worked with React, mainly using Nextjs(No app dir back then), and I never thought about making things work without javascript, and that thought suddenly got into my mind when I was exposed to <a href="https://kit.svelte.dev/docs/form-actions">form actions</a> in Sveltekit. Sveltekit is thought of working without javascript, working always with server-side rendered pages, working with form actions(meaning no need for javascript to make your forms work as expected), fetching data with redirects instead of client-side fetch(this is relative, but in many cases you may not need client-side fetch). Almost anything can be done without client-side fetching.</p>
+
+<h2>
+  
+  
+  Learn Javascript, not React
+</h2>
+
+<p>I'll probably still use React on some next projects, but even though I still find React pretty good, I can't say I prefer writing <em>"Reacty"</em> way of code instead of just javascript. React may only be javascript, but if you've worked with it, you know there are some caveats, making libraries not ported to React work in React, is hard, and at the end you are not learning javascript, you're React way of working with javascript.</p>
+
+<p>With Svelte, you don't have to think about what you have to do to make your code work in Svelte, even though you can change things to use Svelte actions, you don't have to. Everything that works in javascript, works in Svelte out of the box, no overhead of converting packages.</p>
+
+<h2>
+  
+  
+  Accessibility
+</h2>
+
+<p>That's not actually a Svelte specific topic, but more a Svelte community one, but either way, I wanted to share this one. The Svelte community is quite amazing, one of the most awesome things I see in it is the <code>"This Week In Svelte"</code> that the <a href="https://www.youtube.com/@SvelteSociety">Svelte Society</a> has every Friday by sharing new updates of Svelte, new packages made with svelte or made for Svelte, and not only Svelte specific topics, but also web related content in general.</p>
+
+<p>There has been one episode that really changed my vision on accessibility(they have many episodes that tackle some parts of accessibility), that he was using voiceover to walk through the wikipedia page of Svelte and was showing how people using screen readers might navigate through your application, and even though I already knew people would use screen readers, before that, I didn't take time to understand how it worked, and nor used it on my day-to-day, and after that, I cannot build components without thinking about accessibility. Now every component that I build I run voiceover and check if there's anything that could be better, I'm not saying this should be top priority every time but I guess that if you can take some time to improve the accessibility of your websites, you should, it will be good for you, being able to reach more people than before, and of course, for people that now will be able to use your website.</p>
+
+<h2>
+  
+  
+  Saving more state on URL than variables when applicable
+</h2>
+
+<p>Since <code>Sveltekit</code> encourages you to use your page handlers to fetch data instead of client-side, I ended up coming with more solutions that worked without javascript, sometimes using forms for redirecting to the page with the correct parameters or even with javascript, but saving the state on the URL enables you to save "sessions" for a user to share with someone.</p>
+
+<p>I have to say that it's again not a specific thing that Sveltekit introduced, but a thing the environment encourages, and because I didn't feel the need for doing so and nor had the incentive to do so when using Nextjs, I did not learn those things the way I should.</p>
+
+<p>By saying "I didn't feel the need for doing so" I mean that all tutorials I've watched and blog posts that talked about mutations and submitting forms, always were using something like this in React:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">languages</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="dl">"</span><span class="s2">JavaScript</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">TypeScript</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">Python</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">];</span>
+<pre class="highlight tsx"><code><span class="kd">function</span> <span class="nx">ExampleForm</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">e</span><span class="p">:</span> <span class="nx">FormEvent</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">languages</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">language</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">language</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;)</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/learn/rendering-lists">Learn more</a></p>
-
-<h3>
-  
-  
-  4. What is the difference between controlled and uncontrolled components?
-</h3>
-
-<p>The difference between controlled and uncontrolled components lies in <strong>how they manage and update their state</strong>.</p>
-
-<p>Controlled components are components where the state is controlled by React. The component receives its current value and updates it through props. It also triggers a callback function when the value changes. This means that the component doesn't store its own internal state. Instead, the parent component manages and passes the value down to the controlled component.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span> 
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span> 
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span> 
-
-  <span class="k">return</span> <span class="p">(</span> 
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> 
-      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Controlled Component<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span> 
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"name"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">name</span><span class="si">}</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Get Value<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
-  <span class="p">);</span> 
-<span class="p">}</span> 
-</code></pre>
-
-</div>
-
-
-
-<p>Uncontrolled components, on the other hand, manage their own state internally using refs or other methods. They store and update their state independently, without relying on props or callbacks. The parent component has less control over the state of uncontrolled components.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span> 
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span> 
-  <span class="kd">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span> 
-
-  <span class="k">return</span> <span class="p">(</span> 
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span> 
-      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Uncontrolled Component<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span> 
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"name"</span> <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">inputRef</span><span class="si">}</span> <span class="p">/&gt;</span> 
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Get Value<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
-  <span class="p">);</span> 
-<span class="p">}</span> 
-
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/learn/sharing-state-between-components#controlled-and-uncontrolled-components">Learn more</a></p>
-
-<h3>
-  
-  
-  5. What is the difference between class-based and functional React components?
-</h3>
-
-<p>The main difference between class-based and functional components is <strong>how they are defined and the syntax they use.</strong></p>
-
-<p>Class-based components are defined as ES6 classes and extend the <code>React.Component</code> class. They use the <code>render</code> method to return the JSX (JavaScript XML) that defines the component's output. Class components have access to component lifecycle methods and state management through <code>this.state</code> and <code>this.setState()</code>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="p">};</span>
-
-  <span class="nx">handleAgeChange</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
-      <span class="na">value</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="mi">1</span> 
-    <span class="p">});</span>
-  <span class="p">};</span>
-
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Value is <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleAgeChange</span><span class="si">}</span><span class="p">&gt;</span>
-        Increment value
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">handleSubmit</span><span class="si">}</span><span class="p">&gt;</span>
+            <span class="si">{</span><span class="cm">/* ... */</span><span class="si">}</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -296,1014 +278,9 @@
 
 
 
-<p>Functional components, on the other hand, are defined as simple JavaScript functions. They take in props as arguments and return JSX directly. Functional components do not have access to lifecycle methods or state. However, with the introduction of React Hooks in React 16.8, functional components can now manage state and use other features such as context and effects.<br>
-</p>
+<p>Doing something like this,  is relying on the user having javascript enabled, why not teaching people to handle forms as they're natively built and handle form inputs as they were thought, by using native <code>formData()</code>?</p>
 
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">handleAgeChange</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setValue</span><span class="p">(</span><span class="nx">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Value is <span class="si">{</span><span class="nx">value</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleAgeChange</span><span class="si">}</span><span class="p">&gt;</span>
-        Increment value
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In general, functional components are considered simpler and easier to read and test. It is recommended to use functional components whenever possible, unless there is a specific need for class-based components.</p>
-
-<h3>
-  
-  
-  6. What are the lifecycle methods of a component?
-</h3>
-
-<p>Lifecycle methods are a way to hook into the different stages of a component's life cycle, allowing you to execute specific code at specific times.</p>
-
-<p>Here is the list of the major lifecycle methods:</p>
-
-<ol>
-<li><p><code>constructor</code>: This is the first method called when a component is created. It is used for initializing state and binding event handlers. In functional components, you would use the <code>useState</code> hook for similar purposes.</p></li>
-<li><p><code>render</code>: This method is responsible for rendering JSX markup and returns the content to be displayed on the screen.</p></li>
-<li><p><code>componentDidMount</code>: This method is called immediately after the component is rendered in the DOM. It is commonly used for initialization tasks, such as API calls or setting up event listeners.</p></li>
-<li><p><code>componentDidUpdate</code>: This method is invoked when the component's props or state change. It allows you to perform side effects, update the component based on the changes, or trigger additional API calls.</p></li>
-<li><p><code>componentWillUnmount</code>: This method is called right before the component is removed from the DOM. It is used to clean up any resources that were set up in <code>componentDidMount</code>, such as removing event listeners or canceling timers.</p></li>
-</ol>
-
-<p>Some lifecycle methods, like <code>componentWillMount</code>, <code>componentWillReceiveProps</code>, and <code>componentWillUpdate</code>, have been deprecated or replaced with alternative methods or hooks.</p>
-
-<p>As for "this," it refers to the current instance of a class component. It allows you to access properties and methods within the component. In functional components, "this" is not used as functions are not bound to a specific instance.</p>
-
-<h3>
-  
-  
-  7. What are the peculiarities of using useState?
-</h3>
-
-<p><code>useState</code> returns a state value and a function to update it.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">'</span><span class="s1">Some state</span><span class="dl">'</span><span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>During the initial rendering, the returned state matches the value passed as the first argument. The <code>setState</code> function is used to update the state. It takes a new state value as a parameter and <strong>queues a re-render of the component</strong>. The <code>setState</code> function can also accept a callback function as a parameter, which takes the previous state value as a parameter.<br>
-<a href="https://react.dev/reference/react/useState">Learn more</a></p>
-<h3>
-  
-  
-  8. What are the peculiarities of using useEffect?
-</h3>
-
-<p>The <code>useEffect</code> hook allows you to perform side effects in a functional component.<br>
-Mutations, subscriptions, timers, logging, and other side effects are not allowed inside the main body of a functional component known as the React rendering phase. This can lead to confusing errors and inconsistencies in the user interface.<br>
-Instead, it is recommended to use useEffect. The function passed to useEffect will be executed after the render is committed to the screen, or if you pass an array of dependencies as the second parameter, the function will be called every time one of the dependencies changes.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Logging something</span><span class="dl">'</span><span class="p">);</span>
-<span class="p">},</span> <span class="p">[])</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/reference/react/useEffect">Learn more</a></p>
-
-<h3>
-  
-  
-  9. How to track the unmounting of a functional component?
-</h3>
-
-<p>Often, <code>useEffect</code> create resources that need to be cleaned up or reset before the component leaves the screen, such as a subscription or a timer identifier. <br>
-In order to do this, the function passed to <code>useEffect</code> can return a <strong>cleanup function</strong>. The cleanup function is run before the component is removed from the user interface to prevent memory leaks. Additionally, if the component renders multiple times (as is usually the case), the previous effect is cleaned up before the next effect is executed.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">function</span> <span class="nx">handleChange</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">setValue</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="nx">SomeAPI</span><span class="p">.</span><span class="nx">doFunction</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleChange</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="kd">function</span> <span class="nx">cleanup</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">SomeAPI</span><span class="p">.</span><span class="nx">undoFunction</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleChange</span><span class="p">);</span>
-  <span class="p">};</span>
-<span class="p">})</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  10. What are props in React?
-</h3>
-
-<p>Props are data that is passed to the component from the parent. Props<br>
-are read-only and cannot be changed.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="c1">// Parent component</span>
-<span class="kd">const</span> <span class="nx">Parent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, World!</span><span class="dl">"</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">Child</span> <span class="na">data</span><span class="p">=</span><span class="si">{</span><span class="nx">data</span><span class="si">}</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="c1">// Child component</span>
-<span class="kd">const</span> <span class="nx">Child</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">data</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">data</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/learn/passing-props-to-a-component">Learn more</a></p>
-
-<h3>
-  
-  
-  11. What is a state manager and which ones have you worked with or know?
-</h3>
-
-<p>State manager is a tool or library that helps manage the state of an application. It provides a centralized store or container for storing and managing data that can be accessed and updated by different components in the application.<br>
-A state manager solves several problems. Firstly, it is a good practice to separate data and the logic related to it from components. Secondly, when using local state and passing it between components, the code can become convoluted due to the potential for deep nesting of components. By having a global store, we can access and modify data from any component.<br>
-Alongside React Context, Redux or MobX are commonly used as state management libraries.<br>
-<a href="https://mobx.js.org/README.html">Learn more</a><br>
-<a href="https://redux-toolkit.js.org/">Learn more</a></p>
-<h3>
-  
-  
-  12. In which cases can you use local state and when should you use global state?
-</h3>
-
-<p>Local state is recommended to be used in cases where it is only used within one component and there are no plans to pass it to other components. Local state is also used in a component representing an individual item in a list. However, if component decomposition involves nested components with data being passed down the hierarchy, it is better to use global state.</p>
-<h3>
-  
-  
-  13. What is a reducer in Redux and what parameters does it take?
-</h3>
-
-<p>A reducer is a pure function that takes the state and action as parameters. Inside the reducer, we track the type of the received action and, depending on it, we modify the state and return a new state object.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">appReducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">initialState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// The reducer normally looks at the action type field to decide what happens</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Do something here based on the different types of actions</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="c1">// If this reducer doesn't recognize the action type, or doesn't</span>
-      <span class="c1">// care about this specific action, return the existing state unchanged</span>
-      <span class="k">return</span> <span class="nx">state</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers">Learn more</a></p>
-
-<h3>
-  
-  
-  14. What is an action and how can you change the state in Redux?
-</h3>
-
-<p>Action is a simple JavaScript object that must have a field with<br>
-a type.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">{</span>
-  <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SOME_TYPE</span><span class="dl">"</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>You can also optionally add some data as <strong>payload</strong>. In order to<br>
-change the state, it is necessary to call the dispatch function, to which we pass<br>
-action<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">{</span>
-  <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SOME_TYPE</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">payload</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Any payload</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers">Learn more</a></p>
-
-<h3>
-  
-  
-  15. Which pattern does Redux implement?
-</h3>
-
-<p>Redux implements the <strong>Flux pattern</strong>, which is a predictable state management pattern for applications. It helps in managing the state of an application by introducing a unidirectional data flow and a centralized store for the application's state.<br>
-<a href="https://www.newline.co/fullstack-react/30-days-of-react/day-18/#:~:text=Flux%20is%20a%20pattern%20for,default%20method%20for%20handling%20data.">Learn more</a></p>
-<h3>
-  
-  
-  16. Which pattern does Mobx implement?
-</h3>
-
-<p>Mobx implements the <strong>Observer pattern</strong>, also known as the Publish-Subscribe pattern.<br>
-<a href="https://www.patterns.dev/posts/observer-pattern">Learn more</a></p>
-<h3>
-  
-  
-  17. What are the peculiarities of working with Mobx?
-</h3>
-
-<p>Mobx provides decorators like <code>observable</code> and <code>computed</code> to define observable state and reactive functions. Actions decorated with action are used to modify the state, ensuring that all changes are tracked. Mobx also offers automatic dependency tracking, different types of reactions, fine-grained control over reactivity, and seamless integration with React through the mobx-react package. Overall, Mobx simplifies state management by automating the update process based on changes in observable state.</p>
-<h3>
-  
-  
-  18. How to access a variable in Mobx state?
-</h3>
-
-<p>You can access a variable in the state by using the <code>observable</code> decorator to define the variable as observable. Here's an example:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">observable</span><span class="p">,</span> <span class="nx">computed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">mobx</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">class</span> <span class="nx">MyStore</span> <span class="p">{</span>
-  <span class="p">@</span><span class="nd">observable</span> <span class="nx">myVariable</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello Mobx</span><span class="dl">'</span><span class="p">;</span>
-
-  <span class="p">@</span><span class="nd">computed</span> <span class="kd">get</span> <span class="nx">capitalizedVariable</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">myVariable</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyStore</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">capitalizedVariable</span><span class="p">);</span> <span class="c1">// Output: HELLO MOBX</span>
-
-<span class="nx">store</span><span class="p">.</span><span class="nx">myVariable</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hi Mobx</span><span class="dl">'</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">capitalizedVariable</span><span class="p">);</span> <span class="c1">// Output: HI MOBX</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, the <code>myVariable</code> is defined as an observable using the <code>observable</code> decorator. You can then access the variable using <code>store.myVariable</code>. Any changes made to <code>myVariable</code> will automatically trigger updates in dependent components or reactions.<br>
-<a href="https://mobx.js.org/actions.html">Learn more</a></p>
-<h3>
-  
-  
-  19. What is the difference between Redux and Mobx?
-</h3>
-
-<p>Redux is a simpler and more opinionated state management library that follows a strict unidirectional data flow and promotes immutability. It requires more boilerplate code and explicit updates but has excellent integration with React. <br>
-Mobx, on the other hand, provides a more flexible and intuitive API with less boilerplate code. It allows you to directly modify the state and automatically tracks changes for better performance. The choice between Redux and Mobx depends on your specific needs and preferences.</p>
-<h3>
-  
-  
-  20. What is JSX?
-</h3>
-
-<p>By default, the following syntax is used to create elements in react.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">someElement</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span>
-  <span class="dl">'</span><span class="s1">h3</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">{</span><span class="na">className</span><span class="p">:</span> <span class="dl">'</span><span class="s1">title__value</span><span class="dl">'</span><span class="p">},</span>
-  <span class="dl">'</span><span class="s1">Some Title Value</span><span class="dl">'</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>But we are used to seeing it like this<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">someElement</span> <span class="o">=</span> <span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">className</span><span class="p">=</span><span class="s">'title__value'</span><span class="p">&gt;</span>Some Title Value<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This is exactly what the markup is called jsx. This is a kind of language extension<br>
-that simplifies the perception of code and development<br>
-<a href="https://react.dev/learn/writing-markup-with-jsx#jsx-putting-markup-into-javascript">Learn more</a></p>
-<h3>
-  
-  
-  21. What is props drilling?
-</h3>
-
-<p>Props drilling refers to the process of passing props through multiple levels of nested components, even if some intermediate components do not directly use those props. This can lead to a complex and cumbersome code structure.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="c1">// Parent component</span>
-<span class="kd">const</span> <span class="nx">Parent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, World!</span><span class="dl">"</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">ChildA</span> <span class="na">data</span><span class="p">=</span><span class="si">{</span><span class="nx">data</span><span class="si">}</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="c1">// Intermediate ChildA component</span>
-<span class="kd">const</span> <span class="nx">ChildA</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">data</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">ChildB</span> <span class="na">data</span><span class="p">=</span><span class="si">{</span><span class="nx">data</span><span class="si">}</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="c1">// Leaf ChildB component</span>
-<span class="kd">const</span> <span class="nx">ChildB</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">data</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">data</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
-<span class="p">};</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, the <code>data</code> prop is passed from the Parent component to ChildA, and then from ChildA to ChildB even though ChildA doesn't directly use the prop. This can become problematic when there are many levels of nesting or when the data needs to be accessed by components further down the component tree. It can make the code harder to maintain and understand.</p>
-
-<p>Props drilling can be mitigated by using other patterns like context or state management libraries like Redux or MobX. These approaches allow data to be accessed by components without the need for passing props through every intermediate component.</p>
-
-<h3>
-  
-  
-  22. How to render an element conditionally?
-</h3>
-
-<p>You can use any conditional operators, including ternary.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">return</span> <span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="si">{</span><span class="nx">isVisible</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>I'm visible!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span><span class="si">}</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">return</span> <span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="si">{</span><span class="nx">isOnline</span> <span class="p">?</span> <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>I'm online!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">:</span> <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>I'm offline<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span><span class="si">}</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">if</span> <span class="p">(</span><span class="nx">isOnline</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>I'm online!<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">element</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>I'm offline<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-
-<span class="k">return</span> <span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="si">{</span><span class="nx">element</span><span class="si">}</span>
-  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">);</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/learn/conditional-rendering">Learn more</a></p>
-
-<h3>
-  
-  
-  23. What is useMemo used for and how does it work?
-</h3>
-
-<p><code>useMemo</code> is used to cache and memorize the<br>
-result of calculations.<br>
-Pass the creating function and an array of dependencies. <code>useMemo</code> will recalculate the memoized value only when the value of any of the dependencies has changed. This optimization helps to avoid<br>
-costly calculations with each render.<br>
-With the first parameter, the function accepts a callback in which calculations are performed, and with the second an array of dependencies, the function will re-perform calculations only when at least one of the dependencies is changed.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">memoValue</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">computeFunc</span><span class="p">(</span><span class="nx">paramA</span><span class="p">,</span> <span class="nx">paramB</span><span class="p">),</span> <span class="p">[</span><span class="nx">paramA</span><span class="p">,</span> <span class="nx">paramB</span><span class="p">]);</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/reference/react/useMemo">Learn more</a></p>
-
-<h3>
-  
-  
-  24. What is useCallback used for and how does it work?
-</h3>
-
-<p>The <code>useCallback</code> hook will return a memoized version of the callback, which changes only if the values of one of the dependencies change. <br>
-This is useful when passing callbacks to optimized child components that rely on link equality to prevent unnecessary renderings.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">callbackValue</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">computeFunc</span><span class="p">(</span><span class="nx">paramA</span><span class="p">,</span> <span class="nx">paramB</span><span class="p">),</span> <span class="p">[</span><span class="nx">paramA</span><span class="p">,</span> <span class="nx">paramB</span><span class="p">]);</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/reference/react/useCallback">Learn more</a></p>
-
-<h3>
-  
-  
-  25. What is the difference between useMemo and useCallback?
-</h3>
-
-<ol>
-<li>
-<code>useMemo</code> is used to memoize the result of a computation, while <code>useCallback</code> is used to memoize a function itself.</li>
-<li>
-<code>useMemo</code> caches the computed value and returns it on subsequent renders if the dependencies haven't changed.</li>
-<li>
-<code>useCallback</code> caches the function itself and returns the same instance unless the dependencies have changed.</li>
-</ol>
-
-<h3>
-  
-  
-  26. What is React Context?
-</h3>
-
-<p>React Context is a feature that provides a way to pass data through the component tree without manually passing props at every level. It allows you to create a global state that can be accessed by any component within the tree, regardless of its position. Context is useful when you need to share data between multiple components that are not directly connected through props.</p>
-
-<p>The React Context API consists of three main parts:</p>
-
-<ol>
-<li>
-<code>createContext</code>: This function is used to create a new context object.</li>
-<li>
-<code>Context.Provider</code>: This component is used to provide the value to the context. It wraps the components that need access to the value.</li>
-<li>
-<code>Context.Consumer</code> or <code>useContext</code> hook: This component or hook is used to consume the value from the context. It can be used within any component within the context's provider.</li>
-</ol>
-
-<p>By using React Context, you can avoid prop drilling (passing props through multiple levels of components) and easily manage state at a higher level, making your code more organized and efficient.<br>
-<a href="https://react.dev/learn/passing-data-deeply-with-context">Learn more</a></p>
-<h3>
-  
-  
-  27. What is useContext used for and how does it work?
-</h3>
-
-<p>In a typical React application, data is passed from top to bottom (from parent to child component) using props. However, such a method of use may be too cumbersome for some types of props<br>
-(for example, the selected language, UI theme), which must be passed to many components in the application. The context provides a way to share such data between components without having to explicitly pass the props through<br>
-each level of the tree.<br>
-The component calling useContext will always be re-rendered when<br>
-the context value changes. If re-rendering a component is costly, you can optimize it using memoization.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">ThemeContext</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">palette</span><span class="p">.</span><span class="nx">primary</span><span class="p">.</span><span class="nx">main</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
-      Some div
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/reference/react/useContext">Learn more</a></p>
-
-<h3>
-  
-  
-  28. What is useRef used for and how does it work?
-</h3>
-
-<p><code>useRef</code> returns a modifiable ref object, a property. The current of which is initialized by the passed argument. The returned object will persist for the entire lifetime of the component and will not change from render to render.<br>
-The usual use case is to access the descendant in an imperative<br>
-style. I.e. using ref, we can explicitly refer to the DOM element.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">buttonClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">inputRef</span><span class="si">}</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">buttonClick</span><span class="si">}</span><span class="p">&gt;</span>Focus on input tag<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/reference/react/useRef">Learn more</a></p>
-
-<h3>
-  
-  
-  29. What is React.memo()?
-</h3>
-
-<p><code>React.memo()</code> is a higher—order component. If your component always renders the same thing with non-changing props, you can wrap it in a <code>React.memo()</code> call to improve performance in some cases, thereby memorizing the result. This means that React will use the result of the last render, avoiding re-rendering. <code>React.memo()</code> only affects changes to the props. If a functional component is wrapped in React.memo and uses useState, useReducer, or useContext, it will be re-rendered when the state or context changes.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">memo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">MemoComponent</span> <span class="o">=</span> <span class="nx">memo</span><span class="p">(</span><span class="nx">MemoComponent</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// ...</span>
-<span class="p">});</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/reference/react/memo">Learn more</a></p>
-
-<h3>
-  
-  
-  30. What is React Fragment?
-</h3>
-
-<p>Returning multiple elements from a component is a common practice in React. Fragments allow you to form a list of child elements without creating unnecessary nodes in the DOM.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="p">&lt;&gt;</span>
-  <span class="p">&lt;</span><span class="nc">OneChild</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nc">AnotherChild</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/&gt;</span>
-<span class="c1">// or</span>
-<span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">Fragment</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nc">OneChild</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nc">AnotherChild</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">Fragment</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/reference/react/Fragment">Learn more</a></p>
-
-<h3>
-  
-  
-  31. What is React Reconciliation?
-</h3>
-
-<p>Reconciliation is a React algorithm used to distinguish one tree of elements from another to determine the parts that will need to be replaced. <br>
-Reconciliation is the algorithm behind what we used to call Virtual DOM. The definition sounds something like this: when you render a React application, the element tree that describes the application is generated in reserved memory. This tree is then included in the rendering environment - for example, a browser application, it is translated into a set of DOM operations. When the application state is updated, a new tree is generated. The new tree is compared with the previous one in order to calculate and enable exactly the operations that are needed to redraw the updated application.<br>
-<a href="https://react.dev/learn/preserving-and-resetting-state">Learn more</a></p>
-<h3>
-  
-  
-  32. Why do we need keys in lists when using map()?
-</h3>
-
-<p>The keys help React determine which elements have been changed,<br>
-added, or removed. They must be specified so that React can match<br>
-array elements over time. The best way to choose a key is to use a string that will clearly distinguish the list item from its neighbors. Most often, you will use the IDs from your data as keys.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">languages</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="na">lang</span><span class="p">:</span> <span class="dl">"</span><span class="s2">JavaScript</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="na">lang</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TypeScript</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="na">lang</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Python</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">];</span>
-
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">languages</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">language</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">language</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">_</span><span class="p">${</span><span class="nx">language</span><span class="p">.</span><span class="nx">lang</span><span class="p">}</span><span class="s2">`</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">language</span><span class="p">.</span><span class="nx">lang</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-      <span class="p">))</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key">Learn more</a></p>
-
-<h3>
-  
-  
-  33. How to handle asynchronous actions in Redux Thunk?
-</h3>
-
-<p>To use Redux Thunk, you need to import it as middleware. Action creators should return not just an object but a function that takes dispatch as a parameter.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">addUser</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">addUserStart</span><span class="p">());</span>
-  <span class="p">}</span>
-
-  <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://jsonplaceholder.typicode.com/users</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">firstName</span><span class="p">,</span>
-    <span class="nx">lastName</span><span class="p">,</span>
-    <span class="na">completed</span><span class="p">:</span> <span class="kc">false</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">addUserSuccess</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">addUserError</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
-  <span class="p">})</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://redux.js.org/usage/writing-logic-thunks">Learn more</a></p>
-
-<h3>
-  
-  
-  34. How to track changes in a field of an object in a functional component?
-</h3>
-
-<p>To do this, you need to use the <code>useEffect</code> hook and pass the field of the object as a dependency array.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Changed!</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">obj</span><span class="p">.</span><span class="nx">someField</span><span class="p">])</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  35. How to access a DOM element?
-</h3>
-
-<p>Refs are created using <code>React.createRef()</code> or the <code>useRef()</code> hook and attached to React elements through the ref attribute. By accessing the created reference, we can gain access to the DOM element using <code>ref.current</code>.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">myRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myRef</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span> <span class="c1">// Accessing the DOM element</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">myRef</span><span class="si">}</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span>Click Me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  36. What is a custom hook?
-</h3>
-
-<p>Custom hook is a function that allows you to reuse logic between different components. It is a way to encapsulate reusable logic so that it can be easily shared and reused across multiple components. Custom hooks are functions that typically start with the word *<em>use *</em> and can call other hooks if needed.<br>
-<a href="https://react.dev/learn/reusing-logic-with-custom-hooks">Learn more</a></p>
-<h3>
-  
-  
-  37. What is Public API?
-</h3>
-
-<p>In the context of index files, a Public API typically refers to the interface or functions that are exposed and accessible to external modules or components.<br>
-Here's a code example of an index file representing a Public API:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="c1">// index.js</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">calculateSum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this example, the index.js file acts as a Public API where the functions <code>greet()</code> and <code>calculateSum()</code> are exported and can be accessed from other modules by importing them. Other modules can import and use these functions as part of their implementation:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="c1">// main.js</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class="nx">greet</span><span class="p">,</span> <span class="nx">calculateSum</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./index.js</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greet</span><span class="p">(</span><span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// Hello, John!</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="c1">// 8</span>
-</code></pre>
-
-</div>
-
-
-
-<p>By exporting specific functions from the index file, we are defining the Public API of the module, allowing other modules to use those functions.</p>
-
-<h3>
-  
-  
-  38. What are the rules for creating a custom hook?
-</h3>
-
-<ol>
-<li>Start the hook name with "use".</li>
-<li>Use existing hooks if needed.</li>
-<li>Don't call hooks conditionally.</li>
-<li>Extract reusable logic into the custom hook.</li>
-<li>Custom hooks must be pure functions.</li>
-<li>Custom hooks can return values or other hooks.</li>
-<li>Name the custom hook descriptively.
-<a href="https://react.dev/learn/reusing-logic-with-custom-hooks">Learn more</a>
-</li>
-</ol>
-
-<h3>
-  
-  
-  39. What is SSR (Server-Side Rendering)?
-</h3>
-
-<p>Server-Side Rendering (SSR) is a technique used to render pages on the server and send the fully rendered page to the client for display. It allows the server to generate the complete HTML markup of a web page, including its dynamic content, and send it to the client as a response to a request.</p>
-
-<p>In a traditional client-side rendering approach, the client receives a minimal HTML page and then makes additional requests to the server for data and resources, which are used to render the page on the client-side. This can lead to slower initial page loading times and negatively impact search engine optimization (SEO) since search engine crawlers have difficulty indexing JavaScript-driven content.</p>
-
-<p>With SSR, the server takes care of rendering the web page by executing the necessary JavaScript code to produce the final HTML. This means that the client receives the fully rendered page from the server, reducing the need for additional resource requests. SSR improves initial page load times and allows search engines to easily index the content, resulting in better SEO.</p>
-
-<p>SSR is commonly used in frameworks and libraries like Next.js for React and Nuxt.js for Vue.js to enable server-side rendering capabilities. These frameworks handle the server-side rendering logic for you, making it easier to implement SSR.</p>
-
-<h3>
-  
-  
-  40. What are the benefits of using SSR?
-</h3>
-
-<ol>
-<li><p><strong>Improved initial loading times</strong>: SSR allows the server to send a fully rendered HTML page to the client, reducing the amount of processing required on the client-side. This improves the initial loading times, as the user sees a complete page more quickly.</p></li>
-<li><p><strong>SEO-friendly</strong>: Search engines can efficiently crawl and index the content of SSR pages because the fully rendered HTML is available in the initial response. This improves search engine visibility and helps with better search rankings.</p></li>
-<li><p><strong>Accessibility</strong>: SSR ensures that the content is accessible to users who have JavaScript disabled or use assistive technologies. By generating HTML on the server, SSR provides a reliable and accessible user experience for all users.</p></li>
-<li><p><strong>Performance in low-bandwidth environments</strong>: SSR reduces the amount of data needed to be downloaded by the client, making it beneficial for users in low-bandwidth or high-latency environments. This is particularly important for mobile users or users with slower internet connections.</p></li>
-</ol>
-
-<p>While SSR offers these benefits, it's important to note that it may introduce more server load and maintenance complexity compared to client-side rendering methods. Careful consideration should be given to factors such as caching, scalability, and server-side rendering performance optimizations.</p>
-
-<h3>
-  
-  
-  41. What are the main functions of Next.js that you know?
-</h3>
-
-<ol>
-<li>
-<code>getStaticProps</code>: This method is used to fetch data at build time and pre-render a page as static HTML. It ensures that the data is available at build time and does not change on subsequent requests.
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticProps</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/data</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nx">data</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<ol>
-<li>
-<code>getServerSideProps</code>: This method is used to fetch data on each request and pre-render the page on the server. It can be used when you need to fetch data that might change frequently or is user-specific.
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getServerSideProps</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/data</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nx">data</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<ol>
-<li>
-<code>getStaticPaths</code>: This method is used in dynamic routes to specify a list of paths that should be pre-rendered at build time. It is commonly used to fetch data for dynamic routes with parameters.
-</li>
-</ol>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight jsx"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">getStaticPaths</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.example.com/posts</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-
-  <span class="kd">const</span> <span class="nx">paths</span> <span class="o">=</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
-    <span class="na">params</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">post</span><span class="p">.</span><span class="nx">id</span> <span class="p">}</span>
-  <span class="p">}));</span>
-
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">paths</span><span class="p">,</span>
-    <span class="na">fallback</span><span class="p">:</span> <span class="kc">false</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><a href="https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating">Learn more</a></p>
-
-<h3>
-  
-  
-  42. What are linters?
-</h3>
-
-<p>Linters are tools used to check source code for potential errors, bugs, stylistic inconsistencies, and maintainability issues. They help enforce coding standards and ensure code quality and consistency across a codebase.</p>
-
-<p>Linters work by scanning the source code and comparing it against a set of predefined rules or guidelines. These rules can include syntax and formatting conventions, best practices, potential bugs, and code smells. When a linter identifies a violation of a rule, it generates a warning or an error, highlighting the specific line or lines of code that need attention.</p>
-
-<p>Using a linter can provide several benefits:</p>
-
-<ol>
-<li><p><strong>Code Quality</strong>: Linters help identify and prevent potential bugs, code smells, and anti-patterns, leading to better code quality.</p></li>
-<li><p><strong>Consistency</strong>: Linters enforce coding conventions and style guidelines, ensuring consistent formatting and code structure across the codebase, even when multiple developers are working on the same project.</p></li>
-<li><p><strong>Maintainability</strong>: By catching issues early and promoting good coding practices, linters contribute to code maintainability, making it easier to understand, modify, and extend the codebase.</p></li>
-<li><p><strong>Efficiency</strong>: Linters can save developers time by automating code review processes and catching common mistakes before they can cause issues during development or in production.</p></li>
-</ol>
-
-<p>Some popular linters are ESLint for JavaScript and Stylelint for CSS and Sass.<br>
-<a href="https://eslint.org/docs/latest/use/getting-started">Learn more</a></p>
-
-<h3>
-  
-  
-  43. What architectural solutions for React do you know?
-</h3>
-
-<p>There are several architectural solutions and patterns for building React projects. Some popular ones include:</p>
-
-<ol>
-<li><p><strong>MVC (Model-View-Controller)</strong>: MVC is a traditional architectural pattern that separates an application into three main components - Model, View, and Controller. React can be used in the View layer to render the UI, while other libraries or frameworks can be used for the Model and Controller layers.</p></li>
-<li><p><strong>Flux</strong>: Flux is an application architecture introduced by Facebook specifically for React applications. It follows a unidirectional data flow, where data flows in a single direction, making it easier to understand and debug the application's state changes.</p></li>
-<li><p><strong>Atomic Design</strong>: Atomic Design is not specific to React but is a design methodology that divides the UI into smaller, reusable components. It encourages building components that are small, self-contained, and can be composed to create more complex UIs.</p></li>
-<li><p><strong>Container and Component Pattern</strong>: This pattern separates the presentation (Component) from the logic and state management (Container). Components are responsible for rendering the UI, while Containers handle the business logic and state management.</p></li>
-<li><p><strong>Feature-Sliced Design</strong>: It is a modern architectural approach used to organize and structure React applications. It aims to address the challenges of scalability, maintainability, and reusability by dividing the application codebase based on features or modules.</p></li>
-</ol>
-
-<h3>
-  
-  
-  44. What is Feature-Sliced Design?
-</h3>
-
-<p>It is a modern architectural approach used to organize and structure React applications. It aims to address the challenges of scalability, maintainability, and reusability by dividing the application codebase based on features or modules.</p>
-
-<p>In Feature-Sliced Design, each feature or module of the application is organized into a separate directory, containing all the necessary components, actions, reducers, and other related files. This helps in keeping the codebase modular and isolated, making it easier to develop, test, and maintain.</p>
-
-<p>Feature-Sliced Design promotes a clear separation of concerns and encapsulates the functionality within individual features. This allows different teams or developers to work on different features independently, without worrying about conflicts or dependencies.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Cuy79Z1p--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/amysbtftfjkuss87yu8v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Cuy79Z1p--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/amysbtftfjkuss87yu8v.png" alt="Feature-Sliced Design" width="800" height="445"></a></p>
-
-<p><strong>I highy recommend to click on the Learn more button to learn about Feature-Sliced Design</strong><br>
-<a href="https://dev.to/m_midas/feature-sliced-design-the-best-frontend-architecture-4noj">Learn more</a></p>
+<p>I guess it is fair to say that almost all people will be using javascript nowadays, but having javascript enabled is not the only condition for the javascript to run, the user still has to download it. Maybe the user is with bad internet connection, working with forms and redirects will make everything work without having to download that extra bit of javascript.</p>
 
 <h2>
   
@@ -1311,413 +288,509 @@ Here's a code example of an index file representing a Public API:<br>
   Conclusion
 </h2>
 
-<p>In conclusion, interviewing for a React Frontend Developer position requires a solid understanding of the framework's core concepts, principles, and related technologies. By preparing for the questions discussed in this article, you can showcase your React knowledge and demonstrate your ability to create efficient and maintainable user interfaces. Remember to not only focus on memorizing answers but also understanding the underlying concepts and being able to explain them clearly.<br>
-Additionally, keep in mind that interviews are not just about the technical aspects but also about showcasing your problem-solving skills, communication abilities, and how well you can work in a team. By combining technical expertise with a strong overall skill set, you'll be well-equipped to excel in React frontend developer interviews and land your dream job in this exciting and rapidly evolving field.<br>
-Good luck!</p>
+<p>I guess that's all I wanted to share, learning svelte made me learn more about web development and I'm grateful for it, If you didn't give svelte a chance yet, take a shot, you might love it  ❤️.</p>
 
  </details> 
  <hr /> 
 
- #### - [Hacktoberfest 2023 Chronicles: Diverse Insights & Viewpoints](https://dev.to/devteam/hacktoberfest-2023-chronicles-diverse-insights-viewpoints-4i8l) 
- <details><summary>Article</summary> <p><em>Welcome to a cross-section of Hacktoberfest-themed content. In this roundup, we’ll check out a diverse selection of contributions – including tips and guides, inspirational stories, the experiences of new participants and seasoned contributors, and even some challenges. Experience the full spectrum of this celebration right here on DEV.</em></p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/jd2r" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8yHEjICK--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--D_OcUI80--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/951357/e76e888d-172f-49f7-9848-cae85f2a9720.png" alt="jd2r">
-    </div>
-  </a>
-  <a href="/jd2r/so-i-might-be-doing-this-wrong-3ni7" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>So I might be doing this wrong...</h2>
-      <h3>DR ・ Oct 6</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#discuss</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p>Join an open-source newbie's candid reflection on their Hacktoberfest journey. <a class="mentioned-user" href="https://dev.to/jd2r">@jd2r</a> tackles the mental hurdles of finding worthwhile contributions, sharing their struggle to locate manageable issues among the competition. Explore their shift in strategy, opting for unnoticed issues like new features or content typos to ensure valuable contributions to the open-source world.</p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/virtualcoffee" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--euQILpqW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--i1INOim7--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/3610/42d75122-d731-47ba-9473-cf192c6293a6.png" alt="Virtual Coffee" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xCoZ6aeh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--cwN4aaR3--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/146156/5a586e10-abf1-42bb-8798-14ba0fe2b272.jpg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/virtualcoffee/hacktoberfest-2023-lets-make-positive-impacts-learn-grow-together-in-open-source-52a1" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Hacktoberfest 2023: Let's Make Positive Impacts, Learn &amp; Grow Together in Open Source!</h2>
-      <h3>Ayu Adiati for Virtual Coffee ・ Oct 1</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#webdev</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p><a class="mentioned-user" href="https://dev.to/adiatiayu">@adiatiayu</a> shares how Hacktoberfest transformed Virtual Coffee, promoting growth through open source and introducing their three initiatives. Discover how they're embracing the spirit of learning, collaboration, and positive impacts in tech.</p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/rahulkarda" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--iJoV7GLo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--biqXwCmh--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/847169/b779361f-1663-4d5a-a398-29f7cb0bfa82.png" alt="rahulkarda">
-    </div>
-  </a>
-  <a href="/rahulkarda/hacktoberfest-2023-a-journey-of-contribution-and-reflection-2a5j" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Hacktoberfest 2023: A Journey of Contribution and Reflection</h2>
-      <h3>Rahul Karda ・ Oct 9</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p>Discover how @rahulkardal carefully selected projects, immersed themself in learning, and found fulfillment in meaningful pull requests, all while fostering a sense of community.</p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/jarvisscript" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--m6nqeORg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--MuaiLKep--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/8745/bd569b6a-807e-4368-9b91-c35dd617c562.jpeg" alt="jarvisscript">
-    </div>
-  </a>
-  <a href="/jarvisscript/hacktoberfest-week-one-5d8a" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>HacktoberFest Week One</h2>
-      <h3>Chris Jarvis ・ Oct 7</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#css</span>
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p>Join <a class="mentioned-user" href="https://dev.to/jarvisscript">@jarvisscript</a> in an exciting start to HacktoberFest. They began by enhancing the Virtual Coffee site, adding a world map and 2023 badges to member avatars, and planting a tree with their first pull request. 🌱 They also contributed themed cards to a memory game using CSS. The journey has just begun, with more repositories to explore in the coming weeks.</p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/rafajrg21" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MgVblCTj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--DzE9Zl97--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/60601/da8fd229-bada-4068-b580-0e049ec7613c.jpg" alt="rafajrg21">
-    </div>
-  </a>
-  <a href="/rafajrg21/my-hacktoberfest-2023-pledge-164a" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>My Hacktoberfest 2023 Pledge</h2>
-      <h3>Rafael Romero ・ Oct 11</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p><a class="mentioned-user" href="https://dev.to/rafajrg21">@rafajrg21</a>, a Computer Engineer and Frontend Developer, embarks on their Hacktoberfest journey. Despite facing challenges in previous years, they’re determined to make meaningful contributions.</p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/github" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--yZJmauKu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--7fGFlBNG--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2575/3da37f64-b46e-4fa5-bf86-01b63ba5f57b.png" alt="GitHub" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xmsoMpWJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--ak56TdXS--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/397557/4eb4ece3-2832-407c-b933-f1b4b58829e6.jpg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/github/hacktoberfest-has-started-are-you-doing-these-things-748" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Hacktoberfest has started! Are you doing these things?</h2>
-      <h3>Michelle Mannering for GitHub ・ Oct 11</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#github</span>
-        <span class="ltag__link__tag">#hacktoberfest</span>
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-        <span class="ltag__link__tag">#opensource</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p><a class="mentioned-user" href="https://dev.to/mishmanners">@mishmanners</a> presents an insightful guide to Hacktoberfest 2023. Whether you're new to Hacktoberfest or a returning participant, this article is your roadmap to a successful and fulfilling experience.</p>
-
-
-
-
-
-<div class="ltag__link">
-  <a href="/timonwa" class="ltag__link__link">
-    <div class="ltag__link__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--V5dcOJtq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--LU-OwrD_--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/588619/65a4a180-6b32-4a82-a9d8-27dcbab1ee75.jpeg" alt="timonwa">
-    </div>
-  </a>
-  <a href="/timonwa/finding-your-first-hacktoberfest-project-a-step-by-step-guide-2245" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Finding Your First Hacktoberfest Project: A Step-by-Step Guide</h2>
-      <h3>Timonwa Akintokun ・ Oct 9</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#hacktoberfest</span>
-        <span class="ltag__link__tag">#beginners</span>
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p><a class="mentioned-user" href="https://dev.to/timonwa">@timonwa</a> provides a step-by-step guide to finding your first Hacktoberfest project. This insightful article highlights the importance of preparing in advance, suggests platforms for project hunting, and offers a checklist for selecting the right project. Whether you're a newcomer or an experienced contributor, this guide will help you navigate the Hacktoberfest landscape.</p>
-
-
-
-
-<p><em>Feeling inspired by the stories here? <a href="https://dev.to/page/hacktoberfest-2023">Join the Hacktoberfest 2023 celebration</a>! It's your chance to dive into the world of open source, learn, make a difference, and connect with amazing folks. Keep an eye on <a href="https://dev.to/t/hacktoberfest23">#hacktoberfest23</a> for more updates, tips, and experiences. Let's have a blast making a positive impact and growing together in the open-source community!</em></p>
-
- </details> 
- <hr /> 
-
- #### - [Discussion of the Week - v6](https://dev.to/devteam/discussion-of-the-week-v6-46h0) 
- <details><summary>Article</summary> <p>In this weekly roundup, we highlight what we believe to be the most thoughtful, helpful, and/or interesting discussion over the past week! Though we are strong believers in healthy and respectful debate, we typically try to choose discussions that are positive in nature and avoid those that are overly contentious.</p>
-
-<p>Any folks whose articles we feature here will be rewarded with our Discussion of the Week badge. ✨</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6M-JeZHe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvizv31dpchucxic2lxc.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6M-JeZHe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yvizv31dpchucxic2lxc.png" alt="The Discussion of the Week badge. It includes a roll of thread inside a speech bubble. The thread is a reference to comment threads." width="800" height="800"></a></p>
-
-<p>Now that y'all understand the flow, let's go! 🏃💨</p>
+ #### - [Top 10 Tips for using GitHub from the Command Line](https://dev.to/github/top-10-tips-for-using-github-from-the-command-line-1me6) 
+ <details><summary>Article</summary> <p>The <a href="https://cli.github.com/">GitHub CLI</a> (<em>gh</em> cli) is a command line tool that allows you to interact with GitHub without ever leaving your terminal. It's an open source tool that allows you to view and manage issues, pull requests, releases, and more. In this post, we'll cover 10 tips for using the GitHub CLI, but first, how do you install it?</p>
 
 <h2>
   
   
-  The Discussion of the Week
+  Installing the GitHub CLI 🛠️
 </h2>
 
-<p>This one goes to <a class="mentioned-user" href="https://dev.to/bekahhw">@bekahhw</a> for regularly sharing the helpful series <a href="https://dev.to/bekahhw/series/23323">Looking for Contributors</a> — here's <a href="https://dev.to/opensauced/whos-looking-for-open-source-contributors-week-62-346a">this week's edition</a>:</p>
-
-
-<div class="ltag__link">
-  <a href="/opensauced" class="ltag__link__link">
-    <div class="ltag__link__org__pic">
-      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--02eXwIRh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--NCYBd-LB--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/2498/a16cc27c-33f9-40b6-92a8-4a43f70a96ef.png" alt="OpenSauced" width="150" height="150">
-      <div class="ltag__link__user__pic">
-        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d67QbQX9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://res.cloudinary.com/practicaldev/image/fetch/s--4-SxWhDm--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_150%2Cq_auto%2Cw_150/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/345658/a72b6b8b-b954-47fb-8919-ab380905f26b.jpg" alt="" width="150" height="150">
-      </div>
-    </div>
-  </a>
-  <a href="/opensauced/whos-looking-for-open-source-contributors-week-62-346a" class="ltag__link__link">
-    <div class="ltag__link__content">
-      <h2>Who's looking for open source contributors? (week 62)</h2>
-      <h3>BekahHW for OpenSauced ・ Oct 6</h3>
-      <div class="ltag__link__taglist">
-        <span class="ltag__link__tag">#discuss</span>
-        <span class="ltag__link__tag">#opensource</span>
-        <span class="ltag__link__tag">#hacktoberfest23</span>
-        <span class="ltag__link__tag">#100daysofoss</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-<p>Bekah has been sharing this series for a good long while now, but it feels particularly notable as Hacktoberfest is currently underway. Brand new contributors are out in force looking to make their first pull request and they need to know what repos are open to them; meanwhile, maintainers need a good place to shoutout their projects and usher new folks in to contribute... this post is the perfect place for both parties!</p>
-
-<p>I really like how straightforward Bekah's post is... because the the post stays the same each week, it puts the focus on the comments section, allowing folks' projects to take the spotlight. 🔦</p>
-
-<p>Also, as a person who regularly shares <a href="https://dev.to/michaeltharrington/ever-heard-of-ritual-posts-4gd6">ritual content</a>, I really appreciate how Bekah has kept this series steadily going. It ain't easy posting something week after week — props on the consistency.</p>
-
-<p>If any of you have projects to recommend or if you're a contributor looking for a project to work on, I highly recommend checking out Bekah's series. 🙌</p>
-
-<h2>
-  
-  
-  What are your picks?
-</h2>
-
-<p>The DEV Community is particularly special because of the kind, thoughtful, helpful, and entertaining discussions happening between community members. As such, we want to encourage folks to participate in discussions and reward those who are initiating or taking part in conversations across the community. After all, a community is made possible by the people interacting inside it.</p>
-
-<p>There are loads of great discussions floating about in this community. This is just the one we chose to highlight. 🙂</p>
-
-<p>I urge you all to share your favorite discussion of the past week below in the comments. And if you're up for it, give the author an @mention — it'll probably make 'em feel good. 💚</p>
-
- </details> 
- <hr /> 
-
- #### - [Awareness of Energy Consumption](https://dev.to/nogrend/awareness-of-energy-consumption-k39) 
- <details><summary>Article</summary> <p>"Awareness" with that in mind I start the journey for measuring electrical energy consumption. I’ve a workspace and I wonder how much my total electrical energy consumption is.</p>
-
-<h2>
-  
-  
-  What have I come up with?
-</h2>
-
-<p>The electricity is delivered through a one 16 ampère group. After some googling, I came up with the following kWh meter; Eastron SMD120C. It's a kWh meter for one phase up to 45 A. The most important key feature is connectivity, this is done via Modbus RS-485 and fortunately there is a Python package available.</p>
-
-<p>The SMD120C gives voltage, current, power, energy, power factor, frequency and some variations on it like imported or exported energy.</p>
-
-<h2>
-  
-  
-  Proof of concept
-</h2>
-
-<p>Before altering the electrical installation, firstly I put all components together with some ducktape and wires.</p>
-
-<h3>
-  
-  
-  Hardware
-</h3>
-
-<p>The idea is to read measurements with a Raspberry Pi, therefor I used an USB to RS485 converter, with an USB isolator just to be sure.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--NkkibkNo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh4phn2n4vf70zx88bpa.jpeg" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NkkibkNo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bh4phn2n4vf70zx88bpa.jpeg" alt="Eastron SMD120C, USB to RS485 converter and USB isolator" width="800" height="1067"></a></p>
-
-<h3>
-  
-  
-  Software
-</h3>
-
-<p>A Python script on the Raspberry Pi reads the values and send it over MQTT. From this point Node-RED will take over.</p>
-
-<h4>
-  
-  
-  Write code for measurment
-</h4>
-
-<p>In the next code block I import <code>sdm_modbus</code> library, set parameters accordingly to the datasheet, create an instance, start measuring and print the results in the terminal.<br>
+<p>I'm using MacOS, so I'll be using <a href="https://brew.sh/">Homebrew</a> to install the GitHub CLI. If you're using Windows or Linux, you can find instructions for installing the GitHub CLI <a href="https://github.com/cli/cli#installation">here</a>.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import sdm_modbus
+<pre class="highlight shell"><code>brew <span class="nb">install </span>gh
 
-# set parameters
-com_port = "COM7"
-modbus_address = 1 
-baud_rate = 9600
-parity = "N"
-
-# create an instance of the SDM120 class
-device = sdm_modbus.SDM120(device=com_port,
-                           unit=modbus_address, 
-                           baud=baud_rate,
-                           parity=parity)
-
-# read measured values
-device_measurement: dict = {}
-device_measurement = device.read_all(
-                     sdm_modbus.registerType.INPUT)
-
-# print measured values
-for key, value in device_measurement.items():
-        print(key, value)
 </code></pre>
 
 </div>
 
 
 
-<h4>
-  
-  
-  Extend code with MQTT
-</h4>
-
-<p>With some help from Chat GPT the following code send the measurements over MQTT in my local network.<br>
+<p>Once you've installed the GitHub CLI, you'll need to authenticate with GitHub. You can do this by running the following command:<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>import sdm_modbus
-import paho.mqtt.client as mqtt
-import json
+<pre class="highlight shell"><code>gh auth login
 
-load_dotenv()
+</code></pre>
 
-# Parameters for communication through USB
-com_port = "/dev/tty.usbserial-00000000"
-modbus_address = 1
-baud_rate = 9600
-parity = "N"
-
-# MQTT Broker Settings
-mqtt_broker_address: str = os.getenv("MQTT_BROKER_ADDRESS")
-mqtt_topic: str = os.getenv("MQTT_TOPIC")
-mqtt_port: int = int(os.getenv("MQTT_PORT"))
-mqtt_username: str = os.getenv("MQTT_USERNAME")
-mqtt_password: str = os.getenv("MQTT_PASSWORD")
-
-# Create an MQTT client instance
-client = mqtt.Client()
+</div>
 
 
-# Callback when the client connects to the MQTT broker
-def on_connect(client, userdata, flags, rc):
-    print("Connected to MQTT Broker with result code " + str(rc))
+
+<p>This will open a browser window and prompt you to login to GitHub. Once you've logged in, you'll be prompted to authenticate with GitHub. Once you've authenticated, you'll be able to use the GitHub CLI. 🎉</p>
+
+<h2>
+  
+  
+  CLI Syntax and Usage 📝
+</h2>
+
+<p>The CLI follows a very specific syntax. It generally works as, "<em>gh</em>" "feature" "then what you want to do with the feature" then “any flags associated with the feature” - everything you want to do with the cli takes on this format.</p>
+
+<p>For example, if you wanted to clone a repository using the <em>gh</em> cli, it would be <code>gh repo clone &lt;repo to be cloned&gt;</code></p>
+
+<p>Let's take a look at some practical tips when using the GitHub CLI.</p>
+
+<h2>
+  
+  
+  1. Create a new repository and clone it locally 🎉
+</h2>
+
+<p>You can create a new repository using the <code>gh repo create</code> command. This command will prompt you for the name of the repository, the description, and the visibility. You can also specify the name of the repository as an argument to the command.</p>
+
+<p>You can also create a new repository and clone it locally at the same time by using the <code>--clone</code> flag. Here's what this will look like:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh repo create your-new-repo <span class="nt">--public</span> <span class="nt">--clone</span>
+
+</code></pre>
+
+</div>
 
 
-# Set the username and password for the MQTT broker
-client.username_pw_set(username=mqtt_username,
-                       password=mqtt_password)
 
-# Connect to the MQTT broker
-client.on_connect = on_connect
-client.connect(mqtt_broker_address, mqtt_port, 60)
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--OrvsByMG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/simple-next-app/assets/47188731/c2ba02cb-c753-4656-82de-da5f0928f8c9" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--OrvsByMG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/simple-next-app/assets/47188731/c2ba02cb-c753-4656-82de-da5f0928f8c9" alt="gh repo create command" width="600" height="415"></a></p>
 
-# create an instance of the SDM120 class
-device = sdm_modbus.SDM120(device=com_port,
-                           unit=modbus_address, 
-                           baud=baud_rate,
-                           parity=parity)
+<p>The repo was <a href="https://github.com/LadyKerr/gh-cli-example-repo">created here</a> and all you need to do now is to push your changes and you're good.</p>
 
-device_measurement = device.read_all(
-                     sdm_modbus.registerType.INPUT)
+<h2>
+  
+  
+  2. Create issues 📝
+</h2>
 
-# Convert the device_measurement dictionary to a JSON string
-measurement_json = json.dumps(device_measurement)
+<p>We can create issues for this repository right from the command line with the <em>gh</em> cli. This command will prompt you for the title and body of the issue. You can also specify the title and body as arguments to the command.<br>
+</p>
 
-# Publish the measurement to the MQTT topic
-client.publish(mqtt_topic, measurement_json)
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh issue create <span class="nt">-t</span> <span class="s2">"issue title"</span> <span class="nt">-b</span> <span class="s2">"issue body content"</span> <span class="nt">-a</span> <span class="s2">"assignee"</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>You can also edit, transfer, delete, close, and reopen issues with the <em>gh</em> cli. You can find more information about this <a href="https://cli.github.com/manual/gh_issue">here</a>.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dGURei6Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/f7a9328c-5a60-4af0-a12d-54e4cfc32e01" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dGURei6Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/f7a9328c-5a60-4af0-a12d-54e4cfc32e01" alt="gh repo issue create" width="600" height="411"></a></p>
+
+<h2>
+  
+  
+  3. Create pull requests 🔄
+</h2>
+
+<p>We can create pull requests by using the <code>gh pr create</code> command and follow the on-screen prompts. You can also specify the title and body as arguments to the command.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh <span class="nb">pr </span>create <span class="nt">-t</span> <span class="s2">"pull request title"</span> <span class="nt">-b</span> <span class="s2">"pull request body content"</span> <span class="nt">-a</span> <span class="s2">"assignee"</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--kGHzPN28--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/0f8789dc-ee18-4b0a-9fd4-2670a226c0a8" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kGHzPN28--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/0f8789dc-ee18-4b0a-9fd4-2670a226c0a8" alt="gh repo pr create" width="600" height="390"></a></p>
+
+<h2>
+  
+  
+  4. Review pull requests 👀
+</h2>
+
+<p>Run <em>gh</em> pr create and add the necessary flags: -t for the title, -b for the body -a for the assignee and -d to mark the pr as draft. You can also use <code>gh pr create</code> and follow the on screen prompts to create a new PR with the cli.<br>
+Once the PR is created, take note of the PR num and run <code>gh pr view &lt;num&gt;</code> to see the details of the pr in your terminal.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--dMuANFHq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/9124f58c-7556-4494-9616-4a9c608aa7f9" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--dMuANFHq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/9124f58c-7556-4494-9616-4a9c608aa7f9" alt="gh pr review" width="600" height="390"></a></p>
+<h2>
+  
+  
+  5. View action workflows 👀
+</h2>
+
+<p>We can view the action workflows right from the command line with the <em>gh</em> cli. This command will list all the recent action workflows for the repository.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh run list
+
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--i5bJ0Y6Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/cd88ca64-95d2-44f5-bf9e-06d6d05d2da8" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--i5bJ0Y6Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/cd88ca64-95d2-44f5-bf9e-06d6d05d2da8" alt="gh run list" width="600" height="390"></a></p>
+
+<p>You can also run workflows right from your terminal with the command <code>gh workflow run &lt;workflow name&gt;</code>. This command will run the workflow and prompt you for any required inputs.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh workflow run &lt;workflow filename&gt;
+
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  6. Open your current Repo in the browser 💻
+</h2>
+
+<p>You can open your current repository in the browser right from your terminal. This command will take you to the homepage of your repository.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh browse
+
+</code></pre>
+
+</div>
+
+
+
+<p>If you you attach the -b option, you can open the current branch in the browser, like so:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh browse <span class="nt">-b</span> <span class="s2">"branch name"</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  7. Create and update Project Boards 📋
+</h2>
+
+<p>Creating a project from your terminal with the command line requires you to have project scope permissions. To update your auth token with project scope permissions, run the following command and follow the on screen prompts:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh auth refresh <span class="nt">-s</span> project,read:project
+
+</code></pre>
+
+</div>
+
+
+
+<p>Once that's confirmed, you can create a project board with the command <code>gh project create</code> and follow the on screen prompts.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh project create <span class="nt">--owner</span> <span class="s2">"owner"</span> <span class="nt">--title</span> <span class="s2">"title"</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  8. Create edit, and view Releases 🚀
+</h2>
+
+<p>You can create a release with the command <code>gh release create</code> and follow the on screen prompts.<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh release create <span class="nt">--title</span> <span class="s2">"title"</span> <span class="nt">--notes</span> <span class="s2">"notes"</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>You can also edit, dowload assets and delete relases with the <em>gh</em> cli. You can find more information about this <a href="https://cli.github.com/manual/gh_release">here</a>.</p>
+
+<h2>
+  
+  
+  9. Start and Stop Codespaces 💻
+</h2>
+
+<p>A Codespace is an online development environment. You can start a codespace with the command <code>gh codespace create</code> and follow the on screen prompts. You can also do it by specifying certain flags, for example, the branch you want to use:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>gh codespace create <span class="nt">-b</span> <span class="s2">"branch"</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--YMY0XZEg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/02e6e688-53d9-4134-aaef-b07feea39fa2" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--YMY0XZEg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/02e6e688-53d9-4134-aaef-b07feea39fa2" alt="gh codespace create" width="600" height="390"></a></p>
+
+<p>You can then open up the codespace in VSCode or Jupyter Notebooks with the command <code>gh codespace code [flags]</code> or <code>gh codespace jupyter [flags]</code>, respectively, where the flags can include the version of vscode, repo, repo owner and name of the codespace you want to open.</p>
+
+<h2>
+  
+  
+  10. Browse and create <em>gh</em> cli extensions 📦
+</h2>
+
+<p>You can run <code>gh extension browse</code> in your terminal to view a list of all available cli extensions to make your terminal experience even better. You can also install ann extension directly from the browsing interface.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--p3hpRp2---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/2d4e3be9-ece5-404d-b690-3bb9d7354556" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--p3hpRp2---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/2d4e3be9-ece5-404d-b690-3bb9d7354556" alt="gh extension browse command" width="600" height="390"></a></p>
+
+<p>To install an extension you like, run <code>gh extension install &lt;repository&gt; [flags]</code> and follow the on screen prompts.<br>
+You can also create your own cli extensions with the command <code>gh ext create</code> and follow the on screen prompts.</p>
+
+<h2>
+  
+  
+  Getting Help with the <em>gh</em> cli ❓
+</h2>
+
+<p>If you're ever unsure of what to do with the GitHub CLI or how to use it, you can always run <code>gh --help</code> and it will give you a list of all the commands, help topics, extensions, flags and examples you can run with the GitHub CLI.</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fcEkPUWe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/a10819b9-f478-4430-933b-4aa0db58281f" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fcEkPUWe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/a10819b9-f478-4430-933b-4aa0db58281f" alt="gh --help command" width="600" height="390"></a></p>
+
+<h2>
+  
+  
+  GitHub Copilot for CLI 🤖
+</h2>
+
+<p>Ever forget a command and have to search for it over and over again? Yea, me too. This is why we built <a href="https://githubnext.com/projects/copilot-cli">GitHub Copilot for CLI</a>. It provides a chat-like interface in your terminal to help you find commands for GitHub CLI, shell commands and git.</p>
+
+<p>I'll be showing you how to use GitHub Copilot for CLI and how amazing it is at <a href="https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog?search=AI2755D">taking your command line skills to the next level</a>. Join me at GitHub Universe next month to see it in action.</p>
+
+<p><a href="https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog?search=AI2755D"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--d3R2PsK9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://github.com/LadyKerr/gh-cli-example-repo/assets/47188731/f9e22821-df86-4890-9bf1-bcb27150524d" alt="github universe copilot for cli talk" width="800" height="450"></a></p>
+
+<p>And if you can't make it in person, virtual passes are free and open to everyone. Register <a href="https://githubuniverse.com/">here</a>.</p>
+
+<p>If you have any questions about the <em>gh</em> cli, feel free to post them below and I'll do my best to answer them. 😄</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Testando testes no Python - Parte 3: Pytest dentro do Pytest](https://dev.to/vbuxbaum/testando-testes-no-python-parte-3-pytest-dentro-do-pytest-493) 
+ <details><summary>Article</summary> <blockquote>
+<p>Pessoas geralmente começam engatinhando, depois andam, evoluem para corrida, e algumas fazem coisas mais estranhas, como <a href="https://www.google.com/search?q=parkour">Parkour</a>.</p>
+
+<p>Pessoas Devs geralmente começam codando, depois testam, evoluem para o TDD, e algumas fazem coisas mais estranhas, como <strong>testes de testes</strong>. </p>
+</blockquote>
+
+
+
+
+<p>Boas vindas! 🤩 Esse é o 3º artigo de uma <a href="https://dev.to/vbuxbaum/series/24810">curta série</a>, contando um pouco mais sobre "testes de testes". 🧪</p>
+
+<p>Vou discutir as motivações, alternativas, e detalhar as formas que fazemos em projetos de Python na <a href="https://www.betrybe.com/">Trybe</a>.</p>
+
+<h2>
+  
+  
+  Retomando de onde paramos
+</h2>
+
+<p>No artigo anterior mostrei como foi construída a primeira solução para testes de mutações customizadas, utilizando uma <em>fixture</em> <code>autouse</code> parametrizada com as mutações. </p>
+
+<p>Mas havia uma limitação: nesse modelo a pessoa estudante precisa construir todos os seus testes dentro de uma função específica. É suficiente se queremos exercitar a criação de bons <code>assert</code>s, mas limitante quando pensamos em fazer testes mais elaborados e melhor organizados.</p>
+
+<h2>
+  
+  
+  Trocando de "função" para "módulo"
+</h2>
+
+<p>Logo de início, a ideia era que precisávamos parar de parametrizar uma função de testes (o que a fixture faz no exemplo do artigo anterior), e fazer a parametrização para um arquivo (módulo) inteiro. Ou seja, <strong>executar todo um arquivo de testes da pessoa estudante para cada mutação.</strong></p>
+
+<p>Assim a pessoa estudante poderia fazer, por exemplo, 5 funções de teste em um arquivo e, quando uma mutação for aplicada, pelo menos 1 das 5 funções de teste deve <strong><em>falhar</em></strong>. Se <strong><em>todos os testes passarem para uma das mutações</em></strong>, consideramos que ainda não foi atingida a qualidade que esperamos.</p>
+
+<p>A missão era minha, e eu não fazia ideia de como implementar. 😅 Novamente entramos naquele ponto que não havia nada pronto ou óbvio para usarmos, e precisei partir para pesquisa e experimentação. </p>
+
+<h2>
+  
+  
+  "Como rodar um arquivo de teste no Pytest?"
+</h2>
+
+<p>Essa provavelmente foi a primeira pesquisa que fiz no Google, esperando que surgisse alguma resposta para o que precisávamos. E não, obviamente não apareceu. </p>
+
+<blockquote>
+<p>Ou será que apareceu? 👀</p>
+</blockquote>
+
+<p>As respostas para essa pesquisa são de conteúdos para iniciantes, e elas citam comandos básicos da CLI do Pytest:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight shell"><code>python <span class="nt">-m</span> pytest tests/test_file.py
+</code></pre>
+
+</div>
+
+
+
+<p>E meu primeiro pensamento foi:</p>
+
+<blockquote>
+<p>"Eu já sei disso! Me mostre algo que eu não sei! 😫"</p>
+</blockquote>
+
+<p>E logo em seguida:</p>
+
+<blockquote>
+<p>"Calma, realmente é bem simples solicitar ao Pytest a execução de um arquivo completo de testes. Se eu conseguir fazer isso <strong><em>dentro</em></strong> de uma execução do Pytest que já está em curso, consigo usar a parametrização! Será que é possível? 🤔"</p>
+</blockquote>
+
+<p>Resposta: <strong>Sim, é possível!</strong> 🎉</p>
+
+<p>O Pytest é um módulo do Python como qualquer outro. Temos o costume de acioná-lo pela CLI, mas essa é apenas uma interface para um código "chamável" do Python. Na própria documentação do Pytest há a indicação de <a href="https://docs.pytest.org/en/7.1.x/how-to/usage.html#calling-pytest-from-python-code">como executá-lo sem a CLI</a>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="n">retcode</span> <span class="o">=</span> <span class="n">pytest</span><span class="p">.</span><span class="n">main</span><span class="p">()</span>
+</code></pre>
+
+</div>
+
+
+
+<p>Um <code>retcode</code> igual a <code>0</code> (zero) significa que os testes passaram, falharam caso contrário. </p>
+
+<h2>
+  
+  
+  Executando o Pytest <em>dentro</em> do Pytest
+</h2>
+
+<p>Não parece uma ideia muito agradável, e até <a href="https://docs.pytest.org/en/7.1.x/how-to/usage.html#calling-pytest-from-python-code:~:text=Calling%20pytest.main,is%20not%20recommended.">a documentação da ferramenta faz um alerta sobre isso</a>:</p>
+
+<blockquote>
+<p>[...] fazer multiplas chamadas a <code>pytest.main()</code> a partir do mesmo processo (para re-executar testes, por exemplo) não é recomendado.</p>
+</blockquote>
+
+<p>Parece que escreveram isso especialmente pra mim! 😂 Mas sem ousadia nunca venceremos obstáculos, não é mesmo?</p>
+
+<p>Brincadeiras a parte, seguimos entendendo que esse é um uso controlado e (<em>até o momento</em>) com complexidade moderada.</p>
+
+<h2>
+  
+  
+  Ajustando o exemplo anterior
+</h2>
+
+<p>No exemplo do artigo anterior toda a configuração de mutações era feita nos arquivos <code>tests/sorter_mutations.py</code> (<em>definição das mutações</em>) e <code>tests/conftest.py</code> (<em>parametrização e <code>patch</code> das mutações</em>), mas este 2º não será mais necessário.</p>
+
+<p>Como nosso objetivo é somente ter um <code>PASSED</code> 🟢 caso a chamada do <code>pytest.main()</code> falhe para todas as mutações, podemos abandonar a complexidade da fixture parametrizada com <code>XFAIL</code>s e seguir com uma opção mais direta: uma função de teste parametrizada que fará a chamada ao <code>pytest.main()</code>.</p>
+
+<p>Isolando essa nova função de teste em um arquivo dedicado, teremos o seguinte:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---4GU_GyR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wo9frfibfbx5wlqzrojh.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---4GU_GyR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wo9frfibfbx5wlqzrojh.png" alt="Nova estratégia para aplicar mutações" width="800" height="409"></a></p>
+
+<p>Que traduzido para código, fica assim:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<span class="kn">from</span> <span class="nn">tests</span> <span class="kn">import</span> <span class="n">sorter_mutations</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="n">mutated_functions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">sorter_mutations</span><span class="p">.</span><span class="n">no_exception_mutation</span><span class="p">,</span>
+    <span class="n">sorter_mutations</span><span class="p">.</span><span class="n">slice_input_mutation</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="o">@</span><span class="n">pytest</span><span class="p">.</span><span class="n">mark</span><span class="p">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s">"mutation"</span><span class="p">,</span> <span class="n">mutated_functions</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_mutations_for_test_module</span><span class="p">(</span><span class="n">mutation</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">patch</span><span class="p">(</span><span class="s">"tests.test_sorter.sort_this_by"</span><span class="p">,</span> <span class="n">mutation</span><span class="p">):</span>
+        <span class="n">retcode</span> <span class="o">=</span> <span class="n">pytest</span><span class="p">.</span><span class="n">main</span><span class="p">([</span><span class="s">"tests/test_sorter.py"</span><span class="p">])</span>
+
+    <span class="k">assert</span> <span class="n">retcode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"Mutação deveria falhar"</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Dado que não melhoramos o <a href="https://dev.to/vbuxbaum/testando-testes-no-python-parte-2-fixtures-parametrizadas-270g#:~:text=E%20um%20poss%C3%ADvel%20teste%20implementado%20por%20uma%20pessoa%20estudante%20em%20tests/test_sorter.py%3A">último exemplo de "teste da pessoa estudante"</a>, ao executar <code>python -m pytest</code> teremos a saída semelhante a seguinte:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bHI7rGN5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fclrwr36loqfwnm5whim.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bHI7rGN5--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fclrwr36loqfwnm5whim.png" alt="Resultado do teste com pytest chamado internamente" width="800" height="224"></a></p>
+
+<p>Os 2 <code>PASSED</code> 🟢 indicados na imagem são:</p>
+
+<ol>
+<li>A própria função da pessoa estudante sem a mutação aplicada</li>
+<li>O teste com a mutação <code>slice_input_mutation</code>, que falhou como esperado na chamada <code>pytest.main(["tests/test_sorter.py"])</code>
+</li>
+</ol>
+
+<p>E, como imaginávamos, a chamada <code>pytest.main</code> com a mutação <code>no_exception_mutation</code> retornou <code>0</code> e por isso nosso <code>assert</code> acusou um problema: "Mutação deveria falhar" (mas não falhou).</p>
+
+<h2>
+  
+  
+  Melhorando a solução
+</h2>
+
+<p>Particularmente fiquei muito orgulhoso com essa solução! 💜 Mas há melhorias importante antes de chegarmos na versão disponibilizada para as turmas.</p>
+
+<h3>
+  
+  
+  Ocultar logs excessivos
+</h3>
+
+<p>Quando executamos o Pytest internamente, ele se comporta de fato como uma nova execução, gerando todos os logs como esperado. Em nosso exemplo o terminal ficou poluído com logs equivalentes a 3 rodadas do Pytest, e isso não é bom para a experiência, além de confundir a pessoa estudante.</p>
+
+<p>O Pytest possui algumas opções para reduzir a verbosidade de logs, mas sentimos que seria melhor ocultar completamente a saída das chamadas internas. Com 4 linhas podemos fazer a saída de um comando ser redirecionada para a <a href="https://pt.stackoverflow.com/questions/118603/qual-%C3%A9-a-finalidade-do-caminho-dev-null-em-alguns-comandos">"lixeira" <code>/dev/null</code></a>:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight diff"><code><span class="gi">+import contextlib
++import os
+</span><span class="p">from unittest.mock import patch
+from tests import sorter_mutations
+import pytest
+</span>
+mutated_functions = [
+    sorter_mutations.no_exception_mutation,
+    sorter_mutations.slice_input_mutation,
+<span class="err">]</span>
+
+
+@pytest.mark.parametrize("mutation", mutated_functions)
+<span class="p">def test_mutations_for_test_module(mutation):
+</span>    with patch("tests.test_sorter.sort_this_by", mutation):
+<span class="gi">+        with open(os.devnull, "w") as student_output:
++            with contextlib.redirect_stdout(student_output):
+</span>                 retcode = pytest.main(["tests/test_sorter.py"])
+    assert retcode != 0, "Mutação deveria falhar"
+
 </code></pre>
 
 </div>
@@ -1727,75 +800,204 @@ client.publish(mqtt_topic, measurement_json)
 <h3>
   
   
-  Success
+  Mutações devem falhar <code>and</code> Original deve passar
 </h3>
 
-<p>When running the script I received in my Node-RED debugger screen the following object:<br>
-<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fpIWZI_b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ldhmmj8j0rqecbk2hohk.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fpIWZI_b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ldhmmj8j0rqecbk2hohk.png" alt="Results in debugger screen for Node-RED" width="484" height="526"></a></p>
+<p>Tivemos um desafio semelhante na solução anterior usando a <em>fixture</em>: além de garantir que as mutações <strong>devem falhar</strong>, devemos garantir que o teste "normal" ou "original" <strong>deve passar</strong>.</p>
+
+<p>Aqui novamente a biblioteca <code>pytest-dependency</code> e o módulo <code>inspect</code> entram como grandes amigos! Coletamos todas as funções de teste no arquivo <code>tests/test_sorter.py</code> e as adicionamos como dependências para o novo teste <code>test_mutations_for_test_module</code>.</p>
+
+<p>Uma função que coleta todos os <em>nodeid</em>'s de testes funcionais para um arquivo pode ser escrita assim:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+
+<span class="k">def</span> <span class="nf">get_test_functions_from</span><span class="p">(</span><span class="n">student_test_module</span><span class="p">):</span>
+    <span class="n">test_file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">student_test_module</span><span class="p">.</span><span class="n">__file__</span><span class="p">).</span><span class="n">relative_to</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="n">cwd</span><span class="p">())</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">test_file_path</span> <span class="o">+</span> <span class="s">"::"</span> <span class="o">+</span> <span class="n">member</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">inspect</span><span class="p">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">student_test_module</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">inspect</span><span class="p">.</span><span class="n">isfunction</span><span class="p">(</span><span class="n">member</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="n">member</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">startswith</span><span class="p">(</span><span class="s">"test_"</span><span class="p">)</span>
+    <span class="p">]</span>
+</code></pre>
+
+</div>
+
+
+
+<p><em>Nodeid</em> é o identificador de um teste no Pytest, exigido pela <code>pytest-dependency</code>. É o mesmo texto que aparece antes de <code>PASSED</code> ou <code>FAILED</code> quando executamos a CLI com <code>-vv</code>. Exemplo:</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--J-bLriI_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xqixau04pmhtkl8ct73v.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J-bLriI_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xqixau04pmhtkl8ct73v.png" alt="Exemplo de nodeid" width="800" height="76"></a></p>
+
+<blockquote>
+<p>Obs: Se a pessoa estudante utilizar parametrização em seus testes, essa função de coleta de <em>nodeid</em>'s não será suficiente para a <code>pytest-dependency</code> funcionar corretamente. Por isso <a href="https://github.com/betrybe/pytest-dependency/commit/a5b5a21255ddb62727fafb5f9caa923e3a8cc985">alteramos nosso <em>fork</em> novamente</a>, garantindo a interpretação correta das dependências.</p>
+</blockquote>
+
+<h3>
+  
+  
+  Nosso <code>assert</code>, nossas regras
+</h3>
+
+<p>Já que foi necessário criar um <code>assert</code> para garantir que o teste falhou para uma mutação, podemos aproveitar para criar uma mensagem de erro bem específica e didática. Porque só informar <code>"Mutação deveria falhar"</code> se podemos chegar em algo como <code>"Seus testes em '{arquivo}' deveriam falhar com a mutação '{mutação}' definida em '{arquivo de mutações}', mas passaram. Confira essa dica: {dica específica da mutação}"</code>?</p>
+
+<p>Poderíamos ter um map/dicionário para definir a dica de cada mutação, mas escolhemos uma forma mais "preguiçosa": a <em>docstring</em> da própria mutação. Um exemplo seria:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="c1"># ...
+</span>
+<span class="o">@</span><span class="n">pytest</span><span class="p">.</span><span class="n">mark</span><span class="p">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s">"mutation"</span><span class="p">,</span> <span class="n">mutated_functions</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_mutations_for_test_module</span><span class="p">(</span><span class="n">mutation</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">patch</span><span class="p">(</span><span class="s">"tests.test_sorter.sort_this_by"</span><span class="p">,</span> <span class="n">mutation</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">student_output</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">contextlib</span><span class="p">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">student_output</span><span class="p">):</span>
+                <span class="n">retcode</span> <span class="o">=</span> <span class="n">pytest</span><span class="p">.</span><span class="n">main</span><span class="p">([</span><span class="s">"tests/test_sorter.py"</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="n">retcode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span>
+        <span class="s">"Seus testes em 'tests/test_sorter.py' deveriam falhar com a mutação,"</span>
+        <span class="sa">f</span><span class="s">" mas passaram. Confira essa dica: </span><span class="si">{</span><span class="n">mutation</span><span class="p">.</span><span class="n">__doc__</span><span class="si">}</span><span class="s">"</span>
+    <span class="p">)</span>
+</code></pre>
+
+</div>
+
+
 
 <h2>
   
   
-  Summary
+  Primeiro a bagunça, depois a arrumação
 </h2>
 
-<p>In this project, my goal was to measure electrical energy consumption in my workspace for the sake of awareness. I selected the Eastron SMD120C kWh meter, which communicates via Modbus RS-485, and set up the necessary hardware, including a Raspberry Pi and MQTT integration for real-time data transmission to Node-RED.</p>
+<p>Ufa... Muito código (<em>e nem mostrei tudo</em>) mas chegamos lá! 🎉</p>
+
+<p>E nesse momento vem a dor de olhar todo aquele código <em>criativo</em>, mas ainda bagunçado. Só de olhar o "resultado final" já quero fugir de manutenções futuras, ainda mais pensando em múltiplos projetos e múltiplas turmas.</p>
+
+<p>Por isso, aquela boa e velha refatoração sempre cai bem. Criando uma classe e algumas funções para isolar responsabilidades, temos um resultado mais palatável:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
+
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="c1"># Aproveitei nosso fork da pytest-dependency para
+# posicionar as funções de apoio
+</span><span class="kn">from</span> <span class="nn">pytest_dependency</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">assert_fails_with_mutation</span><span class="p">,</span>
+    <span class="n">get_skip_markers</span><span class="p">,</span>
+    <span class="n">get_test_assessment_configs</span><span class="p">,</span>
+    <span class="n">run_pytest_quietly</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">src.sorter</span> <span class="kn">import</span> <span class="n">sort_this_by</span>
+<span class="kn">from</span> <span class="nn">tests</span> <span class="kn">import</span> <span class="n">test_sorter</span><span class="p">,</span> <span class="n">sorter_mutations</span>
+
+<span class="c1"># TA_CFG será um objeto para guardar dados que queremos obter facilmente
+</span><span class="n">TA_CFG</span> <span class="o">=</span> <span class="n">get_test_assessment_configs</span><span class="p">(</span>
+    <span class="n">target_asset</span><span class="o">=</span><span class="n">sort_this_by</span><span class="p">,</span>
+    <span class="n">mutations_module</span><span class="o">=</span><span class="n">sorter_mutations</span><span class="p">,</span>
+    <span class="n">student_test_module</span><span class="o">=</span><span class="n">test_sorter</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Com essa configuração garantimos que só testaremos as mutações
+# caso a pessoa estudante tenha feito testes que passam.
+</span><span class="n">pytestmark</span> <span class="o">=</span> <span class="n">get_skip_markers</span><span class="p">(</span><span class="n">TA_CFG</span><span class="p">)</span>
+
+
+<span class="o">@</span><span class="n">pytest</span><span class="p">.</span><span class="n">mark</span><span class="p">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s">"mutation"</span><span class="p">,</span> <span class="n">TA_CFG</span><span class="p">.</span><span class="n">MUTATED_FUNCTIONS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_mutations_for_test_module</span><span class="p">(</span><span class="n">mutation</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">patch</span><span class="p">(</span><span class="n">TA_CFG</span><span class="p">.</span><span class="n">PATCH_TARGET</span><span class="p">,</span> <span class="n">mutation</span><span class="p">):</span>
+        <span class="n">return_code</span> <span class="o">=</span> <span class="n">run_pytest_quietly</span><span class="p">([</span><span class="n">TA_CFG</span><span class="p">.</span><span class="n">STUDENT_TEST_FILE_PATH</span><span class="p">])</span>
+
+    <span class="n">assert_fails_with_mutation</span><span class="p">(</span><span class="n">mutation</span><span class="p">,</span> <span class="n">return_code</span><span class="p">,</span> <span class="n">TA_CFG</span><span class="p">)</span>
+
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Muitas alegrias, até que...
+</h2>
+
+<p>Esse formato funcionou muito bem para nossos projetos sobre POO, Raspagem de Dados, Algoritmos e Estruturas de Dados, Flask... até que começamos a ensinar <strong>Django</strong>. 😅</p>
+
+<p><a href="https://www.djangoproject.com/">Django</a> é um framework incrível, mas ele abstrai <strong><em>muitos</em></strong> detalhes de implementação. Isso acontece principalmente em relação a comunicação com o banco de dados, e é mais "agravante" quando testes acessam o banco.</p>
+
+<p>Tentamos bastante até entender que não seria viável, com a solução descrita nesse artigo, testar testes que precisavam acessar o banco de dados de uma aplicação Django. Precisávamos voltar ao passo da pesquisa, com boas doses de ousadia, criatividade e paciência.</p>
+
+<p>Vou ser sincero aqui: ainda não tenho a resposta final! Fizemos uma prova de conceito com <a href="https://docs.pytest.org/en/7.1.x/how-to/writing_hook_functions.html">hooks do Pytest</a> que parece promissora, mas ainda não chegamos lá.</p>
+
+<p>Por isso, o próximo artigo pode demorar um pouco a sair, mas já estou ansioso para esse momento!</p>
 
  </details> 
  <hr /> 
 
- #### - [The Role of a DevOps Engineer: Responsibilities and Skills](https://dev.to/neeljyo/the-role-of-a-devops-engineer-responsibilities-and-skills-1l5c) 
- <details><summary>Article</summary> <p>In the fast-paced world of IT and software development, the role of a DevOps engineer has become essential in bridging the gap between development and operations. DevOps engineers play a crucial role in automating processes, improving collaboration, and ensuring the continuous delivery of high-quality software. In this article, we will explore the responsibilities and skills of a DevOps engineer and introduce the concept of a "DevOps Masters Program" designed to equip professionals with advanced DevOps knowledge.</p>
+ #### - [O problema com vh no mobile](https://dev.to/nickgabe/o-problema-com-vh-no-mobile-12jn) 
+ <details><summary>Article</summary> <p>Olá, tudo bem? Sabe aquela coisa chata de quando você coloca um <code>min-height: 100vh</code> no seu body e no mobile ele fica com um scroll sem nenhum motivo aparente? Realmente é uma coisa bem irritante e que antigamente era complicada de ser resolvida sem uma certa <em>"gambiarra"</em>. Mas vamos começar do começo!</p>
 
-<p>The DevOps Engineer's Mission</p>
+<p>Para caso não saiba, o "vh" do css é uma unidade relativa a 1% do viewport do usuário, porém essa viewport inclui todo o navegador, desconsiderando por exemplo elementos que possam estar cobrindo a tela (como é o caso de celulares)</p>
 
-<p>A DevOps engineer is a versatile professional who blends the roles of a developer and an operations expert. Their primary mission is to streamline the software development and deployment lifecycle while maintaining stability, reliability, and security. They act as the bridge between development and operations teams, facilitating communication and collaboration.</p>
+<p>Por isso funciona no desktop, mas em mobile deixa um scroll!</p>
 
-<p>Responsibilities of a DevOps Engineer</p>
+<p>Já a medida "svh" é o equivalente a "small viewport height", ou seja 1% do menor viewport considerando justamente os elementos que possam cobrir a tela como a barra de endereços do mobile.</p>
 
-<p>Continuous Integration/Continuous Deployment (CI/CD): Implement and maintain CI/CD pipelines to automate the build, test, and deployment processes, ensuring faster and more reliable software releases.</p>
+<p>Ou seja, perfeito pra celulares pois é muito mais preciso para o que o usuário vê!</p>
 
-<p>Infrastructure as Code (IaC): Use tools like Terraform or Ansible to define and manage infrastructure as code, allowing for consistent and repeatable infrastructure provisioning.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--jlsB-qB2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86dvs5kwkxyg94tmbrim.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jlsB-qB2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/86dvs5kwkxyg94tmbrim.png" alt="SVH" width="800" height="450"></a></p>
 
-<p>Containerization: Container technologies like Docker and container orchestration platforms like Kubernetes are often used to package and deploy applications. DevOps engineers are responsible for containerization and orchestration.</p>
+<p>Já o "lvh" (large viewport height) é o exato oposto, ele pega o maior viewport possível, desconsiderando a barra de endereços ou uma UI que possa estar cobrindo a tela.</p>
 
-<p>Automation: Automate repetitive tasks and processes, such as configuration management, application deployment, and monitoring, to reduce manual errors and improve efficiency.</p>
+<p>Para desktop ele funciona muito bem como pode imaginar, mas pra mobile depende do seu caso de uso. 🤔</p>
 
-<p>Monitoring and Alerting: Set up monitoring systems and create alerting mechanisms to detect issues proactively and ensure system health.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4XdY5mYo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wrxiocwynfsqddpt6kq5.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--4XdY5mYo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wrxiocwynfsqddpt6kq5.png" alt="LVH" width="800" height="450"></a></p>
 
-<p>Security: Integrate security practices into the DevOps process, ensuring that security is a part of the development and deployment pipeline.</p>
+<p>Afinal, um é bom pra desktop e outro bom pra celular, eu teria que usar uma media query pra adaptar então??</p>
 
-<p>Collaboration: Foster collaboration and communication between development and operations teams, breaking down silos, and promoting a culture of shared responsibility.</p>
+<p>Não :D</p>
 
-<p>Performance Optimization: Identify and resolve performance bottlenecks, ensuring that applications run efficiently and meet performance requirements.</p>
+<p>Felizmente também existe o "dvh" (dynamic viewport height) que se ajusta de acordo com o dispositivo, agindo tanto como svh ou dvh de acordo com o necessário.</p>
 
-<p>Version Control: Manage version control systems like Git to track changes in code and configuration files.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5xKkX8bv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hxxjhdoup0plf61bdut1.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5xKkX8bv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hxxjhdoup0plf61bdut1.png" alt="DVH" width="800" height="450"></a></p>
 
-<p>Key Skills for a DevOps Engineer</p>
+<p>Entretanto alegria de pobre dura pouco, e eles ainda não estão disponíveis em todos os navegadores :(</p>
 
-<p>Scripting and Coding: Proficiency in scripting languages (e.g., Python, Bash) and the ability to write code for automation tasks.</p>
+<p>O firefox e IE por exemplo ainda não possuem suporte...</p>
 
-<p>Cloud Services: Knowledge of cloud platforms such as AWS, Azure, or Google Cloud to deploy and manage cloud resources.</p>
+<p>Por isso, eu recomendo usar porém junto de um fallback! Se liga na dica:<br>
+</p>
 
-<p>CI/CD Tools: Familiarity with CI/CD tools like Jenkins, Travis CI, or GitLab CI for building and deploying software.</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="nt">body</span> <span class="p">{</span>
+  <span class="c">/*
+   primeiro você usa o fallback: vh
+  */</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
 
-<p>Containerization: Understanding of container technologies (e.g., Docker) and container orchestration platforms (e.g., Kubernetes).</p>
+  <span class="c">/*
+    e em seguida, você usa a versão nova!
+    pois caso ela não funcione, será ignorada e
+    o vh informado anteriormente será usado no lugar
+  */</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">100</span><span class="n">dvh</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>Configuration Management: Experience with configuration management tools like Ansible, Puppet, or Chef.</p>
+</div>
 
-<p>Version Control Systems: Proficiency in using version control systems, with Git being the most common.</p>
 
-<p>Monitoring and Logging: Familiarity with monitoring tools like Prometheus, Grafana, and log management solutions like ELK stack.</p>
 
-<p>Security Best Practices: Knowledge of security best practices, including vulnerability scanning and access control.</p>
+<p>São propriedades super úteis e hoje em dia uma mão na roda pra evitar bugs de UI desnecessários :)</p>
 
-<p>The DevOps Masters Program</p>
-
-<p>For professionals looking to advance their DevOps careers, a <a href="https://www.edureka.co/masters-program/devops-engineer-training">DevOps Masters Program</a> can be an excellent opportunity. This program typically offers advanced courses and hands-on experience in DevOps practices, tools, and methodologies. It equips participants with the skills and knowledge needed to take on complex DevOps challenges and lead DevOps initiatives within their organizations.</p>
-
-<p>Conclusion: The DevOps Engineer's Role in Modern IT</p>
-
-<p>The DevOps engineer is a linchpin in modern IT operations. Their responsibilities span automation, collaboration, infrastructure management, and much more. With the rapid evolution of technology and the growing demand for DevOps expertise, a DevOps Masters Program can provide a structured path for professionals to enhance their skills and become leaders in the field. In an era where agility, efficiency, and quality are paramount, DevOps engineers are instrumental in ensuring successful software delivery and operations.</p>
+<p>E é isso, espero que tu tenha aprendido algo novo hoje!<br>
+Obrigado por ler, boa sorte no css e até mais! :)</p>
 
  </details> 
  <hr /> 
