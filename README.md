@@ -117,240 +117,137 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Suspense your federated component with caution](https://dev.to/ibrahimshamma99/suspense-your-federated-component-with-caution-2gnc) 
- <details><summary>Article</summary> <p>When you see examples of federated components, you will mostly see it wrapped by <code>React.Suspense</code>, which basically returns a fallback component until your component is loaded, but suspense does not handle if your federated component throws an error or your micro-site is down, in that case you need to read <a href="https://dev.to/ibrahimshamma99/always-have-plan-b-when-your-federated-component-fails-35di">this article</a> where we explain to handle the situation when we unable to load the component.</p>
+ #### - [Mastering Binary Search](https://dev.to/cleancodestudio/mastering-binary-search-3li6) 
+ <details><summary>Article</summary> <p><small><small><br>
+LeetCode Practice Problems for each Binary Search Implementation and Variation Linked Below<br>
+</small></small><br>
+</p>
 
-<p>When we want to <code>Suspense</code> our federated component we need to take care of the followings:</p>
 
+<center>(My personal study notes)</center>
+
+
+
+
+<ul>
+<li>
+Mastering Binary Search
+
+<ul>
+<li>
+Variations of Binary Search (patterns to practice)
+
+<ul>
+<li>1. Classic Binary Search</li>
+<li>2. Modified Binary Search</li>
+<li>3. Find the Closest Element to a Target</li>
+<li>4. Find the Peak Element</li>
+<li>5. Find Rotation Point in a Rotated Sorted Array</li>
+<li>6. Find First and Last Position of an Element</li>
+<li>When to Use Binary Search</li>
+<li>When Not to Use Binary Search</li>
+</ul>
+</li>
+<li>LeetCode Binary Search </li>
+<li>Points of note to study</li>
+</ul>
+</li>
+</ul>
 <h2>
   
   
-  Your Federated component may be slow to respond
+  Variations of Binary Search (patterns to practice)
 </h2>
 
-<p>You better have a spinner inside the fallback component for example:<br>
-</p>
+<p>Worth knocking these into muscle memory</p>
+<h3>
+  
+  
+  1. Classic Binary Search
+</h3>
+
 
 <div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Spinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nc">FederatedComponent</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">Suspense</span><span class="p">&gt;</span>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">binarySearch</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="kd">let</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="k">return</span> <span class="nx">mid</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="p">}</span>
 </code></pre>
 
 </div>
-
-
-
-<p>but the above code can cause an obvious issue, I may have multiple federated component in one page, so: </p>
-
-<h2>
-  
-  
-  You may consider not showing multiple spinners in your page
-</h2>
-
-<p>In this case you need to do the following:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight tsx"><code><span class="c1">// DO NOT DO THIS</span>
-<span class="p">&lt;&gt;</span>
-    <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Spinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">FederatedComponent1</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">Suspense</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Spinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">FederatedComponent2</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">Suspense</span><span class="p">&gt;</span>
-<span class="p">&lt;/&gt;</span>
-
-
-<span class="c1">// DO THIS</span>
-<span class="p">&lt;</span><span class="nc">Suspense</span> <span class="na">fallback</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Spinner</span> <span class="p">/&gt;</span><span class="si">}</span><span class="p">&gt;</span>
-    <span class="p">&lt;&gt;</span>
-        <span class="p">&lt;</span><span class="nc">FederatedComponent1</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;</span><span class="nc">FederatedComponent2</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/&gt;</span>
-<span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">Suspense</span><span class="p">&gt;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Again checkout the federated wrapper shown in <a href="https://dev.to/ibrahimshamma99/always-have-plan-b-when-your-federated-component-fails-35di">this article</a>, to make sure if your federated sites are not showing for whatever reason, you load a local fallback component.</p>
-
-<h2>
-  
-  
-  Since we are lazy loading components, these components should have nothing to do with SEO
-</h2>
-
-<p>The crawlers will not wait to scrape the site with the lazily loaded component, so you need your SEO content to be part of your <a href="https://web.dev/articles/fcp">FCP</a> </p>
 
 <h3>
   
   
-  Side Note: making the intellisense recognize your federated component
+  2. Modified Binary Search
 </h3>
 
-<p>In the previous blogs we used the definition <code>react-app-env.d.ts</code> for declaring modules like:<br>
-</p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kr">declare</span> <span class="kr">module</span> <span class="dl">"</span><span class="s2">app1/FederatedComponent1</span><span class="dl">"</span><span class="p">;</span>
-<span class="kr">declare</span> <span class="kr">module</span> <span class="dl">"</span><span class="s2">app1/FederatedComponent2</span><span class="dl">"</span><span class="p">;</span>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">modifiedBinarySearch</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>  <span class="c1">// Initialize result</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// Exact match</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
+      <span class="c1">// For the first occurrence, keep going left</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Standard binary search logic</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
 
 </div>
 
 
+<p>Remember, the "Modified Condition" is the part you'd customize based on what specific problem you're tackling.</p>
+<h3>
+  
+  
+  3. Find the Closest Element to a Target
+</h3>
 
-<p>We can do it in a better fashion where we leverage the types and all ts cool features by going into the <code>host</code> <code>tsconfig</code><br>
-and in the <code>compilerOptions</code> we add in the following in the <code>paths</code> properity:<br>
+<p>Here, you have to find the closest element to a given target in a sorted array.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-
-        </span><span class="nl">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"app1/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"path/to/app1/federated-components-dir/*"</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>or just add each federated component one by one:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-           </span><span class="nl">"app1/FederatedComponent1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"path/to/app1/federated-component-1"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"app1/FederatedComponent2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"path/to/app1/federated-component-2"</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-</div>
-
-
-
-<p>in this way the <a href="https://github.com/typescript-language-server/typescript-language-server">ts server</a> can detect and parse the component from the microfronent, thanks to monorepos!</p>
-
- </details> 
- <hr /> 
-
- #### - [10 game-changing shortcut links that can supercharge your online productivity. 💼🚀](https://dev.to/harshal255/10-game-changing-shortcut-links-that-can-supercharge-your-online-productivity-1in3) 
- <details><summary>Article</summary> <p><a href="//meet.new">meet.new</a> - Quickly launch a Google Meet for your virtual meetings.<br>
-<a href="//repo.new">repo.new</a> - Quickly create a new GitHub repository.<br>
-<a href="//notion.new">notion.new</a> - Quickly open a new Notion page for your ideas and projects.<br>
-<a href="//replit.new">replit.new</a> - Quickly open a new Replit workspace for coding experiments.<br>
-<a href="//doc.new">doc.new</a> - Quickly create documents with Google Docs.<br>
-<a href="//sheet.new">sheet.new</a> - Quickly handle data with Google Sheets.<br>
-<a href="//slide.new">slide.new</a> - Quickly craft engaging presentations using Google Slides.<br>
-<a href="//form.new">form.new</a> - Quickly build surveys and forms with Google Forms.<br>
-<a href="//canva.new">canva.new</a> - Quickly design eye-catching visuals with Canva.<br>
-<a href="//design.new">design.new</a> - Quickly collaborate on design projects using Figma.<br>
-These shortcuts can save you precious minutes every day! 🕒</p>
-
-<p>Do you know any new shortcuts that aren't on this list? 😄<br>
-If so, drop them in the comments below! Let's share the knowledge and make life even easier for everyone. 🚀</p>
-
-<p>Feel free to use this LinkedIn post to share these valuable shortcuts with your network. Engage with comments to foster a discussion and discover even more shortcuts from your connections! 🙌🔍</p>
-
- </details> 
- <hr /> 
-
- #### - [What is selenium? Why do we use selenium for automation?](https://dev.to/sadiquaakthar/what-is-selenium-why-do-we-use-selenium-for-automation-bi) 
- <details><summary>Article</summary> <p>Selenium is mainly used to empower Automation in Web Testing and Beyond</p>
-
-<p>In the rapidly evolving technology of software development and quality assurance, automation has become an indispensable tool. Automation not only accelerates the testing process but also enhances its accuracy and repeatability. In this, Selenium emerges as a powerful and versatile open-source framework that has revolutionized web automation.</p>
-
-<p>What is Selenium?</p>
-
-<p>Selenium is a suite of tools and an open-source framework that provides a means to automate web browsers. It allows testers and developers to control and interact with web applications programmatically, replicating user interactions as if a human were operating the browser. Selenium consists of several components, each designed to cater to specific automation needs:</p>
-
-<p><strong>Selenium WebDriver:</strong> It is the most crucial component of Selenium. WebDriver is a browser automation API that provides a mechanism for interacting with web elements, navigating between pages, and performing various actions on a web application. It can support multiple programming languages like Java, Python, C#, Ruby, and more, making it accessible to a broad range of developers.</p>
-
-<p><strong>Selenium IDE (Integrated Development Environment):</strong> Selenium IDE is a browser extension that offers a record-and-playback functionality. It's an excellent entry point for beginners or non-technical users who want to create basic automation scripts without much coding. It is limited in terms of advanced capabilities.</p>
-
-<p><strong>Selenium Grid:</strong> Selenium Grid allows parallel execution of tests on multiple machines and browsers simultaneously. This is particularly valuable for testing compatibility and scaling test suites, reducing testing time, and improving efficiency.</p>
-
-<p><strong>Why Use Selenium for Automation?</strong></p>
-
-<p>Selenium's popularity in the field of automation can be attributed to several reasons:</p>
-
-<p><strong>Cross-Browser Compatibility:</strong> One of the most significant advantages of Selenium is its ability to automate across different web browsers, including Chrome, Firefox, Safari, and Internet Explorer. This ensures that web applications are thoroughly tested for compatibility and functionality on various browsers.</p>
-
-<p><strong>Platform Independence:</strong> Selenium is platform-independent, meaning it can be run on various operating systems such as Windows, macOS, and Linux. This flexibility makes it adaptable to diverse development and testing environments.</p>
-
-<p><strong>Programming Language Support:</strong> Selenium supports multiple programming languages, providing the freedom to choose the language that best suits the automation team's expertise and project requirements. Whether it's Java, Python, C#, Ruby, or others.</p>
-
-<p><strong>Extensibility:</strong> Selenium's flexibility extends to integration with various testing frameworks (e.g., TestNG, JUnit), build tools (e.g., Maven, Gradle), and Continuous Integration (CI) systems (e.g., Jenkins). This enables the creation of complex testing scenarios, facilitates easy reporting, and ensures that automated tests are seamlessly integrated into the development pipeline.</p>
-
-<p><strong>Parallel Testing with Selenium Grid:</strong> Selenium Grid makes it possible to execute tests in parallel on multiple machines and browsers. This drastically reduces testing time, aids in faster issue identification, and contributes to a more efficient testing process.</p>
-
-<p><strong>Active Community and Ecosystem:</strong> Selenium boasts a large and active user community. As an open-source project, it benefits from ongoing development, continuous support, and contributions from users around the world. This translates into an abundance of resources, libraries, and plugins to assist users in solving a wide array of automation challenges.</p>
-
-<p><strong>Record and Playback with Selenium IDE:</strong> Selenium IDE, although less powerful than Selenium WebDriver, provides a user-friendly record-and-playback feature. This is particularly helpful for non-technical users or beginners who wish to create basic automation scripts without delving into programming intricacies.</p>
-
-<p><strong>Cross-Platform Mobile Testing:</strong> In addition to web automation, Selenium can be extended to test mobile applications using tools like Appium. This makes Selenium a versatile choice for both web and mobile automation, allowing organizations to streamline their testing efforts across different platforms.</p>
-
-<p><strong>Robust and Reliable:</strong> Selenium is widely adopted by organizations of all sizes and industries. Its reliability and robustness have been tested extensively, making it a trusted choice for automation. Its robust architecture ensures that tests can be developed to withstand dynamic changes in web applications.</p>
-
-<p><strong>Cost-Effective Solution:</strong> Selenium's open-source nature makes it a cost-effective choice. Organizations do not need to invest in expensive automation tools, as Selenium provides a comprehensive set of features for web automation at no cost.</p>
-
-<p>In conclusion, Selenium has established itself as a cornerstone in the realm of web automation. Its ability to support multiple programming languages, browsers, and platforms, along with its flexibility, extensibility, and active community, makes it the go-to choice for organizations seeking to streamline their testing processes, enhance software quality, and optimize efficiency in a rapidly evolving digital world. Selenium empowers automation in web testing and beyond, contributing to the delivery of reliable and high-quality software.</p>
-
- </details> 
- <hr /> 
-
- #### - [What is your favorite operating system?](https://dev.to/jordantylerburchett/what-is-your-favorite-operating-system-1048) 
- <details><summary>Article</summary> <p>What is your all time favorite operating system and what makes it the best in your opinion?</p>
-
-<p>Throughout the past few decades there have been several different computer operating systems built for specific purposes. From MacOS, Windows, and Linux to iOS, Android and everything in between.</p>
-
-<p>If you're like me some of these stick out above all others and one will be, in your opinion, the best operating system of its time or maybe even of all time. Let's talk about your first time seeing it and what you used it for.</p>
-
- </details> 
- <hr /> 
-
- #### - [Hyperimport - Import c, rust, zig etc. files in TypeScript](https://dev.to/tr1ckydev/hyperimport-import-c-rust-zig-etc-files-in-typescript-1ia5) 
- <details><summary>Article</summary> <p><em>"What? Did I read the title correct?"</em></p>
-
-<p>Yes! Let's jump into an example right in the beginning, 'cause why not?</p>
-
-<p>You'll be able to do this,</p>
-
-<p><em>index.ts</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">add</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./add.rs</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span> <span class="c1">// 10</span>
-</code></pre>
-
-</div>
-
-
-
-<p><em>add.rs</em><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight rust"><code><span class="nd">#[no_mangle]</span>
-<span class="k">pub</span> <span class="k">extern</span> <span class="s">"C"</span> <span class="k">fn</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">isize</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">isize</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">isize</span> <span class="p">{</span>
-    <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">closestElement</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="k">return</span> <span class="nx">mid</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">-</span> <span class="nx">target</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nx">target</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">start</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -358,79 +255,889 @@ If so, drop them in the comments below! Let's share the knowledge and make life 
 
 
 
-<p>...and even more, like importing native C functions from libc in typescript. <a href="https://github.com/tr1ckydev/hyperimport/wiki/Importing-libc-in-typescript">Check out the guide</a>.</p>
+<h3>
+  
+  
+  4. Find the Peak Element
+</h3>
 
-<p><em>"Wait! What?? How is that even possible!?"</em></p>
-
-<p>Long back, when I was working on the project <a href="https://github.com/tr1ckydev/webview-bun">webview-bun</a>, which essentially is an FFI wrapper of the webview library APIs for Bun. It randomly struck my mind, why can't I import the webview C source file directly into typescript, if through FFI API we can import functions from shared libraries which are essentially compiled from a source file like c, rust, zig, etc., how about I create a way to bridge importing functions in typescript with the source file and automate and the steps in between, in a way that it looks to the end user that they are directly importing from the source file while all the hard parts are managed automatically internally.</p>
-
-<p>I wrote a simple function called calc in zig to add two numbers. In typescript, I wrote an import function that would take the path to that zig file, spawn a child process to invoke the zig compiler to compile that file into a shared library file then open that shared library using FFI API and return the symbols which essentially contains the calc function. So when I used the function to import the zig file, those internal steps happened behind the scenes and the calc function worked. Then when I changed the operation inside the zig function from addition to subtraction and executed the typescript file, those steps happened again essentially recompiling the file and the new output reflected the changes. This is how the typescript file looked.<br>
+<p>In an array where adjacent elements are distinct, find a peak element. An element is considered peak if it is greater than its neighbors.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">calc</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">$import</span><span class="p">(</span><span class="dl">"</span><span class="s2">./calc.zig</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">findPeakElement</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">start</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
 
 </div>
 
 
 
-<p><a href="https://i.giphy.com/media/E3MQDZl9qsVwgnKA7b/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/E3MQDZl9qsVwgnKA7b/giphy.gif" alt="" width="600" height="600"></a></p>
+<h3>
+  
+  
+  5. Find Rotation Point in a Rotated Sorted Array
+</h3>
 
-<p>It appeared as if it was black magic in that function, importing the function directly from Zig but under the hood, the file is compiled into a shared library and it is importing from the library and not the source file itself. But, the syntax looked super clean and easy to comprehend. I recorded my screen showing this experimental prototype and posted it on <a href="">Bun's discord</a> server.</p>
-
-<p>Soon, Jarred came across the message and replied that I could make use of the buntime (we'll call runtime as buntime, 'cause why not) Plugin API and implement my logic as a plugin which would allow me to use ES6 imports instead of that weird looking import function.</p>
-
-<p>Honestly, before this, I never actually used the Plugin API, so I started diving into it. With some fair complications and a few rewrites, I was finally able to port that logic over to use the Plugin API. Now I could easily import the zig file using ES6 import syntax. Even though Typescript was still shouting at me because it doesn't know what calc.zig is or what the calc function is, it still blew my mind away because it looked terrifying.<br>
+<p>For a rotated sorted array, find the index where the smallest element is.<br>
 </p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">calc</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./calc.zig</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">findRotationPoint</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">end</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">start</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
 
 </div>
 
 
 
-<p>So, I decided to make it even more terrifying. I added types.</p>
+<h3>
+  
+  
+  6. Find First and Last Position of an Element
+</h3>
 
-<p>Using typescript's <a href="https://www.typescriptlang.org/docs/handbook/modules.html#wildcard-module-declarations">wildcard module declaration</a> feature, I created a types.d.ts where I declared that zig file path as a module, inside which I added type definitions for the calc function. Now typescript is happy and when I hovered over the calc function, the types are working great as expected. The whole combination looked perfect, but it was still a static prototype and not anything people would be able to use in their projects. I recorded my screen showcasing this scary syntax with black magic happening in the background and even showed when I changed the operation from addition to subtraction, the changes were still reflected. I recorded for both a Zig and a Rust file and posted them on the server again. Soon, Jarred reposted both of the videos on Twitter <a href="https://twitter.com/jarredsumner/status/1681608754067046400">here</a> showcasing the power of bun. Everyone in the comments of the tweet went crazy to see something like this even possible.<br>
-<a href="https://i.giphy.com/media/aWPGuTlDqq2yc/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/aWPGuTlDqq2yc/giphy.gif" alt="" width="480" height="252"></a></p>
+<p>In a sorted array with duplicates, find the starting and ending position of a given target value.<br>
+</p>
 
-<p>Primeagen commented, <em>"This is super cool. Do you have any articles or anything I can read on this?"</em>, so I decided to write this article for him :)</p>
+<div class="highlight js-code-highlight">
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">searchRange</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">first</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">last</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">first</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-<p>People kept blowing up my discord asking me when I'll release it. I apologize for making them wait but its now out, finally!</p>
+  <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">last</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-<p>The most difficult part was to make things dynamic because, in that prototype, I had to manually declare the FFI symbol definitions like argument and return types for the calc function and also manually wrote the type definitions too. I wanted things to be automated as much as possible and the user to have full control of every aspect when they would use it in their project. I wanted flexibility which put me into thinking what's the best approach to making this prototype into a real thing people would use in their projects. I experimented with various approaches but all failed in some way which decreased my motivation to work further on this project. I abandoned it for a long time and I also had university stuff going on in between.</p>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">last</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>My goal was, that I wanted the users...</p>
+</div>
+
+
+
+<p>Knowing when to use binary search depends on several factors, such as the problem constraints and the properties of the data. Here are some general guidelines:</p>
+
+<h3>
+  
+  
+  When to Use Binary Search
+</h3>
+
+<ol>
+<li><p><strong>Sorted Data</strong>: The most fundamental prerequisite for binary search is that the data must be sorted.</p></li>
+<li><p><strong>Time Complexity</strong>: If the problem requires better than O(n)O(n)O(n) time complexity, binary search often becomes a candidate with its O(log⁡n)O(\log n)O(logn) time.</p></li>
+<li><p><strong>Constant Space</strong>: If you need to solve the problem with constant extra space, binary search can be a good choice since it only requires pointers like <code>start</code>, <code>end</code>, and <code>mid</code>.</p></li>
+<li><p><strong>Multiple Queries</strong>: In cases where there are multiple queries on static data, preparing a sorted structure for binary search might be beneficial in the long run.</p></li>
+<li><p><strong>Search Conditions</strong>: If the problem involves searching for a particular condition rather than a specific element (e.g., find the point where a function changes behavior), binary search could apply.</p></li>
+</ol>
+
+<h3>
+  
+  
+  When Not to Use Binary Search
+</h3>
+
+<ol>
+<li><p><strong>Unsorted Data</strong>: If the data is not sorted and cannot be sorted in better than O(nlog⁡n)O(n \log n)O(nlogn) time, then binary search is likely not a fit.</p></li>
+<li><p><strong>Updates</strong>: If the data set is being updated frequently, maintaining the sorted order might be costly unless specialized data structures like balanced trees are used.</p></li>
+<li><p><strong>Linear Scanning is Enough</strong>: For smaller datasets or when O(n)O(n)O(n) time complexity is acceptable, a simpler linear search might suffice.</p></li>
+<li><p><strong>Exact Matches</strong>: If you're looking for a range or pair of values rather than an exact match, binary search might require modifications and might not be the most straightforward approach.</p></li>
+<li><p><strong>Space Complexity</strong>: When extra space is not a constraint, other techniques like Hashing might be simpler and more suitable for certain types of search problems.</p></li>
+</ol>
+
+<p>When approaching a problem, look at the constraints and see if binary search can give you an edge in time complexity, or if the problem's nature naturally lends itself to a binary search approach.</p>
+
+<h2>
+  
+  
+  LeetCode Binary Search
+</h2>
+
+<p><small><small></small></small></p>
+
+<ol>
+<li>
+<p><strong>Standard Binary Search (Standard Binary Search)</strong></p>
 
 <ul>
-<li>...to add support for any other kind of other language which isn't available by default, easily.</li>
-<li>...to be able to swap implementations with their custom logic.</li>
-<li>...to import any other kind of plugin and not just be restricted to loading other language files.</li>
+<li><a href="https://leetcode.com/problems/binary-search/">Binary Search</a></li>
 </ul>
-
-<p>Three months later, last week I started from scratch. It was my fourth or fifth attempt at rewriting from scratch. But every time, I started all over again I had experience of the old failed ideas. This final time, I decided to approach this by taking advantage of inheritance, basically classes. Where I split the whole logic into their functions allowing the user to extend and override them essentially swapping the implementations with their custom ones. Took me a week to get everything working as I wanted it to. My most important goals are achieved.</p>
+</li>
+<li>
+<p><strong>Find First and Last Position of Element in Sorted Array (Standard Binary Search)</strong></p>
 
 <ul>
-<li>The Loader class can be extended by the user and functions can be overridden with custom implementations to customize the behavior.</li>
-<li>Any kind of plugin can be imported through hyperimport.</li>
+<li><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Find First and Last Position of Element in Sorted Array</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Search in Rotated Sorted Array (Rotated Array Binary Search)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in Rotated Sorted Array</a></li>
+<li><a href="https://leetcode.com/problems/search-in-rotated-sorted-array-ii/">Search in Rotated Sorted Array II</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Find Minimum in Rotated Sorted Array (Rotated Array Binary Search)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Find Minimum in Rotated Sorted Array</a></li>
+<li><a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/">Find Minimum in Rotated Sorted Array II</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Closest Element to a Target (Standard Binary Search)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/closest-binary-search-tree-value/">Closest Binary Search Tree Value</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Find Peak Element (Modified Binary Search)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/find-peak-element/">Find Peak Element</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Find the Smallest or Largest Element Greater Than a Given Number (Modified Binary Search)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/first-bad-version/">First Bad Version</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Find Kth Element (Modified Binary Search)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/">Kth Smallest Element in a Sorted Matrix</a></li>
+<li><a href="https://leetcode.com/problems/find-k-th-smallest-pair-distance/">Find Kth Smallest Pair Distance</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Variable Length Arrays (String, Range Queries) (Modified Binary Search)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/longest-increasing-subsequence/">Longest Increasing Subsequence</a></li>
+<li><a href="https://leetcode.com/problems/range-sum-query-immutable/">Range Sum Query - Immutable</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Others (Miscellaneous)</strong></p>
+
+<ul>
+<li><a href="https://leetcode.com/problems/search-a-2d-matrix/">Search a 2D Matrix</a></li>
+<li><a href="https://leetcode.com/problems/search-a-2d-matrix-ii/">Search a 2D Matrix II</a></li>
+</ul>
+</li>
+</ol>
+
+
+
+<h2>
+  
+  
+  Points of note to study
+</h2>
+
+<ul>
+<li>
+Classic Binary Search vs. Modified Binary Search
+</li>
+<li> <code>while(start &lt;= end)</code> vs. <code>while(start &lt; end)</code>
+</li>
 </ul>
 
-<p>Not to mention but, this idea was also featured on the official Bun 1.0 launch video. <a href="https://youtu.be/BsnCpESUEqM?t=221">Watch here</a>.</p>
 
-<p><em>"Can I use it? Is it on github??"</em></p>
 
-<p>Absolutely! Check out the <a href="https://github.com/tr1ckydev/hyperimport">Hyperimport repository</a> and browse the <a href="https://github.com/tr1ckydev/hyperimport/wiki">wiki</a> for a comprehensive documentation with guides.</p>
 
-<p>Check out <a href="https://github.com/tr1ckydev/hyperimport/wiki/Importing-a-rust-file">Importing a rust file</a>, for a step by step guide on setting up a basic hyperimport project.</p>
+<p><small></small></p>
 
-<p>Feel free to join the <a href="https://discord.com/invite/tfBA2z8mbq">discord server</a>, if you have any questions.</p>
+<ul>
+<li><a href="https://cleancode.studio">Clean Code Studio</a></li>
+<li>
+<a href="https://cleancode.studio/algorithms/mastering-binary-search">Binary Search Algorithm</a>
+</li>
+</ul>
 
-<p>If you have come this far, thank you so much for reading the article. The story behind a crazy experimental idea turned into reality. I am really excited and will be looking forward to what mind blowing ideas people can make use of it and push it's limits.</p>
+ </details> 
+ <hr /> 
+
+ #### - [[off-topic] Top 5 Playlists Que Eu Escuto Enquanto Estou Programando](https://dev.to/analaura/off-topic-top-5-playlists-que-eu-escuto-enquanto-programo-537e) 
+ <details><summary>Article</summary> <p>Hoje vou trazer algo meio aleatório aqui 😅 mas é que eu curto muito codar escutando música <em><del>(e fazer tudo também)</del></em>. Então, pensei: por que não criar um post no dev.to para compartilhar as playlists que costumo ouvir enquanto estou programando ou até mesmo criando conteúdo. </p>
+
+<p>Eu vou indicar músicas rap/trap que geralmente é estilo de música que eu mais escuto. </p>
+
+<p>Vou fazer um top 5 aqui 💟</p>
+
+<ol>
+<li>
+<a href="https://open.spotify.com/intl-pt/artist/6rk6Izp6o42fUdE0jRqAP4?si=XicjNFFITbCevyN55jybTA">Alee</a> Esse artista maravilhoso que na verdade não é nem o álbum, geralmente dou play em todas, descobri ele faz pouco tempo.</li>
+<li>
+<a href="https://open.spotify.com/intl-pt/album/4GWoodiAMapPzgitxYvygx?si=3C6Z5ekFQoiKvIUTs9fOfg">Flora matos - Do Lado De Flora</a> A verdade é que a Flora se encaixa em todos os momentos da sua vida, mas esse álbum "DO LADO DE FLORA", é perfeito pra codar!</li>
+<li>
+<a href="https://open.spotify.com/intl-pt/album/062ycDqIDtT21UFyKlHDvO?si=oG6L3IfzSb2GPjSgP9t5VQ">Tasha e Tracie - Diretoria</a> Maravilhosas, se você quer se sentir incrível e determinado a resolver TODO e QUALQUER bug, escute Tasha e Tracie.</li>
+<li>
+<a href="https://open.spotify.com/intl-pt/album/04zQ2qk2AsRPZppeI6TvWl?si=s951N5UCQDe-BHZi_n0K3A">Nill - Regina</a> Ai esse álbum, tenho poucas palavras pra ele pois amo demais!</li>
+<li>
+<a href="https://open.spotify.com/playlist/1g4Bekw7Xnq2AV7Md9XFZE?si=559e07af66f84d23">Boombap</a> Essa playlist de Boombap simplesmente perfeita, eu ultimamente to viciada nela escutando 39393x por dia!</li>
+</ol>
+
+<p><em>Tudo que eu recomendei aqui tem o selo Ana Laura de qualidade, faça bom proveito!</em></p>
+
+<p><code>bjs!</code></p>
+
+<p><a href="https://i.giphy.com/media/dhqoWmDRG3MeXwVTK5/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/dhqoWmDRG3MeXwVTK5/giphy.gif" width="480" height="480"></a></p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Unveiling the Power of K-Nearest Neighbors (KNN) in Machine Learning](https://dev.to/edelapaz/unveiling-the-power-of-k-nearest-neighbors-knn-in-machine-learning-5b0a) 
+ <details><summary>Article</summary> <p>In the vast landscape of machine learning algorithms, K-Nearest Neighbors (KNN) stands as a versatile and intuitive approach for classification and regression tasks. Unlike many complex algorithms with intricate mathematical foundations, KNN relies on a simple principle: "Show me your friends, and I'll tell you who you are." In this comprehensive guide, we will delve deep into the workings of KNN, explore the mathematics behind it, and understand its real-world applications.</p>
+
+<h2>
+  
+  
+  Understanding the Essence of K-Nearest Neighbors (KNN)
+</h2>
+
+<p>KNN is a supervised machine learning algorithm used for solving classification and regression problems. It's based on the principle of similarity, where the idea is to identify the similarity between data points and make predictions based on the similarity with their k-nearest neighbors in the training dataset. The term 'k' in KNN represents the number of nearest neighbors considered when making a prediction.</p>
+
+<h3>
+  
+  
+  The Algorithm at a Glance
+</h3>
+
+<p>Let's start by breaking down the KNN algorithm into its fundamental steps:</p>
+
+<ol>
+<li>
+<p><strong>Data Preparation:</strong></p>
+
+<ul>
+<li>Gather a dataset containing labeled examples. Each example should comprise features (attributes) and corresponding class labels (for classification) or target values (for regression). Data preprocessing is vital to ensure the data is in a suitable format for KNN.</li>
+</ul>
+</li>
+<li>
+<p><strong>Choosing a Value for K:</strong></p>
+
+<ul>
+<li>Decide on the number of nearest neighbors (k) to consider when making predictions. The choice of 'k' is a critical hyperparameter that can significantly impact the algorithm's performance. Selecting an appropriate 'k' requires experimentation and domain knowledge.</li>
+</ul>
+</li>
+<li>
+<p><strong>Distance Metric:</strong></p>
+
+<ul>
+<li>Select an appropriate distance metric to measure the similarity between data points. Common distance metrics include Euclidean distance, Manhattan distance, and cosine similarity. The choice of distance metric plays a crucial role in determining the similarity between data points.</li>
+</ul>
+</li>
+<li>
+<p><strong>Prediction for Classification:</strong></p>
+
+<ul>
+<li>To make a classification prediction for a new data point, calculate the distances between that point and all points in the training dataset.</li>
+<li>Select the k-nearest neighbors, i.e., the data points with the smallest distances to the new data point.</li>
+<li>Determine the majority class among these k-nearest neighbors, and assign this class as the prediction for the new data point.</li>
+</ul>
+</li>
+<li>
+<p><strong>Prediction for Regression:</strong></p>
+
+<ul>
+<li>For regression tasks, the process is similar, but instead of class labels, we work with target values.</li>
+<li>Calculate the distances, select the k-nearest neighbors, and then calculate the average of the target values of these neighbors. This average becomes the prediction for the new data point.</li>
+</ul>
+</li>
+<li>
+<p><strong>Model Evaluation:</strong></p>
+
+<ul>
+<li>After making predictions, it's essential to evaluate the model's performance. This is typically done using appropriate evaluation metrics, such as accuracy, precision, recall, F1-score for classification, and mean squared error, R-squared for regression. The choice of evaluation metric depends on the specific problem.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hyperparameter Tuning:</strong></p>
+
+<ul>
+<li>Experiment with different values of 'k' and distance metrics to find the combination that offers the best results for your specific problem. Hyperparameter tuning is crucial for optimizing the performance of the KNN model.</li>
+</ul>
+</li>
+</ol>
+
+<h3>
+  
+  
+  Going Deeper into the Algorithm
+</h3>
+
+<p>Now that we've outlined the basic steps, let's explore each of them in more detail.</p>
+
+<h4>
+  
+  
+  1. Data Preparation
+</h4>
+
+<p>The success of any machine learning algorithm hinges on the quality and suitability of the training data. In the case of KNN, your dataset should consist of labeled examples, where each example has attributes and corresponding class labels (for classification) or target values (for regression).</p>
+
+<p>Data preprocessing is a critical step in data preparation. It includes tasks like:</p>
+
+<ul>
+<li>
+<strong>Data Cleaning:</strong> Identifying and handling missing values, outliers, and errors in the dataset.</li>
+<li>
+<strong>Feature Scaling:</strong> Ensuring that the features have a consistent scale. Since KNN relies on distance calculations, features must be on a similar scale to avoid certain features dominating the distance calculation.</li>
+</ul>
+
+<h4>
+  
+  
+  2. Choosing a Value for K
+</h4>
+
+<p>The choice of 'k' is one of the most crucial decisions when using the KNN algorithm. It determines the number of neighbors that will influence the prediction. Here are some considerations:</p>
+
+<ul>
+<li><p><strong>Small 'k' Values:</strong> A small 'k' (e.g., 1 or 3) leads to a model that is highly sensitive to noise in the data. It may result in a model that overfits the training data and is highly variable.</p></li>
+<li><p><strong>Large 'k' Values:</strong> A larger 'k' (e.g., 10 or 20) makes the model more robust to noise but may cause it to underfit the training data. It might fail to capture local patterns in the data.</p></li>
+</ul>
+
+<p>The choice of 'k' should be based on a balance between underfitting and overfitting. This can often be determined through cross-validation, where different values of 'k' are tested, and the one that yields the best performance on validation data is selected.</p>
+
+<h4>
+  
+  
+  3. Distance Metric
+</h4>
+
+<p>The distance metric used in KNN plays a significant role in determining the similarity between data points. Let's explore some commonly used distance metrics:</p>
+
+<ul>
+<li><p><strong>Euclidean Distance:</strong> This is the most widely used distance metric in KNN. It measures the straight-line distance between two data points in a multi-dimensional space. The formula for Euclidean distance between two points, A and B, with 'n' dimensions. </p></li>
+<li><p><strong>Manhattan Distance:</strong> Also known as city block distance, this metric calculates the distance by summing the absolute differences between the coordinates of two points. </p></li>
+<li><p><strong>Cosine Similarity:</strong> This metric measures the cosine of the angle between two data vectors. It's particularly useful when dealing with high-dimensional data and text data. The cosine similarity between two vectors A and B.</p></li>
+</ul>
+
+<p>The choice of distance metric depends on the nature of the data and the problem at hand. For example, when working with data in which all features have the same unit of measurement, Euclidean distance is often a good choice. However, if the data consists of features with different units, feature scaling should be performed, and Manhattan distance or cosine similarity might be more appropriate.</p>
+
+<h4>
+  
+  
+  4. Prediction for Classification
+</h4>
+
+<p>In classification tasks, the KNN algorithm aims to predict the class label of a new data point. The steps involved in making classification predictions are as follows:</p>
+
+<ul>
+<li>
+<strong>Calculating Distances:</strong> For a new data point, calculate the distances to all data points in the training dataset using the chosen distance metric. This involves applying</li>
+</ul>
+
+<p>the distance formula (e.g., Euclidean distance) to each pair of data points.</p>
+
+<ul>
+<li><p><strong>Selecting Neighbors:</strong> Identify the 'k' data points with the smallest distances to the new data point. These are the k-nearest neighbors.</p></li>
+<li><p><strong>Majority Voting:</strong> Determine the majority class among the k-nearest neighbors. The new data point is assigned the class label that is most common among its neighbors. This is often referred to as majority voting.</p></li>
+</ul>
+
+<p>The implementation of majority voting can be more nuanced in cases of multi-class classification and ties. When there is a tie in the majority class, additional rules can be applied to break the tie. For example, one can choose the class label of the nearest neighbor among the tied classes.</p>
+
+<h4>
+  
+  
+  5. Prediction for Regression
+</h4>
+
+<p>In regression tasks, the KNN algorithm aims to predict a numerical target value for a new data point. The steps are similar to those in classification, with the key difference being how the prediction is made:</p>
+
+<ul>
+<li><p><strong>Calculating Distances:</strong> As in classification, calculate the distances between the new data point and all data points in the training dataset.</p></li>
+<li><p><strong>Selecting Neighbors:</strong> Identify the 'k' data points with the smallest distances to the new data point.</p></li>
+<li><p><strong>Regression Prediction:</strong> Instead of majority voting, in regression, the prediction is the average of the target values of the k-nearest neighbors. This average represents the predicted target value for the new data point.</p></li>
+</ul>
+
+<h4>
+  
+  
+  6. Model Evaluation
+</h4>
+
+<p>After making predictions using KNN, it's essential to assess the model's performance. The choice of evaluation metric depends on whether you're working on a classification or regression problem. Let's explore common evaluation metrics for each case:</p>
+
+<p><strong>For Classification:</strong></p>
+
+<ul>
+<li><p><strong>Accuracy:</strong> This metric measures the proportion of correctly classified data points out of the total. It's a fundamental measure of classification performance.</p></li>
+<li><p><strong>Precision and Recall:</strong> Precision measures the proportion of true positive predictions among all positive predictions, while recall measures the proportion of true positives among all actual positives. These metrics are especially useful when dealing with imbalanced datasets.</p></li>
+<li><p><strong>F1-Score:</strong> The F1-score is the harmonic mean of precision and recall. It provides a balance between the two metrics.</p></li>
+</ul>
+
+<p><strong>For Regression:</strong></p>
+
+<ul>
+<li><p><strong>Mean Squared Error (MSE):</strong> MSE measures the average of the squared differences between predicted and actual target values. It gives higher weight to larger errors.</p></li>
+<li><p><strong>Root Mean Squared Error (RMSE):</strong> RMSE is the square root of MSE and provides an interpretable measure of the average prediction error in the same unit as the target variable.</p></li>
+<li><p><strong>R-squared (R²):</strong> R-squared measures the proportion of the variance in the target variable that is explained by the model. It ranges from 0 to 1, with higher values indicating better model fit.</p></li>
+</ul>
+
+<p>Here, the MSE Model is the mean squared error of the model's predictions, and the MSE Baseline is the mean squared error of a baseline model (e.g., predicting the mean target value for all data points). A higher R² indicates a better fit.</p>
+
+<h4>
+  
+  
+  7. Hyperparameter Tuning
+</h4>
+
+<p>Hyperparameter tuning is a critical part of the KNN model development process. The choice of 'k' and the distance metric can significantly impact the model's performance. Hyperparameter tuning involves experimenting with different values of 'k' and different distance metrics to find the combination that optimizes the model's performance on the specific problem.</p>
+
+<p>Cross-validation is a valuable technique for hyperparameter tuning. It involves splitting the data into training and validation sets multiple times, training the model on the training data, and evaluating it on the validation data for each combination of hyperparameters. The set of hyperparameters that results in the best performance on the validation data is selected.</p>
+
+<h2>
+  
+  
+  The Mathematical Foundation of K-Nearest Neighbors
+</h2>
+
+<p>Understanding the mathematical underpinnings of KNN is crucial to appreciate its inner workings fully. Let's explore the mathematical concepts and calculations that drive the KNN algorithm.</p>
+
+<h3>
+  
+  
+  Distance Metrics
+</h3>
+
+<p>As mentioned earlier, KNN relies on distance metrics to measure the similarity between data points. The choice of distance metric can vary depending on the nature of the data and the problem. Here, we'll take a closer look at the two most common distance metrics used in KNN: Euclidean distance and Manhattan distance.</p>
+
+<h4>
+  
+  
+  Euclidean Distance
+</h4>
+
+<p>Euclidean distance is a measure of the straight-line distance between two data points in a multi-dimensional space. It is derived from the Pythagorean theorem. Consider two data points, A and B, each with 'n' dimensions. </p>
+
+<p>In this formula, ( A_i ) and ( B_i ) represent the values of the 'i-th' dimension for points A and B. The formula calculates the square of the difference between each dimension, sums these squares, and then takes the square root of the sum to obtain the Euclidean distance.</p>
+
+<p>Euclidean distance provides a straightforward way to measure the similarity between two data points in a geometric sense. Data points that are close in Euclidean distance are considered similar, while those that are far apart are considered dissimilar.</p>
+
+<h4>
+  
+  
+  Manhattan Distance
+</h4>
+
+<p>Manhattan distance, also known as city block distance, is an alternative distance metric used in KNN. It is named after the grid-like street layouts of Manhattan, where moving from one point to another involves traveling along city blocks.</p>
+
+<p>The Manhattan distance between two data points, A and B, with 'n' dimensions, is calculated as follows:</p>
+
+<blockquote>
+<p>[ \text{Manhattan Distance} = \sum_{i=1}^{n} |A_i - B_i| ]</p>
+</blockquote>
+
+<p>In this formula, ( A_i ) and ( B_i ) represent the values of the 'i-th' dimension for points A and B. The Manhattan distance is obtained by summing the absolute differences between corresponding dimensions.</p>
+
+<p>Manhattan distance is particularly useful when dealing with data where</p>
+
+<p>the distance between data points must be measured in terms of the number of orthogonal moves required to go from one point to another. Unlike Euclidean distance, it does not consider diagonal shortcuts.</p>
+
+<h3>
+  
+  
+  Implementation of the Algorithm
+</h3>
+
+<p>To implement the KNN algorithm, you need to perform the following mathematical operations:</p>
+
+<ol>
+<li><p><strong>Calculate Distances:</strong> For each new data point, you calculate its distance to all points in the training dataset. This involves applying the chosen distance metric (e.g., Euclidean distance or Manhattan distance) to each pair of data points.</p></li>
+<li><p><strong>Select Neighbors:</strong> After calculating distances, you identify the 'k' data points with the smallest distances to the new data point. These 'k' data points are the k-nearest neighbors.</p></li>
+<li><p><strong>Make Predictions:</strong> In classification, you determine the majority class among the k-nearest neighbors and assign this class as the prediction for the new data point. In regression, you calculate the average of the target values of the k-nearest neighbors and assign this average as the prediction.</p></li>
+<li><p><strong>Evaluate the Model:</strong> Once predictions are made, you evaluate the model's performance using appropriate evaluation metrics. The choice of evaluation metric depends on whether it's a classification or regression problem.</p></li>
+</ol>
+
+<h3>
+  
+  
+  Complexity and Efficiency
+</h3>
+
+<p>While KNN is a simple and intuitive algorithm, its computational efficiency can be a concern, especially for large datasets. The complexity of the algorithm is primarily determined by the number of data points in the training dataset ('n') and the number of dimensions in the feature space ('d'). Let's examine the computational complexity of KNN:</p>
+
+<ul>
+<li><p><strong>Training Complexity:</strong> KNN has virtually no training phase. It doesn't learn a model from the data during training, so the training complexity is negligible.</p></li>
+<li><p><strong>Prediction Complexity:</strong> The complexity of making predictions with KNN is O(n), where 'n' is the number of data points in the training dataset. For each new data point, you need to calculate the distance to all 'n' data points, select the k-nearest neighbors, and make predictions. The computational cost increases with the size of the training dataset.</p></li>
+</ul>
+
+<p>Efforts to optimize the efficiency of KNN include techniques like KD-trees and Ball trees, which organize the training data in a way that reduces the number of distance calculations. However, these structures are most effective when the feature space is of high dimensionality. For lower-dimensional spaces, the brute-force approach to calculating distances may be more efficient.</p>
+
+<h2>
+  
+  
+  Real-World Applications of KNN
+</h2>
+
+<p>KNN, with its simplicity and flexibility, finds applications in various domains. Let's explore some real-world use cases where KNN is prominently employed:</p>
+
+<h3>
+  
+  
+  1. Image Classification
+</h3>
+
+<p>KNN is used in image classification tasks, where the goal is to identify objects or scenes in images. Features are extracted from the images, and KNN is employed to match them to known categories. It's particularly useful in content-based image retrieval systems.</p>
+
+<p>For example, in a photo-sharing platform, KNN can be used to recommend images similar to those that a user has previously liked or interacted with.</p>
+
+<h3>
+  
+  
+  2. Handwriting Recognition
+</h3>
+
+<p>In handwritten digit recognition, KNN is used to classify handwritten digits into numbers (0-9). It works by comparing the features of a handwritten digit with those of known training examples and classifying it accordingly. This application is often used in optical character recognition (OCR) systems.</p>
+
+<h3>
+  
+  
+  3. Recommender Systems
+</h3>
+
+<p>KNN is employed in recommender systems for providing personalized recommendations to users. In collaborative filtering, KNN can be used to find users who are similar to a target user, based on their previous behavior or preferences.</p>
+
+<p>For instance, in an e-commerce platform, KNN can be used to recommend products to a user based on the purchases and ratings of other users with similar preferences.</p>
+
+<h3>
+  
+  
+  4. Anomaly Detection
+</h3>
+
+<p>KNN can be used for anomaly detection in various domains, such as fraud detection and network security. By measuring the similarity between data points, KNN can identify data points that deviate significantly from the norm.</p>
+
+<p>For example, in credit card fraud detection, KNN can be used to identify transactions that are unusual and potentially fraudulent.</p>
+
+<h3>
+  
+  
+  5. Medical Diagnosis
+</h3>
+
+<p>KNN plays a role in medical diagnosis and decision support systems. Patient data, including symptoms, medical history, and test results, can be used as features, and KNN can assist in diagnosing diseases or predicting outcomes.</p>
+
+<p>In a clinical setting, KNN can help identify patients with similar characteristics to a given patient and provide insights into potential diagnoses and treatment options.</p>
+
+<h3>
+  
+  
+  6. Natural Language Processing
+</h3>
+
+<p>In the field of natural language processing (NLP), KNN can be applied to tasks like text classification and sentiment analysis. Features derived from text data, such as word frequencies or embeddings, can be used to classify documents or analyze sentiment.</p>
+
+<p>For instance, in social media analysis, KNN can be employed to categorize tweets or comments into topics or sentiments.</p>
+
+<h3>
+  
+  
+  7. Environmental Modeling
+</h3>
+
+<p>KNN is used in environmental modeling to predict phenomena such as air quality, weather, and ecological patterns. By analyzing historical data and measurements, KNN can make predictions for future conditions.</p>
+
+<p>In meteorology, for example, KNN can assist in predicting weather conditions for specific locations based on data from nearby weather stations.</p>
+
+<h3>
+  
+  
+  8. Marketing and Customer Segmentation
+</h3>
+
+<p>In marketing, KNN can be used for customer segmentation. By considering factors such as purchase history, demographics, and online behavior, KNN can group customers with similar characteristics. This allows businesses to tailor marketing strategies to specific customer segments.</p>
+
+<p>In e-commerce, for instance, KNN can help categorize customers into groups with similar purchasing patterns, enabling targeted marketing campaigns.</p>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>K-Nearest Neighbors (KNN) is a powerful machine learning algorithm with a straightforward approach to classification and regression tasks. Its mathematical foundation, which relies on distance metrics to measure the similarity between data points, provides a clear understanding of how the algorithm works. By choosing an appropriate value for 'k' and the right distance metric, and by conducting thorough hyperparameter tuning, KNN can be optimized for various real-world applications.</p>
+
+<p>In image classification, handwriting recognition, recommendation systems, anomaly detection, medical diagnosis, and more, KNN continues to demonstrate its versatility. It offers simplicity and transparency, making it a valuable tool for both beginners and experienced data scientists in their quest to solve a wide range of problems.</p>
+
+<p>As the world of machine learning and artificial intelligence continues to evolve, KNN remains a fundamental algorithm, showing that sometimes, the simplest methods can yield powerful results.</p>
+
+<p>In summary, K-Nearest Neighbors stands as a testament to the timeless adage that, in the world of machine learning, the simplest algorithms are often the most profound. Its enduring relevance in diverse applications serves as a testament to its utility and effectiveness.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Get involved: Your guide to contributing to WebCrumbs](https://dev.to/opensourcee/get-involved-your-guide-to-contributing-to-webcrumbs-30p7) 
+ <details><summary>Article</summary> <p>Hey there, champ! So, you're itching to dive into the WebCrumbs community, eh? Fantastic! You're about to join a legion of coders hell-bent on making React development as smooth as silk. Here's how you can get your boots on the ground.</p>
+
+<h2>
+  
+  
+  First step: the lay of the land
+</h2>
+
+<p>Start by taking a tour of the <a href="https://github.com/webcrumbs-community/webcrumbs">WebCrumbs GitHub repository</a>. It's the control center of our open-source mission. Check out the <code>README</code> for a general overview and the <code>CONTRIBUTING</code> file for the nitty-gritty.</p>
+
+<h2>
+  
+  
+  Fork it, clone it, branch it
+</h2>
+
+<p>Alright, you know the drill. Fork the repo, clone it locally, and create a new branch. This way, you're all set to work your magic without stepping on any toes.</p>
+
+<h2>
+  
+  
+  Pick your battle
+</h2>
+
+<p>Whether you're a frontend maestro, a backend virtuoso, or a doc-wizard, there's room for you. Go through the open issues, pick one that resonates, and stake your claim.</p>
+
+<h2>
+  
+  
+  Code like a rockstar
+</h2>
+
+<p>Write clean, comment generously, and stick to the style guide. WebCrumbs is all about quality, so make every line of code count.</p>
+
+<h2>
+  
+  
+  The PR moment of truth
+</h2>
+
+<p>Submit a pull request, and wait for the review. Don't sweat it—feedback is how we grow. Once your PR gets the green light, you're officially part of WebCrumbs history.</p>
+
+<h2>
+  
+  
+  Join the conversation
+</h2>
+
+<p>Not just a coder? Fabulous! Join our Discord, engage in forums, write blog posts, or share your WebCrumbs success stories. The more the merrier!</p>
+
+<h2>
+  
+  
+  The icing on the cake
+</h2>
+
+<p>As you contribute, you're not just accumulating GitHub stars. You're building relationships, honing your skills, and, of course, getting those sweet, sweet open-source karma points.</p>
+
+<h3>
+  
+  
+  Ready to roll up your sleeves?
+</h3>
+
+<p>Jump over to the <a href="https://github.com/webcrumbs-community/webcrumbs">WebCrumbs GitHub repository</a> and start your journey. Contribute code, ideas, or even a morale-boosting GIF. Let's make React a cakewalk, together.</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Toggling Mobile Navigation Visibility with CSS: The Checkbox Hack](https://dev.to/joxx/toggling-mobile-navigation-visibility-with-css-the-checkbox-hack-7ej) 
+ <details><summary>Article</summary> <p>In a mobile-first world, creating an intuitive and responsive navigation menu is crucial. The checkbox hack allows you to develop mobile flyout menus without JavaScript. This article will guide you through developing several styles of mobile navigation menus using the checkbox hack.</p>
+
+<h2>
+  
+  
+  Basics of Checkbox Hack
+</h2>
+
+<p>The checkbox hack is based on three components:</p>
+
+<ol>
+<li>A <strong><code>&lt;label&gt;</code></strong> element.</li>
+<li>An associated <strong><code>&lt;input type="checkbox"&gt;</code></strong>.</li>
+<li>A CSS rule that targets the <strong><code>:checked</code></strong> state of the checkbox.</li>
+</ol>
+
+<p>The idea is to toggle the checkbox state by clicking on the label, and then using the <strong><code>:checked</code></strong> CSS pseudo-class to style or reveal a sibling element.</p>
+
+<h2>
+  
+  
+  Basic HTML Structure
+</h2>
+
+
+
+<div class="highlight js-code-highlight">
+<pre class="highlight html"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"menuToggle"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"menuToggle"</span><span class="nt">&gt;</span>☰ Menu<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;nav&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Portfolio<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre>
+
+</div>
+
+
+
+<h2>
+  
+  
+  Different Styles of Menus
+</h2>
+
+<p><strong>Side Menu (Left to Right)</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">-300px</span><span class="p">;</span> <span class="c">/* width of the menu */</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#menuToggle</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span> <span class="o">+</span> <span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><iframe height="600" src="https://codepen.io/joxx/embed/ZEVNxdb?height=600&amp;default-tab=result&amp;embed-version=2">
+</iframe>
+</p>
+
+<p><strong>Sliding Menu (Top to Bottom)</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">-100vh</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100vw</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#menuToggle</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span> <span class="o">+</span> <span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><iframe height="600" src="https://codepen.io/joxx/embed/xxmNWBg?height=600&amp;default-tab=result&amp;embed-version=2">
+</iframe>
+</p>
+
+<p><strong>Splash Menu (Centered)</strong><br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight css"><code><span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span> <span class="m">-50%</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">80vw</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">80vh</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.7</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#menuToggle</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span> <span class="o">+</span> <span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span> <span class="m">-50%</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</div>
+
+
+
+<p><iframe height="600" src="https://codepen.io/joxx/embed/MWZZejp?height=600&amp;default-tab=result&amp;embed-version=2">
+</iframe>
+</p>
+
+<h2>
+  
+  
+  Enhancements and Notes
+</h2>
+
+<ul>
+<li>You can further style the label as a hamburger icon, and change it to a close icon when the menu is open using CSS.</li>
+<li>For better accessibility, ensure to provide fallbacks or alternatives for users who may not be able to interact with this kind of menu.</li>
+<li>Although the checkbox hack is clever and works in most modern browsers, for more complex interactions or larger projects, JavaScript frameworks or libraries might be more suitable.</li>
+</ul>
+
+<h2>
+  
+  
+  Conclusion
+</h2>
+
+<p>The checkbox hack offers a lightweight method to create interactive components without relying on JavaScript. Whether you choose a sidemenu, a top-down sliding menu, or a splash menu, you can achieve a smooth user experience on mobile devices. Experiment with styles and transitions to fit the look and feel of your website!</p>
 
  </details> 
  <hr /> 
