@@ -117,788 +117,493 @@
 
 
 <!-- BLOG-POST-LIST:START -->
- #### - [Mastering Binary Search](https://dev.to/cleancodestudio/mastering-binary-search-3li6) 
- <details><summary>Article</summary> <p><small><small><br>
-LeetCode Practice Problems for each Binary Search Implementation and Variation Linked Below<br>
-</small></small><br>
-</p>
+ #### - [Conhecendo o ecossistema Crystal: ferramentas e projetos](https://dev.to/he4rt/conhecendo-o-ecossistema-crystal-ferramentas-e-projetos-49m1) 
+ <details><summary>Article</summary> <p>Bem, se você abriu esse artigo, então, tenho certeza que está interessado em entender um pouco mais sobre o ecossistema de Crystal. Antes de mais nada, vamos primeiramente introduzir o que é Crystal e onde se aplica.</p>
 
-
-<center>(My personal study notes)</center>
-
-
-
-
-<ul>
-<li>
-Mastering Binary Search
-
-<ul>
-<li>
-Variations of Binary Search (patterns to practice)
-
-<ul>
-<li>1. Classic Binary Search</li>
-<li>2. Modified Binary Search</li>
-<li>3. Find the Closest Element to a Target</li>
-<li>4. Find the Peak Element</li>
-<li>5. Find Rotation Point in a Rotated Sorted Array</li>
-<li>6. Find First and Last Position of an Element</li>
-<li>When to Use Binary Search</li>
-<li>When Not to Use Binary Search</li>
-</ul>
-</li>
-<li>LeetCode Binary Search </li>
-<li>Points of note to study</li>
-</ul>
-</li>
-</ul>
-<h2>
-  
-  
-  Variations of Binary Search (patterns to practice)
-</h2>
-
-<p>Worth knocking these into muscle memory</p>
-<h3>
-  
-  
-  1. Classic Binary Search
-</h3>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">binarySearch</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="kd">let</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span>
-
-    <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="k">return</span> <span class="nx">mid</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">target</span><span class="p">)</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-<h3>
-  
-  
-  2. Modified Binary Search
-</h3>
-
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">modifiedBinarySearch</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>  <span class="c1">// Initialize result</span>
-
-  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-
-    <span class="c1">// Exact match</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">result</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
-      <span class="c1">// For the first occurrence, keep going left</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Standard binary search logic</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-<p>Remember, the "Modified Condition" is the part you'd customize based on what specific problem you're tackling.</p>
-<h3>
-  
-  
-  3. Find the Closest Element to a Target
-</h3>
-
-<p>Here, you have to find the closest element to a given target in a sorted array.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">closestElement</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="k">return</span> <span class="nx">mid</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">-</span> <span class="nx">target</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nx">target</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">start</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  4. Find the Peak Element
-</h3>
-
-<p>In an array where adjacent elements are distinct, find a peak element. An element is considered peak if it is greater than its neighbors.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">findPeakElement</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
-      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">start</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  5. Find Rotation Point in a Rotated Sorted Array
-</h3>
-
-<p>For a rotated sorted array, find the index where the smallest element is.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">findRotationPoint</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">end</span><span class="p">])</span> <span class="p">{</span>
-      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">start</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<h3>
-  
-  
-  6. Find First and Last Position of an Element
-</h3>
-
-<p>In a sorted array with duplicates, find the starting and ending position of a given target value.<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">searchRange</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">first</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">last</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">first</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">===</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">last</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
-      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">start</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">end</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">last</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p>Knowing when to use binary search depends on several factors, such as the problem constraints and the properties of the data. Here are some general guidelines:</p>
-
-<h3>
-  
-  
-  When to Use Binary Search
-</h3>
-
-<ol>
-<li><p><strong>Sorted Data</strong>: The most fundamental prerequisite for binary search is that the data must be sorted.</p></li>
-<li><p><strong>Time Complexity</strong>: If the problem requires better than O(n)O(n)O(n) time complexity, binary search often becomes a candidate with its O(log⁡n)O(\log n)O(logn) time.</p></li>
-<li><p><strong>Constant Space</strong>: If you need to solve the problem with constant extra space, binary search can be a good choice since it only requires pointers like <code>start</code>, <code>end</code>, and <code>mid</code>.</p></li>
-<li><p><strong>Multiple Queries</strong>: In cases where there are multiple queries on static data, preparing a sorted structure for binary search might be beneficial in the long run.</p></li>
-<li><p><strong>Search Conditions</strong>: If the problem involves searching for a particular condition rather than a specific element (e.g., find the point where a function changes behavior), binary search could apply.</p></li>
-</ol>
-
-<h3>
-  
-  
-  When Not to Use Binary Search
-</h3>
-
-<ol>
-<li><p><strong>Unsorted Data</strong>: If the data is not sorted and cannot be sorted in better than O(nlog⁡n)O(n \log n)O(nlogn) time, then binary search is likely not a fit.</p></li>
-<li><p><strong>Updates</strong>: If the data set is being updated frequently, maintaining the sorted order might be costly unless specialized data structures like balanced trees are used.</p></li>
-<li><p><strong>Linear Scanning is Enough</strong>: For smaller datasets or when O(n)O(n)O(n) time complexity is acceptable, a simpler linear search might suffice.</p></li>
-<li><p><strong>Exact Matches</strong>: If you're looking for a range or pair of values rather than an exact match, binary search might require modifications and might not be the most straightforward approach.</p></li>
-<li><p><strong>Space Complexity</strong>: When extra space is not a constraint, other techniques like Hashing might be simpler and more suitable for certain types of search problems.</p></li>
-</ol>
-
-<p>When approaching a problem, look at the constraints and see if binary search can give you an edge in time complexity, or if the problem's nature naturally lends itself to a binary search approach.</p>
-
-<h2>
-  
-  
-  LeetCode Binary Search
-</h2>
-
-<p><small><small></small></small></p>
-
-<ol>
-<li>
-<p><strong>Standard Binary Search (Standard Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/binary-search/">Binary Search</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Find First and Last Position of Element in Sorted Array (Standard Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Find First and Last Position of Element in Sorted Array</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Search in Rotated Sorted Array (Rotated Array Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in Rotated Sorted Array</a></li>
-<li><a href="https://leetcode.com/problems/search-in-rotated-sorted-array-ii/">Search in Rotated Sorted Array II</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Find Minimum in Rotated Sorted Array (Rotated Array Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Find Minimum in Rotated Sorted Array</a></li>
-<li><a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/">Find Minimum in Rotated Sorted Array II</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Closest Element to a Target (Standard Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/closest-binary-search-tree-value/">Closest Binary Search Tree Value</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Find Peak Element (Modified Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/find-peak-element/">Find Peak Element</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Find the Smallest or Largest Element Greater Than a Given Number (Modified Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/first-bad-version/">First Bad Version</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Find Kth Element (Modified Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/">Kth Smallest Element in a Sorted Matrix</a></li>
-<li><a href="https://leetcode.com/problems/find-k-th-smallest-pair-distance/">Find Kth Smallest Pair Distance</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Variable Length Arrays (String, Range Queries) (Modified Binary Search)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/longest-increasing-subsequence/">Longest Increasing Subsequence</a></li>
-<li><a href="https://leetcode.com/problems/range-sum-query-immutable/">Range Sum Query - Immutable</a></li>
-</ul>
-</li>
-<li>
-<p><strong>Others (Miscellaneous)</strong></p>
-
-<ul>
-<li><a href="https://leetcode.com/problems/search-a-2d-matrix/">Search a 2D Matrix</a></li>
-<li><a href="https://leetcode.com/problems/search-a-2d-matrix-ii/">Search a 2D Matrix II</a></li>
-</ul>
-</li>
-</ol>
 
 
 
 <h2>
   
   
-  Points of note to study
+  Índice
 </h2>
 
-<ul>
+<ol>
+<li>O que é Crystal?</li>
+<li>Ruby e Crystal</li>
+<li>Integração nativa com LibC</li>
 <li>
-Classic Binary Search vs. Modified Binary Search
-</li>
-<li> <code>while(start &lt;= end)</code> vs. <code>while(start &lt; end)</code>
-</li>
-</ul>
-
-
-
-
-<p><small></small></p>
-
-<ul>
-<li><a href="https://cleancode.studio">Clean Code Studio</a></li>
-<li>
-<a href="https://cleancode.studio/algorithms/mastering-binary-search">Binary Search Algorithm</a>
-</li>
-</ul>
-
- </details> 
- <hr /> 
-
- #### - [[off-topic] Top 5 Playlists Que Eu Escuto Enquanto Estou Programando](https://dev.to/analaura/off-topic-top-5-playlists-que-eu-escuto-enquanto-programo-537e) 
- <details><summary>Article</summary> <p>Hoje vou trazer algo meio aleatório aqui 😅 mas é que eu curto muito codar escutando música <em><del>(e fazer tudo também)</del></em>. Então, pensei: por que não criar um post no dev.to para compartilhar as playlists que costumo ouvir enquanto estou programando ou até mesmo criando conteúdo. </p>
-
-<p>Eu vou indicar músicas rap/trap que geralmente é estilo de música que eu mais escuto. </p>
-
-<p>Vou fazer um top 5 aqui 💟</p>
+Ferramentas
 
 <ol>
-<li>
-<a href="https://open.spotify.com/intl-pt/artist/6rk6Izp6o42fUdE0jRqAP4?si=XicjNFFITbCevyN55jybTA">Alee</a> Esse artista maravilhoso que na verdade não é nem o álbum, geralmente dou play em todas, descobri ele faz pouco tempo.</li>
-<li>
-<a href="https://open.spotify.com/intl-pt/album/4GWoodiAMapPzgitxYvygx?si=3C6Z5ekFQoiKvIUTs9fOfg">Flora matos - Do Lado De Flora</a> A verdade é que a Flora se encaixa em todos os momentos da sua vida, mas esse álbum "DO LADO DE FLORA", é perfeito pra codar!</li>
-<li>
-<a href="https://open.spotify.com/intl-pt/album/062ycDqIDtT21UFyKlHDvO?si=oG6L3IfzSb2GPjSgP9t5VQ">Tasha e Tracie - Diretoria</a> Maravilhosas, se você quer se sentir incrível e determinado a resolver TODO e QUALQUER bug, escute Tasha e Tracie.</li>
-<li>
-<a href="https://open.spotify.com/intl-pt/album/04zQ2qk2AsRPZppeI6TvWl?si=s951N5UCQDe-BHZi_n0K3A">Nill - Regina</a> Ai esse álbum, tenho poucas palavras pra ele pois amo demais!</li>
-<li>
-<a href="https://open.spotify.com/playlist/1g4Bekw7Xnq2AV7Md9XFZE?si=559e07af66f84d23">Boombap</a> Essa playlist de Boombap simplesmente perfeita, eu ultimamente to viciada nela escutando 39393x por dia!</li>
+<li>Language Server Protocol (LSP)</li>
+<li>Read-Eval-Print Loop (REPL)</li>
+<li>Code style linter</li>
+<li>Debugger</li>
+<li>Gerenciador de dependências</li>
+<li>Livro</li>
+<li>Documentação</li>
+<li>Patterns</li>
 </ol>
 
-<p><em>Tudo que eu recomendei aqui tem o selo Ana Laura de qualidade, faça bom proveito!</em></p>
 
-<p><code>bjs!</code></p>
+</li>
+<li>
+Frameworks
 
-<p><a href="https://i.giphy.com/media/dhqoWmDRG3MeXwVTK5/giphy.gif" class="article-body-image-wrapper"><img src="https://i.giphy.com/media/dhqoWmDRG3MeXwVTK5/giphy.gif" width="480" height="480"></a></p>
+<ol>
+<li>Kemal</li>
+<li>Amber</li>
+<li>Lucky</li>
+<li>Marten</li>
+</ol>
 
- </details> 
- <hr /> 
 
- #### - [Unveiling the Power of K-Nearest Neighbors (KNN) in Machine Learning](https://dev.to/edelapaz/unveiling-the-power-of-k-nearest-neighbors-knn-in-machine-learning-5b0a) 
- <details><summary>Article</summary> <p>In the vast landscape of machine learning algorithms, K-Nearest Neighbors (KNN) stands as a versatile and intuitive approach for classification and regression tasks. Unlike many complex algorithms with intricate mathematical foundations, KNN relies on a simple principle: "Show me your friends, and I'll tell you who you are." In this comprehensive guide, we will delve deep into the workings of KNN, explore the mathematics behind it, and understand its real-world applications.</p>
+</li>
+<li>Projetos com Crystal</li>
+<li>Finalização</li>
+</ol>
+
+
+
 
 <h2>
   
   
-  Understanding the Essence of K-Nearest Neighbors (KNN)
+  O que é Crystal?
 </h2>
 
-<p>KNN is a supervised machine learning algorithm used for solving classification and regression problems. It's based on the principle of similarity, where the idea is to identify the similarity between data points and make predictions based on the similarity with their k-nearest neighbors in the training dataset. The term 'k' in KNN represents the number of nearest neighbors considered when making a prediction.</p>
+<p>Crystal é uma linguagem de programação de código aberto, com sintaxe inspirada no Ruby, que visa a produtividade e o desempenho. Ele tem uma sintaxe elegante e uma tipagem estática, mas sem a necessidade de declarar tipos de variáveis. O Crystal é compilado para código nativo, e não para bytecode, e usa LLVM para gerar o código binário.</p>
 
-<h3>
-  
-  
-  The Algorithm at a Glance
-</h3>
+<p>A aplicabilidade de Crystal é vasta, podendo ser visto de diferentes formas, mas, consigo afirmar que a ênfase de aplicabilidade ocorre para aplicações web, na qual consegue se destacar em pontos específicos exatamente por ser uma linguagem de programação compilada.</p>
 
-<p>Let's start by breaking down the KNN algorithm into its fundamental steps:</p>
-
-<ol>
-<li>
-<p><strong>Data Preparation:</strong></p>
-
-<ul>
-<li>Gather a dataset containing labeled examples. Each example should comprise features (attributes) and corresponding class labels (for classification) or target values (for regression). Data preprocessing is vital to ensure the data is in a suitable format for KNN.</li>
-</ul>
-</li>
-<li>
-<p><strong>Choosing a Value for K:</strong></p>
-
-<ul>
-<li>Decide on the number of nearest neighbors (k) to consider when making predictions. The choice of 'k' is a critical hyperparameter that can significantly impact the algorithm's performance. Selecting an appropriate 'k' requires experimentation and domain knowledge.</li>
-</ul>
-</li>
-<li>
-<p><strong>Distance Metric:</strong></p>
-
-<ul>
-<li>Select an appropriate distance metric to measure the similarity between data points. Common distance metrics include Euclidean distance, Manhattan distance, and cosine similarity. The choice of distance metric plays a crucial role in determining the similarity between data points.</li>
-</ul>
-</li>
-<li>
-<p><strong>Prediction for Classification:</strong></p>
-
-<ul>
-<li>To make a classification prediction for a new data point, calculate the distances between that point and all points in the training dataset.</li>
-<li>Select the k-nearest neighbors, i.e., the data points with the smallest distances to the new data point.</li>
-<li>Determine the majority class among these k-nearest neighbors, and assign this class as the prediction for the new data point.</li>
-</ul>
-</li>
-<li>
-<p><strong>Prediction for Regression:</strong></p>
-
-<ul>
-<li>For regression tasks, the process is similar, but instead of class labels, we work with target values.</li>
-<li>Calculate the distances, select the k-nearest neighbors, and then calculate the average of the target values of these neighbors. This average becomes the prediction for the new data point.</li>
-</ul>
-</li>
-<li>
-<p><strong>Model Evaluation:</strong></p>
-
-<ul>
-<li>After making predictions, it's essential to evaluate the model's performance. This is typically done using appropriate evaluation metrics, such as accuracy, precision, recall, F1-score for classification, and mean squared error, R-squared for regression. The choice of evaluation metric depends on the specific problem.</li>
-</ul>
-</li>
-<li>
-<p><strong>Hyperparameter Tuning:</strong></p>
-
-<ul>
-<li>Experiment with different values of 'k' and distance metrics to find the combination that offers the best results for your specific problem. Hyperparameter tuning is crucial for optimizing the performance of the KNN model.</li>
-</ul>
-</li>
-</ol>
-
-<h3>
-  
-  
-  Going Deeper into the Algorithm
-</h3>
-
-<p>Now that we've outlined the basic steps, let's explore each of them in more detail.</p>
-
-<h4>
-  
-  
-  1. Data Preparation
-</h4>
-
-<p>The success of any machine learning algorithm hinges on the quality and suitability of the training data. In the case of KNN, your dataset should consist of labeled examples, where each example has attributes and corresponding class labels (for classification) or target values (for regression).</p>
-
-<p>Data preprocessing is a critical step in data preparation. It includes tasks like:</p>
-
-<ul>
-<li>
-<strong>Data Cleaning:</strong> Identifying and handling missing values, outliers, and errors in the dataset.</li>
-<li>
-<strong>Feature Scaling:</strong> Ensuring that the features have a consistent scale. Since KNN relies on distance calculations, features must be on a similar scale to avoid certain features dominating the distance calculation.</li>
-</ul>
-
-<h4>
-  
-  
-  2. Choosing a Value for K
-</h4>
-
-<p>The choice of 'k' is one of the most crucial decisions when using the KNN algorithm. It determines the number of neighbors that will influence the prediction. Here are some considerations:</p>
-
-<ul>
-<li><p><strong>Small 'k' Values:</strong> A small 'k' (e.g., 1 or 3) leads to a model that is highly sensitive to noise in the data. It may result in a model that overfits the training data and is highly variable.</p></li>
-<li><p><strong>Large 'k' Values:</strong> A larger 'k' (e.g., 10 or 20) makes the model more robust to noise but may cause it to underfit the training data. It might fail to capture local patterns in the data.</p></li>
-</ul>
-
-<p>The choice of 'k' should be based on a balance between underfitting and overfitting. This can often be determined through cross-validation, where different values of 'k' are tested, and the one that yields the best performance on validation data is selected.</p>
-
-<h4>
-  
-  
-  3. Distance Metric
-</h4>
-
-<p>The distance metric used in KNN plays a significant role in determining the similarity between data points. Let's explore some commonly used distance metrics:</p>
-
-<ul>
-<li><p><strong>Euclidean Distance:</strong> This is the most widely used distance metric in KNN. It measures the straight-line distance between two data points in a multi-dimensional space. The formula for Euclidean distance between two points, A and B, with 'n' dimensions. </p></li>
-<li><p><strong>Manhattan Distance:</strong> Also known as city block distance, this metric calculates the distance by summing the absolute differences between the coordinates of two points. </p></li>
-<li><p><strong>Cosine Similarity:</strong> This metric measures the cosine of the angle between two data vectors. It's particularly useful when dealing with high-dimensional data and text data. The cosine similarity between two vectors A and B.</p></li>
-</ul>
-
-<p>The choice of distance metric depends on the nature of the data and the problem at hand. For example, when working with data in which all features have the same unit of measurement, Euclidean distance is often a good choice. However, if the data consists of features with different units, feature scaling should be performed, and Manhattan distance or cosine similarity might be more appropriate.</p>
-
-<h4>
-  
-  
-  4. Prediction for Classification
-</h4>
-
-<p>In classification tasks, the KNN algorithm aims to predict the class label of a new data point. The steps involved in making classification predictions are as follows:</p>
-
-<ul>
-<li>
-<strong>Calculating Distances:</strong> For a new data point, calculate the distances to all data points in the training dataset using the chosen distance metric. This involves applying</li>
-</ul>
-
-<p>the distance formula (e.g., Euclidean distance) to each pair of data points.</p>
-
-<ul>
-<li><p><strong>Selecting Neighbors:</strong> Identify the 'k' data points with the smallest distances to the new data point. These are the k-nearest neighbors.</p></li>
-<li><p><strong>Majority Voting:</strong> Determine the majority class among the k-nearest neighbors. The new data point is assigned the class label that is most common among its neighbors. This is often referred to as majority voting.</p></li>
-</ul>
-
-<p>The implementation of majority voting can be more nuanced in cases of multi-class classification and ties. When there is a tie in the majority class, additional rules can be applied to break the tie. For example, one can choose the class label of the nearest neighbor among the tied classes.</p>
-
-<h4>
-  
-  
-  5. Prediction for Regression
-</h4>
-
-<p>In regression tasks, the KNN algorithm aims to predict a numerical target value for a new data point. The steps are similar to those in classification, with the key difference being how the prediction is made:</p>
-
-<ul>
-<li><p><strong>Calculating Distances:</strong> As in classification, calculate the distances between the new data point and all data points in the training dataset.</p></li>
-<li><p><strong>Selecting Neighbors:</strong> Identify the 'k' data points with the smallest distances to the new data point.</p></li>
-<li><p><strong>Regression Prediction:</strong> Instead of majority voting, in regression, the prediction is the average of the target values of the k-nearest neighbors. This average represents the predicted target value for the new data point.</p></li>
-</ul>
-
-<h4>
-  
-  
-  6. Model Evaluation
-</h4>
-
-<p>After making predictions using KNN, it's essential to assess the model's performance. The choice of evaluation metric depends on whether you're working on a classification or regression problem. Let's explore common evaluation metrics for each case:</p>
-
-<p><strong>For Classification:</strong></p>
-
-<ul>
-<li><p><strong>Accuracy:</strong> This metric measures the proportion of correctly classified data points out of the total. It's a fundamental measure of classification performance.</p></li>
-<li><p><strong>Precision and Recall:</strong> Precision measures the proportion of true positive predictions among all positive predictions, while recall measures the proportion of true positives among all actual positives. These metrics are especially useful when dealing with imbalanced datasets.</p></li>
-<li><p><strong>F1-Score:</strong> The F1-score is the harmonic mean of precision and recall. It provides a balance between the two metrics.</p></li>
-</ul>
-
-<p><strong>For Regression:</strong></p>
-
-<ul>
-<li><p><strong>Mean Squared Error (MSE):</strong> MSE measures the average of the squared differences between predicted and actual target values. It gives higher weight to larger errors.</p></li>
-<li><p><strong>Root Mean Squared Error (RMSE):</strong> RMSE is the square root of MSE and provides an interpretable measure of the average prediction error in the same unit as the target variable.</p></li>
-<li><p><strong>R-squared (R²):</strong> R-squared measures the proportion of the variance in the target variable that is explained by the model. It ranges from 0 to 1, with higher values indicating better model fit.</p></li>
-</ul>
-
-<p>Here, the MSE Model is the mean squared error of the model's predictions, and the MSE Baseline is the mean squared error of a baseline model (e.g., predicting the mean target value for all data points). A higher R² indicates a better fit.</p>
-
-<h4>
-  
-  
-  7. Hyperparameter Tuning
-</h4>
-
-<p>Hyperparameter tuning is a critical part of the KNN model development process. The choice of 'k' and the distance metric can significantly impact the model's performance. Hyperparameter tuning involves experimenting with different values of 'k' and different distance metrics to find the combination that optimizes the model's performance on the specific problem.</p>
-
-<p>Cross-validation is a valuable technique for hyperparameter tuning. It involves splitting the data into training and validation sets multiple times, training the model on the training data, and evaluating it on the validation data for each combination of hyperparameters. The set of hyperparameters that results in the best performance on the validation data is selected.</p>
+<p>O principal motivo para o surgimento de Crystal foi para resolver alguns problemas bem específicos que Ruby possuia, porém, seriam solucionados deixando de lado a dinamicidade que Ruby proporcionava para abrir espaço para uma linguagem de programação totalmente nova, com a possibilidade de inferência de tipos, sendo compilada. Assim, em 2011 surge o projeto de uma nova linguagem de programação, criada por <a href="https://github.com/asterite">Ary Borenszweig</a>, <a href="https://github.com/waj">Juan Wajnerman</a> e <a href="https://github.com/bcardiff">Brian Cardiff</a>, contando hoje com mais de 450 colaboradores do mundo todo, tendo seu código fonte disponibilizado no repositório oficial do GitHub.</p>
 
 <h2>
   
   
-  The Mathematical Foundation of K-Nearest Neighbors
+  Ruby e Crystal
 </h2>
 
-<p>Understanding the mathematical underpinnings of KNN is crucial to appreciate its inner workings fully. Let's explore the mathematical concepts and calculations that drive the KNN algorithm.</p>
+<p>Como citado anteriormente, Ruby por sua vez possui uma sintaxe muito elegante, na qual Crystal se inspirou em sua maior parte exatamente pelo contexto de desenvolvimento da época, desejando uma linguagem de programação elegante na sintaxe como Ruby, veloz como C, podendo ainda realizar otimizações nativas com interoperabilidade utilizando a LibC e o melhor: sem escrever uma linha de código em C. Parece mágica não é? Bem, é apenas Crystal!</p>
 
-<h3>
-  
-  
-  Distance Metrics
-</h3>
+<p>Uma analogia para entender melhor a compatibilidade de ambas as linguagens de programação que gosto de fazer é: imagine que você hoje é dono de uma empresa que possui N desenvolvedores Ruby, que consequentemente são a maioria dentro da empresa. Em um belo dia você em uma conversa com seus arquitetos de software decidem que uma linguagem compilada é necessária em apenas alguns serviços que estão funcionando hoje. Ao invés de simplesmente reescrever todo o código em alguma outra linguagem compilada, você pode reaproveitar toda a base de código para utilizar e compilar em Crystal, assim, a curva de aprendizado para seus desenvolvedores Ruby será praticamente nula, afinal, apenas alguns pontos específicos requerem maior cuidado ao se trabalhar com Crystal, como por exemplo a verificação de tipos, que pode ser um pouco estranho no início, mas, garanto que com o passar do tempo será mais prática a manutenção de seu código.</p>
 
-<p>As mentioned earlier, KNN relies on distance metrics to measure the similarity between data points. The choice of distance metric can vary depending on the nature of the data and the problem. Here, we'll take a closer look at the two most common distance metrics used in KNN: Euclidean distance and Manhattan distance.</p>
+<p>Entenda que Crystal não veio <em>para substituir o Ruby</em>, mas, para que ambos possam ser utilizados em conjunto, visando um melhor aproveitamento de código, melhor eficiência e melhor ambiente de desenvolvimento. O exemplo que deixarei abaixo demonstra a diferença de dois códigos que fazem a mesma coisa, porém, Crystal possui uma peculiaridade específica que vou retratar logo abaixo.<br>
+</p>
 
-<h4>
-  
-  
-  Euclidean Distance
-</h4>
+<div class="highlight js-code-highlight">
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+  <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="k">end</span>
 
-<p>Euclidean distance is a measure of the straight-line distance between two data points in a multi-dimensional space. It is derived from the Pythagorean theorem. Consider two data points, A and B, each with 'n' dimensions. </p>
+<span class="nb">print</span> <span class="s2">"Digite o primeiro número inteiro: "</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chomp</span><span class="p">.</span><span class="nf">to_i</span>
+<span class="nb">print</span> <span class="s2">"Digite o segundo número inteiro: "</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chomp</span><span class="p">.</span><span class="nf">to_i</span>
 
-<p>In this formula, ( A_i ) and ( B_i ) represent the values of the 'i-th' dimension for points A and B. The formula calculates the square of the difference between each dimension, sums these squares, and then takes the square root of the sum to obtain the Euclidean distance.</p>
+<span class="nb">puts</span> <span class="s2">"A soma dos números é </span><span class="si">#{</span><span class="n">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
 
-<p>Euclidean distance provides a straightforward way to measure the similarity between two data points in a geometric sense. Data points that are close in Euclidean distance are considered similar, while those that are far apart are considered dissimilar.</p>
+</div>
 
-<h4>
-  
-  
-  Manhattan Distance
-</h4>
 
-<p>Manhattan distance, also known as city block distance, is an alternative distance metric used in KNN. It is named after the grid-like street layouts of Manhattan, where moving from one point to another involves traveling along city blocks.</p>
 
-<p>The Manhattan distance between two data points, A and B, with 'n' dimensions, is calculated as follows:</p>
+<p>O código acima é bem simples: pedimos para o usuário informar dois números, <code>a</code> e <code>b</code> respectivamente, na qual <code>chomp</code> remove o enter (<code>\n</code> ou <code>\r</code>) e o <code>to_i</code> converte o valor para inteiro. Agora, em Crystal precisamos apenas adicionar uma validação bem simples:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight crystal"><code><span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+  <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="k">end</span>
+
+<span class="nb">print</span> <span class="s2">"Digite o primeiro número inteiro: "</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">gets</span>
+<span class="nb">print</span> <span class="s2">"Digite o segundo número inteiro: "</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">gets</span>
+
+<span class="c1"># É necessário validar se o valor é nil!</span>
+<span class="k">if</span> <span class="n">a</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">||</span> <span class="n">b</span><span class="p">.</span><span class="nf">nil?</span>
+  <span class="nb">puts</span> <span class="s2">"Você deve digitar dois números inteiros."</span>
+  <span class="nb">exit</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="s2">"A soma dos números é </span><span class="si">#{</span><span class="n">soma</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="nf">chomp</span><span class="p">.</span><span class="nf">to_i</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="nf">chomp</span><span class="p">.</span><span class="nf">to_i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
+
+</div>
+
+
+
+<p>A validação é necessária para não enviarmos um valor nulo para o método <code>chomp</code>, afinal, ele está esperando receber uma <code>String</code> e sem a validação estaremos enviando um <code>String | Nil</code>, não validando com o tipo esperado. Nesse momento você deve estar pensando: <em>mas, os tipos enviados foram validados em tempo de compilação? Isto é, a inferência dos tipos foi feita sem eu precisar falar nada</em>? Bem, a resposta é <strong>sim</strong>, o compilador automaticamente <em>adivinhou</em> de quais tipos se tratavam.</p>
+
+<p>Certo, agora você deve perguntar: <em>nossa mas eu também consigo inferir os tipos manualmente? Como por exemplo na função <code>soma</code>, informando os tipos dos parâmetros que espero receber, além do tipo do retorno</em>? A resposta é <strong>sim</strong>, e neste caso ficaria algo como o exemplo abaixo:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight crystal"><code><span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="n">a</span> <span class="p">:</span> <span class="no">Int32</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="no">Int32</span><span class="p">)</span> <span class="p">:</span> <span class="no">Int32</span>
+  <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
 
 <blockquote>
-<p>[ \text{Manhattan Distance} = \sum_{i=1}^{n} |A_i - B_i| ]</p>
+<p>Interessante, certo?</p>
 </blockquote>
 
-<p>In this formula, ( A_i ) and ( B_i ) represent the values of the 'i-th' dimension for points A and B. The Manhattan distance is obtained by summing the absolute differences between corresponding dimensions.</p>
-
-<p>Manhattan distance is particularly useful when dealing with data where</p>
-
-<p>the distance between data points must be measured in terms of the number of orthogonal moves required to go from one point to another. Unlike Euclidean distance, it does not consider diagonal shortcuts.</p>
-
-<h3>
-  
-  
-  Implementation of the Algorithm
-</h3>
-
-<p>To implement the KNN algorithm, you need to perform the following mathematical operations:</p>
-
-<ol>
-<li><p><strong>Calculate Distances:</strong> For each new data point, you calculate its distance to all points in the training dataset. This involves applying the chosen distance metric (e.g., Euclidean distance or Manhattan distance) to each pair of data points.</p></li>
-<li><p><strong>Select Neighbors:</strong> After calculating distances, you identify the 'k' data points with the smallest distances to the new data point. These 'k' data points are the k-nearest neighbors.</p></li>
-<li><p><strong>Make Predictions:</strong> In classification, you determine the majority class among the k-nearest neighbors and assign this class as the prediction for the new data point. In regression, you calculate the average of the target values of the k-nearest neighbors and assign this average as the prediction.</p></li>
-<li><p><strong>Evaluate the Model:</strong> Once predictions are made, you evaluate the model's performance using appropriate evaluation metrics. The choice of evaluation metric depends on whether it's a classification or regression problem.</p></li>
-</ol>
-
-<h3>
-  
-  
-  Complexity and Efficiency
-</h3>
-
-<p>While KNN is a simple and intuitive algorithm, its computational efficiency can be a concern, especially for large datasets. The complexity of the algorithm is primarily determined by the number of data points in the training dataset ('n') and the number of dimensions in the feature space ('d'). Let's examine the computational complexity of KNN:</p>
-
-<ul>
-<li><p><strong>Training Complexity:</strong> KNN has virtually no training phase. It doesn't learn a model from the data during training, so the training complexity is negligible.</p></li>
-<li><p><strong>Prediction Complexity:</strong> The complexity of making predictions with KNN is O(n), where 'n' is the number of data points in the training dataset. For each new data point, you need to calculate the distance to all 'n' data points, select the k-nearest neighbors, and make predictions. The computational cost increases with the size of the training dataset.</p></li>
-</ul>
-
-<p>Efforts to optimize the efficiency of KNN include techniques like KD-trees and Ball trees, which organize the training data in a way that reduces the number of distance calculations. However, these structures are most effective when the feature space is of high dimensionality. For lower-dimensional spaces, the brute-force approach to calculating distances may be more efficient.</p>
+<p>O principal ponto é dar nas mãos do desenvolvedor a possibilidade de <em>nivelar</em> exatamente o que um método deve ter e/ou deve retornar.</p>
 
 <h2>
   
   
-  Real-World Applications of KNN
+  Integração nativa com LibC
 </h2>
 
-<p>KNN, with its simplicity and flexibility, finds applications in various domains. Let's explore some real-world use cases where KNN is prominently employed:</p>
+<p>Se você quer utilizar ferramentas da LibC, mas, sem a necessidade de escrever código em C, então Crystal pode te ajudar com isso. Com bindings nativas você pode utilizar bibliotecas externas, incluindo a LibC, para utilizar ferramentas que seriam possíveis apenas escrevendo código nativo em C.</p>
+
+<p>Para entender um pouco melhor sobre o funcionamento, recomendo seguir a <a href="https://crystal-lang.org/reference/1.10/syntax_and_semantics/c_bindings/lib.html">documentação oficial</a>, porém, deixarei um exemplo abaixo,<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight crystal"><code><span class="k">lib</span> <span class="no">C</span>
+  <span class="c1"># Em C: double cos(double x)</span>
+  <span class="k">fun</span> <span class="n">cos</span><span class="p">(</span><span class="n">value</span> <span class="p">:</span> <span class="no">Float64</span><span class="p">)</span> <span class="p">:</span> <span class="no">Float64</span>
+<span class="k">end</span>
+</code></pre>
+
+</div>
+
+
+
+<blockquote>
+<p>O exemplo acima demonstra o uso da função <code>cos</code></p>
+</blockquote>
+
+<h2>
+  
+  
+  Ferramentas
+</h2>
+
+<p>Como todo desenvolvedor, nada melhor do que saber como preparar seu ambiente de desenvolvimento com Crystal, não é mesmo? Bem, vamos então navegar por algumas tecnologias que vão te ajudar nessa jornada.</p>
 
 <h3>
   
   
-  1. Image Classification
+  Language Server Protocol (LSP)
 </h3>
 
-<p>KNN is used in image classification tasks, where the goal is to identify objects or scenes in images. Features are extracted from the images, and KNN is employed to match them to known categories. It's particularly useful in content-based image retrieval systems.</p>
+<p>Como todo bom desenvolvedor, sabemos que um LSP pode nos auxiliar muito durante o desenvolvimento de software, por isso, o LSP que estarei recomendando para uso com Crystal é o <a href="https://github.com/elbywan/crystalline">Crystalline</a>, na qual você poderá configurar de forma simples na maioria dos editores de código que esteja utilizando. </p>
 
-<p>For example, in a photo-sharing platform, KNN can be used to recommend images similar to those that a user has previously liked or interacted with.</p>
+<p>Basicamente o Crystalline vai disponibilizar um executável simples, sendo totalmente escrito em Crystal. Você pode seguir os passos deixados no próprio repositório para configurar seu ambiente, porém, gostaria de dizer que um dos guias de configuração que contribuí foi para o Emacs, utilizando o <a href="https://emacs-lsp.github.io/lsp-mode/tutorials/crystal-guide/">emacs-lsp</a>.</p>
+
+<p>Minhas recomendações para editores de código são bem pessoais, porém, recomendaria alguns como Visual Studio Code, Sublime Text, Vim e Emacs.</p>
 
 <h3>
   
   
-  2. Handwriting Recognition
+  Read-Eval-Print Loop (REPL)
 </h3>
 
-<p>In handwritten digit recognition, KNN is used to classify handwritten digits into numbers (0-9). It works by comparing the features of a handwritten digit with those of known training examples and classifying it accordingly. This application is often used in optical character recognition (OCR) systems.</p>
+<p>Desenvolver ao lado de um REPL é uma experiência simplesmente magnífica e recomendo sempre que possível, por isso, Crystal não fica de fora no mundo de REPLs e possui o <a href="https://github.com/crystal-community/icr">icr</a> como REPL oficial, vindo hoje já embutido no próprio Crystal, podendo ser acessado com o comando <code>crystal i</code>!</p>
+
+<p>Basicamente a funcionalidade principal do REPL é ser seu companheiro durante o desenvolvimento, possibilitando a execução de trechos do código de forma isolada sem muitos problemas.</p>
 
 <h3>
   
   
-  3. Recommender Systems
+  Code style linter
 </h3>
 
-<p>KNN is employed in recommender systems for providing personalized recommendations to users. In collaborative filtering, KNN can be used to find users who are similar to a target user, based on their previous behavior or preferences.</p>
+<p>Mais importante do que escrever código para si mesmo é escrever código para outras pessoas, por isso, sempre que possível é recomendado escrever códigos de acordo com as convenções de cada linguagem de programação. Dessa forma, Crystal possui uma <a href="https://crystal-lang.org/reference/1.10/conventions/coding_style.html">convenção de estilo de código</a> incrível, logo, nada mais justo do que uma ferramenta que te ajude no processo de escrita.</p>
 
-<p>For instance, in an e-commerce platform, KNN can be used to recommend products to a user based on the purchases and ratings of other users with similar preferences.</p>
+<p>Assim surge o projeto <a href="https://github.com/crystal-ameba/ameba">Ameba</a>, sendo um linter para validar seu código e verificar se está adequado de acordo com as convenções apresentadas oficialmente.</p>
 
 <h3>
   
   
-  4. Anomaly Detection
+  Debugger
 </h3>
 
-<p>KNN can be used for anomaly detection in various domains, such as fraud detection and network security. By measuring the similarity between data points, KNN can identify data points that deviate significantly from the norm.</p>
-
-<p>For example, in credit card fraud detection, KNN can be used to identify transactions that are unusual and potentially fraudulent.</p>
+<p>Nada melhor do que poder rodar seu código passo por passo para validar problemas e rotinas, não é? Pois bem, o projeto <a href="https://github.com/Sija/debug.cr">debug</a> surge com objetivo de ser um debugger completo para seu desenvolvimento, sendo escrito completamente em Crystal.</p>
 
 <h3>
   
   
-  5. Medical Diagnosis
+  Gerenciador de dependências
 </h3>
 
-<p>KNN plays a role in medical diagnosis and decision support systems. Patient data, including symptoms, medical history, and test results, can be used as features, and KNN can assist in diagnosing diseases or predicting outcomes.</p>
+<p>Dependências podem ser definidas como um conjunto de pacotes/bibliotecas que são necessárias para a execução de determinada aplicação. Gerenciar dependências de forma elegante é algo que Crystal não decepciona utilizando o projeto <a href="https://github.com/crystal-lang/shards">Shards</a>.</p>
 
-<p>In a clinical setting, KNN can help identify patients with similar characteristics to a given patient and provide insights into potential diagnoses and treatment options.</p>
+<p>Basicamente existe um arquivo chamado <code>shard.yml</code>, utilizado para definir de maneira simples pontos como nome do projeto, autores, dependências, versão atual e licença em que determinado projeto é distribuído.</p>
 
 <h3>
   
   
-  6. Natural Language Processing
+  Livro
 </h3>
 
-<p>In the field of natural language processing (NLP), KNN can be applied to tasks like text classification and sentiment analysis. Features derived from text data, such as word frequencies or embeddings, can be used to classify documents or analyze sentiment.</p>
+<p>Um livro sobre a linguagem é necessário, não apenas para ser utilizado como referência, mas, para ser utilizado no processo de aprendizado do leitor.</p>
 
-<p>For instance, in social media analysis, KNN can be employed to categorize tweets or comments into topics or sentiments.</p>
+<p>Assim surge o projeto <a href="https://github.com/crystal-lang/crystal-book">crystal-book</a>, sendo um livro completo com referências da documentação oficial.</p>
 
 <h3>
   
   
-  7. Environmental Modeling
+  Documentação
 </h3>
 
-<p>KNN is used in environmental modeling to predict phenomena such as air quality, weather, and ecological patterns. By analyzing historical data and measurements, KNN can make predictions for future conditions.</p>
+<p>A documentação oficial é necessária para qualquer tecnologia, assim, Crystal possui dois tipos de documentações que podem ser encontradas, sendo elas:</p>
 
-<p>In meteorology, for example, KNN can assist in predicting weather conditions for specific locations based on data from nearby weather stations.</p>
+<ul>
+<li><a href="https://crystal-lang.org/reference/1.10/index.html">Documentação do site oficial com o Crystal Book</a></li>
+<li><a href="https://crystal-lang.org/api/1.10.1/">Documentação de <em>API</em> da versão atual</a></li>
+</ul>
+
+<p>A segunda referência geralmente é utilizada para um detalhamento maior dos métodos e funcionalidades nativas que Crystal proporciona.</p>
 
 <h3>
   
   
-  8. Marketing and Customer Segmentation
+  Patterns
 </h3>
 
-<p>In marketing, KNN can be used for customer segmentation. By considering factors such as purchase history, demographics, and online behavior, KNN can group customers with similar characteristics. This allows businesses to tailor marketing strategies to specific customer segments.</p>
+<p>A definição de patterns e padrões de código é necessária, por isso, existe um repositório com exemplos didáticos de implementações com Crystal utilizando os patterns GOF (Gang of Four), chamado <a href="https://github.com/crystal-community/crystal-patterns">crystal-patterns</a>.</p>
 
-<p>In e-commerce, for instance, KNN can help categorize customers into groups with similar purchasing patterns, enabling targeted marketing campaigns.</p>
+<h2>
+  
+  
+  Frameworks
+</h2>
+
+<p>Atualmente, Crystal conta com diversos frameworks para diversos propósitos, porém, irei citar os mais conhecidos para desenvolvimento de aplicações web no geral.</p>
+
+<h3>
+  
+  
+  Kemal
+</h3>
+
+<p>Sendo um dos frameworks mais conhecidos, <a href="https://github.com/kemalcr/kemal">Kemal</a> se destaca por ser inspirado no estilo de outro framework já existente para Ruby, o Sinatra, sendo utilizado para ser uma solução simples, com tratamento de rotas elegante, possibilitando um middleware que pode ser ampliado.</p>
+
+<p>Sua implementação ocorre de forma simples, sendo bem minimalista, assim, uma comparação deixada no <a href="https://kemalcr.com/">site oficial do Kemal</a> compara a quantidade de requisições por segundo de uma aplicação com Kemal comparada com uma aplicação Ruby com Sinatra: enquanto o Sinatra conseguiu chegar em 5268 requisições por segundo, Kemal conseguiu atingir invejadas <strong>122697</strong> requisições por segundo (magnífico, não é?).</p>
+
+<h3>
+  
+  
+  Amber
+</h3>
+
+<p>Com uma proposta um pouco diferente do Kemal, porém, levando tanto o Kemal quanto Rails e Phoenix como inspiração, temos o <a href="https://github.com/amberframework/amber">Amber</a>, um framework para aplicações robustas, possuindo templates de renderização HTML prontos, possibilitando um desenvolvimento mais produtivo.</p>
+
+<p>O framework conta com a possibilidade de uso de três ORMs distintos, sendo eles <a href="https://github.com/imdrasil/jennifer.cr">Jennifer</a>, <a href="https://github.com/amberframework/granite">Granite</a> e <a href="https://github.com/Crecto/crecto">Crecto</a>.</p>
+
+<h3>
+  
+  
+  Lucky
+</h3>
+
+<p>Sendo um framework inspirado principalmente no Rails, o Lucky é um framework que está no coração de grande parte dos desenvolvedores que alguma vez já trabalharam com Crystal, trazendo infinitas possibilidades, sendo extremamente rápido e produtivo!</p>
+
+<p>O <a href="https://github.com/luckyframework/lucky">repositório oficial</a> está disponível no GitHub, tendo consigo também um artigo interessante falando sobre o uso do Lucky na perspectiva de um desenvolvedor que já trabalhou alguma vez com Rails. O nome do artigo é <a href="https://hackernoon.com/ruby-on-rails-to-lucky-on-crystal-blazing-fast-fewer-bugs-and-even-more-fun-104010913fec">Ruby on Rails to Lucky on Crystal: Blazing fast, fewer bugs, and even more fun</a> e recomendo a leitura.</p>
+
+<h3>
+  
+  
+  Marten
+</h3>
+
+<p>Um framework novo, porém com propostas interessantes, trazendo conceitos novos para o mundo de desenvolvimento com Crystal, ampliando a simplicidade e produtividade dentro do seu código. Este é o <a href="https://github.com/martenframework/marten">Marten</a>, tendo seu repositório oficial publicado no GitHub já está tomando espaço e crescendo cada vez mais como um dos frameworks para Crystal que tende a melhorar ainda mais. </p>
+
+<p>Já ganhou um espaço especial no meu coração e tenho certeza que você vai adorar utilizar o Marten em seu cotidiano como desenvolvedor.</p>
+
+<h2>
+  
+  
+  Projetos com Crystal
+</h2>
+
+<p>Bem, como foi possível observar, a aplicabilidade de Crystal é bem vasta e existem diversas ferramentas para te auxiliar durante todo o processo, mas, quais projetos reais já existem e levam como base o uso de Crystal? Bem, vamos passar citando alguns maneiros se você <em>talvez</em> esteja pensando em começar a contribuir...</p>
+
+<ul>
+<li>
+<a href="https://github.com/veelenga/awesome-crystal">Awesome Crystal</a>: conjunto de repositórios, bibliotecas e ferramentas para uso no desenvolvimento com Crystal, trazendo tudo de melhor que o ecossistema pode te proporcionar</li>
+<li>
+<a href="https://github.com/iv-org/invidious">Invidious</a>: um projeto que tem crescido muito e traz consigo o objetivo de ser uma alternativa para o front-end do YouTube, reduzindo a quantidade de JavaScript a ser renderizado, sendo distribuído sob licença AGPL 3.0</li>
+<li>
+<a href="https://github.com/jeromegn/slang">Slang</a>: uma linguagem de template inspirada no Slim para construção de páginas web sem a necessidade de escrever HTML puro</li>
+<li>
+<a href="https://github.com/lucaong/immutable">Immutable</a>: uma implementação completa de uma coleção de estruturas de dados imutáveis, thread-safe e persistente, possibilitando uma melhor segurança no processamento e acesso de memória</li>
+<li>
+<a href="https://github.com/vitobotta/hetzner-k3s">Hetzner k3s</a>: um CLI completo para gerenciamento de cluster Kubernetes na Hetzner Cloud utilizando a distribuição k3s</li>
+<li>
+<a href="https://github.com/lanjoni/hackacrow">Hackacrow</a>: um CLI completo para validação de entradas e saídas de comandos, sendo útil principalmente para validações de respostas em hackathons</li>
+<li>
+<a href="https://github.com/veelenga/crystal-zsh">Crystal ZSH</a>: um plugin completo para utilizar junto do <code>oh-my-zsh</code>, permitindo uma integração magnífica com seu terminal durante o desenvolvimento com Crystal</li>
+<li>
+<a href="https://github.com/veelenga/awesome-crystal#editor-plugins">Editor Plugins</a>: sendo uma área específica de outro repositório (<code>awesome-crystal</code> nesse caso) conta com plugins interessantes para diferentes editores de código, por isso, recomendo conhecer</li>
+</ul>
+
+<p>Existem diversos outros projetos com Crystal, porém, acredito que vale a pena conferir o primeiro repositório citado anteriormente para conhecer outros projetos que utilizam Crystal. </p>
+
+<h2>
+  
+  
+  Finalização
+</h2>
+
+<p>O intuito desse artigo foi apresentar um pouco mais sobre a proposta que Crystal traz no mundo de desenvolvimento de software, citando ferramentas e projetos que podem fazer parte do seu cotidiano de desenvolvimento.</p>
+
+<p>Se você quer aprender um pouco mais sobre Crystal com um conteúdo totalmente gratuito, em português, escrito com muito amor e carinho, recomendo a leitura do <a href="https://github.com/lanjoni/crystal4noobs">crystal4noobs</a>, um conteúdo parte do projeto <a href="https://github.com/he4rt/4noobs">4noobs</a> da <a href="https://heartdevs.com/">He4rt Devs</a>, trazendo conteúdo de qualidade para todos de forma gratuita.</p>
+
+<p>Agradeço imensamente se você chegou até aqui e espero que tenha gostado da leitura. Não se esqueça de deixar sua estrelinha os repositórios apresentados. Espero que esse artigo possa <em>crystalizar</em> ainda mais sua rotina de desenvolvimento. Meu muito obrigado e até a próxima!</p>
+
+<p>Da comunidade para a comunidade 💜💛</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Best Kubernetes DevOps Tools: A Comprehensive Guide](https://dev.to/dsudia/best-kubernetes-devops-tools-a-comprehensive-guide-da9) 
+ <details><summary>Article</summary> <p><a href="https://www.getambassador.io/kubernetes-glossary/kubernetes?utm_source=Dev.to&amp;utm_medium=blog&amp;utm_campaign=Corporate">Kubernetes</a> has become the standard for container orchestration and is integral to modern DevOps workflows. However, realizing Kubernetes' full potential requires adopting the proper DevOps tools tailored for it. These <a href="https://www.getambassador.io/products/telepresence?utm_source=Dev.to&amp;utm_medium=blog&amp;utm_campaign=Corporate">Kubernetes DevOps tools</a> enable building, testing, deploying, monitoring, and managing applications on Kubernetes efficiently.</p>
+
+<p>This comprehensive guide explores the top DevOps tools purpose-built for Kubernetes to streamline workflows. It covers solutions for CI/CD, deployment, monitoring, automation, and more. The guide also highlights Telepresence as an innovative Kubernetes DevOps tool for accelerated <a href="https://www.getambassador.io/blog/dev-workflow-intro?utm_source=Dev.to&amp;utm_medium=blog&amp;utm_campaign=Corporate">development workflows</a>.</p>
+
+<p>With a robust Kubernetes DevOps toolkit, teams can optimize workflows for application development and delivery. The ecosystem of specialized tools addresses processes and collaboration on top of Kubernetes’ core orchestration capabilities. Selecting the right solutions unlocks improved productivity, resilience, and agility.</p>
+
+<h2>
+  
+  
+  The Intersection of DevOps and Kubernetes
+</h2>
+
+<p>DevOps emphasizes practices like <a href="https://www.getambassador.io/kubernetes-learning-center/courses/continuous-integration?utm_source=Dev.to&amp;utm_medium=blog&amp;utm_campaign=Corporate">continuous integration</a>, infrastructure as code, monitoring, and team collaboration. Kubernetes naturally complements these principles.</p>
+
+<p>Its api-driven architecture allows infrastructure changes to be version controlled and replicated identically across environments. Automated deployments become easier by packaging applications as Kubernetes resources.</p>
+
+<p>Runtime logging and monitoring give observability into apps. The portability of Kubernetes clusters enables multiple teams to work together.</p>
+
+<p>This synergy makes <a href="https://www.getambassador.io/kubernetes-learning-center?utm_source=Dev.to&amp;utm_medium=blog&amp;utm_campaign=Corporate">Kubernetes</a> a catalyst for DevOps transformation. But the technology is only one piece. Having the proper Kubernetes tooling is key to unlocking the full benefits.</p>
+
+<h2>
+  
+  
+  Best Kubernetes DevOps Tools
+</h2>
+
+<p>Here are some of the top Kubernetes DevOps tools to streamline your workflow:</p>
+
+<h3>
+  
+  
+  Continuous Integration Tools
+</h3>
+
+<ul>
+<li><p><a href="https://blog.getambassador.io/automating-microservice-testing-with-jenkins-ed49321a4f1"><strong>Jenkins</strong></a> is an open source automation server that enables continuous integration and delivery pipelines. The <a href="https://plugins.jenkins.io/kubernetes-cli/">Kubernetes plugin</a> allows dynamic provisioning of agents as pods on a Kubernetes cluster. The plugin also allows Jenkins agents to be dynamically provisioned as pods within clusters. This enables scaling up CI capacity on-demand when workloads increase. Agents can build Docker images, execute tests, and deploy artifacts directly within a Kubernetes environment.</p></li>
+<li><p><strong>GitLab CI</strong> - GitLab CI has integrated support for Kubernetes to natively <a href="https://about.gitlab.com/solutions/kubernetes/#:~:text=Everything%20you%20need%20to%20build%2C%20test%2C%20deploy%2C%20and%20run%20your%20app%20at%20scale">build, test, and deploy</a> applications to Kubernetes clusters through pipelines. GitLab can deploy review apps and production apps to Kubernetes out of the box. Pipelines can launch Kubernetes jobs to run CI steps in pods with required dependencies. GitLab also offers Kubernetes cluster management, auto-scaling, monitoring, and more.</p></li>
+<li><p><strong>CircleCI</strong> - CircleCI provides flexible workflows and orchestration to build, test, and deploy applications securely onto Kubernetes for teams. It enables you to seamlessly integrate <a href="https://circleci.com/integrations/kubernetes/#:~:text=Execute%20pre%2Dconfigured%20Kubernetes%20operations%20in%20your%20CircleCI%20pipelines%20using%20orbs.">pre-configured Kubernetes operations</a> into your CI/CD pipelines using orbs. These orbs serve as reusable packages of configuration, allowing you to manage various Kubernetes-related tasks within your CircleCI workflows efficiently.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Continuous Deployment Tools
+</h3>
+
+<ul>
+<li><p><a href="https://helm.sh/%22"><strong>Helm</strong></a> is a package manager that helps define, install, and manage complex Kubernetes applications packaged as charts with manifests, configs, and docs. Helm streamlines deploying complex packaged Kubernetes applications. Developers can create configurable Helm charts wrapping all YAML manifests, configs, and services needed to run an app. Ops teams can then deploy those charts easily across different environments and clusters.</p></li>
+<li><p><a href="https://kustomize.io/"><strong>Kustomize</strong></a> provides a template-free way to customize Kubernetes YAML configurations using overlays and generators without templates. It is ideal for customizing YAML configs for multiple Kubernetes environments like dev, staging, and prod. Engineering teams can define common resources in a base and then apply overlays with patches, variable substitutions, and images per environment.</p></li>
+<li><p><a href="https://fluxcd.io/"><strong>Flux CD</strong></a> enables continuous deployment to Kubernetes through GitOps by syncing Git repositories with Kubernetes clusters. Flux CD enables GitOps for Kubernetes through source control integration. It manages Kubernetes manifests as code and syncs git repo changes to clusters. Flux automates checks, deployments, and updates within clusters.</p></li>
+<li><p><a href="https://keda.sh/"><strong>KEDA</strong></a> introduces event-driven scaling to Kubernetes workloads. It integrates with Kubernetes Horizontal Pod Autoscalers and can scale pods based on external metrics from services like databases and message queues (Kafka, RabbitMQ, MongoDB).</p></li>
+</ul>
+
+<h3>
+  
+  
+  Monitoring &amp; Logging
+</h3>
+
+<ul>
+<li><p><a href="https://www.getambassador.io/docs/emissary/latest/howtos/prometheus/?utm_source=Dev.to&amp;utm_medium=blog&amp;utm_campaign=Corporate"><strong>Prometheus</strong></a> is a leading open source monitoring and alerting system explicitly designed for Kubernetes environments with native support for metrics. Prometheus auto-discovers Kubernetes pods, services, and nodes to collect metrics seamlessly. Its Kubernetes service discovery integration scrapes metrics from API objects like deployments, jobs, and ingresses. Prometheus alerts can trigger autoscaling and remediation based on Kubernetes events and statuses.</p></li>
+<li><p><strong>Grafana</strong> provides an intuitive dashboard interface to visualize metrics collected from sources like Prometheus. It offers out-of-the-box dashboards tailored for monitoring Kubernetes clusters, nodes, deployments, and pods. Users can create custom panels and graphs to build dashboards optimized for their Kubernetes workloads and services. Through dynamic metric visualizations, Grafana helps gain visibility into cluster resource usage, application performance, user activity, and more. Its annotation feature can mark deployment events on graphs.</p></li>
+<li><p><strong>Datadog</strong> provides end-to-end observability, including dashboards, alerts, and log management tailored for monitoring Kubernetes clusters and cloud-native apps. It integrates with Kubernetes to collect metrics and logs from containers, pods, nodes, and controllers. It offers out-of-the-box dashboards for Kubernetes monitoring, namespace mapping, cluster troubleshooting, and more. Datadog's Kubernetes autodiscovery enables tracking dynamic changes.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Automation &amp; Configuration
+</h3>
+
+<ul>
+<li><p><strong>Terraform</strong> provides robust support for provisioning and managing Kubernetes infrastructure as code. The Kubernetes provider integrates deeply to manage resources like clusters, nodes, ingress, storage, RBAC controls, and more. Terraform modules help configure secure and production-ready Kubernetes setups across providers.</p></li>
+<li><p><strong>Pulumi</strong> - takes an infrastructure-as-code approach to Kubernetes using real programming languages like JavaScript, Python, and Go instead of declarative configs. Pulumi's Kubernetes support allows the defining of clusters, configmaps, deployments, and infrastructure in code. It integrates seamlessly with Kubernetes CLI and APIs for full control through code. Pulumi provides flexible abstractions and reuse through packages and libraries.</p></li>
+<li><p><strong>Ansible</strong> provides over 500 modules in the Kubernetes collection for automating tasks within clusters. Modules can deploy apps, configure clusters, manage nodes, handle networking, autoscaling, and security. Ansible is agentless, using OpenSSH to connect and leverage the Kubernetes API. Ansible integrates smoothly with Kubernetes tools like Helm, Kubespray, and Terraform. Ansible playbooks and Kubernetes modules enable automated and idempotent management of production Kubernetes infrastructure.</p></li>
+<li><p><strong>Kubespray</strong> automates production-grade deployment of Kubernetes clusters across cloud providers. It integrates natively with tools like Ansible, Terraform, Helm, and Kustomize for full lifecycle management. Kubespray handles cluster provisioning, configuration, upgrading, scaling, and more to simplify Kubernetes cluster operations.</p></li>
+</ul>
+
+<h3>
+  
+  
+  Secret Management Tools
+</h3>
+
+<ul>
+<li><p><strong>CyberArk Conjur</strong> integrates with Kubernetes to provide robust secret management, access controls, and identity management capabilities essential for secure DevOps workflows. It enables teams to manage credentials, keys, certificates securely, and other secrets needed across Kubernetes environments and pipelines. Conjur brings auditing visibility, granular access policies, and RBAC integration to strengthen security across the Kubernetes stack. Its automation and integration with CI/CD pipelines and infrastructure as code tools gives Engineering teams more control over secrets management as they adopt Kubernetes.</p></li>
+<li><p><strong>HashiCorp Vault</strong> manages and secures sensitive secrets like tokens, passwords, keys, and certificates used by Kubernetes clusters, applications, and tools. It centralizes secrets management with encryption, revocation, renewal, and auditing to provide teams visibility and control. Vault integrates with CI/CD and infrastructure as code tools to inject secrets safely into Kubernetes environments. Its dynamic secrets and automatic rotation remove manual burdens for teams. These capabilities make Vault a crucial DevOps tool for securely automating secrets handling as part of Kubernetes workflows.</p></li>
+<li><p><strong>AWS Secrets Manager</strong> integrates deeply with Kubernetes to control access and reduce risks related to important secrets like database credentials and API keys used by applications. It brings fine-grained access controls, least privilege permissions, and audit trails to improve Kubernetes secrets security. Secrets Manager eliminates manual secret handling through automated rotation and versioning. Together, its ability to manage credentials at scale while providing visibility makes Secrets Manager an essential DevOps tool for teams adopting Kubernetes.</p></li>
+</ul>
+
+<h2>
+  
+  
+  Using Telepresence for Kubernetes Development
+</h2>
+
+<p><a href="https://www.getambassador.io/products/telepresence">Telepresence</a> is a developer productivity tool that connects your local development environment to a cluster, allowing you to maintain your favorite local development practices while working as if you were in your integration environment.</p>
+
+<p>You can run telepresence connect and talk to pods in the cluster via your browser or curl as if you were a pod in the cluster. You can also Intercept pods in the cluster and have requests to that pod come to the locally running code on your laptop, bringing the fast feedback of local development to Kubernetes. Some unique benefits of Telepresence include:</p>
+
+<ul>
+<li>
+<strong>Fewer environments to manage</strong>: With Telepresence, developers can share a development or staging cluster and receive just their test requests.</li>
+<li>
+<strong>Cost savings</strong>: When developers don’t need their own dev environments and databases, your cloud bill shrinks with every node you can turn off.</li>
+<li>
+<strong>No more tedious build-test-deploy cycles</strong>: Developers work faster and use less CI time by making live code changes proxied to remote Kubernetes clusters.</li>
+</ul>
+
+<p>This lightweight, local development experience accelerates iterating on apps interacting with remote Kubernetes services. Teams can catch issues early before deploying to production. Telepresence simplifies developing microservices on Kubernetes, bridging local and remote environments seamlessly.</p>
+
+<h2>
+  
+  
+  Key Criteria for Evaluating Kubernetes DevOps Tools
+</h2>
+
+<p>With the plethora of tools available, focus on these factors when choosing solutions:</p>
+
+<ul>
+<li>
+<strong>User-Friendliness</strong>: Seek tools with intuitive interfaces and easy adoption. Complexity hinders productivity.</li>
+<li>
+<strong>Compatibility</strong>: Integration with other tools in the stack is key. Prioritize open standards over walled gardens.</li>
+<li>
+<strong>Community Backing</strong>: Look for active user communities that drive improvements and provide learning resources.</li>
+<li>
+<strong>Pricing</strong>: Balance feature set against the total cost of ownership for commercial tools. Avoid vendor lock-in.</li>
+<li>
+<strong>Scalability &amp; Performance</strong>: Tools must scale alongside usage without degradation. Review benchmarks.</li>
+<li>
+<strong>Security</strong>: Audit security practices and access controls. This is critical when dealing with sensitive data.</li>
+</ul>
+
+<p>Evaluating against these key focus areas will help you choose a cohesive DevOps toolkit for Kubernetes. Prioritize capabilities that map to your specific workflows and constraints. This thoughtful selection process leads to long-term efficiency gains, optimized workflows, and getting the most from Kubernetes.</p>
 
 <h2>
   
@@ -906,238 +611,392 @@ Classic Binary Search vs. Modified Binary Search
   Conclusion
 </h2>
 
-<p>K-Nearest Neighbors (KNN) is a powerful machine learning algorithm with a straightforward approach to classification and regression tasks. Its mathematical foundation, which relies on distance metrics to measure the similarity between data points, provides a clear understanding of how the algorithm works. By choosing an appropriate value for 'k' and the right distance metric, and by conducting thorough hyperparameter tuning, KNN can be optimized for various real-world applications.</p>
+<p>Kubernetes has become the leading platform for deploying containerized applications at scale. However, to fully realize its benefits depends on adopting the right set of Kubernetes DevOps tools and workflows.</p>
 
-<p>In image classification, handwriting recognition, recommendation systems, anomaly detection, medical diagnosis, and more, KNN continues to demonstrate its versatility. It offers simplicity and transparency, making it a valuable tool for both beginners and experienced data scientists in their quest to solve a wide range of problems.</p>
+<p>This guide provided an overview of the most essential Kubernetes DevOps tools across CI/CD, deployment, monitoring, automation, and other areas. While Kubernetes solves major technology challenges, complementary tools address processes and collaboration.</p>
 
-<p>As the world of machine learning and artificial intelligence continues to evolve, KNN remains a fundamental algorithm, showing that sometimes, the simplest methods can yield powerful results.</p>
+<p>By leveraging solutions like Jenkins, Helm, and Datadog, teams can optimize productivity and application quality. Adopting this new DevOps toolkit tailored for Kubernetes will accelerate your software delivery.</p>
 
-<p>In summary, K-Nearest Neighbors stands as a testament to the timeless adage that, in the world of machine learning, the simplest algorithms are often the most profound. Its enduring relevance in diverse applications serves as a testament to its utility and effectiveness.</p>
+<p>The variety of options also means evaluating your needs, environment, and constraints before choosing solutions. Focus on capabilities, integration, usability, and community support during assessments.</p>
+
+<p>This new generation of purpose-built Kubernetes DevOps tools represents a turning point for optimizing Kubernetes productivity, resilience, and delivery.</p>
 
  </details> 
  <hr /> 
 
- #### - [Get involved: Your guide to contributing to WebCrumbs](https://dev.to/opensourcee/get-involved-your-guide-to-contributing-to-webcrumbs-30p7) 
- <details><summary>Article</summary> <p>Hey there, champ! So, you're itching to dive into the WebCrumbs community, eh? Fantastic! You're about to join a legion of coders hell-bent on making React development as smooth as silk. Here's how you can get your boots on the ground.</p>
+ #### - [Demystifying useLocation in ReactJS: A Beginner’s Guide to Navigation](https://dev.to/gaurbprajapati/demystifying-uselocation-in-reactjs-a-beginners-guide-to-navigation-4h6f) 
+ <details><summary>Article</summary> <p>Navigation is a fundamental aspect of web development, especially in ReactJS applications. As a beginner, understanding how to manage routes and access information about the current URL is crucial. In this beginner-friendly guide, we will delve into the world of React Router DOM and demystify one of its powerful tools - the <code>useLocation</code> hook. We'll break down its significance, discuss its usage, and provide practical examples to help you grasp this concept effortlessly.</p>
+
+<p><strong>Understanding the Basics:</strong></p>
+
+<p>Before we dive into the code, let's grasp the basics. In ReactJS applications, navigation between different pages or components often requires understanding the current URL. React Router DOM is a popular library that simplifies this process, and the <code>useLocation</code> hook is a key tool it offers.</p>
+
+<p><strong>What is useLocation?</strong></p>
+
+<p>In React Router DOM, the <code>useLocation</code> hook provides access to the current location object. This object contains valuable information about the current URL, such as path names, query parameters, and more. Understanding and utilizing this information can significantly enhance the user experience of your web application.</p>
+
+<p><strong>How to Use useLocation:</strong></p>
+
+<p>Let's explore a simple example to illustrate the usage of the <code>useLocation</code> hook:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight jsx"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">BrowserRouter</span> <span class="k">as</span> <span class="nx">Router</span><span class="p">,</span>
+  <span class="nx">Route</span><span class="p">,</span>
+  <span class="nx">Link</span><span class="p">,</span>
+  <span class="nx">Switch</span><span class="p">,</span>
+  <span class="nx">useLocation</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+
+<span class="c1">// Hoem component code </span>
+<span class="kd">const</span> <span class="nx">Home</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">useLocation</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> Welcome to the Home Page!<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Home Page <span class="si">{</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Current Path: <span class="si">{</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Search Parameters: <span class="si">{</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// About component code </span>
+<span class="kd">const</span> <span class="nx">About</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">useLocation</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span> Welcome to the About Page!<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>About Page <span class="si">{</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Current Path: <span class="si">{</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Search Parameters: <span class="si">{</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+
+<span class="c1">// Contact component code</span>
+<span class="c1">// Practice same as above home and about component on Contact component</span>
+<span class="kd">const</span> <span class="nx">Contact</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Contact Us<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+
+
+
+
+<span class="kd">const</span> <span class="nx">NotFound</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>404 - Page Not Found<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Router</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="p">{</span> <span class="na">display</span><span class="p">:</span> <span class="dl">"</span><span class="s2">flex</span><span class="dl">"</span><span class="p">,</span> <span class="na">gap</span><span class="p">:</span> <span class="dl">"</span><span class="s2">20px</span><span class="dl">"</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/home"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/about"</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/contact"</span><span class="p">&gt;</span>Contact<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nc">Switch</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">exact</span> <span class="na">path</span><span class="p">=</span><span class="s">"/home"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">Home</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/about"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">About</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/contact"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">Contact</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">NotFound</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Switch</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Router</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+
+</code></pre>
+
+</div>
+
+
+
+<p>Check out and Explore Above <br>
+<a href="https://codesandbox.io/s/uselocation-reactjs-7jkgd3?file=/src/App.js">https://codesandbox.io/s/uselocation-reactjs-7jkgd3?file=/src/App.js</a></p>
+
+<p>In this example, we import the <code>useLocation</code> hook and utilize  in the <code>About</code> component to access the location object such as pathname and search. By accessing <code>location.pathname</code> and <code>location.search</code>, we can display the current path and search parameters, respectively.<br>
+The Route components define the paths and their corresponding components within the Switch component, which ensures that only one route is rendered at a time.</p>
+
+<p>Current location object for About component :-<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>{pathname: "/about", search: "", hash: "", state: undefined, key: "bhlp93"}
+pathname: "/about"
+search: ""
+hash: ""
+state: undefined
+key: "bhlp93"
+</code></pre>
+
+</div>
+
+
+
+<p><strong>Real-World Application:</strong></p>
+
+<p>Imagine you're building an e-commerce website. Using the <code>useLocation</code> hook, you can dynamically render different product details based on the route and query parameters. For instance, displaying specific product information when a user selects a particular item from the URL.<br>
+We can then utilize properties of the location object, such as pathname and search, to display information about the current route.<br>
+The Route components define the paths and their corresponding components within the Switch component, which ensures that only one route is rendered at a time.</p>
+
+<p><strong>Best Practices:</strong></p>
+
+<ul>
+<li><p><strong>Component Placement:</strong> Ensure that you use the <code>useLocation</code> hook within a component that is rendered within a <code>&lt;Router&gt;</code> component. This ensures access to the current location object.</p></li>
+<li><p><strong>Avoid Overuse:</strong> While the <code>useLocation</code> hook is powerful, avoid excessive reliance on it for complex logic or business rules. Instead, use it to gather information and pass it to other components or functions.</p></li>
+<li><p><strong>Optimize Performance:</strong> Be mindful of performance impacts, especially when using the <code>useLocation</code> hook in deeply nested components. Consider optimizing rerenders if necessary.</p></li>
+</ul>
+
+<p><strong>Conclusion:</strong></p>
+
+<p>Understanding the <code>useLocation</code> hook in React Router DOM is essential for building dynamic and responsive web applications. By harnessing its power, you can create seamless navigation experiences, whether you’re building an e-commerce platform, a blog, or any other type of web application. As you continue your ReactJS journey, remember that mastering the fundamentals of navigation is a key step toward becoming a proficient React developer.</p>
+
+<p>Feel free to experiment with the <code>useLocation</code> hook in your projects, and don’t hesitate to explore its full potential. Happy coding!</p>
+
+ </details> 
+ <hr /> 
+
+ #### - [Optimizing Gradle Builds in Multi-module Projects](https://dev.to/touchlab/optimizing-gradle-builds-in-multi-module-projects-3ijp) 
+ <details><summary>Article</summary> <p>You're not alone if you've also struggled with sluggish Gradle builds in a multi-module project. Recently, we undertook the challenge of significantly reducing build times for a client with over 100 Kotlin Multiplatform modules, and achieved a more than 50% boost in speed across platforms. In this post, we'll walk you through the steps we took. We hope it proves valuable to fellow developers facing similar challenges.</p>
 
 <h2>
   
   
-  First step: the lay of the land
+  Benchmark Your Builds
 </h2>
 
-<p>Start by taking a tour of the <a href="https://github.com/webcrumbs-community/webcrumbs">WebCrumbs GitHub repository</a>. It's the control center of our open-source mission. Check out the <code>README</code> for a general overview and the <code>CONTRIBUTING</code> file for the nitty-gritty.</p>
+<p>Before diving into optimizations, it's crucial to understand the baseline.  Gather build times from all team members, ensuring the Gradle build cache is disabled. Use handy <code>--no-build-cache</code> option to any Gradle task command to run without build cache. Unsurprisingly, in our case, the Intel-based mac machines were really slow compared to Apple chip ones and we didn't have anyone with a Windows machine. This information is key for later comparison and improvement assessment.</p>
+
+<blockquote>
+<p>Note: One thing we realized that, some optimizations below might be more applicable to legacy or tech-debt-laden projects.</p>
+</blockquote>
 
 <h2>
   
   
-  Fork it, clone it, branch it
+  Tools for Insight
 </h2>
-
-<p>Alright, you know the drill. Fork the repo, clone it locally, and create a new branch. This way, you're all set to work your magic without stepping on any toes.</p>
-
-<h2>
-  
-  
-  Pick your battle
-</h2>
-
-<p>Whether you're a frontend maestro, a backend virtuoso, or a doc-wizard, there's room for you. Go through the open issues, pick one that resonates, and stake your claim.</p>
-
-<h2>
-  
-  
-  Code like a rockstar
-</h2>
-
-<p>Write clean, comment generously, and stick to the style guide. WebCrumbs is all about quality, so make every line of code count.</p>
-
-<h2>
-  
-  
-  The PR moment of truth
-</h2>
-
-<p>Submit a pull request, and wait for the review. Don't sweat it—feedback is how we grow. Once your PR gets the green light, you're officially part of WebCrumbs history.</p>
-
-<h2>
-  
-  
-  Join the conversation
-</h2>
-
-<p>Not just a coder? Fabulous! Join our Discord, engage in forums, write blog posts, or share your WebCrumbs success stories. The more the merrier!</p>
-
-<h2>
-  
-  
-  The icing on the cake
-</h2>
-
-<p>As you contribute, you're not just accumulating GitHub stars. You're building relationships, honing your skills, and, of course, getting those sweet, sweet open-source karma points.</p>
 
 <h3>
   
   
-  Ready to roll up your sleeves?
+  Gradle Build Scan
 </h3>
 
-<p>Jump over to the <a href="https://github.com/webcrumbs-community/webcrumbs">WebCrumbs GitHub repository</a> and start your journey. Contribute code, ideas, or even a morale-boosting GIF. Let's make React a cakewalk, together.</p>
+<p>Utilize the power of Gradle <a href="(https://docs.gradle.org/current/userguide/inspect.html#what_is_a_build_scan)">Build Scan</a> to delve into the details of your builds. In my opinion, it's not just a diagnostic tool; it's a learning tool.</p>
+
+<p>In our case, we uncovered insights into the sluggishness of <code>ios link</code> tasks in the Kotlin Multiplatform setup. Comparing build scans on different CI machines helped identify the fastest configuration for a machine to use on our CI. Enabling parallel builds and analyzing the results through build scan reports further validated our improvements.</p>
+
+<h3>
+  
+  
+  Android Studio Build Analyser
+</h3>
+
+<p>Android Studio provides a <a href="https://developer.android.com/build/build-analyzer">built-in analyser tool</a>. It inspects build performance and provides warning around potential issues.</p>
+
+<p><strong>Disable Jetifier</strong></p>
+
+<p>Using this, we noticed the lingering <code>android.enableJetifier=true</code> usage due to outdated <code>Picasso</code> library that didn't use <code>AndroidX</code> libraries. That might have hindered build speed too. Addressing this involved updating <code>Picasso</code> and removing the <code>jetifier</code> flag from <code>gradle.properties</code>.</p>
+
+<p><strong>MultiDex</strong></p>
+
+<p>Through the Build Analyser, we also found unnecessary use of <code>multiDexEnabled</code> in few modules along with some old Gradle configurations. <code>MultiDex</code> was unnecessary with <code>minSdkVersion</code> as 21.</p>
+
+<h2>
+  
+  
+  Dependency Visibility
+</h2>
+
+<p>We observed a significant number of modules relying on other modules via <code>api</code> dependency. The problem with having <code>api</code> dependencies is that Gradle would <code>recompile</code> them when implementation details change. It's because they appear on <code>compile</code> classpaths. This can have significant <code>ripple</code> of recompilations in a multi-module setup and affect the build times.</p>
+
+<p>To mitigate this, we shifted to using <code>implementation</code> for most dependencies, reserving <code>api</code> only for those exported as part of <code>XCFramework</code>.</p>
+
+<h2>
+  
+  
+  Enable Gradle Parallel Execution
+</h2>
+
+<p>In a multi-subproject setup, Gradle may benefit greatly from parallel execution. With the shift from <code>api</code> to <code>implementation</code>, <a href="https://docs.gradle.org/current/userguide/performance.html#parallel_execution">enabling parallel execution</a> further slashed build times.</p>
+
+<h2>
+  
+  
+  Mindful Use of External Gradle Plugins
+</h2>
+
+<p>Some Gradle plugins can be the culprits behind slower builds. Our project had a couple of Gradle plugins like that. They used to execute on every sync, every task and run through all the modules in the project.</p>
+
+<p>Scrutinize third-party plugins before integration, especially in a multi-module setup. Avoid unnecessary global application using <code>subproject</code> or <code>allprojects</code> blocks; apply plugins only where needed.</p>
+
+<h2>
+  
+  
+  Unnecessary KMP targets
+</h2>
+
+<p>When managing Kotlin Multiplatform (KMP) projects, it's crucial to evaluate the necessity of added KMP targets. In our experience, we found that inadvertently adding targets that aren't required for the project can introduce inefficiencies.</p>
+
+<p>For instance, we had inherited some modules with added <code>JVM</code> targets for certain KMP modules from older test modules. Over time, more modules were introduced, and the JVM target persisted without any actual use. This led to unnecessary JVM-related build and test tasks executing during the build phase.</p>
+
+<p>To address this, we recommend reviewing your KMP setup and removing any targets that don't contribute to the project's functionality. This not only streamlines the build process but also reduces unnecessary overhead, especially in a large multi-module project like ours.</p>
+
+<h2>
+  
+  
+  Build only required XCFramework
+</h2>
+
+<p>In Kotlin Multiplatform (KMP) projects with iOS components, the iOS build task can be a significant contributor to extended build times. Often, KMP project script files include configurations for multiple iOS architectures using <code>iOSX64()</code>, <code>iosArm64()</code>, and <code>iosSimulatorArm64()</code> targets, or the shorthand <code>ios()</code> that enables both <code>iosArm64</code> and <code>iOSX64</code>.</p>
+
+<p>However, it's essential to optimize this setup, especially considering that building for unnecessary architectures can consume substantial time and resources. For example, even if your local development machine has an <code>ARM</code> architecture, building the <code>X64</code> framework unnecessarily adds to build times, and vice versa for other architectures.</p>
+
+<p>Generally speaking, if things work on one architecture, then it's high likely that it would work on other architectures too. So it's fine if you at least keep building only one architecture locally. One approach is to introduce a boolean flag in your gradle.properties file, creating custom logic to enable a specific iOS target.</p>
+
+<blockquote>
+<p>Are you on a team where not everybody calling the Kotlin code wants or needs to build it locally? We've built <a href="https://github.com/touchlab/KMMBridge">KMMBridge</a>, a tool to help streamline the iOS dev flow in KMP.</p>
+</blockquote>
+
+<h2>
+  
+  
+  Be Careful with Custom Gradle Tasks
+</h2>
+
+<p>While creating custom Gradle tasks might seem like a convenient way to handle common requirements, it's crucial to exercise caution, especially in a multi-module setup. In our experience, some custom tasks had unintended consequences on build times.</p>
+
+<p>For instance, we had custom tasks responsible for copying resources to another folder, but they ran across all modules, resulting in a noticeable slowdown during the build. To address this issue, we reconsidered our approach and opted for a different strategy to achieve the desired outcome without compromising build efficiency.</p>
+
+<p>The key takeaway is to ensure that custom tasks are appropriately configured to avoid unnecessary repetition across modules or tasks</p>
+
+<h2>
+  
+  
+  Keep build tools up-to-date
+</h2>
+
+<p>Always stay current with Android Studio, Android Gradle Plugin, and Gradle itself. Each iteration brings improvements, potentially enhancing build speed.</p>
+
+<p><strong>AGP 8.+</strong></p>
+
+<p>Upgrade to Android Gradle Plugin 8.0.0 for default behaviors that optimize builds (i.e. <a href="https://developer.android.com/build/optimize-your-build#use-non-transitive-r-classes">non-transitive R classes</a>), especially for apps with multiple modules.</p>
+
+<p><strong>Configuration Cache</strong></p>
+
+<p>Newer build tools have better support for configuration cache. It seems like a very promising feature that can drastically improve build speeds in certain cases.</p>
+
+<p>While configuration cache is a promising feature for faster builds, ensure compatibility with all your tools. As of Kotlin 1.9.10, the Kotlin Multiplatform plugin still lacks full support, limiting its effectiveness.</p>
+
+<p>Kotlin 1.9.20 is supposed to being <a href="https://kotlinlang.org/docs/whatsnew-eap.html#full-support-for-the-gradle-configuration-cache-in-kotlin-multiplatform">full support</a> for configuration cache. We're pretty pumped about it.</p>
+
+<h2>
+  
+  
+  Additional Considerations
+</h2>
+
+<ul>
+<li>Ensure Gradle <a href="https://docs.gradle.org/current/userguide/build_cache.html">Build Cache</a> is enabled.</li>
+<li>Amount of code can be overwhelming in Gradle files with multi-module setup. Simplify Gradle scripts using the <a href="https://docs.gradle.org/current/userguide/custom_plugins.html#sec:precompiled_plugins">Gradle convention plugin</a> to minimize duplicate configuration.</li>
+</ul>
+
+
+
+
+<p>By following these steps, you may turbocharge your Gradle builds, regardless of the project size or complexity. Happy coding! Let me know in the comments if you have questions. Also, you can reach out to me at <a href="https://twitter.com/shaktiman_droid">@shaktiman_droid</a> on Twitter, <a href="https://www.linkedin.com/in/shaktiman-droid/">LinkedIn</a> or <a href="https://slack.kotlinlang.org/">Kotlin Slack</a>. And if you find all this interesting, maybe you'd like to <a href="https://touchlab.co/contact-us/">work with</a> or <a href="https://touchlab.co/careers-3/">work at</a> Touchlab.</p>
 
  </details> 
  <hr /> 
 
- #### - [Toggling Mobile Navigation Visibility with CSS: The Checkbox Hack](https://dev.to/joxx/toggling-mobile-navigation-visibility-with-css-the-checkbox-hack-7ej) 
- <details><summary>Article</summary> <p>In a mobile-first world, creating an intuitive and responsive navigation menu is crucial. The checkbox hack allows you to develop mobile flyout menus without JavaScript. This article will guide you through developing several styles of mobile navigation menus using the checkbox hack.</p>
+ #### - [C - Pointer & Struct](https://dev.to/jasperoh/c-pointer-struct-44o) 
+ <details><summary>Article</summary> <p>🔥 This post will discuss about pointer which is the one of the most important concept in C language to actually implement a LinkedList.</p>
 
-<h2>
-  
-  
-  Basics of Checkbox Hack
-</h2>
+<p>So, what is the pointer? what is the definition? (I captured below paragraph from KNK C programming)</p>
 
-<p>The checkbox hack is based on three components:</p>
+<blockquote>
+<p>Although addresses are represented by numbers, their range of values may differ from that of integers, so we can't necessarily store them in ordinary integer variables. We can, however, store the in special p, we say that p "points to" i. In other words, a pointer is nothing more than an address, and a pointer variable is just a variable that can store an address. <em>KNK C programming P.242</em></p>
+</blockquote>
+
+<p>We can understand the concept with the Excel (Google Spreadsheet).</p>
+
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--85VEK3Wp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ndvktilyoenx1udlfts4.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--85VEK3Wp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ndvktilyoenx1udlfts4.png" alt="Image description" width="800" height="490"></a></p>
+
+<p>According to above image,</p>
 
 <ol>
-<li>A <strong><code>&lt;label&gt;</code></strong> element.</li>
-<li>An associated <strong><code>&lt;input type="checkbox"&gt;</code></strong>.</li>
-<li>A CSS rule that targets the <strong><code>:checked</code></strong> state of the checkbox.</li>
+<li>Cell B6, I put value 15.</li>
+<li>Cell D9, I put a cell-address with =B6.</li>
 </ol>
 
-<p>The idea is to toggle the checkbox state by clicking on the label, and then using the <strong><code>:checked</code></strong> CSS pseudo-class to style or reveal a sibling element.</p>
-
-<h2>
-  
-  
-  Basic HTML Structure
-</h2>
-
-
+<p>You can understand with the code below,<br>
+</p>
 
 <div class="highlight js-code-highlight">
-<pre class="highlight html"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"menuToggle"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"menuToggle"</span><span class="nt">&gt;</span>☰ Menu<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;nav&gt;</span>
-  <span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Portfolio<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/nav&gt;</span>
+<pre class="highlight plaintext"><code>int num = 15; // 1. Cell B6, I put value 15.
+int *numPtr = &amp;num; // 2. Cell D9, I put a cell-address with =B6.
 </code></pre>
 
 </div>
 
 
 
+<p><em>Of course, We should think like computer memory, not a cell in excel. B6 and D9 (address value) is almost randomly assigned by compiler.</em></p>
+
+<p>So, the valuable named "num" is allocated the address of memory. (the size is 4 byte b/c int type)</p>
+
+<p>✅ Just sec in here, I think we should recap the structure of memory.</p>
+
 <h2>
   
   
-  Different Styles of Menus
+  Memory Structure in C
 </h2>
 
-<p><strong>Side Menu (Left to Right)</strong><br>
-</p>
+<p>When we execute a program, OS allocate the memory space for the program. And this allocated memory space is divided by</p>
+
+<ol>
+<li>Data Area</li>
+<li>Stack Area</li>
+<li>Heap Area</li>
+</ol>
+
+<p>And I'll deal with this memory area soon.</p>
+
+<p>Before that, I'll put more detailed code under about pointer.</p>
+
+<h3>
+  
+  
+  Example 1
+</h3>
+
+
 
 <div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">nav</span> <span class="p">{</span>
-    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">left</span><span class="p">:</span> <span class="m">-300px</span><span class="p">;</span> <span class="c">/* width of the menu */</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
-    <span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nf">#menuToggle</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span> <span class="o">+</span> <span class="nt">nav</span> <span class="p">{</span>
-    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
+<pre class="highlight plaintext"><code>int main(){
+ int x; // 1. declare x -&gt; int variable
+ int *ptr_x; // 2. declare pointer var ptr_x, which means this variable can save the memory address and read only 4 bytes because this is int pointer var
+ x = 100; // 3. init x with 100
+ ptr_x = &amp;x; // 4. save x's memory address in ptr_x
+ printf("x : %d, &amp;x : %p\n", x , &amp;x); // 5.using %d to print a decimal format, and %p to pointer(address) format and &amp; operator showing the memory address of x
+ printf("*ptr_x: %d, ptr_x: %p\n",*ptr_x, ptr_x); // 6. if we put * operator in pointer var then, It shows the variable that saved in address
+ *ptr_x = 200; // 7. change the value to 200 that ptr_x indicate
+ printf("x: %d, *ptr_x: %d\n" , x, *ptr_x);
+ return 0;
+}
 </code></pre>
 
 </div>
 
 
-
-<p><iframe height="600" src="https://codepen.io/joxx/embed/ZEVNxdb?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
-</p>
-
-<p><strong>Sliding Menu (Top to Bottom)</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">nav</span> <span class="p">{</span>
-    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-    <span class="nl">top</span><span class="p">:</span> <span class="m">-100vh</span><span class="p">;</span>
-    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100vw</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
-    <span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nf">#menuToggle</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span> <span class="o">+</span> <span class="nt">nav</span> <span class="p">{</span>
-    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><iframe height="600" src="https://codepen.io/joxx/embed/xxmNWBg?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
-</p>
-
-<p><strong>Splash Menu (Centered)</strong><br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight css"><code><span class="nt">nav</span> <span class="p">{</span>
-    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-    <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
-    <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
-    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span> <span class="m">-50%</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">80vw</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">80vh</span><span class="p">;</span>
-    <span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span><span class="p">;</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.7</span><span class="p">);</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
-    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nf">#menuToggle</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span> <span class="o">+</span> <span class="nt">nav</span> <span class="p">{</span>
-    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span> <span class="m">-50%</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-
-</div>
-
-
-
-<p><iframe height="600" src="https://codepen.io/joxx/embed/MWZZejp?height=600&amp;default-tab=result&amp;embed-version=2">
-</iframe>
-</p>
-
-<h2>
-  
-  
-  Enhancements and Notes
-</h2>
-
-<ul>
-<li>You can further style the label as a hamburger icon, and change it to a close icon when the menu is open using CSS.</li>
-<li>For better accessibility, ensure to provide fallbacks or alternatives for users who may not be able to interact with this kind of menu.</li>
-<li>Although the checkbox hack is clever and works in most modern browsers, for more complex interactions or larger projects, JavaScript frameworks or libraries might be more suitable.</li>
-</ul>
-
-<h2>
-  
-  
-  Conclusion
-</h2>
-
-<p>The checkbox hack offers a lightweight method to create interactive components without relying on JavaScript. Whether you choose a sidemenu, a top-down sliding menu, or a splash menu, you can achieve a smooth user experience on mobile devices. Experiment with styles and transitions to fit the look and feel of your website!</p>
 
  </details> 
  <hr /> 
