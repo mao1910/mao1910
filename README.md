@@ -2,6 +2,7 @@
 Update Socials
 Update "Technologies"
 Update Terminal
+Update Top Languages (exclude forked repositories)
 -->
 
 <!-- VISITOR BADGE -->
