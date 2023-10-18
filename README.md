@@ -1,3 +1,9 @@
+<!-- TODO 
+Update Socials
+Update "Technologies"
+Update Terminal
+-->
+
 <!-- VISITOR BADGE -->
 <!-- https://github.com/hehuapei/visitor-badge -->
 
@@ -15,12 +21,9 @@
 
 
 <!-- ABOUT ME TERMINAL -->
-<h1 >
-<img src="./assets/terminal-5.gif" alt="Terminal" />
-
-![](https://github.com/mao1910/mao1910/blob/761de041eede0d504f7d25c8aa64c84afca9fd9c/assets/terminal-5.gif)
-
-</h1>
+<div align="center">
+<img src="/assets/terminal-5.gif?raw=true" alt="Terminal"/>
+</div>
 <br/><br/><br/>
 
 
