@@ -24,7 +24,7 @@ Update Blog Feed (daily.dev bookmarks)
 
 <!-- ABOUT ME TERMINAL -->
 <div align="center">
-<img src="/assets/terminal-8.gif?raw=true" alt="Terminal"/>
+<img src="/assets/terminal-17.gif?raw=true" alt="Terminal"/>
 </div>
 <br/><br/><br/>
 
