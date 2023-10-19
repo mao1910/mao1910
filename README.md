@@ -1,7 +1,6 @@
 <!-- TODO 
 Update Socials
 Update "Technologies"
-Update Terminal
 Update Top Languages (exclude forked repositories)
 Update Blog Feed (daily.dev bookmarks)
 -->
