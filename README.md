@@ -33,8 +33,9 @@ Update Blog Feed (daily.dev bookmarks)
 
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=javascript,typescript,angular,react,html,css,scss,bootstrap,cs,java,spring" />
-    <img src="https://skillicons.dev/icons?i=flutter,firebase,supabase,mysql,git,github,gitlab,vscode,idea,maven,figma" />
+    <img src="https://skillicons.dev/icons?i=express,nodejs,spring,cs,vite,svelte,html,css,tailwind,react,nextjs" />
+    <br/>
+    <img src="https://skillicons.dev/icons?i=firebase,supabase,mongo,postgresql,mysql,redis,postman,vscode,idea,figma,github" />
 </div>
 
 <br/><br/><br/>
