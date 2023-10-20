@@ -1,7 +1,6 @@
 <!-- TODO 
 Update Socials
-Update "Technologies"
-Update Top Languages (exclude forked repositories)
+Update Top Languages (exclude repositories)
 Update Blog Feed (daily.dev bookmarks)
 -->
 
@@ -69,7 +68,7 @@ Update Blog Feed (daily.dev bookmarks)
   <img width=429 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=79DAF9" alt="github stats"/>
   <img width=396 src="https://github-readme-streak-stats-2235.vercel.app?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10&border=79DAF9" alt="streak stats"/>
   <br/>
-  <img src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5&border_color=79DAF9&hide=html&exclude_repo=spotify_now_playing spotify_now_playing&readme-jokes&github-readme-stats" alt="languages stats" />
+  <img src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5&border_color=79DAF9&hide=" alt="languages stats" />     <!-- exclude_repo= -->
 </div>
 
 <br/><br/><br/>
