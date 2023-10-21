@@ -126,9 +126,9 @@
 
 <!-- TODO
 Change the 3stats boxes around, possibly two on top and one on bottom
-Fix RSSfeed
+Fix RSSfeed [own articles]
 Fix Spotify Playlists
 Fix Socials [Portfolio, Discord, Linkedin]
-Update Top Languages [exclude repositories]
+Fix Top Languages [exclude repositories]
 Add Public Repositories of Selected Projects
 -->
