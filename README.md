@@ -116,7 +116,7 @@ Update Top Languages (exclude repositories)
 <!--  daily.dev BOOKMARKS:END -->
 
 <details>
-<summary>daily.dev</summary>
+<summary>While you're here, grab something to read 📕</summary>
 
 <br/>
 
