@@ -1,7 +1,6 @@
 <!-- TODO 
 Update Socials
 Update Top Languages (exclude repositories)
-Update Blog Feed (daily.dev bookmarks)
 -->
 
 <!-- VISITOR BADGE -->
