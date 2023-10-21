@@ -129,5 +129,6 @@ Change the 3stats boxes around, possibly two on top and one on bottom
 Fix RSSfeed
 Fix Spotify Playlists
 Fix Socials [Portfolio, Discord, Linkedin]
-In the future, add Public Repositories of Selected Projects
+Update Top Languages [exclude repositories]
+Add Public Repositories of Selected Projects
 -->
