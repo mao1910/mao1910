@@ -113,6 +113,17 @@ Update Blog Feed (daily.dev bookmarks)
 </details>
 
 
+<!--  daily.dev BOOKMARKS:START -->
+<!--  daily.dev BOOKMARKS:END -->
+
+<details>
+<summary>daily.dev</summary>
+
+<br/>
+
+</details>
+
+
 <!-- RSS FEED -->
 <!-- https://github.com/gautamkrishnar/blog-post-workflow -->
 
