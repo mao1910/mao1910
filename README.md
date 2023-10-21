@@ -1,8 +1,3 @@
-<!-- TODO 
-Update Socials
-Update Top Languages (exclude repositories)
--->
-
 <!-- VISITOR BADGE -->
 <!-- https://github.com/hehuapei/visitor-badge -->
 
