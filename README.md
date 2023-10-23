@@ -107,9 +107,6 @@
 </details>
 
 
-<!--  daily.dev BOOKMARKS:START -->
-<!--  daily.dev BOOKMARKS:END -->
-
 <details>
 <summary>While you're here, grab something to read 📕</summary>
 
@@ -132,3 +129,6 @@ Fix Socials [Portfolio, Discord, Linkedin]
 Fix Top Languages [exclude repositories]
 Add Public Repositories of Selected Projects
 -->
+
+<!--  daily.dev BOOKMARKS:START -->
+<!--  daily.dev BOOKMARKS:END -->
