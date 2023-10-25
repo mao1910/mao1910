@@ -111,11 +111,11 @@
 <summary>While you're here, grab something to read 📕</summary>
 
 <!-- daily.dev BOOKMARKS:START -->
-- [Next.js 13.5](https://app.daily.dev/posts/HXmtLfcG2?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-- [Monoliths to Microservices using the Strangler Pattern](https://app.daily.dev/posts/HYExswYGU?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
+- [UI/UX Design Trends 2023](https://app.daily.dev/posts/YN1RRl208?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
+- [16 little UI design rules that make a big impact](https://app.daily.dev/posts/9KvBp6poj?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
+- [10 Web Development Trends in 2023](https://app.daily.dev/posts/5h3aw-Hrx?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
+- [Netflix System Design- Backend Architecture](https://app.daily.dev/posts/G2Q_LRrvJ?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
 - [The Complete Microservices Guide](https://app.daily.dev/posts/gmr1MyHHT?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-- [Dark-Themed UI Design Tips](https://app.daily.dev/posts/4hKDaHYPd?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-- [A Comprehensive Guide to Connect Google Fit API with Express.js](https://app.daily.dev/posts/UJ7H06ozf?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
 <!-- daily.dev BOOKMARKS:END -->
 <br/>
 
