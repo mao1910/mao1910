@@ -23,7 +23,7 @@
 
 <!-- TECHNOLOGIES LOGOS -->
 <!-- https://github.com/tandpfun/skill-icons -->
-
+<!-- &theme=dark, &perline=3 -->
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
 <div align="center">
     <img src="https://skillicons.dev/icons?i=javascript,nodejs,spring,cs,vite,svelte,html,css,tailwind,react,nextjs" />
