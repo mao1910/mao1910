@@ -23,7 +23,6 @@
 
 <!-- TECHNOLOGIES LOGOS -->
 <!-- https://github.com/tandpfun/skill-icons -->
-<!-- &theme=dark, &perline=3 -->
 
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
 <div align="center">
