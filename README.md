@@ -17,7 +17,7 @@
 <div align="center">
 <img src="/assets/terminal-17.gif?raw=true" alt="Terminal"/>
 </div>
-<br/><br/>
+<br/>
 
 
 <!-- TECHNOLOGIES LOGOS -->
