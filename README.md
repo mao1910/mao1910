@@ -6,7 +6,6 @@
 
 <!-- TYPING SVG -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
-
 <h1 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi+There!+👋;+I'm+Mao!;" />
 </h1>
