@@ -30,7 +30,6 @@
 
 <!-- CONTRIBUTIONS SNAKE GAME -->
 <!-- https://github.com/Platane/snk -->
-
 <div align="center">
   <h2> My Contributionssss🐍 </h2>
   <br>
