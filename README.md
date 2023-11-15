@@ -41,7 +41,7 @@
   <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
   </picture>
   
-  <br/><br/><br/>
+  <br/><br/>
 </div>
 
 
