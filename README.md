@@ -68,7 +68,6 @@
 
 <!--  SOCIAL NETWORKS -->
 <!-- https://github.com/alexandresanlim/Badges4-README.md-Profile -->
-
   <div> 
     <a href="https://www.deviantart.com/madeinkobaia/art/my-profile-is-under-construction-265626465" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <!-- ADD LINKEDIN PROFILE -->
     <a href = "https://www.nicepng.com/ourpic/u2q8o0t4t4r5o0r5_website-under-construction-png-graphic-transparent-website-under/"><img src="https://img.shields.io/badge/Portfolio-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" target="_blank"></a> <!-- ADD PORTFOLIO WEBSITE -->
