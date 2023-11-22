@@ -78,7 +78,6 @@
 
 <!-- SPOTIFY PLAYING-->
 <!-- https://github.com/novatorem/novatorem --> <!-- My Vercel -->
-
 [<img width=438px src="https://spotify-now-playing-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
 
 
