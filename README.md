@@ -83,7 +83,6 @@
 
 <!-- JOKE OF THE DAY -->
 <!-- https://github.com/ABSphreak/readme-jokes --> <!-- My Vercel -->
-
 <details>
 <summary>I've got a Joke for you. Wanna hear it? 🙈</summary>
     
