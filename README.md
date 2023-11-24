@@ -24,7 +24,6 @@
 <div align="center">
     <img src="https://skillicons.dev/icons?i=javascript,nodejs,spring,cs,vite,svelte,html,css,tailwind,react,nextjs,firebase,supabase,mongo,postgresql,mysql,redis,postman,vscode,idea,figma,github&perline=11&theme=dark" />
 </div>
-
 <br/>
 
 
