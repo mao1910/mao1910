@@ -90,7 +90,6 @@
  <tr>
  <td style="padding-top:4px"><img src = "https://readme-jokes-git-master-mao1910.vercel.app/api?&theme=dracula"></td>
  </tr>
-
 </details>
 
 
