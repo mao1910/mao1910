@@ -92,7 +92,6 @@
  </tr>
 </details>
 
-
 <details>
 <summary>While you're here, grab something to read 📕</summary>
 
