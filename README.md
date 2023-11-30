@@ -100,7 +100,6 @@
 - [The Complete Microservices Guide](https://app.daily.dev/posts/gmr1MyHHT?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
 <!-- daily.dev BOOKMARKS:END -->
 <br/>
-
 </details>
 
 
