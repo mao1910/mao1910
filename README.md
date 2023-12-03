@@ -83,7 +83,6 @@
 <details>
 <summary>I've got a Joke for you. Wanna hear it? 🙈</summary>
 <br/>
-
  <tr>
  <td style="padding-top:4px"><img src = "https://readme-jokes-git-master-mao1910.vercel.app/api?&theme=dracula"></td>
  </tr>
