@@ -106,7 +106,6 @@
 <!-- https://github.com/gautamkrishnar/blog-post-workflow -->
 <!-- BLOG-POST-LIST:START/END -->
 
-
 <!-- TODO
 Change the 3stats boxes around, possibly two on top and one on bottom
 Fix RSSfeed [own articles]
