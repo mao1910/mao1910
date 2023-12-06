@@ -101,7 +101,6 @@
 <br/>
 </details>
 
-
 <!-- RSS FEED -->
 <!-- https://github.com/gautamkrishnar/blog-post-workflow -->
 <!-- BLOG-POST-LIST:START/END -->
