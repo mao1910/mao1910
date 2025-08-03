@@ -6,7 +6,7 @@
 <!-- TYPING SVG -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi+There!+👋;+I'm+Mao!;" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi%20there!%20%F0%9F%91%8B;您好啊%20%F0%9F%91%8B;¡Buenas!%20%F0%9F%91%8B;%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%A8%D9%83%20%F0%9F%91%8B;Olá!%20%F0%9F%91%8B;नमस्ते%20जी%20%F0%9F%91%8B" />
 </h1>
 <br/>
 
@@ -22,7 +22,7 @@
 <!-- https://github.com/tandpfun/skill-icons -->
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=javascript,nodejs,spring,cs,vite,svelte,html,css,tailwind,react,nextjs,firebase,supabase,mongo,postgresql,mysql,redis,postman,vscode,idea,figma,github&perline=11&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=javascript,java,spring,cs,html,css,tailwind,react,nextjs,mongo,postgresql,mysql,postman,python,docker,markdown,django,fastapi,sass,less,bash,github&perline=11&theme=dark" />
 </div>
 <br/>
 
@@ -60,44 +60,23 @@
 <!-- FOOTER -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <!-- https://readme-typing-svg.demolab.com/demo/ -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&pause=1000&color=FE6E96&width=535&lines=Thanks+for+dropping+by!;Feel+free+to+check+any+of+the+Socials+below+%F0%9F%91%87;Or+the+Joke+Of+The+Day+if+you're+down+for+a+giggle+%F0%9F%98%9D;Hope+to+see+you+again+%F0%9F%91%8A;Uh%3F+You're+still+here%3F;Well...+I'm+running+out+of+things+to+say...;Tell+you+what%2C+due+to+your+effort+and+perseverance%2C;I+shall+present+you+with+a+short+poem%3A;%22To+code%2C+or+not+to+code%2C+that+is+the+question%3A;Whether+'tis+nobler+in+the+IDE+to+debug;The+errors+and+issues+of+outrageous+software%2C;Or+to+take+up+the+keyboard+against+a+sea+of+bugs;And+by+coding%2C+end+them.%22;by+William+Shakespeare%2C+probably.+;Pretty+sure+that's+Hamlet's.;Alrighty%2C+this+has+been+fun.;But+I'll+restart+the+loop+now...+see+ya+soon!" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&pause=1000&color=FE6E96&width=535&lines=Goodbye!%20%F0%9F%91%8B;%E5%86%8D%E8%A7%81%E5%95%8A%20%F0%9F%91%8B;%C2%A1Ad%C3%B3s!%20%F0%9F%91%8B;%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9%20%F0%9F%91%8B;Tchau!%20%F0%9F%91%8B;%E0%A4%85%E0%A4%B2%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A4%BE%20%E0%A4%9C%E0%A5%80%20%F0%9F%91%8B" alt="Typing SVG" /></a>
 
 
 <!--  SOCIAL NETWORKS -->
 <!-- https://github.com/alexandresanlim/Badges4-README.md-Profile -->
   <div> 
-    <a href="https://www.deviantart.com/madeinkobaia/art/my-profile-is-under-construction-265626465" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <!-- ADD LINKEDIN PROFILE -->
     <a href = "https://www.nicepng.com/ourpic/u2q8o0t4t4r5o0r5_website-under-construction-png-graphic-transparent-website-under/"><img src="https://img.shields.io/badge/Portfolio-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" target="_blank"></a> <!-- ADD PORTFOLIO WEBSITE -->
-    <a href="https://discord.gg" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a> <!-- ADD DISCORD --> <!-- User or Server? -->
-    <a href = "mailto:mao1910dev@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+    <a href = "mailto:mao1910dev@gmail.com"><img src="https://img.shields.io/badge/proton%20mail-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" target="_blank"></a> <!-- UPDATE EMAIL -->
   </div>
-
-
-<!-- SPOTIFY PLAYING-->
-<!-- https://github.com/novatorem/novatorem --> <!-- My Vercel -->
-[<img width=438px src="https://spotify-now-playing-git-main-mao1910.vercel.app//api/spotify/?border_color=FE6E96" alt="Mao Spotify Now Playing" />](https://open.spotify.com/user/31542et242zglhf42ydrtqgvuvde)
-
-
-<!-- JOKE OF THE DAY -->
-<!-- https://github.com/ABSphreak/readme-jokes --> <!-- My Vercel -->
-<details>
-<summary>I've got a Joke for you. Wanna hear it? 🙈</summary>
-<br/>
- <tr>
- <td style="padding-top:4px"><img src = "https://readme-jokes-git-master-mao1910.vercel.app/api?&theme=dracula"></td>
- </tr>
-</details>
 
 <details>
 <summary>While you're here, grab something to read 📕</summary>
 
 <!-- daily.dev BOOKMARKS:START -->
-- [UI/UX Design Trends 2023](https://app.daily.dev/posts/YN1RRl208?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-- [16 little UI design rules that make a big impact](https://app.daily.dev/posts/9KvBp6poj?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-- [10 Web Development Trends in 2023](https://app.daily.dev/posts/5h3aw-Hrx?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-- [Netflix System Design- Backend Architecture](https://app.daily.dev/posts/G2Q_LRrvJ?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-- [The Complete Microservices Guide](https://app.daily.dev/posts/gmr1MyHHT?utm_source=rss&utm_medium=bookmarks&utm_campaign=qZYWAduYN0TDy7G6fPhqf)
-<!-- daily.dev BOOKMARKS:END -->
+- [Building In-Video Search at Netflix](https://netflixtechblog.com/building-in-video-search-936766f0017c)  
+- [Real-Time Messaging at Slack](https://slack.engineering/real-time-messaging/)  
+- [How Discord Stores Trillions of Messages](https://discord.com/blog/how-discord-stores-trillions-of-messages)
 <br/>
 </details>
 
@@ -107,9 +86,6 @@
 
 
 <!-- TODO
-Change the 3stats boxes around, possibly two on top and one on bottom
-Fix RSSfeed [own articles]
-Fix Spotify Playlists
 Fix Socials [Portfolio, Discord, Linkedin]
 Fix Top Languages [exclude repositories]
 Add Public Repositories of Selected Projects
