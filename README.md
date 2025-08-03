@@ -33,7 +33,6 @@
   <h2> My Contributionssss🐍 </h2>
   <br>
   <img alt="contributions-eating Snake" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-contribution-grid-snake.svg" />
-
   <!-- Four lines below suggested by Planate for Dark mode-->
   <picture>
   <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
@@ -57,12 +56,6 @@
 <br/>
 
 
-<!-- FOOTER -->
-<!-- https://github.com/DenverCoder1/readme-typing-svg -->
-<!-- https://readme-typing-svg.demolab.com/demo/ -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&pause=1000&color=FE6E96&width=535&lines=Goodbye!%20%F0%9F%91%8B;%E5%86%8D%E8%A7%81%E5%95%8A%20%F0%9F%91%8B;%C2%A1Ad%C3%B3s!%20%F0%9F%91%8B;%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9%20%F0%9F%91%8B;Tchau!%20%F0%9F%91%8B;%E0%A4%85%E0%A4%B2%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A4%BE%20%E0%A4%9C%E0%A5%80%20%F0%9F%91%8B" alt="Typing SVG" /></a>
-
-
 <!--  SOCIAL NETWORKS -->
 <!-- https://github.com/alexandresanlim/Badges4-README.md-Profile -->
   <div> 
@@ -70,8 +63,10 @@
     <a href = "mailto:mao1910dev@gmail.com"><img src="https://img.shields.io/badge/proton%20mail-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" target="_blank"></a> <!-- UPDATE EMAIL -->
   </div>
 
+
 <details>
 <summary>While you're here, grab something to read 📕</summary>
+
 
 <!-- daily.dev BOOKMARKS:START -->
 - [Building In-Video Search at Netflix](https://netflixtechblog.com/building-in-video-search-936766f0017c)  
@@ -79,6 +74,13 @@
 - [How Discord Stores Trillions of Messages](https://discord.com/blog/how-discord-stores-trillions-of-messages)
 <br/>
 </details>
+
+
+<!-- FOOTER -->
+<!-- https://github.com/DenverCoder1/readme-typing-svg -->
+<!-- https://readme-typing-svg.demolab.com/demo/ -->
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&pause=1000&color=FE6E96&width=535&lines=Goodbye!%20%F0%9F%91%8B;%E5%86%8D%E8%A7%81%E5%95%8A%20%F0%9F%91%8B;%C2%A1Ad%C3%B3s!%20%F0%9F%91%8B;%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9%20%F0%9F%91%8B;Tchau!%20%F0%9F%91%8B;%E0%A4%85%E0%A4%B2%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A4%BE%20%E0%A4%9C%E0%A5%80%20%F0%9F%91%8B" alt="Typing SVG" /></a>
+
 
 <!-- RSS FEED -->
 <!-- https://github.com/gautamkrishnar/blog-post-workflow -->
