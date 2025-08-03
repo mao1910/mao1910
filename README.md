@@ -22,7 +22,7 @@
 <!-- https://github.com/tandpfun/skill-icons -->
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=javascript,python,java,cs,django,fastapi,spring,react,nextjs,tailwind,bootstrap,sass,less,html,css,markdown,postgresql,mysql,mongo,docker,git,postman,vscode,pycharm&perline=8&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=javascript,python,java,react,nextjs,tailwind,html,css,markdown,django,spring,postgresql,mysql,docker,git,postman,vscode,pycharm&perline=9&theme=dark" />
 </div>
 <br/>
 
