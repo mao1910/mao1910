@@ -63,18 +63,16 @@
     <a href = "mailto:mao1910dev@gmail.com"><img src="https://img.shields.io/badge/proton%20mail-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" target="_blank"></a> <!-- UPDATE EMAIL -->
   </div>
 
-
+<!--
 <details>
 <summary>While you're here, grab something to read 📕</summary>
-
-
-<!-- daily.dev BOOKMARKS:START -->
 - [Building In-Video Search at Netflix](https://netflixtechblog.com/building-in-video-search-936766f0017c)  
 - [Real-Time Messaging at Slack](https://slack.engineering/real-time-messaging/)  
 - [How Discord Stores Trillions of Messages](https://discord.com/blog/how-discord-stores-trillions-of-messages)
 <br/>
 </details>
-
+-->
+<br>
 
 <!-- FOOTER -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
