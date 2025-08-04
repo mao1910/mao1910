@@ -48,7 +48,7 @@
 <h2 align="center"> Stats📝 </h2>
   <br>
 <div align=center>
-  <img width=429 src="https://github-readme-stats-mao1910.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=79DAF9" alt="github stats"/>
+  <img width=429 src="https://github-readme-stats-sable-nine-43.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=79DAF9" alt="github stats"/>
   <img width=396 src="https://github-readme-streak-stats-2235.vercel.app?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10&border=79DAF9" alt="streak stats"/>
   <br/>
   <img src="https://github-readme-stats-mao1910.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5&border_color=79DAF9&hide=php" alt="languages stats" />     <!-- exclude_repo= -->
