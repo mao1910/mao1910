@@ -19,10 +19,12 @@
 
 
 <!-- TECHNOLOGIES LOGOS -->
-<!-- https://github.com/tandpfun/skill-icons -->
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=javascript,python,java,react,nextjs,tailwind,html,css,markdown,django,spring,postgresql,mysql,docker,git,postman,vscode,pycharm&perline=9&theme=dark" />
+    <!-- https://github.com/qkrdmstlr3/techstack-generator?tab=readme-ov-file -->
+    <div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/python-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/raspberrypi-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/java-icon.svg" alt="icon" width="53" height="53" /></div>
+    <!-- https://github.com/tandpfun/skill-icons -->
+<img src="https://skillicons.dev/icons?i=nextjs,tailwind,html,css,markdown,spring,postgresql,git,postman,vscode,pycharm&perline=11&theme=dark" />
 </div>
 <br/>
 
