@@ -5,7 +5,7 @@
 
 <!-- CAPSULE RENDER -->
 <!-- https://github.com/hehuapei/visitor-badge](https://github.com/kyechan99/capsule-render -->
-![Render](https://capsule-render.vercel.app/api?type=blur&height=300&color=0:FE6E96,100:FFC0CB&animation=scaleIn&fontAlign=50&textBg=false&stroke=79DAF9&descAlignY=59&fontAlignY=50&reversal=false&fontColor=79DAF9)
+![Render](https://capsule-render.vercel.app/api?type=venom&height=150&color=0:FE6E96,100:FFC0CB&animation=scaleIn&fontAlign=50&textBg=false&stroke=79DAF9&descAlignY=59&fontAlignY=50&reversal=false&fontColor=79DAF9)
 
 
 <!-- TYPING SVG -->
