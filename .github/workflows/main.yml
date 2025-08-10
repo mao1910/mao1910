@@ -21,14 +21,13 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            outputs: |
-              # Light mode with custom pink snake and dots
-              dist/github-snake.svg?color_snake=FE6E96&color_dots=#FFD6E8,#F5B3C2,#E8839F,#DB5B7F,#C5365F
-              # Dark mode with custom pink snake and dots
-              dist/github-snake-dark.svg?color_snake=FE6E96&color_dots=#4B2B34,#653944,#7D4454,#A25669,#BB727C
-              # Previous palettes:
-              # dist/github-snake.svg?palette=github
-              # dist/github-snake-dark.svg?palette=github-dark
+            # Light mode with custom pink snake and dots
+            dist/github-snake.svg?color_snake=FE6E96&color_dots=#FFD6E8,#F5B3C2,#E8839F,#DB5B7F,#C5365F
+            # Dark mode with custom pink snake and dots
+            dist/github-snake-dark.svg?color_snake=FE6E96&color_dots=#4B2B34,#653944,#7D4454,#A25669,#BB727C
+            # Previous palettes:
+            # dist/github-snake.svg?palette=github
+            # dist/github-snake-dark.svg?palette=github-dark
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
