@@ -5,12 +5,14 @@
 
 <!-- CAPSULE RENDER -->
 <!-- https://github.com/hehuapei/visitor-badge](https://github.com/kyechan99/capsule-render -->
-![Render](https://capsule-render.vercel.app/api?type=venom&height=150&color=0:FE6E96,100:FFC0CB&animation=scaleIn&fontAlign=50&text=φ(◎◎ヘ)&fontAlignY=50&fontColor=000000&fontSize=30)
+<img align="left" src="https://capsule-render.vercel.app/api?type=venom&height=150&color=0:FE6E96,100:FFC0CB&animation=scaleIn&fontAlign=50&text=φ(◎◎ヘ)&fontAlignY=50&fontColor=000000&fontSize=30" alt="Render">
+
+
 
 
 <!-- TYPING SVG -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
-<h1 align="center">
+<h1 align="left">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi%20there!%20%F0%9F%91%8B;您好啊%20%F0%9F%91%8B;¡Buenas!%20%F0%9F%91%8B;%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%A8%D9%83%20%F0%9F%91%8B;Olá!%20%F0%9F%91%8B;नमस्ते%20जी%20%F0%9F%91%8B" />
 </h1>
 <br/>
