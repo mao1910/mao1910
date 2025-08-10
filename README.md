@@ -8,8 +8,6 @@
 <img align="left" src="https://capsule-render.vercel.app/api?type=venom&height=150&color=0:FE6E96,100:FFC0CB&animation=scaleIn&fontAlign=50&text=φ(◎◎ヘ)&fontAlignY=50&fontColor=000000&fontSize=30" alt="Render">
 
 
-
-
 <!-- TYPING SVG -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <h1 align="left">
@@ -42,14 +40,15 @@
 <div align="center">
   <h2> My Contributionssss🐍 </h2>
   <br>
-  <img alt="contributions-eating Snake" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-contribution-grid-snake.svg" />
-  <!-- Four lines below suggested by Planate for Dark mode-->
+  <!-- Adaptive dark/light mode images: -->
   <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake.svg" />
+    <img alt="GitHub contribution graph snake animation" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake.svg" />
   </picture>
   <br/>
 </div>
+
 
 
 <!-- GITHUB STATS -->
