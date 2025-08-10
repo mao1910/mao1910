@@ -40,14 +40,13 @@
 <div align="center">
   <h2> My Contributionssss🐍 </h2>
   <br>
-  <img
-    alt="GitHub contribution graph snake animation"
-    src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake.svg"
-  />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake.svg" />
+    <img alt="GitHub contribution graph snake animation" src="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake.svg" />
+  </picture>
   <br/>
 </div>
-
-
 
 
 <!-- GITHUB STATS -->
