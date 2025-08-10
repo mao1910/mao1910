@@ -19,8 +19,9 @@
 
 
 <!-- ABOUT ME TERMINAL -->
+<!-- https://www.terminalgif.com/ -->
 <div align="center">
-<img src="/assets/terminal_01.gif?raw=true" alt="Terminal"/>
+<img src="/assets/terminal_02.gif?raw=true" alt="Terminal"/>
 </div>
 <br/>
 
