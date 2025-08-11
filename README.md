@@ -93,7 +93,12 @@
 
 
 <!-- TODO
-Fix Socials [Portfolio, Discord, Linkedin]
-Fix Top Languages [exclude repositories]
-Add Public Repositories of Selected Projects
+Fix Socials [Portfolio, Email]
+Terminal Gif: change the green button to 306998; make it type slightly faster but last the same time
+Update the icons for languages and tools accordingly
+Update the Terminal Gif info accordingly
+Update the public repos with the Portfolio projects
+Fix the typo in the pfp
+Consider changing the Goodbye languages to not mirror the Hello languages
+Figure out the contribution graph color scheme with the overal page
 -->
