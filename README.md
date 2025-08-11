@@ -66,7 +66,7 @@
 <!--  SOCIAL NETWORKS -->
 <!-- https://github.com/alexandresanlim/Badges4-README.md-Profile -->
   <div> 
-    <a href = "https://www.nicepng.com/ourpic/u2q8o0t4t4r5o0r5_website-under-construction-png-graphic-transparent-website-under/"><img src="https://img.shields.io/badge/Portfolio-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white" target="_blank"></a> <!-- ADD PORTFOLIO WEBSITE -->
+    <a href="https://www.nicepng.com/ourpic/u2q8o0t4t4r5o0r5_website-under-construction-png-graphic-transparent-website-under/"> <img src="https://img.shields.io/badge/Portfolio-306998?style=for-the-badge&logo=Google-chrome&logoColor=white" target="_blank"> </a><!-- ADD PORTFOLIO WEBSITE -->
     <a href = "mailto:mao1910dev@gmail.com"><img src="https://img.shields.io/badge/proton%20mail-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" target="_blank"></a> <!-- UPDATE EMAIL -->
   </div>
 
