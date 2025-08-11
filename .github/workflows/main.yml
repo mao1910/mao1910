@@ -20,7 +20,7 @@ jobs:
         id: snake-gif
         with:
           github_user_name: ${{ github.repository_owner }}
-          #light-v2 dist/github-snake.svg?color_snake=
+          #light-v2 dist/github-snake.svg?color_snake=%23306998&color_dots=%23FFF3F7,%23F9BDD0,%23FE6E96,%23DB5B7F,%23C5365F
           #dark-v2 dist/github-snake-dark.svg?color_snake=%23FE6E96&color_dots=%23161B22,%231C3E57,%23255271,%23306998,%2377A7D3
           outputs: |
             dist/github-snake.svg?color_snake=%23FE6E96&color_dots=%23EEF2F6,%2377A7D3,%23306998,%23255271,%231C3E57
