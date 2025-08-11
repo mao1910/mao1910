@@ -38,7 +38,7 @@
 <!-- CONTRIBUTIONS SNAKE GAME -->
 <!-- https://github.com/Platane/snk -->
 <div align="center">
-  <h2> My Contributionssss🐍 </h2>
+  <h2> My Contributionsss🐍 </h2>
   <br>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mao1910/mao1910/output/github-snake-dark.svg" />
