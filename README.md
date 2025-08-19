@@ -33,6 +33,26 @@
 <img src="https://skillicons.dev/icons?i=nextjs,tailwind,html,css,markdown,spring,postgresql,git,postman,vscode,pycharm&perline=11&theme=dark" />
 </div>
 <br/>
+<!-- Possible re-arrangement of the logos, a workaround to have the two different types of logos alternating with each other. Keeping it here for future reference once I come fix this README
+<table>
+  <tr>
+    <td><img src="https://techstack-generator.vercel.app/python-icon.svg" width="43" height="43" alt="Python" /></td>
+    <td><img src="https://skillicons.dev/icons?i=nextjs" width="43" height="43" alt="Next.js" /></td>
+    <td><img src="https://techstack-generator.vercel.app/django-icon.svg" width="43" height="43" alt="Django" /></td>
+    <td><img src="https://skillicons.dev/icons?i=tailwind" width="43" height="43" alt="Tailwind" /></td>
+    <td><img src="https://techstack-generator.vercel.app/js-icon.svg" width="43" height="43" alt="JavaScript" /></td>
+    <td><img src="https://skillicons.dev/icons?i=html" width="43" height="43" alt="HTML" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://techstack-generator.vercel.app/ts-icon.svg" width="43" height="43" alt="TypeScript" /></td>
+    <td><img src="https://skillicons.dev/icons?i=css" width="43" height="43" alt="CSS" /></td>
+    <td><img src="https://techstack-generator.vercel.app/react-icon.svg" width="43" height="43" alt="React" /></td>
+    <td><img src="https://skillicons.dev/icons?i=markdown" width="43" height="43" alt="Markdown" /></td>
+    <td><img src="https://techstack-generator.vercel.app/docker-icon.svg" width="43" height="43" alt="Docker" /></td>
+    <td><img src="https://skillicons.dev/icons?i=spring" width="43" height="43" alt="Spring" /></td>
+  </tr>
+</table>
+-->
 
 
 <!-- CONTRIBUTIONS SNAKE GAME -->
