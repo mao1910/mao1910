@@ -11,7 +11,7 @@
 <!-- TYPING SVG -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
 <h1 align="left">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi%20there!%20%F0%9F%91%8B;您好啊%20%F0%9F%91%8B;¡Buenas!%20%F0%9F%91%8B;%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%A8%D9%83%20%F0%9F%91%8B;Olá!%20%F0%9F%91%8B;नमस्ते%20जी%20%F0%9F%91%8B" />
+    <img src="https://readme-typing-svg.herokuapp.com/?size=35&center=true&vCenter=true&width=500&height=70&color=FE6E96&font=poppins&duration=5000&lines=Hi%20there!%20%F0%9F%91%8B;您好啊%20%F0%9F%91%8B;¡Buenas!%20%F0%9F%91%8B;%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%A8%D9%83%20%F0%9F%91%8B;Olá!%20%F0%9F%91%8B;नमस्ते%20जी%20%F0%9F%91%8B" />
 </h1>
 <br/>
 
@@ -55,8 +55,8 @@
 <h2 align="center"> Stats📝 </h2>
   <br>
 <div align=center>
-  <img width=429 src="https://github-readme-stats-sable-nine-43.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=306998" alt="github stats"/>
-  <img width=396 src="https://github-readme-streak-stats-2235.vercel.app?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10&border=306998" alt="streak stats"/>
+  <img width="429" src="https://github-readme-stats-sable-nine-43.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=306998" alt="github stats"/>
+  <img width="396" src="https://github-readme-streak-stats-2235.vercel.app?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10&border=306998" alt="streak stats"/>
   <br/>
   <img src="https://github-readme-stats-sable-nine-43.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5&border_color=306998&hide=php" alt="languages stats" />     <!-- exclude_repo= -->
 </div>
@@ -70,6 +70,7 @@
     <a href = "mailto:mao1910dev@gmail.com"><img src="https://img.shields.io/badge/proton%20mail-6D4AFF?style=for-the-badge&logo=protonmail&logoColor=white" target="_blank"></a> <!-- UPDATE EMAIL -->
   </div>
 
+
 <!--
 <details>
 <summary>While you're here, grab something to read 📕</summary>
@@ -80,6 +81,7 @@
 </details>
 -->
 <br>
+
 
 <!-- FOOTER -->
 <!-- https://github.com/DenverCoder1/readme-typing-svg -->
