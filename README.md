@@ -25,14 +25,15 @@
 
 
 <!-- TECHNOLOGIES LOGOS -->
-<h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2>
-<div align="center">
-    <!-- https://github.com/qkrdmstlr3/techstack-generator?tab=readme-ov-file -->
-    <div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/python-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/raspberrypi-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="53" height="53" /><img src="https://techstack-generator.vercel.app/java-icon.svg" alt="icon" width="53" height="53" /></div>
-    <!-- https://github.com/tandpfun/skill-icons -->
-<img src="https://skillicons.dev/icons?i=nextjs,tailwind,html,css,markdown,spring,postgresql,git,postman,vscode,pycharm&perline=11&theme=dark" />
-</div>
-<br/>
+<!-- https://github.com/qkrdmstlr3/techstack-generator?tab=readme-ov-file -->
+<!-- https://github.com/tandpfun/skill-icons -->
+<h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2> 
+<!-- Backend --> 
+<div align="center"> <div> <!-- Keep animated --> <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="48" height="48" /> <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="Django" width="48" height="48" /> <!-- Static --> <img src="https://skillicons.dev/icons?i=java&theme=dark" alt="Java" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=spring&theme=dark" alt="Spring" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=docker&theme=dark" alt="Docker" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=postgresql&theme=dark" alt="PostgreSQL" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=git&theme=dark" alt="Git" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=postman&theme=dark" alt="Postman" width="48" height="48" /> </div> </div> 
+<!-- Frontend --> 
+<div align="center"> <div> <!-- Static --> <img src="https://skillicons.dev/icons?i=markdown&theme=dark" alt="Markdown" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=alpinejs&theme=dark" alt="Alpine.js" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=htmx&theme=dark" alt="HTMX" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=astro&theme=dark" alt="Astro" width="48" height="48" /> <!-- Keep animated --> <img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="TypeScript" width="48" height="48" /> <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="48" height="48" /> </div> </div>
+
+
 <!-- Possible re-arrangement of the logos, a workaround to have the two different types of logos alternating with each other. Keeping it here for future reference once I come fix this README
 <table>
   <tr>
@@ -123,4 +124,5 @@ Update the public repos with the Portfolio projects
 Fix the typo in the pfp
 Consider changing the Goodbye languages to not mirror the Hello languages
 Figure out the contribution graph color scheme with the overal page
+Unify md structure with the tags, indentation and comments
 -->
