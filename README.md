@@ -116,7 +116,7 @@
 
 
 <!-- TODO
-Fix Socials [Portfolio, Email]
+Fix Socials [Portfolio, Email] & consider adding an instantaneous message system like Session, Signal, Element or even Discord
 Terminal Gif: change the green button to 306998; make it type slightly faster but last the same time
 Update the icons for languages and tools accordingly
 Update the Terminal Gif info accordingly
