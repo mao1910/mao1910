@@ -118,11 +118,12 @@
 <!-- TODO
 Fix Socials [Portfolio, Email] & consider adding an instantaneous message system like Session, Signal, Element or even Discord
 Terminal Gif: change the green button to 306998; make it type slightly faster but last the same time
-Update the icons for languages and tools accordingly
 Update the Terminal Gif info accordingly
+Update the icons for languages and tools accordingly
 Update the public repos with the Portfolio projects
 Fix the typo in the pfp
 Consider changing the Goodbye languages to not mirror the Hello languages
 Figure out the contribution graph color scheme with the overal page
+Add Leetcode card from the proper forked repository
 Unify md structure with the tags, indentation and comments
 -->
