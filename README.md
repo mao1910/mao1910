@@ -119,7 +119,7 @@
 Fix Socials [Portfolio, Email] & consider adding an instantaneous message system like Session, Signal, Element or even Discord
 Terminal Gif: change the green button to 306998; make it type slightly faster but last the same time
 Update the Terminal Gif info accordingly
-Update the icons for languages and tools accordingly
+Update the icons for languages and tools accordingly // look into typst, github, gitactions, vercel
 Update the public repos with the Portfolio projects
 Fix the typo in the pfp
 Consider changing the Goodbye languages to not mirror the Hello languages
