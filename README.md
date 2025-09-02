@@ -121,6 +121,7 @@ Terminal Gif: change the green button to 306998; make it type slightly faster bu
 Update the Terminal Gif info accordingly
 Update the icons for languages and tools accordingly // look into typst, github, gitactions, vercel
 Update the public repos with the Portfolio projects
+Update show activity? or make mentioned of projects I contributed to, question mark?
 Fix the typo in the pfp
 Consider changing the Goodbye languages to not mirror the Hello languages
 Figure out the contribution graph color scheme with the overal page
