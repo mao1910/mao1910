@@ -1,6 +1,6 @@
 <!-- VISITOR BADGE -->
 <!-- https://github.com/hehuapei/visitor-badge -->
-<!-- <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=mao1910.mao1910&left_color=%2379DAF9&right_color=%23FE6E96" /> -->
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=mao1910.mao1910&left_color=%23306998&right_color=%23FE6E96" />
 
 
 <!-- CAPSULE RENDER -->
