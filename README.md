@@ -29,31 +29,9 @@
 <!-- https://github.com/tandpfun/skill-icons -->
 <h2 align="center">💻 Languages / Frameworks / Tools ⚒️</h2> 
 <!-- Backend --> 
-<div align="center"> <div> <!-- Keep animated --> <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="48" height="48" /> <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="Django" width="48" height="48" /> <!-- Static --> <img src="https://skillicons.dev/icons?i=java&theme=dark" alt="Java" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=spring&theme=dark" alt="Spring" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=postgresql&theme=dark" alt="PostgreSQL" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=docker&theme=dark" alt="Docker" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=git&theme=dark" alt="Git" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=postman&theme=dark" alt="Postman" width="48" height="48" /> </div> </div> 
+<div align="center"> <div> <!-- Animated --> <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="48" height="48" /> <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="Django" width="48" height="48" /> <!-- Static --> <img src="https://skillicons.dev/icons?i=java&theme=dark" alt="Java" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=spring&theme=dark" alt="Spring" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=postgresql&theme=dark" alt="PostgreSQL" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=docker&theme=dark" alt="Docker" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=git&theme=dark" alt="Git" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=postman&theme=dark" alt="Postman" width="48" height="48" /> </div> </div> 
 <!-- Frontend --> 
-<div align="center"> <div> <!-- Static --> <img src="https://skillicons.dev/icons?i=markdown&theme=dark" alt="Markdown" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=alpinejs&theme=dark" alt="Alpine.js" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=htmx&theme=dark" alt="HTMX" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=astro&theme=dark" alt="Astro" width="48" height="48" /> <!-- Keep animated --> <img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="TypeScript" width="48" height="48" /> <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="48" height="48" /> </div> </div>
-
-
-<!-- Possible re-arrangement of the logos, a workaround to have the two different types of logos alternating with each other. Keeping it here for future reference once I come fix this README
-<table>
-  <tr>
-    <td><img src="https://techstack-generator.vercel.app/python-icon.svg" width="43" height="43" alt="Python" /></td>
-    <td><img src="https://skillicons.dev/icons?i=nextjs" width="43" height="43" alt="Next.js" /></td>
-    <td><img src="https://techstack-generator.vercel.app/django-icon.svg" width="43" height="43" alt="Django" /></td>
-    <td><img src="https://skillicons.dev/icons?i=tailwind" width="43" height="43" alt="Tailwind" /></td>
-    <td><img src="https://techstack-generator.vercel.app/js-icon.svg" width="43" height="43" alt="JavaScript" /></td>
-    <td><img src="https://skillicons.dev/icons?i=html" width="43" height="43" alt="HTML" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://techstack-generator.vercel.app/ts-icon.svg" width="43" height="43" alt="TypeScript" /></td>
-    <td><img src="https://skillicons.dev/icons?i=css" width="43" height="43" alt="CSS" /></td>
-    <td><img src="https://techstack-generator.vercel.app/react-icon.svg" width="43" height="43" alt="React" /></td>
-    <td><img src="https://skillicons.dev/icons?i=markdown" width="43" height="43" alt="Markdown" /></td>
-    <td><img src="https://techstack-generator.vercel.app/docker-icon.svg" width="43" height="43" alt="Docker" /></td>
-    <td><img src="https://skillicons.dev/icons?i=spring" width="43" height="43" alt="Spring" /></td>
-  </tr>
-</table>
--->
+<div align="center"> <div> <!-- Static --> <img src="https://skillicons.dev/icons?i=markdown&theme=dark" alt="Markdown" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=alpinejs&theme=dark" alt="Alpine.js" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=htmx&theme=dark" alt="HTMX" width="48" height="48" /> <img src="https://skillicons.dev/icons?i=astro&theme=dark" alt="Astro" width="48" height="48" /> <!-- Animated --> <img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="TypeScript" width="48" height="48" /> <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="48" height="48" /> </div> </div>
 
 
 <!-- CONTRIBUTIONS SNAKE GAME -->
@@ -79,7 +57,7 @@
   <img width="429" src="https://github-readme-stats-sable-nine-43.vercel.app/api?username=mao1910&count_private=true&show_icons=true&theme=dracula&rank_icon=github&hide=contribs&border_radius=10&border_color=306998" alt="github stats"/>
   <img width="396" src="https://github-readme-streak-stats-2235.vercel.app?user=mao1910&count_private=true&theme=dracula&currStreakNum=79DAF9&currStreakLabel=FE6E96&border_radius=10&border=306998" alt="streak stats"/>
   <br/>
-  <img src="https://github-readme-stats-sable-nine-43.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5&border_color=306998&hide=php" alt="languages stats" />     <!-- exclude_repo= -->
+  <img src="https://github-readme-stats-sable-nine-43.vercel.app/api/top-langs/?username=mao1910&layout=compact&theme=dracula&border_radius=10&size_weight=0.5&count_weight=0.5&border_color=306998&hide=php" alt="languages stats" />
 </div>
 <br/>
 
@@ -92,6 +70,12 @@
   </div>
 
 
+<!-- FOOTER -->
+<!-- https://github.com/DenverCoder1/readme-typing-svg -->
+<!-- https://readme-typing-svg.demolab.com/demo/ -->
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&pause=1000&color=FE6E96&width=535&lines=Goodbye!%20%F0%9F%91%8B;%E5%86%8D%E8%A7%81%E5%95%8A%20%F0%9F%91%8B;%C2%A1Ad%C3%B3s!%20%F0%9F%91%8B;%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9%20%F0%9F%91%8B;Tchau!%20%F0%9F%91%8B;%E0%A4%85%E0%A4%B2%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A4%BE%20%E0%A4%9C%E0%A5%80%20%F0%9F%91%8B" alt="Typing SVG" /></a>
+
+
 <!--
 <details>
 <summary>While you're here, grab something to read 📕</summary>
@@ -101,13 +85,6 @@
 <br/>
 </details>
 -->
-<br>
-
-
-<!-- FOOTER -->
-<!-- https://github.com/DenverCoder1/readme-typing-svg -->
-<!-- https://readme-typing-svg.demolab.com/demo/ -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&pause=1000&color=FE6E96&width=535&lines=Goodbye!%20%F0%9F%91%8B;%E5%86%8D%E8%A7%81%E5%95%8A%20%F0%9F%91%8B;%C2%A1Ad%C3%B3s!%20%F0%9F%91%8B;%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9%20%F0%9F%91%8B;Tchau!%20%F0%9F%91%8B;%E0%A4%85%E0%A4%B2%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A4%BE%20%E0%A4%9C%E0%A5%80%20%F0%9F%91%8B" alt="Typing SVG" /></a>
 
 
 <!-- RSS FEED -->
