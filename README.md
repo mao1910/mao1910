@@ -51,6 +51,8 @@
 <!-- GITHUB STATS -->
 <!-- https://github.com/DenverCoder1/github-readme-streak-stats --> <!--  My Vercel -->
 <!-- https://github.com/anuraghazra/github-readme-stats --> <!--  My  Vercel -->
+<!-- Right now only one of these is being hosted; make sure I fork and host both and adjust the code for extra personalization -->
+
 <h2 align="center"> Stats📝 </h2>
   <br>
 <div align=center>
